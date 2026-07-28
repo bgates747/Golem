@@ -47,7 +47,12 @@ Design is grounded in the Agon documentation, particularly:
 docs/
   devlog/     Dated development log entries
   design/     Design notes and specifications
+reference/    Vendored/curated reference material (not a build dependency)
+runtime/
+  legacy-asm/ Hand-written ZDS/ez80asm-style eZ80 runtime library code
+  agondev/    (future) eZ80/MOS-side loader/runtime built via agondev
 src/          Compiler/toolchain source (not yet started)
+tools/        Auxiliary tooling/scripts (not the compiler itself)
 examples/     Example Golem programs
 tests/        Test suite
 ```

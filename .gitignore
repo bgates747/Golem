@@ -4,6 +4,9 @@
 *.o
 *.bin
 
+# Python virtual environment
+.venv/
+
 # Editor/OS cruft
 .DS_Store
 *.swp
