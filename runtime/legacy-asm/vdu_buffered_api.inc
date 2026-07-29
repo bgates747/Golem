@@ -82,162 +82,162 @@
 ; ===========================================================================
 ; Command number constants
 ; ===========================================================================
-VBUF_CMD_WRITE             equ 0
-VBUF_CMD_CALL               equ 1
-VBUF_CMD_CLEAR              equ 2
-VBUF_CMD_CREATE             equ 3
-VBUF_CMD_SET_OUTPUT         equ 4
-VBUF_CMD_ADJUST             equ 5
-VBUF_CMD_COND_CALL          equ 6
-VBUF_CMD_JUMP               equ 7
-VBUF_CMD_COND_JUMP          equ 8
-VBUF_CMD_JUMP_OFFSET        equ 9
-VBUF_CMD_COND_JUMP_OFFSET   equ 10
-VBUF_CMD_CALL_OFFSET        equ 11
-VBUF_CMD_COND_CALL_OFFSET   equ 12
-VBUF_CMD_COPY               equ 13
-VBUF_CMD_CONSOLIDATE        equ 14
-VBUF_CMD_SPLIT              equ 15
-VBUF_CMD_SPLIT_INTO         equ 16
-VBUF_CMD_SPLIT_FROM         equ 17
-VBUF_CMD_SPLIT_BY           equ 18
-VBUF_CMD_SPLIT_BY_INTO      equ 19
-VBUF_CMD_SPLIT_BY_FROM      equ 20
-VBUF_CMD_SPREAD_INTO        equ 21
-VBUF_CMD_SPREAD_FROM        equ 22
-VBUF_CMD_REVERSE_BLOCKS     equ 23
-VBUF_CMD_REVERSE            equ 24
-VBUF_CMD_COPY_REF           equ 25
-VBUF_CMD_COPY_CONSOLIDATE   equ 26
-VBUF_CMD_MATRIX2D           equ 32
-VBUF_CMD_MATRIX3D           equ 33
-VBUF_CMD_MATRIX             equ 34
-VBUF_CMD_TRANSFORM_BITMAP   equ 40
-VBUF_CMD_TRANSFORM_DATA     equ 41
-VBUF_CMD_READ_VARIABLE      equ 48
-VBUF_CMD_COMPRESS           equ 64
-VBUF_CMD_DECOMPRESS         equ 65
-VBUF_CMD_EXPAND_BITMAP      equ 72
-VBUF_CMD_ADD_CALLBACK       equ 80
-VBUF_CMD_REMOVE_CALLBACK    equ 81
-VBUF_CMD_DEBUG_INFO         equ 128
+VBUF_CMD_WRITE:             equ 0
+VBUF_CMD_CALL:               equ 1
+VBUF_CMD_CLEAR:              equ 2
+VBUF_CMD_CREATE:             equ 3
+VBUF_CMD_SET_OUTPUT:         equ 4
+VBUF_CMD_ADJUST:             equ 5
+VBUF_CMD_COND_CALL:          equ 6
+VBUF_CMD_JUMP:               equ 7
+VBUF_CMD_COND_JUMP:          equ 8
+VBUF_CMD_JUMP_OFFSET:        equ 9
+VBUF_CMD_COND_JUMP_OFFSET:   equ 10
+VBUF_CMD_CALL_OFFSET:        equ 11
+VBUF_CMD_COND_CALL_OFFSET:   equ 12
+VBUF_CMD_COPY:               equ 13
+VBUF_CMD_CONSOLIDATE:        equ 14
+VBUF_CMD_SPLIT:              equ 15
+VBUF_CMD_SPLIT_INTO:         equ 16
+VBUF_CMD_SPLIT_FROM:         equ 17
+VBUF_CMD_SPLIT_BY:           equ 18
+VBUF_CMD_SPLIT_BY_INTO:      equ 19
+VBUF_CMD_SPLIT_BY_FROM:      equ 20
+VBUF_CMD_SPREAD_INTO:        equ 21
+VBUF_CMD_SPREAD_FROM:        equ 22
+VBUF_CMD_REVERSE_BLOCKS:     equ 23
+VBUF_CMD_REVERSE:            equ 24
+VBUF_CMD_COPY_REF:           equ 25
+VBUF_CMD_COPY_CONSOLIDATE:   equ 26
+VBUF_CMD_MATRIX2D:           equ 32
+VBUF_CMD_MATRIX3D:           equ 33
+VBUF_CMD_MATRIX:             equ 34
+VBUF_CMD_TRANSFORM_BITMAP:   equ 40
+VBUF_CMD_TRANSFORM_DATA:     equ 41
+VBUF_CMD_READ_VARIABLE:      equ 48
+VBUF_CMD_COMPRESS:           equ 64
+VBUF_CMD_DECOMPRESS:         equ 65
+VBUF_CMD_EXPAND_BITMAP:      equ 72
+VBUF_CMD_ADD_CALLBACK:       equ 80
+VBUF_CMD_REMOVE_CALLBACK:    equ 81
+VBUF_CMD_DEBUG_INFO:         equ 128
 
 ; Common sentinel: -1 as an unsigned 16-bit value. Used as "current buffer"
 ; for several bufferId arguments, as the terminator for buffer-ID lists, and
 ; as the "all types" wildcard for callback commands.
-VBUF_NONE equ 65535
+VBUF_NONE: equ 65535
 
 ; --- Command 5 (Adjust) operation codes (low 3 bits of the operation byte) -
-VBUF_ADJ_NOT equ 0
-VBUF_ADJ_NEG equ 1
-VBUF_ADJ_SET equ 2
-VBUF_ADJ_ADD equ 3
-VBUF_ADJ_ADC equ 4
-VBUF_ADJ_AND equ 5
-VBUF_ADJ_OR  equ 6
-VBUF_ADJ_XOR equ 7
+VBUF_ADJ_NOT: equ 0
+VBUF_ADJ_NEG: equ 1
+VBUF_ADJ_SET: equ 2
+VBUF_ADJ_ADD: equ 3
+VBUF_ADJ_ADC: equ 4
+VBUF_ADJ_AND: equ 5
+VBUF_ADJ_OR:  equ 6
+VBUF_ADJ_XOR: equ 7
 ; --- Command 5 (Adjust) modifier flag bits (upper bits of the operation byte)
-VBUF_ADJ_F_ADVANCED equ $10 ; use advanced (24-bit) offsets
-VBUF_ADJ_F_BUFVALUE equ $20 ; operand is fetched from a buffer, not the stream
-VBUF_ADJ_F_MULTI_TGT equ $40 ; adjust `count` target bytes, not just one
-VBUF_ADJ_F_MULTI_OP  equ $80 ; read `count` operand values, not just one
+VBUF_ADJ_F_ADVANCED: equ $10 ; use advanced (24-bit) offsets
+VBUF_ADJ_F_BUFVALUE: equ $20 ; operand is fetched from a buffer, not the stream
+VBUF_ADJ_F_MULTI_TGT: equ $40 ; adjust `count` target bytes, not just one
+VBUF_ADJ_F_MULTI_OP:  equ $80 ; read `count` operand values, not just one
 
 ; --- Commands 6/8/10/12 (Conditional) operation codes (low 4 bits) ---------
-VBUF_COND_EXISTS     equ 0
-VBUF_COND_NOT_EXISTS equ 1
-VBUF_COND_EQ         equ 2
-VBUF_COND_NE         equ 3
-VBUF_COND_LT         equ 4
-VBUF_COND_GT         equ 5
-VBUF_COND_LE         equ 6
-VBUF_COND_GE         equ 7
-VBUF_COND_AND        equ 8
-VBUF_COND_OR         equ 9
+VBUF_COND_EXISTS:     equ 0
+VBUF_COND_NOT_EXISTS: equ 1
+VBUF_COND_EQ:         equ 2
+VBUF_COND_NE:         equ 3
+VBUF_COND_LT:         equ 4
+VBUF_COND_GT:         equ 5
+VBUF_COND_LE:         equ 6
+VBUF_COND_GE:         equ 7
+VBUF_COND_AND:        equ 8
+VBUF_COND_OR:         equ 9
 ; --- Commands 6/8/10/12 (Conditional) modifier flag bits -------------------
-VBUF_COND_F_ADVANCED equ $10 ; use advanced (24-bit) offsets
-VBUF_COND_F_BUFVALUE equ $20 ; operand is fetched from a buffer, not the stream
-VBUF_COND_F_VARIABLE equ $40 ; check a VDP variable/feature flag, not a buffer byte
-VBUF_COND_F_16BIT    equ $80 ; source/operand are 16-bit, not 8-bit
+VBUF_COND_F_ADVANCED: equ $10 ; use advanced (24-bit) offsets
+VBUF_COND_F_BUFVALUE: equ $20 ; operand is fetched from a buffer, not the stream
+VBUF_COND_F_VARIABLE: equ $40 ; check a VDP variable/feature flag, not a buffer byte
+VBUF_COND_F_16BIT:    equ $80 ; source/operand are 16-bit, not 8-bit
 
 ; --- Command 24 (Reverse) options bits --------------------------------------
-VBUF_REV_16BIT   equ 1
-VBUF_REV_32BIT   equ 2
-VBUF_REV_SIZE    equ 3 ; bits 0+1 both set = explicit valueSize follows
-VBUF_REV_CHUNKED equ 4
-VBUF_REV_BLOCKS  equ 8
+VBUF_REV_16BIT:   equ 1
+VBUF_REV_32BIT:   equ 2
+VBUF_REV_SIZE:    equ 3 ; bits 0+1 both set = explicit valueSize follows
+VBUF_REV_CHUNKED: equ 4
+VBUF_REV_BLOCKS:  equ 8
 
 ; --- Command 48 (Read VDP variable) options bits ----------------------------
-VBUF_RDVAR_BIGENDIAN equ $01
-VBUF_RDVAR_ADVANCED  equ $10
-VBUF_RDVAR_DEFAULT   equ $40
-VBUF_RDVAR_16BIT     equ $80
+VBUF_RDVAR_BIGENDIAN: equ $01
+VBUF_RDVAR_ADVANCED:  equ $10
+VBUF_RDVAR_DEFAULT:   equ $40
+VBUF_RDVAR_16BIT:     equ $80
 
 ; --- Command 72 (Expand bitmap) options bits (bits 0-2 = bpp, 0 means 8) ---
-VBUF_EXPAND_F_ALIGN  equ $08 ; explicit `width;` follows sourceBufferId;
-VBUF_EXPAND_F_MAPBUF equ $10 ; mapping data comes from a buffer, not inline
+VBUF_EXPAND_F_ALIGN:  equ $08 ; explicit `width;` follows sourceBufferId;
+VBUF_EXPAND_F_MAPBUF: equ $10 ; mapping data comes from a buffer, not inline
 
 ; --- Commands 32/33 (2D/3D affine transform) operation codes ----------------
-VBUF_MATRIX_SET_IDENTITY   equ 0  ; no arguments
-VBUF_MATRIX_INVERT         equ 1  ; no arguments
-VBUF_MATRIX_ROTATE_DEG     equ 2  ; 1 arg (3 for 3D) - float/fixed
-VBUF_MATRIX_ROTATE_RAD     equ 3  ; 1 arg (3 for 3D) - float/fixed
-VBUF_MATRIX_MULTIPLY_ALL   equ 4  ; 1 arg - float/fixed
-VBUF_MATRIX_SCALE          equ 5  ; 2 args (3 for 3D) - float/fixed
-VBUF_MATRIX_TRANSLATE_PX   equ 6  ; 2 args (3 for 3D) - float/fixed
-VBUF_MATRIX_TRANSLATE_UNIT equ 7  ; 2 args (3 for 3D) - float/fixed
-VBUF_MATRIX_SHEAR          equ 8  ; 2 args (3 for 3D) - float/fixed
-VBUF_MATRIX_SKEW_DEG       equ 9  ; 2 args (3 for 3D) - float/fixed
-VBUF_MATRIX_SKEW_RAD       equ 10 ; 2 args (3 for 3D) - float/fixed
-VBUF_MATRIX_COMBINE        equ 11 ; 6 args (12 for 3D) - float/fixed
-VBUF_MATRIX_TRANSLATE_BMP  equ 12 ; bitmapId; + 2 args - float/fixed
+VBUF_MATRIX_SET_IDENTITY:   equ 0  ; no arguments
+VBUF_MATRIX_INVERT:         equ 1  ; no arguments
+VBUF_MATRIX_ROTATE_DEG:     equ 2  ; 1 arg (3 for 3D) - float/fixed
+VBUF_MATRIX_ROTATE_RAD:     equ 3  ; 1 arg (3 for 3D) - float/fixed
+VBUF_MATRIX_MULTIPLY_ALL:   equ 4  ; 1 arg - float/fixed
+VBUF_MATRIX_SCALE:          equ 5  ; 2 args (3 for 3D) - float/fixed
+VBUF_MATRIX_TRANSLATE_PX:   equ 6  ; 2 args (3 for 3D) - float/fixed
+VBUF_MATRIX_TRANSLATE_UNIT: equ 7  ; 2 args (3 for 3D) - float/fixed
+VBUF_MATRIX_SHEAR:          equ 8  ; 2 args (3 for 3D) - float/fixed
+VBUF_MATRIX_SKEW_DEG:       equ 9  ; 2 args (3 for 3D) - float/fixed
+VBUF_MATRIX_SKEW_RAD:       equ 10 ; 2 args (3 for 3D) - float/fixed
+VBUF_MATRIX_COMBINE:        equ 11 ; 6 args (12 for 3D) - float/fixed
+VBUF_MATRIX_TRANSLATE_BMP:  equ 12 ; bitmapId; + 2 args - float/fixed
 ; --- Commands 32/33 modifier flag bits --------------------------------------
-VBUF_MATRIX_F_ADVANCED  equ $10 ; use advanced (24-bit) offsets (buffer-fetched args)
-VBUF_MATRIX_F_BUFVALUE  equ $20 ; fetch argument value(s) from a buffer
-VBUF_MATRIX_F_SEP_FMT   equ $40 ; each argument gets its own format byte
+VBUF_MATRIX_F_ADVANCED:  equ $10 ; use advanced (24-bit) offsets (buffer-fetched args)
+VBUF_MATRIX_F_BUFVALUE:  equ $20 ; fetch argument value(s) from a buffer
+VBUF_MATRIX_F_SEP_FMT:   equ $40 ; each argument gets its own format byte
 ; --- Commands 32/33/34/41 argument "format" byte bits -----------------------
-VBUF_FMT_SHIFT_MASK equ $1F ; fixed-point shift amount (ignored for float)
-VBUF_FMT_FIXED      equ $40 ; fixed-point, not IEEE-754 float
-VBUF_FMT_16BIT      equ $80 ; 16-bit values, not 32-bit
+VBUF_FMT_SHIFT_MASK: equ $1F ; fixed-point shift amount (ignored for float)
+VBUF_FMT_FIXED:      equ $40 ; fixed-point, not IEEE-754 float
+VBUF_FMT_16BIT:      equ $80 ; 16-bit values, not 32-bit
 
 ; --- Command 34 (arbitrary matrix) operation codes --------------------------
-VBUF_MX_SET_VALUES   equ 0  ; format, <values...>
-VBUF_MX_SET_ELEMENT  equ 1  ; sourceBufferId; row, column, format, <value>
-VBUF_MX_FILL         equ 2  ; format, <value>
-VBUF_MX_DIAGONAL     equ 3  ; format, <value>
-VBUF_MX_ADD          equ 4  ; sourceBufferId1; sourceBufferId2;
-VBUF_MX_SUBTRACT     equ 5  ; sourceBufferId1; sourceBufferId2;
-VBUF_MX_MULTIPLY     equ 6  ; sourceBufferId1; sourceBufferId2;
-VBUF_MX_SCALE        equ 7  ; sourceBufferId; format, <value>
-VBUF_MX_SUBMATRIX    equ 8  ; sourceBufferId; row, column
-VBUF_MX_INSERT_ROW   equ 9  ; sourceBufferId; row
-VBUF_MX_INSERT_COL   equ 10 ; sourceBufferId; column
-VBUF_MX_REMOVE_ROW   equ 11 ; sourceBufferId; row
-VBUF_MX_REMOVE_COL   equ 12 ; sourceBufferId; column
+VBUF_MX_SET_VALUES:   equ 0  ; format, <values...>
+VBUF_MX_SET_ELEMENT:  equ 1  ; sourceBufferId; row, column, format, <value>
+VBUF_MX_FILL:         equ 2  ; format, <value>
+VBUF_MX_DIAGONAL:     equ 3  ; format, <value>
+VBUF_MX_ADD:          equ 4  ; sourceBufferId1; sourceBufferId2;
+VBUF_MX_SUBTRACT:     equ 5  ; sourceBufferId1; sourceBufferId2;
+VBUF_MX_MULTIPLY:     equ 6  ; sourceBufferId1; sourceBufferId2;
+VBUF_MX_SCALE:        equ 7  ; sourceBufferId; format, <value>
+VBUF_MX_SUBMATRIX:    equ 8  ; sourceBufferId; row, column
+VBUF_MX_INSERT_ROW:   equ 9  ; sourceBufferId; row
+VBUF_MX_INSERT_COL:   equ 10 ; sourceBufferId; column
+VBUF_MX_REMOVE_ROW:   equ 11 ; sourceBufferId; row
+VBUF_MX_REMOVE_COL:   equ 12 ; sourceBufferId; column
 ; --- Command 34 modifier flag bits ------------------------------------------
-VBUF_MX_F_ADVANCED equ $10
-VBUF_MX_F_BUFVALUE equ $20
+VBUF_MX_F_ADVANCED: equ $10
+VBUF_MX_F_BUFVALUE: equ $20
 
 ; --- Command 40 (transformed bitmap) options bits ---------------------------
-VBUF_XFORM_BMP_RESIZE         equ 1
-VBUF_XFORM_BMP_EXPLICIT_SIZE  equ 2 ; width; height; follow sourceBitmapId;
-VBUF_XFORM_BMP_AUTO_TRANSLATE equ 4
+VBUF_XFORM_BMP_RESIZE:         equ 1
+VBUF_XFORM_BMP_EXPLICIT_SIZE:  equ 2 ; width; height; follow sourceBitmapId;
+VBUF_XFORM_BMP_AUTO_TRANSLATE: equ 4
 
 ; --- Command 41 (transform data) options bits -------------------------------
-VBUF_XFORM_DATA_HAS_SIZE   equ $01 ; explicit `size` (1 byte) follows format
-VBUF_XFORM_DATA_HAS_OFFSET equ $02 ; explicit `offset;` follows
-VBUF_XFORM_DATA_HAS_STRIDE equ $04 ; explicit `stride;` follows
-VBUF_XFORM_DATA_HAS_LIMIT  equ $08 ; explicit `limit;` follows
-VBUF_XFORM_DATA_ADVANCED   equ $10 ; use advanced (24-bit) offsets
-VBUF_XFORM_DATA_BUF_ARGS   equ $20 ; size/offset/stride/limit come from buffers
-VBUF_XFORM_DATA_PER_BLOCK  equ $40 ; apply transform block-by-block
+VBUF_XFORM_DATA_HAS_SIZE:   equ $01 ; explicit `size` (1 byte) follows format
+VBUF_XFORM_DATA_HAS_OFFSET: equ $02 ; explicit `offset;` follows
+VBUF_XFORM_DATA_HAS_STRIDE: equ $04 ; explicit `stride;` follows
+VBUF_XFORM_DATA_HAS_LIMIT:  equ $08 ; explicit `limit;` follows
+VBUF_XFORM_DATA_ADVANCED:   equ $10 ; use advanced (24-bit) offsets
+VBUF_XFORM_DATA_BUF_ARGS:   equ $20 ; size/offset/stride/limit come from buffers
+VBUF_XFORM_DATA_PER_BLOCK:  equ $40 ; apply transform block-by-block
 
 ; --- Commands 80/81 (callbacks) event type constants ------------------------
-VBUF_CB_VSYNC       equ 0
-VBUF_CB_MODE_CHANGE equ 1
-VBUF_CB_KEYBOARD    equ 2
-VBUF_CB_MOUSE       equ 3
-VBUF_CB_PALETTE     equ 4
-VBUF_CB_READ_PIXEL  equ 5
+VBUF_CB_VSYNC:       equ 0
+VBUF_CB_MODE_CHANGE: equ 1
+VBUF_CB_KEYBOARD:    equ 2
+VBUF_CB_MOUSE:       equ 3
+VBUF_CB_PALETTE:     equ 4
+VBUF_CB_READ_PIXEL:  equ 5
 ; VBUF_NONE (65535) is also valid as the `type` argument to command 81, to
 ; remove a buffer's registration from every callback type at once.
 
@@ -282,8 +282,8 @@ vbuf_raw:
     ret z
     rst.lil $18
     ret
-@tail_ptr: dw 0
-@tail_len: dw 0
+@tail_ptr: dw24 0
+@tail_len: dw24 0
 
 
 ; ===========================================================================
@@ -366,7 +366,7 @@ vbuf_create:
     ld bc,2
     rst.lil $18
     ret
-@length: dw 0
+@length: dw24 0
 
 ; Command 0: write a data block to a buffer (creates the buffer, or adds a
 ; new block to an existing one).
@@ -384,8 +384,8 @@ vbuf_write:
     ld bc,(@length)
     rst.lil $18
     ret
-@data_ptr: dw 0
-@length:   dw 0
+@data_ptr: dw24 0
+@length:   dw24 0
 
 ; Command 15: split a buffer in-place into fixed-size blocks.
 ; inputs: hl = bufferId, bc = blockSize
@@ -398,14 +398,20 @@ vbuf_split:
     ld bc,2
     rst.lil $18
     ret
-@blockSize: dw 0
+@blockSize: dw24 0
 
 ; Command 17: split a buffer into fixed-size blocks and spread them across a
 ; run of consecutive target buffer IDs starting at `targetBufferId`.
 ; inputs: hl = bufferId, bc = blockSize, de = targetBufferId
 ; destroys: af, bc, de, hl
 vbuf_split_from:
-    ld (@blockSize),bc
+    ; blockSize is not the last field in the combined 4-byte send below, so
+    ; it must be written byte-by-byte (a 24-bit `ld (nn),bc` store would
+    ; spill its upper byte into targetBufferId's first byte).
+    ld a,c
+    ld (@blockSize),a
+    ld a,b
+    ld (@blockSize+1),a
     ld (@targetBufferId),de
     ld a,VBUF_CMD_SPLIT_FROM
     call vbuf_header
@@ -414,14 +420,19 @@ vbuf_split_from:
     rst.lil $18
     ret
 @blockSize:      dw 0
-@targetBufferId: dw 0
+@targetBufferId: dw24 0
 
 ; Command 18: split a buffer in-place by width into a given number of
 ; blocks/chunks.
 ; inputs: hl = bufferId, bc = width, de = blockCount
 ; destroys: af, bc, de, hl
 vbuf_split_by:
-    ld (@width),bc
+    ; width is not the last field in the combined 4-byte send below, so it
+    ; must be written byte-by-byte (see vbuf_split_from for why).
+    ld a,c
+    ld (@width),a
+    ld a,b
+    ld (@width+1),a
     ld (@blockCount),de
     ld a,VBUF_CMD_SPLIT_BY
     call vbuf_header
@@ -430,15 +441,24 @@ vbuf_split_by:
     rst.lil $18
     ret
 @width:      dw 0
-@blockCount: dw 0
+@blockCount: dw24 0
 
 ; Command 20: split a buffer by width into a given number of blocks/chunks,
 ; and spread them across a run of consecutive target buffer IDs.
 ; inputs: hl = bufferId, bc = width, de = blockCount, ix = targetBufferId
 ; destroys: af, bc, de, hl
 vbuf_split_by_from:
-    ld (@width),bc
-    ld (@blockCount),de
+    ; width and blockCount are not the last field in the combined 6-byte
+    ; send below, so both must be written byte-by-byte (see
+    ; vbuf_split_from for why).
+    ld a,c
+    ld (@width),a
+    ld a,b
+    ld (@width+1),a
+    ld a,e
+    ld (@blockCount),a
+    ld a,d
+    ld (@blockCount+1),a
     push ix
     pop hl
     ld (@targetBufferId),hl
@@ -450,7 +470,7 @@ vbuf_split_by_from:
     ret
 @width:          dw 0
 @blockCount:     dw 0
-@targetBufferId: dw 0
+@targetBufferId: dw24 0
 
 ; Command 22: spread the blocks of a buffer across a run of consecutive
 ; target buffer IDs starting at `targetBufferId` (one block per buffer, no
@@ -465,7 +485,7 @@ vbuf_spread_from:
     ld bc,2
     rst.lil $18
     ret
-@targetBufferId: dw 0
+@targetBufferId: dw24 0
 
 ; Command 64: compress a buffer's blocks into a new buffer (replaces the
 ; target buffer).
@@ -479,7 +499,7 @@ vbuf_compress:
     ld bc,2
     rst.lil $18
     ret
-@sourceBufferId: dw 0
+@sourceBufferId: dw24 0
 
 ; Command 65: decompress a (previously compressed) buffer into a new buffer
 ; (replaces the target buffer).
@@ -493,7 +513,7 @@ vbuf_decompress:
     ld bc,2
     rst.lil $18
     ret
-@sourceBufferId: dw 0
+@sourceBufferId: dw24 0
 
 ; Command 80: register a buffer to be called back on a VDP event.
 ; NB: this is a VDP-internal mechanism only - it registers a buffer to be
@@ -520,7 +540,7 @@ vbuf_add_callback:
     ld bc,2
     rst.lil $18
     ret
-@type: dw 0
+@type: dw24 0
 
 ; Command 81: remove a buffer's registration for a callback event type.
 ; inputs: hl = bufferId, de = type (VBUF_CB_*, or VBUF_NONE for all types)
@@ -533,7 +553,7 @@ vbuf_remove_callback:
     ld bc,2
     rst.lil $18
     ret
-@type: dw 0
+@type: dw24 0
 
 
 ; ===========================================================================
@@ -603,9 +623,9 @@ vbuf_split_into:
     ld bc,(@list_len)
     rst.lil $18
     ret
-@blockSize: dw 0
-@list_ptr:  dw 0
-@list_len:  dw 0
+@blockSize: dw24 0
+@list_ptr:  dw24 0
+@list_len:  dw24 0
 
 ; Command 19: split a buffer by width into blocks (one per listed buffer)
 ; and spread them across a caller-supplied list of target buffer IDs (the
@@ -630,9 +650,9 @@ vbuf_split_by_into:
     ld bc,(@list_len)
     rst.lil $18
     ret
-@width:     dw 0
-@list_ptr:  dw 0
-@list_len:  dw 0
+@width:     dw24 0
+@list_ptr:  dw24 0
+@list_len:  dw24 0
 
 
 ; ===========================================================================
@@ -710,7 +730,7 @@ vbuf_adjust:
     rst.lil $18
     ret
 @op:      db 0
-@offset:  dw 0
+@offset:  dw24 0
 @operand: db 0
 
 ; Command 6: conditionally call a buffer (basic form - check value is an
@@ -722,7 +742,13 @@ vbuf_adjust:
 ; destroys: af, bc, de, hl
 vbuf_cond_call:
     ld (@op),a
-    ld (@checkBufferId),de
+    ; checkBufferId is not the last field in the combined 5-byte send
+    ; below, so it must be written byte-by-byte (a 24-bit `ld (nn),de`
+    ; store would spill its upper byte into checkOffset's first byte).
+    ld a,e
+    ld (@checkBufferId),a
+    ld a,d
+    ld (@checkBufferId+1),a
     ld (@checkOffset),bc
     ld a,ixl
     ld (@operand),a
@@ -740,7 +766,7 @@ vbuf_cond_call:
     ret
 @op:            db 0
 @checkBufferId: dw 0
-@checkOffset:   dw 0
+@checkOffset:   dw24 0
 @operand:       db 0
 
 ; Command 8: conditionally jump to a buffer (same argument shape as command
@@ -749,7 +775,12 @@ vbuf_cond_call:
 ; destroys: af, bc, de, hl
 vbuf_cond_jump:
     ld (@op),a
-    ld (@checkBufferId),de
+    ; checkBufferId is not the last field in the combined 5-byte send
+    ; below, so it must be written byte-by-byte (see vbuf_cond_call above).
+    ld a,e
+    ld (@checkBufferId),a
+    ld a,d
+    ld (@checkBufferId+1),a
     ld (@checkOffset),bc
     ld a,ixl
     ld (@operand),a
@@ -767,7 +798,7 @@ vbuf_cond_jump:
     ret
 @op:            db 0
 @checkBufferId: dw 0
-@checkOffset:   dw 0
+@checkOffset:   dw24 0
 @operand:       db 0
 
 
@@ -803,8 +834,8 @@ vbuf_cond_jump_offset:
     rst.lil $18
     ret
 @offset:   dw24 0
-@tail_len: dw 0
-@tail_ptr: dw 0
+@tail_len: dw24 0
+@tail_ptr: dw24 0
 
 ; Command 12: conditionally call an offset in a buffer (same argument shape
 ; as command 10 - see vbuf_cond_jump_offset above).
@@ -826,8 +857,8 @@ vbuf_cond_call_offset:
     rst.lil $18
     ret
 @offset:   dw24 0
-@tail_len: dw 0
-@tail_ptr: dw 0
+@tail_len: dw24 0
+@tail_ptr: dw24 0
 
 
 ; ===========================================================================
@@ -870,8 +901,8 @@ vbuf_reverse:
     rst.lil $18
     ret
 @options:   db 0
-@valueSize: dw 0
-@chunkSize: dw 0
+@valueSize: dw24 0
+@chunkSize: dw24 0
 
 
 ; ===========================================================================
@@ -890,7 +921,13 @@ vbuf_reverse:
 ; destroys: af, bc, de, hl
 vbuf_read_variable:
     ld (@options),a
-    ld (@offset),de
+    ; offset is not the last field in the combined 5-byte send below, so it
+    ; must be written byte-by-byte (a 24-bit `ld (nn),de` store would spill
+    ; its upper byte into variableId's first byte).
+    ld a,e
+    ld (@offset),a
+    ld a,d
+    ld (@offset+1),a
     ld (@variableId),bc
     push ix
     pop de
@@ -914,8 +951,8 @@ vbuf_read_variable:
     ret
 @options:    db 0
 @offset:     dw 0
-@variableId: dw 0
-@default:    dw 0
+@variableId: dw24 0
+@default:    dw24 0
 
 
 ; ===========================================================================
@@ -963,10 +1000,10 @@ vbuf_expand_bitmap:
     rst.lil $18
     ret
 @options:        db 0
-@sourceBufferId: dw 0
-@width:          dw 0
-@tail_ptr:       dw 0
-@tail_len:       dw 0
+@sourceBufferId: dw24 0
+@width:          dw24 0
+@tail_ptr:       dw24 0
+@tail_len:       dw24 0
 
 
 ; ===========================================================================
@@ -1050,11 +1087,22 @@ vbuf_matrix3d_simple:
 ; destroys: af, bc, de, hl
 vbuf_transform_bitmap:
     ld (@options),a
-    ld (@transformBufferId),de
+    ; transformBufferId is not the last field in the combined 5-byte send
+    ; below, so it must be written byte-by-byte (a 24-bit `ld (nn),de`
+    ; store would spill its upper byte into sourceBitmapId's first byte).
+    ld a,e
+    ld (@transformBufferId),a
+    ld a,d
+    ld (@transformBufferId+1),a
     ld (@sourceBitmapId),bc
     push ix
     pop de
-    ld (@width),de
+    ; width is not the last field in the combined 4-byte send below
+    ; (height follows), so it must also be written byte-by-byte.
+    ld a,e
+    ld (@width),a
+    ld a,d
+    ld (@width+1),a
     push iy
     pop de
     ld (@height),de
@@ -1072,9 +1120,9 @@ vbuf_transform_bitmap:
     ret
 @options:           db 0
 @transformBufferId: dw 0
-@sourceBitmapId:    dw 0
+@sourceBitmapId:    dw24 0
 @width:             dw 0
-@height:            dw 0
+@height:            dw24 0
 
 
 ; ===========================================================================
