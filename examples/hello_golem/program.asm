@@ -1,11 +1,19 @@
 ; program.asm
 ;
-; Hand-authored STAND-IN for what a real Golem compiler would emit as the
-; compiled output of hello.golem's `print "..."` statement, in this
-; directory's toy model of Golem's eventual output format: a flat binary
-; containing *only* the raw bytes that will become a VDP buffer's payload
-; (see loader.asm, which uploads this file's bytes into a buffer verbatim
-; and calls it - it never parses or interprets them).
+; SUPERSEDED as of src/golemc.cpp: a real (if minimal) Golem compiler now
+; exists and produces program.bin directly from hello.golem -
+;   ../../build/golemc hello.golem program.bin
+; - and its output is byte-for-byte identical to what this file hand-
+; assembles (verified). This file is kept only as documentation/history of
+; what program.bin's bytes mean and why; do not hand-edit program.bin via
+; this file going forward, use golemc.
+;
+; Originally: a hand-authored STAND-IN for what a real Golem compiler would
+; emit as the compiled output of hello.golem's `print "..."` statement, in
+; this directory's toy model of Golem's eventual output format: a flat
+; binary containing *only* the raw bytes that will become a VDP buffer's
+; payload (see loader.asm, which uploads this file's bytes into a buffer
+; verbatim and calls it - it never parses or interprets them).
 ;
 ; Why raw text bytes are a valid "compiled instruction" here: per
 ; docs/devlog/2026-07-28.md, Golem's compiled programs run entirely inside
