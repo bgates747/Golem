@@ -10,15 +10,21 @@ Golem is a compiled, low-to-medium-level, C/Pascal-like language targeting the
 Agon Console8 VDP's **Buffered Commands API** directly (rather than the eZ80
 via MOS). See the root [README.md](README.md) for the elevator pitch.
 
-Status: **early design/exploration**. No compiler code exists yet (`src/`,
-`tests/`, and `examples/` are still placeholder `.gitkeep` trees). Design
-work has moved beyond the kickoff devlog, though: `docs/design/` now holds
-a living design-proposals doc, and several follow-on devlogs (toolchain
-decision, execution-lifecycle correction, VDU wrapper library writeup) plus
-a cross-agent collaboration thread with an external "Codex" agent have been
-added. See "Repository layout" and "Session-start reading order" below for
-where everything now lives; treat `docs/design/` as the most current design
-reference where it overlaps with older devlog material.
+Status: **early design/exploration**, but no longer purely design-only: a
+first toy compiler exists and has been verified end to end (`src/golemc.cpp`,
+compiling `.golem` source to a buffer-command byte blob, run successfully
+through `examples/hello_golem/`'s loader in the emulator — see
+[docs/devlog/2026-07-28-golemc-milestone-and-vba-syntax-question.md](docs/devlog/2026-07-28-golemc-milestone-and-vba-syntax-question.md)).
+It is still a toy (one statement form, no variables/expressions/control
+flow yet), and `tests/` is still a placeholder `.gitkeep` tree. Design work
+has moved beyond the kickoff devlog too: `docs/design/` now holds a living
+design-proposals doc, and several follow-on devlogs (toolchain decision,
+execution-lifecycle correction, VDU wrapper library writeup, the golemc
+milestone) plus a cross-agent collaboration thread with an external
+"Codex" agent have been added. See "Repository layout" and "Session-start
+reading order" below for where everything now lives; treat `docs/design/`
+as the most current design reference where it overlaps with older devlog
+material.
 
 ## Repository layout
 
@@ -96,7 +102,10 @@ added there as part of this handoff so other agents can discover it.
    `reference/agnb-asm/`), `2026-07-28-compiler-toolchain.md` (host
    language/toolchain decision), `2026-07-28-execution-lifecycle.md` (a
    correction to the kickoff devlog's execution model — read this one even
-   if skimming others). `from_codex.md`/`to_codex.md` are a paired,
+   if skimming others),
+   `2026-07-28-golemc-milestone-and-vba-syntax-question.md` (first working
+   toy compiler, `src/golemc.cpp`, verified end to end in the emulator; plus
+   a BASIC/VBA syntax-vs-semantics detour). `from_codex.md`/`to_codex.md` are a paired,
    ongoing collaboration thread with an external "Codex" agent working on
    a related project (Pingo) — read them together, in order, as a
    conversation, not as standalone devlogs.
