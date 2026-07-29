@@ -4,6 +4,11 @@
 *.o
 *.bin
 
+# Throwaway, project-local emulator profiles (symlinks to the canonical
+# fab-agon-emulator build/firmware, plus SD card contents) - never committed,
+# see /memories/repo/golem-asm-conventions.md.
+**/emulator/
+
 # Python virtual environment
 .venv/
 
