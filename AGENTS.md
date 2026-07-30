@@ -71,6 +71,18 @@ External references (read-only, outside this repo):
   profile exists yet; one will need to be created under
   `agon-dev-env/emulators` (or a project-local profile, per
   `agon-dev-env/codex/emulator.md`) once there's something runnable.
+- `/home/smith/Agon/mystuff/agon-dev-env/codex/bespoke-vdp-emulator.md` —
+  canonical cross-project workflow (prepared by the external "Codex" agent)
+  for running a *modified/bespoke* VDP firmware build natively inside Fab
+  Agon Emulator (native `.so` module + `--vdp` loader contract, adapter/
+  profile/snapshot conventions, fail-closed launch, `debug_log()` vs.
+  `force_debug_log()` diagnostics). Not needed for Golem's current
+  stock-firmware/stock-Buffered-Commands-API workflow, but is the reference
+  to read first if Golem ever needs to add a new VDP command, verify
+  undocumented firmware behavior via a live instrumented build (rather than
+  just reading `vdu_buffered.h` statically), or otherwise hack on VDP
+  source rather than only emit commands the stock firmware already
+  supports.
 - `/home/smith/Agon/mystuff/agon-utils` — canonical utility/writer/validator
   patterns for Agon binary formats; useful idiom reference for the eventual
   Golem binary-blob loader/packer, even though Golem's output format
@@ -81,7 +93,12 @@ External references (read-only, outside this repo):
   into [reference/agnb-asm/](reference/agnb-asm/) as a seed for Golem's own
   eZ80/MOS/VDU idiom reference — see
   [docs/devlog/2026-07-28-agnb-asm-reference-collection.md](docs/devlog/2026-07-28-agnb-asm-reference-collection.md)
-  for the full provenance/collision analysis.
+  for the full provenance/collision analysis. `agon-utils/examples/flower/`
+  is a real, working MOSlet with command-line argument parsing (argv/argc
+  tokenizer plus verb-dispatch helpers); a vendored, not-yet-implemented
+  copy lives at [reference/flower-moslet-cli/](reference/flower-moslet-cli/)
+  as a prototype for the future MOSlet-based loader CLI described in
+  `docs/design/language-type-proposals.md`'s "Axis 17".
 - `/home/smith/Agon/mystuff/agon-dev-env/codex/assembly.md` — eZ80 assembly
   conventions; only tangentially relevant since Golem targets the VDP buffer
   machine, not eZ80 code, but worth checking if the toolchain ever needs an
@@ -105,7 +122,12 @@ added there as part of this handoff so other agents can discover it.
    if skimming others),
    `2026-07-28-golemc-milestone-and-vba-syntax-question.md` (first working
    toy compiler, `src/golemc.cpp`, verified end to end in the emulator; plus
-   a BASIC/VBA syntax-vs-semantics detour). `from_codex.md`/`to_codex.md` are a paired,
+   a BASIC/VBA syntax-vs-semantics detour), `2026-07-29-emulator-debug-tooling.md`
+   (VDP debug-output hooks, including a correction about `BUFFERED_DEBUG_INFO`
+   being a no-op in the emulator as shipped), and
+   `2026-07-29-loop-tail-call-prototype.md` (hand-prototyped loop +
+   verified tail-call-to-jump conversion, plus a conditional-check gotcha
+   found and worked around). `from_codex.md`/`to_codex.md` are a paired,
    ongoing collaboration thread with an external "Codex" agent working on
    a related project (Pingo) — read them together, in order, as a
    conversation, not as standalone devlogs.
@@ -198,9 +220,18 @@ From the devlog's "Next steps" checklist:
 1. [ ] Write a formal design doc for the Golem IR and buffer/block
        addressing model in `docs/design/`. (A language-type-level proposals
        doc exists; the IR/addressing model itself is still open.)
-2. [ ] Hand-prototype the "one instruction per block" encoding for a trivial
+2. [x] Hand-prototype the "one instruction per block" encoding for a trivial
        loop; verify tail-call jump conversion behaves as documented (check
-       against `vdu_buffered.h`, not just the prose docs).
+       against `vdu_buffered.h`, not just the prose docs). Resolved:
+       confirmed working exactly as documented, both against the firmware
+       source and empirically (a 50-iteration hand-built loop produced 1
+       real call + 49 tail-call-converted jumps, no crash) - see
+       [docs/devlog/2026-07-29-loop-tail-call-prototype.md](docs/devlog/2026-07-29-loop-tail-call-prototype.md)
+       and `examples/loop_test/`. A real, previously-undocumented
+       conditional-check gotcha was also found and worked around along the
+       way (checking a raw buffer byte against zero via
+       `VBUF_COND_EXISTS`/`NOT_EXISTS` or a literal operand is unreliable -
+       see the devlog for the fix).
 3. [ ] Verify the 1x1-matrix float trick (command 34 `invert`) on real
        hardware/emulator.
 4. [x] Decide on the host implementation language and toolchain layout for

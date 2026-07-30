@@ -1,0 +1,76 @@
+// scratch.golem
+//
+// Personal scratch file for exploring language design beyond what
+// src/golemc.cpp currently supports. golemc, as of this writing, only
+// supports one statement form (`print "string literal";`) - none of the
+// declaration, expression, assignment, or typed-print forms below are
+// implemented yet. This file exists to have a concrete target program to
+// design and implement against, not as something that compiles today.
+//
+// Open question raised by the final line: does `print` implicitly format
+// a non-string operand (here, a uint16) as decimal text, or does that
+// require an explicit conversion? DECIDED (see
+// docs/design/language-type-proposals.md, Axis 7 and Axis 8): `print` is
+// monomorphic (string operands only); `str` is a real type and doubles as
+// its own conversion function, so printing qux requires `print str(qux);`.
+// Each `str(...)` call site gets its own compile-time-assigned buffer ID
+// (populated on the fly, cleared when done) rather than a general heap.
+// Still open: the hand-rolled divide-by-10 int-to-decimal routine itself
+// isn't implemented yet, and `str`'s optional format argument
+// (`str(qux, "fmt")`) is entirely TBD.
+
+uint16 foo = 10;
+uint16 bar = 5;
+uint16 qux;
+qux = foo + bar;
+print str(qux);
+
+// --- Speculative: what a Golem-source equivalent of
+// examples/loop_test/loop_test.asm (the hand-assembled "print Hello 50
+// times" tail-call-loop test - see
+// docs/devlog/2026-07-29-loop-tail-call-prototype.md) might look like,
+// using Axis 15's leaning-but-undecided `For ... To ... Next` counted-loop
+// syntax. Not implemented - golemc has no loop/control-flow syntax yet.
+//
+// Deliberately counts UP (1 To 50) rather than down like the hand-written
+// version's counter did, because Golem has no subtraction primitive
+// designed yet (Axis 16 - `--`/binary `-` are blocked on a not-yet-designed
+// two's-complement lowering). Counting up only needs `+`, which Axis 13
+// already designed and golemc already implements - so this sidesteps that
+// gap entirely rather than assuming it away.
+//
+// Left open deliberately: whether golemc would ever recognize that this
+// loop's body compiles down to a self-referential conditional buffer call
+// and therefore deliberately emit that call LAST in the loop's buffer so
+// the VDP's own tail-call-to-jump optimisation applies (see the loop_test
+// devlog) - or whether a first, naive codegen would just accept the VDP's
+// ~20-deep call-stack limit as a real constraint on unrolled-loop depth
+// for now. Also open: the exact runtime encoding of the loop counter `i`
+// itself (a real Golem variable buffer vs. a compiler-internal one), and
+// how/whether the doc's `VBUF_COND_F_BUFVALUE`-against-a-zero-buffer
+// gotcha (see the same devlog) would need to surface as a codegen detail
+// here, or could stay entirely hidden behind whatever comparison op `For`
+// lowers to.
+//
+// `i` is declared on its own line rather than inline in the `For` header
+// (i.e. NOT `For uint16 i = 1 To 50`) - Author's stated preference is to
+// keep declaration and loop-iteration concerns separate, rather than
+// `For` doubling as a declaration form. Open: whether golemc should then
+// reject `For` over an UNdeclared variable (forcing this two-line shape
+// always), or just allow inline declaration too as sugar on top of this.
+//
+// `For ...;` and `Next i;` both end in `;` - DECIDED on Axis 15: every
+// *statement* ends in `;`, including block-delimiting keyword statements
+// themselves, with zero exceptions. (Raised right here, drafting this
+// very example - see Axis 15's updated "Relationship to Axis 5" note.)
+// NB this is a statement rule, not a line rule - newlines remain
+// insignificant (per Axis 5), so the multi-line layout below is purely a
+// readability choice, not a grammar requirement. This whole loop would be
+// equally valid crammed onto one physical line:
+//   For i = 1 To 50; print "Hello "; Next i;
+// - or even the entire rest of this file, for that matter. Statement vs.
+// line is a real, deliberate distinction, not interchangeable wording.
+uint16 i;
+For i = 1 To 50;
+    print "Hello ";
+Next i;

@@ -1,14 +1,12 @@
 // hello.golem
 //
-// Illustrative-only. The Golem language has no lexer/parser/compiler yet
-// (src/ is still a placeholder - see docs/devlog/2026-07-28.md's "Next
-// steps" checklist and AGENTS.md). This file exists purely to give the
-// rest of this directory (program.asm, loader.asm) a source-level anchor:
-// "if Golem could compile something today, this is the trivial program
-// whose *compiled output* program.asm/program.bin hand-simulates."
+// Compiled for real by src/golemc.cpp (see docs/devlog/2026-07-28-golemc-
+// milestone-and-vba-syntax-question.md) - this is no longer illustrative-
+// only. golemc currently supports exactly one statement form, `print
+// "string literal";`, with a mandatory trailing semicolon.
 //
-// Syntax here is speculative/illustrative, drawn loosely from
+// Syntax here is otherwise speculative/illustrative, drawn loosely from
 // docs/design/language-type-proposals.md's tentative lean, and should NOT
 // be treated as settled language design.
 
-print "Hello, World! (via a simulated Golem-compiled buffer, not hand-written eZ80 assembly)"
+print "Hello, World! (via a simulated Golem-compiled buffer, not hand-written eZ80 assembly)\n";

@@ -1,0 +1,13 @@
+// loop.golem
+//
+// Real Golem source that golemc actually compiles (not illustrative-only
+// like examples/scratch.golem) - the `For`/`Next` counted-loop form
+// prototyped there, first real Golem-source program to exercise golemc's
+// new loop codegen (see docs/design/language-type-proposals.md's Axis 15
+// and docs/devlog/2026-07-29-loop-tail-call-prototype.md for the
+// underlying VDP mechanism this compiles down to).
+
+uint16 i;
+For i = 1 To 50;
+    print "Hello ";
+Next i;

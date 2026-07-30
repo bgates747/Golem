@@ -3,6 +3,7 @@
 /dist/
 *.o
 *.bin
+*.golemb
 
 # Throwaway, project-local emulator profiles (symlinks to the canonical
 # fab-agon-emulator build/firmware, plus SD card contents) - never committed,

@@ -23,6 +23,13 @@
 ; of any future Golem compiler without changing a single line of this file
 ; - the loader is generic, not hello-world-specific.
 ;
+; This loader also takes no command-line arguments at all (hard-codes the
+; "program.bin" filename and buffer 0). A future MOSlet-based loader with
+; a real CLI (see docs/design/language-type-proposals.md, "Axis 17") will
+; need an argv/argc tokenizer and verb dispatch (`load`/`run`/`clear`) -
+; see ../../reference/flower-moslet-cli/ for a vendored, not-yet-adapted
+; worked example of both from a real Agon MOSlet.
+;
 ; Build: ez80asm loader.asm loader.bin
 ; Run:   copy both loader.bin and program.bin to the SD card (see
 ;        examples/hello/emulator for a working emulator profile), then
