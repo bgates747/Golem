@@ -7,7 +7,7 @@ def main():
     sources=[ROOT/'src/golemc.cpp',ROOT/'src/hosted.hpp',*sorted((ROOT/'tests').glob('test_*.cpp')),Path(__file__).resolve()]
     def fingerprints():return {str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in sources}
     before=fingerprints()
-    for name in ['existing','hosted','imports','admission','elements','divmod','rounding','vehicle_math']:
+    for name in ['existing','hosted','imports','admission','elements','divmod','rounding','vehicle_math','checked_copy','shared_scratch']:
         command=['g++','-std=c++17','-Wall','-Wextra','-Werror','-g','-O1','-fsanitize=address,undefined',str(ROOT/'tests'/('test_'+name+'.cpp')),'-o',str(ROOT/'build'/('test_'+name))]
         subprocess.run(command,check=True)
         results[name]={'command':command,'stdout':subprocess.check_output([str(ROOT/'build'/('test_'+name))]).decode()}

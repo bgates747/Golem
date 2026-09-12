@@ -1,0 +1,25 @@
+SharedWordScratch();
+Buffer input(1000,8);
+Field signedInput(input,0,f32,-32768,32767);
+Field unsignedInput(input,4,f32,0,65534);
+Buffer output(1001,80);
+Field signedBefore(output,0,s16); Field unsignedNested(output,2,u16);
+Field signedAfter(output,4,s16); Field unsignedAfter(output,6,u16);
+Field count(output,8,u16); Field sentinel(output,10,u16,65535,65535); Set(sentinel,65535);
+Buffer status(1002,10); Buffer expected(1003,2); Buffer proof(1102,4);
+Matrix value(1100,1,1);
+Program leaf(2002) {
+    MatLoad(value,unsignedInput); StoreU16Floor(unsignedNested,value);
+};
+Program inner(2001) {
+    MatLoad(value,signedInput); StoreI16Floor(signedBefore,value);
+    Call(leaf);
+    MatLoad(value,signedInput); StoreI16Floor(signedAfter,value);
+};
+Program submit(2000) {
+    Repeat(3) {
+        Call(inner);
+        MatLoad(value,unsignedInput); StoreU16Floor(unsignedAfter,value);
+        AddU16(count,1);
+    };
+};

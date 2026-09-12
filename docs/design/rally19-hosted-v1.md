@@ -244,6 +244,42 @@ and sentinel neighbours. Host sanitizer/golden/negative checks also pass. The
 R19-07 complete-road bytecode remains identical on both tracks. These additions
 support, but do not complete, the R19-08 vehicle renderer.
 
+## Checked clipping and shared scalar word temporaries
+
+`CopyChecked(destination,source,status)` copies one matching fixed-type field
+only when its runtime value fits the destination's declared range. It first
+resets a writable Boolean u16 status to1; rejection sets it to0 and preserves
+the entire old destination. Source bounds remain broad. Destination/source spans
+must not overlap, and status must have a separate buffer ID from either. Float
+fields are rejected. The destination must be initialized to an in-range value
+before a rejected copy can leave it in use. CallIf on the returned status can
+then guard reciprocal evaluation without pretending the untrusted source had
+narrower bounds. The existing unchecked Copy continues to reject narrowing.
+
+The native depth probe covers1110 inputs, including every integer0..1101 and
+full-u16 extrema. All1037 visible depths64..1100 produce exact floor(8000/z);
+invalid depths retain the old selected depth/result and do not increment the
+projection count. Complete96-byte records also check neighbours. See
+`examples/native_vehicle_math/clip.golem` and Rally evidence/golem-vehicle-clip.
+
+`SharedWordScratch();` is an optional, argument-free first top-level declaration.
+It makes all StoreI16Floor/StoreU16Floor expansions (including DivModPositive's
+internal word stores) reuse a private36-byte transform and two private4-byte
+tuple buffers. Default compilation is unchanged. Each expansion resets the
+transform, computes/converts, and copies its output before returning; there is
+no user Call or yield inside the expansion. Nested user calls and repeats are
+therefore safe. The zero source is private and never modified. Positive32 stores
+and MatTrunc temporaries are not shared by this directive.
+
+This opt-in addressed a measured resource failure: full road+numeric vehicles
+used1022 owned IDs on the oval and exceeded the frozen1024 cap on Fuji. Sharing
+reduces these to848/867 without raising any ceiling. The native shared.golem
+probe executes165 signed/unsigned input pairs in each of isolated/shared modes,
+with three repeats and nested calls per input. All330 complete output records
+match the independent floor oracle and each other. Host tests check resource
+savings, default behavior, invalid placement/arity, aliases and checked-copy
+rejection. These resource and numeric proofs do not establish full-scene timing.
+
 ## Primary source qualification
 
 Read locally on 2026-09-12: agon-docs Buffered-Commands-API.md (commands 0,5,6,

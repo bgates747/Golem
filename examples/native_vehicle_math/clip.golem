@@ -1,0 +1,17 @@
+// Out-of-range depth never launches the reciprocal program.
+Buffer input(1000,80); Field rawDepth(input,0,u16);
+Buffer output(1001,80); Field depth(output,0,u16,64,1100);
+Field projectedQ(output,2,u16,7,125); Field count(output,4,u16); Field guard(output,6,u16);
+Set(depth,64); Set(projectedQ,125); Set(guard,65535);
+Buffer status(1002,10); Field visible(status,0,u16,0,1);
+Buffer expected(1003,2); Matrix unused(1102,1,1);
+Buffer wide(1004,2); Field depthSigned(wide,0,s16,64,1100); Set(depthSigned,64);
+Buffer constants(1005,2); Field one(constants,0,u16,1,1); Set(one,1);
+Matrix denominator(1110,3,3); Matrix reciprocal(1111,1,1); Matrix q(1112,1,1);
+Program project(2001) {
+    WidenUnsigned(depthSigned,depth);
+    Identity(denominator); Scale(denominator,depthSigned,1); InvertAffine(denominator);
+    MatExtract(reciprocal,denominator,0,0); MatScale(q,reciprocal,8000);
+    StoreU16Floor(projectedQ,q); AddU16(count,1);
+};
+Program submit(2000) { CopyChecked(depth,rawDepth,visible); CallIf(project,visible,eq,one); };

@@ -209,6 +209,8 @@ class Compiler {
     Bytes setup;
     std::ostringstream listing;
     unsigned nextInternal = 2, currentProgram = 0;
+    bool sharedWordScratch = false;
+    unsigned wordTransform = 0, wordSource = 0, wordDestination = 0;
     int line = 1;
     void count(const Node &n, size_t size) {
         if (n.args.size() != size)
@@ -629,7 +631,12 @@ class Compiler {
             fail(line, "signed result exceeds narrowed destination bounds");
         Symbol transform;
         transform.kind = Kind::Matrix;
-        transform.id = scratch(36);
+        if (sharedWordScratch && !wordTransform) {
+            wordTransform = scratch(36);
+            wordSource = scratch(4);
+            wordDestination = scratch(4);
+        }
+        transform.id = sharedWordScratch ? wordTransform : scratch(36);
         transform.rows = transform.cols = 3;
         transform.size = 36;
         Symbol scalar;
@@ -646,7 +653,8 @@ class Compiler {
         affine(out, transform, 6, {scalar, operand(zero)});
         if (!unsignedStore)
             affine(out, transform, 6, {operand(bias), operand(zero)});
-        unsigned source = scratch(4), dest = scratch(4);
+        unsigned source = sharedWordScratch ? wordSource : scratch(4),
+                 dest = sharedWordScratch ? wordDestination : scratch(4);
         command(out, dest, 41);
         out.push_back(8);
         out.push_back(0xc0);
@@ -802,6 +810,33 @@ class Compiler {
             }
             listing << "require_equal " << currentProgram << " " << l.id << ":" << l.offset << " "
                     << r.id << ":" << r.offset << " sticky_status " << status.id << ":"
+                    << status.offset << "\n";
+            return;
+        }
+        if (op == "copychecked") {
+            count(n, 3);
+            auto &dst = symbol(a[0], Kind::Field), &src = symbol(a[1], Kind::Field),
+                 &status = symbol(a[2], Kind::Field);
+            if (dst.typeName != src.typeName || dst.typeName == "f32" ||
+                status.id == dst.id || status.id == src.id)
+                fail(line, "CopyChecked needs matching fixed types and separate status storage");
+            unsigned width = type(dst.typeName, line).bytes;
+            writable(dst, width);
+            if (dst.id == src.id && dst.offset < src.offset + width && src.offset < dst.offset + width)
+                fail(line, "CopyChecked storage overlaps");
+            // Validate the fresh status before emitting its reset. A failed
+            // range check preserves the complete old destination value.
+            (void)rejectProgram(status);
+            emitAdjustMultiLiteral(out, int(status.id), 2, status.offset, {1, 0});
+            requireRange(out, src, dst.range, status);
+            unsigned accepted = scratch(0);
+            initial.erase(accepted);
+            copy(programs[accepted], dst.id, dst.offset, src.id, src.offset, width);
+            condition(out, currentProgram, accepted, 2, status.id, status.offset,
+                      comparisonConstant(1), 0);
+            listing << "copy_checked " << currentProgram << " " << src.id << ":" << src.offset
+                    << " to " << dst.id << ":" << dst.offset << " " << dst.typeName << " "
+                    << dst.range.lo << " " << dst.range.hi << " status " << status.id << ":"
                     << status.offset << "\n";
             return;
         }
@@ -1503,6 +1538,16 @@ class Compiler {
     Result run(const std::string &source) {
         listing << std::setprecision(17);
         auto nodes = Parser(source).block();
+        // Opt-in, first top-level declaration only. The floor-store expansion
+        // resets its transform and consumes/copies the result before it returns;
+        // no user Call or yield occurs inside it. These private temporaries can
+        // therefore be shared across successive stores and nested user calls.
+        if (!nodes.empty() && nodes.front().name == "sharedwordscratch") {
+            count(nodes.front(), 0);
+            sharedWordScratch = true;
+            nodes.erase(nodes.begin());
+            listing << "scalar_word_scratch shared_nonreentrant_expansion\n";
+        }
         for (const auto &n : nodes)
             declare(n);
         for (const auto &n : nodes)
