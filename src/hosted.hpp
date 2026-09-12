@@ -213,6 +213,7 @@ class Compiler {
     unsigned wordTransform = 0, wordSource = 0, wordDestination = 0;
     bool sharedWideScratch = false;
     unsigned wideTransform = 0, wideSource = 0, wideDestination = 0;
+    std::map<Bytes, unsigned> scalarLiterals;
     unsigned wideConversionTransform() {
         if (!sharedWideScratch)
             return scratch(36);
@@ -350,10 +351,25 @@ class Compiler {
         }
         Symbol s;
         s.kind = Kind::Field;
-        s.id = scratch(4);
         s.size = 4;
         s.typeName = "f32";
         s.range = exact(double(float(a.value)));
+        if (sharedWideScratch) {
+            // Literal operands are private, immutable binary32 sources. Key
+            // by bytes, preserving signed zero and exact float rounding.
+            Bytes bytes;
+            floatBytes(bytes, a.value);
+            auto found = scalarLiterals.find(bytes);
+            if (found == scalarLiterals.end()) {
+                s.id = scratch(4);
+                initial[s.id] = bytes;
+                scalarLiterals.emplace(std::move(bytes), s.id);
+            } else {
+                s.id = found->second;
+            }
+            return s;
+        }
+        s.id = scratch(4);
         initial[s.id].clear();
         floatBytes(initial[s.id], a.value);
         return s;
@@ -1690,7 +1706,7 @@ class Compiler {
             nodes.erase(nodes.begin());
             listing << "scalar_word_scratch shared_nonreentrant_expansion\n";
             if (sharedWideScratch)
-                listing << "scalar_wide_scratch shared_nonreentrant_expansion\n";
+                listing << "scalar_wide_scratch shared_nonreentrant_expansion\nscalar_literals shared_immutable_binary32_bytes\n";
         }
         for (const auto &n : nodes)
             declare(n);

@@ -299,6 +299,23 @@ evidence/golem-shared-scalar/qualification.json. This opt-in saves42 owned IDs
 in the complete road/car plus numeric-scenery-heading kernel:976/995 oval/Fuji,
 under the unchanged1024 cap. Scenery drawing and performance remain unqualified.
 
+SharedScalarScratch also interns private read-only numeric operands by their
+exact four binary32 bytes. Signed zeros remain distinct. Named user fields and
+mutable matrices never enter this pool, and no writer has access to these private
+operand sources. The default and SharedWordScratch paths keep their original
+allocation order and byte output. Repeated zero operands in affine conversions
+and repeated scale constants therefore consume one resident buffer per bit pattern.
+
+This addition addresses the subsequent history-kernel resource failure. With
+literal pooling, full road/car/heading plus numeric page history compiles at
+821/838 IDs (oval/Fuji), without increasing any cap. All672 native literal records
+preserve positive/negative zero, repeated1.5 operands and nested scalar/word
+conversions; another672 prior conversion records still pass. The default and
+word-only conversion bootstrap bytes remain identical to their earlier evidence.
+Host sanitizer/golden/negative tests pass. See native_quantization/shared_literals
+and Rally evidence/golem-shared-literals. These checks do not qualify the combined
+history renderer or change the externally owned graphics-state preconditions.
+
 ## Typed bitmap drawing
 
 `DrawBitmap(bitmap,x,y[,matrix])` uses an externally bootstrapped bitmap index

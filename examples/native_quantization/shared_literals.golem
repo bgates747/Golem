@@ -1,0 +1,39 @@
+SharedScalarScratch();
+Buffer input(1000,8);
+Field signedInput(input,0,f32,-8388607,8388607);
+Field positiveInput(input,4,f32,0,16777215);
+Buffer output(1001,80);
+Field floored(output,0,f32); Field truncated(output,4,f32);
+Field rounded(output,8,f32); Field positive(output,12,s32,0,16777215);
+Field unsignedWord(output,16,u16); Field signedWord(output,18,s16);
+Field count(output,20,u16); Field sentinel(output,22,u16,65535,65535);
+Field preserved(output,24,f32); Set(sentinel,65535);
+Field literalPositiveZero(output,28,f32); Field literalNegativeZero(output,32,f32);
+Field literalBefore(output,36,f32); Field literalAfter(output,40,f32);
+Buffer status(1002,10); Buffer expected(1003,2); Buffer proof(1102,4);
+Matrix value(1100,1,1); Matrix result(1101,1,1);
+Field valueField(value,0,f32); Field resultField(result,0,f32);
+Program leaf(2002) {
+    MatLoad(value,0); Copy(literalPositiveZero,valueField,4);
+    MatLoad(value,-0); Copy(literalNegativeZero,valueField,4);
+    MatLoad(value,1.5); Copy(literalBefore,valueField,4);
+    MatLoad(value,signedInput); MatRoundAway(result,value); Copy(rounded,resultField,4);
+};
+Program inner(2001) {
+    MatLoad(value,positiveInput); StorePositive32Floor(positive,value);
+    Call(leaf);
+    MatValues(value,511.75); StoreU16Floor(unsignedWord,value);
+    MatValues(value,-127.25); StoreI16Floor(signedWord,value);
+};
+Program submit(2000) {
+    Repeat(3) {
+        MatLoad(value,signedInput); MatFloor(result,value); Copy(floored,resultField,4);
+        Copy(preserved,valueField,4);
+        Call(inner);
+        MatLoad(value,signedInput); MatTrunc(result,value); Copy(truncated,resultField,4);
+        MatLoad(value,1.5); Copy(literalAfter,valueField,4);
+        MatLoad(value,-0); Copy(literalNegativeZero,valueField,4);
+        MatLoad(value,0); Copy(literalPositiveZero,valueField,4);
+        AddU16(count,1);
+    };
+};

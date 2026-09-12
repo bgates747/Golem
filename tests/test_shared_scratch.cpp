@@ -38,7 +38,7 @@ int main() {
     auto wideIsolated = hosted::compile(wide), wordOnly = hosted::compile(prefix + wide),
          scalar = hosted::compile("SharedScalarScratch(); " + wide);
     assert(ledger(wideIsolated.map, "owned_ids") == ledger(wordOnly.map, "owned_ids"));
-    assert(ledger(wideIsolated.map, "owned_ids") - ledger(scalar.map, "owned_ids") == 9);
+    assert(ledger(wideIsolated.map, "owned_ids") - ledger(scalar.map, "owned_ids") == 13);
     assert(scalar.map.find("scalar_wide_scratch shared_nonreentrant_expansion") != std::string::npos);
     assert(wordOnly.map.find("scalar_wide_scratch") == std::string::npos);
     for (const auto &directive : {std::string("SharedWordScratch"), std::string("SharedScalarScratch")}) {
@@ -50,7 +50,12 @@ int main() {
     reject("Program p(2000) { SharedScalarScratch(); };");
     reject("Repeat(2) { SharedScalarScratch(); };");
     auto scalarWords = hosted::compile("SharedScalarScratch(); " + source);
-    assert(ledger(scalarWords.map, "owned_ids") == ledger(shared.map, "owned_ids"));
-    assert(ledger(scalarWords.map, "resident_payload_bytes") == ledger(shared.map, "resident_payload_bytes"));
+    assert(ledger(shared.map, "owned_ids") - ledger(scalarWords.map, "owned_ids") == 3);
+    assert(ledger(shared.map, "resident_payload_bytes") - ledger(scalarWords.map, "resident_payload_bytes") == 12);
+    const std::string literals = "Matrix m(1100,1,1); MatLoad(m,0); MatLoad(m,0); "
+                                 "MatLoad(m,-0); MatLoad(m,-0); MatLoad(m,1.5); MatLoad(m,1.5);";
+    auto literalDefault = hosted::compile(literals), literalShared = hosted::compile("SharedScalarScratch(); " + literals);
+    assert(ledger(literalDefault.map, "owned_ids") - ledger(literalShared.map, "owned_ids") == 3);
+    assert(literalShared.map.find("scalar_literals shared_immutable_binary32_bytes") != std::string::npos);
     puts("Shared word scratch: three stores use one private triple; default and scope checks pass.");
 }
