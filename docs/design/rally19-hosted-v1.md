@@ -183,8 +183,10 @@ failed compilation must not publish a partly generated blob.
 ## R19-06 additions
 
 `DivModPositive(q,r,input,divisor)` accepts a bounded nonnegative s32 domain
-below2^24, constant divisor1..65535, distinct u16 quotient/remainder destinations
-and a quotient<=32767. The compiler checks every integer in the declared domain
+below2^24, constant divisor1..16777215, a u16 quotient<=32767 and a u16 or s32
+remainder destination containing0..divisor-1. The wider divisor/s32 remainder
+form was added for R19-08; the original u16 form emits unchanged code. All
+operand/destination spans must be distinct. The compiler checks every integer in the declared domain
 against binary32 reciprocal multiplication before emitting that construction.
 It rejects domains that round an integer index upwards; it never emits an answer
 table. Runtime computes q, reloads it and obtains r=x-q*divisor exactly.
@@ -213,6 +215,34 @@ underflow to zero; narrowed float stores and nonsingularity cannot be justified
 by an unrepresentable double literal. Field metadata no longer duplicates an
 entire imported asset's data vector per field. Host qualification records source
 hashes before and after tests and rejects a run if its source changed mid-test.
+
+## R19-08 vehicle arithmetic additions
+
+`StorePositive32Floor(destination,scalar)` writes a4-byte s32 field from a finite
+scalar proven within0..16777215. The destination must contain the floored bounds.
+It reuses qualified stock command41 format0x40 on a nonnegative translated zero
+tuple, then copies exactly4 bytes. It is not a signed negative conversion and
+does not broaden TransformData's fixed-output support.
+
+`MatAbs(destination,source)` requires distinct scalar matrices, an initialized
+source and finite source bounds. It loads the source into the destination, clears its IEEE
+sign bit and propagates the absolute interval. The source is unchanged; either
+signed zero produces positive zero.
+
+`LessThan(result,left,right)` requires a writable u16 result with bounds0..1 and
+matching fixed input types (u8/u16/s16/s32/q8s16/q8s32). The result must not overlap
+either input; inputs may alias each other. It writes a fresh Boolean each call,
+compares ordered zero-extended bytes from high to low, and flips the high sign
+bit for signed types. This handles full ranges, including65535 and signed32
+extremes, without passing0xffff to a conditional operand. CallIf's existing
+bounded-u16 restriction is unchanged.
+
+Native proof is in examples/native_vehicle_math and Rally's
+evidence/golem-vehicle-math:576 complete96-byte readbacks cover signed boundary
+pairs, wide real lap division, signed zeros/subnormals, positive floor boundaries
+and sentinel neighbours. Host sanitizer/golden/negative checks also pass. The
+R19-07 complete-road bytecode remains identical on both tracks. These additions
+support, but do not complete, the R19-08 vehicle renderer.
 
 ## Primary source qualification
 

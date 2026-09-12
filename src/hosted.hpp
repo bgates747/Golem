@@ -662,6 +662,40 @@ class Compiler {
         }
         copy(out, f.id, f.offset, dest, 0, 2);
     }
+    void storePositive32Floor(Bytes &out, const Symbol &f, const Symbol &m) {
+        auto range = value(m)[0];
+        if (range.lo < 0 || range.hi > 16777215 || !std::isfinite(range.lo) ||
+            !std::isfinite(range.hi))
+            fail(line, "positive32 store requires finite 0..16777215 input");
+        writable(f, 4);
+        if (std::floor(range.lo) < f.range.lo || std::floor(range.hi) > f.range.hi)
+            fail(line, "positive32 result exceeds destination bounds");
+        Symbol transform;
+        transform.kind = Kind::Matrix;
+        transform.id = scratch(36);
+        transform.rows = transform.cols = 3;
+        transform.size = 36;
+        Symbol scalar;
+        scalar.kind = Kind::Field;
+        scalar.id = m.id;
+        scalar.size = 4;
+        scalar.typeName = "f32";
+        scalar.range = range;
+        Arg zero;
+        zero.number = true;
+        identity(out, transform);
+        affine(out, transform, 6, {scalar, operand(zero)});
+        unsigned source = scratch(8), dest = scratch(8);
+        command(out, dest, 41);
+        out.push_back(8);
+        out.push_back(0x40);
+        emitLE16(out, transform.id);
+        emitLE16(out, source);
+        emitLE16(out, 1);
+        // Only nonnegative magnitudes reach stock's unsigned conversion. The
+        // result is below 2^24, hence also a representable positive signed32.
+        copy(out, f.id, f.offset, dest, 0, 4);
+    }
     Symbol privateScalar() {
         Symbol m;
         m.kind = Kind::Matrix;
@@ -694,6 +728,51 @@ class Compiler {
         line = n.line;
         const auto &a = n.args;
         const auto &op = n.name;
+        if (op == "lessthan") {
+            count(n, 3);
+            auto &dst = symbol(a[0], Kind::Field), &left = symbol(a[1], Kind::Field),
+                 &right = symbol(a[2], Kind::Field);
+            if (dst.typeName != "u16" || dst.range.lo != 0 || dst.range.hi != 1 ||
+                left.typeName != right.typeName || left.typeName == "f32")
+                fail(line, "LessThan needs bool u16 destination and matching fixed input types");
+            writable(dst, 2);
+            unsigned width = type(left.typeName, line).bytes;
+            auto overlaps = [&](const Symbol &src) {
+                return dst.id == src.id && dst.offset < src.offset + width &&
+                       src.offset < dst.offset + 2;
+            };
+            if (overlaps(left) || overlaps(right))
+                fail(line, "LessThan destination aliases an operand");
+            unsigned ordered = scratch(width * 4), accept = scratch(0);
+            initial.erase(accept);
+            emitAdjustMultiLiteral(out, int(dst.id), 2, dst.offset, {0, 0});
+            emitAdjustMultiLiteral(programs[accept], int(dst.id), 2, dst.offset, {1, 0});
+            for (unsigned i = 0; i < width; ++i) {
+                copy(out, ordered, i * 2, left.id, left.offset + i, 1);
+                copy(out, ordered, (width + i) * 2, right.id, right.offset + i, 1);
+            }
+            if (left.typeName != "u8" && left.typeName != "u16") {
+                emitAdjustMultiLiteral(out, int(ordered), 7, (width - 1) * 2, {128});
+                emitAdjustMultiLiteral(out, int(ordered), 7, (width * 2 - 1) * 2, {128});
+            }
+            unsigned next = 0;
+            for (unsigned i = 0; i < width; ++i) {
+                unsigned stage = scratch(0);
+                initial.erase(stage);
+                condition(programs[stage], stage, accept, 4, ordered, i * 2,
+                          ordered, (width + i) * 2);
+                if (next)
+                    condition(programs[stage], stage, next, 2, ordered, i * 2,
+                              ordered, (width + i) * 2);
+                next = stage;
+            }
+            call(out, next);
+            listing << "less_than " << currentProgram << " " << left.typeName << " "
+                    << left.id << ":" << left.offset << " " << right.id << ":" << right.offset
+                    << " result " << dst.id << ":" << dst.offset << " ordered_bytes " << width
+                    << "\n";
+            return;
+        }
         if (op == "requirerange") {
             if (a.size() != 2 && a.size() != 4)
                 fail(line, "RequireRange needs field, [low, high,] sticky status");
@@ -1137,6 +1216,36 @@ class Compiler {
             storeWordFloor(out, f, m, u);
             return;
         }
+        if (op == "matabs") {
+            count(n, 2);
+            auto &dst = symbol(a[0], Kind::Matrix), &src = symbol(a[1], Kind::Matrix);
+            if (dst.rows != 1 || dst.cols != 1 || src.rows != 1 || src.cols != 1 ||
+                dst.id == src.id)
+                fail(line, "MatAbs requires distinct scalar matrices");
+            auto range = value(src)[0];
+            if (!std::isfinite(range.lo) || !std::isfinite(range.hi))
+                fail(line, "MatAbs requires finite source bounds");
+            Symbol field;
+            field.kind = Kind::Field;
+            field.id = src.id;
+            field.size = 4;
+            field.typeName = "f32";
+            field.range = range;
+            loadScalar(out, dst, field);
+            emitAdjustMultiLiteral(out, int(dst.id), 5, 3, {127});
+            bounds[dst.id] = {{range.lo <= 0 && range.hi >= 0
+                                  ? 0 : std::min(std::abs(range.lo), std::abs(range.hi)),
+                              std::max(std::abs(range.lo), std::abs(range.hi))}};
+            return;
+        }
+        if (op == "storepositive32floor") {
+            count(n, 2);
+            auto &dst = symbol(a[0], Kind::Field), &src = symbol(a[1], Kind::Matrix);
+            if (dst.typeName != "s32" || src.rows != 1 || src.cols != 1)
+                fail(line, "StorePositive32Floor requires s32 destination and scalar source");
+            storePositive32Floor(out, dst, src);
+            return;
+        }
         if (op == "mattrunc" || op == "matroundaway") {
             count(n, 2);
             auto &dst = symbol(a[0], Kind::Matrix), &src = symbol(a[1], Kind::Matrix);
@@ -1198,22 +1307,25 @@ class Compiler {
             count(n, 4);
             auto &q = symbol(a[0], Kind::Field), &r = symbol(a[1], Kind::Field),
                  &input = symbol(a[2], Kind::Field);
-            unsigned divisor = integer(a[3], 65535);
-            if (!divisor || q.typeName != "u16" || r.typeName != "u16" || input.typeName != "s32" ||
+            unsigned divisor = integer(a[3], 16777215);
+            if (!divisor || q.typeName != "u16" ||
+                (r.typeName != "u16" && r.typeName != "s32") || input.typeName != "s32" ||
                 input.range.lo < 0 || input.range.hi > 16777215 ||
                 std::ceil(input.range.lo) > std::floor(input.range.hi))
-                fail(line, "DivModPositive needs bounded nonnegative s32 input and u16 outputs");
+                fail(line, "DivModPositive needs bounded nonnegative s32 input, u16 quotient and u16/s32 remainder");
             unsigned low = unsigned(std::ceil(input.range.lo)),
                      high = unsigned(std::floor(input.range.hi));
             if (high / divisor > 32767 || q.range.lo > low / divisor ||
                 q.range.hi < high / divisor || r.range.lo > 0 || r.range.hi < divisor - 1)
                 fail(line, "DivModPositive output ranges cannot contain the result");
             writable(q, 2);
-            writable(r, 2);
+            unsigned remainderBytes = type(r.typeName, line).bytes;
+            writable(r, remainderBytes);
             auto overlap = [](const Symbol &a, unsigned aw, const Symbol &b, unsigned bw) {
                 return a.id == b.id && a.offset < b.offset + bw && b.offset < a.offset + aw;
             };
-            if (overlap(q, 2, r, 2) || overlap(q, 2, input, 4) || overlap(r, 2, input, 4))
+            if (overlap(q, 2, r, remainderBytes) || overlap(q, 2, input, 4) ||
+                overlap(r, remainderBytes, input, 4))
                 fail(line, "DivModPositive storage overlaps");
             float reciprocal = 1.0f / float(divisor);
             // Exhaustive compile-time proof of this finite integer domain under
@@ -1240,7 +1352,10 @@ class Compiler {
             // x and q*divisor are exact integers below 2^24, so subtraction is
             // exact and the proved division identity gives this tight interval.
             bounds[remainder.id] = {{0, double(divisor - 1)}};
-            storeWordFloor(out, r, remainder, true);
+            if (r.typeName == "s32")
+                storePositive32Floor(out, r, remainder);
+            else
+                storeWordFloor(out, r, remainder, true);
             listing << "divmod_positive " << currentProgram << " source " << input.id << ":"
                     << input.offset << " divisor " << divisor << " exhaustive_domain " << low << " "
                     << high << "\n";

@@ -1,0 +1,36 @@
+// Diagnostic operands only. These are not the production80-byte Rally ABI.
+Buffer input(1000,80);
+Field x(input,0,s32,0,6553599); Field a(input,4,s32); Field b(input,8,s32);
+Field signedFloat(input,12,f32,-16777215,16777215);
+Field positiveFloat(input,16,f32,0,16777215);
+Field a16(input,20,s16); Field b16(input,22,s16);
+Field au16(input,24,u16); Field bu16(input,26,u16);
+Field a8(input,28,u8); Field b8(input,29,u8);
+Field aq16(input,30,q8s16); Field bq16(input,32,q8s16);
+Field aq32(input,34,q8s32); Field bq32(input,38,q8s32);
+Buffer output(1001,80);
+Field qFuji(output,0,u16,0,1); Field guardA(output,2,u16);
+Field rFuji(output,4,s32,0,3276799);
+Field qOval(output,8,u16,0,11); Field qHundred(output,10,u16,0,32767);
+Field rHundred(output,12,u16,0,99); Field lt32(output,14,u16,0,1);
+Field lt16(output,16,u16,0,1); Field ltu16(output,18,u16,0,1);
+Field ltu8(output,20,u16,0,1); Field ltq16(output,22,u16,0,1);
+Field ltq32(output,24,u16,0,1); Field guardB(output,26,u16);
+Field absolute(output,28,f32,0,16777215); Field floorPositive(output,32,s32,0,16777215);
+Field rOval(output,36,s32,0,575999); Field equalLess(output,40,u16,0,1);
+Field guardC(output,42,u16);
+Set(guardA,42330); Set(guardB,21930); Set(guardC,65535);
+Buffer status(1002,10); Buffer expected(1003,2); Matrix unused(1102,1,1);
+Matrix signedValue(1100,1,1); Matrix absValue(1101,1,1); Matrix positiveValue(1103,1,1);
+Field absoluteValue(absValue,0,f32);
+Program compute(2000) {
+    DivModPositive(qFuji,rFuji,x,3276800);
+    DivModPositive(qOval,rOval,x,576000);
+    DivModPositive(qHundred,rHundred,rFuji,100);
+    LessThan(lt32,a,b); LessThan(lt16,a16,b16); LessThan(ltu16,au16,bu16);
+    LessThan(ltu8,a8,b8); LessThan(ltq16,aq16,bq16); LessThan(ltq32,aq32,bq32);
+    LessThan(equalLess,a,a);
+    MatLoad(signedValue,signedFloat); MatAbs(absValue,signedValue);
+    Copy(absolute,absoluteValue,4);
+    MatLoad(positiveValue,positiveFloat); StorePositive32Floor(floorPositive,positiveValue);
+};
