@@ -6,6 +6,16 @@ Field numerator(input,8,s32,-100,100);
 Field angle(input,12,s32,-90,90);
 Field fraction(input,16,f32,-32768,32767);
 Field row(input,20,s16,0,239);
+// Read-only word views let the finite admission chain reject arbitrary signed
+// denominator bits before any reciprocal is evaluated.
+Field bLow(input,4,u16,0,65534);
+Field bHigh(input,6,u16,0,65534);
+Buffer guardConstants(1002,4);
+Field zero(guardConstants,0,u16,0,0);
+Field twenty(guardConstants,2,u16,20,20);
+Set(twenty,20);
+Buffer admission(1003,2);
+Field accepted(admission,0,u16,0,1);
 Buffer output(1500,10);
 Field signedResult(output,0,s16);
 Field plotX(output,2,s16);
@@ -29,12 +39,22 @@ Matrix rotation(1110,3,3);
 Matrix signedScalar(1111,1,1);
 Matrix shift(1112,1,1);
 Matrix screen(1113,1,1);
+Matrix difference(1114,1,1);
+Matrix scaled(1115,1,1);
+Matrix table(1116,2,2);
+Matrix patched(1117,2,2);
+Matrix extracted(1118,1,1);
 MatValues(shift,40);
+MatValues(table,1,2,3,4);
 Program compute(2000) {
     MatLoad(left,a);
     MatLoad(right,b);
     MatMul(product,left,right);
     MatAdd(sum,product,left);
+    MatSub(difference,sum,product);
+    MatPut(patched,table,1,0,a);
+    MatExtract(extracted,patched,1,0);
+    MatScale(scaled,extracted,b);
     Identity(denominator);
     Scale(denominator,b,1);
     InvertAffine(denominator);
@@ -54,3 +74,26 @@ Program compute(2000) {
     Set(neighbour,12345);
     Repeat(8) { AddU16(counter,1); };
 };
+Program zeroTrips(2010) {
+    Set(counter,65534); Set(neighbour,12345);
+    Repeat(0) { AddU16(counter,1); };
+};
+Program oneTrip(2011) {
+    Set(counter,65534); Set(neighbour,12345);
+    Repeat(1) { AddU16(counter,1); };
+};
+Program eightTrips(2012) {
+    Set(counter,65534); Set(neighbour,12345);
+    Repeat(8) { AddU16(counter,1); };
+};
+Program hundredTwentyTrips(2013) {
+    Set(counter,65534); Set(neighbour,12345);
+    Repeat(120) { AddU16(counter,1); };
+};
+Program guarded(2020) {
+    Set(accepted,0);
+    CallIf(highZero,bHigh,eq,zero);
+};
+Program highZero(2021) { CallIf(positive,bLow,gt,zero); };
+Program positive(2022) { CallIf(admit,bLow,le,twenty); };
+Program admit(2023) { Set(accepted,1); Call(compute); };

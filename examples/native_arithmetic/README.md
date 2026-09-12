@@ -1,10 +1,13 @@
-# R19-04 arithmetic qualification (in progress)
+# R19-04 arithmetic qualification
 
 `kernel.golem` runs products, multiply-add, reciprocal via affine diagonal
 inversion, division, rotation, signed integer stores and computed PLOT on the
 stock VDP. Five different inputs enter buffer 1000; the eZ80 loader performs no
 tested arithmetic. An eight-trip resident loop wraps a uint16 through 65535 and
 checks its adjacent field remains intact. It returns after each finite call.
+Additional probes cover subtraction, scalar multiplication, nonzero matrix-cell
+replacement/extraction, zero/one/eight/120-trip loops and a finite denominator
+guard that rejects zero, negative and oversized values before inversion.
 
 The host-side driver currently lives in the shared Rally evidence bucket:
 
@@ -15,12 +18,16 @@ make -C src
 ./build/golemc --hosted examples/native_arithmetic/kernel.golem build/kernel.bin
 # AgonArcade-rally19 worktree, using its own venv
 .venv/bin/python docs/tasks/RALLY-19/probe_golem.py UNIQUE-RUN-NAME
+.venv/bin/python docs/tasks/RALLY-19/probe_golem.py UNIQUE-COST-NAME --cost-only
 ```
 
 The driver creates a fresh build below Golem/build/native-arithmetic/ and a fresh
 canonical profile below Rally's RALLY-19/.emulator/. It uses stock Fab 1.2.4 /
 MOS 3.0.2 with normal CPU/UART settings, dummy SDL video/audio, captured native
 pixels and injected Escape. No graphical launch, custom module or alert.
+Cost-only mode omits the capture interposer, runs two sets of five 4096-call
+batches and exits the guest automatically. The host then terminates the isolated
+emulator process after its guest exit marker and complete reports are present.
 
 Diagnostic readback copies each result byte to a stock GP command's token field
 and calls that small buffer. MOS supplies the echo byte to the loader. This is
@@ -37,9 +44,18 @@ coordinates. The corrected reference passes; both results are retained. A second
 attempt exposed agondev's non-idempotent `make -B` directory target. Unique build
 directories resolve it without changing upstream tooling.
 
-Current limits: R19-04 remains unchecked. Native tests of zero/invalid-depth
-admission, zero/one/120-trip loops, broader type/lifetime/index cases and kernel
-cost measurements are still needed. Public TransformData currently qualifies
+The final `complete-intrinsics` visual run and `complete-intrinsics-cost` timing
+run pass. Raw readback after 40,960 calls remains correct, including the adjacent
+field. The final bootstrap is 2461 bytes, 66 owned IDs and 1477 declared resident
+payload bytes (not allocator/metadata/peak memory). Its full arithmetic batch
+averages 61.0 microseconds/call on this Linux host, including eZ80 command
+submission, UART and a final GP parser echo. Do not infer pure VDP execution time
+by subtracting the similarly sized empty-job measurement: timer quantization
+dominates the small difference. This is not ESP32 hardware performance or a
+production rendering-completion measurement. Full scene performance remains a
+later goal milestone.
+
+Public TransformData currently qualifies
 bounded binary32 tuples only; checked fixed output uses StoreI16Floor. Bulk field
 copy and raw matrix mutation deliberately reject until their range/cache behavior
 is qualified. Matrix state must be explicitly created with an intrinsic before
