@@ -446,7 +446,9 @@ Subsequent regression covers all66 frozen Rally poses (24 oval,42 Fuji), both
 full-scene lifecycle suites and834 checked-loader fault cases. The corrected
 production executable and both track assets reproduce byte-for-byte from a
 fresh research frontend. Both602-second replays and all12 native control cases
-also pass. Final native timing is still being requalified for these assets.
+also pass. Final native timing on these assets passes the unchanged budgets;
+Rally `evidence/golem-performance/hardware-inline/qualification.json` contains
+the raw distributions, CPU construction bounds and source/runtime identities.
 
 On physical ESP32, the corrected program reached120 logged root returns on the
 original4096-byte stack, maximum observed interpreter depth six, without a panic.

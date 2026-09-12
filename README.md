@@ -39,7 +39,9 @@ both-track long replay and control regression. The Author confirmed it runs afte
 a board reset on restored official VDP2.16.0, but it remains visibly slow. Sparse
 diagnostic observations were about1.19 resident-call returns/second; these are
 not a scanout FPS measurement. The current lowering has not provided a useful
-hardware acceleration. Final native timing and delivery remain open.
+hardware acceleration. Final native timing passes the unchanged frozen budgets;
+the sibling Rally task's DELIVERY.md and REVIEW.md index the bounded result,
+artifacts, commands and hardware limitations. Further optimization is a new task.
 
 Build with `make -C src`; run `.venv/bin/python tests/run_hosted.py` for host
 sanitizer/regression tests. `build/golemc --hosted input.golem output.bin` emits

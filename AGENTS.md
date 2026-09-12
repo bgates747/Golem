@@ -23,8 +23,15 @@ InlineCalls correction now runs on the original4096-byte diagnostic stack and
 restored official VDP2.16.0. The Author confirmed continued, slow operation after
 the board reset button; no cold power-cycle test was performed. This fixes the
 observed startup crash, not the unacceptable hardware rendering speed. Final
-native timing and delivery remain open. Do not infer ESP32 performance or general
+native timing has since passed; delivery is indexed below. Do not infer ESP32 performance or general
 stack safety from the native host emulator.
+
+Final-candidate correctness/stability and native timing now pass at Rally
+checkpoint `6d574f1`; its `docs/tasks/RALLY-19/DELIVERY.md` is the delivery index.
+The exact corrected assets retain91–92% eZ80 construction savings and87–89%
+scene UART savings, but physical rendering remains unusably slow. This is a
+bounded research result, not a shipping speedup. Use the shared TODO for the
+final delivery marker and obtain a new task decision before further optimization.
 
 Preserve the separate original `/home/smith/Agon/mystuff/golem` checkout and its
 untracked deployment files. Earlier design checklists below are history, not
