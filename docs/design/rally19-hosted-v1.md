@@ -315,6 +315,25 @@ evidence/golem-cars/qualification.json. The admitted renderer still receives onl
 raw80-byte game state. Scenery/frontend, full-scene timing and long-term memory
 qualification remain separate milestones.
 
+## Signed scalar floor for fractional tangent interpolation
+
+`MatFloor(destination,source)` accepts distinct initialized scalar matrices with
+finite source magnitude<=16777215. It shares MatTrunc's positive32 magnitude
+conversion, then detects a negative fractional input by comparing all four
+original magnitude bytes with its exact integer-valued float. Only that case
+increments the integer magnitude before restoring the sign. It preserves signed
+zero and rounds negative subnormals to-1, without an epsilon or32768 bias.
+The source is unchanged; output bounds use floor at both interval endpoints.
+Existing MatTrunc/MatRoundAway paths are unchanged.
+
+Host proof checks every integer discontinuity0..16777215 and its adjacent binary32
+values with both signs, plus compiler shape/range/alias rejection. The complete
+sanitizer/golden/negative suite passes. Native floor.golem passes236 complete
+96-byte records, including1/16384 fractions, signed zero/subnormals, positive and
+negative endpoints, byte carries, source preservation and neighbour sentinels.
+See Rally evidence/golem-floor. This qualifies the primitive, not yet the scenery
+heading or full frontend.
+
 ## Primary source qualification
 
 Read locally on 2026-09-12: agon-docs Buffered-Commands-API.md (commands 0,5,6,

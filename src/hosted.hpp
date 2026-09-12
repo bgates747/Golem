@@ -1281,7 +1281,7 @@ class Compiler {
             storePositive32Floor(out, dst, src);
             return;
         }
-        if (op == "mattrunc" || op == "matroundaway") {
+        if (op == "mattrunc" || op == "matroundaway" || op == "matfloor") {
             count(n, 2);
             auto &dst = symbol(a[0], Kind::Matrix), &src = symbol(a[1], Kind::Matrix);
             if (dst.rows != 1 || dst.cols != 1 || src.rows != 1 || src.cols != 1 ||
@@ -1289,7 +1289,7 @@ class Compiler {
                 fail(line, "MatTrunc requires distinct scalar matrices");
             auto range = value(src)[0];
             double maximum = std::max(std::abs(range.lo), std::abs(range.hi));
-            bool nearest = op == "matroundaway";
+            bool nearest = op == "matroundaway", floor = op == "matfloor";
             if (!std::isfinite(maximum) || maximum > (nearest ? 8388607 : 16777215))
                 fail(line, "MatTrunc requires finite magnitude <=16777215");
             // Preserve the IEEE binary32 sign separately. Only a nonnegative
@@ -1331,11 +1331,37 @@ class Compiler {
             field.id = integerResult;
             field.size = 8;
             field.typeName = "s32";
-            field.range = {0, nearest ? std::round(maximum) : std::floor(maximum)};
+            field.range = {0, nearest ? std::round(maximum) : floor ? std::ceil(maximum) : std::floor(maximum)};
             loadScalar(out, dst, field);
+            if (floor) {
+                // For negative nonintegers floor(x)=-ceil(abs(x)). Compare the
+                // original positive binary32 magnitude with the exactly loaded
+                // integer magnitude; no epsilon or32768 bias loses tiny fractions.
+                unsigned flag = scratch(2), left = scratch(2), right = scratch(2),
+                         different = scratch(0), negative = scratch(0), increment = scratch(0);
+                initial.erase(different); initial.erase(negative); initial.erase(increment);
+                emitAdjustMultiLiteral(programs[different], int(flag), 2, 0, {1, 0});
+                emitAdjustMultiLiteral(programs[increment], int(integerResult), 4, 0, {1, 0, 0, 0});
+                unsigned parent = currentProgram;
+                currentProgram = negative;
+                auto &body = programs[negative];
+                emitAdjustMultiLiteral(body, int(flag), 2, 0, {0, 0});
+                for (unsigned i = 0; i < 4; ++i) {
+                    copy(body, left, 0, absolute, i, 1);
+                    copy(body, right, 0, dst.id, i, 1);
+                    condition(body, negative, different, 3, left, 0, right, 0);
+                }
+                condition(body, negative, increment, 2, flag, 0, comparisonConstant(1), 0);
+                currentProgram = parent;
+                copy(out, left, 0, sign, 0, 1);
+                condition(out, parent, negative, 2, left, 0, comparisonConstant(128), 0);
+                loadScalar(out, dst, field);
+                listing << "mat_floor " << currentProgram << " source " << src.id << " result "
+                        << dst.id << " negative_fraction_correction\n";
+            }
             emitAdjustMultiBufferFetched(out, int(dst.id), 6, 3, 1, int(sign), 0);
-            bounds[dst.id] = {{nearest ? std::round(range.lo) : std::trunc(range.lo),
-                               nearest ? std::round(range.hi) : std::trunc(range.hi)}};
+            bounds[dst.id] = {{nearest ? std::round(range.lo) : floor ? std::floor(range.lo) : std::trunc(range.lo),
+                               nearest ? std::round(range.hi) : floor ? std::floor(range.hi) : std::trunc(range.hi)}};
             return;
         }
         if (op == "divmodpositive") {

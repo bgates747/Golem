@@ -1,0 +1,16 @@
+// Raw finite binary32 input; no host-precomputed floor enters the VDP.
+Buffer input(1000,80); Field x(input,0,f32,-16777215,16777215);
+Buffer output(1001,80);
+Field floored(output,0,f32,-16777215,16777215);
+Field truncated(output,4,f32,-16777215,16777215);
+Field preserved(output,8,f32,-16777215,16777215);
+Field sentinel(output,12,u16,65535,65535); Set(sentinel,65535);
+Field count(output,14,u16);
+Buffer status(1002,10); Buffer expected(1003,2); Buffer unused(1102,4);
+Matrix source(1100,1,1); Matrix f(1101,1,1); Matrix t(1103,1,1);
+Field fv(f,0,f32); Field tv(t,0,f32); Field sourceValue(source,0,f32);
+Program compute(2000) {
+    MatLoad(source,x); MatFloor(f,source); MatTrunc(t,source);
+    Copy(floored,fv,4); Copy(truncated,tv,4); Copy(preserved,sourceValue,4);
+    AddU16(count,1);
+};
