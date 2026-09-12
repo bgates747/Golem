@@ -5,7 +5,9 @@
 #include <cstdint>
 #include <cstdlib>
 #include <cstring>
+#include <filesystem>
 #include <functional>
+#include <iomanip>
 #include <limits>
 #include <set>
 
@@ -15,6 +17,7 @@ struct Arg {
     std::string text;
     bool number = false;
     double value = 0;
+    bool quoted = false;
 };
 struct Node {
     std::string name, text;
@@ -59,6 +62,11 @@ class Parser {
     Arg argument() {
         ws();
         Arg a;
+        if (p < src.size() && src[p] == '"') {
+            a.text = parseStringLiteral(src, p);
+            a.quoted = true;
+            return a;
+        }
         if (p < src.size() && (std::isdigit(static_cast<unsigned char>(src[p])) || src[p] == '-' ||
                                src[p] == '+' || src[p] == '.')) {
             size_t start = p;
@@ -103,7 +111,7 @@ class Parser {
                 continue;
             }
             if (n.name == "buffer" || n.name == "field" || n.name == "matrix" ||
-                n.name == "program")
+                n.name == "program" || n.name == "asset" || n.name == "table")
                 n.text = identifier();
             need('(');
             if (!take(')')) {
@@ -171,20 +179,22 @@ inline Type type(const std::string &s, int line) {
             false};
     fail(line, "unknown field type '" + s + "'");
 }
-enum class Kind { Buffer, Matrix, Program, Field };
+enum class Kind { Buffer, Matrix, Program, Field, Asset, Table };
 struct Symbol {
     Kind kind = Kind::Buffer;
     unsigned id = 0, size = 0, offset = 0, rows = 0, cols = 0;
+    unsigned records = 0;
     std::string typeName;
     Range range;
     Bytes data;
     std::vector<Range> values;
 };
 struct Result {
-    Bytes code;
+    Bytes code, clear;
     std::string map;
 };
 class Compiler {
+    std::filesystem::path sourceDirectory;
     std::map<std::string, Symbol> syms;
     std::set<unsigned> ids;
     std::map<unsigned, std::set<unsigned>> edges;
@@ -207,7 +217,7 @@ class Compiler {
     }
     Symbol &symbol(const Arg &a, Kind k) {
         auto i = syms.find(a.text);
-        if (a.number || i == syms.end())
+        if (a.number || a.quoted || i == syms.end())
             fail(line, "unknown symbol '" + a.text + "'");
         if (i->second.kind != k)
             fail(line, "wrong symbol kind: " + a.text);
@@ -215,7 +225,7 @@ class Compiler {
     }
     Symbol &buffer(const Arg &a) {
         auto i = syms.find(a.text);
-        if (a.number || i == syms.end() || i->second.kind != Kind::Buffer)
+        if (a.number || a.quoted || i == syms.end() || i->second.kind != Kind::Buffer)
             fail(line, "expected data buffer: " + a.text);
         return i->second;
     }
@@ -251,6 +261,9 @@ class Compiler {
         return nullptr;
     }
     void writable(const Symbol &f, unsigned bytes) {
+        for (const auto &kv : syms)
+            if (kv.second.kind == Kind::Asset && kv.second.id == f.id)
+                fail(line, "immutable asset cannot be modified");
         if (matrixOwner(f))
             fail(line, "raw matrix mutation is not qualified; use matrix intrinsics");
         span(f, bytes);
@@ -377,6 +390,47 @@ class Compiler {
     void declare(const Node &n) {
         line = n.line;
         Symbol s;
+        if (n.name == "asset" || n.name == "table") {
+            count(n, n.name == "asset" ? 3 : 4);
+            s.id = integer(n.args[0], 65534);
+            const Arg &path = n.args[n.name == "asset" ? 1 : 3];
+            if (!path.quoted || path.text.empty() || path.text.find('\0') != std::string::npos)
+                fail(line, "asset needs a quoted relative path");
+            std::filesystem::path relative(path.text);
+            if (relative.is_absolute())
+                fail(line, "asset path must be relative to source");
+            for (const auto &part : relative)
+                if (part == "..")
+                    fail(line, "asset parent traversal is not allowed");
+            s.size = integer(n.args[n.name == "asset" ? 2 : 1], 65535);
+            s.records = n.name == "asset" ? 1 : integer(n.args[2], 1024);
+            if (!s.size || !s.records || uint64_t(s.size) * s.records > 512 * 1024)
+                fail(line, "invalid asset size/count or table budget");
+            if (n.name == "table" && (s.id < 4000 || s.id + s.records > 5000))
+                fail(line, "table record IDs must fit reserved 4000..4999 range");
+            std::ifstream file(sourceDirectory / relative, std::ios::binary | std::ios::ate);
+            if (!file || file.tellg() != std::streamoff(s.size * s.records))
+                fail(line, "missing asset or exact size mismatch: " + path.text);
+            file.seekg(0);
+            s.data.resize(s.size * s.records);
+            if (!file.read(reinterpret_cast<char *>(s.data.data()), s.data.size()))
+                fail(line, "asset read failed");
+            s.kind = n.name == "asset" ? Kind::Asset : Kind::Table;
+            claim(n.text, s);
+            for (unsigned i = 0; i < s.records; ++i) {
+                if (i && !ids.insert(s.id + i).second)
+                    fail(line, "table record ID collision");
+                initial[s.id + i] =
+                    Bytes(s.data.begin() + i * s.size, s.data.begin() + (i + 1) * s.size);
+            }
+            uint64_t hash = UINT64_C(14695981039346656037);
+            for (auto byte : s.data)
+                hash = (hash ^ byte) * UINT64_C(1099511628211);
+            listing << "import " << n.text << " " << path.text << " " << s.data.size()
+                    << " fnv1a64 " << std::hex << std::setw(16) << std::setfill('0') << hash
+                    << std::dec << " records " << s.records << "\n";
+            return;
+        }
         if (n.name == "buffer" || n.name == "matrix" || n.name == "program") {
             count(n, n.name == "matrix" ? 3 : n.name == "buffer" ? 2 : 1);
             s.id = integer(n.args[0], 65534);
@@ -403,9 +457,12 @@ class Compiler {
         if (n.args.size() != 3 && n.args.size() != 5)
             fail(line, "Field requires 3 or 5 arguments");
         auto i = syms.find(n.args[0].text);
-        if (i == syms.end() || (i->second.kind != Kind::Buffer && i->second.kind != Kind::Matrix))
+        if (n.args[0].number || n.args[0].quoted || i == syms.end() ||
+            (i->second.kind != Kind::Buffer && i->second.kind != Kind::Matrix &&
+             i->second.kind != Kind::Asset))
             fail(line, "Field owner must be buffer or matrix");
         Symbol s = i->second;
+        s.data.clear();
         s.kind = Kind::Field;
         s.offset = integer(n.args[1], 65535);
         s.typeName = lower(n.args[2].text);
@@ -424,6 +481,33 @@ class Compiler {
         claim(n.text, s);
         listing << "field " << n.text << " " << s.id << ":" << s.offset << " " << s.typeName << " "
                 << s.range.lo << " " << s.range.hi << "\n";
+    }
+    double decoded(const Bytes &data, unsigned offset, const std::string &name) {
+        auto t = type(name, line);
+        uint32_t raw = 0;
+        for (unsigned i = 0; i < t.bytes; ++i)
+            raw |= uint32_t(data.at(offset + i)) << (8 * i);
+        if (name == "f32") {
+            float value;
+            std::memcpy(&value, &raw, 4);
+            return value;
+        }
+        if (name == "u8" || name == "u16")
+            return raw;
+        int64_t value = raw;
+        if (raw & (UINT32_C(1) << (t.bytes * 8 - 1)))
+            value -= INT64_C(1) << (t.bytes * 8);
+        return double(value) / ((name == "q8s16" || name == "q8s32") ? 256 : 1);
+    }
+    void validateFields(const Symbol &dst, const Bytes &data, unsigned offset) {
+        for (const auto &kv : syms) {
+            const auto &f = kv.second;
+            if (f.kind != Kind::Field || f.id != dst.id)
+                continue;
+            double v = decoded(data, offset + f.offset, f.typeName);
+            if (!std::isfinite(v) || v < f.range.lo || v > f.range.hi)
+                fail(line, "imported data violates typed field: " + kv.first);
+        }
     }
     void markMutable(const std::vector<Node> &nodes) {
         for (const auto &n : nodes) {
@@ -445,6 +529,58 @@ class Compiler {
         line = n.line;
         const auto &a = n.args;
         const auto &op = n.name;
+        if (op == "loadindexed") {
+            if (a.size() != 3 && a.size() != 4)
+                fail(line, "LoadIndexed needs destination, table, index [, status]");
+            auto &dst = buffer(a[0]);
+            auto &table = symbol(a[1], Kind::Table);
+            auto &index = symbol(a[2], Kind::Field);
+            if (dst.size != table.size || index.typeName != "u16")
+                fail(line, "indexed record size/type mismatch");
+            if (index.id == dst.id)
+                fail(line, "index storage cannot alias selected record");
+            Symbol status;
+            if (a.size() == 4) {
+                status = symbol(a[3], Kind::Field);
+                if (status.typeName != "u16" || status.range.lo != 0 || status.range.hi != 1 ||
+                    status.id == dst.id ||
+                    (status.id == index.id && status.offset < index.offset + 2 &&
+                     index.offset < status.offset + 2))
+                    fail(line, "lookup status needs disjoint 0..1 u16 field");
+                writable(status, 2);
+                emitAdjustMultiLiteral(out, int(status.id), 2, status.offset, {0, 0});
+            } else if (index.range.lo < 0 || index.range.hi >= table.records)
+                fail(line, "unbounded lookup requires explicit status field");
+            for (unsigned r = 0; r < table.records; ++r)
+                validateFields(dst, table.data, r * table.size);
+            unsigned address = scratch(3), limit = scratch(2), instruction = scratch(15),
+                     body = scratch(0);
+            initial[limit] = le16Bytes(table.records);
+            initial.erase(body);
+            Bytes copyCommand;
+            emitAdjustMultiBufferFetched(copyCommand, int(dst.id), 2, 0, table.size, int(table.id),
+                                         0);
+            initial[instruction] = copyCommand;
+            unsigned parent = currentProgram;
+            currentProgram = body;
+            Bytes code;
+            emitAdjustMultiLiteral(code, int(address), 2, 0,
+                                   {static_cast<unsigned char>(table.id),
+                                    static_cast<unsigned char>(table.id >> 8), 0});
+            emitAdjustMultiBufferFetched(code, int(address), 4, 0, 2, int(index.id), index.offset);
+            copy(code, instruction, 11, address, 0, 2);
+            call(code, instruction);
+            if (a.size() == 4)
+                emitAdjustMultiLiteral(code, int(status.id), 2, status.offset, {1, 0});
+            programs[body] = code;
+            currentProgram = parent;
+            emitCondCallBufferValue(out, int(body), 4, int(index.id), index.offset, int(limit), 0);
+            edges[parent].insert(body);
+            listing << "lookup " << parent << " table " << table.id << " count " << table.records
+                    << " stride " << table.size << " instruction " << instruction
+                    << " source_id_offset 11 guarded_body " << body << "\n";
+            return;
+        }
         if (op == "print") {
             out.insert(out.end(), n.text.begin(), n.text.end());
             return;
@@ -855,6 +991,8 @@ class Compiler {
     }
 
   public:
+    explicit Compiler(std::filesystem::path directory = std::filesystem::current_path())
+        : sourceDirectory(std::move(directory)) {}
     Result run(const std::string &source) {
         auto nodes = Parser(source).block();
         for (const auto &n : nodes)
@@ -862,12 +1000,15 @@ class Compiler {
         for (const auto &n : nodes)
             if (n.name == "field")
                 field(n);
+        for (const auto &kv : syms)
+            if (kv.second.kind == Kind::Asset)
+                validateFields(kv.second, kv.second.data, 0);
         for (const auto &n : nodes)
             if (n.name == "program")
                 markMutable(n.body);
         for (const auto &n : nodes)
             if (n.name != "buffer" && n.name != "field" && n.name != "matrix" &&
-                n.name != "program")
+                n.name != "program" && n.name != "asset" && n.name != "table")
                 statement(n, setup);
         bootstrapBounds = bounds;
         for (const auto &n : nodes)
@@ -915,13 +1056,21 @@ class Compiler {
             if (kv.second.kind != Kind::Field)
                 listing << "symbol " << kv.first << " " << kv.second.id << " "
                         << (kv.second.kind == Kind::Program ? programs.at(kv.second.id).size()
-                                                           : kv.second.size)
+                                                            : kv.second.size)
                         << " " << int(kv.second.kind) << "\n";
         listing << "bootstrap_bytes " << r.code.size() << "\nresident_payload_bytes " << resident
                 << "\nowned_ids " << ids.size() << "\n";
+        for (unsigned id : ids) {
+            command(r.clear, id, 2);
+            listing << "owned " << id << "\n";
+        }
+        listing << "cleanup_bytes " << r.clear.size() << "\n";
         r.map = listing.str();
         return r;
     }
 };
-inline Result compile(const std::string &source) { return Compiler().run(source); }
+inline Result compile(const std::string &source,
+                      const std::filesystem::path &directory = std::filesystem::current_path()) {
+    return Compiler(directory).run(source);
+}
 } // namespace hosted

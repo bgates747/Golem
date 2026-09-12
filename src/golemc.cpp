@@ -726,7 +726,8 @@ int main(int argc, char **argv) {
         const char *input=argv[hostedMode?2:1],*output=argv[hostedMode?3:2];
         std::string src = readFile(input);
         std::vector<unsigned char> compiled;
-        if(hostedMode){auto result=hosted::compile(src);compiled=std::move(result.code);
+        if(hostedMode){auto result=hosted::compile(src,std::filesystem::path(input).parent_path());compiled=std::move(result.code);
+            writeFile(std::string(output)+".clear",result.clear);
             writeFile(std::string(output)+".map",std::vector<unsigned char>(result.map.begin(),result.map.end()));
         }else compiled=compile(src);
         writeFile(output, compiled);

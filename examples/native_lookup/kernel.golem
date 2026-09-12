@@ -1,0 +1,24 @@
+// Resident data selection, then VDP matrix arithmetic. Host sends only index.
+Table samples(4000,8,4,"records.dat");
+Asset everyByte(4100,"bytes.dat",256);
+Buffer state(1000,4);
+Field index(state,0,u16);
+Field ok(state,2,u16,0,1);
+Buffer constants(1001,2);
+Field one(constants,0,u16,1,1);
+Set(one,1);
+Buffer record(1500,8);
+Field a(record,0,s32,-100,100);
+Field b(record,4,s32,1,10);
+Matrix left(1100,1,1);
+Matrix right(1101,1,1);
+Matrix product(1102,1,1);
+Program fetch(2000) {
+    LoadIndexed(record,samples,index,ok);
+    CallIf(project,ok,eq,one);
+};
+Program project(2001) {
+    MatLoad(left,a);
+    MatLoad(right,b);
+    MatMul(product,left,right);
+};
