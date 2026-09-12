@@ -353,6 +353,40 @@ negative endpoints, byte carries, source preservation and neighbour sentinels.
 See Rally evidence/golem-floor. This qualifies the primitive, not yet the scenery
 heading or full frontend.
 
+## Pixel viewport and graphics scrolling
+
+`GraphicsViewport(left,top,right,bottom)` takes nonnegative s16 fields in
+pixel coordinates, with the caller responsible for the active mode/origin and
+on-screen ordered rectangle. It emits VDU24's wire order left,bottom,right,top,
+then a non-drawing absolute PLOT4(0,0). The move updates the graphics cursor stack
+and synchronizes Canvas clipping for subsequent raw bitmap commands. Stock
+rejects invalid rectangles and preserves the prior viewport; the move still
+occurs. This intrinsic does not switch coordinate systems or silently clamp a
+rectangle. Fully specifying each subsequent polygon avoids reliance on the
+previous graphics cursor stack.
+
+`ScrollGraphics(direction,amount)` emits VDU23,7 with graphics extent2. Direction
+is a u8/u16 field bounded0..3 (right,left,down,up); amount is u8/u16 bounded0..255.
+The caller must ensure the current valid viewport's size along that axis is at
+least amount. The compiler cannot prove runtime mode/viewport dimensions across
+arbitrary external host commands. Pinned native scrolling does not clamp all
+out-of-region moves: an unsupported255-row move in a60-row region crashed the
+direct-reference harness. Rally only needs horizontal moves0..255 in width320.
+The operation uses the stock text background fill colour. Both commands finish
+their private patch/call expansion, with no user callback or yield inside it.
+
+Rally SCENERY.md records native proof that reversed Y endpoints are ignored and
+that correct ordering alone leaves raw bitmap Canvas clipping stale. New
+independent outside-region assertions qualify the PLOT4 synchronization. No
+upstream changes or custom VDP commands are involved. All30 native image pairs
+match direct stock commands exactly, with independently verified preservation
+of every outside-region pixel, nonempty in-region rendering, and the marker
+bitmap after full-view restoration. Cases cover all four directions, zero/equal
+extent movements, one-pixel regions and255-pixel horizontal movement in width320.
+The complete host sanitizer/golden/negative suite passes, including the new
+viewport target. See Rally evidence/golem-viewport/qualification.json. This
+primitive qualification does not establish retained scenery or full-scene timing.
+
 ## Primary source qualification
 
 Read locally on 2026-09-12: agon-docs Buffered-Commands-API.md (commands 0,5,6,

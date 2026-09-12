@@ -1490,6 +1490,49 @@ class Compiler {
             emitLE16(out, limit);
             return;
         }
+        if (op == "graphicsviewport") {
+            count(n, 4);
+            std::vector<Symbol> coordinates;
+            for (const auto &arg : a) {
+                const auto &f = symbol(arg, Kind::Field);
+                if (f.typeName != "s16" || f.range.lo < 0)
+                    fail(line, "GraphicsViewport requires nonnegative signed word pixel coordinates");
+                coordinates.push_back(f);
+            }
+            // Public order is left,top,right,bottom in pixel coordinates.
+            // Stock wire order is left,bottom,right,top even in pixel mode.
+            // Runtime screen bounds/order are stock semantics: an invalid
+            // rectangle leaves the previous viewport unchanged.
+            // VDU24 updates Context but raw bitmap drawing uses the Canvas
+            // clipping state from the last PLOT. A non-drawing absolute move
+            // synchronizes that state, including full-viewport restoration.
+            unsigned instruction = scratch(15);
+            initial[instruction] = {24, 0, 0, 0, 0, 0, 0, 0, 0, 25, 4, 0, 0, 0, 0};
+            const unsigned order[] = {0, 3, 2, 1};
+            for (unsigned i = 0; i < 4; ++i) {
+                const auto &f = coordinates[order[i]];
+                copy(out, instruction, 1 + i * 2, f.id, f.offset, 2);
+            }
+            call(out, instruction);
+            listing << "graphics_viewport " << currentProgram << " pixel_left_top_right_bottom wire_0_3_2_1 plot4_sync\n";
+            return;
+        }
+        if (op == "scrollgraphics") {
+            count(n, 2);
+            const auto &direction = symbol(a[0], Kind::Field), &amount = symbol(a[1], Kind::Field);
+            auto boundedByte = [](const Symbol &f, unsigned limit) {
+                return (f.typeName == "u8" || f.typeName == "u16") && f.range.lo >= 0 && f.range.hi <= limit;
+            };
+            if (!boundedByte(direction, 3) || !boundedByte(amount, 255))
+                fail(line, "ScrollGraphics requires direction0..3 and amount0..255 unsigned fields");
+            unsigned instruction = scratch(5);
+            initial[instruction] = {23, 7, 2, 0, 0};
+            copy(out, instruction, 3, direction.id, direction.offset, 1);
+            copy(out, instruction, 4, amount.id, amount.offset, 1);
+            call(out, instruction);
+            listing << "scroll_graphics " << currentProgram << " extent2 direction0_right_1_left_2_down_3_up\n";
+            return;
+        }
         if (op == "drawbitmap") {
             if (a.size() != 3 && a.size() != 4)
                 fail(line, "DrawBitmap needs bitmap,x,y and optional affine matrix");

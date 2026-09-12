@@ -1,0 +1,19 @@
+Buffer input(1000,12);
+Field left(input,0,s16,0,319); Field top(input,2,s16,0,239);
+Field right(input,4,s16,0,319); Field bottom(input,6,s16,0,239);
+Field direction(input,8,u16,0,3); Field amount(input,10,u16,0,255);
+Buffer constants(1001,16);
+Field zero(constants,0,s16,0,0); Field maxX(constants,2,s16,319,319); Set(maxX,319);
+Field maxY(constants,4,s16,239,239); Set(maxY,239);
+Field negative(constants,6,s16,-10,-10); Set(negative,-10);
+Field markerX(constants,8,s16,180,180); Set(markerX,180);
+Field markerY(constants,10,s16,180,180); Set(markerY,180);
+Field bitmap(constants,12,u16,0,0);
+Field marker(constants,14,u16,1,1); Set(marker,1);
+Program draw(2000) {
+    GraphicsViewport(left,top,right,bottom);
+    DrawBitmap(bitmap,negative,negative);
+    ScrollGraphics(direction,amount);
+    GraphicsViewport(zero,zero,maxX,maxY);
+    DrawBitmap(marker,markerX,markerY);
+};
