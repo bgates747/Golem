@@ -1,4 +1,4 @@
-# Resident lookup/lifecycle probe (R19-05 in progress)
+# Resident lookup/lifecycle probe (R19-05)
 
 This example uses the existing C++ Golem compiler's hosted mode. The editable
 `make_assets.py` produces four signed record pairs and an all-byte fixture.
@@ -51,6 +51,14 @@ which can equal its 0xFF wait sentinel. A missing-buffer copy leaves a known
 0x55 tag; all tested owned first bytes differ from that tag before cleanup.
 
 These are parser/buffer observations, not rendering-completion evidence. ID and
-payload ledgers do not establish allocator/metadata balance. Full 80-byte Rally
-admission, malformed packets, sequence policy and allocator measurements remain
-open under R19-05. The shared authoritative register is Rally's root TODO.md.
+payload ledgers alone do not establish allocator/metadata balance. The expanded
+probe below supplies live allocation observations; the full 80-byte admission
+probe is documented in `examples/native_admission/README.md`. Full-game stability
+remains later work in the shared authoritative Rally root TODO.md.
+
+The expanded R19-05 fixture adds a 65535-byte asset and a multiblock bootstrap
+larger than 64 KiB. It samples asset offsets 0/255/256/32767/32768/65534, and table
+IDs 4094..4097 exercise low-byte address carry. `probe_lookup.py UNIQUE --memory`
+adds nine 4096-call batches, externally sampled live allocations, and a headless
+Escape injection proving return to outer keyboard processing. See
+`docs/design/rally19-resident-v1.md` for measured limits and diagnostic scope.

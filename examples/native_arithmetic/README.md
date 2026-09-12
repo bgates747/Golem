@@ -56,11 +56,11 @@ production rendering-completion measurement. Full scene performance remains a
 later goal milestone.
 
 Public TransformData currently qualifies
-bounded binary32 tuples only; checked fixed output uses StoreI16Floor. Bulk field
-copy and raw matrix mutation deliberately reject until their range/cache behavior
-is qualified. Matrix state must be explicitly created with an intrinsic before
-use; allocation alone does not install stock matrix metadata. Assets, dynamic
-indexing, production state admission and full resource lifecycle are R19-05.
+bounded binary32 tuples only; checked fixed output uses StoreI16Floor. Unstructured bulk field
+copy and raw matrix mutation deliberately reject. R19-05 adds fully covered typed
+CopyRecord and validated Asset/Table lookup; see `rally19-resident-v1.md`. Matrix state must be explicitly created with an intrinsic before
+use; allocation alone does not install stock matrix metadata. Resident data/admission/lifecycle qualification is described in
+`docs/design/rally19-resident-v1.md`; full-scene integration remains later work.
 Hosted legacy uint16-expression/For-Next integration is not yet implemented;
 ordinary Golem mode and its regression contract are preserved.
 

@@ -9,8 +9,7 @@ The Buffered Commands API lets command sequences be stored in VDP-resident
 buffers and executed there directly, without round-tripping through MOS on
 the eZ80. It provides memory (buffers/blocks), byte-wise arithmetic and
 logic, conditional and unconditional branching, and call/return — enough
-to be Turing-complete, but with no general-purpose registers, no hardware
-multiply/divide/shift, and no indexed/pointer addressing mode (array and
+to be Turing-complete, but with no general-purpose integer registers or indexed/pointer addressing mode (array and
 pointer access must be compiled to self-modifying "patch, then execute"
 code).
 
@@ -29,8 +28,21 @@ Goals for Golem:
 
 ## Status
 
-Early design/exploration stage. See [docs/devlog](docs/devlog/) for
-progress notes and [docs/design](docs/design/) for design documents.
+The isolated `rally19-vdp` branch extends the existing C++ compiler with an opt-in
+hosted mode. Stock float/matrix operations now provide arithmetic, affine
+reciprocal/rotation and checked signed output; resident imports, guarded indexing
+and finite state admission support the Rally offload goal. This is a qualified
+prototype, with full-scene integration and performance work still outstanding.
+
+Build with `make -C src`; run `.venv/bin/python tests/run_hosted.py` for host
+sanitizer/regression tests. `build/golemc --hosted input.golem output.bin` emits
+the bootstrap plus `.map` and `.clear`. Ordinary `golemc input output` retains
+the legacy language. See [hosted design](docs/design/rally19-hosted-v1.md),
+[resident data/admission](docs/design/rally19-resident-v1.md), and the native
+examples for headless test commands. Goal progress lives only in the sibling
+AgonArcade execution worktree's root TODO.md. No hardware acceptance is implied.
+
+See [docs/devlog](docs/devlog/) for chronological evidence.
 
 ## Reference material
 
@@ -51,7 +63,7 @@ reference/    Vendored/curated reference material (not a build dependency)
 runtime/
   legacy-asm/ Hand-written ZDS/ez80asm-style eZ80 runtime library code
   agondev/    (future) eZ80/MOS-side loader/runtime built via agondev
-src/          Compiler/toolchain source (not yet started)
+src/          C++ compiler, ordinary and hosted frontends
 tools/        Auxiliary tooling/scripts (not the compiler itself)
 examples/     Example Golem programs
 tests/        Test suite

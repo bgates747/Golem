@@ -77,7 +77,7 @@ bool upload() {
     vdp_adv_clear_buffer(0);
     while ((n = fread(block, 1, sizeof(block), f))) {
         total += n;
-        if (total > 65535) {
+        if (total > 1024UL * 1024) {
             fclose(f);
             return false;
         }
@@ -111,14 +111,33 @@ bool collect(FILE *f, unsigned id, unsigned count) {
     }
     return true;
 }
+bool memoryProbe = false;
+void memoryPhase(unsigned number) {
+    if (!memoryProbe)
+        return;
+    FILE *f = fopen("memory.phase", "w");
+    if (f) {
+        fprintf(f, "%u\n", number);
+        fclose(f);
+    }
+    // Give the independent SDL-thread sampler an idle, quiescent observation.
+    uint32_t start = ticks();
+    while (ticks() - start < 30) {
+    }
+}
 int run() {
     if (vdp_mode(8) < 0)
         return 1;
+    FILE *memory = fopen("memory.test", "rb");
+    memoryProbe = memory != nullptr;
+    if (memory)
+        fclose(memory);
     const uint8_t canary[] = {0x34, 0x12}, reply[] = {23, 0, 128, 0};
     vdp_adv_clear_buffer(Foreign);
     vdp_adv_write_block_data(Foreign, 2, (char *)canary);
     vdp_adv_clear_buffer(Query);
     vdp_adv_write_block_data(Query, 4, (char *)reply);
+    memoryPhase(1);
     FILE *out = fopen("results.dat", "wb"), *all = fopen("bytes.dat", "wb"),
          *life = fopen("lifecycle.dat", "wb");
     FILE *owned = fopen("owned.dat", "rb");
@@ -156,6 +175,20 @@ int run() {
             }
             if (!collect(all, 4100, 256))
                 return 10;
+            const unsigned offsets[] = {0, 255, 256, 32767, 32768, 65534};
+            for (unsigned offset : offsets) {
+                uint8_t value;
+                if (!query(4200, offset, value) || fwrite(&value, 1, 1, all) != 1)
+                    return 19;
+            }
+            memoryPhase(100 + cycle * 10 + round);
+            if (memoryProbe) {
+                for (unsigned i = 0; i < 4096; ++i)
+                    call(2000);
+                if (!poll(0xa5))
+                    return 17;
+            }
+            memoryPhase(200 + cycle * 10 + round);
         }
         // First bytes before/after cleanup, including compiler-private IDs.
         for (unsigned i = 0; i < idCount; ++i)
@@ -168,9 +201,17 @@ int run() {
                 return 13;
         if (!collect(life, Foreign, 2))
             return 14;
+        memoryPhase(300 + cycle);
     }
     if (fclose(out) || fclose(all) || fclose(life))
         return 15;
+    if (memoryProbe) {
+        memoryPhase(999);
+        uint32_t start = ticks();
+        while (!(vdp_getKeyMap(14) & 1))
+            if (ticks() - start > 240)
+                return 18;
+    }
     vdp_adv_clear_buffer(Query);
     vdp_adv_clear_buffer(Foreign);
     if (!poll(0xa5))

@@ -1,6 +1,7 @@
 // Resident data selection, then VDP matrix arithmetic. Host sends only index.
-Table samples(4000,8,4,"records.dat");
+Table samples(4094,8,4,"records.dat");
 Asset everyByte(4100,"bytes.dat",256);
+Asset largeData(4200,"large.dat",65535);
 Buffer state(1000,4);
 Field index(state,0,u16);
 Field ok(state,2,u16,0,1);

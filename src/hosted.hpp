@@ -85,7 +85,9 @@ class Parser {
 
   public:
     explicit Parser(const std::string &s) : src(s) {}
-    std::vector<Node> block(bool nested = false) {
+    std::vector<Node> block(bool nested = false, unsigned depth = 0) {
+        if (depth > 32)
+            fail(lineNumberAt(src, p), "hosted syntax nesting exceeds 32");
         std::vector<Node> out;
         for (;;) {
             ws();
@@ -122,7 +124,7 @@ class Parser {
             }
             if (n.name == "program" || n.name == "repeat") {
                 need('{');
-                n.body = block(true);
+                n.body = block(true, depth + 1);
             }
             need(';');
             out.push_back(n);
@@ -202,6 +204,8 @@ class Compiler {
     std::map<unsigned, std::vector<Range>> bounds, bootstrapBounds;
     std::set<unsigned> mutableMatrices;
     std::set<unsigned> finiteRepeat;
+    std::map<unsigned, unsigned> comparisonConstants;
+    std::map<std::pair<unsigned, unsigned>, unsigned> rejectionPrograms;
     Bytes setup;
     std::ostringstream listing;
     unsigned nextInternal = 2, currentProgram = 0;
@@ -465,6 +469,8 @@ class Compiler {
         s.data.clear();
         s.kind = Kind::Field;
         s.offset = integer(n.args[1], 65535);
+        if (n.args[2].number || n.args[2].quoted)
+            fail(line, "field type must be an identifier");
         s.typeName = lower(n.args[2].text);
         auto t = type(s.typeName, line);
         s.range = t.range;
@@ -521,6 +527,92 @@ class Compiler {
             markMutable(n.body);
         }
     }
+    unsigned comparisonConstant(unsigned value) {
+        auto found = comparisonConstants.find(value);
+        if (found != comparisonConstants.end())
+            return found->second;
+        unsigned id = scratch(2);
+        initial[id] = le16Bytes(value);
+        comparisonConstants[value] = id;
+        return id;
+    }
+    unsigned rejectProgram(const Symbol &status) {
+        if (status.typeName != "u16" || status.range.lo != 0 || status.range.hi != 1)
+            fail(line, "validation status must be 0..1 u16");
+        writable(status, 2);
+        auto key = std::make_pair(status.id, status.offset);
+        auto found = rejectionPrograms.find(key);
+        if (found != rejectionPrograms.end())
+            return found->second;
+        unsigned id = scratch(0);
+        initial.erase(id);
+        emitAdjustMultiLiteral(programs[id], int(status.id), 2, status.offset, {0, 0});
+        rejectionPrograms[key] = id;
+        return id;
+    }
+    void condition(Bytes &out, unsigned caller, unsigned target, unsigned op, unsigned left,
+                   unsigned leftOffset, unsigned right, unsigned rightOffset) {
+        emitCondCallBufferValue(out, int(target), static_cast<unsigned char>(op), int(left),
+                                leftOffset, int(right), rightOffset);
+        edges[caller].insert(target);
+    }
+    void requireRange(Bytes &out, const Symbol &field, Range range, const Symbol &status) {
+        auto t = type(field.typeName, line);
+        if (field.typeName == "f32" || field.id == status.id)
+            fail(line, "range validation requires fixed storage separate from status");
+        if (!std::isfinite(range.lo) || !std::isfinite(range.hi) || range.lo < t.range.lo ||
+            range.hi > t.range.hi || range.lo > range.hi)
+            fail(line, "invalid runtime range");
+        unsigned reject = rejectProgram(status);
+        const bool fixed = field.typeName == "q8s16" || field.typeName == "q8s32";
+        const bool signedType = field.typeName != "u8" && field.typeName != "u16";
+        int64_t lo = int64_t(std::ceil(range.lo * (fixed ? 256 : 1)));
+        int64_t hi = int64_t(std::floor(range.hi * (fixed ? 256 : 1)));
+        if (lo > hi)
+            fail(line, "runtime range contains no representable values");
+        // Compare ordered raw bytes. Each byte is zero-extended to a u16 word,
+        // so even 0xff bytes cannot collide with firmware's 0xffff sentinel.
+        unsigned bytes = scratch(t.bytes * 2);
+        for (unsigned i = 0; i < t.bytes; ++i)
+            copy(out, bytes, i * 2, field.id, field.offset + i, 1);
+        if (signedType)
+            emitAdjustMultiLiteral(out, int(bytes), 7, (t.bytes - 1) * 2, {0x80});
+        uint32_t sign = signedType ? UINT32_C(1) << (t.bytes * 8 - 1) : 0;
+        const uint32_t limits[] = {uint32_t(lo) ^ sign, uint32_t(hi) ^ sign};
+        for (unsigned side = 0; side < 2; ++side) {
+            unsigned next = 0;
+            for (unsigned i = 0; i < t.bytes; ++i) {
+                unsigned stage = scratch(0);
+                initial.erase(stage);
+                unsigned constant = comparisonConstant((limits[side] >> (i * 8)) & 255);
+                condition(programs[stage], stage, reject, side ? 5 : 4, bytes, i * 2, constant, 0);
+                if (next)
+                    condition(programs[stage], stage, next, 2, bytes, i * 2, constant, 0);
+                next = stage;
+            }
+            call(out, next);
+        }
+        listing << "require_range " << currentProgram << " " << field.id << ":" << field.offset
+                << " " << field.typeName << " " << range.lo << " " << range.hi << " sticky_status "
+                << status.id << ":" << status.offset << "\n";
+    }
+    std::vector<Symbol> recordLayout(const Symbol &owner) {
+        std::vector<Symbol> fields;
+        for (const auto &kv : syms)
+            if (kv.second.kind == Kind::Field && kv.second.id == owner.id)
+                fields.push_back(kv.second);
+        std::sort(fields.begin(), fields.end(),
+                  [](const Symbol &a, const Symbol &b) { return a.offset < b.offset; });
+        unsigned end = 0;
+        for (const auto &field : fields) {
+            if (field.offset != end)
+                fail(line, "record fields must cover storage without gaps/aliases");
+            end += type(field.typeName, line).bytes;
+        }
+        if (end != owner.size)
+            fail(line, "record fields must cover complete storage");
+        return fields;
+    }
     void statements(const std::vector<Node> &nodes, Bytes &out) {
         for (const auto &n : nodes)
             statement(n, out);
@@ -529,6 +621,56 @@ class Compiler {
         line = n.line;
         const auto &a = n.args;
         const auto &op = n.name;
+        if (op == "requirerange") {
+            if (a.size() != 2 && a.size() != 4)
+                fail(line, "RequireRange needs field, [low, high,] sticky status");
+            auto &f = symbol(a[0], Kind::Field);
+            Range range = f.range;
+            if (a.size() == 4) {
+                if (!a[1].number || !a[2].number)
+                    fail(line, "runtime range bounds must be numeric");
+                range = {a[1].value, a[2].value};
+            }
+            requireRange(out, f, range, symbol(a.back(), Kind::Field));
+            return;
+        }
+        if (op == "requireequal") {
+            count(n, 3);
+            auto &l = symbol(a[0], Kind::Field);
+            auto &r = symbol(a[1], Kind::Field);
+            auto &status = symbol(a[2], Kind::Field);
+            if (l.typeName != r.typeName || l.typeName == "f32" || l.id == status.id ||
+                r.id == status.id)
+                fail(line, "RequireEqual needs matching fixed types separate from status");
+            unsigned reject = rejectProgram(status), left = scratch(2), right = scratch(2);
+            for (unsigned i = 0; i < type(l.typeName, line).bytes; ++i) {
+                copy(out, left, 0, l.id, l.offset + i, 1);
+                copy(out, right, 0, r.id, r.offset + i, 1);
+                condition(out, currentProgram, reject, 3, left, 0, right, 0);
+            }
+            listing << "require_equal " << currentProgram << " " << l.id << ":" << l.offset << " "
+                    << r.id << ":" << r.offset << " sticky_status " << status.id << ":"
+                    << status.offset << "\n";
+            return;
+        }
+        if (op == "copyrecord") {
+            count(n, 2);
+            auto &dst = buffer(a[0]);
+            auto &src = buffer(a[1]);
+            if (dst.id == src.id || dst.size != src.size)
+                fail(line, "record size/alias mismatch");
+            auto df = recordLayout(dst), sf = recordLayout(src);
+            if (df.size() != sf.size())
+                fail(line, "record layouts differ");
+            for (unsigned i = 0; i < df.size(); ++i) {
+                writable(df[i], type(df[i].typeName, line).bytes);
+                if (df[i].offset != sf[i].offset || df[i].typeName != sf[i].typeName ||
+                    sf[i].range.lo < df[i].range.lo || sf[i].range.hi > df[i].range.hi)
+                    fail(line, "record copy does not preserve field layout/ranges");
+            }
+            copy(out, dst.id, 0, src.id, 0, dst.size);
+            return;
+        }
         if (op == "loadindexed") {
             if (a.size() != 3 && a.size() != 4)
                 fail(line, "LoadIndexed needs destination, table, index [, status]");
@@ -994,6 +1136,7 @@ class Compiler {
     explicit Compiler(std::filesystem::path directory = std::filesystem::current_path())
         : sourceDirectory(std::move(directory)) {}
     Result run(const std::string &source) {
+        listing << std::setprecision(17);
         auto nodes = Parser(source).block();
         for (const auto &n : nodes)
             declare(n);
@@ -1036,11 +1179,24 @@ class Compiler {
         visit(0, 1);
         Result r;
         r.code = {23, 0, 248, 1, 0, 1, 0}; // Stock affine feature flag, no firmware modification.
-        unsigned resident = 0;
+        unsigned resident = 0, assetBytes = 0, programBytes = 0, scratchBytes = 0;
+        std::set<unsigned> assetIds, executableIds;
+        for (const auto &kv : syms)
+            if (kv.second.kind == Kind::Asset || kv.second.kind == Kind::Table)
+                for (unsigned i = 0; i < kv.second.records; ++i)
+                    assetIds.insert(kv.second.id + i);
+        for (const auto &edge : edges)
+            executableIds.insert(edge.second.begin(), edge.second.end());
         for (const auto &kv : initial) {
             command(r.code, kv.first, 2);
             emitWriteBlock(r.code, int(kv.first), kv.second);
             resident += unsigned(kv.second.size());
+            if (assetIds.count(kv.first))
+                assetBytes += unsigned(kv.second.size());
+            else if (executableIds.count(kv.first))
+                programBytes += unsigned(kv.second.size());
+            else
+                scratchBytes += unsigned(kv.second.size());
         }
         for (const auto &kv : programs) {
             if (kv.second.size() > 65535)
@@ -1048,9 +1204,12 @@ class Compiler {
             command(r.code, kv.first, 2);
             emitWriteBlock(r.code, int(kv.first), kv.second);
             resident += unsigned(kv.second.size());
+            programBytes += unsigned(kv.second.size());
         }
         r.code.insert(r.code.end(), setup.begin(), setup.end());
-        if (ids.size() > 1024 || resident > 1024 * 1024)
+        if (assetBytes > 512 * 1024 || programBytes > 128 * 1024 || scratchBytes > 64 * 1024)
+            fail(1, "hosted asset/program/scratch budget exceeded");
+        if (ids.size() > 1024 || resident + r.code.size() > 1024 * 1024)
             fail(1, "hosted resident resource budget exceeded");
         for (const auto &kv : syms)
             if (kv.second.kind != Kind::Field)
@@ -1059,7 +1218,10 @@ class Compiler {
                                                             : kv.second.size)
                         << " " << int(kv.second.kind) << "\n";
         listing << "bootstrap_bytes " << r.code.size() << "\nresident_payload_bytes " << resident
-                << "\nowned_ids " << ids.size() << "\n";
+                << "\nowned_ids " << ids.size() << "\nasset_payload_bytes " << assetBytes
+                << "\nprogram_payload_bytes " << programBytes << "\nscratch_payload_bytes "
+                << scratchBytes << "\nresident_plus_bootstrap_payload_bytes "
+                << resident + r.code.size() << "\n";
         for (unsigned id : ids) {
             command(r.clear, id, 2);
             listing << "owned " << id << "\n";

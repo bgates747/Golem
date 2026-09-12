@@ -57,6 +57,12 @@ int main() {
     reject("Table samples(4000,8,2,\"records.dat\"); Buffer record(1500,8); Field "
            "x(record,0,s32,0,10); Buffer state(1000,2); Field index(state,0,u16,0,1); Program "
            "p(2000) { LoadIndexed(record,samples,index); };");
+    writeFile((root / "large.dat").string(), std::vector<unsigned char>(65535, 0));
+    std::string assets;
+    for (unsigned i = 0; i < 9; ++i)
+        assets += "Asset a" + std::to_string(i) + "(" + std::to_string(5000 + i) +
+                  ",\"large.dat\",65535); ";
+    reject(assets);
     puts("Resident imports: exact sizes, source-relative assets, typed records, ID collisions, "
-         "guarded patch lowering and 13 negatives pass.");
+         "guarded patch lowering and 14 negatives pass.");
 }
