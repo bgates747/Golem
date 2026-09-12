@@ -31,8 +31,15 @@ Goals for Golem:
 The isolated `rally19-vdp` branch extends the existing C++ compiler with an opt-in
 hosted mode. Stock float/matrix operations now provide arithmetic, affine
 reciprocal/rotation and checked signed output; resident imports, guarded indexing
-and finite state admission support the Rally offload goal. This is a qualified
-prototype, with full-scene integration and performance work still outstanding.
+and finite state admission support the Rally offload goal. Full-scene integration
+and the frozen native-emulator performance criteria passed on the earlier
+programs. Physical stock VDP then exposed its4096-byte processLoop stack limit.
+The opt-in `InlineCalls(...)` correction passes compiler, full frozen scene,
+both-track long replay and control regression. The Author confirmed it runs after
+a board reset on restored official VDP2.16.0, but it remains visibly slow. Sparse
+diagnostic observations were about1.19 resident-call returns/second; these are
+not a scanout FPS measurement. The current lowering has not provided a useful
+hardware acceleration. Final native timing and delivery remain open.
 
 Build with `make -C src`; run `.venv/bin/python tests/run_hosted.py` for host
 sanitizer/regression tests. `build/golemc --hosted input.golem output.bin` emits
@@ -40,7 +47,7 @@ the bootstrap plus `.map` and `.clear`. Ordinary `golemc input output` retains
 the legacy language. See [hosted design](docs/design/rally19-hosted-v1.md),
 [resident data/admission](docs/design/rally19-resident-v1.md), and the native
 examples for headless test commands. Goal progress lives only in the sibling
-AgonArcade execution worktree's root TODO.md. No hardware acceptance is implied.
+AgonArcade execution worktree's root TODO.md. Physical performance is not accepted.
 
 See [docs/devlog](docs/devlog/) for chronological evidence.
 

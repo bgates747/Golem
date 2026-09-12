@@ -1,5 +1,38 @@
 # Project Handoff
 
+## Current isolated RALLY-19 worktree
+
+This checkout is `/home/smith/Agon/mystuff/golem-rally19`, branch `rally19-vdp`.
+The sections below describe the project's earlier starting point; statements
+there about missing compiler/tests/profiles are historical. For current hosted
+semantics prefer `docs/design/rally19-hosted-v1.md` and
+`docs/design/rally19-resident-v1.md`, then `docs/devlog/2026-09-12-rally19.md`.
+
+Build the existing C++ compiler with `make -C src`; run the complete host suite
+with this checkout's `.venv/bin/python tests/run_hosted.py`. Hosted compilation
+is `build/golemc --hosted input.golem output.bin`; ordinary compilation retains
+the legacy frontend. Typed hosted programs lower to finite stock-VDP buffered
+command sequences; do not substitute a Python bytecode compiler.
+
+The single active execution register is `../AgonArcade-rally19/TODO.md`.
+Rally's `docs/tasks/RALLY-19/BUILDING.md` locates the actual generated Golem scene
+sources and reproducible production build. Its HARDWARE-DEBUG.md owns the latest
+ESP32 diagnosis and firmware/card state. Native integration and earlier timing
+passed, but physical stock VDP exposed processLoop stack exhaustion. The current
+InlineCalls correction now runs on the original4096-byte diagnostic stack and
+restored official VDP2.16.0. The Author confirmed continued, slow operation after
+the board reset button; no cold power-cycle test was performed. This fixes the
+observed startup crash, not the unacceptable hardware rendering speed. Final
+native timing and delivery remain open. Do not infer ESP32 performance or general
+stack safety from the native host emulator.
+
+Preserve the separate original `/home/smith/Agon/mystuff/golem` checkout and its
+untracked deployment files. Earlier design checklists below are history, not
+additional authoritative TODOs. Do not push or mark RALLY-19 complete while
+R19-11/R19-12 remain open. Later explicit Author hardware/diagnostic permissions
+are recorded in Rally HARDWARE-DEBUG.md; original no-hardware goal wording alone
+does not revoke them.
+
 Read `/home/smith/Agon/mystuff/agon-dev-env/codex/AGENTS.md` first — it owns
 reusable environment, workflow, and repository conventions shared across all
 Agon projects. This file contains only Golem-specific information.

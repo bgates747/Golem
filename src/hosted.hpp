@@ -204,6 +204,11 @@ class Compiler {
     std::map<unsigned, std::vector<Range>> bounds, bootstrapBounds;
     std::set<unsigned> mutableMatrices;
     std::set<unsigned> finiteRepeat;
+    // Only compiler-recorded, unconditional call sites may be inlined. Never
+    // scan raw byte payloads: data and patched command operands can look like calls.
+    std::set<unsigned> inlineTargets;
+    std::map<unsigned, std::vector<std::pair<size_t, unsigned>>> directCalls;
+
     std::map<unsigned, unsigned> comparisonConstants;
     std::map<std::pair<unsigned, unsigned>, unsigned> rejectionPrograms;
     Bytes setup;
@@ -307,6 +312,7 @@ class Compiler {
                 << from << " " << size << "\n";
     }
     void call(Bytes &out, unsigned id) {
+        directCalls[currentProgram].push_back({out.size(), id});
         command(out, id, 1);
         edges[currentProgram].insert(id);
     }
@@ -765,6 +771,13 @@ class Compiler {
         line = n.line;
         const auto &a = n.args;
         const auto &op = n.name;
+        if (op == "inlinecalls") {
+            if (currentProgram || a.empty())
+                fail(line, "InlineCalls requires named programs at top level");
+            for (const auto &arg : a)
+                inlineTargets.insert(symbol(arg, Kind::Program).id);
+            return;
+        }
         if (op == "lessthan") {
             count(n, 3);
             auto &dst = symbol(a[0], Kind::Field), &left = symbol(a[1], Kind::Field),
@@ -1747,6 +1760,57 @@ class Compiler {
         for (const auto &p : programs)
             visit(p.first, 1);
         visit(0, 1);
+        // Expand immutable named program bodies after validating the original
+        // DAG. Storage IDs and mutable instruction templates stay shared exactly
+        // as before; conditional calls and finite-loop back edges remain calls.
+        // Retain original entrypoints so external/conditional calls still work.
+        if (!inlineTargets.empty()) {
+            const auto original = programs;
+            std::map<unsigned, Bytes> expanded;
+            std::function<const Bytes &(unsigned)> expand;
+            auto rewrite = [&](unsigned owner, const Bytes &source) {
+                Bytes result;
+                size_t previous = 0;
+                for (const auto &site : directCalls[owner]) {
+                    const size_t offset = site.first;
+                    if (offset < previous || offset + 6 > source.size())
+                        fail(1, "internal inline call relocation out of range");
+                    Bytes expected;
+                    command(expected, site.second, 1);
+                    if (!std::equal(expected.begin(), expected.end(), source.begin() + offset))
+                        fail(1, "internal inline call relocation mismatch");
+                    result.insert(result.end(), source.begin() + previous, source.begin() + offset);
+                    if (inlineTargets.count(site.second)) {
+                        const auto &body = expand(site.second);
+                        if (result.size() + body.size() > 65535)
+                            fail(1, "inlined program exceeds one write block");
+                        result.insert(result.end(), body.begin(), body.end());
+                        listing << "inline_call " << owner << " at " << offset
+                                << " target " << site.second << " bytes " << body.size() << "\n";
+                    } else {
+                        result.insert(result.end(), expected.begin(), expected.end());
+                    }
+                    previous = offset + 6;
+                }
+                result.insert(result.end(), source.begin() + previous, source.end());
+                if (result.size() > 65535)
+                    fail(1, "inlined program exceeds one write block");
+                return result;
+            };
+            expand = [&](unsigned id) -> const Bytes & {
+                auto found = expanded.find(id);
+                if (found != expanded.end())
+                    return found->second;
+                auto source = original.find(id);
+                if (source == original.end())
+                    fail(1, "InlineCalls target must be a named immutable program");
+                return expanded.emplace(id, rewrite(id, source->second)).first->second;
+            };
+            for (const auto &program : original)
+                expand(program.first);
+            setup = rewrite(0, setup);
+            programs = std::move(expanded);
+        }
         Result r;
         r.code = {23, 0, 248, 1, 0, 1, 0}; // Stock affine feature flag, no firmware modification.
         unsigned resident = 0, assetBytes = 0, programBytes = 0, scratchBytes = 0;

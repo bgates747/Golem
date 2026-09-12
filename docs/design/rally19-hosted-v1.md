@@ -415,3 +415,45 @@ runtime, despite the older prose table saying a single value. Therefore this
 design avoids that ambiguous intrinsic and sets explicit matrices. No upstream
 files or firmware modules were edited. R19-04 must prove behavior natively;
 reading source and golden bytes alone are not a runtime pass.
+
+## Physical-stack call inlining (R19-11 hardware candidate)
+
+`InlineCalls(programA, programB, ...);` is an opt-in top-level directive for
+named immutable programs. It replaces unconditional calls to the listed programs
+with their already-lowered bytes. Conditional calls and externally callable
+entrypoints remain. The compiler retains storage IDs and mutable instruction
+templates, validates the original DAG first, records call offsets explicitly,
+and enforces existing per-program and aggregate resource caps after expansion.
+It does not search arbitrary data bytes for opcode patterns. The symbol map
+records each `inline_call` substitution. Inlining requires no new VDP commands.
+
+This addresses Rally exhausting the official ESP32 VDP processLoop's4096-byte
+stack despite passing the native emulator. Eight observed interpreter levels
+consumed more than that budget; selected frame/road/car wrappers are now expanded
+in the game generator. The earlier16-level compiler limit is a syntactic guard,
+**not** a physical stack guarantee. Conditional paths, lost tail-call opportunities
+and the stack of the called VDP primitive still require hardware qualification.
+Do not use raw control bytes that depend on a program's current buffer ID inside
+an inline target; those effects are outside this typed-intrinsic qualification.
+
+The implementation and14 sanitizer/golden/negative suites pass, including byte
+identity with explicitly expanded source, nested/repeated calls, unchanged
+conditional and finite-repeat semantics, cleanup identity and bounded failure.
+Rally's `docs/tasks/RALLY-19/HARDWARE-DEBUG.md` owns the physical evidence/status;
+its root TODO remains the shared execution register.
+
+Subsequent regression covers all66 frozen Rally poses (24 oval,42 Fuji), both
+full-scene lifecycle suites and834 checked-loader fault cases. The corrected
+production executable and both track assets reproduce byte-for-byte from a
+fresh research frontend. Both602-second replays and all12 native control cases
+also pass. Final native timing is still being requalified for these assets.
+
+On physical ESP32, the corrected program reached120 logged root returns on the
+original4096-byte stack, maximum observed interpreter depth six, without a panic.
+The164-byte minimum reported headroom includes diagnostic instrumentation and
+does not establish safety for every path. Official VDP2.16.0 was restored and
+flash-verified; the Author then confirmed continued operation using the board's
+reset button. Cold power-cycle behavior was not tested. Rendering remains slow
+on official firmware. The diagnostic's approximately1.19 root-call returns/sec
+is sparse timing, not a direct frame/scanout measurement. Thus this correction
+addresses the observed startup failure; it does not qualify physical performance.

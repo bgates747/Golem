@@ -1,0 +1,4 @@
+make: Entering directory '/home/smith/Agon/mystuff/golem-rally19/src'
+make: Nothing to be done for 'all'.
+make: Leaving directory '/home/smith/Agon/mystuff/golem-rally19/src'
+Host sanitizer/golden/negative tests passed; build/hosted-tests.json
