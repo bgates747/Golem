@@ -1,0 +1,30 @@
+{
+  "status": "R19-03 specified cases; not claims of implemented hosted parser",
+  "accept": [
+    "Buffer state(1000,8); Field x(state,0,s32); Matrix a(1100,1,1); Program render(2000) { MatLoad(a,x); };",
+    "Matrix a(1100,1,1); Matrix b(1101,1,1); Matrix c(1102,1,1); MatValues(a,7); MatValues(b,9); Program product(2000) { MatMul(c,a,b); };",
+    "Buffer point(1500,4); Field x(point,0,s16); Field y(point,2,s16); Matrix scalar(1100,1,1); MatValues(scalar,-3.75); Program draw(2000) { StoreI16Floor(x,scalar); PlotPoint(69,x,y); };"
+  ],
+  "reject": [
+    {"source":"Buffer a(1000,4); Buffer b(1000,4);", "reason":"duplicate ID"},
+    {"source":"Buffer a(65535,4);", "reason":"reserved ID"},
+    {"source":"Buffer a(1000,4); Field x(a,2,s32);", "reason":"field exceeds buffer"},
+    {"source":"Matrix a(1100,0,1);", "reason":"zero dimension"},
+    {"source":"Matrix a(1100,9,9);", "reason":"matrix dimension budget"},
+    {"source":"Matrix a(1100,1,2); Matrix b(1101,1,2); Matrix c(1102,1,1); MatMul(c,a,b);", "reason":"inner dimension mismatch"},
+    {"source":"Matrix a(1100,1,1); MatValues(a,1,2);", "reason":"wrong value count"},
+    {"source":"Program a(2000) { Call(a); };", "reason":"recursion"},
+    {"source":"Program a(2000) { Repeat(513) { print \"x\"; }; };", "reason":"trip budget"},
+    {"source":"Buffer a(1000,4); Field x(a,0,s32); Set(x,2147483648);", "reason":"signed literal overflow"},
+    {"source":"Buffer a(1000,4); Call(a);", "reason":"data buffer is not callable"},
+    {"source":"Buffer a(1000,4); Field x(a,0,s16); Matrix m(1100,1,1); Program p(2000) { CallIf(p,x,lt,x); };", "reason":"signed field is not a bounded unsigned condition"}
+  ],
+  "native_arithmetic_inputs": {
+    "product": [[7,9],[3,11],[-4,6]],
+    "division": [[84,7],[81,9],[42,3]],
+    "rotation_degrees": [0,45,90,-90],
+    "signed_floor": [-32768,-100,-3.75,-1,0,0.5,127.75,32767],
+    "reject_depth": [0,-1],
+    "bounded_repeat": [0,1,8,120]
+  }
+}
