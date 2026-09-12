@@ -201,6 +201,13 @@ record layout. `WidenUnsigned` also permits u8 to a containing u16 field.
 and eight s16 coordinates, patches a private GCOL/PLOT block and issues the
 accepted two-triangle sequence4,4,85,85. It performs no hidden geometry.
 
+The stock native polygon rasterizer excludes a flat top edge and the right edge,
+and includes the bottom edge. This differs from inclusive filled rectangles.
+R19-07's rectangular road/footer clears therefore use right extent320 and tops
+103/223 to cover screen column319 and rows104/224. The intrinsic preserves its
+input coordinates; it does not silently offset arbitrary polygons. This was
+confirmed against pinned fillPath source and native edge/complete-row images.
+
 Literal range proofs use the actual rounded binary32 representation, including
 underflow to zero; narrowed float stores and nonsingularity cannot be justified
 by an unrepresentable double literal. Field metadata no longer duplicates an
