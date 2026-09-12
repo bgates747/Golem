@@ -1,0 +1,13 @@
+// Raw IEEE binary32 input; stock VDP performs both operations.
+Buffer input(1000,80); Field x(input,0,f32,-8388607,8388607);
+Buffer output(1001,80);
+Field truncated(output,0,f32,-8388607,8388607);
+Field rounded(output,4,f32,-8388607,8388607);
+Buffer status(1002,10); Buffer expected(1003,2); Matrix unused(1102,1,1);
+Matrix source(1100,1,1); Matrix t(1101,1,1); Matrix r(1103,1,1);
+Field tv(t,0,f32); Field rv(r,0,f32);
+Program compute(2000) {
+    MatLoad(source,x);
+    MatTrunc(t,source); MatRoundAway(r,source);
+    Copy(truncated,tv,4); Copy(rounded,rv,4);
+};

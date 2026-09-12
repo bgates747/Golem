@@ -33,6 +33,12 @@ int main() {
     auto asset =
         hosted::compile("Asset tag(4100,\"tag.dat\",2); Field magic(tag,0,u16,43605,43605);", root);
     assert(asset.map.find("tag.dat 2 fnv1a64") != std::string::npos);
+    const std::string element =
+        "Asset tag(4100,\"tag.dat\",2); Field a(tag,0,u8,85,85); Field b(tag,1,u8,170,170); Buffer "
+        "selected(1500,1); Field value(selected,0,u8); Buffer indexBuffer(1000,2); Field "
+        "index(indexBuffer,0,u16); Buffer statusBuffer(1002,2); Field ok(statusBuffer,0,u16,0,1); ";
+    auto selected = hosted::compile(element + "LoadElement(selected,tag,index,ok);", root);
+    assert(selected.map.find("source 4100 count 2 stride 1") != std::string::npos);
     auto reject = [&](const std::string &s) {
         bool failed = false;
         try {

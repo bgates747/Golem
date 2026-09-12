@@ -180,6 +180,33 @@ unbounded/cyclic program, illegal loop mutation, malformed asset/size, and
 exceeded resource limit. Resolve all symbols/relocations before writing output;
 failed compilation must not publish a partly generated blob.
 
+## R19-06 additions
+
+`DivModPositive(q,r,input,divisor)` accepts a bounded nonnegative s32 domain
+below2^24, constant divisor1..65535, distinct u16 quotient/remainder destinations
+and a quotient<=32767. The compiler checks every integer in the declared domain
+against binary32 reciprocal multiplication before emitting that construction.
+It rejects domains that round an integer index upwards; it never emits an answer
+table. Runtime computes q, reloads it and obtains r=x-q*divisor exactly.
+Fetched scalar matrix scaling requires operation0x27, including its fetch bit.
+
+`MatTrunc(dst,src)` and `MatRoundAway(dst,src)` produce scalar integer-valued
+matrices using positive-magnitude stock conversion and explicit sign restoration.
+See examples/native_quantization for bounds, half-boundary qualification and
+native evidence. They preserve signed zero and require distinct scalar matrices.
+
+`LoadElement` now also accepts a read-only Asset with a complete repeated typed
+record layout. `WidenUnsigned` also permits u8 to a containing u16 field.
+`PlotQuad(colour,x1,y1,x2,y2,x3,y3,x4,y4)` accepts a constant stock colour0..63
+and eight s16 coordinates, patches a private GCOL/PLOT block and issues the
+accepted two-triangle sequence4,4,85,85. It performs no hidden geometry.
+
+Literal range proofs use the actual rounded binary32 representation, including
+underflow to zero; narrowed float stores and nonsingularity cannot be justified
+by an unrepresentable double literal. Field metadata no longer duplicates an
+entire imported asset's data vector per field. Host qualification records source
+hashes before and after tests and rejects a run if its source changed mid-test.
+
 ## Primary source qualification
 
 Read locally on 2026-09-12: agon-docs Buffered-Commands-API.md (commands 0,5,6,

@@ -29,6 +29,19 @@ int main() {
         }
         assert(bad);
     };
+    (void)hosted::compile(
+        "Buffer b(1000,4); Field s(b,0,u8); Field d(b,2,u16); WidenUnsigned(d,s);");
+    reject("Buffer b(1000,4); Field s(b,0,u8); Field d(b,2,u16,0,254); WidenUnsigned(d,s);");
+    reject("Buffer b(1000,4); Field s(b,0,u8); Field d(b,0,u16); WidenUnsigned(d,s);");
+    const std::string quad = "Buffer b(1000,4); Field x(b,0,s16); Field y(b,2,s16); ";
+    auto draw = hosted::compile(quad + "Program p(2000) { PlotQuad(11,x,y,x,y,x,y,x,y); };");
+    const std::vector<unsigned char> templateBytes = {
+        18, 0, 11, 25, 4, 0, 0, 0, 0, 25, 4, 0, 0, 0, 0, 25, 85, 0, 0, 0, 0, 25, 85, 0, 0, 0, 0};
+    assert(std::search(draw.code.begin(), draw.code.end(), templateBytes.begin(),
+                       templateBytes.end()) != draw.code.end());
+    reject(quad + "PlotQuad(64,x,y,x,y,x,y,x,y);");
+    reject(quad + "PlotQuad(11,x,y,x,y,x,y,x);");
+    reject("Buffer b(1000,4); Field x(b,0,u16); Field y(b,2,s16); PlotQuad(11,x,y,x,y,x,y,x,y);");
     reject(base + "LoadElement(src,src,index,ok);");
     reject(base + "LoadElement(dst,src,index,index);");
     reject(base + "LoadElement(dst,src,x,ok);");

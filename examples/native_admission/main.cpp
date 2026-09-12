@@ -77,7 +77,7 @@ bool upload() {
     vdp_adv_clear_buffer(0);
     while ((n = fread(block, 1, sizeof(block), f))) {
         total += n;
-        if (total > 65535) {
+        if (total > 1024UL * 1024) {
             fclose(f);
             return false;
         }

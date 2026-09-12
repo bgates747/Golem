@@ -311,6 +311,8 @@ class Compiler {
         auto t = type(s.typeName, line);
         Bytes out;
         if (s.typeName == "f32") {
+            if (double(float(a.value)) < s.range.lo || double(float(a.value)) > s.range.hi)
+                fail(line, "rounded float literal lies outside destination bounds");
             floatBytes(out, a.value);
             return out;
         }
@@ -337,7 +339,7 @@ class Compiler {
         s.id = scratch(4);
         s.size = 4;
         s.typeName = "f32";
-        s.range = exact(a.value);
+        s.range = exact(double(float(a.value)));
         initial[s.id].clear();
         floatBytes(initial[s.id], a.value);
         return s;
@@ -465,8 +467,11 @@ class Compiler {
             (i->second.kind != Kind::Buffer && i->second.kind != Kind::Matrix &&
              i->second.kind != Kind::Asset))
             fail(line, "Field owner must be buffer or matrix");
-        Symbol s = i->second;
-        s.data.clear();
+        Symbol s;
+        s.id = i->second.id;
+        s.size = i->second.size;
+        s.rows = i->second.rows;
+        s.cols = i->second.cols;
         s.kind = Kind::Field;
         s.offset = integer(n.args[1], 65535);
         if (n.args[2].number || n.args[2].quoted)
@@ -613,6 +618,74 @@ class Compiler {
             fail(line, "record fields must cover complete storage");
         return fields;
     }
+    void storeWordFloor(Bytes &out, const Symbol &f, const Symbol &m, bool unsignedStore) {
+        auto range = value(m)[0];
+        if (range.lo < (unsignedStore ? 0 : -32768) || range.hi > (unsignedStore ? 65534 : 32767) ||
+            !std::isfinite(range.lo) || !std::isfinite(range.hi))
+            fail(line, "signed store range not proved within -32768..32767");
+        writable(f, 2);
+        if (std::floor(range.lo) < f.range.lo ||
+            (unsignedStore ? std::floor(range.hi) : std::ceil(range.hi)) > f.range.hi)
+            fail(line, "signed result exceeds narrowed destination bounds");
+        Symbol transform;
+        transform.kind = Kind::Matrix;
+        transform.id = scratch(36);
+        transform.rows = transform.cols = 3;
+        transform.size = 36;
+        Symbol scalar;
+        scalar.kind = Kind::Field;
+        scalar.id = m.id;
+        scalar.size = 4;
+        scalar.typeName = "f32";
+        scalar.range = range;
+        Arg zero;
+        zero.number = true;
+        Arg bias = zero;
+        bias.value = 32768;
+        identity(out, transform);
+        affine(out, transform, 6, {scalar, operand(zero)});
+        if (!unsignedStore)
+            affine(out, transform, 6, {operand(bias), operand(zero)});
+        unsigned source = scratch(4), dest = scratch(4);
+        command(out, dest, 41);
+        out.push_back(8);
+        out.push_back(0xc0);
+        emitLE16(out, transform.id);
+        emitLE16(out, source);
+        emitLE16(out, 1);
+        // XOR the sign-bias bit in the temporary result; preserve neighbours.
+        if (!unsignedStore) {
+            command(out, dest, 5);
+            out.push_back(7);
+            emitLE16(out, 1);
+            out.push_back(128);
+        }
+        copy(out, f.id, f.offset, dest, 0, 2);
+    }
+    Symbol privateScalar() {
+        Symbol m;
+        m.kind = Kind::Matrix;
+        m.id = scratch(4);
+        m.size = 4;
+        m.rows = m.cols = 1;
+        return m;
+    }
+    void loadScalar(Bytes &out, const Symbol &m, const Symbol &f) {
+        matrixHeader(out, m, 0x20);
+        out.push_back(static_cast<unsigned char>(type(f.typeName, line).format));
+        emitLE16(out, f.id);
+        emitLE16(out, f.offset);
+        bounds[m.id] = {f.range};
+    }
+    void scaleScalar(Bytes &out, const Symbol &dst, const Symbol &src, double factor) {
+        matrixHeader(out, dst, 0x27);
+        emitLE16(out, src.id);
+        Arg a;
+        a.number = true;
+        a.value = factor;
+        fetched(out, operand(a));
+        bounds[dst.id] = {times(value(src)[0], exact(double(float(factor))))};
+    }
     void statements(const std::vector<Node> &nodes, Bytes &out) {
         for (const auto &n : nodes)
             statement(n, out);
@@ -676,9 +749,10 @@ class Compiler {
             auto &dst = symbol(a[0], Kind::Field);
             auto &src = symbol(a[1], Kind::Field);
             if ((src.typeName != "u8" && src.typeName != "u16") ||
-                (dst.typeName != "s16" && dst.typeName != "s32") || src.range.lo < dst.range.lo ||
-                src.range.hi > dst.range.hi)
-                fail(line, "unsigned widening requires a containing signed integer range");
+                (dst.typeName != "s16" && dst.typeName != "s32" &&
+                 !(dst.typeName == "u16" && src.typeName == "u8")) ||
+                src.range.lo < dst.range.lo || src.range.hi > dst.range.hi)
+                fail(line, "unsigned widening requires a containing integer range");
             unsigned dw = type(dst.typeName, line).bytes, sw = type(src.typeName, line).bytes;
             writable(dst, dw);
             if (dst.id == src.id && dst.offset < src.offset + sw && src.offset < dst.offset + dw)
@@ -690,7 +764,10 @@ class Compiler {
         if (op == "loadelement") {
             count(n, 4);
             auto &dst = buffer(a[0]);
-            auto &src = buffer(a[1]);
+            auto it = syms.find(a[1].text);
+            auto &src = it != syms.end() && it->second.kind == Kind::Asset
+                            ? symbol(a[1], Kind::Asset)
+                            : buffer(a[1]);
             auto &index = symbol(a[2], Kind::Field);
             auto &status = symbol(a[3], Kind::Field);
             if (dst.id == src.id || !dst.size || src.size % dst.size || index.typeName != "u16" ||
@@ -1054,52 +1131,119 @@ class Compiler {
             count(n, 2);
             auto &f = symbol(a[0], Kind::Field);
             auto &m = symbol(a[1], Kind::Matrix);
-            const bool unsignedStore = op == "storeu16floor";
-            if (f.typeName != (unsignedStore ? "u16" : "s16") || m.rows != 1 || m.cols != 1)
+            bool u = op == "storeu16floor";
+            if (f.typeName != (u ? "u16" : "s16") || m.rows != 1 || m.cols != 1)
                 fail(line, "integer floor store needs matching word field and scalar matrix");
-            auto range = value(m)[0];
-            if (range.lo < (unsignedStore ? 0 : -32768) ||
-                range.hi > (unsignedStore ? 65534 : 32767) || !std::isfinite(range.lo) ||
-                !std::isfinite(range.hi))
-                fail(line, "signed store range not proved within -32768..32767");
-            writable(f, 2);
-            if (std::floor(range.lo) < f.range.lo ||
-                (unsignedStore ? std::floor(range.hi) : std::ceil(range.hi)) > f.range.hi)
-                fail(line, "signed result exceeds narrowed destination bounds");
+            storeWordFloor(out, f, m, u);
+            return;
+        }
+        if (op == "mattrunc" || op == "matroundaway") {
+            count(n, 2);
+            auto &dst = symbol(a[0], Kind::Matrix), &src = symbol(a[1], Kind::Matrix);
+            if (dst.rows != 1 || dst.cols != 1 || src.rows != 1 || src.cols != 1 ||
+                dst.id == src.id)
+                fail(line, "MatTrunc requires distinct scalar matrices");
+            auto range = value(src)[0];
+            double maximum = std::max(std::abs(range.lo), std::abs(range.hi));
+            bool nearest = op == "matroundaway";
+            if (!std::isfinite(maximum) || maximum > (nearest ? 8388607 : 16777215))
+                fail(line, "MatTrunc requires finite magnitude <=16777215");
+            // Preserve the IEEE binary32 sign separately. Only a nonnegative
+            // magnitude reaches stock's unsigned float-to-fixed conversion.
+            unsigned absolute = scratch(4), sign = scratch(1);
+            copy(out, absolute, 0, src.id, 0, 4);
+            copy(out, sign, 0, src.id, 3, 1);
+            emitAdjustMultiLiteral(out, int(absolute), 5, 3, {127});
+            emitAdjustMultiLiteral(out, int(sign), 5, 0, {128});
+            Symbol field;
+            field.kind = Kind::Field;
+            field.id = absolute;
+            field.size = 4;
+            field.typeName = "f32";
+            field.range = {0, maximum};
             Symbol transform;
             transform.kind = Kind::Matrix;
             transform.id = scratch(36);
             transform.rows = transform.cols = 3;
             transform.size = 36;
-            Symbol scalar;
-            scalar.kind = Kind::Field;
-            scalar.id = m.id;
-            scalar.size = 4;
-            scalar.typeName = "f32";
-            scalar.range = range;
             Arg zero;
             zero.number = true;
-            Arg bias = zero;
-            bias.value = 32768;
             identity(out, transform);
-            affine(out, transform, 6, {scalar, operand(zero)});
-            if (!unsignedStore)
-                affine(out, transform, 6, {operand(bias), operand(zero)});
-            unsigned source = scratch(4), dest = scratch(4);
-            command(out, dest, 41);
+            affine(out, transform, 6, {field, operand(zero)});
+            // The predecessor of 0.5 avoids rounding nextafter(0.5,0)+0.5
+            // up to 1 before truncation. Exact half ties still round upwards.
+            if (nearest) {
+                Arg half = zero;
+                half.value = std::nextafter(0.5f, 0.0f);
+                affine(out, transform, 6, {operand(half), operand(zero)});
+            }
+            unsigned source = scratch(8), integerResult = scratch(8);
+            command(out, integerResult, 41);
             out.push_back(8);
-            out.push_back(0xc0);
+            out.push_back(0x40);
             emitLE16(out, transform.id);
             emitLE16(out, source);
             emitLE16(out, 1);
-            // XOR the sign-bias bit in the temporary result; preserve neighbours.
-            if (!unsignedStore) {
-                command(out, dest, 5);
-                out.push_back(7);
-                emitLE16(out, 1);
-                out.push_back(128);
+            field.id = integerResult;
+            field.size = 8;
+            field.typeName = "s32";
+            field.range = {0, nearest ? std::round(maximum) : std::floor(maximum)};
+            loadScalar(out, dst, field);
+            emitAdjustMultiBufferFetched(out, int(dst.id), 6, 3, 1, int(sign), 0);
+            bounds[dst.id] = {{nearest ? std::round(range.lo) : std::trunc(range.lo),
+                               nearest ? std::round(range.hi) : std::trunc(range.hi)}};
+            return;
+        }
+        if (op == "divmodpositive") {
+            count(n, 4);
+            auto &q = symbol(a[0], Kind::Field), &r = symbol(a[1], Kind::Field),
+                 &input = symbol(a[2], Kind::Field);
+            unsigned divisor = integer(a[3], 65535);
+            if (!divisor || q.typeName != "u16" || r.typeName != "u16" || input.typeName != "s32" ||
+                input.range.lo < 0 || input.range.hi > 16777215 ||
+                std::ceil(input.range.lo) > std::floor(input.range.hi))
+                fail(line, "DivModPositive needs bounded nonnegative s32 input and u16 outputs");
+            unsigned low = unsigned(std::ceil(input.range.lo)),
+                     high = unsigned(std::floor(input.range.hi));
+            if (high / divisor > 32767 || q.range.lo > low / divisor ||
+                q.range.hi < high / divisor || r.range.lo > 0 || r.range.hi < divisor - 1)
+                fail(line, "DivModPositive output ranges cannot contain the result");
+            writable(q, 2);
+            writable(r, 2);
+            auto overlap = [](const Symbol &a, unsigned aw, const Symbol &b, unsigned bw) {
+                return a.id == b.id && a.offset < b.offset + bw && b.offset < a.offset + aw;
+            };
+            if (overlap(q, 2, r, 2) || overlap(q, 2, input, 4) || overlap(r, 2, input, 4))
+                fail(line, "DivModPositive storage overlaps");
+            float reciprocal = 1.0f / float(divisor);
+            // Exhaustive compile-time proof of this finite integer domain under
+            // binary32 multiplication. Emit operations, never a table of answers.
+            for (unsigned x = low; x <= high; ++x) {
+                float divided = float(x) * reciprocal;
+                if (unsigned(divided) != x / divisor)
+                    fail(line, "binary32 constant division is not exact over input domain at " +
+                                   std::to_string(x));
             }
-            copy(out, f.id, f.offset, dest, 0, 2);
+            auto x = privateScalar(), divided = privateScalar(), integerQ = privateScalar(),
+                 multiple = privateScalar(), remainder = privateScalar();
+            loadScalar(out, x, input);
+            scaleScalar(out, divided, x, double(reciprocal));
+            storeWordFloor(out, q, divided, true);
+            Symbol signedQ = q;
+            signedQ.typeName = "s16";
+            signedQ.range = {double(low / divisor), double(high / divisor)};
+            loadScalar(out, integerQ, signedQ);
+            scaleScalar(out, multiple, integerQ, divisor);
+            matrixHeader(out, remainder, 5);
+            emitLE16(out, x.id);
+            emitLE16(out, multiple.id);
+            // x and q*divisor are exact integers below 2^24, so subtraction is
+            // exact and the proved division identity gives this tight interval.
+            bounds[remainder.id] = {{0, double(divisor - 1)}};
+            storeWordFloor(out, r, remainder, true);
+            listing << "divmod_positive " << currentProgram << " source " << input.id << ":"
+                    << input.offset << " divisor " << divisor << " exhaustive_domain " << low << " "
+                    << high << "\n";
             return;
         }
         if (op == "transformdata") {
@@ -1154,6 +1298,25 @@ class Compiler {
             emitLE16(out, offset);
             emitLE16(out, stride);
             emitLE16(out, limit);
+            return;
+        }
+        if (op == "plotquad") {
+            count(n, 9);
+            unsigned colour = integer(a[0], 63), instruction = scratch(27);
+            Bytes bytes = {18, 0, static_cast<unsigned char>(colour)};
+            for (unsigned i = 0; i < 4; ++i) {
+                bytes.push_back(25);
+                bytes.push_back(i < 2 ? 4 : 85);
+                bytes.insert(bytes.end(), 4, 0);
+            }
+            initial[instruction] = bytes;
+            for (unsigned i = 0; i < 8; ++i) {
+                auto &f = symbol(a[1 + i], Kind::Field);
+                if (f.typeName != "s16")
+                    fail(line, "PlotQuad coordinates require signed words");
+                copy(out, instruction, 5 + (i / 2) * 6 + (i % 2) * 2, f.id, f.offset, 2);
+            }
+            call(out, instruction);
             return;
         }
         if (op == "plotpoint") {
