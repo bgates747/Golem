@@ -1,0 +1,233 @@
+{
+  "existing": {
+    "command": [
+      "g++",
+      "-std=c++17",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-g",
+      "-O1",
+      "-fsanitize=address,undefined",
+      "/home/smith/Agon/mystuff/golem-rally19/tests/test_existing.cpp",
+      "-o",
+      "/home/smith/Agon/mystuff/golem-rally19/build/test_existing"
+    ],
+    "stdout": "Existing language: print escapes/case, little-endian uint16, addition, loop buffer comparison, ten rejection cases pass.\n"
+  },
+  "hosted": {
+    "command": [
+      "g++",
+      "-std=c++17",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-g",
+      "-O1",
+      "-fsanitize=address,undefined",
+      "/home/smith/Agon/mystuff/golem-rally19/tests/test_hosted.cpp",
+      "-o",
+      "/home/smith/Agon/mystuff/golem-rally19/build/test_hosted"
+    ],
+    "stdout": "Hosted compiler: stock byte goldens, typed load, forward calls, finite repeat, signed-store/PLOT lowering and 26 negative cases pass.\n"
+  },
+  "imports": {
+    "command": [
+      "g++",
+      "-std=c++17",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-g",
+      "-O1",
+      "-fsanitize=address,undefined",
+      "/home/smith/Agon/mystuff/golem-rally19/tests/test_imports.cpp",
+      "-o",
+      "/home/smith/Agon/mystuff/golem-rally19/build/test_imports"
+    ],
+    "stdout": "Resident imports: exact sizes, source-relative assets, typed records, ID collisions, guarded patch lowering and 14 negatives pass.\n"
+  },
+  "admission": {
+    "command": [
+      "g++",
+      "-std=c++17",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-g",
+      "-O1",
+      "-fsanitize=address,undefined",
+      "/home/smith/Agon/mystuff/golem-rally19/tests/test_admission.cpp",
+      "-o",
+      "/home/smith/Agon/mystuff/golem-rally19/build/test_admission"
+    ],
+    "stdout": "Admission compiler: signed-byte normalization, sticky guards, typed record copy, resource caps, syntax depth and 19 negatives pass.\n"
+  },
+  "elements": {
+    "command": [
+      "g++",
+      "-std=c++17",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-g",
+      "-O1",
+      "-fsanitize=address,undefined",
+      "/home/smith/Agon/mystuff/golem-rally19/tests/test_elements.cpp",
+      "-o",
+      "/home/smith/Agon/mystuff/golem-rally19/build/test_elements"
+    ],
+    "stdout": "Element helpers: typed record selection, offset relocation, unsigned floor/widening and ten negatives pass.\n"
+  },
+  "divmod": {
+    "command": [
+      "g++",
+      "-std=c++17",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-g",
+      "-O1",
+      "-fsanitize=address,undefined",
+      "/home/smith/Agon/mystuff/golem-rally19/tests/test_divmod.cpp",
+      "-o",
+      "/home/smith/Agon/mystuff/golem-rally19/build/test_divmod"
+    ],
+    "stdout": "DivModPositive: exhaustive declared domain, fetched-scalar golden, alias/range/rounding rejection and nine negatives pass.\n"
+  },
+  "rounding": {
+    "command": [
+      "g++",
+      "-std=c++17",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-g",
+      "-O1",
+      "-fsanitize=address,undefined",
+      "/home/smith/Agon/mystuff/golem-rally19/tests/test_rounding.cpp",
+      "-o",
+      "/home/smith/Agon/mystuff/golem-rally19/build/test_rounding"
+    ],
+    "stdout": "Scalar truncation/rounding: positive conversion golden, five negatives, and every binary32 half-boundary over the rounded domain pass.\n"
+  },
+  "vehicle_math": {
+    "command": [
+      "g++",
+      "-std=c++17",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-g",
+      "-O1",
+      "-fsanitize=address,undefined",
+      "/home/smith/Agon/mystuff/golem-rally19/tests/test_vehicle_math.cpp",
+      "-o",
+      "/home/smith/Agon/mystuff/golem-rally19/build/test_vehicle_math"
+    ],
+    "stdout": "Vehicle math host checks pass.\n"
+  },
+  "checked_copy": {
+    "command": [
+      "g++",
+      "-std=c++17",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-g",
+      "-O1",
+      "-fsanitize=address,undefined",
+      "/home/smith/Agon/mystuff/golem-rally19/tests/test_checked_copy.cpp",
+      "-o",
+      "/home/smith/Agon/mystuff/golem-rally19/build/test_checked_copy"
+    ],
+    "stdout": "Checked copy host tests: guarded narrowing, fixed formats and alias/type negatives pass.\n"
+  },
+  "shared_scratch": {
+    "command": [
+      "g++",
+      "-std=c++17",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-g",
+      "-O1",
+      "-fsanitize=address,undefined",
+      "/home/smith/Agon/mystuff/golem-rally19/tests/test_shared_scratch.cpp",
+      "-o",
+      "/home/smith/Agon/mystuff/golem-rally19/build/test_shared_scratch"
+    ],
+    "stdout": "Shared word scratch: three stores use one private triple; default and scope checks pass.\n"
+  },
+  "bitmap": {
+    "command": [
+      "g++",
+      "-std=c++17",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-g",
+      "-O1",
+      "-fsanitize=address,undefined",
+      "/home/smith/Agon/mystuff/golem-rally19/tests/test_bitmap.cpp",
+      "-o",
+      "/home/smith/Agon/mystuff/golem-rally19/build/test_bitmap"
+    ],
+    "stdout": "Bitmap command templates, affine proof, ownership, signed coordinates and rejection checks pass.\n"
+  },
+  "floor": {
+    "command": [
+      "g++",
+      "-std=c++17",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-g",
+      "-O1",
+      "-fsanitize=address,undefined",
+      "/home/smith/Agon/mystuff/golem-rally19/tests/test_floor.cpp",
+      "-o",
+      "/home/smith/Agon/mystuff/golem-rally19/build/test_floor"
+    ],
+    "stdout": "MatFloor host checks and every binary32 integer boundary pass.\n"
+  },
+  "viewport": {
+    "command": [
+      "g++",
+      "-std=c++17",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-g",
+      "-O1",
+      "-fsanitize=address,undefined",
+      "/home/smith/Agon/mystuff/golem-rally19/tests/test_viewport.cpp",
+      "-o",
+      "/home/smith/Agon/mystuff/golem-rally19/build/test_viewport"
+    ],
+    "stdout": "Viewport pixel/wire order, finite scroll extent and typed rejection checks pass.\n"
+  },
+  "design_cases": {
+    "accepted": 3,
+    "rejected": 12,
+    "failure_preserves_output": true
+  },
+  "source_hashes": {
+    "src/golemc.cpp": "0156bb00e4d4f3f123e7fb012805bd1f85756cbca5849bd1024fdef8db52cdb5",
+    "src/hosted.hpp": "ee4b702c74e4f75d20a44a3b750c35ccffd4b33b549fa94fbe76c973387ae27a",
+    "tests/test_admission.cpp": "fe5bed0ece8e0bedb9c4b7031b97c94b4a4c735d57d58731e283a4e46040381c",
+    "tests/test_bitmap.cpp": "a61ea2376cc0324c899701ba8d27f0ddcc75b97ef925d638ee2fce97622cbe5e",
+    "tests/test_checked_copy.cpp": "28fc08f0a2a80fe513ad966c91148df1443ea060b06767c0682206333dcd61f9",
+    "tests/test_divmod.cpp": "48848f0f3d913afb0775fa75290d98850f5272ab3c44c60143752399dd42ddd7",
+    "tests/test_elements.cpp": "1f592c362822bd50167ca56ea1d6f797009e9e08d845a65b2ce26290c1d7fdcd",
+    "tests/test_existing.cpp": "e1a8efdb74b7d78ed886a8606529fdeaa84969d37a0d23ce36caf1756ab5c1d5",
+    "tests/test_floor.cpp": "7e1b17132b9a2038e8aafc82580c346d90de318e253ce3fc0389a206af5237e3",
+    "tests/test_hosted.cpp": "1b6392a814598c4abc9fde84913cc912591349202c8dad2e8e02aece575311d6",
+    "tests/test_imports.cpp": "cd442286844ce55ed164c972891fc2af0624866a9b27838d6a32d5edb56d7fdb",
+    "tests/test_rounding.cpp": "67967a7bb80bf0cf18320f89cc08a052906f07fe23f3a40cba71b88697e19b8b",
+    "tests/test_shared_scratch.cpp": "d18fe6ee46702b2920272552df8d1ed88b17beb06c0d52377d3ee20763a1ca39",
+    "tests/test_vehicle_math.cpp": "ab49ac212e887e4c1a9b381797fd864a2ec78d151439407d0d023c62d708630c",
+    "tests/test_viewport.cpp": "44ed9913f5bac339ffa8ba02f207774ce2dabb061fdcf2e17bcbf6e5ddec8ea1",
+    "tests/run_hosted.py": "a26d1968a1f5fca7bef6f2c94857a5baceb8c7d4fa6fa0b23e73eb1dc2c5d93b"
+  }
+}
