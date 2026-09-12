@@ -671,6 +671,85 @@ class Compiler {
             copy(out, dst.id, 0, src.id, 0, dst.size);
             return;
         }
+        if (op == "widenunsigned") {
+            count(n, 2);
+            auto &dst = symbol(a[0], Kind::Field);
+            auto &src = symbol(a[1], Kind::Field);
+            if ((src.typeName != "u8" && src.typeName != "u16") ||
+                (dst.typeName != "s16" && dst.typeName != "s32") || src.range.lo < dst.range.lo ||
+                src.range.hi > dst.range.hi)
+                fail(line, "unsigned widening requires a containing signed integer range");
+            unsigned dw = type(dst.typeName, line).bytes, sw = type(src.typeName, line).bytes;
+            writable(dst, dw);
+            if (dst.id == src.id && dst.offset < src.offset + sw && src.offset < dst.offset + dw)
+                fail(line, "widening storage overlaps");
+            emitAdjustMultiLiteral(out, int(dst.id), 2, dst.offset, Bytes(dw, 0));
+            copy(out, dst.id, dst.offset, src.id, src.offset, sw);
+            return;
+        }
+        if (op == "loadelement") {
+            count(n, 4);
+            auto &dst = buffer(a[0]);
+            auto &src = buffer(a[1]);
+            auto &index = symbol(a[2], Kind::Field);
+            auto &status = symbol(a[3], Kind::Field);
+            if (dst.id == src.id || !dst.size || src.size % dst.size || index.typeName != "u16" ||
+                index.id == dst.id || status.id == dst.id || status.id == src.id ||
+                status.id == index.id)
+                fail(line,
+                     "element lookup requires separate compatible record/index/status storage");
+            unsigned records = src.size / dst.size;
+            if (!records)
+                fail(line, "empty element array");
+            if (status.typeName != "u16" || status.range.lo != 0 || status.range.hi != 1)
+                fail(line, "element lookup status must be 0..1 u16");
+            writable(status, 2);
+            auto df = recordLayout(dst), sf = recordLayout(src);
+            if (sf.size() != df.size() * records)
+                fail(line, "element source layout is not repeated records");
+            for (unsigned r = 0; r < records; ++r)
+                for (unsigned i = 0; i < df.size(); ++i) {
+                    const auto &f = sf[r * df.size() + i];
+                    if (f.offset != r * dst.size + df[i].offset || f.typeName != df[i].typeName ||
+                        f.range.lo < df[i].range.lo || f.range.hi > df[i].range.hi)
+                        fail(line, "element copy does not preserve destination layout/range");
+                }
+            for (const auto &f : df)
+                writable(f, type(f.typeName, line).bytes);
+            emitAdjustMultiLiteral(out, int(status.id), 2, status.offset, {0, 0});
+            unsigned address = scratch(3), limit = comparisonConstant(records - 1),
+                     instruction = scratch(15), body = scratch(0);
+            initial.erase(body);
+            Bytes code;
+            emitAdjustMultiLiteral(code, int(address), 2, 0, {0, 0, 0});
+            unsigned parent = currentProgram;
+            currentProgram = body;
+            copy(code, address, 0, index.id, index.offset, 2);
+            unsigned high = 1;
+            while (high <= dst.size / 2)
+                high *= 2;
+            // Exact bounded integer multiplication by the record stride. The
+            // guard guarantees every intermediate offset fits the copied word.
+            for (unsigned bit = high / 2; bit; bit /= 2) {
+                emitAdjustMultiBufferFetched(code, int(address), 4, 0, 2, int(address), 0);
+                if (dst.size & bit)
+                    emitAdjustMultiBufferFetched(code, int(address), 4, 0, 2, int(index.id),
+                                                 index.offset);
+            }
+            initial[instruction].clear();
+            emitAdjustMultiBufferFetched(initial[instruction], int(dst.id), 2, 0, dst.size,
+                                         int(src.id), 0);
+            copy(code, instruction, 13, address, 0, 2);
+            call(code, instruction);
+            emitAdjustMultiLiteral(code, int(status.id), 2, status.offset, {1, 0});
+            programs[body] = code;
+            currentProgram = parent;
+            condition(out, parent, body, 6, index.id, index.offset, limit, 0);
+            listing << "element_lookup " << parent << " source " << src.id << " count " << records
+                    << " stride " << dst.size << " instruction " << instruction
+                    << " source_offset_field 13 guarded_body " << body << "\n";
+            return;
+        }
         if (op == "loadindexed") {
             if (a.size() != 3 && a.size() != 4)
                 fail(line, "LoadIndexed needs destination, table, index [, status]");
@@ -750,7 +829,9 @@ class Compiler {
         if (op == "copy") {
             count(n, 3);
             auto &d = symbol(a[0], Kind::Field);
-            auto &s = symbol(a[1], Kind::Field);
+            auto s = symbol(a[1], Kind::Field);
+            if (const auto *owner = matrixOwner(s))
+                s.range = value(*owner).at(s.offset / 4);
             unsigned size = integer(a[2], 65535);
             if (!size)
                 fail(line, "zero copy size");
@@ -969,18 +1050,21 @@ class Compiler {
             bounds[m.id] = v;
             return;
         }
-        if (op == "storei16floor") {
+        if (op == "storei16floor" || op == "storeu16floor") {
             count(n, 2);
             auto &f = symbol(a[0], Kind::Field);
             auto &m = symbol(a[1], Kind::Matrix);
-            if (f.typeName != "s16" || m.rows != 1 || m.cols != 1)
-                fail(line, "StoreI16Floor expects s16 field and scalar matrix");
+            const bool unsignedStore = op == "storeu16floor";
+            if (f.typeName != (unsignedStore ? "u16" : "s16") || m.rows != 1 || m.cols != 1)
+                fail(line, "integer floor store needs matching word field and scalar matrix");
             auto range = value(m)[0];
-            if (range.lo < -32768 || range.hi > 32767 || !std::isfinite(range.lo) ||
+            if (range.lo < (unsignedStore ? 0 : -32768) ||
+                range.hi > (unsignedStore ? 65534 : 32767) || !std::isfinite(range.lo) ||
                 !std::isfinite(range.hi))
                 fail(line, "signed store range not proved within -32768..32767");
             writable(f, 2);
-            if (std::floor(range.lo) < f.range.lo || std::ceil(range.hi) > f.range.hi)
+            if (std::floor(range.lo) < f.range.lo ||
+                (unsignedStore ? std::floor(range.hi) : std::ceil(range.hi)) > f.range.hi)
                 fail(line, "signed result exceeds narrowed destination bounds");
             Symbol transform;
             transform.kind = Kind::Matrix;
@@ -999,7 +1083,8 @@ class Compiler {
             bias.value = 32768;
             identity(out, transform);
             affine(out, transform, 6, {scalar, operand(zero)});
-            affine(out, transform, 6, {operand(bias), operand(zero)});
+            if (!unsignedStore)
+                affine(out, transform, 6, {operand(bias), operand(zero)});
             unsigned source = scratch(4), dest = scratch(4);
             command(out, dest, 41);
             out.push_back(8);
@@ -1008,10 +1093,12 @@ class Compiler {
             emitLE16(out, source);
             emitLE16(out, 1);
             // XOR the sign-bias bit in the temporary result; preserve neighbours.
-            command(out, dest, 5);
-            out.push_back(7);
-            emitLE16(out, 1);
-            out.push_back(128);
+            if (!unsignedStore) {
+                command(out, dest, 5);
+                out.push_back(7);
+                emitLE16(out, 1);
+                out.push_back(128);
+            }
             copy(out, f.id, f.offset, dest, 0, 2);
             return;
         }
