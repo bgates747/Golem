@@ -711,19 +711,26 @@ void writeFile(const std::string &path, const std::vector<unsigned char> &data) 
 
 } // namespace
 
+#include "hosted.hpp"
+
 int main(int argc, char **argv) {
-    if (argc != 3) {
+    const bool hostedMode=argc>=2 && std::string(argv[1])=="--hosted";
+    if ((!hostedMode && argc != 3) || (hostedMode && argc!=4)) {
         // Extensions shown here are just illustrative - golemc does not
         // inspect or require any particular file extension on either
         // argument; see this file's header comment.
-        std::cerr << "usage: golemc <input> <output>\n";
+        std::cerr << "usage: golemc [--hosted] <input> <output>\n";
         return 2;
     }
     try {
-        std::string src = readFile(argv[1]);
-        std::vector<unsigned char> compiled = compile(src);
-        writeFile(argv[2], compiled);
-        std::cout << "wrote " << compiled.size() << " bytes to " << argv[2] << "\n";
+        const char *input=argv[hostedMode?2:1],*output=argv[hostedMode?3:2];
+        std::string src = readFile(input);
+        std::vector<unsigned char> compiled;
+        if(hostedMode){auto result=hosted::compile(src);compiled=std::move(result.code);
+            writeFile(std::string(output)+".map",std::vector<unsigned char>(result.map.begin(),result.map.end()));
+        }else compiled=compile(src);
+        writeFile(output, compiled);
+        std::cout << "wrote " << compiled.size() << " bytes to " << output << "\n";
     } catch (const CompileError &e) {
         std::cerr << "golemc: error: " << e.what() << "\n";
         return 1;

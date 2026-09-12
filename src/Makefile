@@ -18,7 +18,7 @@ BIN := $(BUILD_DIR)/golemc
 
 all: $(BIN)
 
-$(BIN): golemc.cpp | $(BUILD_DIR)
+$(BIN): golemc.cpp hosted.hpp | $(BUILD_DIR)
 	$(CXX) $(CXXFLAGS) -o $@ $<
 
 $(BUILD_DIR):
