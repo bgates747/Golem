@@ -16,3 +16,7 @@
 # Editor/OS cruft
 .DS_Store
 *.swp
+
+# Current canonical profiles and auxiliary caches
+.emulator/
+__pycache__/
