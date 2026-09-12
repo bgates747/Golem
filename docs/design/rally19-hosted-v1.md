@@ -280,6 +280,34 @@ match the independent floor oracle and each other. Host tests check resource
 savings, default behavior, invalid placement/arity, aliases and checked-copy
 rejection. These resource and numeric proofs do not establish full-scene timing.
 
+## Typed bitmap drawing
+
+`DrawBitmap(bitmap,x,y[,matrix])` uses an externally bootstrapped bitmap index
+from a u8/u16 field bounded within0..255 and signed s16 screen coordinates.
+The optional matrix must be an initialized finite3x3 affine transform with bottom
+row0,0,1. Interval arithmetic must prove a nonzero determinant and finite inverse.
+Unproved rotations, singular matrices, wrong shapes/types and stale bounds after
+Call are rejected. Any possible64000+bitmap index colliding with a compiler-owned
+buffer is rejected; external bitmap storage is not added to compiler cleanup.
+
+The intrinsic patches one private23-byte select/use-affine/draw/reset block:
+VDU23,27,0 for the bitmap,23,0,0x96 for the matrix,23,27,3 for signed placement,
+then affine reset65535. The form without a matrix resets it before drawing too.
+Matrix creation/manipulation uses the existing typed operations, which replace
+the stock buffer and invalidate its cached inverse. Direct byte patching of a
+live cached transform is not supported. Pinned stock graphics.h::drawBitmap /
+setAffineTransform and buffers.h::checkTransformBuffer were inspected; a cached
+inverse adds a second36-byte chunk, outside the compiler's static payload ledger.
+
+`examples/native_vehicle_math/bitmap.golem` and Rally's probe_bitmap.py compare
+24 native images against independently issued stock commands. Asymmetric8x8
+RGBA2222 patterns cover two bitmaps, transparent pixels, four scales14/64/128/256
+Q8, both reflections, negative and edge coordinates, repeated reuse of the same
+matrix, and a following untransformed draw. Every native pixel matches exactly.
+The full host sanitizer/golden/negative suite passes including command templates,
+owned-resource collisions, nonfinite inverse and matrix-lifetime rejection.
+This primitive proof does not claim final Rally vehicle image or timing acceptance.
+
 ## Primary source qualification
 
 Read locally on 2026-09-12: agon-docs Buffered-Commands-API.md (commands 0,5,6,

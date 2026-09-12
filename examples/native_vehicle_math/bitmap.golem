@@ -1,0 +1,20 @@
+Buffer state(1000,10);
+Field bitmap(state,0,u16,0,1); Field x(state,2,s16,-20,300); Field y(state,4,s16,0,220);
+Field scale(state,6,q8s16,0.0546875,1); Field mirror(state,8,u16,0,1);
+Buffer constants(1001,8);
+Field one(constants,0,u16,1,1); Set(one,1); Field zero(constants,2,u16,0,0);
+Field plainX(constants,4,s16,180,180); Set(plainX,180); Field plainY(constants,6,s16,100,100); Set(plainY,100);
+Matrix transform(1100,3,3); Matrix scaled(1101,1,1); Matrix translation(1102,1,1);
+Field translationX(translation,0,f32);
+Program straight(2001) {
+    Identity(transform); Scale(transform,scale,scale); DrawBitmap(bitmap,x,y,transform);
+};
+Program reflected(2002) {
+    MatLoad(scaled,scale); MatScale(translation,scaled,7);
+    Identity(transform); Scale(transform,-1,1); Scale(transform,scale,scale);
+    Translate(transform,translationX,0); DrawBitmap(bitmap,x,y,transform);
+};
+Program submit(2000) {
+    CallIf(straight,mirror,eq,zero); CallIf(reflected,mirror,eq,one);
+    DrawBitmap(one,plainX,plainY);
+};

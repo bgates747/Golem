@@ -1450,6 +1450,63 @@ class Compiler {
             emitLE16(out, limit);
             return;
         }
+        if (op == "drawbitmap") {
+            if (a.size() != 3 && a.size() != 4)
+                fail(line, "DrawBitmap needs bitmap,x,y and optional affine matrix");
+            const auto &bitmap = symbol(a[0], Kind::Field), &x = symbol(a[1], Kind::Field),
+                       &y = symbol(a[2], Kind::Field);
+            if ((bitmap.typeName != "u8" && bitmap.typeName != "u16") ||
+                bitmap.range.lo < 0 || bitmap.range.hi > 255 ||
+                x.typeName != "s16" || y.typeName != "s16")
+                fail(line, "DrawBitmap requires a bounded byte index and signed word coordinates");
+            // Bitmaps are externally bootstrapped resources, mapped to64000+n.
+            // They must never alias compiler-owned storage or cleanup IDs.
+            for (unsigned index = unsigned(bitmap.range.lo); index <= unsigned(bitmap.range.hi); ++index)
+                if (ids.count(64000 + index))
+                    fail(line, "DrawBitmap external bitmap overlaps owned buffer ID");
+            unsigned matrix = 65535;
+            if (a.size() == 4) {
+                const auto &m = symbol(a[3], Kind::Matrix);
+                if (m.rows != 3 || m.cols != 3)
+                    fail(line, "DrawBitmap affine matrix must be3x3");
+                const auto v = value(m);
+                for (auto r : v)
+                    if (!std::isfinite(r.lo) || !std::isfinite(r.hi))
+                        fail(line, "DrawBitmap matrix bounds must be initialized and finite");
+                if (v[6].lo != 0 || v[6].hi != 0 || v[7].lo != 0 || v[7].hi != 0 ||
+                    v[8].lo != 1 || v[8].hi != 1)
+                    fail(line, "DrawBitmap requires affine bottom row0,0,1");
+                auto neg = [](Range r) { return times(exact(-1), r); };
+                auto determinant = plus(times(v[0], v[4]), neg(times(v[1], v[3])));
+                if (!std::isfinite(determinant.lo) || !std::isfinite(determinant.hi) ||
+                    (determinant.lo <= 0 && determinant.hi >= 0))
+                    fail(line, "DrawBitmap affine nonsingularity not proved");
+                auto reciprocal = rounded(1 / determinant.hi, 1 / determinant.lo);
+                const Range numerators[] = {
+                    v[4], neg(v[1]), plus(times(v[1], v[5]), neg(times(v[4], v[2]))),
+                    neg(v[3]), v[0], plus(times(v[3], v[2]), neg(times(v[0], v[5])))};
+                for (auto numerator : numerators) {
+                    auto inverse = times(numerator, reciprocal);
+                    if (!std::isfinite(inverse.lo) || !std::isfinite(inverse.hi))
+                        fail(line, "DrawBitmap finite affine inverse not proved");
+                }
+                matrix = m.id;
+            }
+            unsigned instruction = scratch(23);
+            Bytes bytes = {23, 27, 0, 0, 23, 0, 0x96, 1};
+            emitLE16(bytes, matrix);
+            bytes.insert(bytes.end(), {23, 27, 3, 0, 0, 0, 0, 23, 0, 0x96, 1, 255, 255});
+            initial[instruction] = bytes;
+            copy(out, instruction, 3, bitmap.id, bitmap.offset, 1);
+            copy(out, instruction, 13, x.id, x.offset, 2);
+            copy(out, instruction, 15, y.id, y.offset, 2);
+            call(out, instruction);
+            listing << "draw_bitmap " << currentProgram << " index " << bitmap.id << ":"
+                    << bitmap.offset << " x " << x.id << ":" << x.offset << " y " << y.id
+                    << ":" << y.offset << " matrix " << matrix << " reset65535 external_range "
+                    << bitmap.range.lo << " " << bitmap.range.hi << "\n";
+            return;
+        }
         if (op == "plotquad") {
             count(n, 9);
             unsigned colour = integer(a[0], 63), instruction = scratch(27);
