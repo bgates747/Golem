@@ -280,6 +280,25 @@ match the independent floor oracle and each other. Host tests check resource
 savings, default behavior, invalid placement/arity, aliases and checked-copy
 rejection. These resource and numeric proofs do not establish full-scene timing.
 
+`SharedScalarScratch();` is an optional argument-free first top-level declaration
+that includes SharedWordScratch and additionally pools the private36-byte
+transform,8-byte zero source and8-byte result for StorePositive32Floor,
+MatTrunc,MatRoundAway and MatFloor. Use one scratch directive only. Default and
+word-only lowering retain their allocation behavior. Wide transforms are reset
+on each use; conversion results are copied or loaded into the user's matrix
+before the expansion returns. MatFloor's private correction calls use the current
+result but cannot invoke another conversion or yield. They finish before a user
+Call can run. Absolute/sign and correction temporaries remain separately owned.
+
+The native shared_scalar.golem probe interleaves all four wide operations and
+both word stores, across three repetitions and nested user calls. Each of the
+isolated, word-only and scalar-sharing variants matches224 complete96-byte
+records, including signed zero/subnormals, byte carries, source preservation and
+neighbour sentinels. Host sanitizer/golden/negative tests also pass. See Rally
+evidence/golem-shared-scalar/qualification.json. This opt-in saves42 owned IDs
+in the complete road/car plus numeric-scenery-heading kernel:976/995 oval/Fuji,
+under the unchanged1024 cap. Scenery drawing and performance remain unqualified.
+
 ## Typed bitmap drawing
 
 `DrawBitmap(bitmap,x,y[,matrix])` uses an externally bootstrapped bitmap index

@@ -211,6 +211,18 @@ class Compiler {
     unsigned nextInternal = 2, currentProgram = 0;
     bool sharedWordScratch = false;
     unsigned wordTransform = 0, wordSource = 0, wordDestination = 0;
+    bool sharedWideScratch = false;
+    unsigned wideTransform = 0, wideSource = 0, wideDestination = 0;
+    unsigned wideConversionTransform() {
+        if (!sharedWideScratch)
+            return scratch(36);
+        if (!wideTransform) {
+            wideTransform = scratch(36);
+            wideSource = scratch(8);
+            wideDestination = scratch(8);
+        }
+        return wideTransform;
+    }
     int line = 1;
     void count(const Node &n, size_t size) {
         if (n.args.size() != size)
@@ -680,7 +692,7 @@ class Compiler {
             fail(line, "positive32 result exceeds destination bounds");
         Symbol transform;
         transform.kind = Kind::Matrix;
-        transform.id = scratch(36);
+        transform.id = wideConversionTransform();
         transform.rows = transform.cols = 3;
         transform.size = 36;
         Symbol scalar;
@@ -693,7 +705,8 @@ class Compiler {
         zero.number = true;
         identity(out, transform);
         affine(out, transform, 6, {scalar, operand(zero)});
-        unsigned source = scratch(8), dest = scratch(8);
+        unsigned source = sharedWideScratch ? wideSource : scratch(8),
+                 dest = sharedWideScratch ? wideDestination : scratch(8);
         command(out, dest, 41);
         out.push_back(8);
         out.push_back(0x40);
@@ -1307,7 +1320,7 @@ class Compiler {
             field.range = {0, maximum};
             Symbol transform;
             transform.kind = Kind::Matrix;
-            transform.id = scratch(36);
+            transform.id = wideConversionTransform();
             transform.rows = transform.cols = 3;
             transform.size = 36;
             Arg zero;
@@ -1321,7 +1334,8 @@ class Compiler {
                 half.value = std::nextafter(0.5f, 0.0f);
                 affine(out, transform, 6, {operand(half), operand(zero)});
             }
-            unsigned source = scratch(8), integerResult = scratch(8);
+            unsigned source = sharedWideScratch ? wideSource : scratch(8),
+                     integerResult = sharedWideScratch ? wideDestination : scratch(8);
             command(out, integerResult, 41);
             out.push_back(8);
             out.push_back(0x40);
@@ -1625,11 +1639,15 @@ class Compiler {
         // resets its transform and consumes/copies the result before it returns;
         // no user Call or yield occurs inside it. These private temporaries can
         // therefore be shared across successive stores and nested user calls.
-        if (!nodes.empty() && nodes.front().name == "sharedwordscratch") {
+        if (!nodes.empty() && (nodes.front().name == "sharedwordscratch" ||
+                               nodes.front().name == "sharedscalarscratch")) {
             count(nodes.front(), 0);
             sharedWordScratch = true;
+            sharedWideScratch = nodes.front().name == "sharedscalarscratch";
             nodes.erase(nodes.begin());
             listing << "scalar_word_scratch shared_nonreentrant_expansion\n";
+            if (sharedWideScratch)
+                listing << "scalar_wide_scratch shared_nonreentrant_expansion\n";
         }
         for (const auto &n : nodes)
             declare(n);
