@@ -308,6 +308,13 @@ The full host sanitizer/golden/negative suite passes including command templates
 owned-resource collisions, nonfinite inverse and matrix-lifetime rejection.
 This primitive proof does not claim final Rally vehicle image or timing acceptance.
 
+Subsequent R19-08 integration passes112 native road/car image pairs and156 numeric
+fixtures using compiler7065d0f. All player/opponent pixels match exactly across
+the five views, both mirrors and original liveries. See Rally CARS.md and
+evidence/golem-cars/qualification.json. The admitted renderer still receives only
+raw80-byte game state. Scenery/frontend, full-scene timing and long-term memory
+qualification remain separate milestones.
+
 ## Primary source qualification
 
 Read locally on 2026-09-12: agon-docs Buffered-Commands-API.md (commands 0,5,6,
