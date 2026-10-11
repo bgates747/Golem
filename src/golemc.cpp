@@ -64,6 +64,7 @@
 // Usage: golemc <input.golem> <output.bin>
 
 #include "token_reader.hpp"
+#include "buffer_allocator.hpp"
 
 #include <algorithm>
 #include <cctype>
@@ -212,13 +213,22 @@ class Compiler {
 public:
     std::vector<unsigned char> out;
 
+    Compiler() { allocator_->claim(1, "ordinary.accumulator"); }
+    explicit Compiler(golem::BufferAllocator &allocator) : allocator_(&allocator) {
+        accBufferId_ = static_cast<int>(allocator_->allocate("ordinary.accumulator"));
+    }
+    int accumulatorId() const { return accBufferId_; }
+    const std::map<std::string, int> &variables() const { return variables_; }
+    const std::map<unsigned, unsigned> &dataBuffers() const { return dataBuffers_; }
+
     // 3 bytes: 2 data bytes + the carry-out landing byte "Add with carry"
     // always writes at offset+2 - see Axis 10's addendum and Axis 13.
     // Allocated lazily so print-only programs (like hello.golem) don't
     // pay for an unused ACC buffer.
     void ensureAcc() {
         if (!accInitialized_) {
-            emitWriteBlock(out, kAccBufferId, {0, 0, 0});
+            emitWriteBlock(out, accBufferId_, {0, 0, 0});
+            dataBuffers_[accBufferId_] = 3;
             accInitialized_ = true;
         }
     }
@@ -230,8 +240,11 @@ public:
         if (variables_.count(name)) {
             golem::syntax::fail(at, "redeclaration of variable '" + name + "'");
         }
-        int bufferId = nextBufferId_++;
+        int bufferId;
+        try { bufferId = static_cast<int>(allocator_->allocate("ordinary.global." + name)); }
+        catch (const golem::AllocationError &error) { golem::syntax::fail(at, error.what()); }
         variables_[name] = bufferId;
+        dataBuffers_[bufferId] = 2;
         return bufferId;
     }
 
@@ -246,13 +259,17 @@ public:
     // Allocates a fresh buffer ID for compiler-internal use (e.g. a
     // `For` loop's body buffer or upper-bound-constant buffer) - not
     // associated with any user-visible variable name.
-    int allocInternalBuffer() { return nextBufferId_++; }
-
-    static constexpr int kAccBufferId = 1;
+    int allocInternalBuffer(const golem::syntax::Position &at) {
+        try { return static_cast<int>(allocator_->allocate("ordinary.loop")); }
+        catch (const golem::AllocationError &error) { golem::syntax::fail(at, error.what()); }
+    }
 
 private:
     std::map<std::string, int> variables_;
-    int nextBufferId_ = 2; // 1 is reserved for ACC
+    golem::BufferAllocator localAllocator_;
+    golem::BufferAllocator *allocator_ = &localAllocator_;
+    std::map<unsigned, unsigned> dataBuffers_; // Only materialized ordinary data.
+    int accBufferId_ = 1; // Default raw-payload compatibility policy.
     bool accInitialized_ = false;
 };
 
@@ -323,11 +340,11 @@ void compileExprInto(Compiler &compiler, std::vector<unsigned char> &out, int de
     }
 
     compiler.ensureAcc();
-    setInto(Compiler::kAccBufferId, terms[0]);
+    setInto(compiler.accumulatorId(), terms[0]);
     for (size_t i = 1; i < terms.size(); ++i) {
-        addInto(Compiler::kAccBufferId, terms[i]);
+        addInto(compiler.accumulatorId(), terms[i]);
     }
-    emitAdjustMultiBufferFetched(out, destBufferId, kOpSet, 0, 2, Compiler::kAccBufferId, 0);
+    emitAdjustMultiBufferFetched(out, destBufferId, kOpSet, 0, 2, compiler.accumulatorId(), 0);
 }
 
 // Parsing preserves the vector-of-terms emission boundary and allocation order.
@@ -360,14 +377,14 @@ void compileStatement(Compiler &compiler, Reader &reader, std::vector<unsigned c
         reader.needKeyword("To");
         auto boundTerms = parseExpr(reader, compiler);
         compileExprInto(compiler, out, iBufferId, startTerms);
-        int boundBufferId = compiler.allocInternalBuffer();
+        int boundBufferId = compiler.allocInternalBuffer(loopVar.begin);
         if (boundTerms.size() == 1 && boundTerms[0].isLiteral) {
             emitWriteBlock(out, boundBufferId, le16Bytes(boundTerms[0].literalValue));
         } else {
             emitWriteBlock(out, boundBufferId, {0, 0});
             compileExprInto(compiler, out, boundBufferId, boundTerms);
         }
-        int bodyBufferId = compiler.allocInternalBuffer();
+        int bodyBufferId = compiler.allocInternalBuffer(loopVar.begin);
         std::vector<unsigned char> bodyOut;
         compileBlock(compiler, reader, bodyOut);
         if (!reader.takeKeyword("Next")) reader.error("expected 'Next' to close 'For " + loopVar.text + "'");
@@ -440,7 +457,7 @@ int main(int argc, char **argv) {
         std::vector<unsigned char> compiled = compile(src);
         writeFile(argv[2], compiled);
         std::cout << "wrote " << compiled.size() << " bytes to " << argv[2] << "\n";
-    } catch (const CompileError &e) {
+    } catch (const std::exception &e) {
         std::cerr << "golemc: error: " << e.what() << "\n";
         return 1;
     }

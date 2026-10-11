@@ -197,3 +197,64 @@ TODO with its concrete result awaiting review. The next proposed increment is
 shared checked allocation and an explicit resident output profile; the existing
 loop endpoint/sentinel limitations and scalar host-bound/nonreentrancy contract
 remain as recorded in GOLEM-004/003. This tranche is left uncommitted.
+
+## GOLEM-005 accepted and pushed; GOLEM-006 integration delivered
+
+The Author requested committing/pushing all dirt, then proceeding on high with
+the next shared-allocation/resident integration tranche. Verified GOLEM-005's
+source fingerprints and committed all accumulated changes as `5cb1756`, then
+pushed `feature/standardized-deployment` successfully before starting new work.
+Disposed GOLEM-005 as accepted and removed it from TODO. Promoted GOLEM-006
+before implementation; its detailed subtasks and acceptance evidence live in
+`docs/tasks/GOLEM-006.md` and its silo.
+
+Added maintained `src/buffer_allocator.hpp` and injected ownership into ordinary
+Compiler state. Default ordinary output keeps accumulator ID 1 and allocation
+from 2. Claims/reservations check collisions, external ordering, invalid/special
+IDs and namespace exhaustion; source-located failures replace overflowing IDs.
+Only materialized ordinary data is passed into resident installation/cleanup.
+Maintained sources do not depend on task artifacts.
+
+The GOLEM-006 scalar adaptation passes the same allocator to every named buffer,
+scratch constant/matrix and helper target. An exact Rally compatibility policy
+remains available for tests; normal resident IDs are relocated at emission time.
+No blind modification of encoded bytes is used. Its task-local integrated CLI
+reuses maintained ordinary parsing and has an explicit --resident mode alongside
+the existing raw output contract. Complete counted-floor source combines
+persistent uint16 globals, assignments/addition and print around one selected
+scalar floor/conversion in one finite Sub. Resident loops/local declarations and
+unsupported source forms reject rather than expanding the qualification scope.
+
+The resident interface publishes input/output/entry/global metadata, external
+reservations and every installed resource's role/size/kind. Installation clears
+owned buffers and initializes ordinary globals once, then installs scalar data
+and programs and sets initial input. It does not invoke the job. Update, call
+and exact-owned cleanup stay separate. The example's 1120-byte installation
+supports repeated fresh inputs with 21-byte update/call packets; ordinary state
+and math then run on the VDP without more eZ80 command traffic. Output readback
+is not included. Host validation of input and binary32 rounding, serialized
+nonreentrant jobs and non-atomic file publication remain explicit contracts.
+
+All host checks pass. The unchanged GOLEM-005 sanitizer regression retains 20
+ordinary/22 scalar byte comparisons and 69 rejection checks. The new sanitizer
+suite passes 22 complete scalar compatibility comparisons and 34 allocation/
+integration rejection cases. Independent decoding validates ownership/spans,
+carry landing bytes, relocated helper targets and a finite four-program graph
+with logical depth at most three. Normalized scalar and mixed layouts preserve
+operations while excluding reserved assets. Seven fixtures each pass 807 calls
+in a bounded host model (5649 total), covering tiny negatives, signed bounds,
+fresh inputs, persistent counters, uint16 wrap, unchanged code, reinstall reset
+and exact cleanup with external assets preserved. Sixteen negative CLI cases
+preserve existing output; raw output retains pre-tranche loop bytes and rejects
+resident source. Standard Make builds pass.
+
+Commands, source fingerprints and reusable durations are in
+`docs/tasks/GOLEM-006/host-checks.json`. Read-only firmware/docs source fingerprints
+and matching commits are in its provenance.json. GOLEM-003/004/005 artifacts and
+their reports remain unchanged. The decoder/model is host evidence, not VDP
+execution or qualification. No firmware/emulator/hardware was run, modified or
+deployed. The experimental resident/profile code stays in its task silo; only
+the shared allocator/ordinary ownership is maintained source. Updated living
+design, README and handoff accordingly. GOLEM-006 remains in TODO awaiting review
+and stock-firmware qualification before scalar/profile production promotion.
+The new tranche is left uncommitted.

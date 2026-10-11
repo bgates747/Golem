@@ -1,0 +1,24 @@
+{
+  "read_only_references": [
+    {
+      "path": "/home/smith/Agon/agon-vdp/video/vdu_buffered.h",
+      "commit": "c7ac293d2aa81ddfa693390549bcd909069c8fc3",
+      "sha256": "b9d9d93295ddc5fb05c802071057e32ed9755837f029ce381340072352c262f0",
+      "matches_commit": true
+    },
+    {
+      "path": "/home/smith/Agon/agon-vdp/video/types.h",
+      "commit": "c7ac293d2aa81ddfa693390549bcd909069c8fc3",
+      "sha256": "0b14cd7fd375145d537335e465459c119c0ba23fa4594f7aeb6709aafd8fb2a5",
+      "matches_commit": true
+    },
+    {
+      "path": "/home/smith/Agon/agon-docs/docs/vdp/Buffered-Commands-API.md",
+      "commit": "f9806bd3cbff6ed5d1c08bef1d51fed11764b86b",
+      "sha256": "9fd4247f91485c5ffbee0d440fda2ed501d206362b69be4c059e3bfc34d36f2b",
+      "matches_commit": true
+    }
+  ],
+  "scalar_baseline": "docs/tasks/GOLEM-003/reference/provenance.json",
+  "checkpoint_commit": "5cb17567e61ff4155fda7dfdfb762b1ba623f44b"
+}

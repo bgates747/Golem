@@ -157,6 +157,14 @@ specifies the minimal grammar and concrete boundary cases. The
 implemented subset and shared reserved keywords; reservation does not imply
 If/Do/Switch or general call support.
 
+The [GOLEM-006 resident integration](../tasks/GOLEM-006/README.md) combines this
+source convention with persistent uint16 globals and one selected scalar job,
+using shared checked buffer ownership. Its explicit resident output mode is
+experimental and task-local. Ordinary maintained output remains a raw payload;
+scalar/profile promotion awaits stock-firmware qualification. Indexed dispatch,
+general branches/loops and stepped Range proposals are not implemented by that
+integration.
+
 ## Axis 6: First native integer type, and variable declaration semantics
 
 **Status: DECIDED - `uint16` first, `sint16` next; naked declarations

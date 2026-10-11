@@ -18,7 +18,7 @@ BIN := $(BUILD_DIR)/golemc
 
 all: $(BIN)
 
-$(BIN): golemc.cpp token_reader.hpp | $(BUILD_DIR)
+$(BIN): golemc.cpp token_reader.hpp buffer_allocator.hpp | $(BUILD_DIR)
 	$(CXX) $(CXXFLAGS) -o $@ $<
 
 $(BUILD_DIR):

@@ -3,10 +3,10 @@
 This is the authoritative register of promoted, unfinished work. Detailed plans
 and task artifacts live under `docs/tasks/`.
 
-- [ ] **GOLEM-005:** Implement the terminator-free parser tranche.
-  [Task plan](docs/tasks/GOLEM-005.md). Shared token reader, existing ordinary
-  statements and task-local scalar frontend delivered; sanitizer and byte
-  compatibility checks pass. [Result](docs/tasks/GOLEM-005/README.md) awaits review.
+- [ ] **GOLEM-006:** Shared allocation and experimental resident scalar integration.
+  [Task plan](docs/tasks/GOLEM-006.md). Checked reservations/ownership, one finite
+  mixed uint16/scalar job and explicit output profile delivered. Host checks pass;
+  [result](docs/tasks/GOLEM-006/README.md) awaits review and firmware qualification.
 
 - [ ] **GOLEM-003:** Implement a small readable scalar-floor/conversion prototype
   over selected Rally command generation. [Task plan](docs/tasks/GOLEM-003.md).

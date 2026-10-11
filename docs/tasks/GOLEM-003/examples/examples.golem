@@ -1,7 +1,22 @@
 // Syntax illustrations for review; this whole file does not compile yet.
-// No statement terminators; parser changes are deferred.
-// For/Next exists in main with the old semicolons; If/Else and Do loops remain proposed.
+// No statement terminators. For/Next is implemented in the main compiler.
+// Boolean comparisons, If/Else, Do loops and Switch remain proposed.
 // Independent samples: each includes its own declarations and initial state.
+
+// Boolean initialization from comparisons (proposed)
+uint16 foo = 1
+uint16 bar = 2
+
+bool quux = foo != bar         // true
+bool equal = foo == bar        // false
+bool less = foo < bar          // true
+bool greater = foo > bar       // false
+bool lessOrEqual = foo <= bar  // true
+bool greaterOrEqual = foo >= bar // false
+
+// Reassign a boolean using another comparison
+quux = foo == bar              // false
+
 
 // Branching
 sint16 result = -1

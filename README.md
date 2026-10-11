@@ -34,8 +34,11 @@ progress notes and [docs/design](docs/design/) for design documents.
 
 `make -C src` builds the host compiler for literal print, uint16 declarations,
 assignment/addition and For/Next. Statements have no terminators; newlines are
-whitespace. [GOLEM-005](docs/tasks/GOLEM-005/README.md) documents migration,
-host checks and the separate experimental scalar-floor frontend.
+whitespace. [GOLEM-005](docs/tasks/GOLEM-005/README.md) documents parser migration
+and the separate experimental scalar-floor frontend.
+[GOLEM-006](docs/tasks/GOLEM-006/README.md) adds checked allocation and a task-local
+resident CLI that combines scalar math with persistent uint16 state; host checks
+pass, with firmware qualification still pending.
 
 ## Reference material
 

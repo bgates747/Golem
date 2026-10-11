@@ -12,7 +12,9 @@ via MOS). See the root [README.md](README.md) for the elevator pitch.
 
 Status: **early design/exploration**. A task-local readable scalar-floor and
 conversion prototype has passed host checks under `docs/tasks/GOLEM-003/`, reusing
-selected Rally emission; it is not part of the maintained compiler and has not
+selected Rally emission. GOLEM-006 adds a task-local integrated resident CLI with
+shared allocation and persistent uint16 state; this scalar/profile code is not
+part of the maintained compiler and has not
 been executed on VDP firmware in this continuation. See
 `TODO.md` for active work and the task document for current evidence. The
 maintained compiler is no longer purely design-only: a
@@ -25,7 +27,8 @@ assignment, chained addition and For/Next. It has no general signed/float
 expressions, procedures or If/Do/Switch support. `tests/` is still a placeholder
 `.gitkeep` tree; task-local host checks live in GOLEM-003 and parser-review
 observations in GOLEM-004. GOLEM-005 implements terminator-free ordinary
-parsing and a task-local scalar successor using a shared token reader. Design work
+parsing and a task-local scalar successor using a shared token reader. GOLEM-006
+adds checked allocation to main while preserving ordinary payload bytes. Design work
 has moved beyond the kickoff devlog too: `docs/design/` now holds a living
 design-proposals doc, and several follow-on devlogs (toolchain decision,
 execution-lifecycle correction, VDU wrapper library writeup, the golemc
@@ -152,7 +155,9 @@ added there as part of this handoff so other agents can discover it.
 A host compiler Makefile exists: `make -C src` builds `build/golemc`.
 It accepts terminator-free syntax; newlines are whitespace. GOLEM-003 retains
 its historical semicolon parser/fixtures. GOLEM-005 has the new task-local
-scalar Makefile/CLI and host checks: `make -C docs/tasks/GOLEM-005 check`.
+scalar Makefile/CLI. GOLEM-006 supplies current host regression/integration
+checks: `make -C docs/tasks/GOLEM-006 check`. Its README owns the explicit
+experimental resident output mode; maintained `build/golemc` remains raw-only.
 This review did not create or validate an emulator profile. The compiler's
 host language and toolchain layout are decided
 (see [docs/devlog/2026-07-28-compiler-toolchain.md](docs/devlog/2026-07-28-compiler-toolchain.md)):
@@ -203,7 +208,12 @@ overlap):
   integer ops (add-with-carry chains) and explicit "patch, then execute"
   pseudo-ops for any runtime-computed address (arrays, pointers, stack-frame
   locals) — the VDP has no indexed/pointer addressing mode.
-- Current ordinary globals use fixed per-variable buffers. Shared local-stack
+- Current ordinary globals use fixed per-variable buffers with checked buffer
+  allocation. Raw mode preserves accumulator ID 1 and allocation from 2.
+  GOLEM-006 injects the same allocator into ordinary and scalar emission, with
+  external reservations before compiler claims; IDs 0 and 65535 are reserved.
+  Installed ownership/cleanup and an explicit resident mode are task-local.
+  Shared local-stack
   frames, heap objects/arrays and frame-relative patched offsets are earlier
   proposals, not implemented requirements for the small scalar integration.
 - Loops are preferred over recursion. Main's For body uses one initial call
@@ -237,8 +247,10 @@ overlap):
 
 `TODO.md` is the authoritative register. GOLEM-003's scalar prototype is
 host-qualified and awaits promotion/firmware decisions. GOLEM-004's review was
-accepted for the GOLEM-005 parser tranche. Shared checked allocation and explicit
-resident output integration remain the next separate increment.
+accepted for the GOLEM-005 parser tranche, now accepted at its commit/push
+checkpoint. GOLEM-006 delivers shared checked allocation and an explicit
+experimental resident output profile. Host evidence is not firmware qualification;
+scalar/profile production promotion still requires that separate gate.
 
 The July devlogs' next-step checklists are historical context, not another
 active register. They recorded formal IR/addressing work, reciprocal experiments
