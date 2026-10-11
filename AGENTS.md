@@ -10,7 +10,12 @@ Golem is a compiled, low-to-medium-level, C/Pascal-like language targeting the
 Agon Console8 VDP's **Buffered Commands API** directly (rather than the eZ80
 via MOS). See the root [README.md](README.md) for the elevator pitch.
 
-Status: **early design/exploration**, but no longer purely design-only: a
+Status: **early design/exploration**. A task-local readable scalar-floor and
+conversion prototype has passed host checks under `docs/tasks/GOLEM-003/`, reusing
+selected Rally emission; it is not part of the maintained compiler and has not
+been executed on VDP firmware in this continuation. See
+`TODO.md` for active work and the task document for current evidence. The
+maintained compiler is no longer purely design-only: a
 first toy compiler exists and has been verified end to end (`src/golemc.cpp`,
 compiling `.golem` source to a buffer-command byte blob, run successfully
 through `examples/hello_golem/`'s loader in the emulator — see
@@ -176,8 +181,10 @@ Summarized from the devlog and cross-checked against
 for anything still open (prefer that doc over this summary where they
 overlap):
 
-- One compiled instruction per VDP buffer block; block index doubles as a
-  jump/call target (a clean program-counter/address unit).
+- Author preference, 2026-10-11: multiple commands per block, with one or more
+  blocks per buffer; small procedures may use one block. This replaces the
+  early one-instruction-per-block proposal as the preferred direction. Exact
+  grouping and branch-address rules remain open; see GOLEM-001's review notes.
 - Typed three-address-code IR with explicit widening passes for multi-byte
   integer ops (add-with-carry chains) and explicit "patch, then execute"
   pseudo-ops for any runtime-computed address (arrays, pointers, stack-frame

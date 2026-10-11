@@ -9,12 +9,20 @@ Started 2026-07-28, seeded from the discussion in
 [docs/devlog/2026-07-28-execution-lifecycle.md](../devlog/2026-07-28-execution-lifecycle.md),
 and [docs/devlog/2026-07-28-compiler-toolchain.md](../devlog/2026-07-28-compiler-toolchain.md).
 Read those first for the platform constraints this document assumes
-throughout: no MMU/indexed addressing (patch-then-execute instead), one
-buffer block = one compiled instruction, 8/16-bit arithmetic as the fast
+throughout: no MMU/indexed addressing (patch-then-execute instead), 8/16-bit arithmetic as the fast
 path with 32-bit "taxed" and comparisons hardware-capped at 16 bits, the
 VDP is write-only from the eZ80's perspective (hard to introspect at
 runtime), and the corrected `batch`/`event-resident`/`hosted` execution
 lifecycle model.
+
+Layout preference updated 2026-10-11: the Author prefers multiple commands per
+block, with one or more blocks in a buffer. A small procedure may use a single
+block. This supersedes the kickoff's one-block-per-instruction assumption as
+the preferred direction; exact block boundaries and branch-address rules are
+still open. Source operations, command sequences and physical block placement
+are separate choices. See [GOLEM-001 review considerations](../tasks/GOLEM-001.md)
+and the task-local [GOLEM-003 prototype](../tasks/GOLEM-003.md). The latter's
+experimental syntax and compatibility IDs are not accepted language rules.
 
 This question is deliberately broken into independent axes - "what type of
 language" bundles several genuinely separate decisions that don't have to

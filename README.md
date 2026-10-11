@@ -17,8 +17,8 @@ code).
 Goals for Golem:
 
 - Compile a small, C/Pascal-like language directly to Buffered Commands API
-  byte sequences (one instruction per buffer block, so jump/call targets
-  are simply block indices).
+  byte sequences, preferring multiple commands per block and one or more
+  blocks per buffer. Exact branch-address layout remains a design decision.
 - Provide a runtime library for operations the VDP has no primitive for
   (multiply, divide, shifts, wide comparisons).
 - Prefer loops (conditional jump, zero stack cost) over recursion; support

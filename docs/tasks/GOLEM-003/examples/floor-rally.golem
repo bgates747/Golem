@@ -1,0 +1,13 @@
+// Equivalent source for the frozen Rally oracle.
+Buffer input(1000,4);
+Field x(input,0,f32,-32768,32767);
+Set(x,-0.00006103515625);
+Buffer output(1001,2);
+Field result(output,0,s16);
+Matrix source(1100,1,1);
+Matrix integral(1101,1,1);
+Program compute(2000) {
+    MatLoad(source,x);
+    MatFloor(integral,source);
+    StoreI16Floor(result,integral);
+};

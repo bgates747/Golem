@@ -1,0 +1,13 @@
+{
+  "repository": "https://github.com/bgates747/Golem.git",
+  "branch": "rally19-vdp",
+  "commit": "4db7e96f70c3d63f4ab53766f3b32063e9357c8b",
+  "compiler_checkpoint": "f9e7d8d0d0d105c26cc2ee8c2f30a2267a905895",
+  "purpose": "Immutable host oracle; do not build in or modify the Rally worktree.",
+  "sha256": {
+    "src/golemc.cpp": "0156bb00e4d4f3f123e7fb012805bd1f85756cbca5849bd1024fdef8db52cdb5",
+    "src/hosted.hpp": "930a6f7e1680d3568d2ec82ef3907f8856fc8f87d735364f10a27218bd86445c",
+    "tests/test_existing.cpp": "e1a8efdb74b7d78ed886a8606529fdeaa84969d37a0d23ce36caf1756ab5c1d5",
+    "tests/test_floor.cpp": "7e1b17132b9a2038e8aafc82580c346d90de318e253ce3fc0389a206af5237e3"
+  }
+}
