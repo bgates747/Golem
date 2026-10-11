@@ -176,6 +176,11 @@ cd /home/smith/Agon/mystuff/agon-utils && .venv/bin/python tests/test_agonutils.
 
 ## Architecture and application-specific conventions
 
+Language convention revised 2026-10-11: no statement terminators; newlines
+remain whitespace, and the parser determines statement boundaries from grammar.
+See design Axes 5 and 15. Implementation is explicitly deferred: the maintained
+compiler and GOLEM-003 executable fixtures still use their existing semicolons.
+
 Summarized from the devlog and cross-checked against
 [docs/design/language-type-proposals.md](docs/design/language-type-proposals.md)
 for anything still open (prefer that doc over this summary where they
@@ -251,6 +256,11 @@ From the devlog's "Next steps" checklist:
        compiler task, but track for a PR/bug-report outcome.
 
 ## Task documents and artifacts
+
+Code samples must include the explicit typed declarations and initial state
+required to understand or use each sample independently. Do not rely on another
+sample's variables or imply declaration through assignment or a loop header.
+An iteration header may supply the initial value of an already-declared counter.
 
 `TODO.md` is the authoritative task register; keep entries concise and link
 each detailed task plan at `docs/tasks/<TASK-ID>.md`. For tasks producing

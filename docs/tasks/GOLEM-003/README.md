@@ -71,8 +71,11 @@ One source file contains, in order, one `float32` declaration with an explicit
 The float initializer is optional and defaults to zero. Bounds and values are
 finite decimal literals; exponent notation, whitespace and `//` comments work.
 Keywords and builtin names are case-insensitive; identifiers are case-sensitive
-and cannot reuse reserved words. Names must be distinct. All statements,
-including block delimiters, require semicolons.
+and cannot reuse reserved words. Names must be distinct. The current prototype
+requires semicolons on all statements, including block delimiters. The language
+specification was revised on 2026-10-11 to omit all statement terminators; that parser
+change is explicitly deferred. `floor.golem` retains executable prototype syntax;
+[examples.golem](examples/examples.golem) illustrates the revised design convention.
 
 The input range must lie within -32768..32767, inclusive. This is deliberately
 narrower than all values that could floor into a signed word. Both the initial

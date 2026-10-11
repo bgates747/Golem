@@ -103,32 +103,47 @@ be resolved together or in this order.
   passes). The more ambitious long-term target implied by the original
   devlog's three-address-code IR sketch, but a much bigger lift.
 
-## Axis 5: Statement terminator
+## Axis 5: Statement terminators
 
-**Status: DECIDED - mandatory `;` as a statement separator.**
+**Status: DECIDED for the current design, revised 2026-10-11 — no statement
+terminators or separators. Implementation pending.**
 
-Unlike the axes above, this one is settled, not just leaning. `src/golemc.cpp`
-originally treated the trailing `;` after its one statement form (`print
-"...";`) as optional, which was harmless with only one statement form (the
-next statement was always unambiguously recognizable by its leading
-`print` keyword). That stops being true once more statement forms are
-added that don't each start with a unique leading keyword (e.g. a bare
-assignment or a function-call statement) - without a mandatory terminator,
-the parser would need real lookahead/backtracking, or newline-significance
-rules, to know where one statement ends and the next begins (the classic
-"automatic semicolon insertion" trap JS is known for, where guessing
-statement boundaries produces real, surprising bugs).
+Declarations, assignments, calls, output and structural statements do not use
+semicolons or another terminator. Newlines remain whitespace, not statement
+boundaries. The parser recognizes complete statements from their grammar;
+multiple statements may therefore share a line:
 
-Decision: semicolons are a **mandatory statement separator**, Pascal/
-Wirth-family style, not optional decoration and not newline-significant.
-This is the simplest, least ambiguous choice for a recursive-descent
-parser and matches the Pascal-style static-typing lean already adopted on
-Axis 2 - both are instances of the same underlying preference (push
-complexity/ambiguity out of the grammar and into explicit syntax, given
-how hard this platform is to debug at runtime). Applied in
-`src/golemc.cpp` (see
-[docs/devlog/2026-07-28-golemc-milestone-and-vba-syntax-question.md](../devlog/2026-07-28-golemc-milestone-and-vba-syntax-question.md)
-for the discussion this followed).
+```golem
+print "foo" print "bar"
+```
+
+Ordinary multiline formatting remains available for readability:
+
+```golem
+uint16 i
+For i = 1 To 8
+    If i == 4 Then
+        print "halfway"
+    Else
+        print "tick"
+    EndIf
+Next i
+```
+
+There is no automatic semicolon insertion or newline-based continuation rule.
+As expressions and calls expand, resolve concrete boundary ambiguities through
+explicit grammar/parser improvements and useful diagnostics rather than
+requiring terminators in advance. This is a deliberate exploratory choice;
+revisit it if actual language constructs demonstrate a need.
+
+This supersedes both the original every-statement semicolon rule and the
+intermediate ordinary-statements-only rule discussed on 2026-10-11. The Author
+explicitly deferred implementation. The maintained compiler and GOLEM-003
+prototype still require their existing semicolons; executable regression
+fixtures retain that syntax until a parser change is authorized. Design
+illustrations use the new convention. Exact block spellings remain governed by
+Axis 15. The original decision remains in the
+[earlier milestone devlog](../devlog/2026-07-28-golemc-milestone-and-vba-syntax-question.md).
 
 ## Axis 6: First native integer type, and variable declaration semantics
 
@@ -194,7 +209,7 @@ argument's static type (no `.toString()` needed), which would be a
 defensible option here too - but it was rejected in favor of keeping
 `print`'s codegen (and the type-dispatch decision) monomorphic and
 explicit, consistent with the explicit-over-implicit bias already applied
-on Axis 5 (mandatory `;`) and the IR's explicit-widening passes: an
+on Axis 5 (grammar-defined statement boundaries) and the IR's explicit-widening passes: an
 explicit conversion (`print str(qux);`, exact spelling TBD) keeps the
 value→text conversion logic in one reusable, visible place instead of
 hidden inside `print`'s overload resolution - which matters more here than
@@ -626,7 +641,7 @@ convention entirely open.**
     range" done by prefixing every line. Simplest possible lexer (no
     nesting-vs-non-nesting question to answer), consistent with this
     project's general bias toward minimal/unambiguous grammar (e.g. Axis
-    5's mandatory statement terminator), but loses a genuinely convenient
+    5's grammar-defined statement boundaries), but loses a genuinely convenient
     editing affordance.
   - **Paired delimiters, C-style (`/* ... */`, non-nesting)** - familiar,
     but reintroduces a `/`-based delimiter alongside a `#`-based line
@@ -675,38 +690,81 @@ spellings within each construct are open.**
   `}` that gives no such signal. Open: whether repeating the variable name
   at `Next` is mandatory or optional, and whether a `Step` clause (VBA's
   `For i = 1 To 100 Step 2`) is in scope for v1 or deferred.
-- **Relationship to Axis 5 (mandatory `;` terminator): DECIDED - every
-  *statement* ends in `;`, including block-delimiting keyword statements
-  themselves, no exceptions.** Raised concretely while drafting a worked
-  `For` example in `examples/scratch.golem` (see
-  [docs/devlog/2026-07-29-loop-tail-call-prototype.md](../devlog/2026-07-29-loop-tail-call-prototype.md)'s
-  follow-on discussion): the original phrasing above ("these are
-  block-*delimiting* keywords, not statement terminators") left it
-  ambiguous whether `For i = 1 To 50` and `Next i` themselves needed a
-  trailing `;`. Leaving that ambiguous is exactly the kind of "some
-  statements need it, some don't, good luck remembering which"
-  inconsistency Axis 5 was adopted specifically to avoid (same underlying
-  rationale: push ambiguity out of the grammar/author's memory and into
-  explicit, uniform syntax). Resolution: `;` is required after **every**
-  statement without exception - `For i = 1 To 50;` ... `Next i;`,
-  `If x Then;` ... `Else;` ... `EndIf;`, `Do While x;` ... `Loop;` - not
-  just the statements nested inside a block. One rule, zero special
-  cases, nothing to memorize per-construct.
-  **Important distinction (statement vs. line, not to be conflated):**
-  this is a statement-terminator rule, not a line-terminator rule -
-  Axis 5 already decided `;` is "not newline-significant", and that is
-  unaffected here. Line breaks (as used in `examples/scratch.golem`'s
-  formatting, e.g. putting `For`, its body, and `Next` each on their own
-  line) are purely a readability convention with zero grammatical
-  meaning. It is equally valid - if not stylistically encouraged - to
-  write the entire `For` loop, or an entire program, as one physical
-  line: `For i = 1 To 50; print "Hello "; Next i;` is exactly as valid
-  as the multi-line form.
+- **Relationship to Axis 5: DECIDED, revised 2026-10-11 — no statement
+  terminators.** Neither structural constructs nor their body statements use
+  semicolons. Newlines remain whitespace. For example:
+
+  ```golem
+  uint16 i
+  For i = 1 To 8
+      If i == 4 Then
+          print "halfway"
+      Else
+          print "tick"
+      EndIf
+  Next i
+  ```
+
+  The corresponding one-line form is `For i = 1 To 8 print "tick" Next i`.
+  The parser must recognize grammatical boundaries without relying on line
+  endings. Implementation is explicitly deferred.
 - **Note for Axis 14 (comment syntax):** Axis 14 flagged `{`/`}` as
   potentially wanted later for block-statement syntax, which would have
   made reusing them for a block-comment delimiter ambiguous. This axis's
   lean away from curly-brace blocks removes that particular concern, for
   whichever of Axis 14's block-comment options end up chosen.
+
+### Switch and indexed dispatch — initial decision, 2026-10-11
+
+Use `Switch selector`, integer-constant `Case value` branches, optional
+`Default`, and `EndSwitch`. Evaluate the selector once. Execute only the
+matching case, without fall-through or a required `break`. Duplicate case
+values are compile-time errors. Implementation remains deferred.
+
+An explicit `Range(low, high)` clause requests indexed jump-table dispatch:
+
+```golem
+sint16 direction = -1
+
+Switch direction Range(-2, 2)
+Case -2
+    print "hard left"
+Case -1
+    print "left"
+Case 1
+    print "right"
+Case 2
+    print "hard right"
+Default
+    print "neutral or unknown"
+EndSwitch
+```
+
+The initial range has inclusive, compile-time integer bounds and consecutive
+slots starting at any representable lower bound. Bounds-check before forming
+the slot index `selector - low`. Bounds and case values must fit the selector's
+integer type. An inverted range, duplicate cases, cases outside the declared
+range, or a table exceeding the implementation's supported resource budget
+must fail compilation. Calculate table size and index normalization without
+arithmetic overflow; the numeric resource cap is not yet selected.
+
+Missing cases are allowed without warnings. Fill their slots with `Default`,
+or the continuation after `EndSwitch` if there is no default. Out-of-range
+selectors use the same fallback. In the example, slot 0 therefore takes the
+fallback. Do not silently replace an explicitly requested table with a chain
+of comparisons. A switch without `Range` makes no jump-table request.
+
+Non-unit steps are a possible extension, not part of the selected initial
+contract. For example, `Range(2, 10, 2)` could denote 2, 4, 6, 8, 10; dispatch
+would additionally check step alignment before normalizing the index. Exact
+step rules and implementation have not been selected.
+
+Additional Range uses are drafted in the task-local
+[Range syntax prototypes](../tasks/GOLEM-003/range-prototypes.md): inclusive
+ascending/descending integer sequences, `For ... In Range(...)`, membership,
+stepped switch dispatch, and a possible `Bounds` spelling to distinguish
+continuous numeric bounds. These remain review proposals, not implemented or
+accepted extensions to the initial step-1 dispatch contract.
 
 ## Axis 16: Increment/decrement operators `++` / `--`
 

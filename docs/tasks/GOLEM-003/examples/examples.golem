@@ -1,0 +1,159 @@
+// Syntax illustrations for review; this whole file does not compile yet.
+// No statement terminators; parser changes are deferred.
+// For/Next exists in main with the old semicolons; If/Else and Do loops remain proposed.
+// Independent samples: each includes its own declarations and initial state.
+
+// Branching
+sint16 result = -1
+
+If result < 0 Then
+    print "negative"
+ElseIf result == 0 Then
+    print "zero"
+Else
+    print "positive"
+EndIf
+
+
+// Selection: evaluate once, no fall-through, optional Default
+uint16 direction = 1
+
+Switch direction
+Case 0
+    print "north"
+Case 1
+    print "east"
+Case 2
+    print "south"
+Case 3
+    print "west"
+Default
+    print "unknown"
+EndSwitch
+
+
+// Indexed dispatch: inclusive consecutive slots, any starting value
+// TODO implementation: Range requests a bounds-checked resident jump table.
+// Missing Case 0 and out-of-range values both use Default, without a warning.
+// Without Default, those values continue after EndSwitch.
+// Duplicate/out-of-range cases and oversized tables are compile-time errors.
+sint16 turn = -1
+
+Switch turn Range(-2, 2)
+Case -2
+    print "hard left"
+Case -1
+    print "left"
+Case 1
+    print "right"
+Case 2
+    print "hard right"
+Default
+    print "neutral or unknown"
+EndSwitch
+
+// Possible later extension, not yet selected: Range(2, 10, 2).
+// This would cover 2, 4, 6, 8, 10 and require a step-alignment check.
+
+
+// Range prototypes below are proposals, not implemented syntax.
+// Range has inclusive limits; default step is 1. It need not create an array.
+sint16 rangeIndex
+
+For rangeIndex In Range(2, 10, 2)
+    print "ascending tick"
+Next rangeIndex
+
+// Independent descending iteration; the loop assigns its initial counter value.
+sint16 descendingIndex
+
+For descendingIndex In Range(10, 2, -2)
+    print "descending tick"
+Next descendingIndex
+
+
+// Membership checks bounds AND step alignment: 6 belongs, 7 does not.
+sint16 value = 6
+
+If value In Range(2, 10, 2) Then
+    print "member"
+Else
+    print "outside or between steps"
+EndIf
+
+
+// Stepped jump-table extension: slots for 2, 4, 6, 8, 10.
+// Missing cases 4 and 8, nonmembers, and out-of-bounds values use Default.
+uint16 direction = 6
+
+Switch direction Range(2, 10, 2)
+Case 2
+    print "first"
+Case 6
+    print "third"
+Case 10
+    print "fifth"
+Default
+    print "unhandled"
+EndSwitch
+
+
+// Numeric bounds are not stepped sequences: 0.25 is permitted here.
+// Bounds is a proposed name; keeping context-dependent Range is another option.
+float32 boundedInput Bounds(-1, 1) = 0.25
+
+
+// Counted loop: inclusive endpoints, increment of 1
+uint16 i
+
+For i = 1 To 8
+    print "tick"
+Next i
+
+
+// A branch inside a loop
+uint16 i
+
+For i = 1 To 8
+    If i == 4 Then
+        print "halfway"
+    Else
+        print "tick"
+    EndIf
+Next i
+
+
+// Test before each iteration; continue while true
+uint16 count = 0
+
+Do While count < 4
+    print "tick"
+    count = count + 1
+Loop
+
+
+// Test before each iteration; stop when true
+uint16 count = 0
+
+Do Until count == 4
+    print "tick"
+    count = count + 1
+Loop
+
+
+// Test after each iteration; always run at least once, continue while true
+uint16 count = 0
+
+Do
+    print "tick"
+    count = count + 1
+Loop While count < 4
+
+
+// Test after each iteration; always run at least once, stop when true
+uint16 count = 0
+
+Do
+    print "tick"
+    count = count + 1
+Loop Until count == 4

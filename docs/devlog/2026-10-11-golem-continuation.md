@@ -70,3 +70,57 @@ main's frontend and storage policy, plus firmware qualification before productio
 promotion. Broader expression syntax, module linking and native Xtensa research
 are not prerequisites. The output stays resident; the 21-byte recurring count
 does not include result readback or another application's use of that output.
+
+## Terminator convention revised; implementation deferred
+
+The Author approved semicolons for ordinary statements only: declarations,
+assignments, calls and output. Structural headers, branch markers and closers
+(`Sub`/`EndSub`, `If`/`Else`/`EndIf`, `For`/`Next`, `Do`/`Loop`) do not use
+semicolons. This supersedes the earlier every-statement rule in design Axes 5
+and 15. Newlines remain whitespace; there is no automatic semicolon insertion.
+
+Updated the living specification and readable design examples. The maintained
+compiler, prototype parsers and executable `floor.golem` fixture are unchanged,
+as the Author explicitly requested no implementation yet.
+
+### Follow-up: remove all statement terminators for now
+
+The Author subsequently chose to remove terminators from ordinary statements
+as well, keeping newlines insignificant. The parser should recognize complete
+statements from grammar; concrete ambiguities will be addressed through parser
+improvements as they arise. `print "foo" print "bar"` illustrates two statements
+on one line. This supersedes the intermediate ordinary-only semicolon decision
+above. Updated design Axes 5 and 15, handoff and `examples.golem`; compiler code
+and executable fixtures remain unchanged under the earlier implementation deferral.
+
+### Indexed switch decision
+
+The Author accepted `Switch selector Range(low, high)` as the initial explicit
+jump-table form, with inclusive consecutive slots starting at any representable
+integer value. Evaluate once and bounds-check before indexing. Missing cases
+silently fill with the default target, or the continuation after the switch
+when no default exists. Duplicate/out-of-range cases and oversized tables fail
+compilation. Recorded in the living design and readable examples; no compiler
+implementation was performed. A non-unit step argument was subsequently raised
+as a possible extension and is recorded as unselected, requiring an additional
+alignment check.
+
+### Shared Range syntax prototypes
+
+At the Author's request, wrote task-local `GOLEM-003/range-prototypes.md` and
+added readable examples for ascending/descending stepped iteration, membership,
+stepped indexed switches and an illustrative `Bounds` declaration. Recorded
+inclusive limits, alignment, finite counter arithmetic, sparse-case fallback
+and proposed edge-case rules. Distinguished integer sequences from continuous
+float bounds; additional syntax and the bounds naming remain proposals. No
+compiler implementation or executable fixture changes were made.
+
+## GOLEM-004 promoted for review
+
+The Author requested a task for the grammar/integration review, committing and
+pushing all accumulated documentation first, then proceeding with that task.
+GOLEM-004 will reconcile the terminator-free source convention, current control
+flow and Range decisions with the maintained parser and scalar prototype. It
+will provide concrete grammar, allocation, compatibility and validation rules
+for the next small integration slice. The previous parser implementation deferral
+remains in effect; this task authorizes review and read-only source probes.
