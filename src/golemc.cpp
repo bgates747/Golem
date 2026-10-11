@@ -2,26 +2,12 @@
 //
 // Toy Golem compiler (proof of concept).
 //
-// Supports:
-//   print "string literal";
-//   uint16 <ident> [= expr];        (naked declaration defaults to 0)
-//   <ident> = expr;
-//   For <ident> = expr To expr; <statements> Next <ident>;
-// where expr := term ('+' term)*, term := ident | integer-literal, and
-// every *statement* requires a trailing `;` (not every *line* - newlines
-// are not significant; see docs/design/language-type-proposals.md's
-// statement-terminator note, Axis 5, for why: with only one statement
-// form an optional terminator was harmless, but once more statement
-// forms exist that don't each start with a unique leading keyword, an
-// optional terminator becomes ambiguous. A mandatory semicolon keeps the
-// grammar unambiguous for a simple recursive-descent parser, Pascal/
-// Wirth-family style, with no JS-style automatic-semicolon-insertion
-// footguns.). Per Axis 15's now-settled "every statement ends in `;`,
-// including block-delimiting keyword statements themselves" note, a
-// `For` loop's header line and its `Next <ident>` closer each end in
-// their own `;` too - `For i = 1 To 50; ... Next i;`.
+// Supports terminator-free print, uint16 declarations/assignment/addition,
+// and For <declared-counter> = expr To expr ... Next <matching-counter>.
+// Newlines are whitespace. Keywords are case-insensitive; identifiers are
+// case-sensitive. Shared token reading and source spans live in token_reader.hpp.
 //
-// The `For` loop's variable must already be declared (`uint16 i;`) -
+// The `For` loop's variable must already be declared (`uint16 i`) -
 // `For` never doubles as a declaration form (Author's stated preference:
 // keep declaration and loop-iteration concerns separate). Its codegen
 // mirrors examples/loop_test/loop_test.asm's hand-verified mechanism
@@ -39,7 +25,7 @@
 // unless both sides are buffer-fetched.
 //
 // `print` still only accepts a string literal - printing a `uint16`
-// (`print str(qux);`) is NOT implemented yet; see Axis 7/8's still-open
+// (`print str(qux)`) is NOT implemented yet; see Axis 7/8's still-open
 // questions (no first-class `string` type, no int-to-decimal runtime
 // routine) - that's real follow-on work, not done here.
 //
@@ -68,14 +54,16 @@
 // Axis 13 for the concrete design (the addition primitive, its
 // dedicated-accumulator storage model, and the exact wire encoding used).
 //
-// This is NOT the real Golem compiler - it has no general lexer/parser,
-// no widths beyond `uint16`, no comparisons/control flow, no `str()`.
+// This is NOT the real Golem compiler - it has no general expression AST,
+// no widths beyond `uint16`, no If/Do/Switch, no `str()`.
 // It exists to close the loop first opened by examples/hello_golem/: that
 // example's program.bin was hand-authored to *stand in* for compiler
 // output; this program is a genuine (if minimal) compiler that produces
 // the same kind of output for real, from real .golem source.
 //
 // Usage: golemc <input.golem> <output.bin>
+
+#include "token_reader.hpp"
 
 #include <algorithm>
 #include <cctype>
@@ -89,112 +77,9 @@
 
 namespace {
 
-struct CompileError : std::runtime_error {
-    using std::runtime_error::runtime_error;
-};
-
-int lineNumberAt(const std::string &src, size_t pos) {
-    return 1 + static_cast<int>(std::count(src.begin(), src.begin() + pos, '\n'));
-}
-
-// Advance pos past any whitespace and `//`-to-end-of-line comments. This
-// toy grammar has no statement terminators other than the `print` keyword
-// itself (plus an optional `;`), so newlines are not otherwise significant.
-void skipWhitespaceAndComments(const std::string &src, size_t &pos) {
-    for (;;) {
-        while (pos < src.size() && std::isspace(static_cast<unsigned char>(src[pos]))) {
-            ++pos;
-        }
-        if (pos + 1 < src.size() && src[pos] == '/' && src[pos + 1] == '/') {
-            while (pos < src.size() && src[pos] != '\n') {
-                ++pos;
-            }
-            continue;
-        }
-        break;
-    }
-}
-
-// Parse a double-quoted string literal starting at src[pos] (which must be
-// '"'). Supports \\, \", and \n escapes only. Advances pos past the
-// closing quote and returns the literal's decoded bytes.
-std::string parseStringLiteral(const std::string &src, size_t &pos) {
-    int startLine = lineNumberAt(src, pos);
-    if (pos >= src.size() || src[pos] != '"') {
-        throw CompileError("line " + std::to_string(startLine) +
-                            ": expected '\"' to start a string literal");
-    }
-    ++pos;
-    std::string out;
-    for (;;) {
-        if (pos >= src.size()) {
-            throw CompileError("line " + std::to_string(startLine) +
-                                ": unterminated string literal");
-        }
-        char c = src[pos];
-        if (c == '"') {
-            ++pos;
-            break;
-        }
-        if (c == '\\' && pos + 1 < src.size()) {
-            char next = src[pos + 1];
-            if (next == '"' || next == '\\') {
-                out.push_back(next);
-                pos += 2;
-                continue;
-            }
-            if (next == 'n') {
-                out.push_back('\n');
-                pos += 2;
-                continue;
-            }
-        }
-        out.push_back(c);
-        ++pos;
-    }
-    return out;
-}
-
-bool isIdentStart(char c) {
-    return std::isalpha(static_cast<unsigned char>(c)) || c == '_';
-}
-
-bool isIdentCont(char c) {
-    return std::isalnum(static_cast<unsigned char>(c)) || c == '_';
-}
-
-std::string parseIdentifier(const std::string &src, size_t &pos) {
-    int startLine = lineNumberAt(src, pos);
-    if (pos >= src.size() || !isIdentStart(src[pos])) {
-        throw CompileError("line " + std::to_string(startLine) + ": expected an identifier");
-    }
-    size_t start = pos;
-    ++pos;
-    while (pos < src.size() && isIdentCont(src[pos])) {
-        ++pos;
-    }
-    return src.substr(start, pos - start);
-}
-
-// Parses an unsigned decimal integer literal, range-checked to fit a
-// uint16 (0-65535) - see docs/design/language-type-proposals.md's Axis 2
-// static/range-checked typing lean.
-unsigned parseUint16Literal(const std::string &src, size_t &pos) {
-    int startLine = lineNumberAt(src, pos);
-    if (pos >= src.size() || !std::isdigit(static_cast<unsigned char>(src[pos]))) {
-        throw CompileError("line " + std::to_string(startLine) + ": expected an integer literal");
-    }
-    size_t start = pos;
-    while (pos < src.size() && std::isdigit(static_cast<unsigned char>(src[pos]))) {
-        ++pos;
-    }
-    unsigned long value = std::stoul(src.substr(start, pos - start));
-    if (value > 0xFFFFu) {
-        throw CompileError("line " + std::to_string(startLine) + ": integer literal " +
-                            std::to_string(value) + " does not fit in a uint16 (0-65535)");
-    }
-    return static_cast<unsigned>(value);
-}
+using CompileError = golem::syntax::Error;
+using Reader = golem::syntax::Reader;
+using Kind = golem::syntax::Kind;
 
 // --- Buffered Commands API byte-level emission helpers ---
 //
@@ -292,7 +177,9 @@ void emitAdjustMultiBufferFetched(std::vector<unsigned char> &out, int bufferId,
 // partial-write pattern), so the contamination is a shared additive
 // offset that cancels out of every comparison operator (equality AND
 // ordering alike) - this is the only reliable form for a raw numeric
-// buffer compare.
+// buffer compare for ordinary values. The raw 0xffff word still collides
+// with the firmware's -1 invalid-operand sentinel; GOLEM-004 records this
+// existing loop-domain limitation. This parser tranche preserves emission.
 void emitCondCallBufferValue(std::vector<unsigned char> &out, int targetBufferId,
                               unsigned char condOpBase, int checkBufferId,
                               unsigned checkOffset, int operandBufferId,
@@ -321,17 +208,6 @@ std::vector<unsigned char> le16Bytes(unsigned value) {
 // loader.asm's `program_buffer_id`), so variable/scratch buffer IDs start
 // at 1 (`kAccBufferId`).
 
-// Reserved-keyword check, case-insensitive (Axis 18: keywords are
-// case-insensitive, so a variable can't dodge the reservation by typing
-// e.g. `Print` or `PRINT` instead of `print`).
-bool isReservedKeyword(const std::string &name) {
-    static const std::vector<std::string> kKeywords = {"print", "uint16", "for", "to", "next"};
-    std::string lower = name;
-    std::transform(lower.begin(), lower.end(), lower.begin(),
-                    [](unsigned char c) { return static_cast<char>(std::tolower(c)); });
-    return std::find(kKeywords.begin(), kKeywords.end(), lower) != kKeywords.end();
-}
-
 class Compiler {
 public:
     std::vector<unsigned char> out;
@@ -347,25 +223,22 @@ public:
         }
     }
 
-    int declareVariable(const std::string &name, int lineNo) {
-        if (isReservedKeyword(name)) {
-            throw CompileError("line " + std::to_string(lineNo) + ": '" + name +
-                                "' is a reserved keyword and cannot be used as a variable name");
+    int declareVariable(const std::string &name, const golem::syntax::Position &at) {
+        if (golem::syntax::reserved(name)) {
+            golem::syntax::fail(at, "reserved identifier '" + name + "'");
         }
         if (variables_.count(name)) {
-            throw CompileError("line " + std::to_string(lineNo) +
-                                ": redeclaration of variable '" + name + "'");
+            golem::syntax::fail(at, "redeclaration of variable '" + name + "'");
         }
         int bufferId = nextBufferId_++;
         variables_[name] = bufferId;
         return bufferId;
     }
 
-    int lookupVariable(const std::string &name, int lineNo) const {
+    int lookupVariable(const std::string &name, const golem::syntax::Position &at) const {
         auto it = variables_.find(name);
         if (it == variables_.end()) {
-            throw CompileError("line " + std::to_string(lineNo) +
-                                ": use of undeclared variable '" + name + "'");
+            golem::syntax::fail(at, "use of undeclared variable '" + name + "'");
         }
         return it->second;
     }
@@ -395,28 +268,21 @@ struct Term {
 // literal - see docs/design/language-type-proposals.md Axis 10's
 // addendum ("Golem does allow multiple operations within a single
 // expression").
-std::vector<Term> parseExpr(const std::string &src, size_t &pos, const Compiler &compiler) {
+std::vector<Term> parseExpr(Reader &reader, const Compiler &compiler) {
     std::vector<Term> terms;
-    for (;;) {
-        int lineNo = lineNumberAt(src, pos);
+    do {
         Term term;
-        if (pos < src.size() && std::isdigit(static_cast<unsigned char>(src[pos]))) {
+        if (reader.peek().kind == Kind::Number) {
             term.isLiteral = true;
-            term.literalValue = parseUint16Literal(src, pos);
+            term.literalValue = reader.uint16();
         } else {
-            std::string name = parseIdentifier(src, pos);
-            term.isLiteral = false;
-            term.varBufferId = compiler.lookupVariable(name, lineNo);
+            if (reader.peek().kind != Kind::Identifier || golem::syntax::reserved(reader.peek().text))
+                reader.error("expected expression operand (integer or declared uint16 variable)");
+            auto name = reader.pop();
+            term.varBufferId = compiler.lookupVariable(name.text, name.begin);
         }
         terms.push_back(term);
-        skipWhitespaceAndComments(src, pos);
-        if (pos < src.size() && src[pos] == '+') {
-            ++pos;
-            skipWhitespaceAndComments(src, pos);
-            continue;
-        }
-        break;
-    }
+    } while (reader.take('+'));
     return terms;
 }
 
@@ -464,131 +330,36 @@ void compileExprInto(Compiler &compiler, std::vector<unsigned char> &out, int de
     emitAdjustMultiBufferFetched(out, destBufferId, kOpSet, 0, 2, Compiler::kAccBufferId, 0);
 }
 
-// Compile Golem source into the raw payload-byte "compiled output" this toy
-// model uses (see program.asm's header comment). Supports:
-//   print "string literal";           (literal bytes, no CR/LF appended -
-//                                       see Axis 21: consecutive `print`s
-//                                       run together on one line unless the
-//                                       literal itself includes `\n`)
-//   uint16 <ident> [= expr];          (naked declaration defaults to 0)
-//   <ident> = expr;
-//   For <ident> = expr To expr; <statements> Next <ident>;
-// where expr := term ('+' term)*, term := ident | integer-literal.
+// Parsing preserves the vector-of-terms emission boundary and allocation order.
+void compileBlock(Compiler &compiler, Reader &reader, std::vector<unsigned char> &out);
 
-bool matchesKeywordAt(const std::string &src, size_t pos, const std::string &keyword) {
-    // Keywords are matched case-insensitively (see
-    // docs/design/language-type-proposals.md's Axis 18) - `for`, `For`,
-    // and `FOR` are all the same keyword. Identifiers (variable names)
-    // are NOT case-folded here; `parseIdentifier`/`declareVariable`/
-    // `lookupVariable` compare/store names exactly as written.
-    if (pos + keyword.size() > src.size()) {
-        return false;
-    }
-    for (size_t i = 0; i < keyword.size(); ++i) {
-        if (std::tolower(static_cast<unsigned char>(src[pos + i])) !=
-            std::tolower(static_cast<unsigned char>(keyword[i]))) {
-            return false;
-        }
-    }
-    return pos + keyword.size() >= src.size() || !isIdentCont(src[pos + keyword.size()]);
-}
-
-void compileBlock(Compiler &compiler, const std::string &src, size_t &pos,
-                   std::vector<unsigned char> &out);
-
-// Compiles exactly one statement, emitting into `out`, and consumes that
-// statement's own trailing `;` (per Axis 5/Axis 15: every *statement* -
-// including a `For` header line and its `Next` closer - ends in `;`,
-// independent of line breaks).
-void compileStatement(Compiler &compiler, const std::string &src, size_t &pos,
-                       std::vector<unsigned char> &out) {
-    static const std::string kPrint = "print";
-    static const std::string kUint16 = "uint16";
-    static const std::string kFor = "For";
-    static const std::string kTo = "To";
-    static const std::string kNext = "Next";
-
-    int lineNo = lineNumberAt(src, pos);
-
-    auto expectSemicolon = [&]() {
-        skipWhitespaceAndComments(src, pos);
-        if (pos >= src.size() || src[pos] != ';') {
-            throw CompileError("line " + std::to_string(lineNumberAt(src, pos)) +
-                                ": expected ';' after statement");
-        }
-        ++pos;
-        skipWhitespaceAndComments(src, pos);
-    };
-
-    if (matchesKeywordAt(src, pos, kPrint)) {
-        pos += kPrint.size();
-        skipWhitespaceAndComments(src, pos);
-        std::string text = parseStringLiteral(src, pos);
-        // No automatic CR/LF - see Axis 21: `print` emits exactly the
-        // literal's decoded bytes, nothing more, so a programmer issuing
-        // several `print`s in a row (e.g. inside a loop body) gets them
-        // concatenated on one line unless a literal itself ends in `\n`.
-        for (unsigned char c : text) {
-            out.push_back(c);
-        }
-        expectSemicolon();
-    } else if (matchesKeywordAt(src, pos, kUint16)) {
-        pos += kUint16.size();
-        skipWhitespaceAndComments(src, pos);
-        std::string name = parseIdentifier(src, pos);
-        int bufferId = compiler.declareVariable(name, lineNo);
-        skipWhitespaceAndComments(src, pos);
-        if (pos < src.size() && src[pos] == '=') {
-            ++pos;
-            skipWhitespaceAndComments(src, pos);
-            std::vector<Term> terms = parseExpr(src, pos, compiler);
+void compileStatement(Compiler &compiler, Reader &reader, std::vector<unsigned char> &out) {
+    if (reader.takeKeyword("print")) {
+        if (reader.peek().kind != Kind::String) reader.error("expected string literal after 'print'");
+        auto text = reader.pop().text;
+        out.insert(out.end(), text.begin(), text.end());
+    } else if (reader.takeKeyword("uint16")) {
+        auto name = reader.name();
+        int bufferId = compiler.declareVariable(name.text, name.begin);
+        if (reader.take('=')) {
+            auto terms = parseExpr(reader, compiler);
             if (terms.size() == 1 && terms[0].isLiteral) {
-                // Common case: write the literal value directly as
-                // the buffer's initial content, no adjust needed.
                 emitWriteBlock(out, bufferId, le16Bytes(terms[0].literalValue));
             } else {
                 emitWriteBlock(out, bufferId, {0, 0});
                 compileExprInto(compiler, out, bufferId, terms);
             }
         } else {
-            // Naked declaration - defaults to 0, see Axis 6.
             emitWriteBlock(out, bufferId, {0, 0});
         }
-        expectSemicolon();
-    } else if (matchesKeywordAt(src, pos, kFor)) {
-        pos += kFor.size();
-        skipWhitespaceAndComments(src, pos);
-        std::string loopVarName = parseIdentifier(src, pos);
-        // The loop variable must already be declared - `For` never
-        // doubles as a declaration form (Author's stated preference: keep
-        // declaration and loop-iteration concerns separate).
-        int iBufferId = compiler.lookupVariable(loopVarName, lineNo);
-        skipWhitespaceAndComments(src, pos);
-        if (pos >= src.size() || src[pos] != '=') {
-            throw CompileError("line " + std::to_string(lineNumberAt(src, pos)) +
-                                ": expected '=' after 'For " + loopVarName + "'");
-        }
-        ++pos;
-        skipWhitespaceAndComments(src, pos);
-        std::vector<Term> startTerms = parseExpr(src, pos, compiler);
-        skipWhitespaceAndComments(src, pos);
-        if (!matchesKeywordAt(src, pos, kTo)) {
-            throw CompileError("line " + std::to_string(lineNumberAt(src, pos)) +
-                                ": expected 'To' in 'For' loop");
-        }
-        pos += kTo.size();
-        skipWhitespaceAndComments(src, pos);
-        std::vector<Term> boundTerms = parseExpr(src, pos, compiler);
-        expectSemicolon(); // closes the `For ... To ...` header line
-
-        // Initialise the loop variable, in the surrounding buffer - same
-        // codegen as a plain `i = expr;` assignment.
+    } else if (reader.takeKeyword("For")) {
+        auto loopVar = reader.name();
+        int iBufferId = compiler.lookupVariable(loopVar.text, loopVar.begin);
+        reader.need('=');
+        auto startTerms = parseExpr(reader, compiler);
+        reader.needKeyword("To");
+        auto boundTerms = parseExpr(reader, compiler);
         compileExprInto(compiler, out, iBufferId, startTerms);
-
-        // Materialise the (possibly-computed) upper bound into its own
-        // dedicated buffer - never compare the loop variable directly
-        // against a literal (see emitCondCallBufferValue's comment for
-        // why that's unreliable).
         int boundBufferId = compiler.allocInternalBuffer();
         if (boundTerms.size() == 1 && boundTerms[0].isLiteral) {
             emitWriteBlock(out, boundBufferId, le16Bytes(boundTerms[0].literalValue));
@@ -596,97 +367,42 @@ void compileStatement(Compiler &compiler, const std::string &src, size_t &pos,
             emitWriteBlock(out, boundBufferId, {0, 0});
             compileExprInto(compiler, out, boundBufferId, boundTerms);
         }
-
-        // The loop body gets its own dedicated buffer so it can
-        // conditionally call itself as the very last thing it does - see
-        // docs/devlog/2026-07-29-loop-tail-call-prototype.md: the VDP
-        // automatically converts a trailing conditional call into a jump,
-        // so this loop costs only one real call frame no matter how many
-        // iterations it runs.
         int bodyBufferId = compiler.allocInternalBuffer();
         std::vector<unsigned char> bodyOut;
-        compileBlock(compiler, src, pos, bodyOut);
-
-        skipWhitespaceAndComments(src, pos);
-        if (!matchesKeywordAt(src, pos, kNext)) {
-            throw CompileError("line " + std::to_string(lineNumberAt(src, pos)) +
-                                ": expected 'Next' to close 'For " + loopVarName + "'");
-        }
-        pos += kNext.size();
-        skipWhitespaceAndComments(src, pos);
-        std::string closingName = parseIdentifier(src, pos);
-        if (closingName != loopVarName) {
-            throw CompileError("line " + std::to_string(lineNumberAt(src, pos)) +
-                                ": 'Next " + closingName + "' does not match 'For " +
-                                loopVarName + "'");
-        }
-        expectSemicolon(); // closes `Next i`
-
-        // Increment the loop variable - reuses the exact same addition
-        // codegen as a plain `i = i + 1;` assignment (Axis 13's ACC
-        // scratch buffer keeps the carry-out byte from spilling into
-        // whatever buffer happens to follow `i`'s).
+        compileBlock(compiler, reader, bodyOut);
+        if (!reader.takeKeyword("Next")) reader.error("expected 'Next' to close 'For " + loopVar.text + "'");
+        const auto closing = reader.peek();
+        auto closingName = reader.name();
+        if (closingName.text != loopVar.text)
+            golem::syntax::fail(closing.begin, "'Next " + closingName.text +
+                                "' does not match 'For " + loopVar.text + "'");
         compileExprInto(compiler, bodyOut, iBufferId, {Term{false, 0, iBufferId}, Term{true, 1, 0}});
-
-        // Trailing conditional self-call: continue while i <= bound. This
-        // MUST be the last thing written to bodyOut for the VDP's
-        // tail-call optimisation to trigger.
+        // The trailing conditional self-call remains the last body command.
         emitCondCallBufferValue(bodyOut, bodyBufferId, kCondLE, iBufferId, 0, boundBufferId, 0);
-
-        // Materialise the body buffer as a literal data blob in the
-        // surrounding buffer, then conditionally call it once to enter
-        // the loop (checked, not unconditional, so `For i = 10 To 5`
-        // correctly runs zero iterations) - this first call is a real,
-        // non-tail call, but it only happens once regardless of
-        // iteration count; the per-iteration tail-call optimisation lives
-        // inside bodyOut itself, above.
         emitWriteBlock(out, bodyBufferId, bodyOut);
         emitCondCallBufferValue(out, bodyBufferId, kCondLE, iBufferId, 0, boundBufferId, 0);
-    } else if (pos < src.size() && isIdentStart(src[pos])) {
-        std::string name = parseIdentifier(src, pos);
-        int bufferId = compiler.lookupVariable(name, lineNo);
-        skipWhitespaceAndComments(src, pos);
-        if (pos >= src.size() || src[pos] != '=') {
-            throw CompileError("line " + std::to_string(lineNumberAt(src, pos)) +
-                                ": expected '=' after '" + name + "'");
-        }
-        ++pos;
-        skipWhitespaceAndComments(src, pos);
-        std::vector<Term> terms = parseExpr(src, pos, compiler);
+    } else if (reader.peek().kind == Kind::Identifier) {
+        if (golem::syntax::reserved(reader.peek().text))
+            reader.error("unsupported statement or unexpected block delimiter '" + reader.peek().text + "'");
+        auto name = reader.pop();
+        int bufferId = compiler.lookupVariable(name.text, name.begin);
+        reader.need('=');
+        auto terms = parseExpr(reader, compiler);
         compileExprInto(compiler, out, bufferId, terms);
-        expectSemicolon();
     } else {
-        throw CompileError("line " + std::to_string(lineNo) +
-                            ": expected a statement ('print', 'uint16', 'For', "
-                            "or an assignment)");
+        reader.error("expected a statement ('print', 'uint16', 'For', or an assignment)");
     }
 }
 
-// Compiles zero or more statements into `out`, stopping (without consuming)
-// as soon as the upcoming token is the `Next` keyword, or at end-of-input.
-// Used both at the top level (which should never legitimately see a bare
-// `Next`) and to compile a `For` loop's body.
-void compileBlock(Compiler &compiler, const std::string &src, size_t &pos,
-                   std::vector<unsigned char> &out) {
-    static const std::string kNext = "Next";
-    for (;;) {
-        skipWhitespaceAndComments(src, pos);
-        if (pos >= src.size() || matchesKeywordAt(src, pos, kNext)) {
-            break;
-        }
-        compileStatement(compiler, src, pos, out);
-    }
+void compileBlock(Compiler &compiler, Reader &reader, std::vector<unsigned char> &out) {
+    while (!reader.end() && !reader.keyword("Next")) compileStatement(compiler, reader, out);
 }
 
 std::vector<unsigned char> compile(const std::string &src) {
     Compiler compiler;
-    size_t pos = 0;
-    compileBlock(compiler, src, pos, compiler.out);
-    skipWhitespaceAndComments(src, pos);
-    if (pos < src.size()) {
-        throw CompileError("line " + std::to_string(lineNumberAt(src, pos)) +
-                            ": unexpected 'Next' with no matching 'For'");
-    }
+    Reader reader(src);
+    compileBlock(compiler, reader, compiler.out);
+    if (!reader.end()) reader.error("unexpected 'Next' with no matching 'For'");
     return compiler.out;
 }
 

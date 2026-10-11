@@ -151,3 +151,49 @@ the immediate proposed code tranche is the shared token reader and
 terminator-free existing ordinary/scalar source forms, before allocator and
 resident-output integration. New control-flow backends and Range extensions
 remain separate increments.
+
+## GOLEM-004 accepted; GOLEM-005 parser tranche delivered
+
+The Author authorized the recommended next parser tranche. Disposed GOLEM-004
+as an accepted review and removed it from TODO; its grammar and source findings
+provided the implementation contract. Promoted GOLEM-005 before changing code.
+The review's allocator/resident integration and firmware qualification slices
+remain separate proposed increments, not additional implementation in this task.
+
+Added maintained `src/token_reader.hpp` with half-open source spans, line/column
+errors, case-insensitive keyword matching, preserved identifier spelling,
+complete decimal tokens and checked integer/float conversion. The maintained
+ordinary parser now recognizes print, uint16 declarations/assignment/addition
+and named For/Next without statement terminators. Newlines remain whitespace;
+semicolons outside strings/comments reject with an explicit migration message.
+Future control-flow keywords are reserved consistently but not implemented.
+Oversized integers now exit with a compile error instead of an uncaught
+std::out_of_range. Finite double subnormals remain accepted; double underflow
+to zero, overflow and malformed numeric text reject explicitly.
+
+Kept GOLEM-003's parser, backend, fixtures, frozen Rally oracle and historical
+reports unchanged. The new experimental scalar frontend/CLI and floor source
+live in GOLEM-005's silo and use the same maintained token reader, returning the
+same scalar::Spec to the unchanged backend. This does not combine scalar and
+ordinary allocation/output profiles or promote scalar emission into production.
+Scalar bootstrap, cleanup, invoke and input-update/call bytes are unchanged;
+only the interface manifest's experimental task label changes to GOLEM-005.
+
+Host evidence is `docs/tasks/GOLEM-005/host-checks.json`. C++17 builds with
+-Wall -Wextra -Werror pass. Address/undefined-behavior sanitizer checks compare
+20 ordinary source pairs against the exact pre-tranche compiler and 22 scalar
+pairs against GOLEM-003, including float/double subnormals and numeric bounds.
+All command streams match. Sixty-nine rejection checks, source spans, casing
+and zero initialization pass. Ten negative CLI cases exit 1 and preserve
+existing output. Migrated hello and loop executable sources match bytes from
+their actual pre-tranche Git source; scratch.golem remains a design sample with
+unsupported str conversion. Commands, fingerprints and reusable build/run
+durations are preserved in the report. Standard main and task-local Make builds
+also pass. No firmware/emulator/hardware was run, modified or deployed.
+
+Updated living design, handoff and maintained examples for the implemented
+subset and documented reserved-name/semicolon migration. GOLEM-005 remains in
+TODO with its concrete result awaiting review. The next proposed increment is
+shared checked allocation and an explicit resident output profile; the existing
+loop endpoint/sentinel limitations and scalar host-bound/nonreentrancy contract
+remain as recorded in GOLEM-004/003. This tranche is left uncommitted.

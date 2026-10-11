@@ -106,7 +106,9 @@ be resolved together or in this order.
 ## Axis 5: Statement terminators
 
 **Status: DECIDED for the current design, revised 2026-10-11 — no statement
-terminators or separators. Implementation pending.**
+terminators or separators. Implemented in GOLEM-005 for existing ordinary
+statements and its experimental scalar source shape; other constructs remain
+proposals.**
 
 Declarations, assignments, calls, output and structural statements do not use
 semicolons or another terminator. Newlines remain whitespace, not statement
@@ -138,17 +140,22 @@ revisit it if actual language constructs demonstrate a need.
 
 This supersedes both the original every-statement semicolon rule and the
 intermediate ordinary-statements-only rule discussed on 2026-10-11. The Author
-explicitly deferred implementation. The maintained compiler and GOLEM-003
-prototype still require their existing semicolons; executable regression
-fixtures retain that syntax until a parser change is authorized. Design
-illustrations use the new convention. Exact block spellings remain governed by
+initially deferred implementation, then authorized GOLEM-005's parser tranche.
+The maintained compiler now uses this syntax; GOLEM-005's experimental scalar
+frontend uses the same token reader. Historical GOLEM-003 and frozen Rally
+fixtures retain their old syntax as compatibility evidence. Maintained executable
+examples have been migrated with byte-equivalence checks. Design illustrations
+use the new convention. Exact block spellings remain governed by
 Axis 15. The original decision remains in the
 [earlier milestone devlog](../devlog/2026-07-28-golemc-milestone-and-vba-syntax-question.md).
 
 Later sections retain historical implemented-source quotations and Buffered
 Commands wire notation containing semicolons; those do not reinstate language
 terminators. The [GOLEM-004 grammar/integration review](../tasks/GOLEM-004/grammar-integration-review.md)
-specifies a proposed minimal parser tranche and concrete boundary cases.
+specifies the minimal grammar and concrete boundary cases. The
+[GOLEM-005 implementation/migration note](../tasks/GOLEM-005/README.md) lists the
+implemented subset and shared reserved keywords; reservation does not imply
+If/Do/Switch or general call support.
 
 ## Axis 6: First native integer type, and variable declaration semantics
 
@@ -713,7 +720,8 @@ spellings within each construct are open.**
 
   The corresponding one-line form is `For i = 1 To 8 print "tick" Next i`.
   The parser must recognize grammatical boundaries without relying on line
-  endings. Implementation is explicitly deferred.
+  endings. GOLEM-005 implements the convention for existing For/Next; the
+  other control-flow backends remain deferred.
 - **Note for Axis 14 (comment syntax):** Axis 14 flagged `{`/`}` as
   potentially wanted later for block-statement syntax, which would have
   made reusing them for a block-comment delimiter ambiguous. This axis's

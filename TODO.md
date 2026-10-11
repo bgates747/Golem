@@ -3,10 +3,10 @@
 This is the authoritative register of promoted, unfinished work. Detailed plans
 and task artifacts live under `docs/tasks/`.
 
-- [ ] **GOLEM-004:** Review grammar and the next scalar integration slice.
-  [Task plan](docs/tasks/GOLEM-004.md). [Review delivered](docs/tasks/GOLEM-004/grammar-integration-review.md)
-  with 18 host parser observations; next implementation tranche awaits a task
-  decision. Compiler implementation is deferred.
+- [ ] **GOLEM-005:** Implement the terminator-free parser tranche.
+  [Task plan](docs/tasks/GOLEM-005.md). Shared token reader, existing ordinary
+  statements and task-local scalar frontend delivered; sanitizer and byte
+  compatibility checks pass. [Result](docs/tasks/GOLEM-005/README.md) awaits review.
 
 - [ ] **GOLEM-003:** Implement a small readable scalar-floor/conversion prototype
   over selected Rally command generation. [Task plan](docs/tasks/GOLEM-003.md).

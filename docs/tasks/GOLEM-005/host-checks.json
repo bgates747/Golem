@@ -1,0 +1,187 @@
+{
+  "baseline_commit": "6a2017c26968be2631c955f67508d9e3ad0d16d7",
+  "builds": {
+    "parsers": {
+      "command": [
+        "g++",
+        "-std=c++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-005/test_parsers.cpp",
+        "-o",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-005/build/parsers"
+      ],
+      "stdout": "",
+      "seconds": 15.96
+    },
+    "ordinary": {
+      "command": [
+        "g++",
+        "-std=c++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-O2",
+        "/Agon/mystuff/golem/src/golemc.cpp",
+        "-o",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-005/build/ordinary"
+      ],
+      "stdout": "",
+      "seconds": 2.275
+    },
+    "scalar": {
+      "command": [
+        "g++",
+        "-std=c++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-O2",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-005/golemc_scalar.cpp",
+        "-o",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-005/build/scalar"
+      ],
+      "stdout": "",
+      "seconds": 5.531
+    },
+    "legacy": {
+      "command": [
+        "g++",
+        "-std=c++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-O2",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-005/build/legacy.cpp",
+        "-o",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-005/build/legacy"
+      ],
+      "stdout": "",
+      "seconds": 1.927
+    },
+    "legacy-scalar": {
+      "command": [
+        "g++",
+        "-std=c++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-O2",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-003/golemc_scalar.cpp",
+        "-o",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-005/build/legacy-scalar"
+      ],
+      "stdout": "",
+      "seconds": 3.17
+    }
+  },
+  "cli_checks": [
+    {
+      "compiler": "ordinary",
+      "source": "uint16 a=999999999999999999999999999999",
+      "returncode": 1,
+      "stderr": "golemc: error: line 1, column 10: integer literal does not fit in a uint16 (0-65535)"
+    },
+    {
+      "compiler": "ordinary",
+      "source": "uint16 a=1foo",
+      "returncode": 1,
+      "stderr": "golemc: error: line 1, column 10: malformed numeric literal"
+    },
+    {
+      "compiler": "ordinary",
+      "source": "uint16 a a=1+\nprint \"foo\"",
+      "returncode": 1,
+      "stderr": "golemc: error: line 2, column 1: expected expression operand (integer or declared uint16 variable)"
+    },
+    {
+      "compiler": "ordinary",
+      "source": "print \"foo\";",
+      "returncode": 1,
+      "stderr": "golemc: error: line 1, column 12: statement terminators are not supported; remove ';'"
+    },
+    {
+      "compiler": "ordinary",
+      "source": "uint16 If",
+      "returncode": 1,
+      "stderr": "golemc: error: line 1, column 8: reserved identifier 'If'"
+    },
+    {
+      "compiler": "ordinary",
+      "source": "uint16 a=1 b=2",
+      "returncode": 1,
+      "stderr": "golemc: error: line 1, column 12: use of undeclared variable 'b'"
+    },
+    {
+      "compiler": "scalar",
+      "value": "-0.75",
+      "returncode": 1,
+      "stderr": "golemc-scalar: line 2, column 33: decimal literal is outside the finite representable range"
+    },
+    {
+      "compiler": "scalar",
+      "value": "1e-9999",
+      "returncode": 1,
+      "stderr": "golemc-scalar: line 1, column 1: decimal literal is outside the finite representable range"
+    },
+    {
+      "compiler": "scalar",
+      "value": "32768",
+      "returncode": 1,
+      "stderr": "golemc-scalar: input and its float32 rounding must satisfy declared Range"
+    },
+    {
+      "compiler": "scalar",
+      "value": "NaN",
+      "returncode": 1,
+      "stderr": "golemc-scalar: line 1, column 1: expected finite decimal number"
+    }
+  ],
+  "parser_suite": {
+    "command": [
+      "/Agon/mystuff/golem/docs/tasks/GOLEM-005/build/parsers"
+    ],
+    "stdout": "20 ordinary byte matches; 22 scalar byte matches; 69 rejection checks; spans/casing/defaults pass.",
+    "seconds": 0.049
+  },
+  "example_matches": [
+    "examples/hello_golem/hello.golem",
+    "examples/loop_golem/loop.golem"
+  ],
+  "source_sha256": {
+    "docs/tasks/GOLEM-005/examples/floor.golem": "345c56d6ee79549049af147a8b769e81108c657babbd7092f9a0f4d908c0ac6a",
+    "docs/tasks/GOLEM-005/golemc_scalar.cpp": "130d939d6ea1d53f1abc105efdfeef746908a75c47ff1e1cb32f047eb17e2eb5",
+    "docs/tasks/GOLEM-005/run_checks.py": "5e868a2148b5ed6f32c9eebe04f4b2ab6e5514e83dbc909443e96d3fc8bc63e8",
+    "docs/tasks/GOLEM-005/scalar_frontend.hpp": "69b653af92170bfa9b1d3f57dc968e15705dd1007801aabb54c096aa9cea339a",
+    "docs/tasks/GOLEM-005/test_parsers.cpp": "bf4a3ea9f40e46cb737a1805d4b4eb37f56ccfe79cec00f14416ca82674a9b42",
+    "src/golemc.cpp": "5311349c3ba7dc98ef2fce755aee4b1003c6e95000cd8efa9225c6ff22fe24f8",
+    "src/token_reader.hpp": "fb09435139aaea6fc5903493b5a36f2b4508ccf656dc1fd3b9cac60b35b89497"
+  },
+  "historical_prototype_sha256": {
+    "docs/tasks/GOLEM-003/.gitignore": "020c2606e8ed484089c2083e0be438b9d0736bee1558a6b76af0d58bd23f69cf",
+    "docs/tasks/GOLEM-003/Makefile": "73eb3bb5997c91657118628a81e57736b0cd4418ede3a10c7f864e99c870ddc8",
+    "docs/tasks/GOLEM-003/README.md": "d9615cda027becc41559246979b0e201e860a25f0e66ad40b48fe69865857e27",
+    "docs/tasks/GOLEM-003/examples/examples.golem": "f89d7fc2593150fe06a750eab695113d56d4991a76e1bd1adf723ac93e7ed805",
+    "docs/tasks/GOLEM-003/examples/floor-rally.golem": "f961886bf1cb5bdf4ef6d19209699abd86c3066e9079f588b303cadf9cb1272b",
+    "docs/tasks/GOLEM-003/examples/floor.golem": "fb19a48c7e0da7790ff85379e8405206c3d1271756cddd639c5b96d9fd2eac5f",
+    "docs/tasks/GOLEM-003/golemc_scalar.cpp": "6a705da8fd95c89d08f494ee8edc1084c61d435fbd8289bf824bd35c3bea2292",
+    "docs/tasks/GOLEM-003/host-checks.json": "0974d3844da168fb0757ab325314d508aef2530394717722230291f3c12d3b9a",
+    "docs/tasks/GOLEM-003/range-prototypes.md": "8da4a54351c8cee39a3c1cf9db2ff6388ff614e05f9953ffc465a839480d2349",
+    "docs/tasks/GOLEM-003/reference/provenance.json": "099dd7af27e3c9a262ab07468dd598278dbc8ed49607f7b640c787ada8569c78",
+    "docs/tasks/GOLEM-003/reference/src/golemc.cpp": "0156bb00e4d4f3f123e7fb012805bd1f85756cbca5849bd1024fdef8db52cdb5",
+    "docs/tasks/GOLEM-003/reference/src/hosted.hpp": "930a6f7e1680d3568d2ec82ef3907f8856fc8f87d735364f10a27218bd86445c",
+    "docs/tasks/GOLEM-003/reference/tests/test_existing.cpp": "e1a8efdb74b7d78ed886a8606529fdeaa84969d37a0d23ce36caf1756ab5c1d5",
+    "docs/tasks/GOLEM-003/reference/tests/test_floor.cpp": "7e1b17132b9a2038e8aafc82580c346d90de318e253ce3fc0389a206af5237e3",
+    "docs/tasks/GOLEM-003/run_checks.py": "a482a65884b436e63f9f2d3811545d888d11177847f83f543201e70a322323cd",
+    "docs/tasks/GOLEM-003/scalar_backend.hpp": "6ce5d4606558144d1b7c71383ef4563c19f77cbc09df3d6c59929153e445bff9",
+    "docs/tasks/GOLEM-003/scalar_frontend.hpp": "dc452ffa7c5c13191116b8d10acd0833808792d08feaaa0d87ef7844ffc7c216",
+    "docs/tasks/GOLEM-003/test_scalar.cpp": "4eb435f14d897f78a09067989a62e1b5b813d71d936dffe98043d1753034bb0c"
+  },
+  "legacy_source_sha256": "362bc56869a048c1d984f48535ac19fc7d856b5d26e0281e9c078268b8619174",
+  "output_preserved_on_rejection": true,
+  "firmware_executed": false
+}

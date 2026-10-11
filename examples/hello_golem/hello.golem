@@ -1,12 +1,2 @@
-// hello.golem
-//
-// Compiled for real by src/golemc.cpp (see docs/devlog/2026-07-28-golemc-
-// milestone-and-vba-syntax-question.md) - this is no longer illustrative-
-// only. golemc currently supports exactly one statement form, `print
-// "string literal";`, with a mandatory trailing semicolon.
-//
-// Syntax here is otherwise speculative/illustrative, drawn loosely from
-// docs/design/language-type-proposals.md's tentative lean, and should NOT
-// be treated as settled language design.
-
-print "Hello, World! (via a simulated Golem-compiled buffer, not hand-written eZ80 assembly)\n";
+// Compiled by src/golemc.cpp. No statement terminators; newlines are whitespace.
+print "Hello, World! (via a simulated Golem-compiled buffer, not hand-written eZ80 assembly)\n"

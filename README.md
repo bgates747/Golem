@@ -32,6 +32,11 @@ Goals for Golem:
 Early design/exploration stage. See [docs/devlog](docs/devlog/) for
 progress notes and [docs/design](docs/design/) for design documents.
 
+`make -C src` builds the host compiler for literal print, uint16 declarations,
+assignment/addition and For/Next. Statements have no terminators; newlines are
+whitespace. [GOLEM-005](docs/tasks/GOLEM-005/README.md) documents migration,
+host checks and the separate experimental scalar-floor frontend.
+
 ## Reference material
 
 Design is grounded in the Agon documentation, particularly:

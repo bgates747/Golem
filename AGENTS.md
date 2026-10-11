@@ -24,7 +24,8 @@ It is still a toy, but implements literal print, uint16 declarations and
 assignment, chained addition and For/Next. It has no general signed/float
 expressions, procedures or If/Do/Switch support. `tests/` is still a placeholder
 `.gitkeep` tree; task-local host checks live in GOLEM-003 and parser-review
-observations in GOLEM-004. Design work
+observations in GOLEM-004. GOLEM-005 implements terminator-free ordinary
+parsing and a task-local scalar successor using a shared token reader. Design work
 has moved beyond the kickoff devlog too: `docs/design/` now holds a living
 design-proposals doc, and several follow-on devlogs (toolchain decision,
 execution-lifecycle correction, VDU wrapper library writeup, the golemc
@@ -149,8 +150,9 @@ added there as part of this handoff so other agents can discover it.
 ## Build, test, emulator, and hardware deployment commands
 
 A host compiler Makefile exists: `make -C src` builds `build/golemc`.
-It currently requires the old semicolon syntax. GOLEM-003 has a separate
-task-local Makefile/CLI; its README owns the host verification commands.
+It accepts terminator-free syntax; newlines are whitespace. GOLEM-003 retains
+its historical semicolon parser/fixtures. GOLEM-005 has the new task-local
+scalar Makefile/CLI and host checks: `make -C docs/tasks/GOLEM-005 check`.
 This review did not create or validate an emulator profile. The compiler's
 host language and toolchain layout are decided
 (see [docs/devlog/2026-07-28-compiler-toolchain.md](docs/devlog/2026-07-28-compiler-toolchain.md)):
@@ -184,8 +186,9 @@ cd /home/smith/Agon/mystuff/agon-utils && .venv/bin/python tests/test_agonutils.
 
 Language convention revised 2026-10-11: no statement terminators; newlines
 remain whitespace, and the parser determines statement boundaries from grammar.
-See design Axes 5 and 15. Implementation is explicitly deferred: the maintained
-compiler and GOLEM-003 executable fixtures still use their existing semicolons.
+See design Axes 5 and 15. GOLEM-005 implements this for maintained ordinary
+statements and its task-local scalar successor. Historical GOLEM-003 fixtures
+and frozen Rally source retain semicolons; do not migrate them in place.
 
 Summarized from the devlog and cross-checked against
 [docs/design/language-type-proposals.md](docs/design/language-type-proposals.md)
@@ -233,8 +236,9 @@ overlap):
 ## Active work and historical follow-ups
 
 `TODO.md` is the authoritative register. GOLEM-003's scalar prototype is
-host-qualified and awaits promotion/firmware decisions. GOLEM-004 reviews the
-terminator-free grammar and integration sequence; implementation remains deferred.
+host-qualified and awaits promotion/firmware decisions. GOLEM-004's review was
+accepted for the GOLEM-005 parser tranche. Shared checked allocation and explicit
+resident output integration remain the next separate increment.
 
 The July devlogs' next-step checklists are historical context, not another
 active register. They recorded formal IR/addressing work, reciprocal experiments
