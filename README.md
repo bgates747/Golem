@@ -51,7 +51,7 @@ reference/    Vendored/curated reference material (not a build dependency)
 runtime/
   legacy-asm/ Hand-written ZDS/ez80asm-style eZ80 runtime library code
   agondev/    (future) eZ80/MOS-side loader/runtime built via agondev
-src/          Compiler/toolchain source (not yet started)
+src/          Maintained toy C++ compiler and host Makefile
 tools/        Auxiliary tooling/scripts (not the compiler itself)
 examples/     Example Golem programs
 tests/        Test suite

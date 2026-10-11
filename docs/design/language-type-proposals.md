@@ -145,6 +145,11 @@ illustrations use the new convention. Exact block spellings remain governed by
 Axis 15. The original decision remains in the
 [earlier milestone devlog](../devlog/2026-07-28-golemc-milestone-and-vba-syntax-question.md).
 
+Later sections retain historical implemented-source quotations and Buffered
+Commands wire notation containing semicolons; those do not reinstate language
+terminators. The [GOLEM-004 grammar/integration review](../tasks/GOLEM-004/grammar-integration-review.md)
+specifies a proposed minimal parser tranche and concrete boundary cases.
+
 ## Axis 6: First native integer type, and variable declaration semantics
 
 **Status: DECIDED - `uint16` first, `sint16` next; naked declarations
@@ -671,16 +676,17 @@ spellings within each construct are open.**
   implied by default - this axis is really about *block delimiting*
   specifically, independent of Axis 2's typing-style lean (which stays
   Pascal-ish regardless of how blocks are spelled).
-- **`If ... Then ... Else ... EndIf`** (VBA idiom) is the preferred
-  conditional form. Open: exact closing-keyword spelling (`EndIf` vs
-  `End If` as two tokens vs something else), and whether a single-line
-  `If ... Then <stmt>` (no `Else`/`EndIf` needed) form is also allowed the
-  way classic BASIC dialects often do.
-- **`Do While ... Loop` / `Do Until ... Loop`** (VBA idiom) preferred for
-  condition-checked-first loops. Open: whether the post-condition variants
-  VBA also has (`Do ... Loop While ...` / `Do ... Loop Until ...`,
-  condition checked *after* the body runs at least once) are in scope too,
-  or whether v1 only supports the pre-condition form.
+- **`If ... Then ... ElseIf ... Then ... Else ... EndIf`** is the working
+  reviewed conditional form, updated 2026-10-11. Test conditions in order and
+  execute only the first matching branch; `Else` is optional. Use the single
+  case-insensitive keyword `ElseIf` in current design examples. Single-line
+  conditionals without an explicit closer and two-word aliases such as
+  `End If` remain unselected. No conditional parser has been implemented.
+- **`Do While ... Loop` / `Do Until ... Loop`** are preferred pre-condition
+  loops, with **`Do ... Loop While ...` / `Do ... Loop Until ...`** also
+  preferred following the 2026-10-11 review. Pre-condition forms may execute
+  zero times; post-condition forms execute at least once. `While` continues
+  when true and `Until` stops when true. These forms remain unimplemented.
 - **`For i = 1 To 100 ... Next i`** (VBA idiom) preferred for counted
   loops, with the Author explicitly noting the appeal of **naming the
   loop variable again at `Next`** ("`Next i`") as "informatively

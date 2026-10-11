@@ -1,0 +1,204 @@
+{
+  "baseline_commit": "c1483c2510caf89d685c96e661e6626ab89b2255",
+  "compiler_builds": {
+    "main": {
+      "command": [
+        "g++",
+        "-std=c++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-O2",
+        "/Agon/mystuff/golem/src/golemc.cpp",
+        "-o",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-004/build/main"
+      ],
+      "seconds": 1.825
+    },
+    "scalar": {
+      "command": [
+        "g++",
+        "-std=c++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-O2",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-003/golemc_scalar.cpp",
+        "-o",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-004/build/scalar"
+      ],
+      "seconds": 3.163
+    }
+  },
+  "observations": [
+    {
+      "compiler": "main",
+      "name": "legacy_adjacent_prints",
+      "source": "print \"foo\"; print \"bar\";",
+      "accepted": true,
+      "returncode": 0,
+      "stdout": "wrote 6 bytes to /Agon/mystuff/golem/docs/tasks/GOLEM-004/build/cases/main/legacy_adjacent_prints/output",
+      "stderr": ""
+    },
+    {
+      "compiler": "main",
+      "name": "terminator_free_adjacent_prints",
+      "source": "print \"foo\" print \"bar\"",
+      "accepted": false,
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "golemc: error: line 1: expected ';' after statement"
+    },
+    {
+      "compiler": "main",
+      "name": "terminator_free_multiline_prints",
+      "source": "print \"foo\"\nprint \"bar\"",
+      "accepted": false,
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "golemc: error: line 2: expected ';' after statement"
+    },
+    {
+      "compiler": "main",
+      "name": "legacy_multiline_addition",
+      "source": "uint16 a=1; uint16 b; b=a+\n2;",
+      "accepted": true,
+      "returncode": 0,
+      "stdout": "wrote 74 bytes to /Agon/mystuff/golem/docs/tasks/GOLEM-004/build/cases/main/legacy_multiline_addition/output",
+      "stderr": ""
+    },
+    {
+      "compiler": "main",
+      "name": "terminator_free_declarations_assignments",
+      "source": "uint16 a=1 uint16 b b=a+2",
+      "accepted": false,
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "golemc: error: line 1: expected ';' after statement"
+    },
+    {
+      "compiler": "main",
+      "name": "legacy_for",
+      "source": "uint16 i; For i=1 To 2; print \"tick\"; Next i;",
+      "accepted": true,
+      "returncode": 0,
+      "stdout": "wrote 129 bytes to /Agon/mystuff/golem/docs/tasks/GOLEM-004/build/cases/main/legacy_for/output",
+      "stderr": ""
+    },
+    {
+      "compiler": "main",
+      "name": "terminator_free_for",
+      "source": "uint16 i For i=1 To 2 print \"tick\" Next i",
+      "accepted": false,
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "golemc: error: line 1: expected ';' after statement"
+    },
+    {
+      "compiler": "main",
+      "name": "future_keyword_identifier",
+      "source": "uint16 If=1;",
+      "accepted": true,
+      "returncode": 0,
+      "stdout": "wrote 10 bytes to /Agon/mystuff/golem/docs/tasks/GOLEM-004/build/cases/main/future_keyword_identifier/output",
+      "stderr": ""
+    },
+    {
+      "compiler": "main",
+      "name": "range_identifier",
+      "source": "uint16 Range=1;",
+      "accepted": true,
+      "returncode": 0,
+      "stdout": "wrote 10 bytes to /Agon/mystuff/golem/docs/tasks/GOLEM-004/build/cases/main/range_identifier/output",
+      "stderr": ""
+    },
+    {
+      "compiler": "main",
+      "name": "loop_max_endpoint_compile_only",
+      "source": "uint16 i; For i=65535 To 65535; print \"tick\"; Next i;",
+      "accepted": true,
+      "returncode": 0,
+      "stdout": "wrote 129 bytes to /Agon/mystuff/golem/docs/tasks/GOLEM-004/build/cases/main/loop_max_endpoint_compile_only/output",
+      "stderr": ""
+    },
+    {
+      "compiler": "main",
+      "name": "missing_operand",
+      "source": "uint16 a=1; a=1+; print \"tick\";",
+      "accepted": false,
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "golemc: error: line 1: expected an identifier"
+    },
+    {
+      "compiler": "main",
+      "name": "huge_literal_diagnostic",
+      "source": "uint16 a=999999999999999999999999999999;",
+      "accepted": false,
+      "returncode": -6,
+      "stdout": "",
+      "stderr": "terminate called after throwing an instance of 'std::out_of_range'\n  what():  stoul"
+    },
+    {
+      "compiler": "scalar",
+      "name": "legacy_scalar_bounds",
+      "source": "float32 x Range(-1,1)=0.25; sint16 result; Sub compute; result=sint16(floor(x)); EndSub;",
+      "accepted": true,
+      "returncode": 0,
+      "stdout": "installed stream 1008 bytes; update/call 21 bytes",
+      "stderr": ""
+    },
+    {
+      "compiler": "scalar",
+      "name": "terminator_free_scalar",
+      "source": "float32 x Range(-1,1)=0.25 sint16 result Sub compute result=sint16(floor(x)) EndSub",
+      "accepted": false,
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "golemc-scalar: line 1: expected ';'"
+    },
+    {
+      "compiler": "scalar",
+      "name": "future_keyword_identifier",
+      "source": "float32 If Range(-1,1)=0.25; sint16 result; Sub compute; result=sint16(floor(If)); EndSub;",
+      "accepted": true,
+      "returncode": 0,
+      "stdout": "installed stream 1008 bytes; update/call 21 bytes",
+      "stderr": ""
+    },
+    {
+      "compiler": "scalar",
+      "name": "bounds_not_sequence",
+      "source": "float32 x Range(-1,1)=0.75; sint16 result; Sub compute; result=sint16(floor(x)); EndSub;",
+      "accepted": true,
+      "returncode": 0,
+      "stdout": "installed stream 1008 bytes; update/call 21 bytes",
+      "stderr": ""
+    },
+    {
+      "compiler": "scalar",
+      "name": "alternate_bounds_name",
+      "source": "float32 x Bounds(-1,1)=0.25; sint16 result; Sub compute; result=sint16(floor(x)); EndSub;",
+      "accepted": false,
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "golemc-scalar: line 1: expected 'Range'"
+    },
+    {
+      "compiler": "scalar",
+      "name": "stepped_decl_bounds",
+      "source": "float32 x Range(-1,1,1)=0.25; sint16 result; Sub compute; result=sint16(floor(x)); EndSub;",
+      "accepted": false,
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "golemc-scalar: line 1: expected ')'"
+    }
+  ],
+  "source_sha256": {
+    "src/golemc.cpp": "362bc56869a048c1d984f48535ac19fc7d856b5d26e0281e9c078268b8619174",
+    "docs/tasks/GOLEM-003/scalar_backend.hpp": "6ce5d4606558144d1b7c71383ef4563c19f77cbc09df3d6c59929153e445bff9",
+    "docs/tasks/GOLEM-003/scalar_frontend.hpp": "dc452ffa7c5c13191116b8d10acd0833808792d08feaaa0d87ef7844ffc7c216",
+    "docs/tasks/GOLEM-003/golemc_scalar.cpp": "6a705da8fd95c89d08f494ee8edc1084c61d435fbd8289bf824bd35c3bea2292"
+  },
+  "firmware_executed": false
+}

@@ -20,8 +20,11 @@ first toy compiler exists and has been verified end to end (`src/golemc.cpp`,
 compiling `.golem` source to a buffer-command byte blob, run successfully
 through `examples/hello_golem/`'s loader in the emulator — see
 [docs/devlog/2026-07-28-golemc-milestone-and-vba-syntax-question.md](docs/devlog/2026-07-28-golemc-milestone-and-vba-syntax-question.md)).
-It is still a toy (one statement form, no variables/expressions/control
-flow yet), and `tests/` is still a placeholder `.gitkeep` tree. Design work
+It is still a toy, but implements literal print, uint16 declarations and
+assignment, chained addition and For/Next. It has no general signed/float
+expressions, procedures or If/Do/Switch support. `tests/` is still a placeholder
+`.gitkeep` tree; task-local host checks live in GOLEM-003 and parser-review
+observations in GOLEM-004. Design work
 has moved beyond the kickoff devlog too: `docs/design/` now holds a living
 design-proposals doc, and several follow-on devlogs (toolchain decision,
 execution-lifecycle correction, VDU wrapper library writeup, the golemc
@@ -41,7 +44,7 @@ reference/    Vendored/curated reference material (not a build dependency)
 runtime/
   legacy-asm/ Hand-written ZDS/ez80asm-style eZ80 runtime library code
   agondev/    (placeholder) future eZ80/MOS-side loader/runtime via agondev
-src/          Compiler/toolchain source (C++, not yet started)
+src/          Maintained toy C++ compiler and host Makefile
 tools/        (placeholder) auxiliary/tooling scripts, not the compiler
 examples/     Example Golem programs (placeholder)
 tests/        Test suite (placeholder)
@@ -145,8 +148,11 @@ added there as part of this handoff so other agents can discover it.
 
 ## Build, test, emulator, and hardware deployment commands
 
-No compiler build system exists yet, and no emulator profile has been
-created. The compiler's host language and toolchain layout are decided
+A host compiler Makefile exists: `make -C src` builds `build/golemc`.
+It currently requires the old semicolon syntax. GOLEM-003 has a separate
+task-local Makefile/CLI; its README owns the host verification commands.
+This review did not create or validate an emulator profile. The compiler's
+host language and toolchain layout are decided
 (see [docs/devlog/2026-07-28-compiler-toolchain.md](docs/devlog/2026-07-28-compiler-toolchain.md)):
 the compiler itself is written in **C++**, built with an ordinary host
 compiler (not agondev), targeting Linux first (Mac later if there's
@@ -190,18 +196,17 @@ overlap):
   blocks per buffer; small procedures may use one block. This replaces the
   early one-instruction-per-block proposal as the preferred direction. Exact
   grouping and branch-address rules remain open; see GOLEM-001's review notes.
-- Typed three-address-code IR with explicit widening passes for multi-byte
+- Earlier proposal, not implemented: typed three-address-code IR with widening passes for multi-byte
   integer ops (add-with-carry chains) and explicit "patch, then execute"
   pseudo-ops for any runtime-computed address (arrays, pointers, stack-frame
   locals) — the VDP has no indexed/pointer addressing mode.
-- Memory model: globals get fixed `bufferId`/offset at compile time; locals
-  live in a shared stack buffer with frame-relative access compiled to
-  self-modified offsets patched in the function prologue; heap
-  objects/arrays get a dedicated buffer or region, indexed via
-  patch-then-execute.
-- Loops preferred over recursion (zero stack cost, maps to conditional
-  jump); tail calls are free (the VDP auto-converts a trailing conditional
-  call into a jump) and should be used for recursion-shaped code wherever
+- Current ordinary globals use fixed per-variable buffers. Shared local-stack
+  frames, heap objects/arrays and frame-relative patched offsets are earlier
+  proposals, not implemented requirements for the small scalar integration.
+- Loops are preferred over recursion. Main's For body uses one initial call
+  and a trailing conditional self-call converted to a jump, avoiding per-iteration
+  stack growth. Tail-call conversion avoids an additional call frame; it does
+  not eliminate command-dispatch work. Use it for recursion-shaped code wherever
   possible. Non-tail recursion needs bounding or an explicit software stack
   — the VDP's internal call stack can overflow and crash it.
   **Correction**: this does NOT mean the whole program can be one
@@ -225,35 +230,17 @@ overlap):
   comparisons are hardware-capped at 16 bits, so wider comparisons must be
   decomposed byte-by-byte.
 
-## Current task and unresolved checklist
+## Active work and historical follow-ups
 
-From the devlog's "Next steps" checklist:
+`TODO.md` is the authoritative register. GOLEM-003's scalar prototype is
+host-qualified and awaits promotion/firmware decisions. GOLEM-004 reviews the
+terminator-free grammar and integration sequence; implementation remains deferred.
 
-1. [ ] Write a formal design doc for the Golem IR and buffer/block
-       addressing model in `docs/design/`. (A language-type-level proposals
-       doc exists; the IR/addressing model itself is still open.)
-2. [x] Hand-prototype the "one instruction per block" encoding for a trivial
-       loop; verify tail-call jump conversion behaves as documented (check
-       against `vdu_buffered.h`, not just the prose docs). Resolved:
-       confirmed working exactly as documented, both against the firmware
-       source and empirically (a 50-iteration hand-built loop produced 1
-       real call + 49 tail-call-converted jumps, no crash) - see
-       [docs/devlog/2026-07-29-loop-tail-call-prototype.md](docs/devlog/2026-07-29-loop-tail-call-prototype.md)
-       and `examples/loop_test/`. A real, previously-undocumented
-       conditional-check gotcha was also found and worked around along the
-       way (checking a raw buffer byte against zero via
-       `VBUF_COND_EXISTS`/`NOT_EXISTS` or a literal operand is unreliable -
-       see the devlog for the fix).
-3. [ ] Verify the 1x1-matrix float trick (command 34 `invert`) on real
-       hardware/emulator.
-4. [x] Decide on the host implementation language and toolchain layout for
-       the compiler itself. Resolved: C++, ordinary host compiler, Linux
-       first — see
-       [docs/devlog/2026-07-28-compiler-toolchain.md](docs/devlog/2026-07-28-compiler-toolchain.md).
-5. [ ] Codex is separately working, at our request, on reproducing and
-       fixing a stock-MOS packet-parser discard bug found during the
-       collaboration (see `docs/devlog/to_codex.md` §9) - not a Golem
-       compiler task, but track for a PR/bug-report outcome.
+The July devlogs' next-step checklists are historical context, not another
+active register. They recorded formal IR/addressing work, reciprocal experiments
+and the external MOS packet-parser investigation. The host toolchain decision
+and hand-built loop/tail-call prototype were resolved in those logs. Check the
+current task register and later evidence before reviving an old follow-up.
 
 ## Task documents and artifacts
 

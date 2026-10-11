@@ -124,3 +124,30 @@ flow and Range decisions with the maintained parser and scalar prototype. It
 will provide concrete grammar, allocation, compatibility and validation rules
 for the next small integration slice. The previous parser implementation deferral
 remains in effect; this task authorizes review and read-only source probes.
+
+### GOLEM-004 review delivered
+
+Committed and pushed the accumulated syntax decisions and task plan as
+`c1483c2`, then completed the grammar/integration review. The deliverable is
+`docs/tasks/GOLEM-004/grammar-integration-review.md`, with proposed minimal grammar,
+boundary/diagnostic cases, a shared allocation contract, output-profile handling
+and three implementation-sized slices. The living design now reflects ElseIf
+and both pre/post-condition Do-loop preferences; stale main compiler/build
+descriptions and the competing historical handoff checklist were corrected.
+
+Eighteen current-parser probes build existing C++ sources with strict warnings
+and record behavior in `parser-observations.json`. Newline insignificance is
+already supported; explicit semicolon checks reject new source. Both main and
+the scalar prototype allocate private IDs from 2, preventing safe concatenation.
+Main accepts future keyword identifiers and a 65535 loop endpoint; the review
+records compatibility and stock conditional-sentinel implications. A huge
+integer literal aborts through an uncaught std::out_of_range, identifying a
+checked-conversion requirement for the parser tranche.
+
+Reviewed compiler fingerprints are unchanged. No proposed parser was implemented,
+no numeric emission or executable fixtures changed, and no firmware/emulator/
+hardware was run or modified. GOLEM-004 remains in TODO for review acceptance;
+the immediate proposed code tranche is the shared token reader and
+terminator-free existing ordinary/scalar source forms, before allocator and
+resident-output integration. New control-flow backends and Range extensions
+remain separate increments.
