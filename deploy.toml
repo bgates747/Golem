@@ -1,0 +1,29 @@
+schema = 1
+project = "golem"
+default_profile = "examples/hello_golem/emulator"
+default_sd_mount = "/media/smith/AGON"
+expected_sd_label = "AGON"
+
+[bundles.hello]
+collection = "demos"
+source = "examples/hello"
+files = ["hello.bin"]
+destination = "mystuff/golem/demos/hello"
+require = ["hello.bin"]
+entry = "hello.bin"
+
+[bundles.hello-golem]
+collection = "demos"
+source = "examples/hello_golem"
+files = ["loader.bin", "program.bin"]
+destination = "mystuff/golem/demos/hello-golem"
+require = ["loader.bin", "program.bin"]
+entry = "loader.bin"
+
+[bundles.loop-test]
+collection = "tests"
+source = "examples/loop_test"
+files = ["loop_test.bin"]
+destination = "mystuff/golem/tests/loop-test"
+require = ["loop_test.bin"]
+entry = "loop_test.bin"

@@ -1,0 +1,176 @@
+{
+  "task": "GOLEM-001",
+  "checked_at": "2026-10-11T16:05:39.454395-04:00",
+  "scope": "Read-only source and recorded-evidence audit; no test suite, native emulator or hardware run.",
+  "repositories": [
+    {
+      "path": "/Agon/mystuff/golem",
+      "head": "0d25ac69be76d43c2f76323cd3173adc3b267eae"
+    },
+    {
+      "path": "/Agon/mystuff/golem-rally19",
+      "head": "4db7e96f70c3d63f4ab53766f3b32063e9357c8b"
+    },
+    {
+      "path": "/Agon/mystuff/AgonArcade-rally19",
+      "head": "cea012005086cafc81654e0d35ba21fd2a4a153e"
+    },
+    {
+      "path": "/Agon/agon-vdp",
+      "head": "c7ac293d2aa81ddfa693390549bcd909069c8fc3"
+    },
+    {
+      "path": "/Agon/agon-docs",
+      "head": "f9806bd3cbff6ed5d1c08bef1d51fed11764b86b"
+    }
+  ],
+  "common_ancestor": "a083173a084fadefa1fbe42926c6945a758b1757",
+  "main_only_rally_only_commit_counts": [
+    1,
+    25
+  ],
+  "historical_host_report": "/Agon/mystuff/golem-rally19/docs/evidence/rally19-hardware-inline/hosted-tests.json",
+  "historical_host_report_sha256": "f6e7e77484daf24355464bba775256aaead0ea571363fd55469f8c3739823185",
+  "source_hash_checks": [
+    {
+      "path": "src/golemc.cpp",
+      "expected_sha256": "0156bb00e4d4f3f123e7fb012805bd1f85756cbca5849bd1024fdef8db52cdb5",
+      "actual_sha256": "0156bb00e4d4f3f123e7fb012805bd1f85756cbca5849bd1024fdef8db52cdb5",
+      "matches": true
+    },
+    {
+      "path": "src/hosted.hpp",
+      "expected_sha256": "930a6f7e1680d3568d2ec82ef3907f8856fc8f87d735364f10a27218bd86445c",
+      "actual_sha256": "930a6f7e1680d3568d2ec82ef3907f8856fc8f87d735364f10a27218bd86445c",
+      "matches": true
+    },
+    {
+      "path": "tests/test_admission.cpp",
+      "expected_sha256": "fe5bed0ece8e0bedb9c4b7031b97c94b4a4c735d57d58731e283a4e46040381c",
+      "actual_sha256": "fe5bed0ece8e0bedb9c4b7031b97c94b4a4c735d57d58731e283a4e46040381c",
+      "matches": true
+    },
+    {
+      "path": "tests/test_bitmap.cpp",
+      "expected_sha256": "a61ea2376cc0324c899701ba8d27f0ddcc75b97ef925d638ee2fce97622cbe5e",
+      "actual_sha256": "a61ea2376cc0324c899701ba8d27f0ddcc75b97ef925d638ee2fce97622cbe5e",
+      "matches": true
+    },
+    {
+      "path": "tests/test_checked_copy.cpp",
+      "expected_sha256": "28fc08f0a2a80fe513ad966c91148df1443ea060b06767c0682206333dcd61f9",
+      "actual_sha256": "28fc08f0a2a80fe513ad966c91148df1443ea060b06767c0682206333dcd61f9",
+      "matches": true
+    },
+    {
+      "path": "tests/test_divmod.cpp",
+      "expected_sha256": "48848f0f3d913afb0775fa75290d98850f5272ab3c44c60143752399dd42ddd7",
+      "actual_sha256": "48848f0f3d913afb0775fa75290d98850f5272ab3c44c60143752399dd42ddd7",
+      "matches": true
+    },
+    {
+      "path": "tests/test_elements.cpp",
+      "expected_sha256": "1f592c362822bd50167ca56ea1d6f797009e9e08d845a65b2ce26290c1d7fdcd",
+      "actual_sha256": "1f592c362822bd50167ca56ea1d6f797009e9e08d845a65b2ce26290c1d7fdcd",
+      "matches": true
+    },
+    {
+      "path": "tests/test_existing.cpp",
+      "expected_sha256": "e1a8efdb74b7d78ed886a8606529fdeaa84969d37a0d23ce36caf1756ab5c1d5",
+      "actual_sha256": "e1a8efdb74b7d78ed886a8606529fdeaa84969d37a0d23ce36caf1756ab5c1d5",
+      "matches": true
+    },
+    {
+      "path": "tests/test_floor.cpp",
+      "expected_sha256": "7e1b17132b9a2038e8aafc82580c346d90de318e253ce3fc0389a206af5237e3",
+      "actual_sha256": "7e1b17132b9a2038e8aafc82580c346d90de318e253ce3fc0389a206af5237e3",
+      "matches": true
+    },
+    {
+      "path": "tests/test_hosted.cpp",
+      "expected_sha256": "1b6392a814598c4abc9fde84913cc912591349202c8dad2e8e02aece575311d6",
+      "actual_sha256": "1b6392a814598c4abc9fde84913cc912591349202c8dad2e8e02aece575311d6",
+      "matches": true
+    },
+    {
+      "path": "tests/test_imports.cpp",
+      "expected_sha256": "cd442286844ce55ed164c972891fc2af0624866a9b27838d6a32d5edb56d7fdb",
+      "actual_sha256": "cd442286844ce55ed164c972891fc2af0624866a9b27838d6a32d5edb56d7fdb",
+      "matches": true
+    },
+    {
+      "path": "tests/test_inline.cpp",
+      "expected_sha256": "1fc4d164cd0360cc5e05ce6b58061d6b0d64a5f865946511a36b7e0c97cc101f",
+      "actual_sha256": "1fc4d164cd0360cc5e05ce6b58061d6b0d64a5f865946511a36b7e0c97cc101f",
+      "matches": true
+    },
+    {
+      "path": "tests/test_rounding.cpp",
+      "expected_sha256": "67967a7bb80bf0cf18320f89cc08a052906f07fe23f3a40cba71b88697e19b8b",
+      "actual_sha256": "67967a7bb80bf0cf18320f89cc08a052906f07fe23f3a40cba71b88697e19b8b",
+      "matches": true
+    },
+    {
+      "path": "tests/test_shared_scratch.cpp",
+      "expected_sha256": "d18fe6ee46702b2920272552df8d1ed88b17beb06c0d52377d3ee20763a1ca39",
+      "actual_sha256": "d18fe6ee46702b2920272552df8d1ed88b17beb06c0d52377d3ee20763a1ca39",
+      "matches": true
+    },
+    {
+      "path": "tests/test_vehicle_math.cpp",
+      "expected_sha256": "ab49ac212e887e4c1a9b381797fd864a2ec78d151439407d0d023c62d708630c",
+      "actual_sha256": "ab49ac212e887e4c1a9b381797fd864a2ec78d151439407d0d023c62d708630c",
+      "matches": true
+    },
+    {
+      "path": "tests/test_viewport.cpp",
+      "expected_sha256": "44ed9913f5bac339ffa8ba02f207774ce2dabb061fdcf2e17bcbf6e5ddec8ea1",
+      "actual_sha256": "44ed9913f5bac339ffa8ba02f207774ce2dabb061fdcf2e17bcbf6e5ddec8ea1",
+      "matches": true
+    },
+    {
+      "path": "tests/run_hosted.py",
+      "expected_sha256": "56f048e2b0188f28b78ceedfe86d3ff4681a394ce15876d2a19b27de1083f258",
+      "actual_sha256": "56f048e2b0188f28b78ceedfe86d3ff4681a394ce15876d2a19b27de1083f258",
+      "matches": true
+    }
+  ],
+  "recorded_suites": {
+    "existing": "Existing language: print escapes/case, little-endian uint16, addition, loop buffer comparison, ten rejection cases pass.",
+    "hosted": "Hosted compiler: stock byte goldens, typed load, forward calls, finite repeat, signed-store/PLOT lowering and 26 negative cases pass.",
+    "imports": "Resident imports: exact sizes, source-relative assets, typed records, ID collisions, guarded patch lowering and 14 negatives pass.",
+    "admission": "Admission compiler: signed-byte normalization, sticky guards, typed record copy, resource caps, syntax depth and 19 negatives pass.",
+    "elements": "Element helpers: typed record selection, offset relocation, unsigned floor/widening and ten negatives pass.",
+    "divmod": "DivModPositive: exhaustive declared domain, fetched-scalar golden, alias/range/rounding rejection and nine negatives pass.",
+    "rounding": "Scalar truncation/rounding: positive conversion golden, five negatives, and every binary32 half-boundary over the rounded domain pass.",
+    "vehicle_math": "Vehicle math host checks pass.",
+    "checked_copy": "Checked copy host tests: guarded narrowing, fixed formats and alias/type negatives pass.",
+    "shared_scratch": "Shared word scratch: three stores use one private triple; default and scope checks pass.",
+    "bitmap": "Bitmap command templates, affine proof, ownership, signed coordinates and rejection checks pass.",
+    "floor": "MatFloor host checks and every binary32 integer boundary pass.",
+    "viewport": "Viewport pixel/wire order, finite scroll extent and typed rejection checks pass.",
+    "inline": "InlineCalls: byte-equivalent explicit expansion, nested/repeated sites, retained conditional/loop semantics, cleanup identity and bounded rejection pass."
+  },
+  "recorded_design_cases": {
+    "accepted": 3,
+    "rejected": 12,
+    "failure_preserves_output": true
+  },
+  "limits": [
+    "Historical tests were not rerun.",
+    "The historical source hash list does not include hosted-design-cases.json.",
+    "Native and physical conclusions are attributed to delivery/review records; their complete evidence trees were not independently re-audited."
+  ],
+  "generated_scene": {
+    "path": "/Agon/mystuff/AgonArcade-rally19/docs/tasks/RALLY-19/.work/frontend/hardware-inline/kernels/oval/oval-scenery-draw.golem",
+    "sha256": "cb70f5f19408f34e93efacee3661ab3e206d3f932f34a9c35c0a605294211043",
+    "lines": 20281,
+    "bytes": 1285993,
+    "declaration_counts": {
+      "Buffer": 61,
+      "Field": 19435,
+      "Matrix": 70,
+      "Program": 92
+    }
+  }
+}

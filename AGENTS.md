@@ -243,6 +243,21 @@ From the devlog's "Next steps" checklist:
        collaboration (see `docs/devlog/to_codex.md` §9) - not a Golem
        compiler task, but track for a PR/bug-report outcome.
 
+## Task documents and artifacts
+
+`TODO.md` is the authoritative task register; keep entries concise and link
+each detailed task plan at `docs/tasks/<TASK-ID>.md`. For tasks producing
+multiple files, keep reports, exploratory code, scripts, fixtures and other
+task artifacts together under `docs/tasks/<TASK-ID>/`. Promote useful artifacts
+into maintained documentation or the production package only when that
+promotion is agreed. Task plans contain scope and acceptance criteria; task
+overall status belongs in the register. Track subtasks in the detailed task
+document using stable IDs with short subsection-specific prefixes and
+zero-padded numbers (for example, `SRC-001`, `INV-001`, `DEL-001`). Place the
+checkbox after the ID: `- SRC-001 [ ] ...`. Use `[x]` for completed or otherwise
+disposed subtasks and record the disposition when it is not completion. Never
+renumber existing IDs or use Markdown ordered-list numbers for subtask identity.
+
 ## Network access authority
 
 For access between development machines, read the [canonical network instructions](https://github.com/bgates747/agon-dev-env/blob/feature/standardized-deployment/codex/environment.md#ssh-between-development-machines) in `~/Agon/mystuff/agon-dev-env/codex/environment.md` and its machine-local `.local/ssh-001/CONNECTIONS.md` guide. They own current hostnames, discovery, SSH identities, sudo, and LAN shares. Do not duplicate access recipes or revive old aliases, addresses, or share mappings in this project. Project-specific device/protocol and bench-safety instructions remain local.
