@@ -16,6 +16,7 @@ template<class F> void reject(F action, const std::string &message) {
         ++rejections;
         return;
     }
+    std::cerr << "Unexpected acceptance; expected " << message << '\n';
     assert(false && "unexpected acceptance");
 }
 const std::string floorSource =
@@ -90,6 +91,16 @@ int main() {
     const auto subtract = resident::compileResident("uint16 a=1 " + replace("result=", "a=a-1 result="));
     assert(subtract.extras.errorStatus && subtract.extras.programs.size() == 2);
     assert(resident::manifest(subtract).find("\"uint16_sub_underflow\": 2") != std::string::npos);
+    reject([&] { resident::compileResident("uint16 a=256*256 " + floorSource); }, "constant multiplication overflows");
+    reject([&] { resident::compileResident("uint16 a=65535*2*0 " + floorSource); }, "constant multiplication overflows");
+    reject([&] { resident::compileResident("uint16 a=1 uint16 b=a*1 " + floorSource); }, "initializer multiplication requires constant");
+    reject([] { ordinary::compile("uint16 a=2*3"); }, "multiplication requires --resident");
+    assert(resident::compileResident("uint16 a=1+2*3-4 " + floorSource).extras.errorStatus == 0);
+    assert(resident::compileResident("uint16 a=1+2*3-4 " + floorSource).bootstrap ==
+           resident::compileResident("uint16 a=3+0 " + floorSource).bootstrap);
+    assert(resident::compileResident("uint16 a=0*65535*65535 " + floorSource).extras.errorStatus == 0);
+    const auto multiply = resident::compileResident("uint16 a=2 " + replace("result=", "a=a*a result="));
+    assert(resident::manifest(multiply).find("\"uint16_mul_overflow\": 3") != std::string::npos);
     reject([&] { resident::compileResident(replace("floor(x)", "floor(X)")); }, "declared float32 input");
     reject([&] { resident::compileResident(replace("floor(x)", "floor(x+1)")); }, "expected ')'");
     reject([&] { resident::compileResident(replace("Range(-32768,32767)", "Range(-1,1,1)")); }, "expected ')'");

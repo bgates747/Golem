@@ -1,10 +1,10 @@
 # Maintained resident scalar profile
 
-Resident uint16 addition checks overflow and subtraction checks underflow and ends a failed job without
-changing that assignment's destination. Host checks and stock Fab/MOS execution
-pass. GOLEM-012 addition human review passed; GOLEM-013 subtraction human review
-is pending. Fresh-input/call traffic
-remains 21 bytes. Broader numeric operations remain proposed.
+Resident uint16 addition, subtraction and multiplication check bounds and end a
+failed job without changing that assignment's destination. Host/sanitizer and
+stock Fab/MOS checks pass. GOLEM-012/013/014 human review passed, including
+agent retrieval of the saved multiplication results. Fresh-input/call traffic remains 21 bytes.
+Broader numeric operations remain proposed.
 
 `make -C src check` builds and checks the host compiler. Raw mode remains
 `build/golemc source.golem payload.bin`. Resident mode is explicit:
@@ -18,7 +18,7 @@ The maintained [floor example](../../examples/resident/floor.golem) and
 and initialize their inputs. This profile accepts one finite `float32` input
 with a two-endpoint `Range`, one `sint16` output and one `Sub` containing exactly
 one `result = sint16(floor(x))`. Optional persistent `uint16` globals must precede
-the float declaration. The job can assign/copy/add/subtract these globals and print
+the float declaration. The job can assign/copy/add/subtract/multiply these globals and print
 literal strings before or after the conversion. Resident loops, local variables,
 general float expressions and additional jobs are not implemented.
 
@@ -64,10 +64,11 @@ Semantic validation completes before output writes. Filesystem publication is
 not atomic if an I/O operation fails. Raw payloads and resident packages have
 different installation contracts; mode is never inferred from source.
 
-## Checked addition/subtraction and job errors
+## Checked arithmetic and job errors
 
 Resident uint16 arithmetic must stay within 0:65535. Binary + and - have equal
-precedence and evaluate left to right. Every intermediate operation is checked,
+precedence and evaluate left to right. Multiplication has higher precedence and
+chained products also evaluate left to right. Every intermediate operation is checked,
 so a later term cannot conceal an earlier overflow or underflow.
 The destination changes only after the complete expression succeeds, including for
 self-referential assignments. An arithmetic error stops the job, skips later statements
@@ -77,13 +78,14 @@ also remains. Custom handlers and Resume/retry are future work.
 
 Packages containing runtime checked additions expose an optional `runtime_error`
 uint16 field in `interface.json`. Code 0 means no error; code 1 means uint16
-addition overflow; code 2 (`uint16_sub_underflow`) means subtraction underflow.
+addition overflow; code 2 (`uint16_sub_underflow`) means subtraction underflow;
+code 3 (`uint16_mul_overflow`) means multiplication overflow.
 The entry resets this field on every invocation. A later call
 can therefore succeed after the caller corrects the input globals. This field is
 resident state, not an automatic acknowledgement to MOS. Error exit needs no
 host readback or extra recurring commands.
 
-Known constant expressions fold safely; an invalid intermediate sum or difference
+Known constant expressions fold safely; an invalid intermediate sum, difference or product
 is rejected at compile time. Global initializer arithmetic currently requires
 constant operands; move variable expressions
 into the job so their errors can use its finite exit. Simple global copies remain
@@ -121,6 +123,24 @@ Parenthesized/general expressions and raw-mode subtraction remain unsupported.
 
 [GOLEM-013](../tasks/GOLEM-013/README.md) adds subtraction and mixed chains.
 Maintained/sanitizer checks, 88 independent model jobs and 1,248 stock-emulator
-checks pass. Oryx headless results match; human review of this tranche is pending.
+checks pass. Oryx headless results match and the Author confirmed human review
+worked; this tranche was committed/pushed as 964d546.
 All four counted-floor command artifacts remain identical to ddb5e87; its
 manifest now also publishes underflow code 2.
+
+## Multiplication qualification
+
+`total = a + b * c` evaluates b * c before adding a. Multiplication fails when
+its own intermediate result exceeds 65535, even if a later factor is zero.
+Runtime multiplication uses a shared finite 16-step kernel computing the exact
+uint32 product, then checks the upper bytes from the calling job. Failure exits
+with code 3 before committing the assignment. The helper itself cannot raise a
+source arithmetic error, so a failing nested call cannot resume later statements.
+Installed scratch state is reused and reset on every product evaluation.
+
+[GOLEM-014](../tasks/GOLEM-014/README.md) records 120 independent model jobs,
+14 expression-order cases, sanitizer checks and 1,670 stock Fab/MOS checks.
+The fixture installs 3344 bytes across 50 owned buffers. Calls remain 21 bytes
+with a new input, 6 bytes without. Reviewed addition/subtraction command artifacts
+and all five pure-floor package artifacts remain unchanged. Physical hardware
+and other firmware versions remain outside this evidence.

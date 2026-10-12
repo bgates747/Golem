@@ -1,0 +1,1046 @@
+{
+  "pass": true,
+  "packages": [
+    {
+      "name": "default",
+      "manifest": {
+        "schema": 1,
+        "profile": "resident-scalar",
+        "input": {
+          "name": "x",
+          "id": 26,
+          "offset": 0,
+          "type": "float32",
+          "bytes": 4,
+          "min": -32768,
+          "max": 32767
+        },
+        "output": {
+          "name": "result",
+          "id": 27,
+          "offset": 0,
+          "type": "sint16",
+          "bytes": 2
+        },
+        "entry": {
+          "name": "compute",
+          "id": 30,
+          "blocks": 1,
+          "bytes": 1231
+        },
+        "globals": [
+          {
+            "name": "a",
+            "id": 2,
+            "offset": 0,
+            "type": "uint16",
+            "bytes": 2
+          },
+          {
+            "name": "after",
+            "id": 9,
+            "offset": 0,
+            "type": "uint16",
+            "bytes": 2
+          },
+          {
+            "name": "b",
+            "id": 3,
+            "offset": 0,
+            "type": "uint16",
+            "bytes": 2
+          },
+          {
+            "name": "before",
+            "id": 6,
+            "offset": 0,
+            "type": "uint16",
+            "bytes": 2
+          },
+          {
+            "name": "c",
+            "id": 4,
+            "offset": 0,
+            "type": "uint16",
+            "bytes": 2
+          },
+          {
+            "name": "completed",
+            "id": 11,
+            "offset": 0,
+            "type": "uint16",
+            "bytes": 2
+          },
+          {
+            "name": "extra",
+            "id": 5,
+            "offset": 0,
+            "type": "uint16",
+            "bytes": 2
+          },
+          {
+            "name": "selfValue",
+            "id": 8,
+            "offset": 0,
+            "type": "uint16",
+            "bytes": 2
+          },
+          {
+            "name": "tail",
+            "id": 10,
+            "offset": 0,
+            "type": "uint16",
+            "bytes": 2
+          },
+          {
+            "name": "total",
+            "id": 7,
+            "offset": 0,
+            "type": "uint16",
+            "bytes": 2
+          }
+        ],
+        "runtime_error": {
+          "id": 13,
+          "offset": 0,
+          "type": "uint16",
+          "bytes": 2,
+          "none": 0,
+          "uint16_add_overflow": 1,
+          "uint16_sub_underflow": 2,
+          "uint16_mul_overflow": 3,
+          "reset": "each_invocation",
+          "on_error": "abort_job_preserve_destination"
+        },
+        "reserved_ranges": [],
+        "owned": [
+          {
+            "id": 1,
+            "bytes": 3,
+            "kind": "data",
+            "role": "ordinary.accumulator"
+          },
+          {
+            "id": 2,
+            "bytes": 2,
+            "kind": "data",
+            "role": "ordinary.global.a"
+          },
+          {
+            "id": 3,
+            "bytes": 2,
+            "kind": "data",
+            "role": "ordinary.global.b"
+          },
+          {
+            "id": 4,
+            "bytes": 2,
+            "kind": "data",
+            "role": "ordinary.global.c"
+          },
+          {
+            "id": 5,
+            "bytes": 2,
+            "kind": "data",
+            "role": "ordinary.global.extra"
+          },
+          {
+            "id": 6,
+            "bytes": 2,
+            "kind": "data",
+            "role": "ordinary.global.before"
+          },
+          {
+            "id": 7,
+            "bytes": 2,
+            "kind": "data",
+            "role": "ordinary.global.total"
+          },
+          {
+            "id": 8,
+            "bytes": 2,
+            "kind": "data",
+            "role": "ordinary.global.selfValue"
+          },
+          {
+            "id": 9,
+            "bytes": 2,
+            "kind": "data",
+            "role": "ordinary.global.after"
+          },
+          {
+            "id": 10,
+            "bytes": 2,
+            "kind": "data",
+            "role": "ordinary.global.tail"
+          },
+          {
+            "id": 11,
+            "bytes": 2,
+            "kind": "data",
+            "role": "ordinary.global.completed"
+          },
+          {
+            "id": 12,
+            "bytes": 2,
+            "kind": "data",
+            "role": "ordinary.product_operand"
+          },
+          {
+            "id": 13,
+            "bytes": 2,
+            "kind": "data",
+            "role": "runtime.error_status"
+          },
+          {
+            "id": 14,
+            "bytes": 2,
+            "kind": "data",
+            "role": "runtime.carry_word"
+          },
+          {
+            "id": 15,
+            "bytes": 2,
+            "kind": "data",
+            "role": "runtime.zero_word"
+          },
+          {
+            "id": 16,
+            "bytes": 13,
+            "kind": "program",
+            "role": "runtime.overflow_exit"
+          },
+          {
+            "id": 17,
+            "bytes": 5,
+            "kind": "data",
+            "role": "runtime.multiply_product"
+          },
+          {
+            "id": 18,
+            "bytes": 5,
+            "kind": "data",
+            "role": "runtime.multiply_shifted"
+          },
+          {
+            "id": 19,
+            "bytes": 2,
+            "kind": "data",
+            "role": "runtime.multiply_operand"
+          },
+          {
+            "id": 20,
+            "bytes": 2,
+            "kind": "data",
+            "role": "runtime.multiply_bit"
+          },
+          {
+            "id": 21,
+            "bytes": 15,
+            "kind": "program",
+            "role": "runtime.multiply_add"
+          },
+          {
+            "id": 22,
+            "bytes": 13,
+            "kind": "program",
+            "role": "runtime.multiply_overflow_exit"
+          },
+          {
+            "id": 23,
+            "bytes": 913,
+            "kind": "program",
+            "role": "runtime.multiply_kernel"
+          },
+          {
+            "id": 24,
+            "bytes": 2,
+            "kind": "data",
+            "role": "runtime.subtrahend_complement"
+          },
+          {
+            "id": 25,
+            "bytes": 13,
+            "kind": "program",
+            "role": "runtime.underflow_exit"
+          },
+          {
+            "id": 26,
+            "bytes": 4,
+            "kind": "data",
+            "role": "scalar.input"
+          },
+          {
+            "id": 27,
+            "bytes": 2,
+            "kind": "data",
+            "role": "scalar.output"
+          },
+          {
+            "id": 28,
+            "bytes": 4,
+            "kind": "data",
+            "role": "scalar.source"
+          },
+          {
+            "id": 29,
+            "bytes": 4,
+            "kind": "data",
+            "role": "scalar.integral"
+          },
+          {
+            "id": 30,
+            "bytes": 1231,
+            "kind": "program",
+            "role": "scalar.entry"
+          },
+          {
+            "id": 31,
+            "bytes": 4,
+            "kind": "data",
+            "role": "scalar.scratch.0"
+          },
+          {
+            "id": 32,
+            "bytes": 1,
+            "kind": "data",
+            "role": "scalar.scratch.1"
+          },
+          {
+            "id": 33,
+            "bytes": 36,
+            "kind": "data",
+            "role": "scalar.scratch.2"
+          },
+          {
+            "id": 34,
+            "bytes": 4,
+            "kind": "data",
+            "role": "scalar.scratch.3"
+          },
+          {
+            "id": 35,
+            "bytes": 8,
+            "kind": "data",
+            "role": "scalar.scratch.4"
+          },
+          {
+            "id": 36,
+            "bytes": 8,
+            "kind": "data",
+            "role": "scalar.scratch.5"
+          },
+          {
+            "id": 37,
+            "bytes": 2,
+            "kind": "data",
+            "role": "scalar.scratch.6"
+          },
+          {
+            "id": 38,
+            "bytes": 2,
+            "kind": "data",
+            "role": "scalar.scratch.7"
+          },
+          {
+            "id": 39,
+            "bytes": 2,
+            "kind": "data",
+            "role": "scalar.scratch.8"
+          },
+          {
+            "id": 40,
+            "bytes": 13,
+            "kind": "program",
+            "role": "scalar.scratch.9"
+          },
+          {
+            "id": 41,
+            "bytes": 208,
+            "kind": "program",
+            "role": "scalar.scratch.10"
+          },
+          {
+            "id": 42,
+            "bytes": 15,
+            "kind": "program",
+            "role": "scalar.scratch.11"
+          },
+          {
+            "id": 43,
+            "bytes": 2,
+            "kind": "data",
+            "role": "scalar.scratch.12"
+          },
+          {
+            "id": 44,
+            "bytes": 2,
+            "kind": "data",
+            "role": "scalar.scratch.13"
+          },
+          {
+            "id": 45,
+            "bytes": 36,
+            "kind": "data",
+            "role": "scalar.scratch.14"
+          },
+          {
+            "id": 46,
+            "bytes": 4,
+            "kind": "data",
+            "role": "scalar.scratch.15"
+          },
+          {
+            "id": 47,
+            "bytes": 4,
+            "kind": "data",
+            "role": "scalar.scratch.16"
+          },
+          {
+            "id": 48,
+            "bytes": 4,
+            "kind": "data",
+            "role": "scalar.scratch.17"
+          },
+          {
+            "id": 49,
+            "bytes": 4,
+            "kind": "data",
+            "role": "scalar.scratch.18"
+          },
+          {
+            "id": 50,
+            "bytes": 4,
+            "kind": "data",
+            "role": "scalar.scratch.19"
+          }
+        ],
+        "byte_order": "little-endian",
+        "serialized_nonreentrant": true,
+        "external_input_requires_host_validation": true,
+        "loader_root_reserved": 0,
+        "special_id_reserved": 65535,
+        "bootstrap_bytes": 3344,
+        "input_update_bytes": 15,
+        "call_bytes": 6,
+        "cleanup_bytes": 300
+      },
+      "arithmetic_jobs": 60,
+      "artifacts_sha256": {
+        "bootstrap.bin": "bf93ed1ec756d3a6dc118bffb0a02f448f0d165d2f68ab8e258aa37c14f2e78c",
+        "cleanup.bin": "4c0978f1a821459609451f099d9c26268fd1fd634eb322692220331596e2ea9d",
+        "interface.json": "fc3e6b5ddd53f8485313d4fae77a836782c7631178ab7a718bdbd758665ad769",
+        "invoke.bin": "7a531b7a52b932170689847d7b2a8d2c101e63f8cdc5cb26c47f822b341a7d77",
+        "update-call.bin": "7667606c8898cf4c9501ce246065fcc90cfe82d2f6df409660f6c1ecf391f9b1"
+      }
+    },
+    {
+      "name": "relocated",
+      "manifest": {
+        "schema": 1,
+        "profile": "resident-scalar",
+        "input": {
+          "name": "x",
+          "id": 285,
+          "offset": 0,
+          "type": "float32",
+          "bytes": 4,
+          "min": -32768,
+          "max": 32767
+        },
+        "output": {
+          "name": "result",
+          "id": 286,
+          "offset": 0,
+          "type": "sint16",
+          "bytes": 2
+        },
+        "entry": {
+          "name": "compute",
+          "id": 289,
+          "blocks": 1,
+          "bytes": 1231
+        },
+        "globals": [
+          {
+            "name": "a",
+            "id": 256,
+            "offset": 0,
+            "type": "uint16",
+            "bytes": 2
+          },
+          {
+            "name": "after",
+            "id": 268,
+            "offset": 0,
+            "type": "uint16",
+            "bytes": 2
+          },
+          {
+            "name": "b",
+            "id": 257,
+            "offset": 0,
+            "type": "uint16",
+            "bytes": 2
+          },
+          {
+            "name": "before",
+            "id": 265,
+            "offset": 0,
+            "type": "uint16",
+            "bytes": 2
+          },
+          {
+            "name": "c",
+            "id": 258,
+            "offset": 0,
+            "type": "uint16",
+            "bytes": 2
+          },
+          {
+            "name": "completed",
+            "id": 270,
+            "offset": 0,
+            "type": "uint16",
+            "bytes": 2
+          },
+          {
+            "name": "extra",
+            "id": 259,
+            "offset": 0,
+            "type": "uint16",
+            "bytes": 2
+          },
+          {
+            "name": "selfValue",
+            "id": 267,
+            "offset": 0,
+            "type": "uint16",
+            "bytes": 2
+          },
+          {
+            "name": "tail",
+            "id": 269,
+            "offset": 0,
+            "type": "uint16",
+            "bytes": 2
+          },
+          {
+            "name": "total",
+            "id": 266,
+            "offset": 0,
+            "type": "uint16",
+            "bytes": 2
+          }
+        ],
+        "runtime_error": {
+          "id": 272,
+          "offset": 0,
+          "type": "uint16",
+          "bytes": 2,
+          "none": 0,
+          "uint16_add_overflow": 1,
+          "uint16_sub_underflow": 2,
+          "uint16_mul_overflow": 3,
+          "reset": "each_invocation",
+          "on_error": "abort_job_preserve_destination"
+        },
+        "reserved_ranges": [
+          {
+            "first": 1,
+            "last": 254
+          },
+          {
+            "first": 260,
+            "last": 264
+          },
+          {
+            "first": 50000,
+            "last": 50000
+          }
+        ],
+        "owned": [
+          {
+            "id": 255,
+            "bytes": 3,
+            "kind": "data",
+            "role": "ordinary.accumulator"
+          },
+          {
+            "id": 256,
+            "bytes": 2,
+            "kind": "data",
+            "role": "ordinary.global.a"
+          },
+          {
+            "id": 257,
+            "bytes": 2,
+            "kind": "data",
+            "role": "ordinary.global.b"
+          },
+          {
+            "id": 258,
+            "bytes": 2,
+            "kind": "data",
+            "role": "ordinary.global.c"
+          },
+          {
+            "id": 259,
+            "bytes": 2,
+            "kind": "data",
+            "role": "ordinary.global.extra"
+          },
+          {
+            "id": 265,
+            "bytes": 2,
+            "kind": "data",
+            "role": "ordinary.global.before"
+          },
+          {
+            "id": 266,
+            "bytes": 2,
+            "kind": "data",
+            "role": "ordinary.global.total"
+          },
+          {
+            "id": 267,
+            "bytes": 2,
+            "kind": "data",
+            "role": "ordinary.global.selfValue"
+          },
+          {
+            "id": 268,
+            "bytes": 2,
+            "kind": "data",
+            "role": "ordinary.global.after"
+          },
+          {
+            "id": 269,
+            "bytes": 2,
+            "kind": "data",
+            "role": "ordinary.global.tail"
+          },
+          {
+            "id": 270,
+            "bytes": 2,
+            "kind": "data",
+            "role": "ordinary.global.completed"
+          },
+          {
+            "id": 271,
+            "bytes": 2,
+            "kind": "data",
+            "role": "ordinary.product_operand"
+          },
+          {
+            "id": 272,
+            "bytes": 2,
+            "kind": "data",
+            "role": "runtime.error_status"
+          },
+          {
+            "id": 273,
+            "bytes": 2,
+            "kind": "data",
+            "role": "runtime.carry_word"
+          },
+          {
+            "id": 274,
+            "bytes": 2,
+            "kind": "data",
+            "role": "runtime.zero_word"
+          },
+          {
+            "id": 275,
+            "bytes": 13,
+            "kind": "program",
+            "role": "runtime.overflow_exit"
+          },
+          {
+            "id": 276,
+            "bytes": 5,
+            "kind": "data",
+            "role": "runtime.multiply_product"
+          },
+          {
+            "id": 277,
+            "bytes": 5,
+            "kind": "data",
+            "role": "runtime.multiply_shifted"
+          },
+          {
+            "id": 278,
+            "bytes": 2,
+            "kind": "data",
+            "role": "runtime.multiply_operand"
+          },
+          {
+            "id": 279,
+            "bytes": 2,
+            "kind": "data",
+            "role": "runtime.multiply_bit"
+          },
+          {
+            "id": 280,
+            "bytes": 15,
+            "kind": "program",
+            "role": "runtime.multiply_add"
+          },
+          {
+            "id": 281,
+            "bytes": 13,
+            "kind": "program",
+            "role": "runtime.multiply_overflow_exit"
+          },
+          {
+            "id": 282,
+            "bytes": 913,
+            "kind": "program",
+            "role": "runtime.multiply_kernel"
+          },
+          {
+            "id": 283,
+            "bytes": 2,
+            "kind": "data",
+            "role": "runtime.subtrahend_complement"
+          },
+          {
+            "id": 284,
+            "bytes": 13,
+            "kind": "program",
+            "role": "runtime.underflow_exit"
+          },
+          {
+            "id": 285,
+            "bytes": 4,
+            "kind": "data",
+            "role": "scalar.input"
+          },
+          {
+            "id": 286,
+            "bytes": 2,
+            "kind": "data",
+            "role": "scalar.output"
+          },
+          {
+            "id": 287,
+            "bytes": 4,
+            "kind": "data",
+            "role": "scalar.source"
+          },
+          {
+            "id": 288,
+            "bytes": 4,
+            "kind": "data",
+            "role": "scalar.integral"
+          },
+          {
+            "id": 289,
+            "bytes": 1231,
+            "kind": "program",
+            "role": "scalar.entry"
+          },
+          {
+            "id": 290,
+            "bytes": 4,
+            "kind": "data",
+            "role": "scalar.scratch.0"
+          },
+          {
+            "id": 291,
+            "bytes": 1,
+            "kind": "data",
+            "role": "scalar.scratch.1"
+          },
+          {
+            "id": 292,
+            "bytes": 36,
+            "kind": "data",
+            "role": "scalar.scratch.2"
+          },
+          {
+            "id": 293,
+            "bytes": 4,
+            "kind": "data",
+            "role": "scalar.scratch.3"
+          },
+          {
+            "id": 294,
+            "bytes": 8,
+            "kind": "data",
+            "role": "scalar.scratch.4"
+          },
+          {
+            "id": 295,
+            "bytes": 8,
+            "kind": "data",
+            "role": "scalar.scratch.5"
+          },
+          {
+            "id": 296,
+            "bytes": 2,
+            "kind": "data",
+            "role": "scalar.scratch.6"
+          },
+          {
+            "id": 297,
+            "bytes": 2,
+            "kind": "data",
+            "role": "scalar.scratch.7"
+          },
+          {
+            "id": 298,
+            "bytes": 2,
+            "kind": "data",
+            "role": "scalar.scratch.8"
+          },
+          {
+            "id": 299,
+            "bytes": 13,
+            "kind": "program",
+            "role": "scalar.scratch.9"
+          },
+          {
+            "id": 300,
+            "bytes": 208,
+            "kind": "program",
+            "role": "scalar.scratch.10"
+          },
+          {
+            "id": 301,
+            "bytes": 15,
+            "kind": "program",
+            "role": "scalar.scratch.11"
+          },
+          {
+            "id": 302,
+            "bytes": 2,
+            "kind": "data",
+            "role": "scalar.scratch.12"
+          },
+          {
+            "id": 303,
+            "bytes": 2,
+            "kind": "data",
+            "role": "scalar.scratch.13"
+          },
+          {
+            "id": 304,
+            "bytes": 36,
+            "kind": "data",
+            "role": "scalar.scratch.14"
+          },
+          {
+            "id": 305,
+            "bytes": 4,
+            "kind": "data",
+            "role": "scalar.scratch.15"
+          },
+          {
+            "id": 306,
+            "bytes": 4,
+            "kind": "data",
+            "role": "scalar.scratch.16"
+          },
+          {
+            "id": 307,
+            "bytes": 4,
+            "kind": "data",
+            "role": "scalar.scratch.17"
+          },
+          {
+            "id": 308,
+            "bytes": 4,
+            "kind": "data",
+            "role": "scalar.scratch.18"
+          },
+          {
+            "id": 309,
+            "bytes": 4,
+            "kind": "data",
+            "role": "scalar.scratch.19"
+          }
+        ],
+        "byte_order": "little-endian",
+        "serialized_nonreentrant": true,
+        "external_input_requires_host_validation": true,
+        "loader_root_reserved": 0,
+        "special_id_reserved": 65535,
+        "bootstrap_bytes": 3344,
+        "input_update_bytes": 15,
+        "call_bytes": 6,
+        "cleanup_bytes": 300
+      },
+      "arithmetic_jobs": 60,
+      "artifacts_sha256": {
+        "bootstrap.bin": "a5057426386fc044efe5c0196045cb50f51faf09757afa44d5019c474cb61fa9",
+        "cleanup.bin": "75a82ec3f74d983427b677fb2eea224547d5322fc1bae93c74500d20aebb98f0",
+        "interface.json": "e0947f821eac9b2b2ef18ff2362d90346b2d3bf69ae5e298413aa6506758dea2",
+        "invoke.bin": "de2378f83098e62fc6a338c6632785cf1863ceaff0670523601999cc73d174f2",
+        "update-call.bin": "6a6f8816fafa8b900d912cc46a8254b9b54872342e9e5fdc07662f8dbc827a0e"
+      }
+    }
+  ],
+  "host_model_jobs": 120,
+  "source_sha256": {
+    "src/buffer_allocator.hpp": "17af55e64b94d2e4517d1a8110c4d1bddea28dd6f20240263590d0684e186868",
+    "src/ordinary.hpp": "9b5af4c552311e3b4af0aa207e856a7243512eb4e6d3ffc22fbb00bcbe0260b6",
+    "src/resident.hpp": "4371931ade6a1481fde313a181ad9df3cc45d34a363960de04ee0027b2fe4d64",
+    "src/scalar_backend.hpp": "cdad521fa96586d32321d3335e2c038188e1b0046e12da4e082045b875455c79",
+    "src/token_reader.hpp": "fb09435139aaea6fc5903493b5a36f2b4508ccf656dc1fd3b9cac60b35b89497",
+    "src/golemc.cpp": "848f54e622e226a7bbd99392bab629318a8ba09fe6f1948e53b365b1bf68878e",
+    "tests/test_compiler.cpp": "62e46a77bb73a21f8fe7f359fea2014ca9413f187bff85daa89b3624a113f96c"
+  },
+  "pure_floor_five_artifact_parity": true,
+  "raw_parity_cases": 4,
+  "rejected_packages_preserved": 3,
+  "sanitizer_output": "Maintained raw/resident contract checks pass; 36 rejection cases.",
+  "commands": [
+    {
+      "command": [
+        "make",
+        "-C",
+        "src",
+        "check",
+        "CXXFLAGS=-std=c++17 -Wall -Wextra -Werror -O2"
+      ],
+      "seconds": 10.99
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-014/checked-multiply.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-014/build/default"
+      ],
+      "seconds": 0.003
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--reserve",
+        "1:254",
+        "--reserve",
+        "260:264",
+        "--reserve",
+        "50000:50000",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-014/checked-multiply.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-014/build/relocated"
+      ],
+      "seconds": 0.002
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "/Agon/mystuff/golem/examples/resident/floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-014/build/pure-floor"
+      ],
+      "seconds": 0.002
+    },
+    {
+      "command": [
+        "g++",
+        "-std=c++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-O2",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-014/build/baseline/src/golemc.cpp",
+        "-o",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-014/build/baseline-golemc"
+      ],
+      "seconds": 4.737
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/build/golemc",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-014/build/raw-0.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-014/build/new.bin"
+      ],
+      "seconds": 0.002
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-014/build/baseline-golemc",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-014/build/raw-0.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-014/build/old.bin"
+      ],
+      "seconds": 0.001
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/build/golemc",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-014/build/raw-1.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-014/build/new.bin"
+      ],
+      "seconds": 0.001
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-014/build/baseline-golemc",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-014/build/raw-1.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-014/build/old.bin"
+      ],
+      "seconds": 0.001
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/build/golemc",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-014/build/raw-2.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-014/build/new.bin"
+      ],
+      "seconds": 0.001
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-014/build/baseline-golemc",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-014/build/raw-2.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-014/build/old.bin"
+      ],
+      "seconds": 0.001
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/build/golemc",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-014/build/raw-3.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-014/build/new.bin"
+      ],
+      "seconds": 0.001
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-014/build/baseline-golemc",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-014/build/raw-3.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-014/build/old.bin"
+      ],
+      "seconds": 0.002
+    },
+    {
+      "command": [
+        "g++",
+        "-std=c++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "/Agon/mystuff/golem/tests/test_compiler.cpp",
+        "-o",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-014/build/sanitized"
+      ],
+      "seconds": 20.923
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-014/build/sanitized"
+      ],
+      "seconds": 0.171
+    }
+  ],
+  "seconds": 36.908,
+  "scope": "Host command-byte model and compiler checks; not VDP execution."
+}

@@ -1,0 +1,12 @@
+{
+  "host": "oryx-linuxlite",
+  "human_validation": "passed",
+  "author_confirmation": "worked. you may gather the results.",
+  "checks": 1670,
+  "resident_jobs": 120,
+  "observed_bytes": 8016,
+  "observed_sha256": "4fcf02a80d4b3deb567dde76e08469a8af6b9f3757d354a34db199272be18f7f",
+  "reviewed_guest_sha256": "a4e484c1ecc7be7aa67e279f02c4bb8f244097a272ae476b260be3dd41923e8a",
+  "agent_retrieval": "Saved Oryx file retrieved and independently compared locally on 2026-10-12",
+  "commit_approval": "explicitly granted by Author: do that then tell me what is next"
+}

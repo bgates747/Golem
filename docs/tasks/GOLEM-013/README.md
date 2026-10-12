@@ -3,9 +3,9 @@
 Resident uint16 subtraction now checks underflow and preserves the failed
 assignment's destination. Mixed + / - chains evaluate left to right and check
 every intermediate result. Host/sanitizer checks and stock Fab/MOS execution
-pass. The dedicated Oryx fixture also passes headless verification and is stopped,
-ready for human review. Fresh-input/call traffic remains 21 bytes. This tranche
-remains uncommitted pending human testing and explicit commit approval.
+pass. The Author confirmed human Oryx review worked, and the agent retrieved
+matching saved results. This tranche was approved, committed and pushed as
+964d546. Fresh-input/call traffic remains 21 bytes.
 
 ## Oryx human review
 

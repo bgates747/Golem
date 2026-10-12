@@ -26,9 +26,8 @@ See `docs/tasks/GOLEM-012/README.md` for evidence and exact review commands.
 
 GOLEM-013 adds resident uint16 subtraction and mixed left-to-right + / - chains.
 Underflow preserves the failed destination and exits with status 2. Automated
-host/sanitizer/stock-emulator qualification passes; the stopped Oryx fixture is
-ready for human review. Leave this tranche uncommitted until human testing and
-explicit commit approval. See `docs/tasks/GOLEM-013/README.md`.
+host/sanitizer/stock-emulator qualification and human Oryx review pass. The Author
+approved commit/push as 964d546. See `docs/tasks/GOLEM-013/README.md`.
 
 
 GOLEM-007's stock Fab 1.2.5/MOS 3.0.2 qualification and Oryx keyboard review
@@ -44,6 +43,12 @@ milestone) plus a cross-agent collaboration thread with an external
 reading order" below for where everything now lives; treat `docs/design/`
 as the most current design reference where it overlaps with older devlog
 material.
+
+GOLEM-014 adds checked resident uint16 multiplication with standard precedence
+and status 3 on overflow. Shared bounded VDP helpers keep installation traffic
+small. Host/sanitizer/stock-emulator and Oryx human review pass. The agent retrieved
+matching saved results. The Author subsequently explicitly approved commit/push.
+See `docs/tasks/GOLEM-014/README.md`.
 
 ## Human review workflow
 

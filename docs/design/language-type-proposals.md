@@ -1451,3 +1451,14 @@ separate implementation work.
 Exponentiation uses **, bitwise XOR uses ^, and sqrt(n) is the selected real
 square-root spelling. Power and square-root implementation remain future work;
 complex numbers were a joke, not a requested type-system extension.
+
+## Checked resident multiplication — implementation slice 2026-10-12
+
+GOLEM-014 implements binary uint16 * in resident jobs, with higher precedence
+than + / -. Operators at each precedence level evaluate left to right, and each
+intermediate result is checked. Known constant overflow is rejected; runtime
+overflow preserves the assignment destination and exits the job with status 3.
+For example, `a * b * 0` fails if a * b overflows. This does not implement integer
+power, division, signed multiplication or raw-mode multiplication. Human review
+of the emitted stock-VDP multiplication commands passed; the agent retrieved
+and verified all 1,670 saved Oryx checks.

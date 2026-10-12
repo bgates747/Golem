@@ -1,0 +1,22 @@
+uint16 a = 0
+uint16 b = 0
+uint16 c = 0
+uint16 extra = 0
+uint16 before = 0
+uint16 total = 48879
+uint16 selfValue = 222
+uint16 after = 0
+uint16 tail = 9
+uint16 completed = 0
+float32 x Range(-32768,32767) = -0.75
+sint16 result
+Sub compute
+    before = a
+    total = a + b * c
+    result = sint16(floor(x))
+    selfValue = selfValue * extra * 1
+    after = total - c * b
+    tail = tail * 2
+    completed = 1
+    print "completed"
+EndSub

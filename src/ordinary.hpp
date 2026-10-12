@@ -216,6 +216,59 @@ public:
         emitCondJumpBufferValue(code, underflowExit_, 2, carryWord_, 0, zeroWord_, 0);
     }
 
+    unsigned productOperandBuffer() {
+        if (!productOperand_) {
+            productOperand_ = allocator_->allocate("ordinary.product_operand");
+            emitWriteBlock(out, productOperand_, {0, 0});
+            dataBuffers_[productOperand_] = 2;
+        }
+        return productOperand_;
+    }
+
+    void multiply(std::vector<unsigned char> &code, unsigned accumulator,
+                  bool literal, unsigned value, int source) {
+        ensureErrorState();
+        if (!mulProduct_) {
+            mulProduct_ = allocator_->allocate("runtime.multiply_product");
+            mulShift_ = allocator_->allocate("runtime.multiply_shifted");
+            mulOperand_ = allocator_->allocate("runtime.multiply_operand");
+            mulBit_ = allocator_->allocate("runtime.multiply_bit");
+            mulAdd_ = allocator_->allocate("runtime.multiply_add");
+            mulExit_ = allocator_->allocate("runtime.multiply_overflow_exit");
+            mulKernel_ = allocator_->allocate("runtime.multiply_kernel");
+            for (unsigned id : {mulProduct_, mulShift_, mulOperand_, mulBit_}) {
+                unsigned size = (id == mulProduct_ || id == mulShift_) ? 5 : 2;
+                emitWriteBlock(out, id, std::vector<unsigned char>(size, 0));
+                dataBuffers_[id] = size;
+            }
+            // This helper cannot fail: the full uint16 product fits in uint32.
+            emitAdjustMultiBufferFetched(programs_[mulAdd_], mulProduct_, kOpAddWithCarry,
+                                         0, 4, mulShift_, 0);
+            emitAdjustMultiLiteral(programs_[mulExit_], errorStatus_, kOpSet, 0, {3, 0});
+            // Shared finite kernel; errors are checked after it returns to the job.
+            auto &kernel = programs_[mulKernel_];
+            for (unsigned bit = 0; bit < 16; ++bit) {
+                emitAdjustMultiBufferFetched(kernel, mulBit_, kOpSet, 0, 2, mulOperand_, 0);
+                emitAdjustMultiLiteral(kernel, mulBit_, 5, 0, le16Bytes(1u << bit));
+                emitCondCallBufferValue(kernel, mulAdd_, 3, mulBit_, 0, zeroWord_, 0);
+                if (bit != 15)
+                    emitAdjustMultiBufferFetched(kernel, mulShift_, kOpAddWithCarry, 0, 4, mulShift_, 0);
+            }
+        }
+        emitAdjustMultiLiteral(code, mulProduct_, kOpSet, 0, {0, 0, 0, 0, 0});
+        emitAdjustMultiLiteral(code, mulShift_, kOpSet, 2, {0, 0, 0});
+        emitAdjustMultiBufferFetched(code, mulShift_, kOpSet, 0, 2, accumulator, 0);
+        if (literal) emitAdjustMultiLiteral(code, mulOperand_, kOpSet, 0, le16Bytes(value));
+        else emitAdjustMultiBufferFetched(code, mulOperand_, kOpSet, 0, 2, source, 0);
+        emitBufferHeader(code, mulKernel_);
+        code.push_back(1);
+        // Fold high product bytes into a 0:255 word: never compare 0xFFFF.
+        emitAdjustMultiBufferFetched(code, carryWord_, kOpSet, 0, 1, mulProduct_, 2);
+        emitAdjustMultiBufferFetched(code, carryWord_, 6, 0, 1, mulProduct_, 3);
+        emitCondJumpBufferValue(code, mulExit_, 3, carryWord_, 0, zeroWord_, 0);
+        emitAdjustMultiBufferFetched(code, accumulator, kOpSet, 0, 2, mulProduct_, 0);
+    }
+
     // 3 bytes: 2 data bytes + the carry-out landing byte "Add with carry"
     // always writes at offset+2 - see Axis 10's addendum and Axis 13.
     // Allocated lazily so print-only programs (like hello.golem) don't
@@ -268,6 +321,8 @@ private:
     bool accInitialized_ = false;
     unsigned errorStatus_ = 0, carryWord_ = 0, zeroWord_ = 0, overflowExit_ = 0;
     unsigned complement_ = 0, underflowExit_ = 0;
+    unsigned productOperand_ = 0, mulProduct_ = 0, mulShift_ = 0, mulOperand_ = 0;
+    unsigned mulBit_ = 0, mulAdd_ = 0, mulExit_ = 0, mulKernel_ = 0;
     std::map<unsigned, std::vector<unsigned char>> programs_;
 };
 
@@ -278,6 +333,7 @@ struct Term {
     unsigned literalValue = 0;
     int varBufferId = 0;
     bool subtract = false; // Binary operation before this term; first term has none.
+    std::vector<Term> factors{}; // Following operands in this higher-precedence product.
 };
 
 // Parses `term (('+' | '-') term)*` where `term` is an identifier or an integer
@@ -287,9 +343,8 @@ struct Term {
 inline std::vector<Term> parseExpr(Reader &reader, const Compiler &compiler) {
     std::vector<Term> terms;
     bool subtract = false;
-    do {
+    auto operand = [&]() {
         Term term;
-        term.subtract = subtract;
         if (reader.peek().kind == Kind::Number) {
             term.isLiteral = true;
             term.literalValue = reader.uint16();
@@ -298,6 +353,16 @@ inline std::vector<Term> parseExpr(Reader &reader, const Compiler &compiler) {
                 reader.error("expected expression operand (integer or declared uint16 variable)");
             auto name = reader.pop();
             term.varBufferId = compiler.lookupVariable(name.text, name.begin);
+        }
+        return term;
+    };
+    do {
+        Term term = operand();
+        term.subtract = subtract;
+        while (reader.take('*')) {
+            if (compiler.addition == Compiler::Addition::Wrapping)
+                reader.error("multiplication requires --resident");
+            term.factors.push_back(operand());
         }
         terms.push_back(term);
         if (reader.take('+')) subtract = false;
@@ -323,9 +388,23 @@ inline std::vector<Term> parseExpr(Reader &reader, const Compiler &compiler) {
 // happens to be laid out next), and only the final 2-byte result is
 // copied into the real destination.
 inline void compileExprInto(Compiler &compiler, std::vector<unsigned char> &out, int destBufferId,
-                      const std::vector<Term> &terms) {
-    if (terms.size() > 1 && compiler.addition != Compiler::Addition::Wrapping) {
-        if (std::all_of(terms.begin(), terms.end(), [](const Term &term) { return term.isLiteral; })) {
+                      std::vector<Term> terms) {
+    for (auto &term : terms) {
+        if (!term.factors.empty() && term.isLiteral &&
+            std::all_of(term.factors.begin(), term.factors.end(), [](const Term &t) { return t.isLiteral; })) {
+            unsigned product = term.literalValue;
+            for (const auto &factor : term.factors) {
+                if (factor.literalValue && product > 65535u / factor.literalValue)
+                    throw CompileError("uint16 constant multiplication overflows");
+                product *= factor.literalValue;
+            }
+            term.literalValue = product;
+            term.factors.clear();
+        }
+    }
+    const bool products = std::any_of(terms.begin(), terms.end(), [](const Term &t) { return !t.factors.empty(); });
+    if ((terms.size() > 1 || products) && compiler.addition != Compiler::Addition::Wrapping) {
+        if (std::all_of(terms.begin(), terms.end(), [](const Term &term) { return term.isLiteral && term.factors.empty(); })) {
             unsigned sum = terms[0].literalValue;
             for (size_t i = 1; i < terms.size(); ++i) {
                 const auto &term = terms[i];
@@ -344,7 +423,7 @@ inline void compileExprInto(Compiler &compiler, std::vector<unsigned char> &out,
         }
         if (compiler.addition == Compiler::Addition::Initializer) {
             const bool subtraction = std::any_of(terms.begin(), terms.end(), [](const Term &t) { return t.subtract; });
-            throw CompileError(std::string("resident initializer ") + (subtraction ? "subtraction" : "addition") +
+            throw CompileError(std::string("resident initializer ") + (products ? "multiplication" : subtraction ? "subtraction" : "addition") +
                                " requires constant operands; move it into the job");
         }
     }
@@ -354,6 +433,8 @@ inline void compileExprInto(Compiler &compiler, std::vector<unsigned char> &out,
         } else {
             emitAdjustMultiBufferFetched(out, bufferId, kOpSet, 0, 2, term.varBufferId, 0);
         }
+        for (const auto &factor : term.factors)
+            compiler.multiply(out, bufferId, factor.isLiteral, factor.literalValue, factor.varBufferId);
     };
     auto addInto = [&](int bufferId, const Term &term) {
         if (term.isLiteral) {
@@ -365,7 +446,7 @@ inline void compileExprInto(Compiler &compiler, std::vector<unsigned char> &out,
         }
     };
 
-    if (terms.size() == 1) {
+    if (terms.size() == 1 && !products) {
         setInto(destBufferId, terms[0]);
         return;
     }
@@ -373,11 +454,18 @@ inline void compileExprInto(Compiler &compiler, std::vector<unsigned char> &out,
     compiler.ensureAcc();
     setInto(compiler.accumulatorId(), terms[0]);
     for (size_t i = 1; i < terms.size(); ++i) {
-        if (terms[i].subtract) {
-            compiler.subtract(out, terms[i].isLiteral, terms[i].literalValue, terms[i].varBufferId);
+        Term operand = terms[i];
+        if (!operand.factors.empty()) {
+            unsigned buffer = compiler.productOperandBuffer();
+            setInto(buffer, operand);
+            operand.isLiteral = false;
+            operand.varBufferId = buffer;
+        }
+        if (operand.subtract) {
+            compiler.subtract(out, operand.isLiteral, operand.literalValue, operand.varBufferId);
             continue;
         }
-        addInto(compiler.accumulatorId(), terms[i]);
+        addInto(compiler.accumulatorId(), operand);
         if (compiler.addition == Compiler::Addition::CheckedResident) compiler.checkCarry(out);
     }
     emitAdjustMultiBufferFetched(out, destBufferId, kOpSet, 0, 2, compiler.accumulatorId(), 0);
@@ -396,7 +484,7 @@ inline void compileStatement(Compiler &compiler, Reader &reader, std::vector<uns
         int bufferId = compiler.declareVariable(name.text, name.begin);
         if (reader.take('=')) {
             auto terms = parseExpr(reader, compiler);
-            if (terms.size() == 1 && terms[0].isLiteral) {
+            if (terms.size() == 1 && terms[0].isLiteral && terms[0].factors.empty()) {
                 emitWriteBlock(out, bufferId, le16Bytes(terms[0].literalValue));
             } else {
                 emitWriteBlock(out, bufferId, {0, 0});
@@ -414,7 +502,7 @@ inline void compileStatement(Compiler &compiler, Reader &reader, std::vector<uns
         auto boundTerms = parseExpr(reader, compiler);
         compileExprInto(compiler, out, iBufferId, startTerms);
         int boundBufferId = compiler.allocInternalBuffer(loopVar.begin);
-        if (boundTerms.size() == 1 && boundTerms[0].isLiteral) {
+        if (boundTerms.size() == 1 && boundTerms[0].isLiteral && boundTerms[0].factors.empty()) {
             emitWriteBlock(out, boundBufferId, le16Bytes(boundTerms[0].literalValue));
         } else {
             emitWriteBlock(out, boundBufferId, {0, 0});

@@ -104,7 +104,8 @@ inline std::string manifest(const Result &result, const std::vector<Reservation>
     if (result.extras.errorStatus) {
         out << "  \"runtime_error\": {\"id\": " << result.extras.errorStatus
             << ", \"offset\": 0, \"type\": \"uint16\", \"bytes\": 2,"
-            << " \"none\": 0, \"uint16_add_overflow\": 1, \"uint16_sub_underflow\": 2, \"reset\": \"each_invocation\","
+            << " \"none\": 0, \"uint16_add_overflow\": 1, \"uint16_sub_underflow\": 2,"
+            << " \"uint16_mul_overflow\": 3, \"reset\": \"each_invocation\","
             << " \"on_error\": \"abort_job_preserve_destination\"},\n";
     }
     out << "  \"reserved_ranges\": [";

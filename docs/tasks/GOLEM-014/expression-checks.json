@@ -1,0 +1,167 @@
+{
+  "passed": true,
+  "cases": [
+    {
+      "expression": "a+b*c",
+      "values": [
+        2,
+        3,
+        4,
+        0
+      ],
+      "result": 14,
+      "error": 0
+    },
+    {
+      "expression": "a*b+c*d",
+      "values": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "result": 26,
+      "error": 0
+    },
+    {
+      "expression": "a*b-c*d",
+      "values": [
+        3,
+        4,
+        2,
+        5
+      ],
+      "result": 2,
+      "error": 0
+    },
+    {
+      "expression": "2*a+3",
+      "values": [
+        4,
+        0,
+        0,
+        0
+      ],
+      "result": 11,
+      "error": 0
+    },
+    {
+      "expression": "a*2*3",
+      "values": [
+        4,
+        0,
+        0,
+        0
+      ],
+      "result": 24,
+      "error": 0
+    },
+    {
+      "expression": "a*b*0",
+      "values": [
+        65535,
+        2,
+        0,
+        0
+      ],
+      "result": 48879,
+      "error": 3
+    },
+    {
+      "expression": "a*0*b",
+      "values": [
+        65535,
+        65535,
+        0,
+        0
+      ],
+      "result": 0,
+      "error": 0
+    },
+    {
+      "expression": "a-b+c*d",
+      "values": [
+        0,
+        1,
+        65535,
+        2
+      ],
+      "result": 48879,
+      "error": 2
+    },
+    {
+      "expression": "a+b+c*d",
+      "values": [
+        65535,
+        1,
+        65535,
+        2
+      ],
+      "result": 48879,
+      "error": 1
+    },
+    {
+      "expression": "a-b*c",
+      "values": [
+        0,
+        65535,
+        2,
+        0
+      ],
+      "result": 48879,
+      "error": 3
+    },
+    {
+      "expression": "total*total",
+      "values": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "result": 48879,
+      "error": 3
+    },
+    {
+      "expression": "total*0+total",
+      "values": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "result": 48879,
+      "error": 0
+    },
+    {
+      "expression": "a*b+b*a",
+      "values": [
+        1,
+        32767,
+        0,
+        0
+      ],
+      "result": 65534,
+      "error": 0
+    },
+    {
+      "expression": "a*b+b*a",
+      "values": [
+        1,
+        32768,
+        0,
+        0
+      ],
+      "result": 48879,
+      "error": 1
+    }
+  ],
+  "scope": "Independent command model; not VDP execution",
+  "source_sha256": {
+    "src/buffer_allocator.hpp": "17af55e64b94d2e4517d1a8110c4d1bddea28dd6f20240263590d0684e186868",
+    "src/ordinary.hpp": "9b5af4c552311e3b4af0aa207e856a7243512eb4e6d3ffc22fbb00bcbe0260b6",
+    "src/resident.hpp": "4371931ade6a1481fde313a181ad9df3cc45d34a363960de04ee0027b2fe4d64",
+    "src/scalar_backend.hpp": "cdad521fa96586d32321d3335e2c038188e1b0046e12da4e082045b875455c79",
+    "src/token_reader.hpp": "fb09435139aaea6fc5903493b5a36f2b4508ccf656dc1fd3b9cac60b35b89497"
+  }
+}
