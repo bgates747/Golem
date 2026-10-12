@@ -1,0 +1,36 @@
+{
+  "host": "oryx-linuxlite",
+  "architecture": "x86_64",
+  "profile": "/home/smith/Agon/mystuff/golem/.emulator",
+  "human_validation": "passed",
+  "dependencies": {
+    ".emulator/fab-agon-emulator.bin": "\tlinux-vdso.so.1 (0x00007ca79ee53000)\n\tlibSDL3.so.0 => /home/smith/.local/lib/libSDL3.so.0 (0x00007ca79e800000)\n\tlibgcc_s.so.1 => /usr/lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007ca79ec91000)\n\tlibc.so.6 => /usr/lib/x86_64-linux-gnu/libc.so.6 (0x00007ca79e400000)\n\t/lib64/ld-linux-x86-64.so.2 (0x00007ca79ee55000)\n\tlibm.so.6 => /usr/lib/x86_64-linux-gnu/libm.so.6 (0x00007ca79eb6b000)\n",
+    ".emulator/firmware/vdp_platform.so": "\tlinux-vdso.so.1 (0x00007fce00624000)\n\tlibstdc++.so.6 => /usr/lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007fce00200000)\n\tlibm.so.6 => /usr/lib/x86_64-linux-gnu/libm.so.6 (0x00007fce000da000)\n\tlibgcc_s.so.1 => /usr/lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007fce000ac000)\n\tlibc.so.6 => /usr/lib/x86_64-linux-gnu/libc.so.6 (0x00007fcdffe00000)\n\t/lib64/ld-linux-x86-64.so.2 (0x00007fce00626000)\n"
+  },
+  "sha256": {
+    ".emulator/fab-agon-emulator": "d12d063c66c1bdb8d4c78179e0485d0be16427294587ee0a965830722489386d",
+    ".emulator/fab-agon-emulator.bin": "aec5f8c266117d5bf864c6124d3c8986d042802ed5cbaaf8813e04a9fb8d0bea",
+    ".emulator/mos_platform.bin": "d564243283972690933a4554296ad6202ca4ef54572279533a942960846bebae",
+    ".emulator/mos_platform.map": "d69e60bbce61a7b4b3eef318ba395f11c4e1a5b585755755113992dc94edcb86",
+    ".emulator/firmware/vdp_platform.so": "14338aaeead48cb3df5987bf7fcc1b350d9e08d4a0ee0fcfc1a4a89cf79fae97",
+    ".emulator/sdcard/autoexec.txt": "96af83e1022163e5700191473337fd3e9890fc1aeea1daca89795cdeeb0210c5",
+    ".emulator/sdcard/golem/probe.bin": "e6898311968f9b6d9835ee242332403d4fdd942ec9f59d88fb70930a9a9f94de",
+    "docs/tasks/GOLEM-007/expected.dat": "47df09eecf3073928a5a591e40866703e51b18372d040d84cf5c4e6410d7e7d0",
+    "docs/tasks/GOLEM-007/build/setup_emulator.py": "2eec152df4f4219fdc00717981670bbfa8e8ad38f1e6083ff5ee1f83fe3f6622",
+    "docs/tasks/GOLEM-007/verify_review.py": "647379fbd69c702460cae4862449a42d9893a70e4a3c372978539e38e1f0ba5c"
+  },
+  "launch_command": "cd ~/Agon/mystuff/golem/.emulator && SDL_VIDEODRIVER=x11 ./fab-agon-emulator --renderer sw",
+  "verification": "Canonical profile generation, pinned MOS hashes, local x86-64 runtime dependencies, and guest/expected-data/verifier hashes match Pi. No emulator process launched.",
+  "runtime_artifact_source": "/Agon/fab-agon-emulator x86-64 reference artifacts on Pi",
+  "reference_checkout_commit": "c22876d1f7ad903537c308cf65afd6553b37cdb8",
+  "agent_launched": false,
+  "review": {
+    "launched_by": "Author",
+    "numerical_checks": 855,
+    "observed_bytes": 9204,
+    "observations": "Remote verifier and Author-run verifier match expected data.",
+    "MOS_prompt_and_keyboard": "Author confirmed dir responds correctly in emulator.",
+    "commit_approval": "explicitly granted by Author"
+  },
+  "current_verifier_sha256": "bd62eb3b7df0a089380874004a1642ad8916e00099533b5af71a0a3ec7894a8e"
+}

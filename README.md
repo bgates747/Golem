@@ -38,7 +38,9 @@ whitespace. [GOLEM-005](docs/tasks/GOLEM-005/README.md) documents parser migrati
 and the separate experimental scalar-floor frontend.
 [GOLEM-006](docs/tasks/GOLEM-006/README.md) adds checked allocation and a task-local
 resident CLI that combines scalar math with persistent uint16 state; host checks
-pass, with firmware qualification still pending.
+pass. [GOLEM-007](docs/tasks/GOLEM-007/README.md) adds passing stock-emulator
+qualification through MOS/UART and successful human review on Oryx; production
+promotion remains pending.
 
 ## Reference material
 

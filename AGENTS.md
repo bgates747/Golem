@@ -14,8 +14,10 @@ Status: **early design/exploration**. A task-local readable scalar-floor and
 conversion prototype has passed host checks under `docs/tasks/GOLEM-003/`, reusing
 selected Rally emission. GOLEM-006 adds a task-local integrated resident CLI with
 shared allocation and persistent uint16 state; this scalar/profile code is not
-part of the maintained compiler and has not
-been executed on VDP firmware in this continuation. See
+part of the maintained compiler. GOLEM-007 executes the integrated successor
+on stock Fab 1.2.5 VDP via MOS 3.0.2; automated checks and human review on Oryx
+pass. The Author explicitly approved the qualification commit and scalar/profile
+promotion tranche. See
 `TODO.md` for active work and the task document for current evidence. The
 maintained compiler is no longer purely design-only: a
 first toy compiler exists and has been verified end to end (`src/golemc.cpp`,
@@ -79,10 +81,10 @@ External references (read-only, outside this repo):
   check `dspm_mult`/`mat.h` usage in this header before trusting the docs
   alone).
 - `/home/smith/Agon/fab-agon-emulator` — emulator for testing generated
-  buffer-command sequences without hardware. No Golem-specific emulator
-  profile exists yet; one will need to be created under
-  `agon-dev-env/emulators` (or a project-local profile, per
-  `agon-dev-env/codex/emulator.md`) once there's something runnable.
+  buffer-command sequences without hardware. GOLEM-007's ignored project
+  `.emulator/` profile uses a native build of official tag 1.2.5 in its own
+  runtime directory; the reference checkout's inherited x86-64 binaries cannot
+  run on the Pi. See the task README and canonical emulator guide.
 - `/home/smith/Agon/mystuff/agon-dev-env/codex/bespoke-vdp-emulator.md` —
   canonical cross-project workflow (prepared by the external "Codex" agent)
   for running a *modified/bespoke* VDP firmware build natively inside Fab
@@ -152,13 +154,24 @@ added there as part of this handoff so other agents can discover it.
 
 ## Build, test, emulator, and hardware deployment commands
 
+Human emulator reviews default to a dedicated local instance on Oryx Linux Lite,
+unless the Author explicitly selects another host. The Pi has no accessible
+desktop, mouse, keyboard or monitor. Do not launch graphical emulators for the
+Author: stage and verify the Oryx instance, leave it stopped, and provide Bash
+launch commands plus review instructions. Pi headless evidence does not satisfy
+human review. See GOLEM-007 for the current review fixture.
+
 A host compiler Makefile exists: `make -C src` builds `build/golemc`.
 It accepts terminator-free syntax; newlines are whitespace. GOLEM-003 retains
 its historical semicolon parser/fixtures. GOLEM-005 has the new task-local
 scalar Makefile/CLI. GOLEM-006 supplies current host regression/integration
 checks: `make -C docs/tasks/GOLEM-006 check`. Its README owns the explicit
 experimental resident output mode; maintained `build/golemc` remains raw-only.
-This review did not create or validate an emulator profile. The compiler's
+GOLEM-007 owns the current stock qualification script and evidence. Its ignored
+project `.emulator/` profile uses a native ARM64 build of official Fab 1.2.5,
+tagged MOS 3.0.2 and a bounded MOS/UART guest. From that directory launch only
+`./fab-agon-emulator`; read the task README before rerunning or changing it.
+The compiler's
 host language and toolchain layout are decided
 (see [docs/devlog/2026-07-28-compiler-toolchain.md](docs/devlog/2026-07-28-compiler-toolchain.md)):
 the compiler itself is written in **C++**, built with an ordinary host
@@ -248,9 +261,11 @@ overlap):
 `TODO.md` is the authoritative register. GOLEM-003's scalar prototype is
 host-qualified and awaits promotion/firmware decisions. GOLEM-004's review was
 accepted for the GOLEM-005 parser tranche, now accepted at its commit/push
-checkpoint. GOLEM-006 delivers shared checked allocation and an explicit
-experimental resident output profile. Host evidence is not firmware qualification;
-scalar/profile production promotion still requires that separate gate.
+checkpoint. GOLEM-006 was accepted at commit/push checkpoint `76458a9` and delivers
+shared checked allocation plus an explicit experimental resident output profile.
+GOLEM-007 supplies stock-emulator qualification, separate from the host model.
+Human emulator validation passed on Oryx and the Author explicitly approved
+committing that tranche and proceeding with scalar/profile production promotion.
 
 The July devlogs' next-step checklists are historical context, not another
 active register. They recorded formal IR/addressing work, reciprocal experiments

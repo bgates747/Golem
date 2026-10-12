@@ -161,7 +161,9 @@ The [GOLEM-006 resident integration](../tasks/GOLEM-006/README.md) combines this
 source convention with persistent uint16 globals and one selected scalar job,
 using shared checked buffer ownership. Its explicit resident output mode is
 experimental and task-local. Ordinary maintained output remains a raw payload;
-scalar/profile promotion awaits stock-firmware qualification. Indexed dispatch,
+scalar/profile promotion remains pending. [GOLEM-007](../tasks/GOLEM-007/README.md)
+passes stock-emulator numeric/lifecycle checks through MOS/UART, with human review
+completed on Oryx; this does not qualify physical ESP32 execution. Indexed dispatch,
 general branches/loops and stepped Range proposals are not implemented by that
 integration.
 

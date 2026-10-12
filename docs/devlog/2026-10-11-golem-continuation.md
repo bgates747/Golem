@@ -258,3 +258,113 @@ the shared allocator/ordinary ownership is maintained source. Updated living
 design, README and handoff accordingly. GOLEM-006 remains in TODO awaiting review
 and stock-firmware qualification before scalar/profile production promotion.
 The new tranche is left uncommitted.
+
+## GOLEM-006 accepted and pushed; GOLEM-007 stock emulator qualification
+
+The Author requested committing/pushing all dirt, then proceeding with emulator
+qualification. Confirmed GOLEM-006's tested source fingerprints still matched
+the working files, committed the complete accumulated tranche and comparison
+examples as `76458a9`, and pushed `feature/standardized-deployment`. Disposed
+GOLEM-006's host integration as accepted and removed it from TODO; scalar
+production promotion remains a separate decision. Promoted GOLEM-007 in TODO
+before implementing its test tools.
+
+The Pi inherited x86-64 Fab and ez80asm binaries. Built native ARM64 tools in
+Golem-owned ignored directories: official Fab 1.2.5 detached at
+`c22876d1f7ad903537c308cf65afd6553b37cdb8`, with its recorded submodules, and
+assembler source copied from commit `5dc733c286b7864e3eb05ef93462c7e1637ba51e`.
+Copied assembler C/header bytes match that commit. Used Fab's top-level Makefile
+and left official checkouts/other profiles untouched. The canonical setup tool
+generated Golem's `.emulator/` wrapper, pinned MOS 3.0.2 Arthur image/map and
+isolated SD tree. Only the generated test binary is mapped into `/golem`, avoiding
+a recursive project/SD mapping.
+
+GOLEM-007's generic assembly guest streams a host-generated tape through MOS
+and the emulated UART. A stock command-5 fetch patches a GP echo packet; two
+tagged nibbles transport every possible byte without colliding with the wait
+sentinel. Observations are saved through MOS and compared independently of
+GOLEM-006's host model. No scalar math is performed on the eZ80. The Author
+authorized serial-debug observations during this work. Inspection confirmed
+that the stock `force_debug_log` path still calls an empty userspace `print`,
+despite a working DBGSerial byte-write stdout path. GP supplied the required
+observations, so no firmware patch or message to Tomm was needed.
+
+The final stock-emulator run passes 855 checks across 150 resident calls and
+9,204 observed bytes. Four packages cover pure/mixed jobs with default and
+relocated layouts; 33 binary32 inputs each cover signed limits, fractional
+neighbors, signed zeros and subnormals, including the smallest negative
+subnormal. Counter persistence and explicit 65534/65535/0/1 wrap pass. Full
+program bytes remain unchanged; live reinstall and reinstall after cleanup
+reset state and restore the declared input. Controlled present/absent probes
+pass for every owned buffer after two cleanups per layout, preserving root 0,
+external canaries and the diagnostic asset. All 256 byte values round-trip
+initially and after each layout. Reservations force IDs across 255/256.
+
+The runner observes `/proc` to verify the actual loaded native module and Fab
+executable, and checks runtime/source hashes before/after execution. Durable
+report, raw observed/expected bytes, manifests and provenance live in the
+GOLEM-007 silo. Final setup took 0.086 seconds with cached tools; execution and
+retrieval took 22.634 seconds with process identity sampling. Comparable runs
+before that sampling took about 12 seconds; neither is a speed benchmark.
+Initial native tool builds were not timed. The qualified bundled stock VDP
+revision is `1056ee38ec1cc68ed327bd32ee47d04b1c30597c`, distinct from the
+canonical ESP32 revision consulted by GOLEM-006's host model. Physical hardware,
+raster completion and complete heap/metadata balance remain unqualified.
+
+Updated living status/design and retained the 1120-byte installation/21-byte
+fresh-call application contract; diagnostic traffic is explicitly separate.
+Launched the prepared graphical review through `.emulator/`'s canonical entry
+on the Pi desktop. The finite guest prints a transport-completion message and
+returns to MOS; human review should confirm the prompt and keyboard response.
+Per the canonical environment AGENTS.md, all new emulator-related work remains
+uncommitted and unpushed pending explicit human testing and approval. GOLEM-007
+remains in TODO for that gate; scalar code is still experimental/task-local.
+
+## Review-host correction: dedicated local Oryx instance, manual launch
+
+The Author clarified that the Pi desktop is never available for viewing: it
+has no mouse, keyboard or monitor. Human emulator reviews default to Oryx unless
+the Author chooses another host. Agents must prepare a dedicated local Oryx
+instance, leave it stopped, and provide Bash commands and review instructions;
+do not launch graphical instances or attention alerts on the Author's behalf.
+Updated the shared environment AGENTS/emulator guide and Golem's handoff to
+replace the former launch-for-attention instruction with this explicit protocol.
+
+Stopped only the previously launched Pi review process after verifying its
+executable identity. Prepared Oryx's dedicated local Golem instance at
+`/home/smith/Agon/mystuff/golem/.emulator`, with local x86-64 stock runtime
+artifacts, tagged MOS 3.0.2, a canonical generated wrapper, isolated SD files and
+the exact qualified eZ80 guest. Created its local project Python environment.
+Verified native architecture, resolved runtime libraries, MOS hashes and exact
+guest/expected-data/verifier correspondence to the Pi fixture. No emulator was
+launched on Oryx. These are setup checks, not Oryx execution or human acceptance.
+
+Added a small result verifier and documented manual launch, transport completion,
+MOS `dir` keyboard check, close, and raw result verification. Oryx preparation
+evidence is in GOLEM-007/oryx-review.json. GOLEM-007 remains pending human review
+and permission to commit; the preceding automated Pi evidence remains valid.
+
+## Oryx review passed; verifier instructions made explicit
+
+The Author manually launched the dedicated Oryx fixture and supplied a screenshot
+showing transport completion and the MOS prompt. Remote verification and the
+Author's own verifier run both matched all 855 checks and 9,204 observed bytes.
+The Author subsequently confirmed that typing `dir` inside the emulator returned
+the expected directory listing and prompt. Human emulator validation has passed;
+this confirmation did not explicitly authorize committing the tranche.
+
+At the Author's request, replaced the verifier's vague human-confirmation message
+with: "In the emulator window, type dir at the MOS prompt and report to the agent
+that it works." Updated the review instructions to leave the emulator open while
+running the Bash verifier, then return to the emulator for `dir`. Recorded the
+successful human review in current task/status documents. No fixture, compiler,
+firmware or emulator execution was changed or relaunched.
+
+## GOLEM-007 accepted; production promotion authorized
+
+The Author explicitly approved committing/pushing the successful qualification
+tranche and proceeding with promotion of its scalar backend and resident mode
+into the maintained compiler. Disposed GOLEM-007 as accepted, removed it from
+TODO, and recorded the approval in its task/review evidence. The shared Oryx
+manual-review protocol documentation is included in a separate, narrowly staged
+agon-dev-env commit; unrelated environment work is preserved.

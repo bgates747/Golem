@@ -1,0 +1,7051 @@
+{
+  "pass": true,
+  "command": [
+    "./fab-agon-emulator",
+    "--renderer",
+    "sw"
+  ],
+  "loaded_vdp": "/Agon/mystuff/golem/.emulator/runtime/fab-1.2.5/firmware/vdp_platform.so",
+  "executed_fab": "/Agon/mystuff/golem/.emulator/runtime/fab-1.2.5/fab-agon-emulator",
+  "runtime_identity": {
+    ".emulator/fab-agon-emulator": "d12d063c66c1bdb8d4c78179e0485d0be16427294587ee0a965830722489386d",
+    ".emulator/fab-agon-emulator.bin": "c63b5a45b9eec9b989bdde73af6d12add92887e3f4e6ac8ffe9291d98979fb66",
+    ".emulator/mos_platform.bin": "d564243283972690933a4554296ad6202ca4ef54572279533a942960846bebae",
+    ".emulator/mos_platform.map": "d69e60bbce61a7b4b3eef318ba395f11c4e1a5b585755755113992dc94edcb86",
+    ".emulator/firmware/vdp_platform.so": "ef5cc21d4df685970680bc5a3564852d5d312e8af77a6dfc880735d64c2e4e8e",
+    "docs/tasks/GOLEM-007/build/probe.bin": "e6898311968f9b6d9835ee242332403d4fdd942ec9f59d88fb70930a9a9f94de",
+    "docs/tasks/GOLEM-007/build/tape.bin": "445c366110d33601e9479cced9f6f940e493e3e9ada67931db672bfab3ec46d7",
+    "docs/tasks/GOLEM-007/guest.asm": "029b8986770851ab74711d6807fd2483ce8485ba7ce34f584931dfb7b2f224f7",
+    "docs/tasks/GOLEM-007/qualify.py": "d853227dfa59522e4e28adfb93dc3164b2804324bb96ccded6279e64f176d453",
+    "/Agon/mystuff/agon-dev-env/scripts/setup_emulator.py": "2eec152df4f4219fdc00717981670bbfa8e8ad38f1e6083ff5ee1f83fe3f6622",
+    "reference/agnb-asm/lib/mos_api.inc": "4c6ce9caa6600aeb6418b97e21fe914129b3cab63ecf5890b3ac709ba7fae960",
+    "docs/tasks/GOLEM-007/build/ez80asm": "6ebd756a9be4d08219cf84339c096a23a9a29c9a0304e7f460d26e77baa6a368",
+    "docs/tasks/GOLEM-006/build/golemc-integrated": "43f6dadd2aa2092d671f5f8a24d6c172e694305403a0e867b2c0dc5ddf40a797",
+    "src/golemc.cpp": "e73360212ec4025cf0b734575c5571795af785a7cb6670f54b035af55bfc1148",
+    "src/token_reader.hpp": "fb09435139aaea6fc5903493b5a36f2b4508ccf656dc1fd3b9cac60b35b89497",
+    "src/buffer_allocator.hpp": "17af55e64b94d2e4517d1a8110c4d1bddea28dd6f20240263590d0684e186868",
+    "docs/tasks/GOLEM-006/golemc_integrated.cpp": "be65e75cdd8007a1bcbc88575da15b809c49ec7164c5326d9cd9a7889dd84d14",
+    "docs/tasks/GOLEM-006/integration.hpp": "dd109a118e13db04c93cb293dd1c9f838021bb6c5e0e3b3231d4171897cb4901",
+    "docs/tasks/GOLEM-006/scalar_backend.hpp": "5274ac408e622b0f22dcaeabe4e93d7e543bb7202abf3b0a1b04fed9662d56e4"
+  },
+  "fab_tag": "1.2.5",
+  "mos_release": "v3.0.2 Arthur",
+  "architecture": "aarch64",
+  "execution_seconds": 22.634,
+  "checks": 855,
+  "observed_bytes": 9204,
+  "numeric_jobs": 132,
+  "resident_calls": 150,
+  "failures": [],
+  "fixture": {
+    "packages": [
+      {
+        "name": "floor-default",
+        "command": [
+          "/Agon/mystuff/golem/docs/tasks/GOLEM-006/build/golemc-integrated",
+          "--resident",
+          "--reserve",
+          "50000:50000",
+          "--reserve",
+          "60000:60002",
+          "/Agon/mystuff/golem/docs/tasks/GOLEM-006/examples/floor.golem",
+          "/Agon/mystuff/golem/docs/tasks/GOLEM-007/build/floor-default"
+        ],
+        "numeric_cases": 33,
+        "manifest": {
+          "schema": 1,
+          "profile": "experimental-resident-scalar",
+          "experimental_task": "GOLEM-006",
+          "input": {
+            "name": "x",
+            "id": 2,
+            "offset": 0,
+            "type": "float32",
+            "bytes": 4,
+            "min": -32768,
+            "max": 32767
+          },
+          "output": {
+            "name": "result",
+            "id": 3,
+            "offset": 0,
+            "type": "sint16",
+            "bytes": 2
+          },
+          "entry": {
+            "name": "compute",
+            "id": 6,
+            "blocks": 1,
+            "bytes": 259
+          },
+          "globals": [],
+          "reserved_ranges": [
+            {
+              "first": 50000,
+              "last": 50000
+            },
+            {
+              "first": 60000,
+              "last": 60002
+            }
+          ],
+          "owned": [
+            {
+              "id": 2,
+              "bytes": 4,
+              "kind": "data",
+              "role": "scalar.input"
+            },
+            {
+              "id": 3,
+              "bytes": 2,
+              "kind": "data",
+              "role": "scalar.output"
+            },
+            {
+              "id": 4,
+              "bytes": 4,
+              "kind": "data",
+              "role": "scalar.source"
+            },
+            {
+              "id": 5,
+              "bytes": 4,
+              "kind": "data",
+              "role": "scalar.integral"
+            },
+            {
+              "id": 6,
+              "bytes": 259,
+              "kind": "program",
+              "role": "scalar.entry"
+            },
+            {
+              "id": 7,
+              "bytes": 4,
+              "kind": "data",
+              "role": "scalar.scratch.0"
+            },
+            {
+              "id": 8,
+              "bytes": 1,
+              "kind": "data",
+              "role": "scalar.scratch.1"
+            },
+            {
+              "id": 9,
+              "bytes": 36,
+              "kind": "data",
+              "role": "scalar.scratch.2"
+            },
+            {
+              "id": 10,
+              "bytes": 4,
+              "kind": "data",
+              "role": "scalar.scratch.3"
+            },
+            {
+              "id": 11,
+              "bytes": 8,
+              "kind": "data",
+              "role": "scalar.scratch.4"
+            },
+            {
+              "id": 12,
+              "bytes": 8,
+              "kind": "data",
+              "role": "scalar.scratch.5"
+            },
+            {
+              "id": 13,
+              "bytes": 2,
+              "kind": "data",
+              "role": "scalar.scratch.6"
+            },
+            {
+              "id": 14,
+              "bytes": 2,
+              "kind": "data",
+              "role": "scalar.scratch.7"
+            },
+            {
+              "id": 15,
+              "bytes": 2,
+              "kind": "data",
+              "role": "scalar.scratch.8"
+            },
+            {
+              "id": 16,
+              "bytes": 13,
+              "kind": "program",
+              "role": "scalar.scratch.9"
+            },
+            {
+              "id": 17,
+              "bytes": 208,
+              "kind": "program",
+              "role": "scalar.scratch.10"
+            },
+            {
+              "id": 18,
+              "bytes": 15,
+              "kind": "program",
+              "role": "scalar.scratch.11"
+            },
+            {
+              "id": 19,
+              "bytes": 2,
+              "kind": "data",
+              "role": "scalar.scratch.12"
+            },
+            {
+              "id": 20,
+              "bytes": 2,
+              "kind": "data",
+              "role": "scalar.scratch.13"
+            },
+            {
+              "id": 21,
+              "bytes": 36,
+              "kind": "data",
+              "role": "scalar.scratch.14"
+            },
+            {
+              "id": 22,
+              "bytes": 4,
+              "kind": "data",
+              "role": "scalar.scratch.15"
+            },
+            {
+              "id": 23,
+              "bytes": 4,
+              "kind": "data",
+              "role": "scalar.scratch.16"
+            },
+            {
+              "id": 24,
+              "bytes": 4,
+              "kind": "data",
+              "role": "scalar.scratch.17"
+            },
+            {
+              "id": 25,
+              "bytes": 4,
+              "kind": "data",
+              "role": "scalar.scratch.18"
+            },
+            {
+              "id": 26,
+              "bytes": 4,
+              "kind": "data",
+              "role": "scalar.scratch.19"
+            }
+          ],
+          "byte_order": "little-endian",
+          "serialized_nonreentrant": true,
+          "external_input_requires_host_validation": true,
+          "loader_root_reserved": 0,
+          "special_id_reserved": 65535,
+          "bootstrap_bytes": 1008,
+          "input_update_bytes": 15,
+          "call_bytes": 6,
+          "cleanup_bytes": 150
+        },
+        "source_sha256": "cc9293174a62a4d5340d557b8a83a57c7ec578fd7d54468b7a94dc9eb9a459ff",
+        "artifacts_sha256": {
+          "bootstrap.bin": "d3d52b5be6550a0087c93a39c996f7c236e8a9682b6265ddbc5eab5d545e03b3",
+          "cleanup.bin": "6d9b40cddc8635af0a8f9fa6e8ca0ef5b03947fd2e3543013575805aac5ea69a",
+          "interface.json": "d6c663aea9b2398ed20dfd57f80ebdecb04096ccdedb8d321188e7ac3b5c68f7",
+          "invoke.bin": "0b9ef4674184fd85f33ae75fe91deb4aa71b6ad5a682a65eacb429cc1dfc1237",
+          "update-call.bin": "e1f41258b1a291c24f4569439478c852c83c6f66c7ec067c2c005e5adee5e510"
+        }
+      },
+      {
+        "name": "floor-relocated",
+        "command": [
+          "/Agon/mystuff/golem/docs/tasks/GOLEM-006/build/golemc-integrated",
+          "--resident",
+          "--reserve",
+          "50000:50000",
+          "--reserve",
+          "60000:60002",
+          "--reserve",
+          "1:254",
+          "--reserve",
+          "260:264",
+          "/Agon/mystuff/golem/docs/tasks/GOLEM-006/examples/floor.golem",
+          "/Agon/mystuff/golem/docs/tasks/GOLEM-007/build/floor-relocated"
+        ],
+        "numeric_cases": 33,
+        "manifest": {
+          "schema": 1,
+          "profile": "experimental-resident-scalar",
+          "experimental_task": "GOLEM-006",
+          "input": {
+            "name": "x",
+            "id": 256,
+            "offset": 0,
+            "type": "float32",
+            "bytes": 4,
+            "min": -32768,
+            "max": 32767
+          },
+          "output": {
+            "name": "result",
+            "id": 257,
+            "offset": 0,
+            "type": "sint16",
+            "bytes": 2
+          },
+          "entry": {
+            "name": "compute",
+            "id": 265,
+            "blocks": 1,
+            "bytes": 259
+          },
+          "globals": [],
+          "reserved_ranges": [
+            {
+              "first": 50000,
+              "last": 50000
+            },
+            {
+              "first": 60000,
+              "last": 60002
+            },
+            {
+              "first": 1,
+              "last": 254
+            },
+            {
+              "first": 260,
+              "last": 264
+            }
+          ],
+          "owned": [
+            {
+              "id": 256,
+              "bytes": 4,
+              "kind": "data",
+              "role": "scalar.input"
+            },
+            {
+              "id": 257,
+              "bytes": 2,
+              "kind": "data",
+              "role": "scalar.output"
+            },
+            {
+              "id": 258,
+              "bytes": 4,
+              "kind": "data",
+              "role": "scalar.source"
+            },
+            {
+              "id": 259,
+              "bytes": 4,
+              "kind": "data",
+              "role": "scalar.integral"
+            },
+            {
+              "id": 265,
+              "bytes": 259,
+              "kind": "program",
+              "role": "scalar.entry"
+            },
+            {
+              "id": 266,
+              "bytes": 4,
+              "kind": "data",
+              "role": "scalar.scratch.0"
+            },
+            {
+              "id": 267,
+              "bytes": 1,
+              "kind": "data",
+              "role": "scalar.scratch.1"
+            },
+            {
+              "id": 268,
+              "bytes": 36,
+              "kind": "data",
+              "role": "scalar.scratch.2"
+            },
+            {
+              "id": 269,
+              "bytes": 4,
+              "kind": "data",
+              "role": "scalar.scratch.3"
+            },
+            {
+              "id": 270,
+              "bytes": 8,
+              "kind": "data",
+              "role": "scalar.scratch.4"
+            },
+            {
+              "id": 271,
+              "bytes": 8,
+              "kind": "data",
+              "role": "scalar.scratch.5"
+            },
+            {
+              "id": 272,
+              "bytes": 2,
+              "kind": "data",
+              "role": "scalar.scratch.6"
+            },
+            {
+              "id": 273,
+              "bytes": 2,
+              "kind": "data",
+              "role": "scalar.scratch.7"
+            },
+            {
+              "id": 274,
+              "bytes": 2,
+              "kind": "data",
+              "role": "scalar.scratch.8"
+            },
+            {
+              "id": 275,
+              "bytes": 13,
+              "kind": "program",
+              "role": "scalar.scratch.9"
+            },
+            {
+              "id": 276,
+              "bytes": 208,
+              "kind": "program",
+              "role": "scalar.scratch.10"
+            },
+            {
+              "id": 277,
+              "bytes": 15,
+              "kind": "program",
+              "role": "scalar.scratch.11"
+            },
+            {
+              "id": 278,
+              "bytes": 2,
+              "kind": "data",
+              "role": "scalar.scratch.12"
+            },
+            {
+              "id": 279,
+              "bytes": 2,
+              "kind": "data",
+              "role": "scalar.scratch.13"
+            },
+            {
+              "id": 280,
+              "bytes": 36,
+              "kind": "data",
+              "role": "scalar.scratch.14"
+            },
+            {
+              "id": 281,
+              "bytes": 4,
+              "kind": "data",
+              "role": "scalar.scratch.15"
+            },
+            {
+              "id": 282,
+              "bytes": 4,
+              "kind": "data",
+              "role": "scalar.scratch.16"
+            },
+            {
+              "id": 283,
+              "bytes": 4,
+              "kind": "data",
+              "role": "scalar.scratch.17"
+            },
+            {
+              "id": 284,
+              "bytes": 4,
+              "kind": "data",
+              "role": "scalar.scratch.18"
+            },
+            {
+              "id": 285,
+              "bytes": 4,
+              "kind": "data",
+              "role": "scalar.scratch.19"
+            }
+          ],
+          "byte_order": "little-endian",
+          "serialized_nonreentrant": true,
+          "external_input_requires_host_validation": true,
+          "loader_root_reserved": 0,
+          "special_id_reserved": 65535,
+          "bootstrap_bytes": 1008,
+          "input_update_bytes": 15,
+          "call_bytes": 6,
+          "cleanup_bytes": 150
+        },
+        "source_sha256": "cc9293174a62a4d5340d557b8a83a57c7ec578fd7d54468b7a94dc9eb9a459ff",
+        "artifacts_sha256": {
+          "bootstrap.bin": "11f45816e83e17a763a0490298bc1da529d4bd856da8f50f3fc72f0e498d279f",
+          "cleanup.bin": "e50e5ca1f547076caea4913fc6356ac25cc08c294d729a0da9540118b07258b1",
+          "interface.json": "08d3fe0732f140f0c7562c67eceecf484aab075988b66073b02026b6ce43f534",
+          "invoke.bin": "864d9edcd8f47c5bd6f568fc15157810b2828988a438b3be9fbb948d97ce8af5",
+          "update-call.bin": "90a9b5fcc245c061b997997ed92f3bcea1afb9e72aaa06307a0e56b8aa0a1ff6"
+        }
+      },
+      {
+        "name": "mixed-default",
+        "command": [
+          "/Agon/mystuff/golem/docs/tasks/GOLEM-006/build/golemc-integrated",
+          "--resident",
+          "--reserve",
+          "50000:50000",
+          "--reserve",
+          "60000:60002",
+          "/Agon/mystuff/golem/docs/tasks/GOLEM-006/examples/counted-floor.golem",
+          "/Agon/mystuff/golem/docs/tasks/GOLEM-007/build/mixed-default"
+        ],
+        "numeric_cases": 33,
+        "manifest": {
+          "schema": 1,
+          "profile": "experimental-resident-scalar",
+          "experimental_task": "GOLEM-006",
+          "input": {
+            "name": "x",
+            "id": 4,
+            "offset": 0,
+            "type": "float32",
+            "bytes": 4,
+            "min": -32768,
+            "max": 32767
+          },
+          "output": {
+            "name": "result",
+            "id": 5,
+            "offset": 0,
+            "type": "sint16",
+            "bytes": 2
+          },
+          "entry": {
+            "name": "compute",
+            "id": 8,
+            "blocks": 1,
+            "bytes": 322
+          },
+          "globals": [
+            {
+              "name": "calls",
+              "id": 2,
+              "offset": 0,
+              "type": "uint16",
+              "bytes": 2
+            },
+            {
+              "name": "previous",
+              "id": 3,
+              "offset": 0,
+              "type": "uint16",
+              "bytes": 2
+            }
+          ],
+          "reserved_ranges": [
+            {
+              "first": 50000,
+              "last": 50000
+            },
+            {
+              "first": 60000,
+              "last": 60002
+            }
+          ],
+          "owned": [
+            {
+              "id": 1,
+              "bytes": 3,
+              "kind": "data",
+              "role": "ordinary.accumulator"
+            },
+            {
+              "id": 2,
+              "bytes": 2,
+              "kind": "data",
+              "role": "ordinary.global.calls"
+            },
+            {
+              "id": 3,
+              "bytes": 2,
+              "kind": "data",
+              "role": "ordinary.global.previous"
+            },
+            {
+              "id": 4,
+              "bytes": 4,
+              "kind": "data",
+              "role": "scalar.input"
+            },
+            {
+              "id": 5,
+              "bytes": 2,
+              "kind": "data",
+              "role": "scalar.output"
+            },
+            {
+              "id": 6,
+              "bytes": 4,
+              "kind": "data",
+              "role": "scalar.source"
+            },
+            {
+              "id": 7,
+              "bytes": 4,
+              "kind": "data",
+              "role": "scalar.integral"
+            },
+            {
+              "id": 8,
+              "bytes": 322,
+              "kind": "program",
+              "role": "scalar.entry"
+            },
+            {
+              "id": 9,
+              "bytes": 4,
+              "kind": "data",
+              "role": "scalar.scratch.0"
+            },
+            {
+              "id": 10,
+              "bytes": 1,
+              "kind": "data",
+              "role": "scalar.scratch.1"
+            },
+            {
+              "id": 11,
+              "bytes": 36,
+              "kind": "data",
+              "role": "scalar.scratch.2"
+            },
+            {
+              "id": 12,
+              "bytes": 4,
+              "kind": "data",
+              "role": "scalar.scratch.3"
+            },
+            {
+              "id": 13,
+              "bytes": 8,
+              "kind": "data",
+              "role": "scalar.scratch.4"
+            },
+            {
+              "id": 14,
+              "bytes": 8,
+              "kind": "data",
+              "role": "scalar.scratch.5"
+            },
+            {
+              "id": 15,
+              "bytes": 2,
+              "kind": "data",
+              "role": "scalar.scratch.6"
+            },
+            {
+              "id": 16,
+              "bytes": 2,
+              "kind": "data",
+              "role": "scalar.scratch.7"
+            },
+            {
+              "id": 17,
+              "bytes": 2,
+              "kind": "data",
+              "role": "scalar.scratch.8"
+            },
+            {
+              "id": 18,
+              "bytes": 13,
+              "kind": "program",
+              "role": "scalar.scratch.9"
+            },
+            {
+              "id": 19,
+              "bytes": 208,
+              "kind": "program",
+              "role": "scalar.scratch.10"
+            },
+            {
+              "id": 20,
+              "bytes": 15,
+              "kind": "program",
+              "role": "scalar.scratch.11"
+            },
+            {
+              "id": 21,
+              "bytes": 2,
+              "kind": "data",
+              "role": "scalar.scratch.12"
+            },
+            {
+              "id": 22,
+              "bytes": 2,
+              "kind": "data",
+              "role": "scalar.scratch.13"
+            },
+            {
+              "id": 23,
+              "bytes": 36,
+              "kind": "data",
+              "role": "scalar.scratch.14"
+            },
+            {
+              "id": 24,
+              "bytes": 4,
+              "kind": "data",
+              "role": "scalar.scratch.15"
+            },
+            {
+              "id": 25,
+              "bytes": 4,
+              "kind": "data",
+              "role": "scalar.scratch.16"
+            },
+            {
+              "id": 26,
+              "bytes": 4,
+              "kind": "data",
+              "role": "scalar.scratch.17"
+            },
+            {
+              "id": 27,
+              "bytes": 4,
+              "kind": "data",
+              "role": "scalar.scratch.18"
+            },
+            {
+              "id": 28,
+              "bytes": 4,
+              "kind": "data",
+              "role": "scalar.scratch.19"
+            }
+          ],
+          "byte_order": "little-endian",
+          "serialized_nonreentrant": true,
+          "external_input_requires_host_validation": true,
+          "loader_root_reserved": 0,
+          "special_id_reserved": 65535,
+          "bootstrap_bytes": 1120,
+          "input_update_bytes": 15,
+          "call_bytes": 6,
+          "cleanup_bytes": 168
+        },
+        "source_sha256": "70ee55ec1b2c80db2e49913cb859893d9dd2da6e4881bd54520ceaea1a83f933",
+        "artifacts_sha256": {
+          "bootstrap.bin": "7ffcec16ed77886e0e0bff5ad60620791c7b4e0065fe5eb8221562133970d2cf",
+          "cleanup.bin": "9079ff422a0b3dd0de952bea3bba2d07cc05cfddbd767cc32ef4a7d897f8e8c7",
+          "interface.json": "6e6440236043186adf81a76d3c8c9ab4ffc896c204cca7d906478ff9aaf350bb",
+          "invoke.bin": "e4d4133a78371a002de11658aa639a8249d5cf9d2cabe36797174ac1685d70d6",
+          "update-call.bin": "182abe33167f826ec8ee21fc77a13c6ac41bc458baf50a86ba16b21f78c2f734"
+        }
+      },
+      {
+        "name": "mixed-relocated",
+        "command": [
+          "/Agon/mystuff/golem/docs/tasks/GOLEM-006/build/golemc-integrated",
+          "--resident",
+          "--reserve",
+          "50000:50000",
+          "--reserve",
+          "60000:60002",
+          "--reserve",
+          "1:254",
+          "--reserve",
+          "260:264",
+          "/Agon/mystuff/golem/docs/tasks/GOLEM-006/examples/counted-floor.golem",
+          "/Agon/mystuff/golem/docs/tasks/GOLEM-007/build/mixed-relocated"
+        ],
+        "numeric_cases": 33,
+        "manifest": {
+          "schema": 1,
+          "profile": "experimental-resident-scalar",
+          "experimental_task": "GOLEM-006",
+          "input": {
+            "name": "x",
+            "id": 258,
+            "offset": 0,
+            "type": "float32",
+            "bytes": 4,
+            "min": -32768,
+            "max": 32767
+          },
+          "output": {
+            "name": "result",
+            "id": 259,
+            "offset": 0,
+            "type": "sint16",
+            "bytes": 2
+          },
+          "entry": {
+            "name": "compute",
+            "id": 267,
+            "blocks": 1,
+            "bytes": 322
+          },
+          "globals": [
+            {
+              "name": "calls",
+              "id": 256,
+              "offset": 0,
+              "type": "uint16",
+              "bytes": 2
+            },
+            {
+              "name": "previous",
+              "id": 257,
+              "offset": 0,
+              "type": "uint16",
+              "bytes": 2
+            }
+          ],
+          "reserved_ranges": [
+            {
+              "first": 50000,
+              "last": 50000
+            },
+            {
+              "first": 60000,
+              "last": 60002
+            },
+            {
+              "first": 1,
+              "last": 254
+            },
+            {
+              "first": 260,
+              "last": 264
+            }
+          ],
+          "owned": [
+            {
+              "id": 255,
+              "bytes": 3,
+              "kind": "data",
+              "role": "ordinary.accumulator"
+            },
+            {
+              "id": 256,
+              "bytes": 2,
+              "kind": "data",
+              "role": "ordinary.global.calls"
+            },
+            {
+              "id": 257,
+              "bytes": 2,
+              "kind": "data",
+              "role": "ordinary.global.previous"
+            },
+            {
+              "id": 258,
+              "bytes": 4,
+              "kind": "data",
+              "role": "scalar.input"
+            },
+            {
+              "id": 259,
+              "bytes": 2,
+              "kind": "data",
+              "role": "scalar.output"
+            },
+            {
+              "id": 265,
+              "bytes": 4,
+              "kind": "data",
+              "role": "scalar.source"
+            },
+            {
+              "id": 266,
+              "bytes": 4,
+              "kind": "data",
+              "role": "scalar.integral"
+            },
+            {
+              "id": 267,
+              "bytes": 322,
+              "kind": "program",
+              "role": "scalar.entry"
+            },
+            {
+              "id": 268,
+              "bytes": 4,
+              "kind": "data",
+              "role": "scalar.scratch.0"
+            },
+            {
+              "id": 269,
+              "bytes": 1,
+              "kind": "data",
+              "role": "scalar.scratch.1"
+            },
+            {
+              "id": 270,
+              "bytes": 36,
+              "kind": "data",
+              "role": "scalar.scratch.2"
+            },
+            {
+              "id": 271,
+              "bytes": 4,
+              "kind": "data",
+              "role": "scalar.scratch.3"
+            },
+            {
+              "id": 272,
+              "bytes": 8,
+              "kind": "data",
+              "role": "scalar.scratch.4"
+            },
+            {
+              "id": 273,
+              "bytes": 8,
+              "kind": "data",
+              "role": "scalar.scratch.5"
+            },
+            {
+              "id": 274,
+              "bytes": 2,
+              "kind": "data",
+              "role": "scalar.scratch.6"
+            },
+            {
+              "id": 275,
+              "bytes": 2,
+              "kind": "data",
+              "role": "scalar.scratch.7"
+            },
+            {
+              "id": 276,
+              "bytes": 2,
+              "kind": "data",
+              "role": "scalar.scratch.8"
+            },
+            {
+              "id": 277,
+              "bytes": 13,
+              "kind": "program",
+              "role": "scalar.scratch.9"
+            },
+            {
+              "id": 278,
+              "bytes": 208,
+              "kind": "program",
+              "role": "scalar.scratch.10"
+            },
+            {
+              "id": 279,
+              "bytes": 15,
+              "kind": "program",
+              "role": "scalar.scratch.11"
+            },
+            {
+              "id": 280,
+              "bytes": 2,
+              "kind": "data",
+              "role": "scalar.scratch.12"
+            },
+            {
+              "id": 281,
+              "bytes": 2,
+              "kind": "data",
+              "role": "scalar.scratch.13"
+            },
+            {
+              "id": 282,
+              "bytes": 36,
+              "kind": "data",
+              "role": "scalar.scratch.14"
+            },
+            {
+              "id": 283,
+              "bytes": 4,
+              "kind": "data",
+              "role": "scalar.scratch.15"
+            },
+            {
+              "id": 284,
+              "bytes": 4,
+              "kind": "data",
+              "role": "scalar.scratch.16"
+            },
+            {
+              "id": 285,
+              "bytes": 4,
+              "kind": "data",
+              "role": "scalar.scratch.17"
+            },
+            {
+              "id": 286,
+              "bytes": 4,
+              "kind": "data",
+              "role": "scalar.scratch.18"
+            },
+            {
+              "id": 287,
+              "bytes": 4,
+              "kind": "data",
+              "role": "scalar.scratch.19"
+            }
+          ],
+          "byte_order": "little-endian",
+          "serialized_nonreentrant": true,
+          "external_input_requires_host_validation": true,
+          "loader_root_reserved": 0,
+          "special_id_reserved": 65535,
+          "bootstrap_bytes": 1120,
+          "input_update_bytes": 15,
+          "call_bytes": 6,
+          "cleanup_bytes": 168
+        },
+        "source_sha256": "70ee55ec1b2c80db2e49913cb859893d9dd2da6e4881bd54520ceaea1a83f933",
+        "artifacts_sha256": {
+          "bootstrap.bin": "889133f284fb7b0860585998f7e8f106c4384487269e4612391c83675449a208",
+          "cleanup.bin": "feb38030a78ff9b84a25d1558bf2f0010e614c1c36c31f6931908a3546b6e811",
+          "interface.json": "57c93da5d001f5e24bbcd428b97e91d0ee40d8f760a10556e7123d505b2113f9",
+          "invoke.bin": "6a0aeb1df3956d3c9a635fdf6f749275505f57941d98cf1ea2d853f48dc7b20d",
+          "update-call.bin": "69cfacbae0fb54e198bf6c8e6b0908f1505afb43d895b154f4a9e517ee716e9f"
+        }
+      }
+    ],
+    "checks": [
+      {
+        "label": "all 256 byte values",
+        "id": 60001,
+        "offset": 0,
+        "start": 0,
+        "bytes": 256
+      },
+      {
+        "label": "floor-default zero-initialized output",
+        "id": 3,
+        "offset": 0,
+        "start": 256,
+        "bytes": 2
+      },
+      {
+        "label": "floor-default declared initial input",
+        "id": 2,
+        "offset": 0,
+        "start": 258,
+        "bytes": 4
+      },
+      {
+        "label": "floor-default installed program",
+        "id": 6,
+        "offset": 0,
+        "start": 262,
+        "bytes": 259
+      },
+      {
+        "label": "floor-default installed program",
+        "id": 16,
+        "offset": 0,
+        "start": 521,
+        "bytes": 13
+      },
+      {
+        "label": "floor-default installed program",
+        "id": 17,
+        "offset": 0,
+        "start": 534,
+        "bytes": 208
+      },
+      {
+        "label": "floor-default installed program",
+        "id": 18,
+        "offset": 0,
+        "start": 742,
+        "bytes": 15
+      },
+      {
+        "label": "floor-default input 0",
+        "id": 2,
+        "offset": 0,
+        "start": 757,
+        "bytes": 4
+      },
+      {
+        "label": "floor-default floor -32768",
+        "id": 3,
+        "offset": 0,
+        "start": 761,
+        "bytes": 2
+      },
+      {
+        "label": "floor-default input 1",
+        "id": 2,
+        "offset": 0,
+        "start": 763,
+        "bytes": 4
+      },
+      {
+        "label": "floor-default floor -32767.998046875",
+        "id": 3,
+        "offset": 0,
+        "start": 767,
+        "bytes": 2
+      },
+      {
+        "label": "floor-default input 2",
+        "id": 2,
+        "offset": 0,
+        "start": 769,
+        "bytes": 4
+      },
+      {
+        "label": "floor-default floor -32767.5",
+        "id": 3,
+        "offset": 0,
+        "start": 773,
+        "bytes": 2
+      },
+      {
+        "label": "floor-default input 3",
+        "id": 2,
+        "offset": 0,
+        "start": 775,
+        "bytes": 4
+      },
+      {
+        "label": "floor-default floor -32767",
+        "id": 3,
+        "offset": 0,
+        "start": 779,
+        "bytes": 2
+      },
+      {
+        "label": "floor-default input 4",
+        "id": 2,
+        "offset": 0,
+        "start": 781,
+        "bytes": 4
+      },
+      {
+        "label": "floor-default floor -256.25",
+        "id": 3,
+        "offset": 0,
+        "start": 785,
+        "bytes": 2
+      },
+      {
+        "label": "floor-default input 5",
+        "id": 2,
+        "offset": 0,
+        "start": 787,
+        "bytes": 4
+      },
+      {
+        "label": "floor-default floor -2.000000238418579",
+        "id": 3,
+        "offset": 0,
+        "start": 791,
+        "bytes": 2
+      },
+      {
+        "label": "floor-default input 6",
+        "id": 2,
+        "offset": 0,
+        "start": 793,
+        "bytes": 4
+      },
+      {
+        "label": "floor-default floor -2",
+        "id": 3,
+        "offset": 0,
+        "start": 797,
+        "bytes": 2
+      },
+      {
+        "label": "floor-default input 7",
+        "id": 2,
+        "offset": 0,
+        "start": 799,
+        "bytes": 4
+      },
+      {
+        "label": "floor-default floor -1.9999998807907104",
+        "id": 3,
+        "offset": 0,
+        "start": 803,
+        "bytes": 2
+      },
+      {
+        "label": "floor-default input 8",
+        "id": 2,
+        "offset": 0,
+        "start": 805,
+        "bytes": 4
+      },
+      {
+        "label": "floor-default floor -1.5",
+        "id": 3,
+        "offset": 0,
+        "start": 809,
+        "bytes": 2
+      },
+      {
+        "label": "floor-default input 9",
+        "id": 2,
+        "offset": 0,
+        "start": 811,
+        "bytes": 4
+      },
+      {
+        "label": "floor-default floor -1.0000001192092896",
+        "id": 3,
+        "offset": 0,
+        "start": 815,
+        "bytes": 2
+      },
+      {
+        "label": "floor-default input 10",
+        "id": 2,
+        "offset": 0,
+        "start": 817,
+        "bytes": 4
+      },
+      {
+        "label": "floor-default floor -1",
+        "id": 3,
+        "offset": 0,
+        "start": 821,
+        "bytes": 2
+      },
+      {
+        "label": "floor-default input 11",
+        "id": 2,
+        "offset": 0,
+        "start": 823,
+        "bytes": 4
+      },
+      {
+        "label": "floor-default floor -0.9999999403953552",
+        "id": 3,
+        "offset": 0,
+        "start": 827,
+        "bytes": 2
+      },
+      {
+        "label": "floor-default input 12",
+        "id": 2,
+        "offset": 0,
+        "start": 829,
+        "bytes": 4
+      },
+      {
+        "label": "floor-default floor -0.75",
+        "id": 3,
+        "offset": 0,
+        "start": 833,
+        "bytes": 2
+      },
+      {
+        "label": "floor-default input 13",
+        "id": 2,
+        "offset": 0,
+        "start": 835,
+        "bytes": 4
+      },
+      {
+        "label": "floor-default floor -6.103515625e-05",
+        "id": 3,
+        "offset": 0,
+        "start": 839,
+        "bytes": 2
+      },
+      {
+        "label": "floor-default input 14",
+        "id": 2,
+        "offset": 0,
+        "start": 841,
+        "bytes": 4
+      },
+      {
+        "label": "floor-default floor -1.1754943508222875e-38",
+        "id": 3,
+        "offset": 0,
+        "start": 845,
+        "bytes": 2
+      },
+      {
+        "label": "floor-default input 15",
+        "id": 2,
+        "offset": 0,
+        "start": 847,
+        "bytes": 4
+      },
+      {
+        "label": "floor-default floor -1.401298464324817e-45",
+        "id": 3,
+        "offset": 0,
+        "start": 851,
+        "bytes": 2
+      },
+      {
+        "label": "floor-default input 16",
+        "id": 2,
+        "offset": 0,
+        "start": 853,
+        "bytes": 4
+      },
+      {
+        "label": "floor-default floor -0.0",
+        "id": 3,
+        "offset": 0,
+        "start": 857,
+        "bytes": 2
+      },
+      {
+        "label": "floor-default input 17",
+        "id": 2,
+        "offset": 0,
+        "start": 859,
+        "bytes": 4
+      },
+      {
+        "label": "floor-default floor 0.0",
+        "id": 3,
+        "offset": 0,
+        "start": 863,
+        "bytes": 2
+      },
+      {
+        "label": "floor-default input 18",
+        "id": 2,
+        "offset": 0,
+        "start": 865,
+        "bytes": 4
+      },
+      {
+        "label": "floor-default floor 1.401298464324817e-45",
+        "id": 3,
+        "offset": 0,
+        "start": 869,
+        "bytes": 2
+      },
+      {
+        "label": "floor-default input 19",
+        "id": 2,
+        "offset": 0,
+        "start": 871,
+        "bytes": 4
+      },
+      {
+        "label": "floor-default floor 1.1754943508222875e-38",
+        "id": 3,
+        "offset": 0,
+        "start": 875,
+        "bytes": 2
+      },
+      {
+        "label": "floor-default input 20",
+        "id": 2,
+        "offset": 0,
+        "start": 877,
+        "bytes": 4
+      },
+      {
+        "label": "floor-default floor 6.103515625e-05",
+        "id": 3,
+        "offset": 0,
+        "start": 881,
+        "bytes": 2
+      },
+      {
+        "label": "floor-default input 21",
+        "id": 2,
+        "offset": 0,
+        "start": 883,
+        "bytes": 4
+      },
+      {
+        "label": "floor-default floor 0.75",
+        "id": 3,
+        "offset": 0,
+        "start": 887,
+        "bytes": 2
+      },
+      {
+        "label": "floor-default input 22",
+        "id": 2,
+        "offset": 0,
+        "start": 889,
+        "bytes": 4
+      },
+      {
+        "label": "floor-default floor 0.9999999403953552",
+        "id": 3,
+        "offset": 0,
+        "start": 893,
+        "bytes": 2
+      },
+      {
+        "label": "floor-default input 23",
+        "id": 2,
+        "offset": 0,
+        "start": 895,
+        "bytes": 4
+      },
+      {
+        "label": "floor-default floor 1",
+        "id": 3,
+        "offset": 0,
+        "start": 899,
+        "bytes": 2
+      },
+      {
+        "label": "floor-default input 24",
+        "id": 2,
+        "offset": 0,
+        "start": 901,
+        "bytes": 4
+      },
+      {
+        "label": "floor-default floor 1.0000001192092896",
+        "id": 3,
+        "offset": 0,
+        "start": 905,
+        "bytes": 2
+      },
+      {
+        "label": "floor-default input 25",
+        "id": 2,
+        "offset": 0,
+        "start": 907,
+        "bytes": 4
+      },
+      {
+        "label": "floor-default floor 1.5",
+        "id": 3,
+        "offset": 0,
+        "start": 911,
+        "bytes": 2
+      },
+      {
+        "label": "floor-default input 26",
+        "id": 2,
+        "offset": 0,
+        "start": 913,
+        "bytes": 4
+      },
+      {
+        "label": "floor-default floor 1.9999998807907104",
+        "id": 3,
+        "offset": 0,
+        "start": 917,
+        "bytes": 2
+      },
+      {
+        "label": "floor-default input 27",
+        "id": 2,
+        "offset": 0,
+        "start": 919,
+        "bytes": 4
+      },
+      {
+        "label": "floor-default floor 2",
+        "id": 3,
+        "offset": 0,
+        "start": 923,
+        "bytes": 2
+      },
+      {
+        "label": "floor-default input 28",
+        "id": 2,
+        "offset": 0,
+        "start": 925,
+        "bytes": 4
+      },
+      {
+        "label": "floor-default floor 2.000000238418579",
+        "id": 3,
+        "offset": 0,
+        "start": 929,
+        "bytes": 2
+      },
+      {
+        "label": "floor-default input 29",
+        "id": 2,
+        "offset": 0,
+        "start": 931,
+        "bytes": 4
+      },
+      {
+        "label": "floor-default floor 256.25",
+        "id": 3,
+        "offset": 0,
+        "start": 935,
+        "bytes": 2
+      },
+      {
+        "label": "floor-default input 30",
+        "id": 2,
+        "offset": 0,
+        "start": 937,
+        "bytes": 4
+      },
+      {
+        "label": "floor-default floor 32766.5",
+        "id": 3,
+        "offset": 0,
+        "start": 941,
+        "bytes": 2
+      },
+      {
+        "label": "floor-default input 31",
+        "id": 2,
+        "offset": 0,
+        "start": 943,
+        "bytes": 4
+      },
+      {
+        "label": "floor-default floor 32766.998046875",
+        "id": 3,
+        "offset": 0,
+        "start": 947,
+        "bytes": 2
+      },
+      {
+        "label": "floor-default input 32",
+        "id": 2,
+        "offset": 0,
+        "start": 949,
+        "bytes": 4
+      },
+      {
+        "label": "floor-default floor 32767",
+        "id": 3,
+        "offset": 0,
+        "start": 953,
+        "bytes": 2
+      },
+      {
+        "label": "floor-default repeated invoke",
+        "id": 3,
+        "offset": 0,
+        "start": 955,
+        "bytes": 2
+      },
+      {
+        "label": "floor-default unchanged program",
+        "id": 6,
+        "offset": 0,
+        "start": 957,
+        "bytes": 259
+      },
+      {
+        "label": "floor-default unchanged program",
+        "id": 16,
+        "offset": 0,
+        "start": 1216,
+        "bytes": 13
+      },
+      {
+        "label": "floor-default unchanged program",
+        "id": 17,
+        "offset": 0,
+        "start": 1229,
+        "bytes": 208
+      },
+      {
+        "label": "floor-default unchanged program",
+        "id": 18,
+        "offset": 0,
+        "start": 1437,
+        "bytes": 15
+      },
+      {
+        "label": "floor-default live reinstall result",
+        "id": 3,
+        "offset": 0,
+        "start": 1452,
+        "bytes": 2
+      },
+      {
+        "label": "floor-default live reinstalled program",
+        "id": 6,
+        "offset": 0,
+        "start": 1454,
+        "bytes": 259
+      },
+      {
+        "label": "floor-default live reinstalled program",
+        "id": 16,
+        "offset": 0,
+        "start": 1713,
+        "bytes": 13
+      },
+      {
+        "label": "floor-default live reinstalled program",
+        "id": 17,
+        "offset": 0,
+        "start": 1726,
+        "bytes": 208
+      },
+      {
+        "label": "floor-default live reinstalled program",
+        "id": 18,
+        "offset": 0,
+        "start": 1934,
+        "bytes": 15
+      },
+      {
+        "label": "floor-default present before cleanup",
+        "id": 2,
+        "offset": 0,
+        "start": 1949,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default present before cleanup",
+        "id": 3,
+        "offset": 0,
+        "start": 1950,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default present before cleanup",
+        "id": 4,
+        "offset": 0,
+        "start": 1951,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default present before cleanup",
+        "id": 5,
+        "offset": 0,
+        "start": 1952,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default present before cleanup",
+        "id": 6,
+        "offset": 0,
+        "start": 1953,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default present before cleanup",
+        "id": 7,
+        "offset": 0,
+        "start": 1954,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default present before cleanup",
+        "id": 8,
+        "offset": 0,
+        "start": 1955,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default present before cleanup",
+        "id": 9,
+        "offset": 0,
+        "start": 1956,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default present before cleanup",
+        "id": 10,
+        "offset": 0,
+        "start": 1957,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default present before cleanup",
+        "id": 11,
+        "offset": 0,
+        "start": 1958,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default present before cleanup",
+        "id": 12,
+        "offset": 0,
+        "start": 1959,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default present before cleanup",
+        "id": 13,
+        "offset": 0,
+        "start": 1960,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default present before cleanup",
+        "id": 14,
+        "offset": 0,
+        "start": 1961,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default present before cleanup",
+        "id": 15,
+        "offset": 0,
+        "start": 1962,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default present before cleanup",
+        "id": 16,
+        "offset": 0,
+        "start": 1963,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default present before cleanup",
+        "id": 17,
+        "offset": 0,
+        "start": 1964,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default present before cleanup",
+        "id": 18,
+        "offset": 0,
+        "start": 1965,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default present before cleanup",
+        "id": 19,
+        "offset": 0,
+        "start": 1966,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default present before cleanup",
+        "id": 20,
+        "offset": 0,
+        "start": 1967,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default present before cleanup",
+        "id": 21,
+        "offset": 0,
+        "start": 1968,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default present before cleanup",
+        "id": 22,
+        "offset": 0,
+        "start": 1969,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default present before cleanup",
+        "id": 23,
+        "offset": 0,
+        "start": 1970,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default present before cleanup",
+        "id": 24,
+        "offset": 0,
+        "start": 1971,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default present before cleanup",
+        "id": 25,
+        "offset": 0,
+        "start": 1972,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default present before cleanup",
+        "id": 26,
+        "offset": 0,
+        "start": 1973,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default absent after cleanup",
+        "id": 2,
+        "offset": 0,
+        "start": 1974,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default absent after cleanup",
+        "id": 3,
+        "offset": 0,
+        "start": 1975,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default absent after cleanup",
+        "id": 4,
+        "offset": 0,
+        "start": 1976,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default absent after cleanup",
+        "id": 5,
+        "offset": 0,
+        "start": 1977,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default absent after cleanup",
+        "id": 6,
+        "offset": 0,
+        "start": 1978,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default absent after cleanup",
+        "id": 7,
+        "offset": 0,
+        "start": 1979,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default absent after cleanup",
+        "id": 8,
+        "offset": 0,
+        "start": 1980,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default absent after cleanup",
+        "id": 9,
+        "offset": 0,
+        "start": 1981,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default absent after cleanup",
+        "id": 10,
+        "offset": 0,
+        "start": 1982,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default absent after cleanup",
+        "id": 11,
+        "offset": 0,
+        "start": 1983,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default absent after cleanup",
+        "id": 12,
+        "offset": 0,
+        "start": 1984,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default absent after cleanup",
+        "id": 13,
+        "offset": 0,
+        "start": 1985,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default absent after cleanup",
+        "id": 14,
+        "offset": 0,
+        "start": 1986,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default absent after cleanup",
+        "id": 15,
+        "offset": 0,
+        "start": 1987,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default absent after cleanup",
+        "id": 16,
+        "offset": 0,
+        "start": 1988,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default absent after cleanup",
+        "id": 17,
+        "offset": 0,
+        "start": 1989,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default absent after cleanup",
+        "id": 18,
+        "offset": 0,
+        "start": 1990,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default absent after cleanup",
+        "id": 19,
+        "offset": 0,
+        "start": 1991,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default absent after cleanup",
+        "id": 20,
+        "offset": 0,
+        "start": 1992,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default absent after cleanup",
+        "id": 21,
+        "offset": 0,
+        "start": 1993,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default absent after cleanup",
+        "id": 22,
+        "offset": 0,
+        "start": 1994,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default absent after cleanup",
+        "id": 23,
+        "offset": 0,
+        "start": 1995,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default absent after cleanup",
+        "id": 24,
+        "offset": 0,
+        "start": 1996,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default absent after cleanup",
+        "id": 25,
+        "offset": 0,
+        "start": 1997,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default absent after cleanup",
+        "id": 26,
+        "offset": 0,
+        "start": 1998,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default preserved external",
+        "id": 0,
+        "offset": 0,
+        "start": 1999,
+        "bytes": 4
+      },
+      {
+        "label": "floor-default preserved external",
+        "id": 50000,
+        "offset": 0,
+        "start": 2003,
+        "bytes": 4
+      },
+      {
+        "label": "floor-default preserved diagnostic asset",
+        "id": 60001,
+        "offset": 0,
+        "start": 2007,
+        "bytes": 256
+      },
+      {
+        "label": "floor-default declared initial tiny negative",
+        "id": 3,
+        "offset": 0,
+        "start": 2263,
+        "bytes": 2
+      },
+      {
+        "label": "floor-default absent after second cleanup",
+        "id": 2,
+        "offset": 0,
+        "start": 2265,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default absent after second cleanup",
+        "id": 3,
+        "offset": 0,
+        "start": 2266,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default absent after second cleanup",
+        "id": 4,
+        "offset": 0,
+        "start": 2267,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default absent after second cleanup",
+        "id": 5,
+        "offset": 0,
+        "start": 2268,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default absent after second cleanup",
+        "id": 6,
+        "offset": 0,
+        "start": 2269,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default absent after second cleanup",
+        "id": 7,
+        "offset": 0,
+        "start": 2270,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default absent after second cleanup",
+        "id": 8,
+        "offset": 0,
+        "start": 2271,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default absent after second cleanup",
+        "id": 9,
+        "offset": 0,
+        "start": 2272,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default absent after second cleanup",
+        "id": 10,
+        "offset": 0,
+        "start": 2273,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default absent after second cleanup",
+        "id": 11,
+        "offset": 0,
+        "start": 2274,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default absent after second cleanup",
+        "id": 12,
+        "offset": 0,
+        "start": 2275,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default absent after second cleanup",
+        "id": 13,
+        "offset": 0,
+        "start": 2276,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default absent after second cleanup",
+        "id": 14,
+        "offset": 0,
+        "start": 2277,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default absent after second cleanup",
+        "id": 15,
+        "offset": 0,
+        "start": 2278,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default absent after second cleanup",
+        "id": 16,
+        "offset": 0,
+        "start": 2279,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default absent after second cleanup",
+        "id": 17,
+        "offset": 0,
+        "start": 2280,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default absent after second cleanup",
+        "id": 18,
+        "offset": 0,
+        "start": 2281,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default absent after second cleanup",
+        "id": 19,
+        "offset": 0,
+        "start": 2282,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default absent after second cleanup",
+        "id": 20,
+        "offset": 0,
+        "start": 2283,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default absent after second cleanup",
+        "id": 21,
+        "offset": 0,
+        "start": 2284,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default absent after second cleanup",
+        "id": 22,
+        "offset": 0,
+        "start": 2285,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default absent after second cleanup",
+        "id": 23,
+        "offset": 0,
+        "start": 2286,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default absent after second cleanup",
+        "id": 24,
+        "offset": 0,
+        "start": 2287,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default absent after second cleanup",
+        "id": 25,
+        "offset": 0,
+        "start": 2288,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default absent after second cleanup",
+        "id": 26,
+        "offset": 0,
+        "start": 2289,
+        "bytes": 1
+      },
+      {
+        "label": "floor-default external after second cleanup",
+        "id": 0,
+        "offset": 0,
+        "start": 2290,
+        "bytes": 4
+      },
+      {
+        "label": "floor-default external after second cleanup",
+        "id": 50000,
+        "offset": 0,
+        "start": 2294,
+        "bytes": 4
+      },
+      {
+        "label": "floor-relocated zero-initialized output",
+        "id": 257,
+        "offset": 0,
+        "start": 2298,
+        "bytes": 2
+      },
+      {
+        "label": "floor-relocated declared initial input",
+        "id": 256,
+        "offset": 0,
+        "start": 2300,
+        "bytes": 4
+      },
+      {
+        "label": "floor-relocated installed program",
+        "id": 265,
+        "offset": 0,
+        "start": 2304,
+        "bytes": 259
+      },
+      {
+        "label": "floor-relocated installed program",
+        "id": 275,
+        "offset": 0,
+        "start": 2563,
+        "bytes": 13
+      },
+      {
+        "label": "floor-relocated installed program",
+        "id": 276,
+        "offset": 0,
+        "start": 2576,
+        "bytes": 208
+      },
+      {
+        "label": "floor-relocated installed program",
+        "id": 277,
+        "offset": 0,
+        "start": 2784,
+        "bytes": 15
+      },
+      {
+        "label": "floor-relocated input 0",
+        "id": 256,
+        "offset": 0,
+        "start": 2799,
+        "bytes": 4
+      },
+      {
+        "label": "floor-relocated floor -32768",
+        "id": 257,
+        "offset": 0,
+        "start": 2803,
+        "bytes": 2
+      },
+      {
+        "label": "floor-relocated input 1",
+        "id": 256,
+        "offset": 0,
+        "start": 2805,
+        "bytes": 4
+      },
+      {
+        "label": "floor-relocated floor -32767.998046875",
+        "id": 257,
+        "offset": 0,
+        "start": 2809,
+        "bytes": 2
+      },
+      {
+        "label": "floor-relocated input 2",
+        "id": 256,
+        "offset": 0,
+        "start": 2811,
+        "bytes": 4
+      },
+      {
+        "label": "floor-relocated floor -32767.5",
+        "id": 257,
+        "offset": 0,
+        "start": 2815,
+        "bytes": 2
+      },
+      {
+        "label": "floor-relocated input 3",
+        "id": 256,
+        "offset": 0,
+        "start": 2817,
+        "bytes": 4
+      },
+      {
+        "label": "floor-relocated floor -32767",
+        "id": 257,
+        "offset": 0,
+        "start": 2821,
+        "bytes": 2
+      },
+      {
+        "label": "floor-relocated input 4",
+        "id": 256,
+        "offset": 0,
+        "start": 2823,
+        "bytes": 4
+      },
+      {
+        "label": "floor-relocated floor -256.25",
+        "id": 257,
+        "offset": 0,
+        "start": 2827,
+        "bytes": 2
+      },
+      {
+        "label": "floor-relocated input 5",
+        "id": 256,
+        "offset": 0,
+        "start": 2829,
+        "bytes": 4
+      },
+      {
+        "label": "floor-relocated floor -2.000000238418579",
+        "id": 257,
+        "offset": 0,
+        "start": 2833,
+        "bytes": 2
+      },
+      {
+        "label": "floor-relocated input 6",
+        "id": 256,
+        "offset": 0,
+        "start": 2835,
+        "bytes": 4
+      },
+      {
+        "label": "floor-relocated floor -2",
+        "id": 257,
+        "offset": 0,
+        "start": 2839,
+        "bytes": 2
+      },
+      {
+        "label": "floor-relocated input 7",
+        "id": 256,
+        "offset": 0,
+        "start": 2841,
+        "bytes": 4
+      },
+      {
+        "label": "floor-relocated floor -1.9999998807907104",
+        "id": 257,
+        "offset": 0,
+        "start": 2845,
+        "bytes": 2
+      },
+      {
+        "label": "floor-relocated input 8",
+        "id": 256,
+        "offset": 0,
+        "start": 2847,
+        "bytes": 4
+      },
+      {
+        "label": "floor-relocated floor -1.5",
+        "id": 257,
+        "offset": 0,
+        "start": 2851,
+        "bytes": 2
+      },
+      {
+        "label": "floor-relocated input 9",
+        "id": 256,
+        "offset": 0,
+        "start": 2853,
+        "bytes": 4
+      },
+      {
+        "label": "floor-relocated floor -1.0000001192092896",
+        "id": 257,
+        "offset": 0,
+        "start": 2857,
+        "bytes": 2
+      },
+      {
+        "label": "floor-relocated input 10",
+        "id": 256,
+        "offset": 0,
+        "start": 2859,
+        "bytes": 4
+      },
+      {
+        "label": "floor-relocated floor -1",
+        "id": 257,
+        "offset": 0,
+        "start": 2863,
+        "bytes": 2
+      },
+      {
+        "label": "floor-relocated input 11",
+        "id": 256,
+        "offset": 0,
+        "start": 2865,
+        "bytes": 4
+      },
+      {
+        "label": "floor-relocated floor -0.9999999403953552",
+        "id": 257,
+        "offset": 0,
+        "start": 2869,
+        "bytes": 2
+      },
+      {
+        "label": "floor-relocated input 12",
+        "id": 256,
+        "offset": 0,
+        "start": 2871,
+        "bytes": 4
+      },
+      {
+        "label": "floor-relocated floor -0.75",
+        "id": 257,
+        "offset": 0,
+        "start": 2875,
+        "bytes": 2
+      },
+      {
+        "label": "floor-relocated input 13",
+        "id": 256,
+        "offset": 0,
+        "start": 2877,
+        "bytes": 4
+      },
+      {
+        "label": "floor-relocated floor -6.103515625e-05",
+        "id": 257,
+        "offset": 0,
+        "start": 2881,
+        "bytes": 2
+      },
+      {
+        "label": "floor-relocated input 14",
+        "id": 256,
+        "offset": 0,
+        "start": 2883,
+        "bytes": 4
+      },
+      {
+        "label": "floor-relocated floor -1.1754943508222875e-38",
+        "id": 257,
+        "offset": 0,
+        "start": 2887,
+        "bytes": 2
+      },
+      {
+        "label": "floor-relocated input 15",
+        "id": 256,
+        "offset": 0,
+        "start": 2889,
+        "bytes": 4
+      },
+      {
+        "label": "floor-relocated floor -1.401298464324817e-45",
+        "id": 257,
+        "offset": 0,
+        "start": 2893,
+        "bytes": 2
+      },
+      {
+        "label": "floor-relocated input 16",
+        "id": 256,
+        "offset": 0,
+        "start": 2895,
+        "bytes": 4
+      },
+      {
+        "label": "floor-relocated floor -0.0",
+        "id": 257,
+        "offset": 0,
+        "start": 2899,
+        "bytes": 2
+      },
+      {
+        "label": "floor-relocated input 17",
+        "id": 256,
+        "offset": 0,
+        "start": 2901,
+        "bytes": 4
+      },
+      {
+        "label": "floor-relocated floor 0.0",
+        "id": 257,
+        "offset": 0,
+        "start": 2905,
+        "bytes": 2
+      },
+      {
+        "label": "floor-relocated input 18",
+        "id": 256,
+        "offset": 0,
+        "start": 2907,
+        "bytes": 4
+      },
+      {
+        "label": "floor-relocated floor 1.401298464324817e-45",
+        "id": 257,
+        "offset": 0,
+        "start": 2911,
+        "bytes": 2
+      },
+      {
+        "label": "floor-relocated input 19",
+        "id": 256,
+        "offset": 0,
+        "start": 2913,
+        "bytes": 4
+      },
+      {
+        "label": "floor-relocated floor 1.1754943508222875e-38",
+        "id": 257,
+        "offset": 0,
+        "start": 2917,
+        "bytes": 2
+      },
+      {
+        "label": "floor-relocated input 20",
+        "id": 256,
+        "offset": 0,
+        "start": 2919,
+        "bytes": 4
+      },
+      {
+        "label": "floor-relocated floor 6.103515625e-05",
+        "id": 257,
+        "offset": 0,
+        "start": 2923,
+        "bytes": 2
+      },
+      {
+        "label": "floor-relocated input 21",
+        "id": 256,
+        "offset": 0,
+        "start": 2925,
+        "bytes": 4
+      },
+      {
+        "label": "floor-relocated floor 0.75",
+        "id": 257,
+        "offset": 0,
+        "start": 2929,
+        "bytes": 2
+      },
+      {
+        "label": "floor-relocated input 22",
+        "id": 256,
+        "offset": 0,
+        "start": 2931,
+        "bytes": 4
+      },
+      {
+        "label": "floor-relocated floor 0.9999999403953552",
+        "id": 257,
+        "offset": 0,
+        "start": 2935,
+        "bytes": 2
+      },
+      {
+        "label": "floor-relocated input 23",
+        "id": 256,
+        "offset": 0,
+        "start": 2937,
+        "bytes": 4
+      },
+      {
+        "label": "floor-relocated floor 1",
+        "id": 257,
+        "offset": 0,
+        "start": 2941,
+        "bytes": 2
+      },
+      {
+        "label": "floor-relocated input 24",
+        "id": 256,
+        "offset": 0,
+        "start": 2943,
+        "bytes": 4
+      },
+      {
+        "label": "floor-relocated floor 1.0000001192092896",
+        "id": 257,
+        "offset": 0,
+        "start": 2947,
+        "bytes": 2
+      },
+      {
+        "label": "floor-relocated input 25",
+        "id": 256,
+        "offset": 0,
+        "start": 2949,
+        "bytes": 4
+      },
+      {
+        "label": "floor-relocated floor 1.5",
+        "id": 257,
+        "offset": 0,
+        "start": 2953,
+        "bytes": 2
+      },
+      {
+        "label": "floor-relocated input 26",
+        "id": 256,
+        "offset": 0,
+        "start": 2955,
+        "bytes": 4
+      },
+      {
+        "label": "floor-relocated floor 1.9999998807907104",
+        "id": 257,
+        "offset": 0,
+        "start": 2959,
+        "bytes": 2
+      },
+      {
+        "label": "floor-relocated input 27",
+        "id": 256,
+        "offset": 0,
+        "start": 2961,
+        "bytes": 4
+      },
+      {
+        "label": "floor-relocated floor 2",
+        "id": 257,
+        "offset": 0,
+        "start": 2965,
+        "bytes": 2
+      },
+      {
+        "label": "floor-relocated input 28",
+        "id": 256,
+        "offset": 0,
+        "start": 2967,
+        "bytes": 4
+      },
+      {
+        "label": "floor-relocated floor 2.000000238418579",
+        "id": 257,
+        "offset": 0,
+        "start": 2971,
+        "bytes": 2
+      },
+      {
+        "label": "floor-relocated input 29",
+        "id": 256,
+        "offset": 0,
+        "start": 2973,
+        "bytes": 4
+      },
+      {
+        "label": "floor-relocated floor 256.25",
+        "id": 257,
+        "offset": 0,
+        "start": 2977,
+        "bytes": 2
+      },
+      {
+        "label": "floor-relocated input 30",
+        "id": 256,
+        "offset": 0,
+        "start": 2979,
+        "bytes": 4
+      },
+      {
+        "label": "floor-relocated floor 32766.5",
+        "id": 257,
+        "offset": 0,
+        "start": 2983,
+        "bytes": 2
+      },
+      {
+        "label": "floor-relocated input 31",
+        "id": 256,
+        "offset": 0,
+        "start": 2985,
+        "bytes": 4
+      },
+      {
+        "label": "floor-relocated floor 32766.998046875",
+        "id": 257,
+        "offset": 0,
+        "start": 2989,
+        "bytes": 2
+      },
+      {
+        "label": "floor-relocated input 32",
+        "id": 256,
+        "offset": 0,
+        "start": 2991,
+        "bytes": 4
+      },
+      {
+        "label": "floor-relocated floor 32767",
+        "id": 257,
+        "offset": 0,
+        "start": 2995,
+        "bytes": 2
+      },
+      {
+        "label": "floor-relocated repeated invoke",
+        "id": 257,
+        "offset": 0,
+        "start": 2997,
+        "bytes": 2
+      },
+      {
+        "label": "floor-relocated unchanged program",
+        "id": 265,
+        "offset": 0,
+        "start": 2999,
+        "bytes": 259
+      },
+      {
+        "label": "floor-relocated unchanged program",
+        "id": 275,
+        "offset": 0,
+        "start": 3258,
+        "bytes": 13
+      },
+      {
+        "label": "floor-relocated unchanged program",
+        "id": 276,
+        "offset": 0,
+        "start": 3271,
+        "bytes": 208
+      },
+      {
+        "label": "floor-relocated unchanged program",
+        "id": 277,
+        "offset": 0,
+        "start": 3479,
+        "bytes": 15
+      },
+      {
+        "label": "floor-relocated live reinstall result",
+        "id": 257,
+        "offset": 0,
+        "start": 3494,
+        "bytes": 2
+      },
+      {
+        "label": "floor-relocated live reinstalled program",
+        "id": 265,
+        "offset": 0,
+        "start": 3496,
+        "bytes": 259
+      },
+      {
+        "label": "floor-relocated live reinstalled program",
+        "id": 275,
+        "offset": 0,
+        "start": 3755,
+        "bytes": 13
+      },
+      {
+        "label": "floor-relocated live reinstalled program",
+        "id": 276,
+        "offset": 0,
+        "start": 3768,
+        "bytes": 208
+      },
+      {
+        "label": "floor-relocated live reinstalled program",
+        "id": 277,
+        "offset": 0,
+        "start": 3976,
+        "bytes": 15
+      },
+      {
+        "label": "floor-relocated present before cleanup",
+        "id": 256,
+        "offset": 0,
+        "start": 3991,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated present before cleanup",
+        "id": 257,
+        "offset": 0,
+        "start": 3992,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated present before cleanup",
+        "id": 258,
+        "offset": 0,
+        "start": 3993,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated present before cleanup",
+        "id": 259,
+        "offset": 0,
+        "start": 3994,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated present before cleanup",
+        "id": 265,
+        "offset": 0,
+        "start": 3995,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated present before cleanup",
+        "id": 266,
+        "offset": 0,
+        "start": 3996,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated present before cleanup",
+        "id": 267,
+        "offset": 0,
+        "start": 3997,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated present before cleanup",
+        "id": 268,
+        "offset": 0,
+        "start": 3998,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated present before cleanup",
+        "id": 269,
+        "offset": 0,
+        "start": 3999,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated present before cleanup",
+        "id": 270,
+        "offset": 0,
+        "start": 4000,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated present before cleanup",
+        "id": 271,
+        "offset": 0,
+        "start": 4001,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated present before cleanup",
+        "id": 272,
+        "offset": 0,
+        "start": 4002,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated present before cleanup",
+        "id": 273,
+        "offset": 0,
+        "start": 4003,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated present before cleanup",
+        "id": 274,
+        "offset": 0,
+        "start": 4004,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated present before cleanup",
+        "id": 275,
+        "offset": 0,
+        "start": 4005,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated present before cleanup",
+        "id": 276,
+        "offset": 0,
+        "start": 4006,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated present before cleanup",
+        "id": 277,
+        "offset": 0,
+        "start": 4007,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated present before cleanup",
+        "id": 278,
+        "offset": 0,
+        "start": 4008,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated present before cleanup",
+        "id": 279,
+        "offset": 0,
+        "start": 4009,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated present before cleanup",
+        "id": 280,
+        "offset": 0,
+        "start": 4010,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated present before cleanup",
+        "id": 281,
+        "offset": 0,
+        "start": 4011,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated present before cleanup",
+        "id": 282,
+        "offset": 0,
+        "start": 4012,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated present before cleanup",
+        "id": 283,
+        "offset": 0,
+        "start": 4013,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated present before cleanup",
+        "id": 284,
+        "offset": 0,
+        "start": 4014,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated present before cleanup",
+        "id": 285,
+        "offset": 0,
+        "start": 4015,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated absent after cleanup",
+        "id": 256,
+        "offset": 0,
+        "start": 4016,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated absent after cleanup",
+        "id": 257,
+        "offset": 0,
+        "start": 4017,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated absent after cleanup",
+        "id": 258,
+        "offset": 0,
+        "start": 4018,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated absent after cleanup",
+        "id": 259,
+        "offset": 0,
+        "start": 4019,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated absent after cleanup",
+        "id": 265,
+        "offset": 0,
+        "start": 4020,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated absent after cleanup",
+        "id": 266,
+        "offset": 0,
+        "start": 4021,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated absent after cleanup",
+        "id": 267,
+        "offset": 0,
+        "start": 4022,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated absent after cleanup",
+        "id": 268,
+        "offset": 0,
+        "start": 4023,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated absent after cleanup",
+        "id": 269,
+        "offset": 0,
+        "start": 4024,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated absent after cleanup",
+        "id": 270,
+        "offset": 0,
+        "start": 4025,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated absent after cleanup",
+        "id": 271,
+        "offset": 0,
+        "start": 4026,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated absent after cleanup",
+        "id": 272,
+        "offset": 0,
+        "start": 4027,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated absent after cleanup",
+        "id": 273,
+        "offset": 0,
+        "start": 4028,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated absent after cleanup",
+        "id": 274,
+        "offset": 0,
+        "start": 4029,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated absent after cleanup",
+        "id": 275,
+        "offset": 0,
+        "start": 4030,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated absent after cleanup",
+        "id": 276,
+        "offset": 0,
+        "start": 4031,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated absent after cleanup",
+        "id": 277,
+        "offset": 0,
+        "start": 4032,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated absent after cleanup",
+        "id": 278,
+        "offset": 0,
+        "start": 4033,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated absent after cleanup",
+        "id": 279,
+        "offset": 0,
+        "start": 4034,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated absent after cleanup",
+        "id": 280,
+        "offset": 0,
+        "start": 4035,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated absent after cleanup",
+        "id": 281,
+        "offset": 0,
+        "start": 4036,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated absent after cleanup",
+        "id": 282,
+        "offset": 0,
+        "start": 4037,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated absent after cleanup",
+        "id": 283,
+        "offset": 0,
+        "start": 4038,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated absent after cleanup",
+        "id": 284,
+        "offset": 0,
+        "start": 4039,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated absent after cleanup",
+        "id": 285,
+        "offset": 0,
+        "start": 4040,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated preserved external",
+        "id": 0,
+        "offset": 0,
+        "start": 4041,
+        "bytes": 4
+      },
+      {
+        "label": "floor-relocated preserved external",
+        "id": 50000,
+        "offset": 0,
+        "start": 4045,
+        "bytes": 4
+      },
+      {
+        "label": "floor-relocated preserved external",
+        "id": 1,
+        "offset": 0,
+        "start": 4049,
+        "bytes": 3
+      },
+      {
+        "label": "floor-relocated preserved external",
+        "id": 254,
+        "offset": 0,
+        "start": 4052,
+        "bytes": 3
+      },
+      {
+        "label": "floor-relocated preserved external",
+        "id": 260,
+        "offset": 0,
+        "start": 4055,
+        "bytes": 3
+      },
+      {
+        "label": "floor-relocated preserved external",
+        "id": 264,
+        "offset": 0,
+        "start": 4058,
+        "bytes": 3
+      },
+      {
+        "label": "floor-relocated preserved diagnostic asset",
+        "id": 60001,
+        "offset": 0,
+        "start": 4061,
+        "bytes": 256
+      },
+      {
+        "label": "floor-relocated declared initial tiny negative",
+        "id": 257,
+        "offset": 0,
+        "start": 4317,
+        "bytes": 2
+      },
+      {
+        "label": "floor-relocated absent after second cleanup",
+        "id": 256,
+        "offset": 0,
+        "start": 4319,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated absent after second cleanup",
+        "id": 257,
+        "offset": 0,
+        "start": 4320,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated absent after second cleanup",
+        "id": 258,
+        "offset": 0,
+        "start": 4321,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated absent after second cleanup",
+        "id": 259,
+        "offset": 0,
+        "start": 4322,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated absent after second cleanup",
+        "id": 265,
+        "offset": 0,
+        "start": 4323,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated absent after second cleanup",
+        "id": 266,
+        "offset": 0,
+        "start": 4324,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated absent after second cleanup",
+        "id": 267,
+        "offset": 0,
+        "start": 4325,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated absent after second cleanup",
+        "id": 268,
+        "offset": 0,
+        "start": 4326,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated absent after second cleanup",
+        "id": 269,
+        "offset": 0,
+        "start": 4327,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated absent after second cleanup",
+        "id": 270,
+        "offset": 0,
+        "start": 4328,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated absent after second cleanup",
+        "id": 271,
+        "offset": 0,
+        "start": 4329,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated absent after second cleanup",
+        "id": 272,
+        "offset": 0,
+        "start": 4330,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated absent after second cleanup",
+        "id": 273,
+        "offset": 0,
+        "start": 4331,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated absent after second cleanup",
+        "id": 274,
+        "offset": 0,
+        "start": 4332,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated absent after second cleanup",
+        "id": 275,
+        "offset": 0,
+        "start": 4333,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated absent after second cleanup",
+        "id": 276,
+        "offset": 0,
+        "start": 4334,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated absent after second cleanup",
+        "id": 277,
+        "offset": 0,
+        "start": 4335,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated absent after second cleanup",
+        "id": 278,
+        "offset": 0,
+        "start": 4336,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated absent after second cleanup",
+        "id": 279,
+        "offset": 0,
+        "start": 4337,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated absent after second cleanup",
+        "id": 280,
+        "offset": 0,
+        "start": 4338,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated absent after second cleanup",
+        "id": 281,
+        "offset": 0,
+        "start": 4339,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated absent after second cleanup",
+        "id": 282,
+        "offset": 0,
+        "start": 4340,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated absent after second cleanup",
+        "id": 283,
+        "offset": 0,
+        "start": 4341,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated absent after second cleanup",
+        "id": 284,
+        "offset": 0,
+        "start": 4342,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated absent after second cleanup",
+        "id": 285,
+        "offset": 0,
+        "start": 4343,
+        "bytes": 1
+      },
+      {
+        "label": "floor-relocated external after second cleanup",
+        "id": 0,
+        "offset": 0,
+        "start": 4344,
+        "bytes": 4
+      },
+      {
+        "label": "floor-relocated external after second cleanup",
+        "id": 50000,
+        "offset": 0,
+        "start": 4348,
+        "bytes": 4
+      },
+      {
+        "label": "floor-relocated external after second cleanup",
+        "id": 1,
+        "offset": 0,
+        "start": 4352,
+        "bytes": 3
+      },
+      {
+        "label": "floor-relocated external after second cleanup",
+        "id": 254,
+        "offset": 0,
+        "start": 4355,
+        "bytes": 3
+      },
+      {
+        "label": "floor-relocated external after second cleanup",
+        "id": 260,
+        "offset": 0,
+        "start": 4358,
+        "bytes": 3
+      },
+      {
+        "label": "floor-relocated external after second cleanup",
+        "id": 264,
+        "offset": 0,
+        "start": 4361,
+        "bytes": 3
+      },
+      {
+        "label": "mixed-default calls after install",
+        "id": 2,
+        "offset": 0,
+        "start": 4364,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default previous after install",
+        "id": 3,
+        "offset": 0,
+        "start": 4366,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default zero-initialized output",
+        "id": 5,
+        "offset": 0,
+        "start": 4368,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default declared initial input",
+        "id": 4,
+        "offset": 0,
+        "start": 4370,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-default installed program",
+        "id": 8,
+        "offset": 0,
+        "start": 4374,
+        "bytes": 322
+      },
+      {
+        "label": "mixed-default installed program",
+        "id": 18,
+        "offset": 0,
+        "start": 4696,
+        "bytes": 13
+      },
+      {
+        "label": "mixed-default installed program",
+        "id": 19,
+        "offset": 0,
+        "start": 4709,
+        "bytes": 208
+      },
+      {
+        "label": "mixed-default installed program",
+        "id": 20,
+        "offset": 0,
+        "start": 4917,
+        "bytes": 15
+      },
+      {
+        "label": "mixed-default input 0",
+        "id": 4,
+        "offset": 0,
+        "start": 4932,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-default floor -32768",
+        "id": 5,
+        "offset": 0,
+        "start": 4936,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default calls after input 0",
+        "id": 2,
+        "offset": 0,
+        "start": 4938,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default previous after input 0",
+        "id": 3,
+        "offset": 0,
+        "start": 4940,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default input 1",
+        "id": 4,
+        "offset": 0,
+        "start": 4942,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-default floor -32767.998046875",
+        "id": 5,
+        "offset": 0,
+        "start": 4946,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default calls after input 1",
+        "id": 2,
+        "offset": 0,
+        "start": 4948,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default previous after input 1",
+        "id": 3,
+        "offset": 0,
+        "start": 4950,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default input 2",
+        "id": 4,
+        "offset": 0,
+        "start": 4952,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-default floor -32767.5",
+        "id": 5,
+        "offset": 0,
+        "start": 4956,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default calls after input 2",
+        "id": 2,
+        "offset": 0,
+        "start": 4958,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default previous after input 2",
+        "id": 3,
+        "offset": 0,
+        "start": 4960,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default input 3",
+        "id": 4,
+        "offset": 0,
+        "start": 4962,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-default floor -32767",
+        "id": 5,
+        "offset": 0,
+        "start": 4966,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default calls after input 3",
+        "id": 2,
+        "offset": 0,
+        "start": 4968,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default previous after input 3",
+        "id": 3,
+        "offset": 0,
+        "start": 4970,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default input 4",
+        "id": 4,
+        "offset": 0,
+        "start": 4972,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-default floor -256.25",
+        "id": 5,
+        "offset": 0,
+        "start": 4976,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default calls after input 4",
+        "id": 2,
+        "offset": 0,
+        "start": 4978,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default previous after input 4",
+        "id": 3,
+        "offset": 0,
+        "start": 4980,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default input 5",
+        "id": 4,
+        "offset": 0,
+        "start": 4982,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-default floor -2.000000238418579",
+        "id": 5,
+        "offset": 0,
+        "start": 4986,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default calls after input 5",
+        "id": 2,
+        "offset": 0,
+        "start": 4988,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default previous after input 5",
+        "id": 3,
+        "offset": 0,
+        "start": 4990,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default input 6",
+        "id": 4,
+        "offset": 0,
+        "start": 4992,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-default floor -2",
+        "id": 5,
+        "offset": 0,
+        "start": 4996,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default calls after input 6",
+        "id": 2,
+        "offset": 0,
+        "start": 4998,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default previous after input 6",
+        "id": 3,
+        "offset": 0,
+        "start": 5000,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default input 7",
+        "id": 4,
+        "offset": 0,
+        "start": 5002,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-default floor -1.9999998807907104",
+        "id": 5,
+        "offset": 0,
+        "start": 5006,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default calls after input 7",
+        "id": 2,
+        "offset": 0,
+        "start": 5008,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default previous after input 7",
+        "id": 3,
+        "offset": 0,
+        "start": 5010,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default input 8",
+        "id": 4,
+        "offset": 0,
+        "start": 5012,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-default floor -1.5",
+        "id": 5,
+        "offset": 0,
+        "start": 5016,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default calls after input 8",
+        "id": 2,
+        "offset": 0,
+        "start": 5018,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default previous after input 8",
+        "id": 3,
+        "offset": 0,
+        "start": 5020,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default input 9",
+        "id": 4,
+        "offset": 0,
+        "start": 5022,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-default floor -1.0000001192092896",
+        "id": 5,
+        "offset": 0,
+        "start": 5026,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default calls after input 9",
+        "id": 2,
+        "offset": 0,
+        "start": 5028,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default previous after input 9",
+        "id": 3,
+        "offset": 0,
+        "start": 5030,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default input 10",
+        "id": 4,
+        "offset": 0,
+        "start": 5032,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-default floor -1",
+        "id": 5,
+        "offset": 0,
+        "start": 5036,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default calls after input 10",
+        "id": 2,
+        "offset": 0,
+        "start": 5038,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default previous after input 10",
+        "id": 3,
+        "offset": 0,
+        "start": 5040,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default input 11",
+        "id": 4,
+        "offset": 0,
+        "start": 5042,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-default floor -0.9999999403953552",
+        "id": 5,
+        "offset": 0,
+        "start": 5046,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default calls after input 11",
+        "id": 2,
+        "offset": 0,
+        "start": 5048,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default previous after input 11",
+        "id": 3,
+        "offset": 0,
+        "start": 5050,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default input 12",
+        "id": 4,
+        "offset": 0,
+        "start": 5052,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-default floor -0.75",
+        "id": 5,
+        "offset": 0,
+        "start": 5056,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default calls after input 12",
+        "id": 2,
+        "offset": 0,
+        "start": 5058,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default previous after input 12",
+        "id": 3,
+        "offset": 0,
+        "start": 5060,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default input 13",
+        "id": 4,
+        "offset": 0,
+        "start": 5062,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-default floor -6.103515625e-05",
+        "id": 5,
+        "offset": 0,
+        "start": 5066,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default calls after input 13",
+        "id": 2,
+        "offset": 0,
+        "start": 5068,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default previous after input 13",
+        "id": 3,
+        "offset": 0,
+        "start": 5070,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default input 14",
+        "id": 4,
+        "offset": 0,
+        "start": 5072,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-default floor -1.1754943508222875e-38",
+        "id": 5,
+        "offset": 0,
+        "start": 5076,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default calls after input 14",
+        "id": 2,
+        "offset": 0,
+        "start": 5078,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default previous after input 14",
+        "id": 3,
+        "offset": 0,
+        "start": 5080,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default input 15",
+        "id": 4,
+        "offset": 0,
+        "start": 5082,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-default floor -1.401298464324817e-45",
+        "id": 5,
+        "offset": 0,
+        "start": 5086,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default calls after input 15",
+        "id": 2,
+        "offset": 0,
+        "start": 5088,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default previous after input 15",
+        "id": 3,
+        "offset": 0,
+        "start": 5090,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default input 16",
+        "id": 4,
+        "offset": 0,
+        "start": 5092,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-default floor -0.0",
+        "id": 5,
+        "offset": 0,
+        "start": 5096,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default calls after input 16",
+        "id": 2,
+        "offset": 0,
+        "start": 5098,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default previous after input 16",
+        "id": 3,
+        "offset": 0,
+        "start": 5100,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default input 17",
+        "id": 4,
+        "offset": 0,
+        "start": 5102,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-default floor 0.0",
+        "id": 5,
+        "offset": 0,
+        "start": 5106,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default calls after input 17",
+        "id": 2,
+        "offset": 0,
+        "start": 5108,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default previous after input 17",
+        "id": 3,
+        "offset": 0,
+        "start": 5110,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default input 18",
+        "id": 4,
+        "offset": 0,
+        "start": 5112,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-default floor 1.401298464324817e-45",
+        "id": 5,
+        "offset": 0,
+        "start": 5116,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default calls after input 18",
+        "id": 2,
+        "offset": 0,
+        "start": 5118,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default previous after input 18",
+        "id": 3,
+        "offset": 0,
+        "start": 5120,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default input 19",
+        "id": 4,
+        "offset": 0,
+        "start": 5122,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-default floor 1.1754943508222875e-38",
+        "id": 5,
+        "offset": 0,
+        "start": 5126,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default calls after input 19",
+        "id": 2,
+        "offset": 0,
+        "start": 5128,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default previous after input 19",
+        "id": 3,
+        "offset": 0,
+        "start": 5130,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default input 20",
+        "id": 4,
+        "offset": 0,
+        "start": 5132,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-default floor 6.103515625e-05",
+        "id": 5,
+        "offset": 0,
+        "start": 5136,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default calls after input 20",
+        "id": 2,
+        "offset": 0,
+        "start": 5138,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default previous after input 20",
+        "id": 3,
+        "offset": 0,
+        "start": 5140,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default input 21",
+        "id": 4,
+        "offset": 0,
+        "start": 5142,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-default floor 0.75",
+        "id": 5,
+        "offset": 0,
+        "start": 5146,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default calls after input 21",
+        "id": 2,
+        "offset": 0,
+        "start": 5148,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default previous after input 21",
+        "id": 3,
+        "offset": 0,
+        "start": 5150,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default input 22",
+        "id": 4,
+        "offset": 0,
+        "start": 5152,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-default floor 0.9999999403953552",
+        "id": 5,
+        "offset": 0,
+        "start": 5156,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default calls after input 22",
+        "id": 2,
+        "offset": 0,
+        "start": 5158,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default previous after input 22",
+        "id": 3,
+        "offset": 0,
+        "start": 5160,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default input 23",
+        "id": 4,
+        "offset": 0,
+        "start": 5162,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-default floor 1",
+        "id": 5,
+        "offset": 0,
+        "start": 5166,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default calls after input 23",
+        "id": 2,
+        "offset": 0,
+        "start": 5168,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default previous after input 23",
+        "id": 3,
+        "offset": 0,
+        "start": 5170,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default input 24",
+        "id": 4,
+        "offset": 0,
+        "start": 5172,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-default floor 1.0000001192092896",
+        "id": 5,
+        "offset": 0,
+        "start": 5176,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default calls after input 24",
+        "id": 2,
+        "offset": 0,
+        "start": 5178,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default previous after input 24",
+        "id": 3,
+        "offset": 0,
+        "start": 5180,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default input 25",
+        "id": 4,
+        "offset": 0,
+        "start": 5182,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-default floor 1.5",
+        "id": 5,
+        "offset": 0,
+        "start": 5186,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default calls after input 25",
+        "id": 2,
+        "offset": 0,
+        "start": 5188,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default previous after input 25",
+        "id": 3,
+        "offset": 0,
+        "start": 5190,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default input 26",
+        "id": 4,
+        "offset": 0,
+        "start": 5192,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-default floor 1.9999998807907104",
+        "id": 5,
+        "offset": 0,
+        "start": 5196,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default calls after input 26",
+        "id": 2,
+        "offset": 0,
+        "start": 5198,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default previous after input 26",
+        "id": 3,
+        "offset": 0,
+        "start": 5200,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default input 27",
+        "id": 4,
+        "offset": 0,
+        "start": 5202,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-default floor 2",
+        "id": 5,
+        "offset": 0,
+        "start": 5206,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default calls after input 27",
+        "id": 2,
+        "offset": 0,
+        "start": 5208,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default previous after input 27",
+        "id": 3,
+        "offset": 0,
+        "start": 5210,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default input 28",
+        "id": 4,
+        "offset": 0,
+        "start": 5212,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-default floor 2.000000238418579",
+        "id": 5,
+        "offset": 0,
+        "start": 5216,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default calls after input 28",
+        "id": 2,
+        "offset": 0,
+        "start": 5218,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default previous after input 28",
+        "id": 3,
+        "offset": 0,
+        "start": 5220,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default input 29",
+        "id": 4,
+        "offset": 0,
+        "start": 5222,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-default floor 256.25",
+        "id": 5,
+        "offset": 0,
+        "start": 5226,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default calls after input 29",
+        "id": 2,
+        "offset": 0,
+        "start": 5228,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default previous after input 29",
+        "id": 3,
+        "offset": 0,
+        "start": 5230,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default input 30",
+        "id": 4,
+        "offset": 0,
+        "start": 5232,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-default floor 32766.5",
+        "id": 5,
+        "offset": 0,
+        "start": 5236,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default calls after input 30",
+        "id": 2,
+        "offset": 0,
+        "start": 5238,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default previous after input 30",
+        "id": 3,
+        "offset": 0,
+        "start": 5240,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default input 31",
+        "id": 4,
+        "offset": 0,
+        "start": 5242,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-default floor 32766.998046875",
+        "id": 5,
+        "offset": 0,
+        "start": 5246,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default calls after input 31",
+        "id": 2,
+        "offset": 0,
+        "start": 5248,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default previous after input 31",
+        "id": 3,
+        "offset": 0,
+        "start": 5250,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default input 32",
+        "id": 4,
+        "offset": 0,
+        "start": 5252,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-default floor 32767",
+        "id": 5,
+        "offset": 0,
+        "start": 5256,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default calls after input 32",
+        "id": 2,
+        "offset": 0,
+        "start": 5258,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default previous after input 32",
+        "id": 3,
+        "offset": 0,
+        "start": 5260,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default repeated invoke",
+        "id": 5,
+        "offset": 0,
+        "start": 5262,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default calls after repeated invoke",
+        "id": 2,
+        "offset": 0,
+        "start": 5264,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default previous after repeated invoke",
+        "id": 3,
+        "offset": 0,
+        "start": 5266,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default calls wrap 65535",
+        "id": 2,
+        "offset": 0,
+        "start": 5268,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default previous wrap 65535",
+        "id": 3,
+        "offset": 0,
+        "start": 5270,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default calls wrap 0",
+        "id": 2,
+        "offset": 0,
+        "start": 5272,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default previous wrap 0",
+        "id": 3,
+        "offset": 0,
+        "start": 5274,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default calls wrap 1",
+        "id": 2,
+        "offset": 0,
+        "start": 5276,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default previous wrap 1",
+        "id": 3,
+        "offset": 0,
+        "start": 5278,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default unchanged program",
+        "id": 8,
+        "offset": 0,
+        "start": 5280,
+        "bytes": 322
+      },
+      {
+        "label": "mixed-default unchanged program",
+        "id": 18,
+        "offset": 0,
+        "start": 5602,
+        "bytes": 13
+      },
+      {
+        "label": "mixed-default unchanged program",
+        "id": 19,
+        "offset": 0,
+        "start": 5615,
+        "bytes": 208
+      },
+      {
+        "label": "mixed-default unchanged program",
+        "id": 20,
+        "offset": 0,
+        "start": 5823,
+        "bytes": 15
+      },
+      {
+        "label": "mixed-default calls live reinstall reset",
+        "id": 2,
+        "offset": 0,
+        "start": 5838,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default previous live reinstall reset",
+        "id": 3,
+        "offset": 0,
+        "start": 5840,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default live reinstall result",
+        "id": 5,
+        "offset": 0,
+        "start": 5842,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default calls live reinstall invoke",
+        "id": 2,
+        "offset": 0,
+        "start": 5844,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default previous live reinstall invoke",
+        "id": 3,
+        "offset": 0,
+        "start": 5846,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default live reinstalled program",
+        "id": 8,
+        "offset": 0,
+        "start": 5848,
+        "bytes": 322
+      },
+      {
+        "label": "mixed-default live reinstalled program",
+        "id": 18,
+        "offset": 0,
+        "start": 6170,
+        "bytes": 13
+      },
+      {
+        "label": "mixed-default live reinstalled program",
+        "id": 19,
+        "offset": 0,
+        "start": 6183,
+        "bytes": 208
+      },
+      {
+        "label": "mixed-default live reinstalled program",
+        "id": 20,
+        "offset": 0,
+        "start": 6391,
+        "bytes": 15
+      },
+      {
+        "label": "mixed-default present before cleanup",
+        "id": 1,
+        "offset": 0,
+        "start": 6406,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default present before cleanup",
+        "id": 2,
+        "offset": 0,
+        "start": 6407,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default present before cleanup",
+        "id": 3,
+        "offset": 0,
+        "start": 6408,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default present before cleanup",
+        "id": 4,
+        "offset": 0,
+        "start": 6409,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default present before cleanup",
+        "id": 5,
+        "offset": 0,
+        "start": 6410,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default present before cleanup",
+        "id": 6,
+        "offset": 0,
+        "start": 6411,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default present before cleanup",
+        "id": 7,
+        "offset": 0,
+        "start": 6412,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default present before cleanup",
+        "id": 8,
+        "offset": 0,
+        "start": 6413,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default present before cleanup",
+        "id": 9,
+        "offset": 0,
+        "start": 6414,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default present before cleanup",
+        "id": 10,
+        "offset": 0,
+        "start": 6415,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default present before cleanup",
+        "id": 11,
+        "offset": 0,
+        "start": 6416,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default present before cleanup",
+        "id": 12,
+        "offset": 0,
+        "start": 6417,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default present before cleanup",
+        "id": 13,
+        "offset": 0,
+        "start": 6418,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default present before cleanup",
+        "id": 14,
+        "offset": 0,
+        "start": 6419,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default present before cleanup",
+        "id": 15,
+        "offset": 0,
+        "start": 6420,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default present before cleanup",
+        "id": 16,
+        "offset": 0,
+        "start": 6421,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default present before cleanup",
+        "id": 17,
+        "offset": 0,
+        "start": 6422,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default present before cleanup",
+        "id": 18,
+        "offset": 0,
+        "start": 6423,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default present before cleanup",
+        "id": 19,
+        "offset": 0,
+        "start": 6424,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default present before cleanup",
+        "id": 20,
+        "offset": 0,
+        "start": 6425,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default present before cleanup",
+        "id": 21,
+        "offset": 0,
+        "start": 6426,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default present before cleanup",
+        "id": 22,
+        "offset": 0,
+        "start": 6427,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default present before cleanup",
+        "id": 23,
+        "offset": 0,
+        "start": 6428,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default present before cleanup",
+        "id": 24,
+        "offset": 0,
+        "start": 6429,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default present before cleanup",
+        "id": 25,
+        "offset": 0,
+        "start": 6430,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default present before cleanup",
+        "id": 26,
+        "offset": 0,
+        "start": 6431,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default present before cleanup",
+        "id": 27,
+        "offset": 0,
+        "start": 6432,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default present before cleanup",
+        "id": 28,
+        "offset": 0,
+        "start": 6433,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default absent after cleanup",
+        "id": 1,
+        "offset": 0,
+        "start": 6434,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default absent after cleanup",
+        "id": 2,
+        "offset": 0,
+        "start": 6435,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default absent after cleanup",
+        "id": 3,
+        "offset": 0,
+        "start": 6436,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default absent after cleanup",
+        "id": 4,
+        "offset": 0,
+        "start": 6437,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default absent after cleanup",
+        "id": 5,
+        "offset": 0,
+        "start": 6438,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default absent after cleanup",
+        "id": 6,
+        "offset": 0,
+        "start": 6439,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default absent after cleanup",
+        "id": 7,
+        "offset": 0,
+        "start": 6440,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default absent after cleanup",
+        "id": 8,
+        "offset": 0,
+        "start": 6441,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default absent after cleanup",
+        "id": 9,
+        "offset": 0,
+        "start": 6442,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default absent after cleanup",
+        "id": 10,
+        "offset": 0,
+        "start": 6443,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default absent after cleanup",
+        "id": 11,
+        "offset": 0,
+        "start": 6444,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default absent after cleanup",
+        "id": 12,
+        "offset": 0,
+        "start": 6445,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default absent after cleanup",
+        "id": 13,
+        "offset": 0,
+        "start": 6446,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default absent after cleanup",
+        "id": 14,
+        "offset": 0,
+        "start": 6447,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default absent after cleanup",
+        "id": 15,
+        "offset": 0,
+        "start": 6448,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default absent after cleanup",
+        "id": 16,
+        "offset": 0,
+        "start": 6449,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default absent after cleanup",
+        "id": 17,
+        "offset": 0,
+        "start": 6450,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default absent after cleanup",
+        "id": 18,
+        "offset": 0,
+        "start": 6451,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default absent after cleanup",
+        "id": 19,
+        "offset": 0,
+        "start": 6452,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default absent after cleanup",
+        "id": 20,
+        "offset": 0,
+        "start": 6453,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default absent after cleanup",
+        "id": 21,
+        "offset": 0,
+        "start": 6454,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default absent after cleanup",
+        "id": 22,
+        "offset": 0,
+        "start": 6455,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default absent after cleanup",
+        "id": 23,
+        "offset": 0,
+        "start": 6456,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default absent after cleanup",
+        "id": 24,
+        "offset": 0,
+        "start": 6457,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default absent after cleanup",
+        "id": 25,
+        "offset": 0,
+        "start": 6458,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default absent after cleanup",
+        "id": 26,
+        "offset": 0,
+        "start": 6459,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default absent after cleanup",
+        "id": 27,
+        "offset": 0,
+        "start": 6460,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default absent after cleanup",
+        "id": 28,
+        "offset": 0,
+        "start": 6461,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default preserved external",
+        "id": 0,
+        "offset": 0,
+        "start": 6462,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-default preserved external",
+        "id": 50000,
+        "offset": 0,
+        "start": 6466,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-default preserved diagnostic asset",
+        "id": 60001,
+        "offset": 0,
+        "start": 6470,
+        "bytes": 256
+      },
+      {
+        "label": "mixed-default calls reinstall reset",
+        "id": 2,
+        "offset": 0,
+        "start": 6726,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default previous reinstall reset",
+        "id": 3,
+        "offset": 0,
+        "start": 6728,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default declared initial tiny negative",
+        "id": 5,
+        "offset": 0,
+        "start": 6730,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default calls first reinstalled invoke",
+        "id": 2,
+        "offset": 0,
+        "start": 6732,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default previous first reinstalled invoke",
+        "id": 3,
+        "offset": 0,
+        "start": 6734,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-default absent after second cleanup",
+        "id": 1,
+        "offset": 0,
+        "start": 6736,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default absent after second cleanup",
+        "id": 2,
+        "offset": 0,
+        "start": 6737,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default absent after second cleanup",
+        "id": 3,
+        "offset": 0,
+        "start": 6738,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default absent after second cleanup",
+        "id": 4,
+        "offset": 0,
+        "start": 6739,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default absent after second cleanup",
+        "id": 5,
+        "offset": 0,
+        "start": 6740,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default absent after second cleanup",
+        "id": 6,
+        "offset": 0,
+        "start": 6741,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default absent after second cleanup",
+        "id": 7,
+        "offset": 0,
+        "start": 6742,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default absent after second cleanup",
+        "id": 8,
+        "offset": 0,
+        "start": 6743,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default absent after second cleanup",
+        "id": 9,
+        "offset": 0,
+        "start": 6744,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default absent after second cleanup",
+        "id": 10,
+        "offset": 0,
+        "start": 6745,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default absent after second cleanup",
+        "id": 11,
+        "offset": 0,
+        "start": 6746,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default absent after second cleanup",
+        "id": 12,
+        "offset": 0,
+        "start": 6747,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default absent after second cleanup",
+        "id": 13,
+        "offset": 0,
+        "start": 6748,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default absent after second cleanup",
+        "id": 14,
+        "offset": 0,
+        "start": 6749,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default absent after second cleanup",
+        "id": 15,
+        "offset": 0,
+        "start": 6750,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default absent after second cleanup",
+        "id": 16,
+        "offset": 0,
+        "start": 6751,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default absent after second cleanup",
+        "id": 17,
+        "offset": 0,
+        "start": 6752,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default absent after second cleanup",
+        "id": 18,
+        "offset": 0,
+        "start": 6753,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default absent after second cleanup",
+        "id": 19,
+        "offset": 0,
+        "start": 6754,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default absent after second cleanup",
+        "id": 20,
+        "offset": 0,
+        "start": 6755,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default absent after second cleanup",
+        "id": 21,
+        "offset": 0,
+        "start": 6756,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default absent after second cleanup",
+        "id": 22,
+        "offset": 0,
+        "start": 6757,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default absent after second cleanup",
+        "id": 23,
+        "offset": 0,
+        "start": 6758,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default absent after second cleanup",
+        "id": 24,
+        "offset": 0,
+        "start": 6759,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default absent after second cleanup",
+        "id": 25,
+        "offset": 0,
+        "start": 6760,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default absent after second cleanup",
+        "id": 26,
+        "offset": 0,
+        "start": 6761,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default absent after second cleanup",
+        "id": 27,
+        "offset": 0,
+        "start": 6762,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default absent after second cleanup",
+        "id": 28,
+        "offset": 0,
+        "start": 6763,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-default external after second cleanup",
+        "id": 0,
+        "offset": 0,
+        "start": 6764,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-default external after second cleanup",
+        "id": 50000,
+        "offset": 0,
+        "start": 6768,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-relocated calls after install",
+        "id": 256,
+        "offset": 0,
+        "start": 6772,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated previous after install",
+        "id": 257,
+        "offset": 0,
+        "start": 6774,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated zero-initialized output",
+        "id": 259,
+        "offset": 0,
+        "start": 6776,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated declared initial input",
+        "id": 258,
+        "offset": 0,
+        "start": 6778,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-relocated installed program",
+        "id": 267,
+        "offset": 0,
+        "start": 6782,
+        "bytes": 322
+      },
+      {
+        "label": "mixed-relocated installed program",
+        "id": 277,
+        "offset": 0,
+        "start": 7104,
+        "bytes": 13
+      },
+      {
+        "label": "mixed-relocated installed program",
+        "id": 278,
+        "offset": 0,
+        "start": 7117,
+        "bytes": 208
+      },
+      {
+        "label": "mixed-relocated installed program",
+        "id": 279,
+        "offset": 0,
+        "start": 7325,
+        "bytes": 15
+      },
+      {
+        "label": "mixed-relocated input 0",
+        "id": 258,
+        "offset": 0,
+        "start": 7340,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-relocated floor -32768",
+        "id": 259,
+        "offset": 0,
+        "start": 7344,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated calls after input 0",
+        "id": 256,
+        "offset": 0,
+        "start": 7346,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated previous after input 0",
+        "id": 257,
+        "offset": 0,
+        "start": 7348,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated input 1",
+        "id": 258,
+        "offset": 0,
+        "start": 7350,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-relocated floor -32767.998046875",
+        "id": 259,
+        "offset": 0,
+        "start": 7354,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated calls after input 1",
+        "id": 256,
+        "offset": 0,
+        "start": 7356,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated previous after input 1",
+        "id": 257,
+        "offset": 0,
+        "start": 7358,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated input 2",
+        "id": 258,
+        "offset": 0,
+        "start": 7360,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-relocated floor -32767.5",
+        "id": 259,
+        "offset": 0,
+        "start": 7364,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated calls after input 2",
+        "id": 256,
+        "offset": 0,
+        "start": 7366,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated previous after input 2",
+        "id": 257,
+        "offset": 0,
+        "start": 7368,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated input 3",
+        "id": 258,
+        "offset": 0,
+        "start": 7370,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-relocated floor -32767",
+        "id": 259,
+        "offset": 0,
+        "start": 7374,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated calls after input 3",
+        "id": 256,
+        "offset": 0,
+        "start": 7376,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated previous after input 3",
+        "id": 257,
+        "offset": 0,
+        "start": 7378,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated input 4",
+        "id": 258,
+        "offset": 0,
+        "start": 7380,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-relocated floor -256.25",
+        "id": 259,
+        "offset": 0,
+        "start": 7384,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated calls after input 4",
+        "id": 256,
+        "offset": 0,
+        "start": 7386,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated previous after input 4",
+        "id": 257,
+        "offset": 0,
+        "start": 7388,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated input 5",
+        "id": 258,
+        "offset": 0,
+        "start": 7390,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-relocated floor -2.000000238418579",
+        "id": 259,
+        "offset": 0,
+        "start": 7394,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated calls after input 5",
+        "id": 256,
+        "offset": 0,
+        "start": 7396,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated previous after input 5",
+        "id": 257,
+        "offset": 0,
+        "start": 7398,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated input 6",
+        "id": 258,
+        "offset": 0,
+        "start": 7400,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-relocated floor -2",
+        "id": 259,
+        "offset": 0,
+        "start": 7404,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated calls after input 6",
+        "id": 256,
+        "offset": 0,
+        "start": 7406,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated previous after input 6",
+        "id": 257,
+        "offset": 0,
+        "start": 7408,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated input 7",
+        "id": 258,
+        "offset": 0,
+        "start": 7410,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-relocated floor -1.9999998807907104",
+        "id": 259,
+        "offset": 0,
+        "start": 7414,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated calls after input 7",
+        "id": 256,
+        "offset": 0,
+        "start": 7416,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated previous after input 7",
+        "id": 257,
+        "offset": 0,
+        "start": 7418,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated input 8",
+        "id": 258,
+        "offset": 0,
+        "start": 7420,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-relocated floor -1.5",
+        "id": 259,
+        "offset": 0,
+        "start": 7424,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated calls after input 8",
+        "id": 256,
+        "offset": 0,
+        "start": 7426,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated previous after input 8",
+        "id": 257,
+        "offset": 0,
+        "start": 7428,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated input 9",
+        "id": 258,
+        "offset": 0,
+        "start": 7430,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-relocated floor -1.0000001192092896",
+        "id": 259,
+        "offset": 0,
+        "start": 7434,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated calls after input 9",
+        "id": 256,
+        "offset": 0,
+        "start": 7436,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated previous after input 9",
+        "id": 257,
+        "offset": 0,
+        "start": 7438,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated input 10",
+        "id": 258,
+        "offset": 0,
+        "start": 7440,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-relocated floor -1",
+        "id": 259,
+        "offset": 0,
+        "start": 7444,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated calls after input 10",
+        "id": 256,
+        "offset": 0,
+        "start": 7446,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated previous after input 10",
+        "id": 257,
+        "offset": 0,
+        "start": 7448,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated input 11",
+        "id": 258,
+        "offset": 0,
+        "start": 7450,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-relocated floor -0.9999999403953552",
+        "id": 259,
+        "offset": 0,
+        "start": 7454,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated calls after input 11",
+        "id": 256,
+        "offset": 0,
+        "start": 7456,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated previous after input 11",
+        "id": 257,
+        "offset": 0,
+        "start": 7458,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated input 12",
+        "id": 258,
+        "offset": 0,
+        "start": 7460,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-relocated floor -0.75",
+        "id": 259,
+        "offset": 0,
+        "start": 7464,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated calls after input 12",
+        "id": 256,
+        "offset": 0,
+        "start": 7466,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated previous after input 12",
+        "id": 257,
+        "offset": 0,
+        "start": 7468,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated input 13",
+        "id": 258,
+        "offset": 0,
+        "start": 7470,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-relocated floor -6.103515625e-05",
+        "id": 259,
+        "offset": 0,
+        "start": 7474,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated calls after input 13",
+        "id": 256,
+        "offset": 0,
+        "start": 7476,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated previous after input 13",
+        "id": 257,
+        "offset": 0,
+        "start": 7478,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated input 14",
+        "id": 258,
+        "offset": 0,
+        "start": 7480,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-relocated floor -1.1754943508222875e-38",
+        "id": 259,
+        "offset": 0,
+        "start": 7484,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated calls after input 14",
+        "id": 256,
+        "offset": 0,
+        "start": 7486,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated previous after input 14",
+        "id": 257,
+        "offset": 0,
+        "start": 7488,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated input 15",
+        "id": 258,
+        "offset": 0,
+        "start": 7490,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-relocated floor -1.401298464324817e-45",
+        "id": 259,
+        "offset": 0,
+        "start": 7494,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated calls after input 15",
+        "id": 256,
+        "offset": 0,
+        "start": 7496,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated previous after input 15",
+        "id": 257,
+        "offset": 0,
+        "start": 7498,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated input 16",
+        "id": 258,
+        "offset": 0,
+        "start": 7500,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-relocated floor -0.0",
+        "id": 259,
+        "offset": 0,
+        "start": 7504,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated calls after input 16",
+        "id": 256,
+        "offset": 0,
+        "start": 7506,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated previous after input 16",
+        "id": 257,
+        "offset": 0,
+        "start": 7508,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated input 17",
+        "id": 258,
+        "offset": 0,
+        "start": 7510,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-relocated floor 0.0",
+        "id": 259,
+        "offset": 0,
+        "start": 7514,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated calls after input 17",
+        "id": 256,
+        "offset": 0,
+        "start": 7516,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated previous after input 17",
+        "id": 257,
+        "offset": 0,
+        "start": 7518,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated input 18",
+        "id": 258,
+        "offset": 0,
+        "start": 7520,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-relocated floor 1.401298464324817e-45",
+        "id": 259,
+        "offset": 0,
+        "start": 7524,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated calls after input 18",
+        "id": 256,
+        "offset": 0,
+        "start": 7526,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated previous after input 18",
+        "id": 257,
+        "offset": 0,
+        "start": 7528,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated input 19",
+        "id": 258,
+        "offset": 0,
+        "start": 7530,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-relocated floor 1.1754943508222875e-38",
+        "id": 259,
+        "offset": 0,
+        "start": 7534,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated calls after input 19",
+        "id": 256,
+        "offset": 0,
+        "start": 7536,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated previous after input 19",
+        "id": 257,
+        "offset": 0,
+        "start": 7538,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated input 20",
+        "id": 258,
+        "offset": 0,
+        "start": 7540,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-relocated floor 6.103515625e-05",
+        "id": 259,
+        "offset": 0,
+        "start": 7544,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated calls after input 20",
+        "id": 256,
+        "offset": 0,
+        "start": 7546,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated previous after input 20",
+        "id": 257,
+        "offset": 0,
+        "start": 7548,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated input 21",
+        "id": 258,
+        "offset": 0,
+        "start": 7550,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-relocated floor 0.75",
+        "id": 259,
+        "offset": 0,
+        "start": 7554,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated calls after input 21",
+        "id": 256,
+        "offset": 0,
+        "start": 7556,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated previous after input 21",
+        "id": 257,
+        "offset": 0,
+        "start": 7558,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated input 22",
+        "id": 258,
+        "offset": 0,
+        "start": 7560,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-relocated floor 0.9999999403953552",
+        "id": 259,
+        "offset": 0,
+        "start": 7564,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated calls after input 22",
+        "id": 256,
+        "offset": 0,
+        "start": 7566,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated previous after input 22",
+        "id": 257,
+        "offset": 0,
+        "start": 7568,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated input 23",
+        "id": 258,
+        "offset": 0,
+        "start": 7570,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-relocated floor 1",
+        "id": 259,
+        "offset": 0,
+        "start": 7574,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated calls after input 23",
+        "id": 256,
+        "offset": 0,
+        "start": 7576,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated previous after input 23",
+        "id": 257,
+        "offset": 0,
+        "start": 7578,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated input 24",
+        "id": 258,
+        "offset": 0,
+        "start": 7580,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-relocated floor 1.0000001192092896",
+        "id": 259,
+        "offset": 0,
+        "start": 7584,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated calls after input 24",
+        "id": 256,
+        "offset": 0,
+        "start": 7586,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated previous after input 24",
+        "id": 257,
+        "offset": 0,
+        "start": 7588,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated input 25",
+        "id": 258,
+        "offset": 0,
+        "start": 7590,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-relocated floor 1.5",
+        "id": 259,
+        "offset": 0,
+        "start": 7594,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated calls after input 25",
+        "id": 256,
+        "offset": 0,
+        "start": 7596,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated previous after input 25",
+        "id": 257,
+        "offset": 0,
+        "start": 7598,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated input 26",
+        "id": 258,
+        "offset": 0,
+        "start": 7600,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-relocated floor 1.9999998807907104",
+        "id": 259,
+        "offset": 0,
+        "start": 7604,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated calls after input 26",
+        "id": 256,
+        "offset": 0,
+        "start": 7606,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated previous after input 26",
+        "id": 257,
+        "offset": 0,
+        "start": 7608,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated input 27",
+        "id": 258,
+        "offset": 0,
+        "start": 7610,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-relocated floor 2",
+        "id": 259,
+        "offset": 0,
+        "start": 7614,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated calls after input 27",
+        "id": 256,
+        "offset": 0,
+        "start": 7616,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated previous after input 27",
+        "id": 257,
+        "offset": 0,
+        "start": 7618,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated input 28",
+        "id": 258,
+        "offset": 0,
+        "start": 7620,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-relocated floor 2.000000238418579",
+        "id": 259,
+        "offset": 0,
+        "start": 7624,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated calls after input 28",
+        "id": 256,
+        "offset": 0,
+        "start": 7626,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated previous after input 28",
+        "id": 257,
+        "offset": 0,
+        "start": 7628,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated input 29",
+        "id": 258,
+        "offset": 0,
+        "start": 7630,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-relocated floor 256.25",
+        "id": 259,
+        "offset": 0,
+        "start": 7634,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated calls after input 29",
+        "id": 256,
+        "offset": 0,
+        "start": 7636,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated previous after input 29",
+        "id": 257,
+        "offset": 0,
+        "start": 7638,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated input 30",
+        "id": 258,
+        "offset": 0,
+        "start": 7640,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-relocated floor 32766.5",
+        "id": 259,
+        "offset": 0,
+        "start": 7644,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated calls after input 30",
+        "id": 256,
+        "offset": 0,
+        "start": 7646,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated previous after input 30",
+        "id": 257,
+        "offset": 0,
+        "start": 7648,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated input 31",
+        "id": 258,
+        "offset": 0,
+        "start": 7650,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-relocated floor 32766.998046875",
+        "id": 259,
+        "offset": 0,
+        "start": 7654,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated calls after input 31",
+        "id": 256,
+        "offset": 0,
+        "start": 7656,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated previous after input 31",
+        "id": 257,
+        "offset": 0,
+        "start": 7658,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated input 32",
+        "id": 258,
+        "offset": 0,
+        "start": 7660,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-relocated floor 32767",
+        "id": 259,
+        "offset": 0,
+        "start": 7664,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated calls after input 32",
+        "id": 256,
+        "offset": 0,
+        "start": 7666,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated previous after input 32",
+        "id": 257,
+        "offset": 0,
+        "start": 7668,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated repeated invoke",
+        "id": 259,
+        "offset": 0,
+        "start": 7670,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated calls after repeated invoke",
+        "id": 256,
+        "offset": 0,
+        "start": 7672,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated previous after repeated invoke",
+        "id": 257,
+        "offset": 0,
+        "start": 7674,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated calls wrap 65535",
+        "id": 256,
+        "offset": 0,
+        "start": 7676,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated previous wrap 65535",
+        "id": 257,
+        "offset": 0,
+        "start": 7678,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated calls wrap 0",
+        "id": 256,
+        "offset": 0,
+        "start": 7680,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated previous wrap 0",
+        "id": 257,
+        "offset": 0,
+        "start": 7682,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated calls wrap 1",
+        "id": 256,
+        "offset": 0,
+        "start": 7684,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated previous wrap 1",
+        "id": 257,
+        "offset": 0,
+        "start": 7686,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated unchanged program",
+        "id": 267,
+        "offset": 0,
+        "start": 7688,
+        "bytes": 322
+      },
+      {
+        "label": "mixed-relocated unchanged program",
+        "id": 277,
+        "offset": 0,
+        "start": 8010,
+        "bytes": 13
+      },
+      {
+        "label": "mixed-relocated unchanged program",
+        "id": 278,
+        "offset": 0,
+        "start": 8023,
+        "bytes": 208
+      },
+      {
+        "label": "mixed-relocated unchanged program",
+        "id": 279,
+        "offset": 0,
+        "start": 8231,
+        "bytes": 15
+      },
+      {
+        "label": "mixed-relocated calls live reinstall reset",
+        "id": 256,
+        "offset": 0,
+        "start": 8246,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated previous live reinstall reset",
+        "id": 257,
+        "offset": 0,
+        "start": 8248,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated live reinstall result",
+        "id": 259,
+        "offset": 0,
+        "start": 8250,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated calls live reinstall invoke",
+        "id": 256,
+        "offset": 0,
+        "start": 8252,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated previous live reinstall invoke",
+        "id": 257,
+        "offset": 0,
+        "start": 8254,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated live reinstalled program",
+        "id": 267,
+        "offset": 0,
+        "start": 8256,
+        "bytes": 322
+      },
+      {
+        "label": "mixed-relocated live reinstalled program",
+        "id": 277,
+        "offset": 0,
+        "start": 8578,
+        "bytes": 13
+      },
+      {
+        "label": "mixed-relocated live reinstalled program",
+        "id": 278,
+        "offset": 0,
+        "start": 8591,
+        "bytes": 208
+      },
+      {
+        "label": "mixed-relocated live reinstalled program",
+        "id": 279,
+        "offset": 0,
+        "start": 8799,
+        "bytes": 15
+      },
+      {
+        "label": "mixed-relocated present before cleanup",
+        "id": 255,
+        "offset": 0,
+        "start": 8814,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated present before cleanup",
+        "id": 256,
+        "offset": 0,
+        "start": 8815,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated present before cleanup",
+        "id": 257,
+        "offset": 0,
+        "start": 8816,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated present before cleanup",
+        "id": 258,
+        "offset": 0,
+        "start": 8817,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated present before cleanup",
+        "id": 259,
+        "offset": 0,
+        "start": 8818,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated present before cleanup",
+        "id": 265,
+        "offset": 0,
+        "start": 8819,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated present before cleanup",
+        "id": 266,
+        "offset": 0,
+        "start": 8820,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated present before cleanup",
+        "id": 267,
+        "offset": 0,
+        "start": 8821,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated present before cleanup",
+        "id": 268,
+        "offset": 0,
+        "start": 8822,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated present before cleanup",
+        "id": 269,
+        "offset": 0,
+        "start": 8823,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated present before cleanup",
+        "id": 270,
+        "offset": 0,
+        "start": 8824,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated present before cleanup",
+        "id": 271,
+        "offset": 0,
+        "start": 8825,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated present before cleanup",
+        "id": 272,
+        "offset": 0,
+        "start": 8826,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated present before cleanup",
+        "id": 273,
+        "offset": 0,
+        "start": 8827,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated present before cleanup",
+        "id": 274,
+        "offset": 0,
+        "start": 8828,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated present before cleanup",
+        "id": 275,
+        "offset": 0,
+        "start": 8829,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated present before cleanup",
+        "id": 276,
+        "offset": 0,
+        "start": 8830,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated present before cleanup",
+        "id": 277,
+        "offset": 0,
+        "start": 8831,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated present before cleanup",
+        "id": 278,
+        "offset": 0,
+        "start": 8832,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated present before cleanup",
+        "id": 279,
+        "offset": 0,
+        "start": 8833,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated present before cleanup",
+        "id": 280,
+        "offset": 0,
+        "start": 8834,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated present before cleanup",
+        "id": 281,
+        "offset": 0,
+        "start": 8835,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated present before cleanup",
+        "id": 282,
+        "offset": 0,
+        "start": 8836,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated present before cleanup",
+        "id": 283,
+        "offset": 0,
+        "start": 8837,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated present before cleanup",
+        "id": 284,
+        "offset": 0,
+        "start": 8838,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated present before cleanup",
+        "id": 285,
+        "offset": 0,
+        "start": 8839,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated present before cleanup",
+        "id": 286,
+        "offset": 0,
+        "start": 8840,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated present before cleanup",
+        "id": 287,
+        "offset": 0,
+        "start": 8841,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated absent after cleanup",
+        "id": 255,
+        "offset": 0,
+        "start": 8842,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated absent after cleanup",
+        "id": 256,
+        "offset": 0,
+        "start": 8843,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated absent after cleanup",
+        "id": 257,
+        "offset": 0,
+        "start": 8844,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated absent after cleanup",
+        "id": 258,
+        "offset": 0,
+        "start": 8845,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated absent after cleanup",
+        "id": 259,
+        "offset": 0,
+        "start": 8846,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated absent after cleanup",
+        "id": 265,
+        "offset": 0,
+        "start": 8847,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated absent after cleanup",
+        "id": 266,
+        "offset": 0,
+        "start": 8848,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated absent after cleanup",
+        "id": 267,
+        "offset": 0,
+        "start": 8849,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated absent after cleanup",
+        "id": 268,
+        "offset": 0,
+        "start": 8850,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated absent after cleanup",
+        "id": 269,
+        "offset": 0,
+        "start": 8851,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated absent after cleanup",
+        "id": 270,
+        "offset": 0,
+        "start": 8852,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated absent after cleanup",
+        "id": 271,
+        "offset": 0,
+        "start": 8853,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated absent after cleanup",
+        "id": 272,
+        "offset": 0,
+        "start": 8854,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated absent after cleanup",
+        "id": 273,
+        "offset": 0,
+        "start": 8855,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated absent after cleanup",
+        "id": 274,
+        "offset": 0,
+        "start": 8856,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated absent after cleanup",
+        "id": 275,
+        "offset": 0,
+        "start": 8857,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated absent after cleanup",
+        "id": 276,
+        "offset": 0,
+        "start": 8858,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated absent after cleanup",
+        "id": 277,
+        "offset": 0,
+        "start": 8859,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated absent after cleanup",
+        "id": 278,
+        "offset": 0,
+        "start": 8860,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated absent after cleanup",
+        "id": 279,
+        "offset": 0,
+        "start": 8861,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated absent after cleanup",
+        "id": 280,
+        "offset": 0,
+        "start": 8862,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated absent after cleanup",
+        "id": 281,
+        "offset": 0,
+        "start": 8863,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated absent after cleanup",
+        "id": 282,
+        "offset": 0,
+        "start": 8864,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated absent after cleanup",
+        "id": 283,
+        "offset": 0,
+        "start": 8865,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated absent after cleanup",
+        "id": 284,
+        "offset": 0,
+        "start": 8866,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated absent after cleanup",
+        "id": 285,
+        "offset": 0,
+        "start": 8867,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated absent after cleanup",
+        "id": 286,
+        "offset": 0,
+        "start": 8868,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated absent after cleanup",
+        "id": 287,
+        "offset": 0,
+        "start": 8869,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated preserved external",
+        "id": 0,
+        "offset": 0,
+        "start": 8870,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-relocated preserved external",
+        "id": 50000,
+        "offset": 0,
+        "start": 8874,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-relocated preserved external",
+        "id": 1,
+        "offset": 0,
+        "start": 8878,
+        "bytes": 3
+      },
+      {
+        "label": "mixed-relocated preserved external",
+        "id": 254,
+        "offset": 0,
+        "start": 8881,
+        "bytes": 3
+      },
+      {
+        "label": "mixed-relocated preserved external",
+        "id": 260,
+        "offset": 0,
+        "start": 8884,
+        "bytes": 3
+      },
+      {
+        "label": "mixed-relocated preserved external",
+        "id": 264,
+        "offset": 0,
+        "start": 8887,
+        "bytes": 3
+      },
+      {
+        "label": "mixed-relocated preserved diagnostic asset",
+        "id": 60001,
+        "offset": 0,
+        "start": 8890,
+        "bytes": 256
+      },
+      {
+        "label": "mixed-relocated calls reinstall reset",
+        "id": 256,
+        "offset": 0,
+        "start": 9146,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated previous reinstall reset",
+        "id": 257,
+        "offset": 0,
+        "start": 9148,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated declared initial tiny negative",
+        "id": 259,
+        "offset": 0,
+        "start": 9150,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated calls first reinstalled invoke",
+        "id": 256,
+        "offset": 0,
+        "start": 9152,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated previous first reinstalled invoke",
+        "id": 257,
+        "offset": 0,
+        "start": 9154,
+        "bytes": 2
+      },
+      {
+        "label": "mixed-relocated absent after second cleanup",
+        "id": 255,
+        "offset": 0,
+        "start": 9156,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated absent after second cleanup",
+        "id": 256,
+        "offset": 0,
+        "start": 9157,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated absent after second cleanup",
+        "id": 257,
+        "offset": 0,
+        "start": 9158,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated absent after second cleanup",
+        "id": 258,
+        "offset": 0,
+        "start": 9159,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated absent after second cleanup",
+        "id": 259,
+        "offset": 0,
+        "start": 9160,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated absent after second cleanup",
+        "id": 265,
+        "offset": 0,
+        "start": 9161,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated absent after second cleanup",
+        "id": 266,
+        "offset": 0,
+        "start": 9162,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated absent after second cleanup",
+        "id": 267,
+        "offset": 0,
+        "start": 9163,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated absent after second cleanup",
+        "id": 268,
+        "offset": 0,
+        "start": 9164,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated absent after second cleanup",
+        "id": 269,
+        "offset": 0,
+        "start": 9165,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated absent after second cleanup",
+        "id": 270,
+        "offset": 0,
+        "start": 9166,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated absent after second cleanup",
+        "id": 271,
+        "offset": 0,
+        "start": 9167,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated absent after second cleanup",
+        "id": 272,
+        "offset": 0,
+        "start": 9168,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated absent after second cleanup",
+        "id": 273,
+        "offset": 0,
+        "start": 9169,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated absent after second cleanup",
+        "id": 274,
+        "offset": 0,
+        "start": 9170,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated absent after second cleanup",
+        "id": 275,
+        "offset": 0,
+        "start": 9171,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated absent after second cleanup",
+        "id": 276,
+        "offset": 0,
+        "start": 9172,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated absent after second cleanup",
+        "id": 277,
+        "offset": 0,
+        "start": 9173,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated absent after second cleanup",
+        "id": 278,
+        "offset": 0,
+        "start": 9174,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated absent after second cleanup",
+        "id": 279,
+        "offset": 0,
+        "start": 9175,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated absent after second cleanup",
+        "id": 280,
+        "offset": 0,
+        "start": 9176,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated absent after second cleanup",
+        "id": 281,
+        "offset": 0,
+        "start": 9177,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated absent after second cleanup",
+        "id": 282,
+        "offset": 0,
+        "start": 9178,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated absent after second cleanup",
+        "id": 283,
+        "offset": 0,
+        "start": 9179,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated absent after second cleanup",
+        "id": 284,
+        "offset": 0,
+        "start": 9180,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated absent after second cleanup",
+        "id": 285,
+        "offset": 0,
+        "start": 9181,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated absent after second cleanup",
+        "id": 286,
+        "offset": 0,
+        "start": 9182,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated absent after second cleanup",
+        "id": 287,
+        "offset": 0,
+        "start": 9183,
+        "bytes": 1
+      },
+      {
+        "label": "mixed-relocated external after second cleanup",
+        "id": 0,
+        "offset": 0,
+        "start": 9184,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-relocated external after second cleanup",
+        "id": 50000,
+        "offset": 0,
+        "start": 9188,
+        "bytes": 4
+      },
+      {
+        "label": "mixed-relocated external after second cleanup",
+        "id": 1,
+        "offset": 0,
+        "start": 9192,
+        "bytes": 3
+      },
+      {
+        "label": "mixed-relocated external after second cleanup",
+        "id": 254,
+        "offset": 0,
+        "start": 9195,
+        "bytes": 3
+      },
+      {
+        "label": "mixed-relocated external after second cleanup",
+        "id": 260,
+        "offset": 0,
+        "start": 9198,
+        "bytes": 3
+      },
+      {
+        "label": "mixed-relocated external after second cleanup",
+        "id": 264,
+        "offset": 0,
+        "start": 9201,
+        "bytes": 3
+      }
+    ],
+    "tape_bytes": 25420,
+    "observation_bytes": 9204,
+    "tape_sent_vdu_bytes": 18594,
+    "query_vdu_bytes_per_observed_byte": 102,
+    "numeric_inputs": [
+      -32768,
+      -32767.998046875,
+      -32767.5,
+      -32767,
+      -256.25,
+      -2.000000238418579,
+      -2,
+      -1.9999998807907104,
+      -1.5,
+      -1.0000001192092896,
+      -1,
+      -0.9999999403953552,
+      -0.75,
+      -6.103515625e-05,
+      -1.1754943508222875e-38,
+      -1.401298464324817e-45,
+      -0.0,
+      0.0,
+      1.401298464324817e-45,
+      1.1754943508222875e-38,
+      6.103515625e-05,
+      0.75,
+      0.9999999403953552,
+      1,
+      1.0000001192092896,
+      1.5,
+      1.9999998807907104,
+      2,
+      2.000000238418579,
+      256.25,
+      32766.5,
+      32766.998046875,
+      32767
+    ],
+    "smoke": false,
+    "setup_seconds": 0.086
+  },
+  "guest_results_sha256": "47df09eecf3073928a5a591e40866703e51b18372d040d84cf5c4e6410d7e7d0",
+  "expected_sha256": "47df09eecf3073928a5a591e40866703e51b18372d040d84cf5c4e6410d7e7d0",
+  "scope": "Stock emulator VDP via MOS/eZ80 UART; GP byte observations, no firmware changes",
+  "human_validation": "pending",
+  "hardware_qualified": false
+}

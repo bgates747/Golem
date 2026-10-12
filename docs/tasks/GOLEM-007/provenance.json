@@ -1,0 +1,67 @@
+{
+  "accepted_golem_checkpoint": "76458a9162ee1a5c6c1fc10ac05a51a0ca8470a0",
+  "official_fab_tag": "1.2.5",
+  "official_fab_commit": "c22876d1f7ad903537c308cf65afd6553b37cdb8",
+  "fab_submodules": [
+    "6b056597d560fbf5802db7c97172d0aaee62da4f sdcard (6b05659)",
+    " 69d51197334658411d82c44bd8abd6fc2ff88c9d src/vdp/AgonElectronHAL (v0.5-kingsvalley-9-g69d5119)",
+    " cdd57fd4d709427b2e89738ae3b086720d8cf013 src/vdp/userspace-vdp-gl (remotes/origin/main-3-gcdd57fd4)",
+    " 1056ee38ec1cc68ed327bd32ee47d04b1c30597c src/vdp/vdp-console8 (remotes/origin/main-214-g1056ee3)"
+  ],
+  "fab_status": "",
+  "build_command": [
+    "make",
+    "-C",
+    ".emulator/runtime/fab-1.2.5"
+  ],
+  "build_log_sha256": "e6f34dffe2e1125b00a78f05f046a7895dd56c52395452be286754d33c6fdb6a",
+  "runtime_initial_build_seconds": null,
+  "build_duration_note": "Initial runtime/tool builds were not timed; steady qualification setup/execution use host monotonic seconds in emulator-checks.json.",
+  "assembler_commit": "5dc733c286b7864e3eb05ef93462c7e1637ba51e",
+  "assembler_compile_command": [
+    "gcc",
+    "-DUNIX",
+    "-O2",
+    "-fno-common",
+    "-Wno-unused-result",
+    "build/assembler/src/*.c",
+    "-o",
+    "build/ez80asm"
+  ],
+  "assembler_sources_sha256": {
+    "assemble.c": "897ae3950079e5cc60b8ccf2e2cd9ad243bd7b15cec91b90ee71c98a4fabf7f8",
+    "assemble.h": "c9e6894daecc8ff918865bf2bec2739f3b32cff676f0d6cddc7ed151a6b11c79",
+    "config.h": "8168bf93f3c74c2c83b68b4be1bdb632018d6449a6ee5df880babccf45377a3c",
+    "console.c": "9868c75db3c6078416b70cce89be54f807b897557b66639524be26972ec49c05",
+    "console.h": "87f8a85239575ef4d2e7b4fbc27e28ab2108a53ebc64e69aa0ec514fee6da0a7",
+    "defines.h": "5a83dd4cb288112cfdd6b3bef4db5e4c9402c7eb423739f94215cfd44d188602",
+    "getopt.c": "24803a7992e71157cee31c663454d6f4542aa5334d9c0bb394ea3b24e97e99f5",
+    "getopt.h": "0e8279c8fa6327a5f9ce86ac17d455c467509159e6b497d13f7a93295456bdd2",
+    "globals.c": "e32a0ab4c021a5db39ce5872aff09189c4569426eb5c20482015db30045a25bd",
+    "globals.h": "4309fd96af891f8d75994d47e96f504f42ade47c8cdd41502d02826e09dde469",
+    "hash.c": "c5de7bf373831dbeeefb728afeda74126ff24ca34af8fe6877c358d408a922ca",
+    "hash.h": "47f357c8f57214ac8ee001cd9253850ca1b1fc6967d55d3f54ee6f46932870ba",
+    "instruction.c": "3ef5a15294595863ef98d0f278e40887fbd9f7efa9ae63d0fe24fb730b2a0459",
+    "instruction.h": "be582fa20bfe9a4c5e6f207ecfcffdee5f93a8ba95db0c618692e13515815c76",
+    "io.c": "a3bbb2209e622d414ecfb0157eff2b8281c5bbaf46e2879df97fa98e0f0996c4",
+    "io.h": "ffe637d079b5204053670cae4efd9cee52a3397f855df443b2c951038bc01422",
+    "label.c": "bb5ea3b1a1b33024440300416aad0a589685f2ae2d6d41840f48dbbe4c89cb97",
+    "label.h": "72fa25e5ba6968c779f2d94fdadb6ae18b02165d9c64d994883d679fdca12cdf",
+    "listing.c": "16d8bffa7215a044f49e7b2c8a68266de28bdc20407b4291ab53c2c85002dddb",
+    "listing.h": "2dee73e1b4d61810e3d5188b1e51c93d94ec8879e3a65a1a86813e7298abc147",
+    "macro.c": "aaf4790c9becf14d8aa4cd5d3a5114a7116b280b9c8f17b5b2fae5fc44d8efc7",
+    "macro.h": "4527b73cb2d96a178e57f98867f4122cbf983018941b7daeee30ee7df7a99e98",
+    "main.c": "e527bb35bb625a0b2b155b3265486d55476da3afc91fee2b883d8634ed74f9fe",
+    "moscalls.h": "17d17061670a4fa03acf23905bef10dcaf4e8bccd26c43486c34ed4960134594",
+    "str2num.c": "c5e04cf3c56841f2525e8cad611ebeb112c071747e2fab730b5b97ae8ca11f45",
+    "str2num.h": "b6a6a8cc256356e4a155134818d782f6943ef170f5ccf0e76e18339025be3661",
+    "utils.c": "ed7de1702e1828b94cdfd7f4313c65b66c1c07f9b18d9bfbf909d09384946f34",
+    "utils.h": "3eb0db3790b6e3e630212a1a3a3bed4ff31b554c8c51ee78cabc0eba2f6af23d"
+  },
+  "stock_debug_gap": {
+    "caller": "src/vdp/vdp-console8/video/video.ino:force_debug_log",
+    "stub": "src/vdp/userspace-vdp-gl/src/userspace-platform/HardwareSerial.h:print(const char *)",
+    "behavior": "force_debug_log calls print, which discards text; byte write has a DBGSerial-only stdout path. Source observation; no runtime patch made."
+  },
+  "unmodified_reference_policy": "Official checkout and other profiles left untouched; native build is a detached official tag inside ignored project .emulator/runtime."
+}
