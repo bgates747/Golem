@@ -1,0 +1,259 @@
+{
+  "subtask": "GOLEM-009 / SEM-001",
+  "main_checkpoint": "c83463b",
+  "rally_head": "4db7e96f70c3d63f4ab53766f3b32063e9357c8b",
+  "sources": [
+    {
+      "path": "/Agon/mystuff/golem/src/ordinary.hpp",
+      "sha256": "82650a2b8e6348bb599c09f73dde99b874f40589867bfb796005b5cf059bcf8a"
+    },
+    {
+      "path": "/Agon/mystuff/golem/src/resident.hpp",
+      "sha256": "42970162390ad32276fd3e81d8b4b43d714ed60eaa1efbd6eff8e22af95f817d"
+    },
+    {
+      "path": "/Agon/mystuff/golem/src/scalar_backend.hpp",
+      "sha256": "20135c3e3cdf0386bccadd99f34f785d35b85629cb96d7230d64e5864836fa2c"
+    },
+    {
+      "path": "/Agon/mystuff/golem/docs/design/resident-scalar.md",
+      "sha256": "ae8cca3606220a61b5d32c13c72556f324e55f3b952a1032590903581df40702"
+    },
+    {
+      "path": "/Agon/mystuff/golem-rally19/src/hosted.hpp",
+      "sha256": "930a6f7e1680d3568d2ec82ef3907f8856fc8f87d735364f10a27218bd86445c"
+    },
+    {
+      "path": "/Agon/mystuff/golem-rally19/docs/design/rally19-hosted-v1.md",
+      "sha256": "b6a3ca27ed408a13bd40d9e0c597bd918294f253e99564c231633b84d2d15474"
+    }
+  ],
+  "review_sha256": "c689a2def65cb26be8b6fb0abe5314f323068417861c468419925ad6a5aabac3",
+  "examples_sha256": "8087cdfa069accad73d748cd29099d16437b5b05dfbfffef94c66564868f3845",
+  "samples": [
+    {
+      "id": "EX-001",
+      "line": 183
+    },
+    {
+      "id": "EX-002",
+      "line": 197
+    },
+    {
+      "id": "EX-003",
+      "line": 208
+    },
+    {
+      "id": "EX-004",
+      "line": 227
+    },
+    {
+      "id": "EX-005",
+      "line": 238
+    },
+    {
+      "id": "EX-006",
+      "line": 252
+    },
+    {
+      "id": "EX-007",
+      "line": 261
+    },
+    {
+      "id": "EX-008",
+      "line": 269
+    },
+    {
+      "id": "EX-009",
+      "line": 277
+    },
+    {
+      "id": "EX-010",
+      "line": 286
+    },
+    {
+      "id": "EX-011",
+      "line": 298
+    },
+    {
+      "id": "EX-012",
+      "line": 313
+    },
+    {
+      "id": "EX-013",
+      "line": 327
+    },
+    {
+      "id": "EX-014",
+      "line": 337
+    },
+    {
+      "id": "EX-015",
+      "line": 347
+    },
+    {
+      "id": "EX-016",
+      "line": 364
+    },
+    {
+      "id": "EX-017",
+      "line": 381
+    },
+    {
+      "id": "EX-018",
+      "line": 407
+    },
+    {
+      "id": "EX-019",
+      "line": 411
+    },
+    {
+      "id": "EX-020",
+      "line": 418
+    },
+    {
+      "id": "EX-021",
+      "line": 428
+    }
+  ],
+  "reference_cases": [
+    {
+      "case": "fixed16(4) domain",
+      "observed": "(Fraction(-2048, 1), Fraction(32767, 16))",
+      "expected": "(Fraction(-2048, 1), Fraction(32767, 16))"
+    },
+    {
+      "case": "fixed16(8) domain",
+      "observed": "(Fraction(-128, 1), Fraction(32767, 256))",
+      "expected": "(Fraction(-128, 1), Fraction(32767, 256))"
+    },
+    {
+      "case": "fixed32(8) domain",
+      "observed": "(Fraction(-8388608, 1), Fraction(2147483647, 256))",
+      "expected": "(Fraction(-8388608, 1), Fraction(2147483647, 256))"
+    },
+    {
+      "case": "Q4 -1.25 -> Q8 exact",
+      "observed": "-5/4",
+      "expected": "-5/4"
+    },
+    {
+      "case": "negative Q8 -> Q4 truncation",
+      "observed": "-5/4",
+      "expected": "-5/4"
+    },
+    {
+      "case": "Q4 maximum does not fit Q8",
+      "observed": "True",
+      "expected": "True"
+    },
+    {
+      "case": "Q8 wide maximum -> binary32 loses fraction",
+      "observed": "8388608.0",
+      "expected": "8388608.0"
+    },
+    {
+      "case": "16777217 -> binary32 loses integer precision",
+      "observed": "16777216.0",
+      "expected": "16777216.0"
+    },
+    {
+      "case": "tiny negative sample exact",
+      "observed": "-1/16384",
+      "expected": "-1/16384"
+    },
+    {
+      "case": "tiny negative floor",
+      "observed": "-1",
+      "expected": "-1"
+    },
+    {
+      "case": "negative cast truncation candidate",
+      "observed": "-2",
+      "expected": "-2"
+    },
+    {
+      "case": "negative explicit floor",
+      "observed": "-3",
+      "expected": "-3"
+    },
+    {
+      "case": "uint16 stepped range cardinality",
+      "observed": "8192",
+      "expected": "8192"
+    },
+    {
+      "case": "uint16 stepped range last",
+      "observed": "65528",
+      "expected": "65528"
+    },
+    {
+      "case": "next iteration would overflow",
+      "observed": "True",
+      "expected": "True"
+    },
+    {
+      "case": "three dimensional element count",
+      "observed": "800",
+      "expected": "800"
+    },
+    {
+      "case": "positive divmod",
+      "observed": "(3, 2)",
+      "expected": "(3, 2)"
+    },
+    {
+      "case": "EX-009 1001 binary32 quotient references",
+      "observed": "True",
+      "expected": "True"
+    }
+  ],
+  "document_checks": [
+    "unique EX-001..EX-021 anchors",
+    "canonical For/In headers",
+    "only executable EX-006 retains scalar Range",
+    "EX-006 source body unchanged from pushed checkpoint",
+    "local report/task/prototype file links resolve"
+  ],
+  "validation_seconds": 0.008,
+  "limits": "Exact-rational and host binary32 references plus source/document review only. No proposed semantics executed in a compiler. No firmware/emulator/hardware suites rerun. SYN-001 evidence is historical.",
+  "snapshot_scope": "Top-level hashes/counts describe SEM-001 delivery; the division_review_amendment records later Author review edits.",
+  "division_review_amendment": {
+    "examples_sha256": "d15f277453d9b2220fbaa6b29d8b73e0eaa8c0cef9df19c9e37b718ce9911694",
+    "review_sha256": "d388a50dcde5680e10f0e1e61e42758dcc7d3dbd4ec22866f2860a53159e6efe",
+    "sample_count": 22,
+    "reference_pairs_checked": 1040,
+    "cases": [
+      {
+        "n": -17,
+        "d": -5,
+        "q": 3,
+        "r": -2
+      },
+      {
+        "n": -17,
+        "d": 5,
+        "q": -3,
+        "r": -2
+      },
+      {
+        "n": 17,
+        "d": -5,
+        "q": -3,
+        "r": 2
+      },
+      {
+        "n": 17,
+        "d": 5,
+        "q": 3,
+        "r": 2
+      }
+    ],
+    "checks": [
+      "22 unique sample IDs",
+      "EX-021 calls divmod once",
+      "signed rational quotient/remainder identity and remainder sign"
+    ],
+    "limits": "Mathematical reference and document checks only; no new compiler implementation or runtime qualification."
+  }
+}

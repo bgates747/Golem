@@ -135,6 +135,16 @@ inline void emitCondCallBufferValue(std::vector<unsigned char> &out, int targetB
     emitLE16(out, operandOffset);
 }
 
+inline void emitCondJumpBufferValue(std::vector<unsigned char> &out, int targetBufferId,
+                              unsigned char condOpBase, int checkBufferId,
+                              unsigned checkOffset, int operandBufferId,
+                              unsigned operandOffset) {
+    const auto start = out.size();
+    emitCondCallBufferValue(out, targetBufferId, condOpBase, checkBufferId,
+                           checkOffset, operandBufferId, operandOffset);
+    out[start + 5] = 8; // Same condition format, replace current stream instead of calling.
+}
+
 inline std::vector<unsigned char> le16Bytes(unsigned value) {
     return {static_cast<unsigned char>(value & 0xFF),
             static_cast<unsigned char>((value >> 8) & 0xFF)};
@@ -152,6 +162,7 @@ inline std::vector<unsigned char> le16Bytes(unsigned value) {
 
 class Compiler {
 public:
+    enum class Addition { Wrapping, Initializer, CheckedResident };
     std::vector<unsigned char> out;
 
     Compiler() { allocator_->claim(1, "ordinary.accumulator"); }
@@ -161,6 +172,26 @@ public:
     int accumulatorId() const { return accBufferId_; }
     const std::map<std::string, int> &variables() const { return variables_; }
     const std::map<unsigned, unsigned> &dataBuffers() const { return dataBuffers_; }
+    const std::map<unsigned, std::vector<unsigned char>> &programs() const { return programs_; }
+    Addition addition = Addition::Wrapping;
+    unsigned errorStatus() const { return errorStatus_; }
+
+    void checkCarry(std::vector<unsigned char> &code) {
+        if (!errorStatus_) {
+            errorStatus_ = allocator_->allocate("runtime.error_status");
+            carryWord_ = allocator_->allocate("runtime.carry_word");
+            zeroWord_ = allocator_->allocate("runtime.zero_word");
+            overflowExit_ = allocator_->allocate("runtime.overflow_exit");
+            for (unsigned id : {errorStatus_, carryWord_, zeroWord_}) {
+                emitWriteBlock(out, id, {0, 0});
+                dataBuffers_[id] = 2;
+            }
+            emitAdjustMultiLiteral(programs_[overflowExit_], errorStatus_, kOpSet, 0, {1, 0});
+        }
+        // Only the low byte changes; the owned high byte stays zero. No 0xFFFF check.
+        emitAdjustMultiBufferFetched(code, carryWord_, kOpSet, 0, 1, accBufferId_, 2);
+        emitCondJumpBufferValue(code, overflowExit_, 3, carryWord_, 0, zeroWord_, 0);
+    }
 
     // 3 bytes: 2 data bytes + the carry-out landing byte "Add with carry"
     // always writes at offset+2 - see Axis 10's addendum and Axis 13.
@@ -212,6 +243,8 @@ private:
     std::map<unsigned, unsigned> dataBuffers_; // Only materialized ordinary data.
     int accBufferId_ = 1; // Default raw-payload compatibility policy.
     bool accInitialized_ = false;
+    unsigned errorStatus_ = 0, carryWord_ = 0, zeroWord_ = 0, overflowExit_ = 0;
+    std::map<unsigned, std::vector<unsigned char>> programs_;
 };
 
 // A single term in a `uint16` expression: either a literal value or a
@@ -258,6 +291,20 @@ inline std::vector<Term> parseExpr(Reader &reader, const Compiler &compiler) {
 // copied into the real destination.
 inline void compileExprInto(Compiler &compiler, std::vector<unsigned char> &out, int destBufferId,
                       const std::vector<Term> &terms) {
+    if (terms.size() > 1 && compiler.addition != Compiler::Addition::Wrapping) {
+        if (std::all_of(terms.begin(), terms.end(), [](const Term &term) { return term.isLiteral; })) {
+            unsigned sum = 0;
+            for (const auto &term : terms) {
+                if (term.literalValue > 65535u - sum)
+                    throw CompileError("uint16 constant addition overflows");
+                sum += term.literalValue;
+            }
+            emitAdjustMultiLiteral(out, destBufferId, kOpSet, 0, le16Bytes(sum));
+            return;
+        }
+        if (compiler.addition == Compiler::Addition::Initializer)
+            throw CompileError("resident initializer addition requires constant operands; move it into the job");
+    }
     auto setInto = [&](int bufferId, const Term &term) {
         if (term.isLiteral) {
             emitAdjustMultiLiteral(out, bufferId, kOpSet, 0, le16Bytes(term.literalValue));
@@ -284,6 +331,7 @@ inline void compileExprInto(Compiler &compiler, std::vector<unsigned char> &out,
     setInto(compiler.accumulatorId(), terms[0]);
     for (size_t i = 1; i < terms.size(); ++i) {
         addInto(compiler.accumulatorId(), terms[i]);
+        if (compiler.addition == Compiler::Addition::CheckedResident) compiler.checkCarry(out);
     }
     emitAdjustMultiBufferFetched(out, destBufferId, kOpSet, 0, 2, compiler.accumulatorId(), 0);
 }

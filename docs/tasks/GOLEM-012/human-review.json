@@ -1,0 +1,10 @@
+{
+  "host": "oryx-linuxlite",
+  "human_validation": "passed",
+  "author_confirmation": "sigh. it worked.",
+  "reviewed_guest_sha256": "8377639e7eb3cb76a14de57045df5f67043ce88e084b08496bcc3a551dfe4476",
+  "checks": 1238,
+  "observed_bytes": 4022,
+  "followup": "Guest completion message now prints the dir instructions directly; compiler and numerical fixture unchanged.",
+  "commit_approval": "explicitly granted by Author: commit push and do the next tranche"
+}

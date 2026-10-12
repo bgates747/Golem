@@ -176,7 +176,7 @@ Loop Until count == 4
 
 // GOLEM-009 additions for review. Each section below is independent.
 // Except EX-006, these are proposed syntax, not executable compiler support.
-// Function/type names are candidates. Detailed semantics await SEM-001 review.
+// Semantics and domains: docs/tasks/GOLEM-009/semantics-review.md (review pending).
 // Assets, data indexing, checked copying and typed drawing remain deferred.
 
 
@@ -206,9 +206,9 @@ distanceFloat = float32(distance)
 
 
 // EX-003 — Float copy, signed input conversion, arithmetic and scaling (proposed)
-float32 left Range(-10, 10) = -2.5
-float32 right Range(-10, 10) = 4.0
-sint32 count Range(0, 100) = 3
+float32 left Bounds(-10, 10) = -2.5
+float32 right Bounds(-10, 10) = 4.0
+sint32 count Bounds(0, 100) = 3
 float32 copied = 0.0
 float32 countFloat = 0.0
 float32 sum = 0.0
@@ -226,8 +226,8 @@ scaled = left * 0.5
 
 // EX-004 — Bounded reciprocal and division through multiplication (proposed)
 // The denominator's declared range excludes zero.
-float32 numerator Range(-8, 8) = 6.0
-float32 denominator Range(1, 4) = 2.0
+float32 numerator Bounds(-8, 8) = 6.0
+float32 denominator Bounds(1, 4) = 2.0
 float32 inverse = 0.0
 float32 quotient = 0.0
 
@@ -237,7 +237,7 @@ quotient = numerator * inverse
 
 // EX-005 — Float-valued rounding and absolute value (proposed)
 // For -2.5: floor=-3, trunc=-2, round_away=-3, abs=2.5.
-float32 value Range(-10, 10) = -2.5
+float32 value Bounds(-10, 10) = -2.5
 float32 floored = 0.0
 float32 truncated = 0.0
 float32 rounded = 0.0
@@ -250,6 +250,7 @@ magnitude = abs(value)
 
 
 // EX-006 — Supported resident floor/conversion slice: compile separately --resident
+// Legacy Range value bounds retained for the current parser; proposals use Bounds.
 float32 x Range(-32768, 32767) = -0.00006103515625
 sint16 result
 Sub compute
@@ -259,7 +260,7 @@ EndSub
 
 // EX-007 — Bounded float-to-unsigned-word conversion after floor (proposed)
 // This Rally-backed path excludes 65535; it is not a general cast.
-float32 x Range(0, 65534) = 123.75
+float32 x Bounds(0, 65534) = 123.75
 uint16 result = 0
 
 result = uint16(floor(x))
@@ -267,7 +268,7 @@ result = uint16(floor(x))
 
 // EX-008 — Bounded nonnegative float-to-signed32 conversion (proposed)
 // This path covers 0..16777215, not arbitrary signed32 conversion.
-float32 x Range(0, 16777215) = 123456.75
+float32 x Bounds(0, 16777215) = 123456.75
 sint32 result = 0
 
 result = sint32(floor(x))
@@ -275,7 +276,7 @@ result = sint32(floor(x))
 
 // EX-009 — Constant-divisor quotient and remainder together (proposed)
 // First two arguments are outputs. Here 100 / 7 gives quotient 14, remainder 2.
-sint32 dividend Range(0, 1000) = 100
+sint32 dividend Bounds(0, 1000) = 100
 uint16 quotient = 0
 uint16 remainder = 0
 
@@ -311,11 +312,11 @@ scaled = left * 0.5
 
 // EX-012 — Identity and geometric composition (proposed)
 // Apply scale, then degree rotation, then translation to points.
-float32 scaleX Range(1, 4) = 2.0
-float32 scaleY Range(1, 4) = 2.0
-float32 angle Range(-90, 90) = 45.0
-float32 offsetX Range(-10, 10) = 2.0
-float32 offsetY Range(-10, 10) = 3.0
+float32 scaleX Bounds(1, 4) = 2.0
+float32 scaleY Bounds(1, 4) = 2.0
+float32 angle Bounds(-90, 90) = 45.0
+float32 offsetX Bounds(-10, 10) = 2.0
+float32 offsetY Bounds(-10, 10) = 3.0
 matrix(3,3) transform = identity(3)
 
 transform = scale(transform, scaleX, scaleY)
@@ -379,7 +380,7 @@ EndSub
 
 // EX-017 — Explicit conversions between numeric types (proposed)
 // For parameterized targets, candidate spelling is convert(targetType, value).
-// Precision loss and out-of-range behavior remain to be decided.
+// Review recommends truncation for precision loss and checked out-of-range failure.
 sint16 integerValue = -12
 float32 floatValue = -2.0
 fixed16(4) coarse = -1.25
@@ -403,18 +404,18 @@ integerFromFloat = sint16(floatValue)
 integerFromFixed = sint16(coarse)
 
 
-// Array and stepped iteration syntax selected; implementation pending.
+// EX-018 — Selected three-dimensional Array syntax; implementation pending.
 Array float32 readings(0:3, 0:9, 0:19)
 readings(2, 5, 7) = 42.0
 
-// Inclusive endpoint; last value is 65528. Terminate before uint16 wraparound.
+// EX-019 — Selected stepped iteration; last value 65528, stop before wraparound.
 uint16 sampleIndex
 For sampleIndex In Range(0:65535:8)
     print "sample"
 Next sampleIndex
 
 
-// Function and scope proposals; passing/ownership rules await review.
+// EX-020 — Function and scope proposals; passing/ownership await review.
 uint16 calls = 0
 Function twice(uint16 value) As uint16
     uint16 result = value * 2
@@ -424,10 +425,21 @@ EndFunction
 uint16 answer = twice(7)
 
 
-// Multiple typed results; this call uses a nonzero denominator.
+// EX-021 — Multiple typed results; runtime integer division is new backend work.
 Function divide(uint16 numerator, uint16 denominator) As (uint16, uint16)
-    Return numerator / denominator, numerator % denominator
+    uint16 q = 0
+    uint16 r = 0
+    (q, r) = divmod(numerator, denominator)
+    Return q, r
 EndFunction
 uint16 quotient = 0
 uint16 remainder = 0
 (quotient, remainder) = divide(17, 5)
+
+
+// EX-022 — Paired integer quotient/remainder; builtin implementation pending.
+sint16 numerator = -17
+sint16 denominator = 5
+sint16 quotient = 0
+sint16 remainder = 0
+(quotient, remainder) = divmod(numerator, denominator)

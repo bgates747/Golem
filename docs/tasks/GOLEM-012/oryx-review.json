@@ -1,0 +1,31 @@
+{
+  "host": "oryx-linuxlite",
+  "architecture": "x86_64",
+  "profile": "/home/smith/Agon/mystuff/golem/.emulator",
+  "pass_headless": true,
+  "checks": 1238,
+  "observed_bytes": 4022,
+  "execution_seconds": 8.335,
+  "runtime_identity": {
+    ".emulator/fab-agon-emulator": "d12d063c66c1bdb8d4c78179e0485d0be16427294587ee0a965830722489386d",
+    ".emulator/fab-agon-emulator.bin": "aec5f8c266117d5bf864c6124d3c8986d042802ed5cbaaf8813e04a9fb8d0bea",
+    ".emulator/mos_platform.bin": "d564243283972690933a4554296ad6202ca4ef54572279533a942960846bebae",
+    ".emulator/mos_platform.map": "d69e60bbce61a7b4b3eef318ba395f11c4e1a5b585755755113992dc94edcb86",
+    ".emulator/firmware/vdp_platform.so": "14338aaeead48cb3df5987bf7fcc1b350d9e08d4a0ee0fcfc1a4a89cf79fae97"
+  },
+  "fixture_identity": {
+    "docs/tasks/GOLEM-012/expected.dat": "249a4c04f6608e120569b16c1b98c43d9c3d8d5a3ff8b0ba972037b47fe393db",
+    "docs/tasks/GOLEM-012/emulator-checks.json": "82578a9cf948e6d5a78065c44d038cc35efe8d11d4b1130134dc45ca95d0e9de",
+    "docs/tasks/GOLEM-012/verify_review.py": "5cbf290e5cc57db40396dec378c94c385770676eb300af4562e28f95922c779a",
+    ".emulator/sdcard/golem-012/probe.bin": "9d4f6e946879c5a67994216746ac59180fa94056de20c85bbf75c227d25c0da3"
+  },
+  "startup_sha256": "80720532289f3695c343ac816e98ec0769fa8dfe1a661b5165a17d609ae07548",
+  "observed_sha256": "249a4c04f6608e120569b16c1b98c43d9c3d8d5a3ff8b0ba972037b47fe393db",
+  "executed_fab": "/home/smith/Agon/mystuff/golem/.emulator/runtime/fab-1.2.5/fab-agon-emulator",
+  "loaded_vdp": "/home/smith/Agon/mystuff/golem/.emulator/runtime/fab-1.2.5/firmware/vdp_platform.so",
+  "human_validation": "pending",
+  "graphical_emulator_launched": false,
+  "emulator_stopped": true,
+  "result_removed_for_fresh_human_review": true,
+  "previous_startup_backup": "/home/smith/Agon/mystuff/golem/docs/tasks/GOLEM-012/build/previous-autoexec.txt"
+}

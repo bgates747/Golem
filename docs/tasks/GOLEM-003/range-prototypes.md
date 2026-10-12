@@ -1,9 +1,10 @@
 # Range syntax prototypes
 
-Use `Range(start, end, step)` to describe an inclusive integer sequence, with
+Use `Range(start:end:step)` to describe an inclusive integer sequence, with
 step defaulting to 1. The same description could support iteration, membership
-and indexed dispatch without constructing an array. These are review prototypes,
-not implemented grammar. The accepted first jump-table target remains consecutive
+and indexed dispatch without constructing an array. Colon spelling and For/In
+were selected in the 2026-10-11 review; they are not implemented grammar.
+The accepted first jump-table target remains consecutive
 step-1 slots; stepped dispatch and the other uses below are proposed extensions.
 Numeric bounds need a separate meaning from sequence membership.
 Each code sample is independent and includes its required declarations and
@@ -14,17 +15,17 @@ implicitly declare it.
 
 | Expression | Values |
 |---|---|
-| `Range(0, 20)` | 0 through 20, inclusive |
-| `Range(2, 10, 2)` | 2, 4, 6, 8, 10 |
-| `Range(10, 2, -2)` | 10, 8, 6, 4, 2 |
-| `Range(0, 5, 2)` | 0, 2, 4; do not force the unaligned endpoint into the sequence |
-| `Range(3, 3)` | 3 once |
+| `Range(0:20)` | 0 through 20, inclusive |
+| `Range(2:10:2)` | 2, 4, 6, 8, 10 |
+| `Range(10:2:-2)` | 10, 8, 6, 4, 2 |
+| `Range(0:5:2)` | 0, 2, 4; do not force the unaligned endpoint into the sequence |
+| `Range(3:3)` | 3 once |
 
 Proposed initial rules: arguments are compile-time integer constants, step is
 nonzero, and its direction must reach toward the endpoint. With distinct bounds,
 reject a positive step on a descending range or a negative step on an ascending
-range. Do not infer a negative default step: `Range(10, 2)` would be an error;
-write `Range(10, 2, -1)`. Equal bounds produce one value with either nonzero step.
+range. Do not infer a negative default step: `Range(10:2)` would be an error;
+write `Range(10:2:-1)`. Equal bounds produce one value with either nonzero step.
 These edge-case rules are proposals, not previously settled decisions.
 
 Endpoints are limits, included only when reached by stepping from the start.
@@ -39,7 +40,7 @@ and automatic materialization into arrays are outside this first prototype.
 ```golem
 sint16 i
 
-For i In Range(2, 10, 2)
+For i In Range(2:10:2)
     print "ascending tick"
 Next i
 ```
@@ -49,15 +50,15 @@ Descending iteration:
 ```golem
 sint16 i
 
-For i In Range(10, 2, -2)
+For i In Range(10:2:-2)
     print "descending tick"
 Next i
 ```
 
-`In` is proposed spelling. Keep declaration separate from iteration and retain
-the named `Next i`. Evaluate the range once at loop entry. This is an additional
-source form alongside existing `For i = 1 To 8`, not a decision to remove that
-form. Compiler-generated counters and termination checks must preserve finite
+`In` is selected spelling. Keep declaration separate from iteration and retain
+the named `Next i`. Evaluate the range once at loop entry. This replaces the
+earlier For/To/Step design; the current compiler still accepts its older header.
+Compiler-generated counters and termination checks must preserve finite
 execution; new loop restrictions and variable-mutation rules need an agreed
 implementation contract.
 
@@ -66,7 +67,7 @@ implementation contract.
 ```golem
 sint16 value = 6
 
-If value In Range(2, 10, 2) Then
+If value In Range(2:10:2) Then
     print "member"
 Else
     print "outside or between steps"
@@ -84,7 +85,7 @@ machine remains backend work; this notation makes no speed guarantee.
 ```golem
 uint16 direction = 6
 
-Switch direction Range(2, 10, 2)
+Switch direction Range(2:10:2)
 Case 2
     print "first"
 Case 6
@@ -107,34 +108,26 @@ case values outside the sequence (including misaligned values), and tables
 exceeding the supported resource budget. Do not silently substitute comparison
 dispatch for an explicit table request. Stepped normalization adds work and
 requires qualification; the currently selected initial implementation target
-is still `Range(start, end)` with step 1.
+is still `Range(start:end)` with step 1.
 
 ## Numeric bounds are a different concept
 
-The working scalar prototype uses `float32 x Range(-1, 1)` to permit every
-finite representable float32 between -1 and 1. It does not mean only the
-three sequence values -1, 0, 1. Possible source spellings for review:
+The maintained scalar specimen still uses legacy `float32 x Range(-1, 1)`
+(comma-separated numeric bounds). Current proposals use a separate Bounds name:
 
 ```golem
-// Candidate distinct name for continuous numeric bounds
 float32 x Bounds(-1, 1) = 0.25
 ```
 
-```golem
-// Alternative: retain existing Range spelling, with context-dependent meaning
-float32 x Range(-1, 1) = 0.25
-```
+Bounds describes numeric values, not discrete sequence membership. Renaming the
+parser and implementing runtime enforcement are separate changes. Existing
+executable floor.golem keeps its current spelling and host-admission contract.
 
-Neither resolves the naming choice yet. `Bounds` is an illustrative proposal,
-not an implemented keyword. In either form, declarations describe admissible
-numeric values; they do not automatically generate runtime admission checks.
-Existing executable `floor.golem` keeps its current prototype syntax.
+## Review status
 
-## Review choices
-
-The common sequence meaning, `For ... In` / membership spelling, error versus
-empty-sequence behavior for reversed bounds, compile-time-only restriction and
-distinct `Bounds` spelling remain proposals. The selected step-1 switch contract
-is recorded in design Axis 15. No parser/backend changes are authorized by this
-writeup; all examples deliberately omit statement terminators per the current
-language-design convention.
+Colon-separated inclusive Range and For/In are selected design. Stepped Switch,
+membership implementation, compile-time-only initial arguments and loop-counter
+mutation/final-value policies are covered in the
+[SEM-001 review](../GOLEM-009/semantics-review.md#ranges-and-control-flow).
+The selected initial Switch target remains step 1. No parser/backend changes are
+authorized by this writeup; examples remain terminator-free.

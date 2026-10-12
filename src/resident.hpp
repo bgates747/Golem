@@ -17,6 +17,7 @@ inline Result compileResident(const std::string &source, const std::vector<Reser
     for (size_t i = 0; i < reservations.size(); ++i)
         allocation.reserve(reservations[i].first, reservations[i].last, "asset." + std::to_string(i));
     Compiler ordinary(allocation);
+    ordinary.addition = Compiler::Addition::Initializer;
     Reader reader(source);
     // Ordinary globals initialize only at installation, not on each invocation.
     while (reader.keyword("uint16")) compileStatement(ordinary, reader, ordinary.out);
@@ -34,6 +35,7 @@ inline Result compileResident(const std::string &source, const std::vector<Reser
     if (reader.take('=')) spec.initial = reader.number();
     reader.needKeyword("sint16"); spec.output = name();
     reader.needKeyword("Sub"); spec.entry = name();
+    ordinary.addition = Compiler::Addition::CheckedResident;
     resident_scalar::Extras extras;
     bool floorSeen = false;
     while (!reader.keyword("EndSub")) {
@@ -59,6 +61,8 @@ inline Result compileResident(const std::string &source, const std::vector<Reser
     extras.initialize = ordinary.out;
     extras.data = ordinary.dataBuffers();
     extras.globals = ordinary.variables();
+    extras.programs = ordinary.programs();
+    extras.errorStatus = ordinary.errorStatus();
     return resident_scalar::compile(spec, allocation, std::move(extras));
 }
 inline double updateValue(const std::string &text) {
@@ -96,7 +100,14 @@ inline std::string manifest(const Result &result, const std::vector<Reservation>
         out << "{\"name\": " << quote(global.first) << ", \"id\": " << global.second
             << ", \"offset\": 0, \"type\": \"uint16\", \"bytes\": 2}";
     }
-    out << "],\n  \"reserved_ranges\": [";
+    out << "],\n";
+    if (result.extras.errorStatus) {
+        out << "  \"runtime_error\": {\"id\": " << result.extras.errorStatus
+            << ", \"offset\": 0, \"type\": \"uint16\", \"bytes\": 2,"
+            << " \"none\": 0, \"uint16_add_overflow\": 1, \"reset\": \"each_invocation\","
+            << " \"on_error\": \"abort_job_preserve_destination\"},\n";
+    }
+    out << "  \"reserved_ranges\": [";
     first = true;
     for (const auto &range : reservations) {
         if (!first) out << ',';

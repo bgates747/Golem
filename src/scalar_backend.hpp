@@ -34,6 +34,8 @@ struct Extras {
     Bytes initialize, before, after;
     std::map<unsigned, unsigned> data;
     std::map<std::string, int> globals;
+    std::map<unsigned, Bytes> programs;
+    unsigned errorStatus = 0;
 };
 struct Result {
     Bytes bootstrap, cleanup, invoke;
@@ -233,12 +235,22 @@ class Lowering {
             if (claim == allocator.claims().end() || claim->second.external || data.second == 0 || data.second > 65535)
                 throw Error("ordinary data must have checked compiler ownership and a valid span");
         }
+        for (const auto &program : extras.programs) {
+            auto claim = allocator.claims().find(program.first);
+            if (claim == allocator.claims().end() || claim->second.external ||
+                extras.data.count(program.first) || program.second.empty() || program.second.size() > 65535)
+                throw Error("ordinary helper must have checked compiler ownership and a valid program");
+        }
+        if (extras.errorStatus && (!extras.data.count(extras.errorStatus) || extras.data.at(extras.errorStatus) != 2))
+            throw Error("runtime error status must be an owned uint16 field");
         initial[layout.input] = Bytes(4, 0);
         initial[layout.output] = Bytes(2, 0);
         initial[layout.source] = Bytes(4, 0);
         initial[layout.integral] = Bytes(4, 0);
+        programs = extras.programs;
         Bytes &job = programs[layout.entry];
-        job = extras.before;
+        if (extras.errorStatus) literal(job, extras.errorStatus, 2, 0, {0, 0});
+        job.insert(job.end(), extras.before.begin(), extras.before.end());
         loadScalar(job, layout.source, {layout.input, 0, Format::F32});
         Scalar integral = floorScalar(job, layout.integral, {layout.source, spec.range});
         storeSignedWord(job, {layout.output, 0, Format::S16}, integral);

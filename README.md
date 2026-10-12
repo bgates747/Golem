@@ -1,5 +1,7 @@
 # Golem
 
+**Golem Obtains Less Excessive Messaging**
+
 Golem is a low-to-medium-level compiled programming language targeting the
 Agon Console8 VDP's **Buffered Commands API** — a byte-addressable,
 register-less, self-modifying "buffer machine" exposed by `VDU 23, 0, &A0`
@@ -35,14 +37,18 @@ progress notes and [docs/design](docs/design/) for design documents.
 `make -C src check` builds and checks the maintained host compiler. Raw mode
 supports literal print, uint16 declarations, assignment/addition and For/Next.
 Explicit `--resident` mode adds bounded float32 floor-to-sint16 jobs with
-persistent uint16 state. Statements have no terminators; newlines are whitespace.
+persistent uint16 state and checked addition. Overflow preserves the assignment's
+destination and ends the job, allowing normal VDP processing to resume.
+Statements have no terminators; newlines are whitespace.
 See the [resident contract](docs/design/resident-scalar.md) and
 [counted-floor example](examples/resident/counted-floor.golem).
 
 [GOLEM-007](docs/tasks/GOLEM-007/README.md) records passing stock-emulator
 qualification and successful human review on Oryx.
 [GOLEM-008](docs/tasks/GOLEM-008.md) promotes that slice while preserving its
-reviewed command bytes. Broader syntax shown in design examples remains proposed.
+reviewed command bytes. [GOLEM-012](docs/tasks/GOLEM-012/README.md) adds checked
+resident addition; automated qualification and Oryx human review pass.
+Broader syntax shown in design examples remains proposed.
 
 ## Reference material
 

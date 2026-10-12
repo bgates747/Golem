@@ -18,9 +18,15 @@ uint16 globals. See `docs/design/resident-scalar.md` for the supported grammar,
 package/host contract and initialized examples. Broader expressions and
 If/Do/Switch remain proposed. `make -C src check` runs maintained contract tests.
 
+GOLEM-012 adds checked resident uint16 addition, per-invocation error status and
+a finite overflow exit preserving the failed destination. Host/sanitizer checks
+and stock Fab/MOS qualification pass. The Author confirmed Oryx human review
+worked; the Author subsequently explicitly approved commit and push.
+See `docs/tasks/GOLEM-012/README.md` for evidence and exact review commands.
+
 GOLEM-007's stock Fab 1.2.5/MOS 3.0.2 qualification and Oryx keyboard review
 passed. The Author explicitly approved committing it and promoting the scalar
-slice. GOLEM-008 verifies identical reviewed command bytes and records host
+slice. GOLEM-008 verified identical reviewed command bytes and recorded host
 checks under its silo. Historical task artifacts remain intact. See `TODO.md`
 for active work. Design work
 has moved beyond the kickoff devlog too: `docs/design/` now holds a living

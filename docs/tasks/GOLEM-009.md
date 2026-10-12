@@ -1,9 +1,11 @@
 # GOLEM-009 — Complete Rally function and syntax review proposal
 
 INV-001 was accepted at `bcea0c2`, and INV-002 at `8f1afe1` (both pushed).
-SYN-001 alone was then authorized; its syntax additions are complete and await
-Author review. Do not proceed to SEM-001 yet. The deliverable will inventory
-all required Rally capabilities/functions against existing examples and add
+SYN-001 and subsequent syntax discussions were checkpointed at `c83463b` (pushed).
+The Author then authorized SEM-001 and reviewed its decisions conversationally.
+The inventory and syntax review is delivered; GOLEM-012 is the separately
+authorized checked-addition implementation. The deliverable inventories
+all required Rally capabilities/functions against existing examples and adds
 missing readable syntax examples to `examples.golem` for Author review.
 Comparators and conditionals are already largely covered at the syntax-design
 level; missing compiler implementation does not make an example a syntax gap.
@@ -33,8 +35,10 @@ inventory entries; do not develop their syntax examples in this tranche.
   Delivered 17 independent additions in
   [examples.golem](GOLEM-003/examples/examples.golem), with
   [traceability notes](GOLEM-009/syntax-additions.md) and
-  [verification evidence](GOLEM-009/syntax-additions.json); awaiting Author review.
-- SEM-001 [ ] State supported types, ranges, conversion/rounding behavior,
+  [verification evidence](GOLEM-009/syntax-additions.json). Later review revisions
+  add EX-018 through EX-021 and update Range/Bounds spelling; original SYN-001
+  evidence is a historical snapshot, not the current file hash.
+- SEM-001 [x] State supported types, ranges, conversion/rounding behavior,
   constraints and unresolved decisions beside the relevant proposals. Distinguish
   Rally's implemented behavior from any proposed extension.
   Author review requirement: explicit numeric conversions between integer,
@@ -45,11 +49,21 @@ inventory entries; do not develop their syntax examples in this tranche.
   Include the [functions and scope review writeup](../design/language-type-proposals.md#functions-and-scope--review-writeup-2026-10-11):
   arbitrary supported parameter/result types, multiple results, lexical scope,
   shadowing, initialization, passing mode and composite ownership/lifetime.
-- REV-001 [ ] Present the inventory and syntax examples for Author review before
+  Delivered [semantics review](GOLEM-009/semantics-review.md) and
+  [reference evidence](GOLEM-009/semantics-evidence.json); decisions recorded below.
+  Subsequent conversational review accepted conversion, ByVal/result lifetime,
+  scope/initialization, counter ownership and acyclic-call directions, then integer
+  `/`, `%` and paired divmod. Decisions are recorded in the living language document;
+  EX-021 uses shared divmod and EX-022 illustrates signed results. Checked
+  arithmetic and finite resident error exit are accepted; custom handlers and
+  ByRef are deferred. Concrete composite ABI work belongs with later feature
+  implementation. Only GOLEM-012's checked-addition tranche is authorized now.
+- REV-001 [x] Present the inventory and syntax examples for Author review before
   implementation; record decisions and create implementation tasks only when
   authorized.
 
 Keep supporting audit files under `docs/tasks/GOLEM-009/`; the requested syntax
 additions belong in the existing `examples.golem`. Execution is one subtask at a
-time, followed by Author review. SEM-001 and REV-001 remain unexecuted.
-SYN-001 appends to the existing examples; no compiler code has been changed.
+time, followed by Author review. The review is disposed by recorded decisions,
+explicit deferrals and the GOLEM-012 implementation authorization. This audit
+itself does not authorize the remaining proposed compiler features.

@@ -4,6 +4,10 @@ Status: **living document** - actively updated as decisions are made or
 reconsidered. Not a frozen spec. See individual sections for current
 status markers.
 
+Current operation domains and recommendations for conversions, bounds failures,
+function ownership and scope are in the [GOLEM-009 SEM-001 review](../tasks/GOLEM-009/semantics-review.md).
+That report is pending Author review; recommendations are not accepted language rules.
+
 Started 2026-07-28, seeded from the discussion in
 [docs/devlog/2026-07-28.md](../devlog/2026-07-28.md),
 [docs/devlog/2026-07-28-execution-lifecycle.md](../devlog/2026-07-28-execution-lifecycle.md),
@@ -1377,3 +1381,70 @@ copy-versus-transfer rules, aliasing and ownership/lifetime remain unresolved.
 The implementation must also account for finite VDP execution and bounded call
 storage; independent invocation semantics do not promise unrestricted recursion.
 These questions belong to GOLEM-009 SEM-001 before implementation proceeds.
+
+## Semantic review decisions — 2026-10-11
+
+The Author accepted the following during the conversational review of
+GOLEM-009 SEM-001. These decisions supersede the corresponding recommendations
+and open questions in the earlier review writeup; implementation remains pending.
+
+1. DEC-001: Plain numeric conversions discard fractional precision toward zero;
+   explicit floor rounds down. Out-of-range conversion preserves its destination
+   and takes a resident error path. Failure handling must not require MOS awareness.
+2. DEC-002: Parameters default to ByVal with value semantics, including composites.
+   ByRef is deferred. Returned arrays/matrices/tables remain valid after the call
+   and have caller-owned storage; never expose expired local references.
+3. DEC-003: Lexical scope; declarations may not shadow a currently visible global,
+   parameter or outer local. New locals must be assigned before being read.
+   Parameters arrive initialized; For initializes its counter. Existing global
+   initialization behavior is preserved.
+4. DEC-004: For controls its counter; neither its body nor called routines may
+   modify it during iteration. Normal completion retains the last visited value
+   and must avoid a final overflowing increment.
+5. DEC-005: Initially reject recursive call cycles, including indirect cycles.
+   Bounded recursion/tail recursion remains later work.
+6. DEC-006: Integer `/` yields a quotient truncated toward zero; `%` yields the
+   matching remainder. For nonzero denominator, n = q*d + r and abs(r) < abs(d);
+   a nonzero remainder has the numerator's sign. Float `/` yields a float.
+   Division by zero or an unrepresentable quotient takes the resident error path.
+7. DEC-007: Provide paired `divmod(numerator, denominator)` returning quotient,
+   then remainder, using multiple-result assignment. Evaluate operands once and
+   compute a shared division/remainder result, rather than requiring separate
+   `/` and `%` operations. Initial signature uses matching integer operand types
+   and the same type for both results; explicit conversions are required for
+   other destination types. No implicit float or mixed-type overload is selected.
+
+```golem
+sint16 numerator = -17
+sint16 denominator = 5
+sint16 quotient = 0
+sint16 remainder = 0
+(quotient, remainder) = divmod(numerator, denominator)
+```
+
+The results are -3 and -2. One operation at language level can require multiple
+VDP commands; it does not promise a hardware divide instruction. Rally's existing
+DivModPositive proves only a bounded nonnegative constant-divisor slice. General
+signed/runtime-divisor divmod is additional backend work, not functionality
+established by this spelling. Explicit resident handler syntax, broader arithmetic
+overflow policy and some object ABI details remain open.
+
+## Checked arithmetic and default errors — accepted 2026-10-11
+
+The Author accepted checked addition, subtraction, multiplication and integer
+power: preserve the destination and signal a resident error on overflow. This
+supersedes the earlier recommendation to retain unbounded uint16 wrapping as a
+language rule. The first implementation tranche is specifically resident uint16
+addition (GOLEM-012); raw-mode wrapping remains an existing implementation limit.
+
+A runtime error sets resident status, stops the current Golem job and returns
+control to normal VDP processing. Earlier successful writes remain. Custom error
+handlers, including the discussed On Error Call spelling, are future work;
+Resume/retry is deferred. Execution must not require MOS to learn about an error.
+The per-call status reset policy and concrete first error code are documented by
+the resident implementation contract. Other arithmetic and conversions remain
+separate implementation work.
+
+Exponentiation uses **, bitwise XOR uses ^, and sqrt(n) is the selected real
+square-root spelling. Power and square-root implementation remain future work;
+complex numbers were a joke, not a requested type-system extension.

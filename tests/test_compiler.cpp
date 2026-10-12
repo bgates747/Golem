@@ -40,7 +40,10 @@ int main() {
         "float32 x Range(-32768,32767)=-0.00006103515625 sint16 result "
         "Sub compute previous=calls calls=calls+1 result=sint16(floor(x)) print \"done\\n\" EndSub";
     const auto stateful = resident::compileResident(mixed);
-    assert(stateful.bootstrap.size() == 1120 && stateful.owned.size() == 28);
+    assert(stateful.extras.errorStatus != 0 && stateful.extras.programs.size() == 1);
+    assert(stateful.owned.at(stateful.extras.errorStatus) == 2);
+    assert(stateful.cleanup.size() == stateful.owned.size() * 6);
+    assert(resident_scalar::inputUpdate(stateful, -0.75).size() + stateful.invoke.size() == 21);
     const std::vector<resident::Reservation> reserved{{1,254},{260,264},{50000,50000}};
     const auto relocated = resident::compileResident(mixed, reserved);
     for (const auto &entry : relocated.owned) {
@@ -54,6 +57,10 @@ int main() {
     assert(metadata.find("experimental_task") == std::string::npos);
     assert(metadata.find("\"serialized_nonreentrant\": true") != std::string::npos);
     assert(metadata.find("\"external_input_requires_host_validation\": true") != std::string::npos);
+    assert(metadata.find("\"uint16_add_overflow\": 1") != std::string::npos);
+    assert(metadata.find("\"reset\": \"each_invocation\"") != std::string::npos);
+    assert(pure.extras.errorStatus == 0);
+    assert(resident::manifest(pure).find("runtime_error") == std::string::npos);
     assert(resident::compileResident(mixed).bootstrap == stateful.bootstrap);
     for (double value : {-32768.0, -32767.75, -1.5, -1.0, -0.00006103515625,
                          -static_cast<double>(std::numeric_limits<float>::denorm_min()),
@@ -72,6 +79,10 @@ int main() {
         return source;
     };
     reject([&] { resident::compileResident("uint16 x " + floorSource); }, "duplicate declaration");
+    reject([&] { resident::compileResident("uint16 a=65535+1 " + floorSource); }, "constant addition overflows");
+    reject([&] { resident::compileResident("uint16 a=1 uint16 b=a+1 " + floorSource); }, "initializer addition requires constant");
+    reject([&] { resident::compileResident("uint16 a=0 " + replace("result=", "a=65535+1 result=")); }, "constant addition overflows");
+    assert(resident::compileResident("uint16 a=32768+32767 " + floorSource).extras.errorStatus == 0);
     reject([&] { resident::compileResident(replace("floor(x)", "floor(X)")); }, "declared float32 input");
     reject([&] { resident::compileResident(replace("floor(x)", "floor(x+1)")); }, "expected ')'");
     reject([&] { resident::compileResident(replace("Range(-32768,32767)", "Range(-1,1,1)")); }, "expected ')'");

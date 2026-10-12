@@ -1,5 +1,11 @@
 # GOLEM-009 / SYN-001 — Missing syntax examples added
 
+Historical SYN-001 delivery snapshot. Later Author review changed original
+Range/For examples, selected Bounds for numeric constraints, and added
+EX-018 through EX-021. Current semantics, domains and remaining decisions are
+in the [SEM-001 review](semantics-review.md); the original hash and prefix-preservation
+claims below describe the earlier delivery, not the current file.
+
 Seventeen independent samples have been appended to the existing
 [examples.golem](../GOLEM-003/examples/examples.golem), preserving its original
 174 lines unchanged. They illustrate the uncovered math/storage/control

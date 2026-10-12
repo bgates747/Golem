@@ -1,0 +1,14 @@
+// Proposed syntax. Install once; the host invokes compute to fill the results.
+
+Array float32 distances(0:3)
+
+Function hypotenuse(float32 x, float32 y) As float32
+    Return sqrt(x ** 2 + y ** 2)
+EndFunction
+
+Sub compute
+    uint16 i
+    For i In Range(0:3)
+        distances(i) = hypotenuse(float32(i) * 3.0, 4.0)
+    Next i
+EndSub
