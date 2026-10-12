@@ -1,0 +1,11 @@
+{
+  "pass": true,
+  "baseline": "ddb5e87",
+  "command_artifacts_sha256": {
+    "bootstrap.bin": "20a8e65fefcde48465d529a3cdda1bab38006bb0525d14488aef845b625074b0",
+    "invoke.bin": "7587591599c0b364b0dc865e729686544f9075b55510f60936d7408a925d49db",
+    "update-call.bin": "5d0b8613f21b279897b6eb082259094ca0e197eea03f5f192f0af6d2f43f7d39",
+    "cleanup.bin": "e8dc0f4bce959d6e8925dda0515f19821896dec1337fb9faf4afb49f87f056eb"
+  },
+  "manifest_change": "Adds uint16_sub_underflow error code 2"
+}

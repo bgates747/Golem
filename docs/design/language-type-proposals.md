@@ -1436,6 +1436,9 @@ power: preserve the destination and signal a resident error on overflow. This
 supersedes the earlier recommendation to retain unbounded uint16 wrapping as a
 language rule. The first implementation tranche is specifically resident uint16
 addition (GOLEM-012); raw-mode wrapping remains an existing implementation limit.
+GOLEM-013 adds resident uint16 subtraction and mixed binary + / - chains with
+equal precedence and left-to-right intermediate checking; its human review is
+pending. This does not implement general arithmetic or raw-mode subtraction.
 
 A runtime error sets resident status, stops the current Golem job and returns
 control to normal VDP processing. Earlier successful writes remain. Custom error

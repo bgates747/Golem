@@ -83,6 +83,13 @@ int main() {
     reject([&] { resident::compileResident("uint16 a=1 uint16 b=a+1 " + floorSource); }, "initializer addition requires constant");
     reject([&] { resident::compileResident("uint16 a=0 " + replace("result=", "a=65535+1 result=")); }, "constant addition overflows");
     assert(resident::compileResident("uint16 a=32768+32767 " + floorSource).extras.errorStatus == 0);
+    assert(resident::compileResident("uint16 a=65535-65535+1 " + floorSource).extras.errorStatus == 0);
+    reject([&] { resident::compileResident("uint16 a=0-1 " + floorSource); }, "constant subtraction underflows");
+    reject([&] { resident::compileResident("uint16 a=0-1+1 " + floorSource); }, "constant subtraction underflows");
+    reject([&] { resident::compileResident("uint16 a=1 uint16 b=a-1 " + floorSource); }, "initializer subtraction requires constant");
+    const auto subtract = resident::compileResident("uint16 a=1 " + replace("result=", "a=a-1 result="));
+    assert(subtract.extras.errorStatus && subtract.extras.programs.size() == 2);
+    assert(resident::manifest(subtract).find("\"uint16_sub_underflow\": 2") != std::string::npos);
     reject([&] { resident::compileResident(replace("floor(x)", "floor(X)")); }, "declared float32 input");
     reject([&] { resident::compileResident(replace("floor(x)", "floor(x+1)")); }, "expected ')'");
     reject([&] { resident::compileResident(replace("Range(-32768,32767)", "Range(-1,1,1)")); }, "expected ')'");

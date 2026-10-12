@@ -176,7 +176,7 @@ public:
     Addition addition = Addition::Wrapping;
     unsigned errorStatus() const { return errorStatus_; }
 
-    void checkCarry(std::vector<unsigned char> &code) {
+    void ensureErrorState() {
         if (!errorStatus_) {
             errorStatus_ = allocator_->allocate("runtime.error_status");
             carryWord_ = allocator_->allocate("runtime.carry_word");
@@ -188,9 +188,32 @@ public:
             }
             emitAdjustMultiLiteral(programs_[overflowExit_], errorStatus_, kOpSet, 0, {1, 0});
         }
+    }
+    void checkCarry(std::vector<unsigned char> &code) {
+        ensureErrorState();
         // Only the low byte changes; the owned high byte stays zero. No 0xFFFF check.
         emitAdjustMultiBufferFetched(code, carryWord_, kOpSet, 0, 1, accBufferId_, 2);
         emitCondJumpBufferValue(code, overflowExit_, 3, carryWord_, 0, zeroWord_, 0);
+    }
+
+    void subtract(std::vector<unsigned char> &code, bool literal, unsigned value, int source) {
+        ensureErrorState();
+        if (!complement_) {
+            complement_ = allocator_->allocate("runtime.subtrahend_complement");
+            underflowExit_ = allocator_->allocate("runtime.underflow_exit");
+            emitWriteBlock(out, complement_, {0, 0});
+            dataBuffers_[complement_] = 2;
+            emitAdjustMultiLiteral(programs_[underflowExit_], errorStatus_, kOpSet, 0, {2, 0});
+        }
+        if (literal) emitAdjustMultiLiteral(code, complement_, kOpSet, 0, le16Bytes(value));
+        else emitAdjustMultiBufferFetched(code, complement_, kOpSet, 0, 2, source, 0);
+        emitAdjustMultiLiteral(code, complement_, 7, 0, {255, 255}); // XOR: one's complement.
+        // a - b = a + ~b + 1. Either carry means no borrow; retain both.
+        emitAdjustMultiBufferFetched(code, accBufferId_, kOpAddWithCarry, 0, 2, complement_, 0);
+        emitAdjustMultiBufferFetched(code, carryWord_, kOpSet, 0, 1, accBufferId_, 2);
+        emitAdjustMultiLiteral(code, accBufferId_, kOpAddWithCarry, 0, {1, 0});
+        emitAdjustMultiBufferFetched(code, carryWord_, 6, 0, 1, accBufferId_, 2); // OR carries.
+        emitCondJumpBufferValue(code, underflowExit_, 2, carryWord_, 0, zeroWord_, 0);
     }
 
     // 3 bytes: 2 data bytes + the carry-out landing byte "Add with carry"
@@ -244,6 +267,7 @@ private:
     int accBufferId_ = 1; // Default raw-payload compatibility policy.
     bool accInitialized_ = false;
     unsigned errorStatus_ = 0, carryWord_ = 0, zeroWord_ = 0, overflowExit_ = 0;
+    unsigned complement_ = 0, underflowExit_ = 0;
     std::map<unsigned, std::vector<unsigned char>> programs_;
 };
 
@@ -253,16 +277,19 @@ struct Term {
     bool isLiteral = false;
     unsigned literalValue = 0;
     int varBufferId = 0;
+    bool subtract = false; // Binary operation before this term; first term has none.
 };
 
-// Parses `term ('+' term)*` where `term` is an identifier or an integer
+// Parses `term (('+' | '-') term)*` where `term` is an identifier or an integer
 // literal - see docs/design/language-type-proposals.md Axis 10's
 // addendum ("Golem does allow multiple operations within a single
 // expression").
 inline std::vector<Term> parseExpr(Reader &reader, const Compiler &compiler) {
     std::vector<Term> terms;
+    bool subtract = false;
     do {
         Term term;
+        term.subtract = subtract;
         if (reader.peek().kind == Kind::Number) {
             term.isLiteral = true;
             term.literalValue = reader.uint16();
@@ -273,7 +300,13 @@ inline std::vector<Term> parseExpr(Reader &reader, const Compiler &compiler) {
             term.varBufferId = compiler.lookupVariable(name.text, name.begin);
         }
         terms.push_back(term);
-    } while (reader.take('+'));
+        if (reader.take('+')) subtract = false;
+        else if (reader.take('-')) {
+            if (compiler.addition == Compiler::Addition::Wrapping)
+                reader.error("subtraction requires --resident");
+            subtract = true;
+        } else break;
+    } while (true);
     return terms;
 }
 
@@ -293,17 +326,27 @@ inline void compileExprInto(Compiler &compiler, std::vector<unsigned char> &out,
                       const std::vector<Term> &terms) {
     if (terms.size() > 1 && compiler.addition != Compiler::Addition::Wrapping) {
         if (std::all_of(terms.begin(), terms.end(), [](const Term &term) { return term.isLiteral; })) {
-            unsigned sum = 0;
-            for (const auto &term : terms) {
-                if (term.literalValue > 65535u - sum)
-                    throw CompileError("uint16 constant addition overflows");
-                sum += term.literalValue;
+            unsigned sum = terms[0].literalValue;
+            for (size_t i = 1; i < terms.size(); ++i) {
+                const auto &term = terms[i];
+                if (term.subtract) {
+                    if (term.literalValue > sum)
+                        throw CompileError("uint16 constant subtraction underflows");
+                    sum -= term.literalValue;
+                } else {
+                    if (term.literalValue > 65535u - sum)
+                        throw CompileError("uint16 constant addition overflows");
+                    sum += term.literalValue;
+                }
             }
             emitAdjustMultiLiteral(out, destBufferId, kOpSet, 0, le16Bytes(sum));
             return;
         }
-        if (compiler.addition == Compiler::Addition::Initializer)
-            throw CompileError("resident initializer addition requires constant operands; move it into the job");
+        if (compiler.addition == Compiler::Addition::Initializer) {
+            const bool subtraction = std::any_of(terms.begin(), terms.end(), [](const Term &t) { return t.subtract; });
+            throw CompileError(std::string("resident initializer ") + (subtraction ? "subtraction" : "addition") +
+                               " requires constant operands; move it into the job");
+        }
     }
     auto setInto = [&](int bufferId, const Term &term) {
         if (term.isLiteral) {
@@ -330,6 +373,10 @@ inline void compileExprInto(Compiler &compiler, std::vector<unsigned char> &out,
     compiler.ensureAcc();
     setInto(compiler.accumulatorId(), terms[0]);
     for (size_t i = 1; i < terms.size(); ++i) {
+        if (terms[i].subtract) {
+            compiler.subtract(out, terms[i].isLiteral, terms[i].literalValue, terms[i].varBufferId);
+            continue;
+        }
         addInto(compiler.accumulatorId(), terms[i]);
         if (compiler.addition == Compiler::Addition::CheckedResident) compiler.checkCarry(out);
     }

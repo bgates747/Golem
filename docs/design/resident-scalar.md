@@ -1,8 +1,9 @@
 # Maintained resident scalar profile
 
-Resident uint16 addition now checks overflow and ends a failed job without
+Resident uint16 addition checks overflow and subtraction checks underflow and ends a failed job without
 changing that assignment's destination. Host checks and stock Fab/MOS execution
-pass, and the Author confirmed GOLEM-012 review on Oryx worked. Fresh-input/call traffic
+pass. GOLEM-012 addition human review passed; GOLEM-013 subtraction human review
+is pending. Fresh-input/call traffic
 remains 21 bytes. Broader numeric operations remain proposed.
 
 `make -C src check` builds and checks the host compiler. Raw mode remains
@@ -17,7 +18,7 @@ The maintained [floor example](../../examples/resident/floor.golem) and
 and initialize their inputs. This profile accepts one finite `float32` input
 with a two-endpoint `Range`, one `sint16` output and one `Sub` containing exactly
 one `result = sint16(floor(x))`. Optional persistent `uint16` globals must precede
-the float declaration. The job can assign/copy/add these globals and print
+the float declaration. The job can assign/copy/add/subtract these globals and print
 literal strings before or after the conversion. Resident loops, local variables,
 general float expressions and additional jobs are not implemented.
 
@@ -63,27 +64,30 @@ Semantic validation completes before output writes. Filesystem publication is
 not atomic if an I/O operation fails. Raw payloads and resident packages have
 different installation contracts; mode is never inferred from source.
 
-## Checked addition and job errors
+## Checked addition/subtraction and job errors
 
-Resident uint16 sums must stay within 0:65535. Every addition in a chain checks
-carry before proceeding, so an early overflow cannot disappear in a later term.
-The destination changes only after the complete sum succeeds, including for
-self-referential assignments. An overflow stops the job, skips later statements
+Resident uint16 arithmetic must stay within 0:65535. Binary + and - have equal
+precedence and evaluate left to right. Every intermediate operation is checked,
+so a later term cannot conceal an earlier overflow or underflow.
+The destination changes only after the complete expression succeeds, including for
+self-referential assignments. An arithmetic error stops the job, skips later statements
 and returns control to normal VDP processing. Earlier successful writes remain;
 there is no rollback. A floor result already written before a later overflow
 also remains. Custom handlers and Resume/retry are future work.
 
 Packages containing runtime checked additions expose an optional `runtime_error`
 uint16 field in `interface.json`. Code 0 means no error; code 1 means uint16
-addition overflow. The entry resets this field on every invocation. A later call
+addition overflow; code 2 (`uint16_sub_underflow`) means subtraction underflow.
+The entry resets this field on every invocation. A later call
 can therefore succeed after the caller corrects the input globals. This field is
 resident state, not an automatic acknowledgement to MOS. Error exit needs no
 host readback or extra recurring commands.
 
-Known constant sums are folded and compile-time overflow is rejected. Global
-initializer additions currently require constant operands; move variable sums
+Known constant expressions fold safely; an invalid intermediate sum or difference
+is rejected at compile time. Global initializer arithmetic currently requires
+constant operands; move variable expressions
 into the job so their errors can use its finite exit. Simple global copies remain
-supported. Programs without runtime checked additions omit the status and error
+supported. Programs without runtime checked arithmetic omit the status and error
 helper. The pure floor package retains all five earlier artifact bytes.
 
 This implementation covers the current single, finite resident job. Source
@@ -107,3 +111,16 @@ jobs, and 1,238 stock Fab/MOS checks across 88 jobs. The Oryx fixture also passe
 headless verification; the Author confirmed the human keyboard review worked. The earlier
 GOLEM-007 human acceptance applies to its historical packages; it does not
 replace acceptance of this changed counted-floor implementation.
+
+## Subtraction qualification
+
+`remaining = remaining - 1` succeeds when remaining is positive; at zero it
+preserves remaining and exits with code 2. `total = a - b + c` fails immediately
+when a < b, even if c would bring the mathematical final result back into range.
+Parenthesized/general expressions and raw-mode subtraction remain unsupported.
+
+[GOLEM-013](../tasks/GOLEM-013/README.md) adds subtraction and mixed chains.
+Maintained/sanitizer checks, 88 independent model jobs and 1,248 stock-emulator
+checks pass. Oryx headless results match; human review of this tranche is pending.
+All four counted-floor command artifacts remain identical to ddb5e87; its
+manifest now also publishes underflow code 2.

@@ -24,6 +24,13 @@ and stock Fab/MOS qualification pass. The Author confirmed Oryx human review
 worked; the Author subsequently explicitly approved commit and push.
 See `docs/tasks/GOLEM-012/README.md` for evidence and exact review commands.
 
+GOLEM-013 adds resident uint16 subtraction and mixed left-to-right + / - chains.
+Underflow preserves the failed destination and exits with status 2. Automated
+host/sanitizer/stock-emulator qualification passes; the stopped Oryx fixture is
+ready for human review. Leave this tranche uncommitted until human testing and
+explicit commit approval. See `docs/tasks/GOLEM-013/README.md`.
+
+
 GOLEM-007's stock Fab 1.2.5/MOS 3.0.2 qualification and Oryx keyboard review
 passed. The Author explicitly approved committing it and promoting the scalar
 slice. GOLEM-008 verified identical reviewed command bytes and recorded host
@@ -37,6 +44,15 @@ milestone) plus a cross-agent collaboration thread with an external
 reading order" below for where everything now lives; treat `docs/design/`
 as the most current design reference where it overlaps with older devlog
 material.
+
+## Human review workflow
+
+The Author launches the staged Oryx test, follows its onscreen `dir` instruction,
+closes the emulator and reports whether it worked. The agent then retrieves and
+verifies the saved results over SSH. Do not ask the Author to open another
+terminal or run the verifier; the verifier only reports numerical results and
+must not repeat the guest's keyboard instruction. The emulator need not remain
+running. A rerun should remove the previous results file first.
 
 ## Repository layout
 
