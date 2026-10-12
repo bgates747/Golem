@@ -27,7 +27,7 @@ inline bool reserved(const std::string &word) {
     for (const char *keyword : {"print", "uint16", "for", "to", "next", "float32",
             "sint16", "range", "sub", "endsub", "floor", "str", "if", "then",
             "elseif", "else", "endif", "do", "while", "until", "loop", "switch",
-            "case", "default", "endswitch"})
+            "case", "default", "endswitch", "divmod"})
         if (name == keyword) return true;
     return false;
 }

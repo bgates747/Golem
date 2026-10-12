@@ -1,9 +1,9 @@
 # Maintained resident scalar profile
 
-Resident uint16 addition, subtraction and multiplication check bounds and end a
-failed job without changing that assignment's destination. Host/sanitizer and
-stock Fab/MOS checks pass. GOLEM-012/013/014 human review passed, including
-agent retrieval of the saved multiplication results. Fresh-input/call traffic remains 21 bytes.
+Resident uint16 addition, subtraction, multiplication and paired divmod preserve
+failed destinations and end the finite job. Host/sanitizer and stock Fab/MOS
+checks pass. GOLEM-012/013/014/015 human review passed, including agent
+verification of saved Oryx results. Fresh-input/call traffic remains 21 bytes.
 Broader numeric operations remain proposed.
 
 `make -C src check` builds and checks the host compiler. Raw mode remains
@@ -18,7 +18,8 @@ The maintained [floor example](../../examples/resident/floor.golem) and
 and initialize their inputs. This profile accepts one finite `float32` input
 with a two-endpoint `Range`, one `sint16` output and one `Sub` containing exactly
 one `result = sint16(floor(x))`. Optional persistent `uint16` globals must precede
-the float declaration. The job can assign/copy/add/subtract/multiply these globals and print
+the float declaration. The job can assign/copy/add/subtract/multiply these globals,
+perform paired uint16 divmod and print
 literal strings before or after the conversion. Resident loops, local variables,
 general float expressions and additional jobs are not implemented.
 
@@ -76,10 +77,11 @@ and returns control to normal VDP processing. Earlier successful writes remain;
 there is no rollback. A floor result already written before a later overflow
 also remains. Custom handlers and Resume/retry are future work.
 
-Packages containing runtime checked additions expose an optional `runtime_error`
+Packages containing runtime checked arithmetic expose an optional `runtime_error`
 uint16 field in `interface.json`. Code 0 means no error; code 1 means uint16
 addition overflow; code 2 (`uint16_sub_underflow`) means subtraction underflow;
-code 3 (`uint16_mul_overflow`) means multiplication overflow.
+code 3 (`uint16_mul_overflow`) means multiplication overflow;
+code 4 (`uint16_divide_by_zero`) means a zero divisor.
 The entry resets this field on every invocation. A later call
 can therefore succeed after the caller corrects the input globals. This field is
 resident state, not an automatic acknowledgement to MOS. Error exit needs no
@@ -144,3 +146,51 @@ The fixture installs 3344 bytes across 50 owned buffers. Calls remain 21 bytes
 with a new input, 6 bytes without. Reviewed addition/subtraction command artifacts
 and all five pure-floor package artifacts remain unchanged. Physical hardware
 and other firmware versions remain outside this evidence.
+
+## Paired uint16 division qualification
+
+```golem
+uint16 numerator = 17
+uint16 denominator = 5
+uint16 quotient = 0
+uint16 remainder = 0
+float32 x Range(-32768,32767) = -0.75
+sint16 result
+Sub compute
+    (quotient, remainder) = divmod(numerator, denominator)
+    result = sint16(floor(x))
+EndSub
+```
+
+The result is quotient 3 and remainder 2. Both destinations must be distinct,
+previously declared uint16 globals. Arguments accept the current uint16
+expression grammar (+, -, *); they evaluate once, left to right, into private
+storage. Inputs may alias either output, including `(numerator, denominator) =
+divmod(numerator, denominator)`. Both outputs retain their original values until
+argument evaluation and division succeed. An argument arithmetic error or zero
+divisor preserves both destinations, skips later statements and exits the job.
+Earlier successful writes remain. A literal zero divisor also takes runtime
+status 4; divmod constant folding is not implemented. Invalid constant arithmetic
+within an argument still fails compilation under the existing expression rules.
+
+A shared finite 16-step restoring division kernel computes both results. Byte
+comparisons use zero-extended words, avoiding the firmware's 0xFFFF operand
+sentinel. An explicit tail jump in the low-byte comparator limits helper depth
+to three. Division-by-zero exit occurs in the calling job before entering the
+kernel; its internal arithmetic cannot raise a source-level error. Private
+scratch state resets for each evaluation. Both destination copies occur only
+after successful completion, with no intervening operation that can fail.
+
+[GOLEM-015](../tasks/GOLEM-015/README.md) records 156 independent model jobs,
+16 argument/order/alias cases, sanitizer checks and 2,126 stock Fab/MOS checks
+across 156 jobs (12,232 observed bytes). Oryx headless output matches exactly;
+human review passed and saved results were independently verified. The two-site fixture installs 5,086 bytes across 55
+owned buffers; new-input/call remains 21 bytes and a plain call remains 6 bytes.
+All four reviewed addition/subtraction/multiplication command artifacts remain
+unchanged against 0c311ba; their optional manifest error catalogue gains code 4.
+All five pure-floor artifacts remain unchanged. Numerical readback belongs to
+test instrumentation and is excluded from application traffic figures.
+
+This slice does not add / or % syntax, signed divmod, general functions,
+parenthesized arithmetic expressions or raw-mode divmod. Physical ESP32 hardware
+and other firmware versions remain unqualified.

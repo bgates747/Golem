@@ -50,6 +50,12 @@ small. Host/sanitizer/stock-emulator and Oryx human review pass. The agent retri
 matching saved results. The Author subsequently explicitly approved commit/push.
 See `docs/tasks/GOLEM-014/README.md`.
 
+GOLEM-015 adds paired uint16 `(q, r) = divmod(n, d)`. Arguments evaluate once,
+left to right; division by zero preserves both outputs and exits with status 4.
+Host/sanitizer and stock Pi/Oryx headless qualification pass (2,126 checks,
+156 jobs). The Author confirmed Oryx human review succeeded; the agent retrieved
+and independently verified all saved results. The Author explicitly approved commit and push. See `docs/tasks/GOLEM-015/README.md`.
+
 ## Human review workflow
 
 The Author launches the staged Oryx test, follows its onscreen `dir` instruction,

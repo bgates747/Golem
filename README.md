@@ -37,7 +37,8 @@ progress notes and [docs/design](docs/design/) for design documents.
 `make -C src check` builds and checks the maintained host compiler. Raw mode
 supports literal print, uint16 declarations, assignment/addition and For/Next.
 Explicit `--resident` mode adds bounded float32 floor-to-sint16 jobs with
-persistent uint16 state and checked addition/subtraction/multiplication. Arithmetic failure preserves the assignment's
+persistent uint16 state, checked addition/subtraction/multiplication and paired
+`divmod`. Arithmetic failure preserves the assignment's
 destination and ends the job, allowing normal VDP processing to resume.
 Statements have no terminators; newlines are whitespace.
 See the [resident contract](docs/design/resident-scalar.md) and
@@ -52,6 +53,8 @@ resident addition; automated qualification and Oryx human review pass.
 chains; automated qualification and human review pass.
 [GOLEM-014](docs/tasks/GOLEM-014/README.md) adds checked multiplication; automated
 qualification and Oryx human review pass.
+[GOLEM-015](docs/tasks/GOLEM-015/README.md) adds paired uint16 quotient/remainder;
+automated qualification and Oryx human review pass.
 Broader syntax shown in design examples remains proposed.
 
 ## Reference material

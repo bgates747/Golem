@@ -1,0 +1,1108 @@
+{
+  "pass": true,
+  "packages": [
+    {
+      "name": "default",
+      "manifest": {
+        "schema": 1,
+        "profile": "resident-scalar",
+        "input": {
+          "name": "x",
+          "id": 32,
+          "offset": 0,
+          "type": "float32",
+          "bytes": 4,
+          "min": -32768,
+          "max": 32767
+        },
+        "output": {
+          "name": "result",
+          "id": 33,
+          "offset": 0,
+          "type": "sint16",
+          "bytes": 2
+        },
+        "entry": {
+          "name": "compute",
+          "id": 36,
+          "blocks": 1,
+          "bytes": 664
+        },
+        "globals": [
+          {
+            "name": "after",
+            "id": 10,
+            "offset": 0,
+            "type": "uint16",
+            "bytes": 2
+          },
+          {
+            "name": "before",
+            "id": 5,
+            "offset": 0,
+            "type": "uint16",
+            "bytes": 2
+          },
+          {
+            "name": "completed",
+            "id": 11,
+            "offset": 0,
+            "type": "uint16",
+            "bytes": 2
+          },
+          {
+            "name": "denominator",
+            "id": 3,
+            "offset": 0,
+            "type": "uint16",
+            "bytes": 2
+          },
+          {
+            "name": "nextDivisor",
+            "id": 4,
+            "offset": 0,
+            "type": "uint16",
+            "bytes": 2
+          },
+          {
+            "name": "numerator",
+            "id": 2,
+            "offset": 0,
+            "type": "uint16",
+            "bytes": 2
+          },
+          {
+            "name": "quotient",
+            "id": 6,
+            "offset": 0,
+            "type": "uint16",
+            "bytes": 2
+          },
+          {
+            "name": "remainder",
+            "id": 7,
+            "offset": 0,
+            "type": "uint16",
+            "bytes": 2
+          },
+          {
+            "name": "secondQuotient",
+            "id": 8,
+            "offset": 0,
+            "type": "uint16",
+            "bytes": 2
+          },
+          {
+            "name": "secondRemainder",
+            "id": 9,
+            "offset": 0,
+            "type": "uint16",
+            "bytes": 2
+          }
+        ],
+        "runtime_error": {
+          "id": 12,
+          "offset": 0,
+          "type": "uint16",
+          "bytes": 2,
+          "none": 0,
+          "uint16_add_overflow": 1,
+          "uint16_sub_underflow": 2,
+          "uint16_mul_overflow": 3,
+          "uint16_divide_by_zero": 4,
+          "reset": "each_invocation",
+          "on_error": "abort_job_preserve_destination"
+        },
+        "reserved_ranges": [],
+        "owned": [
+          {
+            "id": 2,
+            "bytes": 2,
+            "kind": "data",
+            "role": "ordinary.global.numerator"
+          },
+          {
+            "id": 3,
+            "bytes": 2,
+            "kind": "data",
+            "role": "ordinary.global.denominator"
+          },
+          {
+            "id": 4,
+            "bytes": 2,
+            "kind": "data",
+            "role": "ordinary.global.nextDivisor"
+          },
+          {
+            "id": 5,
+            "bytes": 2,
+            "kind": "data",
+            "role": "ordinary.global.before"
+          },
+          {
+            "id": 6,
+            "bytes": 2,
+            "kind": "data",
+            "role": "ordinary.global.quotient"
+          },
+          {
+            "id": 7,
+            "bytes": 2,
+            "kind": "data",
+            "role": "ordinary.global.remainder"
+          },
+          {
+            "id": 8,
+            "bytes": 2,
+            "kind": "data",
+            "role": "ordinary.global.secondQuotient"
+          },
+          {
+            "id": 9,
+            "bytes": 2,
+            "kind": "data",
+            "role": "ordinary.global.secondRemainder"
+          },
+          {
+            "id": 10,
+            "bytes": 2,
+            "kind": "data",
+            "role": "ordinary.global.after"
+          },
+          {
+            "id": 11,
+            "bytes": 2,
+            "kind": "data",
+            "role": "ordinary.global.completed"
+          },
+          {
+            "id": 12,
+            "bytes": 2,
+            "kind": "data",
+            "role": "runtime.error_status"
+          },
+          {
+            "id": 13,
+            "bytes": 2,
+            "kind": "data",
+            "role": "runtime.carry_word"
+          },
+          {
+            "id": 14,
+            "bytes": 2,
+            "kind": "data",
+            "role": "runtime.zero_word"
+          },
+          {
+            "id": 15,
+            "bytes": 13,
+            "kind": "program",
+            "role": "runtime.overflow_exit"
+          },
+          {
+            "id": 16,
+            "bytes": 3,
+            "kind": "data",
+            "role": "runtime.divmod_numerator"
+          },
+          {
+            "id": 17,
+            "bytes": 3,
+            "kind": "data",
+            "role": "runtime.divmod_denominator"
+          },
+          {
+            "id": 18,
+            "bytes": 5,
+            "kind": "data",
+            "role": "runtime.divmod_remainder"
+          },
+          {
+            "id": 19,
+            "bytes": 2,
+            "kind": "data",
+            "role": "runtime.divmod_quotient"
+          },
+          {
+            "id": 20,
+            "bytes": 4,
+            "kind": "data",
+            "role": "runtime.divmod_complement"
+          },
+          {
+            "id": 21,
+            "bytes": 2,
+            "kind": "data",
+            "role": "runtime.divmod_mask"
+          },
+          {
+            "id": 22,
+            "bytes": 2,
+            "kind": "data",
+            "role": "runtime.divmod_bit"
+          },
+          {
+            "id": 23,
+            "bytes": 2,
+            "kind": "data",
+            "role": "runtime.divmod_take"
+          },
+          {
+            "id": 24,
+            "bytes": 2,
+            "kind": "data",
+            "role": "runtime.divmod_compare_left"
+          },
+          {
+            "id": 25,
+            "bytes": 2,
+            "kind": "data",
+            "role": "runtime.divmod_compare_right"
+          },
+          {
+            "id": 26,
+            "bytes": 3056,
+            "kind": "program",
+            "role": "runtime.divmod_kernel"
+          },
+          {
+            "id": 27,
+            "bytes": 15,
+            "kind": "program",
+            "role": "runtime.divmod_bring_bit"
+          },
+          {
+            "id": 28,
+            "bytes": 13,
+            "kind": "program",
+            "role": "runtime.divmod_set_take"
+          },
+          {
+            "id": 29,
+            "bytes": 45,
+            "kind": "program",
+            "role": "runtime.divmod_compare_low"
+          },
+          {
+            "id": 30,
+            "bytes": 45,
+            "kind": "program",
+            "role": "runtime.divmod_subtract"
+          },
+          {
+            "id": 31,
+            "bytes": 13,
+            "kind": "program",
+            "role": "runtime.divmod_zero_exit"
+          },
+          {
+            "id": 32,
+            "bytes": 4,
+            "kind": "data",
+            "role": "scalar.input"
+          },
+          {
+            "id": 33,
+            "bytes": 2,
+            "kind": "data",
+            "role": "scalar.output"
+          },
+          {
+            "id": 34,
+            "bytes": 4,
+            "kind": "data",
+            "role": "scalar.source"
+          },
+          {
+            "id": 35,
+            "bytes": 4,
+            "kind": "data",
+            "role": "scalar.integral"
+          },
+          {
+            "id": 36,
+            "bytes": 664,
+            "kind": "program",
+            "role": "scalar.entry"
+          },
+          {
+            "id": 37,
+            "bytes": 4,
+            "kind": "data",
+            "role": "scalar.scratch.0"
+          },
+          {
+            "id": 38,
+            "bytes": 1,
+            "kind": "data",
+            "role": "scalar.scratch.1"
+          },
+          {
+            "id": 39,
+            "bytes": 36,
+            "kind": "data",
+            "role": "scalar.scratch.2"
+          },
+          {
+            "id": 40,
+            "bytes": 4,
+            "kind": "data",
+            "role": "scalar.scratch.3"
+          },
+          {
+            "id": 41,
+            "bytes": 8,
+            "kind": "data",
+            "role": "scalar.scratch.4"
+          },
+          {
+            "id": 42,
+            "bytes": 8,
+            "kind": "data",
+            "role": "scalar.scratch.5"
+          },
+          {
+            "id": 43,
+            "bytes": 2,
+            "kind": "data",
+            "role": "scalar.scratch.6"
+          },
+          {
+            "id": 44,
+            "bytes": 2,
+            "kind": "data",
+            "role": "scalar.scratch.7"
+          },
+          {
+            "id": 45,
+            "bytes": 2,
+            "kind": "data",
+            "role": "scalar.scratch.8"
+          },
+          {
+            "id": 46,
+            "bytes": 13,
+            "kind": "program",
+            "role": "scalar.scratch.9"
+          },
+          {
+            "id": 47,
+            "bytes": 208,
+            "kind": "program",
+            "role": "scalar.scratch.10"
+          },
+          {
+            "id": 48,
+            "bytes": 15,
+            "kind": "program",
+            "role": "scalar.scratch.11"
+          },
+          {
+            "id": 49,
+            "bytes": 2,
+            "kind": "data",
+            "role": "scalar.scratch.12"
+          },
+          {
+            "id": 50,
+            "bytes": 2,
+            "kind": "data",
+            "role": "scalar.scratch.13"
+          },
+          {
+            "id": 51,
+            "bytes": 36,
+            "kind": "data",
+            "role": "scalar.scratch.14"
+          },
+          {
+            "id": 52,
+            "bytes": 4,
+            "kind": "data",
+            "role": "scalar.scratch.15"
+          },
+          {
+            "id": 53,
+            "bytes": 4,
+            "kind": "data",
+            "role": "scalar.scratch.16"
+          },
+          {
+            "id": 54,
+            "bytes": 4,
+            "kind": "data",
+            "role": "scalar.scratch.17"
+          },
+          {
+            "id": 55,
+            "bytes": 4,
+            "kind": "data",
+            "role": "scalar.scratch.18"
+          },
+          {
+            "id": 56,
+            "bytes": 4,
+            "kind": "data",
+            "role": "scalar.scratch.19"
+          }
+        ],
+        "byte_order": "little-endian",
+        "serialized_nonreentrant": true,
+        "external_input_requires_host_validation": true,
+        "loader_root_reserved": 0,
+        "special_id_reserved": 65535,
+        "bootstrap_bytes": 5086,
+        "input_update_bytes": 15,
+        "call_bytes": 6,
+        "cleanup_bytes": 330
+      },
+      "arithmetic_jobs": 78,
+      "artifacts_sha256": {
+        "bootstrap.bin": "20638333f4194d52ed703332edc87a56c2b0a8da00908081f8ab21b3f71701fa",
+        "cleanup.bin": "df120b3d8e1c8c80875f2c83742b60931b79af2e8a23cb0b61f9f43e86f32cbe",
+        "interface.json": "1a4b8b2a654b65b8d558553e7d6594ba985f02a06c0350ab3d62d2480cca52d1",
+        "invoke.bin": "81b3a79c004506fe210f35e95dea747b508fd1811995fd74564d55131234ea8e",
+        "update-call.bin": "738a1a8aff85ff538716aba2f0bf27f75e1a8a6c3d43f4e963326c64e98f1307"
+      }
+    },
+    {
+      "name": "relocated",
+      "manifest": {
+        "schema": 1,
+        "profile": "resident-scalar",
+        "input": {
+          "name": "x",
+          "id": 291,
+          "offset": 0,
+          "type": "float32",
+          "bytes": 4,
+          "min": -32768,
+          "max": 32767
+        },
+        "output": {
+          "name": "result",
+          "id": 292,
+          "offset": 0,
+          "type": "sint16",
+          "bytes": 2
+        },
+        "entry": {
+          "name": "compute",
+          "id": 295,
+          "blocks": 1,
+          "bytes": 664
+        },
+        "globals": [
+          {
+            "name": "after",
+            "id": 269,
+            "offset": 0,
+            "type": "uint16",
+            "bytes": 2
+          },
+          {
+            "name": "before",
+            "id": 259,
+            "offset": 0,
+            "type": "uint16",
+            "bytes": 2
+          },
+          {
+            "name": "completed",
+            "id": 270,
+            "offset": 0,
+            "type": "uint16",
+            "bytes": 2
+          },
+          {
+            "name": "denominator",
+            "id": 257,
+            "offset": 0,
+            "type": "uint16",
+            "bytes": 2
+          },
+          {
+            "name": "nextDivisor",
+            "id": 258,
+            "offset": 0,
+            "type": "uint16",
+            "bytes": 2
+          },
+          {
+            "name": "numerator",
+            "id": 256,
+            "offset": 0,
+            "type": "uint16",
+            "bytes": 2
+          },
+          {
+            "name": "quotient",
+            "id": 265,
+            "offset": 0,
+            "type": "uint16",
+            "bytes": 2
+          },
+          {
+            "name": "remainder",
+            "id": 266,
+            "offset": 0,
+            "type": "uint16",
+            "bytes": 2
+          },
+          {
+            "name": "secondQuotient",
+            "id": 267,
+            "offset": 0,
+            "type": "uint16",
+            "bytes": 2
+          },
+          {
+            "name": "secondRemainder",
+            "id": 268,
+            "offset": 0,
+            "type": "uint16",
+            "bytes": 2
+          }
+        ],
+        "runtime_error": {
+          "id": 271,
+          "offset": 0,
+          "type": "uint16",
+          "bytes": 2,
+          "none": 0,
+          "uint16_add_overflow": 1,
+          "uint16_sub_underflow": 2,
+          "uint16_mul_overflow": 3,
+          "uint16_divide_by_zero": 4,
+          "reset": "each_invocation",
+          "on_error": "abort_job_preserve_destination"
+        },
+        "reserved_ranges": [
+          {
+            "first": 1,
+            "last": 254
+          },
+          {
+            "first": 260,
+            "last": 264
+          },
+          {
+            "first": 50000,
+            "last": 50000
+          }
+        ],
+        "owned": [
+          {
+            "id": 256,
+            "bytes": 2,
+            "kind": "data",
+            "role": "ordinary.global.numerator"
+          },
+          {
+            "id": 257,
+            "bytes": 2,
+            "kind": "data",
+            "role": "ordinary.global.denominator"
+          },
+          {
+            "id": 258,
+            "bytes": 2,
+            "kind": "data",
+            "role": "ordinary.global.nextDivisor"
+          },
+          {
+            "id": 259,
+            "bytes": 2,
+            "kind": "data",
+            "role": "ordinary.global.before"
+          },
+          {
+            "id": 265,
+            "bytes": 2,
+            "kind": "data",
+            "role": "ordinary.global.quotient"
+          },
+          {
+            "id": 266,
+            "bytes": 2,
+            "kind": "data",
+            "role": "ordinary.global.remainder"
+          },
+          {
+            "id": 267,
+            "bytes": 2,
+            "kind": "data",
+            "role": "ordinary.global.secondQuotient"
+          },
+          {
+            "id": 268,
+            "bytes": 2,
+            "kind": "data",
+            "role": "ordinary.global.secondRemainder"
+          },
+          {
+            "id": 269,
+            "bytes": 2,
+            "kind": "data",
+            "role": "ordinary.global.after"
+          },
+          {
+            "id": 270,
+            "bytes": 2,
+            "kind": "data",
+            "role": "ordinary.global.completed"
+          },
+          {
+            "id": 271,
+            "bytes": 2,
+            "kind": "data",
+            "role": "runtime.error_status"
+          },
+          {
+            "id": 272,
+            "bytes": 2,
+            "kind": "data",
+            "role": "runtime.carry_word"
+          },
+          {
+            "id": 273,
+            "bytes": 2,
+            "kind": "data",
+            "role": "runtime.zero_word"
+          },
+          {
+            "id": 274,
+            "bytes": 13,
+            "kind": "program",
+            "role": "runtime.overflow_exit"
+          },
+          {
+            "id": 275,
+            "bytes": 3,
+            "kind": "data",
+            "role": "runtime.divmod_numerator"
+          },
+          {
+            "id": 276,
+            "bytes": 3,
+            "kind": "data",
+            "role": "runtime.divmod_denominator"
+          },
+          {
+            "id": 277,
+            "bytes": 5,
+            "kind": "data",
+            "role": "runtime.divmod_remainder"
+          },
+          {
+            "id": 278,
+            "bytes": 2,
+            "kind": "data",
+            "role": "runtime.divmod_quotient"
+          },
+          {
+            "id": 279,
+            "bytes": 4,
+            "kind": "data",
+            "role": "runtime.divmod_complement"
+          },
+          {
+            "id": 280,
+            "bytes": 2,
+            "kind": "data",
+            "role": "runtime.divmod_mask"
+          },
+          {
+            "id": 281,
+            "bytes": 2,
+            "kind": "data",
+            "role": "runtime.divmod_bit"
+          },
+          {
+            "id": 282,
+            "bytes": 2,
+            "kind": "data",
+            "role": "runtime.divmod_take"
+          },
+          {
+            "id": 283,
+            "bytes": 2,
+            "kind": "data",
+            "role": "runtime.divmod_compare_left"
+          },
+          {
+            "id": 284,
+            "bytes": 2,
+            "kind": "data",
+            "role": "runtime.divmod_compare_right"
+          },
+          {
+            "id": 285,
+            "bytes": 3056,
+            "kind": "program",
+            "role": "runtime.divmod_kernel"
+          },
+          {
+            "id": 286,
+            "bytes": 15,
+            "kind": "program",
+            "role": "runtime.divmod_bring_bit"
+          },
+          {
+            "id": 287,
+            "bytes": 13,
+            "kind": "program",
+            "role": "runtime.divmod_set_take"
+          },
+          {
+            "id": 288,
+            "bytes": 45,
+            "kind": "program",
+            "role": "runtime.divmod_compare_low"
+          },
+          {
+            "id": 289,
+            "bytes": 45,
+            "kind": "program",
+            "role": "runtime.divmod_subtract"
+          },
+          {
+            "id": 290,
+            "bytes": 13,
+            "kind": "program",
+            "role": "runtime.divmod_zero_exit"
+          },
+          {
+            "id": 291,
+            "bytes": 4,
+            "kind": "data",
+            "role": "scalar.input"
+          },
+          {
+            "id": 292,
+            "bytes": 2,
+            "kind": "data",
+            "role": "scalar.output"
+          },
+          {
+            "id": 293,
+            "bytes": 4,
+            "kind": "data",
+            "role": "scalar.source"
+          },
+          {
+            "id": 294,
+            "bytes": 4,
+            "kind": "data",
+            "role": "scalar.integral"
+          },
+          {
+            "id": 295,
+            "bytes": 664,
+            "kind": "program",
+            "role": "scalar.entry"
+          },
+          {
+            "id": 296,
+            "bytes": 4,
+            "kind": "data",
+            "role": "scalar.scratch.0"
+          },
+          {
+            "id": 297,
+            "bytes": 1,
+            "kind": "data",
+            "role": "scalar.scratch.1"
+          },
+          {
+            "id": 298,
+            "bytes": 36,
+            "kind": "data",
+            "role": "scalar.scratch.2"
+          },
+          {
+            "id": 299,
+            "bytes": 4,
+            "kind": "data",
+            "role": "scalar.scratch.3"
+          },
+          {
+            "id": 300,
+            "bytes": 8,
+            "kind": "data",
+            "role": "scalar.scratch.4"
+          },
+          {
+            "id": 301,
+            "bytes": 8,
+            "kind": "data",
+            "role": "scalar.scratch.5"
+          },
+          {
+            "id": 302,
+            "bytes": 2,
+            "kind": "data",
+            "role": "scalar.scratch.6"
+          },
+          {
+            "id": 303,
+            "bytes": 2,
+            "kind": "data",
+            "role": "scalar.scratch.7"
+          },
+          {
+            "id": 304,
+            "bytes": 2,
+            "kind": "data",
+            "role": "scalar.scratch.8"
+          },
+          {
+            "id": 305,
+            "bytes": 13,
+            "kind": "program",
+            "role": "scalar.scratch.9"
+          },
+          {
+            "id": 306,
+            "bytes": 208,
+            "kind": "program",
+            "role": "scalar.scratch.10"
+          },
+          {
+            "id": 307,
+            "bytes": 15,
+            "kind": "program",
+            "role": "scalar.scratch.11"
+          },
+          {
+            "id": 308,
+            "bytes": 2,
+            "kind": "data",
+            "role": "scalar.scratch.12"
+          },
+          {
+            "id": 309,
+            "bytes": 2,
+            "kind": "data",
+            "role": "scalar.scratch.13"
+          },
+          {
+            "id": 310,
+            "bytes": 36,
+            "kind": "data",
+            "role": "scalar.scratch.14"
+          },
+          {
+            "id": 311,
+            "bytes": 4,
+            "kind": "data",
+            "role": "scalar.scratch.15"
+          },
+          {
+            "id": 312,
+            "bytes": 4,
+            "kind": "data",
+            "role": "scalar.scratch.16"
+          },
+          {
+            "id": 313,
+            "bytes": 4,
+            "kind": "data",
+            "role": "scalar.scratch.17"
+          },
+          {
+            "id": 314,
+            "bytes": 4,
+            "kind": "data",
+            "role": "scalar.scratch.18"
+          },
+          {
+            "id": 315,
+            "bytes": 4,
+            "kind": "data",
+            "role": "scalar.scratch.19"
+          }
+        ],
+        "byte_order": "little-endian",
+        "serialized_nonreentrant": true,
+        "external_input_requires_host_validation": true,
+        "loader_root_reserved": 0,
+        "special_id_reserved": 65535,
+        "bootstrap_bytes": 5086,
+        "input_update_bytes": 15,
+        "call_bytes": 6,
+        "cleanup_bytes": 330
+      },
+      "arithmetic_jobs": 78,
+      "artifacts_sha256": {
+        "bootstrap.bin": "2de57dd95e2f3bf3936dd460f80f7a7de9ebb091253d43c7e7530d94269bcca5",
+        "cleanup.bin": "1baf35c4f665321e0cb57b6b5bb9bdcab8dd0f8522dc7be8aaca7d29087ebe67",
+        "interface.json": "b82dde1c3035c6a7c139d8363469166db60e9a43b1452bf4c9c7294496e02d86",
+        "invoke.bin": "6793fa6aaa7f50cb9cec4463c646f1178758a0800ef97783d0342ce408588e39",
+        "update-call.bin": "f7f3c9c8d36e2f4ea868ad5e439c7ff73ee748e928814283b66ef5ab34f3af98"
+      }
+    }
+  ],
+  "host_model_jobs": 156,
+  "source_sha256": {
+    "src/buffer_allocator.hpp": "17af55e64b94d2e4517d1a8110c4d1bddea28dd6f20240263590d0684e186868",
+    "src/ordinary.hpp": "7c8fe20f4e63c6e57de70b9931696b87c88c9c4ea499679b1bc239f09480c5da",
+    "src/resident.hpp": "1ff0d71cedc28310121b45ec34297d27401f5b79a02802c18af6526b698447a3",
+    "src/scalar_backend.hpp": "cdad521fa96586d32321d3335e2c038188e1b0046e12da4e082045b875455c79",
+    "src/token_reader.hpp": "bfd5f2bf6a527f9c862f399ce1dd9b55e90d23f3accc52145aa67cd108cf7cc8",
+    "src/golemc.cpp": "848f54e622e226a7bbd99392bab629318a8ba09fe6f1948e53b365b1bf68878e",
+    "tests/test_compiler.cpp": "9c65a39f375d1c51e00118e5304818b9b4f2f904b33736a1015a307c5dd785fe"
+  },
+  "pure_floor_five_artifact_parity": true,
+  "raw_parity_cases": 4,
+  "rejected_packages_preserved": 3,
+  "sanitizer_output": "Maintained raw/resident contract checks pass; 43 rejection cases.",
+  "commands": [
+    {
+      "command": [
+        "make",
+        "-C",
+        "src",
+        "check",
+        "CXXFLAGS=-std=c++17 -Wall -Wextra -Werror -O2"
+      ],
+      "seconds": 6.26
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-015/checked-divmod.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-015/build/default"
+      ],
+      "seconds": 0.003
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--reserve",
+        "1:254",
+        "--reserve",
+        "260:264",
+        "--reserve",
+        "50000:50000",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-015/checked-divmod.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-015/build/relocated"
+      ],
+      "seconds": 0.002
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "/Agon/mystuff/golem/examples/resident/floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-015/build/pure-floor"
+      ],
+      "seconds": 0.002
+    },
+    {
+      "command": [
+        "g++",
+        "-std=c++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-O2",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-015/build/baseline/src/golemc.cpp",
+        "-o",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-015/build/baseline-golemc"
+      ],
+      "seconds": 4.761
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/build/golemc",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-015/build/raw-0.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-015/build/new.bin"
+      ],
+      "seconds": 0.002
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-015/build/baseline-golemc",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-015/build/raw-0.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-015/build/old.bin"
+      ],
+      "seconds": 0.001
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/build/golemc",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-015/build/raw-1.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-015/build/new.bin"
+      ],
+      "seconds": 0.001
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-015/build/baseline-golemc",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-015/build/raw-1.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-015/build/old.bin"
+      ],
+      "seconds": 0.001
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/build/golemc",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-015/build/raw-2.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-015/build/new.bin"
+      ],
+      "seconds": 0.001
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-015/build/baseline-golemc",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-015/build/raw-2.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-015/build/old.bin"
+      ],
+      "seconds": 0.001
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/build/golemc",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-015/build/raw-3.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-015/build/new.bin"
+      ],
+      "seconds": 0.001
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-015/build/baseline-golemc",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-015/build/raw-3.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-015/build/old.bin"
+      ],
+      "seconds": 0.001
+    },
+    {
+      "command": [
+        "g++",
+        "-std=c++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "/Agon/mystuff/golem/tests/test_compiler.cpp",
+        "-o",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-015/build/sanitized"
+      ],
+      "seconds": 22.06
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-015/build/sanitized"
+      ],
+      "seconds": 0.187
+    }
+  ],
+  "seconds": 33.404,
+  "scope": "Host command-byte model and compiler checks; not VDP execution."
+}

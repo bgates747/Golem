@@ -225,6 +225,77 @@ public:
         return productOperand_;
     }
 
+    std::pair<unsigned, unsigned> divmodOperands() {
+        ensureErrorState();
+        if (!divNumerator_) {
+            auto data = [&](const char *role, unsigned size) {
+                unsigned id = allocator_->allocate(role);
+                emitWriteBlock(out, id, std::vector<unsigned char>(size, 0));
+                dataBuffers_[id] = size;
+                return id;
+            };
+            divNumerator_ = data("runtime.divmod_numerator", 3);
+            divDenominator_ = data("runtime.divmod_denominator", 3);
+            divRemainder_ = data("runtime.divmod_remainder", 5);
+            divQuotient_ = data("runtime.divmod_quotient", 2);
+            divComplement_ = data("runtime.divmod_complement", 4);
+            divMask_ = data("runtime.divmod_mask", 2);
+            divBit_ = data("runtime.divmod_bit", 2);
+            divTake_ = data("runtime.divmod_take", 2);
+            divLeft_ = data("runtime.divmod_compare_left", 2);
+            divRight_ = data("runtime.divmod_compare_right", 2);
+            divKernel_ = allocator_->allocate("runtime.divmod_kernel");
+            unsigned bring = allocator_->allocate("runtime.divmod_bring_bit");
+            unsigned take = allocator_->allocate("runtime.divmod_set_take");
+            unsigned low = allocator_->allocate("runtime.divmod_compare_low");
+            unsigned step = allocator_->allocate("runtime.divmod_subtract");
+            divExit_ = allocator_->allocate("runtime.divmod_zero_exit");
+            emitAdjustMultiLiteral(programs_[bring], divRemainder_, kOpAddWithCarry, 0, {1,0,0,0});
+            emitAdjustMultiLiteral(programs_[take], divTake_, kOpSet, 0, {1,0});
+            auto &compare = programs_[low];
+            emitAdjustMultiBufferFetched(compare, divLeft_, kOpSet, 0, 1, divRemainder_, 0);
+            emitAdjustMultiBufferFetched(compare, divRight_, kOpSet, 0, 1, divDenominator_, 0);
+            // Tail jump keeps the helper call depth bounded at three.
+            emitCondJumpBufferValue(compare, take, 7, divLeft_, 0, divRight_, 0);
+            auto &subtract = programs_[step];
+            emitAdjustMultiBufferFetched(subtract, divRemainder_, kOpAddWithCarry, 0, 4, divComplement_, 0);
+            emitAdjustMultiLiteral(subtract, divRemainder_, kOpAddWithCarry, 0, {1,0,0,0});
+            emitAdjustMultiBufferFetched(subtract, divQuotient_, 6, 0, 2, divMask_, 0);
+            emitAdjustMultiLiteral(programs_[divExit_], errorStatus_, kOpSet, 0, {4,0});
+            auto &kernel = programs_[divKernel_];
+            for (int bit = 15; bit >= 0; --bit) {
+                emitAdjustMultiBufferFetched(kernel, divRemainder_, kOpAddWithCarry, 0, 4, divRemainder_, 0);
+                emitAdjustMultiLiteral(kernel, divMask_, kOpSet, 0, le16Bytes(1u << bit));
+                emitAdjustMultiBufferFetched(kernel, divBit_, kOpSet, 0, 2, divNumerator_, 0);
+                emitAdjustMultiBufferFetched(kernel, divBit_, 5, 0, 2, divMask_, 0);
+                emitCondCallBufferValue(kernel, bring, 3, divBit_, 0, zeroWord_, 0);
+                emitAdjustMultiLiteral(kernel, divTake_, kOpSet, 0, {0,0});
+                emitAdjustMultiBufferFetched(kernel, divLeft_, kOpSet, 0, 1, divRemainder_, 2);
+                emitCondCallBufferValue(kernel, take, 3, divLeft_, 0, zeroWord_, 0);
+                emitAdjustMultiBufferFetched(kernel, divLeft_, kOpSet, 0, 1, divRemainder_, 1);
+                emitAdjustMultiBufferFetched(kernel, divRight_, kOpSet, 0, 1, divDenominator_, 1);
+                emitCondCallBufferValue(kernel, take, 5, divLeft_, 0, divRight_, 0);
+                emitCondCallBufferValue(kernel, low, 2, divLeft_, 0, divRight_, 0);
+                emitCondCallBufferValue(kernel, step, 3, divTake_, 0, zeroWord_, 0);
+            }
+        }
+        return {divNumerator_, divDenominator_};
+    }
+
+    void divmod(std::vector<unsigned char> &code, unsigned quotient, unsigned remainder) {
+        // Inputs are already evaluated into private buffers, including aliased globals.
+        emitAdjustMultiBufferFetched(code, carryWord_, kOpSet, 0, 1, divDenominator_, 0);
+        emitAdjustMultiBufferFetched(code, carryWord_, 6, 0, 1, divDenominator_, 1);
+        emitCondJumpBufferValue(code, divExit_, 2, carryWord_, 0, zeroWord_, 0);
+        emitAdjustMultiLiteral(code, divRemainder_, kOpSet, 0, {0,0,0,0,0});
+        emitAdjustMultiLiteral(code, divQuotient_, kOpSet, 0, {0,0});
+        emitAdjustMultiLiteral(code, divComplement_, kOpSet, 0, {255,255,255,255});
+        emitAdjustMultiBufferFetched(code, divComplement_, 7, 0, 2, divDenominator_, 0);
+        emitBufferHeader(code, divKernel_); code.push_back(1);
+        emitAdjustMultiBufferFetched(code, quotient, kOpSet, 0, 2, divQuotient_, 0);
+        emitAdjustMultiBufferFetched(code, remainder, kOpSet, 0, 2, divRemainder_, 0);
+    }
+
     void multiply(std::vector<unsigned char> &code, unsigned accumulator,
                   bool literal, unsigned value, int source) {
         ensureErrorState();
@@ -323,6 +394,9 @@ private:
     unsigned complement_ = 0, underflowExit_ = 0;
     unsigned productOperand_ = 0, mulProduct_ = 0, mulShift_ = 0, mulOperand_ = 0;
     unsigned mulBit_ = 0, mulAdd_ = 0, mulExit_ = 0, mulKernel_ = 0;
+    unsigned divNumerator_ = 0, divDenominator_ = 0, divRemainder_ = 0, divQuotient_ = 0;
+    unsigned divComplement_ = 0, divMask_ = 0, divBit_ = 0, divTake_ = 0;
+    unsigned divLeft_ = 0, divRight_ = 0, divKernel_ = 0, divExit_ = 0;
     std::map<unsigned, std::vector<unsigned char>> programs_;
 };
 
@@ -475,7 +549,21 @@ inline void compileExprInto(Compiler &compiler, std::vector<unsigned char> &out,
 inline void compileBlock(Compiler &compiler, Reader &reader, std::vector<unsigned char> &out);
 
 inline void compileStatement(Compiler &compiler, Reader &reader, std::vector<unsigned char> &out) {
-    if (reader.takeKeyword("print")) {
+    if (reader.take('(')) {
+        if (compiler.addition != Compiler::Addition::CheckedResident)
+            reader.error("paired divmod assignment requires a resident job");
+        auto q = reader.name(); reader.need(','); auto r = reader.name();
+        int quotient = compiler.lookupVariable(q.text, q.begin);
+        int remainder = compiler.lookupVariable(r.text, r.begin);
+        if (quotient == remainder) reader.error("divmod destinations must be distinct uint16 globals");
+        reader.need(')'); reader.need('='); reader.needKeyword("divmod"); reader.need('(');
+        auto numerator = parseExpr(reader, compiler); reader.need(',');
+        auto denominator = parseExpr(reader, compiler); reader.need(')');
+        auto operands = compiler.divmodOperands();
+        compileExprInto(compiler, out, operands.first, numerator);
+        compileExprInto(compiler, out, operands.second, denominator);
+        compiler.divmod(out, quotient, remainder);
+    } else if (reader.takeKeyword("print")) {
         if (reader.peek().kind != Kind::String) reader.error("expected string literal after 'print'");
         auto text = reader.pop().text;
         out.insert(out.end(), text.begin(), text.end());

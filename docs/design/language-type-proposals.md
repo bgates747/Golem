@@ -1462,3 +1462,17 @@ For example, `a * b * 0` fails if a * b overflows. This does not implement integ
 power, division, signed multiplication or raw-mode multiplication. Human review
 of the emitted stock-VDP multiplication commands passed; the agent retrieved
 and verified all 1,670 saved Oryx checks.
+
+## Paired uint16 divmod — implementation slice 2026-10-12
+
+GOLEM-015 implements `(quotient, remainder) = divmod(numerator, denominator)`
+for distinct declared uint16 global destinations in the single resident job.
+Arguments evaluate once, left to right, with the current + / - / * expression
+grammar. Inputs may alias outputs. Argument errors and division by zero preserve
+both outputs; zero divisor exits with status 4. Earlier writes remain and normal
+VDP processing resumes. Each invocation resets status, allowing later recovery.
+
+Host/sanitizer, stock Pi and Oryx headless qualification pass. Oryx human review
+passed; the agent retrieved and independently verified the saved results. See [the maintained contract](resident-scalar.md) and
+[GOLEM-015 evidence](../tasks/GOLEM-015/README.md). Signed divmod, / and % syntax,
+general functions and richer expressions remain design proposals.

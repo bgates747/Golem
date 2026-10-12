@@ -1,0 +1,21 @@
+uint16 numerator = 0
+uint16 denominator = 1
+uint16 nextDivisor = 1
+uint16 before = 0
+uint16 quotient = 48879
+uint16 remainder = 222
+uint16 secondQuotient = 4660
+uint16 secondRemainder = 56797
+uint16 after = 0
+uint16 completed = 0
+float32 x Range(-32768,32767) = -0.75
+sint16 result
+Sub compute
+    before = numerator
+    (quotient, remainder) = divmod(numerator, denominator)
+    result = sint16(floor(x))
+    (secondQuotient, secondRemainder) = divmod(quotient, nextDivisor)
+    after = remainder
+    completed = 1
+    print "completed"
+EndSub

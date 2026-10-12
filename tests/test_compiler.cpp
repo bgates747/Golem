@@ -101,6 +101,16 @@ int main() {
     assert(resident::compileResident("uint16 a=0*65535*65535 " + floorSource).extras.errorStatus == 0);
     const auto multiply = resident::compileResident("uint16 a=2 " + replace("result=", "a=a*a result="));
     assert(resident::manifest(multiply).find("\"uint16_mul_overflow\": 3") != std::string::npos);
+    const std::string pair = "uint16 q=0 uint16 r=0 " +
+        replace("result=", "(q,r)=DiVmOd(65535,1) result=");
+    assert(resident::manifest(resident::compileResident(pair)).find("\"uint16_divide_by_zero\": 4") != std::string::npos);
+    reject([&] { resident::compileResident("uint16 q=0 " + replace("result=", "(q,q)=divmod(17,5) result=")); }, "distinct uint16 globals");
+    reject([&] { resident::compileResident("uint16 q=0 uint16 r=0 " + replace("result=", "(q,r)=divmod(17) result=")); }, "expected ','");
+    reject([&] { resident::compileResident("uint16 q=0 uint16 r=0 " + replace("result=", "(q,r)=divmod(65536,1) result=")); }, "does not fit in a uint16");
+    reject([&] { resident::compileResident("uint16 q=0 uint16 r=0 " + replace("result=", "(q,r)=divmod(1,2,3) result=")); }, "expected ')'");
+    reject([&] { resident::compileResident("uint16 q=0 " + replace("result=", "(q,result)=divmod(1,2) result=")); }, "undeclared variable");
+    reject([] { ordinary::compile("uint16 q uint16 r (q,r)=divmod(17,5)"); }, "requires a resident job");
+    reject([&] { resident::compileResident("uint16 divmod=0 " + floorSource); }, "reserved identifier");
     reject([&] { resident::compileResident(replace("floor(x)", "floor(X)")); }, "declared float32 input");
     reject([&] { resident::compileResident(replace("floor(x)", "floor(x+1)")); }, "expected ')'");
     reject([&] { resident::compileResident(replace("Range(-32768,32767)", "Range(-1,1,1)")); }, "expected ')'");

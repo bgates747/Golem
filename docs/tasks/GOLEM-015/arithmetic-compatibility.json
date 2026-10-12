@@ -1,0 +1,34 @@
+{
+  "passed": true,
+  "baseline": "0c311ba",
+  "packages": [
+    {
+      "example": "examples/resident/counted-floor.golem",
+      "command_artifacts_sha256": {
+        "bootstrap.bin": "20a8e65fefcde48465d529a3cdda1bab38006bb0525d14488aef845b625074b0",
+        "invoke.bin": "7587591599c0b364b0dc865e729686544f9075b55510f60936d7408a925d49db",
+        "update-call.bin": "5d0b8613f21b279897b6eb082259094ca0e197eea03f5f192f0af6d2f43f7d39",
+        "cleanup.bin": "e8dc0f4bce959d6e8925dda0515f19821896dec1337fb9faf4afb49f87f056eb"
+      }
+    },
+    {
+      "example": "docs/tasks/GOLEM-013/checked-subtract.golem",
+      "command_artifacts_sha256": {
+        "bootstrap.bin": "7f07635bd393f55bac151f90fb232c015fe1176a83c469a5890a22be3e23f138",
+        "invoke.bin": "db18aa27f3c66a8054c4eaa465acdfc01754dbd3e724ee2d0293ac90126ff34b",
+        "update-call.bin": "868a5e0c601b85b22360e7246fcde97e6911e2dc789c1f4170e2ed2f10631665",
+        "cleanup.bin": "1b6e755a9c3f9fe7df9bf607dde16c5291889eccc76555aacbf8c81be7c106c1"
+      }
+    },
+    {
+      "example": "docs/tasks/GOLEM-014/checked-multiply.golem",
+      "command_artifacts_sha256": {
+        "bootstrap.bin": "bf93ed1ec756d3a6dc118bffb0a02f448f0d165d2f68ab8e258aa37c14f2e78c",
+        "invoke.bin": "7a531b7a52b932170689847d7b2a8d2c101e63f8cdc5cb26c47f822b341a7d77",
+        "update-call.bin": "7667606c8898cf4c9501ce246065fcc90cfe82d2f6df409660f6c1ecf391f9b1",
+        "cleanup.bin": "4c0978f1a821459609451f099d9c26268fd1fd634eb322692220331596e2ea9d"
+      }
+    }
+  ],
+  "manifest_change": "Adds uint16_divide_by_zero error code 4"
+}
