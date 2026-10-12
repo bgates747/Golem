@@ -8,7 +8,9 @@ Keep the Buffered Commands API unchanged. Research should establish what native
 modules add over Rally's already implemented matrix-based floating-point path,
 and recommend the smallest useful experiment before implementation.
 
-Recorded 2026-10-11; research has not started. Overall status belongs in
+Recorded 2026-10-11; a focused source review of existing Pingo/Wolf return hooks
+was requested and recorded in [vdplet return-channel notes](GOLEM-002/vdplet-return-channel-notes.md).
+Broader native-loader feasibility research has not started. Overall status belongs in
 [TODO.md](../../TODO.md). Put reports, exploratory code, build products and other
 task artifacts under `docs/tasks/GOLEM-002/`; promote useful artifacts only after
 review. This request records a future research task, not authorization to build
@@ -56,6 +58,10 @@ executable-memory and execution-time/stack limits remain feasibility constraints
   to inventory existing scalar float, fixed-format, reciprocal and rounding
   support. Read the canonical bespoke-VDP emulator guide: Fab's host-native
   `.so` firmware modules are different from Xtensa payloads loaded on an ESP32.
+
+The return-channel notes inform RES-004 through RES-007: distinguish the existing
+custom-firmware callback from stock loader support, and consider small optional
+completion/status replies alongside resident numeric results and error handling.
 
 ## Feasibility and architecture
 

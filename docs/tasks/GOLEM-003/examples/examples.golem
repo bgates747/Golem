@@ -54,7 +54,7 @@ EndSwitch
 // Duplicate/out-of-range cases and oversized tables are compile-time errors.
 sint16 turn = -1
 
-Switch turn Range(-2, 2)
+Switch turn Range(-2:2)
 Case -2
     print "hard left"
 Case -1
@@ -67,22 +67,22 @@ Default
     print "neutral or unknown"
 EndSwitch
 
-// Possible later extension, not yet selected: Range(2, 10, 2).
+// Possible later extension, not yet selected: Range(2:10:2).
 // This would cover 2, 4, 6, 8, 10 and require a step-alignment check.
 
 
-// Range prototypes below are proposals, not implemented syntax.
+// Selected Range spelling; parser support remains pending.
 // Range has inclusive limits; default step is 1. It need not create an array.
 sint16 rangeIndex
 
-For rangeIndex In Range(2, 10, 2)
+For rangeIndex In Range(2:10:2)
     print "ascending tick"
 Next rangeIndex
 
 // Independent descending iteration; the loop assigns its initial counter value.
 sint16 descendingIndex
 
-For descendingIndex In Range(10, 2, -2)
+For descendingIndex In Range(10:2:-2)
     print "descending tick"
 Next descendingIndex
 
@@ -90,7 +90,7 @@ Next descendingIndex
 // Membership checks bounds AND step alignment: 6 belongs, 7 does not.
 sint16 value = 6
 
-If value In Range(2, 10, 2) Then
+If value In Range(2:10:2) Then
     print "member"
 Else
     print "outside or between steps"
@@ -101,7 +101,7 @@ EndIf
 // Missing cases 4 and 8, nonmembers, and out-of-bounds values use Default.
 uint16 direction = 6
 
-Switch direction Range(2, 10, 2)
+Switch direction Range(2:10:2)
 Case 2
     print "first"
 Case 6
@@ -114,14 +114,14 @@ EndSwitch
 
 
 // Numeric bounds are not stepped sequences: 0.25 is permitted here.
-// Bounds is a proposed name; keeping context-dependent Range is another option.
+// Bounds constrains numeric values; Range describes discrete indices/sequences.
 float32 boundedInput Bounds(-1, 1) = 0.25
 
 
 // Counted loop: inclusive endpoints, increment of 1
 uint16 i
 
-For i = 1 To 8
+For i In Range(1:8)
     print "tick"
 Next i
 
@@ -129,7 +129,7 @@ Next i
 // A branch inside a loop
 uint16 i
 
-For i = 1 To 8
+For i In Range(1:8)
     If i == 4 Then
         print "halfway"
     Else
@@ -172,3 +172,262 @@ Do
     print "tick"
     count = count + 1
 Loop Until count == 4
+
+
+// GOLEM-009 additions for review. Each section below is independent.
+// Except EX-006, these are proposed syntax, not executable compiler support.
+// Function/type names are candidates. Detailed semantics await SEM-001 review.
+// Assets, data indexing, checked copying and typed drawing remain deferred.
+
+
+// EX-001 — Typed integer values, ordinary copying and unsigned widening (proposed)
+uint8 small = 200
+uint16 full = 65535
+sint16 signedValue = -12
+sint32 large = 100000
+uint16 copied = 0
+sint16 widenedByte = 0
+sint32 widenedWord = 0
+
+copied = full
+widenedByte = sint16(small)
+widenedWord = sint32(full)
+
+
+// EX-002 — Fixed-point values and explicit float loads (proposed)
+// Candidate notation: signed total width, with 8 fractional bits.
+fixed16(8) quarter = -1.25
+fixed32(8) distance = 123.5
+float32 quarterFloat = 0.0
+float32 distanceFloat = 0.0
+
+quarterFloat = float32(quarter)
+distanceFloat = float32(distance)
+
+
+// EX-003 — Float copy, signed input conversion, arithmetic and scaling (proposed)
+float32 left Range(-10, 10) = -2.5
+float32 right Range(-10, 10) = 4.0
+sint32 count Range(0, 100) = 3
+float32 copied = 0.0
+float32 countFloat = 0.0
+float32 sum = 0.0
+float32 difference = 0.0
+float32 product = 0.0
+float32 scaled = 0.0
+
+copied = left
+countFloat = float32(count)
+sum = left + right
+difference = left - right
+product = left * right
+scaled = left * 0.5
+
+
+// EX-004 — Bounded reciprocal and division through multiplication (proposed)
+// The denominator's declared range excludes zero.
+float32 numerator Range(-8, 8) = 6.0
+float32 denominator Range(1, 4) = 2.0
+float32 inverse = 0.0
+float32 quotient = 0.0
+
+inverse = reciprocal(denominator)
+quotient = numerator * inverse
+
+
+// EX-005 — Float-valued rounding and absolute value (proposed)
+// For -2.5: floor=-3, trunc=-2, round_away=-3, abs=2.5.
+float32 value Range(-10, 10) = -2.5
+float32 floored = 0.0
+float32 truncated = 0.0
+float32 rounded = 0.0
+float32 magnitude = 0.0
+
+floored = floor(value)
+truncated = trunc(value)
+rounded = round_away(value)
+magnitude = abs(value)
+
+
+// EX-006 — Supported resident floor/conversion slice: compile separately --resident
+float32 x Range(-32768, 32767) = -0.00006103515625
+sint16 result
+Sub compute
+    result = sint16(floor(x))
+EndSub
+
+
+// EX-007 — Bounded float-to-unsigned-word conversion after floor (proposed)
+// This Rally-backed path excludes 65535; it is not a general cast.
+float32 x Range(0, 65534) = 123.75
+uint16 result = 0
+
+result = uint16(floor(x))
+
+
+// EX-008 — Bounded nonnegative float-to-signed32 conversion (proposed)
+// This path covers 0..16777215, not arbitrary signed32 conversion.
+float32 x Range(0, 16777215) = 123456.75
+sint32 result = 0
+
+result = sint32(floor(x))
+
+
+// EX-009 — Constant-divisor quotient and remainder together (proposed)
+// First two arguments are outputs. Here 100 / 7 gives quotient 14, remainder 2.
+sint32 dividend Range(0, 1000) = 100
+uint16 quotient = 0
+uint16 remainder = 0
+
+divmod_positive(quotient, remainder, dividend, 7)
+
+
+// EX-010 — Matrix values, typed copy/load, extraction and cell replacement (proposed)
+// Values are row-major. Submatrix origins and cell coordinates are zero-based.
+matrix(2,2) source = matrix_values(1.0, 2.0, 3.0, 4.0)
+matrix(2,2) copied = matrix_values(0.0, 0.0, 0.0, 0.0)
+matrix(1,2) firstRow = matrix_values(0.0, 0.0)
+matrix(2,2) changed = matrix_values(0.0, 0.0, 0.0, 0.0)
+
+copied = source
+firstRow = submatrix(copied, 0, 0, 1, 2)
+changed = with_element(copied, 1, 0, 9.0)
+
+
+// EX-011 — Matrix arithmetic (proposed)
+// Matrix * matrix is a matrix product. Matrix * scalar scales every element.
+matrix(2,2) left = matrix_values(1.0, 2.0, 3.0, 4.0)
+matrix(2,2) right = matrix_values(5.0, 6.0, 7.0, 8.0)
+matrix(2,2) sum = matrix_values(0.0, 0.0, 0.0, 0.0)
+matrix(2,2) difference = matrix_values(0.0, 0.0, 0.0, 0.0)
+matrix(2,2) product = matrix_values(0.0, 0.0, 0.0, 0.0)
+matrix(2,2) scaled = matrix_values(0.0, 0.0, 0.0, 0.0)
+
+sum = left + right
+difference = left - right
+product = left * right
+scaled = left * 0.5
+
+
+// EX-012 — Identity and geometric composition (proposed)
+// Apply scale, then degree rotation, then translation to points.
+float32 scaleX Range(1, 4) = 2.0
+float32 scaleY Range(1, 4) = 2.0
+float32 angle Range(-90, 90) = 45.0
+float32 offsetX Range(-10, 10) = 2.0
+float32 offsetY Range(-10, 10) = 3.0
+matrix(3,3) transform = identity(3)
+
+transform = scale(transform, scaleX, scaleY)
+transform = rotate_degrees(transform, angle)
+transform = translate(transform, offsetX, offsetY)
+
+
+// EX-013 — Qualified diagonal affine inverse (proposed)
+// Restricted to nonzero diagonal entries; not an arbitrary matrix inverse.
+matrix(3,3) diagonal = matrix_values(2.0, 0.0, 0.0,
+                                    0.0, 4.0, 0.0,
+                                    0.0, 0.0, 1.0)
+matrix(3,3) inverse = identity(3)
+
+inverse = invert_affine(diagonal)
+
+
+// EX-014 — Transform float point tuples without drawing or data indexing (proposed)
+// Each row is an (x,y) point with implicit homogeneous 1. No perspective divide.
+matrix(2,2) points = matrix_values(1.0, 2.0, 3.0, 4.0)
+matrix(2,2) moved = matrix_values(0.0, 0.0, 0.0, 0.0)
+matrix(3,3) transform = identity(3)
+
+transform = translate(transform, 2.0, 3.0)
+transform_points(moved, points, transform)
+
+
+// EX-015 — Persistent state, finite resident work and source calls (proposed)
+// Host invokes work after installation; globals initialize once and persist.
+uint16 enabled = 1
+uint16 calls = 0
+uint16 i = 0
+Sub tick
+    calls = calls + 1
+EndSub
+Sub work
+    For i In Range(1:8)
+        If enabled == 1 Then
+            tick()
+        EndIf
+    Next i
+EndSub
+
+
+// EX-016 — Sticky runtime admission for integer values (proposed)
+// Failure clears valid; later successful checks do not restore it. Reset per job.
+sint16 reading = 21
+sint16 expected = 21
+bool valid = true
+Sub validate
+    valid = true
+    require_range(reading, 0, 20, valid)
+    require_equal(reading, expected, valid)
+    If valid Then
+        print "accepted"
+    Else
+        print "rejected"
+    EndIf
+EndSub
+
+
+// EX-017 — Explicit conversions between numeric types (proposed)
+// For parameterized targets, candidate spelling is convert(targetType, value).
+// Precision loss and out-of-range behavior remain to be decided.
+sint16 integerValue = -12
+float32 floatValue = -2.0
+fixed16(4) coarse = -1.25
+fixed16(8) fine = 0.0
+fixed32(8) wide = 0.0
+fixed16(8) fixedFromInteger = 0.0
+fixed16(4) fixedFromFloat = 0.0
+float32 floatFromInteger = 0.0
+float32 floatFromFixed = 0.0
+sint16 integerFromFloat = 0
+sint16 integerFromFixed = 0
+
+fine = convert(fixed16(8), coarse)
+wide = convert(fixed32(8), fine)
+coarse = convert(fixed16(4), wide)
+fixedFromInteger = convert(fixed16(8), integerValue)
+fixedFromFloat = convert(fixed16(4), floatValue)
+floatFromInteger = float32(integerValue)
+floatFromFixed = float32(fine)
+integerFromFloat = sint16(floatValue)
+integerFromFixed = sint16(coarse)
+
+
+// Array and stepped iteration syntax selected; implementation pending.
+Array float32 readings(0:3, 0:9, 0:19)
+readings(2, 5, 7) = 42.0
+
+// Inclusive endpoint; last value is 65528. Terminate before uint16 wraparound.
+uint16 sampleIndex
+For sampleIndex In Range(0:65535:8)
+    print "sample"
+Next sampleIndex
+
+
+// Function and scope proposals; passing/ownership rules await review.
+uint16 calls = 0
+Function twice(uint16 value) As uint16
+    uint16 result = value * 2
+    calls = calls + 1
+    Return result
+EndFunction
+uint16 answer = twice(7)
+
+
+// Multiple typed results; this call uses a nonzero denominator.
+Function divide(uint16 numerator, uint16 denominator) As (uint16, uint16)
+    Return numerator / denominator, numerator % denominator
+EndFunction
+uint16 quotient = 0
+uint16 remainder = 0
+(quotient, remainder) = divide(17, 5)

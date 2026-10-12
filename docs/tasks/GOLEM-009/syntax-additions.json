@@ -1,0 +1,388 @@
+{
+  "subtask": "GOLEM-009 / SYN-001",
+  "checkpoint": "8f1afe159e09931972018a067a2640d65d1a3115",
+  "example_path": "docs/tasks/GOLEM-003/examples/examples.golem",
+  "previous_line_count": 174,
+  "original_prefix_preserved": true,
+  "example_sha256": "fc3515ca917eee6ebe17b6dd7b27981fba210d381ea4e735c941248870feec57",
+  "samples": [
+    {
+      "sample": "EX-001",
+      "title": "Typed integer values, ordinary copying and unsigned widening (proposed)",
+      "line": 183,
+      "inventory": [
+        "DAT-001",
+        "DAT-002",
+        "INT-002"
+      ],
+      "declared_variables": [
+        "small",
+        "full",
+        "signedValue",
+        "large",
+        "copied",
+        "widenedByte",
+        "widenedWord"
+      ],
+      "procedures": [],
+      "status": "proposed"
+    },
+    {
+      "sample": "EX-002",
+      "title": "Fixed-point values and explicit float loads (proposed)",
+      "line": 197,
+      "inventory": [
+        "DAT-001",
+        "FLT-001"
+      ],
+      "declared_variables": [
+        "quarter",
+        "distance",
+        "quarterFloat",
+        "distanceFloat"
+      ],
+      "procedures": [],
+      "status": "proposed"
+    },
+    {
+      "sample": "EX-003",
+      "title": "Float copy, signed input conversion, arithmetic and scaling (proposed)",
+      "line": 208,
+      "inventory": [
+        "DAT-002",
+        "FLT-001",
+        "FLT-002"
+      ],
+      "declared_variables": [
+        "left",
+        "right",
+        "count",
+        "copied",
+        "countFloat",
+        "sum",
+        "difference",
+        "product",
+        "scaled"
+      ],
+      "procedures": [],
+      "status": "proposed"
+    },
+    {
+      "sample": "EX-004",
+      "title": "Bounded reciprocal and division through multiplication (proposed)",
+      "line": 227,
+      "inventory": [
+        "FLT-003"
+      ],
+      "declared_variables": [
+        "numerator",
+        "denominator",
+        "inverse",
+        "quotient"
+      ],
+      "procedures": [],
+      "status": "proposed"
+    },
+    {
+      "sample": "EX-005",
+      "title": "Float-valued rounding and absolute value (proposed)",
+      "line": 238,
+      "inventory": [
+        "RND-001",
+        "RND-002",
+        "RND-003",
+        "RND-004"
+      ],
+      "declared_variables": [
+        "value",
+        "floored",
+        "truncated",
+        "rounded",
+        "magnitude"
+      ],
+      "procedures": [],
+      "status": "proposed"
+    },
+    {
+      "sample": "EX-006",
+      "title": "Supported resident floor/conversion slice: compile separately --resident",
+      "line": 252,
+      "inventory": [
+        "RND-001",
+        "CNV-001",
+        "CTL-001"
+      ],
+      "declared_variables": [
+        "x",
+        "result"
+      ],
+      "procedures": [
+        "compute"
+      ],
+      "status": "maintained resident slice"
+    },
+    {
+      "sample": "EX-007",
+      "title": "Bounded float-to-unsigned-word conversion after floor (proposed)",
+      "line": 260,
+      "inventory": [
+        "CNV-002"
+      ],
+      "declared_variables": [
+        "x",
+        "result"
+      ],
+      "procedures": [],
+      "status": "proposed"
+    },
+    {
+      "sample": "EX-008",
+      "title": "Bounded nonnegative float-to-signed32 conversion (proposed)",
+      "line": 268,
+      "inventory": [
+        "CNV-003"
+      ],
+      "declared_variables": [
+        "x",
+        "result"
+      ],
+      "procedures": [],
+      "status": "proposed"
+    },
+    {
+      "sample": "EX-009",
+      "title": "Constant-divisor quotient and remainder together (proposed)",
+      "line": 276,
+      "inventory": [
+        "INT-003"
+      ],
+      "declared_variables": [
+        "dividend",
+        "quotient",
+        "remainder"
+      ],
+      "procedures": [],
+      "status": "proposed"
+    },
+    {
+      "sample": "EX-010",
+      "title": "Matrix values, typed copy/load, extraction and cell replacement (proposed)",
+      "line": 285,
+      "inventory": [
+        "MAT-001"
+      ],
+      "declared_variables": [
+        "source",
+        "copied",
+        "firstRow",
+        "changed"
+      ],
+      "procedures": [],
+      "status": "proposed"
+    },
+    {
+      "sample": "EX-011",
+      "title": "Matrix arithmetic (proposed)",
+      "line": 297,
+      "inventory": [
+        "MAT-002"
+      ],
+      "declared_variables": [
+        "left",
+        "right",
+        "sum",
+        "difference",
+        "product",
+        "scaled"
+      ],
+      "procedures": [],
+      "status": "proposed"
+    },
+    {
+      "sample": "EX-012",
+      "title": "Identity and geometric composition (proposed)",
+      "line": 312,
+      "inventory": [
+        "GEO-001"
+      ],
+      "declared_variables": [
+        "scaleX",
+        "scaleY",
+        "angle",
+        "offsetX",
+        "offsetY",
+        "transform"
+      ],
+      "procedures": [],
+      "status": "proposed"
+    },
+    {
+      "sample": "EX-013",
+      "title": "Qualified diagonal affine inverse (proposed)",
+      "line": 326,
+      "inventory": [
+        "GEO-002"
+      ],
+      "declared_variables": [
+        "diagonal",
+        "inverse"
+      ],
+      "procedures": [],
+      "status": "proposed"
+    },
+    {
+      "sample": "EX-014",
+      "title": "Transform float point tuples without drawing or data indexing (proposed)",
+      "line": 336,
+      "inventory": [
+        "GEO-003"
+      ],
+      "declared_variables": [
+        "points",
+        "moved",
+        "transform"
+      ],
+      "procedures": [],
+      "status": "proposed"
+    },
+    {
+      "sample": "EX-015",
+      "title": "Persistent state, finite resident work and source calls (proposed)",
+      "line": 346,
+      "inventory": [
+        "DAT-002",
+        "CTL-001",
+        "RUN-001",
+        "INT-001",
+        "CTL-002"
+      ],
+      "declared_variables": [
+        "enabled",
+        "calls",
+        "i"
+      ],
+      "procedures": [
+        "tick",
+        "work"
+      ],
+      "status": "proposed"
+    },
+    {
+      "sample": "EX-016",
+      "title": "Sticky runtime admission for integer values (proposed)",
+      "line": 363,
+      "inventory": [
+        "VAL-001",
+        "CMP-001",
+        "CTL-001"
+      ],
+      "declared_variables": [
+        "reading",
+        "expected",
+        "valid"
+      ],
+      "procedures": [
+        "validate"
+      ],
+      "status": "proposed"
+    },
+    {
+      "sample": "EX-017",
+      "title": "Explicit conversions between numeric types (proposed)",
+      "line": 380,
+      "inventory": [
+        "DAT-001",
+        "INT-002",
+        "FLT-001"
+      ],
+      "declared_variables": [
+        "integerValue",
+        "floatValue",
+        "coarse",
+        "fine",
+        "wide",
+        "fixedFromInteger",
+        "fixedFromFloat",
+        "floatFromInteger",
+        "floatFromFixed",
+        "integerFromFloat",
+        "integerFromFixed"
+      ],
+      "procedures": [],
+      "status": "proposed; Author review extension"
+    }
+  ],
+  "coverage_rows_filled": [
+    "CNV-001",
+    "CNV-002",
+    "CNV-003",
+    "CTL-001",
+    "DAT-001",
+    "DAT-002",
+    "FLT-001",
+    "FLT-002",
+    "FLT-003",
+    "GEO-001",
+    "GEO-002",
+    "GEO-003",
+    "INT-002",
+    "INT-003",
+    "MAT-001",
+    "MAT-002",
+    "RND-001",
+    "RND-002",
+    "RND-003",
+    "RND-004",
+    "VAL-001"
+  ],
+  "document_checks": [
+    "declared identifiers",
+    "required initialization",
+    "no terminators",
+    "balanced parentheses",
+    "matrix literal arity",
+    "no deferred builtins"
+  ],
+  "compiler_verification": "EX-006 only; all five package artifacts match maintained floor example",
+  "compiler_commands": [
+    {
+      "command": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-009/build/syntax-check/floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-009/build/syntax-check/sample"
+      ],
+      "seconds": 0.01
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "/Agon/mystuff/golem/examples/resident/floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-009/build/syntax-check/maintained"
+      ],
+      "seconds": 0.003
+    }
+  ],
+  "floor_artifact_sha256": {
+    "bootstrap.bin": "d3d52b5be6550a0087c93a39c996f7c236e8a9682b6265ddbc5eab5d545e03b3",
+    "cleanup.bin": "6d9b40cddc8635af0a8f9fa6e8ca0ef5b03947fd2e3543013575805aac5ea69a",
+    "invoke.bin": "0b9ef4674184fd85f33ae75fe91deb4aa71b6ad5a682a65eacb429cc1dfc1237",
+    "update-call.bin": "e1f41258b1a291c24f4569439478c852c83c6f66c7ec067c2c005e5adee5e510",
+    "interface.json": "a17f743455a8206bbf4efe3387bcabc614e2e438e6ba341c76c64176dca09c39"
+  },
+  "divmod_example_binary32_domain_checked": [
+    0,
+    1000
+  ],
+  "validation_seconds": 0.029,
+  "duration_scope": "Structural sample checks and floor package comparison only; excludes design/writing.",
+  "limits": "Structural checks are not a parser or proof of proposed semantics; no other new samples compile or were firmware-qualified.",
+  "review_amendment": {
+    "requirement": "Explicit integer/fixed/float conversions, including fixed width and fractional-bit changes.",
+    "notation": "Candidate convert(targetType, value) for parameterized targets; ordinary target-type calls retained.",
+    "validation": "EX-017 declarations/initialization, identifiers, parentheses and no terminators; prior sample anchors unchanged.",
+    "validation_seconds": 0.013,
+    "semantics": "Rounding, precision loss and out-of-range policy remain pending SEM-001."
+  }
+}

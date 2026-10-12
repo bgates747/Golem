@@ -790,6 +790,34 @@ stepped switch dispatch, and a possible `Bounds` spelling to distinguish
 continuous numeric bounds. These remain review proposals, not implemented or
 accepted extensions to the initial step-1 dispatch contract.
 
+## Array and Range syntax decision — 2026-10-11
+
+This decision supersedes earlier comma-separated Range and For/To/Step proposals
+above. Canonical counted iteration is `For i In Range(start:end:step) ... Next i`;
+do not retain `For i = start To end Step step` as an alternative. The optional
+variable after `Next` remains as previously illustrated. Parser changes are pending.
+
+```golem
+Array float32 readings(0:3, 0:9, 0:19)
+readings(2, 5, 7) = 42.0
+
+uint16 i
+For i In Range(0:65535:8)
+    print "sample"
+Next i
+```
+
+All index bounds are inclusive. The array has 4 × 10 × 20 homogeneous elements.
+`Range(start:end)` defaults to step 1; `Range(start:end:step)` permits descending
+iteration with a negative step. Include the end only when reached exactly. Reject
+zero steps and steps pointing away from the end. Loop termination must avoid
+counter overflow: the example ends after 65528 without wrapping to zero.
+Array dimensions initially use consecutive `lower:upper` indices. Range describes
+discrete sequences/indices; Bounds is the working spelling for numeric value
+constraints. Mixed-type rows were discussed under the name Table, with explicit
+field types; Table declaration syntax remains undecided. No implementation is
+authorized by recording these decisions.
+
 ## Axis 16: Increment/decrement operators `++` / `--`
 
 **Status: DECIDED in principle (Author: "i do like those" - a firm want),
@@ -1283,3 +1311,69 @@ oversized-payload discard bug documented in
 [from_codex.md](../devlog/from_codex.md) §10.3 is arguably already a
 bug-report-worthy finding, independent of any Golem-specific feature -
 worth considering as a first candidate, separate from Golem's own design.)
+
+## Functions and scope — review writeup, 2026-10-11
+
+Functions extend Sub routines with explicitly typed return values. The Author
+approved the VBA-like Function/As/EndFunction direction and requires functions
+to accept and return any Golem object type, including arrays, matrices and tables.
+Multiple typed results are supported in the design direction. Syntax and scope
+rules below are recorded for review; no parser or runtime implementation is implied.
+Matrices remain a separate type, as explicitly confirmed by the Author.
+
+```golem
+uint16 calls = 0
+
+Function twice(uint16 value) As uint16
+    uint16 result = value * 2
+    calls = calls + 1
+    Return result
+EndFunction
+
+uint16 answer = twice(7)
+```
+
+1. FN-001: A Sub has no result; a Function declares its result type after As.
+   Use explicit Return, including early returns, rather than assigning to the
+   function name. Every reachable normal exit must supply the declared results.
+2. FN-002: Parameters and results may have any supported Golem type. Composite
+   results must remain valid after the invocation ends. This requirement does
+   not imply copying all data or returning references into expired local storage.
+3. FN-003: Proposed multiple-result spelling declares an ordered list of types
+   after As, returns corresponding expressions and assigns into explicitly
+   declared destinations. Result count and types must match. Packaging results
+   in a Table is not required solely to return multiple values.
+
+```golem
+Function divide(uint16 numerator, uint16 denominator) As (uint16, uint16)
+    Return numerator / denominator, numerator % denominator
+EndFunction
+
+uint16 quotient = 0
+uint16 remainder = 0
+(quotient, remainder) = divide(17, 5)
+```
+
+This example uses a nonzero denominator. Division-by-zero handling remains part
+of semantic review; the example does not establish a failure policy.
+
+1. SC-001: Proposed scope rule: declarations outside routines are global and
+   persist between invocations of the installed program. Initialization follows
+   program installation/reset, not every routine call.
+2. SC-002: Parameters and routine-body declarations are local to each invocation.
+   Nested-block declarations are visible only within their lexical block.
+   Each invocation has independent local state; storage reuse is an implementation
+   choice only where it preserves that behavior. Locals with initializers execute
+   those initializers when their declarations are reached. No implicit zero
+   initialization or permission to read an uninitialized local is established.
+3. SC-003: Proposed name rule: reject local declarations that hide globals.
+   Duplicate declarations and shadowing of parameters/outer locals still need a
+   precise rule. These are review proposals, not existing compiler guarantees.
+4. SC-004: A future Static local could persist between calls while remaining
+   private to its routine. It is a possible extension, not selected syntax.
+
+Passing by value/reference, mutability, composite layout/shape declarations,
+copy-versus-transfer rules, aliasing and ownership/lifetime remain unresolved.
+The implementation must also account for finite VDP execution and bounded call
+storage; independent invocation semantics do not promise unrestricted recursion.
+These questions belong to GOLEM-009 SEM-001 before implementation proceeds.
