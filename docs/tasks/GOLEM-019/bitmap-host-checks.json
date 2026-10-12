@@ -1,0 +1,255 @@
+{
+  "passed": true,
+  "seconds": 48.364,
+  "prior_cli_profiles": [
+    "examples/resident/floor.golem",
+    "examples/resident/counted-floor.golem",
+    "docs/tasks/GOLEM-013/checked-subtract.golem",
+    "docs/tasks/GOLEM-014/checked-multiply.golem",
+    "docs/tasks/GOLEM-015/checked-divmod.golem",
+    "docs/tasks/GOLEM-017/table.golem"
+  ],
+  "geometry_artifacts_unchanged": 12,
+  "assembler_consumers": [
+    {
+      "name": "default",
+      "installation": 262,
+      "input_bytes": 6,
+      "call_bytes": 6,
+      "owned": 6
+    },
+    {
+      "name": "relocated",
+      "installation": 262,
+      "input_bytes": 6,
+      "call_bytes": 6,
+      "owned": 6
+    }
+  ],
+  "prepublication_rejections": 3,
+  "sanitizers": "address,undefined",
+  "commands": [
+    {
+      "args": [
+        "make",
+        "-C",
+        "src",
+        "check",
+        "CXXFLAGS=-std=c++17 -Wall -Wextra -Werror -O2"
+      ],
+      "seconds": 10.632
+    },
+    {
+      "args": [
+        "g++",
+        "-std=c++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "/Agon/mystuff/golem/tests/test_compiler.cpp",
+        "-o",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-019/build/test-sanitized"
+      ],
+      "seconds": 37.229
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-019/build/test-sanitized"
+      ],
+      "seconds": 0.471
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--emit-asm",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-018/geometry.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-019/build/after-geometry"
+      ],
+      "seconds": 0.003
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--emit-asm",
+        "--reserve",
+        "1:254",
+        "--reserve",
+        "260:264",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-018/geometry.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-019/build/after-relocated"
+      ],
+      "seconds": 0.002
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--emit-asm",
+        "/Agon/mystuff/golem/examples/resident/floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-019/build/prior-0"
+      ],
+      "seconds": 0.002
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--emit-asm",
+        "/Agon/mystuff/golem/examples/resident/counted-floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-019/build/prior-1"
+      ],
+      "seconds": 0.002
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--emit-asm",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-013/checked-subtract.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-019/build/prior-2"
+      ],
+      "seconds": 0.002
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--emit-asm",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-014/checked-multiply.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-019/build/prior-3"
+      ],
+      "seconds": 0.002
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--emit-asm",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-015/checked-divmod.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-019/build/prior-4"
+      ],
+      "seconds": 0.002
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--emit-asm",
+        "--table-data",
+        "samples=/Agon/mystuff/golem/docs/tasks/GOLEM-017/records.dat",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-017/table.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-019/build/prior-5"
+      ],
+      "seconds": 0.002
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--emit-asm",
+        "--reserve",
+        "8195:8195",
+        "--reserve",
+        "8201:8202",
+        "--reserve",
+        "8463:8463",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-019/bitmaps.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-019/build/default"
+      ],
+      "seconds": 0.002
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-007/build/ez80asm",
+        "default-consumer.asm",
+        "default-consumer.bin",
+        "-c"
+      ],
+      "seconds": 0.001
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--emit-asm",
+        "--reserve",
+        "8195:8195",
+        "--reserve",
+        "8201:8202",
+        "--reserve",
+        "8463:8463",
+        "--reserve",
+        "1:254",
+        "--reserve",
+        "260:264",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-019/bitmaps.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-019/build/relocated"
+      ],
+      "seconds": 0.002
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-007/build/ez80asm",
+        "relocated-consumer.asm",
+        "relocated-consumer.bin",
+        "-c"
+      ],
+      "seconds": 0.001
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--emit-asm",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-019/build/bad.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-019/build/preserve"
+      ],
+      "seconds": 0.003
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--emit-asm",
+        "--reserve",
+        "8195:8195",
+        "--reserve",
+        "8201:8202",
+        "--reserve",
+        "8463:8463",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-019/build/bad.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-019/build/preserve"
+      ],
+      "seconds": 0.001
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--emit-asm",
+        "--reserve",
+        "8195:8195",
+        "--reserve",
+        "8201:8202",
+        "--reserve",
+        "8463:8463",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-019/build/bad.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-019/build/preserve"
+      ],
+      "seconds": 0.001
+    }
+  ],
+  "source_sha256": {
+    "src/resident_drawing.hpp": "cd84a55b1c97a96200b1eba1cbd8bd9effb866ec37b5e091e11b7262db26c994",
+    "src/assembly_output.hpp": "c5745e4d23d591c363f748ce11fd3d443f6e4851c2a0be04530adf49788fea4a",
+    "tests/test_compiler.cpp": "a0e39ab146ba786bc392ad07ab3385eb419ceedc06f941893c0ebbe31bc91042",
+    "docs/tasks/GOLEM-019/bitmaps.golem": "f85281c81593d96b7ef8571eb952edd2e8032ba99810ef310b9b2820d34cceda",
+    "docs/tasks/GOLEM-019/check_bitmap.py": "7c15e80162a7f98bc464dde64c75e87498a07f22963efdc7fa03edfcdbd18e32"
+  }
+}

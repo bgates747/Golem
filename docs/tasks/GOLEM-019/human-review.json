@@ -1,0 +1,21 @@
+{
+  "retrieved_at": "2026-10-12T11:31:20.350952+00:00",
+  "host": "oryx-linuxlite",
+  "emulator_stopped": true,
+  "numerical_pass": true,
+  "checks": 18526,
+  "bytes": 18869,
+  "sha256": "65d2bf9ce218bf9e9f6d5b6000dcf18318b450cccd5b26f8db4fb3e445effccd",
+  "runtime_and_fixture_identity_match": true,
+  "visual_confirmation": "passed",
+  "mos_keyboard_confirmation": "superseded_by_successful_GOLEM-020_review",
+  "commit_approved": true,
+  "superseded_for_presentation": true,
+  "replacement": "demo-checks.json",
+  "replacement_visual_confirmation": "passed",
+  "replacement_numerical_pass": true,
+  "replacement_checks": 864,
+  "replacement_result_sha256": "44caa26294e7d882a15d1e50520306a8f244ddfb0d0a58dd9e56e71e5aac3e72",
+  "commit_approval_recorded_at": "2026-10-12T08:26:40.256458-04:00",
+  "commit_approval_instruction": "commit and push"
+}

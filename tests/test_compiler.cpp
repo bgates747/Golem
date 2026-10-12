@@ -178,5 +178,86 @@ int main() {
     reject([&] { assembly::render(resident_table::compile(alteredTable("Sub fetch","Sub package_bootstrap"),"samples",tableData),{}); },"symbol collision");
     const auto keywordCase = alteredTable("Record Sample","rEcOrD Sample");
     assert(resident_table::compile(keywordCase,"samples",tableData).bootstrap==table.bootstrap);
+    const std::string drawingSource = "uint8 colour Bounds(0,63)=11 sint16 x=-32768 sint16 y=32767 "
+        "Sub paint draw_point(colour,x,y) draw_line(2,x,y,0,0) fill_quad(colour,0,0,20,0,30,20,-10,20) EndSub";
+    const auto drawing = resident_drawing::compile(drawingSource, {{1,254},{50000,50000}});
+    assert(drawing.input==255 && drawing.entry==256 && drawing.spec.values==resident_scalar::Bytes({11,0,128,255,127}));
+    assert(drawing.spec.globals[1].offset==1 && drawing.spec.globals[2].offset==3);
+    assert(drawing.invoke.size()==6 && resident_drawing::inputUpdate(drawing).size()==16);
+    assert(drawing.owned.size()==5 && !drawing.owned.count(0) && !drawing.owned.count(50000));
+    const auto drawAsm = assembly::render(drawing,{});
+    assert(drawAsm.find("golem_colour_type: equ 5")!=std::string::npos);
+    assert(drawAsm.find("golem_x_offset: equ 1")!=std::string::npos);
+    assert(drawAsm.find("golem_paint:\n")!=std::string::npos);
+    const auto literalDrawing = resident_drawing::compile("Sub paint fill_quad(3,0,0,20,0,30,20,-10,20) EndSub");
+    assert(!literalDrawing.input && resident_drawing::inputUpdate(literalDrawing).empty());
+    assert(literalDrawing.programs.at(2)==resident_scalar::Bytes({18,0,3,25,4,0,0,0,0,25,4,20,0,0,0,
+        25,85,246,255,20,0,25,85,30,0,20,0}));
+    auto drawChange = [&](const std::string &from, const std::string &to) {
+        auto s=drawingSource; s.replace(s.find(from),from.size(),to); return s;
+    };
+    assert(resident_drawing::compile(drawChange("draw_point","DrAw_PoInT"),{{1,254},{50000,50000}}).bootstrap==drawing.bootstrap);
+    for (const auto &change : std::vector<std::pair<std::string,std::string>>{
+            {"Bounds(0,63)","Bounds(0,255)"},{"Bounds(0,63)","Bounds(40,30)"},
+            {"=11","=64"},{"=11","=1.5"},{"x=-32768","x=-32769"},{"y=32767","y=32768"},
+            {"x=-32768","x"},{"colour,x,y","colour,X,y"},{"colour,x,y","x,x,y"},
+            {"colour,x,y","colour,colour,y"},{"colour,x,y","64,x,y"},
+            {"colour,x,y","colour,x+1,y"},{"colour,x,y","colour,x"},
+            {"draw_point(colour,x,y)","draw_bitmap(colour,x,y)"},
+            {"draw_point(colour,x,y)","x=1"},{"EndSub",""},{"EndSub","EndSub Sub two EndSub"},
+            {"Sub paint","Sub x"},{"Sub paint","Sub draw_point"},
+            {"=11","=11;"},{"sint16 y=32767","sint16 x=32767"}})
+        reject([&] {resident_drawing::compile(drawChange(change.first,change.second));}, "");
+    reject([] {resident_drawing::compile("Sub empty EndSub");},"requires an operation");
+    reject([&] {resident_drawing::compile(drawingSource,{{1,65531}});},"namespace exhausted");
+    reject([&] {assembly::render(resident_drawing::compile(drawChange("Sub paint","Sub package_bootstrap")),{});},"symbol collision");
+    reject([&] {assembly::render(resident_drawing::compile(drawChange("Sub paint","sint16 X=0 Sub paint")),{});},"symbol collision");
+    const std::string bitmapSource = "uint16 image Bounds(1,65534)=50000 sint16 x=-32768 sint16 y=32767 "
+        "Sub paint draw_bitmap(image,x,y) draw_point(2,0,0) EndSub";
+    assert(resident_drawing::profile(bitmapSource));
+    assert(!resident_drawing::profile("uint16 a=1 // Sub fake draw_bitmap\n" + floorSource));
+    assert(!resident_drawing::profile("uint16 a=1 " + floorSource));
+    const auto bitmap = resident_drawing::compile(bitmapSource,{{1,254},{50000,50000}});
+    assert(bitmap.input==255 && bitmap.entry==256 && bitmap.spec.values==resident_scalar::Bytes({80,195,0,128,255,127}));
+    assert(bitmap.spec.globals[0].width()==2 && bitmap.spec.globals[0].typeTag()==1);
+    assert(bitmap.programs.at(257)==resident_scalar::Bytes({23,27,32,0,0,23,0,150,1,255,255,
+        23,27,3,0,0,0,0,23,0,150,1,255,255}));
+    // Three independent word patches at the full-ID selector and signed positions.
+    assert(bitmap.programs.at(256)==resident_scalar::Bytes({
+        23,0,160,1,1,5,226,3,0,2,0,255,0,0,0,
+        23,0,160,1,1,5,226,14,0,2,0,255,0,2,0,
+        23,0,160,1,1,5,226,16,0,2,0,255,0,4,0,
+        23,0,160,1,1,1,23,0,160,2,1,1}));
+    assert(bitmap.initialBitmapIDs==std::set<unsigned>({50000}));
+    assert(!bitmap.owned.count(50000) && bitmap.invoke.size()==6);
+    assert(resident_drawing::inputUpdate(bitmap).size()+bitmap.invoke.size()==23);
+    assert(resident_scalar::Bytes(bitmap.bootstrap.begin(),bitmap.bootstrap.begin()+7)==resident_scalar::Bytes({23,0,248,1,0,1,0}));
+    assert(resident_drawing::manifest(bitmap,{{50000,50000}}).find("\"initial_bitmap_ids\": [50000]")!=std::string::npos);
+    assert(assembly::render(bitmap,{}).find("golem_image_type: equ 1")!=std::string::npos);
+    const auto literalBitmap = resident_drawing::compile(
+        "Sub paint draw_bitmap(50000,-32768,32767) draw_bitmap(65534,-1,0) EndSub",{{50000,50000},{65534,65534}});
+    assert(!literalBitmap.input && literalBitmap.owned.size()==3);
+    assert(literalBitmap.programs.at(2)==resident_scalar::Bytes({23,27,32,80,195,23,0,150,1,255,255,
+        23,27,3,0,128,255,127,23,0,150,1,255,255}));
+    assert(literalBitmap.programs.at(3)[3]==254 && literalBitmap.programs.at(3)[4]==255);
+    assert(literalBitmap.programs.at(3)[14]==255 && literalBitmap.programs.at(3)[15]==255);
+    auto bitmapChange = [&](const std::string &from, const std::string &to) {
+        auto s=bitmapSource; s.replace(s.find(from),from.size(),to); return s;
+    };
+    assert(resident_drawing::compile(bitmapChange("draw_bitmap","DrAw_BiTmAp"),{{1,254},{50000,50000}}).bootstrap==bitmap.bootstrap);
+    reject([&] {resident_drawing::compile(bitmapSource);},"requires --reserve");
+    reject([] {resident_drawing::compile("Sub paint draw_bitmap(50000,0,0) EndSub");},"requires --reserve");
+    reject([&] {resident_drawing::compile(bitmapSource,{{49999,49999}});},"requires --reserve");
+    for (const auto &change : std::vector<std::pair<std::string,std::string>>{
+            {"uint16 image","sint16 image"},{"uint16 image","uint8 image"},
+            {"Bounds(1,65534)","Bounds(0,65534)"},{"Bounds(1,65534)","Bounds(1,65535)"},
+            {"Bounds(1,65534)",""},{"=50000","=65535"},{"=50000","=-1"},
+            {"image,x,y","0,x,y"},{"image,x,y","65535,x,y"},{"image,x,y","1.5,x,y"},
+            {"image,x,y","image,image,y"},{"image,x,y","image,x,image"},
+            {"image,x,y","Image,x,y"},{"image,x,y","image,x+1,y"},
+            {"image,x,y","image,x,y,0"},{"image,x,y","image,x"},
+            {"Sub paint","Sub draw_bitmap"},{"image,x,y","image,-32769,y"},
+            {"image,x,y","image,x,32768"}})
+        reject([&] {resident_drawing::compile(bitmapChange(change.first,change.second),{{50000,50000}});},"");
     std::cout << "Maintained raw/resident contract checks pass; " << rejections << " rejection cases.\n";
 }

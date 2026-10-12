@@ -1,0 +1,107 @@
+{
+  "pass": true,
+  "scope": "DRW-001 existing host compiler drawing checks with ASan/UBSan; no graphics execution",
+  "rally_commit": "4db7e96f70c3d63f4ab53766f3b32063e9357c8b",
+  "rally_status": "",
+  "source_sha256": {
+    "/Agon/mystuff/golem-rally19/src/golemc.cpp": "0156bb00e4d4f3f123e7fb012805bd1f85756cbca5849bd1024fdef8db52cdb5",
+    "/Agon/mystuff/golem-rally19/src/hosted.hpp": "930a6f7e1680d3568d2ec82ef3907f8856fc8f87d735364f10a27218bd86445c",
+    "/Agon/mystuff/golem-rally19/docs/design/rally19-hosted-v1.md": "b6a3ca27ed408a13bd40d9e0c597bd918294f253e99564c231633b84d2d15474",
+    "/Agon/mystuff/golem-rally19/tests/test_hosted.cpp": "1b6392a814598c4abc9fde84913cc912591349202c8dad2e8e02aece575311d6",
+    "/Agon/mystuff/golem-rally19/tests/test_elements.cpp": "1f592c362822bd50167ca56ea1d6f797009e9e08d845a65b2ce26290c1d7fdcd",
+    "/Agon/mystuff/golem-rally19/tests/test_bitmap.cpp": "a61ea2376cc0324c899701ba8d27f0ddcc75b97ef925d638ee2fce97622cbe5e",
+    "/Agon/mystuff/golem-rally19/tests/test_viewport.cpp": "44ed9913f5bac339ffa8ba02f207774ce2dabb061fdcf2e17bcbf6e5ddec8ea1",
+    "/Agon/mystuff/golem-rally19/examples/native_vehicle_math/bitmap.golem": "34159b781c4715807e24712d88996069884b2d9185175581461b7d91cda1df80",
+    "/Agon/mystuff/golem-rally19/examples/native_quantization/viewport.golem": "4091f5cacd8443450d6505d4c324b03d52e846a23a5363486beb079fe49aa753",
+    "/Agon/mystuff/AgonJukebox/.emulator/runtime/fab-1.2.4/src/vdp/vdp-console8/video/context/graphics.h": "eba700bc2b988af484784c4d90ebc8233a008687f1e5d5b65ab61cc7e6433d2a",
+    "/Agon/mystuff/AgonJukebox/.emulator/runtime/fab-1.2.4/src/vdp/vdp-console8/video/context/viewport.h": "2f69546602eb5b765719b8186688edece1e38b3b0bb0e276325391887451d5ff",
+    "/Agon/mystuff/AgonJukebox/.emulator/runtime/fab-1.2.4/src/vdp/vdp-console8/video/vdu.h": "24923b53a83d77ebf729795d7ecb7343e6f2fed0e9d748d48fc83c8b75e805cb",
+    "/Agon/mystuff/AgonJukebox/.emulator/runtime/fab-1.2.4/src/vdp/vdp-console8/video/vdu_sprites.h": "53b0fe1474ba20565cfc31afae993f88eb44084ab8b3c4181d5261a59db3c1eb",
+    "/Agon/mystuff/AgonJukebox/.emulator/runtime/fab-1.2.4/src/vdp/vdp-console8/video/buffers.h": "f04f4da7521192d05725a7f54a52200c0b7cd9ed067335feaf20baf32ec62751",
+    "/Agon/mystuff/AgonJukebox/.emulator/runtime/fab-1.2.4/src/vdp/vdp-console8/video/types.h": "0b14cd7fd375145d537335e465459c119c0ba23fa4594f7aeb6709aafd8fb2a5",
+    "/Agon/mystuff/golem/.emulator/runtime/fab-1.2.5/src/vdp/vdp-console8/video/context/graphics.h": "eba700bc2b988af484784c4d90ebc8233a008687f1e5d5b65ab61cc7e6433d2a",
+    "/Agon/mystuff/golem/.emulator/runtime/fab-1.2.5/src/vdp/vdp-console8/video/context/viewport.h": "2f69546602eb5b765719b8186688edece1e38b3b0bb0e276325391887451d5ff",
+    "/Agon/mystuff/golem/.emulator/runtime/fab-1.2.5/src/vdp/vdp-console8/video/vdu.h": "24923b53a83d77ebf729795d7ecb7343e6f2fed0e9d748d48fc83c8b75e805cb",
+    "/Agon/mystuff/golem/.emulator/runtime/fab-1.2.5/src/vdp/vdp-console8/video/vdu_sprites.h": "53b0fe1474ba20565cfc31afae993f88eb44084ab8b3c4181d5261a59db3c1eb",
+    "/Agon/mystuff/golem/.emulator/runtime/fab-1.2.5/src/vdp/vdp-console8/video/buffers.h": "f04f4da7521192d05725a7f54a52200c0b7cd9ed067335feaf20baf32ec62751",
+    "/Agon/mystuff/golem/.emulator/runtime/fab-1.2.5/src/vdp/vdp-console8/video/types.h": "0b14cd7fd375145d537335e465459c119c0ba23fa4594f7aeb6709aafd8fb2a5"
+  },
+  "tests": [
+    {
+      "test": "test_hosted",
+      "command": [
+        "g++",
+        "-std=c++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-g",
+        "-O1",
+        "-fsanitize=address,undefined",
+        "/Agon/mystuff/golem-rally19/tests/test_hosted.cpp",
+        "-o",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-011/build/test_hosted"
+      ],
+      "stdout": "Hosted compiler: stock byte goldens, typed load, forward calls, finite repeat, signed-store/PLOT lowering and 26 negative cases pass.",
+      "seconds": 44.22
+    },
+    {
+      "test": "test_elements",
+      "command": [
+        "g++",
+        "-std=c++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-g",
+        "-O1",
+        "-fsanitize=address,undefined",
+        "/Agon/mystuff/golem-rally19/tests/test_elements.cpp",
+        "-o",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-011/build/test_elements"
+      ],
+      "stdout": "Element helpers: typed record selection, offset relocation, unsigned floor/widening and ten negatives pass.",
+      "seconds": 43.193
+    },
+    {
+      "test": "test_bitmap",
+      "command": [
+        "g++",
+        "-std=c++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-g",
+        "-O1",
+        "-fsanitize=address,undefined",
+        "/Agon/mystuff/golem-rally19/tests/test_bitmap.cpp",
+        "-o",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-011/build/test_bitmap"
+      ],
+      "stdout": "Bitmap command templates, affine proof, ownership, signed coordinates and rejection checks pass.",
+      "seconds": 43.326
+    },
+    {
+      "test": "test_viewport",
+      "command": [
+        "g++",
+        "-std=c++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-g",
+        "-O1",
+        "-fsanitize=address,undefined",
+        "/Agon/mystuff/golem-rally19/tests/test_viewport.cpp",
+        "-o",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-011/build/test_viewport"
+      ],
+      "stdout": "Viewport pixel/wire order, finite scroll extent and typed rejection checks pass.",
+      "seconds": 43.05
+    }
+  ],
+  "seconds": 173.796,
+  "reference_checkout_modified": false,
+  "emulator_launched": false,
+  "production_compiler_changed": false
+}

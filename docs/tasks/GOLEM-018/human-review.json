@@ -1,0 +1,33 @@
+{
+  "retrieved_at": "2026-10-12T08:33:07.374270+00:00",
+  "host": "oryx-linuxlite",
+  "checks": 11451,
+  "pixel_pairs": 5704,
+  "observed_bytes": 12589,
+  "saved_results_match": true,
+  "observed_sha256": "419696d94bd6049f899a58b83998c74b6b043bc9d43687ac69f70f69e5d7336a",
+  "expected_sha256": "419696d94bd6049f899a58b83998c74b6b043bc9d43687ac69f70f69e5d7336a",
+  "fixture_identity": {
+    "docs/tasks/GOLEM-018/expected.dat": "419696d94bd6049f899a58b83998c74b6b043bc9d43687ac69f70f69e5d7336a",
+    "docs/tasks/GOLEM-018/emulator-checks.json": "bacfb89dcbdf9117f66575f393b41710f6b20480d739e16f2f6741b887a91c1a",
+    "docs/tasks/GOLEM-018/verify_review.py": "236c2bdcaa741a3bbfd0e57370f922501d811344831c47e6ffd6a82bdf35dba2",
+    ".emulator/sdcard/golem-018/probe.bin": "d71db61e2685a74cd84492fe3ff7fb26b642285244304cd7899d1e69991b8e80"
+  },
+  "runtime_identity": {
+    ".emulator/fab-agon-emulator": "d12d063c66c1bdb8d4c78179e0485d0be16427294587ee0a965830722489386d",
+    ".emulator/fab-agon-emulator.bin": "aec5f8c266117d5bf864c6124d3c8986d042802ed5cbaaf8813e04a9fb8d0bea",
+    ".emulator/mos_platform.bin": "d564243283972690933a4554296ad6202ca4ef54572279533a942960846bebae",
+    ".emulator/mos_platform.map": "d69e60bbce61a7b4b3eef318ba395f11c4e1a5b585755755113992dc94edcb86",
+    ".emulator/firmware/vdp_platform.so": "14338aaeead48cb3df5987bf7fcc1b350d9e08d4a0ee0fcfc1a4a89cf79fae97"
+  },
+  "staged_identity_matches": true,
+  "author_keyboard_confirmation": "dir worked",
+  "author_visual_observation": "Cyan drawings at far upper left; requested an expected-shape reference.",
+  "explanation": "Intentional negative-coordinate clipping cases; final restored drawing uses yellow dots, line and trapezoid.",
+  "visual_review": "passed; Author confirmed the reference matches what they saw",
+  "commit_approved": true,
+  "author_visual_confirmation": "exceedingly weird test pattern but whatever. that is what i saw",
+  "accepted": true,
+  "commit_approval_recorded_at": "2026-10-12T08:26:40.256458-04:00",
+  "commit_approval_instruction": "commit and push"
+}

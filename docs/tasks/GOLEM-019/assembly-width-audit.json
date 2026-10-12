@@ -1,0 +1,13 @@
+{
+  "tool": "pingo_terrain/scripts/audit_adl_width.py",
+  "passed": true,
+  "files": 2,
+  "wide_memory_accesses": 12,
+  "definite_width_hazards": 0,
+  "indirect_or_unresolved_review_items": 0,
+  "scope": "Locally edited guest.asm and agnb_support.inc; canonical agnb_api.inc is an unchanged snapshot.",
+  "source_sha256": {
+    "docs/tasks/GOLEM-019/guest.asm": "093d8451038250722937348eb47002c2a0b1e3bf23b065416da82713048f40e9",
+    "docs/tasks/GOLEM-019/agnb_support.inc": "091aff1644b2235af452a89582b1617e1972a9042a0269fbb82f30fca37956eb"
+  }
+}

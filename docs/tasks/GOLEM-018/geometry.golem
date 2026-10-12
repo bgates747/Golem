@@ -1,0 +1,30 @@
+// Assembly: mode 8 (320x240), pixel coordinates, origin (0,0), full viewport.
+// Install once; call golem_drawGeometry. Inputs persist between calls.
+uint8 colour Bounds(0,63) = 11
+sint16 pointX = 24
+sint16 pointY = 50
+sint16 lineX1 = 60
+sint16 lineY1 = 50
+sint16 lineX2 = 130
+sint16 lineY2 = 100
+sint16 x1 = 180
+sint16 y1 = 60
+sint16 x2 = 260
+sint16 y2 = 60
+sint16 x3 = 280
+sint16 y3 = 120
+sint16 x4 = 160
+sint16 y4 = 120
+Sub drawGeometry
+    draw_point(colour, pointX, pointY)
+    draw_point(colour, 27, 50)
+    draw_point(colour, 30, 50)
+    draw_point(colour, 24, 53)
+    draw_point(colour, 27, 53)
+    draw_point(colour, 30, 53)
+    draw_point(colour, 24, 56)
+    draw_point(colour, 27, 56)
+    draw_point(colour, 30, 56)
+    draw_line(colour, lineX1, lineY1, lineX2, lineY2)
+    fill_quad(colour, x1, y1, x2, y2, x3, y3, x4, y4)
+EndSub

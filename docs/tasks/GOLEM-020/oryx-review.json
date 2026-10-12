@@ -1,0 +1,37 @@
+{
+  "host": "oryx-linuxlite",
+  "architecture": "x86_64",
+  "profile": "/home/smith/Agon/mystuff/golem/.emulator",
+  "pass_headless": true,
+  "checks": 841,
+  "observed_bytes": 946,
+  "execution_seconds": 21.927,
+  "runtime_identity": {
+    ".emulator/fab-agon-emulator": "d12d063c66c1bdb8d4c78179e0485d0be16427294587ee0a965830722489386d",
+    ".emulator/fab-agon-emulator.bin": "aec5f8c266117d5bf864c6124d3c8986d042802ed5cbaaf8813e04a9fb8d0bea",
+    ".emulator/mos_platform.bin": "d564243283972690933a4554296ad6202ca4ef54572279533a942960846bebae",
+    ".emulator/mos_platform.map": "d69e60bbce61a7b4b3eef318ba395f11c4e1a5b585755755113992dc94edcb86",
+    ".emulator/firmware/vdp_platform.so": "14338aaeead48cb3df5987bf7fcc1b350d9e08d4a0ee0fcfc1a4a89cf79fae97"
+  },
+  "fixture_identity": {
+    "docs/tasks/GOLEM-020/expected.dat": "d95742a02e9dbe3d3f9263ae510effae6eb9c80f3bdc801b47f9fd9b01e87440",
+    "docs/tasks/GOLEM-020/checks.json": "9e30e37f243c1c12e85a01d44baee9ab99ce4f240a6f7e74779d544317def8c4",
+    "docs/tasks/GOLEM-020/verify_review.py": "bb9b295045d9f469d467f527b7007d48234a3034cca922988493b422dc19acd8",
+    "docs/tasks/GOLEM-020/animation.golem": "3905e06d9f6bb49cda4af677ff9036a81d9807ae2d36f1b90ab297bacbcfa656",
+    "docs/tasks/GOLEM-020/animation.asm": "1ed88b3f057e2e298548f9fdcb5501c372030a92a8c4e241603876601121c710",
+    "docs/tasks/GOLEM-020/README.md": "661972639c5b960162dc4aa8fbb8c578e622ea7e2a9da37541d0653b19ab78c5",
+    "docs/tasks/GOLEM-020/build/golem.inc": "ec8f0b09e2e38ed8576df02772a4a7e9bd3da1a013784c3925d914298f46b093",
+    "docs/tasks/GOLEM-020/build/interface.json": "8a76a051543dfabbc291c48922d4dd43be28543838701d3e2a6ef246f27eec5e",
+    ".emulator/sdcard/golem-020/probe.bin": "2f060b8edcd06914083fe238a6f2636faaf734ee75f68acefdd2e91626578804",
+    ".emulator/sdcard/golem-020/wolf-review.agnb": "f7b4daccf894ba545566ee6eb2c420cf78394c8e39f4799a30e3a55cd0d9391a"
+  },
+  "startup_sha256": "55d2e10029c0a3e02b970fd3081cf75e61dcb867711f11fcc67d7db896843f22",
+  "observed_sha256": "d95742a02e9dbe3d3f9263ae510effae6eb9c80f3bdc801b47f9fd9b01e87440",
+  "executed_fab": "/home/smith/Agon/mystuff/golem/.emulator/runtime/fab-1.2.5/fab-agon-emulator",
+  "loaded_vdp": "/home/smith/Agon/mystuff/golem/.emulator/runtime/fab-1.2.5/firmware/vdp_platform.so",
+  "human_validation": "pending",
+  "graphical_emulator_launched": false,
+  "emulator_stopped": true,
+  "result_removed_for_fresh_human_review": true,
+  "previous_startup_backup": "/home/smith/Agon/mystuff/golem/docs/tasks/GOLEM-020/build/previous-autoexec.txt"
+}

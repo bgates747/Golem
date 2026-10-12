@@ -70,6 +70,20 @@ the packed rows. [GOLEM-017](docs/tasks/GOLEM-017/README.md) passes host, assemb
 and stock Pi/Oryx headless qualification. Oryx human review passed; the agent
 verified the saved results.
 
+The separate [resident drawing profile](docs/design/resident-drawing.md) supports
+named points, lines and filled convex quads with initialized packed inputs and
+assembly call wrappers. [GOLEM-018](docs/tasks/GOLEM-018/README.md) passes host,
+assembler and stock Pi/Oryx headless pixel checks. Oryx human visual/keyboard
+review passed, and the saved results were retrieved and verified.
+Plain `draw_bitmap(bufferId,x,y)` now supports full 16-bit asset IDs and named
+assembly calls. [GOLEM-019](docs/tasks/GOLEM-019/README.md) uses familiar Wolf
+bitmaps at native sizes; compiler/sanitizer/assembly and stock pixel checks pass.
+The Author accepted the corrected static bitmap display; its saved 864-byte
+result matches. GOLEM-020 subsequently passed animation and MOS keyboard review.
+[GOLEM-020](docs/tasks/GOLEM-020/README.md) adds a finite Wolf bitmap animation: Golem
+draws each frame; assembly updates positions and presents with stock VSYNC swaps.
+Its saved human run matches all 841 checks / 946 bytes.
+
 ## Reference material
 
 Design is grounded in the Agon documentation, particularly:

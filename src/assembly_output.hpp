@@ -1,5 +1,6 @@
 #pragma once
 #include "resident_table.hpp"
+#include "resident_drawing.hpp"
 
 namespace golem::assembly {
 // A single package per include. Names are checked under assembler case folding.
@@ -81,6 +82,19 @@ inline std::string render(const resident_table::Result &r, const resident_scalar
                              r.invoke, r.bootstrap, r.cleanup, update);
     const std::string old = "3=float32.";
     text.replace(text.find(old), old.size(), "3=float32, 4=packed record.");
+    return text;
+}
+inline std::string render(const resident_drawing::Result &r, const resident_scalar::Bytes &update) {
+    std::vector<Export> fields;
+    for (const auto &g : r.spec.globals)
+        fields.push_back({g.name, r.input, g.width(), g.typeTag(), g.offset});
+    std::vector<Constant> constants;
+    if (r.input) constants = {{"golem_inputs_buffer", r.input},
+                              {"golem_inputs_bytes", static_cast<unsigned>(r.spec.values.size())}};
+    auto text = renderPackage(fields, constants, r.spec.entry, r.entry, static_cast<unsigned>(r.owned.size()),
+                             r.invoke, r.bootstrap, r.cleanup, update);
+    const std::string old = "3=float32.";
+    text.replace(text.find(old), old.size(), "3=float32, 4=packed record, 5=uint8.");
     return text;
 }
 } // namespace golem::assembly

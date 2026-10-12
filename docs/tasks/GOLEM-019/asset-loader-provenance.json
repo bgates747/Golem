@@ -1,0 +1,7 @@
+{
+  "source": "agon-utils/examples/agnb/api/agnb_api.inc",
+  "source_sha256": "4693d4b17274e0c2476507cce98032e91cfa0d304317b2c8247b043d048dcccc",
+  "local_copy": "agnb_api.inc",
+  "copied_unchanged": true,
+  "support": "agnb_support.inc adapts reference agnb_dependencies.inc to exact word writes; existing mos_api.inc supplies FFSCALL/FatFS constants"
+}

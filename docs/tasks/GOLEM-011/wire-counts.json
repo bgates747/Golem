@@ -1,0 +1,88 @@
+{
+  "kind": "source-derived byte accounting; no drawing implementation or execution",
+  "packet_bytes": {
+    "call": 6,
+    "literal_update_header": 11,
+    "buffer_copy": 15,
+    "clear_and_write_overhead": 14
+  },
+  "operations": {
+    "point": {
+      "direct_bytes": 9,
+      "operand_bytes": 5,
+      "packed_update_call_bytes": 22
+    },
+    "line": {
+      "direct_bytes": 15,
+      "operand_bytes": 9,
+      "packed_update_call_bytes": 26
+    },
+    "quad": {
+      "direct_bytes": 27,
+      "operand_bytes": 17,
+      "packed_update_call_bytes": 34
+    },
+    "plot": {
+      "direct_bytes": 6,
+      "operand_bytes": 4,
+      "packed_update_call_bytes": 21
+    },
+    "bitmap_full_id": {
+      "direct_bytes": 24,
+      "operand_bytes": 6,
+      "packed_update_call_bytes": 23
+    },
+    "viewport": {
+      "direct_bytes": 15,
+      "operand_bytes": 8,
+      "packed_update_call_bytes": 25
+    },
+    "scroll": {
+      "direct_bytes": 5,
+      "operand_bytes": 1,
+      "packed_update_call_bytes": 18
+    }
+  },
+  "separate_field_updates": {
+    "point": 44,
+    "line": 70,
+    "quad": 122
+  },
+  "viewport_four_scrolls_restore": {
+    "direct_bytes": 50,
+    "packed_update_call_bytes": 26
+  },
+  "three_shape_job": {
+    "inputs": 29,
+    "templates": 51,
+    "entry": 273,
+    "owned_buffers": 5,
+    "payload": 353,
+    "installation": 423,
+    "direct_per_job": 45,
+    "unchanged_call": 6,
+    "full_update_call": 46,
+    "coordinate_pair_update_call": 21,
+    "cleanup": 30,
+    "installation_break_even_unchanged_calls": 11,
+    "installation_and_cleanup_break_even_unchanged_calls": 12
+  },
+  "sources": [
+    {
+      "path": "/Agon/mystuff/golem/src/scalar_backend.hpp",
+      "sha256": "cdad521fa96586d32321d3335e2c038188e1b0046e12da4e082045b875455c79"
+    },
+    {
+      "path": "/Agon/mystuff/golem/src/assembly_output.hpp",
+      "sha256": "705444359a07360c7583a09ba80eac4262c9dc535409045fc352bb11bad9a83b"
+    },
+    {
+      "path": "/home/smith/Agon/agon-docs/docs/vdp/Buffered-Commands-API.md",
+      "sha256": "9fd4247f91485c5ffbee0d440fda2ed501d206362b69be4c059e3bfc34d36f2b"
+    },
+    {
+      "path": "/Agon/mystuff/golem-rally19/src/hosted.hpp",
+      "sha256": "930a6f7e1680d3568d2ec82ef3907f8856fc8f87d735364f10a27218bd86445c"
+    }
+  ]
+}

@@ -78,6 +78,16 @@ int main(int argc, char **argv) {
                 if (emitAssembly) assembly = golem::assembly::render(result,update);
                 bootstrap = std::move(result.bootstrap); cleanup = std::move(result.cleanup);
                 invoke = std::move(result.invoke); ownedCount = result.owned.size();
+            } else if (golem::resident_drawing::profile(source)) {
+                if (!tablePath.empty()) throw std::runtime_error("--table-data requires the resident table profile");
+                if (argc - pos != 2) throw std::runtime_error("drawing profile does not accept a scalar example input");
+                auto result = golem::resident_drawing::compile(source, reservations);
+                update = golem::resident_drawing::inputUpdate(result);
+                update.insert(update.end(), result.invoke.begin(), result.invoke.end());
+                json = golem::resident_drawing::manifest(result, reservations);
+                if (emitAssembly) assembly = golem::assembly::render(result, update);
+                bootstrap = std::move(result.bootstrap); cleanup = std::move(result.cleanup);
+                invoke = std::move(result.invoke); ownedCount = result.owned.size();
             } else {
                 if (!tablePath.empty()) throw std::runtime_error("--table-data requires the resident table profile");
                 auto result = golem::resident::compileResident(source, reservations);

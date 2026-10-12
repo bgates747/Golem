@@ -1,0 +1,9548 @@
+{
+  "checks": 864,
+  "fixture": {
+    "checks": [
+      {
+        "label": "Golem review.golem picture",
+        "start": 0,
+        "bytes": 1,
+        "pixel": [
+          96,
+          16
+        ],
+        "expected": 16,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 1,
+        "bytes": 1,
+        "pixel": [
+          96,
+          24
+        ],
+        "expected": 16,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 2,
+        "bytes": 1,
+        "pixel": [
+          96,
+          32
+        ],
+        "expected": 16,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 3,
+        "bytes": 1,
+        "pixel": [
+          96,
+          40
+        ],
+        "expected": 36,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 4,
+        "bytes": 1,
+        "pixel": [
+          96,
+          48
+        ],
+        "expected": 36,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 5,
+        "bytes": 1,
+        "pixel": [
+          96,
+          56
+        ],
+        "expected": 36,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 6,
+        "bytes": 1,
+        "pixel": [
+          96,
+          64
+        ],
+        "expected": 20,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 7,
+        "bytes": 1,
+        "pixel": [
+          96,
+          72
+        ],
+        "expected": 42,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 8,
+        "bytes": 1,
+        "pixel": [
+          96,
+          80
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 9,
+        "bytes": 1,
+        "pixel": [
+          96,
+          88
+        ],
+        "expected": 42,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 10,
+        "bytes": 1,
+        "pixel": [
+          96,
+          96
+        ],
+        "expected": 42,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 11,
+        "bytes": 1,
+        "pixel": [
+          96,
+          104
+        ],
+        "expected": 42,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 12,
+        "bytes": 1,
+        "pixel": [
+          96,
+          112
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 13,
+        "bytes": 1,
+        "pixel": [
+          96,
+          120
+        ],
+        "expected": 21,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 14,
+        "bytes": 1,
+        "pixel": [
+          96,
+          128
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 15,
+        "bytes": 1,
+        "pixel": [
+          96,
+          136
+        ],
+        "expected": 21,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 16,
+        "bytes": 1,
+        "pixel": [
+          96,
+          144
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 17,
+        "bytes": 1,
+        "pixel": [
+          96,
+          152
+        ],
+        "expected": 21,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 18,
+        "bytes": 1,
+        "pixel": [
+          96,
+          160
+        ],
+        "expected": 21,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 19,
+        "bytes": 1,
+        "pixel": [
+          96,
+          168
+        ],
+        "expected": 21,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 20,
+        "bytes": 1,
+        "pixel": [
+          96,
+          175
+        ],
+        "expected": 21,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 21,
+        "bytes": 1,
+        "pixel": [
+          96,
+          176
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 22,
+        "bytes": 1,
+        "pixel": [
+          96,
+          184
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 23,
+        "bytes": 1,
+        "pixel": [
+          96,
+          208
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 24,
+        "bytes": 1,
+        "pixel": [
+          96,
+          232
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 25,
+        "bytes": 1,
+        "pixel": [
+          97,
+          16
+        ],
+        "expected": 36,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 26,
+        "bytes": 1,
+        "pixel": [
+          111,
+          199
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 27,
+        "bytes": 1,
+        "pixel": [
+          111,
+          200
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 28,
+        "bytes": 1,
+        "pixel": [
+          111,
+          231
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 29,
+        "bytes": 1,
+        "pixel": [
+          111,
+          232
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 30,
+        "bytes": 1,
+        "pixel": [
+          112,
+          16
+        ],
+        "expected": 16,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 31,
+        "bytes": 1,
+        "pixel": [
+          112,
+          32
+        ],
+        "expected": 36,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 32,
+        "bytes": 1,
+        "pixel": [
+          112,
+          48
+        ],
+        "expected": 16,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 33,
+        "bytes": 1,
+        "pixel": [
+          112,
+          64
+        ],
+        "expected": 16,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 34,
+        "bytes": 1,
+        "pixel": [
+          112,
+          80
+        ],
+        "expected": 42,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 35,
+        "bytes": 1,
+        "pixel": [
+          112,
+          96
+        ],
+        "expected": 21,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 36,
+        "bytes": 1,
+        "pixel": [
+          112,
+          112
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 37,
+        "bytes": 1,
+        "pixel": [
+          112,
+          128
+        ],
+        "expected": 21,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 38,
+        "bytes": 1,
+        "pixel": [
+          112,
+          144
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 39,
+        "bytes": 1,
+        "pixel": [
+          112,
+          160
+        ],
+        "expected": 21,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 40,
+        "bytes": 1,
+        "pixel": [
+          112,
+          199
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 41,
+        "bytes": 1,
+        "pixel": [
+          112,
+          200
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 42,
+        "bytes": 1,
+        "pixel": [
+          112,
+          204
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 43,
+        "bytes": 1,
+        "pixel": [
+          112,
+          208
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 44,
+        "bytes": 1,
+        "pixel": [
+          112,
+          212
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 45,
+        "bytes": 1,
+        "pixel": [
+          112,
+          216
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 46,
+        "bytes": 1,
+        "pixel": [
+          112,
+          220
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 47,
+        "bytes": 1,
+        "pixel": [
+          112,
+          224
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 48,
+        "bytes": 1,
+        "pixel": [
+          112,
+          228
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 49,
+        "bytes": 1,
+        "pixel": [
+          112,
+          231
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 50,
+        "bytes": 1,
+        "pixel": [
+          112,
+          232
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 51,
+        "bytes": 1,
+        "pixel": [
+          114,
+          201
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 52,
+        "bytes": 1,
+        "pixel": [
+          114,
+          209
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 53,
+        "bytes": 1,
+        "pixel": [
+          114,
+          217
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 54,
+        "bytes": 1,
+        "pixel": [
+          114,
+          223
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 55,
+        "bytes": 1,
+        "pixel": [
+          116,
+          200
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 56,
+        "bytes": 1,
+        "pixel": [
+          116,
+          202
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 57,
+        "bytes": 1,
+        "pixel": [
+          116,
+          204
+        ],
+        "expected": 52,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 58,
+        "bytes": 1,
+        "pixel": [
+          116,
+          208
+        ],
+        "expected": 16,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 59,
+        "bytes": 1,
+        "pixel": [
+          116,
+          209
+        ],
+        "expected": 16,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 60,
+        "bytes": 1,
+        "pixel": [
+          116,
+          212
+        ],
+        "expected": 58,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 61,
+        "bytes": 1,
+        "pixel": [
+          116,
+          216
+        ],
+        "expected": 16,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 62,
+        "bytes": 1,
+        "pixel": [
+          116,
+          220
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 63,
+        "bytes": 1,
+        "pixel": [
+          116,
+          224
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 64,
+        "bytes": 1,
+        "pixel": [
+          116,
+          228
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 65,
+        "bytes": 1,
+        "pixel": [
+          116,
+          231
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 66,
+        "bytes": 1,
+        "pixel": [
+          117,
+          213
+        ],
+        "expected": 58,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 67,
+        "bytes": 1,
+        "pixel": [
+          118,
+          206
+        ],
+        "expected": 58,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 68,
+        "bytes": 1,
+        "pixel": [
+          118,
+          217
+        ],
+        "expected": 58,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 69,
+        "bytes": 1,
+        "pixel": [
+          120,
+          16
+        ],
+        "expected": 16,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 70,
+        "bytes": 1,
+        "pixel": [
+          120,
+          40
+        ],
+        "expected": 36,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 71,
+        "bytes": 1,
+        "pixel": [
+          120,
+          64
+        ],
+        "expected": 16,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 72,
+        "bytes": 1,
+        "pixel": [
+          120,
+          88
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 73,
+        "bytes": 1,
+        "pixel": [
+          120,
+          112
+        ],
+        "expected": 21,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 74,
+        "bytes": 1,
+        "pixel": [
+          120,
+          136
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 75,
+        "bytes": 1,
+        "pixel": [
+          120,
+          160
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 76,
+        "bytes": 1,
+        "pixel": [
+          120,
+          184
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 77,
+        "bytes": 1,
+        "pixel": [
+          120,
+          200
+        ],
+        "expected": 52,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 78,
+        "bytes": 1,
+        "pixel": [
+          120,
+          204
+        ],
+        "expected": 16,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 79,
+        "bytes": 1,
+        "pixel": [
+          120,
+          208
+        ],
+        "expected": 21,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 80,
+        "bytes": 1,
+        "pixel": [
+          120,
+          212
+        ],
+        "expected": 21,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 81,
+        "bytes": 1,
+        "pixel": [
+          120,
+          216
+        ],
+        "expected": 58,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 82,
+        "bytes": 1,
+        "pixel": [
+          120,
+          220
+        ],
+        "expected": 58,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 83,
+        "bytes": 1,
+        "pixel": [
+          120,
+          224
+        ],
+        "expected": 58,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 84,
+        "bytes": 1,
+        "pixel": [
+          120,
+          228
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 85,
+        "bytes": 1,
+        "pixel": [
+          120,
+          230
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 86,
+        "bytes": 1,
+        "pixel": [
+          120,
+          232
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 87,
+        "bytes": 1,
+        "pixel": [
+          124,
+          200
+        ],
+        "expected": 52,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 88,
+        "bytes": 1,
+        "pixel": [
+          124,
+          204
+        ],
+        "expected": 16,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 89,
+        "bytes": 1,
+        "pixel": [
+          124,
+          206
+        ],
+        "expected": 58,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 90,
+        "bytes": 1,
+        "pixel": [
+          124,
+          208
+        ],
+        "expected": 21,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 91,
+        "bytes": 1,
+        "pixel": [
+          124,
+          212
+        ],
+        "expected": 19,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 92,
+        "bytes": 1,
+        "pixel": [
+          124,
+          216
+        ],
+        "expected": 58,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 93,
+        "bytes": 1,
+        "pixel": [
+          124,
+          220
+        ],
+        "expected": 58,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 94,
+        "bytes": 1,
+        "pixel": [
+          124,
+          224
+        ],
+        "expected": 58,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 95,
+        "bytes": 1,
+        "pixel": [
+          124,
+          228
+        ],
+        "expected": 58,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 96,
+        "bytes": 1,
+        "pixel": [
+          125,
+          70
+        ],
+        "expected": 37,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 97,
+        "bytes": 1,
+        "pixel": [
+          125,
+          210
+        ],
+        "expected": 21,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 98,
+        "bytes": 1,
+        "pixel": [
+          125,
+          221
+        ],
+        "expected": 58,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 99,
+        "bytes": 1,
+        "pixel": [
+          126,
+          214
+        ],
+        "expected": 58,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 100,
+        "bytes": 1,
+        "pixel": [
+          127,
+          218
+        ],
+        "expected": 53,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 101,
+        "bytes": 1,
+        "pixel": [
+          128,
+          16
+        ],
+        "expected": 36,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 102,
+        "bytes": 1,
+        "pixel": [
+          128,
+          32
+        ],
+        "expected": 36,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 103,
+        "bytes": 1,
+        "pixel": [
+          128,
+          48
+        ],
+        "expected": 16,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 104,
+        "bytes": 1,
+        "pixel": [
+          128,
+          64
+        ],
+        "expected": 16,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 105,
+        "bytes": 1,
+        "pixel": [
+          128,
+          80
+        ],
+        "expected": 42,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 106,
+        "bytes": 1,
+        "pixel": [
+          128,
+          96
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 107,
+        "bytes": 1,
+        "pixel": [
+          128,
+          112
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 108,
+        "bytes": 1,
+        "pixel": [
+          128,
+          128
+        ],
+        "expected": 21,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 109,
+        "bytes": 1,
+        "pixel": [
+          128,
+          144
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 110,
+        "bytes": 1,
+        "pixel": [
+          128,
+          160
+        ],
+        "expected": 21,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 111,
+        "bytes": 1,
+        "pixel": [
+          128,
+          200
+        ],
+        "expected": 52,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 112,
+        "bytes": 1,
+        "pixel": [
+          128,
+          204
+        ],
+        "expected": 16,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 113,
+        "bytes": 1,
+        "pixel": [
+          128,
+          208
+        ],
+        "expected": 58,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 114,
+        "bytes": 1,
+        "pixel": [
+          128,
+          212
+        ],
+        "expected": 58,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 115,
+        "bytes": 1,
+        "pixel": [
+          128,
+          214
+        ],
+        "expected": 53,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 116,
+        "bytes": 1,
+        "pixel": [
+          128,
+          216
+        ],
+        "expected": 58,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 117,
+        "bytes": 1,
+        "pixel": [
+          128,
+          220
+        ],
+        "expected": 58,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 118,
+        "bytes": 1,
+        "pixel": [
+          128,
+          224
+        ],
+        "expected": 58,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 119,
+        "bytes": 1,
+        "pixel": [
+          128,
+          228
+        ],
+        "expected": 58,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 120,
+        "bytes": 1,
+        "pixel": [
+          130,
+          203
+        ],
+        "expected": 52,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 121,
+        "bytes": 1,
+        "pixel": [
+          130,
+          226
+        ],
+        "expected": 52,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 122,
+        "bytes": 1,
+        "pixel": [
+          130,
+          231
+        ],
+        "expected": 58,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 123,
+        "bytes": 1,
+        "pixel": [
+          131,
+          224
+        ],
+        "expected": 58,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 124,
+        "bytes": 1,
+        "pixel": [
+          132,
+          200
+        ],
+        "expected": 52,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 125,
+        "bytes": 1,
+        "pixel": [
+          132,
+          204
+        ],
+        "expected": 52,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 126,
+        "bytes": 1,
+        "pixel": [
+          132,
+          208
+        ],
+        "expected": 52,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 127,
+        "bytes": 1,
+        "pixel": [
+          132,
+          212
+        ],
+        "expected": 19,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 128,
+        "bytes": 1,
+        "pixel": [
+          132,
+          216
+        ],
+        "expected": 58,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 129,
+        "bytes": 1,
+        "pixel": [
+          132,
+          220
+        ],
+        "expected": 58,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 130,
+        "bytes": 1,
+        "pixel": [
+          132,
+          224
+        ],
+        "expected": 58,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 131,
+        "bytes": 1,
+        "pixel": [
+          132,
+          228
+        ],
+        "expected": 58,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 132,
+        "bytes": 1,
+        "pixel": [
+          133,
+          207
+        ],
+        "expected": 52,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 133,
+        "bytes": 1,
+        "pixel": [
+          134,
+          211
+        ],
+        "expected": 21,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 134,
+        "bytes": 1,
+        "pixel": [
+          135,
+          215
+        ],
+        "expected": 58,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 135,
+        "bytes": 1,
+        "pixel": [
+          135,
+          228
+        ],
+        "expected": 58,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 136,
+        "bytes": 1,
+        "pixel": [
+          136,
+          200
+        ],
+        "expected": 52,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 137,
+        "bytes": 1,
+        "pixel": [
+          136,
+          204
+        ],
+        "expected": 16,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 138,
+        "bytes": 1,
+        "pixel": [
+          136,
+          208
+        ],
+        "expected": 21,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 139,
+        "bytes": 1,
+        "pixel": [
+          136,
+          212
+        ],
+        "expected": 21,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 140,
+        "bytes": 1,
+        "pixel": [
+          136,
+          216
+        ],
+        "expected": 58,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 141,
+        "bytes": 1,
+        "pixel": [
+          136,
+          219
+        ],
+        "expected": 58,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 142,
+        "bytes": 1,
+        "pixel": [
+          136,
+          220
+        ],
+        "expected": 58,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 143,
+        "bytes": 1,
+        "pixel": [
+          136,
+          224
+        ],
+        "expected": 58,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 144,
+        "bytes": 1,
+        "pixel": [
+          136,
+          228
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 145,
+        "bytes": 1,
+        "pixel": [
+          136,
+          229
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 146,
+        "bytes": 1,
+        "pixel": [
+          137,
+          201
+        ],
+        "expected": 52,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 147,
+        "bytes": 1,
+        "pixel": [
+          138,
+          222
+        ],
+        "expected": 58,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 148,
+        "bytes": 1,
+        "pixel": [
+          138,
+          224
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 149,
+        "bytes": 1,
+        "pixel": [
+          138,
+          228
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 150,
+        "bytes": 1,
+        "pixel": [
+          140,
+          200
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 151,
+        "bytes": 1,
+        "pixel": [
+          140,
+          204
+        ],
+        "expected": 52,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 152,
+        "bytes": 1,
+        "pixel": [
+          140,
+          208
+        ],
+        "expected": 16,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 153,
+        "bytes": 1,
+        "pixel": [
+          140,
+          212
+        ],
+        "expected": 58,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 154,
+        "bytes": 1,
+        "pixel": [
+          140,
+          216
+        ],
+        "expected": 16,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 155,
+        "bytes": 1,
+        "pixel": [
+          140,
+          220
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 156,
+        "bytes": 1,
+        "pixel": [
+          140,
+          221
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 157,
+        "bytes": 1,
+        "pixel": [
+          140,
+          224
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 158,
+        "bytes": 1,
+        "pixel": [
+          140,
+          225
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 159,
+        "bytes": 1,
+        "pixel": [
+          140,
+          226
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 160,
+        "bytes": 1,
+        "pixel": [
+          140,
+          227
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 161,
+        "bytes": 1,
+        "pixel": [
+          140,
+          228
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 162,
+        "bytes": 1,
+        "pixel": [
+          141,
+          204
+        ],
+        "expected": 52,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 163,
+        "bytes": 1,
+        "pixel": [
+          142,
+          206
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 164,
+        "bytes": 1,
+        "pixel": [
+          142,
+          214
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 165,
+        "bytes": 1,
+        "pixel": [
+          143,
+          199
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 166,
+        "bytes": 1,
+        "pixel": [
+          143,
+          200
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 167,
+        "bytes": 1,
+        "pixel": [
+          143,
+          231
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 168,
+        "bytes": 1,
+        "pixel": [
+          143,
+          232
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 169,
+        "bytes": 1,
+        "pixel": [
+          144,
+          16
+        ],
+        "expected": 16,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 170,
+        "bytes": 1,
+        "pixel": [
+          144,
+          32
+        ],
+        "expected": 16,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 171,
+        "bytes": 1,
+        "pixel": [
+          144,
+          40
+        ],
+        "expected": 36,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 172,
+        "bytes": 1,
+        "pixel": [
+          144,
+          48
+        ],
+        "expected": 16,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 173,
+        "bytes": 1,
+        "pixel": [
+          144,
+          64
+        ],
+        "expected": 16,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 174,
+        "bytes": 1,
+        "pixel": [
+          144,
+          74
+        ],
+        "expected": 17,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 175,
+        "bytes": 1,
+        "pixel": [
+          144,
+          80
+        ],
+        "expected": 6,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 176,
+        "bytes": 1,
+        "pixel": [
+          144,
+          88
+        ],
+        "expected": 6,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 177,
+        "bytes": 1,
+        "pixel": [
+          144,
+          96
+        ],
+        "expected": 6,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 178,
+        "bytes": 1,
+        "pixel": [
+          144,
+          112
+        ],
+        "expected": 6,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 179,
+        "bytes": 1,
+        "pixel": [
+          144,
+          128
+        ],
+        "expected": 21,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 180,
+        "bytes": 1,
+        "pixel": [
+          144,
+          136
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 181,
+        "bytes": 1,
+        "pixel": [
+          144,
+          144
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 182,
+        "bytes": 1,
+        "pixel": [
+          144,
+          160
+        ],
+        "expected": 21,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 183,
+        "bytes": 1,
+        "pixel": [
+          144,
+          184
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 184,
+        "bytes": 1,
+        "pixel": [
+          144,
+          199
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 185,
+        "bytes": 1,
+        "pixel": [
+          144,
+          200
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 186,
+        "bytes": 1,
+        "pixel": [
+          144,
+          208
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 187,
+        "bytes": 1,
+        "pixel": [
+          144,
+          231
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 188,
+        "bytes": 1,
+        "pixel": [
+          144,
+          232
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 189,
+        "bytes": 1,
+        "pixel": [
+          153,
+          76
+        ],
+        "expected": 22,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 190,
+        "bytes": 1,
+        "pixel": [
+          160,
+          16
+        ],
+        "expected": 36,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 191,
+        "bytes": 1,
+        "pixel": [
+          160,
+          32
+        ],
+        "expected": 16,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 192,
+        "bytes": 1,
+        "pixel": [
+          160,
+          48
+        ],
+        "expected": 16,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 193,
+        "bytes": 1,
+        "pixel": [
+          160,
+          64
+        ],
+        "expected": 36,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 194,
+        "bytes": 1,
+        "pixel": [
+          160,
+          80
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 195,
+        "bytes": 1,
+        "pixel": [
+          160,
+          96
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 196,
+        "bytes": 1,
+        "pixel": [
+          160,
+          112
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 197,
+        "bytes": 1,
+        "pixel": [
+          160,
+          128
+        ],
+        "expected": 42,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 198,
+        "bytes": 1,
+        "pixel": [
+          160,
+          144
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 199,
+        "bytes": 1,
+        "pixel": [
+          160,
+          160
+        ],
+        "expected": 21,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 200,
+        "bytes": 1,
+        "pixel": [
+          168,
+          16
+        ],
+        "expected": 36,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 201,
+        "bytes": 1,
+        "pixel": [
+          168,
+          40
+        ],
+        "expected": 36,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 202,
+        "bytes": 1,
+        "pixel": [
+          168,
+          64
+        ],
+        "expected": 36,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 203,
+        "bytes": 1,
+        "pixel": [
+          168,
+          88
+        ],
+        "expected": 6,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 204,
+        "bytes": 1,
+        "pixel": [
+          168,
+          112
+        ],
+        "expected": 6,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 205,
+        "bytes": 1,
+        "pixel": [
+          168,
+          136
+        ],
+        "expected": 21,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 206,
+        "bytes": 1,
+        "pixel": [
+          168,
+          160
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 207,
+        "bytes": 1,
+        "pixel": [
+          168,
+          184
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 208,
+        "bytes": 1,
+        "pixel": [
+          168,
+          208
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 209,
+        "bytes": 1,
+        "pixel": [
+          168,
+          232
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 210,
+        "bytes": 1,
+        "pixel": [
+          176,
+          16
+        ],
+        "expected": 36,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 211,
+        "bytes": 1,
+        "pixel": [
+          176,
+          32
+        ],
+        "expected": 16,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 212,
+        "bytes": 1,
+        "pixel": [
+          176,
+          48
+        ],
+        "expected": 16,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 213,
+        "bytes": 1,
+        "pixel": [
+          176,
+          64
+        ],
+        "expected": 16,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 214,
+        "bytes": 1,
+        "pixel": [
+          176,
+          80
+        ],
+        "expected": 1,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 215,
+        "bytes": 1,
+        "pixel": [
+          176,
+          96
+        ],
+        "expected": 6,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 216,
+        "bytes": 1,
+        "pixel": [
+          176,
+          112
+        ],
+        "expected": 1,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 217,
+        "bytes": 1,
+        "pixel": [
+          176,
+          128
+        ],
+        "expected": 21,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 218,
+        "bytes": 1,
+        "pixel": [
+          176,
+          144
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 219,
+        "bytes": 1,
+        "pixel": [
+          176,
+          160
+        ],
+        "expected": 21,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 220,
+        "bytes": 1,
+        "pixel": [
+          191,
+          183
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 221,
+        "bytes": 1,
+        "pixel": [
+          191,
+          184
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 222,
+        "bytes": 1,
+        "pixel": [
+          191,
+          247
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 223,
+        "bytes": 1,
+        "pixel": [
+          191,
+          248
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 224,
+        "bytes": 1,
+        "pixel": [
+          192,
+          16
+        ],
+        "expected": 36,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 225,
+        "bytes": 1,
+        "pixel": [
+          192,
+          32
+        ],
+        "expected": 36,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 226,
+        "bytes": 1,
+        "pixel": [
+          192,
+          40
+        ],
+        "expected": 36,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 227,
+        "bytes": 1,
+        "pixel": [
+          192,
+          48
+        ],
+        "expected": 16,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 228,
+        "bytes": 1,
+        "pixel": [
+          192,
+          64
+        ],
+        "expected": 36,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 229,
+        "bytes": 1,
+        "pixel": [
+          192,
+          80
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 230,
+        "bytes": 1,
+        "pixel": [
+          192,
+          88
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 231,
+        "bytes": 1,
+        "pixel": [
+          192,
+          96
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 232,
+        "bytes": 1,
+        "pixel": [
+          192,
+          112
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 233,
+        "bytes": 1,
+        "pixel": [
+          192,
+          128
+        ],
+        "expected": 21,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 234,
+        "bytes": 1,
+        "pixel": [
+          192,
+          136
+        ],
+        "expected": 21,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 235,
+        "bytes": 1,
+        "pixel": [
+          192,
+          144
+        ],
+        "expected": 21,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 236,
+        "bytes": 1,
+        "pixel": [
+          192,
+          160
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 237,
+        "bytes": 1,
+        "pixel": [
+          192,
+          183
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 238,
+        "bytes": 1,
+        "pixel": [
+          192,
+          184
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 239,
+        "bytes": 1,
+        "pixel": [
+          192,
+          188
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 240,
+        "bytes": 1,
+        "pixel": [
+          192,
+          192
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 241,
+        "bytes": 1,
+        "pixel": [
+          192,
+          196
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 242,
+        "bytes": 1,
+        "pixel": [
+          192,
+          200
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 243,
+        "bytes": 1,
+        "pixel": [
+          192,
+          204
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 244,
+        "bytes": 1,
+        "pixel": [
+          192,
+          205
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 245,
+        "bytes": 1,
+        "pixel": [
+          192,
+          208
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 246,
+        "bytes": 1,
+        "pixel": [
+          192,
+          212
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 247,
+        "bytes": 1,
+        "pixel": [
+          192,
+          216
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 248,
+        "bytes": 1,
+        "pixel": [
+          192,
+          220
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 249,
+        "bytes": 1,
+        "pixel": [
+          192,
+          224
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 250,
+        "bytes": 1,
+        "pixel": [
+          192,
+          228
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 251,
+        "bytes": 1,
+        "pixel": [
+          192,
+          232
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 252,
+        "bytes": 1,
+        "pixel": [
+          192,
+          236
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 253,
+        "bytes": 1,
+        "pixel": [
+          192,
+          240
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 254,
+        "bytes": 1,
+        "pixel": [
+          192,
+          244
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 255,
+        "bytes": 1,
+        "pixel": [
+          192,
+          247
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 256,
+        "bytes": 1,
+        "pixel": [
+          192,
+          248
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 257,
+        "bytes": 1,
+        "pixel": [
+          196,
+          184
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 258,
+        "bytes": 1,
+        "pixel": [
+          196,
+          188
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 259,
+        "bytes": 1,
+        "pixel": [
+          196,
+          192
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 260,
+        "bytes": 1,
+        "pixel": [
+          196,
+          196
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 261,
+        "bytes": 1,
+        "pixel": [
+          196,
+          200
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 262,
+        "bytes": 1,
+        "pixel": [
+          196,
+          204
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 263,
+        "bytes": 1,
+        "pixel": [
+          196,
+          208
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 264,
+        "bytes": 1,
+        "pixel": [
+          196,
+          212
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 265,
+        "bytes": 1,
+        "pixel": [
+          196,
+          216
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 266,
+        "bytes": 1,
+        "pixel": [
+          196,
+          220
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 267,
+        "bytes": 1,
+        "pixel": [
+          196,
+          222
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 268,
+        "bytes": 1,
+        "pixel": [
+          196,
+          224
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 269,
+        "bytes": 1,
+        "pixel": [
+          196,
+          228
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 270,
+        "bytes": 1,
+        "pixel": [
+          196,
+          232
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 271,
+        "bytes": 1,
+        "pixel": [
+          196,
+          236
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 272,
+        "bytes": 1,
+        "pixel": [
+          196,
+          240
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 273,
+        "bytes": 1,
+        "pixel": [
+          196,
+          244
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 274,
+        "bytes": 1,
+        "pixel": [
+          200,
+          184
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 275,
+        "bytes": 1,
+        "pixel": [
+          200,
+          188
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 276,
+        "bytes": 1,
+        "pixel": [
+          200,
+          192
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 277,
+        "bytes": 1,
+        "pixel": [
+          200,
+          196
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 278,
+        "bytes": 1,
+        "pixel": [
+          200,
+          197
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 279,
+        "bytes": 1,
+        "pixel": [
+          200,
+          200
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 280,
+        "bytes": 1,
+        "pixel": [
+          200,
+          204
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 281,
+        "bytes": 1,
+        "pixel": [
+          200,
+          208
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 282,
+        "bytes": 1,
+        "pixel": [
+          200,
+          212
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 283,
+        "bytes": 1,
+        "pixel": [
+          200,
+          216
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 284,
+        "bytes": 1,
+        "pixel": [
+          200,
+          220
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 285,
+        "bytes": 1,
+        "pixel": [
+          200,
+          224
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 286,
+        "bytes": 1,
+        "pixel": [
+          200,
+          228
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 287,
+        "bytes": 1,
+        "pixel": [
+          200,
+          232
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 288,
+        "bytes": 1,
+        "pixel": [
+          200,
+          236
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 289,
+        "bytes": 1,
+        "pixel": [
+          200,
+          240
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 290,
+        "bytes": 1,
+        "pixel": [
+          200,
+          244
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 291,
+        "bytes": 1,
+        "pixel": [
+          203,
+          78
+        ],
+        "expected": 26,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 292,
+        "bytes": 1,
+        "pixel": [
+          204,
+          184
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 293,
+        "bytes": 1,
+        "pixel": [
+          204,
+          188
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 294,
+        "bytes": 1,
+        "pixel": [
+          204,
+          192
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 295,
+        "bytes": 1,
+        "pixel": [
+          204,
+          196
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 296,
+        "bytes": 1,
+        "pixel": [
+          204,
+          200
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 297,
+        "bytes": 1,
+        "pixel": [
+          204,
+          204
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 298,
+        "bytes": 1,
+        "pixel": [
+          204,
+          208
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 299,
+        "bytes": 1,
+        "pixel": [
+          204,
+          212
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 300,
+        "bytes": 1,
+        "pixel": [
+          204,
+          216
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 301,
+        "bytes": 1,
+        "pixel": [
+          204,
+          220
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 302,
+        "bytes": 1,
+        "pixel": [
+          204,
+          224
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 303,
+        "bytes": 1,
+        "pixel": [
+          204,
+          228
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 304,
+        "bytes": 1,
+        "pixel": [
+          204,
+          232
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 305,
+        "bytes": 1,
+        "pixel": [
+          204,
+          233
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 306,
+        "bytes": 1,
+        "pixel": [
+          204,
+          236
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 307,
+        "bytes": 1,
+        "pixel": [
+          204,
+          240
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 308,
+        "bytes": 1,
+        "pixel": [
+          204,
+          244
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 309,
+        "bytes": 1,
+        "pixel": [
+          208,
+          16
+        ],
+        "expected": 36,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 310,
+        "bytes": 1,
+        "pixel": [
+          208,
+          32
+        ],
+        "expected": 16,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 311,
+        "bytes": 1,
+        "pixel": [
+          208,
+          48
+        ],
+        "expected": 16,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 312,
+        "bytes": 1,
+        "pixel": [
+          208,
+          64
+        ],
+        "expected": 36,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 313,
+        "bytes": 1,
+        "pixel": [
+          208,
+          80
+        ],
+        "expected": 21,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 314,
+        "bytes": 1,
+        "pixel": [
+          208,
+          83
+        ],
+        "expected": 5,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 315,
+        "bytes": 1,
+        "pixel": [
+          208,
+          96
+        ],
+        "expected": 42,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 316,
+        "bytes": 1,
+        "pixel": [
+          208,
+          112
+        ],
+        "expected": 26,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 317,
+        "bytes": 1,
+        "pixel": [
+          208,
+          128
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 318,
+        "bytes": 1,
+        "pixel": [
+          208,
+          144
+        ],
+        "expected": 42,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 319,
+        "bytes": 1,
+        "pixel": [
+          208,
+          160
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 320,
+        "bytes": 1,
+        "pixel": [
+          208,
+          184
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 321,
+        "bytes": 1,
+        "pixel": [
+          208,
+          188
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 322,
+        "bytes": 1,
+        "pixel": [
+          208,
+          189
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 323,
+        "bytes": 1,
+        "pixel": [
+          208,
+          192
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 324,
+        "bytes": 1,
+        "pixel": [
+          208,
+          196
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 325,
+        "bytes": 1,
+        "pixel": [
+          208,
+          200
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 326,
+        "bytes": 1,
+        "pixel": [
+          208,
+          204
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 327,
+        "bytes": 1,
+        "pixel": [
+          208,
+          208
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 328,
+        "bytes": 1,
+        "pixel": [
+          208,
+          210
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 329,
+        "bytes": 1,
+        "pixel": [
+          208,
+          212
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 330,
+        "bytes": 1,
+        "pixel": [
+          208,
+          216
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 331,
+        "bytes": 1,
+        "pixel": [
+          208,
+          220
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 332,
+        "bytes": 1,
+        "pixel": [
+          208,
+          224
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 333,
+        "bytes": 1,
+        "pixel": [
+          208,
+          228
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 334,
+        "bytes": 1,
+        "pixel": [
+          208,
+          232
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 335,
+        "bytes": 1,
+        "pixel": [
+          208,
+          236
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 336,
+        "bytes": 1,
+        "pixel": [
+          208,
+          240
+        ],
+        "expected": 57,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 337,
+        "bytes": 1,
+        "pixel": [
+          208,
+          242
+        ],
+        "expected": 57,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 338,
+        "bytes": 1,
+        "pixel": [
+          208,
+          244
+        ],
+        "expected": 57,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 339,
+        "bytes": 1,
+        "pixel": [
+          210,
+          94
+        ],
+        "expected": 41,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 340,
+        "bytes": 1,
+        "pixel": [
+          210,
+          229
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 341,
+        "bytes": 1,
+        "pixel": [
+          210,
+          237
+        ],
+        "expected": 57,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 342,
+        "bytes": 1,
+        "pixel": [
+          212,
+          184
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 343,
+        "bytes": 1,
+        "pixel": [
+          212,
+          188
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 344,
+        "bytes": 1,
+        "pixel": [
+          212,
+          192
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 345,
+        "bytes": 1,
+        "pixel": [
+          212,
+          196
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 346,
+        "bytes": 1,
+        "pixel": [
+          212,
+          200
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 347,
+        "bytes": 1,
+        "pixel": [
+          212,
+          204
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 348,
+        "bytes": 1,
+        "pixel": [
+          212,
+          208
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 349,
+        "bytes": 1,
+        "pixel": [
+          212,
+          212
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 350,
+        "bytes": 1,
+        "pixel": [
+          212,
+          216
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 351,
+        "bytes": 1,
+        "pixel": [
+          212,
+          220
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 352,
+        "bytes": 1,
+        "pixel": [
+          212,
+          224
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 353,
+        "bytes": 1,
+        "pixel": [
+          212,
+          228
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 354,
+        "bytes": 1,
+        "pixel": [
+          212,
+          232
+        ],
+        "expected": 57,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 355,
+        "bytes": 1,
+        "pixel": [
+          212,
+          236
+        ],
+        "expected": 58,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 356,
+        "bytes": 1,
+        "pixel": [
+          212,
+          240
+        ],
+        "expected": 58,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 357,
+        "bytes": 1,
+        "pixel": [
+          212,
+          244
+        ],
+        "expected": 57,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 358,
+        "bytes": 1,
+        "pixel": [
+          214,
+          243
+        ],
+        "expected": 58,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 359,
+        "bytes": 1,
+        "pixel": [
+          216,
+          16
+        ],
+        "expected": 16,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 360,
+        "bytes": 1,
+        "pixel": [
+          216,
+          40
+        ],
+        "expected": 36,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 361,
+        "bytes": 1,
+        "pixel": [
+          216,
+          64
+        ],
+        "expected": 36,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 362,
+        "bytes": 1,
+        "pixel": [
+          216,
+          88
+        ],
+        "expected": 26,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 363,
+        "bytes": 1,
+        "pixel": [
+          216,
+          112
+        ],
+        "expected": 26,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 364,
+        "bytes": 1,
+        "pixel": [
+          216,
+          136
+        ],
+        "expected": 42,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 365,
+        "bytes": 1,
+        "pixel": [
+          216,
+          160
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 366,
+        "bytes": 1,
+        "pixel": [
+          216,
+          184
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 367,
+        "bytes": 1,
+        "pixel": [
+          216,
+          188
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 368,
+        "bytes": 1,
+        "pixel": [
+          216,
+          192
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 369,
+        "bytes": 1,
+        "pixel": [
+          216,
+          196
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 370,
+        "bytes": 1,
+        "pixel": [
+          216,
+          200
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 371,
+        "bytes": 1,
+        "pixel": [
+          216,
+          202
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 372,
+        "bytes": 1,
+        "pixel": [
+          216,
+          204
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 373,
+        "bytes": 1,
+        "pixel": [
+          216,
+          208
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 374,
+        "bytes": 1,
+        "pixel": [
+          216,
+          212
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 375,
+        "bytes": 1,
+        "pixel": [
+          216,
+          216
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 376,
+        "bytes": 1,
+        "pixel": [
+          216,
+          220
+        ],
+        "expected": 21,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 377,
+        "bytes": 1,
+        "pixel": [
+          216,
+          224
+        ],
+        "expected": 21,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 378,
+        "bytes": 1,
+        "pixel": [
+          216,
+          228
+        ],
+        "expected": 21,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 379,
+        "bytes": 1,
+        "pixel": [
+          216,
+          232
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 380,
+        "bytes": 1,
+        "pixel": [
+          216,
+          236
+        ],
+        "expected": 37,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 381,
+        "bytes": 1,
+        "pixel": [
+          216,
+          240
+        ],
+        "expected": 58,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 382,
+        "bytes": 1,
+        "pixel": [
+          216,
+          244
+        ],
+        "expected": 58,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 383,
+        "bytes": 1,
+        "pixel": [
+          218,
+          218
+        ],
+        "expected": 21,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 384,
+        "bytes": 1,
+        "pixel": [
+          218,
+          221
+        ],
+        "expected": 21,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 385,
+        "bytes": 1,
+        "pixel": [
+          218,
+          231
+        ],
+        "expected": 21,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 386,
+        "bytes": 1,
+        "pixel": [
+          218,
+          234
+        ],
+        "expected": 21,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 387,
+        "bytes": 1,
+        "pixel": [
+          218,
+          238
+        ],
+        "expected": 37,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 388,
+        "bytes": 1,
+        "pixel": [
+          220,
+          184
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 389,
+        "bytes": 1,
+        "pixel": [
+          220,
+          188
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 390,
+        "bytes": 1,
+        "pixel": [
+          220,
+          192
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 391,
+        "bytes": 1,
+        "pixel": [
+          220,
+          196
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 392,
+        "bytes": 1,
+        "pixel": [
+          220,
+          200
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 393,
+        "bytes": 1,
+        "pixel": [
+          220,
+          204
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 394,
+        "bytes": 1,
+        "pixel": [
+          220,
+          208
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 395,
+        "bytes": 1,
+        "pixel": [
+          220,
+          212
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 396,
+        "bytes": 1,
+        "pixel": [
+          220,
+          216
+        ],
+        "expected": 21,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 397,
+        "bytes": 1,
+        "pixel": [
+          220,
+          220
+        ],
+        "expected": 21,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 398,
+        "bytes": 1,
+        "pixel": [
+          220,
+          223
+        ],
+        "expected": 21,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 399,
+        "bytes": 1,
+        "pixel": [
+          220,
+          224
+        ],
+        "expected": 21,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 400,
+        "bytes": 1,
+        "pixel": [
+          220,
+          225
+        ],
+        "expected": 21,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 401,
+        "bytes": 1,
+        "pixel": [
+          220,
+          227
+        ],
+        "expected": 42,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 402,
+        "bytes": 1,
+        "pixel": [
+          220,
+          228
+        ],
+        "expected": 42,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 403,
+        "bytes": 1,
+        "pixel": [
+          220,
+          229
+        ],
+        "expected": 42,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 404,
+        "bytes": 1,
+        "pixel": [
+          220,
+          232
+        ],
+        "expected": 21,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 405,
+        "bytes": 1,
+        "pixel": [
+          220,
+          236
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 406,
+        "bytes": 1,
+        "pixel": [
+          220,
+          240
+        ],
+        "expected": 58,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 407,
+        "bytes": 1,
+        "pixel": [
+          220,
+          244
+        ],
+        "expected": 58,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 408,
+        "bytes": 1,
+        "pixel": [
+          222,
+          212
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 409,
+        "bytes": 1,
+        "pixel": [
+          224,
+          16
+        ],
+        "expected": 16,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 410,
+        "bytes": 1,
+        "pixel": [
+          224,
+          32
+        ],
+        "expected": 16,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 411,
+        "bytes": 1,
+        "pixel": [
+          224,
+          48
+        ],
+        "expected": 36,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 412,
+        "bytes": 1,
+        "pixel": [
+          224,
+          64
+        ],
+        "expected": 16,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 413,
+        "bytes": 1,
+        "pixel": [
+          224,
+          80
+        ],
+        "expected": 26,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 414,
+        "bytes": 1,
+        "pixel": [
+          224,
+          96
+        ],
+        "expected": 26,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 415,
+        "bytes": 1,
+        "pixel": [
+          224,
+          112
+        ],
+        "expected": 26,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 416,
+        "bytes": 1,
+        "pixel": [
+          224,
+          128
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 417,
+        "bytes": 1,
+        "pixel": [
+          224,
+          144
+        ],
+        "expected": 21,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 418,
+        "bytes": 1,
+        "pixel": [
+          224,
+          160
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 419,
+        "bytes": 1,
+        "pixel": [
+          224,
+          184
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 420,
+        "bytes": 1,
+        "pixel": [
+          224,
+          188
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 421,
+        "bytes": 1,
+        "pixel": [
+          224,
+          192
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 422,
+        "bytes": 1,
+        "pixel": [
+          224,
+          194
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 423,
+        "bytes": 1,
+        "pixel": [
+          224,
+          196
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 424,
+        "bytes": 1,
+        "pixel": [
+          224,
+          200
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 425,
+        "bytes": 1,
+        "pixel": [
+          224,
+          204
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 426,
+        "bytes": 1,
+        "pixel": [
+          224,
+          208
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 427,
+        "bytes": 1,
+        "pixel": [
+          224,
+          212
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 428,
+        "bytes": 1,
+        "pixel": [
+          224,
+          216
+        ],
+        "expected": 21,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 429,
+        "bytes": 1,
+        "pixel": [
+          224,
+          220
+        ],
+        "expected": 21,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 430,
+        "bytes": 1,
+        "pixel": [
+          224,
+          224
+        ],
+        "expected": 21,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 431,
+        "bytes": 1,
+        "pixel": [
+          224,
+          228
+        ],
+        "expected": 42,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 432,
+        "bytes": 1,
+        "pixel": [
+          224,
+          232
+        ],
+        "expected": 21,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 433,
+        "bytes": 1,
+        "pixel": [
+          224,
+          236
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 434,
+        "bytes": 1,
+        "pixel": [
+          224,
+          240
+        ],
+        "expected": 58,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 435,
+        "bytes": 1,
+        "pixel": [
+          224,
+          244
+        ],
+        "expected": 58,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 436,
+        "bytes": 1,
+        "pixel": [
+          226,
+          239
+        ],
+        "expected": 37,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 437,
+        "bytes": 1,
+        "pixel": [
+          226,
+          245
+        ],
+        "expected": 57,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 438,
+        "bytes": 1,
+        "pixel": [
+          228,
+          184
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 439,
+        "bytes": 1,
+        "pixel": [
+          228,
+          188
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 440,
+        "bytes": 1,
+        "pixel": [
+          228,
+          192
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 441,
+        "bytes": 1,
+        "pixel": [
+          228,
+          196
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 442,
+        "bytes": 1,
+        "pixel": [
+          228,
+          200
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 443,
+        "bytes": 1,
+        "pixel": [
+          228,
+          204
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 444,
+        "bytes": 1,
+        "pixel": [
+          228,
+          208
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 445,
+        "bytes": 1,
+        "pixel": [
+          228,
+          212
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 446,
+        "bytes": 1,
+        "pixel": [
+          228,
+          216
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 447,
+        "bytes": 1,
+        "pixel": [
+          228,
+          220
+        ],
+        "expected": 21,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 448,
+        "bytes": 1,
+        "pixel": [
+          228,
+          224
+        ],
+        "expected": 21,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 449,
+        "bytes": 1,
+        "pixel": [
+          228,
+          228
+        ],
+        "expected": 21,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 450,
+        "bytes": 1,
+        "pixel": [
+          228,
+          232
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 451,
+        "bytes": 1,
+        "pixel": [
+          228,
+          235
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 452,
+        "bytes": 1,
+        "pixel": [
+          228,
+          236
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 453,
+        "bytes": 1,
+        "pixel": [
+          228,
+          240
+        ],
+        "expected": 57,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 454,
+        "bytes": 1,
+        "pixel": [
+          228,
+          244
+        ],
+        "expected": 57,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 455,
+        "bytes": 1,
+        "pixel": [
+          232,
+          184
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 456,
+        "bytes": 1,
+        "pixel": [
+          232,
+          186
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 457,
+        "bytes": 1,
+        "pixel": [
+          232,
+          188
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 458,
+        "bytes": 1,
+        "pixel": [
+          232,
+          192
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 459,
+        "bytes": 1,
+        "pixel": [
+          232,
+          196
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 460,
+        "bytes": 1,
+        "pixel": [
+          232,
+          200
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 461,
+        "bytes": 1,
+        "pixel": [
+          232,
+          204
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 462,
+        "bytes": 1,
+        "pixel": [
+          232,
+          207
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 463,
+        "bytes": 1,
+        "pixel": [
+          232,
+          208
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 464,
+        "bytes": 1,
+        "pixel": [
+          232,
+          212
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 465,
+        "bytes": 1,
+        "pixel": [
+          232,
+          216
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 466,
+        "bytes": 1,
+        "pixel": [
+          232,
+          220
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 467,
+        "bytes": 1,
+        "pixel": [
+          232,
+          224
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 468,
+        "bytes": 1,
+        "pixel": [
+          232,
+          228
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 469,
+        "bytes": 1,
+        "pixel": [
+          232,
+          232
+        ],
+        "expected": 37,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 470,
+        "bytes": 1,
+        "pixel": [
+          232,
+          236
+        ],
+        "expected": 37,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 471,
+        "bytes": 1,
+        "pixel": [
+          232,
+          240
+        ],
+        "expected": 57,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 472,
+        "bytes": 1,
+        "pixel": [
+          232,
+          244
+        ],
+        "expected": 57,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 473,
+        "bytes": 1,
+        "pixel": [
+          232,
+          246
+        ],
+        "expected": 57,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 474,
+        "bytes": 1,
+        "pixel": [
+          236,
+          184
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 475,
+        "bytes": 1,
+        "pixel": [
+          236,
+          188
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 476,
+        "bytes": 1,
+        "pixel": [
+          236,
+          192
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 477,
+        "bytes": 1,
+        "pixel": [
+          236,
+          196
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 478,
+        "bytes": 1,
+        "pixel": [
+          236,
+          200
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 479,
+        "bytes": 1,
+        "pixel": [
+          236,
+          204
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 480,
+        "bytes": 1,
+        "pixel": [
+          236,
+          208
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 481,
+        "bytes": 1,
+        "pixel": [
+          236,
+          212
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 482,
+        "bytes": 1,
+        "pixel": [
+          236,
+          216
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 483,
+        "bytes": 1,
+        "pixel": [
+          236,
+          220
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 484,
+        "bytes": 1,
+        "pixel": [
+          236,
+          224
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 485,
+        "bytes": 1,
+        "pixel": [
+          236,
+          228
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 486,
+        "bytes": 1,
+        "pixel": [
+          236,
+          232
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 487,
+        "bytes": 1,
+        "pixel": [
+          236,
+          236
+        ],
+        "expected": 37,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 488,
+        "bytes": 1,
+        "pixel": [
+          236,
+          240
+        ],
+        "expected": 37,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 489,
+        "bytes": 1,
+        "pixel": [
+          236,
+          244
+        ],
+        "expected": 37,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 490,
+        "bytes": 1,
+        "pixel": [
+          240,
+          16
+        ],
+        "expected": 36,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 491,
+        "bytes": 1,
+        "pixel": [
+          240,
+          32
+        ],
+        "expected": 16,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 492,
+        "bytes": 1,
+        "pixel": [
+          240,
+          40
+        ],
+        "expected": 36,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 493,
+        "bytes": 1,
+        "pixel": [
+          240,
+          48
+        ],
+        "expected": 36,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 494,
+        "bytes": 1,
+        "pixel": [
+          240,
+          64
+        ],
+        "expected": 36,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 495,
+        "bytes": 1,
+        "pixel": [
+          240,
+          80
+        ],
+        "expected": 6,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 496,
+        "bytes": 1,
+        "pixel": [
+          240,
+          88
+        ],
+        "expected": 6,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 497,
+        "bytes": 1,
+        "pixel": [
+          240,
+          96
+        ],
+        "expected": 6,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 498,
+        "bytes": 1,
+        "pixel": [
+          240,
+          112
+        ],
+        "expected": 6,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 499,
+        "bytes": 1,
+        "pixel": [
+          240,
+          128
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 500,
+        "bytes": 1,
+        "pixel": [
+          240,
+          136
+        ],
+        "expected": 21,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 501,
+        "bytes": 1,
+        "pixel": [
+          240,
+          144
+        ],
+        "expected": 14,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 502,
+        "bytes": 1,
+        "pixel": [
+          240,
+          160
+        ],
+        "expected": 21,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 503,
+        "bytes": 1,
+        "pixel": [
+          240,
+          184
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 504,
+        "bytes": 1,
+        "pixel": [
+          240,
+          188
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 505,
+        "bytes": 1,
+        "pixel": [
+          240,
+          192
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 506,
+        "bytes": 1,
+        "pixel": [
+          240,
+          196
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 507,
+        "bytes": 1,
+        "pixel": [
+          240,
+          199
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 508,
+        "bytes": 1,
+        "pixel": [
+          240,
+          200
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 509,
+        "bytes": 1,
+        "pixel": [
+          240,
+          204
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 510,
+        "bytes": 1,
+        "pixel": [
+          240,
+          208
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 511,
+        "bytes": 1,
+        "pixel": [
+          240,
+          212
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 512,
+        "bytes": 1,
+        "pixel": [
+          240,
+          215
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 513,
+        "bytes": 1,
+        "pixel": [
+          240,
+          216
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 514,
+        "bytes": 1,
+        "pixel": [
+          240,
+          220
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 515,
+        "bytes": 1,
+        "pixel": [
+          240,
+          224
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 516,
+        "bytes": 1,
+        "pixel": [
+          240,
+          228
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 517,
+        "bytes": 1,
+        "pixel": [
+          240,
+          232
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 518,
+        "bytes": 1,
+        "pixel": [
+          240,
+          236
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 519,
+        "bytes": 1,
+        "pixel": [
+          240,
+          240
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 520,
+        "bytes": 1,
+        "pixel": [
+          240,
+          244
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 521,
+        "bytes": 1,
+        "pixel": [
+          240,
+          247
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 522,
+        "bytes": 1,
+        "pixel": [
+          242,
+          142
+        ],
+        "expected": 14,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 523,
+        "bytes": 1,
+        "pixel": [
+          242,
+          242
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 524,
+        "bytes": 1,
+        "pixel": [
+          244,
+          184
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 525,
+        "bytes": 1,
+        "pixel": [
+          244,
+          188
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 526,
+        "bytes": 1,
+        "pixel": [
+          244,
+          192
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 527,
+        "bytes": 1,
+        "pixel": [
+          244,
+          196
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 528,
+        "bytes": 1,
+        "pixel": [
+          244,
+          200
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 529,
+        "bytes": 1,
+        "pixel": [
+          244,
+          204
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 530,
+        "bytes": 1,
+        "pixel": [
+          244,
+          208
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 531,
+        "bytes": 1,
+        "pixel": [
+          244,
+          212
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 532,
+        "bytes": 1,
+        "pixel": [
+          244,
+          216
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 533,
+        "bytes": 1,
+        "pixel": [
+          244,
+          220
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 534,
+        "bytes": 1,
+        "pixel": [
+          244,
+          224
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 535,
+        "bytes": 1,
+        "pixel": [
+          244,
+          225
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 536,
+        "bytes": 1,
+        "pixel": [
+          244,
+          228
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 537,
+        "bytes": 1,
+        "pixel": [
+          244,
+          232
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 538,
+        "bytes": 1,
+        "pixel": [
+          244,
+          236
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 539,
+        "bytes": 1,
+        "pixel": [
+          244,
+          240
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 540,
+        "bytes": 1,
+        "pixel": [
+          244,
+          244
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 541,
+        "bytes": 1,
+        "pixel": [
+          246,
+          218
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 542,
+        "bytes": 1,
+        "pixel": [
+          248,
+          184
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 543,
+        "bytes": 1,
+        "pixel": [
+          248,
+          188
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 544,
+        "bytes": 1,
+        "pixel": [
+          248,
+          191
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 545,
+        "bytes": 1,
+        "pixel": [
+          248,
+          192
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 546,
+        "bytes": 1,
+        "pixel": [
+          248,
+          196
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 547,
+        "bytes": 1,
+        "pixel": [
+          248,
+          200
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 548,
+        "bytes": 1,
+        "pixel": [
+          248,
+          204
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 549,
+        "bytes": 1,
+        "pixel": [
+          248,
+          208
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 550,
+        "bytes": 1,
+        "pixel": [
+          248,
+          212
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 551,
+        "bytes": 1,
+        "pixel": [
+          248,
+          216
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 552,
+        "bytes": 1,
+        "pixel": [
+          248,
+          220
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 553,
+        "bytes": 1,
+        "pixel": [
+          248,
+          224
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 554,
+        "bytes": 1,
+        "pixel": [
+          248,
+          228
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 555,
+        "bytes": 1,
+        "pixel": [
+          248,
+          232
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 556,
+        "bytes": 1,
+        "pixel": [
+          248,
+          236
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 557,
+        "bytes": 1,
+        "pixel": [
+          248,
+          237
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 558,
+        "bytes": 1,
+        "pixel": [
+          248,
+          240
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 559,
+        "bytes": 1,
+        "pixel": [
+          248,
+          244
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 560,
+        "bytes": 1,
+        "pixel": [
+          250,
+          212
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 561,
+        "bytes": 1,
+        "pixel": [
+          252,
+          184
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 562,
+        "bytes": 1,
+        "pixel": [
+          252,
+          188
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 563,
+        "bytes": 1,
+        "pixel": [
+          252,
+          192
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 564,
+        "bytes": 1,
+        "pixel": [
+          252,
+          196
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 565,
+        "bytes": 1,
+        "pixel": [
+          252,
+          200
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 566,
+        "bytes": 1,
+        "pixel": [
+          252,
+          204
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 567,
+        "bytes": 1,
+        "pixel": [
+          252,
+          208
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 568,
+        "bytes": 1,
+        "pixel": [
+          252,
+          212
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 569,
+        "bytes": 1,
+        "pixel": [
+          252,
+          216
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 570,
+        "bytes": 1,
+        "pixel": [
+          252,
+          220
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 571,
+        "bytes": 1,
+        "pixel": [
+          252,
+          224
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 572,
+        "bytes": 1,
+        "pixel": [
+          252,
+          228
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 573,
+        "bytes": 1,
+        "pixel": [
+          252,
+          232
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 574,
+        "bytes": 1,
+        "pixel": [
+          252,
+          236
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 575,
+        "bytes": 1,
+        "pixel": [
+          252,
+          240
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 576,
+        "bytes": 1,
+        "pixel": [
+          252,
+          244
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 577,
+        "bytes": 1,
+        "pixel": [
+          255,
+          183
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 578,
+        "bytes": 1,
+        "pixel": [
+          255,
+          184
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 579,
+        "bytes": 1,
+        "pixel": [
+          255,
+          247
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 580,
+        "bytes": 1,
+        "pixel": [
+          255,
+          248
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 581,
+        "bytes": 1,
+        "pixel": [
+          256,
+          16
+        ],
+        "expected": 36,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 582,
+        "bytes": 1,
+        "pixel": [
+          256,
+          32
+        ],
+        "expected": 16,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 583,
+        "bytes": 1,
+        "pixel": [
+          256,
+          48
+        ],
+        "expected": 36,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 584,
+        "bytes": 1,
+        "pixel": [
+          256,
+          64
+        ],
+        "expected": 36,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 585,
+        "bytes": 1,
+        "pixel": [
+          256,
+          80
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 586,
+        "bytes": 1,
+        "pixel": [
+          256,
+          96
+        ],
+        "expected": 37,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 587,
+        "bytes": 1,
+        "pixel": [
+          256,
+          112
+        ],
+        "expected": 6,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 588,
+        "bytes": 1,
+        "pixel": [
+          256,
+          128
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 589,
+        "bytes": 1,
+        "pixel": [
+          256,
+          144
+        ],
+        "expected": 52,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 590,
+        "bytes": 1,
+        "pixel": [
+          256,
+          160
+        ],
+        "expected": 52,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 591,
+        "bytes": 1,
+        "pixel": [
+          256,
+          183
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 592,
+        "bytes": 1,
+        "pixel": [
+          256,
+          184
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 593,
+        "bytes": 1,
+        "pixel": [
+          256,
+          247
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 594,
+        "bytes": 1,
+        "pixel": [
+          256,
+          248
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 595,
+        "bytes": 1,
+        "pixel": [
+          260,
+          144
+        ],
+        "expected": 8,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 596,
+        "bytes": 1,
+        "pixel": [
+          264,
+          16
+        ],
+        "expected": 36,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 597,
+        "bytes": 1,
+        "pixel": [
+          264,
+          40
+        ],
+        "expected": 36,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 598,
+        "bytes": 1,
+        "pixel": [
+          264,
+          64
+        ],
+        "expected": 36,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 599,
+        "bytes": 1,
+        "pixel": [
+          264,
+          88
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 600,
+        "bytes": 1,
+        "pixel": [
+          264,
+          112
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 601,
+        "bytes": 1,
+        "pixel": [
+          264,
+          136
+        ],
+        "expected": 21,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 602,
+        "bytes": 1,
+        "pixel": [
+          264,
+          160
+        ],
+        "expected": 21,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 603,
+        "bytes": 1,
+        "pixel": [
+          264,
+          184
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 604,
+        "bytes": 1,
+        "pixel": [
+          264,
+          208
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 605,
+        "bytes": 1,
+        "pixel": [
+          264,
+          232
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 606,
+        "bytes": 1,
+        "pixel": [
+          266,
+          138
+        ],
+        "expected": 63,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 607,
+        "bytes": 1,
+        "pixel": [
+          266,
+          142
+        ],
+        "expected": 10,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 608,
+        "bytes": 1,
+        "pixel": [
+          272,
+          16
+        ],
+        "expected": 36,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 609,
+        "bytes": 1,
+        "pixel": [
+          272,
+          32
+        ],
+        "expected": 16,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 610,
+        "bytes": 1,
+        "pixel": [
+          272,
+          48
+        ],
+        "expected": 36,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 611,
+        "bytes": 1,
+        "pixel": [
+          272,
+          64
+        ],
+        "expected": 36,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 612,
+        "bytes": 1,
+        "pixel": [
+          272,
+          80
+        ],
+        "expected": 1,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 613,
+        "bytes": 1,
+        "pixel": [
+          272,
+          96
+        ],
+        "expected": 6,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 614,
+        "bytes": 1,
+        "pixel": [
+          272,
+          112
+        ],
+        "expected": 1,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 615,
+        "bytes": 1,
+        "pixel": [
+          272,
+          128
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 616,
+        "bytes": 1,
+        "pixel": [
+          272,
+          144
+        ],
+        "expected": 52,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 617,
+        "bytes": 1,
+        "pixel": [
+          272,
+          160
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 618,
+        "bytes": 1,
+        "pixel": [
+          276,
+          80
+        ],
+        "expected": 40,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 619,
+        "bytes": 1,
+        "pixel": [
+          281,
+          83
+        ],
+        "expected": 52,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 620,
+        "bytes": 1,
+        "pixel": [
+          288,
+          16
+        ],
+        "expected": 16,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 621,
+        "bytes": 1,
+        "pixel": [
+          288,
+          32
+        ],
+        "expected": 16,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 622,
+        "bytes": 1,
+        "pixel": [
+          288,
+          40
+        ],
+        "expected": 16,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 623,
+        "bytes": 1,
+        "pixel": [
+          288,
+          48
+        ],
+        "expected": 16,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 624,
+        "bytes": 1,
+        "pixel": [
+          288,
+          64
+        ],
+        "expected": 36,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 625,
+        "bytes": 1,
+        "pixel": [
+          288,
+          80
+        ],
+        "expected": 40,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 626,
+        "bytes": 1,
+        "pixel": [
+          288,
+          88
+        ],
+        "expected": 42,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 627,
+        "bytes": 1,
+        "pixel": [
+          288,
+          96
+        ],
+        "expected": 21,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 628,
+        "bytes": 1,
+        "pixel": [
+          288,
+          112
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 629,
+        "bytes": 1,
+        "pixel": [
+          288,
+          128
+        ],
+        "expected": 42,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 630,
+        "bytes": 1,
+        "pixel": [
+          288,
+          136
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 631,
+        "bytes": 1,
+        "pixel": [
+          288,
+          144
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 632,
+        "bytes": 1,
+        "pixel": [
+          288,
+          160
+        ],
+        "expected": 42,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 633,
+        "bytes": 1,
+        "pixel": [
+          288,
+          184
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 634,
+        "bytes": 1,
+        "pixel": [
+          288,
+          208
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 635,
+        "bytes": 1,
+        "pixel": [
+          288,
+          232
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 636,
+        "bytes": 1,
+        "pixel": [
+          295,
+          205
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 637,
+        "bytes": 1,
+        "pixel": [
+          295,
+          206
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 638,
+        "bytes": 1,
+        "pixel": [
+          295,
+          225
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 639,
+        "bytes": 1,
+        "pixel": [
+          295,
+          226
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 640,
+        "bytes": 1,
+        "pixel": [
+          296,
+          205
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 641,
+        "bytes": 1,
+        "pixel": [
+          296,
+          206
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 642,
+        "bytes": 1,
+        "pixel": [
+          296,
+          210
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 643,
+        "bytes": 1,
+        "pixel": [
+          296,
+          214
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 644,
+        "bytes": 1,
+        "pixel": [
+          296,
+          218
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 645,
+        "bytes": 1,
+        "pixel": [
+          296,
+          222
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 646,
+        "bytes": 1,
+        "pixel": [
+          296,
+          225
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 647,
+        "bytes": 1,
+        "pixel": [
+          296,
+          226
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 648,
+        "bytes": 1,
+        "pixel": [
+          297,
+          219
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 649,
+        "bytes": 1,
+        "pixel": [
+          297,
+          223
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 650,
+        "bytes": 1,
+        "pixel": [
+          300,
+          206
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 651,
+        "bytes": 1,
+        "pixel": [
+          300,
+          209
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 652,
+        "bytes": 1,
+        "pixel": [
+          300,
+          210
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 653,
+        "bytes": 1,
+        "pixel": [
+          300,
+          214
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 654,
+        "bytes": 1,
+        "pixel": [
+          300,
+          218
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 655,
+        "bytes": 1,
+        "pixel": [
+          300,
+          222
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 656,
+        "bytes": 1,
+        "pixel": [
+          303,
+          217
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 657,
+        "bytes": 1,
+        "pixel": [
+          303,
+          218
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 658,
+        "bytes": 1,
+        "pixel": [
+          303,
+          222
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 659,
+        "bytes": 1,
+        "pixel": [
+          304,
+          16
+        ],
+        "expected": 36,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 660,
+        "bytes": 1,
+        "pixel": [
+          304,
+          32
+        ],
+        "expected": 16,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 661,
+        "bytes": 1,
+        "pixel": [
+          304,
+          48
+        ],
+        "expected": 36,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 662,
+        "bytes": 1,
+        "pixel": [
+          304,
+          64
+        ],
+        "expected": 36,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 663,
+        "bytes": 1,
+        "pixel": [
+          304,
+          80
+        ],
+        "expected": 40,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 664,
+        "bytes": 1,
+        "pixel": [
+          304,
+          96
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 665,
+        "bytes": 1,
+        "pixel": [
+          304,
+          112
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 666,
+        "bytes": 1,
+        "pixel": [
+          304,
+          128
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 667,
+        "bytes": 1,
+        "pixel": [
+          304,
+          144
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 668,
+        "bytes": 1,
+        "pixel": [
+          304,
+          160
+        ],
+        "expected": 21,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 669,
+        "bytes": 1,
+        "pixel": [
+          304,
+          206
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 670,
+        "bytes": 1,
+        "pixel": [
+          304,
+          210
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 671,
+        "bytes": 1,
+        "pixel": [
+          304,
+          214
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 672,
+        "bytes": 1,
+        "pixel": [
+          304,
+          216
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 673,
+        "bytes": 1,
+        "pixel": [
+          304,
+          218
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 674,
+        "bytes": 1,
+        "pixel": [
+          304,
+          222
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 675,
+        "bytes": 1,
+        "pixel": [
+          305,
+          215
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 676,
+        "bytes": 1,
+        "pixel": [
+          306,
+          207
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 677,
+        "bytes": 1,
+        "pixel": [
+          306,
+          211
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 678,
+        "bytes": 1,
+        "pixel": [
+          306,
+          225
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 679,
+        "bytes": 1,
+        "pixel": [
+          308,
+          206
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 680,
+        "bytes": 1,
+        "pixel": [
+          308,
+          210
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 681,
+        "bytes": 1,
+        "pixel": [
+          308,
+          212
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 682,
+        "bytes": 1,
+        "pixel": [
+          308,
+          214
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 683,
+        "bytes": 1,
+        "pixel": [
+          308,
+          218
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 684,
+        "bytes": 1,
+        "pixel": [
+          308,
+          222
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 685,
+        "bytes": 1,
+        "pixel": [
+          309,
+          221
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 686,
+        "bytes": 1,
+        "pixel": [
+          312,
+          16
+        ],
+        "expected": 36,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 687,
+        "bytes": 1,
+        "pixel": [
+          312,
+          40
+        ],
+        "expected": 36,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 688,
+        "bytes": 1,
+        "pixel": [
+          312,
+          64
+        ],
+        "expected": 36,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 689,
+        "bytes": 1,
+        "pixel": [
+          312,
+          88
+        ],
+        "expected": 6,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 690,
+        "bytes": 1,
+        "pixel": [
+          312,
+          112
+        ],
+        "expected": 6,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 691,
+        "bytes": 1,
+        "pixel": [
+          312,
+          136
+        ],
+        "expected": 42,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 692,
+        "bytes": 1,
+        "pixel": [
+          312,
+          160
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 693,
+        "bytes": 1,
+        "pixel": [
+          312,
+          184
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 694,
+        "bytes": 1,
+        "pixel": [
+          312,
+          206
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 695,
+        "bytes": 1,
+        "pixel": [
+          312,
+          208
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 696,
+        "bytes": 1,
+        "pixel": [
+          312,
+          210
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 697,
+        "bytes": 1,
+        "pixel": [
+          312,
+          214
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 698,
+        "bytes": 1,
+        "pixel": [
+          312,
+          218
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 699,
+        "bytes": 1,
+        "pixel": [
+          312,
+          222
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 700,
+        "bytes": 1,
+        "pixel": [
+          312,
+          232
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 701,
+        "bytes": 1,
+        "pixel": [
+          315,
+          213
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 702,
+        "bytes": 1,
+        "pixel": [
+          315,
+          220
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 703,
+        "bytes": 1,
+        "pixel": [
+          315,
+          224
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 704,
+        "bytes": 1,
+        "pixel": [
+          316,
+          206
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 705,
+        "bytes": 1,
+        "pixel": [
+          316,
+          209
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 706,
+        "bytes": 1,
+        "pixel": [
+          316,
+          210
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 707,
+        "bytes": 1,
+        "pixel": [
+          316,
+          214
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 708,
+        "bytes": 1,
+        "pixel": [
+          316,
+          218
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 709,
+        "bytes": 1,
+        "pixel": [
+          316,
+          222
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 710,
+        "bytes": 1,
+        "pixel": [
+          318,
+          210
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 711,
+        "bytes": 1,
+        "pixel": [
+          320,
+          16
+        ],
+        "expected": 36,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 712,
+        "bytes": 1,
+        "pixel": [
+          320,
+          32
+        ],
+        "expected": 16,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 713,
+        "bytes": 1,
+        "pixel": [
+          320,
+          48
+        ],
+        "expected": 36,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 714,
+        "bytes": 1,
+        "pixel": [
+          320,
+          64
+        ],
+        "expected": 36,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 715,
+        "bytes": 1,
+        "pixel": [
+          320,
+          80
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 716,
+        "bytes": 1,
+        "pixel": [
+          320,
+          96
+        ],
+        "expected": 6,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 717,
+        "bytes": 1,
+        "pixel": [
+          320,
+          112
+        ],
+        "expected": 1,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 718,
+        "bytes": 1,
+        "pixel": [
+          320,
+          128
+        ],
+        "expected": 21,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 719,
+        "bytes": 1,
+        "pixel": [
+          320,
+          144
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 720,
+        "bytes": 1,
+        "pixel": [
+          320,
+          160
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 721,
+        "bytes": 1,
+        "pixel": [
+          320,
+          206
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 722,
+        "bytes": 1,
+        "pixel": [
+          320,
+          210
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 723,
+        "bytes": 1,
+        "pixel": [
+          320,
+          211
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 724,
+        "bytes": 1,
+        "pixel": [
+          320,
+          214
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 725,
+        "bytes": 1,
+        "pixel": [
+          320,
+          217
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 726,
+        "bytes": 1,
+        "pixel": [
+          320,
+          218
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 727,
+        "bytes": 1,
+        "pixel": [
+          320,
+          222
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 728,
+        "bytes": 1,
+        "pixel": [
+          321,
+          206
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 729,
+        "bytes": 1,
+        "pixel": [
+          321,
+          208
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 730,
+        "bytes": 1,
+        "pixel": [
+          321,
+          215
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 731,
+        "bytes": 1,
+        "pixel": [
+          321,
+          216
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 732,
+        "bytes": 1,
+        "pixel": [
+          322,
+          212
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 733,
+        "bytes": 1,
+        "pixel": [
+          322,
+          219
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 734,
+        "bytes": 1,
+        "pixel": [
+          322,
+          223
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 735,
+        "bytes": 1,
+        "pixel": [
+          323,
+          214
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 736,
+        "bytes": 1,
+        "pixel": [
+          324,
+          206
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 737,
+        "bytes": 1,
+        "pixel": [
+          324,
+          210
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 738,
+        "bytes": 1,
+        "pixel": [
+          324,
+          214
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 739,
+        "bytes": 1,
+        "pixel": [
+          324,
+          218
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 740,
+        "bytes": 1,
+        "pixel": [
+          324,
+          222
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 741,
+        "bytes": 1,
+        "pixel": [
+          325,
+          218
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 742,
+        "bytes": 1,
+        "pixel": [
+          327,
+          207
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 743,
+        "bytes": 1,
+        "pixel": [
+          328,
+          206
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 744,
+        "bytes": 1,
+        "pixel": [
+          328,
+          210
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 745,
+        "bytes": 1,
+        "pixel": [
+          328,
+          214
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 746,
+        "bytes": 1,
+        "pixel": [
+          328,
+          218
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 747,
+        "bytes": 1,
+        "pixel": [
+          328,
+          221
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 748,
+        "bytes": 1,
+        "pixel": [
+          328,
+          222
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 749,
+        "bytes": 1,
+        "pixel": [
+          329,
+          213
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 750,
+        "bytes": 1,
+        "pixel": [
+          330,
+          209
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 751,
+        "bytes": 1,
+        "pixel": [
+          331,
+          219
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 752,
+        "bytes": 1,
+        "pixel": [
+          331,
+          225
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 753,
+        "bytes": 1,
+        "pixel": [
+          332,
+          100
+        ],
+        "expected": 12,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 754,
+        "bytes": 1,
+        "pixel": [
+          332,
+          102
+        ],
+        "expected": 4,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 755,
+        "bytes": 1,
+        "pixel": [
+          332,
+          206
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 756,
+        "bytes": 1,
+        "pixel": [
+          332,
+          210
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 757,
+        "bytes": 1,
+        "pixel": [
+          332,
+          214
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 758,
+        "bytes": 1,
+        "pixel": [
+          332,
+          218
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 759,
+        "bytes": 1,
+        "pixel": [
+          332,
+          222
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 760,
+        "bytes": 1,
+        "pixel": [
+          332,
+          224
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 761,
+        "bytes": 1,
+        "pixel": [
+          333,
+          222
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 762,
+        "bytes": 1,
+        "pixel": [
+          334,
+          207
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 763,
+        "bytes": 1,
+        "pixel": [
+          334,
+          211
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 764,
+        "bytes": 1,
+        "pixel": [
+          335,
+          205
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 765,
+        "bytes": 1,
+        "pixel": [
+          335,
+          206
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 766,
+        "bytes": 1,
+        "pixel": [
+          335,
+          225
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 767,
+        "bytes": 1,
+        "pixel": [
+          335,
+          226
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 768,
+        "bytes": 1,
+        "pixel": [
+          336,
+          16
+        ],
+        "expected": 36,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 769,
+        "bytes": 1,
+        "pixel": [
+          336,
+          32
+        ],
+        "expected": 16,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 770,
+        "bytes": 1,
+        "pixel": [
+          336,
+          40
+        ],
+        "expected": 36,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 771,
+        "bytes": 1,
+        "pixel": [
+          336,
+          48
+        ],
+        "expected": 36,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 772,
+        "bytes": 1,
+        "pixel": [
+          336,
+          64
+        ],
+        "expected": 36,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 773,
+        "bytes": 1,
+        "pixel": [
+          336,
+          80
+        ],
+        "expected": 6,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 774,
+        "bytes": 1,
+        "pixel": [
+          336,
+          88
+        ],
+        "expected": 6,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 775,
+        "bytes": 1,
+        "pixel": [
+          336,
+          96
+        ],
+        "expected": 6,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 776,
+        "bytes": 1,
+        "pixel": [
+          336,
+          112
+        ],
+        "expected": 12,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 777,
+        "bytes": 1,
+        "pixel": [
+          336,
+          128
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 778,
+        "bytes": 1,
+        "pixel": [
+          336,
+          136
+        ],
+        "expected": 21,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 779,
+        "bytes": 1,
+        "pixel": [
+          336,
+          144
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 780,
+        "bytes": 1,
+        "pixel": [
+          336,
+          160
+        ],
+        "expected": 42,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 781,
+        "bytes": 1,
+        "pixel": [
+          336,
+          184
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 782,
+        "bytes": 1,
+        "pixel": [
+          336,
+          205
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 783,
+        "bytes": 1,
+        "pixel": [
+          336,
+          206
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 784,
+        "bytes": 1,
+        "pixel": [
+          336,
+          208
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 785,
+        "bytes": 1,
+        "pixel": [
+          336,
+          225
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 786,
+        "bytes": 1,
+        "pixel": [
+          336,
+          226
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 787,
+        "bytes": 1,
+        "pixel": [
+          336,
+          232
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 788,
+        "bytes": 1,
+        "pixel": [
+          352,
+          16
+        ],
+        "expected": 36,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 789,
+        "bytes": 1,
+        "pixel": [
+          352,
+          32
+        ],
+        "expected": 16,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 790,
+        "bytes": 1,
+        "pixel": [
+          352,
+          48
+        ],
+        "expected": 36,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 791,
+        "bytes": 1,
+        "pixel": [
+          352,
+          64
+        ],
+        "expected": 16,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 792,
+        "bytes": 1,
+        "pixel": [
+          352,
+          80
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 793,
+        "bytes": 1,
+        "pixel": [
+          352,
+          96
+        ],
+        "expected": 6,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 794,
+        "bytes": 1,
+        "pixel": [
+          352,
+          112
+        ],
+        "expected": 2,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 795,
+        "bytes": 1,
+        "pixel": [
+          352,
+          128
+        ],
+        "expected": 2,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 796,
+        "bytes": 1,
+        "pixel": [
+          352,
+          144
+        ],
+        "expected": 2,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 797,
+        "bytes": 1,
+        "pixel": [
+          352,
+          160
+        ],
+        "expected": 21,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 798,
+        "bytes": 1,
+        "pixel": [
+          360,
+          16
+        ],
+        "expected": 16,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 799,
+        "bytes": 1,
+        "pixel": [
+          360,
+          40
+        ],
+        "expected": 36,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 800,
+        "bytes": 1,
+        "pixel": [
+          360,
+          64
+        ],
+        "expected": 16,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 801,
+        "bytes": 1,
+        "pixel": [
+          360,
+          88
+        ],
+        "expected": 6,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 802,
+        "bytes": 1,
+        "pixel": [
+          360,
+          112
+        ],
+        "expected": 2,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 803,
+        "bytes": 1,
+        "pixel": [
+          360,
+          119
+        ],
+        "expected": 15,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 804,
+        "bytes": 1,
+        "pixel": [
+          360,
+          136
+        ],
+        "expected": 15,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 805,
+        "bytes": 1,
+        "pixel": [
+          360,
+          160
+        ],
+        "expected": 21,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 806,
+        "bytes": 1,
+        "pixel": [
+          360,
+          184
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 807,
+        "bytes": 1,
+        "pixel": [
+          360,
+          208
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 808,
+        "bytes": 1,
+        "pixel": [
+          360,
+          232
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 809,
+        "bytes": 1,
+        "pixel": [
+          364,
+          74
+        ],
+        "expected": 1,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 810,
+        "bytes": 1,
+        "pixel": [
+          368,
+          16
+        ],
+        "expected": 16,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 811,
+        "bytes": 1,
+        "pixel": [
+          368,
+          32
+        ],
+        "expected": 16,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 812,
+        "bytes": 1,
+        "pixel": [
+          368,
+          48
+        ],
+        "expected": 36,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 813,
+        "bytes": 1,
+        "pixel": [
+          368,
+          64
+        ],
+        "expected": 16,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 814,
+        "bytes": 1,
+        "pixel": [
+          368,
+          80
+        ],
+        "expected": 6,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 815,
+        "bytes": 1,
+        "pixel": [
+          368,
+          96
+        ],
+        "expected": 6,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 816,
+        "bytes": 1,
+        "pixel": [
+          368,
+          109
+        ],
+        "expected": 57,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 817,
+        "bytes": 1,
+        "pixel": [
+          368,
+          112
+        ],
+        "expected": 57,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 818,
+        "bytes": 1,
+        "pixel": [
+          368,
+          128
+        ],
+        "expected": 15,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 819,
+        "bytes": 1,
+        "pixel": [
+          368,
+          144
+        ],
+        "expected": 15,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 820,
+        "bytes": 1,
+        "pixel": [
+          368,
+          160
+        ],
+        "expected": 21,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 821,
+        "bytes": 1,
+        "pixel": [
+          369,
+          73
+        ],
+        "expected": 6,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 822,
+        "bytes": 1,
+        "pixel": [
+          384,
+          16
+        ],
+        "expected": 16,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 823,
+        "bytes": 1,
+        "pixel": [
+          384,
+          32
+        ],
+        "expected": 16,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 824,
+        "bytes": 1,
+        "pixel": [
+          384,
+          40
+        ],
+        "expected": 36,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 825,
+        "bytes": 1,
+        "pixel": [
+          384,
+          48
+        ],
+        "expected": 36,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 826,
+        "bytes": 1,
+        "pixel": [
+          384,
+          64
+        ],
+        "expected": 16,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 827,
+        "bytes": 1,
+        "pixel": [
+          384,
+          80
+        ],
+        "expected": 21,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 828,
+        "bytes": 1,
+        "pixel": [
+          384,
+          88
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 829,
+        "bytes": 1,
+        "pixel": [
+          384,
+          96
+        ],
+        "expected": 42,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 830,
+        "bytes": 1,
+        "pixel": [
+          384,
+          112
+        ],
+        "expected": 57,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 831,
+        "bytes": 1,
+        "pixel": [
+          384,
+          128
+        ],
+        "expected": 57,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 832,
+        "bytes": 1,
+        "pixel": [
+          384,
+          136
+        ],
+        "expected": 57,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 833,
+        "bytes": 1,
+        "pixel": [
+          384,
+          144
+        ],
+        "expected": 57,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 834,
+        "bytes": 1,
+        "pixel": [
+          384,
+          160
+        ],
+        "expected": 21,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 835,
+        "bytes": 1,
+        "pixel": [
+          384,
+          184
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 836,
+        "bytes": 1,
+        "pixel": [
+          384,
+          208
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 837,
+        "bytes": 1,
+        "pixel": [
+          384,
+          232
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 838,
+        "bytes": 1,
+        "pixel": [
+          400,
+          16
+        ],
+        "expected": 16,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 839,
+        "bytes": 1,
+        "pixel": [
+          400,
+          32
+        ],
+        "expected": 16,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 840,
+        "bytes": 1,
+        "pixel": [
+          400,
+          48
+        ],
+        "expected": 36,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 841,
+        "bytes": 1,
+        "pixel": [
+          400,
+          64
+        ],
+        "expected": 16,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 842,
+        "bytes": 1,
+        "pixel": [
+          400,
+          80
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 843,
+        "bytes": 1,
+        "pixel": [
+          400,
+          96
+        ],
+        "expected": 21,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 844,
+        "bytes": 1,
+        "pixel": [
+          400,
+          112
+        ],
+        "expected": 2,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 845,
+        "bytes": 1,
+        "pixel": [
+          400,
+          128
+        ],
+        "expected": 2,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 846,
+        "bytes": 1,
+        "pixel": [
+          400,
+          144
+        ],
+        "expected": 21,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 847,
+        "bytes": 1,
+        "pixel": [
+          400,
+          160
+        ],
+        "expected": 2,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 848,
+        "bytes": 1,
+        "pixel": [
+          404,
+          66
+        ],
+        "expected": 42,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 849,
+        "bytes": 1,
+        "pixel": [
+          404,
+          85
+        ],
+        "expected": 2,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 850,
+        "bytes": 1,
+        "pixel": [
+          408,
+          16
+        ],
+        "expected": 36,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 851,
+        "bytes": 1,
+        "pixel": [
+          408,
+          40
+        ],
+        "expected": 36,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 852,
+        "bytes": 1,
+        "pixel": [
+          408,
+          64
+        ],
+        "expected": 16,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 853,
+        "bytes": 1,
+        "pixel": [
+          408,
+          88
+        ],
+        "expected": 2,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 854,
+        "bytes": 1,
+        "pixel": [
+          408,
+          112
+        ],
+        "expected": 2,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 855,
+        "bytes": 1,
+        "pixel": [
+          408,
+          136
+        ],
+        "expected": 21,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 856,
+        "bytes": 1,
+        "pixel": [
+          408,
+          160
+        ],
+        "expected": 2,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 857,
+        "bytes": 1,
+        "pixel": [
+          408,
+          184
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 858,
+        "bytes": 1,
+        "pixel": [
+          408,
+          208
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 859,
+        "bytes": 1,
+        "pixel": [
+          408,
+          232
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 860,
+        "bytes": 1,
+        "pixel": [
+          409,
+          65
+        ],
+        "expected": 21,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 861,
+        "bytes": 1,
+        "pixel": [
+          415,
+          16
+        ],
+        "expected": 0,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 862,
+        "bytes": 1,
+        "pixel": [
+          415,
+          175
+        ],
+        "expected": 2,
+        "reference": null
+      },
+      {
+        "label": "Golem review.golem picture",
+        "start": 863,
+        "bytes": 1,
+        "pixel": [
+          415,
+          176
+        ],
+        "expected": 0,
+        "reference": null
+      }
+    ]
+  },
+  "observation_bytes": 864,
+  "expected_sha256": "44caa26294e7d882a15d1e50520306a8f244ddfb0d0a58dd9e56e71e5aac3e72",
+  "golem_entry_calls": 1,
+  "direct_bitmap_draws": 0,
+  "diagnostic_scenes": 0,
+  "golem_source": "review.golem",
+  "assembly_source": "demo_guest.asm",
+  "display": {
+    "width": 512,
+    "height": 384,
+    "art_offset": [
+      96,
+      16
+    ],
+    "text_top": 256
+  },
+  "pass_headless": true,
+  "execution_seconds": 1.849,
+  "runtime_identity": {
+    ".emulator/fab-agon-emulator": "d12d063c66c1bdb8d4c78179e0485d0be16427294587ee0a965830722489386d",
+    ".emulator/fab-agon-emulator.bin": "c63b5a45b9eec9b989bdde73af6d12add92887e3f4e6ac8ffe9291d98979fb66",
+    ".emulator/firmware/vdp_platform.so": "ef5cc21d4df685970680bc5a3564852d5d312e8af77a6dfc880735d64c2e4e8e",
+    ".emulator/mos_platform.bin": "d564243283972690933a4554296ad6202ca4ef54572279533a942960846bebae",
+    ".emulator/mos_platform.map": "d69e60bbce61a7b4b3eef318ba395f11c4e1a5b585755755113992dc94edcb86",
+    "docs/tasks/GOLEM-019/build/demo/probe.bin": "d492bc35ecce2af25e92e27cc88288418cbdcf72e9743a28d91d21fddc704b35",
+    "docs/tasks/GOLEM-019/build/demo/tape.bin": "57847ea3a41a0b29420ec10a6d665868a0eec8184d8cd18f63b9117bc7d838c1",
+    "docs/tasks/GOLEM-019/review.golem": "153b84b0cb1eaef4a167fb1e1a40c4859d5ba57f81ea5c8331ce9b75c1a45b5d",
+    "docs/tasks/GOLEM-019/demo_guest.asm": "08756eeb534f076f5a34f412ac39751a42cd82afcdaba80ccd82653417ff0a92",
+    "docs/tasks/GOLEM-019/prepare_demo.py": "f4dd15aabe5ef599d86872b6c037a1b54f4dba41776e07c47e8b03e0250b2528",
+    "docs/tasks/GOLEM-019/agnb_api.inc": "4693d4b17274e0c2476507cce98032e91cfa0d304317b2c8247b043d048dcccc",
+    "docs/tasks/GOLEM-019/agnb_support.inc": "091aff1644b2235af452a89582b1617e1972a9042a0269fbb82f30fca37956eb",
+    "docs/tasks/GOLEM-019/assets/wolf-review.agnb": "f7b4daccf894ba545566ee6eb2c420cf78394c8e39f4799a30e3a55cd0d9391a"
+  },
+  "loaded_vdp": "/Agon/mystuff/golem/.emulator/runtime/fab-1.2.5/firmware/vdp_platform.so",
+  "executed_fab": "/Agon/mystuff/golem/.emulator/runtime/fab-1.2.5/fab-agon-emulator",
+  "human_validation": "pending",
+  "graphical_emulator_launched": false
+}

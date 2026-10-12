@@ -1,0 +1,15 @@
+// Complete per-frame Golem drawing. Assembly advances these positions at vblank.
+// Assets are loaded once by assembly; no bitmap pixels are sent per frame.
+sint16 faceX = 8
+sint16 faceY = 10
+sint16 pistolX = 200
+sint16 pistolY = 100
+sint16 iconX = 96
+sint16 iconY = 170
+Sub drawFrame
+    fill_quad(0, 0, 0, 319, 0, 319, 191, 0, 191)
+    draw_bitmap(8202, 0, 0)
+    draw_bitmap(8195, faceX, faceY)
+    draw_bitmap(8463, pistolX, pistolY)
+    draw_bitmap(8201, iconX, iconY)
+EndSub

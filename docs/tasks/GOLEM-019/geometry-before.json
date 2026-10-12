@@ -1,0 +1,18 @@
+{
+  "geometry": {
+    "bootstrap.bin": "a3ad5f5e93977fd3a51cf2ffffda99a6cd7cec874155ba8e4195da59e0e4f096",
+    "cleanup.bin": "5352781db9661bbad4463056f5e3a5c13074b8e1cef08a1f3afc431e63d8bd0e",
+    "golem.inc": "1bf809ccd658f25fce120b36ca5ee6d3f1a4d8a811137def04b10f95d43d26d3",
+    "interface.json": "09ce073b9d5ced0d0996f8ffadc76f89f62225bdfbf8c6f8fc9d1fec3df70437",
+    "invoke.bin": "159e9391525fa974508748d07496f04f846e4971756243cccace8a2b44d43a3d",
+    "update-call.bin": "4506d0327af83888b7bdcaf05b1ea7bc4378023bdbcb614512ebf02f4c57b54a"
+  },
+  "relocated": {
+    "bootstrap.bin": "70763423676b215dbc28a0fa4c780f50b58c330ce793c6cda091286138247d0b",
+    "cleanup.bin": "0d1170000d6c85e97e3c65edd7967c74bf6251dcdd54034003491449612e296f",
+    "golem.inc": "0a6bc24d1f903b6f385fd3067bc1dafe9a58f1b4e7db362198b041f789dd6780",
+    "interface.json": "f01e530d13ec0695dc1f899fc8732b77ccc4bc44ecf3ce9465b0eecd0159f863",
+    "invoke.bin": "3a60bdb15dad9ea72baa6bf211fa5c26122fbc2172f140c649ee13e29f931d9e",
+    "update-call.bin": "6830e1c82f07702e0e0f5757fa4c301de4ab4a4e1c94fc87ca141de677f82103"
+  }
+}

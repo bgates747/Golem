@@ -1,0 +1,2 @@
+ADL width audit: 1 files, 23 wide memory accesses, 0 definite width hazards, 0 indirect/unresolved review items
+classifications: 24-bit-storage=17, indirect=6

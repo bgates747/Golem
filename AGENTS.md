@@ -89,6 +89,17 @@ resident contract and GOLEM-010 review documents.
 
 ## Human review workflow
 
+GOLEM-018 implements a standalone resident drawing profile: initialized
+uint8/sint16 packed globals, one finite Sub, draw_point/draw_line/fill_quad and
+matching literals. Named assembly exports include offsets and uint8 type tag 5.
+Host/sanitizer, prior-profile parity, real assembler and stock Pi/Oryx headless
+pixel checks pass (5,704 direct/resident pairs; 12,589 saved bytes). The Oryx demo
+was staged and stopped. The Author confirmed dir worked; retrieved human results
+match all 12,589 bytes. Intentional cyan clipping geometry was explained with a
+reference image; the Author confirmed it matches what they saw. Human visual
+and keyboard review pass. The Author explicitly approved commit and push on 2026-10-12.
+See docs/design/resident-drawing.md and docs/tasks/GOLEM-018/README.md.
+
 The Author launches the staged Oryx test, follows its onscreen `dir` instruction,
 closes the emulator and reports whether it worked. The agent then retrieves and
 verifies the saved results over SSH. Do not ask the Author to open another
@@ -96,7 +107,39 @@ terminal or run the verifier; the verifier only reports numerical results and
 must not repeat the guest's keyboard instruction. The emulator need not remain
 running. A rerun should remove the previous results file first.
 
+The visual test is part of the Author's review. Complete implementation,
+qualification and Oryx visual staging in the same tranche before stopping for
+review. Do not ask the Author to approve internal qualification/staging steps
+separately or stop while the visual test is still unprepared.
+Human demos must identify the Golem source/entry and distinguish assembly's
+role on screen. Keep direct VDU comparisons and intermediate diagnostic scenes
+in automated qualification; the human demo should show the actual Golem program
+being reviewed without hidden extra bitmap drawing from the harness.
+
 ## Repository layout
+
+GOLEM-019 adds plain draw_bitmap(bufferId,x,y) and uint16 fields to the resident
+drawing profile. Initial/literal bitmap IDs must be reserved; host updates must
+select reserved, loaded assets. Bitmap installation enables stock affine support
+so transform-disable commands are consumed. Borrowed assets are excluded from
+bootstrap/cleanup. The named four-image Wolf example installs in 262 bytes and
+repeats in six wire bytes (23 after a full six-byte input update). Host/sanitizer,
+previous-geometry parity and actual assembler checks pass. CHK-001 stock bitmap
+qualification passes: 18,526 checks, 18,869 saved bytes, 7.299 seconds in the
+final development-host run. Assembly loads the real AGNB through the unchanged canonical
+API snapshot. Model/direct/resident pixels verify placement, alpha and clipping;
+partial ID/position writes, active-transform reset and preservation after cleanup
+pass. Oryx staging/headless verification pass and the emulator is stopped.
+The final 512x384 screen centres native-size artwork above a separate text area
+so dir output cannot scroll the images. The original combined visual/diagnostic
+run was confusing and is superseded: prepare_demo.py/demo_guest.asm now call
+review.golem once, label its four bitmap calls and run no direct bitmap draws or
+intermediate scenes. This human demo passes 864 model pixel checks locally and
+on Oryx. verify_review.py uses demo-expected.dat/demo-checks.json; the full
+automated 18,526-check evidence remains separate. The Author accepted the
+corrected static pictures; retrieved results match all 864 bytes. Explicit MOS
+keyboard check is superseded by successful GOLEM-020 review; commit and push were explicitly approved on 2026-10-12.
+See docs/tasks/GOLEM-019/README.md and the maintained drawing contract.
 
 ```
 docs/
@@ -362,3 +405,19 @@ renumber existing IDs or use Markdown ordered-list numbers for subtask identity.
 ## Network access authority
 
 For access between development machines, read the [canonical network instructions](https://github.com/bgates747/agon-dev-env/blob/feature/standardized-deployment/codex/environment.md#ssh-between-development-machines) in `~/Agon/mystuff/agon-dev-env/codex/environment.md` and its machine-local `.local/ssh-001/CONNECTIONS.md` guide. They own current hostnames, discovery, SSH identities, sudo, and LAN shares. Do not duplicate access recipes or revive old aliases, addresses, or share mappings in this project. Project-specific device/protocol and bench-safety instructions remain local.
+
+## Wolf animation — GOLEM-020
+
+The Author requested animation and suggested vblank as the timer. The finite
+600-frame demo uses existing Golem calls only: animation.golem clears and draws
+each frame. animation.asm loads assets once, reflects three sprites at the
+playfield edges, updates twelve position bytes, calls golem_drawFrame and sends
+the stock VSYNC swap. This is the sole pacing clock; no additional host-side
+vblank wait or completion packet. The 320x240 64-colour double-buffered mode136
+returns to single-buffered mode8 before MOS. Labels identify both source roles.
+The resident drawing profile still has no assignments/branches; do not imply
+that movement arithmetic runs in Golem. All artifacts live in docs/tasks/GOLEM-020/.
+GOLEM-020 local and Oryx qualification pass 841 checks/946 bytes. The dedicated
+Oryx visual fixture passed human animation and MOS keyboard review. Retrieved
+human results match all 946 bytes and the staged runtime/fixture identities.
+The emulator is stopped. The Author explicitly approved commit and push on 2026-10-12.

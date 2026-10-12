@@ -539,3 +539,114 @@ Sub fetch
     selected = samples(index)
     print "selected\n"
 EndSub
+
+
+// GOLEM-011: drawing syntax review. EX-030/032 are implemented by GOLEM-018.
+// Other drawing blocks remain proposals. GOLEM-018 human review is pending.
+// Each sample is independent. Assembly installs initial state and calls its Sub.
+// Review notes and state contracts: docs/tasks/GOLEM-011/drawing-syntax.md.
+
+
+// EX-030 — Resident point and line drawing: compile separately --resident
+// Assembly: 320x240 pixels, origin (0,0), full viewport, palette set.
+// Coordinates are absolute pixels; colour is a logical palette index.
+uint8 colour Bounds(0, 63) = 11
+sint16 startX = 40
+sint16 startY = 30
+sint16 endX = 120
+sint16 endY = 90
+Sub drawGeometry
+    draw_point(colour, startX, startY)
+    draw_line(colour, startX, startY, endX, endY)
+EndSub
+
+
+// EX-031 — General PLOT when its exact stock behavior is wanted (proposed)
+// Assembly: 320x240 pixels, origin (0,0), full viewport, GCOL 0,11.
+// Code 69 plots an absolute foreground point; other codes may use cursor history.
+sint16 x = 40
+sint16 y = 30
+Sub plotExact
+    plot(69, x, y)
+EndSub
+
+
+// EX-032 — Resident convex quad in perimeter order: compile separately --resident
+// Assembly: 320x240 pixels, origin (0,0), full viewport, palette set.
+// Sets foreground colour/paint mode; follows stock polygon edge coverage.
+uint8 colour Bounds(0, 63) = 11
+sint16 x1 = 40
+sint16 y1 = 30
+sint16 x2 = 120
+sint16 y2 = 30
+sint16 x3 = 140
+sint16 y3 = 90
+sint16 x4 = 20
+sint16 y4 = 90
+Sub drawPanel
+    fill_quad(colour, x1, y1, x2, y2, x3, y3, x4, y4)
+EndSub
+
+
+// EX-033 — Plain bitmap placement: compile separately --resident --reserve 50000:50000.
+// Assembly: pixel coordinates, origin (0,0), full viewport.
+// Build reserves ID 50000; assembly loads/registers its bitmap before calling.
+// Top-left pixel placement; omitting the matrix disables bitmap transformation.
+// Host writes must use reserved, loaded IDs; Bounds alone does not prove ownership.
+uint16 bitmapBuffer Bounds(1, 65534) = 50000
+sint16 x = -12
+sint16 y = 20
+Sub drawImage
+    draw_bitmap(bitmapBuffer, x, y)
+EndSub
+
+
+// EX-034 — Bitmap with an explicit affine transform (proposed)
+// Assembly: pixel coordinates, origin (0,0), full viewport; bitmap ID 50000 loaded.
+// Build reserves ID 50000. Rebuild the matrix each call, then disable it after draw.
+uint16 bitmapBuffer Bounds(1, 65534) = 50000
+sint16 x = 40
+sint16 y = 30
+float32 scaleX Bounds(0.5, 2.0) = 0.5
+float32 scaleY Bounds(0.5, 2.0) = 0.5
+matrix(3,3) transform = identity(3)
+Sub drawScaledImage
+    transform = identity(3)
+    transform = scale(transform, scaleX, scaleY)
+    draw_bitmap(bitmapBuffer, x, y, transform)
+EndSub
+
+
+// EX-035 — Inclusive viewport limits in left,top,right,bottom order (proposed)
+// Assembly: 320x240 pixels, origin (0,0), full viewport, palette set.
+// Both viewport calls also synchronize bitmap clipping and move the graphics cursor.
+sint16 left Bounds(0, 319) = 20
+sint16 top Bounds(0, 239) = 40
+sint16 right Bounds(0, 319) = 299
+sint16 bottom Bounds(0, 239) = 99
+uint8 colour Bounds(0, 63) = 11
+sint16 x = 40
+sint16 y = 60
+Sub drawClipped
+    graphics_viewport(left, top, right, bottom)
+    draw_point(colour, x, y)
+    graphics_viewport(0, 0, 319, 239)
+EndSub
+
+
+// EX-036 — Named scrolling directions, no numeric direction codes (proposed)
+// Assembly: 320x240 pixels, origin (0,0), full viewport, black text background.
+// Region is 280x60 pixels; amount must fit the axis being scrolled.
+sint16 left Bounds(0, 319) = 20
+sint16 top Bounds(0, 239) = 40
+sint16 right Bounds(0, 319) = 299
+sint16 bottom Bounds(0, 239) = 99
+uint8 amount Bounds(0, 60) = 8
+Sub scrollPanel
+    graphics_viewport(left, top, right, bottom)
+    scroll_left(amount)
+    scroll_right(amount)
+    scroll_up(amount)
+    scroll_down(amount)
+    graphics_viewport(0, 0, 319, 239)
+EndSub

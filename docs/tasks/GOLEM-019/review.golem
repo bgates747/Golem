@@ -1,0 +1,11 @@
+// Human review: 512x384 display; native-size Wolf images centred above instructions.
+// Assembly loads wolf-review.agnb and reserves 8195:8195, 8201:8202, 8463:8463.
+uint16 bitmapBuffer Bounds(1,65534) = 8202
+sint16 x = 96
+sint16 y = 16
+Sub drawWolf
+    draw_bitmap(bitmapBuffer, x, y)
+    draw_bitmap(8195, 112, 200)
+    draw_bitmap(8463, 192, 184)
+    draw_bitmap(8201, 296, 206)
+EndSub
