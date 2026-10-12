@@ -10,27 +10,19 @@ Golem is a compiled, low-to-medium-level, C/Pascal-like language targeting the
 Agon Console8 VDP's **Buffered Commands API** directly (rather than the eZ80
 via MOS). See the root [README.md](README.md) for the elevator pitch.
 
-Status: **early design/exploration**. A task-local readable scalar-floor and
-conversion prototype has passed host checks under `docs/tasks/GOLEM-003/`, reusing
-selected Rally emission. GOLEM-006 adds a task-local integrated resident CLI with
-shared allocation and persistent uint16 state; this scalar/profile code is not
-part of the maintained compiler. GOLEM-007 executes the integrated successor
-on stock Fab 1.2.5 VDP via MOS 3.0.2; automated checks and human review on Oryx
-pass. The Author explicitly approved the qualification commit and scalar/profile
-promotion tranche. See
-`TODO.md` for active work and the task document for current evidence. The
-maintained compiler is no longer purely design-only: a
-first toy compiler exists and has been verified end to end (`src/golemc.cpp`,
-compiling `.golem` source to a buffer-command byte blob, run successfully
-through `examples/hello_golem/`'s loader in the emulator — see
-[docs/devlog/2026-07-28-golemc-milestone-and-vba-syntax-question.md](docs/devlog/2026-07-28-golemc-milestone-and-vba-syntax-question.md)).
-It is still a toy, but implements literal print, uint16 declarations and
-assignment, chained addition and For/Next. It has no general signed/float
-expressions, procedures or If/Do/Switch support. `tests/` is still a placeholder
-`.gitkeep` tree; task-local host checks live in GOLEM-003 and parser-review
-observations in GOLEM-004. GOLEM-005 implements terminator-free ordinary
-parsing and a task-local scalar successor using a shared token reader. GOLEM-006
-adds checked allocation to main while preserving ordinary payload bytes. Design work
+Status: **early design/exploration**, with a maintained compiler in `src/`.
+Raw mode implements literal print, uint16 declarations/assignment/addition and
+For/Next. GOLEM-008 promotes the qualified scalar backend and explicit resident
+output mode: one bounded float32 floor-to-sint16 job, with optional persistent
+uint16 globals. See `docs/design/resident-scalar.md` for the supported grammar,
+package/host contract and initialized examples. Broader expressions and
+If/Do/Switch remain proposed. `make -C src check` runs maintained contract tests.
+
+GOLEM-007's stock Fab 1.2.5/MOS 3.0.2 qualification and Oryx keyboard review
+passed. The Author explicitly approved committing it and promoting the scalar
+slice. GOLEM-008 verifies identical reviewed command bytes and records host
+checks under its silo. Historical task artifacts remain intact. See `TODO.md`
+for active work. Design work
 has moved beyond the kickoff devlog too: `docs/design/` now holds a living
 design-proposals doc, and several follow-on devlogs (toolchain decision,
 execution-lifecycle correction, VDU wrapper library writeup, the golemc
@@ -161,12 +153,13 @@ Author: stage and verify the Oryx instance, leave it stopped, and provide Bash
 launch commands plus review instructions. Pi headless evidence does not satisfy
 human review. See GOLEM-007 for the current review fixture.
 
-A host compiler Makefile exists: `make -C src` builds `build/golemc`.
-It accepts terminator-free syntax; newlines are whitespace. GOLEM-003 retains
-its historical semicolon parser/fixtures. GOLEM-005 has the new task-local
-scalar Makefile/CLI. GOLEM-006 supplies current host regression/integration
-checks: `make -C docs/tasks/GOLEM-006 check`. Its README owns the explicit
-experimental resident output mode; maintained `build/golemc` remains raw-only.
+A host compiler Makefile exists: `make -C src check` builds `build/golemc`
+and runs maintained tests. Syntax is terminator-free; newlines are whitespace.
+Raw mode is `build/golemc source payload`; resident mode is
+`build/golemc --resident [--reserve FIRST:LAST ...] source directory [example-input]`.
+Read `docs/design/resident-scalar.md` before using resident output. GOLEM-003/005/006
+retain historical prototype and regression fixtures; production has no task
+implementation dependency. GOLEM-008 owns promotion parity and sanitizer checks.
 GOLEM-007 owns the current stock qualification script and evidence. Its ignored
 project `.emulator/` profile uses a native ARM64 build of official Fab 1.2.5,
 tagged MOS 3.0.2 and a bounded MOS/UART guest. From that directory launch only
@@ -259,7 +252,7 @@ overlap):
 ## Active work and historical follow-ups
 
 `TODO.md` is the authoritative register. GOLEM-003's scalar prototype is
-host-qualified and awaits promotion/firmware decisions. GOLEM-004's review was
+promoted through GOLEM-008 after GOLEM-007 qualification. GOLEM-004's review was
 accepted for the GOLEM-005 parser tranche, now accepted at its commit/push
 checkpoint. GOLEM-006 was accepted at commit/push checkpoint `76458a9` and delivers
 shared checked allocation plus an explicit experimental resident output profile.

@@ -32,15 +32,17 @@ Goals for Golem:
 Early design/exploration stage. See [docs/devlog](docs/devlog/) for
 progress notes and [docs/design](docs/design/) for design documents.
 
-`make -C src` builds the host compiler for literal print, uint16 declarations,
-assignment/addition and For/Next. Statements have no terminators; newlines are
-whitespace. [GOLEM-005](docs/tasks/GOLEM-005/README.md) documents parser migration
-and the separate experimental scalar-floor frontend.
-[GOLEM-006](docs/tasks/GOLEM-006/README.md) adds checked allocation and a task-local
-resident CLI that combines scalar math with persistent uint16 state; host checks
-pass. [GOLEM-007](docs/tasks/GOLEM-007/README.md) adds passing stock-emulator
-qualification through MOS/UART and successful human review on Oryx; production
-promotion remains pending.
+`make -C src check` builds and checks the maintained host compiler. Raw mode
+supports literal print, uint16 declarations, assignment/addition and For/Next.
+Explicit `--resident` mode adds bounded float32 floor-to-sint16 jobs with
+persistent uint16 state. Statements have no terminators; newlines are whitespace.
+See the [resident contract](docs/design/resident-scalar.md) and
+[counted-floor example](examples/resident/counted-floor.golem).
+
+[GOLEM-007](docs/tasks/GOLEM-007/README.md) records passing stock-emulator
+qualification and successful human review on Oryx.
+[GOLEM-008](docs/tasks/GOLEM-008.md) promotes that slice while preserving its
+reviewed command bytes. Broader syntax shown in design examples remains proposed.
 
 ## Reference material
 

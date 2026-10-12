@@ -1,0 +1,6 @@
+// One bounded input, zero-initialized signed output, one finite resident job.
+float32 x Range(-32768,32767) = -0.00006103515625
+sint16 result
+Sub compute
+    result = sint16(floor(x))
+EndSub

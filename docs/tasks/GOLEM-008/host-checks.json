@@ -1,0 +1,1020 @@
+{
+  "pass": true,
+  "baseline_checkpoint": "ec91999",
+  "review_package_parity": [
+    "floor-default",
+    "floor-relocated",
+    "mixed-default",
+    "mixed-relocated"
+  ],
+  "resident_boundary_layout_comparisons": 24,
+  "raw_comparisons": 5,
+  "cli_rejections_preserve_output": 14,
+  "sanitizer_output": "Maintained raw/resident contract checks pass; 26 rejection cases.",
+  "standalone_source_build": true,
+  "commands": [
+    {
+      "command": [
+        "g++",
+        "-std=c++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-O2",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/baseline/docs/tasks/GOLEM-006/golemc_integrated.cpp",
+        "-o",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/baseline-resident"
+      ],
+      "seconds": 6.138
+    },
+    {
+      "command": [
+        "g++",
+        "-std=c++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-O2",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/baseline/src/golemc.cpp",
+        "-o",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/baseline-raw"
+      ],
+      "seconds": 3.504
+    },
+    {
+      "command": [
+        "make",
+        "-C",
+        "src",
+        "check",
+        "CXXFLAGS=-std=c++17 -Wall -Wextra -Werror -O2"
+      ],
+      "seconds": 6.71
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--reserve",
+        "50000:50000",
+        "--reserve",
+        "60000:60002",
+        "/Agon/mystuff/golem/examples/resident/floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/floor-default"
+      ],
+      "seconds": 0.002
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--reserve",
+        "50000:50000",
+        "--reserve",
+        "60000:60002",
+        "/Agon/mystuff/golem/examples/resident/floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/floor-default",
+        "-32768"
+      ],
+      "seconds": 0.038
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/baseline-resident",
+        "--resident",
+        "--reserve",
+        "50000:50000",
+        "--reserve",
+        "60000:60002",
+        "/Agon/mystuff/golem/examples/resident/floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/reference",
+        "-32768"
+      ],
+      "seconds": 0.002
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--reserve",
+        "50000:50000",
+        "--reserve",
+        "60000:60002",
+        "/Agon/mystuff/golem/examples/resident/floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/floor-default",
+        "-1.5"
+      ],
+      "seconds": 0.035
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/baseline-resident",
+        "--resident",
+        "--reserve",
+        "50000:50000",
+        "--reserve",
+        "60000:60002",
+        "/Agon/mystuff/golem/examples/resident/floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/reference",
+        "-1.5"
+      ],
+      "seconds": 0.006
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--reserve",
+        "50000:50000",
+        "--reserve",
+        "60000:60002",
+        "/Agon/mystuff/golem/examples/resident/floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/floor-default",
+        "-0"
+      ],
+      "seconds": 0.028
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/baseline-resident",
+        "--resident",
+        "--reserve",
+        "50000:50000",
+        "--reserve",
+        "60000:60002",
+        "/Agon/mystuff/golem/examples/resident/floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/reference",
+        "-0"
+      ],
+      "seconds": 0.011
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--reserve",
+        "50000:50000",
+        "--reserve",
+        "60000:60002",
+        "/Agon/mystuff/golem/examples/resident/floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/floor-default",
+        "0"
+      ],
+      "seconds": 0.025
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/baseline-resident",
+        "--resident",
+        "--reserve",
+        "50000:50000",
+        "--reserve",
+        "60000:60002",
+        "/Agon/mystuff/golem/examples/resident/floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/reference",
+        "0"
+      ],
+      "seconds": 0.014
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--reserve",
+        "50000:50000",
+        "--reserve",
+        "60000:60002",
+        "/Agon/mystuff/golem/examples/resident/floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/floor-default",
+        "1.401298464324817e-45"
+      ],
+      "seconds": 0.02
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/baseline-resident",
+        "--resident",
+        "--reserve",
+        "50000:50000",
+        "--reserve",
+        "60000:60002",
+        "/Agon/mystuff/golem/examples/resident/floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/reference",
+        "1.401298464324817e-45"
+      ],
+      "seconds": 0.01
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--reserve",
+        "50000:50000",
+        "--reserve",
+        "60000:60002",
+        "/Agon/mystuff/golem/examples/resident/floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/floor-default",
+        "32767"
+      ],
+      "seconds": 0.023
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/baseline-resident",
+        "--resident",
+        "--reserve",
+        "50000:50000",
+        "--reserve",
+        "60000:60002",
+        "/Agon/mystuff/golem/examples/resident/floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/reference",
+        "32767"
+      ],
+      "seconds": 0.005
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--reserve",
+        "50000:50000",
+        "--reserve",
+        "60000:60002",
+        "--reserve",
+        "1:254",
+        "--reserve",
+        "260:264",
+        "/Agon/mystuff/golem/examples/resident/floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/floor-relocated"
+      ],
+      "seconds": 0.002
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--reserve",
+        "50000:50000",
+        "--reserve",
+        "60000:60002",
+        "--reserve",
+        "1:254",
+        "--reserve",
+        "260:264",
+        "/Agon/mystuff/golem/examples/resident/floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/floor-relocated",
+        "-32768"
+      ],
+      "seconds": 0.05
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/baseline-resident",
+        "--resident",
+        "--reserve",
+        "50000:50000",
+        "--reserve",
+        "60000:60002",
+        "--reserve",
+        "1:254",
+        "--reserve",
+        "260:264",
+        "/Agon/mystuff/golem/examples/resident/floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/reference",
+        "-32768"
+      ],
+      "seconds": 0.002
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--reserve",
+        "50000:50000",
+        "--reserve",
+        "60000:60002",
+        "--reserve",
+        "1:254",
+        "--reserve",
+        "260:264",
+        "/Agon/mystuff/golem/examples/resident/floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/floor-relocated",
+        "-1.5"
+      ],
+      "seconds": 0.025
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/baseline-resident",
+        "--resident",
+        "--reserve",
+        "50000:50000",
+        "--reserve",
+        "60000:60002",
+        "--reserve",
+        "1:254",
+        "--reserve",
+        "260:264",
+        "/Agon/mystuff/golem/examples/resident/floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/reference",
+        "-1.5"
+      ],
+      "seconds": 0.003
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--reserve",
+        "50000:50000",
+        "--reserve",
+        "60000:60002",
+        "--reserve",
+        "1:254",
+        "--reserve",
+        "260:264",
+        "/Agon/mystuff/golem/examples/resident/floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/floor-relocated",
+        "-0"
+      ],
+      "seconds": 0.024
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/baseline-resident",
+        "--resident",
+        "--reserve",
+        "50000:50000",
+        "--reserve",
+        "60000:60002",
+        "--reserve",
+        "1:254",
+        "--reserve",
+        "260:264",
+        "/Agon/mystuff/golem/examples/resident/floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/reference",
+        "-0"
+      ],
+      "seconds": 0.002
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--reserve",
+        "50000:50000",
+        "--reserve",
+        "60000:60002",
+        "--reserve",
+        "1:254",
+        "--reserve",
+        "260:264",
+        "/Agon/mystuff/golem/examples/resident/floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/floor-relocated",
+        "0"
+      ],
+      "seconds": 0.031
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/baseline-resident",
+        "--resident",
+        "--reserve",
+        "50000:50000",
+        "--reserve",
+        "60000:60002",
+        "--reserve",
+        "1:254",
+        "--reserve",
+        "260:264",
+        "/Agon/mystuff/golem/examples/resident/floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/reference",
+        "0"
+      ],
+      "seconds": 0.003
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--reserve",
+        "50000:50000",
+        "--reserve",
+        "60000:60002",
+        "--reserve",
+        "1:254",
+        "--reserve",
+        "260:264",
+        "/Agon/mystuff/golem/examples/resident/floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/floor-relocated",
+        "1.401298464324817e-45"
+      ],
+      "seconds": 0.031
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/baseline-resident",
+        "--resident",
+        "--reserve",
+        "50000:50000",
+        "--reserve",
+        "60000:60002",
+        "--reserve",
+        "1:254",
+        "--reserve",
+        "260:264",
+        "/Agon/mystuff/golem/examples/resident/floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/reference",
+        "1.401298464324817e-45"
+      ],
+      "seconds": 0.003
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--reserve",
+        "50000:50000",
+        "--reserve",
+        "60000:60002",
+        "--reserve",
+        "1:254",
+        "--reserve",
+        "260:264",
+        "/Agon/mystuff/golem/examples/resident/floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/floor-relocated",
+        "32767"
+      ],
+      "seconds": 0.025
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/baseline-resident",
+        "--resident",
+        "--reserve",
+        "50000:50000",
+        "--reserve",
+        "60000:60002",
+        "--reserve",
+        "1:254",
+        "--reserve",
+        "260:264",
+        "/Agon/mystuff/golem/examples/resident/floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/reference",
+        "32767"
+      ],
+      "seconds": 0.011
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--reserve",
+        "50000:50000",
+        "--reserve",
+        "60000:60002",
+        "/Agon/mystuff/golem/examples/resident/counted-floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/mixed-default"
+      ],
+      "seconds": 0.003
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--reserve",
+        "50000:50000",
+        "--reserve",
+        "60000:60002",
+        "/Agon/mystuff/golem/examples/resident/counted-floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/mixed-default",
+        "-32768"
+      ],
+      "seconds": 0.025
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/baseline-resident",
+        "--resident",
+        "--reserve",
+        "50000:50000",
+        "--reserve",
+        "60000:60002",
+        "/Agon/mystuff/golem/examples/resident/counted-floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/reference",
+        "-32768"
+      ],
+      "seconds": 0.002
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--reserve",
+        "50000:50000",
+        "--reserve",
+        "60000:60002",
+        "/Agon/mystuff/golem/examples/resident/counted-floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/mixed-default",
+        "-1.5"
+      ],
+      "seconds": 0.021
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/baseline-resident",
+        "--resident",
+        "--reserve",
+        "50000:50000",
+        "--reserve",
+        "60000:60002",
+        "/Agon/mystuff/golem/examples/resident/counted-floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/reference",
+        "-1.5"
+      ],
+      "seconds": 0.003
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--reserve",
+        "50000:50000",
+        "--reserve",
+        "60000:60002",
+        "/Agon/mystuff/golem/examples/resident/counted-floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/mixed-default",
+        "-0"
+      ],
+      "seconds": 0.018
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/baseline-resident",
+        "--resident",
+        "--reserve",
+        "50000:50000",
+        "--reserve",
+        "60000:60002",
+        "/Agon/mystuff/golem/examples/resident/counted-floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/reference",
+        "-0"
+      ],
+      "seconds": 0.007
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--reserve",
+        "50000:50000",
+        "--reserve",
+        "60000:60002",
+        "/Agon/mystuff/golem/examples/resident/counted-floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/mixed-default",
+        "0"
+      ],
+      "seconds": 0.024
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/baseline-resident",
+        "--resident",
+        "--reserve",
+        "50000:50000",
+        "--reserve",
+        "60000:60002",
+        "/Agon/mystuff/golem/examples/resident/counted-floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/reference",
+        "0"
+      ],
+      "seconds": 0.003
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--reserve",
+        "50000:50000",
+        "--reserve",
+        "60000:60002",
+        "/Agon/mystuff/golem/examples/resident/counted-floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/mixed-default",
+        "1.401298464324817e-45"
+      ],
+      "seconds": 0.035
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/baseline-resident",
+        "--resident",
+        "--reserve",
+        "50000:50000",
+        "--reserve",
+        "60000:60002",
+        "/Agon/mystuff/golem/examples/resident/counted-floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/reference",
+        "1.401298464324817e-45"
+      ],
+      "seconds": 0.003
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--reserve",
+        "50000:50000",
+        "--reserve",
+        "60000:60002",
+        "/Agon/mystuff/golem/examples/resident/counted-floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/mixed-default",
+        "32767"
+      ],
+      "seconds": 0.028
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/baseline-resident",
+        "--resident",
+        "--reserve",
+        "50000:50000",
+        "--reserve",
+        "60000:60002",
+        "/Agon/mystuff/golem/examples/resident/counted-floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/reference",
+        "32767"
+      ],
+      "seconds": 0.003
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--reserve",
+        "50000:50000",
+        "--reserve",
+        "60000:60002",
+        "--reserve",
+        "1:254",
+        "--reserve",
+        "260:264",
+        "/Agon/mystuff/golem/examples/resident/counted-floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/mixed-relocated"
+      ],
+      "seconds": 0.004
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--reserve",
+        "50000:50000",
+        "--reserve",
+        "60000:60002",
+        "--reserve",
+        "1:254",
+        "--reserve",
+        "260:264",
+        "/Agon/mystuff/golem/examples/resident/counted-floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/mixed-relocated",
+        "-32768"
+      ],
+      "seconds": 0.059
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/baseline-resident",
+        "--resident",
+        "--reserve",
+        "50000:50000",
+        "--reserve",
+        "60000:60002",
+        "--reserve",
+        "1:254",
+        "--reserve",
+        "260:264",
+        "/Agon/mystuff/golem/examples/resident/counted-floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/reference",
+        "-32768"
+      ],
+      "seconds": 0.002
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--reserve",
+        "50000:50000",
+        "--reserve",
+        "60000:60002",
+        "--reserve",
+        "1:254",
+        "--reserve",
+        "260:264",
+        "/Agon/mystuff/golem/examples/resident/counted-floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/mixed-relocated",
+        "-1.5"
+      ],
+      "seconds": 0.037
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/baseline-resident",
+        "--resident",
+        "--reserve",
+        "50000:50000",
+        "--reserve",
+        "60000:60002",
+        "--reserve",
+        "1:254",
+        "--reserve",
+        "260:264",
+        "/Agon/mystuff/golem/examples/resident/counted-floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/reference",
+        "-1.5"
+      ],
+      "seconds": 0.003
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--reserve",
+        "50000:50000",
+        "--reserve",
+        "60000:60002",
+        "--reserve",
+        "1:254",
+        "--reserve",
+        "260:264",
+        "/Agon/mystuff/golem/examples/resident/counted-floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/mixed-relocated",
+        "-0"
+      ],
+      "seconds": 0.029
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/baseline-resident",
+        "--resident",
+        "--reserve",
+        "50000:50000",
+        "--reserve",
+        "60000:60002",
+        "--reserve",
+        "1:254",
+        "--reserve",
+        "260:264",
+        "/Agon/mystuff/golem/examples/resident/counted-floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/reference",
+        "-0"
+      ],
+      "seconds": 0.007
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--reserve",
+        "50000:50000",
+        "--reserve",
+        "60000:60002",
+        "--reserve",
+        "1:254",
+        "--reserve",
+        "260:264",
+        "/Agon/mystuff/golem/examples/resident/counted-floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/mixed-relocated",
+        "0"
+      ],
+      "seconds": 0.035
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/baseline-resident",
+        "--resident",
+        "--reserve",
+        "50000:50000",
+        "--reserve",
+        "60000:60002",
+        "--reserve",
+        "1:254",
+        "--reserve",
+        "260:264",
+        "/Agon/mystuff/golem/examples/resident/counted-floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/reference",
+        "0"
+      ],
+      "seconds": 0.003
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--reserve",
+        "50000:50000",
+        "--reserve",
+        "60000:60002",
+        "--reserve",
+        "1:254",
+        "--reserve",
+        "260:264",
+        "/Agon/mystuff/golem/examples/resident/counted-floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/mixed-relocated",
+        "1.401298464324817e-45"
+      ],
+      "seconds": 0.037
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/baseline-resident",
+        "--resident",
+        "--reserve",
+        "50000:50000",
+        "--reserve",
+        "60000:60002",
+        "--reserve",
+        "1:254",
+        "--reserve",
+        "260:264",
+        "/Agon/mystuff/golem/examples/resident/counted-floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/reference",
+        "1.401298464324817e-45"
+      ],
+      "seconds": 0.003
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--reserve",
+        "50000:50000",
+        "--reserve",
+        "60000:60002",
+        "--reserve",
+        "1:254",
+        "--reserve",
+        "260:264",
+        "/Agon/mystuff/golem/examples/resident/counted-floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/mixed-relocated",
+        "32767"
+      ],
+      "seconds": 0.032
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/baseline-resident",
+        "--resident",
+        "--reserve",
+        "50000:50000",
+        "--reserve",
+        "60000:60002",
+        "--reserve",
+        "1:254",
+        "--reserve",
+        "260:264",
+        "/Agon/mystuff/golem/examples/resident/counted-floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/reference",
+        "32767"
+      ],
+      "seconds": 0.003
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/baseline-raw",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/raw-0.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/old.bin"
+      ],
+      "seconds": 0.002
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/build/golemc",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/raw-0.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/new.bin"
+      ],
+      "seconds": 0.002
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/baseline-raw",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/raw-1.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/old.bin"
+      ],
+      "seconds": 0.066
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/build/golemc",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/raw-1.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/new.bin"
+      ],
+      "seconds": 0.003
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/baseline-raw",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/raw-2.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/old.bin"
+      ],
+      "seconds": 0.029
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/build/golemc",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/raw-2.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/new.bin"
+      ],
+      "seconds": 0.005
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/baseline-raw",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/raw-3.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/old.bin"
+      ],
+      "seconds": 0.034
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/build/golemc",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/raw-3.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/new.bin"
+      ],
+      "seconds": 0.002
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/baseline-raw",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/raw-4.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/old.bin"
+      ],
+      "seconds": 0.029
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/build/golemc",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/raw-4.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/new.bin"
+      ],
+      "seconds": 0.006
+    },
+    {
+      "command": [
+        "g++",
+        "-std=c++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-O2",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/standalone/src/golemc.cpp",
+        "-o",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/standalone-golemc"
+      ],
+      "seconds": 5.994
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/standalone-golemc",
+        "--resident",
+        "/Agon/mystuff/golem/examples/resident/floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/standalone-output"
+      ],
+      "seconds": 0.002
+    },
+    {
+      "command": [
+        "g++",
+        "-std=c++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "/Agon/mystuff/golem/tests/test_compiler.cpp",
+        "-o",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/sanitized"
+      ],
+      "seconds": 22.488
+    },
+    {
+      "command": [
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-008/build/sanitized"
+      ],
+      "seconds": 0.223
+    }
+  ],
+  "production_sha256": {
+    "src/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/Makefile": "fadcc654e56d88c033eca26aa6c13e0ba295dfae6fe3c31ce08e664f06f67bf6",
+    "src/buffer_allocator.hpp": "17af55e64b94d2e4517d1a8110c4d1bddea28dd6f20240263590d0684e186868",
+    "src/golemc.cpp": "848f54e622e226a7bbd99392bab629318a8ba09fe6f1948e53b365b1bf68878e",
+    "src/ordinary.hpp": "82650a2b8e6348bb599c09f73dde99b874f40589867bfb796005b5cf059bcf8a",
+    "src/resident.hpp": "42970162390ad32276fd3e81d8b4b43d714ed60eaa1efbd6eff8e22af95f817d",
+    "src/scalar_backend.hpp": "20135c3e3cdf0386bccadd99f34f785d35b85629cb96d7230d64e5864836fa2c",
+    "src/token_reader.hpp": "fb09435139aaea6fc5903493b5a36f2b4508ccf656dc1fd3b9cac60b35b89497"
+  },
+  "seconds": 46.443
+}

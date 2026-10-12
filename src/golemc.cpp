@@ -1,464 +1,74 @@
-// golemc.cpp
-//
-// Toy Golem compiler (proof of concept).
-//
-// Supports terminator-free print, uint16 declarations/assignment/addition,
-// and For <declared-counter> = expr To expr ... Next <matching-counter>.
-// Newlines are whitespace. Keywords are case-insensitive; identifiers are
-// case-sensitive. Shared token reading and source spans live in token_reader.hpp.
-//
-// The `For` loop's variable must already be declared (`uint16 i`) -
-// `For` never doubles as a declaration form (Author's stated preference:
-// keep declaration and loop-iteration concerns separate). Its codegen
-// mirrors examples/loop_test/loop_test.asm's hand-verified mechanism
-// exactly: the loop body compiles into its own dedicated buffer ending
-// in a trailing conditional self-call, which the VDP automatically
-// converts into a jump (see docs/devlog/2026-07-29-loop-tail-call-
-// prototype.md), so the loop costs one real call frame no matter how
-// many iterations it runs. The continuation check (`i <= bound`) always
-// compares two real buffers against each other (the loop variable's
-// buffer and a dedicated buffer holding the upper bound), never a raw
-// buffer byte against a literal operand - see emitCondCallBufferValue's
-// comment below for why that's a hard *correctness* requirement, not a
-// style choice: `vdu_buffered.h`'s bufferConditional() leaves the upper
-// bytes of its internal comparison value contaminated with a sentinel
-// unless both sides are buffer-fetched.
-//
-// `print` still only accepts a string literal - printing a `uint16`
-// (`print str(qux)`) is NOT implemented yet; see Axis 7/8's still-open
-// questions (no first-class `string` type, no int-to-decimal runtime
-// routine) - that's real follow-on work, not done here.
-//
-// File extensions are purely a project convention, never enforced here:
-// golemc reads whatever bytes are at argv[1] and writes whatever bytes it
-// produces to argv[2], with zero extension-based logic anywhere in this
-// file - a `.golem`, `.txt`, or extensionless source file all compile
-// identically, and the output can be written to a `.golemb` (informal
-// project convention for a compiled Golem binary - short for "Golem
-// binary"; not required, and this compiler doesn't care what you call it),
-// `.bin`, or any other name/extension a given loader happens to expect.
-//
-// Compiles a .golem source file down to the *compiled program* format
-// demonstrated by examples/hello_golem/program.asm: a flat binary blob
-// containing the raw bytes that get written into a VDP buffer and called.
-// `print`'s codegen is literal-byte passthrough (see that file's header
-// comment for why printable text needs no escape interpretation to become
-// "print this" when replayed via the Buffered Commands API's buffer-call
-// mechanism). Declarations/assignments/addition, by contrast, emit real
-// VDU Buffered Commands API command bytes (command 0 "write block",
-// command 5 "adjust buffer contents") directly into that same byte
-// stream - this is just as valid, since the compiled program buffer is
-// itself replayed as a raw VDU byte stream when called, so an embedded
-// `VDU 23, 0, &A0, ...` command sequence works exactly like the literal
-// print-text bytes do. See docs/design/language-type-proposals.md's
-// Axis 13 for the concrete design (the addition primitive, its
-// dedicated-accumulator storage model, and the exact wire encoding used).
-//
-// This is NOT the real Golem compiler - it has no general expression AST,
-// no widths beyond `uint16`, no If/Do/Switch, no `str()`.
-// It exists to close the loop first opened by examples/hello_golem/: that
-// example's program.bin was hand-authored to *stand in* for compiler
-// output; this program is a genuine (if minimal) compiler that produces
-// the same kind of output for real, from real .golem source.
-//
-// Usage: golemc <input.golem> <output.bin>
-
-#include "token_reader.hpp"
-#include "buffer_allocator.hpp"
-
-#include <algorithm>
-#include <cctype>
-#include <fstream>
-#include <iostream>
-#include <map>
-#include <sstream>
-#include <stdexcept>
-#include <string>
-#include <vector>
+// Host compiler CLI: explicit raw payload or resident package output.
+#include "resident.hpp"
+#include <filesystem>
 
 namespace {
-
-using CompileError = golem::syntax::Error;
-using Reader = golem::syntax::Reader;
-using Kind = golem::syntax::Kind;
-
-// --- Buffered Commands API byte-level emission helpers ---
-//
-// These emit real VDU Buffered Commands API command bytes (see
-// /home/smith/Agon/agon-docs/docs/vdp/Buffered-Commands-API.md) directly
-// into the compiled program's own byte stream - the compiled program
-// buffer is itself replayed as a raw VDU byte stream when called (see
-// program.asm's header comment), so these commands are just as valid to
-// embed there as the literal print-text bytes are.
-
-void emitLE16(std::vector<unsigned char> &out, unsigned value) {
-    out.push_back(static_cast<unsigned char>(value & 0xFF));
-    out.push_back(static_cast<unsigned char>((value >> 8) & 0xFF));
+using namespace golem::ordinary;
 }
-
-// `VDU 23, 0, &A0, bufferId;` - the common header for every Buffered
-// Commands API command.
-void emitBufferHeader(std::vector<unsigned char> &out, int bufferId) {
-    out.push_back(23);
-    out.push_back(0);
-    out.push_back(0xA0);
-    emitLE16(out, static_cast<unsigned>(bufferId));
-}
-
-// Command 0: write a data block to a buffer (this also creates the buffer
-// if it doesn't already exist yet - see command 0's docs).
-void emitWriteBlock(std::vector<unsigned char> &out, int bufferId,
-                    const std::vector<unsigned char> &data) {
-    emitBufferHeader(out, bufferId);
-    out.push_back(0);
-    emitLE16(out, static_cast<unsigned>(data.size()));
-    out.insert(out.end(), data.begin(), data.end());
-}
-
-constexpr unsigned char kOpSet = 2;
-constexpr unsigned char kOpAddWithCarry = 4;
-
-constexpr unsigned char kCmdCondCall = 6;          // Buffered Commands API command 6
-constexpr unsigned char kCondLE = 6;               // VBUF_COND_LE
-constexpr unsigned char kCondFlagBufValue = 0x20;  // VBUF_COND_F_BUFVALUE
-constexpr unsigned char kCondFlag16Bit = 0x80;     // VBUF_COND_F_16BIT
-
-// Command 5 (Adjust), "multiple target values" (&40) + "multiple operand
-// values" (&80) modifiers, operand given as `literalOperand.size()`
-// literal bytes (not buffer-fetched) - see
-// docs/design/language-type-proposals.md's Axis 13 for why these two
-// modifier bits together are used for every uint16-width (2-byte)
-// Set/Add here, mirroring Buffered-Commands-API.md's chained-add example.
-void emitAdjustMultiLiteral(std::vector<unsigned char> &out, int bufferId,
-                             unsigned char operationBase, unsigned offset,
-                             const std::vector<unsigned char> &literalOperand) {
-    emitBufferHeader(out, bufferId);
-    out.push_back(5);
-    out.push_back(static_cast<unsigned char>(operationBase | 0x40 | 0x80));
-    emitLE16(out, offset);
-    emitLE16(out, static_cast<unsigned>(literalOperand.size()));
-    out.insert(out.end(), literalOperand.begin(), literalOperand.end());
-}
-
-// Command 5 (Adjust), "multiple target values" + "multiple operand
-// values" + "operand is a buffer-fetched value" modifiers - a genuine
-// buffer-to-buffer, byte-for-byte Set/Add-with-carry, mirroring
-// Buffered-Commands-API.md's cross-buffer AND example (operation `AND`
-// there; `Set`/`Add with carry` used the same way here - see Axis 13's
-// note that this specific combination isn't spelled out verbatim for
-// `Set` in the prose docs, and is worth confirming against
-// vdu_buffered.h).
-void emitAdjustMultiBufferFetched(std::vector<unsigned char> &out, int bufferId,
-                                   unsigned char operationBase, unsigned offset,
-                                   unsigned count, int srcBufferId, unsigned srcOffset) {
-    emitBufferHeader(out, bufferId);
-    out.push_back(5);
-    out.push_back(static_cast<unsigned char>(operationBase | 0x40 | 0x80 | 0x20));
-    emitLE16(out, offset);
-    emitLE16(out, count);
-    emitLE16(out, static_cast<unsigned>(srcBufferId));
-    emitLE16(out, srcOffset);
-}
-
-// Command 6 (Conditionally call a buffer), buffer-fetched-operand + 16-bit
-// form: compares two REAL buffers against each other, never a raw buffer
-// byte against a literal operand.
-//
-// This is a hard correctness requirement, not a style choice, found while
-// hand-verifying the loop mechanism this codegen mirrors (see
-// docs/devlog/2026-07-29-loop-tail-call-prototype.md): `vdu_buffered.h`'s
-// bufferConditional() initialises its internal `sourceValue`/`operandValue`
-// accumulators to -1 (all bits set), then for a "basic" (non-buffer-value)
-// check only overwrites the low 1-2 bytes via a plain `memcpy` - the
-// untouched upper bytes stay 0xFF. A checked byte/word compared against a
-// literal is therefore always contaminated on one side only (the literal
-// operand's upper bits are clean, the buffer-read side's are not), making
-// ordering/zero comparisons unreliable. Comparing two *buffer-fetched*
-// values instead contaminates both sides identically (same -1 init, same
-// partial-write pattern), so the contamination is a shared additive
-// offset that cancels out of every comparison operator (equality AND
-// ordering alike) - this is the only reliable form for a raw numeric
-// buffer compare for ordinary values. The raw 0xffff word still collides
-// with the firmware's -1 invalid-operand sentinel; GOLEM-004 records this
-// existing loop-domain limitation. This parser tranche preserves emission.
-void emitCondCallBufferValue(std::vector<unsigned char> &out, int targetBufferId,
-                              unsigned char condOpBase, int checkBufferId,
-                              unsigned checkOffset, int operandBufferId,
-                              unsigned operandOffset) {
-    emitBufferHeader(out, targetBufferId);
-    out.push_back(kCmdCondCall);
-    out.push_back(static_cast<unsigned char>(condOpBase | kCondFlagBufValue | kCondFlag16Bit));
-    emitLE16(out, static_cast<unsigned>(checkBufferId));
-    emitLE16(out, checkOffset);
-    emitLE16(out, static_cast<unsigned>(operandBufferId));
-    emitLE16(out, operandOffset);
-}
-
-std::vector<unsigned char> le16Bytes(unsigned value) {
-    return {static_cast<unsigned char>(value & 0xFF),
-            static_cast<unsigned char>((value >> 8) & 0xFF)};
-}
-
-// --- Symbol table / variable storage ---
-//
-// Each uint16 variable gets its own dedicated 2-byte buffer (offset 0),
-// per Axis 13's "this toy compiler only" note: buffer IDs are abundant
-// (65534 available per Buffered-Commands-API.md), so a shared/offset-
-// tracked "globals arena" isn't needed yet to get real declarations
-// working. Buffer ID 0 is reserved for the compiled program itself (see
-// loader.asm's `program_buffer_id`), so variable/scratch buffer IDs start
-// at 1 (`kAccBufferId`).
-
-class Compiler {
-public:
-    std::vector<unsigned char> out;
-
-    Compiler() { allocator_->claim(1, "ordinary.accumulator"); }
-    explicit Compiler(golem::BufferAllocator &allocator) : allocator_(&allocator) {
-        accBufferId_ = static_cast<int>(allocator_->allocate("ordinary.accumulator"));
+namespace golem::cli {
+unsigned reservationNumber(const std::string &text) {
+    if (text.empty()) throw golem::AllocationError("empty reservation endpoint");
+    unsigned value = 0;
+    for (char c : text) {
+        if (c < '0' || c > '9' || value > (65534u - static_cast<unsigned>(c - '0')) / 10u)
+            throw golem::AllocationError("reservation endpoints must be decimal IDs in 1..65534");
+        value = value * 10u + static_cast<unsigned>(c - '0');
     }
-    int accumulatorId() const { return accBufferId_; }
-    const std::map<std::string, int> &variables() const { return variables_; }
-    const std::map<unsigned, unsigned> &dataBuffers() const { return dataBuffers_; }
-
-    // 3 bytes: 2 data bytes + the carry-out landing byte "Add with carry"
-    // always writes at offset+2 - see Axis 10's addendum and Axis 13.
-    // Allocated lazily so print-only programs (like hello.golem) don't
-    // pay for an unused ACC buffer.
-    void ensureAcc() {
-        if (!accInitialized_) {
-            emitWriteBlock(out, accBufferId_, {0, 0, 0});
-            dataBuffers_[accBufferId_] = 3;
-            accInitialized_ = true;
-        }
-    }
-
-    int declareVariable(const std::string &name, const golem::syntax::Position &at) {
-        if (golem::syntax::reserved(name)) {
-            golem::syntax::fail(at, "reserved identifier '" + name + "'");
-        }
-        if (variables_.count(name)) {
-            golem::syntax::fail(at, "redeclaration of variable '" + name + "'");
-        }
-        int bufferId;
-        try { bufferId = static_cast<int>(allocator_->allocate("ordinary.global." + name)); }
-        catch (const golem::AllocationError &error) { golem::syntax::fail(at, error.what()); }
-        variables_[name] = bufferId;
-        dataBuffers_[bufferId] = 2;
-        return bufferId;
-    }
-
-    int lookupVariable(const std::string &name, const golem::syntax::Position &at) const {
-        auto it = variables_.find(name);
-        if (it == variables_.end()) {
-            golem::syntax::fail(at, "use of undeclared variable '" + name + "'");
-        }
-        return it->second;
-    }
-
-    // Allocates a fresh buffer ID for compiler-internal use (e.g. a
-    // `For` loop's body buffer or upper-bound-constant buffer) - not
-    // associated with any user-visible variable name.
-    int allocInternalBuffer(const golem::syntax::Position &at) {
-        try { return static_cast<int>(allocator_->allocate("ordinary.loop")); }
-        catch (const golem::AllocationError &error) { golem::syntax::fail(at, error.what()); }
-    }
-
-private:
-    std::map<std::string, int> variables_;
-    golem::BufferAllocator localAllocator_;
-    golem::BufferAllocator *allocator_ = &localAllocator_;
-    std::map<unsigned, unsigned> dataBuffers_; // Only materialized ordinary data.
-    int accBufferId_ = 1; // Default raw-payload compatibility policy.
-    bool accInitialized_ = false;
-};
-
-// A single term in a `uint16` expression: either a literal value or a
-// reference to an already-declared variable's buffer.
-struct Term {
-    bool isLiteral = false;
-    unsigned literalValue = 0;
-    int varBufferId = 0;
-};
-
-// Parses `term ('+' term)*` where `term` is an identifier or an integer
-// literal - see docs/design/language-type-proposals.md Axis 10's
-// addendum ("Golem does allow multiple operations within a single
-// expression").
-std::vector<Term> parseExpr(Reader &reader, const Compiler &compiler) {
-    std::vector<Term> terms;
-    do {
-        Term term;
-        if (reader.peek().kind == Kind::Number) {
-            term.isLiteral = true;
-            term.literalValue = reader.uint16();
-        } else {
-            if (reader.peek().kind != Kind::Identifier || golem::syntax::reserved(reader.peek().text))
-                reader.error("expected expression operand (integer or declared uint16 variable)");
-            auto name = reader.pop();
-            term.varBufferId = compiler.lookupVariable(name.text, name.begin);
-        }
-        terms.push_back(term);
-    } while (reader.take('+'));
-    return terms;
+    if (value == 0) throw golem::AllocationError("buffer ID 0 is reserved for the loader root");
+    return value;
 }
-
-// Compiles `terms` (already parsed by parseExpr) so their sum ends up in
-// the 2-byte buffer `destBufferId` at offset 0, emitting into `out`
-// (the surrounding buffer currently being compiled - the top-level
-// program buffer, or a `For` loop's own body buffer). Implements Axis 13's
-// addition-primitive design: a single term is `Set` directly into the
-// destination (`Set` never produces a trailing side-effect byte, so this
-// is always safe); two or more terms are combined in the dedicated `ACC`
-// scratch buffer first (since `Add with carry` - needed for correct
-// multi-byte addition - always writes a carry-out byte immediately after
-// its target, which would otherwise silently clobber whichever variable
-// happens to be laid out next), and only the final 2-byte result is
-// copied into the real destination.
-void compileExprInto(Compiler &compiler, std::vector<unsigned char> &out, int destBufferId,
-                      const std::vector<Term> &terms) {
-    auto setInto = [&](int bufferId, const Term &term) {
-        if (term.isLiteral) {
-            emitAdjustMultiLiteral(out, bufferId, kOpSet, 0, le16Bytes(term.literalValue));
-        } else {
-            emitAdjustMultiBufferFetched(out, bufferId, kOpSet, 0, 2, term.varBufferId, 0);
-        }
-    };
-    auto addInto = [&](int bufferId, const Term &term) {
-        if (term.isLiteral) {
-            emitAdjustMultiLiteral(out, bufferId, kOpAddWithCarry, 0,
-                                    le16Bytes(term.literalValue));
-        } else {
-            emitAdjustMultiBufferFetched(out, bufferId, kOpAddWithCarry, 0, 2,
-                                          term.varBufferId, 0);
-        }
-    };
-
-    if (terms.size() == 1) {
-        setInto(destBufferId, terms[0]);
-        return;
-    }
-
-    compiler.ensureAcc();
-    setInto(compiler.accumulatorId(), terms[0]);
-    for (size_t i = 1; i < terms.size(); ++i) {
-        addInto(compiler.accumulatorId(), terms[i]);
-    }
-    emitAdjustMultiBufferFetched(out, destBufferId, kOpSet, 0, 2, compiler.accumulatorId(), 0);
+golem::resident::Reservation reservation(const std::string &text) {
+    auto colon = text.find(':');
+    if (colon == std::string::npos) throw golem::AllocationError("reservation must be FIRST:LAST (inclusive)");
+    return {reservationNumber(text.substr(0, colon)), reservationNumber(text.substr(colon + 1))};
 }
-
-// Parsing preserves the vector-of-terms emission boundary and allocation order.
-void compileBlock(Compiler &compiler, Reader &reader, std::vector<unsigned char> &out);
-
-void compileStatement(Compiler &compiler, Reader &reader, std::vector<unsigned char> &out) {
-    if (reader.takeKeyword("print")) {
-        if (reader.peek().kind != Kind::String) reader.error("expected string literal after 'print'");
-        auto text = reader.pop().text;
-        out.insert(out.end(), text.begin(), text.end());
-    } else if (reader.takeKeyword("uint16")) {
-        auto name = reader.name();
-        int bufferId = compiler.declareVariable(name.text, name.begin);
-        if (reader.take('=')) {
-            auto terms = parseExpr(reader, compiler);
-            if (terms.size() == 1 && terms[0].isLiteral) {
-                emitWriteBlock(out, bufferId, le16Bytes(terms[0].literalValue));
-            } else {
-                emitWriteBlock(out, bufferId, {0, 0});
-                compileExprInto(compiler, out, bufferId, terms);
-            }
-        } else {
-            emitWriteBlock(out, bufferId, {0, 0});
-        }
-    } else if (reader.takeKeyword("For")) {
-        auto loopVar = reader.name();
-        int iBufferId = compiler.lookupVariable(loopVar.text, loopVar.begin);
-        reader.need('=');
-        auto startTerms = parseExpr(reader, compiler);
-        reader.needKeyword("To");
-        auto boundTerms = parseExpr(reader, compiler);
-        compileExprInto(compiler, out, iBufferId, startTerms);
-        int boundBufferId = compiler.allocInternalBuffer(loopVar.begin);
-        if (boundTerms.size() == 1 && boundTerms[0].isLiteral) {
-            emitWriteBlock(out, boundBufferId, le16Bytes(boundTerms[0].literalValue));
-        } else {
-            emitWriteBlock(out, boundBufferId, {0, 0});
-            compileExprInto(compiler, out, boundBufferId, boundTerms);
-        }
-        int bodyBufferId = compiler.allocInternalBuffer(loopVar.begin);
-        std::vector<unsigned char> bodyOut;
-        compileBlock(compiler, reader, bodyOut);
-        if (!reader.takeKeyword("Next")) reader.error("expected 'Next' to close 'For " + loopVar.text + "'");
-        const auto closing = reader.peek();
-        auto closingName = reader.name();
-        if (closingName.text != loopVar.text)
-            golem::syntax::fail(closing.begin, "'Next " + closingName.text +
-                                "' does not match 'For " + loopVar.text + "'");
-        compileExprInto(compiler, bodyOut, iBufferId, {Term{false, 0, iBufferId}, Term{true, 1, 0}});
-        // The trailing conditional self-call remains the last body command.
-        emitCondCallBufferValue(bodyOut, bodyBufferId, kCondLE, iBufferId, 0, boundBufferId, 0);
-        emitWriteBlock(out, bodyBufferId, bodyOut);
-        emitCondCallBufferValue(out, bodyBufferId, kCondLE, iBufferId, 0, boundBufferId, 0);
-    } else if (reader.peek().kind == Kind::Identifier) {
-        if (golem::syntax::reserved(reader.peek().text))
-            reader.error("unsupported statement or unexpected block delimiter '" + reader.peek().text + "'");
-        auto name = reader.pop();
-        int bufferId = compiler.lookupVariable(name.text, name.begin);
-        reader.need('=');
-        auto terms = parseExpr(reader, compiler);
-        compileExprInto(compiler, out, bufferId, terms);
-    } else {
-        reader.error("expected a statement ('print', 'uint16', 'For', or an assignment)");
-    }
-}
-
-void compileBlock(Compiler &compiler, Reader &reader, std::vector<unsigned char> &out) {
-    while (!reader.end() && !reader.keyword("Next")) compileStatement(compiler, reader, out);
-}
-
-std::vector<unsigned char> compile(const std::string &src) {
-    Compiler compiler;
-    Reader reader(src);
-    compileBlock(compiler, reader, compiler.out);
-    if (!reader.end()) reader.error("unexpected 'Next' with no matching 'For'");
-    return compiler.out;
-}
-
-std::string readFile(const std::string &path) {
-    std::ifstream in(path, std::ios::binary);
-    if (!in) {
-        throw CompileError("could not open input file: " + path);
-    }
-    std::ostringstream ss;
-    ss << in.rdbuf();
-    return ss.str();
-}
-
-void writeFile(const std::string &path, const std::vector<unsigned char> &data) {
+void write(const std::filesystem::path &path, const golem::resident_scalar::Bytes &bytes) {
     std::ofstream out(path, std::ios::binary);
-    if (!out) {
-        throw CompileError("could not open output file for writing: " + path);
-    }
-    out.write(reinterpret_cast<const char *>(data.data()),
-              static_cast<std::streamsize>(data.size()));
+    if (!out || !out.write(reinterpret_cast<const char *>(bytes.data()), bytes.size()))
+        throw std::runtime_error("could not write " + path.string());
+    out.close();
+    if (!out) throw std::runtime_error("could not close " + path.string());
 }
-
-} // namespace
-
+}
 int main(int argc, char **argv) {
-    if (argc != 3) {
-        // Extensions shown here are just illustrative - golemc does not
-        // inspect or require any particular file extension on either
-        // argument; see this file's header comment.
-        std::cerr << "usage: golemc <input> <output>\n";
-        return 2;
-    }
+    using namespace golem::cli;
     try {
-        std::string src = readFile(argv[1]);
-        std::vector<unsigned char> compiled = compile(src);
-        writeFile(argv[2], compiled);
-        std::cout << "wrote " << compiled.size() << " bytes to " << argv[2] << "\n";
-    } catch (const std::exception &e) {
-        std::cerr << "golemc: error: " << e.what() << "\n";
+        if (argc >= 2 && std::string(argv[1]) == "--resident") {
+            int pos = 2;
+            std::vector<golem::resident::Reservation> reservations;
+            while (pos < argc && std::string(argv[pos]) == "--reserve") {
+                if (++pos == argc) throw std::runtime_error("--reserve requires FIRST:LAST");
+                reservations.push_back(reservation(argv[pos++]));
+            }
+            if (argc - pos != 2 && argc - pos != 3) throw std::runtime_error("resident mode requires source, output directory and optional example input");
+            auto result = golem::resident::compileResident(readFile(argv[pos]), reservations);
+            double value = argc - pos == 3 ? golem::resident::updateValue(argv[pos + 2]) : result.spec.initial;
+            auto update = golem::resident_scalar::inputUpdate(result, value);
+            update.insert(update.end(), result.invoke.begin(), result.invoke.end());
+            auto json = golem::resident::manifest(result, reservations);
+            // Semantic/reservation validation completes before output mutation.
+            // File publication itself is not atomic if an I/O operation fails.
+            const std::filesystem::path output(argv[pos + 1]);
+            std::filesystem::create_directories(output);
+            write(output / "bootstrap.bin", result.bootstrap);
+            write(output / "cleanup.bin", result.cleanup);
+            write(output / "invoke.bin", result.invoke);
+            write(output / "update-call.bin", update);
+            write(output / "interface.json", golem::resident_scalar::Bytes(json.begin(), json.end()));
+            std::cout << "resident installation " << result.bootstrap.size() << " bytes; update/call "
+                      << update.size() << " bytes; owned buffers " << result.owned.size() << '\n';
+            return 0;
+        }
+        if (argc != 3 || std::string(argv[1]).compare(0, 2, "--") == 0) {
+            std::cerr << "usage: golemc <source> <payload>\n"
+                      << "       golemc --resident [--reserve FIRST:LAST ...] <source> <directory> [example-input]\n";
+            return 2;
+        }
+        auto bytes = compile(readFile(argv[1]));
+        write(argv[2], bytes);
+        std::cout << "wrote " << bytes.size() << " payload bytes\n";
+    } catch (const std::exception &error) {
+        std::cerr << "golemc: error: " << error.what() << '\n';
         return 1;
     }
     return 0;

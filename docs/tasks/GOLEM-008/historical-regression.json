@@ -1,0 +1,417 @@
+{
+  "baseline_commit": "5cb17567e61ff4155fda7dfdfb762b1ba623f44b",
+  "builds": {
+    "parser-regression": {
+      "command": [
+        "g++",
+        "-std=c++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-006/build/parser-regression.cpp",
+        "-o",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-006/build/parser-regression"
+      ],
+      "stdout": "",
+      "seconds": 32.07
+    },
+    "integration": {
+      "command": [
+        "g++",
+        "-std=c++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-006/test_integration.cpp",
+        "-o",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-006/build/integration"
+      ],
+      "stdout": "",
+      "seconds": 30.196
+    },
+    "golemc-integrated": {
+      "command": [
+        "g++",
+        "-std=c++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-O2",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-006/golemc_integrated.cpp",
+        "-o",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-006/build/golemc-integrated"
+      ],
+      "stdout": "",
+      "seconds": 6.293
+    },
+    "baseline": {
+      "command": [
+        "g++",
+        "-std=c++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-O2",
+        "-I",
+        "/Agon/mystuff/golem/src",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-006/build/baseline.cpp",
+        "-o",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-006/build/baseline"
+      ],
+      "stdout": "",
+      "seconds": 2.47
+    }
+  },
+  "cli_rejections": [
+    {
+      "args": [
+        "--resident",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-006/build/invalid.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-006/build/cli-output"
+      ],
+      "returncode": 1,
+      "stderr": "golemc-integrated: line 7, column 5: For/Next is not qualified for this resident profile"
+    },
+    {
+      "args": [
+        "--resident",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-006/examples/counted-floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-006/build/cli-output",
+        "32768"
+      ],
+      "returncode": 1,
+      "stderr": "golemc-integrated: input and its float32 rounding must satisfy declared Range"
+    },
+    {
+      "args": [
+        "--resident",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-006/examples/counted-floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-006/build/cli-output",
+        "1e9999"
+      ],
+      "returncode": 1,
+      "stderr": "golemc-integrated: line 1, column 1: decimal literal is outside the finite representable range"
+    },
+    {
+      "args": [
+        "--resident",
+        "--reserve",
+        "1:65534",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-006/examples/counted-floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-006/build/cli-output"
+      ],
+      "returncode": 1,
+      "stderr": "golemc-integrated: buffer ID namespace exhausted"
+    },
+    {
+      "args": [
+        "--resident",
+        "--reserve",
+        "5:10",
+        "--reserve",
+        "8:12",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-006/examples/counted-floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-006/build/cli-output"
+      ],
+      "returncode": 1,
+      "stderr": "golemc-integrated: buffer ID 8 already claimed by asset.0"
+    },
+    {
+      "args": [
+        "--resident",
+        "--reserve",
+        "0:1",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-006/examples/counted-floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-006/build/cli-output"
+      ],
+      "returncode": 1,
+      "stderr": "golemc-integrated: buffer ID 0 is reserved for the loader root"
+    },
+    {
+      "args": [
+        "--resident",
+        "--reserve",
+        "1:65535",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-006/examples/counted-floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-006/build/cli-output"
+      ],
+      "returncode": 1,
+      "stderr": "golemc-integrated: reservation endpoints must be decimal IDs in 1..65534"
+    },
+    {
+      "args": [
+        "--resident",
+        "--reserve",
+        "1:65536",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-006/examples/counted-floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-006/build/cli-output"
+      ],
+      "returncode": 1,
+      "stderr": "golemc-integrated: reservation endpoints must be decimal IDs in 1..65534"
+    },
+    {
+      "args": [
+        "--resident",
+        "--reserve",
+        "999999999999999999999:999999999999999999999",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-006/examples/counted-floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-006/build/cli-output"
+      ],
+      "returncode": 1,
+      "stderr": "golemc-integrated: reservation endpoints must be decimal IDs in 1..65534"
+    },
+    {
+      "args": [
+        "--resident",
+        "--reserve",
+        "20:10",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-006/examples/counted-floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-006/build/cli-output"
+      ],
+      "returncode": 1,
+      "stderr": "golemc-integrated: reversed reservation range"
+    },
+    {
+      "args": [
+        "--resident",
+        "--reserve",
+        "5",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-006/examples/counted-floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-006/build/cli-output"
+      ],
+      "returncode": 1,
+      "stderr": "golemc-integrated: reservation must be FIRST:LAST (inclusive)"
+    },
+    {
+      "args": [
+        "--resident",
+        "--reserve",
+        "1:",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-006/examples/counted-floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-006/build/cli-output"
+      ],
+      "returncode": 1,
+      "stderr": "golemc-integrated: empty reservation endpoint"
+    },
+    {
+      "args": [
+        "--resident",
+        "--reserve",
+        ":10",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-006/examples/counted-floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-006/build/cli-output"
+      ],
+      "returncode": 1,
+      "stderr": "golemc-integrated: empty reservation endpoint"
+    },
+    {
+      "args": [
+        "--resident",
+        "--reserve",
+        "1:2:3",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-006/examples/counted-floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-006/build/cli-output"
+      ],
+      "returncode": 1,
+      "stderr": "golemc-integrated: reservation endpoints must be decimal IDs in 1..65534"
+    },
+    {
+      "args": [
+        "--resident",
+        "--reserve",
+        "-1:2",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-006/examples/counted-floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-006/build/cli-output"
+      ],
+      "returncode": 1,
+      "stderr": "golemc-integrated: reservation endpoints must be decimal IDs in 1..65534"
+    },
+    {
+      "args": [
+        "--resident",
+        "--reserve",
+        "x:2",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-006/examples/counted-floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-006/build/cli-output"
+      ],
+      "returncode": 1,
+      "stderr": "golemc-integrated: reservation endpoints must be decimal IDs in 1..65534"
+    }
+  ],
+  "firmware_executed": false,
+  "parser-regression": {
+    "command": [
+      "/Agon/mystuff/golem/docs/tasks/GOLEM-006/build/parser-regression"
+    ],
+    "stdout": "20 ordinary byte matches; 22 scalar byte matches; 69 rejection checks; spans/casing/defaults pass.",
+    "seconds": 0.077
+  },
+  "integration": {
+    "command": [
+      "/Agon/mystuff/golem/docs/tasks/GOLEM-006/build/integration"
+    ],
+    "stdout": "22 full compatibility matches; 34 allocation/integration rejections; 7 decoder fixtures written.",
+    "seconds": 0.423
+  },
+  "decoder_and_host_model": {
+    "seconds": 1.432,
+    "fixtures": {
+      "compat": {
+        "numeric_jobs": 807,
+        "programs": 4,
+        "decoded_commands": 35,
+        "owned_buffers": 25,
+        "logical_call_depth": 3,
+        "installation_bytes": 1008,
+        "recurring_update_call_bytes": 21,
+        "cleanup_bytes": 150,
+        "persistent_state_and_reinstall_reset": true,
+        "external_assets_preserved": true
+      },
+      "floor-default": {
+        "numeric_jobs": 807,
+        "programs": 4,
+        "decoded_commands": 35,
+        "owned_buffers": 25,
+        "logical_call_depth": 3,
+        "installation_bytes": 1008,
+        "recurring_update_call_bytes": 21,
+        "cleanup_bytes": 150,
+        "persistent_state_and_reinstall_reset": true,
+        "external_assets_preserved": true
+      },
+      "floor-reserved": {
+        "numeric_jobs": 807,
+        "programs": 4,
+        "decoded_commands": 35,
+        "owned_buffers": 25,
+        "logical_call_depth": 3,
+        "installation_bytes": 1008,
+        "recurring_update_call_bytes": 21,
+        "cleanup_bytes": 150,
+        "persistent_state_and_reinstall_reset": true,
+        "external_assets_preserved": true
+      },
+      "initialized-expressions": {
+        "numeric_jobs": 807,
+        "programs": 4,
+        "decoded_commands": 38,
+        "owned_buffers": 28,
+        "logical_call_depth": 3,
+        "installation_bytes": 1143,
+        "recurring_update_call_bytes": 21,
+        "cleanup_bytes": 168,
+        "persistent_state_and_reinstall_reset": true,
+        "external_assets_preserved": true
+      },
+      "mixed-default": {
+        "numeric_jobs": 807,
+        "programs": 4,
+        "decoded_commands": 44,
+        "owned_buffers": 28,
+        "logical_call_depth": 3,
+        "installation_bytes": 1120,
+        "recurring_update_call_bytes": 21,
+        "cleanup_bytes": 168,
+        "persistent_state_and_reinstall_reset": true,
+        "external_assets_preserved": true
+      },
+      "mixed-reserved": {
+        "numeric_jobs": 807,
+        "programs": 4,
+        "decoded_commands": 44,
+        "owned_buffers": 28,
+        "logical_call_depth": 3,
+        "installation_bytes": 1120,
+        "recurring_update_call_bytes": 21,
+        "cleanup_bytes": 168,
+        "persistent_state_and_reinstall_reset": true,
+        "external_assets_preserved": true
+      },
+      "wrapping-counter": {
+        "numeric_jobs": 807,
+        "programs": 4,
+        "decoded_commands": 38,
+        "owned_buffers": 27,
+        "logical_call_depth": 3,
+        "installation_bytes": 1084,
+        "recurring_update_call_bytes": 21,
+        "cleanup_bytes": 162,
+        "persistent_state_and_reinstall_reset": true,
+        "external_assets_preserved": true
+      }
+    },
+    "normalized_scalar_relocations": 2,
+    "normalized_mixed_relocations": 1,
+    "description": "Bounded independent host model; no firmware execution or timing claim"
+  },
+  "cli_success": {
+    "command": [
+      "/Agon/mystuff/golem/docs/tasks/GOLEM-006/build/golemc-integrated",
+      "--resident",
+      "--reserve",
+      "1:8",
+      "--reserve",
+      "20:24",
+      "/Agon/mystuff/golem/docs/tasks/GOLEM-006/examples/counted-floor.golem",
+      "/Agon/mystuff/golem/docs/tasks/GOLEM-006/build/cli-output",
+      "-0.75"
+    ],
+    "stdout": "resident installation 1120 bytes; update/call 21 bytes; owned buffers 28",
+    "seconds": 0.086
+  },
+  "source_sha256": {
+    "docs/tasks/GOLEM-006/examples/counted-floor.golem": "70ee55ec1b2c80db2e49913cb859893d9dd2da6e4881bd54520ceaea1a83f933",
+    "docs/tasks/GOLEM-006/examples/floor.golem": "cc9293174a62a4d5340d557b8a83a57c7ec578fd7d54468b7a94dc9eb9a459ff",
+    "docs/tasks/GOLEM-006/golemc_integrated.cpp": "be65e75cdd8007a1bcbc88575da15b809c49ec7164c5326d9cd9a7889dd84d14",
+    "docs/tasks/GOLEM-006/integration.hpp": "dd109a118e13db04c93cb293dd1c9f838021bb6c5e0e3b3231d4171897cb4901",
+    "docs/tasks/GOLEM-006/run_checks.py": "adbe012e75cda8b8f8c10b79148a8503fbfb0ab1eef4606fa24e445daed2db06",
+    "docs/tasks/GOLEM-006/scalar_backend.hpp": "5274ac408e622b0f22dcaeabe4e93d7e543bb7202abf3b0a1b04fed9662d56e4",
+    "docs/tasks/GOLEM-006/test_integration.cpp": "c4bf3d8e58d9a41be72edfec272e1861bb84ac302b63a1a0e87b0a9f767ad2ba",
+    "docs/tasks/GOLEM-006/wire_checks.py": "e327e0b60b574fa1b4857797c41a872cbc892602ee4830a3c4bfc05bbeaa94d0",
+    "src/buffer_allocator.hpp": "17af55e64b94d2e4517d1a8110c4d1bddea28dd6f20240263590d0684e186868",
+    "src/golemc.cpp": "848f54e622e226a7bbd99392bab629318a8ba09fe6f1948e53b365b1bf68878e",
+    "src/token_reader.hpp": "fb09435139aaea6fc5903493b5a36f2b4508ccf656dc1fd3b9cac60b35b89497"
+  },
+  "historical_sha256": {
+    "docs/tasks/GOLEM-003/.gitignore": "020c2606e8ed484089c2083e0be438b9d0736bee1558a6b76af0d58bd23f69cf",
+    "docs/tasks/GOLEM-003/Makefile": "73eb3bb5997c91657118628a81e57736b0cd4418ede3a10c7f864e99c870ddc8",
+    "docs/tasks/GOLEM-003/README.md": "d9615cda027becc41559246979b0e201e860a25f0e66ad40b48fe69865857e27",
+    "docs/tasks/GOLEM-003/examples/examples.golem": "d5e9d682ee15afb5a457731b58f05190574b996cfd888b90ca81d4ccc9654323",
+    "docs/tasks/GOLEM-003/examples/floor-rally.golem": "f961886bf1cb5bdf4ef6d19209699abd86c3066e9079f588b303cadf9cb1272b",
+    "docs/tasks/GOLEM-003/examples/floor.golem": "fb19a48c7e0da7790ff85379e8405206c3d1271756cddd639c5b96d9fd2eac5f",
+    "docs/tasks/GOLEM-003/golemc_scalar.cpp": "6a705da8fd95c89d08f494ee8edc1084c61d435fbd8289bf824bd35c3bea2292",
+    "docs/tasks/GOLEM-003/host-checks.json": "0974d3844da168fb0757ab325314d508aef2530394717722230291f3c12d3b9a",
+    "docs/tasks/GOLEM-003/range-prototypes.md": "8da4a54351c8cee39a3c1cf9db2ff6388ff614e05f9953ffc465a839480d2349",
+    "docs/tasks/GOLEM-003/reference/provenance.json": "099dd7af27e3c9a262ab07468dd598278dbc8ed49607f7b640c787ada8569c78",
+    "docs/tasks/GOLEM-003/reference/src/golemc.cpp": "0156bb00e4d4f3f123e7fb012805bd1f85756cbca5849bd1024fdef8db52cdb5",
+    "docs/tasks/GOLEM-003/reference/src/hosted.hpp": "930a6f7e1680d3568d2ec82ef3907f8856fc8f87d735364f10a27218bd86445c",
+    "docs/tasks/GOLEM-003/reference/tests/test_existing.cpp": "e1a8efdb74b7d78ed886a8606529fdeaa84969d37a0d23ce36caf1756ab5c1d5",
+    "docs/tasks/GOLEM-003/reference/tests/test_floor.cpp": "7e1b17132b9a2038e8aafc82580c346d90de318e253ce3fc0389a206af5237e3",
+    "docs/tasks/GOLEM-003/run_checks.py": "a482a65884b436e63f9f2d3811545d888d11177847f83f543201e70a322323cd",
+    "docs/tasks/GOLEM-003/scalar_backend.hpp": "6ce5d4606558144d1b7c71383ef4563c19f77cbc09df3d6c59929153e445bff9",
+    "docs/tasks/GOLEM-003/scalar_frontend.hpp": "dc452ffa7c5c13191116b8d10acd0833808792d08feaaa0d87ef7844ffc7c216",
+    "docs/tasks/GOLEM-003/test_scalar.cpp": "4eb435f14d897f78a09067989a62e1b5b813d71d936dffe98043d1753034bb0c",
+    "docs/tasks/GOLEM-004/.gitignore": "020c2606e8ed484089c2083e0be438b9d0736bee1558a6b76af0d58bd23f69cf",
+    "docs/tasks/GOLEM-004/grammar-integration-review.md": "68c290ea86daf0ec4e7d1f34e64bdd4a2564e84f099a36c8ca2408a30f52c945",
+    "docs/tasks/GOLEM-004/parser-observations.json": "dfe5a04a6fa288b71d2e487c1ccf134ac47d404fd11296a39130800caa624c3c",
+    "docs/tasks/GOLEM-004/probe_parsers.py": "7137ef4f3b767a7dde493fd1474e3ad52075fcd4c3ace991cacc0f62253a178c",
+    "docs/tasks/GOLEM-005/.gitignore": "020c2606e8ed484089c2083e0be438b9d0736bee1558a6b76af0d58bd23f69cf",
+    "docs/tasks/GOLEM-005/Makefile": "f4c97d95e083bc534b1b12a57e6fe6a1f47f147f317d4333d46563377c41b178",
+    "docs/tasks/GOLEM-005/README.md": "89e7c235f9c5a1be6bd101d29922de7ed7280da00173c6e2ec187a7fb0fd3b01",
+    "docs/tasks/GOLEM-005/examples/floor.golem": "345c56d6ee79549049af147a8b769e81108c657babbd7092f9a0f4d908c0ac6a",
+    "docs/tasks/GOLEM-005/golemc_scalar.cpp": "130d939d6ea1d53f1abc105efdfeef746908a75c47ff1e1cb32f047eb17e2eb5",
+    "docs/tasks/GOLEM-005/host-checks.json": "224302e980393836527701843b0951483af33bec1282382fad2b7171d933cac4",
+    "docs/tasks/GOLEM-005/run_checks.py": "5e868a2148b5ed6f32c9eebe04f4b2ab6e5514e83dbc909443e96d3fc8bc63e8",
+    "docs/tasks/GOLEM-005/scalar_frontend.hpp": "69b653af92170bfa9b1d3f57dc968e15705dd1007801aabb54c096aa9cea339a",
+    "docs/tasks/GOLEM-005/test_parsers.cpp": "bf4a3ea9f40e46cb737a1805d4b4eb37f56ccfe79cec00f14416ca82674a9b42"
+  },
+  "ordinary_payload_preserved": true,
+  "rejection_preserves_outputs": true
+}
