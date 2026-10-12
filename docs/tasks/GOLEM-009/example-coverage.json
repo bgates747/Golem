@@ -1,0 +1,431 @@
+{
+  "subtask": "GOLEM-009 / INV-002",
+  "checkpoint": "bcea0c2af53536154c32706ce24bd4b22f757e3a",
+  "scope": "Manual syntax example coverage audit; no parser/firmware verification and no example modifications.",
+  "central_file": "docs/tasks/GOLEM-003/examples/examples.golem",
+  "inventory_sha256": "d5fb355221dd9451be05b71e6429293d6e433f81482a0047132bd6e4cb251cef",
+  "counts": {
+    "Partial": 3,
+    "Covered": 3,
+    "Missing": 18,
+    "Host/tooling": 3,
+    "Parked": 1,
+    "Deferred": 4
+  },
+  "rows": [
+    {
+      "id": "DAT-001",
+      "coverage": "Partial",
+      "finding": "E:7/22/118 demonstrate uint16, sint16 and a bounded float32 initializer. No uint8, sint32 or Q8 fixed-point declaration/initialization example in E. P:215 illustrates sint32 elsewhere; fixed-point source names remain undesigned. Numeric bounds in E use proposed `Bounds`, whereas executable F uses `Range`. Preserve that distinction pending review."
+    },
+    {
+      "id": "DAT-002",
+      "coverage": "Partial",
+      "finding": "E includes initialization, literal print and boolean reassignment (18). Plain numeric variable-to-variable assignment is illustrated in C:7; sum assignment in S:7. General typed copy is not illustrated in E. Bootstrap raw bytes are a storage/interface question, not automatically a needed public intrinsic. Computed `str` printing in S remains outside Rally's implemented feature set."
+    },
+    {
+      "id": "INT-001",
+      "coverage": "Covered",
+      "finding": "E:146 demonstrates uint16 addition/reassignment. C:8 and S:7 additionally show persistent increment and two-variable addition. No new addition spelling needed."
+    },
+    {
+      "id": "INT-002",
+      "coverage": "Missing",
+      "finding": "No readable unsigned-to-containing-integer widening example found. The explicit conversion style in P/F is an existing direction, not a complete widening example."
+    },
+    {
+      "id": "FLT-001",
+      "coverage": "Partial",
+      "finding": "E:118 has a float literal and bounds proposal, but no float copy, integer-to-float conversion or computation. F:2 supplies an executable bounded float declaration; P:318 illustrates integer-to-float conversion elsewhere."
+    },
+    {
+      "id": "FLT-002",
+      "coverage": "Missing",
+      "finding": "P:318 shows converted operands multiplied, within a deferred imported-record example. Its math spelling can be reused independently of imports. No standalone initialized float addition/subtraction/multiplication/scaling example appears in E."
+    },
+    {
+      "id": "FLT-003",
+      "coverage": "Missing",
+      "finding": "No readable scalar reciprocal/division example found. The Rally intrinsic construction is evidence of capability, not an existing friendly syntax sample."
+    },
+    {
+      "id": "INT-003",
+      "coverage": "Missing",
+      "finding": "No readable bounded constant quotient/remainder example found. Full signed/general division must not be implied by the restricted Rally operation."
+    },
+    {
+      "id": "RND-001",
+      "coverage": "Missing",
+      "finding": "F:5 and C:9 already demonstrate true floor with conversion. Reuse that syntax in E; a standalone float-valued floor result is not yet illustrated."
+    },
+    {
+      "id": "RND-002",
+      "coverage": "Missing",
+      "finding": "No readable truncation-toward-zero example found."
+    },
+    {
+      "id": "RND-003",
+      "coverage": "Missing",
+      "finding": "No readable nearest-rounding/halfway-away example found."
+    },
+    {
+      "id": "RND-004",
+      "coverage": "Missing",
+      "finding": "No readable scalar absolute-value example found."
+    },
+    {
+      "id": "CNV-001",
+      "coverage": "Missing",
+      "finding": "F:5 shows the explicit signed-word conversion after floor. E does not. This can share a sample with RND-001 rather than introduce a duplicate builtin."
+    },
+    {
+      "id": "CNV-002",
+      "coverage": "Missing",
+      "finding": "No readable unsigned word conversion example found. Existing uint16 declarations do not demonstrate conversion from float."
+    },
+    {
+      "id": "CNV-003",
+      "coverage": "Missing",
+      "finding": "No readable bounded positive32 store/conversion example found. P's sint32 input declaration does not cover this output conversion."
+    },
+    {
+      "id": "MAT-001",
+      "coverage": "Missing",
+      "finding": "P:216 illustrates a matrix declaration; P:218 initializes its value through identity/rotation. No general literal construction, typed load, extraction or cell update sample in E. Shape notation exists as a proposal; the other operations still lack examples."
+    },
+    {
+      "id": "MAT-002",
+      "coverage": "Missing",
+      "finding": "No readable non-scalar matrix add/subtract/multiply/scaling sample found. P:318's scalar product does not demonstrate matrix multiplication."
+    },
+    {
+      "id": "GEO-001",
+      "coverage": "Missing",
+      "finding": "P:218 illustrates identity and degree rotation. Translation, geometric scale and a composition example are not shown in E. Reuse the existing direction, keeping units and order explicit."
+    },
+    {
+      "id": "GEO-002",
+      "coverage": "Missing",
+      "finding": "No readable qualified diagonal-affine inverse sample found. An arbitrary inverse would exceed Rally's proved operation."
+    },
+    {
+      "id": "GEO-003",
+      "coverage": "Missing",
+      "finding": "P:224 mentions a possible point-transform wrapper in prose, but supplies no independent initialized source sample. It is a hint, not covered example syntax. Typed geometry math stays in scope; imported/indexed data and drawing stay deferred."
+    },
+    {
+      "id": "CMP-001",
+      "coverage": "Covered",
+      "finding": "E:10\u201318 shows all six comparator symbols, boolean initialization and reassignment; E:24 adds a signed comparison. Keep these forms. Type coverage/float comparison behavior still needs semantic review, not six newly designed operators."
+    },
+    {
+      "id": "CTL-001",
+      "coverage": "Missing",
+      "finding": "F:4 shows one Sub; P:253/256/259 shows two Subs and a conditional source call. E has branch bodies but no procedure declaration/call. Reuse the existing proposal; no parameters/returns or recursion implied."
+    },
+    {
+      "id": "CTL-002",
+      "coverage": "Covered",
+      "finding": "E:124 shows counted For/Next; E:132 nests a conditional; E:144/153/162/171 show the four Do/Loop variants. Range/dispatch proposals also exist. No replacement loop syntax needed. A finite resident job using the existing loop/call forms can draw on P:257; backend admission restrictions are a separate issue."
+    },
+    {
+      "id": "VAL-001",
+      "coverage": "Missing",
+      "finding": "E:93 tests sequence membership, not sticky runtime admission/status. H:42 describes host float validation, not a source admission builtin. No readable sticky range/equality validation example found. Copy-related admission stays deferred to GOLEM-010."
+    },
+    {
+      "id": "RUN-001",
+      "coverage": "Host/tooling",
+      "finding": "C demonstrates persistent globals and one job; H documents install/update/call/cleanup. E has no resident-job example. Share the job illustration with CTL-001/DAT-002; refer to H for transport/lifecycle instead of inventing Golem installation commands."
+    },
+    {
+      "id": "RES-001",
+      "coverage": "Host/tooling",
+      "finding": "H:49 gives `--reserve`; ownership/layout is in generated metadata. No allocator/reservation source function is required by existing design. Keep resource configuration outside application snippets unless separately selected."
+    },
+    {
+      "id": "TOL-001",
+      "coverage": "Host/tooling",
+      "finding": "H documents artifacts/host validation. Type/shape diagnostics and maps are compiler behavior, not uncovered language functions. They do not require a new source sample per diagnostic."
+    },
+    {
+      "id": "OPT-001",
+      "coverage": "Parked",
+      "finding": "Scratch sharing, pooling and inlining controls are not illustrated in E. Remain parked, consistent with the priority on wire traffic over optimization work."
+    },
+    {
+      "id": "DEF-001",
+      "coverage": "Deferred",
+      "finding": "Assets/tables/imports: GOLEM-010. P EX-004 is historical evidence, not authorization to expand it now."
+    },
+    {
+      "id": "DEF-002",
+      "coverage": "Deferred",
+      "finding": "Indexed record/element access: GOLEM-010. Switch jump-table syntax in E indexes control targets; it does not cover data indexing and does not reopen that deferred work."
+    },
+    {
+      "id": "DEF-003",
+      "coverage": "Deferred",
+      "finding": "Checked field/record copying: GOLEM-010. Ordinary assignment coverage does not establish checked-copy behavior."
+    },
+    {
+      "id": "DEF-004",
+      "coverage": "Deferred",
+      "finding": "Typed drawing: GOLEM-011. Geometry transforms above are math examples, not point/quad/bitmap/viewport rendering."
+    }
+  ],
+  "sources": {
+    "E": {
+      "path": "docs/tasks/GOLEM-003/examples/examples.golem",
+      "line_count": 174,
+      "sha256": "d5e9d682ee15afb5a457731b58f05190574b996cfd888b90ca81d4ccc9654323",
+      "anchors": [
+        {
+          "line": 6,
+          "text": "// Boolean initialization from comparisons (proposed)"
+        },
+        {
+          "line": 7,
+          "text": "uint16 foo = 1"
+        },
+        {
+          "line": 10,
+          "text": "bool quux = foo != bar         // true"
+        },
+        {
+          "line": 11,
+          "text": "bool equal = foo == bar        // false"
+        },
+        {
+          "line": 12,
+          "text": "bool less = foo < bar          // true"
+        },
+        {
+          "line": 13,
+          "text": "bool greater = foo > bar       // false"
+        },
+        {
+          "line": 14,
+          "text": "bool lessOrEqual = foo <= bar  // true"
+        },
+        {
+          "line": 15,
+          "text": "bool greaterOrEqual = foo >= bar // false"
+        },
+        {
+          "line": 18,
+          "text": "quux = foo == bar              // false"
+        },
+        {
+          "line": 21,
+          "text": "// Branching"
+        },
+        {
+          "line": 22,
+          "text": "sint16 result = -1"
+        },
+        {
+          "line": 24,
+          "text": "If result < 0 Then"
+        },
+        {
+          "line": 33,
+          "text": "// Selection: evaluate once, no fall-through, optional Default"
+        },
+        {
+          "line": 50,
+          "text": "// Indexed dispatch: inclusive consecutive slots, any starting value"
+        },
+        {
+          "line": 74,
+          "text": "// Range prototypes below are proposals, not implemented syntax."
+        },
+        {
+          "line": 90,
+          "text": "// Membership checks bounds AND step alignment: 6 belongs, 7 does not."
+        },
+        {
+          "line": 93,
+          "text": "If value In Range(2, 10, 2) Then"
+        },
+        {
+          "line": 116,
+          "text": "// Numeric bounds are not stepped sequences: 0.25 is permitted here."
+        },
+        {
+          "line": 118,
+          "text": "float32 boundedInput Bounds(-1, 1) = 0.25"
+        },
+        {
+          "line": 121,
+          "text": "// Counted loop: inclusive endpoints, increment of 1"
+        },
+        {
+          "line": 124,
+          "text": "For i = 1 To 8"
+        },
+        {
+          "line": 132,
+          "text": "For i = 1 To 8"
+        },
+        {
+          "line": 144,
+          "text": "Do While count < 4"
+        },
+        {
+          "line": 146,
+          "text": "    count = count + 1"
+        },
+        {
+          "line": 153,
+          "text": "Do Until count == 4"
+        },
+        {
+          "line": 162,
+          "text": "Do"
+        },
+        {
+          "line": 171,
+          "text": "Do"
+        }
+      ]
+    },
+    "F": {
+      "path": "examples/resident/floor.golem",
+      "line_count": 6,
+      "sha256": "cc9293174a62a4d5340d557b8a83a57c7ec578fd7d54468b7a94dc9eb9a459ff",
+      "anchors": [
+        {
+          "line": 2,
+          "text": "float32 x Range(-32768,32767) = -0.00006103515625"
+        },
+        {
+          "line": 4,
+          "text": "Sub compute"
+        },
+        {
+          "line": 5,
+          "text": "    result = sint16(floor(x))"
+        }
+      ]
+    },
+    "C": {
+      "path": "examples/resident/counted-floor.golem",
+      "line_count": 11,
+      "sha256": "70ee55ec1b2c80db2e49913cb859893d9dd2da6e4881bd54520ceaea1a83f933",
+      "anchors": [
+        {
+          "line": 2,
+          "text": "uint16 calls = 0"
+        },
+        {
+          "line": 7,
+          "text": "    previous = calls"
+        },
+        {
+          "line": 8,
+          "text": "    calls = calls + 1"
+        },
+        {
+          "line": 9,
+          "text": "    result = sint16(floor(x))"
+        }
+      ]
+    },
+    "P": {
+      "path": "docs/tasks/GOLEM-001/rally-capability-integration-proposal.md",
+      "line_count": 580,
+      "sha256": "91f3088d50791e712640aad955a12dd4467caa95ab21618f1c3fd89b51d0477f",
+      "anchors": [
+        {
+          "line": 181,
+          "text": "float32 x Range(-32768,32767) = -0.00006103515625;"
+        },
+        {
+          "line": 215,
+          "text": "sint32 angle Range(-90,90) = 45;"
+        },
+        {
+          "line": 216,
+          "text": "matrix(3,3) rotation;"
+        },
+        {
+          "line": 218,
+          "text": "    rotation = rotate_degrees(identity(3),angle);"
+        },
+        {
+          "line": 224,
+          "text": "`transform_points(destination,source,rotation)` can infer count/stride from typed"
+        },
+        {
+          "line": 250,
+          "text": "uint16 enabled = 1;"
+        },
+        {
+          "line": 253,
+          "text": "Sub tick;"
+        },
+        {
+          "line": 256,
+          "text": "Sub work;"
+        },
+        {
+          "line": 257,
+          "text": "    For i = 1 To 8;"
+        },
+        {
+          "line": 259,
+          "text": "            tick();"
+        },
+        {
+          "line": 318,
+          "text": "        product = float32(selected.a) * float32(selected.b);"
+        }
+      ]
+    },
+    "S": {
+      "path": "examples/scratch.golem",
+      "line_count": 14,
+      "sha256": "074a12a5e04a1cae9c7b837c5c9aaf6f06589354bc1e94b9746aaabe76961c51",
+      "anchors": [
+        {
+          "line": 4,
+          "text": "uint16 foo = 10"
+        },
+        {
+          "line": 7,
+          "text": "qux = foo + bar"
+        },
+        {
+          "line": 8,
+          "text": "print str(qux)"
+        }
+      ]
+    },
+    "H": {
+      "path": "docs/design/resident-scalar.md",
+      "line_count": 67,
+      "sha256": "ae8cca3606220a61b5d32c13c72556f324e55f3b952a1032590903581df40702",
+      "anchors": [
+        {
+          "line": 7,
+          "text": "build/golemc --resident examples/resident/counted-floor.golem build/counted-floor -0.75"
+        },
+        {
+          "line": 25,
+          "text": "The directory contains five files:"
+        },
+        {
+          "line": 42,
+          "text": "The host must validate finite, representable float32 inputs against the declared"
+        },
+        {
+          "line": 49,
+          "text": "Reserve external buffers with repeated inclusive `--reserve FIRST:LAST` options"
+        }
+      ]
+    }
+  },
+  "validation_seconds": 0.025,
+  "duration_scope": "Coverage completeness, reference and unchanged-file checks only; excludes analysis/report writing."
+}
