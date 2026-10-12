@@ -5,8 +5,9 @@ and task artifacts live under `docs/tasks/`.
 
 - [ ] **GOLEM-009:** Audit Rally capabilities/functions against existing syntax
   examples and add uncovered cases to `examples.golem` for Author review.
-  [Task plan](docs/tasks/GOLEM-009.md). Queued only; do not start while the
-  Author is still working through the current list. No implementation authorized.
+  [Task plan](docs/tasks/GOLEM-009.md). INV-001 reconciliation delivered;
+  awaiting Author review before INV-002. One subtask at a time.
+  No compiler implementation authorized.
 
 - [ ] **GOLEM-010:** Review assets/tables, indexed access and checked copying.
   [Task plan](docs/tasks/GOLEM-010.md). Deferred beyond the next tranche.

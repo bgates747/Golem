@@ -1,0 +1,291 @@
+{
+  "subtask": "GOLEM-009 / INV-001",
+  "scope": "Source/document reconciliation only; no compiler, test suite, emulator or hardware run.",
+  "main_head": "1affbc50b5a3c782a2a9c840cac812c31e17c79e",
+  "rally_head": "4db7e96f70c3d63f4ab53766f3b32063e9357c8b",
+  "rally_clean": true,
+  "statement_operation_count": 44,
+  "statement_operations": [
+    "addu16",
+    "bytes",
+    "call",
+    "callif",
+    "copy",
+    "copychecked",
+    "copyrecord",
+    "divmodpositive",
+    "drawbitmap",
+    "graphicsviewport",
+    "identity",
+    "inlinecalls",
+    "invertaffine",
+    "lessthan",
+    "loadelement",
+    "loadindexed",
+    "matabs",
+    "matadd",
+    "matextract",
+    "matfloor",
+    "matload",
+    "matmul",
+    "matput",
+    "matroundaway",
+    "matscale",
+    "matsub",
+    "mattrunc",
+    "matvalues",
+    "plotpoint",
+    "plotquad",
+    "print",
+    "repeat",
+    "requireequal",
+    "requirerange",
+    "rotatedegrees",
+    "scale",
+    "scrollgraphics",
+    "set",
+    "storei16floor",
+    "storepositive32floor",
+    "storeu16floor",
+    "transformdata",
+    "translate",
+    "widenunsigned"
+  ],
+  "operation_inventory_rows": {
+    "DAT-002": [
+      "print",
+      "set",
+      "copy",
+      "bytes"
+    ],
+    "INT-001": [
+      "addu16"
+    ],
+    "INT-002": [
+      "widenunsigned"
+    ],
+    "FLT-001": [
+      "matload",
+      "matvalues"
+    ],
+    "FLT-002": [
+      "matadd",
+      "matsub",
+      "matmul",
+      "matscale"
+    ],
+    "FLT-003": [
+      "invertaffine",
+      "matextract"
+    ],
+    "INT-003": [
+      "divmodpositive"
+    ],
+    "RND-001": [
+      "matfloor"
+    ],
+    "RND-002": [
+      "mattrunc"
+    ],
+    "RND-003": [
+      "matroundaway"
+    ],
+    "RND-004": [
+      "matabs"
+    ],
+    "CNV-001": [
+      "storei16floor"
+    ],
+    "CNV-002": [
+      "storeu16floor"
+    ],
+    "CNV-003": [
+      "storepositive32floor"
+    ],
+    "MAT-001": [
+      "matvalues",
+      "matload",
+      "matextract",
+      "matput"
+    ],
+    "MAT-002": [
+      "matadd",
+      "matsub",
+      "matmul",
+      "matscale"
+    ],
+    "GEO-001": [
+      "identity",
+      "translate",
+      "scale",
+      "rotatedegrees"
+    ],
+    "GEO-002": [
+      "invertaffine"
+    ],
+    "GEO-003": [
+      "transformdata"
+    ],
+    "CMP-001": [
+      "lessthan",
+      "callif"
+    ],
+    "CTL-001": [
+      "call",
+      "callif"
+    ],
+    "CTL-002": [
+      "repeat"
+    ],
+    "VAL-001": [
+      "requirerange",
+      "requireequal"
+    ],
+    "OPT-001": [
+      "inlinecalls"
+    ],
+    "DEF-002": [
+      "loadindexed",
+      "loadelement"
+    ],
+    "DEF-003": [
+      "copychecked",
+      "copyrecord"
+    ],
+    "DEF-004": [
+      "plotpoint",
+      "plotquad",
+      "drawbitmap",
+      "graphicsviewport",
+      "scrollgraphics"
+    ]
+  },
+  "field_types": [
+    "u8",
+    "u16",
+    "s16",
+    "s32",
+    "q8s16",
+    "q8s32",
+    "f32"
+  ],
+  "declarations": [
+    "buffer",
+    "field",
+    "matrix",
+    "program",
+    "asset",
+    "table"
+  ],
+  "configuration_directives": {
+    "sharedwordscratch": "OPT-001",
+    "sharedscalarscratch": "OPT-001"
+  },
+  "main_source_sha256": {
+    "src/ordinary.hpp": "82650a2b8e6348bb599c09f73dde99b874f40589867bfb796005b5cf059bcf8a",
+    "src/resident.hpp": "42970162390ad32276fd3e81d8b4b43d714ed60eaa1efbd6eff8e22af95f817d",
+    "src/scalar_backend.hpp": "20135c3e3cdf0386bccadd99f34f785d35b85629cb96d7230d64e5864836fa2c",
+    "src/buffer_allocator.hpp": "17af55e64b94d2e4517d1a8110c4d1bddea28dd6f20240263590d0684e186868",
+    "src/token_reader.hpp": "fb09435139aaea6fc5903493b5a36f2b4508ccf656dc1fd3b9cac60b35b89497",
+    "src/golemc.cpp": "848f54e622e226a7bbd99392bab629318a8ba09fe6f1948e53b365b1bf68878e",
+    "docs/design/resident-scalar.md": "ae8cca3606220a61b5d32c13c72556f324e55f3b952a1032590903581df40702",
+    "docs/design/language-type-proposals.md": "2cd248831ce916511133a64f18335f4c72441622c389126ca08236a99add295d",
+    "docs/tasks/GOLEM-001/rally-capability-integration-proposal.md": "91f3088d50791e712640aad955a12dd4467caa95ab21618f1c3fd89b51d0477f",
+    "docs/tasks/GOLEM-003/examples/examples.golem": "d5e9d682ee15afb5a457731b58f05190574b996cfd888b90ca81d4ccc9654323"
+  },
+  "rally_source_sha256": {
+    "src/hosted.hpp": "930a6f7e1680d3568d2ec82ef3907f8856fc8f87d735364f10a27218bd86445c"
+  },
+  "historical_host_report_sha256": "f6e7e77484daf24355464bba775256aaead0ea571363fd55469f8c3739823185",
+  "historical_source_checks": [
+    {
+      "path": "src/golemc.cpp",
+      "expected": "0156bb00e4d4f3f123e7fb012805bd1f85756cbca5849bd1024fdef8db52cdb5",
+      "actual": "0156bb00e4d4f3f123e7fb012805bd1f85756cbca5849bd1024fdef8db52cdb5"
+    },
+    {
+      "path": "src/hosted.hpp",
+      "expected": "930a6f7e1680d3568d2ec82ef3907f8856fc8f87d735364f10a27218bd86445c",
+      "actual": "930a6f7e1680d3568d2ec82ef3907f8856fc8f87d735364f10a27218bd86445c"
+    },
+    {
+      "path": "tests/test_admission.cpp",
+      "expected": "fe5bed0ece8e0bedb9c4b7031b97c94b4a4c735d57d58731e283a4e46040381c",
+      "actual": "fe5bed0ece8e0bedb9c4b7031b97c94b4a4c735d57d58731e283a4e46040381c"
+    },
+    {
+      "path": "tests/test_bitmap.cpp",
+      "expected": "a61ea2376cc0324c899701ba8d27f0ddcc75b97ef925d638ee2fce97622cbe5e",
+      "actual": "a61ea2376cc0324c899701ba8d27f0ddcc75b97ef925d638ee2fce97622cbe5e"
+    },
+    {
+      "path": "tests/test_checked_copy.cpp",
+      "expected": "28fc08f0a2a80fe513ad966c91148df1443ea060b06767c0682206333dcd61f9",
+      "actual": "28fc08f0a2a80fe513ad966c91148df1443ea060b06767c0682206333dcd61f9"
+    },
+    {
+      "path": "tests/test_divmod.cpp",
+      "expected": "48848f0f3d913afb0775fa75290d98850f5272ab3c44c60143752399dd42ddd7",
+      "actual": "48848f0f3d913afb0775fa75290d98850f5272ab3c44c60143752399dd42ddd7"
+    },
+    {
+      "path": "tests/test_elements.cpp",
+      "expected": "1f592c362822bd50167ca56ea1d6f797009e9e08d845a65b2ce26290c1d7fdcd",
+      "actual": "1f592c362822bd50167ca56ea1d6f797009e9e08d845a65b2ce26290c1d7fdcd"
+    },
+    {
+      "path": "tests/test_existing.cpp",
+      "expected": "e1a8efdb74b7d78ed886a8606529fdeaa84969d37a0d23ce36caf1756ab5c1d5",
+      "actual": "e1a8efdb74b7d78ed886a8606529fdeaa84969d37a0d23ce36caf1756ab5c1d5"
+    },
+    {
+      "path": "tests/test_floor.cpp",
+      "expected": "7e1b17132b9a2038e8aafc82580c346d90de318e253ce3fc0389a206af5237e3",
+      "actual": "7e1b17132b9a2038e8aafc82580c346d90de318e253ce3fc0389a206af5237e3"
+    },
+    {
+      "path": "tests/test_hosted.cpp",
+      "expected": "1b6392a814598c4abc9fde84913cc912591349202c8dad2e8e02aece575311d6",
+      "actual": "1b6392a814598c4abc9fde84913cc912591349202c8dad2e8e02aece575311d6"
+    },
+    {
+      "path": "tests/test_imports.cpp",
+      "expected": "cd442286844ce55ed164c972891fc2af0624866a9b27838d6a32d5edb56d7fdb",
+      "actual": "cd442286844ce55ed164c972891fc2af0624866a9b27838d6a32d5edb56d7fdb"
+    },
+    {
+      "path": "tests/test_inline.cpp",
+      "expected": "1fc4d164cd0360cc5e05ce6b58061d6b0d64a5f865946511a36b7e0c97cc101f",
+      "actual": "1fc4d164cd0360cc5e05ce6b58061d6b0d64a5f865946511a36b7e0c97cc101f"
+    },
+    {
+      "path": "tests/test_rounding.cpp",
+      "expected": "67967a7bb80bf0cf18320f89cc08a052906f07fe23f3a40cba71b88697e19b8b",
+      "actual": "67967a7bb80bf0cf18320f89cc08a052906f07fe23f3a40cba71b88697e19b8b"
+    },
+    {
+      "path": "tests/test_shared_scratch.cpp",
+      "expected": "d18fe6ee46702b2920272552df8d1ed88b17beb06c0d52377d3ee20763a1ca39",
+      "actual": "d18fe6ee46702b2920272552df8d1ed88b17beb06c0d52377d3ee20763a1ca39"
+    },
+    {
+      "path": "tests/test_vehicle_math.cpp",
+      "expected": "ab49ac212e887e4c1a9b381797fd864a2ec78d151439407d0d023c62d708630c",
+      "actual": "ab49ac212e887e4c1a9b381797fd864a2ec78d151439407d0d023c62d708630c"
+    },
+    {
+      "path": "tests/test_viewport.cpp",
+      "expected": "44ed9913f5bac339ffa8ba02f207774ce2dabb061fdcf2e17bcbf6e5ddec8ea1",
+      "actual": "44ed9913f5bac339ffa8ba02f207774ce2dabb061fdcf2e17bcbf6e5ddec8ea1"
+    },
+    {
+      "path": "tests/run_hosted.py",
+      "expected": "56f048e2b0188f28b78ceedfe86d3ff4681a394ce15876d2a19b27de1083f258",
+      "actual": "56f048e2b0188f28b78ceedfe86d3ff4681a394ce15876d2a19b27de1083f258"
+    }
+  ],
+  "all_recorded_source_hashes_match": true,
+  "fresh_test_execution": false,
+  "audit_validation_seconds": 0.103,
+  "duration_scope": "Hash and operation-coverage validation only; excludes investigation and report writing."
+}

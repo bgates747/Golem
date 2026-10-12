@@ -1,6 +1,8 @@
 # GOLEM-009 — Complete Rally function and syntax review proposal
 
-Queued at the Author's request; do not begin yet. The deliverable will inventory
+INV-001 alone was authorized after the queue checkpoint. Its reconciliation is
+complete and awaits Author review; do not proceed to another subtask yet.
+The deliverable will inventory
 all required Rally capabilities/functions against existing examples and add
 missing readable syntax examples to `examples.golem` for Author review.
 Comparators and conditionals are already largely covered at the syntax-design
@@ -13,9 +15,11 @@ inventory entries; do not develop their syntax examples in this tranche.
 
 ## Inventory and proposals
 
-- INV-001 [ ] Reconcile the GOLEM-001 capability comparison with current
+- INV-001 [x] Reconcile the GOLEM-001 capability comparison with current
   maintained Golem support and the examined Rally implementation. Distinguish
   already implemented features, existing syntax proposals and remaining gaps.
+  Delivered [inventory](GOLEM-009/inventory.md) and
+  [source audit](GOLEM-009/inventory-audit.json); awaiting Author review.
 - INV-002 [ ] Audit the existing `examples.golem` against that inventory. Record
   where each capability is illustrated and identify anything not covered.
   Treat comparator and conditional examples as the starting design; extend them
@@ -32,6 +36,6 @@ inventory entries; do not develop their syntax examples in this tranche.
   authorized.
 
 Keep supporting audit files under `docs/tasks/GOLEM-009/`; the requested syntax
-additions belong in the existing `examples.golem`. Do not generate the inventory
-or edit examples merely by queuing
-this task. Await the Author's instruction to begin after the current list review.
+additions belong in the existing `examples.golem`. Execution is one subtask at a
+time, followed by Author review. INV-002 and later subtasks remain unexecuted;
+no examples or compiler code have been changed by INV-001.
