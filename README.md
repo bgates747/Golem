@@ -57,6 +57,19 @@ qualification and Oryx human review pass.
 automated qualification and Oryx human review pass.
 Broader syntax shown in design examples remains proposed.
 
+The intended integration is PC compilation followed by an eZ80 assembly
+application that loads, updates and calls the resident VDP buffers. Compiler
+output publishes their assigned locations. Optional `--emit-asm` now generates
+assembly symbols, payload bytes and a named eZ80 call wrapper for current resident
+packages. [GOLEM-016](docs/tasks/GOLEM-016/README.md) records assembler validation. See the [assembly integration contract](docs/design/resident-scalar.md#assembly-application-integration--direction-agreed-2026-10-12).
+
+The separate [resident table profile](docs/design/resident-table.md) now supports
+one immutable typed table and checked whole-record selection, with a named
+assembly wrapper and field/table layout symbols. Build-time --table-data supplies
+the packed rows. [GOLEM-017](docs/tasks/GOLEM-017/README.md) passes host, assembler
+and stock Pi/Oryx headless qualification. Oryx human review passed; the agent
+verified the saved results.
+
 ## Reference material
 
 Design is grounded in the Agon documentation, particularly:

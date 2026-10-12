@@ -874,6 +874,15 @@ sidesteps that hazard for free, rather than needing a second bespoke
 
 ## Axis 17: The loader's ultimate target shape - a command-line-driven MOSlet
 
+**Priority correction, 2026-10-12:** the intended workflow is PC compilation
+consumed by a hand-written assembly application. The application owns loading,
+updates and invocation. Generated assembly includes for layout symbols and
+payload bytes are the preferred additional integration output, still to be
+implemented. The MOSlet/standalone ideas below are optional future frontends;
+they are not the required ultimate shape or current priority. See the
+[maintained integration contract](resident-scalar.md#assembly-application-integration--direction-agreed-2026-10-12).
+
+
 **Status: leaning, far-future - not needed for anything currently being
 built. Today's loader (`examples/hello_golem/loader.asm`) is explicitly a
 "quick and dirty hack to get our feet wet" (Author's own framing) and is
@@ -1476,3 +1485,52 @@ Host/sanitizer, stock Pi and Oryx headless qualification pass. Oryx human review
 passed; the agent retrieved and independently verified the saved results. See [the maintained contract](resident-scalar.md) and
 [GOLEM-015 evidence](../tasks/GOLEM-015/README.md). Signed divmod, / and % syntax,
 general functions and richer expressions remain design proposals.
+
+## Asset loading and assembly output — decision 2026-10-12
+
+Table/Array declarations describe resident typed storage and inclusive logical
+bounds. Source-level ImportBinary in the GOLEM-010 prototype is withdrawn.
+Filename resolution, data preparation and file-to-symbol mappings belong to the
+PC build. The assembly application installs data at compiler-published buffer
+IDs/offsets before invoking resident code, and owns all updates/calls/cleanup.
+Stock VDP cannot initiate MOS file loading.
+
+Compiler-generated assembly is the intended additional output: named constants,
+labels and byte definitions for command/data payloads and their lengths. It must
+share layout accounting with interface metadata and AGNB writers. This is a
+direction for future implementation, not an implemented output mode or native
+CPU compilation. AGNB remains a candidate assembly-side bulk asset transport;
+raw table/program forms require extensions. An interactive Golem environment
+is a separate future application, not part of the required integration path.
+
+## Named assembly interface — implementation slice 2026-10-12
+
+The Author accepted direct named eZ80 wrappers. GOLEM-016 implements optional
+--resident --emit-asm output for the current finite scalar package. Source Sub
+tick exports call golem_tick, which transmits its six-byte VDP entry command.
+It does not acknowledge job completion or implement native Golem execution.
+The include also emits storage constants and labeled payload bytes/lengths from
+the same layout as interface.json. All five existing artifacts remain unchanged.
+Broader Table/Array/Record exports remain future work. See the maintained
+resident contract and GOLEM-016 evidence for the complete current scope.
+
+## Typed table selection — implementation slice 2026-10-12
+
+GOLEM-017 implements a separate resident-table profile: one flat uint16/sint16
+Record, one immutable zero-based inclusive Table, an initialized record output
+and uint16 index, and one finite Sub selecting the complete row. Build-time
+--table-data NAME=PATH maps packed data; the source contains no filename or file
+load operation. Optional --emit-asm exports the named entry, record fields and
+table layout as well as package bytes. No dummy float/floor is required.
+
+An invalid index preserves the destination and exits with status 5; each call
+resets status. Admission precedes source-ID calculation and template patching.
+Trusted rows are copied without additional value checks or copy readback.
+The small package uses 19 bytes for a new index and call, six for call alone.
+
+Host/model, actual assembler, stock Pi/Oryx headless and Oryx human review pass.
+The agent retrieved and verified all 873 saved checks. See [the maintained table contract](resident-table.md) and
+[GOLEM-017 evidence](../tasks/GOLEM-017/README.md). EX-029 is the implemented small
+sample. EX-023 through EX-028 remain proposals, including narrowed bounds,
+sint32 fields, general arrays and mutable stores. General table/arithmetic
+composition and AGNB raw/table extensions remain future work.

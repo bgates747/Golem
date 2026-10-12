@@ -1,0 +1,59 @@
+{
+  "pass": true,
+  "scope": "Independent byte decoder/interpreter and actual ez80asm; not stock firmware.",
+  "packages": [
+    {
+      "name": "default",
+      "indices_checked": 65539,
+      "depth": 3,
+      "owned": 19
+    },
+    {
+      "name": "relocated",
+      "indices_checked": 20,
+      "depth": 3,
+      "owned": 19
+    },
+    {
+      "name": "wide",
+      "indices_checked": 270,
+      "depth": 3,
+      "owned": 273
+    },
+    {
+      "name": "near-end",
+      "indices_checked": 20,
+      "depth": 3,
+      "owned": 19
+    },
+    {
+      "name": "singleton",
+      "indices_checked": 17,
+      "depth": 3,
+      "owned": 16
+    }
+  ],
+  "maximum_shape": {
+    "rows": 1024,
+    "fields": 32,
+    "row_bytes": 64,
+    "indices_checked": 6
+  },
+  "prepublication_rejections": 11,
+  "all_uint16_indices_checked_for_four_rows": true,
+  "source_sha256": {
+    "src/assembly_output.hpp": "705444359a07360c7583a09ba80eac4262c9dc535409045fc352bb11bad9a83b",
+    "src/buffer_allocator.hpp": "7c8881777decd9e04231adae3ab4050e52451c0fadaafe6b37c7ce0735c7b449",
+    "src/ordinary.hpp": "7c8fe20f4e63c6e57de70b9931696b87c88c9c4ea499679b1bc239f09480c5da",
+    "src/resident.hpp": "1ff0d71cedc28310121b45ec34297d27401f5b79a02802c18af6526b698447a3",
+    "src/resident_table.hpp": "6c40b1b620b74c15c2cc17aef2d3a5eb42b5ad3393738c4b2c0440ab3a24d546",
+    "src/scalar_backend.hpp": "cdad521fa96586d32321d3335e2c038188e1b0046e12da4e082045b875455c79",
+    "src/token_reader.hpp": "397fe169f1a84b47acf8a77a3036fd50ddfeac45e64d07a74b0497ca50f4126d",
+    "src/golemc.cpp": "306f673998eaa847f8f135a00481e8207c92b5738614d771a1cb0389e73f975f",
+    "tests/test_compiler.cpp": "61b3e3ddbd30286f2a8646d73584329dc8009949d0f1a5a3a3b538ce5de2c779",
+    "docs/tasks/GOLEM-017/run_checks.py": "c84a3a87d53896f3600b5fcf9dacb4808c95bec19be1942efb05bebf9ebcb3d1",
+    "docs/tasks/GOLEM-017/command_model.py": "2f668e48a2d817bbb580c842ed39fbc4d3c84f57c69761ef6373c8372a5ba73f",
+    "docs/tasks/GOLEM-017/qualify.py": "114e1aad2ddbede62185e7f57fc250d6b1f324cd65215b302e8fbb6d35878c5f"
+  },
+  "seconds": 3.151
+}

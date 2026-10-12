@@ -1,0 +1,7 @@
+uint16 calls = 0
+float32 x Range(-32768,32767) = -0.75
+sint16 result
+Sub tick
+    calls = calls + 1
+    result = sint16(floor(x))
+EndSub

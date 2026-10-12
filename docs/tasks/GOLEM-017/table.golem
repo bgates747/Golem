@@ -1,0 +1,11 @@
+Record Sample
+    uint16 tag
+    sint16 delta
+EndRecord
+Table Sample samples(0:3)
+Sample selected = Sample(65535, -32768)
+uint16 index = 0
+Sub fetch
+    selected = samples(index)
+    print "selected\n"
+EndSub

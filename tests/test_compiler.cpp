@@ -1,4 +1,4 @@
-#include "../src/resident.hpp"
+#include "../src/assembly_output.hpp"
 #include <cassert>
 #include <iostream>
 #include <limits>
@@ -61,6 +61,13 @@ int main() {
     assert(metadata.find("\"uint16_add_overflow\": 1") != std::string::npos);
     assert(metadata.find("\"reset\": \"each_invocation\"") != std::string::npos);
     assert(pure.extras.errorStatus == 0);
+    const auto include = assembly::render(relocated, resident_scalar::inputUpdate(relocated, -0.75));
+    assert(include.find("golem_compute:\n    ld hl,golem_compute_call") != std::string::npos);
+    assert(include.find("golem_x_buffer: equ " + std::to_string(relocated.layout.input)) != std::string::npos);
+    assert(include.find("golem_runtime_error_buffer:") != std::string::npos);
+    reject([&] { assembly::render(resident::compileResident("uint16 X=0 " + floorSource), {}); }, "assembly symbol collision");
+    reject([&] { assembly::render(resident::compileResident("uint16 runtime_error=0 " + mixed), {}); }, "assembly symbol collision");
+    reject([&] { assembly::render(resident::compileResident("uint16 " + std::string(65, 'a') + "=0 " + floorSource), {}); }, "64-character limit");
     assert(resident::manifest(pure).find("runtime_error") == std::string::npos);
     assert(resident::compileResident(mixed).bootstrap == stateful.bootstrap);
     for (double value : {-32768.0, -32767.75, -1.5, -1.0, -0.00006103515625,
@@ -128,5 +135,48 @@ int main() {
     reject([&] { resident::compileResident(floorSource, {{65535,65535}}); }, "reserved");
     reject([] { resident::updateValue("1 garbage"); }, "unexpected text");
     reject([] { resident::updateValue("1e9999"); }, "representable range");
+    const std::string tableSource =
+        "Record Sample uint16 tag sint16 delta EndRecord Table Sample samples(0:3) "
+        "Sample selected=Sample(65535,-32768) uint16 index=0 "
+        "Sub fetch selected=samples(index) print \"selected\" EndSub";
+    const resident_scalar::Bytes tableData{1,0,254,255,2,0,3,0,3,0,252,255,4,0,5,0};
+    const auto table = resident_table::compile(tableSource,"samples",tableData);
+    assert(table.spec.rowBytes()==4 && table.spec.members[1].offset==2);
+    assert(table.owned.size()==19 && table.base==1 && table.initial.at(3)[2]==252);
+    assert(table.initial.at(table.output)==resident_scalar::Bytes({255,255,0,128}));
+    assert(resident_table::inputUpdate(table,65535).size()+table.invoke.size()==19);
+    assert(resident_table::manifest(table).find("table_index_out_of_bounds")!=std::string::npos);
+    const auto tableInclude = assembly::render(table,{});
+    assert(tableInclude.find("golem_selected_delta_offset: equ 2")!=std::string::npos);
+    assert(tableInclude.find("golem_fetch:\n    ld hl,golem_fetch_call")!=std::string::npos);
+    const auto tableRelocated = resident_table::compile(tableSource,"samples",tableData,reserved);
+    assert(tableRelocated.base==255);
+    for (const auto &v : tableRelocated.owned)
+        for (const auto &range : reserved) assert(v.first<range.first || v.first>range.last);
+    BufferAllocator runs(1,12); runs.reserve(4,5,"asset");
+    assert(runs.allocateRun(4,"rows")==6); // Skip an insufficient hole atomically.
+    const auto claims = runs.claims().size();
+    reject([&] { runs.allocateRun(4,"more"); },"no consecutive");
+    assert(runs.claims().size()==claims && runs.allocate("next")==10);
+    reject([&] { runs.allocateRun(0,"empty"); },"invalid consecutive");
+    auto alteredTable = [&](const std::string &from, const std::string &to) {
+        auto text=tableSource; text.replace(text.find(from),from.size(),to); return text;
+    };
+    reject([&] { resident_table::compile(tableSource,"other",tableData); },"name must match");
+    reject([&] { resident_table::compile(tableSource,"samples",{}); },"data size");
+    reject([&] { resident_table::compile(tableSource,"samples",tableData,{{1,65520}}); },"namespace exhausted");
+    for (const auto &change : std::vector<std::pair<std::string,std::string>>{
+            {"0:3","1:3"},{"0:3","0:1024"},{"uint16 tag","float32 tag"},
+            {"-32768","-32769"},{"65535,","-1,"},{"index=0","index=65536"},
+            {"samples(index)","samples(Index)"},{"samples(index)","samples(index+1)"},
+            {"samples(index)","samples(1)"},{"selected=samples(index)","samples(index)=selected"},
+            {"uint16 tag sint16 delta","uint16 tag sint16 tag"},
+            {"EndSub","selected=samples(index) EndSub"},{"selected=samples(index)",""},
+            {"Sub fetch","Sub selected"},{"EndSub","EndSub print \"trailing\""}}) {
+        reject([&] { resident_table::compile(alteredTable(change.first,change.second),"samples",tableData); },"");
+    }
+    reject([&] { assembly::render(resident_table::compile(alteredTable("Sub fetch","Sub package_bootstrap"),"samples",tableData),{}); },"symbol collision");
+    const auto keywordCase = alteredTable("Record Sample","rEcOrD Sample");
+    assert(resident_table::compile(keywordCase,"samples",tableData).bootstrap==table.bootstrap);
     std::cout << "Maintained raw/resident contract checks pass; " << rejections << " rejection cases.\n";
 }

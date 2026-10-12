@@ -56,6 +56,37 @@ Host/sanitizer and stock Pi/Oryx headless qualification pass (2,126 checks,
 156 jobs). The Author confirmed Oryx human review succeeded; the agent retrieved
 and independently verified all saved results. The Author explicitly approved commit and push. See `docs/tasks/GOLEM-015/README.md`.
 
+## Assembly integration direction — 2026-10-12
+
+The intended use is PC-compiled VDP buffers invoked by an eZ80 assembly
+application. Assembly owns loading, installation, updates, calls, pacing and
+cleanup. The compiler publishes assigned buffer IDs, offsets, layouts and entry
+points; it does not place data on hardware. Stock VDP cannot ask MOS to load a
+file. AGNB loading belongs to assembly, with filenames and embedded IDs resolved
+by the build. Current Table/Array review samples describe storage without
+ImportBinary; configured data must be installed before access.
+
+The Author favors direct generated assembly output, as used in their toolchains:
+symbolic equates plus labeled VDP command/data bytes and lengths, generated from
+the same layout as the manifest. GOLEM-016 implements this for current resident
+packages via --resident --emit-asm, producing golem.inc. A source Sub tick exports
+call golem_tick; its wrapper transmits the six-byte VDP call without a completion
+acknowledgement. Ten actual assembler consumers preserve all five prior artifacts.
+The Author accepted this tranche; no new emulator fixture was deployed by it.
+See docs/tasks/GOLEM-016/README.md.
+
+GOLEM-017 now implements the separate resident-table profile: one flat
+uint16/sint16 Record, one immutable zero-based Table and checked whole-record
+selection, without a dummy float/floor. Build mapping --table-data NAME=PATH
+supplies packed data; --emit-asm exports entry, field and table layout symbols.
+Index failure preserves the destination and exits with status 5; status resets
+per call. Host/model, stock Pi/Oryx headless and Oryx human review pass. The
+agent retrieved and verified all 873 checks across 98 jobs (3,453 bytes). The
+Author explicitly approved commit and push. See docs/design/resident-table.md and docs/tasks/GOLEM-017/README.md.
+An interactive BASIC-like Golem application or standalone MOSlet is an optional
+future frontend, not a prerequisite or current priority. See the maintained
+resident contract and GOLEM-010 review documents.
+
 ## Human review workflow
 
 The Author launches the staged Oryx test, follows its onscreen `dir` instruction,
@@ -298,6 +329,15 @@ active register. They recorded formal IR/addressing work, reciprocal experiments
 and the external MOS packet-parser investigation. The host toolchain decision
 and hand-built loop/tail-call prototype were resolved in those logs. Check the
 current task register and later evidence before reviving an old follow-up.
+
+## Complexity budget
+
+The Author emphasizes this is a hobby project. Keep useful runtime bounds and
+admission checks simple and proportionate. CPY-001 was accepted on that basis:
+validate changing external inputs, then reuse established validity for trusted
+resident copies while it remains true. Checked copying is source-value admission,
+not post-copy byte verification. Do not add readback, checksums, redundant checks
+or rollback machinery for this feature. No elaborate optimizer is required.
 
 ## Task documents and artifacts
 

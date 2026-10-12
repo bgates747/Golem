@@ -65,6 +65,64 @@ Semantic validation completes before output writes. Filesystem publication is
 not atomic if an I/O operation fails. Raw payloads and resident packages have
 different installation contracts; mode is never inferred from source.
 
+## Assembly application integration — direction agreed 2026-10-12
+
+The intended consumer is a hand-written eZ80 assembly application. Golem compiles
+VDP command buffers and their data/layout on the development PC. The assembly
+application owns file loading, VDP installation, input updates, entry calls,
+pacing and cleanup. Stock VDP cannot request that MOS read a file or transfer it
+from eZ80 memory. Resident Golem code accesses already installed VDP storage.
+
+The compiler output tells assembly where each object is assigned: buffer IDs,
+data offsets, types, dimensions/row layouts, entry points and cleanup ownership.
+These are assigned addresses; compilation does not install anything on hardware.
+The existing binary files and interface.json expose the current scalar contract.
+
+Optional `--emit-asm` now adds golem.inc to the existing five files, using the
+same compiled layout. A source Sub tick exports an eZ80 ADL wrapper golem_tick,
+called directly with `call golem_tick`. It transmits the six-byte resident call
+through MOS RST 18h and returns without a VDP completion acknowledgement. Assembly
+still owns installation, input updates, result handling, pacing and cleanup.
+
+The include publishes golem_<name>_buffer/_offset/_bytes/_type for current input,
+output and uint16 globals, optional golem_runtime_error fields, the named entry
+buffer and call packet, owned count and labeled bootstrap/update-call/cleanup
+payloads with lengths. Type tags are 1=uint16, 2=sint16, 3=float32. Include once
+in ADL=1 code at a location execution cannot fall through into. The wrapper
+changes HL/BC; remaining effects follow MOS RST 18h. These symbols identify VDP
+storage, not eZ80 RAM. The separate [resident table profile](resident-table.md)
+now exports one flat record/table layout and supports checked row selection
+without scalar floor. General dimension exports remain future work.
+
+Names use a golem_ prefix. Requesting assembly output rejects case-folded symbol
+collisions or names beyond ez80asm's 64-character limit before publishing files.
+Without --emit-asm the original output contract remains unchanged. Both forms
+preserve the previous binary and manifest bytes. [GOLEM-016](../tasks/GOLEM-016/README.md)
+records ten assembled normal/relocated consumer checks and ASan/UBSan evidence.
+The wrapper is host/assembler-qualified; no new emulator execution was performed.
+
+File-to-asset mappings belong in the PC build configuration. A Table/Array
+source declaration describes typed storage and logical bounds; assembly must
+install its configured initial payload before the job accesses it. Source-level
+ImportBinary was a misleading earlier prototype and is withdrawn from the
+current asset/index review. Selected initialization/build mapping syntax remains
+implemented separately in GOLEM-017 through --table-data NAME=PATH as a PC build
+input and initialized record/index declarations. This does not change the scalar
+profile's grammar or require AGNB extensions.
+
+AGNB is an available bulk-loading format for the assembly application. Its
+writer must use IDs from the same build accounting, or a prebuilt container's
+IDs must be claimed before compiler allocation. The assembly loader opens the
+container, reads it through eZ80 RAM and streams payloads into those VDP IDs.
+Build-time packing avoids repeated MOS directory searches and per-asset runtime
+filenames. Existing AGNB image/audio forms do not yet define raw tables or Golem
+program records; local extensions can be developed and later proposed upstream.
+
+A BASIC-like interactive Golem application, possibly with imperative commands,
+editing and file operations, is a separate possible future frontend. It is not
+required for assembly integration, and no on-hardware compiler or standalone
+loader application is selected as the next task by this decision.
+
 ## Checked arithmetic and job errors
 
 Resident uint16 arithmetic must stay within 0:65535. Binary + and - have equal

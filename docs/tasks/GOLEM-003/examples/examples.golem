@@ -176,8 +176,8 @@ Loop Until count == 4
 
 // GOLEM-009 additions for review. Each section below is independent.
 // Except EX-006, these are proposed syntax, not executable compiler support.
-// Semantics and domains: docs/tasks/GOLEM-009/semantics-review.md (review pending).
-// Assets, data indexing, checked copying and typed drawing remain deferred.
+// Semantics and domains: docs/tasks/GOLEM-009/semantics-review.md (accepted direction).
+// GOLEM-010 adds storage/index/copy proposals below; typed drawing remains deferred.
 
 
 // EX-001 — Typed integer values, ordinary copying and unsigned widening (proposed)
@@ -404,9 +404,17 @@ integerFromFloat = sint16(floatValue)
 integerFromFixed = sint16(coarse)
 
 
-// EX-018 — Selected three-dimensional Array syntax; implementation pending.
+// EX-018 — Three-dimensional Array; proposed access, implementation pending.
+// Assembly installs 800 float32 zeros and the emitted scalar initializers first.
 Array float32 readings(0:3, 0:9, 0:19)
-readings(2, 5, 7) = 42.0
+uint16 first = 2
+uint16 second = 5
+uint16 third = 7
+float32 selected = 1.0
+Sub sampleReading
+    readings(first, second, third) = 42.0
+    selected = readings(first, second, third)
+EndSub
 
 // EX-019 — Selected stepped iteration; last value 65528, stop before wraparound.
 uint16 sampleIndex
@@ -437,9 +445,97 @@ uint16 remainder = 0
 (quotient, remainder) = divide(17, 5)
 
 
-// EX-022 — Paired integer quotient/remainder; builtin implementation pending.
+// EX-022 — Signed paired quotient/remainder (proposed); uint16 resident divmod exists.
 sint16 numerator = -17
 sint16 denominator = 5
 sint16 quotient = 0
 sint16 remainder = 0
 (quotient, remainder) = divmod(numerator, denominator)
+
+
+// GOLEM-010: EX-023 through EX-028 remain proposed storage/access/copy syntax.
+// Each block stands alone. Assembly installs data/initial state, updates and calls.
+// File mappings and generated assembly interface notes: docs/tasks/GOLEM-010/examples-review.md.
+
+// EX-023 — Opaque resident asset; assembly supplies its configured payload.
+// Build maps everyByte to the 256 bytes 0 through 255; resident data is read-only.
+Asset everyByte(256)
+
+
+// EX-024 — Select a complete mixed-field table row in one assignment.
+// Assembly installs four packed sint32 pairs: (7,9), (-4,6), (31,2), (80,1).
+Record Sample
+    sint32 a Bounds(-100, 100)
+    sint32 b Bounds(1, 10)
+EndRecord
+Table Sample samples(0:3)
+Sample selected = Sample(0, 1)
+uint16 index = 2
+Sub fetch
+    selected = samples(index)
+    print "selected"
+EndSub
+
+
+// EX-025 — Inclusive signed bounds; -1 selects the second element, not the last.
+// Assembly installs four sint16 values 10, 20, 30, 40 and scalar initial state.
+Array sint16 values(-2:1)
+sint16 index = -1
+sint16 selected = 99
+Sub fetch
+    selected = values(index)
+EndSub
+
+
+// EX-026 — Checked scalar assignment: out-of-bounds raw preserves depth, ends job.
+uint16 raw = 1200
+uint16 depth Bounds(64, 1100) = 64
+Sub acceptDepth
+    depth = raw
+    print "accepted"
+EndSub
+
+
+// EX-027 — Copy a whole record, or update one field; same-type value semantics.
+// Assembly installs the emitted initializers; host updates need admission checks.
+Record Sample
+    uint16 tag
+    uint16 depth Bounds(64, 1100)
+EndRecord
+Sample incoming = Sample(7, 100)
+Sample accepted = Sample(0, 64)
+uint16 rawDepth = 100
+Sub acceptSample
+    accepted = incoming
+    print "accepted"
+EndSub
+Sub acceptDepthField
+    accepted.depth = rawDepth
+EndSub
+
+
+// EX-028 — Indexed mutable Array store; failed index/expression leaves slot unchanged.
+// Assembly installs four uint16 zeros plus the emitted index/value initializers.
+Array uint16 values(10:13)
+uint16 index = 11
+uint16 raw = 24
+Sub storeValue
+    values(index) = raw + 1
+EndSub
+
+
+// EX-029 — Supported small typed table job: compile separately --resident.
+// PC build: --table-data samples=docs/tasks/GOLEM-017/records.dat --emit-asm
+// Assembly sends the bootstrap, updates index and calls golem_fetch.
+// Rows are (1,-2), (2,3), (3,-4), (4,5); invalid index preserves selected.
+Record Sample
+    uint16 tag
+    sint16 delta
+EndRecord
+Table Sample samples(0:3)
+Sample selected = Sample(65535, -32768)
+uint16 index = 0
+Sub fetch
+    selected = samples(index)
+    print "selected\n"
+EndSub

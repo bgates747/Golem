@@ -1,0 +1,21 @@
+{
+  "scope": "AST-001 AGNB source review only; no runtime qualification",
+  "agon_utils_head": "ca7dde5052c44d731da4184d662000bc9e7a497e",
+  "source_sha256": {
+    "examples/agnb/api/file-format.md": "6bd5ecddafa7adc5cf3646f04c6def58f0179c58c5536924a91bdf22a334dbf5",
+    "examples/agnb/api/README.md": "aa3c5616069c4408cfc6f90df9fa1e9aff6005491be5ad57fea2aa2c029868ee",
+    "examples/agnb/api/agnb_api.inc": "4693d4b17274e0c2476507cce98032e91cfa0d304317b2c8247b043d048dcccc",
+    "examples/agnb/docs/agon-buffer-file-format-specification.md": "eda4b5b9a005d51dde552009509f4a6a803f940cac9bbcc28dd69e4678d0474f",
+    "examples/agnb/images/container/scripts/do_assembly.py": "39371ca2813e14594143bf9ebb4a792434145fd5547c0f3c9630b427912645c9",
+    "examples/agnb/images/container/scripts/view_agnb.py": "2bdf9d5e3acd8b5e4cbec8d8f79c16454fc76d7fbd18c7d604e81abed6408fc7",
+    "examples/agnb/audio/scripts/build_audio_container.py": "5419464644e2666071c95d31d8165294091d1eb210beec11a8d21df89a9ca95a",
+    "examples/agnb/docs/agnb-loader-agon-api-precis.md": "f3c36ae3a079b19b692ad2e43a685741e91e4009868d0f25ffb8cf84ee64ce4c"
+  },
+  "examined_file_status": "",
+  "canonical_checkout_modified_by_review": false,
+  "author_direction": [
+    "Use AGNB to avoid repeated MOS directory searches for loose assets.",
+    "Build resolves filenames and buffer IDs; runtime consumes embedded IDs.",
+    "Local extensions may be developed, then useful general changes proposed upstream."
+  ]
+}

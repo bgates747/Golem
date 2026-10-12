@@ -1,5 +1,5 @@
 // Host compiler CLI: explicit raw payload or resident package output.
-#include "resident.hpp"
+#include "assembly_output.hpp"
 #include <filesystem>
 
 namespace {
@@ -35,33 +35,77 @@ int main(int argc, char **argv) {
     try {
         if (argc >= 2 && std::string(argv[1]) == "--resident") {
             int pos = 2;
+            bool emitAssembly = false;
+            std::string tableName, tablePath;
             std::vector<golem::resident::Reservation> reservations;
-            while (pos < argc && std::string(argv[pos]) == "--reserve") {
+            while (pos < argc && (std::string(argv[pos]) == "--reserve" || std::string(argv[pos]) == "--emit-asm" || std::string(argv[pos]) == "--table-data")) {
+                if (std::string(argv[pos]) == "--emit-asm") {
+                    if (emitAssembly) throw std::runtime_error("duplicate --emit-asm option");
+                    emitAssembly = true; ++pos; continue;
+                }
+                if (std::string(argv[pos]) == "--table-data") {
+                    if (!tablePath.empty()) throw std::runtime_error("only one --table-data mapping is supported");
+                    if (++pos == argc) throw std::runtime_error("--table-data requires NAME=PATH");
+                    const std::string mapping = argv[pos++];
+                    const auto equals = mapping.find('=');
+                    if (equals == std::string::npos || equals == 0 || equals + 1 == mapping.size())
+                        throw std::runtime_error("--table-data requires NAME=PATH");
+                    tableName = mapping.substr(0,equals); tablePath = mapping.substr(equals+1);
+                    continue;
+                }
                 if (++pos == argc) throw std::runtime_error("--reserve requires FIRST:LAST");
                 reservations.push_back(reservation(argv[pos++]));
             }
             if (argc - pos != 2 && argc - pos != 3) throw std::runtime_error("resident mode requires source, output directory and optional example input");
-            auto result = golem::resident::compileResident(readFile(argv[pos]), reservations);
-            double value = argc - pos == 3 ? golem::resident::updateValue(argv[pos + 2]) : result.spec.initial;
-            auto update = golem::resident_scalar::inputUpdate(result, value);
-            update.insert(update.end(), result.invoke.begin(), result.invoke.end());
-            auto json = golem::resident::manifest(result, reservations);
+            const auto source = readFile(argv[pos]);
+            golem::syntax::Reader mode(source);
+            golem::resident_scalar::Bytes bootstrap, cleanup, invoke, update;
+            std::string json, assembly;
+            size_t ownedCount = 0;
+            if (mode.keyword("Record")) {
+                if (tablePath.empty()) throw std::runtime_error("table profile requires --table-data NAME=PATH at build time");
+                const auto raw = readFile(tablePath);
+                auto result = golem::resident_table::compile(source, tableName,
+                    golem::resident_scalar::Bytes(raw.begin(),raw.end()), reservations);
+                unsigned value = result.spec.initialIndex;
+                if (argc - pos == 3) {
+                    golem::syntax::Reader input(argv[pos+2]); value = input.uint16();
+                    if (!input.end()) input.error("unexpected text after uint16 index");
+                }
+                update = golem::resident_table::inputUpdate(result,value);
+                update.insert(update.end(),result.invoke.begin(),result.invoke.end());
+                json = golem::resident_table::manifest(result,reservations);
+                if (emitAssembly) assembly = golem::assembly::render(result,update);
+                bootstrap = std::move(result.bootstrap); cleanup = std::move(result.cleanup);
+                invoke = std::move(result.invoke); ownedCount = result.owned.size();
+            } else {
+                if (!tablePath.empty()) throw std::runtime_error("--table-data requires the resident table profile");
+                auto result = golem::resident::compileResident(source, reservations);
+                double value = argc - pos == 3 ? golem::resident::updateValue(argv[pos + 2]) : result.spec.initial;
+                update = golem::resident_scalar::inputUpdate(result, value);
+                update.insert(update.end(), result.invoke.begin(), result.invoke.end());
+                json = golem::resident::manifest(result, reservations);
+                if (emitAssembly) assembly = golem::assembly::render(result, update);
+                bootstrap = std::move(result.bootstrap); cleanup = std::move(result.cleanup);
+                invoke = std::move(result.invoke); ownedCount = result.owned.size();
+            }
             // Semantic/reservation validation completes before output mutation.
             // File publication itself is not atomic if an I/O operation fails.
             const std::filesystem::path output(argv[pos + 1]);
             std::filesystem::create_directories(output);
-            write(output / "bootstrap.bin", result.bootstrap);
-            write(output / "cleanup.bin", result.cleanup);
-            write(output / "invoke.bin", result.invoke);
+            write(output / "bootstrap.bin", bootstrap);
+            write(output / "cleanup.bin", cleanup);
+            write(output / "invoke.bin", invoke);
             write(output / "update-call.bin", update);
             write(output / "interface.json", golem::resident_scalar::Bytes(json.begin(), json.end()));
-            std::cout << "resident installation " << result.bootstrap.size() << " bytes; update/call "
-                      << update.size() << " bytes; owned buffers " << result.owned.size() << '\n';
+            if (emitAssembly) write(output / "golem.inc", golem::resident_scalar::Bytes(assembly.begin(), assembly.end()));
+            std::cout << "resident installation " << bootstrap.size() << " bytes; update/call "
+                      << update.size() << " bytes; owned buffers " << ownedCount << '\n';
             return 0;
         }
         if (argc != 3 || std::string(argv[1]).compare(0, 2, "--") == 0) {
             std::cerr << "usage: golemc <source> <payload>\n"
-                      << "       golemc --resident [--reserve FIRST:LAST ...] <source> <directory> [example-input]\n";
+                      << "       golemc --resident [--emit-asm] [--table-data NAME=PATH] [--reserve FIRST:LAST ...] <source> <directory> [example-input]\n";
             return 2;
         }
         auto bytes = compile(readFile(argv[1]));

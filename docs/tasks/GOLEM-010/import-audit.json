@@ -1,0 +1,29 @@
+{
+  "scope": "AST-001 host import regression; no emulator or hardware execution",
+  "pass": true,
+  "rally_commit": "4db7e96f70c3d63f4ab53766f3b32063e9357c8b",
+  "rally_status_after": "",
+  "source_sha256": {
+    "src/golemc.cpp": "0156bb00e4d4f3f123e7fb012805bd1f85756cbca5849bd1024fdef8db52cdb5",
+    "src/hosted.hpp": "930a6f7e1680d3568d2ec82ef3907f8856fc8f87d735364f10a27218bd86445c",
+    "tests/test_imports.cpp": "cd442286844ce55ed164c972891fc2af0624866a9b27838d6a32d5edb56d7fdb",
+    "examples/native_lookup/kernel.golem": "d86679cc5ad7c44bdd1d6156c0685cea0171a09f6ff734cb007ec12ba262bd22",
+    "examples/native_lookup/make_assets.py": "580ae0b37fdfafa7d66085fa38e0f5938c3e3c966e0daa44143f30573c3cbba8"
+  },
+  "command": [
+    "g++",
+    "-std=c++17",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-g",
+    "-O1",
+    "-fsanitize=address,undefined",
+    "/Agon/mystuff/golem-rally19/tests/test_imports.cpp",
+    "-o",
+    "/Agon/mystuff/golem/docs/tasks/GOLEM-010/build/test_imports"
+  ],
+  "stdout": "Resident imports: exact sizes, source-relative assets, typed records, ID collisions, guarded patch lowering and 14 negatives pass.",
+  "seconds": 41.962,
+  "reference_checkout_modified": false
+}

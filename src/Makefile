@@ -18,13 +18,13 @@ BIN := $(BUILD_DIR)/golemc
 
 all: $(BIN)
 
-$(BIN): golemc.cpp ordinary.hpp resident.hpp scalar_backend.hpp token_reader.hpp buffer_allocator.hpp | $(BUILD_DIR)
+$(BIN): golemc.cpp assembly_output.hpp resident_table.hpp ordinary.hpp resident.hpp scalar_backend.hpp token_reader.hpp buffer_allocator.hpp | $(BUILD_DIR)
 	$(CXX) $(CXXFLAGS) -o $@ $<
 
 $(BUILD_DIR):
 	mkdir -p $(BUILD_DIR)
 
-$(BUILD_DIR)/test_compiler: ../tests/test_compiler.cpp ordinary.hpp resident.hpp scalar_backend.hpp token_reader.hpp buffer_allocator.hpp | $(BUILD_DIR)
+$(BUILD_DIR)/test_compiler: ../tests/test_compiler.cpp assembly_output.hpp resident_table.hpp ordinary.hpp resident.hpp scalar_backend.hpp token_reader.hpp buffer_allocator.hpp | $(BUILD_DIR)
 	$(CXX) $(CXXFLAGS) -o $@ $<
 
 check: $(BIN) $(BUILD_DIR)/test_compiler

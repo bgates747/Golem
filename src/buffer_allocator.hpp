@@ -47,6 +47,22 @@ public:
         if (next_ > last_) throw AllocationError("buffer ID namespace exhausted");
         return claim(next_++, owner);
     }
+    unsigned allocateRun(unsigned count, const std::string &owner) {
+        if (!count || count > last_) throw AllocationError("invalid consecutive buffer count");
+        unsigned start = next_, length = 0;
+        // Find the complete run before claiming any of it. A failed search must
+        // neither consume IDs nor move the ordinary allocation cursor.
+        for (unsigned id = next_; id <= last_; ++id) {
+            if (claims_.count(id)) { start = id + 1; length = 0; }
+            else if (++length == count) {
+                for (unsigned row = 0; row < count; ++row)
+                    claim(start + row, owner + "." + std::to_string(row));
+                next_ = start + count;
+                return start;
+            }
+        }
+        throw AllocationError("no consecutive buffer ID run available");
+    }
     const std::map<unsigned, BufferClaim> &claims() const { return claims_; }
 };
 } // namespace golem
