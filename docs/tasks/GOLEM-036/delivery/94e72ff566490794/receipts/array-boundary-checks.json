@@ -1,0 +1,27 @@
+{
+  "count": 16383,
+  "array_bytes": 65532,
+  "checks": [
+    {
+      "index": 49153,
+      "byte_offset": 0,
+      "language_status": 0
+    },
+    {
+      "index": 57345,
+      "byte_offset": 32768,
+      "language_status": 0
+    },
+    {
+      "index": 65535,
+      "byte_offset": 65528,
+      "language_status": 0
+    },
+    {
+      "index": 49152,
+      "byte_offset": null,
+      "language_status": 5
+    }
+  ],
+  "buffered_model_native_host_sanitizers": true
+}

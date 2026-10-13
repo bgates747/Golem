@@ -1,0 +1,62 @@
+{
+  "bundle_sha256": "94e72ff56649079472a59b33ae9ba1514b49dcb5c8c919ace369de6e46fb2c6a",
+  "all_bundle_files_present_and_verified": 122,
+  "exported_cpp_source_builds_without_working_task_dependencies": true,
+  "packages": [
+    {
+      "package": "default",
+      "matching_artifacts": [
+        "buffered-install.bin",
+        "native-install.bin",
+        "state.bin",
+        "array-unsignedValues.bin",
+        "buffered-cleanup.bin",
+        "array-signedValues.bin",
+        "calls.inc",
+        "arrays-install.bin",
+        "layout.inc",
+        "native.c",
+        "native-cleanup.bin",
+        "common-install.bin"
+      ]
+    },
+    {
+      "package": "relocated",
+      "matching_artifacts": [
+        "buffered-install.bin",
+        "native-install.bin",
+        "state.bin",
+        "array-unsignedValues.bin",
+        "buffered-cleanup.bin",
+        "array-signedValues.bin",
+        "calls.inc",
+        "arrays-install.bin",
+        "layout.inc",
+        "native.c",
+        "native-cleanup.bin",
+        "common-install.bin"
+      ]
+    },
+    {
+      "package": "animation",
+      "matching_artifacts": [
+        "buffered-install.bin",
+        "array-lateral.bin",
+        "native-install.bin",
+        "array-station.bin",
+        "state.bin",
+        "buffered-cleanup.bin",
+        "array-screenX.bin",
+        "calls.inc",
+        "arrays-install.bin",
+        "layout.inc",
+        "array-drift.bin",
+        "array-direction.bin",
+        "array-colour.bin",
+        "native.c",
+        "native-cleanup.bin",
+        "common-install.bin"
+      ]
+    }
+  ]
+}

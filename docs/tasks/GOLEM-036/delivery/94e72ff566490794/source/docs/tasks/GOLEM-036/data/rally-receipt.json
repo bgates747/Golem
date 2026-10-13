@@ -1,0 +1,5 @@
+{
+  "source": "/Agon/mystuff/AgonArcade/docs/tasks/RALLY-25/reference/numeric-vectors.json",
+  "sha256": "71147b1fdacca46ac95b44ea930bc067e8cc52ce4c0e3c23929fb724e9a6a169",
+  "scope": "only add/subtract and integer conversions in first tranche; later numeric vectors retained unchanged"
+}

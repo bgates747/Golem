@@ -1,0 +1,51 @@
+{
+  "compiler_commit": "93bf1e452cc4c57b9aaf412ae016e318c7be6ceb",
+  "scalar_commit": "25901e52eb80a4d66847c11fbc70d1bac68ee633",
+  "sdk_commit": "33a554c82377b10d428f0d2ec258d1b48f27ed22",
+  "sdk_files": {
+    "include/vdplet.h": "fa8385e2906f07d37372d80c40f73d419defdbefe7a3458461ac9d5fe0820d38",
+    "src/vdplet_image.h": "6a28226a138ec2c54f1b456b1bf3f33372db1a2477cb1f92afc7547ba5007fff",
+    "src/vdplet_runtime.h": "af049fe93f1e64b0ec1135e5c0e55c1938adf022669dc35d906f5fcb6c58d91b",
+    "tests/check_image.cpp": "7812b6fc7fef7b3b9d4d9faf16d324e4a0155efc98ca64198af0da764e4b0a3c",
+    "build/check_image": "0cb638527c6ec94f78393ce21fbe8698147fe9ca61618c740778cc91e806a464",
+    "tools/build_module.py": "c2353057f2b00545378bc6727752a247df8254dbe51a44c5b99d1478de96bd62"
+  },
+  "files": [
+    {
+      "path": "docs/tasks/GOLEM-035/portable.hpp",
+      "sha256": "1e12c32e3269eb1938fca064d7a5e232ad9577af66b5c1ca4ef28b44f2205d34",
+      "bytes": 41540
+    },
+    {
+      "path": "docs/tasks/GOLEM-035/backends.hpp",
+      "sha256": "2759730ee00388a743e8c934d62a02ac71ba982057aafaf151ee7cdebda8a2c1",
+      "bytes": 41395
+    },
+    {
+      "path": "docs/tasks/GOLEM-035/root.hpp",
+      "sha256": "eedfc6dac1ce24bdc9eba8a547a53ac378801e30a3703426f39a0f37ced7292d",
+      "bytes": 9452
+    },
+    {
+      "path": "docs/tasks/GOLEM-035/compiler.cpp",
+      "sha256": "07f4045f5fec70065eb036562bd018de58d5627935bf9452d4e7035a82bd15f3",
+      "bytes": 10989
+    },
+    {
+      "path": "src/ordinary.hpp",
+      "sha256": "7c8fe20f4e63c6e57de70b9931696b87c88c9c4ea499679b1bc239f09480c5da",
+      "bytes": 33802
+    },
+    {
+      "path": "src/token_reader.hpp",
+      "sha256": "397fe169f1a84b47acf8a77a3036fd50ddfeac45e64d07a74b0497ca50f4126d",
+      "bytes": 7116
+    },
+    {
+      "path": "src/buffer_allocator.hpp",
+      "sha256": "7c8881777decd9e04231adae3ab4050e52451c0fadaafe6b37c7ce0735c7b449",
+      "bytes": 3174
+    }
+  ],
+  "extension": "GOLEM-036 first wide storage/add/subtract/comparison/conversion tranche; later operators gated"
+}

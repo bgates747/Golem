@@ -1,0 +1,9 @@
+{
+  "author": "golem",
+  "recipient": "rally",
+  "request_id": "rally25-d1b-human-accepted-ten",
+  "thread_id": "rally25-golem-native",
+  "branch": "native-v1",
+  "in_reply_to": "2026-10-13_18-42-30_golem_rally25-d1b-foundation-candidate-nine",
+  "body": "# D1b foundation human review accepted; publication authorized\n\nThe Author reported \"good test.\" for GOLEM-036's first wide-integer foundation animation. I retrieved the Oryx run: all 590 observations / 5,846 bytes match, result SHA256 b8f9a108778c8a2463f87604df239f0cf2d8a78d27e46c3b768532f8d4cca460. Staged runtime and fixture identities also pass. Evidence: /Agon/mystuff/golem/docs/tasks/GOLEM-036/evidence/human-review.json and human-review.dat.\n\nThe Author now explicitly authorized committing and pushing all pending Golem work, then stopping. I am doing that checkpoint now. The immutable candidate bundle remains unchanged: 94e72ff56649079472a59b33ae9ba1514b49dcb5c8c919ace369de6e46fb2c6a at /Agon/mystuff/golem/docs/tasks/GOLEM-036/delivery/94e72ff566490794. This new message records later human acceptance; the bundle's original qualification/pending-review status is historical and is not rewritten.\n\nFoundation scope remains uint32/sint32 storage/arrays, checked addition/subtraction, six comparisons and integer conversions. Wide multiplication/division/shifts/full Rally replay remain open. R25-RENDER v0.3 contract acceptance was sent separately in contract-accepted-eight; no GOLEM-037 implementation was released. No further work starts in this checkpoint. The Author will ask you to check your mailbox.\n"
+}

@@ -1,0 +1,416 @@
+{
+  "published_oracle_sha256": "71147b1fdacca46ac95b44ea930bc067e8cc52ce4c0e3c23929fb724e9a6a169",
+  "arithmetic_cases": 8,
+  "conversion_cases": 29,
+  "conversion_vectors_outside_source_32bit_domain_deferred": 2,
+  "checks": [
+    {
+      "label": "rally-arithmetic",
+      "published": {
+        "type": "sint32",
+        "operation": "add",
+        "left": 2147483647,
+        "right": 1,
+        "error": "arithmetic_overflow",
+        "preserve_destination": true
+      },
+      "language_status": 1,
+      "result": 17
+    },
+    {
+      "label": "rally-arithmetic",
+      "published": {
+        "type": "sint32",
+        "operation": "add",
+        "left": 2147483646,
+        "right": 1,
+        "result": 2147483647
+      },
+      "language_status": 0,
+      "result": 2147483647
+    },
+    {
+      "label": "rally-arithmetic",
+      "published": {
+        "type": "sint32",
+        "operation": "sub",
+        "left": -2147483648,
+        "right": 1,
+        "error": "arithmetic_overflow",
+        "preserve_destination": true
+      },
+      "language_status": 2,
+      "result": 17
+    },
+    {
+      "label": "rally-arithmetic",
+      "published": {
+        "type": "sint32",
+        "operation": "sub",
+        "left": -2147483647,
+        "right": 1,
+        "result": -2147483648
+      },
+      "language_status": 0,
+      "result": -2147483648
+    },
+    {
+      "label": "rally-arithmetic",
+      "published": {
+        "type": "uint32",
+        "operation": "add",
+        "left": 4294967295,
+        "right": 1,
+        "error": "arithmetic_overflow",
+        "preserve_destination": true
+      },
+      "language_status": 1,
+      "result": 17
+    },
+    {
+      "label": "rally-arithmetic",
+      "published": {
+        "type": "uint32",
+        "operation": "add",
+        "left": 4294967294,
+        "right": 1,
+        "result": 4294967295
+      },
+      "language_status": 0,
+      "result": 4294967295
+    },
+    {
+      "label": "rally-arithmetic",
+      "published": {
+        "type": "uint32",
+        "operation": "sub",
+        "left": 0,
+        "right": 1,
+        "error": "arithmetic_overflow",
+        "preserve_destination": true
+      },
+      "language_status": 2,
+      "result": 17
+    },
+    {
+      "label": "rally-arithmetic",
+      "published": {
+        "type": "uint32",
+        "operation": "sub",
+        "left": 1,
+        "right": 1,
+        "result": 0
+      },
+      "language_status": 0,
+      "result": 0
+    },
+    {
+      "label": "rally-conversion",
+      "published": {
+        "destination_type": "sint16",
+        "value": -38400,
+        "error": "conversion_range",
+        "preserve_destination": true
+      },
+      "language_status": 32,
+      "result": 17
+    },
+    {
+      "label": "rally-conversion",
+      "published": {
+        "destination_type": "sint16",
+        "value": -32769,
+        "error": "conversion_range",
+        "preserve_destination": true
+      },
+      "language_status": 32,
+      "result": 17
+    },
+    {
+      "label": "rally-conversion",
+      "published": {
+        "destination_type": "sint16",
+        "value": -32768,
+        "result": -32768
+      },
+      "language_status": 0,
+      "result": -32768
+    },
+    {
+      "label": "rally-conversion",
+      "published": {
+        "destination_type": "sint16",
+        "value": 32767,
+        "result": 32767
+      },
+      "language_status": 0,
+      "result": 32767
+    },
+    {
+      "label": "rally-conversion",
+      "published": {
+        "destination_type": "sint16",
+        "value": 32768,
+        "error": "conversion_range",
+        "preserve_destination": true
+      },
+      "language_status": 32,
+      "result": 17
+    },
+    {
+      "label": "rally-conversion",
+      "published": {
+        "destination_type": "sint16",
+        "value": 38400,
+        "error": "conversion_range",
+        "preserve_destination": true
+      },
+      "language_status": 32,
+      "result": 17
+    },
+    {
+      "label": "rally-conversion",
+      "published": {
+        "destination_type": "sint16",
+        "value": 3276800,
+        "error": "conversion_range",
+        "preserve_destination": true
+      },
+      "language_status": 32,
+      "result": 17
+    },
+    {
+      "label": "rally-conversion",
+      "published": {
+        "destination_type": "sint16",
+        "value": 4294967295,
+        "error": "conversion_range",
+        "preserve_destination": true
+      },
+      "language_status": 32,
+      "result": 17
+    },
+    {
+      "label": "rally-conversion",
+      "published": {
+        "destination_type": "uint16",
+        "value": -38400,
+        "error": "conversion_range",
+        "preserve_destination": true
+      },
+      "language_status": 32,
+      "result": 17
+    },
+    {
+      "label": "rally-conversion",
+      "published": {
+        "destination_type": "uint16",
+        "value": -1,
+        "error": "conversion_range",
+        "preserve_destination": true
+      },
+      "language_status": 32,
+      "result": 17
+    },
+    {
+      "label": "rally-conversion",
+      "published": {
+        "destination_type": "uint16",
+        "value": 0,
+        "result": 0
+      },
+      "language_status": 0,
+      "result": 0
+    },
+    {
+      "label": "rally-conversion",
+      "published": {
+        "destination_type": "uint16",
+        "value": 38400,
+        "result": 38400
+      },
+      "language_status": 0,
+      "result": 38400
+    },
+    {
+      "label": "rally-conversion",
+      "published": {
+        "destination_type": "uint16",
+        "value": 65535,
+        "result": 65535
+      },
+      "language_status": 0,
+      "result": 65535
+    },
+    {
+      "label": "rally-conversion",
+      "published": {
+        "destination_type": "uint16",
+        "value": 65536,
+        "error": "conversion_range",
+        "preserve_destination": true
+      },
+      "language_status": 32,
+      "result": 17
+    },
+    {
+      "label": "rally-conversion",
+      "published": {
+        "destination_type": "uint16",
+        "value": 3276800,
+        "error": "conversion_range",
+        "preserve_destination": true
+      },
+      "language_status": 32,
+      "result": 17
+    },
+    {
+      "label": "rally-conversion",
+      "published": {
+        "destination_type": "uint16",
+        "value": 4294967295,
+        "error": "conversion_range",
+        "preserve_destination": true
+      },
+      "language_status": 32,
+      "result": 17
+    },
+    {
+      "label": "rally-conversion",
+      "published": {
+        "destination_type": "sint32",
+        "value": -2147483648,
+        "result": -2147483648
+      },
+      "language_status": 0,
+      "result": -2147483648
+    },
+    {
+      "label": "rally-conversion",
+      "published": {
+        "destination_type": "sint32",
+        "value": -38400,
+        "result": -38400
+      },
+      "language_status": 0,
+      "result": -38400
+    },
+    {
+      "label": "rally-conversion",
+      "published": {
+        "destination_type": "sint32",
+        "value": 38400,
+        "result": 38400
+      },
+      "language_status": 0,
+      "result": 38400
+    },
+    {
+      "label": "rally-conversion",
+      "published": {
+        "destination_type": "sint32",
+        "value": 3276800,
+        "result": 3276800
+      },
+      "language_status": 0,
+      "result": 3276800
+    },
+    {
+      "label": "rally-conversion",
+      "published": {
+        "destination_type": "sint32",
+        "value": 2147483647,
+        "result": 2147483647
+      },
+      "language_status": 0,
+      "result": 2147483647
+    },
+    {
+      "label": "rally-conversion",
+      "published": {
+        "destination_type": "sint32",
+        "value": 2147483648,
+        "error": "conversion_range",
+        "preserve_destination": true
+      },
+      "language_status": 32,
+      "result": 17
+    },
+    {
+      "label": "rally-conversion",
+      "published": {
+        "destination_type": "sint32",
+        "value": 4294967295,
+        "error": "conversion_range",
+        "preserve_destination": true
+      },
+      "language_status": 32,
+      "result": 17
+    },
+    {
+      "label": "rally-conversion",
+      "published": {
+        "destination_type": "uint32",
+        "value": -38400,
+        "error": "conversion_range",
+        "preserve_destination": true
+      },
+      "language_status": 32,
+      "result": 17
+    },
+    {
+      "label": "rally-conversion",
+      "published": {
+        "destination_type": "uint32",
+        "value": -1,
+        "error": "conversion_range",
+        "preserve_destination": true
+      },
+      "language_status": 32,
+      "result": 17
+    },
+    {
+      "label": "rally-conversion",
+      "published": {
+        "destination_type": "uint32",
+        "value": 0,
+        "result": 0
+      },
+      "language_status": 0,
+      "result": 0
+    },
+    {
+      "label": "rally-conversion",
+      "published": {
+        "destination_type": "uint32",
+        "value": 38400,
+        "result": 38400
+      },
+      "language_status": 0,
+      "result": 38400
+    },
+    {
+      "label": "rally-conversion",
+      "published": {
+        "destination_type": "uint32",
+        "value": 3276800,
+        "result": 3276800
+      },
+      "language_status": 0,
+      "result": 3276800
+    },
+    {
+      "label": "rally-conversion",
+      "published": {
+        "destination_type": "uint32",
+        "value": 4294967295,
+        "result": 4294967295
+      },
+      "language_status": 0,
+      "result": 4294967295
+    }
+  ],
+  "explicit_widening_order_cases": 2,
+  "buffered_and_native_host_sanitizers": true,
+  "full_route_contact_replay": false
+}

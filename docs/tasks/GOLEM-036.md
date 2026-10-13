@@ -3,7 +3,8 @@
 Provide explicit uint32/sint32 state/intermediates and checked numeric operations
 sufficient for Rally's existing units, without substituting floats or implicitly
 widening 16-bit expressions. This follows the [accepted contract](GOLEM-033/accepted-contract.md),
-requires D0 and Rally's pinned numeric oracles, and awaits Author release.
+requires accepted D0/D1a and Rally's pinned numeric oracles. The Author released
+the first bounded wide-integer tranche after accepting GOLEM-035.
 
 ## Scope and dependencies
 
@@ -17,7 +18,7 @@ Rally handoff revision 2 supplies independent numeric/route/contact/lookup vecto
 its 19 file hashes were verified during D0. Signed arithmetic right shift in those
 formulas means floor division by a power of two, distinct from signed quotient
 truncation. Preserve this explicitly if a shift/helper is selected. Direct map
-projection can exceed signed32; select an exact wider helper before claiming that
+projection can exceed signed 32; select an exact wider helper before claiming that
 path. See GOLEM-034/rally-oracle-handoff-v2.json for the receipt.
 
 Signed quotient truncates toward zero; remainder is n-q*d, with numerator's sign
@@ -31,13 +32,13 @@ Narrowing is explicit, checked and numeric, not a wrapping bit reinterpretation.
 
 - INV-001 [x] Receive pinned Rally formulas, unit/range audit and independent vectors, including projection products.
 - NUM-001 [ ] Freeze widths, Bounds, intermediate overflow rules, conversions, signed division/remainder and division-overflow status.
-- SYN-001 [ ] Add explicit wide declarations/operands, typed comparisons and conversions; retain existing 16-bit behavior.
+- SYN-001 [x] Add explicit wide declarations/operands, typed comparisons and conversions; retain existing 16-bit behavior.
 - EMIT-001 [ ] Implement checked add/subtract/multiply/compare/divmod and narrowing on both supported backends.
-- STO-001 [ ] Extend GOLEM-035 arrays/descriptors/fixtures to wide elements without reinterpreting prior installed layouts.
+- STO-001 [x] Extend GOLEM-035 arrays/descriptors/fixtures to wide elements without reinterpreting prior installed layouts.
 - HLP-001 [ ] Where needed, specify an exact checked wider-intermediate mul-div helper or separately reviewed 64-bit requirement; do not promise general 64-bit support prematurely.
 - CHK-001 [ ] Verify extrema, sign combinations, zero divisor, minimum/-1, remainder identities, intermediate failures, paired-store preservation and narrowing.
 - CHK-002 [ ] Compare route/world/projection replay against Rally's independent oracle on stock and actual Xtensa engines, with resource/traffic receipts.
-- VIS-001 [ ] Prepare a source-labelled Oryx review grounded in the agreed Rally numeric fixture.
+- VIS-001 [x] Prepare a source-labelled Oryx review grounded in the agreed Rally numeric fixture.
 - REV-001 [ ] Obtain human acceptance and explicit commit/push approval.
 
 ## Delivery boundary
@@ -47,3 +48,43 @@ entire numeric surface in one run. Missing buffered support rejects explicitly;
 it cannot silently change algorithms or create incompatible semantics. Keep
 multi-file reports and fixtures in GOLEM-036/. Golem owns language/emission;
 Rally owns authoritative game units and independent results.
+
+## First bounded tranche: wide integer foundation
+
+Implement uint32/sint32 globals and Array elements, checked + / -, all six
+same-type comparisons and explicit checked conversions among the four integer
+types. Type tags 7=uint32, 8=sint32 preserve existing 1..6. Narrow source expressions
+retain their current width: widen operands explicitly before forming a wide
+expression. Values/Bounds are numeric and inclusive, packed little endian.
+
+This tranche rejects wide multiplication/divmod/shifts and conversions between
+wide integers and floats explicitly. Those remain subsequent reviewed numeric
+steps, retaining existing narrow arithmetic/float behavior. Initial array indices
+remain uint16/sint16; wider indices require explicit checked narrowing. Four-byte
+elements admit at most 16383 entries in the current one-block profile.
+
+Native intermediates may use checked host C 64-bit addition/subtraction, without
+introducing source-language 64-bit types. Buffered code uses bounded byte carry
+and sign checks; both preserve failed destinations and prior effects, and publish
+no success after failure. Oryx review will use wide Rally-scale state and retained
+arrays, narrowing only proven screen-relative differences for drawing.
+
+- WID-001 [x] Implement/qualify the first wide storage, + / -, comparison and integer-conversion tranche with Oryx review.
+- WID-002 [ ] Follow with checked wide multiplication and paired signed/unsigned division against the accepted status/rounding contract.
+- WID-003 [ ] Complete shifts/exact helpers and full Rally route/contact/projection replay as separately bounded reviewed work.
+
+## First tranche evidence / review checkpoint
+
+The foundation is implemented and automatically qualified; see
+[README/source/receipts](GOLEM-036/README.md). SYN-001/STO-001 cover the explicit
+32-bit declarations/comparisons/conversions and width-aware retained layouts.
+VIS-001 is prepared/stopped on Oryx. EMIT/CHK/NUM/HLP remain open for the later
+operators/full numeric contract; WID-001 is accepted after human review. The Author subsequently explicitly approved commit/push.
+
+- FND-001 [x] Implement explicit uint32/sint32 grammar, Bounds, casts and width-aware array descriptors without changing prior outputs.
+- FND-002 [x] Emit bounded buffered carry/sign arithmetic and byte-wise comparisons, preserving failed destinations.
+- FND-003 [x] Emit SDK-admitted native 32-bit code, packed byte access and finite scoped array views under unchanged limits.
+- FND-004 [x] Pass sanitized host/model, direct published Rally primitive, maximum-array boundary and independent package reproducibility checks.
+- FND-005 [x] Qualify stock and actual Xtensa JIT/interpreter, default/relocated layouts, physical faults, cleanup and 600-frame pixels/state.
+- FND-006 [x] Freeze immutable source/package/receipt delivery and stage the source-labelled Oryx review stopped.
+- FND-007 [x] The Author reported 'good test.'; retrieved results match590 observations/5846 bytes and runtime/fixture identities. The Author subsequently explicitly approved commit/push.

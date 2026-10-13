@@ -1,0 +1,22 @@
+{
+  "rejections": 15,
+  "diagnostics": [
+    "compiler: line 1, column 21: literal does not fit uint32",
+    "compiler: line 1, column 21: literal does not fit uint32",
+    "compiler: line 1, column 21: literal does not fit sint32",
+    "compiler: line 1, column 21: literal does not fit sint32",
+    "compiler: line 1, column 34: invalid inclusive Bounds for declared type",
+    "compiler: line 1, column 42: invalid inclusive Bounds for declared type",
+    "compiler: line 1, column 35: Array requires ascending inclusive bounds in -32768..65535 and a one-block packed element count",
+    "compiler: line 1, column 37: literal does not fit sint32",
+    "compiler: line 1, column 48: wide multiplication is deferred to the next numeric tranche",
+    "compiler: line 1, column 46: divmod requires declared uint16 destinations",
+    "compiler: line 1, column 47: mixed variable types require an explicit conversion (not supported in this slice)",
+    "compiler: line 1, column 47: wide integer/float conversions are deferred",
+    "compiler: line 1, column 47: wide integer/float conversions are deferred",
+    "compiler: line 1, column 75: mixed variable types require an explicit conversion (not supported in this slice)",
+    "compiler: line 1, column 55: cannot assign a ReadOnly Array element"
+  ],
+  "wide_extreme_literals_and_arrays_admitted": true,
+  "actual_assembler_consumer": true
+}

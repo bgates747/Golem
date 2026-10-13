@@ -1,0 +1,1378 @@
+{
+  "family": "R25-G0/root-v1",
+  "kind": "wide-integer-foundation-D1b",
+  "schema": 1,
+  "inputs": {
+    "source": {
+      "path": "/Agon/mystuff/golem/docs/tasks/GOLEM-036/probe.golem",
+      "sha256": "68666026b56e34bd5dd53a374a6ea10ad9ff05003f393febdbf2dbb7e5b72b6b"
+    },
+    "bindings": {
+      "path": "/Agon/mystuff/golem/docs/tasks/GOLEM-036/bindings.json",
+      "sha256": "35fd4fe04ec5d7dfedfc5b85f14c9da233d9ec98723f068e0fe2139fc19d1aab"
+    },
+    "d0_layer": {
+      "compiler.cpp": "1be2c0181257aaa71305498791c8b09a9ec2c6f86d9fe20e8999cce4c9691c69",
+      "root.hpp": "eedfc6dac1ce24bdc9eba8a547a53ac378801e30a3703426f39a0f37ced7292d",
+      "portable.hpp": "a3d9a8ab296ce1c1c037ad80cf7a629e66ac04c9ed01b8afa14c7388722fc66d",
+      "backends.hpp": "a51590ce5a891da6afb100c35950b7c0c72f241304116834a0bb94b1aaca4869"
+    },
+    "baseline": {
+      "compiler_commit": "93bf1e452cc4c57b9aaf412ae016e318c7be6ceb",
+      "scalar_commit": "25901e52eb80a4d66847c11fbc70d1bac68ee633",
+      "sdk_commit": "33a554c82377b10d428f0d2ec258d1b48f27ed22",
+      "sdk_files": {
+        "include/vdplet.h": "fa8385e2906f07d37372d80c40f73d419defdbefe7a3458461ac9d5fe0820d38",
+        "src/vdplet_image.h": "6a28226a138ec2c54f1b456b1bf3f33372db1a2477cb1f92afc7547ba5007fff",
+        "src/vdplet_runtime.h": "af049fe93f1e64b0ec1135e5c0e55c1938adf022669dc35d906f5fcb6c58d91b",
+        "tests/check_image.cpp": "7812b6fc7fef7b3b9d4d9faf16d324e4a0155efc98ca64198af0da764e4b0a3c",
+        "build/check_image": "0cb638527c6ec94f78393ce21fbe8698147fe9ca61618c740778cc91e806a464",
+        "tools/build_module.py": "c2353057f2b00545378bc6727752a247df8254dbe51a44c5b99d1478de96bd62"
+      },
+      "files": [
+        {
+          "path": "docs/tasks/GOLEM-035/portable.hpp",
+          "sha256": "1e12c32e3269eb1938fca064d7a5e232ad9577af66b5c1ca4ef28b44f2205d34",
+          "bytes": 41540
+        },
+        {
+          "path": "docs/tasks/GOLEM-035/backends.hpp",
+          "sha256": "2759730ee00388a743e8c934d62a02ac71ba982057aafaf151ee7cdebda8a2c1",
+          "bytes": 41395
+        },
+        {
+          "path": "docs/tasks/GOLEM-035/root.hpp",
+          "sha256": "eedfc6dac1ce24bdc9eba8a547a53ac378801e30a3703426f39a0f37ced7292d",
+          "bytes": 9452
+        },
+        {
+          "path": "docs/tasks/GOLEM-035/compiler.cpp",
+          "sha256": "07f4045f5fec70065eb036562bd018de58d5627935bf9452d4e7035a82bd15f3",
+          "bytes": 10989
+        },
+        {
+          "path": "src/ordinary.hpp",
+          "sha256": "7c8fe20f4e63c6e57de70b9931696b87c88c9c4ea499679b1bc239f09480c5da",
+          "bytes": 33802
+        },
+        {
+          "path": "src/token_reader.hpp",
+          "sha256": "397fe169f1a84b47acf8a77a3036fd50ddfeac45e64d07a74b0497ca50f4126d",
+          "bytes": 7116
+        },
+        {
+          "path": "src/buffer_allocator.hpp",
+          "sha256": "7c8881777decd9e04231adae3ab4050e52451c0fadaafe6b37c7ce0735c7b449",
+          "bytes": 3174
+        }
+      ],
+      "extension": "GOLEM-036 first wide storage/add/subtract/comparison/conversion tranche; later operators gated"
+    },
+    "host_compiler": "g++ (Debian 14.2.0-19) 14.2.0",
+    "tool_executable_sha256": {
+      "g++": "ac4f48ec03aa3988b0c087fd8a0ae681c2922354b321065ff49911b8ab20db73",
+      "gcc": "fb051a6c58961fb6aec758acf50d7d0375eecff740d0706388092829e3fb7a41",
+      "xtensa-esp32-elf-gcc": "e091761ac142b87be663aa36c8dc9af10044a9769a540ee0337ebc97ea56a22d",
+      "xtensa-esp32-elf-ld": "fd641bedc57930941b7b7d9e3d51ece550bf663fb4d9d13ec0a2188082c47245",
+      "xtensa-esp32-elf-strip": "cef0e79caf472d12d87063c8cbc6ed21880ab41dce99fab12671d50e02adcaae"
+    },
+    "native_toolchain": "xtensa-esp32-elf-gcc (crosstool-NG esp-2021r2-patch5) 8.4.0",
+    "abi_header_sha256": "fa8385e2906f07d37372d80c40f73d419defdbefe7a3458461ac9d5fe0820d38",
+    "reservations_prefix": 0,
+    "array_data": {}
+  },
+  "interface": {
+    "schema": 1,
+    "profile": "portable-scalar-foundation",
+    "experimental": true,
+    "execution_contract": "r25-g0-root-v1-dual-backend",
+    "state_buffer": 1,
+    "state_bytes": 154,
+    "state_owner": "application_shared",
+    "initialization": "explicit_install_or_reset",
+    "error": {
+      "offset": 14,
+      "bytes": 2,
+      "codes": {
+        "ok": 0,
+        "uint16_add_overflow": 1,
+        "uint16_sub_underflow": 2,
+        "uint16_mul_overflow": 3,
+        "array_index": 5,
+        "zero_divisor": 4,
+        "bounds_failure": 32,
+        "nonfinite_float": 33
+      }
+    },
+    "globals": [
+      {
+        "name": "flag",
+        "type": "bool",
+        "offset": 112,
+        "bytes": 2,
+        "bounds": [
+          0,
+          1
+        ]
+      },
+      {
+        "name": "ua",
+        "type": "uint32",
+        "offset": 114,
+        "bytes": 4,
+        "bounds": [
+          0,
+          4294967295
+        ]
+      },
+      {
+        "name": "ub",
+        "type": "uint32",
+        "offset": 118,
+        "bytes": 4,
+        "bounds": [
+          0,
+          4294967295
+        ]
+      },
+      {
+        "name": "ur",
+        "type": "uint32",
+        "offset": 122,
+        "bytes": 4,
+        "bounds": [
+          0,
+          4294967295
+        ]
+      },
+      {
+        "name": "sa",
+        "type": "sint32",
+        "offset": 126,
+        "bytes": 4,
+        "bounds": [
+          -2147483648,
+          2147483647
+        ]
+      },
+      {
+        "name": "sb",
+        "type": "sint32",
+        "offset": 130,
+        "bytes": 4,
+        "bounds": [
+          -2147483648,
+          2147483647
+        ]
+      },
+      {
+        "name": "sr",
+        "type": "sint32",
+        "offset": 134,
+        "bytes": 4,
+        "bounds": [
+          -2147483648,
+          2147483647
+        ]
+      },
+      {
+        "name": "un",
+        "type": "uint16",
+        "offset": 138,
+        "bytes": 2,
+        "bounds": [
+          0,
+          65535
+        ]
+      },
+      {
+        "name": "sn",
+        "type": "sint16",
+        "offset": 140,
+        "bytes": 2,
+        "bounds": [
+          -32768,
+          32767
+        ]
+      },
+      {
+        "name": "boundedU",
+        "type": "uint32",
+        "offset": 142,
+        "bytes": 4,
+        "bounds": [
+          65536,
+          6553600
+        ]
+      },
+      {
+        "name": "boundedS",
+        "type": "sint32",
+        "offset": 146,
+        "bytes": 4,
+        "bounds": [
+          -38400,
+          38400
+        ]
+      },
+      {
+        "name": "index",
+        "type": "uint16",
+        "offset": 150,
+        "bytes": 2,
+        "bounds": [
+          0,
+          65535
+        ]
+      },
+      {
+        "name": "signedIndex",
+        "type": "sint16",
+        "offset": 152,
+        "bytes": 2,
+        "bounds": [
+          -32768,
+          32767
+        ]
+      }
+    ],
+    "arrays": [
+      {
+        "name": "unsignedValues",
+        "type": "uint32",
+        "buffer": 2,
+        "offset": 0,
+        "bytes": 16,
+        "lower": 0,
+        "upper": 3,
+        "count": 4,
+        "element_bytes": 4,
+        "access": 3,
+        "owner": "application_retained",
+        "initial_data": "array-unsignedValues.bin"
+      },
+      {
+        "name": "signedValues",
+        "type": "sint32",
+        "buffer": 3,
+        "offset": 0,
+        "bytes": 16,
+        "lower": -2,
+        "upper": 1,
+        "count": 4,
+        "element_bytes": 4,
+        "access": 3,
+        "owner": "application_retained",
+        "initial_data": "array-signedValues.bin"
+      }
+    ],
+    "entries": [
+      {
+        "name": "addUnsigned",
+        "logical_id": 0,
+        "parameter_bytes": 0,
+        "result_bytes": 0,
+        "worst_case_visits": 1
+      },
+      {
+        "name": "subtractUnsigned",
+        "logical_id": 1,
+        "parameter_bytes": 0,
+        "result_bytes": 0,
+        "worst_case_visits": 1
+      },
+      {
+        "name": "addSigned",
+        "logical_id": 2,
+        "parameter_bytes": 0,
+        "result_bytes": 0,
+        "worst_case_visits": 1
+      },
+      {
+        "name": "subtractSigned",
+        "logical_id": 3,
+        "parameter_bytes": 0,
+        "result_bytes": 0,
+        "worst_case_visits": 1
+      },
+      {
+        "name": "compareUnsigned",
+        "logical_id": 4,
+        "parameter_bytes": 0,
+        "result_bytes": 0,
+        "worst_case_visits": 1
+      },
+      {
+        "name": "compareSigned",
+        "logical_id": 5,
+        "parameter_bytes": 0,
+        "result_bytes": 0,
+        "worst_case_visits": 1
+      },
+      {
+        "name": "unsignedToSigned",
+        "logical_id": 6,
+        "parameter_bytes": 0,
+        "result_bytes": 0,
+        "worst_case_visits": 1
+      },
+      {
+        "name": "signedToUnsigned",
+        "logical_id": 7,
+        "parameter_bytes": 0,
+        "result_bytes": 0,
+        "worst_case_visits": 1
+      },
+      {
+        "name": "narrowUnsigned",
+        "logical_id": 8,
+        "parameter_bytes": 0,
+        "result_bytes": 0,
+        "worst_case_visits": 1
+      },
+      {
+        "name": "narrowSigned",
+        "logical_id": 9,
+        "parameter_bytes": 0,
+        "result_bytes": 0,
+        "worst_case_visits": 1
+      },
+      {
+        "name": "signedToNarrowUnsigned",
+        "logical_id": 10,
+        "parameter_bytes": 0,
+        "result_bytes": 0,
+        "worst_case_visits": 1
+      },
+      {
+        "name": "unsignedToNarrowSigned",
+        "logical_id": 11,
+        "parameter_bytes": 0,
+        "result_bytes": 0,
+        "worst_case_visits": 1
+      },
+      {
+        "name": "widenUnsigned",
+        "logical_id": 12,
+        "parameter_bytes": 0,
+        "result_bytes": 0,
+        "worst_case_visits": 2
+      },
+      {
+        "name": "widenSigned",
+        "logical_id": 13,
+        "parameter_bytes": 0,
+        "result_bytes": 0,
+        "worst_case_visits": 1
+      },
+      {
+        "name": "widenSignedToUnsigned",
+        "logical_id": 14,
+        "parameter_bytes": 0,
+        "result_bytes": 0,
+        "worst_case_visits": 1
+      },
+      {
+        "name": "readUnsigned",
+        "logical_id": 15,
+        "parameter_bytes": 0,
+        "result_bytes": 0,
+        "worst_case_visits": 1
+      },
+      {
+        "name": "readSigned",
+        "logical_id": 16,
+        "parameter_bytes": 0,
+        "result_bytes": 0,
+        "worst_case_visits": 1
+      },
+      {
+        "name": "storeUnsigned",
+        "logical_id": 17,
+        "parameter_bytes": 0,
+        "result_bytes": 0,
+        "worst_case_visits": 1
+      },
+      {
+        "name": "storeSigned",
+        "logical_id": 18,
+        "parameter_bytes": 0,
+        "result_bytes": 0,
+        "worst_case_visits": 1
+      },
+      {
+        "name": "boundedUnsigned",
+        "logical_id": 19,
+        "parameter_bytes": 0,
+        "result_bytes": 0,
+        "worst_case_visits": 1
+      },
+      {
+        "name": "boundedSigned",
+        "logical_id": 20,
+        "parameter_bytes": 0,
+        "result_bytes": 0,
+        "worst_case_visits": 1
+      },
+      {
+        "name": "indexConversion",
+        "logical_id": 21,
+        "parameter_bytes": 0,
+        "result_bytes": 0,
+        "worst_case_visits": 1
+      },
+      {
+        "name": "EqualUnsigned",
+        "logical_id": 22,
+        "parameter_bytes": 0,
+        "result_bytes": 0,
+        "worst_case_visits": 1
+      },
+      {
+        "name": "NotEqualUnsigned",
+        "logical_id": 23,
+        "parameter_bytes": 0,
+        "result_bytes": 0,
+        "worst_case_visits": 1
+      },
+      {
+        "name": "LessUnsigned",
+        "logical_id": 24,
+        "parameter_bytes": 0,
+        "result_bytes": 0,
+        "worst_case_visits": 1
+      },
+      {
+        "name": "GreaterUnsigned",
+        "logical_id": 25,
+        "parameter_bytes": 0,
+        "result_bytes": 0,
+        "worst_case_visits": 1
+      },
+      {
+        "name": "LessEqualUnsigned",
+        "logical_id": 26,
+        "parameter_bytes": 0,
+        "result_bytes": 0,
+        "worst_case_visits": 1
+      },
+      {
+        "name": "GreaterEqualUnsigned",
+        "logical_id": 27,
+        "parameter_bytes": 0,
+        "result_bytes": 0,
+        "worst_case_visits": 1
+      },
+      {
+        "name": "EqualSigned",
+        "logical_id": 28,
+        "parameter_bytes": 0,
+        "result_bytes": 0,
+        "worst_case_visits": 1
+      },
+      {
+        "name": "NotEqualSigned",
+        "logical_id": 29,
+        "parameter_bytes": 0,
+        "result_bytes": 0,
+        "worst_case_visits": 1
+      },
+      {
+        "name": "LessSigned",
+        "logical_id": 30,
+        "parameter_bytes": 0,
+        "result_bytes": 0,
+        "worst_case_visits": 1
+      },
+      {
+        "name": "GreaterSigned",
+        "logical_id": 31,
+        "parameter_bytes": 0,
+        "result_bytes": 0,
+        "worst_case_visits": 1
+      },
+      {
+        "name": "LessEqualSigned",
+        "logical_id": 32,
+        "parameter_bytes": 0,
+        "result_bytes": 0,
+        "worst_case_visits": 1
+      },
+      {
+        "name": "GreaterEqualSigned",
+        "logical_id": 33,
+        "parameter_bytes": 0,
+        "result_bytes": 0,
+        "worst_case_visits": 1
+      },
+      {
+        "name": "identityUnsigned",
+        "logical_id": 34,
+        "parameter_bytes": 0,
+        "result_bytes": 0,
+        "worst_case_visits": 1
+      },
+      {
+        "name": "identitySigned",
+        "logical_id": 35,
+        "parameter_bytes": 0,
+        "result_bytes": 0,
+        "worst_case_visits": 1
+      },
+      {
+        "name": "priorEffect",
+        "logical_id": 36,
+        "parameter_bytes": 0,
+        "result_bytes": 0,
+        "worst_case_visits": 2
+      },
+      {
+        "name": "skippedWideConversion",
+        "logical_id": 37,
+        "parameter_bytes": 0,
+        "result_bytes": 0,
+        "worst_case_visits": 1
+      }
+    ],
+    "external_reservations": [
+      {
+        "first": 60000,
+        "last": 60031
+      }
+    ]
+  },
+  "root": {
+    "family": "R25-G0/root-v1",
+    "schema": 1,
+    "header_bytes": 112,
+    "root_bytes": 154,
+    "globals_bytes": 42,
+    "byte_order": "little",
+    "argument_bytes": 2,
+    "fields": {
+      "magic": 0,
+      "schema": 2,
+      "header_bytes": 4,
+      "root_bytes": 6,
+      "session": 8,
+      "interface_status": 12,
+      "language_status": 14,
+      "runtime_result": 16,
+      "last_success_generation": 20,
+      "last_success_entry": 24,
+      "descriptor_count": 26,
+      "requested_entry": 28,
+      "last_success_session": 32,
+      "entry_count": 36,
+      "globals_bytes": 38,
+      "contract_tag": 44,
+      "descriptors": 48
+    },
+    "bindings": [
+      {
+        "role": 1,
+        "buffer": 0,
+        "offset": 0,
+        "bytes": 0,
+        "access": 0,
+        "installed_min_bytes": 0
+      },
+      {
+        "role": 2,
+        "buffer": 0,
+        "offset": 0,
+        "bytes": 0,
+        "access": 0,
+        "installed_min_bytes": 0
+      },
+      {
+        "role": 3,
+        "buffer": 0,
+        "offset": 0,
+        "bytes": 0,
+        "access": 0,
+        "installed_min_bytes": 0
+      },
+      {
+        "role": 4,
+        "buffer": 0,
+        "offset": 0,
+        "bytes": 0,
+        "access": 0,
+        "installed_min_bytes": 0
+      }
+    ],
+    "runtime_result_owner": "invocation_transport_owner",
+    "generation": "successful-invocation-modulo-2^32",
+    "stock_storage_admission": "host-installed-manifest-invariant",
+    "native_storage_admission": "actual-root-and-bound-range-leases"
+  },
+  "backends": {
+    "shared_state": 1,
+    "state_bytes": 154,
+    "error_offset": 14,
+    "root_schema": 1,
+    "root_header_bytes": 112,
+    "native_handle_offset": 24,
+    "buffered_dispatch": 421,
+    "native_arguments": 460,
+    "buffered_entries": [
+      422,
+      423,
+      424,
+      425,
+      426,
+      427,
+      428,
+      429,
+      430,
+      431,
+      432,
+      433,
+      434,
+      435,
+      436,
+      437,
+      438,
+      439,
+      440,
+      441,
+      442,
+      443,
+      444,
+      445,
+      446,
+      447,
+      448,
+      449,
+      450,
+      451,
+      452,
+      453,
+      454,
+      455,
+      456,
+      457,
+      458,
+      459
+    ],
+    "native_wrappers": [
+      461,
+      462,
+      463,
+      464,
+      465,
+      466,
+      467,
+      468,
+      469,
+      470,
+      471,
+      472,
+      473,
+      474,
+      475,
+      476,
+      477,
+      478,
+      479,
+      480,
+      481,
+      482,
+      483,
+      484,
+      485,
+      486,
+      487,
+      488,
+      489,
+      490,
+      491,
+      492,
+      493,
+      494,
+      495,
+      496,
+      497,
+      498
+    ],
+    "buffered_owned": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89,
+      90,
+      91,
+      92,
+      93,
+      94,
+      95,
+      96,
+      97,
+      98,
+      99,
+      100,
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109,
+      110,
+      111,
+      112,
+      113,
+      114,
+      115,
+      116,
+      117,
+      118,
+      119,
+      120,
+      121,
+      122,
+      123,
+      124,
+      125,
+      126,
+      127,
+      128,
+      129,
+      130,
+      131,
+      132,
+      133,
+      134,
+      135,
+      136,
+      137,
+      138,
+      139,
+      140,
+      141,
+      142,
+      143,
+      144,
+      145,
+      146,
+      147,
+      148,
+      149,
+      150,
+      151,
+      152,
+      153,
+      154,
+      155,
+      156,
+      157,
+      158,
+      159,
+      160,
+      161,
+      162,
+      163,
+      164,
+      165,
+      166,
+      167,
+      168,
+      169,
+      170,
+      171,
+      172,
+      173,
+      174,
+      175,
+      176,
+      177,
+      178,
+      179,
+      180,
+      181,
+      182,
+      183,
+      184,
+      185,
+      186,
+      187,
+      188,
+      189,
+      190,
+      191,
+      192,
+      193,
+      194,
+      195,
+      196,
+      197,
+      198,
+      199,
+      200,
+      201,
+      202,
+      203,
+      204,
+      205,
+      206,
+      207,
+      208,
+      209,
+      210,
+      211,
+      212,
+      213,
+      214,
+      215,
+      216,
+      217,
+      218,
+      219,
+      220,
+      221,
+      222,
+      223,
+      224,
+      225,
+      226,
+      227,
+      228,
+      229,
+      230,
+      231,
+      232,
+      233,
+      234,
+      235,
+      236,
+      237,
+      238,
+      239,
+      240,
+      241,
+      242,
+      243,
+      244,
+      245,
+      246,
+      247,
+      248,
+      249,
+      250,
+      251,
+      252,
+      253,
+      254,
+      255,
+      256,
+      257,
+      258,
+      259,
+      260,
+      261,
+      262,
+      263,
+      264,
+      265,
+      266,
+      267,
+      268,
+      269,
+      270,
+      271,
+      272,
+      273,
+      274,
+      275,
+      276,
+      277,
+      278,
+      279,
+      280,
+      281,
+      282,
+      283,
+      284,
+      285,
+      286,
+      287,
+      288,
+      289,
+      290,
+      291,
+      292,
+      293,
+      294,
+      295,
+      296,
+      297,
+      298,
+      299,
+      300,
+      301,
+      302,
+      303,
+      304,
+      305,
+      306,
+      307,
+      308,
+      309,
+      310,
+      311,
+      312,
+      313,
+      314,
+      315,
+      316,
+      317,
+      318,
+      319,
+      320,
+      321,
+      322,
+      323,
+      324,
+      325,
+      326,
+      327,
+      328,
+      329,
+      330,
+      331,
+      332,
+      333,
+      334,
+      335,
+      336,
+      337,
+      338,
+      339,
+      340,
+      341,
+      342,
+      343,
+      344,
+      345,
+      346,
+      347,
+      348,
+      349,
+      350,
+      351,
+      352,
+      353,
+      354,
+      355,
+      356,
+      357,
+      358,
+      359,
+      360,
+      361,
+      362,
+      363,
+      364,
+      365,
+      366,
+      367,
+      368,
+      369,
+      370,
+      371,
+      372,
+      373,
+      374,
+      375,
+      376,
+      377,
+      378,
+      379,
+      380,
+      381,
+      382,
+      383,
+      384,
+      385,
+      386,
+      387,
+      388,
+      389,
+      390,
+      391,
+      392,
+      393,
+      394,
+      395,
+      396,
+      397,
+      398,
+      399,
+      400,
+      401,
+      402,
+      403,
+      404,
+      405,
+      406,
+      407,
+      408,
+      409,
+      410,
+      411,
+      412,
+      413,
+      414,
+      415,
+      416,
+      417,
+      418,
+      419,
+      420,
+      421,
+      422,
+      423,
+      424,
+      425,
+      426,
+      427,
+      428,
+      429,
+      430,
+      431,
+      432,
+      433,
+      434,
+      435,
+      436,
+      437,
+      438,
+      439,
+      440,
+      441,
+      442,
+      443,
+      444,
+      445,
+      446,
+      447,
+      448,
+      449,
+      450,
+      451,
+      452,
+      453,
+      454,
+      455,
+      456,
+      457,
+      458,
+      459
+    ],
+    "native_owned": [
+      460,
+      461,
+      462,
+      463,
+      464,
+      465,
+      466,
+      467,
+      468,
+      469,
+      470,
+      471,
+      472,
+      473,
+      474,
+      475,
+      476,
+      477,
+      478,
+      479,
+      480,
+      481,
+      482,
+      483,
+      484,
+      485,
+      486,
+      487,
+      488,
+      489,
+      490,
+      491,
+      492,
+      493,
+      494,
+      495,
+      496,
+      497,
+      498
+    ]
+  },
+  "native_module": {
+    "name": "probe",
+    "source": "/Agon/mystuff/golem/docs/tasks/GOLEM-036/build/probe/native.c",
+    "source_sha256": "bb70859affb74aae719d6627b852b6dee1206694f6d5d1bd350955fa8aa29cb2",
+    "build_id": "0x474c3336",
+    "capabilities": 1,
+    "envelope_bytes": 64,
+    "elf_bytes": 3880,
+    "package_bytes": 3944,
+    "sha256": "6409d057777f1ced56a688a137d46f55e3c6fca4b1bb4e4d76941c4a50df8907",
+    "package": "/Agon/mystuff/golem/docs/tasks/GOLEM-036/build/probe/probe.vdpl",
+    "elf": "/Agon/mystuff/golem/docs/tasks/GOLEM-036/build/probe/probe.elf",
+    "entry_virtual": 464,
+    "resident_text_bytes": 2648,
+    "resident_data_bytes": 268,
+    "relative_relocations": 7,
+    "allocated_sections": {
+      ".text": {
+        "virtual_address": 392,
+        "bytes": 2646,
+        "type": 1
+      },
+      ".rodata": {
+        "virtual_address": 3040,
+        "bytes": 264,
+        "type": 1
+      },
+      ".data": {
+        "virtual_address": 7548,
+        "bytes": 4,
+        "type": 1
+      }
+    }
+  },
+  "resources": {
+    "module": {
+      "name": "probe",
+      "source": "/Agon/mystuff/golem/docs/tasks/GOLEM-036/build/probe/native.c",
+      "source_sha256": "bb70859affb74aae719d6627b852b6dee1206694f6d5d1bd350955fa8aa29cb2",
+      "build_id": "0x474c3336",
+      "capabilities": 1,
+      "envelope_bytes": 64,
+      "elf_bytes": 3880,
+      "package_bytes": 3944,
+      "sha256": "6409d057777f1ced56a688a137d46f55e3c6fca4b1bb4e4d76941c4a50df8907",
+      "package": "/Agon/mystuff/golem/docs/tasks/GOLEM-036/build/probe/probe.vdpl",
+      "elf": "/Agon/mystuff/golem/docs/tasks/GOLEM-036/build/probe/probe.elf",
+      "entry_virtual": 464,
+      "resident_text_bytes": 2648,
+      "resident_data_bytes": 268,
+      "relative_relocations": 7,
+      "allocated_sections": {
+        ".text": {
+          "virtual_address": 392,
+          "bytes": 2646,
+          "type": 1
+        },
+        ".rodata": {
+          "virtual_address": 3040,
+          "bytes": 264,
+          "type": 1
+        },
+        ".data": {
+          "virtual_address": 7548,
+          "bytes": 4,
+          "type": 1
+        }
+      }
+    },
+    "stack_frames": [
+      {
+        "function": "get32",
+        "bytes": 32
+      },
+      {
+        "function": "put32",
+        "bytes": 32
+      },
+      {
+        "function": "vdplet_entry",
+        "bytes": 112
+      }
+    ],
+    "conservative_sum_module_static_frames": 176,
+    "stack_scope": "module frames only; excludes firmware/service caller frames",
+    "max_live_leases": 3,
+    "admitted_stack_budget": 512,
+    "admission_policy": "existing SDK limits; no capacity probe or limit change"
+  },
+  "artifacts": {
+    "array-signedValues.bin": {
+      "bytes": 16,
+      "sha256": "ce8b1aa268da9045e7ea74cb93ee4e8a88de56982ab9d3e752ef390f7a921dd8"
+    },
+    "array-unsignedValues.bin": {
+      "bytes": 16,
+      "sha256": "27788daf778d413805516c8d0ba0927bdd54ef4a17c290645b21a9318b52c7f3"
+    },
+    "arrays-install.bin": {
+      "bytes": 60,
+      "sha256": "03aeebe44a7cbf484ce738a408304ddbcde418f4d0d1fc5d0ae0d93831cdfb2f"
+    },
+    "backends.json": {
+      "bytes": 74767,
+      "sha256": "b8b02bee827db7ab4da20c156555d98376ac7b340ff83f68aac3db3809337583"
+    },
+    "buffered-cleanup.bin": {
+      "bytes": 2736,
+      "sha256": "29284fa9c67f0ffcd4cda332a2a880eb96a9083da8fdf215b1c9762fd1ef05a0"
+    },
+    "buffered-install.bin": {
+      "bytes": 34392,
+      "sha256": "aa8a12db443a91cf8a47891ec1b2c650a67393abcf84a7b1dd479477902b831f"
+    },
+    "calls.inc": {
+      "bytes": 11816,
+      "sha256": "315a3d8fe3a4357d0b42ca7e61a1178c0fb82d929f95e913b7cae5c946e32dd8"
+    },
+    "common-install.bin": {
+      "bytes": 228,
+      "sha256": "b520419443a8167e88dbe1976262b4bb95779b3fbdf442c757f5c42e536838e7"
+    },
+    "interface.json": {
+      "bytes": 6617,
+      "sha256": "3ede7e08fe5c285024ed3e37cfc4f1cc8d3039763a0a8d9a6233bc0d526237f9"
+    },
+    "layout.inc": {
+      "bytes": 4322,
+      "sha256": "47f28f7d998e62e5773db58d63b794500ecedff55eb1651d2e39a6477d863173"
+    },
+    "native-cleanup.bin": {
+      "bytes": 234,
+      "sha256": "debf139a77aecd9c1a1d7946845ca64b62c9083c69f7a0abeaa9719bec6e77a3"
+    },
+    "native-install.bin": {
+      "bytes": 1688,
+      "sha256": "492796e56afb36160bd05fdd5c40371d2aa2023ccb157843f01f220271249e47"
+    },
+    "native.c": {
+      "bytes": 13054,
+      "sha256": "bb70859affb74aae719d6627b852b6dee1206694f6d5d1bd350955fa8aa29cb2"
+    },
+    "probe.elf": {
+      "bytes": 7208,
+      "sha256": "0f2dc0b8f9968af2f582e5615bdc5bc0fd52a797f301af6ff7c8f90d2e5fd1a9"
+    },
+    "probe.json": {
+      "bytes": 1201,
+      "sha256": "92fdf17aaaf64ecace5d1bf460b921398c2baab09e377c14d490f5d5cc6a9271"
+    },
+    "probe.su": {
+      "bytes": 100,
+      "sha256": "e501cd9b1e75438bb58128f4a8606f0e41f220ed152f33d11e7df52ff0c99a2c"
+    },
+    "probe.upload.elf": {
+      "bytes": 3880,
+      "sha256": "068bbaa43810f7dfd2ddc0da9cdaf6663e8e232f596b44a3bee183ef4f4a7237"
+    },
+    "probe.vdpl": {
+      "bytes": 3944,
+      "sha256": "6409d057777f1ced56a688a137d46f55e3c6fca4b1bb4e4d76941c4a50df8907"
+    },
+    "program.json": {
+      "bytes": 9781,
+      "sha256": "84fe79c47c8060e76bfafcbe862037fb2ec9d9a50d604b3af378d306e521807f"
+    },
+    "resources.json": {
+      "bytes": 1503,
+      "sha256": "fb029f4f5fa2d681e731bc86b754802e66af537d449a347145866482812c11fe"
+    },
+    "root.json": {
+      "bytes": 1019,
+      "sha256": "47f7a5e87d40bf96fd50bd6601409c6f7729f293ed812758018251a036536453"
+    },
+    "state.bin": {
+      "bytes": 154,
+      "sha256": "256ba3aa11103c3e9913cb358850ced71ac01b11b2c3a565cd8184e17218e19a"
+    }
+  }
+}

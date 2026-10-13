@@ -1,0 +1,39 @@
+// Wide Rally-scale state; assembly draws screen-relative positions and paces VSYNC.
+// Assembly installs common-install.bin (root + all array initial bytes) first.
+uint16 slot = 0
+uint32 base Bounds(3200000,3200000) = 3200000
+uint32 delta = 2
+uint32 worldTick = 65500
+Array uint32 station(0:2) = Values(3200032,3200128,3200224)
+Array sint32 lateral(0:2) = Values(-38400,0,38400)
+Array sint32 drift(0:2) = Values(256,256,-256)
+Array uint16 direction(0:2) = Values(1,0,1)
+Array uint16 screenX(0:2) = Values(32,128,224)
+Array uint16 colour(0:2) = Values(48,12,12)
+Sub step
+    For slot In Range(0:2)
+        delta = uint32(slot) + 2
+        If station(slot) >= 3200288 Then
+            direction(slot) = 0
+        ElseIf station(slot) <= 3200016 Then
+            direction(slot) = 1
+        EndIf
+        If direction(slot) == 1 Then
+            station(slot) = station(slot) + delta
+        Else
+            station(slot) = station(slot) - delta
+        EndIf
+        screenX(slot) = uint16(station(slot) - base)
+        If lateral(slot) <= -38400 Then
+            drift(slot) = 256
+        ElseIf lateral(slot) >= 38400 Then
+            drift(slot) = -256
+        EndIf
+        lateral(slot) = lateral(slot) + drift(slot)
+        colour(slot) = 12
+        If lateral(slot) < 0 Then
+            colour(slot) = 48
+        EndIf
+    Next slot
+    worldTick = worldTick + 1
+EndSub

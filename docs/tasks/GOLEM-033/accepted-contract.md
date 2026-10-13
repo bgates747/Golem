@@ -139,3 +139,19 @@ TODO.md owns overall execution status; these links describe dependencies only.
 Array and numeric grammar/layout details still need implementation-sized design
 reviews. Sparse-player alignment, recovery behavior, firmware ownership and any
 capacity-policy change remain explicit unresolved decisions.
+
+## Renderer helper agreement — R25-RENDER v0.3
+
+For D2 planning, the mutually proposed concrete helper ABI/storage/publication
+contract is accepted as recorded in [v03-CONTRACT.md](../GOLEM-037/v03-CONTRACT.md)
+and exact [header](../GOLEM-037/v03-rally_render.h), with SHA256 pins in
+[GOLEM-037](../GOLEM-037.md). Private context 464 holds value-only scratch; bindings 76,
+state 108 and completion 48 retain their fixed layouts. Generated glue owns typed
+marshalling, early argument-view release and a separate application-owned retained
+completion range, preserving root-v1 globals_bytes. Any helper or publication
+failure suppresses root success. Drawing requires matching session/request/tick,
+all success channels and fresh root success after explicit readiness preclear.
+The bounded native-bindings schema/profile/hook spelling is agreed for future
+implementation; it is not an available compiler flag. Actual combined SDK
+admission, cleanup and Author visual review remain later gates. This contract
+agreement releases no D2 implementation or capacity change.

@@ -805,8 +805,40 @@ through source execution. Concrete helper structs/grammar/error mapping remain o
 GOLEM-035 human review subsequently passed: the Author reported the tests look
 good. Retrieved results match all 1,302 observations/12,912 bytes; staged runtime
 and fixture identities pass. See docs/tasks/GOLEM-035/evidence/human-review.json.
-Explicit commit/push approval remains pending.
+The Author subsequently explicitly approved commit/push.
 
 The Author subsequently explicitly authorized committing/pushing all pending
 work and proceeding. GOLEM-035 is accepted and removed from TODO; the next
 released tranche is the GOLEM-036 wide integer foundation.
+
+## Wide integer foundation — GOLEM-036 first tranche
+
+Task-local source now supports uint32/sint32 globals and four-byte retained arrays,
+checked+/- and six comparisons, integer-only checked conversions and Bounds. Tags 7/8
+preserve old layouts; no implicit operand widening. Wide multiplication/divmod/
+shifts/float conversions reject explicitly and remain later reviewed work.
+Four-byte elements admit 16,383 entries; indices remain uint16/sint16. Prior035
+executable/layout/native-C bytes, including narrow float support, match exactly.
+
+Host ASan/UBSan/model/generated-C 3,872 cases, direct Rally 8 arithmetic / 29 conversion
+vectors, two widening-order and four maximum-array boundary cases pass. Stock
+probes/motion and actual Xtensa JIT/interpreter default/relocated pass.600-frame
+review passes590 observations/5846 bytes,56320 final playfield pixels and MOS return
+on both engines. SDK policy/source and production src are unchanged. Immutable
+packages/source/receipts and resources are in docs/tasks/GOLEM-036/delivery.json.
+
+Oryx review is staged/stopped at ~/Agon/mystuff/golem/docs/tasks/GOLEM-036/.emulator.
+Read animation.golem: Golem moves three stations around3.2million, signed Q8
+laterals±38400 and colours; assembly draws/paces VSYNC. Red/green indicates lateral
+sign, not horizontal direction. Caption alternates backend every 12 frames. The
+Author launches the wrapper, follows onscreen dir, closes/reports; agent retrieves.
+Human review and explicit commit/push approval remain pending. GOLEM-036 remains
+open for subsequent multiplication/division/shifts/exact helpers/full Rally replay.
+
+GOLEM-035 was accepted/committed/pushed as 93bf1e4 before this work. R25-RENDER v0.3
+helper contract is accepted for D2 planning (exact header/proposal retained037;
+private pointer-free context 464, separate completion 48). Proposed native binding
+flag/hooks are not implemented. No GOLEM-037 implementation release or composed
+resource/stack qualification is inferred.
+
+GOLEM-036 foundation human review subsequently passed: the Author reported 'good test.' Retrieved results match all 590 observations/5,846 bytes and staged runtime/fixture identities. See docs/tasks/GOLEM-036/evidence/human-review.json. The foundation tranche is accepted; the Author subsequently explicitly approved commit/push. Multiplication/division and remaining GOLEM-036 work are still open.

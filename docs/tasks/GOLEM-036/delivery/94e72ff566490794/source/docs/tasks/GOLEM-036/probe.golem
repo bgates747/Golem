@@ -1,0 +1,144 @@
+bool flag = false
+uint32 ua = 0
+uint32 ub = 0
+uint32 ur = 17
+sint32 sa = 0
+sint32 sb = 0
+sint32 sr = 17
+uint16 un = 17
+sint16 sn = 17
+uint32 boundedU Bounds(65536,6553600) = 65536
+sint32 boundedS Bounds(-38400,38400) = 0
+uint16 index = 0
+Array uint32 unsignedValues(0:3) = Values(0,65536,3276799,4294967295)
+Array sint32 signedValues(-2:1) = Values(-2147483648,-38400,38400,2147483647)
+sint16 signedIndex = -2
+Sub addUnsigned
+    ur = ua + ub
+EndSub
+Sub subtractUnsigned
+    ur = ua - ub
+EndSub
+Sub addSigned
+    sr = sa + sb
+EndSub
+Sub subtractSigned
+    sr = sa - sb
+EndSub
+Sub compareUnsigned
+    flag = ua < ub
+EndSub
+Sub compareSigned
+    flag = sa >= sb
+EndSub
+Sub unsignedToSigned
+    sr = sint32(ua)
+EndSub
+Sub signedToUnsigned
+    ur = uint32(sa)
+EndSub
+Sub narrowUnsigned
+    un = uint16(ua)
+EndSub
+Sub narrowSigned
+    sn = sint16(sa)
+EndSub
+Sub signedToNarrowUnsigned
+    un = uint16(sa)
+EndSub
+Sub unsignedToNarrowSigned
+    sn = sint16(ua)
+EndSub
+Sub widenUnsigned
+    sr = sint32(un)
+    ur = uint32(un)
+EndSub
+Sub widenSigned
+    sr = sint32(sn)
+EndSub
+Sub widenSignedToUnsigned
+    ur = uint32(sn)
+EndSub
+Sub readUnsigned
+    ur = unsignedValues(index)
+EndSub
+Sub readSigned
+    sr = signedValues(signedIndex)
+EndSub
+Sub storeUnsigned
+    unsignedValues(index) = ua + ub
+EndSub
+Sub storeSigned
+    signedValues(signedIndex) = sa - sb
+EndSub
+Sub boundedUnsigned
+    boundedU = ua
+EndSub
+Sub boundedSigned
+    boundedS = sa
+EndSub
+Sub indexConversion
+    ur = unsignedValues(uint16(ua))
+EndSub
+
+Sub EqualUnsigned
+    flag = ua == ub
+EndSub
+
+Sub NotEqualUnsigned
+    flag = ua != ub
+EndSub
+
+Sub LessUnsigned
+    flag = ua < ub
+EndSub
+
+Sub GreaterUnsigned
+    flag = ua > ub
+EndSub
+
+Sub LessEqualUnsigned
+    flag = ua <= ub
+EndSub
+
+Sub GreaterEqualUnsigned
+    flag = ua >= ub
+EndSub
+
+Sub EqualSigned
+    flag = sa == sb
+EndSub
+
+Sub NotEqualSigned
+    flag = sa != sb
+EndSub
+
+Sub LessSigned
+    flag = sa < sb
+EndSub
+
+Sub GreaterSigned
+    flag = sa > sb
+EndSub
+
+Sub LessEqualSigned
+    flag = sa <= sb
+EndSub
+
+Sub GreaterEqualSigned
+    flag = sa >= sb
+EndSub
+
+Sub identityUnsigned
+    ur = uint32(ua)
+EndSub
+Sub identitySigned
+    sr = sint32(sa)
+EndSub
+Sub priorEffect
+    ur = ua + ub
+    boundedU = ua
+EndSub
+Sub skippedWideConversion
+    flag = false And uint16(ua) == 0
+EndSub

@@ -68,3 +68,16 @@ Completion publication/release can itself fail: skip root-success publication
 and require runtime/interface/language/helper results, matched completion and
 fresh root success before drawing. Resident ready alone is insufficient. Exact
 header/build-hook agreement remains queued; no D2 implementation is released.
+
+## Accepted helper contract v0.3 (planning only)
+
+Exact header SHA256 `2adcc445e416f3dd95db2f52afb7ef8803c67e6fc444556be5e9d1505b133e50`
+and proposal SHA256 `0b1c90c8f22233ca7328155537ca9a59cbe817a90e33eab98d558dbc751db885`
+are retained as v03-rally_render.h/v03-CONTRACT.md. v0.3 replaces private context 84
+with pointer-free context 464 (snapshot/scratch included); bindings 76, state 108,
+completion 48 and signatures remain fixed. Golem accepts the helper interface,
+error/publication rules and proposed bounded native-bindings spelling for D2
+planning, recorded in v03-acceptance-request.json. Concrete generated JSON/source
+field maps remain D2 implementation/validation work. No compiler flag/linking,
+capacity probe or GOLEM-037 implementation is released by this acceptance.
+Composed native stack remains unqualified under the unchanged 512-byte policy.

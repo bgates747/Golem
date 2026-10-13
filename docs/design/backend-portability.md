@@ -225,3 +225,22 @@ shapes/ranges and stock depends on the host-installed invariant. No array-conten
 scan, per-element host updates or runtime readback verification is required.
 See [array source/qualification](../tasks/GOLEM-035/README.md) for limits and pending
 human review. Wider world-coordinate math and renderer linking remain later work.
+
+GOLEM-035 is human accepted and published through93bf1e4. GOLEM-036's first
+foundation adds task-local uint32/sint32 globals/arrays, checked+/- and six
+comparisons, inclusive Bounds and explicit numeric integer conversions. Same
+source/storage/error semantics run on stock buffered and native targets. Typed
+narrow expressions retain their width; widening must precede the arithmetic
+when needed. Four-byte element tags 7/8 preserve prior layouts and root-v1. Wide
+multiply/divmod/shifts/float casts explicitly reject pending later reviewed work.
+See [source, limits and qualification](../tasks/GOLEM-036/README.md); human review
+is staged/stopped, not yet accepted. No production compiler/SDK promotion occurs.
+
+R25-RENDER v0.3 is accepted as the D2 helper planning contract, including
+pointer-free context 464 and separately published application-owned completion 48.
+Planned native-only hooks reject buffered targeting explicitly; this does not
+make an unimplemented renderer stock compatible. Header/signature/error/publication
+requirements are in [the reconciled contract](../tasks/GOLEM-033/accepted-contract.md#renderer-helper-agreement--r25-render-v03).
+D2 implementation and composed SDK admission remain later gates.
+
+GOLEM-036 foundation human review subsequently passed: the Author reported 'good test.' Retrieved results match all 590 observations/5,846 bytes and staged runtime/fixture identities. See docs/tasks/GOLEM-036/evidence/human-review.json. The foundation tranche is accepted; the Author subsequently explicitly approved commit/push. Multiplication/division and remaining GOLEM-036 work are still open.
