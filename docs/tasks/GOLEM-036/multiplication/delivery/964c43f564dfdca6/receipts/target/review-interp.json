@@ -1,0 +1,93 @@
+{
+  "variant": "review",
+  "observations": 460,
+  "calls": 300,
+  "result_bytes": 4546,
+  "result_sha256": "fb66d983cd47861143d82127d152f98e12afb30d7caa9a2ae6e81566f51142cc",
+  "native": {
+    "LOAD native": 1,
+    "native entry 6": 32684,
+    "native entry 7": 16393,
+    "entry_address": "0x40097fac"
+  },
+  "visual": {
+    "frames": 300,
+    "successful_invocations": 300,
+    "rectangles": [
+      {
+        "x": 16,
+        "y": 72,
+        "right": 30,
+        "bottom": 82,
+        "colour": 12
+      },
+      {
+        "x": 80,
+        "y": 92,
+        "right": 94,
+        "bottom": 102,
+        "colour": 12
+      },
+      {
+        "x": 241,
+        "y": 115,
+        "right": 255,
+        "bottom": 125,
+        "colour": 48
+      }
+    ],
+    "guides": [
+      53,
+      97,
+      141
+    ],
+    "width": 320,
+    "height": 240,
+    "playfield_rows": 176,
+    "world_station_base": 3200000,
+    "signed_product_factor": -3,
+    "scheduler_implemented": false
+  },
+  "backend_stats": {
+    "engine": "interp",
+    "frames": 1105,
+    "cycles": 4636540000,
+    "retired": 2555747974,
+    "uart_rx": 44712,
+    "uart_tx": 5887,
+    "uart_delivered": 5887,
+    "isync": 157,
+    "code_invalidations": 4,
+    "keys": 0,
+    "failed": false,
+    "unhandled": 0,
+    "unregistered": 0,
+    "unmapped": 0
+  },
+  "playfield_pixels": 56320,
+  "engine": "interp",
+  "elapsed_seconds": 33.144,
+  "mapped_vdp_libraries": [
+    "/home/smith/Agon/mystuff/golem/docs/tasks/GOLEM-036/multiplication/.emulator/flexe-vdp.so"
+  ],
+  "returned_to_mos_prompt": true,
+  "graphical_instance_launched": false,
+  "runtime_identities": [
+    "a0e2aebfc6f299ec9905b989841ba000a1471f685078b76004480211c0396812  fab-agon-emulator.bin",
+    "d564243283972690933a4554296ad6202ca4ef54572279533a942960846bebae  mos_platform.bin",
+    "d69e60bbce61a7b4b3eef318ba395f11c4e1a5b585755755113992dc94edcb86  mos_platform.map",
+    "817da2e320c206fcb7e423b39434c6452319d71a2f54fac451aa9b7a10fa5a0d  flexe-vdp.so",
+    "31d25eec03a531b336d78d453f0720bbd1312c7c8516fdfa80130769ab15e49f  esp32-firmware.bin",
+    "51f196eb7b84ed79394a9fde1dff832ad479417c360525c69582fd093c3a0a3a  esp32-firmware.elf",
+    "e14907c9782e3289903aecd28437b3b2461abbd59368fdf26a2a268bc13bb0c2  sdcard/golem036m/probe.bin",
+    "3b4ada80240eb383fd2c281ea4be83362ba85babf8261087aae669d7a0b11856  sdcard/golem036m/script.bin",
+    "362c5f29e99607158dcd31059b245687d6d196a34c1ab1b15d69e8f921191e0a  sdcard/golem036m/expected.json",
+    "92d8238f1f6ee8c752d06e3a132c0f6457d491ba63c7869e8e561beffc7de2e8  sdcard/golem036m/expected.dat",
+    "6e04468d32f6d18e089202f6963bf7f695f80c3eabbd815a410ac58dee148b3d  sdcard/golem036m/mask.dat",
+    "211b65d06b559534e2175e2730241b378c7fbfbc2a072d46144e8e1c78b822b3  sdcard/golem036m/probe.golem",
+    "312dc8f6aac19ae18a384e96301b9da5080f13a0aaca886445a1788dd43a31d3  sdcard/golem036m/animation.golem",
+    "35fd4fe04ec5d7dfedfc5b85f14c9da233d9ec98723f068e0fe2139fc19d1aab  sdcard/golem036m/bindings.json",
+    "3c71f7fdaa8e78afed8531cc1ef7bade9ce0a8b1354c3992a8a95a7a9bdea5ad  sdcard/autoexec.txt",
+    "a1f12ee8db8c181cbe70774ba5dace148fa8ea3e6cb9ee0e9a74d8b124f793e5  fab-agon-emulator"
+  ]
+}

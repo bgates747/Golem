@@ -9,7 +9,7 @@ claim those reviews occurred.
 
 - [ ] **GOLEM-036:** D1b faithful wide integer primitives, signed division and checked narrowing.
   [Plan](docs/tasks/GOLEM-036.md). First wide storage/add/subtract/comparison/conversion tranche qualified; human review accepted and saved results verified; commit/push explicitly approved.
-  Multiplication/division, wider helpers and full Rally replay remain later reviewed steps.
+  Checked multiplication human review accepted and saved results verified; commit/push explicitly approved; division, wider helpers and full Rally replay remain later reviewed steps.
 
 - [ ] **GOLEM-037:** D2 single-module Golem/Rally renderer and helper composition.
   [Plan](docs/tasks/GOLEM-037.md). Depends on D0/D1; awaiting Author plan review/release.

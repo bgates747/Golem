@@ -1,0 +1,38 @@
+// Golem computes a quadratic horizontal path and a signed vertical product.
+// Assembly installs this state, draws the markers and paces with VSYNC.
+uint16 slot = 0
+uint32 origin Bounds(3200000,3200000) = 3200000
+uint32 tick = 65500
+Array uint32 phase(0:2) = Values(0,8,15)
+Array uint32 station(0:2) = Values(3200000,3200064,3200225)
+Array sint32 tilt(0:2) = Values(-8,0,7)
+Array sint32 product(0:2) = Values(24,0,-21)
+Array uint16 lane(0:2) = Values(48,92,136)
+Array uint16 direction(0:2) = Values(1,0,0)
+Array uint16 screenX(0:2) = Values(16,80,241)
+Array uint16 screenY(0:2) = Values(72,92,115)
+Array uint16 colour(0:2) = Values(12,12,48)
+Sub step
+    For slot In Range(0:2)
+        If phase(slot) >= 15 Then
+            direction(slot) = 0
+        ElseIf phase(slot) <= 0 Then
+            direction(slot) = 1
+        EndIf
+        If direction(slot) == 1 Then
+            phase(slot) = phase(slot) + 1
+        Else
+            phase(slot) = phase(slot) - 1
+        EndIf
+        station(slot) = origin + phase(slot) * phase(slot)
+        tilt(slot) = sint32(phase(slot)) - 8
+        product(slot) = tilt(slot) * -3
+        screenX(slot) = 16 + uint16(station(slot) - origin)
+        screenY(slot) = uint16(sint32(lane(slot)) + product(slot))
+        colour(slot) = 12
+        If product(slot) < 0 Then
+            colour(slot) = 48
+        EndIf
+    Next slot
+    tick = tick + 1
+EndSub

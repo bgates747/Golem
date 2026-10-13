@@ -1,0 +1,3 @@
+native.c:10:24:get32	32	static
+native.c:11:20:put32	32	static
+native.c:18:9:vdplet_entry	112	static

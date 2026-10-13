@@ -244,3 +244,13 @@ requirements are in [the reconciled contract](../tasks/GOLEM-033/accepted-contra
 D2 implementation and composed SDK admission remain later gates.
 
 GOLEM-036 foundation human review subsequently passed: the Author reported 'good test.' Retrieved results match all 590 observations/5,846 bytes and staged runtime/fixture identities. See docs/tasks/GOLEM-036/evidence/human-review.json. The foundation tranche is accepted; the Author subsequently explicitly approved commit/push. Multiplication/division and remaining GOLEM-036 work are still open.
+
+GOLEM-036's second task-local tranche adds checked uint32/sint32 multiplication
+on both backends, preserving explicit operand widths, overflow 3, prior effects
+and failed destinations. Buffered uses a finite shared full-product kernel;
+native uses checked private 64-bit products. Source 64-bit types and wide division/
+shifts/float casts remain excluded. Foundation executable/layout/C outputs retain
+byte parity. [Source and qualification](../tasks/GOLEM-036/multiplication/README.md)
+include a quadratic/signed-product animation; human review is pending.
+
+GOLEM-036 multiplication human review subsequently passed: the Author accepted it; retrieved results match all 460 observations / 4,546 bytes, with runtime/fixture identities verified. See docs/tasks/GOLEM-036/multiplication/evidence/human-review.json. The Author subsequently explicitly approved commit/push; division is a separate next tranche. Rally acknowledged the candidate identity and is planning its own bounded host qualification using generated metadata; this is not independent target acceptance or a shared ABI change.

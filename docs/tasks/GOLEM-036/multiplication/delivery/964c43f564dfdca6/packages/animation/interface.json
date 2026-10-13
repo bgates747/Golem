@@ -1,0 +1,18 @@
+{
+  "schema": 1, "profile": "portable-scalar-foundation",
+  "experimental": true, "execution_contract": "r25-g0-root-v1-dual-backend",
+  "state_buffer": 1, "state_bytes": 122,
+  "state_owner": "application_shared",
+  "initialization": "explicit_install_or_reset",
+  "error": {"offset": 14, "bytes": 2, "codes": {"ok": 0, "uint16_add_overflow": 1, "uint16_sub_underflow": 2, "uint16_mul_overflow": 3, "array_index": 5, "zero_divisor": 4, "bounds_failure": 32, "nonfinite_float": 33}},
+  "globals": [
+    {"name": "slot", "type": "uint16", "offset": 112, "bytes": 2, "bounds": [0, 65535]},
+    {"name": "origin", "type": "uint32", "offset": 114, "bytes": 4, "bounds": [3200000, 3200000]},
+    {"name": "tick", "type": "uint32", "offset": 118, "bytes": 4, "bounds": [0, 4294967295]}
+  ],
+  "arrays":[{"name":"phase","type":"uint32","buffer":2,"offset":0,"bytes":12,"lower":0,"upper":2,"count":3,"element_bytes":4,"access":3,"owner":"application_retained","initial_data":"array-phase.bin"},{"name":"station","type":"uint32","buffer":3,"offset":0,"bytes":12,"lower":0,"upper":2,"count":3,"element_bytes":4,"access":3,"owner":"application_retained","initial_data":"array-station.bin"},{"name":"tilt","type":"sint32","buffer":4,"offset":0,"bytes":12,"lower":0,"upper":2,"count":3,"element_bytes":4,"access":3,"owner":"application_retained","initial_data":"array-tilt.bin"},{"name":"product","type":"sint32","buffer":5,"offset":0,"bytes":12,"lower":0,"upper":2,"count":3,"element_bytes":4,"access":3,"owner":"application_retained","initial_data":"array-product.bin"},{"name":"lane","type":"uint16","buffer":6,"offset":0,"bytes":6,"lower":0,"upper":2,"count":3,"element_bytes":2,"access":3,"owner":"application_retained","initial_data":"array-lane.bin"},{"name":"direction","type":"uint16","buffer":7,"offset":0,"bytes":6,"lower":0,"upper":2,"count":3,"element_bytes":2,"access":3,"owner":"application_retained","initial_data":"array-direction.bin"},{"name":"screenX","type":"uint16","buffer":8,"offset":0,"bytes":6,"lower":0,"upper":2,"count":3,"element_bytes":2,"access":3,"owner":"application_retained","initial_data":"array-screenX.bin"},{"name":"screenY","type":"uint16","buffer":9,"offset":0,"bytes":6,"lower":0,"upper":2,"count":3,"element_bytes":2,"access":3,"owner":"application_retained","initial_data":"array-screenY.bin"},{"name":"colour","type":"uint16","buffer":10,"offset":0,"bytes":6,"lower":0,"upper":2,"count":3,"element_bytes":2,"access":3,"owner":"application_retained","initial_data":"array-colour.bin"}],
+  "entries": [
+    {"name": "step", "logical_id": 0, "parameter_bytes": 0, "result_bytes": 0, "worst_case_visits": 44}
+  ],
+  "external_reservations": [{"first":60000,"last":60031}]
+}

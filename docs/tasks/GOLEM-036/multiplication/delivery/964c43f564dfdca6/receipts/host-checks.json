@@ -1,0 +1,23 @@
+{
+  "packages": [
+    {
+      "prefix": 0,
+      "cases": 841,
+      "direct_published_rally_products": 6
+    },
+    {
+      "prefix": 254,
+      "cases": 841,
+      "direct_published_rally_products": 6
+    }
+  ],
+  "checks": 1682,
+  "foundation_outputs_unchanged": true,
+  "maintained_checks": [
+    "make: Entering directory '/Agon/mystuff/golem/src'",
+    "../build/test_compiler",
+    "Maintained raw/resident contract checks pass; 132 rejection cases.",
+    "make: Leaving directory '/Agon/mystuff/golem/src'"
+  ],
+  "elapsed_seconds": 10.21
+}

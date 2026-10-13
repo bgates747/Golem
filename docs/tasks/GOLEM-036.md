@@ -88,3 +88,25 @@ operators/full numeric contract; WID-001 is accepted after human review. The Aut
 - FND-005 [x] Qualify stock and actual Xtensa JIT/interpreter, default/relocated layouts, physical faults, cleanup and 600-frame pixels/state.
 - FND-006 [x] Freeze immutable source/package/receipt delivery and stage the source-labelled Oryx review stopped.
 - FND-007 [x] The Author reported 'good test.'; retrieved results match590 observations/5846 bytes and runtime/fixture identities. The Author subsequently explicitly approved commit/push.
+
+## Second bounded tranche: checked wide multiplication
+
+The Author released multiplication only after accepted foundation commit 4a62c1d.
+Artifacts live in GOLEM-036/multiplication/ to preserve the foundation sources,
+packages and Oryx fixture. `*` retains existing precedence and left-to-right
+evaluation. Both 32-bit integer types check the full mathematical product before
+storing; overflow is language 3. Failed destinations and earlier effects retain
+the existing contract. Wide division/shifts/helpers/full Rally replay stay open.
+
+- MUL-001 [x] Implement typed multiplication, constant evaluation and checked native emission.
+- MUL-002 [x] Implement one bounded stock shared 32x32 kernel with private full-product scratch and signed magnitude/range handling.
+- MUL-003 [x] Verify extrema/sign combinations, nested products/precedence, skipped branches, prior effects and failed array writes against independent Rally vectors.
+- MUL-004 [x] Qualify stock and both actual Xtensa engines/default-relocated layouts; record resources and traffic.
+- MUL-005 [x] Freeze reproducible source/package delivery and stage a source-labelled Oryx visual review stopped.
+- MUL-006 [x] Human review accepted; all 460 observations / 4,546 bytes and runtime/fixture identities verified. The Author explicitly approved commit/push after the mailbox check found no reply.
+
+Multiplication implementation/automatic qualification is complete; see
+[multiplication source, resources and receipts](GOLEM-036/multiplication/README.md).
+MUL-005 is complete: immutable export rebuild and stopped Oryx identities pass.
+MUL-006 retains the pending human/publication gate.
+WID-002 stays open because paired division is a separate unreleased tranche.

@@ -1,0 +1,59 @@
+bool flag = false
+uint32 ua = 0
+uint32 ub = 0
+uint32 uc = 1
+uint32 ur = 17
+sint32 sa = 0
+sint32 sb = 0
+sint32 sc = 1
+sint32 sr = 17
+uint16 narrow = 65535
+uint16 index = 0
+uint32 bounded Bounds(0,11796120) = 17
+Array uint32 unsignedValues(0:1) = Values(17,19)
+Array sint32 signedValues(-1:0) = Values(17,-19)
+sint16 signedIndex = -1
+Sub multiplyUnsigned
+ ur = ua * ub
+EndSub
+Sub multiplySigned
+ sr = sa * sb
+EndSub
+Sub nestedUnsigned
+ ur = (ua * ub) * (uc * 2)
+EndSub
+Sub nestedSigned
+ sr = (sa * sb) * (sc * -2)
+EndSub
+Sub precedence
+ ur = ua + ub * uc
+EndSub
+Sub priorEffect
+ ur = ua + 1
+ unsignedValues(index) = ua * ub
+EndSub
+Sub storeUnsigned
+ unsignedValues(index) = ua * ub
+EndSub
+Sub storeSigned
+ signedValues(signedIndex) = sa * sb
+EndSub
+Sub skipped
+ flag = false And ua * ub == 0
+EndSub
+Sub narrowFirst
+ ur = uint32(narrow * 2)
+EndSub
+Sub wideFirst
+ ur = uint32(narrow) * 2
+EndSub
+Sub boundedProduct
+ bounded = ua * ub
+EndSub
+Sub constantSuccess
+ ur = 65535 * 65537
+ sr = -1073741824 * 2
+EndSub
+Sub evaluationOrder
+ ur = (ua * ub) * uint32(sint16(sa))
+EndSub

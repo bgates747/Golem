@@ -1,0 +1,11 @@
+{
+  "rejections": [
+    "compiler: line 1, column 30: invalid constant intermediate, language status 3",
+    "compiler: line 1, column 31: invalid constant intermediate, language status 3",
+    "compiler: line 1, column 33: mixed variable types require an explicit conversion (not supported in this slice)",
+    "compiler: line 1, column 36: wide integer/float conversions are deferred",
+    "compiler: line 1, column 30: divmod requires declared uint16 destinations",
+    "compiler: line 1, column 55: cannot assign a ReadOnly Array element"
+  ],
+  "actual_assembler_consumer": true
+}

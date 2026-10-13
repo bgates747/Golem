@@ -1,0 +1,55 @@
+{
+  "variant": "review",
+  "observations": 460,
+  "calls": 300,
+  "result_bytes": 4546,
+  "result_sha256": "fb66d983cd47861143d82127d152f98e12afb30d7caa9a2ae6e81566f51142cc",
+  "native": {
+    "LOAD native": 1,
+    "native entry 6": 32684,
+    "native entry 7": 16393,
+    "entry_address": "0x40097fac"
+  },
+  "visual": {
+    "frames": 300,
+    "successful_invocations": 300,
+    "rectangles": [
+      {
+        "x": 16,
+        "y": 72,
+        "right": 30,
+        "bottom": 82,
+        "colour": 12
+      },
+      {
+        "x": 80,
+        "y": 92,
+        "right": 94,
+        "bottom": 102,
+        "colour": 12
+      },
+      {
+        "x": 241,
+        "y": 115,
+        "right": 255,
+        "bottom": 125,
+        "colour": 48
+      }
+    ],
+    "guides": [
+      53,
+      97,
+      141
+    ],
+    "width": 320,
+    "height": 240,
+    "playfield_rows": 176,
+    "world_station_base": 3200000,
+    "signed_product_factor": -3,
+    "scheduler_implemented": false
+  },
+  "author_report": "accepted. you may or may not have mail.",
+  "human_review_accepted": true,
+  "runtime_fixture_identities_verified": true,
+  "commit_push_approval": true
+}

@@ -842,3 +842,24 @@ flag/hooks are not implemented. No GOLEM-037 implementation release or composed
 resource/stack qualification is inferred.
 
 GOLEM-036 foundation human review subsequently passed: the Author reported 'good test.' Retrieved results match all 590 observations/5,846 bytes and staged runtime/fixture identities. See docs/tasks/GOLEM-036/evidence/human-review.json. The foundation tranche is accepted; the Author subsequently explicitly approved commit/push. Multiplication/division and remaining GOLEM-036 work are still open.
+
+## Checked wide multiplication — GOLEM-036 second tranche
+
+Artifacts/sources are siloed in docs/tasks/GOLEM-036/multiplication/; accepted
+foundation files/packages are preserved. Checked uint32/sint32 * has standard
+precedence/evaluation order and language overflow 3. Buffered emission uses one
+bounded 32-round shared full-product magnitude kernel with private carries and
+per-expression snapshots. Native uses checked 64-bit intermediates of 32-bit values.
+No source 64-bit type, wide divmod/shift/float cast or SDK policy change is added.
+
+Host 1,682 model/sanitized-C cases, all six published Rally product vectors/default
+and relocated, foundation byte parity and maintained compiler checks pass. Stock
+probes/motion, both actual Xtensa engines/default-relocated and 300-frame pixels/
+state/MOS return pass. Ordinary frame traffic remains 15 bytes. Human review is
+staged under docs/tasks/GOLEM-036/multiplication/.emulator; launch only its wrapper.
+Golem computes quadratic x and signed y; assembly draws/paces VSYNC. The Author
+watches, follows onscreen dir, closes/reports; agent retrieves. Human acceptance
+and explicit commit/push approval remain pending. Division remains next separate
+tranche, without an implementation release in this checkpoint.
+
+GOLEM-036 multiplication human review subsequently passed: the Author accepted it; retrieved results match all 460 observations / 4,546 bytes, with runtime/fixture identities verified. See docs/tasks/GOLEM-036/multiplication/evidence/human-review.json. The Author subsequently explicitly approved commit/push; division is a separate next tranche. Rally acknowledged the candidate identity and is planning its own bounded host qualification using generated metadata; this is not independent target acceptance or a shared ABI change.
