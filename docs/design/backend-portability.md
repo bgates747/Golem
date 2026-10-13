@@ -182,3 +182,35 @@ IEEE exception/subnormal support and physical qualification are not claimed.
 See [the float tranche](../tasks/GOLEM-032/README.md) for source and evidence.
 Production compiler and generic SDK remain unchanged.
 
+## Accepted Rally integration planning contract — R25-G0 v0.2
+
+Rally accepted all eight clauses of Golem's counterproposal without amendments
+on 2026-10-13. [Accepted requirements and ownership](../tasks/GOLEM-033/accepted-contract.md)
+are the reconciled planning record; the original proposal and immutable peer
+acceptance are linked there. GOLEM-033 negotiation is complete. The Author subsequently released D0/GOLEM-034;
+firmware work, capacity probing and later game implementation remain gated.
+
+D0 pins reproducible compiler/artifact identities and the shared root interface;
+D1 adds bounded typed arrays and faithful explicit wide integer math; D2 composes
+generated Golem C and Rally renderer/helpers into one native module; D3 requires
+a separately owned serialized firmware scheduler, complete snapshots and
+collision-only event transport. Source/storage/error semantics remain common
+across supported targets; unavailable buffered helpers require explicit rejection.
+No silent floating substitution or implicit widening is permitted for game math.
+Current admission limits are policy, not established physical memory ceilings.
+
+The authoritative TODO links GOLEM-034 through GOLEM-038. Their detailed plans
+preserve implementation-sized reviews, independent Rally oracles and existing
+human validation gates. Snapshot interpolation/prediction/staleness, recovery
+policy, firmware ownership and any admission-limit change remain explicit decisions.
+
+GOLEM-034 delivers a task-local frozen GOLEM-032/25901e5 compiler closure plus
+an agreed R25-G0/root-v1 layer. The common 112-byte header and generated globals
+layout are identical for buffered/native packages; retained descriptor bytes are
+fixed build-time bindings. Native validates actual lengths by SDK leases; stock
+depends on assembly's installed shape/lifetime invariant. Generation/entry/session
+advance only after successful source return. Runtime results remain host owned;
+no status field proves rollback, snapshot synchronization or scheduling.
+See [D0 source, immutable delivery and qualification](../tasks/GOLEM-034/README.md)
+for exact interfaces, resources and pending human review. Production src and the
+generic SDK/runtime are unchanged.

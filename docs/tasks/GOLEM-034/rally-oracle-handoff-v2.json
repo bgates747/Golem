@@ -1,0 +1,7 @@
+{
+  "manifest": "/Agon/mystuff/AgonArcade/docs/tasks/RALLY-25/reference/handoff-manifest-v2.json",
+  "sha256": "0754c7f20f40da9aa02b14ac707eec3cf8224627519dcad68f675bfb5a85387e",
+  "revision": "rally-d0-d1-handoff-2",
+  "verified_files": 19,
+  "scope": "Receipt of Rally-owned references; does not release D1 implementation"
+}

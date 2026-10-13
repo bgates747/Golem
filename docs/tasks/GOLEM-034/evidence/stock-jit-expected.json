@@ -1,0 +1,2858 @@
+{
+  "variant": "stock",
+  "checks": [
+    {
+      "label": "buffered normal case 0 word 4",
+      "offset": 0,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 0 word 5",
+      "offset": 2,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 0 word 6",
+      "offset": 4,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 0 word 7",
+      "offset": 6,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 0 word 8",
+      "offset": 8,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 0 word 9",
+      "offset": 10,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 0 word 10",
+      "offset": 12,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 0 word 11",
+      "offset": 14,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 0 word 12",
+      "offset": 16,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 0 word 14",
+      "offset": 18,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 0 word 16",
+      "offset": 20,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 0 word 17",
+      "offset": 22,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 0 word 56",
+      "offset": 24,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 0 word 57",
+      "offset": 26,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 0 word 58",
+      "offset": 28,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 0 word 59",
+      "offset": 30,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 0 word 60",
+      "offset": 32,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 0 word 61",
+      "offset": 34,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 0 word 62",
+      "offset": 36,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 1 word 4",
+      "offset": 38,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 1 word 5",
+      "offset": 40,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 1 word 6",
+      "offset": 42,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 1 word 7",
+      "offset": 44,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 1 word 8",
+      "offset": 46,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 1 word 9",
+      "offset": 48,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 1 word 10",
+      "offset": 50,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 1 word 11",
+      "offset": 52,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 1 word 12",
+      "offset": 54,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 1 word 14",
+      "offset": 56,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 1 word 16",
+      "offset": 58,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 1 word 17",
+      "offset": 60,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 1 word 56",
+      "offset": 62,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 1 word 57",
+      "offset": 64,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 1 word 58",
+      "offset": 66,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 1 word 59",
+      "offset": 68,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 1 word 60",
+      "offset": 70,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 1 word 61",
+      "offset": 72,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 1 word 62",
+      "offset": 74,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 2 word 4",
+      "offset": 76,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 2 word 5",
+      "offset": 78,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 2 word 6",
+      "offset": 80,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 2 word 7",
+      "offset": 82,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 2 word 8",
+      "offset": 84,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 2 word 9",
+      "offset": 86,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 2 word 10",
+      "offset": 88,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 2 word 11",
+      "offset": 90,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 2 word 12",
+      "offset": 92,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 2 word 14",
+      "offset": 94,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 2 word 16",
+      "offset": 96,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 2 word 17",
+      "offset": 98,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 2 word 56",
+      "offset": 100,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 2 word 57",
+      "offset": 102,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 2 word 58",
+      "offset": 104,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 2 word 59",
+      "offset": 106,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 2 word 60",
+      "offset": 108,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 2 word 61",
+      "offset": 110,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 2 word 62",
+      "offset": 112,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 3 word 4",
+      "offset": 114,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 3 word 5",
+      "offset": 116,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 3 word 6",
+      "offset": 118,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 3 word 7",
+      "offset": 120,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 3 word 8",
+      "offset": 122,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 3 word 9",
+      "offset": 124,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 3 word 10",
+      "offset": 126,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 3 word 11",
+      "offset": 128,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 3 word 12",
+      "offset": 130,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 3 word 14",
+      "offset": 132,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 3 word 16",
+      "offset": 134,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 3 word 17",
+      "offset": 136,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 3 word 56",
+      "offset": 138,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 3 word 57",
+      "offset": 140,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 3 word 58",
+      "offset": 142,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 3 word 59",
+      "offset": 144,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 3 word 60",
+      "offset": 146,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 3 word 61",
+      "offset": 148,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 3 word 62",
+      "offset": 150,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 4 word 4",
+      "offset": 152,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 4 word 5",
+      "offset": 154,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 4 word 6",
+      "offset": 156,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 4 word 7",
+      "offset": 158,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 4 word 8",
+      "offset": 160,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 4 word 9",
+      "offset": 162,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 4 word 10",
+      "offset": 164,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 4 word 11",
+      "offset": 166,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 4 word 12",
+      "offset": 168,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 4 word 14",
+      "offset": 170,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 4 word 16",
+      "offset": 172,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 4 word 17",
+      "offset": 174,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 4 word 56",
+      "offset": 176,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 4 word 57",
+      "offset": 178,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 4 word 58",
+      "offset": 180,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 4 word 59",
+      "offset": 182,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 4 word 60",
+      "offset": 184,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 4 word 61",
+      "offset": 186,
+      "bytes": 2
+    },
+    {
+      "label": "buffered normal case 4 word 62",
+      "offset": 188,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 5 word 0",
+      "offset": 190,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 5 word 4",
+      "offset": 192,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 5 word 5",
+      "offset": 194,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 5 word 6",
+      "offset": 196,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 5 word 7",
+      "offset": 198,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 5 word 8",
+      "offset": 200,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 5 word 9",
+      "offset": 202,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 5 word 10",
+      "offset": 204,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 5 word 11",
+      "offset": 206,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 5 word 12",
+      "offset": 208,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 5 word 14",
+      "offset": 210,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 5 word 16",
+      "offset": 212,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 5 word 17",
+      "offset": 214,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 5 word 56",
+      "offset": 216,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 5 word 57",
+      "offset": 218,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 5 word 58",
+      "offset": 220,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 5 word 59",
+      "offset": 222,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 5 word 60",
+      "offset": 224,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 5 word 61",
+      "offset": 226,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 5 word 62",
+      "offset": 228,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 6 word 1",
+      "offset": 230,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 6 word 4",
+      "offset": 232,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 6 word 5",
+      "offset": 234,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 6 word 6",
+      "offset": 236,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 6 word 7",
+      "offset": 238,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 6 word 8",
+      "offset": 240,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 6 word 9",
+      "offset": 242,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 6 word 10",
+      "offset": 244,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 6 word 11",
+      "offset": 246,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 6 word 12",
+      "offset": 248,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 6 word 14",
+      "offset": 250,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 6 word 16",
+      "offset": 252,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 6 word 17",
+      "offset": 254,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 6 word 56",
+      "offset": 256,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 6 word 57",
+      "offset": 258,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 6 word 58",
+      "offset": 260,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 6 word 59",
+      "offset": 262,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 6 word 60",
+      "offset": 264,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 6 word 61",
+      "offset": 266,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 6 word 62",
+      "offset": 268,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 7 word 2",
+      "offset": 270,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 7 word 4",
+      "offset": 272,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 7 word 5",
+      "offset": 274,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 7 word 6",
+      "offset": 276,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 7 word 7",
+      "offset": 278,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 7 word 8",
+      "offset": 280,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 7 word 9",
+      "offset": 282,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 7 word 10",
+      "offset": 284,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 7 word 11",
+      "offset": 286,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 7 word 12",
+      "offset": 288,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 7 word 14",
+      "offset": 290,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 7 word 16",
+      "offset": 292,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 7 word 17",
+      "offset": 294,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 7 word 56",
+      "offset": 296,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 7 word 57",
+      "offset": 298,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 7 word 58",
+      "offset": 300,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 7 word 59",
+      "offset": 302,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 7 word 60",
+      "offset": 304,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 7 word 61",
+      "offset": 306,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 7 word 62",
+      "offset": 308,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 8 word 4",
+      "offset": 310,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 8 word 5",
+      "offset": 312,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 8 word 6",
+      "offset": 314,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 8 word 7",
+      "offset": 316,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 8 word 8",
+      "offset": 318,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 8 word 9",
+      "offset": 320,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 8 word 10",
+      "offset": 322,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 8 word 11",
+      "offset": 324,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 8 word 12",
+      "offset": 326,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 8 word 14",
+      "offset": 328,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 8 word 15",
+      "offset": 330,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 8 word 16",
+      "offset": 332,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 8 word 17",
+      "offset": 334,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 8 word 56",
+      "offset": 336,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 8 word 57",
+      "offset": 338,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 8 word 58",
+      "offset": 340,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 8 word 59",
+      "offset": 342,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 8 word 60",
+      "offset": 344,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 8 word 61",
+      "offset": 346,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 8 word 62",
+      "offset": 348,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 9 word 4",
+      "offset": 350,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 9 word 5",
+      "offset": 352,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 9 word 6",
+      "offset": 354,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 9 word 7",
+      "offset": 356,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 9 word 8",
+      "offset": 358,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 9 word 9",
+      "offset": 360,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 9 word 10",
+      "offset": 362,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 9 word 11",
+      "offset": 364,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 9 word 12",
+      "offset": 366,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 9 word 14",
+      "offset": 368,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 9 word 16",
+      "offset": 370,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 9 word 17",
+      "offset": 372,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 9 word 24",
+      "offset": 374,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 9 word 56",
+      "offset": 376,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 9 word 57",
+      "offset": 378,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 9 word 58",
+      "offset": 380,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 9 word 59",
+      "offset": 382,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 9 word 60",
+      "offset": 384,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 9 word 61",
+      "offset": 386,
+      "bytes": 2
+    },
+    {
+      "label": "buffered metadata case 9 word 62",
+      "offset": 388,
+      "bytes": 2
+    },
+    {
+      "label": "buffered zero-session case 10 word 4",
+      "offset": 390,
+      "bytes": 2
+    },
+    {
+      "label": "buffered zero-session case 10 word 5",
+      "offset": 392,
+      "bytes": 2
+    },
+    {
+      "label": "buffered zero-session case 10 word 6",
+      "offset": 394,
+      "bytes": 2
+    },
+    {
+      "label": "buffered zero-session case 10 word 7",
+      "offset": 396,
+      "bytes": 2
+    },
+    {
+      "label": "buffered zero-session case 10 word 8",
+      "offset": 398,
+      "bytes": 2
+    },
+    {
+      "label": "buffered zero-session case 10 word 9",
+      "offset": 400,
+      "bytes": 2
+    },
+    {
+      "label": "buffered zero-session case 10 word 10",
+      "offset": 402,
+      "bytes": 2
+    },
+    {
+      "label": "buffered zero-session case 10 word 11",
+      "offset": 404,
+      "bytes": 2
+    },
+    {
+      "label": "buffered zero-session case 10 word 12",
+      "offset": 406,
+      "bytes": 2
+    },
+    {
+      "label": "buffered zero-session case 10 word 14",
+      "offset": 408,
+      "bytes": 2
+    },
+    {
+      "label": "buffered zero-session case 10 word 16",
+      "offset": 410,
+      "bytes": 2
+    },
+    {
+      "label": "buffered zero-session case 10 word 17",
+      "offset": 412,
+      "bytes": 2
+    },
+    {
+      "label": "buffered zero-session case 10 word 56",
+      "offset": 414,
+      "bytes": 2
+    },
+    {
+      "label": "buffered zero-session case 10 word 57",
+      "offset": 416,
+      "bytes": 2
+    },
+    {
+      "label": "buffered zero-session case 10 word 58",
+      "offset": 418,
+      "bytes": 2
+    },
+    {
+      "label": "buffered zero-session case 10 word 59",
+      "offset": 420,
+      "bytes": 2
+    },
+    {
+      "label": "buffered zero-session case 10 word 60",
+      "offset": 422,
+      "bytes": 2
+    },
+    {
+      "label": "buffered zero-session case 10 word 61",
+      "offset": 424,
+      "bytes": 2
+    },
+    {
+      "label": "buffered zero-session case 10 word 62",
+      "offset": 426,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 11 word 4",
+      "offset": 428,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 11 word 5",
+      "offset": 430,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 11 word 6",
+      "offset": 432,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 11 word 7",
+      "offset": 434,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 11 word 8",
+      "offset": 436,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 11 word 9",
+      "offset": 438,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 11 word 10",
+      "offset": 440,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 11 word 11",
+      "offset": 442,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 11 word 12",
+      "offset": 444,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 11 word 14",
+      "offset": 446,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 11 word 16",
+      "offset": 448,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 11 word 17",
+      "offset": 450,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 11 word 56",
+      "offset": 452,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 11 word 57",
+      "offset": 454,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 11 word 58",
+      "offset": 456,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 11 word 59",
+      "offset": 458,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 11 word 60",
+      "offset": 460,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 11 word 61",
+      "offset": 462,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 11 word 62",
+      "offset": 464,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 12 word 4",
+      "offset": 466,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 12 word 5",
+      "offset": 468,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 12 word 6",
+      "offset": 470,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 12 word 7",
+      "offset": 472,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 12 word 8",
+      "offset": 474,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 12 word 9",
+      "offset": 476,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 12 word 10",
+      "offset": 478,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 12 word 11",
+      "offset": 480,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 12 word 12",
+      "offset": 482,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 12 word 14",
+      "offset": 484,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 12 word 16",
+      "offset": 486,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 12 word 17",
+      "offset": 488,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 12 word 56",
+      "offset": 490,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 12 word 57",
+      "offset": 492,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 12 word 58",
+      "offset": 494,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 12 word 59",
+      "offset": 496,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 12 word 60",
+      "offset": 498,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 12 word 61",
+      "offset": 500,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 12 word 62",
+      "offset": 502,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 13 word 4",
+      "offset": 504,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 13 word 5",
+      "offset": 506,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 13 word 6",
+      "offset": 508,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 13 word 7",
+      "offset": 510,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 13 word 8",
+      "offset": 512,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 13 word 9",
+      "offset": 514,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 13 word 10",
+      "offset": 516,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 13 word 11",
+      "offset": 518,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 13 word 12",
+      "offset": 520,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 13 word 14",
+      "offset": 522,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 13 word 16",
+      "offset": 524,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 13 word 17",
+      "offset": 526,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 13 word 56",
+      "offset": 528,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 13 word 57",
+      "offset": 530,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 13 word 58",
+      "offset": 532,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 13 word 59",
+      "offset": 534,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 13 word 60",
+      "offset": 536,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 13 word 61",
+      "offset": 538,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 13 word 62",
+      "offset": 540,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 14 word 4",
+      "offset": 542,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 14 word 5",
+      "offset": 544,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 14 word 6",
+      "offset": 546,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 14 word 7",
+      "offset": 548,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 14 word 8",
+      "offset": 550,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 14 word 9",
+      "offset": 552,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 14 word 10",
+      "offset": 554,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 14 word 11",
+      "offset": 556,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 14 word 12",
+      "offset": 558,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 14 word 14",
+      "offset": 560,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 14 word 16",
+      "offset": 562,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 14 word 17",
+      "offset": 564,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 14 word 56",
+      "offset": 566,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 14 word 57",
+      "offset": 568,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 14 word 58",
+      "offset": 570,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 14 word 59",
+      "offset": 572,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 14 word 60",
+      "offset": 574,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 14 word 61",
+      "offset": 576,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 14 word 62",
+      "offset": 578,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 15 word 4",
+      "offset": 580,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 15 word 5",
+      "offset": 582,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 15 word 6",
+      "offset": 584,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 15 word 7",
+      "offset": 586,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 15 word 8",
+      "offset": 588,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 15 word 9",
+      "offset": 590,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 15 word 10",
+      "offset": 592,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 15 word 11",
+      "offset": 594,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 15 word 12",
+      "offset": 596,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 15 word 14",
+      "offset": 598,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 15 word 16",
+      "offset": 600,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 15 word 17",
+      "offset": 602,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 15 word 56",
+      "offset": 604,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 15 word 57",
+      "offset": 606,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 15 word 58",
+      "offset": 608,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 15 word 59",
+      "offset": 610,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 15 word 60",
+      "offset": 612,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 15 word 61",
+      "offset": 614,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 15 word 62",
+      "offset": 616,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 16 word 4",
+      "offset": 618,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 16 word 5",
+      "offset": 620,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 16 word 6",
+      "offset": 622,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 16 word 7",
+      "offset": 624,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 16 word 8",
+      "offset": 626,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 16 word 9",
+      "offset": 628,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 16 word 10",
+      "offset": 630,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 16 word 11",
+      "offset": 632,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 16 word 12",
+      "offset": 634,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 16 word 14",
+      "offset": 636,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 16 word 16",
+      "offset": 638,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 16 word 17",
+      "offset": 640,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 16 word 56",
+      "offset": 642,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 16 word 57",
+      "offset": 644,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 16 word 58",
+      "offset": 646,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 16 word 59",
+      "offset": 648,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 16 word 60",
+      "offset": 650,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 16 word 61",
+      "offset": 652,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 16 word 62",
+      "offset": 654,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 17 word 4",
+      "offset": 656,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 17 word 5",
+      "offset": 658,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 17 word 6",
+      "offset": 660,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 17 word 7",
+      "offset": 662,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 17 word 8",
+      "offset": 664,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 17 word 9",
+      "offset": 666,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 17 word 10",
+      "offset": 668,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 17 word 11",
+      "offset": 670,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 17 word 12",
+      "offset": 672,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 17 word 14",
+      "offset": 674,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 17 word 16",
+      "offset": 676,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 17 word 17",
+      "offset": 678,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 17 word 56",
+      "offset": 680,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 17 word 57",
+      "offset": 682,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 17 word 58",
+      "offset": 684,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 17 word 59",
+      "offset": 686,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 17 word 60",
+      "offset": 688,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 17 word 61",
+      "offset": 690,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 17 word 62",
+      "offset": 692,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 18 word 4",
+      "offset": 694,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 18 word 5",
+      "offset": 696,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 18 word 6",
+      "offset": 698,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 18 word 7",
+      "offset": 700,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 18 word 8",
+      "offset": 702,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 18 word 9",
+      "offset": 704,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 18 word 10",
+      "offset": 706,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 18 word 11",
+      "offset": 708,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 18 word 12",
+      "offset": 710,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 18 word 14",
+      "offset": 712,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 18 word 16",
+      "offset": 714,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 18 word 17",
+      "offset": 716,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 18 word 56",
+      "offset": 718,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 18 word 57",
+      "offset": 720,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 18 word 58",
+      "offset": 722,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 18 word 59",
+      "offset": 724,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 18 word 60",
+      "offset": 726,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 18 word 61",
+      "offset": 728,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 18 word 62",
+      "offset": 730,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 19 word 4",
+      "offset": 732,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 19 word 5",
+      "offset": 734,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 19 word 6",
+      "offset": 736,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 19 word 7",
+      "offset": 738,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 19 word 8",
+      "offset": 740,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 19 word 9",
+      "offset": 742,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 19 word 10",
+      "offset": 744,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 19 word 11",
+      "offset": 746,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 19 word 12",
+      "offset": 748,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 19 word 14",
+      "offset": 750,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 19 word 16",
+      "offset": 752,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 19 word 17",
+      "offset": 754,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 19 word 56",
+      "offset": 756,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 19 word 57",
+      "offset": 758,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 19 word 58",
+      "offset": 760,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 19 word 59",
+      "offset": 762,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 19 word 60",
+      "offset": 764,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 19 word 61",
+      "offset": 766,
+      "bytes": 2
+    },
+    {
+      "label": "buffered opaque-wrap case 19 word 62",
+      "offset": 768,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 20 word 4",
+      "offset": 770,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 20 word 5",
+      "offset": 772,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 20 word 6",
+      "offset": 774,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 20 word 7",
+      "offset": 776,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 20 word 8",
+      "offset": 778,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 20 word 9",
+      "offset": 780,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 20 word 10",
+      "offset": 782,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 20 word 11",
+      "offset": 784,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 20 word 12",
+      "offset": 786,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 20 word 14",
+      "offset": 788,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 20 word 16",
+      "offset": 790,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 20 word 17",
+      "offset": 792,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 20 word 56",
+      "offset": 794,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 20 word 57",
+      "offset": 796,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 20 word 58",
+      "offset": 798,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 20 word 59",
+      "offset": 800,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 20 word 60",
+      "offset": 802,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 20 word 61",
+      "offset": 804,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-admission case 20 word 62",
+      "offset": 806,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-failure case 21 word 4",
+      "offset": 808,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-failure case 21 word 5",
+      "offset": 810,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-failure case 21 word 6",
+      "offset": 812,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-failure case 21 word 7",
+      "offset": 814,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-failure case 21 word 8",
+      "offset": 816,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-failure case 21 word 9",
+      "offset": 818,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-failure case 21 word 10",
+      "offset": 820,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-failure case 21 word 11",
+      "offset": 822,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-failure case 21 word 12",
+      "offset": 824,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-failure case 21 word 14",
+      "offset": 826,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-failure case 21 word 16",
+      "offset": 828,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-failure case 21 word 17",
+      "offset": 830,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-failure case 21 word 56",
+      "offset": 832,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-failure case 21 word 57",
+      "offset": 834,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-failure case 21 word 58",
+      "offset": 836,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-failure case 21 word 59",
+      "offset": 838,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-failure case 21 word 60",
+      "offset": 840,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-failure case 21 word 61",
+      "offset": 842,
+      "bytes": 2
+    },
+    {
+      "label": "buffered source-failure case 21 word 62",
+      "offset": 844,
+      "bytes": 2
+    },
+    {
+      "label": "buffered stopped case 22 word 4",
+      "offset": 846,
+      "bytes": 2
+    },
+    {
+      "label": "buffered stopped case 22 word 5",
+      "offset": 848,
+      "bytes": 2
+    },
+    {
+      "label": "buffered stopped case 22 word 6",
+      "offset": 850,
+      "bytes": 2
+    },
+    {
+      "label": "buffered stopped case 22 word 7",
+      "offset": 852,
+      "bytes": 2
+    },
+    {
+      "label": "buffered stopped case 22 word 8",
+      "offset": 854,
+      "bytes": 2
+    },
+    {
+      "label": "buffered stopped case 22 word 9",
+      "offset": 856,
+      "bytes": 2
+    },
+    {
+      "label": "buffered stopped case 22 word 10",
+      "offset": 858,
+      "bytes": 2
+    },
+    {
+      "label": "buffered stopped case 22 word 11",
+      "offset": 860,
+      "bytes": 2
+    },
+    {
+      "label": "buffered stopped case 22 word 12",
+      "offset": 862,
+      "bytes": 2
+    },
+    {
+      "label": "buffered stopped case 22 word 14",
+      "offset": 864,
+      "bytes": 2
+    },
+    {
+      "label": "buffered stopped case 22 word 16",
+      "offset": 866,
+      "bytes": 2
+    },
+    {
+      "label": "buffered stopped case 22 word 17",
+      "offset": 868,
+      "bytes": 2
+    },
+    {
+      "label": "buffered stopped case 22 word 56",
+      "offset": 870,
+      "bytes": 2
+    },
+    {
+      "label": "buffered stopped case 22 word 57",
+      "offset": 872,
+      "bytes": 2
+    },
+    {
+      "label": "buffered stopped case 22 word 58",
+      "offset": 874,
+      "bytes": 2
+    },
+    {
+      "label": "buffered stopped case 22 word 59",
+      "offset": 876,
+      "bytes": 2
+    },
+    {
+      "label": "buffered stopped case 22 word 60",
+      "offset": 878,
+      "bytes": 2
+    },
+    {
+      "label": "buffered stopped case 22 word 61",
+      "offset": 880,
+      "bytes": 2
+    },
+    {
+      "label": "buffered stopped case 22 word 62",
+      "offset": 882,
+      "bytes": 2
+    },
+    {
+      "label": "buffered unknown-requested case 23 word 4",
+      "offset": 884,
+      "bytes": 2
+    },
+    {
+      "label": "buffered unknown-requested case 23 word 5",
+      "offset": 886,
+      "bytes": 2
+    },
+    {
+      "label": "buffered unknown-requested case 23 word 6",
+      "offset": 888,
+      "bytes": 2
+    },
+    {
+      "label": "buffered unknown-requested case 23 word 7",
+      "offset": 890,
+      "bytes": 2
+    },
+    {
+      "label": "buffered unknown-requested case 23 word 8",
+      "offset": 892,
+      "bytes": 2
+    },
+    {
+      "label": "buffered unknown-requested case 23 word 9",
+      "offset": 894,
+      "bytes": 2
+    },
+    {
+      "label": "buffered unknown-requested case 23 word 10",
+      "offset": 896,
+      "bytes": 2
+    },
+    {
+      "label": "buffered unknown-requested case 23 word 11",
+      "offset": 898,
+      "bytes": 2
+    },
+    {
+      "label": "buffered unknown-requested case 23 word 12",
+      "offset": 900,
+      "bytes": 2
+    },
+    {
+      "label": "buffered unknown-requested case 23 word 14",
+      "offset": 902,
+      "bytes": 2
+    },
+    {
+      "label": "buffered unknown-requested case 23 word 16",
+      "offset": 904,
+      "bytes": 2
+    },
+    {
+      "label": "buffered unknown-requested case 23 word 17",
+      "offset": 906,
+      "bytes": 2
+    },
+    {
+      "label": "buffered unknown-requested case 23 word 56",
+      "offset": 908,
+      "bytes": 2
+    },
+    {
+      "label": "buffered unknown-requested case 23 word 57",
+      "offset": 910,
+      "bytes": 2
+    },
+    {
+      "label": "buffered unknown-requested case 23 word 58",
+      "offset": 912,
+      "bytes": 2
+    },
+    {
+      "label": "buffered unknown-requested case 23 word 59",
+      "offset": 914,
+      "bytes": 2
+    },
+    {
+      "label": "buffered unknown-requested case 23 word 60",
+      "offset": 916,
+      "bytes": 2
+    },
+    {
+      "label": "buffered unknown-requested case 23 word 61",
+      "offset": 918,
+      "bytes": 2
+    },
+    {
+      "label": "buffered unknown-requested case 23 word 62",
+      "offset": 920,
+      "bytes": 2
+    },
+    {
+      "label": "root survives both private cleanups word 0",
+      "offset": 922,
+      "bytes": 2
+    },
+    {
+      "label": "root survives both private cleanups word 1",
+      "offset": 924,
+      "bytes": 2
+    },
+    {
+      "label": "root survives both private cleanups word 2",
+      "offset": 926,
+      "bytes": 2
+    },
+    {
+      "label": "root survives both private cleanups word 3",
+      "offset": 928,
+      "bytes": 2
+    },
+    {
+      "label": "root survives both private cleanups word 4",
+      "offset": 930,
+      "bytes": 2
+    },
+    {
+      "label": "root survives both private cleanups word 5",
+      "offset": 932,
+      "bytes": 2
+    },
+    {
+      "label": "root survives both private cleanups word 6",
+      "offset": 934,
+      "bytes": 2
+    },
+    {
+      "label": "root survives both private cleanups word 7",
+      "offset": 936,
+      "bytes": 2
+    },
+    {
+      "label": "root survives both private cleanups word 8",
+      "offset": 938,
+      "bytes": 2
+    },
+    {
+      "label": "root survives both private cleanups word 9",
+      "offset": 940,
+      "bytes": 2
+    },
+    {
+      "label": "root survives both private cleanups word 10",
+      "offset": 942,
+      "bytes": 2
+    },
+    {
+      "label": "root survives both private cleanups word 11",
+      "offset": 944,
+      "bytes": 2
+    },
+    {
+      "label": "root survives both private cleanups word 12",
+      "offset": 946,
+      "bytes": 2
+    },
+    {
+      "label": "root survives both private cleanups word 13",
+      "offset": 948,
+      "bytes": 2
+    },
+    {
+      "label": "root survives both private cleanups word 14",
+      "offset": 950,
+      "bytes": 2
+    },
+    {
+      "label": "root survives both private cleanups word 15",
+      "offset": 952,
+      "bytes": 2
+    },
+    {
+      "label": "root survives both private cleanups word 16",
+      "offset": 954,
+      "bytes": 2
+    },
+    {
+      "label": "root survives both private cleanups word 17",
+      "offset": 956,
+      "bytes": 2
+    },
+    {
+      "label": "root survives both private cleanups word 18",
+      "offset": 958,
+      "bytes": 2
+    },
+    {
+      "label": "root survives both private cleanups word 19",
+      "offset": 960,
+      "bytes": 2
+    },
+    {
+      "label": "root survives both private cleanups word 20",
+      "offset": 962,
+      "bytes": 2
+    },
+    {
+      "label": "root survives both private cleanups word 21",
+      "offset": 964,
+      "bytes": 2
+    },
+    {
+      "label": "root survives both private cleanups word 22",
+      "offset": 966,
+      "bytes": 2
+    },
+    {
+      "label": "root survives both private cleanups word 23",
+      "offset": 968,
+      "bytes": 2
+    },
+    {
+      "label": "root survives both private cleanups word 24",
+      "offset": 970,
+      "bytes": 2
+    },
+    {
+      "label": "root survives both private cleanups word 25",
+      "offset": 972,
+      "bytes": 2
+    },
+    {
+      "label": "root survives both private cleanups word 26",
+      "offset": 974,
+      "bytes": 2
+    },
+    {
+      "label": "root survives both private cleanups word 27",
+      "offset": 976,
+      "bytes": 2
+    },
+    {
+      "label": "root survives both private cleanups word 28",
+      "offset": 978,
+      "bytes": 2
+    },
+    {
+      "label": "root survives both private cleanups word 29",
+      "offset": 980,
+      "bytes": 2
+    },
+    {
+      "label": "root survives both private cleanups word 30",
+      "offset": 982,
+      "bytes": 2
+    },
+    {
+      "label": "root survives both private cleanups word 31",
+      "offset": 984,
+      "bytes": 2
+    },
+    {
+      "label": "root survives both private cleanups word 32",
+      "offset": 986,
+      "bytes": 2
+    },
+    {
+      "label": "root survives both private cleanups word 33",
+      "offset": 988,
+      "bytes": 2
+    },
+    {
+      "label": "root survives both private cleanups word 34",
+      "offset": 990,
+      "bytes": 2
+    },
+    {
+      "label": "root survives both private cleanups word 35",
+      "offset": 992,
+      "bytes": 2
+    },
+    {
+      "label": "root survives both private cleanups word 36",
+      "offset": 994,
+      "bytes": 2
+    },
+    {
+      "label": "root survives both private cleanups word 37",
+      "offset": 996,
+      "bytes": 2
+    },
+    {
+      "label": "root survives both private cleanups word 38",
+      "offset": 998,
+      "bytes": 2
+    },
+    {
+      "label": "root survives both private cleanups word 39",
+      "offset": 1000,
+      "bytes": 2
+    },
+    {
+      "label": "root survives both private cleanups word 40",
+      "offset": 1002,
+      "bytes": 2
+    },
+    {
+      "label": "root survives both private cleanups word 41",
+      "offset": 1004,
+      "bytes": 2
+    },
+    {
+      "label": "root survives both private cleanups word 42",
+      "offset": 1006,
+      "bytes": 2
+    },
+    {
+      "label": "root survives both private cleanups word 43",
+      "offset": 1008,
+      "bytes": 2
+    },
+    {
+      "label": "root survives both private cleanups word 44",
+      "offset": 1010,
+      "bytes": 2
+    },
+    {
+      "label": "root survives both private cleanups word 45",
+      "offset": 1012,
+      "bytes": 2
+    },
+    {
+      "label": "root survives both private cleanups word 46",
+      "offset": 1014,
+      "bytes": 2
+    },
+    {
+      "label": "root survives both private cleanups word 47",
+      "offset": 1016,
+      "bytes": 2
+    },
+    {
+      "label": "root survives both private cleanups word 48",
+      "offset": 1018,
+      "bytes": 2
+    },
+    {
+      "label": "root survives both private cleanups word 49",
+      "offset": 1020,
+      "bytes": 2
+    },
+    {
+      "label": "root survives both private cleanups word 50",
+      "offset": 1022,
+      "bytes": 2
+    },
+    {
+      "label": "root survives both private cleanups word 51",
+      "offset": 1024,
+      "bytes": 2
+    },
+    {
+      "label": "root survives both private cleanups word 52",
+      "offset": 1026,
+      "bytes": 2
+    },
+    {
+      "label": "root survives both private cleanups word 53",
+      "offset": 1028,
+      "bytes": 2
+    },
+    {
+      "label": "root survives both private cleanups word 54",
+      "offset": 1030,
+      "bytes": 2
+    },
+    {
+      "label": "root survives both private cleanups word 55",
+      "offset": 1032,
+      "bytes": 2
+    },
+    {
+      "label": "root survives both private cleanups word 56",
+      "offset": 1034,
+      "bytes": 2
+    },
+    {
+      "label": "root survives both private cleanups word 57",
+      "offset": 1036,
+      "bytes": 2
+    },
+    {
+      "label": "root survives both private cleanups word 58",
+      "offset": 1038,
+      "bytes": 2
+    },
+    {
+      "label": "root survives both private cleanups word 59",
+      "offset": 1040,
+      "bytes": 2
+    },
+    {
+      "label": "root survives both private cleanups word 60",
+      "offset": 1042,
+      "bytes": 2
+    },
+    {
+      "label": "root survives both private cleanups word 61",
+      "offset": 1044,
+      "bytes": 2
+    },
+    {
+      "label": "root survives both private cleanups word 62",
+      "offset": 1046,
+      "bytes": 2
+    },
+    {
+      "label": "borrowed role 1 word 0",
+      "offset": 1048,
+      "bytes": 2
+    },
+    {
+      "label": "borrowed role 1 word 1",
+      "offset": 1050,
+      "bytes": 2
+    },
+    {
+      "label": "borrowed role 1 word 2",
+      "offset": 1052,
+      "bytes": 2
+    },
+    {
+      "label": "borrowed role 1 word 3",
+      "offset": 1054,
+      "bytes": 2
+    },
+    {
+      "label": "borrowed role 1 word 4",
+      "offset": 1056,
+      "bytes": 2
+    },
+    {
+      "label": "borrowed role 1 word 5",
+      "offset": 1058,
+      "bytes": 2
+    },
+    {
+      "label": "borrowed role 1 word 6",
+      "offset": 1060,
+      "bytes": 2
+    },
+    {
+      "label": "borrowed role 1 word 7",
+      "offset": 1062,
+      "bytes": 2
+    },
+    {
+      "label": "borrowed role 1 word 8",
+      "offset": 1064,
+      "bytes": 2
+    },
+    {
+      "label": "borrowed role 2 word 0",
+      "offset": 1066,
+      "bytes": 2
+    },
+    {
+      "label": "borrowed role 2 word 1",
+      "offset": 1068,
+      "bytes": 2
+    },
+    {
+      "label": "borrowed role 2 word 2",
+      "offset": 1070,
+      "bytes": 2
+    },
+    {
+      "label": "borrowed role 2 word 3",
+      "offset": 1072,
+      "bytes": 2
+    },
+    {
+      "label": "borrowed role 3 word 0",
+      "offset": 1074,
+      "bytes": 2
+    },
+    {
+      "label": "borrowed role 3 word 1",
+      "offset": 1076,
+      "bytes": 2
+    },
+    {
+      "label": "borrowed role 3 word 2",
+      "offset": 1078,
+      "bytes": 2
+    },
+    {
+      "label": "borrowed role 3 word 3",
+      "offset": 1080,
+      "bytes": 2
+    },
+    {
+      "label": "borrowed role 3 word 4",
+      "offset": 1082,
+      "bytes": 2
+    },
+    {
+      "label": "borrowed role 3 word 5",
+      "offset": 1084,
+      "bytes": 2
+    },
+    {
+      "label": "borrowed role 3 word 6",
+      "offset": 1086,
+      "bytes": 2
+    },
+    {
+      "label": "borrowed role 3 word 7",
+      "offset": 1088,
+      "bytes": 2
+    },
+    {
+      "label": "borrowed role 3 word 8",
+      "offset": 1090,
+      "bytes": 2
+    },
+    {
+      "label": "borrowed role 3 word 9",
+      "offset": 1092,
+      "bytes": 2
+    },
+    {
+      "label": "borrowed role 3 word 10",
+      "offset": 1094,
+      "bytes": 2
+    },
+    {
+      "label": "borrowed role 4 word 0",
+      "offset": 1096,
+      "bytes": 2
+    },
+    {
+      "label": "borrowed role 4 word 1",
+      "offset": 1098,
+      "bytes": 2
+    }
+  ],
+  "result_bytes": 1100,
+  "module_loads": 0,
+  "calls": [
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 1,
+      "backend": "buffered"
+    },
+    {
+      "entry": 2,
+      "backend": "buffered"
+    },
+    {
+      "entry": 3,
+      "backend": "buffered"
+    },
+    {
+      "entry": 4,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 1,
+      "backend": "buffered"
+    },
+    {
+      "entry": 1,
+      "backend": "buffered"
+    },
+    {
+      "entry": 2,
+      "backend": "buffered"
+    },
+    {
+      "entry": 2,
+      "backend": "buffered"
+    },
+    {
+      "entry": 3,
+      "backend": "buffered"
+    },
+    {
+      "entry": 3,
+      "backend": "buffered"
+    },
+    {
+      "entry": 4,
+      "backend": "buffered"
+    },
+    {
+      "entry": 4,
+      "backend": "buffered"
+    },
+    {
+      "entry": 1,
+      "backend": "buffered"
+    },
+    {
+      "entry": 1,
+      "backend": "buffered"
+    }
+  ],
+  "visual": null,
+  "source": "probe",
+  "state_id": 1,
+  "probe_sha256": "254b4da160c745c1fe9f6448911202fbd7d25975394ea58549377bb5ee050ca1",
+  "script_sha256": "a47be5afb23f878a9377217529a1e1c01223264d7acd2b02a15d257be00e79bc",
+  "source_sha256": "f562ee1898b5d56ca74610a6aa7afe5937982fe771b4affbd9252e422a8d9850",
+  "module_sha256": "508438faac4f19e5b42eb726c3e1466bb9970b25f4ff3fe629938dba171780cb"
+}

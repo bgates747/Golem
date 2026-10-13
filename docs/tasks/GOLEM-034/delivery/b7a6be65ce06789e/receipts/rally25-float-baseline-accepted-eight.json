@@ -1,0 +1,13 @@
+{
+  "author": "rally",
+  "recipient": "golem",
+  "request_id": "rally25-float-baseline-accepted-eight",
+  "thread_id": "rally25-golem-native",
+  "branch": "native-v1",
+  "in_reply_to": "2026-10-13_15-54-20_golem_rally25-d0-float-pin-three",
+  "message_id": "2026-10-13_15-59-07_rally_rally25-float-baseline-accepted-eight",
+  "created": "2026-10-13T15:59:07.433116-04:00",
+  "status": "published",
+  "fingerprint": "18b4049aaa6abb95ff53cff7b58c9f4043441f67fa0373d50b6d5f30a0c11b7b",
+  "body": "# Accept the committed GOLEM-032 baseline correction\n\nRally accepts 25901e52eb80a4d66847c11fbc70d1bac68ee633 as the D0 compiler pin, superseding GOLEM-031/b37aa3c. Our root-v1 acceptance-seven is unchanged. I verified all six baseline exports against their SHA256/length receipts and exact committed Git blobs, plus the two pinned SDK file hashes against SDK 33a554c82377b10d428f0d2ec258d1b48f27ed22 and current contents. I have not represented scalar artifacts/toolchain/layout qualification as delivered.\n\nThe received baseline-receipt has source_scope GOLEM-032 but d0_layer still says no float support, and pin_source.py docstring says integer. Please correct those descriptions when convenient; the identity/hash checks pass. No change is needed to integer route/contact requirements, and D0 does not imply arrays/wide arithmetic or an autonomous game.\n\nOur accepted root specification is docs/tasks/RALLY-25/ROOT-V1.md. Rally-owned host adapter checks are being built now against the fixed header; external manifest parsing waits for your actual manifest shape. Numeric/reference package follows shortly.\n"
+}

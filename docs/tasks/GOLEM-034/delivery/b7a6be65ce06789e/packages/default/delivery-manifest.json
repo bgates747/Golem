@@ -1,0 +1,634 @@
+{
+  "family": "R25-G0/root-v1",
+  "kind": "bounded-scalar-D0-probe",
+  "schema": 1,
+  "inputs": {
+    "source": {
+      "path": "/Agon/mystuff/golem/docs/tasks/GOLEM-034/probe.golem",
+      "sha256": "f562ee1898b5d56ca74610a6aa7afe5937982fe771b4affbd9252e422a8d9850"
+    },
+    "bindings": {
+      "path": "/Agon/mystuff/golem/docs/tasks/GOLEM-034/bindings.json",
+      "sha256": "50fc9773501aab0a5a9234c45b2f05c70af5c51c27d1483e69e4e53b6961c6aa"
+    },
+    "d0_layer": {
+      "compiler.cpp": "70026992a7e1987ab025806791caab1f687dd4974d442909fe9b590228529ce1",
+      "root.hpp": "5379ad77960871801d217cc01bcba326d7233f5c8f812ca633ac9a56bd91665c"
+    },
+    "baseline": {
+      "compiler_commit": "25901e52eb80a4d66847c11fbc70d1bac68ee633",
+      "source_scope": "GOLEM-032 frozen scalar frontend/backends and complete local include closure",
+      "files": [
+        {
+          "path": "docs/tasks/GOLEM-032/portable.hpp",
+          "sha256": "6e055d6c9013c8a0740256dc25626d3c3f84372d78dc6f7e1a86de88457bd2ee",
+          "bytes": 34997
+        },
+        {
+          "path": "docs/tasks/GOLEM-032/backends.hpp",
+          "sha256": "40bf05879176aebccbd989c3dcc298c9b9bdb632ccf199bfb8e2dacf514afa4d",
+          "bytes": 37121
+        },
+        {
+          "path": "docs/tasks/GOLEM-032/compiler.cpp",
+          "sha256": "6153b39e1f2d47f7dfa22abbfa907cca8d15487b03400ce8a3e335b3d772b402",
+          "bytes": 6156
+        },
+        {
+          "path": "src/ordinary.hpp",
+          "sha256": "7c8fe20f4e63c6e57de70b9931696b87c88c9c4ea499679b1bc239f09480c5da",
+          "bytes": 33802
+        },
+        {
+          "path": "src/token_reader.hpp",
+          "sha256": "397fe169f1a84b47acf8a77a3036fd50ddfeac45e64d07a74b0497ca50f4126d",
+          "bytes": 7116
+        },
+        {
+          "path": "src/buffer_allocator.hpp",
+          "sha256": "7c8881777decd9e04231adae3ab4050e52451c0fadaafe6b37c7ce0735c7b449",
+          "bytes": 3174
+        }
+      ],
+      "sdk_commit": "33a554c82377b10d428f0d2ec258d1b48f27ed22",
+      "sdk_files": {
+        "include/vdplet.h": "fa8385e2906f07d37372d80c40f73d419defdbefe7a3458461ac9d5fe0820d38",
+        "src/vdplet_image.h": "6a28226a138ec2c54f1b456b1bf3f33372db1a2477cb1f92afc7547ba5007fff",
+        "src/vdplet_runtime.h": "af049fe93f1e64b0ec1135e5c0e55c1938adf022669dc35d906f5fcb6c58d91b",
+        "tests/check_image.cpp": "7812b6fc7fef7b3b9d4d9faf16d324e4a0155efc98ca64198af0da764e4b0a3c",
+        "build/check_image": "0cb638527c6ec94f78393ce21fbe8698147fe9ca61618c740778cc91e806a464",
+        "tools/build_module.py": "c2353057f2b00545378bc6727752a247df8254dbe51a44c5b99d1478de96bd62"
+      },
+      "sdk_dirty": [],
+      "d0_layer": "root.hpp and compiler.cpp in GOLEM-034; retains committed scalar/float grammar; does not claim arrays/wide source arithmetic"
+    },
+    "host_compiler": "g++ (Debian 14.2.0-19) 14.2.0",
+    "tool_executable_sha256": {
+      "g++": "ac4f48ec03aa3988b0c087fd8a0ae681c2922354b321065ff49911b8ab20db73",
+      "gcc": "fb051a6c58961fb6aec758acf50d7d0375eecff740d0706388092829e3fb7a41",
+      "xtensa-esp32-elf-gcc": "e091761ac142b87be663aa36c8dc9af10044a9769a540ee0337ebc97ea56a22d",
+      "xtensa-esp32-elf-ld": "fd641bedc57930941b7b7d9e3d51ece550bf663fb4d9d13ec0a2188082c47245",
+      "xtensa-esp32-elf-strip": "cef0e79caf472d12d87063c8cbc6ed21880ab41dce99fab12671d50e02adcaae"
+    },
+    "native_toolchain": "xtensa-esp32-elf-gcc (crosstool-NG esp-2021r2-patch5) 8.4.0",
+    "abi_header_sha256": "fa8385e2906f07d37372d80c40f73d419defdbefe7a3458461ac9d5fe0820d38",
+    "reservations_prefix": 0
+  },
+  "interface": {
+    "schema": 1,
+    "profile": "portable-scalar-foundation",
+    "experimental": true,
+    "execution_contract": "r25-g0-root-v1-dual-backend",
+    "state_buffer": 1,
+    "state_bytes": 126,
+    "state_owner": "application_shared",
+    "initialization": "explicit_install_or_reset",
+    "error": {
+      "offset": 14,
+      "bytes": 2,
+      "codes": {
+        "ok": 0,
+        "uint16_add_overflow": 1,
+        "uint16_sub_underflow": 2,
+        "uint16_mul_overflow": 3,
+        "bounds_failure": 32,
+        "nonfinite_float": 33
+      }
+    },
+    "globals": [
+      {
+        "name": "position",
+        "type": "uint16",
+        "offset": 112,
+        "bytes": 2,
+        "bounds": [
+          32,
+          224
+        ]
+      },
+      {
+        "name": "direction",
+        "type": "uint16",
+        "offset": 114,
+        "bytes": 2,
+        "bounds": [
+          0,
+          1
+        ]
+      },
+      {
+        "name": "screen",
+        "type": "uint16",
+        "offset": 116,
+        "bytes": 2,
+        "bounds": [
+          32,
+          224
+        ]
+      },
+      {
+        "name": "right",
+        "type": "uint16",
+        "offset": 118,
+        "bytes": 2,
+        "bounds": [
+          48,
+          240
+        ]
+      },
+      {
+        "name": "ticks",
+        "type": "uint16",
+        "offset": 120,
+        "bytes": 2,
+        "bounds": [
+          0,
+          65535
+        ]
+      },
+      {
+        "name": "colour",
+        "type": "uint16",
+        "offset": 122,
+        "bytes": 2,
+        "bounds": [
+          0,
+          63
+        ]
+      },
+      {
+        "name": "running",
+        "type": "bool",
+        "offset": 124,
+        "bytes": 2,
+        "bounds": [
+          0,
+          1
+        ]
+      }
+    ],
+    "entries": [
+      {
+        "name": "InitRace",
+        "logical_id": 0,
+        "parameter_bytes": 0,
+        "result_bytes": 0,
+        "worst_case_visits": 7
+      },
+      {
+        "name": "Tick120",
+        "logical_id": 1,
+        "parameter_bytes": 0,
+        "result_bytes": 0,
+        "worst_case_visits": 7
+      },
+      {
+        "name": "Render30",
+        "logical_id": 2,
+        "parameter_bytes": 0,
+        "result_bytes": 0,
+        "worst_case_visits": 4
+      },
+      {
+        "name": "ResetRace",
+        "logical_id": 3,
+        "parameter_bytes": 0,
+        "result_bytes": 0,
+        "worst_case_visits": 7
+      },
+      {
+        "name": "StopRace",
+        "logical_id": 4,
+        "parameter_bytes": 0,
+        "result_bytes": 0,
+        "worst_case_visits": 1
+      }
+    ],
+    "external_reservations": [
+      {
+        "first": 60000,
+        "last": 60031
+      },
+      {
+        "first": 20000,
+        "last": 20000
+      },
+      {
+        "first": 20001,
+        "last": 20001
+      },
+      {
+        "first": 20002,
+        "last": 20002
+      },
+      {
+        "first": 20003,
+        "last": 20003
+      }
+    ]
+  },
+  "root": {
+    "family": "R25-G0/root-v1",
+    "schema": 1,
+    "header_bytes": 112,
+    "root_bytes": 126,
+    "globals_bytes": 14,
+    "byte_order": "little",
+    "argument_bytes": 2,
+    "fields": {
+      "magic": 0,
+      "schema": 2,
+      "header_bytes": 4,
+      "root_bytes": 6,
+      "session": 8,
+      "interface_status": 12,
+      "language_status": 14,
+      "runtime_result": 16,
+      "last_success_generation": 20,
+      "last_success_entry": 24,
+      "descriptor_count": 26,
+      "requested_entry": 28,
+      "last_success_session": 32,
+      "entry_count": 36,
+      "globals_bytes": 38,
+      "contract_tag": 44,
+      "descriptors": 48
+    },
+    "bindings": [
+      {
+        "role": 1,
+        "buffer": 20000,
+        "offset": 2,
+        "bytes": 16,
+        "access": 1,
+        "installed_min_bytes": 18
+      },
+      {
+        "role": 2,
+        "buffer": 20001,
+        "offset": 0,
+        "bytes": 8,
+        "access": 3,
+        "installed_min_bytes": 8
+      },
+      {
+        "role": 3,
+        "buffer": 20002,
+        "offset": 4,
+        "bytes": 18,
+        "access": 1,
+        "installed_min_bytes": 22
+      },
+      {
+        "role": 4,
+        "buffer": 20003,
+        "offset": 0,
+        "bytes": 4,
+        "access": 1,
+        "installed_min_bytes": 4
+      }
+    ],
+    "runtime_result_owner": "invocation_transport_owner",
+    "generation": "successful-invocation-modulo-2^32",
+    "stock_storage_admission": "host-installed-manifest-invariant",
+    "native_storage_admission": "actual-root-and-bound-range-leases"
+  },
+  "backends": {
+    "shared_state": 1,
+    "state_bytes": 126,
+    "error_offset": 14,
+    "root_schema": 1,
+    "root_header_bytes": 112,
+    "native_handle_offset": 24,
+    "buffered_dispatch": 137,
+    "native_arguments": 143,
+    "buffered_entries": [
+      138,
+      139,
+      140,
+      141,
+      142
+    ],
+    "native_wrappers": [
+      144,
+      145,
+      146,
+      147,
+      148
+    ],
+    "buffered_owned": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89,
+      90,
+      91,
+      92,
+      93,
+      94,
+      95,
+      96,
+      97,
+      98,
+      99,
+      100,
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109,
+      110,
+      111,
+      112,
+      113,
+      114,
+      115,
+      116,
+      117,
+      118,
+      119,
+      120,
+      121,
+      122,
+      123,
+      124,
+      125,
+      126,
+      127,
+      128,
+      129,
+      130,
+      131,
+      132,
+      133,
+      134,
+      135,
+      136,
+      137,
+      138,
+      139,
+      140,
+      141,
+      142
+    ],
+    "native_owned": [
+      143,
+      144,
+      145,
+      146,
+      147,
+      148
+    ]
+  },
+  "native_module": {
+    "name": "probe",
+    "source": "/Agon/mystuff/golem/docs/tasks/GOLEM-034/build/probe/native.c",
+    "source_sha256": "9e6613cc1f2dcca39ae3b08510100941eaf338245341862e0ee0d78ec4280e23",
+    "build_id": "0x474c3334",
+    "capabilities": 1,
+    "envelope_bytes": 64,
+    "elf_bytes": 2536,
+    "package_bytes": 2600,
+    "sha256": "508438faac4f19e5b42eb726c3e1466bb9970b25f4ff3fe629938dba171780cb",
+    "package": "/Agon/mystuff/golem/docs/tasks/GOLEM-034/build/probe/probe.vdpl",
+    "elf": "/Agon/mystuff/golem/docs/tasks/GOLEM-034/build/probe/probe.elf",
+    "entry_virtual": 412,
+    "resident_text_bytes": 1328,
+    "resident_data_bytes": 268,
+    "relative_relocations": 5,
+    "allocated_sections": {
+      ".text": {
+        "virtual_address": 368,
+        "bytes": 1327,
+        "type": 1
+      },
+      ".rodata": {
+        "virtual_address": 1696,
+        "bytes": 264,
+        "type": 1
+      },
+      ".data": {
+        "virtual_address": 6204,
+        "bytes": 4,
+        "type": 1
+      }
+    }
+  },
+  "resources": {
+    "module": {
+      "name": "probe",
+      "source": "/Agon/mystuff/golem/docs/tasks/GOLEM-034/build/probe/native.c",
+      "source_sha256": "9e6613cc1f2dcca39ae3b08510100941eaf338245341862e0ee0d78ec4280e23",
+      "build_id": "0x474c3334",
+      "capabilities": 1,
+      "envelope_bytes": 64,
+      "elf_bytes": 2536,
+      "package_bytes": 2600,
+      "sha256": "508438faac4f19e5b42eb726c3e1466bb9970b25f4ff3fe629938dba171780cb",
+      "package": "/Agon/mystuff/golem/docs/tasks/GOLEM-034/build/probe/probe.vdpl",
+      "elf": "/Agon/mystuff/golem/docs/tasks/GOLEM-034/build/probe/probe.elf",
+      "entry_virtual": 412,
+      "resident_text_bytes": 1328,
+      "resident_data_bytes": 268,
+      "relative_relocations": 5,
+      "allocated_sections": {
+        ".text": {
+          "virtual_address": 368,
+          "bytes": 1327,
+          "type": 1
+        },
+        ".rodata": {
+          "virtual_address": 1696,
+          "bytes": 264,
+          "type": 1
+        },
+        ".data": {
+          "virtual_address": 6204,
+          "bytes": 4,
+          "type": 1
+        }
+      }
+    },
+    "stack_frames": [
+      {
+        "function": "get32",
+        "bytes": 32
+      },
+      {
+        "function": "vdplet_entry",
+        "bytes": 112
+      }
+    ],
+    "conservative_sum_module_static_frames": 144,
+    "stack_scope": "module frames only; excludes firmware/service caller frames",
+    "max_live_leases": 3,
+    "admitted_stack_budget": 512,
+    "admission_policy": "existing SDK limits; no capacity probe or limit change"
+  },
+  "artifacts": {
+    "backends.json": {
+      "bytes": 30936,
+      "sha256": "e676826b4b09d0ca88b4b9539aa4db5ce0eb90eeb191877e29c32b2060e6fb96"
+    },
+    "buffered-cleanup.bin": {
+      "bytes": 846,
+      "sha256": "73e11150329a4d8f438a01f06fd056086c66876c132a237d2bd6bb05d0871b24"
+    },
+    "buffered-install.bin": {
+      "bytes": 13860,
+      "sha256": "8dea02369a6afd0311932251c1b34e9d1e74412425a9886a9ec07d4b00f79a2b"
+    },
+    "calls.inc": {
+      "bytes": 1430,
+      "sha256": "452c1c485a91f3c7e3a5033ef97be0261a21070f449c4a60746172d02b8e88b9"
+    },
+    "common-install.bin": {
+      "bytes": 140,
+      "sha256": "71daf46dd9417173c4e3e83443e420df9dd6fa47fab571016ba77a399689b274"
+    },
+    "interface.json": {
+      "bytes": 1826,
+      "sha256": "eac28b1252387d3eef7da8bbf3302a6fb2ec0ef7cde25a21623a6ec536c20d41"
+    },
+    "layout.inc": {
+      "bytes": 1954,
+      "sha256": "5eaa4d878fb4f437a69cde959fed6ebd06591601fde12731e78e0378d06368fe"
+    },
+    "native-cleanup.bin": {
+      "bytes": 36,
+      "sha256": "17ddfd4e621ceb0c58a2d1d933243767504a76755035dc4cdd533f5ee73a4dbf"
+    },
+    "native-install.bin": {
+      "bytes": 236,
+      "sha256": "66c05669460c71766118b39f47422772ded005e1700ec1127bd6913d28bbd72e"
+    },
+    "native.c": {
+      "bytes": 6702,
+      "sha256": "9e6613cc1f2dcca39ae3b08510100941eaf338245341862e0ee0d78ec4280e23"
+    },
+    "probe.elf": {
+      "bytes": 4632,
+      "sha256": "058204d4c6f253f1fcd5dec80d2044650a5b3abd5631ef2507058ace3ad83403"
+    },
+    "probe.json": {
+      "bytes": 1201,
+      "sha256": "08ae36ceddb8685abea2749fe795e973f6a6eb837a5146ccb19dfa8f306de632"
+    },
+    "probe.su": {
+      "bytes": 68,
+      "sha256": "26df64a85d18423ba8b2a73060475bb93ea993c1568f2d76f1f8cb32b3620701"
+    },
+    "probe.upload.elf": {
+      "bytes": 2536,
+      "sha256": "84f5e1519a49f741e84fde4c7dc78eaaebf641bc1c58afde6597f803867cf9fc"
+    },
+    "probe.vdpl": {
+      "bytes": 2600,
+      "sha256": "508438faac4f19e5b42eb726c3e1466bb9970b25f4ff3fe629938dba171780cb"
+    },
+    "program.json": {
+      "bytes": 4278,
+      "sha256": "ce03b5634886b26028a512b52069f628a7c824dcdc6339b15ee7e707598c9862"
+    },
+    "resources.json": {
+      "bytes": 1445,
+      "sha256": "3c20858bbacc05fadfc87b176c04ab6e70cec813e31d3417048aeae6895f6caa"
+    },
+    "root.json": {
+      "bytes": 1039,
+      "sha256": "6a2c5a63c3e641df7c4db960e063d7b989c9cd3a4fe2f9d4bdf477a88b175e3d"
+    },
+    "state.bin": {
+      "bytes": 126,
+      "sha256": "20e0b4c863626f25a7a1bad9dd87ae9ec57a7cb7faf06a0fa14d13bee7a55914"
+    }
+  }
+}

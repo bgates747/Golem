@@ -1,0 +1,25 @@
+{
+  "schema": 1, "profile": "portable-scalar-foundation",
+  "experimental": true, "execution_contract": "r25-g0-root-v1-dual-backend",
+  "state_buffer": 1, "state_bytes": 126,
+  "state_owner": "application_shared",
+  "initialization": "explicit_install_or_reset",
+  "error": {"offset": 14, "bytes": 2, "codes": {"ok": 0, "uint16_add_overflow": 1, "uint16_sub_underflow": 2, "uint16_mul_overflow": 3, "bounds_failure": 32, "nonfinite_float": 33}},
+  "globals": [
+    {"name": "position", "type": "uint16", "offset": 112, "bytes": 2, "bounds": [32, 224]},
+    {"name": "direction", "type": "uint16", "offset": 114, "bytes": 2, "bounds": [0, 1]},
+    {"name": "screen", "type": "uint16", "offset": 116, "bytes": 2, "bounds": [32, 224]},
+    {"name": "right", "type": "uint16", "offset": 118, "bytes": 2, "bounds": [48, 240]},
+    {"name": "ticks", "type": "uint16", "offset": 120, "bytes": 2, "bounds": [0, 65535]},
+    {"name": "colour", "type": "uint16", "offset": 122, "bytes": 2, "bounds": [0, 63]},
+    {"name": "running", "type": "bool", "offset": 124, "bytes": 2, "bounds": [0, 1]}
+  ],
+  "entries": [
+    {"name": "InitRace", "logical_id": 0, "parameter_bytes": 0, "result_bytes": 0, "worst_case_visits": 7},
+    {"name": "Tick120", "logical_id": 1, "parameter_bytes": 0, "result_bytes": 0, "worst_case_visits": 7},
+    {"name": "Render30", "logical_id": 2, "parameter_bytes": 0, "result_bytes": 0, "worst_case_visits": 4},
+    {"name": "ResetRace", "logical_id": 3, "parameter_bytes": 0, "result_bytes": 0, "worst_case_visits": 7},
+    {"name": "StopRace", "logical_id": 4, "parameter_bytes": 0, "result_bytes": 0, "worst_case_visits": 1}
+  ],
+  "external_reservations": [{"first":60000,"last":60031},{"first":20000,"last":20000},{"first":20001,"last":20001},{"first":20002,"last":20002},{"first":20003,"last":20003}]
+}

@@ -1,0 +1,23 @@
+{
+  "rebuilds": [
+    {
+      "prefix": 0,
+      "identical_executable_layout_files": 12,
+      "delivery_manifest_sha256": "433989c7e5b8e6d042a4619db035889f6f053c56251da2154898f7d5b72e895d"
+    },
+    {
+      "prefix": 254,
+      "identical_executable_layout_files": 12,
+      "delivery_manifest_sha256": "1658fb449bfa3fda894fb919ba4b8c07ee2d2e9aa4997dc8e1317ba1da877d8d"
+    }
+  ],
+  "retained_scalar_types": [
+    "bool",
+    "uint16",
+    "sint16",
+    "float32"
+  ],
+  "unaligned_float_offset": 118,
+  "unbound_descriptors": 4,
+  "native_and_buffered_source_parity": true
+}

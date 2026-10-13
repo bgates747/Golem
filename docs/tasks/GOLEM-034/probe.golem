@@ -1,0 +1,54 @@
+// D0 scalar interface probe; these names are not a delivered Rally game.
+// Golem updates scalar state. Assembly invokes entries, draws and paces VSYNC.
+uint16 position Bounds(32,224) = 32
+uint16 direction Bounds(0,1) = 1
+uint16 screen Bounds(32,224) = 32
+uint16 right Bounds(48,240) = 48
+uint16 ticks = 0
+uint16 colour Bounds(0,63) = 12
+bool running = false
+Sub InitRace
+    position = 32
+    direction = 1
+    screen = 32
+    right = 48
+    ticks = 0
+    colour = 12
+    running = true
+EndSub
+Sub Tick120
+    If running Then
+        If position == 224 Then
+            direction = 0
+        ElseIf position == 32 Then
+            direction = 1
+        EndIf
+        If direction == 1 Then
+            position = position + 2
+        Else
+            position = position - 2
+        EndIf
+        ticks = ticks + 1
+    EndIf
+EndSub
+Sub Render30
+    screen = position
+    right = screen + 16
+    If direction == 1 Then
+        colour = 12
+    Else
+        colour = 48
+    EndIf
+EndSub
+Sub ResetRace
+    position = 128
+    direction = 0
+    screen = 128
+    right = 144
+    ticks = 0
+    colour = 48
+    running = true
+EndSub
+Sub StopRace
+    running = false
+EndSub

@@ -3,9 +3,21 @@
 This is the authoritative register of promoted, unfinished work. Detailed plans
 and task artifacts live under `docs/tasks/`.
 
-GOLEM-032 was accepted and explicitly approved for commit/push on 2026-10-13.
+GOLEM-034 was accepted and explicitly approved for commit/push on 2026-10-13.
 Outstanding human/physical reviews below remain open; this checkpoint does not
 claim those reviews occurred.
+
+- [ ] **GOLEM-035:** D1a bounded typed arrays/SoA and retained tables on both backends.
+  [Plan](docs/tasks/GOLEM-035.md). Depends on D0; awaiting Author plan review/release.
+
+- [ ] **GOLEM-036:** D1b faithful wide integer primitives, signed division and checked narrowing.
+  [Plan](docs/tasks/GOLEM-036.md). Requires Rally numeric oracles and D0; awaiting Author plan review/release.
+
+- [ ] **GOLEM-037:** D2 single-module Golem/Rally renderer and helper composition.
+  [Plan](docs/tasks/GOLEM-037.md). Depends on D0/D1; awaiting Author plan review/release.
+
+- [ ] **GOLEM-038:** D3 scheduler/snapshot/collision-event design and ownership gates.
+  [Plan](docs/tasks/GOLEM-038.md). Firmware owner, game policies and implementation authority remain open.
 
 - [ ] **GOLEM-023:** Research friendly Golem source compiled to native VDPlets:
   compare native library calls, explicit native procedures, whole native modules

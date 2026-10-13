@@ -1,0 +1,14 @@
+{
+  "bundle": "delivery/b7a6be65ce06789e",
+  "sha256": "b7a6be65ce06789e837c986a1af4968aa83e0cc43a5e5a0a976338241be3b08f",
+  "package_manifests": {
+    "default": {
+      "manifest": "packages/default/delivery-manifest.json",
+      "sha256": "433989c7e5b8e6d042a4619db035889f6f053c56251da2154898f7d5b72e895d"
+    },
+    "relocated": {
+      "manifest": "packages/relocated/delivery-manifest.json",
+      "sha256": "1658fb449bfa3fda894fb919ba4b8c07ee2d2e9aa4997dc8e1317ba1da877d8d"
+    }
+  }
+}

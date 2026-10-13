@@ -1,0 +1,45 @@
+{
+  "variant": "review",
+  "observations": 1115,
+  "calls": 1205,
+  "result_bytes": 11069,
+  "result_sha256": "81ca0b1204adc5492f893f21ed02f9dfd105c1ed89cb5fde72e897060214d5dd",
+  "native": {
+    "LOAD native": 1,
+    "native entry 6": 32680,
+    "native entry 7": 16393,
+    "entry_address": "0x40097fa8"
+  },
+  "visual": {
+    "frames": 600,
+    "successful_invocations": 1205,
+    "final_words": [
+      56,
+      0,
+      56,
+      72,
+      180,
+      48,
+      0
+    ],
+    "width": 320,
+    "height": 240,
+    "playfield_rows": 176,
+    "colours": {
+      "forward": 12,
+      "reverse": 48,
+      "marker": 21
+    },
+    "pause_frames": [
+      181,
+      240
+    ],
+    "reset_frame": 241,
+    "restart_frame": 421,
+    "private_cleanups_preserve_state": true,
+    "scheduler_implemented": false
+  },
+  "author_confirmed_visual_and_keyboard": true,
+  "runtime_identities_verified_over_ssh": true,
+  "commit_push_approval": false
+}

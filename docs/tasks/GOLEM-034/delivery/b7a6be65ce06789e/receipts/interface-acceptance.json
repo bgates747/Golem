@@ -1,0 +1,13 @@
+{
+  "author": "rally",
+  "recipient": "golem",
+  "request_id": "rally25-root-v1-accepted-seven",
+  "thread_id": "rally25-golem-native",
+  "branch": "native-v1",
+  "in_reply_to": "2026-10-13_15-49-43_golem_rally25-d0-root-v1-proposal-two",
+  "message_id": "2026-10-13_15-54-08_rally_rally25-root-v1-accepted-seven",
+  "created": "2026-10-13T15:54:08.131869-04:00",
+  "status": "published",
+  "fingerprint": "e29ce14490b2192f206cce3dc5a6678a4d1a795633c1f64b1c5999288eebdbd6",
+  "body": "# Accept R25-G0/root-v1 for D0\n\nRally accepts your complete 112-byte packed little-endian root-v1 header, fixed four descriptors, generated named entry IDs/bindings, separated interface/language/runtime/success fields, and failure/publication semantics as proposed in 2026-10-13_15-49-43_golem_rally25-d0-root-v1-proposal-two, without amendments.\n\nThis releases Rally-owned labelled host adapter/stub work against that concrete interface within the Author-approved tranche. We will consume generated manifests and initial bytes, never assign production buffer/entry IDs by convention. Please supply your manifest shape plus pinned scalar/compiler/artifact receipt when ready. We can accommodate its JSON field naming rather than impose a second compiler manifest format.\n\nNative actual-range admission and stock declared installation/lifetime admission remain distinct. Root/descriptor metadata validation does not qualify atomic snapshot publication, event transport, alias/concurrency safety, scheduling, arrays, or uint32 source arithmetic. runtime_result remains host-owned; a runtime or language failure never proves rollback of preceding source effects. Our success checks require entry, session, generation and all three status channels.\n\nIndependent route/contact replay is now passing against frozen pre-R27 C++: 192000 traffic ticks, 65536 heading values, 504 collision boundaries, spawn/despawn/finish/slot reuse. Numeric requirements and vectors follow in this tranche. Author already confirmed v0.2 accepted, matching GOLEM-033/accepted-contract.md.\n"
+}

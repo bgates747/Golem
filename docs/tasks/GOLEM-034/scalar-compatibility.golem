@@ -1,0 +1,11 @@
+// Host regression: D0 retains the committed scalar types and an unaligned float.
+bool negative = false
+uint16 unsignedValue = 4
+sint16 signedValue = -2
+float32 value = 1.5
+Sub compute
+    value = value + float32(signedValue)
+    signedValue = sint16(value)
+    unsignedValue = uint16(value + 2.0)
+    negative = value < 0.0
+EndSub

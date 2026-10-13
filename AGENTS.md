@@ -701,3 +701,61 @@ individual packets remain bounded to 65535 bytes. The Author accepted review;
 saved results pass 637 observations/6,289 bytes and runtime identities pass.
 The Author explicitly approved commit/push on 2026-10-13; no physical target was flashed.
 
+## Accepted Rally planning contract — GOLEM-033
+
+Rally accepted Golem's eight-clause R25-G0 v0.2 counterproposal without amendments
+in mailbox message 2026-10-13_15-12-37_rally_rally25-contract-v02-accepted-five.
+See docs/tasks/GOLEM-033/accepted-contract.md and its immutable receipts. GOLEM-033
+negotiation is complete; the Author requested task documents and a stop for review.
+That planning document did not release implementation. The Author subsequently
+released GOLEM-034 at high effort; later firmware/capacity work remains gated.
+
+GOLEM-034 plans D0 baseline/artifacts/root ABI; GOLEM-035 plans D1a bounded arrays;
+GOLEM-036 plans D1b faithful wide math; GOLEM-037 plans D2 helper/renderer linking;
+GOLEM-038 plans D3 firmware ownership, scheduler, snapshots and event design.
+TODO.md owns their overall status. The Author requested committing accepted
+GOLEM-032; it is pushed at 25901e52eb80a4d66847c11fbc70d1bac68ee633 and
+supersedes 031 as the delivered baseline, with Rally verified acceptance. The
+original counterproposal/acceptance preserve historical planning provenance.
+Sparse-input time alignment and recovery remain Author decisions before D3.
+
+## Pinned Rally scalar/interface delivery — GOLEM-034
+
+D0 exports the exact GOLEM-032 six-file compiler closure from 25901e5 and adds a
+separate task-local root/interface layer; production src and the generic SDK are
+unchanged. R25-G0/root-v1 was accepted by Rally without amendments. Its packed
+112-byte header separates interface/language/host-owned runtime results and
+last-success generation/entry/session. Fixed build-time descriptors bind retained
+input/event/table/asset-directory buffers. Native validates actual root/ranges
+with at most three live leases; stock requires the host-installed storage/lifetime
+invariant. Every named assembly call still sends six wire bytes. Native handle
+patch offset is generated (currently 24); do not reuse the old 11.
+
+The five-name scalar probe is not Rally gameplay or an autonomous scheduler.
+Generation counts successful invocations modulo 2^32, not simulation steps.
+Source failures retain earlier effects without publishing new success markers.
+All source globals are admitted at entry, including Init/Reset: invalid external
+state needs host repair/reinstallation before those entries can run.
+
+Host ASan/UBSan/model/generated-C checks pass 2,270 cases/seven CLI rejections;
+rebuilds preserve 12 executable/layout files per package. An additional regression
+retains signed/float/bool types, an unaligned float and unbound descriptors. Stock
+and actual Xtensa JIT/interpreter pass default/relocated root admission, physical
+native failures and cleanup checks. The 600-frame source-labelled review exercises
+all five Subs, including a pause/reset/restart, passes 1,115 observations/11,069 bytes
+and 56,320 playfield pixels, and returns to MOS. Immutable delivery identity is in
+docs/tasks/GOLEM-034/delivery.json; source, instructions and receipts are linked
+from its README.md. Rally has the delivery for its independently owned adapter.
+
+Oryx review is staged/stopped at ~/Agon/mystuff/golem/docs/tasks/GOLEM-034/.emulator.
+The Author launches ./fab-agon-emulator there, types dir when instructed onscreen,
+closes and reports. Agent retrieves/verifies saved results. Human acceptance and
+explicit commit/push approval remain pending; no physical target was flashed.
+
+GOLEM-034 human review subsequently passed: the Author reported it works;
+retrieved results match all 1,115 observations/11,069 bytes and runtime/fixture
+identities pass. See evidence/human-review.json beneath the task. Explicit
+commit/push approval remains pending.
+
+The Author subsequently explicitly approved committing/pushing all pending work
+and proceeding to GOLEM-035. GOLEM-034 is accepted and removed from TODO.

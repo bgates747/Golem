@@ -1,0 +1,47 @@
+{
+  "compiler_commit": "25901e52eb80a4d66847c11fbc70d1bac68ee633",
+  "source_scope": "GOLEM-032 frozen scalar frontend/backends and complete local include closure",
+  "files": [
+    {
+      "path": "docs/tasks/GOLEM-032/portable.hpp",
+      "sha256": "6e055d6c9013c8a0740256dc25626d3c3f84372d78dc6f7e1a86de88457bd2ee",
+      "bytes": 34997
+    },
+    {
+      "path": "docs/tasks/GOLEM-032/backends.hpp",
+      "sha256": "40bf05879176aebccbd989c3dcc298c9b9bdb632ccf199bfb8e2dacf514afa4d",
+      "bytes": 37121
+    },
+    {
+      "path": "docs/tasks/GOLEM-032/compiler.cpp",
+      "sha256": "6153b39e1f2d47f7dfa22abbfa907cca8d15487b03400ce8a3e335b3d772b402",
+      "bytes": 6156
+    },
+    {
+      "path": "src/ordinary.hpp",
+      "sha256": "7c8fe20f4e63c6e57de70b9931696b87c88c9c4ea499679b1bc239f09480c5da",
+      "bytes": 33802
+    },
+    {
+      "path": "src/token_reader.hpp",
+      "sha256": "397fe169f1a84b47acf8a77a3036fd50ddfeac45e64d07a74b0497ca50f4126d",
+      "bytes": 7116
+    },
+    {
+      "path": "src/buffer_allocator.hpp",
+      "sha256": "7c8881777decd9e04231adae3ab4050e52451c0fadaafe6b37c7ce0735c7b449",
+      "bytes": 3174
+    }
+  ],
+  "sdk_commit": "33a554c82377b10d428f0d2ec258d1b48f27ed22",
+  "sdk_files": {
+    "include/vdplet.h": "fa8385e2906f07d37372d80c40f73d419defdbefe7a3458461ac9d5fe0820d38",
+    "src/vdplet_image.h": "6a28226a138ec2c54f1b456b1bf3f33372db1a2477cb1f92afc7547ba5007fff",
+    "src/vdplet_runtime.h": "af049fe93f1e64b0ec1135e5c0e55c1938adf022669dc35d906f5fcb6c58d91b",
+    "tests/check_image.cpp": "7812b6fc7fef7b3b9d4d9faf16d324e4a0155efc98ca64198af0da764e4b0a3c",
+    "build/check_image": "0cb638527c6ec94f78393ce21fbe8698147fe9ca61618c740778cc91e806a464",
+    "tools/build_module.py": "c2353057f2b00545378bc6727752a247df8254dbe51a44c5b99d1478de96bd62"
+  },
+  "sdk_dirty": [],
+  "d0_layer": "root.hpp and compiler.cpp in GOLEM-034; retains committed scalar/float grammar; does not claim arrays/wide source arithmetic"
+}
