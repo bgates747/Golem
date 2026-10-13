@@ -1,0 +1,72 @@
+float32 a = 0.0
+float32 b = 1.0
+float32 result = 7.0
+float32 bounded Bounds(-10.1,10.1) = 3.0
+uint16 u = 0
+sint16 signedResult = 3
+bool flag = false
+uint16 earlier = 7
+Sub add
+    earlier = earlier + 1
+    result = a + b
+    earlier = earlier + 1
+EndSub
+Sub subtract
+    earlier = earlier + 1
+    result = a - b
+    earlier = earlier + 1
+EndSub
+Sub multiply
+    earlier = earlier + 1
+    result = a * b
+    earlier = earlier + 1
+EndSub
+Sub chain
+    earlier = earlier + 1
+    result = a + b * 0.5 - a
+    earlier = earlier + 1
+EndSub
+Sub equal
+    flag = a == b
+EndSub
+Sub unequal
+    flag = a != b
+EndSub
+Sub less
+    flag = a < b
+EndSub
+Sub greater
+    flag = a > b
+EndSub
+Sub atMost
+    flag = a <= b
+EndSub
+Sub atLeast
+    flag = a >= b
+EndSub
+Sub toSigned
+    earlier = earlier + 1
+    signedResult = sint16(a)
+    earlier = earlier + 1
+EndSub
+Sub toUnsigned
+    earlier = earlier + 1
+    u = uint16(a)
+    earlier = earlier + 1
+EndSub
+Sub fromSigned
+    result = float32(signedResult)
+EndSub
+Sub fromUnsigned
+    result = float32(u)
+EndSub
+Sub boundedResult
+    bounded = a
+EndSub
+Sub skippedConversion
+    flag = flag And uint16(a) == u
+    earlier = earlier + 1
+EndSub
+Sub copy
+    result = float32(a)
+EndSub

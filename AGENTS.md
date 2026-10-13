@@ -670,3 +670,34 @@ is 18 bytes; the square crosses a gray origin marker, red when negative, green
 otherwise. Use its dedicated Oryx profile and single-terminal review protocol.
 The Author accepted signed-motion review; saved results pass 481 observations/4,729
 bytes and runtime identities pass. The Author explicitly approved commit/push on 2026-10-13.
+
+## Float32 prototype — GOLEM-032
+
+The task-local GOLEM-032 fork adds float32 + / - / *, all six comparisons and
+explicit conversions to/from uint16/sint16 on both backends. Four-byte packed
+storage uses tag 3, including unaligned fields. Native/host builds disable
+contraction. Inputs admit finite normal values and signed zero; non-finite or
+subnormal globals fail with status 33. Subnormal literals are rejected. Arithmetic
+subnormals flush to positive zero; expression zero is canonical positive zero.
+Non-finite results report 33. Float-to-integer conversion truncates toward zero
+and checks range before any potentially unsafe cast; failure reports 32.
+Inclusive Bounds account for thresholds between representable float values.
+
+Stock arithmetic uses scalar matrices and enables the existing affine feature
+flag. Conversion widens signed/unsigned words into freshly reset signed-32-bit
+scratch, or checks a float's domain and transforms only its nonnegative magnitude
+before restoring the integer sign. Entry admission is shared across named Subs;
+errors propagate before source effects. Production compiler and generic SDK/
+runtime remain unchanged. Division/sqrt/pow/floor are outside this tranche.
+
+Host ASan/UBSan, independent command model/generated C, ELF and maintained checks
+pass 24,494 cases, 84 grammar/reference cases and 101 rejections. Stock and both
+actual Xtensa engines pass representative numeric edges including rounding,
+underflow, decimal Bounds and conversion limits; see docs/tasks/GOLEM-032/README.md
+for receipts and human review status. drift.golem uses fractional position and
+0.75-pixel displacement, owns reversals, casts and colour. Its shared state is
+24 bytes. The dedicated guest's script allocation is 128 KiB in free memory;
+individual packets remain bounded to 65535 bytes. The Author accepted review;
+saved results pass 637 observations/6,289 bytes and runtime identities pass.
+The Author explicitly approved commit/push on 2026-10-13; no physical target was flashed.
+

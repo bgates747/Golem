@@ -1,0 +1,282 @@
+{
+  "variant": "meter-stock",
+  "checks": [
+    {
+      "label": "buffered case 0",
+      "offset": 0,
+      "bytes": 24
+    },
+    {
+      "label": "buffered case 1",
+      "offset": 24,
+      "bytes": 24
+    },
+    {
+      "label": "buffered case 2",
+      "offset": 48,
+      "bytes": 24
+    },
+    {
+      "label": "buffered case 3",
+      "offset": 72,
+      "bytes": 24
+    },
+    {
+      "label": "buffered case 4",
+      "offset": 96,
+      "bytes": 24
+    },
+    {
+      "label": "buffered case 5",
+      "offset": 120,
+      "bytes": 24
+    },
+    {
+      "label": "buffered case 6",
+      "offset": 144,
+      "bytes": 24
+    },
+    {
+      "label": "buffered case 7",
+      "offset": 168,
+      "bytes": 24
+    },
+    {
+      "label": "buffered case 8",
+      "offset": 192,
+      "bytes": 24
+    },
+    {
+      "label": "buffered case 9",
+      "offset": 216,
+      "bytes": 24
+    },
+    {
+      "label": "buffered case 10",
+      "offset": 240,
+      "bytes": 24
+    },
+    {
+      "label": "buffered case 11",
+      "offset": 264,
+      "bytes": 24
+    },
+    {
+      "label": "buffered case 12",
+      "offset": 288,
+      "bytes": 24
+    },
+    {
+      "label": "buffered case 13",
+      "offset": 312,
+      "bytes": 24
+    },
+    {
+      "label": "buffered case 14",
+      "offset": 336,
+      "bytes": 24
+    },
+    {
+      "label": "buffered case 15",
+      "offset": 360,
+      "bytes": 24
+    },
+    {
+      "label": "buffered case 16",
+      "offset": 384,
+      "bytes": 24
+    },
+    {
+      "label": "buffered case 17",
+      "offset": 408,
+      "bytes": 24
+    },
+    {
+      "label": "buffered case 18",
+      "offset": 432,
+      "bytes": 24
+    },
+    {
+      "label": "buffered case 19",
+      "offset": 456,
+      "bytes": 24
+    },
+    {
+      "label": "buffered case 20",
+      "offset": 480,
+      "bytes": 24
+    },
+    {
+      "label": "buffered case 21",
+      "offset": 504,
+      "bytes": 24
+    },
+    {
+      "label": "buffered case 22",
+      "offset": 528,
+      "bytes": 24
+    },
+    {
+      "label": "buffered case 23",
+      "offset": 552,
+      "bytes": 24
+    },
+    {
+      "label": "buffered case 24",
+      "offset": 576,
+      "bytes": 24
+    },
+    {
+      "label": "buffered case 25",
+      "offset": 600,
+      "bytes": 24
+    },
+    {
+      "label": "buffered case 26",
+      "offset": 624,
+      "bytes": 24
+    },
+    {
+      "label": "buffered case 27",
+      "offset": 648,
+      "bytes": 24
+    },
+    {
+      "label": "buffered case 28",
+      "offset": 672,
+      "bytes": 24
+    },
+    {
+      "label": "shared state survives cleanup",
+      "offset": 696,
+      "bytes": 24
+    }
+  ],
+  "result_bytes": 720,
+  "module_loads": 0,
+  "calls": [
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    }
+  ],
+  "visual": null,
+  "source": "drift",
+  "state_id": 1,
+  "probe_sha256": "61faaa567968f7e6ef521e8c388c14a9e2bc6734d0a31d7ee2361c2f7e403250",
+  "script_sha256": "87713171bc96b7c43bd89d3028d779b72c281d2fba01c9fa8244675bf4ba32e7",
+  "source_sha256": "a5bf9bfff086f5fdefd12dd67f48e6b2c4337601dc6e5ebebcd0765c0eb49cd9",
+  "module_sha256": "ebe568d7cb0f91c8c78219ecaa6a00a213c2f35b2f758001bddeebc4b4606a6b"
+}

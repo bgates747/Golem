@@ -1,0 +1,28 @@
+// GOLEM-032: signed position/velocity; Golem owns movement and colours.
+// Assembly draws the square and origin marker, selects backend and paces VSYNC.
+sint16 position Bounds(-96,96) = -96
+sint16 velocity Bounds(-2,2) = 2
+uint16 screen Bounds(32,224) = 32
+uint16 right Bounds(48,240) = 48
+uint16 ticks = 0
+sint16 displacement = 0
+uint16 colour Bounds(0,63) = 48
+bool negative = true
+Sub tick
+    If position >= 96 Then
+        velocity = 0 - 2
+    ElseIf position <= -96 Then
+        velocity = 2
+    EndIf
+    displacement = velocity * 3
+    position = position + displacement
+    screen = uint16(position + 128)
+    right = screen + 16
+    negative = position < 0
+    If negative Then
+        colour = 48
+    Else
+        colour = 12
+    EndIf
+    ticks = ticks + 1
+EndSub

@@ -1,0 +1,28 @@
+// GOLEM-032: fractional motion; Golem owns arithmetic, casts and colours.
+// Assembly draws the square/origin, selects backend and paces stock VSYNC.
+float32 position Bounds(-96,96) = -96.0
+float32 velocity Bounds(-1,1) = 0.375
+uint16 screen Bounds(32,224) = 32
+uint16 right Bounds(48,240) = 48
+uint16 ticks = 0
+float32 displacement = 0.0
+uint16 colour Bounds(0,63) = 48
+bool negative = true
+Sub tick
+    If position >= 96.0 Then
+        velocity = 0.0 - 0.375
+    ElseIf position <= -96.0 Then
+        velocity = 0.375
+    EndIf
+    displacement = velocity * 2.0
+    position = position + displacement
+    screen = uint16(position + 128.0)
+    right = screen + 16
+    negative = position < 0.0
+    If negative Then
+        colour = 48
+    Else
+        colour = 12
+    EndIf
+    ticks = ticks + 1
+EndSub

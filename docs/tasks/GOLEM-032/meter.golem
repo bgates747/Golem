@@ -1,0 +1,33 @@
+// Four small movement steps share one host call. Both targets run this exact Sub.
+// Resident VDU draws the final coordinates; assembly selects and paces tick.
+uint16 phase Bounds(0, 96) = 0
+uint16 step Bounds(1, 1) = 1
+uint16 x = 48
+uint16 y = 152
+uint16 right = 60
+uint16 bottom = 164
+uint16 barRight = 20
+uint16 ticks = 0
+uint16 direction Bounds(0, 1) = 0
+uint16 batch Bounds(0, 3) = 0
+
+Sub tick
+    For batch In Range(0:3)
+        If phase == 96 Then
+            direction = 1
+        ElseIf phase == 0 Then
+            direction = 0
+        EndIf
+        If direction == 0 Then
+            phase = phase + step
+        Else
+            phase = phase - step
+        EndIf
+        ticks = ticks + 1
+    Next batch
+    x = phase * 2 + 48
+    y = 152 - phase
+    right = x + 12
+    bottom = y + 12
+    barRight = x - 28
+EndSub

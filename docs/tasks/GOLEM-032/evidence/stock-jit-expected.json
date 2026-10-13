@@ -1,0 +1,399 @@
+{
+  "variant": "stock",
+  "checks": [
+    {
+      "label": "buffered case 0",
+      "offset": 0,
+      "bytes": 26
+    },
+    {
+      "label": "buffered case 1",
+      "offset": 26,
+      "bytes": 26
+    },
+    {
+      "label": "buffered case 2",
+      "offset": 52,
+      "bytes": 26
+    },
+    {
+      "label": "buffered case 3",
+      "offset": 78,
+      "bytes": 26
+    },
+    {
+      "label": "buffered case 4",
+      "offset": 104,
+      "bytes": 26
+    },
+    {
+      "label": "buffered case 5",
+      "offset": 130,
+      "bytes": 26
+    },
+    {
+      "label": "buffered case 6",
+      "offset": 156,
+      "bytes": 26
+    },
+    {
+      "label": "buffered case 7",
+      "offset": 182,
+      "bytes": 26
+    },
+    {
+      "label": "buffered case 8",
+      "offset": 208,
+      "bytes": 26
+    },
+    {
+      "label": "buffered case 9",
+      "offset": 234,
+      "bytes": 26
+    },
+    {
+      "label": "buffered case 10",
+      "offset": 260,
+      "bytes": 26
+    },
+    {
+      "label": "buffered case 11",
+      "offset": 286,
+      "bytes": 26
+    },
+    {
+      "label": "buffered case 12",
+      "offset": 312,
+      "bytes": 26
+    },
+    {
+      "label": "buffered case 13",
+      "offset": 338,
+      "bytes": 26
+    },
+    {
+      "label": "buffered case 14",
+      "offset": 364,
+      "bytes": 26
+    },
+    {
+      "label": "buffered case 15",
+      "offset": 390,
+      "bytes": 26
+    },
+    {
+      "label": "buffered case 16",
+      "offset": 416,
+      "bytes": 26
+    },
+    {
+      "label": "buffered case 17",
+      "offset": 442,
+      "bytes": 26
+    },
+    {
+      "label": "buffered case 18",
+      "offset": 468,
+      "bytes": 26
+    },
+    {
+      "label": "buffered case 19",
+      "offset": 494,
+      "bytes": 26
+    },
+    {
+      "label": "buffered case 20",
+      "offset": 520,
+      "bytes": 26
+    },
+    {
+      "label": "buffered case 21",
+      "offset": 546,
+      "bytes": 26
+    },
+    {
+      "label": "buffered case 22",
+      "offset": 572,
+      "bytes": 26
+    },
+    {
+      "label": "buffered case 23",
+      "offset": 598,
+      "bytes": 26
+    },
+    {
+      "label": "buffered case 24",
+      "offset": 624,
+      "bytes": 26
+    },
+    {
+      "label": "buffered case 25",
+      "offset": 650,
+      "bytes": 26
+    },
+    {
+      "label": "buffered case 26",
+      "offset": 676,
+      "bytes": 26
+    },
+    {
+      "label": "buffered case 27",
+      "offset": 702,
+      "bytes": 26
+    },
+    {
+      "label": "buffered case 28",
+      "offset": 728,
+      "bytes": 26
+    },
+    {
+      "label": "buffered case 29",
+      "offset": 754,
+      "bytes": 26
+    },
+    {
+      "label": "buffered case 30",
+      "offset": 780,
+      "bytes": 26
+    },
+    {
+      "label": "buffered case 31",
+      "offset": 806,
+      "bytes": 26
+    },
+    {
+      "label": "buffered case 32",
+      "offset": 832,
+      "bytes": 26
+    },
+    {
+      "label": "buffered case 33",
+      "offset": 858,
+      "bytes": 26
+    },
+    {
+      "label": "buffered case 34",
+      "offset": 884,
+      "bytes": 26
+    },
+    {
+      "label": "buffered case 35",
+      "offset": 910,
+      "bytes": 26
+    },
+    {
+      "label": "buffered case 36",
+      "offset": 936,
+      "bytes": 26
+    },
+    {
+      "label": "buffered case 37",
+      "offset": 962,
+      "bytes": 26
+    },
+    {
+      "label": "buffered case 38",
+      "offset": 988,
+      "bytes": 26
+    },
+    {
+      "label": "buffered case 39",
+      "offset": 1014,
+      "bytes": 26
+    },
+    {
+      "label": "buffered case 40",
+      "offset": 1040,
+      "bytes": 26
+    },
+    {
+      "label": "buffered case 41",
+      "offset": 1066,
+      "bytes": 26
+    },
+    {
+      "label": "shared state survives cleanup",
+      "offset": 1092,
+      "bytes": 26
+    }
+  ],
+  "result_bytes": 1118,
+  "module_loads": 0,
+  "calls": [
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 1,
+      "backend": "buffered"
+    },
+    {
+      "entry": 1,
+      "backend": "buffered"
+    },
+    {
+      "entry": 1,
+      "backend": "buffered"
+    },
+    {
+      "entry": 2,
+      "backend": "buffered"
+    },
+    {
+      "entry": 2,
+      "backend": "buffered"
+    },
+    {
+      "entry": 2,
+      "backend": "buffered"
+    },
+    {
+      "entry": 2,
+      "backend": "buffered"
+    },
+    {
+      "entry": 3,
+      "backend": "buffered"
+    },
+    {
+      "entry": 4,
+      "backend": "buffered"
+    },
+    {
+      "entry": 4,
+      "backend": "buffered"
+    },
+    {
+      "entry": 5,
+      "backend": "buffered"
+    },
+    {
+      "entry": 5,
+      "backend": "buffered"
+    },
+    {
+      "entry": 6,
+      "backend": "buffered"
+    },
+    {
+      "entry": 6,
+      "backend": "buffered"
+    },
+    {
+      "entry": 7,
+      "backend": "buffered"
+    },
+    {
+      "entry": 7,
+      "backend": "buffered"
+    },
+    {
+      "entry": 8,
+      "backend": "buffered"
+    },
+    {
+      "entry": 8,
+      "backend": "buffered"
+    },
+    {
+      "entry": 9,
+      "backend": "buffered"
+    },
+    {
+      "entry": 9,
+      "backend": "buffered"
+    },
+    {
+      "entry": 10,
+      "backend": "buffered"
+    },
+    {
+      "entry": 10,
+      "backend": "buffered"
+    },
+    {
+      "entry": 10,
+      "backend": "buffered"
+    },
+    {
+      "entry": 11,
+      "backend": "buffered"
+    },
+    {
+      "entry": 11,
+      "backend": "buffered"
+    },
+    {
+      "entry": 11,
+      "backend": "buffered"
+    },
+    {
+      "entry": 12,
+      "backend": "buffered"
+    },
+    {
+      "entry": 13,
+      "backend": "buffered"
+    },
+    {
+      "entry": 14,
+      "backend": "buffered"
+    },
+    {
+      "entry": 14,
+      "backend": "buffered"
+    },
+    {
+      "entry": 15,
+      "backend": "buffered"
+    },
+    {
+      "entry": 15,
+      "backend": "buffered"
+    },
+    {
+      "entry": 16,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 14,
+      "backend": "buffered"
+    },
+    {
+      "entry": 14,
+      "backend": "buffered"
+    }
+  ],
+  "visual": null,
+  "source": "floats",
+  "state_id": 1,
+  "probe_sha256": "f7cd50912111ad3c752bb1e8f520f7a074b6eaa3f77a714e7b3ea0f4d92a7e86",
+  "script_sha256": "556b0b78dbee7dadcf0a836efaf4b3dc4a0da0efd35c2935fd286260fcbaf529",
+  "source_sha256": "89bad765a757cee1f434bfc57f60afc71b84bd1ebb1c574caf7d501a790a23e6",
+  "module_sha256": "1b3351693cb5495cd399ab8dfa18059d28091aa0f1aced096ef335476ee380fb"
+}

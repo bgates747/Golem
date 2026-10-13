@@ -168,3 +168,17 @@ For counters and divmod remain uint16. The visual demonstrates signed movement
 and conversion into screen coordinates; source, qualification and human-review
 status are in [the signed tranche](../tasks/GOLEM-031/README.md). Production compiler
 and generic SDK remain unchanged.
+
+GOLEM-032 adds task-local float32 arithmetic/comparisons and explicit integer
+conversions to both targets. The bounded profile admits finite normal inputs
+and signed zero, rejects non-finite/subnormal inputs with status 33, canonicalizes
+expression zero and flushes subnormal results to zero. Non-finite results also
+report 33. Integer-to-float conversions are exact; float-to-integer truncates
+toward zero, checks numeric range and preserves failed destinations. Bounds use
+representable thresholds that preserve their inclusive numeric meaning. Stock
+uses matrix operations; native uses uncontracted binary32 arithmetic. The tested
+rounding and underflow edges match across stock and actual Xtensa engines; full
+IEEE exception/subnormal support and physical qualification are not claimed.
+See [the float tranche](../tasks/GOLEM-032/README.md) for source and evidence.
+Production compiler and generic SDK remain unchanged.
+
