@@ -1,0 +1,38 @@
+{
+  "compiler": "xtensa-esp32-elf-gcc (crosstool-NG esp-2021r2-patch5) 8.4.0",
+  "abi_header_sha256": "fa8385e2906f07d37372d80c40f73d419defdbefe7a3458461ac9d5fe0820d38",
+  "module": {
+    "name": "animation",
+    "source": "/Agon/mystuff/golem/docs/tasks/GOLEM-035/build/animation/native.c",
+    "source_sha256": "65145b8e9169d707994815b5389d42d3b9ead85670a3260ed499d18d4f3b2d90",
+    "build_id": "0x474c3335",
+    "capabilities": 1,
+    "envelope_bytes": 64,
+    "elf_bytes": 8200,
+    "package_bytes": 8264,
+    "sha256": "72723d23ae305058d39b8ba2ac4ae450308cc54c279d89193855b54eb5f2a40a",
+    "package": "/Agon/mystuff/golem/docs/tasks/GOLEM-035/build/animation/animation.vdpl",
+    "elf": "/Agon/mystuff/golem/docs/tasks/GOLEM-035/build/animation/animation.elf",
+    "entry_virtual": 408,
+    "resident_text_bytes": 6992,
+    "resident_data_bytes": 268,
+    "relative_relocations": 5,
+    "allocated_sections": {
+      ".text": {
+        "virtual_address": 368,
+        "bytes": 6991,
+        "type": 1
+      },
+      ".rodata": {
+        "virtual_address": 7360,
+        "bytes": 264,
+        "type": 1
+      },
+      ".data": {
+        "virtual_address": 11868,
+        "bytes": 4,
+        "type": 1
+      }
+    }
+  }
+}

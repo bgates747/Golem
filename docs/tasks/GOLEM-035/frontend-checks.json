@@ -1,0 +1,30 @@
+{
+  "rejections": 23,
+  "messages": [
+    "compiler: line 1, column 33: Array elements currently require uint16 or sint16",
+    "compiler: line 1, column 33: Array elements currently require uint16 or sint16",
+    "compiler: line 1, column 46: Array requires ascending inclusive bounds in -32768..65535 and at most 32767 elements per buffer",
+    "compiler: line 1, column 56: Array requires ascending inclusive bounds in -32768..65535 and at most 32767 elements per buffer",
+    "compiler: line 1, column 50: Array requires ascending inclusive bounds in -32768..65535 and at most 32767 elements per buffer",
+    "compiler: line 1, column 44: Range requires integer literals with magnitude at most 65535",
+    "compiler: line 1, column 45: expected ')'",
+    "compiler: line 1, column 45: expected ')'",
+    "compiler: line 1, column 57: Values count must equal the inclusive Array size",
+    "compiler: line 1, column 61: Values count must equal the inclusive Array size",
+    "compiler: line 1, column 52: literal does not fit uint16",
+    "compiler: line 1, column 52: literal does not fit sint16",
+    "compiler: array requires exact initialized data: a",
+    "compiler: line 1, column 70: cannot assign a ReadOnly Array element",
+    "compiler: line 1, column 78: constant array index is outside inclusive bounds",
+    "compiler: line 1, column 78: constant array index is outside inclusive bounds",
+    "compiler: line 1, column 79: expected ')'",
+    "compiler: line 1, column 78: undeclared global 'true'",
+    "compiler: line 1, column 78: literal does not fit sint16",
+    "compiler: line 1, column 67: array element type requires an explicit conversion",
+    "compiler: unknown array mapping: unknown",
+    "compiler: array data conflicts with source initializer: a",
+    "compiler: invalid or duplicate array mapping"
+  ],
+  "array_only_programs": 3,
+  "actual_assembler_consumer": true
+}

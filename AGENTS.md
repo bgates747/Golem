@@ -759,3 +759,54 @@ commit/push approval remains pending.
 
 The Author subsequently explicitly approved committing/pushing all pending work
 and proceeding to GOLEM-035. GOLEM-034 is accepted and removed from TODO.
+
+## Retained typed arrays — GOLEM-035
+
+The task-local D0 successor adds one-dimensional Array uint16/sint16 storage,
+inclusive ascending numeric bounds, typed name(index) reads/writes, ReadOnly
+permissions and explicit Fill/Values or exact build-supplied packed initialization.
+Each array has a generated application-owned buffer; optional manifest descriptors
+publish width/bounds/access/ownership/initial-data identity. Root-v1 is unchanged.
+Native preflight validates actual shape; indexed views are released before the
+next access, for root+arguments+one-array peak 3. Stock relies on the established
+installation/lifetime invariant. Both private cleanups and native unload retain
+root/arrays. No per-call array scan or runtime readback verification is added.
+
+Stores check/evaluate index before RHS, then write once. Logical index failure is
+language 5, preserving the failed element/destination and adjacent data; arithmetic
+codes and prior effects remain. Scalar Bounds/conversion rules still apply. The
+initial single-block policy is 32767 two-byte elements, bounds -32768..65535;
+float/wide/multidimensional arrays and paired array divmod outputs remain outside
+this slice. Six-slot pixel motion does not qualify wide Rally world units.
+
+Host ASan/UBSan/model/generated-C checks pass 2,838 array cases, 866 Rally/six-slot
+cases, eight destination/conversion checks and 23 grammar/build rejections. Scalar
+executable/layout bytes match D0. Stock validates all 257 Rally sine values, all
+six route records and 60 motion steps. Actual Xtensa JIT/interpreter default and
+relocated cases pass 2,046 observations/20,460 bytes each. Both engines' 600-frame
+review passes 1,302 observations/12,912 bytes, 56,320 final playfield pixels and MOS
+return. The complete source export rebuild and three package/storage reproducibility
+checks pass. Generic SDK/runtime and production src remain unchanged.
+
+Oryx review is staged/stopped at ~/Agon/mystuff/golem/docs/tasks/GOLEM-035/.emulator.
+Read animation.golem: Golem owns six positions/velocities/phases/colours and reads
+Rally's speed/sine arrays; assembly draws/paces VSYNC. Backend changes retain state.
+A frame needs 15 wire bytes (calculate 6, draw 6, swap 3), with no per-marker position
+updates. Human review and explicit commit/push approval remain pending. See
+docs/tasks/GOLEM-035/README.md and its immutable delivery.json.
+
+Rally independently verified D0's complete bundle/adapter mapping and accepted
+D1a storage without mismatch. Signed minimum/-1 division overflow status 6 is
+agreed for GOLEM-036, not implemented here. GOLEM-037 records the received renderer
+proposal and D2 recommendation to release the argument lease before helper entry,
+so root+asset+output can fit planned three leases; D0/D1a still hold argument/root
+through source execution. Concrete helper structs/grammar/error mapping remain open.
+
+GOLEM-035 human review subsequently passed: the Author reported the tests look
+good. Retrieved results match all 1,302 observations/12,912 bytes; staged runtime
+and fixture identities pass. See docs/tasks/GOLEM-035/evidence/human-review.json.
+Explicit commit/push approval remains pending.
+
+The Author subsequently explicitly authorized committing/pushing all pending
+work and proceeding. GOLEM-035 is accepted and removed from TODO; the next
+released tranche is the GOLEM-036 wide integer foundation.

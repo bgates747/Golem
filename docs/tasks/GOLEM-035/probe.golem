@@ -1,0 +1,50 @@
+uint16 index = 0
+sint16 signedIndex = -2
+uint16 value = 7
+sint16 selected = 99
+uint16 selectedUnsigned = 99
+uint16 marker = 0
+uint16 sum = 0
+uint16 counter = 0
+bool test = false
+Array sint16 signedValues(-2:1) = Values(-32768,-1,0,32767)
+Array uint16 words(65530:65533) = Values(10,20,30,65535)
+Array uint16 mutable(0:5) = Fill(0)
+ReadOnly Array sint16 sine(0:256)
+Sub readSigned
+    selected = signedValues(signedIndex)
+EndSub
+Sub readUnsigned
+    selectedUnsigned = words(index)
+EndSub
+Sub store
+    marker = marker + 1
+    mutable(index) = value
+    selectedUnsigned = mutable(index)
+EndSub
+Sub increment
+    mutable(index) = mutable(index) + value
+EndSub
+Sub copy
+    signedValues(signedIndex) = sine(index)
+    selected = signedValues(signedIndex)
+EndSub
+Sub readSine
+    selected = sine(index)
+EndSub
+Sub skipped
+    test = false And sine(index) == 0
+    marker = marker + 1
+EndSub
+Sub indexFirst
+    mutable(index) = value + 1
+EndSub
+Sub expressionIndex
+    selectedUnsigned = mutable(index + value)
+EndSub
+Sub accumulate
+    sum = 0
+    For counter In Range(0:5)
+        sum = sum + mutable(counter)
+    Next counter
+EndSub

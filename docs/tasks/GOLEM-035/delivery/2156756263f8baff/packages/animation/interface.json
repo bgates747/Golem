@@ -1,0 +1,33 @@
+{
+  "schema": 1, "profile": "portable-scalar-foundation",
+  "experimental": true, "execution_contract": "r25-g0-root-v1-dual-backend",
+  "state_buffer": 1, "state_bytes": 142,
+  "state_owner": "application_shared",
+  "initialization": "explicit_install_or_reset",
+  "error": {"offset": 14, "bytes": 2, "codes": {"ok": 0, "uint16_add_overflow": 1, "uint16_sub_underflow": 2, "uint16_mul_overflow": 3, "array_index": 5, "zero_divisor": 4, "bounds_failure": 32, "nonfinite_float": 33}},
+  "globals": [
+    {"name": "slot", "type": "uint16", "offset": 112, "bytes": 2, "bounds": [0, 65535]},
+    {"name": "waveIndex", "type": "uint16", "offset": 114, "bytes": 2, "bounds": [0, 65535]},
+    {"name": "phaseValue", "type": "uint16", "offset": 116, "bytes": 2, "bounds": [0, 65535]},
+    {"name": "sineValue", "type": "uint16", "offset": 118, "bytes": 2, "bounds": [0, 65535]},
+    {"name": "bob", "type": "uint16", "offset": 120, "bytes": 2, "bounds": [0, 65535]},
+    {"name": "remainder", "type": "uint16", "offset": 122, "bytes": 2, "bounds": [0, 65535]},
+    {"name": "quotient", "type": "uint16", "offset": 124, "bytes": 2, "bounds": [0, 65535]},
+    {"name": "ticks", "type": "uint16", "offset": 126, "bytes": 2, "bounds": [0, 65535]},
+    {"name": "routeIndex", "type": "uint16", "offset": 128, "bytes": 2, "bounds": [0, 65535]},
+    {"name": "nextX", "type": "sint16", "offset": 130, "bytes": 2, "bounds": [-32768, 32767]},
+    {"name": "durationResult", "type": "sint16", "offset": 132, "bytes": 2, "bounds": [-32768, 32767]},
+    {"name": "speedResult", "type": "sint16", "offset": 134, "bytes": 2, "bounds": [-32768, 32767]},
+    {"name": "headingResult", "type": "sint16", "offset": 136, "bytes": 2, "bounds": [-32768, 32767]},
+    {"name": "rateResult", "type": "sint16", "offset": 138, "bytes": 2, "bounds": [-32768, 32767]},
+    {"name": "sineResult", "type": "sint16", "offset": 140, "bytes": 2, "bounds": [-32768, 32767]}
+  ],
+  "arrays":[{"name":"x","type":"uint16","buffer":2,"offset":0,"bytes":12,"lower":0,"upper":5,"count":6,"element_bytes":2,"access":3,"owner":"application_retained","initial_data":"array-x.bin"},{"name":"y","type":"uint16","buffer":3,"offset":0,"bytes":12,"lower":0,"upper":5,"count":6,"element_bytes":2,"access":3,"owner":"application_retained","initial_data":"array-y.bin"},{"name":"velocity","type":"sint16","buffer":4,"offset":0,"bytes":12,"lower":0,"upper":5,"count":6,"element_bytes":2,"access":3,"owner":"application_retained","initial_data":"array-velocity.bin"},{"name":"phase","type":"uint16","buffer":5,"offset":0,"bytes":12,"lower":0,"upper":5,"count":6,"element_bytes":2,"access":3,"owner":"application_retained","initial_data":"array-phase.bin"},{"name":"colour","type":"uint16","buffer":6,"offset":0,"bytes":12,"lower":0,"upper":5,"count":6,"element_bytes":2,"access":3,"owner":"application_retained","initial_data":"array-colour.bin"},{"name":"baseY","type":"uint16","buffer":7,"offset":0,"bytes":12,"lower":0,"upper":5,"count":6,"element_bytes":2,"access":1,"owner":"application_retained","initial_data":"array-baseY.bin"},{"name":"duration","type":"sint16","buffer":8,"offset":0,"bytes":12,"lower":0,"upper":5,"count":6,"element_bytes":2,"access":1,"owner":"application_retained","initial_data":"array-duration.bin"},{"name":"speed","type":"sint16","buffer":9,"offset":0,"bytes":12,"lower":0,"upper":5,"count":6,"element_bytes":2,"access":1,"owner":"application_retained","initial_data":"array-speed.bin"},{"name":"heading","type":"sint16","buffer":10,"offset":0,"bytes":12,"lower":0,"upper":5,"count":6,"element_bytes":2,"access":1,"owner":"application_retained","initial_data":"array-heading.bin"},{"name":"rate","type":"sint16","buffer":11,"offset":0,"bytes":12,"lower":0,"upper":5,"count":6,"element_bytes":2,"access":1,"owner":"application_retained","initial_data":"array-rate.bin"},{"name":"sine","type":"sint16","buffer":12,"offset":0,"bytes":514,"lower":0,"upper":256,"count":257,"element_bytes":2,"access":1,"owner":"application_retained","initial_data":"array-sine.bin"}],
+  "entries": [
+    {"name": "Init", "logical_id": 0, "parameter_bytes": 0, "result_bytes": 0, "worst_case_visits": 31},
+    {"name": "step", "logical_id": 1, "parameter_bytes": 0, "result_bytes": 0, "worst_case_visits": 110},
+    {"name": "readRoute", "logical_id": 2, "parameter_bytes": 0, "result_bytes": 0, "worst_case_visits": 4},
+    {"name": "readSine", "logical_id": 3, "parameter_bytes": 0, "result_bytes": 0, "worst_case_visits": 1}
+  ],
+  "external_reservations": [{"first":60000,"last":60031}]
+}

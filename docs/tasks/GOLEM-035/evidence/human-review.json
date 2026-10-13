@@ -1,0 +1,79 @@
+{
+  "variant": "review",
+  "observations": 1302,
+  "calls": 601,
+  "result_bytes": 12912,
+  "result_sha256": "a17e7bbb95ebc9170c66211d62438972f435c4b231b1a15ef322534d7b6ba94d",
+  "native": {
+    "LOAD native": 1,
+    "native entry 6": 32676,
+    "native entry 7": 16393,
+    "entry_address": "0x40097fa4"
+  },
+  "visual": {
+    "frames": 600,
+    "successful_invocations": 601,
+    "rectangles": [
+      {
+        "x": 182,
+        "y": 24,
+        "right": 196,
+        "bottom": 32,
+        "colour": 12
+      },
+      {
+        "x": 134,
+        "y": 53,
+        "right": 148,
+        "bottom": 61,
+        "colour": 12
+      },
+      {
+        "x": 16,
+        "y": 82,
+        "right": 30,
+        "bottom": 90,
+        "colour": 48
+      },
+      {
+        "x": 218,
+        "y": 111,
+        "right": 232,
+        "bottom": 119,
+        "colour": 48
+      },
+      {
+        "x": 170,
+        "y": 139,
+        "right": 184,
+        "bottom": 147,
+        "colour": 48
+      },
+      {
+        "x": 192,
+        "y": 167,
+        "right": 206,
+        "bottom": 175,
+        "colour": 48
+      }
+    ],
+    "guides": [
+      24,
+      52,
+      80,
+      108,
+      136,
+      164
+    ],
+    "width": 320,
+    "height": 240,
+    "playfield_rows": 176,
+    "sine_values": 257,
+    "opponents": 6,
+    "scheduler_implemented": false
+  },
+  "author_report": "done. tests look good",
+  "human_review_accepted": true,
+  "runtime_fixture_identities_verified": true,
+  "commit_push_approval": false
+}

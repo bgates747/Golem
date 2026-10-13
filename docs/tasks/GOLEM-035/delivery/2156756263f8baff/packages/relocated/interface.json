@@ -1,0 +1,33 @@
+{
+  "schema": 1, "profile": "portable-scalar-foundation",
+  "experimental": true, "execution_contract": "r25-g0-root-v1-dual-backend",
+  "state_buffer": 255, "state_bytes": 130,
+  "state_owner": "application_shared",
+  "initialization": "explicit_install_or_reset",
+  "error": {"offset": 14, "bytes": 2, "codes": {"ok": 0, "uint16_add_overflow": 1, "uint16_sub_underflow": 2, "uint16_mul_overflow": 3, "array_index": 5, "zero_divisor": 4, "bounds_failure": 32, "nonfinite_float": 33}},
+  "globals": [
+    {"name": "index", "type": "uint16", "offset": 112, "bytes": 2, "bounds": [0, 65535]},
+    {"name": "signedIndex", "type": "sint16", "offset": 114, "bytes": 2, "bounds": [-32768, 32767]},
+    {"name": "value", "type": "uint16", "offset": 116, "bytes": 2, "bounds": [0, 65535]},
+    {"name": "selected", "type": "sint16", "offset": 118, "bytes": 2, "bounds": [-32768, 32767]},
+    {"name": "selectedUnsigned", "type": "uint16", "offset": 120, "bytes": 2, "bounds": [0, 65535]},
+    {"name": "marker", "type": "uint16", "offset": 122, "bytes": 2, "bounds": [0, 65535]},
+    {"name": "sum", "type": "uint16", "offset": 124, "bytes": 2, "bounds": [0, 65535]},
+    {"name": "counter", "type": "uint16", "offset": 126, "bytes": 2, "bounds": [0, 65535]},
+    {"name": "test", "type": "bool", "offset": 128, "bytes": 2, "bounds": [0, 1]}
+  ],
+  "arrays":[{"name":"signedValues","type":"sint16","buffer":256,"offset":0,"bytes":8,"lower":-2,"upper":1,"count":4,"element_bytes":2,"access":3,"owner":"application_retained","initial_data":"array-signedValues.bin"},{"name":"words","type":"uint16","buffer":257,"offset":0,"bytes":8,"lower":65530,"upper":65533,"count":4,"element_bytes":2,"access":3,"owner":"application_retained","initial_data":"array-words.bin"},{"name":"mutable","type":"uint16","buffer":258,"offset":0,"bytes":12,"lower":0,"upper":5,"count":6,"element_bytes":2,"access":3,"owner":"application_retained","initial_data":"array-mutable.bin"},{"name":"sine","type":"sint16","buffer":259,"offset":0,"bytes":514,"lower":0,"upper":256,"count":257,"element_bytes":2,"access":1,"owner":"application_retained","initial_data":"array-sine.bin"}],
+  "entries": [
+    {"name": "readSigned", "logical_id": 0, "parameter_bytes": 0, "result_bytes": 0, "worst_case_visits": 1},
+    {"name": "readUnsigned", "logical_id": 1, "parameter_bytes": 0, "result_bytes": 0, "worst_case_visits": 1},
+    {"name": "store", "logical_id": 2, "parameter_bytes": 0, "result_bytes": 0, "worst_case_visits": 3},
+    {"name": "increment", "logical_id": 3, "parameter_bytes": 0, "result_bytes": 0, "worst_case_visits": 1},
+    {"name": "copy", "logical_id": 4, "parameter_bytes": 0, "result_bytes": 0, "worst_case_visits": 2},
+    {"name": "readSine", "logical_id": 5, "parameter_bytes": 0, "result_bytes": 0, "worst_case_visits": 1},
+    {"name": "skipped", "logical_id": 6, "parameter_bytes": 0, "result_bytes": 0, "worst_case_visits": 2},
+    {"name": "indexFirst", "logical_id": 7, "parameter_bytes": 0, "result_bytes": 0, "worst_case_visits": 1},
+    {"name": "expressionIndex", "logical_id": 8, "parameter_bytes": 0, "result_bytes": 0, "worst_case_visits": 1},
+    {"name": "accumulate", "logical_id": 9, "parameter_bytes": 0, "result_bytes": 0, "worst_case_visits": 14}
+  ],
+  "external_reservations": [{"first":60000,"last":60031},{"first":1,"last":254}]
+}

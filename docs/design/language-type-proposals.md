@@ -1545,3 +1545,16 @@ The agent retrieved and verified all 873 saved checks. See [the maintained table
 sample. EX-023 through EX-028 remain proposals, including narrowed bounds,
 sint32 fields, general arrays and mutable stores. General table/arithmetic
 composition and AGNB raw/table extensions remain future work.
+
+## First retained-array implementation — GOLEM-035
+
+The task-local portable successor implements one-dimensional `Array uint16` /
+`Array sint16`, inclusive bounds and typed `name(index)` reads/writes on both
+backends. Explicit `= Fill(literal)` / `= Values(...)` or build-supplied packed data
+initialize retained application buffers; `ReadOnly Array` forbids source writes.
+Indices evaluate/check before a store RHS; logical range failure is language
+status 5, preserving the failed element/destination and earlier effects. Native
+leases check actual storage while stock uses the installation invariant. See
+[the supported profile and initialized examples](../tasks/GOLEM-035/README.md).
+This does not implement the broader multidimensional/float/wide proposals above,
+and remains a task-local prototype pending human review and agreed promotion.

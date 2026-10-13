@@ -1,0 +1,18 @@
+{
+  "bundle": "delivery/2156756263f8baff",
+  "sha256": "2156756263f8baffa52e3c14a57e7838d90336bc9ee3d5bbde78566ed722ff8f",
+  "packages": {
+    "default": {
+      "manifest": "packages/default/delivery-manifest.json",
+      "sha256": "35c8dbd787946746c41b87fb2e4795771586b03b63e786da661e50b7966dcb62"
+    },
+    "relocated": {
+      "manifest": "packages/relocated/delivery-manifest.json",
+      "sha256": "88966b59d2bf4c36d3f90fe9e982e8b75854e4f5bf350cdada870d584efdf354"
+    },
+    "animation": {
+      "manifest": "packages/animation/delivery-manifest.json",
+      "sha256": "69f19263c31541db8d60b9f52ec92861e786bacc9a829587572389dc9504f564"
+    }
+  }
+}

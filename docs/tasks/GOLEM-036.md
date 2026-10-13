@@ -23,8 +23,10 @@ path. See GOLEM-034/rally-oracle-handoff-v2.json for the receipt.
 Signed quotient truncates toward zero; remainder is n-q*d, with numerator's sign
 or zero and abs(r)<abs(d). Zero divisor is status 4. Minimum signed value divided
 by -1 is a checked overflow, preserving both outputs. Freeze its error code
-before implementing it. Golem proposed language status 6 in the D0 delivery
-message; peer acceptance remains pending. This is separate from interface status 6. Both paired results pass checks before either store.
+before implementing it. Rally accepted language status 6 for minimum signed/-1 overflow in message
+2026-10-13_17-18-34_rally_rally25-d0-received-division-six-eleven. Both outputs
+remain unchanged, earlier effects remain, and status 4 still means zero divisor.
+Interface status 6 is a separate channel. Both paired results pass checks before either store.
 Narrowing is explicit, checked and numeric, not a wrapping bit reinterpretation.
 
 - INV-001 [x] Receive pinned Rally formulas, unit/range audit and independent vectors, including projection products.

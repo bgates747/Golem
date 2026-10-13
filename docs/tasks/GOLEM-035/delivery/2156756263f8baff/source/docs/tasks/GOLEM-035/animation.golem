@@ -1,0 +1,76 @@
+// Retained arrays drive six markers. Assembly draws and paces with VSYNC.
+// Route columns and the 257-value sine table come from Rally's frozen data.
+uint16 slot = 0
+uint16 waveIndex = 0
+uint16 phaseValue = 0
+uint16 sineValue = 0
+uint16 bob = 0
+uint16 remainder = 0
+uint16 quotient = 0
+uint16 ticks = 0
+uint16 routeIndex = 0
+sint16 nextX = 0
+sint16 durationResult = 0
+sint16 speedResult = 0
+sint16 headingResult = 0
+sint16 rateResult = 0
+sint16 sineResult = 0
+Array uint16 x(0:5) = Values(32,80,128,176,224,272)
+Array uint16 y(0:5) = Values(20,48,76,104,132,160)
+Array sint16 velocity(0:5) = Fill(0)
+Array uint16 phase(0:5) = Values(0,40,80,120,160,200)
+Array uint16 colour(0:5) = Fill(12)
+ReadOnly Array uint16 baseY(0:5) = Values(20,48,76,104,132,160)
+ReadOnly Array sint16 duration(0:5)
+ReadOnly Array sint16 speed(0:5)
+ReadOnly Array sint16 heading(0:5)
+ReadOnly Array sint16 rate(0:5)
+ReadOnly Array sint16 sine(0:256)
+Sub Init
+    For slot In Range(0:5)
+        (quotient,remainder) = divmod(uint16(speed(slot)),60)
+        velocity(slot) = sint16(quotient)
+        If slot < 3 Then
+            velocity(slot) = 0 - velocity(slot)
+        EndIf
+    Next slot
+EndSub
+Sub step
+    For slot In Range(0:5)
+        nextX = sint16(x(slot)) + velocity(slot)
+        If nextX < 16 Or nextX > 288 Then
+            velocity(slot) = 0 - velocity(slot)
+            nextX = sint16(x(slot)) + velocity(slot)
+        EndIf
+        x(slot) = uint16(nextX)
+        phaseValue = phase(slot)
+        If phaseValue == 511 Then
+            phaseValue = 0
+        Else
+            phaseValue = phaseValue + 1
+        EndIf
+        phase(slot) = phaseValue
+        If phaseValue > 256 Then
+            waveIndex = 512 - phaseValue
+        Else
+            waveIndex = phaseValue
+        EndIf
+        sineValue = uint16(sine(waveIndex))
+        (bob,remainder) = divmod(sineValue,4096)
+        y(slot) = baseY(slot) + bob
+        colour(slot) = 12
+        If velocity(slot) < 0 Then
+            colour(slot) = 48
+        EndIf
+    Next slot
+    ticks = ticks + 1
+EndSub
+Sub readRoute
+    durationResult = duration(routeIndex)
+    speedResult = speed(routeIndex)
+    headingResult = heading(routeIndex)
+    rateResult = rate(routeIndex)
+EndSub
+Sub readSine
+    sineResult = sine(waveIndex)
+EndSub

@@ -3,12 +3,9 @@
 This is the authoritative register of promoted, unfinished work. Detailed plans
 and task artifacts live under `docs/tasks/`.
 
-GOLEM-034 was accepted and explicitly approved for commit/push on 2026-10-13.
+GOLEM-035 was accepted and explicitly approved for commit/push on 2026-10-13.
 Outstanding human/physical reviews below remain open; this checkpoint does not
 claim those reviews occurred.
-
-- [ ] **GOLEM-035:** D1a bounded typed arrays/SoA and retained tables on both backends.
-  [Plan](docs/tasks/GOLEM-035.md). Depends on D0; awaiting Author plan review/release.
 
 - [ ] **GOLEM-036:** D1b faithful wide integer primitives, signed division and checked narrowing.
   [Plan](docs/tasks/GOLEM-036.md). Requires Rally numeric oracles and D0; awaiting Author plan review/release.

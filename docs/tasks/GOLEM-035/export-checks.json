@@ -1,0 +1,20 @@
+{
+  "bundle_sha256": "2156756263f8baffa52e3c14a57e7838d90336bc9ee3d5bbde78566ed722ff8f",
+  "exported_cpp_source_builds_without_working_task_dependencies": true,
+  "matching_artifacts": [
+    "buffered-install.bin",
+    "native-install.bin",
+    "state.bin",
+    "array-words.bin",
+    "buffered-cleanup.bin",
+    "array-signedValues.bin",
+    "calls.inc",
+    "array-sine.bin",
+    "arrays-install.bin",
+    "layout.inc",
+    "array-mutable.bin",
+    "native.c",
+    "native-cleanup.bin",
+    "common-install.bin"
+  ]
+}

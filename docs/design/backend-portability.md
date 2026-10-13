@@ -214,3 +214,14 @@ no status field proves rollback, snapshot synchronization or scheduling.
 See [D0 source, immutable delivery and qualification](../tasks/GOLEM-034/README.md)
 for exact interfaces, resources and pending human review. Production src and the
 generic SDK/runtime are unchanged.
+
+GOLEM-035 adds retained one-dimensional uint16/sint16 arrays to both task-local
+backends. Inclusive numeric indices, Fill/Values or exact build-supplied initial
+data, ReadOnly source permissions and index-before-RHS stores are shared. Logical
+index failure is language status 5; earlier effects remain. Application-owned
+array buffers survive backend changes/unload/private cleanup. Optional generated
+array descriptors extend manifests without changing root-v1; native checks actual
+shapes/ranges and stock depends on the host-installed invariant. No array-content
+scan, per-element host updates or runtime readback verification is required.
+See [array source/qualification](../tasks/GOLEM-035/README.md) for limits and pending
+human review. Wider world-coordinate math and renderer linking remain later work.

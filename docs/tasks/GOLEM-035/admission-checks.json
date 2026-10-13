@@ -1,0 +1,46 @@
+{
+  "cases": [
+    {
+      "entry": 0,
+      "index": 0,
+      "language_status": 32
+    },
+    {
+      "entry": 0,
+      "index": 1,
+      "language_status": 0
+    },
+    {
+      "entry": 1,
+      "index": 0,
+      "language_status": 32
+    },
+    {
+      "entry": 1,
+      "index": 1,
+      "language_status": 0
+    },
+    {
+      "entry": 2,
+      "index": 0,
+      "language_status": 32
+    },
+    {
+      "entry": 2,
+      "index": 1,
+      "language_status": 0
+    },
+    {
+      "entry": 3,
+      "index": 0,
+      "language_status": 0
+    },
+    {
+      "entry": 3,
+      "index": 1,
+      "language_status": 0
+    }
+  ],
+  "native_and_buffered_parity": true,
+  "leases_released": true
+}

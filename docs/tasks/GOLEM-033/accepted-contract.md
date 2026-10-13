@@ -23,6 +23,16 @@ This supersedes the historical uncommitted/031-only wording in clause 1 below.
 Rally also accepted concrete root-v1 unchanged; see GOLEM-034/README.md. These
 amendments release D0 only, retaining later feature/firmware and human review gates.
 
+The Author subsequently released GOLEM-035/D1a after accepting and publishing D0.
+Rally accepted the concrete storage profile in message
+2026-10-13_17-26-57_rally_rally25-d1a-profile-accepted-thirteen; see
+[the typed-array contract/report](../GOLEM-035/README.md). D1b/D2/firmware remain
+separate release boundaries. Rally accepted language status 6 for minimum
+signed/-1 division overflow (zero divisor 4, conversion/Bounds 32), paired outputs
+unchanged and earlier effects retained, in message
+2026-10-13_17-18-34_rally_rally25-d0-received-division-six-eleven. This resolves
+clause 3's pending numeric mapping without implementing signed division.
+
 ## Accepted clauses
 
 1. **Baseline.** GOLEM-031 is committed/pushed at b37aa3c. GOLEM-032 float32

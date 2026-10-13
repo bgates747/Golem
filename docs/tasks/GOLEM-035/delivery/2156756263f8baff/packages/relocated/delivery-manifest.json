@@ -1,0 +1,846 @@
+{
+  "family": "R25-G0/root-v1",
+  "kind": "bounded-retained-array-D1a",
+  "schema": 1,
+  "inputs": {
+    "source": {
+      "path": "/Agon/mystuff/golem/docs/tasks/GOLEM-035/probe.golem",
+      "sha256": "6ac15229846c02c1a23383fa4408943068292c031476779fcbb648f294db6501"
+    },
+    "bindings": {
+      "path": "/Agon/mystuff/golem/docs/tasks/GOLEM-035/bindings.json",
+      "sha256": "35fd4fe04ec5d7dfedfc5b85f14c9da233d9ec98723f068e0fe2139fc19d1aab"
+    },
+    "d0_layer": {
+      "compiler.cpp": "07f4045f5fec70065eb036562bd018de58d5627935bf9452d4e7035a82bd15f3",
+      "root.hpp": "eedfc6dac1ce24bdc9eba8a547a53ac378801e30a3703426f39a0f37ced7292d",
+      "portable.hpp": "1e12c32e3269eb1938fca064d7a5e232ad9577af66b5c1ca4ef28b44f2205d34",
+      "backends.hpp": "2759730ee00388a743e8c934d62a02ac71ba982057aafaf151ee7cdebda8a2c1"
+    },
+    "baseline": {
+      "compiler_commit": "1a1f303e878eee339a84bcbe5c9560a010588e88",
+      "scalar_commit": "25901e52eb80a4d66847c11fbc70d1bac68ee633",
+      "sdk_commit": "33a554c82377b10d428f0d2ec258d1b48f27ed22",
+      "sdk_files": {
+        "include/vdplet.h": "fa8385e2906f07d37372d80c40f73d419defdbefe7a3458461ac9d5fe0820d38",
+        "src/vdplet_image.h": "6a28226a138ec2c54f1b456b1bf3f33372db1a2477cb1f92afc7547ba5007fff",
+        "src/vdplet_runtime.h": "af049fe93f1e64b0ec1135e5c0e55c1938adf022669dc35d906f5fcb6c58d91b",
+        "tests/check_image.cpp": "7812b6fc7fef7b3b9d4d9faf16d324e4a0155efc98ca64198af0da764e4b0a3c",
+        "build/check_image": "0cb638527c6ec94f78393ce21fbe8698147fe9ca61618c740778cc91e806a464",
+        "tools/build_module.py": "c2353057f2b00545378bc6727752a247df8254dbe51a44c5b99d1478de96bd62"
+      },
+      "files": [
+        {
+          "path": "docs/tasks/GOLEM-034/compiler.cpp",
+          "sha256": "70026992a7e1987ab025806791caab1f687dd4974d442909fe9b590228529ce1",
+          "bytes": 9039
+        },
+        {
+          "path": "docs/tasks/GOLEM-034/root.hpp",
+          "sha256": "5379ad77960871801d217cc01bcba326d7233f5c8f812ca633ac9a56bd91665c",
+          "bytes": 8971
+        },
+        {
+          "path": "docs/tasks/GOLEM-034/baseline/docs/tasks/GOLEM-032/portable.hpp",
+          "sha256": "6e055d6c9013c8a0740256dc25626d3c3f84372d78dc6f7e1a86de88457bd2ee",
+          "bytes": 34997
+        },
+        {
+          "path": "docs/tasks/GOLEM-034/baseline/docs/tasks/GOLEM-032/backends.hpp",
+          "sha256": "40bf05879176aebccbd989c3dcc298c9b9bdb632ccf199bfb8e2dacf514afa4d",
+          "bytes": 37121
+        },
+        {
+          "path": "docs/tasks/GOLEM-034/baseline/docs/tasks/GOLEM-032/compiler.cpp",
+          "sha256": "6153b39e1f2d47f7dfa22abbfa907cca8d15487b03400ce8a3e335b3d772b402",
+          "bytes": 6156
+        },
+        {
+          "path": "docs/tasks/GOLEM-034/baseline/src/ordinary.hpp",
+          "sha256": "7c8fe20f4e63c6e57de70b9931696b87c88c9c4ea499679b1bc239f09480c5da",
+          "bytes": 33802
+        },
+        {
+          "path": "docs/tasks/GOLEM-034/baseline/src/token_reader.hpp",
+          "sha256": "397fe169f1a84b47acf8a77a3036fd50ddfeac45e64d07a74b0497ca50f4126d",
+          "bytes": 7116
+        },
+        {
+          "path": "docs/tasks/GOLEM-034/baseline/src/buffer_allocator.hpp",
+          "sha256": "7c8881777decd9e04231adae3ab4050e52451c0fadaafe6b37c7ce0735c7b449",
+          "bytes": 3174
+        },
+        {
+          "path": "src/ordinary.hpp",
+          "sha256": "7c8fe20f4e63c6e57de70b9931696b87c88c9c4ea499679b1bc239f09480c5da",
+          "bytes": 33802
+        },
+        {
+          "path": "src/token_reader.hpp",
+          "sha256": "397fe169f1a84b47acf8a77a3036fd50ddfeac45e64d07a74b0497ca50f4126d",
+          "bytes": 7116
+        },
+        {
+          "path": "src/buffer_allocator.hpp",
+          "sha256": "7c8881777decd9e04231adae3ab4050e52451c0fadaafe6b37c7ce0735c7b449",
+          "bytes": 3174
+        }
+      ],
+      "d1a_layer": "task-local portable.hpp/backends.hpp/root.hpp/compiler.cpp; retained array extension of pinned D0"
+    },
+    "host_compiler": "g++ (Debian 14.2.0-19) 14.2.0",
+    "tool_executable_sha256": {
+      "g++": "ac4f48ec03aa3988b0c087fd8a0ae681c2922354b321065ff49911b8ab20db73",
+      "gcc": "fb051a6c58961fb6aec758acf50d7d0375eecff740d0706388092829e3fb7a41",
+      "xtensa-esp32-elf-gcc": "e091761ac142b87be663aa36c8dc9af10044a9769a540ee0337ebc97ea56a22d",
+      "xtensa-esp32-elf-ld": "fd641bedc57930941b7b7d9e3d51ece550bf663fb4d9d13ec0a2188082c47245",
+      "xtensa-esp32-elf-strip": "cef0e79caf472d12d87063c8cbc6ed21880ab41dce99fab12671d50e02adcaae"
+    },
+    "native_toolchain": "xtensa-esp32-elf-gcc (crosstool-NG esp-2021r2-patch5) 8.4.0",
+    "abi_header_sha256": "fa8385e2906f07d37372d80c40f73d419defdbefe7a3458461ac9d5fe0820d38",
+    "reservations_prefix": 254,
+    "array_data": {
+      "sine": {
+        "path": "/Agon/mystuff/golem/docs/tasks/GOLEM-035/data/sine.dat",
+        "sha256": "6062d337f69ac6ae99b7da9cdf95f87aea1ee04a9110f26839f0a85f74efff68"
+      }
+    }
+  },
+  "interface": {
+    "schema": 1,
+    "profile": "portable-scalar-foundation",
+    "experimental": true,
+    "execution_contract": "r25-g0-root-v1-dual-backend",
+    "state_buffer": 255,
+    "state_bytes": 130,
+    "state_owner": "application_shared",
+    "initialization": "explicit_install_or_reset",
+    "error": {
+      "offset": 14,
+      "bytes": 2,
+      "codes": {
+        "ok": 0,
+        "uint16_add_overflow": 1,
+        "uint16_sub_underflow": 2,
+        "uint16_mul_overflow": 3,
+        "array_index": 5,
+        "zero_divisor": 4,
+        "bounds_failure": 32,
+        "nonfinite_float": 33
+      }
+    },
+    "globals": [
+      {
+        "name": "index",
+        "type": "uint16",
+        "offset": 112,
+        "bytes": 2,
+        "bounds": [
+          0,
+          65535
+        ]
+      },
+      {
+        "name": "signedIndex",
+        "type": "sint16",
+        "offset": 114,
+        "bytes": 2,
+        "bounds": [
+          -32768,
+          32767
+        ]
+      },
+      {
+        "name": "value",
+        "type": "uint16",
+        "offset": 116,
+        "bytes": 2,
+        "bounds": [
+          0,
+          65535
+        ]
+      },
+      {
+        "name": "selected",
+        "type": "sint16",
+        "offset": 118,
+        "bytes": 2,
+        "bounds": [
+          -32768,
+          32767
+        ]
+      },
+      {
+        "name": "selectedUnsigned",
+        "type": "uint16",
+        "offset": 120,
+        "bytes": 2,
+        "bounds": [
+          0,
+          65535
+        ]
+      },
+      {
+        "name": "marker",
+        "type": "uint16",
+        "offset": 122,
+        "bytes": 2,
+        "bounds": [
+          0,
+          65535
+        ]
+      },
+      {
+        "name": "sum",
+        "type": "uint16",
+        "offset": 124,
+        "bytes": 2,
+        "bounds": [
+          0,
+          65535
+        ]
+      },
+      {
+        "name": "counter",
+        "type": "uint16",
+        "offset": 126,
+        "bytes": 2,
+        "bounds": [
+          0,
+          65535
+        ]
+      },
+      {
+        "name": "test",
+        "type": "bool",
+        "offset": 128,
+        "bytes": 2,
+        "bounds": [
+          0,
+          1
+        ]
+      }
+    ],
+    "arrays": [
+      {
+        "name": "signedValues",
+        "type": "sint16",
+        "buffer": 256,
+        "offset": 0,
+        "bytes": 8,
+        "lower": -2,
+        "upper": 1,
+        "count": 4,
+        "element_bytes": 2,
+        "access": 3,
+        "owner": "application_retained",
+        "initial_data": "array-signedValues.bin"
+      },
+      {
+        "name": "words",
+        "type": "uint16",
+        "buffer": 257,
+        "offset": 0,
+        "bytes": 8,
+        "lower": 65530,
+        "upper": 65533,
+        "count": 4,
+        "element_bytes": 2,
+        "access": 3,
+        "owner": "application_retained",
+        "initial_data": "array-words.bin"
+      },
+      {
+        "name": "mutable",
+        "type": "uint16",
+        "buffer": 258,
+        "offset": 0,
+        "bytes": 12,
+        "lower": 0,
+        "upper": 5,
+        "count": 6,
+        "element_bytes": 2,
+        "access": 3,
+        "owner": "application_retained",
+        "initial_data": "array-mutable.bin"
+      },
+      {
+        "name": "sine",
+        "type": "sint16",
+        "buffer": 259,
+        "offset": 0,
+        "bytes": 514,
+        "lower": 0,
+        "upper": 256,
+        "count": 257,
+        "element_bytes": 2,
+        "access": 1,
+        "owner": "application_retained",
+        "initial_data": "array-sine.bin"
+      }
+    ],
+    "entries": [
+      {
+        "name": "readSigned",
+        "logical_id": 0,
+        "parameter_bytes": 0,
+        "result_bytes": 0,
+        "worst_case_visits": 1
+      },
+      {
+        "name": "readUnsigned",
+        "logical_id": 1,
+        "parameter_bytes": 0,
+        "result_bytes": 0,
+        "worst_case_visits": 1
+      },
+      {
+        "name": "store",
+        "logical_id": 2,
+        "parameter_bytes": 0,
+        "result_bytes": 0,
+        "worst_case_visits": 3
+      },
+      {
+        "name": "increment",
+        "logical_id": 3,
+        "parameter_bytes": 0,
+        "result_bytes": 0,
+        "worst_case_visits": 1
+      },
+      {
+        "name": "copy",
+        "logical_id": 4,
+        "parameter_bytes": 0,
+        "result_bytes": 0,
+        "worst_case_visits": 2
+      },
+      {
+        "name": "readSine",
+        "logical_id": 5,
+        "parameter_bytes": 0,
+        "result_bytes": 0,
+        "worst_case_visits": 1
+      },
+      {
+        "name": "skipped",
+        "logical_id": 6,
+        "parameter_bytes": 0,
+        "result_bytes": 0,
+        "worst_case_visits": 2
+      },
+      {
+        "name": "indexFirst",
+        "logical_id": 7,
+        "parameter_bytes": 0,
+        "result_bytes": 0,
+        "worst_case_visits": 1
+      },
+      {
+        "name": "expressionIndex",
+        "logical_id": 8,
+        "parameter_bytes": 0,
+        "result_bytes": 0,
+        "worst_case_visits": 1
+      },
+      {
+        "name": "accumulate",
+        "logical_id": 9,
+        "parameter_bytes": 0,
+        "result_bytes": 0,
+        "worst_case_visits": 14
+      }
+    ],
+    "external_reservations": [
+      {
+        "first": 60000,
+        "last": 60031
+      },
+      {
+        "first": 1,
+        "last": 254
+      }
+    ]
+  },
+  "root": {
+    "family": "R25-G0/root-v1",
+    "schema": 1,
+    "header_bytes": 112,
+    "root_bytes": 130,
+    "globals_bytes": 18,
+    "byte_order": "little",
+    "argument_bytes": 2,
+    "fields": {
+      "magic": 0,
+      "schema": 2,
+      "header_bytes": 4,
+      "root_bytes": 6,
+      "session": 8,
+      "interface_status": 12,
+      "language_status": 14,
+      "runtime_result": 16,
+      "last_success_generation": 20,
+      "last_success_entry": 24,
+      "descriptor_count": 26,
+      "requested_entry": 28,
+      "last_success_session": 32,
+      "entry_count": 36,
+      "globals_bytes": 38,
+      "contract_tag": 44,
+      "descriptors": 48
+    },
+    "bindings": [
+      {
+        "role": 1,
+        "buffer": 0,
+        "offset": 0,
+        "bytes": 0,
+        "access": 0,
+        "installed_min_bytes": 0
+      },
+      {
+        "role": 2,
+        "buffer": 0,
+        "offset": 0,
+        "bytes": 0,
+        "access": 0,
+        "installed_min_bytes": 0
+      },
+      {
+        "role": 3,
+        "buffer": 0,
+        "offset": 0,
+        "bytes": 0,
+        "access": 0,
+        "installed_min_bytes": 0
+      },
+      {
+        "role": 4,
+        "buffer": 0,
+        "offset": 0,
+        "bytes": 0,
+        "access": 0,
+        "installed_min_bytes": 0
+      }
+    ],
+    "runtime_result_owner": "invocation_transport_owner",
+    "generation": "successful-invocation-modulo-2^32",
+    "stock_storage_admission": "host-installed-manifest-invariant",
+    "native_storage_admission": "actual-root-and-bound-range-leases"
+  },
+  "backends": {
+    "shared_state": 255,
+    "state_bytes": 130,
+    "error_offset": 14,
+    "root_schema": 1,
+    "root_header_bytes": 112,
+    "native_handle_offset": 24,
+    "buffered_dispatch": 432,
+    "native_arguments": 443,
+    "buffered_entries": [
+      433,
+      434,
+      435,
+      436,
+      437,
+      438,
+      439,
+      440,
+      441,
+      442
+    ],
+    "native_wrappers": [
+      444,
+      445,
+      446,
+      447,
+      448,
+      449,
+      450,
+      451,
+      452,
+      453
+    ],
+    "buffered_owned": [
+      260,
+      261,
+      262,
+      263,
+      264,
+      265,
+      266,
+      267,
+      268,
+      269,
+      270,
+      271,
+      272,
+      273,
+      274,
+      275,
+      276,
+      277,
+      278,
+      279,
+      280,
+      281,
+      282,
+      283,
+      284,
+      285,
+      286,
+      287,
+      288,
+      289,
+      290,
+      291,
+      292,
+      293,
+      294,
+      295,
+      296,
+      297,
+      298,
+      299,
+      300,
+      301,
+      302,
+      303,
+      304,
+      305,
+      306,
+      307,
+      308,
+      309,
+      310,
+      311,
+      312,
+      313,
+      314,
+      315,
+      316,
+      317,
+      318,
+      319,
+      320,
+      321,
+      322,
+      323,
+      324,
+      325,
+      326,
+      327,
+      328,
+      329,
+      330,
+      331,
+      332,
+      333,
+      334,
+      335,
+      336,
+      337,
+      338,
+      339,
+      340,
+      341,
+      342,
+      343,
+      344,
+      345,
+      346,
+      347,
+      348,
+      349,
+      350,
+      351,
+      352,
+      353,
+      354,
+      355,
+      356,
+      357,
+      358,
+      359,
+      360,
+      361,
+      362,
+      363,
+      364,
+      365,
+      366,
+      367,
+      368,
+      369,
+      370,
+      371,
+      372,
+      373,
+      374,
+      375,
+      376,
+      377,
+      378,
+      379,
+      380,
+      381,
+      382,
+      383,
+      384,
+      385,
+      386,
+      387,
+      388,
+      389,
+      390,
+      391,
+      392,
+      393,
+      394,
+      395,
+      396,
+      397,
+      398,
+      399,
+      400,
+      401,
+      402,
+      403,
+      404,
+      405,
+      406,
+      407,
+      408,
+      409,
+      410,
+      411,
+      412,
+      413,
+      414,
+      415,
+      416,
+      417,
+      418,
+      419,
+      420,
+      421,
+      422,
+      423,
+      424,
+      425,
+      426,
+      427,
+      428,
+      429,
+      430,
+      431,
+      432,
+      433,
+      434,
+      435,
+      436,
+      437,
+      438,
+      439,
+      440,
+      441,
+      442
+    ],
+    "native_owned": [
+      443,
+      444,
+      445,
+      446,
+      447,
+      448,
+      449,
+      450,
+      451,
+      452,
+      453
+    ]
+  },
+  "native_module": {
+    "name": "probe",
+    "source": "/Agon/mystuff/golem/docs/tasks/GOLEM-035/build/probe-relocated/native.c",
+    "source_sha256": "41c45c86ea8d99261800c3d1f72c6ba0287185b066f2ff225c3ff4b9a4320ded",
+    "build_id": "0x474c3335",
+    "capabilities": 1,
+    "envelope_bytes": 64,
+    "elf_bytes": 3844,
+    "package_bytes": 3908,
+    "sha256": "e0a61c3ea933f114cde0d03912bf76b3585f253850a1231e23ac6e7b12afd53e",
+    "package": "/Agon/mystuff/golem/docs/tasks/GOLEM-035/build/probe-relocated/probe.vdpl",
+    "elf": "/Agon/mystuff/golem/docs/tasks/GOLEM-035/build/probe-relocated/probe.elf",
+    "entry_virtual": 420,
+    "resident_text_bytes": 2624,
+    "resident_data_bytes": 268,
+    "relative_relocations": 6,
+    "allocated_sections": {
+      ".text": {
+        "virtual_address": 380,
+        "bytes": 2623,
+        "type": 1
+      },
+      ".rodata": {
+        "virtual_address": 3004,
+        "bytes": 264,
+        "type": 1
+      },
+      ".data": {
+        "virtual_address": 7512,
+        "bytes": 4,
+        "type": 1
+      }
+    }
+  },
+  "resources": {
+    "module": {
+      "name": "probe",
+      "source": "/Agon/mystuff/golem/docs/tasks/GOLEM-035/build/probe-relocated/native.c",
+      "source_sha256": "41c45c86ea8d99261800c3d1f72c6ba0287185b066f2ff225c3ff4b9a4320ded",
+      "build_id": "0x474c3335",
+      "capabilities": 1,
+      "envelope_bytes": 64,
+      "elf_bytes": 3844,
+      "package_bytes": 3908,
+      "sha256": "e0a61c3ea933f114cde0d03912bf76b3585f253850a1231e23ac6e7b12afd53e",
+      "package": "/Agon/mystuff/golem/docs/tasks/GOLEM-035/build/probe-relocated/probe.vdpl",
+      "elf": "/Agon/mystuff/golem/docs/tasks/GOLEM-035/build/probe-relocated/probe.elf",
+      "entry_virtual": 420,
+      "resident_text_bytes": 2624,
+      "resident_data_bytes": 268,
+      "relative_relocations": 6,
+      "allocated_sections": {
+        ".text": {
+          "virtual_address": 380,
+          "bytes": 2623,
+          "type": 1
+        },
+        ".rodata": {
+          "virtual_address": 3004,
+          "bytes": 264,
+          "type": 1
+        },
+        ".data": {
+          "virtual_address": 7512,
+          "bytes": 4,
+          "type": 1
+        }
+      }
+    },
+    "stack_frames": [
+      {
+        "function": "get32",
+        "bytes": 32
+      },
+      {
+        "function": "vdplet_entry",
+        "bytes": 128
+      }
+    ],
+    "conservative_sum_module_static_frames": 160,
+    "stack_scope": "module frames only; excludes firmware/service caller frames",
+    "max_live_leases": 3,
+    "admitted_stack_budget": 512,
+    "admission_policy": "existing SDK limits; no capacity probe or limit change"
+  },
+  "artifacts": {
+    "array-mutable.bin": {
+      "bytes": 12,
+      "sha256": "15ec7bf0b50732b49f8228e07d24365338f9e3ab994b00af08e5a3bffe55fd8b"
+    },
+    "array-signedValues.bin": {
+      "bytes": 8,
+      "sha256": "a0b3d8f5dbcdc6dac337b3de2e92fe62e1391e6a031d577ca3f7b4b804ac9c79"
+    },
+    "array-sine.bin": {
+      "bytes": 514,
+      "sha256": "6062d337f69ac6ae99b7da9cdf95f87aea1ee04a9110f26839f0a85f74efff68"
+    },
+    "array-words.bin": {
+      "bytes": 8,
+      "sha256": "d1f9c24f4929af5dbabfb93409c1cbdb9cda04e16dc99e8041f02782f2da17b9"
+    },
+    "arrays-install.bin": {
+      "bytes": 598,
+      "sha256": "1d43881ed6058029da956566d34736626a4cd49a533d92d2882bb1e61f2f985c"
+    },
+    "backends.json": {
+      "bytes": 32207,
+      "sha256": "248079655f9684dc4398160d01540749128a346b95c009026ba269a6ebb69ed3"
+    },
+    "buffered-cleanup.bin": {
+      "bytes": 1098,
+      "sha256": "fbdfcac2d96773ae7a005c8afa4a7fe2ef883fb2c602a72c98f55af17706a8d1"
+    },
+    "buffered-install.bin": {
+      "bytes": 14398,
+      "sha256": "cfe83af9f3b471494dc2a25716e4e07f8f07afc4904b68618d40eb3ed1e5454b"
+    },
+    "calls.inc": {
+      "bytes": 2840,
+      "sha256": "178d2845f36856eb65c4326a633a0c675e7d82285a0a91246d54316cc9a73572"
+    },
+    "common-install.bin": {
+      "bytes": 742,
+      "sha256": "84490eec79e071d5688ae7424039a0a0607d5cd67a92754b8fca6a6cb8ac5ba8"
+    },
+    "interface.json": {
+      "bytes": 3338,
+      "sha256": "3557e044b49a46700cf24e358e284e0444e1ccb3e76f8b25ced3667c28748498"
+    },
+    "layout.inc": {
+      "bytes": 3307,
+      "sha256": "3086e1e2a8e776228ea259a6240307796d3af889d4449fdafbe66b6ce1caf941"
+    },
+    "native-cleanup.bin": {
+      "bytes": 66,
+      "sha256": "a3bcd7234026663d900674d694301be06225d3e97d021f83d803b93b47f2bc6f"
+    },
+    "native-install.bin": {
+      "bytes": 456,
+      "sha256": "36f3c7fce75dc83a12b844611b461642fdeba5138517a2f124f2d7d52dbec8a6"
+    },
+    "native.c": {
+      "bytes": 10885,
+      "sha256": "41c45c86ea8d99261800c3d1f72c6ba0287185b066f2ff225c3ff4b9a4320ded"
+    },
+    "probe.elf": {
+      "bytes": 6756,
+      "sha256": "d9b92f66de42ab1b69644353f42cb4ae040b210e3e45e56ea50071fd07b1f368"
+    },
+    "probe.json": {
+      "bytes": 1231,
+      "sha256": "ffd59c87b403d2a5a6f3ef03fc531bdd80ffee0ecd1e153e3d7c7c6b83edc6d2"
+    },
+    "probe.su": {
+      "bytes": 68,
+      "sha256": "6ba8d9e486477d235ffb9b02872c760e1941e80f1038ce0d4df85eb2e8ac6666"
+    },
+    "probe.upload.elf": {
+      "bytes": 3844,
+      "sha256": "a0bb9c9f5e825b6a3b6121ee0d194852881ab8b8624d6924f9519ae8ae54effe"
+    },
+    "probe.vdpl": {
+      "bytes": 3908,
+      "sha256": "e0a61c3ea933f114cde0d03912bf76b3585f253850a1231e23ac6e7b12afd53e"
+    },
+    "program.json": {
+      "bytes": 3784,
+      "sha256": "2d1c11bd7d67c393ca9ce8eb7f3dc6954069e92ea57f87d5a93150e8a1bf09e0"
+    },
+    "resources.json": {
+      "bytes": 1475,
+      "sha256": "f2692f46cfdbc4d446700d22e1bdd170810dbae317f73436f6b4bbd3dc4fd7b6"
+    },
+    "root.json": {
+      "bytes": 1019,
+      "sha256": "1084e301f83b9ca6d8ee28bb0ace4d97edaacc4cc43b3d524fc045efdbc6aa49"
+    },
+    "state.bin": {
+      "bytes": 130,
+      "sha256": "d14120aedab6e796e9e56c13c8f1968046034122c8a96129e24dda04170605ae"
+    }
+  }
+}
