@@ -624,3 +624,22 @@ Oryx visual staging are documented in docs/tasks/GOLEM-029/README.md. The Author
 bytes. The Author explicitly approved commit/push on 2026-10-13. The traffic-light appearance
 is intentionally unchanged; lights.golem now expresses its decisions with the
 new compound operators. Use its task-specific profile and single-terminal review.
+
+## Paired integer division prototype — GOLEM-030
+
+The task-local GOLEM-030 fork implements `(q,r)=divmod(n,d)` on both backends.
+Arguments evaluate once left to right, before either distinct uint16 destination
+changes; input/output aliasing is supported. Zero divisor reports status 4;
+arithmetic or either destination Bounds failure preserves both outputs and prior
+effects, then stops. Active loop counters cannot be destinations. The buffered
+backend reuses the maintained qualified division kernel; native uses integer
+quotient/remainder. Production compiler and generic SDK/runtime remain unchanged.
+
+Host ASan/UBSan, command model/generated-C, ELF and maintained checks pass
+9,104 cases, 66 grammar/reference cases and 82 rejections. Target qualification
+and visual staging are recorded in docs/tasks/GOLEM-030/README.md. lights.golem
+uses quotient for phase and remainder for green blinking; state is now 24 bytes
+and must be explicitly installed. Use its separate Oryx profile and the normal
+single-terminal review protocol. The Author accepted visual review; retrieved
+results pass all 637 observations/6,289 bytes and runtime identities pass.
+The Author explicitly approved commit/push on 2026-10-13.

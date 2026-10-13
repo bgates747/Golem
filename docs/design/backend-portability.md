@@ -147,3 +147,14 @@ at entry. Boolean storage and the shared assembly interface remain unchanged.
 See [the compound-Boolean tranche](../tasks/GOLEM-029/README.md) for qualification
 and accepted human review. The Author explicitly approved commit/push on 2026-10-13.
 Production compiler and generic SDK are unchanged.
+
+GOLEM-030 extends the task-local uint16 subset with paired divmod assignments.
+Distinct initialized uint16 destinations receive quotient and remainder together
+only after both arguments evaluate and both outputs pass destination Bounds.
+Arguments evaluate once left to right and may alias outputs. Zero divisor is
+status 4; arithmetic and Bounds errors retain both outputs and prior effects.
+The existing qualified buffered kernel and native division share the same
+source, layout and named assembly contract. The visual uses quotient for phase
+and remainder for green blinking. See [the division tranche](../tasks/GOLEM-030/README.md)
+for qualification and human-review status. Production compiler and generic SDK
+remain unchanged.

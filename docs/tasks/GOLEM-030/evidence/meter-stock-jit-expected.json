@@ -1,0 +1,237 @@
+{
+  "variant": "meter-stock",
+  "checks": [
+    {
+      "label": "buffered case 0",
+      "offset": 0,
+      "bytes": 24
+    },
+    {
+      "label": "buffered case 1",
+      "offset": 24,
+      "bytes": 24
+    },
+    {
+      "label": "buffered case 2",
+      "offset": 48,
+      "bytes": 24
+    },
+    {
+      "label": "buffered case 3",
+      "offset": 72,
+      "bytes": 24
+    },
+    {
+      "label": "buffered case 4",
+      "offset": 96,
+      "bytes": 24
+    },
+    {
+      "label": "buffered case 5",
+      "offset": 120,
+      "bytes": 24
+    },
+    {
+      "label": "buffered case 6",
+      "offset": 144,
+      "bytes": 24
+    },
+    {
+      "label": "buffered case 7",
+      "offset": 168,
+      "bytes": 24
+    },
+    {
+      "label": "buffered case 8",
+      "offset": 192,
+      "bytes": 24
+    },
+    {
+      "label": "buffered case 9",
+      "offset": 216,
+      "bytes": 24
+    },
+    {
+      "label": "buffered case 10",
+      "offset": 240,
+      "bytes": 24
+    },
+    {
+      "label": "buffered case 11",
+      "offset": 264,
+      "bytes": 24
+    },
+    {
+      "label": "buffered case 12",
+      "offset": 288,
+      "bytes": 24
+    },
+    {
+      "label": "buffered case 13",
+      "offset": 312,
+      "bytes": 24
+    },
+    {
+      "label": "buffered case 14",
+      "offset": 336,
+      "bytes": 24
+    },
+    {
+      "label": "buffered case 15",
+      "offset": 360,
+      "bytes": 24
+    },
+    {
+      "label": "buffered case 16",
+      "offset": 384,
+      "bytes": 24
+    },
+    {
+      "label": "buffered case 17",
+      "offset": 408,
+      "bytes": 24
+    },
+    {
+      "label": "buffered case 18",
+      "offset": 432,
+      "bytes": 24
+    },
+    {
+      "label": "buffered case 19",
+      "offset": 456,
+      "bytes": 24
+    },
+    {
+      "label": "buffered case 20",
+      "offset": 480,
+      "bytes": 24
+    },
+    {
+      "label": "buffered case 21",
+      "offset": 504,
+      "bytes": 24
+    },
+    {
+      "label": "buffered case 22",
+      "offset": 528,
+      "bytes": 24
+    },
+    {
+      "label": "buffered case 23",
+      "offset": 552,
+      "bytes": 24
+    },
+    {
+      "label": "shared state survives cleanup",
+      "offset": 576,
+      "bytes": 24
+    }
+  ],
+  "result_bytes": 600,
+  "module_loads": 0,
+  "calls": [
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    }
+  ],
+  "visual": null,
+  "source": "lights",
+  "state_id": 1,
+  "probe_sha256": "fe170edccf9f38ab1a6699d74a985e4019d2833f5b2bb25e62edbcca81005ff6",
+  "script_sha256": "fa91b20784f5096094aba42595fff9cc3113a29c40b1fee826c4196f8153e2e0",
+  "source_sha256": "999f8f7413f89803e9fc090a8f19ab0b16a30cbe4b6f5814c6c35af9703c5476",
+  "module_sha256": "a20b2fa5353b100136f215fbcfd67ef6e170f72473261ab48240262f1e335f41"
+}

@@ -1,0 +1,39 @@
+// GOLEM-030: Boolean traffic lights. Both backends run this same tick Sub.
+// Golem chooses lamp colours; resident VDU draws; assembly selects and paces.
+uint16 frame Bounds(0, 179) = 0
+uint16 ticks = 0
+uint16 redColour Bounds(0, 63) = 48
+uint16 amberColour Bounds(0, 63) = 21
+uint16 greenColour Bounds(0, 63) = 21
+bool red = true
+bool amber = false
+bool green = false
+bool moving = false
+uint16 phase Bounds(0,2) = 0
+uint16 withinPhase Bounds(0,59) = 0
+
+Sub tick
+    If frame == 179 Then
+        frame = 0
+    Else
+        frame = frame + 1
+    EndIf
+    (phase, withinPhase) = divmod(frame, 60)
+    red = phase == 0
+    amber = phase == 1
+    green = phase == 2
+    moving = green And withinPhase < 30
+    redColour = 21
+    amberColour = 21
+    greenColour = 21
+    If red Then
+        redColour = 48
+    EndIf
+    If amber Then
+        amberColour = 52
+    EndIf
+    If moving Then
+        greenColour = 12
+    EndIf
+    ticks = ticks + 1
+EndSub
