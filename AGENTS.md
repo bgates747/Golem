@@ -544,3 +544,40 @@ existing single-terminal review protocol. The Author explicitly approved
 commit/push on 2026-10-13 and accepted the visual review;
 retrieved human results match all 533 observations/5,249 bytes. Keyboard success
 was not separately stated. See `docs/tasks/GOLEM-026/README.md`.
+
+## Portable bounded Range loops — GOLEM-027
+
+The task-local GOLEM-027 fork adds For counter In Range(start:end:step) / Next
+with optional matching counter name. Counters are initialized uint16 globals;
+endpoints and signed step are integer literals. Default step is 1; reject zero
+or wrong-direction steps. PC-computed trip/last values are inclusive and admit
+all visited counter values against Bounds. The body cannot assign an active
+counter; nested loops use distinct counters. Limits are eight nested loops and
+262144 worst-case statement/condition/iteration visits per entry. The interface
+publishes worst_case_visits; typed loop nodes publish trips and last.
+
+Buffered loop bodies are not unrolled. Jump-connected header/body/latch blocks
+stop before the final increment, preserving 65535 and descending zero without
+wrapping. Compile-time validity permits scratch-counter advancement without
+redundant runtime admission. Body/condition failure retains the current counter
+and earlier effects, then exits the whole invocation. Native C shares those
+semantics. Historical tasks, production compiler and generic SDK/runtime are unchanged.
+
+Host ASan/UBSan/model/generated-C checks pass 2488 cases, 22 grammar/reference
+acceptances and 51 rejections, plus ELF and maintained checks. Stock VDP and
+actual Xtensa JIT/interpreter qualify full ascending/descending uint16 traversals,
+nested loops/branches, failures, relocated IDs and cleanup retention. The initial
+hybrid full traversal exceeded the inherited 240-tick guest reply timeout; the
+task's qualification guest now uses a 24-bit 12000-tick bounded wait. Both engines
+then pass. This changes no runtime/SDK behavior; diagnostic evidence is retained.
+
+The 600-frame review performs 2400 simulation steps using four loop iterations
+per tick call. The 22-byte state adds batch before error; install it explicitly.
+State checks and all 56320 final playfield pixels pass. Human review is staged
+and stopped on Oryx at `~/Agon/mystuff/golem/docs/tasks/GOLEM-027/.emulator`.
+Source is beside the profile; launch its generated wrapper only. Follow the
+single-terminal review protocol. This tranche remains uncommitted pending human
+review and explicit commit approval. The Author subsequently reported that the
+review worked; retrieved results identify GOLEM-027 and match all 585 observations/
+5769 bytes, including 2400 steps. Human acceptance is recorded; only explicit
+commit/push approval was subsequently given on 2026-10-13. See `docs/tasks/GOLEM-027/README.md`.

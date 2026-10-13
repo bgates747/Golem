@@ -828,6 +828,11 @@ constraints. Mixed-type rows were discussed under the name Table, with explicit
 field types; Table declaration syntax remains undecided. No implementation is
 authorized by recording these decisions.
 
+GOLEM-027 now implements the bounded uint16 For/Range form, including optional
+Next names, in the task-local shared buffered/native prototype. Limits and
+qualification are recorded in [its report](../tasks/GOLEM-027/README.md).
+The maintained compiler and broader Array/Range proposals are unchanged.
+
 ## Axis 16: Increment/decrement operators `++` / `--`
 
 **Status: DECIDED in principle (Author: "i do like those" - a firm want),

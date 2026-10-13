@@ -104,6 +104,18 @@ pass; explicit commit/push approval was given on 2026-10-13. Native/stock packag
 new explicitly installed 20-byte layout; this does not migrate an older installed
 state automatically. See [the conditional tranche](../tasks/GOLEM-026/README.md).
 
+GOLEM-027 adds bounded For/Range loops to the task-local uint16 subset, preserving
+inclusive range semantics, optional Next names and the last visited counter.
+Ranges are computed on the PC; both backends reject body writes to active counters
+and cap worst-case source work. Full uint16 traversals, selected/skipped failures,
+nested loops and relocated buffers pass stock/actual-Xtensa qualification. The
+visual performs four simulation steps per host invocation, showing how a batch
+can reduce arithmetic call traffic. Both paths share a new explicitly installed
+22-byte layout. The Author reports the review worked and saved results pass;
+explicit commit/push approval was given on 2026-10-13. Production promotion, runtime
+ranges, other counter types and source drawing remain later work. See
+[the loop tranche](../tasks/GOLEM-027/README.md).
+
 The first research proposal's whole-module target choice remains useful. Its
 suggestion of making buffered support a later optional concern is superseded by
 REQ-001 through REQ-004: the shared contract is required from the outset, even

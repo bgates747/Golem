@@ -1,0 +1,135 @@
+// Each entry is independently exercised with explicitly initialized globals.
+uint16 a = 0
+uint16 b = 0
+uint16 result = 99
+uint16 earlier = 7
+uint16 narrow Bounds(0, 100) = 9
+
+Sub equal
+    earlier = earlier + 1
+    If a == b Then
+        result = 11
+    Else
+        result = 22
+    EndIf
+    earlier = earlier + 1
+EndSub
+
+Sub unequal
+    earlier = earlier + 1
+    If a != b Then
+        result = 11
+    Else
+        result = 22
+    EndIf
+    earlier = earlier + 1
+EndSub
+
+Sub less
+    earlier = earlier + 1
+    If a < b Then
+        result = 11
+    Else
+        result = 22
+    EndIf
+    earlier = earlier + 1
+EndSub
+
+Sub greater
+    earlier = earlier + 1
+    If a > b Then
+        result = 11
+    Else
+        result = 22
+    EndIf
+    earlier = earlier + 1
+EndSub
+
+Sub atMost
+    earlier = earlier + 1
+    If a <= b Then
+        result = 11
+    Else
+        result = 22
+    EndIf
+    earlier = earlier + 1
+EndSub
+
+Sub atLeast
+    earlier = earlier + 1
+    If a >= b Then
+        result = 11
+    Else
+        result = 22
+    EndIf
+    earlier = earlier + 1
+EndSub
+
+Sub nested
+    earlier = earlier + 1
+    If a < b Then
+        If a == 0 Then
+            result = 10
+        ElseIf a == 255 Then
+            result = 11
+        Else
+            result = 12
+        EndIf
+    ElseIf a == b Then
+        result = 20
+    Else
+        result = 30
+    EndIf
+    earlier = earlier + 1
+EndSub
+
+Sub skipped
+    If a == 0 Then
+        result = 1
+    ElseIf a == 1 Then
+        result = 2
+    Else
+        result = b + 1
+    EndIf
+    earlier = earlier + 1
+EndSub
+
+Sub conditionFault
+    earlier = earlier + 1
+    If a + 1 < b - 1 Then
+        result = 1
+    Else
+        result = 2
+    EndIf
+    earlier = earlier + 1
+EndSub
+
+Sub branchFault
+    earlier = earlier + 1
+    If a == b Then
+        result = a + 1
+        narrow = a
+    Else
+        result = b - 1
+        narrow = a
+    EndIf
+    earlier = earlier + 1
+EndSub
+
+Sub emptyJoin
+    If a >= b Then
+    EndIf
+    earlier = earlier + 1
+EndSub
+
+Sub nestedFault
+    earlier = earlier + 1
+    If a == b Then
+        If a + 1 > b Then
+            result = 1
+        EndIf
+    Else
+        result = 2
+    EndIf
+    earlier = earlier + 1
+EndSub
