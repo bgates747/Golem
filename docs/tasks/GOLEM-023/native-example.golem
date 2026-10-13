@@ -1,0 +1,30 @@
+// GOLEM-023 research proposal; the current compiler cannot compile this file.
+// Proposed native-only source module. Assembly installs initialized globals,
+// loads the VDPlet, binds its fresh handle and calls named entry wrappers.
+float32 input Bounds(-8, 8) = 2.0
+float32 scale Bounds(0, 4) = 1.5
+float32 bias Bounds(-1, 1) = 0.25
+float32 output Bounds(-16, 16) = 0.0
+uint16 calls = 0
+
+Function calibrate(float32 value) As float32
+    float32 candidate = value * scale + bias
+    bool belowFloor = candidate < -16.0
+    If belowFloor Then
+        Return -16.0
+    ElseIf candidate > 16.0 Then
+        Return 16.0
+    Else
+        Return candidate
+    EndIf
+EndFunction
+
+Sub compute
+    uint16 sampleIndex = 0
+    float32 total = 0.0
+    For sampleIndex In Range(1:4)
+        total = total + calibrate(input)
+    Next sampleIndex
+    calls = calls + 1
+    output = total * 0.25
+EndSub

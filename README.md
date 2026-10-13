@@ -2,6 +2,13 @@
 
 **Golem Obtains Less Excessive Messaging**
 
+The intended language supports [one source with interchangeable execution
+backends](docs/design/backend-portability.md): stock VDP buffered commands or
+native VDPlets, selected by developers or application end users. Shared semantics,
+storage and call interfaces will support startup choice and later state-preserving
+runtime selection. The current compiler implements only the small buffered
+profiles described below; native output and runtime selection are planned.
+
 Golem is a low-to-medium-level compiled programming language targeting the
 Agon Console8 VDP's **Buffered Commands API** — a byte-addressable,
 register-less, self-modifying "buffer machine" exposed by `VDU 23, 0, &A0`

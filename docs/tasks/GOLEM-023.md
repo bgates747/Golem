@@ -8,6 +8,12 @@ Complete native source modules may offer a simpler first implementation than
 mixed native/buffered procedures. This records options and a research plan;
 no syntax, backend or implementation is approved by creating this task.
 
+The Author subsequently required one source program for stock buffered and native
+VDPlet targets, with developer/end-user selection including runtime choice.
+[Accepted portability requirements and roadmap](../design/backend-portability.md)
+now govern this research. [GOLEM-024](GOLEM-024.md) owns the authorized first
+shared frontend/layout implementation; remaining research below stays open.
+
 `TODO.md` owns overall status. This document owns scope, design questions and
 acceptance criteria. Future reports, prototypes and fixtures belong under
 `docs/tasks/GOLEM-023/`; creating this task does not authorize implementation,
@@ -157,20 +163,36 @@ experimental execution evidence must not be presented as hardware measurement.
 
 ## Research subtasks
 
-- OPT-001 [ ] Compare the four integration options against approachable source,
+### First tranche — authorized 2026-10-12
+
+Compare the options, recommend the smallest viable native subset, and present
+initialized Golem source plus the assembly/storage interface. Inspect current
+compiler/runtime contracts and use task-local compiler inspection probes to
+check helper dependencies where useful. Do not add a production frontend,
+backend, runtime service or hardware deployment. The deliverable is a review
+report under `GOLEM-023/`, with completed and remaining scope recorded below.
+
+### Detailed items
+
+- OPT-001 [x] Compare the four integration options against approachable source,
   development budget, supported language coverage, recurring wire traffic and
   expected sources of execution overhead. Recommend a starting option and a
-  bounded migration path.
-- LNG-001 [ ] Specify a candidate native subset with complete initialized
+  bounded migration path. First-tranche report recommends a native source module
+  selected by CLI, with explicit per-procedure placement later.
+- LNG-001 [x] Specify a candidate native subset with complete initialized
   examples, including expressions, conditionals, finite loops, Subs/Functions
   and calls. Distinguish existing syntax, proposed syntax and deferred features.
+  The first-tranche report and initialized native-example.golem cover this scope;
+  the proposed subset remains subject to Author review.
 - GEN-001 [ ] Describe the Golem-to-C translation and packaging interfaces;
   account for integer checks, conversions, float behavior, evaluation order,
   unsupported imports and compiler-generated helper dependencies.
-- ABI-001 [ ] Propose inputs, outputs, persistent state, arguments/results,
+- ABI-001 [x] Propose inputs, outputs, persistent state, arguments/results,
   exported entry names, assembly wrappers and fresh-handle updates. Compare
   whole-module storage against shared native/buffered storage and quantify any
-  recurring copies or transfers.
+  recurring copies or transfers. First-tranche report specifies shared global
+  storage, caller-owned scalar call frames, named wrappers, handle binding and
+  recurring wire accounting; implementation and qualification remain separate.
 - SVC-001 [ ] Map desired operations to current runtime services. Identify
   graphics restrictions and compare command-buffer generation with any proposed
   service extension; keep repository ownership boundaries explicit.
@@ -184,8 +206,26 @@ experimental execution evidence must not be presented as hardware measurement.
 - REC-001 [ ] Deliver a recommendation with phased implementation scope,
   acceptance criteria and unresolved author decisions. Stop for review before
   compiler/runtime implementation or physical deployment.
+- POR-001 [ ] Extend the translation/service/resource assessment to the accepted
+  dual-backend requirement, including qualified common semantics, dual-package
+  ownership, safe selection, quiescent live changes and state preservation.
 
 ## Acceptance criteria for the research
+
+### First-tranche delivery
+
+[Recommendation and review decisions](GOLEM-023/README.md),
+[initialized proposed source](GOLEM-023/native-example.golem) and
+[pinned compiler inspection](GOLEM-023/compiler-inspection.json) are ready.
+OPT-001, LNG-001 and ABI-001 are completed as research proposals, not accepted
+language/backend specifications. GEN-001 and RES-001 have partial evidence;
+math-helper closure, full translation/resource rules, the service assessment,
+comparison workload and final recommendation remain open. Stop for Author review
+before further research under this task. The Author has since authorized the
+separate bounded GOLEM-024 implementation, which supersedes this pause for that
+scope only; runtime/backend implementation and physical deployment remain deferred.
+
+### Overall task criteria
 
 The report must explain what a less-technical programmer writes, what the PC
 toolchain emits and what assembly/firmware each do. It must recommend a small

@@ -4,6 +4,12 @@ Status: **living document** - actively updated as decisions are made or
 reconsidered. Not a frozen spec. See individual sections for current
 status markers.
 
+The Author's accepted one-source/two-backend direction and staged roadmap are in
+[backend-portability.md](backend-portability.md): stock Buffered Commands API or
+native VDPlet execution with common semantics, data layout and named host entries.
+Developer/end-user selection, including state-preserving runtime changes, is a
+requirement; its implementation is staged and not available in the current compiler.
+
 Current operation domains and recommendations for conversions, bounds failures,
 function ownership and scope are in the [GOLEM-009 SEM-001 review](../tasks/GOLEM-009/semantics-review.md).
 That report is pending Author review; recommendations are not accepted language rules.

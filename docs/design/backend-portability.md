@@ -1,0 +1,91 @@
+# One Golem source, interchangeable VDP execution backends
+
+The Author requires one Golem language and reusable source for stock Buffered
+Commands API execution or native VDPlet execution. Developers can select a target
+for local requirements; an application can ship both versions and let end users
+choose, including at runtime. Shared language semantics, persistent storage and
+entry interfaces must be designed before backend-specific emission. This is an
+accepted direction recorded on 2026-10-12; the mechanisms below are requirements
+and a staged roadmap, not claims of implemented dual-backend support.
+
+## Requirements
+
+- REQ-001: A portable source program has the same declarations, expressions and
+  procedure bodies for either target. Backend selection belongs to compiler/build
+  configuration and application dispatch; portable source needs no Native marker.
+- REQ-002: Parse and type-check portable source through one frontend and shared
+  typed representation. Implement target-specific emission behind that boundary;
+  do not create independently evolving native and buffered dialects.
+- REQ-003: Portable operations preserve agreed types, evaluation order, numeric
+  conversions, Bounds, error behavior, results and persistent-state effects on
+  both targets. Define and qualify floating behavior explicitly; similar-looking
+  computations or host-only models do not establish backend equivalence.
+- REQ-004: Publish one target-independent data and call interface: field types,
+  offsets, initial bytes, entry identity and parameter/result layouts. Allocate
+  shared data before code and backend-private scratch; a target choice must not
+  move globals. Retain explicit external buffer reservation accounting.
+- REQ-005: The application owns initial installation, updates, invocation, result
+  consumption, pacing and cleanup. Existing named assembly-call conventions
+  continue through a selected dispatcher. These calls enqueue work; returning
+  on eZ80 alone is not proof of VDP completion.
+- REQ-006: A portable distribution may contain both compiled implementations and
+  common initialized data. Install shared state once. Backend installation,
+  removal or replacement must preserve it unless the application explicitly
+  requests reset. Backend-private resources have separate ownership/cleanup.
+- REQ-007: Stock VDP can run the buffered implementation. Runtime-enabled firmware
+  can offer either implementation if its capabilities/resources suffice. Native
+  execution requires the loader-enabled firmware; selection never silently
+  flashes or changes firmware.
+- REQ-008: End users may choose a path through application configuration/startup
+  controls. Later live switching occurs only after the outstanding invocation
+  completes, with the same compatible interface and persistent state. Explicitly
+  synchronize before rebinding calls or unloading code; no mid-routine switching.
+- REQ-009: Automatic availability detection needs a qualified stock-safe protocol
+  and bounded waiting, or use an explicit user setting. The existence of D8/D9
+  commands alone does not prove it is safe to probe unsupported firmware. A busy
+  native slot must not cause the application to evict another owner's module.
+- REQ-010: Native-only extensions need explicit target requirements and diagnostics.
+  A portable build must reject unsupported operations; it cannot silently change
+  algorithms, omit work or label an unqualified native-only feature portable.
+- REQ-011: Runtime selection uses precompiled artifacts; it does not compile
+  source on the Agon. Selecting a whole module first avoids automatic instruction
+  partitioning and repeated cross-backend transitions inside a routine.
+- REQ-012: Compare implementations against shared reference cases, including
+  invalid inputs, failed destination preservation, earlier committed effects,
+  repeated calls and state-preserving changes of backend. Report installation,
+  steady-state wire traffic, execution and presentation measurements separately.
+- REQ-013: No automatic replay after a routine has begun and failed. Earlier
+  writes/drawing may have happened; falling back and rerunning can duplicate
+  effects. Availability fallback before executing a job is a separate policy.
+
+## Roadmap and current limits
+
+This table describes dependencies. `TODO.md` and its linked task plans own
+execution status and checkboxes; this is not another actionable task register.
+
+| Stage | Deliverable | Boundary |
+| --- | --- | --- |
+| Shared foundation | Common typed frontend, deterministic initialized state layout and target requirements | First bounded implementation: GOLEM-024; no executable backend output yet |
+| First portable routine | Same checked uint16 source lowered to buffered commands and a native package | Require actual target qualification before claiming interchangeable execution |
+| Common language growth | Expressions, conversions, floats, conditionals, loops and routines, incrementally qualified on both targets | A supported syntax/type does not imply every operation on it is portable |
+| Startup selection | Dual-artifact packaging, named-call dispatch and explicit user choice; qualified capability detection when available | Stock buffered path remains usable without the native loader |
+| Live selection | Quiescent backend change with state/ownership preservation and fresh native handle binding | No mid-call replacement, implicit state reset or error replay |
+
+Generated C remains the preferred native route to investigate. Native-only
+compilation can be an interim development artifact, but source compatibility
+and shared storage must remain first-class constraints. The maintained compiler
+currently has separate small resident profiles rather than this shared frontend;
+it has no native output, dual-package dispatcher or live switching implementation.
+
+The first research proposal's whole-module target choice remains useful. Its
+suggestion of making buffered support a later optional concern is superseded by
+REQ-001 through REQ-004: the shared contract is required from the outset, even
+while emitter implementation is staged.
+
+## References
+
+- [Native integration research and remaining questions](../tasks/GOLEM-023.md)
+- [First shared implementation task](../tasks/GOLEM-024.md)
+- [Existing native research report](../tasks/GOLEM-023/README.md)
+- [Maintained resident assembly contract](resident-scalar.md)
+- [VDPlet runtime contract](../../../agon-vdplet/docs/API-reference.md)

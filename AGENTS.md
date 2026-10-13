@@ -471,5 +471,9 @@ The maintained hardware runtime/SDK has moved to `/Agon/mystuff/agon-vdplet`.
 Historical task paths are compatibility links and builder adapters; keep future
 generic runtime changes in that repository. GOLEM-023 researches approachable
 Golem source compiled to native VDPlets, with generated C as the candidate route.
-The first research tranche is authorized; implementation and hardware flashing
-are not. See `docs/tasks/GOLEM-023.md` and the authoritative `TODO.md`.
+The first research tranche is complete. The Author requires common source,
+semantics and storage for buffered/native targets, including application/end-user
+runtime selection; see `docs/design/backend-portability.md`. GOLEM-024 authorizes
+a task-local shared scalar frontend and layout prototype only. Backend emitters,
+runtime services and physical deployment remain later work. See the detailed
+task plans and authoritative `TODO.md`.
