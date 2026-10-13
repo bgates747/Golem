@@ -1,0 +1,30 @@
+// Both targets run this exact Sub. Golem chooses when to reverse direction.
+// Resident VDU drawing uses the coordinates; assembly selects and paces tick.
+uint16 phase Bounds(0, 96) = 0
+uint16 step Bounds(4, 4) = 4
+uint16 x = 48
+uint16 y = 152
+uint16 right = 60
+uint16 bottom = 164
+uint16 barRight = 20
+uint16 ticks = 0
+uint16 direction Bounds(0, 1) = 0
+
+Sub tick
+    If phase == 96 Then
+        direction = 1
+    ElseIf phase == 0 Then
+        direction = 0
+    EndIf
+    If direction == 0 Then
+        phase = phase + step
+    Else
+        phase = phase - step
+    EndIf
+    x = phase * 2 + 48
+    y = 152 - phase
+    right = x + 12
+    bottom = y + 12
+    barRight = x - 28
+    ticks = ticks + 1
+EndSub

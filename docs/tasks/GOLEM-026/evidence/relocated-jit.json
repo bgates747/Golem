@@ -1,0 +1,54 @@
+{
+  "variant": "relocated",
+  "observations": 694,
+  "calls": 114,
+  "result_bytes": 6940,
+  "result_sha256": "a8b2741b2e7dd42c9620bf5442b23984aa95c452355e2d8387b0275f78c8e06a",
+  "native": {
+    "LOAD native": 1,
+    "native entry 6": 32656,
+    "native entry 7": 16393,
+    "entry_address": "0x40097f90"
+  },
+  "visual": null,
+  "backend_stats": {
+    "engine": "jit",
+    "frames": 512,
+    "cycles": 2181690000,
+    "retired": 785927287,
+    "uart_rx": 31080,
+    "uart_tx": 8671,
+    "uart_delivered": 8671,
+    "isync": 70,
+    "code_invalidations": 2,
+    "keys": 0,
+    "failed": false,
+    "unhandled": 0,
+    "unregistered": 0,
+    "unmapped": 0
+  },
+  "engine": "jit",
+  "elapsed_seconds": 9.277,
+  "mapped_vdp_libraries": [
+    "/home/smith/Agon/mystuff/golem/docs/tasks/GOLEM-026/.emulator-relocated/flexe-vdp.so"
+  ],
+  "returned_to_mos_prompt": true,
+  "graphical_instance_launched": false,
+  "runtime_identities": [
+    "a0e2aebfc6f299ec9905b989841ba000a1471f685078b76004480211c0396812  fab-agon-emulator.bin",
+    "d564243283972690933a4554296ad6202ca4ef54572279533a942960846bebae  mos_platform.bin",
+    "d69e60bbce61a7b4b3eef318ba395f11c4e1a5b585755755113992dc94edcb86  mos_platform.map",
+    "817da2e320c206fcb7e423b39434c6452319d71a2f54fac451aa9b7a10fa5a0d  flexe-vdp.so",
+    "31d25eec03a531b336d78d453f0720bbd1312c7c8516fdfa80130769ab15e49f  esp32-firmware.bin",
+    "51f196eb7b84ed79394a9fde1dff832ad479417c360525c69582fd093c3a0a3a  esp32-firmware.elf",
+    "b1215d8ad140d00203ca4bd24a2af8d1f5b9f4c5ccfeed21a302975242d4af8b  sdcard/golem026/probe.bin",
+    "09b4b91478ef7c54fc4a8819228605faeb755c19516996435891e452d493fe49  sdcard/golem026/script.bin",
+    "485a94d3c5c3b4e926447f20babfc7b80d68b413c528be32be840d8dd7c9ab29  sdcard/golem026/expected.json",
+    "325652fcda1db425ca043b1022a77724d67a3df5b52de0c282d75b185532b13e  sdcard/golem026/expected.dat",
+    "b8ad98e994dd054f8d28effb5e1ba42e9a5ee8ae722b4007dca42ef501548be1  sdcard/golem026/mask.dat",
+    "16fcfd11670f7bd55e36643dd838262f188ab3cef9138f8980da443973a21f21  sdcard/golem026/meter.golem",
+    "12b540902be07c9b3e77023e1b3667697ee1c53f2995ec3999369470314e2382  sdcard/golem026/conditions.golem",
+    "e8a48835d4000bf0cc402c22a6cb2e9e21af44659e9dcabfc0cccdc55b19771c  sdcard/autoexec.txt",
+    "248073d2d21980ffde08492d5392003b1709b403fb00690b76865535034e6143  fab-agon-emulator"
+  ]
+}

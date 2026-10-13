@@ -94,6 +94,16 @@ explicitly selects and binds calls; no capability probe, automatic replay or
 mid-call switching is added. Float output and production promotion remain later
 work. See [the executable tranche](../tasks/GOLEM-025/README.md).
 
+GOLEM-026 extends the task-local integer subset with all six uint16 comparisons
+and structured If/ElseIf/Else/EndIf. Both emitters preserve left-to-right
+condition evaluation, skipped branches and whole-invocation failure exits.
+Stock VDP and actual Xtensa JIT/interpreter qualification pass; the single tick
+animation now lets Golem choose direction while assembly retains pacing and
+drawing invocation. The Author accepted the visual review and saved human results
+pass; explicit commit/push approval was given on 2026-10-13. Native/stock packages share a
+new explicitly installed 20-byte layout; this does not migrate an older installed
+state automatically. See [the conditional tranche](../tasks/GOLEM-026/README.md).
+
 The first research proposal's whole-module target choice remains useful. Its
 suggestion of making buffered support a later optional concern is superseded by
 REQ-001 through REQ-004: the shared contract is required from the outset, even

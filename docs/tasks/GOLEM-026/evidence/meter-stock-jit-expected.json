@@ -1,0 +1,255 @@
+{
+  "variant": "meter-stock",
+  "checks": [
+    {
+      "label": "buffered case 0",
+      "offset": 0,
+      "bytes": 20
+    },
+    {
+      "label": "buffered case 1",
+      "offset": 20,
+      "bytes": 20
+    },
+    {
+      "label": "buffered case 2",
+      "offset": 40,
+      "bytes": 20
+    },
+    {
+      "label": "buffered case 3",
+      "offset": 60,
+      "bytes": 20
+    },
+    {
+      "label": "buffered case 4",
+      "offset": 80,
+      "bytes": 20
+    },
+    {
+      "label": "buffered case 5",
+      "offset": 100,
+      "bytes": 20
+    },
+    {
+      "label": "buffered case 6",
+      "offset": 120,
+      "bytes": 20
+    },
+    {
+      "label": "buffered case 7",
+      "offset": 140,
+      "bytes": 20
+    },
+    {
+      "label": "buffered case 8",
+      "offset": 160,
+      "bytes": 20
+    },
+    {
+      "label": "buffered case 9",
+      "offset": 180,
+      "bytes": 20
+    },
+    {
+      "label": "buffered case 10",
+      "offset": 200,
+      "bytes": 20
+    },
+    {
+      "label": "buffered case 11",
+      "offset": 220,
+      "bytes": 20
+    },
+    {
+      "label": "buffered case 12",
+      "offset": 240,
+      "bytes": 20
+    },
+    {
+      "label": "buffered case 13",
+      "offset": 260,
+      "bytes": 20
+    },
+    {
+      "label": "buffered case 14",
+      "offset": 280,
+      "bytes": 20
+    },
+    {
+      "label": "buffered case 15",
+      "offset": 300,
+      "bytes": 20
+    },
+    {
+      "label": "buffered case 16",
+      "offset": 320,
+      "bytes": 20
+    },
+    {
+      "label": "buffered case 17",
+      "offset": 340,
+      "bytes": 20
+    },
+    {
+      "label": "buffered case 18",
+      "offset": 360,
+      "bytes": 20
+    },
+    {
+      "label": "buffered case 19",
+      "offset": 380,
+      "bytes": 20
+    },
+    {
+      "label": "buffered case 20",
+      "offset": 400,
+      "bytes": 20
+    },
+    {
+      "label": "buffered case 21",
+      "offset": 420,
+      "bytes": 20
+    },
+    {
+      "label": "buffered case 22",
+      "offset": 440,
+      "bytes": 20
+    },
+    {
+      "label": "buffered case 23",
+      "offset": 460,
+      "bytes": 20
+    },
+    {
+      "label": "buffered case 24",
+      "offset": 480,
+      "bytes": 20
+    },
+    {
+      "label": "buffered case 25",
+      "offset": 500,
+      "bytes": 20
+    },
+    {
+      "label": "shared state survives cleanup",
+      "offset": 520,
+      "bytes": 20
+    }
+  ],
+  "result_bytes": 540,
+  "module_loads": 0,
+  "calls": [
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    }
+  ],
+  "visual": null,
+  "source": "meter",
+  "state_id": 1,
+  "probe_sha256": "83ac0699d1b9b26bb7968ae0f9bc564c6e769c48fdb3f35ee4fc8720f1449ba4",
+  "script_sha256": "e6f0a74f3ffbfe1dfac8d045541ce1f35057d256d74d5e0b886fa4940de84433",
+  "source_sha256": "16fcfd11670f7bd55e36643dd838262f188ab3cef9138f8980da443973a21f21",
+  "module_sha256": "53f93ab8fd24faeccfb6505b849434567df0ca991cc383e7ac7e46d2472a4707"
+}

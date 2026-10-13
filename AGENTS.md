@@ -514,3 +514,33 @@ The dedicated Oryx review is staged/stopped at
 onscreen, closes and reports; the agent retrieves/verifies saved results. Source
 is deployed beside the report. The Author explicitly approved committing and pushing this tranche.
 See `docs/tasks/GOLEM-025/README.md`.
+
+## Portable comparisons and structured branches — GOLEM-026
+
+The task-local GOLEM-026 fork adds uint16 == != < > <= >= conditions and
+If/ElseIf/Else/EndIf to both emitters. Conditions evaluate once left to right;
+unselected tests/bodies are skipped. Eight nested If levels and 64 ElseIf arms
+are the current limits. Bool storage, signed/float comparisons, Boolean
+composition, loops and source drawing remain outside this slice.
+
+Buffered comparisons use zero-extended bytes, including full 65535 values.
+Straight-line statements share blocks; tail jumps connect branches and joins so
+arithmetic/Bounds failures exit the entire invocation. Native C follows the same
+typed tree and shared-state/error contract. Historical prototypes, production
+compiler and generic SDK/runtime are unchanged.
+
+Host/sanitizer checks pass 2,236 cases, eight grammar/reference acceptances and
+26 rejections; native ELF and maintained checks pass. Stock VDP and actual Xtensa
+JIT/interpreter qualify conditional failures, skipped work, joins and relocated
+IDs. The 600-frame visual now uses one tick Sub: Golem chooses direction, while
+assembly selects backend/draws/paces. The meter layout is 20 bytes; install it
+explicitly rather than reusing GOLEM-025's 18-byte state. Both new backends share
+that layout. Full-state observations and all 56,320 final playfield pixels pass.
+
+Human review is staged/stopped on Oryx at
+`~/Agon/mystuff/golem/docs/tasks/GOLEM-026/.emulator`. Source is beside that
+profile. Launch only the generated `./fab-agon-emulator` wrapper; follow the
+existing single-terminal review protocol. The Author explicitly approved
+commit/push on 2026-10-13 and accepted the visual review;
+retrieved human results match all 533 observations/5,249 bytes. Keyboard success
+was not separately stated. See `docs/tasks/GOLEM-026/README.md`.
