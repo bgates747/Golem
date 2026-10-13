@@ -52,3 +52,11 @@ This authorizes the accumulated GOLEM-011 drawing audit, GOLEM-018 geometry,
 GOLEM-019 bitmaps and GOLEM-020 animation work. Maintained compiler checks pass
 (114 rejection cases), diff whitespace checks pass and origin was fetched with
 no branch divergence. Human evidence records this explicit commit approval.
+
+The Author subsequently suggested autonomous TI-99/4A-like sprite motion, then
+explicitly requested recording the idea without implementing it. The deferred
+note in [the drawing design](../design/resident-drawing.md#deferred-idea-autonomous-sprite-motion)
+captures persistent position/velocity, possible boundary behaviours and the goal
+of setup/change traffic without eZ80 frame calls. Scheduling-hook feasibility
+remains unverified. No compiler, runtime or emulator changes were made, and this
+idea was not promoted into the active task queue.

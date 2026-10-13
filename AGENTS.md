@@ -421,3 +421,55 @@ GOLEM-020 local and Oryx qualification pass 841 checks/946 bytes. The dedicated
 Oryx visual fixture passed human animation and MOS keyboard review. Retrieved
 human results match all 946 bytes and the staged runtime/fixture identities.
 The emulator is stopped. The Author explicitly approved commit and push on 2026-10-12.
+
+## Experimental Fab/Flexe and vdplets — GOLEM-021
+
+The Author authorized an eight-hour implementation goal on 2026-10-12. The owned
+Fab 1.2.5 frontend now runs actual ESP32 firmware through a Flexe VDP adapter on
+Pi and Oryx. Runtime-uploaded C/C++ numeric and packed-renderer Xtensa modules
+pass both engines; Oryx's final main fixture passes 56 replies/560 bytes and
+61,440 image/margin pixels, with an actual return to MOS. This needs the generic
+vdplet-enabled firmware once; stock VDP alone has no such loader. Subsequent
+modules need no firmware rebuild. No physical target was flashed.
+
+The agon-6502 owner accepted the buffer/frame ABI and supplied its own F2/F3
+module. Its unchanged package passes 36 fresh Oryx runs, 32,708 replies and
+2,211,840 image/margin pixels, with eight complete retained-buffer observations.
+The evidence was returned through the canonical agent mailbox; source and
+hardware ownership remain with agon-6502. See docs/tasks/GOLEM-021/README.md and
+codec/README.md beneath that task silo. GOLEM-002 owns loader/service source.
+
+The main human profile is staged and stopped on Oryx at
+`~/Agon/mystuff/golem/docs/tasks/GOLEM-021/.emulator`; launch only its generated
+`./fab-agon-emulator` wrapper. The separate codec profile is under codec/.emulator.
+Do not overwrite the accepted root .emulator profile. Keyboard uses the VDP
+serial console, not physical PS/2 ULP emulation. Timing is functional, with
+possible frame coalescing; native modules are trusted and must return.
+Human review remains pending. The Author explicitly authorized committing and
+pushing all pending work on 2026-10-12; this does not claim human acceptance.
+
+## Multiple resident drawing Subs — GOLEM-022
+
+The drawing compiler accepts multiple finite named Subs sharing initialized
+packed globals. Assembly chooses each generated `golem_<SubName>` wrapper;
+first Sub remains the default invoke/update-call target. Single-Sub schema and
+all 120 compared legacy package files are unchanged. Multi-Sub manifests add
+ordered entries. There are still no drawing assignments, locals, inter-Sub calls,
+branches, loops or implicit scheduler. Keywords/builtins retain their existing
+case insensitivity; variable/procedure identifiers retain case sensitivity.
+
+Host contracts (132 rejection cases), ASan/UBSan, real assembler consumers and
+stock Oryx default/relocated checks pass. The recognizable Wolf/cyan-line human
+fixture is separately staged and stopped under
+`~/Agon/mystuff/golem/docs/tasks/GOLEM-022/qualification/.emulator`.
+See docs/tasks/GOLEM-022.md and its qualification/README.md. Human acceptance remains pending. The Author explicitly authorized commit/push
+of all pending work on 2026-10-12; that checkpoint does not claim human review.
+
+## Native Golem research — GOLEM-023
+
+The maintained hardware runtime/SDK has moved to `/Agon/mystuff/agon-vdplet`.
+Historical task paths are compatibility links and builder adapters; keep future
+generic runtime changes in that repository. GOLEM-023 researches approachable
+Golem source compiled to native VDPlets, with generated C as the candidate route.
+The first research tranche is authorized; implementation and hardware flashing
+are not. See `docs/tasks/GOLEM-023.md` and the authoritative `TODO.md`.

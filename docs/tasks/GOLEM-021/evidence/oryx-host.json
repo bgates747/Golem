@@ -1,0 +1,19 @@
+{
+  "schema": 1,
+  "created_utc": "2026-10-12T15:04:49.985452+00:00",
+  "hostname": "oryx-linuxlite",
+  "architecture": "x86_64",
+  "uname": [
+    "Linux",
+    "oryx-linuxlite",
+    "7.1.5-76070105-generic",
+    "#202607241434~1787955069~26.04~9520501~dev SMP PREEMPT_DYNAMIC F",
+    "x86_64"
+  ],
+  "python": "/home/smith/Agon/mystuff/golem/.venv/bin/python",
+  "source_bundle_sha256": "4bffeda74c781cf8ad619639db6aa44f8a0674ff228e745b3469a552fdf500d2",
+  "source_fixture": "packed",
+  "frontend_sha256": "a0e2aebfc6f299ec9905b989841ba000a1471f685078b76004480211c0396812",
+  "adapter_sha256": "817da2e320c206fcb7e423b39434c6452319d71a2f54fac451aa9b7a10fa5a0d",
+  "graphical_instance_launched": false
+}

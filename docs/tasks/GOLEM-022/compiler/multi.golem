@@ -1,0 +1,14 @@
+// Three finite jobs share one packed input block. Assembly selects each entry.
+// Assembly loads bitmap 50000 before calling drawWolf.
+uint8 colour Bounds(0,63) = 11
+sint16 x = 40
+sint16 y = 30
+Sub drawMarker
+    draw_point(colour, x, y)
+EndSub
+Sub drawGuide
+    draw_line(2, 20, 20, 100, 80)
+EndSub
+Sub drawWolf
+    draw_bitmap(50000, x, y)
+EndSub

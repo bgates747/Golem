@@ -17,12 +17,14 @@ struct Global {
 };
 struct Operand { int field = -1, value = 0; };
 struct Operation { std::string name; std::vector<Operand> args; };
+struct Procedure { std::string name; std::vector<Operation> operations; };
 struct Spec {
     std::vector<Global> globals;
-    std::vector<Operation> operations;
+    std::vector<Procedure> procedures;
     std::string entry;
     Bytes values;
 };
+struct Entry { std::string name; unsigned id; Bytes invoke; };
 struct Result {
     Spec spec;
     unsigned input = 0, entry = 0;
@@ -31,6 +33,7 @@ struct Result {
     std::map<unsigned, unsigned> owned;
     std::map<unsigned, std::string> roles;
     std::set<unsigned> initialBitmapIDs;
+    std::vector<Entry> entries;
 };
 inline bool profile(const std::string &source) {
     syntax::Reader r(source);
@@ -84,38 +87,43 @@ inline Spec parse(const std::string &source) {
         if (g.width() == 2) s.values.push_back(static_cast<unsigned char>(static_cast<unsigned>(g.value) >> 8));
         s.globals.push_back(g);
     }
-    r.needKeyword("Sub"); s.entry = name();
-    while (!r.keyword("EndSub")) {
-        if (r.end()) r.error("expected 'EndSub'");
-        const auto token = r.identifier();
-        Operation op{syntax::lower(token.text), {}};
-        const bool bitmap = op.name == "draw_bitmap";
-        unsigned count = op.name == "draw_point" || bitmap ? 3 : op.name == "draw_line" ? 5 : op.name == "fill_quad" ? 9 : 0;
-        if (!count) syntax::fail(token.begin, "unsupported resident drawing statement");
-        r.need('(');
-        for (unsigned i = 0; i < count; ++i) {
-            if (i) r.need(',');
-            Operand arg;
-            if (r.peek().kind == syntax::Kind::Identifier) {
-                const auto t = r.identifier();
-                const auto found = fields.find(t.text);
-                if (found == fields.end()) syntax::fail(t.begin, "undeclared drawing operand '" + t.text + "'");
-                arg.field = static_cast<int>(found->second);
-                const auto &g = s.globals.at(found->second);
-                const Type expected = i ? Type::Sint16 : bitmap ? Type::Uint16 : Type::Uint8;
-                if (g.type != expected) syntax::fail(t.begin, i ? "coordinate requires sint16" :
-                    bitmap ? "bitmap buffer ID requires uint16" : "colour requires uint8");
-                if (i == 0 && bitmap && (g.lo < 1 || g.hi > 65534))
-                    syntax::fail(t.begin, "bitmap buffer Bounds must fit 1..65534");
-                if (i == 0 && !bitmap && (g.lo < 0 || g.hi > 63)) syntax::fail(t.begin, "colour Bounds must fit 0..63");
-            } else arg.value = integer(i ? -32768 : bitmap ? 1 : 0, i ? 32767 : bitmap ? 65534 : 63);
-            op.args.push_back(arg);
+    do {
+        r.needKeyword("Sub");
+        Procedure procedure{name(), {}};
+        while (!r.keyword("EndSub")) {
+            if (r.end()) r.error("expected 'EndSub'");
+            const auto token = r.identifier();
+            Operation op{syntax::lower(token.text), {}};
+            const bool bitmap = op.name == "draw_bitmap";
+            unsigned count = op.name == "draw_point" || bitmap ? 3 : op.name == "draw_line" ? 5 : op.name == "fill_quad" ? 9 : 0;
+            if (!count) syntax::fail(token.begin, "unsupported resident drawing statement");
+            r.need('(');
+            for (unsigned i = 0; i < count; ++i) {
+                if (i) r.need(',');
+                Operand arg;
+                if (r.peek().kind == syntax::Kind::Identifier) {
+                    const auto t = r.identifier();
+                    const auto found = fields.find(t.text);
+                    if (found == fields.end()) syntax::fail(t.begin, "undeclared drawing operand '" + t.text + "'");
+                    arg.field = static_cast<int>(found->second);
+                    const auto &g = s.globals.at(found->second);
+                    const Type expected = i ? Type::Sint16 : bitmap ? Type::Uint16 : Type::Uint8;
+                    if (g.type != expected) syntax::fail(t.begin, i ? "coordinate requires sint16" :
+                        bitmap ? "bitmap buffer ID requires uint16" : "colour requires uint8");
+                    if (i == 0 && bitmap && (g.lo < 1 || g.hi > 65534))
+                        syntax::fail(t.begin, "bitmap buffer Bounds must fit 1..65534");
+                    if (i == 0 && !bitmap && (g.lo < 0 || g.hi > 63)) syntax::fail(t.begin, "colour Bounds must fit 0..63");
+                } else arg.value = integer(i ? -32768 : bitmap ? 1 : 0, i ? 32767 : bitmap ? 65534 : 63);
+                op.args.push_back(arg);
+            }
+            r.need(')'); procedure.operations.push_back(std::move(op));
         }
-        r.need(')'); s.operations.push_back(std::move(op));
-    }
-    r.needKeyword("EndSub");
-    if (!r.end()) r.error("unexpected trailing source; drawing profile supports one Sub");
-    if (s.operations.empty()) r.error("drawing Sub requires an operation");
+        r.needKeyword("EndSub");
+        if (procedure.operations.empty()) r.error("drawing Sub requires an operation");
+        s.procedures.push_back(std::move(procedure));
+    } while (r.keyword("Sub"));
+    if (!r.end()) r.error("unexpected trailing source; expected another Sub or end of source");
+    s.entry = s.procedures.front().name;
     if (s.values.size() > 65535) r.error("packed drawing inputs exceed one block");
     return s;
 }
@@ -124,56 +132,64 @@ inline Result compile(const std::string &source, const std::vector<resident::Res
     BufferAllocator allocation;
     for (size_t i = 0; i < reservations.size(); ++i)
         allocation.reserve(reservations[i].first, reservations[i].last, "asset." + std::to_string(i));
-    for (const auto &op : r.spec.operations) if (op.name == "draw_bitmap") {
-        const auto &arg = op.args.front();
-        const unsigned id = static_cast<unsigned>(arg.field < 0 ? arg.value : r.spec.globals.at(arg.field).value);
-        if (!allocation.claims().count(id))
-            throw AllocationError("bitmap buffer ID " + std::to_string(id) + " requires --reserve before compiler allocation");
-        r.initialBitmapIDs.insert(id);
-    }
+    for (const auto &procedure : r.spec.procedures)
+        for (const auto &op : procedure.operations) if (op.name == "draw_bitmap") {
+            const auto &arg = op.args.front();
+            const unsigned id = static_cast<unsigned>(arg.field < 0 ? arg.value : r.spec.globals.at(arg.field).value);
+            if (!allocation.claims().count(id))
+                throw AllocationError("bitmap buffer ID " + std::to_string(id) + " requires --reserve before compiler allocation");
+            r.initialBitmapIDs.insert(id);
+        }
     // The stock transform selector returns without consuming its operands when
     // this feature flag is off. Enable it before installing bitmap templates.
     if (!r.initialBitmapIDs.empty()) r.bootstrap = {23, 0, 248, 1, 0, 1, 0};
     if (!r.spec.values.empty()) {
         r.input = allocation.allocate("drawing.inputs"); r.initial[r.input] = r.spec.values;
     }
-    r.entry = allocation.allocate("drawing.entry");
-    auto &entry = r.programs[r.entry];
-    for (size_t index = 0; index < r.spec.operations.size(); ++index) {
-        const auto &op = r.spec.operations[index];
-        const unsigned id = allocation.allocate("drawing.template." + std::to_string(index));
-        const bool bitmap = op.name == "draw_bitmap";
-        auto &bytes = r.programs[id];
-        if (bitmap) bytes = {23,27,32,0,0, 23,0,150,1,255,255,
-                            23,27,3,0,0,0,0, 23,0,150,1,255,255};
-        else bytes = {18, 0, 0};
-        auto operand = [&](unsigned argIndex, unsigned offset) {
-            const auto &arg = op.args.at(argIndex);
-            if (arg.field >= 0) {
-                const auto &g = r.spec.globals.at(static_cast<size_t>(arg.field));
-                copy(entry, id, offset, r.input, g.offset, g.width());
-            } else {
-                bytes.at(offset) = static_cast<unsigned char>(arg.value);
-                if (argIndex || bitmap) bytes.at(offset + 1) = static_cast<unsigned char>(static_cast<unsigned>(arg.value) >> 8);
+    for (size_t sub = 0; sub < r.spec.procedures.size(); ++sub) {
+        const auto &procedure = r.spec.procedures[sub];
+        const std::string suffix = sub ? "." + std::to_string(sub) : "";
+        const unsigned entryID = allocation.allocate("drawing.entry" + suffix);
+        Bytes invoke; command(invoke, entryID, 1);
+        r.entries.push_back({procedure.name, entryID, std::move(invoke)});
+        auto &entry = r.programs[entryID];
+        for (size_t index = 0; index < procedure.operations.size(); ++index) {
+            const auto &op = procedure.operations[index];
+            const unsigned id = allocation.allocate("drawing.template" + suffix + "." + std::to_string(index));
+            const bool bitmap = op.name == "draw_bitmap";
+            auto &bytes = r.programs[id];
+            if (bitmap) bytes = {23,27,32,0,0, 23,0,150,1,255,255,
+                                23,27,3,0,0,0,0, 23,0,150,1,255,255};
+            else bytes = {18, 0, 0};
+            auto operand = [&](unsigned argIndex, unsigned offset) {
+                const auto &arg = op.args.at(argIndex);
+                if (arg.field >= 0) {
+                    const auto &g = r.spec.globals.at(static_cast<size_t>(arg.field));
+                    copy(entry, id, offset, r.input, g.offset, g.width());
+                } else {
+                    bytes.at(offset) = static_cast<unsigned char>(arg.value);
+                    if (argIndex || bitmap) bytes.at(offset + 1) = static_cast<unsigned char>(static_cast<unsigned>(arg.value) >> 8);
+                }
+            };
+            if (bitmap) {
+                operand(0, 3); operand(1, 14); operand(2, 16);
+                command(entry, id, 1);
+                continue;
             }
-        };
-        if (bitmap) {
-            operand(0, 3); operand(1, 14); operand(2, 16);
+            operand(0, 2);
+            const std::vector<unsigned> order = op.name == "draw_point" ? std::vector<unsigned>{0} :
+                op.name == "draw_line" ? std::vector<unsigned>{0, 1} : std::vector<unsigned>{0, 1, 3, 2};
+            for (size_t point = 0; point < order.size(); ++point) {
+                const auto offset = static_cast<unsigned>(bytes.size());
+                const unsigned code = op.name == "draw_point" ? 69 : op.name == "draw_line" ? (point ? 5 : 4) : (point < 2 ? 4 : 85);
+                bytes.insert(bytes.end(), {25, static_cast<unsigned char>(code), 0, 0, 0, 0});
+                operand(1 + 2 * order[point], offset + 2);
+                operand(2 + 2 * order[point], offset + 4);
+            }
             command(entry, id, 1);
-            continue;
         }
-        operand(0, 2);
-        const std::vector<unsigned> order = op.name == "draw_point" ? std::vector<unsigned>{0} :
-            op.name == "draw_line" ? std::vector<unsigned>{0, 1} : std::vector<unsigned>{0, 1, 3, 2};
-        for (size_t point = 0; point < order.size(); ++point) {
-            const auto offset = static_cast<unsigned>(bytes.size());
-            const unsigned code = op.name == "draw_point" ? 69 : op.name == "draw_line" ? (point ? 5 : 4) : (point < 2 ? 4 : 85);
-            bytes.insert(bytes.end(), {25, static_cast<unsigned char>(code), 0, 0, 0, 0});
-            operand(1 + 2 * order[point], offset + 2);
-            operand(2 + 2 * order[point], offset + 4);
-        }
-        command(entry, id, 1);
     }
+    r.entry = r.entries.front().id;
     for (const auto &claim : allocation.claims()) if (!claim.second.external) {
         const unsigned id = claim.first;
         const auto &bytes = r.programs.count(id) ? r.programs.at(id) : r.initial.at(id);
@@ -181,7 +197,7 @@ inline Result compile(const std::string &source, const std::vector<resident::Res
         command(r.bootstrap, id, 2); writeBlock(r.bootstrap, id, bytes);
         command(r.cleanup, id, 2);
     }
-    command(r.invoke, r.entry, 1);
+    r.invoke = r.entries.front().invoke;
     return r;
 }
 inline Bytes inputUpdate(const Result &r) {
@@ -196,7 +212,17 @@ inline std::string manifest(const Result &r, const std::vector<resident::Reserva
     if (r.input) out << "{\"id\":" << r.input << ",\"bytes\":" << r.spec.values.size() << '}';
     else out << "null";
     out << ",\n  \"entry\": {\"name\":" << q(r.spec.entry) << ",\"id\":" << r.entry
-        << ",\"blocks\":1,\"bytes\":" << r.programs.at(r.entry).size() << "},\n  \"globals\": [";
+        << ",\"blocks\":1,\"bytes\":" << r.programs.at(r.entry).size() << "},\n";
+    if (r.entries.size() > 1) {
+        out << "  \"entries\": [";
+        for (size_t i = 0; i < r.entries.size(); ++i) {
+            const auto &entry = r.entries[i]; if (i) out << ',';
+            out << "{\"name\":" << q(entry.name) << ",\"id\":" << entry.id
+                << ",\"blocks\":1,\"bytes\":" << r.programs.at(entry.id).size() << '}';
+        }
+        out << "],\n";
+    }
+    out << "  \"globals\": [";
     for (size_t i = 0; i < r.spec.globals.size(); ++i) {
         const auto &g = r.spec.globals[i]; if (i) out << ',';
         out << "{\"name\":" << q(g.name) << ",\"id\":" << r.input << ",\"offset\":" << g.offset

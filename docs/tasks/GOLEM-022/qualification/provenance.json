@@ -1,0 +1,69 @@
+{
+  "adapted_transport": {
+    "source": "docs/tasks/GOLEM-019/demo_guest.asm",
+    "sha256": "08756eeb534f076f5a34f412ac39751a42cd82afcdaba80ccd82653417ff0a92"
+  },
+  "frozen_copies": {
+    "docs/tasks/GOLEM-019/agnb_api.inc": "4693d4b17274e0c2476507cce98032e91cfa0d304317b2c8247b043d048dcccc",
+    "docs/tasks/GOLEM-019/agnb_support.inc": "091aff1644b2235af452a89582b1617e1972a9042a0269fbb82f30fca37956eb",
+    "reference/agnb-asm/lib/mos_api.inc": "4c6ce9caa6600aeb6418b97e21fe914129b3cab63ecf5890b3ac709ba7fae960"
+  },
+  "assets": {
+    "source_project": "AgonWolf3D",
+    "source_container": "tgt/ui.agnb",
+    "source_container_sha256": "3a9ed09a8d4a9ed973f78f498fa39dc2b87c40fb595002f2ca2f61e971a643b0",
+    "display": {
+      "width": 320,
+      "height": 240,
+      "background": "black"
+    },
+    "assets": [
+      {
+        "name": "splash",
+        "source": "build/ui/rgba2/core/splash.rgba2",
+        "buffer_id": 8202,
+        "width": 320,
+        "height": 160,
+        "x": 0,
+        "y": 0,
+        "bytes": 51200,
+        "sha256": "291f9c2edae2625f3ed9799da6bf7225d438f8d21be21d3bef54ec9396e7e775"
+      },
+      {
+        "name": "bj_100",
+        "source": "build/ui/rgba2/core/bj_100.rgba2",
+        "buffer_id": 8195,
+        "width": 32,
+        "height": 32,
+        "x": 16,
+        "y": 184,
+        "bytes": 1024,
+        "sha256": "573bbbfd4b43e44453dfbfc65554436f6708b373f2f6714cb7daa8310e1dcce9"
+      },
+      {
+        "name": "bj_pistol_00",
+        "source": "build/ui/rgba2/bj/bj_pistol_00.rgba2",
+        "buffer_id": 8463,
+        "width": 64,
+        "height": 64,
+        "x": 96,
+        "y": 168,
+        "bytes": 4096,
+        "sha256": "92e286530f856d4b12dcf4a8d6cbf5df7a85fd2eb0c2f29d9906f8cc4376b08d"
+      },
+      {
+        "name": "lower_panel_pistol",
+        "source": "build/ui/rgba2/core/lower_panel_pistol.rgba2",
+        "buffer_id": 8201,
+        "width": 40,
+        "height": 20,
+        "x": 200,
+        "y": 190,
+        "bytes": 800,
+        "sha256": "d54fdc7887d58bd5d59e11ddef14695875a8a9b1b1ccfd980fa5dcb5f3f5ae06"
+      }
+    ]
+  },
+  "compiler_sha256": "a7aa24ed1ea3ce3c9e86f1a98b936736d1310e0e3fb972683d8e72f226f463e9",
+  "canonical_setup_sha256": "23432375e90170f6d855282dc984516ef3b623e842827cccc65feccd81276b02"
+}

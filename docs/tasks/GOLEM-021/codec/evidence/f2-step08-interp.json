@@ -1,0 +1,78 @@
+{
+  "pass_transcript": true,
+  "checks": 3938,
+  "bytes": 39380,
+  "observed_sha256": "f1570ac8c9b48d09aa24ea859aef29485da488a664f7b6b8f17e618ce9d8b2fe",
+  "module_handles": [
+    1
+  ],
+  "native_entry_addresses": [
+    "0x40097f6c"
+  ],
+  "human_visual_review": "pending",
+  "command_task_minimum_free_stack_bytes": 2260,
+  "pass_native_pixels": true,
+  "pixel_checks": 61440,
+  "image_dimensions": [
+    280,
+    192
+  ],
+  "screen_dimensions": [
+    320,
+    240
+  ],
+  "unchanged_black_margin": [
+    280,
+    0,
+    319,
+    191
+  ],
+  "decoded_vga_sha256": "4b0a412dae5c55a05d2c0bf67326051a7c1292bf481c16956e97fde3a7098fd1",
+  "packed_sha256": "ccf9383cfee6ac6736f84784be0917ee0520492b4f8db7d991db745801a30279",
+  "engine": "interp",
+  "elapsed_seconds": 12.839,
+  "mapped_vdp_libraries": [
+    "/home/smith/Agon/mystuff/golem/docs/tasks/GOLEM-021/codec/.emulator/flexe-vdp.so"
+  ],
+  "graphical_instance_launched": false,
+  "returned_to_mos_prompt": true,
+  "backend_stats": {
+    "engine": "interp",
+    "frames": 574,
+    "cycles": 2440860000,
+    "retired": 1001200577,
+    "uart_rx": 94502,
+    "uart_tx": 47609,
+    "uart_delivered": 47609,
+    "isync": 21,
+    "code_invalidations": 3,
+    "keys": 0,
+    "failed": false,
+    "unhandled": 0,
+    "unregistered": 0,
+    "unmapped": 0
+  },
+  "runtime_identities": [
+    "a0e2aebfc6f299ec9905b989841ba000a1471f685078b76004480211c0396812  fab-agon-emulator.bin",
+    "d564243283972690933a4554296ad6202ca4ef54572279533a942960846bebae  mos_platform.bin",
+    "d69e60bbce61a7b4b3eef318ba395f11c4e1a5b585755755113992dc94edcb86  mos_platform.map",
+    "817da2e320c206fcb7e423b39434c6452319d71a2f54fac451aa9b7a10fa5a0d  flexe-vdp.so",
+    "31d25eec03a531b336d78d453f0720bbd1312c7c8516fdfa80130769ab15e49f  esp32-firmware.bin",
+    "51f196eb7b84ed79394a9fde1dff832ad479417c360525c69582fd093c3a0a3a  esp32-firmware.elf",
+    "b44243e41682c1ba82d470414511e1a38c0a2f2e86ec0e2b3672031aa5bb6f38  sdcard/vdplet/probe.bin",
+    "b539b844cbf9694e1fc00fa4ff37fc84665d44fb04903807c48b64203298157e  sdcard/vdplet/script.bin",
+    "560625702fe65f2da3d6fdb5ef5ee6d2f1ea5f098b55a4770ca4e7865fd2cb11  sdcard/vdplet/expected.json",
+    "fd1aa6a5d1c4d51f0f27fd191de896cee4c7e93480f8a611e6e96ac798fd6092  sdcard/vdplet/apple-codecs.vdpl",
+    "ccf9383cfee6ac6736f84784be0917ee0520492b4f8db7d991db745801a30279  sdcard/vdplet/loderunner.packed",
+    "de009684ce2ac28ea71f4d1afe467352f664ac244d4e447028dc51a563596c86  sdcard/vdplet/assets.json",
+    "0d7d39a0ff0a6f6e1e0c75300ee4d0107572ec6a5ef881798bf72e36623fc8ca  fab-agon-emulator"
+  ],
+  "expected_sha256": "560625702fe65f2da3d6fdb5ef5ee6d2f1ea5f098b55a4770ca4e7865fd2cb11",
+  "codec_entry": 2,
+  "sequence_prefix": 8,
+  "unsupported_mode_case": false,
+  "retained_bytes_observed_completely": 7680,
+  "retained_sha256": "a89257ad52d525d539f06e4128b0cb1b69191d488b2203417e655eeaf3d57c3c",
+  "started_utc": "2026-10-12T15:27:31.038769+00:00",
+  "module_sha256": "fd1aa6a5d1c4d51f0f27fd191de896cee4c7e93480f8a611e6e96ac798fd6092"
+}

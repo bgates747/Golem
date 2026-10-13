@@ -1,0 +1,33 @@
+{
+  "source_commit": "fbda8e905ccff36a090e4e33b0ffc2337dd79c52",
+  "purpose": "Observe clean Linux AArch64 JIT replacement/invalidation behavior before adapter-owned fixes",
+  "test_sha256": "a158aeb1656daa84c2e660c74dbb56d252137289de1ee465e3edd3ddcd708343",
+  "command": [
+    "stdbuf",
+    "-oL",
+    "docs/tasks/GOLEM-021/baseline/build/iram_reload"
+  ],
+  "samples": [
+    {
+      "utc": "2026-10-12T13:52:13.383452+00:00",
+      "returncode": 8,
+      "wall_seconds": 0.027378506027162075,
+      "stdout": "",
+      "stderr": "DIAG replacement=1 value=42 pc=40080200 flushes=1 old=0\nFAIL case=host_mem_write8 check=8\n"
+    },
+    {
+      "utc": "2026-10-12T13:52:13.455868+00:00",
+      "returncode": 8,
+      "wall_seconds": 0.07241982780396938,
+      "stdout": "{\"case\":\"host_mem_write8\",\"interpreter\":43,\"jit_before_invalidation\":42,\"jit_after_invalidation\":43,\"expected_stale\":true,\"pass\":true}\n{\"case\":\"host_mem_write16\",\"interpreter\":43,\"jit_before_invalidation\":42,\"jit_after_invalidation\":43,\"expected_stale\":true,\"pass\":true}\n",
+      "stderr": "DIAG replacement=1 value=42 pc=40080200 flushes=1 old=0\nFAIL case=host_mem_write32 check=8\n"
+    },
+    {
+      "utc": "2026-10-12T13:52:13.469554+00:00",
+      "returncode": 8,
+      "wall_seconds": 0.013673439156264067,
+      "stdout": "",
+      "stderr": "DIAG replacement=1 value=42 pc=40080200 flushes=1 old=0\nFAIL case=host_mem_write8 check=8\n"
+    }
+  ]
+}

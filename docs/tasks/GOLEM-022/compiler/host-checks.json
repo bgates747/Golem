@@ -1,0 +1,1168 @@
+{
+  "pass": true,
+  "scope": "Host, byte parity and actual ez80asm; stock emulator separately qualified",
+  "seconds": 191.09,
+  "baseline_compiler_sha256": "4db17a651f67c6d76bcde9406fe2df160a5a6fe9d95a4c2004215cbff7e4e4f9",
+  "maintained_contract_output": "make: Entering directory '/Agon/mystuff/golem/src'\ng++ -std=c++17 -Wall -Wextra -Werror -O2 -o ../build/golemc golemc.cpp\ng++ -std=c++17 -Wall -Wextra -Werror -O2 -o ../build/test_compiler ../tests/test_compiler.cpp\n../build/test_compiler\nMaintained raw/resident contract checks pass; 132 rejection cases.\nmake: Leaving directory '/Agon/mystuff/golem/src'",
+  "sanitizer_output": "Maintained raw/resident contract checks pass; 132 rejection cases.",
+  "legacy_packages": [
+    {
+      "source": "examples/resident/floor.golem",
+      "relocated": false,
+      "artifacts": {
+        "bootstrap.bin": "d3d52b5be6550a0087c93a39c996f7c236e8a9682b6265ddbc5eab5d545e03b3",
+        "invoke.bin": "0b9ef4674184fd85f33ae75fe91deb4aa71b6ad5a682a65eacb429cc1dfc1237",
+        "update-call.bin": "e1f41258b1a291c24f4569439478c852c83c6f66c7ec067c2c005e5adee5e510",
+        "cleanup.bin": "6d9b40cddc8635af0a8f9fa6e8ca0ef5b03947fd2e3543013575805aac5ea69a",
+        "interface.json": "a17f743455a8206bbf4efe3387bcabc614e2e438e6ba341c76c64176dca09c39",
+        "golem.inc": "48c97d750f5a00a38095be43e6cea810c338740e1c489de48dff89cf40c633dd"
+      }
+    },
+    {
+      "source": "examples/resident/floor.golem",
+      "relocated": true,
+      "artifacts": {
+        "bootstrap.bin": "11f45816e83e17a763a0490298bc1da529d4bd856da8f50f3fc72f0e498d279f",
+        "invoke.bin": "864d9edcd8f47c5bd6f568fc15157810b2828988a438b3be9fbb948d97ce8af5",
+        "update-call.bin": "90a9b5fcc245c061b997997ed92f3bcea1afb9e72aaa06307a0e56b8aa0a1ff6",
+        "cleanup.bin": "e50e5ca1f547076caea4913fc6356ac25cc08c294d729a0da9540118b07258b1",
+        "interface.json": "a2d2c7b3355f858e2eb0df3817860d4361914124950dd9d97d65b6de0fb7a55e",
+        "golem.inc": "e11a0a427a95863b56629f6f0eb42f490af854377b5107ec2222c1e7bd016583"
+      }
+    },
+    {
+      "source": "examples/resident/counted-floor.golem",
+      "relocated": false,
+      "artifacts": {
+        "bootstrap.bin": "20a8e65fefcde48465d529a3cdda1bab38006bb0525d14488aef845b625074b0",
+        "invoke.bin": "7587591599c0b364b0dc865e729686544f9075b55510f60936d7408a925d49db",
+        "update-call.bin": "5d0b8613f21b279897b6eb082259094ca0e197eea03f5f192f0af6d2f43f7d39",
+        "cleanup.bin": "e8dc0f4bce959d6e8925dda0515f19821896dec1337fb9faf4afb49f87f056eb",
+        "interface.json": "72bcdab03634876b1f5b239c58d2a2def56de5438eec47cb3a3c163a6ec53ebe",
+        "golem.inc": "26d9a5dd7f3b09a42e3852fed2883d883d7f49a4b4e51768df410111b3fc45c8"
+      }
+    },
+    {
+      "source": "examples/resident/counted-floor.golem",
+      "relocated": true,
+      "artifacts": {
+        "bootstrap.bin": "53e4a159c7594196a64c8d58493b7df3b9614642d521a27ebf5e3fd2d9c2f86d",
+        "invoke.bin": "aa718a25a1e8df5c434fd42441bd4a0fe5529db7156f64800d125479c7aef769",
+        "update-call.bin": "ba55d6bb4c27b4397c33a2f46c2ef3bfd8e32915975dfd8c5f60918975e927ef",
+        "cleanup.bin": "4d71e048b7055ce6dd4c2fb082a5c4c45e20f3963ba15a5c761256ca6a69a54d",
+        "interface.json": "24624bb0a2ed8b24f52aacbafad152c03cc7ad17133b33c491972df7ae5964d0",
+        "golem.inc": "c0f8337666fb68b39d3f573fcf48815ccfc45e3c8f8ef0ee624f4cf91b7340d3"
+      }
+    },
+    {
+      "source": "docs/tasks/GOLEM-013/checked-subtract.golem",
+      "relocated": false,
+      "artifacts": {
+        "bootstrap.bin": "7f07635bd393f55bac151f90fb232c015fe1176a83c469a5890a22be3e23f138",
+        "invoke.bin": "db18aa27f3c66a8054c4eaa465acdfc01754dbd3e724ee2d0293ac90126ff34b",
+        "update-call.bin": "868a5e0c601b85b22360e7246fcde97e6911e2dc789c1f4170e2ed2f10631665",
+        "cleanup.bin": "1b6e755a9c3f9fe7df9bf607dde16c5291889eccc76555aacbf8c81be7c106c1",
+        "interface.json": "8a73fbdcafa399293126f4bef28b6075185a187dde607c98eb15894e817ce482",
+        "golem.inc": "6bc0463663016edc9970a32b19198e325d6a8627d18e0c8ae42dbceb7af63df5"
+      }
+    },
+    {
+      "source": "docs/tasks/GOLEM-013/checked-subtract.golem",
+      "relocated": true,
+      "artifacts": {
+        "bootstrap.bin": "ed9d1977916616b42ef8e3cea43f19a9e36194476da7e40e591e57b3358d06be",
+        "invoke.bin": "7d5bc45ed05ab0b6096b901f2b40c00467078c9fa4aa6be0f76bd444ed22979b",
+        "update-call.bin": "dec0d5788ef257ba26caf40000986eabdcd579599b073fab8c912d81d28830d8",
+        "cleanup.bin": "df7f12b0b9cb223800b328144855c284362248422bcaa98bb1f1b1558566ee63",
+        "interface.json": "bebe3ee30c9e4aeba9fda594413f1fff14da1674af36651fb7ee8a75ae94c5e4",
+        "golem.inc": "7403e11c3b6d8112cbb52309c82cf46831af100bec00d7ae94cd5bdc167588cd"
+      }
+    },
+    {
+      "source": "docs/tasks/GOLEM-014/checked-multiply.golem",
+      "relocated": false,
+      "artifacts": {
+        "bootstrap.bin": "bf93ed1ec756d3a6dc118bffb0a02f448f0d165d2f68ab8e258aa37c14f2e78c",
+        "invoke.bin": "7a531b7a52b932170689847d7b2a8d2c101e63f8cdc5cb26c47f822b341a7d77",
+        "update-call.bin": "7667606c8898cf4c9501ce246065fcc90cfe82d2f6df409660f6c1ecf391f9b1",
+        "cleanup.bin": "4c0978f1a821459609451f099d9c26268fd1fd634eb322692220331596e2ea9d",
+        "interface.json": "d197f0a07145c8c1749ed8197fa0db5f5108a44e2880653ea1365759ed97a3d1",
+        "golem.inc": "38519352ded8f54f7473fffa4fa6e4d6e53df6e3829184344e8b1f4416543d75"
+      }
+    },
+    {
+      "source": "docs/tasks/GOLEM-014/checked-multiply.golem",
+      "relocated": true,
+      "artifacts": {
+        "bootstrap.bin": "a5057426386fc044efe5c0196045cb50f51faf09757afa44d5019c474cb61fa9",
+        "invoke.bin": "de2378f83098e62fc6a338c6632785cf1863ceaff0670523601999cc73d174f2",
+        "update-call.bin": "6a6f8816fafa8b900d912cc46a8254b9b54872342e9e5fdc07662f8dbc827a0e",
+        "cleanup.bin": "75a82ec3f74d983427b677fb2eea224547d5322fc1bae93c74500d20aebb98f0",
+        "interface.json": "d39fdce9a1119b67b0d43c1379eec9f330d1a35a29e5f149f84dc5d8115c1da1",
+        "golem.inc": "e984dee5c2a0fa01864a58416a61daf3b7152ed34b52b4f90c1a71245d35a3a0"
+      }
+    },
+    {
+      "source": "docs/tasks/GOLEM-015/checked-divmod.golem",
+      "relocated": false,
+      "artifacts": {
+        "bootstrap.bin": "20638333f4194d52ed703332edc87a56c2b0a8da00908081f8ab21b3f71701fa",
+        "invoke.bin": "81b3a79c004506fe210f35e95dea747b508fd1811995fd74564d55131234ea8e",
+        "update-call.bin": "738a1a8aff85ff538716aba2f0bf27f75e1a8a6c3d43f4e963326c64e98f1307",
+        "cleanup.bin": "df120b3d8e1c8c80875f2c83742b60931b79af2e8a23cb0b61f9f43e86f32cbe",
+        "interface.json": "1a4b8b2a654b65b8d558553e7d6594ba985f02a06c0350ab3d62d2480cca52d1",
+        "golem.inc": "1e411f9456e1b3584105a4eb1e0d879e5106a2e367e99262f65905ffa0a96e24"
+      }
+    },
+    {
+      "source": "docs/tasks/GOLEM-015/checked-divmod.golem",
+      "relocated": true,
+      "artifacts": {
+        "bootstrap.bin": "2de57dd95e2f3bf3936dd460f80f7a7de9ebb091253d43c7e7530d94269bcca5",
+        "invoke.bin": "6793fa6aaa7f50cb9cec4463c646f1178758a0800ef97783d0342ce408588e39",
+        "update-call.bin": "f7f3c9c8d36e2f4ea868ad5e439c7ff73ee748e928814283b66ef5ab34f3af98",
+        "cleanup.bin": "1baf35c4f665321e0cb57b6b5bb9bdcab8dd0f8522dc7be8aaca7d29087ebe67",
+        "interface.json": "2aa9c6f86d63fb4b9e44e175cc0feb845e393bf265124017772e82f243912f18",
+        "golem.inc": "88371d12b2cb804ccf859000cb8845f690f8dd767bccea51ead9cc5730aa4c2d"
+      }
+    },
+    {
+      "source": "docs/tasks/GOLEM-017/table.golem",
+      "relocated": false,
+      "artifacts": {
+        "bootstrap.bin": "925268ef376b45cc32cddbea360723029317b79f6cb2eddfc605448878449815",
+        "invoke.bin": "decbf3877415c4eaeb19043305c36f47e5244d4506469ab0632feee1a493efe9",
+        "update-call.bin": "e8fcc88432dfca8ba6234651eec5b5f00d9b239466ac77aec2a983a92dcf0dd1",
+        "cleanup.bin": "10b5f6410b819f082bd355683a3eee33c81dd0e71e35515a3e2f19440cd8eb70",
+        "interface.json": "3c18ec0ef4ff30086f60e240fa817d3c8fdd8491a9e40a55692542bbb0e9f228",
+        "golem.inc": "e049e660abe7bc3d05e6a4917d138b30e09d6917fdfbf722850199a0346797cb"
+      }
+    },
+    {
+      "source": "docs/tasks/GOLEM-017/table.golem",
+      "relocated": true,
+      "artifacts": {
+        "bootstrap.bin": "2ec7af09585a396bfd05947b865567fb13336c18a94aa74544b02d03422a34b0",
+        "invoke.bin": "50e9701a38b40dde4266a83d816086e10f8a0296d6e6b33ef2d2a88fcc3026e1",
+        "update-call.bin": "d977297026b83b9a76baf0c4b049ddba42a62d5e358f2dfb78e87703cd9d6eed",
+        "cleanup.bin": "82295329f09d51c9e5c9b953af21cb525e3bc4b02ecc85c9abca7291c8443004",
+        "interface.json": "e86870723a81b938c22836617f1cc4e3e1deaa5b98f8a4c30a5f98f91c59dfaf",
+        "golem.inc": "1bff5191e642ea5583507ecaa324ce39fff142b51f379b08ce41cc5ab012cb58"
+      }
+    },
+    {
+      "source": "docs/tasks/GOLEM-018/geometry.golem",
+      "relocated": false,
+      "artifacts": {
+        "bootstrap.bin": "a3ad5f5e93977fd3a51cf2ffffda99a6cd7cec874155ba8e4195da59e0e4f096",
+        "invoke.bin": "159e9391525fa974508748d07496f04f846e4971756243cccace8a2b44d43a3d",
+        "update-call.bin": "4506d0327af83888b7bdcaf05b1ea7bc4378023bdbcb614512ebf02f4c57b54a",
+        "cleanup.bin": "5352781db9661bbad4463056f5e3a5c13074b8e1cef08a1f3afc431e63d8bd0e",
+        "interface.json": "09ce073b9d5ced0d0996f8ffadc76f89f62225bdfbf8c6f8fc9d1fec3df70437",
+        "golem.inc": "1bf809ccd658f25fce120b36ca5ee6d3f1a4d8a811137def04b10f95d43d26d3"
+      }
+    },
+    {
+      "source": "docs/tasks/GOLEM-018/geometry.golem",
+      "relocated": true,
+      "artifacts": {
+        "bootstrap.bin": "70763423676b215dbc28a0fa4c780f50b58c330ce793c6cda091286138247d0b",
+        "invoke.bin": "3a60bdb15dad9ea72baa6bf211fa5c26122fbc2172f140c649ee13e29f931d9e",
+        "update-call.bin": "6830e1c82f07702e0e0f5757fa4c301de4ab4a4e1c94fc87ca141de677f82103",
+        "cleanup.bin": "0d1170000d6c85e97e3c65edd7967c74bf6251dcdd54034003491449612e296f",
+        "interface.json": "f01e530d13ec0695dc1f899fc8732b77ccc4bc44ecf3ce9465b0eecd0159f863",
+        "golem.inc": "0a6bc24d1f903b6f385fd3067bc1dafe9a58f1b4e7db362198b041f789dd6780"
+      }
+    },
+    {
+      "source": "docs/tasks/GOLEM-019/bitmaps.golem",
+      "relocated": false,
+      "artifacts": {
+        "bootstrap.bin": "69eb048e477a7b44874f11c77aae6e5e322f2f3fedc9273259988f2bd2fd3433",
+        "invoke.bin": "159e9391525fa974508748d07496f04f846e4971756243cccace8a2b44d43a3d",
+        "update-call.bin": "be33db14097e01c477cb676367b7c572be20400386cb351c1481e1fe68411b3b",
+        "cleanup.bin": "4e038aff6ac44082bc405e5771e907895f9cfcc903031698c7ae2f0f4c1459a2",
+        "interface.json": "79f35e26f3b2a763a4a513731adc72de0fb876567af1359d7ed7ffa192ac22d5",
+        "golem.inc": "79183ff2e3bc599e6e200cef67fcb34a74d53be15fc0874467e69dae84ca904f"
+      }
+    },
+    {
+      "source": "docs/tasks/GOLEM-019/bitmaps.golem",
+      "relocated": true,
+      "artifacts": {
+        "bootstrap.bin": "9bdd5392f915d0939f1f557011cab29d9fd8f620970dd7bf69265d9481264afe",
+        "invoke.bin": "3a60bdb15dad9ea72baa6bf211fa5c26122fbc2172f140c649ee13e29f931d9e",
+        "update-call.bin": "b3a13bb92e25927f35e21f4cf1f94d45921e00f2227dae8448f68ed068104aeb",
+        "cleanup.bin": "e9e9386929c9736e3c06ca966a477937202219dd9bcb39cf05903e9c884c27c9",
+        "interface.json": "58017a238134500881c4fb80d561a8c04db0493b1a60d29c04096790f39afdec",
+        "golem.inc": "778701426c539d697ad2991d914e2334a973613a2a58046d717f55a673722900"
+      }
+    },
+    {
+      "source": "docs/tasks/GOLEM-019/review.golem",
+      "relocated": false,
+      "artifacts": {
+        "bootstrap.bin": "e8c9747531840ed790323990d0bfca4d6505b02d82ad40fe51b9d52cae8afe41",
+        "invoke.bin": "159e9391525fa974508748d07496f04f846e4971756243cccace8a2b44d43a3d",
+        "update-call.bin": "b8296325bd4b299728744d41018fce454f4a02d741830c11807b426e9ae1273d",
+        "cleanup.bin": "4e038aff6ac44082bc405e5771e907895f9cfcc903031698c7ae2f0f4c1459a2",
+        "interface.json": "2163e7faa545634c78ddd160ac013c63ea30d8531384e19f831fdc8e133210cc",
+        "golem.inc": "55be33c6f6c9d2c4678469381f53318dac7629a28e1cd1e8043d5d1b565c7853"
+      }
+    },
+    {
+      "source": "docs/tasks/GOLEM-019/review.golem",
+      "relocated": true,
+      "artifacts": {
+        "bootstrap.bin": "bdc1bc03ca8a387f0ab9513a9bdec04b68109aa65561fb1a76199c547e8f7aba",
+        "invoke.bin": "3a60bdb15dad9ea72baa6bf211fa5c26122fbc2172f140c649ee13e29f931d9e",
+        "update-call.bin": "62e1b0726dd87ac73383756f3523475f6221ca64c45a31d608063297ea2550ab",
+        "cleanup.bin": "e9e9386929c9736e3c06ca966a477937202219dd9bcb39cf05903e9c884c27c9",
+        "interface.json": "f5bc5902992401d2a2b443d5dc3ce1c717eac83bae01da80ac3966e827427074",
+        "golem.inc": "028aeb6ac7634c7cda6b24fc456578519cb9339d6a7262740e34d4d8ad423bcc"
+      }
+    },
+    {
+      "source": "docs/tasks/GOLEM-020/animation.golem",
+      "relocated": false,
+      "artifacts": {
+        "bootstrap.bin": "fa343097fde2cfc4e0c64de66692d062dd10fab410cbf6d82363dd77bde4d22a",
+        "invoke.bin": "159e9391525fa974508748d07496f04f846e4971756243cccace8a2b44d43a3d",
+        "update-call.bin": "04d7294c9ba28a5039b3decc15cdbeed8488aa2d7eab0ba5f1b69e273067af3f",
+        "cleanup.bin": "5230bbd7ab156da5e9ed756c0900ef308f42f6f0e312a270f11daf02c17a31d1",
+        "interface.json": "8a76a051543dfabbc291c48922d4dd43be28543838701d3e2a6ef246f27eec5e",
+        "golem.inc": "ec8f0b09e2e38ed8576df02772a4a7e9bd3da1a013784c3925d914298f46b093"
+      }
+    },
+    {
+      "source": "docs/tasks/GOLEM-020/animation.golem",
+      "relocated": true,
+      "artifacts": {
+        "bootstrap.bin": "1037e8ce69c450ca80ff7c5422a9cf1667cf74b09a4e536b2ede0db9844b9b94",
+        "invoke.bin": "3a60bdb15dad9ea72baa6bf211fa5c26122fbc2172f140c649ee13e29f931d9e",
+        "update-call.bin": "933b817f90d0d660a6b85b71995b8f93e6aa3f06954f330da3e81599cb74faf5",
+        "cleanup.bin": "8a1e69e9aa8024b78cfd71c7657f01c19f3d7f425f08d44ddd6f88409b22aeb7",
+        "interface.json": "9cafbbecd5bc1d81593159e585150ac13a3bf0313f0ab86a5f7beaef65d09f0f",
+        "golem.inc": "36dbbdf3ca6a1a538b16860ca0237a6d64a14f58201a7a8e8ab1415c478e5139"
+      }
+    }
+  ],
+  "raw_payloads": [
+    {
+      "source": "examples/hello_golem/hello.golem",
+      "sha256": "453ce15a67f1861d71f41c91027a9dfb9ad9d7fe1ad8a92f6a5911f2ed39d330"
+    },
+    {
+      "source": "examples/loop_golem/loop.golem",
+      "sha256": "a02210017d3c55e9544d8b29ff2e19606d30f691a8d9c506954cd8a1587b25d0"
+    }
+  ],
+  "assembler_consumers": [
+    {
+      "name": "ordinary",
+      "entries": [
+        {
+          "name": "drawMarker",
+          "id": 2,
+          "blocks": 1,
+          "bytes": 51
+        },
+        {
+          "name": "drawGuide",
+          "id": 4,
+          "blocks": 1,
+          "bytes": 6
+        },
+        {
+          "name": "drawWolf",
+          "id": 6,
+          "blocks": 1,
+          "bytes": 36
+        }
+      ],
+      "owned": 7,
+      "input_bytes": 5,
+      "binary_bytes": 477,
+      "include_sha256": "11f22ec4bcef9e9916a177e59a0ec26f322901814294ffbee59d9ab4e4828afe"
+    },
+    {
+      "name": "relocated",
+      "entries": [
+        {
+          "name": "drawMarker",
+          "id": 256,
+          "blocks": 1,
+          "bytes": 51
+        },
+        {
+          "name": "drawGuide",
+          "id": 258,
+          "blocks": 1,
+          "bytes": 6
+        },
+        {
+          "name": "drawWolf",
+          "id": 265,
+          "blocks": 1,
+          "bytes": 36
+        }
+      ],
+      "owned": 7,
+      "input_bytes": 5,
+      "binary_bytes": 477,
+      "include_sha256": "d36e3f8c213e57f554d610da612a1b300d6aba9ed0e88c8e1370cccaf18a251e"
+    }
+  ],
+  "prepublication_rejections": [
+    "golemc: error: generated assembly symbol collision: golem_Paint_buffer",
+    "golemc: error: generated assembly symbol collision: golem_second_buffer",
+    "golemc: error: generated assembly symbol collision: golem_paint_call",
+    "golemc: error: generated assembly symbol collision: golem_package_cleanup",
+    "golemc: error: generated assembly symbol exceeds ez80asm's 64-character limit: golem_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa_buffer",
+    "golemc: error: line 1, column 46: unsupported resident drawing statement"
+  ],
+  "commands": [
+    {
+      "args": [
+        "make",
+        "-C",
+        "src",
+        "check",
+        "CXXFLAGS=-std=c++17 -Wall -Wextra -Werror -O2"
+      ],
+      "seconds": 60.704
+    },
+    {
+      "args": [
+        "g++",
+        "-std=c++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "/Agon/mystuff/golem/tests/test_compiler.cpp",
+        "-o",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/test-sanitized"
+      ],
+      "seconds": 127.927
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/test-sanitized"
+      ],
+      "seconds": 1.972
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/build/golemc-before",
+        "--resident",
+        "--emit-asm",
+        "/Agon/mystuff/golem/examples/resident/floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/legacy-0/old"
+      ],
+      "seconds": 0.016
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--emit-asm",
+        "/Agon/mystuff/golem/examples/resident/floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/legacy-0/new"
+      ],
+      "seconds": 0.008
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/build/golemc-before",
+        "--resident",
+        "--emit-asm",
+        "--reserve",
+        "1:254",
+        "--reserve",
+        "260:264",
+        "/Agon/mystuff/golem/examples/resident/floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/legacy-1/old"
+      ],
+      "seconds": 0.007
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--emit-asm",
+        "--reserve",
+        "1:254",
+        "--reserve",
+        "260:264",
+        "/Agon/mystuff/golem/examples/resident/floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/legacy-1/new"
+      ],
+      "seconds": 0.008
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/build/golemc-before",
+        "--resident",
+        "--emit-asm",
+        "/Agon/mystuff/golem/examples/resident/counted-floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/legacy-2/old"
+      ],
+      "seconds": 0.007
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--emit-asm",
+        "/Agon/mystuff/golem/examples/resident/counted-floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/legacy-2/new"
+      ],
+      "seconds": 0.008
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/build/golemc-before",
+        "--resident",
+        "--emit-asm",
+        "--reserve",
+        "1:254",
+        "--reserve",
+        "260:264",
+        "/Agon/mystuff/golem/examples/resident/counted-floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/legacy-3/old"
+      ],
+      "seconds": 0.008
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--emit-asm",
+        "--reserve",
+        "1:254",
+        "--reserve",
+        "260:264",
+        "/Agon/mystuff/golem/examples/resident/counted-floor.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/legacy-3/new"
+      ],
+      "seconds": 0.006
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/build/golemc-before",
+        "--resident",
+        "--emit-asm",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-013/checked-subtract.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/legacy-4/old"
+      ],
+      "seconds": 0.01
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--emit-asm",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-013/checked-subtract.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/legacy-4/new"
+      ],
+      "seconds": 0.007
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/build/golemc-before",
+        "--resident",
+        "--emit-asm",
+        "--reserve",
+        "1:254",
+        "--reserve",
+        "260:264",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-013/checked-subtract.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/legacy-5/old"
+      ],
+      "seconds": 0.008
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--emit-asm",
+        "--reserve",
+        "1:254",
+        "--reserve",
+        "260:264",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-013/checked-subtract.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/legacy-5/new"
+      ],
+      "seconds": 0.008
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/build/golemc-before",
+        "--resident",
+        "--emit-asm",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-014/checked-multiply.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/legacy-6/old"
+      ],
+      "seconds": 0.009
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--emit-asm",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-014/checked-multiply.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/legacy-6/new"
+      ],
+      "seconds": 0.008
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/build/golemc-before",
+        "--resident",
+        "--emit-asm",
+        "--reserve",
+        "1:254",
+        "--reserve",
+        "260:264",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-014/checked-multiply.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/legacy-7/old"
+      ],
+      "seconds": 0.006
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--emit-asm",
+        "--reserve",
+        "1:254",
+        "--reserve",
+        "260:264",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-014/checked-multiply.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/legacy-7/new"
+      ],
+      "seconds": 0.007
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/build/golemc-before",
+        "--resident",
+        "--emit-asm",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-015/checked-divmod.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/legacy-8/old"
+      ],
+      "seconds": 0.008
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--emit-asm",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-015/checked-divmod.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/legacy-8/new"
+      ],
+      "seconds": 0.008
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/build/golemc-before",
+        "--resident",
+        "--emit-asm",
+        "--reserve",
+        "1:254",
+        "--reserve",
+        "260:264",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-015/checked-divmod.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/legacy-9/old"
+      ],
+      "seconds": 0.012
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--emit-asm",
+        "--reserve",
+        "1:254",
+        "--reserve",
+        "260:264",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-015/checked-divmod.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/legacy-9/new"
+      ],
+      "seconds": 0.012
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/build/golemc-before",
+        "--resident",
+        "--emit-asm",
+        "--table-data",
+        "samples=/Agon/mystuff/golem/docs/tasks/GOLEM-017/records.dat",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-017/table.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/legacy-10/old"
+      ],
+      "seconds": 0.016
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--emit-asm",
+        "--table-data",
+        "samples=/Agon/mystuff/golem/docs/tasks/GOLEM-017/records.dat",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-017/table.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/legacy-10/new"
+      ],
+      "seconds": 0.012
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/build/golemc-before",
+        "--resident",
+        "--emit-asm",
+        "--reserve",
+        "1:254",
+        "--reserve",
+        "260:264",
+        "--table-data",
+        "samples=/Agon/mystuff/golem/docs/tasks/GOLEM-017/records.dat",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-017/table.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/legacy-11/old"
+      ],
+      "seconds": 0.011
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--emit-asm",
+        "--reserve",
+        "1:254",
+        "--reserve",
+        "260:264",
+        "--table-data",
+        "samples=/Agon/mystuff/golem/docs/tasks/GOLEM-017/records.dat",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-017/table.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/legacy-11/new"
+      ],
+      "seconds": 0.008
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/build/golemc-before",
+        "--resident",
+        "--emit-asm",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-018/geometry.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/legacy-12/old"
+      ],
+      "seconds": 0.012
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--emit-asm",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-018/geometry.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/legacy-12/new"
+      ],
+      "seconds": 0.008
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/build/golemc-before",
+        "--resident",
+        "--emit-asm",
+        "--reserve",
+        "1:254",
+        "--reserve",
+        "260:264",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-018/geometry.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/legacy-13/old"
+      ],
+      "seconds": 0.007
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--emit-asm",
+        "--reserve",
+        "1:254",
+        "--reserve",
+        "260:264",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-018/geometry.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/legacy-13/new"
+      ],
+      "seconds": 0.006
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/build/golemc-before",
+        "--resident",
+        "--emit-asm",
+        "--reserve",
+        "8195:8195",
+        "--reserve",
+        "8201:8202",
+        "--reserve",
+        "8463:8463",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-019/bitmaps.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/legacy-14/old"
+      ],
+      "seconds": 0.004
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--emit-asm",
+        "--reserve",
+        "8195:8195",
+        "--reserve",
+        "8201:8202",
+        "--reserve",
+        "8463:8463",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-019/bitmaps.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/legacy-14/new"
+      ],
+      "seconds": 0.003
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/build/golemc-before",
+        "--resident",
+        "--emit-asm",
+        "--reserve",
+        "1:254",
+        "--reserve",
+        "260:264",
+        "--reserve",
+        "8195:8195",
+        "--reserve",
+        "8201:8202",
+        "--reserve",
+        "8463:8463",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-019/bitmaps.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/legacy-15/old"
+      ],
+      "seconds": 0.005
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--emit-asm",
+        "--reserve",
+        "1:254",
+        "--reserve",
+        "260:264",
+        "--reserve",
+        "8195:8195",
+        "--reserve",
+        "8201:8202",
+        "--reserve",
+        "8463:8463",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-019/bitmaps.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/legacy-15/new"
+      ],
+      "seconds": 0.009
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/build/golemc-before",
+        "--resident",
+        "--emit-asm",
+        "--reserve",
+        "8195:8195",
+        "--reserve",
+        "8201:8202",
+        "--reserve",
+        "8463:8463",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-019/review.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/legacy-16/old"
+      ],
+      "seconds": 0.008
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--emit-asm",
+        "--reserve",
+        "8195:8195",
+        "--reserve",
+        "8201:8202",
+        "--reserve",
+        "8463:8463",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-019/review.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/legacy-16/new"
+      ],
+      "seconds": 0.01
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/build/golemc-before",
+        "--resident",
+        "--emit-asm",
+        "--reserve",
+        "1:254",
+        "--reserve",
+        "260:264",
+        "--reserve",
+        "8195:8195",
+        "--reserve",
+        "8201:8202",
+        "--reserve",
+        "8463:8463",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-019/review.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/legacy-17/old"
+      ],
+      "seconds": 0.006
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--emit-asm",
+        "--reserve",
+        "1:254",
+        "--reserve",
+        "260:264",
+        "--reserve",
+        "8195:8195",
+        "--reserve",
+        "8201:8202",
+        "--reserve",
+        "8463:8463",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-019/review.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/legacy-17/new"
+      ],
+      "seconds": 0.008
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/build/golemc-before",
+        "--resident",
+        "--emit-asm",
+        "--reserve",
+        "8195:8195",
+        "--reserve",
+        "8201:8202",
+        "--reserve",
+        "8463:8463",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-020/animation.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/legacy-18/old"
+      ],
+      "seconds": 0.008
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--emit-asm",
+        "--reserve",
+        "8195:8195",
+        "--reserve",
+        "8201:8202",
+        "--reserve",
+        "8463:8463",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-020/animation.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/legacy-18/new"
+      ],
+      "seconds": 0.008
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/build/golemc-before",
+        "--resident",
+        "--emit-asm",
+        "--reserve",
+        "1:254",
+        "--reserve",
+        "260:264",
+        "--reserve",
+        "8195:8195",
+        "--reserve",
+        "8201:8202",
+        "--reserve",
+        "8463:8463",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-020/animation.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/legacy-19/old"
+      ],
+      "seconds": 0.008
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--emit-asm",
+        "--reserve",
+        "1:254",
+        "--reserve",
+        "260:264",
+        "--reserve",
+        "8195:8195",
+        "--reserve",
+        "8201:8202",
+        "--reserve",
+        "8463:8463",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-020/animation.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/legacy-19/new"
+      ],
+      "seconds": 0.008
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/build/golemc-before",
+        "/Agon/mystuff/golem/examples/hello_golem/hello.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/raw-0/old"
+      ],
+      "seconds": 0.003
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/build/golemc",
+        "/Agon/mystuff/golem/examples/hello_golem/hello.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/raw-0/new"
+      ],
+      "seconds": 0.007
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/build/golemc-before",
+        "/Agon/mystuff/golem/examples/loop_golem/loop.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/raw-1/old"
+      ],
+      "seconds": 0.008
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/build/golemc",
+        "/Agon/mystuff/golem/examples/loop_golem/loop.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/raw-1/new"
+      ],
+      "seconds": 0.008
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--emit-asm",
+        "--reserve",
+        "50000:50000",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/multi.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/ordinary/package"
+      ],
+      "seconds": 0.011
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-007/build/ez80asm",
+        "consumer.asm",
+        "consumer.bin",
+        "-c"
+      ],
+      "seconds": 0.008
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--emit-asm",
+        "--reserve",
+        "50000:50000",
+        "--reserve",
+        "1:254",
+        "--reserve",
+        "260:264",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/multi.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/relocated/package"
+      ],
+      "seconds": 0.011
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-007/build/ez80asm",
+        "consumer.asm",
+        "consumer.bin",
+        "-c"
+      ],
+      "seconds": 0.005
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--emit-asm",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/bad-0.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/preserve"
+      ],
+      "seconds": 0.006
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--emit-asm",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/bad-0.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/missing-0"
+      ],
+      "seconds": 0.005
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/bad-0.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/without-asm-0"
+      ],
+      "seconds": 0.007
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--emit-asm",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/bad-1.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/preserve"
+      ],
+      "seconds": 0.01
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--emit-asm",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/bad-1.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/missing-1"
+      ],
+      "seconds": 0.006
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/bad-1.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/without-asm-1"
+      ],
+      "seconds": 0.003
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--emit-asm",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/bad-2.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/preserve"
+      ],
+      "seconds": 0.002
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--emit-asm",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/bad-2.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/missing-2"
+      ],
+      "seconds": 0.003
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/bad-2.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/without-asm-2"
+      ],
+      "seconds": 0.003
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--emit-asm",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/bad-3.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/preserve"
+      ],
+      "seconds": 0.003
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--emit-asm",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/bad-3.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/missing-3"
+      ],
+      "seconds": 0.002
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/bad-3.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/without-asm-3"
+      ],
+      "seconds": 0.003
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--emit-asm",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/bad-4.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/preserve"
+      ],
+      "seconds": 0.002
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--emit-asm",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/bad-4.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/missing-4"
+      ],
+      "seconds": 0.002
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/bad-4.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/without-asm-4"
+      ],
+      "seconds": 0.002
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--emit-asm",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/bad-5.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/preserve"
+      ],
+      "seconds": 0.003
+    },
+    {
+      "args": [
+        "/Agon/mystuff/golem/build/golemc",
+        "--resident",
+        "--emit-asm",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/bad-5.golem",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-022/compiler/build/missing-5"
+      ],
+      "seconds": 0.002
+    }
+  ],
+  "source_sha256": {
+    "src/resident_drawing.hpp": "8daf1a0199b6a38c6b023397d8288439492cf73e7156c20167487aa2ccfe139d",
+    "src/assembly_output.hpp": "f1306d7038d8460bdd4e4a4ad7e4dde1d424a12089f152758186b957c1c5b54c",
+    "tests/test_compiler.cpp": "f8f5d42e4b386ae9b09e766e58af214f6fabb04190594ac3c790f0dc62607322",
+    "docs/tasks/GOLEM-022/compiler/run_checks.py": "6cb3161af7e9fe92e1bd4447b3fb466688c7767483714558ea80b28c50230539"
+  }
+}

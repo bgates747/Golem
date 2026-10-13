@@ -259,5 +259,75 @@ int main() {
             {"Sub paint","Sub draw_bitmap"},{"image,x,y","image,-32769,y"},
             {"image,x,y","image,x,32768"}})
         reject([&] {resident_drawing::compile(bitmapChange(change.first,change.second),{{50000,50000}});},"");
+    // Independent finite entries share one input block and keep the first Sub
+    // as the legacy invoke target. A later bitmap still controls admission.
+    const std::string multiSource =
+        "uint8 colour Bounds(0,63)=11 sint16 x=40 sint16 y=30 "
+        "Sub marker draw_point(colour,x,y) EndSub "
+        "Sub line draw_line(colour,x,y,100,80) EndSub "
+        "Sub wolf draw_bitmap(50000,x,y) EndSub";
+    const auto multi = resident_drawing::compile(multiSource,{{50000,50000}});
+    assert(multi.spec.procedures.size()==3 && multi.entries.size()==3);
+    assert(multi.input==1 && multi.initial.size()==1 && multi.owned.size()==7);
+    assert(multi.entry==2 && multi.invoke==multi.entries[0].invoke);
+    assert(multi.entries[0].name=="marker" && multi.entries[1].name=="line" && multi.entries[2].name=="wolf");
+    assert(multi.entries[1].id==4 && multi.entries[2].id==6);
+    assert(multi.roles.at(2)=="drawing.entry" && multi.roles.at(3)=="drawing.template.0");
+    assert(multi.roles.at(4)=="drawing.entry.1" && multi.roles.at(5)=="drawing.template.1.0");
+    assert(multi.initialBitmapIDs==std::set<unsigned>({50000}) && !multi.owned.count(50000));
+    assert(multi.cleanup.size()==multi.owned.size()*6);
+    for (size_t i=0;i<multi.entries.size();++i) {
+        resident_scalar::Bytes expectedCall;
+        resident_scalar::command(expectedCall,multi.entries[i].id,1);
+        assert(multi.entries[i].invoke==expectedCall && expectedCall.size()==6);
+        resident_scalar::Bytes expectedEnd;
+        resident_scalar::command(expectedEnd,multi.entries[i].id+1,1);
+        const auto &program=multi.programs.at(multi.entries[i].id);
+        assert(resident_scalar::Bytes(program.end()-6,program.end())==expectedEnd);
+    }
+    const auto firstOnly=resident_drawing::compile(
+        multiSource.substr(0,multiSource.find("Sub line")));
+    assert(firstOnly.programs.at(2)==multi.programs.at(2));
+    assert(firstOnly.programs.at(3)==multi.programs.at(3));
+    assert(resident_drawing::manifest(firstOnly).find("\"entries\"")==std::string::npos);
+    const auto multiJSON=resident_drawing::manifest(multi,{{50000,50000}});
+    assert(multiJSON.find("\"entries\": [{\"name\":\"marker\",\"id\":2,\"blocks\":1,\"bytes\":51},"
+                          "{\"name\":\"line\",\"id\":4,\"blocks\":1,\"bytes\":51},"
+                          "{\"name\":\"wolf\",\"id\":6,\"blocks\":1,\"bytes\":36}]")!=std::string::npos);
+    const auto multiAsm=assembly::render(multi,{});
+    for (const auto &entry:multi.entries)
+        assert(multiAsm.find("golem_"+entry.name+":\n")!=std::string::npos);
+    const std::string twoLiterals=
+        "Sub first draw_point(1,2,3) EndSub Sub second draw_point(4,5,6) EndSub";
+    const auto two=resident_drawing::compile(twoLiterals);
+    assert(!two.input && two.initial.empty() && two.entries[0].id==1 && two.entries[1].id==3);
+    assert(two.owned.size()==4 && resident_drawing::inputUpdate(two).empty());
+    assert(two.programs.at(2)==resident_scalar::Bytes({18,0,1,25,69,2,0,3,0}));
+    assert(two.programs.at(4)==resident_scalar::Bytes({18,0,4,25,69,5,0,6,0}));
+    for (const auto &suffix:std::vector<std::string>{
+            "Sub first draw_point(1,0,0) EndSub", "Sub later EndSub",
+            "Sub later draw_point(1,0,0)", "Sub later x=1 EndSub",
+            "Sub later first EndSub", "Sub later Sub inner draw_point(1,0,0) EndSub EndSub",
+            "Sub later uint8 local=0 EndSub", "uint8 late=0 Sub later draw_point(1,0,0) EndSub"})
+        reject([&] {resident_drawing::compile("Sub first draw_point(1,0,0) EndSub "+suffix);},"");
+    reject([&] {resident_drawing::compile(multiSource);},"requires --reserve");
+    reject([] {resident_drawing::compile(
+        "uint16 image Bounds(1,65534)=1 sint16 x=0 sint16 y=0 "
+        "Sub first draw_point(1,x,y) EndSub Sub later draw_bitmap(image,x,y) EndSub",
+        {{2,65534}});},"requires --reserve");
+    reject([&] {resident_drawing::compile(twoLiterals,{{1,65531}});},"namespace exhausted");
+    std::string oversized="sint16 x=0 Sub first draw_point(1,0,0) EndSub Sub large ";
+    for (unsigned i=0;i<1900;++i) oversized+="draw_point(1,x,x) ";
+    oversized+="EndSub";
+    reject([&] {resident_drawing::compile(oversized);},"write block exceeds 65535");
+    for (const auto &source:std::vector<std::string>{
+            "Sub paint draw_point(1,0,0) EndSub Sub Paint draw_point(1,0,0) EndSub",
+            "sint16 Second=0 Sub first draw_point(1,0,0) EndSub Sub second draw_point(1,0,0) EndSub",
+            "Sub paint draw_point(1,0,0) EndSub Sub paint_call draw_point(1,0,0) EndSub",
+            "Sub paint draw_point(1,0,0) EndSub Sub package_bootstrap draw_point(1,0,0) EndSub",
+            "uint8 inputs Bounds(0,63)=1 Sub first draw_point(inputs,0,0) EndSub Sub second draw_point(1,0,0) EndSub"})
+        reject([&] {assembly::render(resident_drawing::compile(source),{});},"collision");
+    reject([] {assembly::render(resident_drawing::compile(
+        "Sub first draw_point(1,0,0) EndSub Sub "+std::string(60,'a')+" draw_point(1,0,0) EndSub"),{});},"64-character limit");
     std::cout << "Maintained raw/resident contract checks pass; " << rejections << " rejection cases.\n";
 }

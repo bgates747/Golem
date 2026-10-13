@@ -1,0 +1,539 @@
+{
+  "schema": 1,
+  "created_utc": "2026-10-12T15:07:14.966088+00:00",
+  "status": "Native Oryx build, direct media qualification and complete Fab/MOS packed module fixture pass with both engines; profile stopped for human launch",
+  "build": {
+    "schema": 1,
+    "created_utc": "2026-10-12T14:50:05.871165+00:00",
+    "host": "oryx-linuxlite",
+    "architecture": "x86_64",
+    "outputs": {
+      "adapter": {
+        "path": "/home/smith/Agon/mystuff/golem/docs/tasks/GOLEM-021/emulator/build/flexe-vdp.so",
+        "sha256": "817da2e320c206fcb7e423b39434c6452319d71a2f54fac451aa9b7a10fa5a0d"
+      },
+      "frontend": {
+        "path": "/home/smith/Agon/mystuff/golem/docs/tasks/GOLEM-021/emulator/build/fab-source/target/release/fab-agon-emulator",
+        "sha256": "a0e2aebfc6f299ec9905b989841ba000a1471f685078b76004480211c0396812"
+      }
+    },
+    "core": {
+      "upstream_commit": "fbda8e905ccff36a090e4e33b0ffc2337dd79c52",
+      "patch_revision": 4,
+      "patch_files": {
+        "src/jit.c": "a7f3c9b5da4515724774121b5f05098c47d6ccf4de69813f53e27a8aa7e6ca42",
+        "src/xtensa.h": "e7f0301139eeac03f1a984df8d1ccc4583cd1176bea59b70908aa535beddc3b1",
+        "src/xtensa.c": "dbc9b13e9d3b9f70b0e9b5b2d2fb21ebb7cf4d10debd3cf2681b7fcf1ba5082f",
+        "src/flexe_session.c": "c77e50aa6412b3a6a8e609cb6a6f5b8087ea4772c690823e43c1cd8be535b664",
+        "src/peripherals.c": "c46147016acb943a80fba729ae688fed9e74582cc0079f1d31de0a7228d81a08"
+      }
+    },
+    "frontend": {
+      "upstream_commit": "c22876d1f7ad903537c308cf65afd6553b37cdb8",
+      "patch_revision": 1,
+      "patch_files": {
+        "src/main.rs": "0e6b9a9c4cafd1b0aa33aeb785491c453bfafa5f6d8621711f047828b8ec1133",
+        "src/vdp_interface.rs": "ec162054028a39f02a5e934ebf745f9d270752f541ff5af878781c37d3ef1c29"
+      }
+    },
+    "graphical_instance_launched": false
+  },
+  "tool_versions": {
+    "cc": "Ubuntu GCC 15.2.0-16ubuntu1",
+    "rustc": "1.97.1 (8bab26f4f 2026-07-14)",
+    "cargo": "1.97.1 (c980f4866 2026-06-30)",
+    "cmake": "4.2.3",
+    "openssl": "3.5.5",
+    "zlib": "1.3.1",
+    "sdl3": "3.4.2"
+  },
+  "dependency_setup": {
+    "requested_packages": [
+      "libssl-dev",
+      "libsdl3-dev"
+    ],
+    "additional_required_packages": [
+      "libfribidi-dev",
+      "libxtst-dev"
+    ],
+    "graphical_instance_launched": false
+  },
+  "engines": {
+    "jit": {
+      "check": {
+        "firmware_sha256": "2aa6710fd9eab3443a874b19786a5f2efc5562ddc6ab437c33c8e6b4bcf20b5b",
+        "backend_sha256": "817da2e320c206fcb7e423b39434c6452319d71a2f54fac451aa9b7a10fa5a0d",
+        "elf_sha256": "6c90d0bfdb03bc5fd615efb03f51692340dd22b19193e87dda5313aaa86b3fb1",
+        "passed": true,
+        "engine": "jit",
+        "width": 320,
+        "height": 240,
+        "glyph_pixels": 115,
+        "frames": 584,
+        "cycles": 2553690000,
+        "wall_seconds": 10.640924525000003,
+        "uart_bytes": 20,
+        "modes": [
+          {
+            "mode": 0,
+            "width": 640,
+            "height": 480,
+            "glyph_pixels": 115,
+            "background": [
+              170,
+              0,
+              0
+            ],
+            "rate": 59.52381134033203
+          },
+          {
+            "mode": 3,
+            "width": 640,
+            "height": 240,
+            "glyph_pixels": 115,
+            "background": [
+              170,
+              0,
+              0
+            ],
+            "rate": 59.63740539550781
+          },
+          {
+            "mode": 8,
+            "width": 320,
+            "height": 240,
+            "glyph_pixels": 115,
+            "background": [
+              170,
+              0,
+              0
+            ],
+            "rate": 58.31212615966797
+          },
+          {
+            "mode": 12,
+            "width": 320,
+            "height": 200,
+            "glyph_pixels": 115,
+            "background": [
+              170,
+              0,
+              0
+            ],
+            "rate": 63.775508880615234
+          },
+          {
+            "mode": 16,
+            "width": 800,
+            "height": 600,
+            "glyph_pixels": 115,
+            "background": [
+              255,
+              0,
+              0
+            ],
+            "rate": 60.3165397644043
+          },
+          {
+            "mode": 18,
+            "width": 1024,
+            "height": 768,
+            "glyph_pixels": 115,
+            "background": [
+              255,
+              255,
+              255
+            ],
+            "rate": 55.388160705566406
+          },
+          {
+            "mode": 20,
+            "width": 512,
+            "height": 384,
+            "glyph_pixels": 115,
+            "background": [
+              170,
+              0,
+              0
+            ],
+            "rate": 55.388160705566406
+          },
+          {
+            "mode": 24,
+            "width": 640,
+            "height": 512,
+            "glyph_pixels": 115,
+            "background": [
+              170,
+              0,
+              0
+            ],
+            "rate": 55.57383346557617
+          },
+          {
+            "mode": 27,
+            "width": 640,
+            "height": 256,
+            "glyph_pixels": 115,
+            "background": [
+              170,
+              0,
+              0
+            ],
+            "rate": 55.46976089477539
+          }
+        ],
+        "audio": {
+          "samples": 16384,
+          "non_silent": 8192,
+          "frequency": 1024.0,
+          "minimum": 27,
+          "maximum": 227
+        }
+      },
+      "stats": {
+        "engine": "jit",
+        "frames": 584,
+        "cycles": 2553710000,
+        "retired": 1099806475,
+        "uart_rx": 239,
+        "uart_tx": 186,
+        "uart_delivered": 186,
+        "isync": 11,
+        "code_invalidations": 1,
+        "keys": 1,
+        "failed": false,
+        "unhandled": 0,
+        "unregistered": 0,
+        "unmapped": 0
+      },
+      "receipt_sha256": {
+        "check.json": "5a2be1d1fba543d807ad22774280bf1d6340f69f491e7e6121f3dbd73862d428",
+        "stats.json": "6768ed7881c7014caccca23358c0c0498238e0247ed1a59753075aa23e129437"
+      }
+    },
+    "interp": {
+      "check": {
+        "firmware_sha256": "2aa6710fd9eab3443a874b19786a5f2efc5562ddc6ab437c33c8e6b4bcf20b5b",
+        "backend_sha256": "817da2e320c206fcb7e423b39434c6452319d71a2f54fac451aa9b7a10fa5a0d",
+        "elf_sha256": "6c90d0bfdb03bc5fd615efb03f51692340dd22b19193e87dda5313aaa86b3fb1",
+        "passed": true,
+        "engine": "interp",
+        "width": 320,
+        "height": 240,
+        "glyph_pixels": 115,
+        "frames": 572,
+        "cycles": 2504480000,
+        "wall_seconds": 12.959509778999973,
+        "uart_bytes": 20,
+        "modes": [
+          {
+            "mode": 0,
+            "width": 640,
+            "height": 480,
+            "glyph_pixels": 115,
+            "background": [
+              170,
+              0,
+              0
+            ],
+            "rate": 59.52381134033203
+          },
+          {
+            "mode": 3,
+            "width": 640,
+            "height": 240,
+            "glyph_pixels": 115,
+            "background": [
+              170,
+              0,
+              0
+            ],
+            "rate": 59.63740539550781
+          },
+          {
+            "mode": 8,
+            "width": 320,
+            "height": 240,
+            "glyph_pixels": 115,
+            "background": [
+              170,
+              0,
+              0
+            ],
+            "rate": 58.31212615966797
+          },
+          {
+            "mode": 12,
+            "width": 320,
+            "height": 200,
+            "glyph_pixels": 115,
+            "background": [
+              170,
+              0,
+              0
+            ],
+            "rate": 63.775508880615234
+          },
+          {
+            "mode": 16,
+            "width": 800,
+            "height": 600,
+            "glyph_pixels": 115,
+            "background": [
+              255,
+              0,
+              0
+            ],
+            "rate": 60.3165397644043
+          },
+          {
+            "mode": 18,
+            "width": 1024,
+            "height": 768,
+            "glyph_pixels": 115,
+            "background": [
+              255,
+              255,
+              255
+            ],
+            "rate": 55.388160705566406
+          },
+          {
+            "mode": 20,
+            "width": 512,
+            "height": 384,
+            "glyph_pixels": 115,
+            "background": [
+              170,
+              0,
+              0
+            ],
+            "rate": 55.388160705566406
+          },
+          {
+            "mode": 24,
+            "width": 640,
+            "height": 512,
+            "glyph_pixels": 115,
+            "background": [
+              170,
+              0,
+              0
+            ],
+            "rate": 55.57383346557617
+          },
+          {
+            "mode": 27,
+            "width": 640,
+            "height": 256,
+            "glyph_pixels": 115,
+            "background": [
+              170,
+              0,
+              0
+            ],
+            "rate": 55.46976089477539
+          }
+        ],
+        "audio": {
+          "samples": 16384,
+          "non_silent": 8192,
+          "frequency": 1024.0,
+          "minimum": 27,
+          "maximum": 227
+        }
+      },
+      "stats": {
+        "engine": "interp",
+        "frames": 572,
+        "cycles": 2504490000,
+        "retired": 1041245910,
+        "uart_rx": 239,
+        "uart_tx": 186,
+        "uart_delivered": 186,
+        "isync": 11,
+        "code_invalidations": 1,
+        "keys": 1,
+        "failed": false,
+        "unhandled": 0,
+        "unregistered": 0,
+        "unmapped": 0
+      },
+      "receipt_sha256": {
+        "check.json": "0f91d2e12cad3071e8fbecdac866484ad40c036b31f5413218f42db92264e0f4",
+        "stats.json": "b058b86a6ffbc5a7d625d3a38a994ff9cf7cb7c31af5a6c1e1b19f390d96a9cd"
+      }
+    }
+  },
+  "full_mos_proof": {
+    "jit": {
+      "path": "evidence/oryx-packed-jit.json",
+      "sha256": "452d66a203bccdd3c7cd23dc57cdd0e4059da02d9ef65577e48c01d0d6e9e35e",
+      "receipt": {
+        "pass_transcript": true,
+        "checks": 56,
+        "bytes": 560,
+        "observed_sha256": "ba078b859af78939d36e798fadbc4bde8400ed19c9965be77634770deb8dd3ec",
+        "module_handles": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "native_entry_addresses": [
+          "0x40097b8c",
+          "0x40097b8c",
+          "0x40097b8c",
+          "0x40097b84"
+        ],
+        "replaced_at_same_entry": true,
+        "human_visual_review": "pending",
+        "command_task_minimum_free_stack_bytes": 2164,
+        "pass_native_pixels": true,
+        "pixel_checks": 61440,
+        "image_dimensions": [
+          280,
+          192
+        ],
+        "screen_dimensions": [
+          320,
+          240
+        ],
+        "unchanged_black_margin": [
+          280,
+          0,
+          319,
+          191
+        ],
+        "decoded_vga_sha256": "6f800bde5e32f44b668703297fdefffce646f2fd3f5c733af377dede76318add",
+        "packed_sha256": "34baecf6c24a305eb8a4a6fa36976fe190e6b189bb684288add8cf587f87b382",
+        "engine": "jit",
+        "elapsed_seconds": 8.835,
+        "mapped_vdp_libraries": [
+          "/home/smith/Agon/mystuff/golem/docs/tasks/GOLEM-021/.emulator/flexe-vdp.so"
+        ],
+        "graphical_instance_launched": false,
+        "returned_to_mos_prompt": true,
+        "backend_stats": {
+          "engine": "jit",
+          "frames": 482,
+          "cycles": 2065340000,
+          "retired": 628717206,
+          "uart_rx": 21274,
+          "uart_tx": 1035,
+          "uart_delivered": 1035,
+          "isync": 29,
+          "code_invalidations": 5,
+          "keys": 0,
+          "failed": false,
+          "unhandled": 0,
+          "unregistered": 0,
+          "unmapped": 0
+        },
+        "runtime_identities": [
+          "a0e2aebfc6f299ec9905b989841ba000a1471f685078b76004480211c0396812  fab-agon-emulator.bin",
+          "d564243283972690933a4554296ad6202ca4ef54572279533a942960846bebae  mos_platform.bin",
+          "d69e60bbce61a7b4b3eef318ba395f11c4e1a5b585755755113992dc94edcb86  mos_platform.map",
+          "817da2e320c206fcb7e423b39434c6452319d71a2f54fac451aa9b7a10fa5a0d  flexe-vdp.so",
+          "31d25eec03a531b336d78d453f0720bbd1312c7c8516fdfa80130769ab15e49f  esp32-firmware.bin",
+          "51f196eb7b84ed79394a9fde1dff832ad479417c360525c69582fd093c3a0a3a  esp32-firmware.elf",
+          "5ac890044fa28d6d650dcf897a6d85ebefb84a4809086dc97ac4ec19b0a45dd4  sdcard/vdplet/probe.bin",
+          "9dfcd9b5cae3152f54b41b7a78640ec6aef1e8f5ad3032ee9ab3b9095d219118  sdcard/vdplet/script.bin",
+          "5f72211c6d425be2a619399593cc7c6b8841906e924189c3fa55f656a588fc52  sdcard/vdplet/expected.json",
+          "f62999262bcae37afee95ad02e40a4160a3d49c8122f0471ef3a34580e2b004e  sdcard/vdplet/numeric-1.vdpl",
+          "3486e188b752ce6ddd6d566db91b7605c77b41f9031d5998d318616423036bfa  sdcard/vdplet/numeric-2.vdpl",
+          "609abaa6c4de6a162d9272c4e43955ce47f59ad0a5d36e0a1c2346fb09ee577d  sdcard/vdplet/packed-mono.vdpl",
+          "34baecf6c24a305eb8a4a6fa36976fe190e6b189bb684288add8cf587f87b382  sdcard/vdplet/loderunner.packed",
+          "fcb674789dcabdfed24139d9194f6c0afde9a410236e84b338bd8247ebe25998  sdcard/vdplet/assets.json",
+          "0d7d39a0ff0a6f6e1e0c75300ee4d0107572ec6a5ef881798bf72e36623fc8ca  fab-agon-emulator"
+        ],
+        "expected_sha256": "5f72211c6d425be2a619399593cc7c6b8841906e924189c3fa55f656a588fc52"
+      }
+    },
+    "interp": {
+      "path": "evidence/oryx-packed-interp.json",
+      "sha256": "eb453c2e74eba5326ef43bdab87d9a9feb9fd1d93f17b5afd7f196894dd053d1",
+      "receipt": {
+        "pass_transcript": true,
+        "checks": 56,
+        "bytes": 560,
+        "observed_sha256": "0df7a55e6880c76e27dba14830e60c16d253b803e4d8680ccaf3e938b0ff4ae1",
+        "module_handles": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "native_entry_addresses": [
+          "0x40097b8c",
+          "0x40097b8c",
+          "0x40097b8c",
+          "0x40097b84"
+        ],
+        "replaced_at_same_entry": true,
+        "human_visual_review": "pending",
+        "command_task_minimum_free_stack_bytes": 2260,
+        "pass_native_pixels": true,
+        "pixel_checks": 61440,
+        "image_dimensions": [
+          280,
+          192
+        ],
+        "screen_dimensions": [
+          320,
+          240
+        ],
+        "unchanged_black_margin": [
+          280,
+          0,
+          319,
+          191
+        ],
+        "decoded_vga_sha256": "6f800bde5e32f44b668703297fdefffce646f2fd3f5c733af377dede76318add",
+        "packed_sha256": "34baecf6c24a305eb8a4a6fa36976fe190e6b189bb684288add8cf587f87b382",
+        "engine": "interp",
+        "elapsed_seconds": 8.835,
+        "mapped_vdp_libraries": [
+          "/home/smith/Agon/mystuff/golem/docs/tasks/GOLEM-021/.emulator/flexe-vdp.so"
+        ],
+        "graphical_instance_launched": false,
+        "returned_to_mos_prompt": true,
+        "backend_stats": {
+          "engine": "interp",
+          "frames": 471,
+          "cycles": 2020440000,
+          "retired": 567278417,
+          "uart_rx": 21274,
+          "uart_tx": 1035,
+          "uart_delivered": 1035,
+          "isync": 29,
+          "code_invalidations": 5,
+          "keys": 0,
+          "failed": false,
+          "unhandled": 0,
+          "unregistered": 0,
+          "unmapped": 0
+        },
+        "runtime_identities": [
+          "a0e2aebfc6f299ec9905b989841ba000a1471f685078b76004480211c0396812  fab-agon-emulator.bin",
+          "d564243283972690933a4554296ad6202ca4ef54572279533a942960846bebae  mos_platform.bin",
+          "d69e60bbce61a7b4b3eef318ba395f11c4e1a5b585755755113992dc94edcb86  mos_platform.map",
+          "817da2e320c206fcb7e423b39434c6452319d71a2f54fac451aa9b7a10fa5a0d  flexe-vdp.so",
+          "31d25eec03a531b336d78d453f0720bbd1312c7c8516fdfa80130769ab15e49f  esp32-firmware.bin",
+          "51f196eb7b84ed79394a9fde1dff832ad479417c360525c69582fd093c3a0a3a  esp32-firmware.elf",
+          "5ac890044fa28d6d650dcf897a6d85ebefb84a4809086dc97ac4ec19b0a45dd4  sdcard/vdplet/probe.bin",
+          "9dfcd9b5cae3152f54b41b7a78640ec6aef1e8f5ad3032ee9ab3b9095d219118  sdcard/vdplet/script.bin",
+          "5f72211c6d425be2a619399593cc7c6b8841906e924189c3fa55f656a588fc52  sdcard/vdplet/expected.json",
+          "f62999262bcae37afee95ad02e40a4160a3d49c8122f0471ef3a34580e2b004e  sdcard/vdplet/numeric-1.vdpl",
+          "3486e188b752ce6ddd6d566db91b7605c77b41f9031d5998d318616423036bfa  sdcard/vdplet/numeric-2.vdpl",
+          "609abaa6c4de6a162d9272c4e43955ce47f59ad0a5d36e0a1c2346fb09ee577d  sdcard/vdplet/packed-mono.vdpl",
+          "34baecf6c24a305eb8a4a6fa36976fe190e6b189bb684288add8cf587f87b382  sdcard/vdplet/loderunner.packed",
+          "fcb674789dcabdfed24139d9194f6c0afde9a410236e84b338bd8247ebe25998  sdcard/vdplet/assets.json",
+          "0d7d39a0ff0a6f6e1e0c75300ee4d0107572ec6a5ef881798bf72e36623fc8ca  fab-agon-emulator"
+        ],
+        "expected_sha256": "5f72211c6d425be2a619399593cc7c6b8841906e924189c3fa55f656a588fc52"
+      }
+    }
+  }
+}

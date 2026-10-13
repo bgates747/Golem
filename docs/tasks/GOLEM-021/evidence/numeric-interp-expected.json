@@ -1,0 +1,339 @@
+{
+  "checks": [
+    {
+      "label": "discovery",
+      "token": 0,
+      "kind": 1,
+      "value": null,
+      "capture_handle": false
+    },
+    {
+      "label": "protocol version",
+      "token": 1,
+      "kind": 4,
+      "value": 256,
+      "capture_handle": false
+    },
+    {
+      "label": "initial handle absent",
+      "token": 2,
+      "kind": 4,
+      "value": 0,
+      "capture_handle": false
+    },
+    {
+      "label": "numeric 1 initial load",
+      "token": 3,
+      "kind": 2,
+      "value": null,
+      "capture_handle": true
+    },
+    {
+      "label": "numeric 1 initial load entry low",
+      "token": 4,
+      "kind": 4,
+      "value": null,
+      "capture_handle": false
+    },
+    {
+      "label": "numeric 1 initial load entry high",
+      "token": 5,
+      "kind": 4,
+      "value": null,
+      "capture_handle": false
+    },
+    {
+      "label": "load count 1",
+      "token": 6,
+      "kind": 4,
+      "value": 1,
+      "capture_handle": false
+    },
+    {
+      "label": "x=2 call",
+      "token": 7,
+      "kind": 3,
+      "value": 0,
+      "capture_handle": false
+    },
+    {
+      "label": "x=2 result word 0",
+      "token": 8,
+      "kind": 4,
+      "value": 0,
+      "capture_handle": false
+    },
+    {
+      "label": "x=2 result word 1",
+      "token": 9,
+      "kind": 4,
+      "value": 16464,
+      "capture_handle": false
+    },
+    {
+      "label": "x=2 result word 2",
+      "token": 10,
+      "kind": 4,
+      "value": 1,
+      "capture_handle": false
+    },
+    {
+      "label": "x=2 result word 3",
+      "token": 11,
+      "kind": 4,
+      "value": 0,
+      "capture_handle": false
+    },
+    {
+      "label": "x=-4 call",
+      "token": 12,
+      "kind": 3,
+      "value": 0,
+      "capture_handle": false
+    },
+    {
+      "label": "x=-4 result word 0",
+      "token": 13,
+      "kind": 4,
+      "value": 0,
+      "capture_handle": false
+    },
+    {
+      "label": "x=-4 result word 1",
+      "token": 14,
+      "kind": 4,
+      "value": 49336,
+      "capture_handle": false
+    },
+    {
+      "label": "x=-4 result word 2",
+      "token": 15,
+      "kind": 4,
+      "value": 2,
+      "capture_handle": false
+    },
+    {
+      "label": "x=-4 result word 3",
+      "token": 16,
+      "kind": 4,
+      "value": 0,
+      "capture_handle": false
+    },
+    {
+      "label": "repeat keeps native state call",
+      "token": 17,
+      "kind": 3,
+      "value": 0,
+      "capture_handle": false
+    },
+    {
+      "label": "repeat keeps native state result word 0",
+      "token": 18,
+      "kind": 4,
+      "value": 0,
+      "capture_handle": false
+    },
+    {
+      "label": "repeat keeps native state result word 1",
+      "token": 19,
+      "kind": 4,
+      "value": 49336,
+      "capture_handle": false
+    },
+    {
+      "label": "repeat keeps native state result word 2",
+      "token": 20,
+      "kind": 4,
+      "value": 3,
+      "capture_handle": false
+    },
+    {
+      "label": "repeat keeps native state result word 3",
+      "token": 21,
+      "kind": 4,
+      "value": 0,
+      "capture_handle": false
+    },
+    {
+      "label": "unload",
+      "token": 22,
+      "kind": 3,
+      "value": 0,
+      "capture_handle": false
+    },
+    {
+      "label": "numeric 1 reload",
+      "token": 23,
+      "kind": 2,
+      "value": null,
+      "capture_handle": true
+    },
+    {
+      "label": "numeric 1 reload entry low",
+      "token": 24,
+      "kind": 4,
+      "value": null,
+      "capture_handle": false
+    },
+    {
+      "label": "numeric 1 reload entry high",
+      "token": 25,
+      "kind": 4,
+      "value": null,
+      "capture_handle": false
+    },
+    {
+      "label": "load count 2",
+      "token": 26,
+      "kind": 4,
+      "value": 2,
+      "capture_handle": false
+    },
+    {
+      "label": "reload resets bss call",
+      "token": 27,
+      "kind": 3,
+      "value": 0,
+      "capture_handle": false
+    },
+    {
+      "label": "reload resets bss result word 0",
+      "token": 28,
+      "kind": 4,
+      "value": 0,
+      "capture_handle": false
+    },
+    {
+      "label": "reload resets bss result word 1",
+      "token": 29,
+      "kind": 4,
+      "value": 16000,
+      "capture_handle": false
+    },
+    {
+      "label": "reload resets bss result word 2",
+      "token": 30,
+      "kind": 4,
+      "value": 1,
+      "capture_handle": false
+    },
+    {
+      "label": "reload resets bss result word 3",
+      "token": 31,
+      "kind": 4,
+      "value": 0,
+      "capture_handle": false
+    },
+    {
+      "label": "unload",
+      "token": 32,
+      "kind": 3,
+      "value": 0,
+      "capture_handle": false
+    },
+    {
+      "label": "numeric 2 replacement",
+      "token": 33,
+      "kind": 2,
+      "value": null,
+      "capture_handle": true
+    },
+    {
+      "label": "numeric 2 replacement entry low",
+      "token": 34,
+      "kind": 4,
+      "value": null,
+      "capture_handle": false
+    },
+    {
+      "label": "numeric 2 replacement entry high",
+      "token": 35,
+      "kind": 4,
+      "value": null,
+      "capture_handle": false
+    },
+    {
+      "label": "load count 3",
+      "token": 36,
+      "kind": 4,
+      "value": 3,
+      "capture_handle": false
+    },
+    {
+      "label": "changed native code call",
+      "token": 37,
+      "kind": 3,
+      "value": 0,
+      "capture_handle": false
+    },
+    {
+      "label": "changed native code result word 0",
+      "token": 38,
+      "kind": 4,
+      "value": 0,
+      "capture_handle": false
+    },
+    {
+      "label": "changed native code result word 1",
+      "token": 39,
+      "kind": 4,
+      "value": 16528,
+      "capture_handle": false
+    },
+    {
+      "label": "changed native code result word 2",
+      "token": 40,
+      "kind": 4,
+      "value": 1,
+      "capture_handle": false
+    },
+    {
+      "label": "changed native code result word 3",
+      "token": 41,
+      "kind": 4,
+      "value": 0,
+      "capture_handle": false
+    },
+    {
+      "label": "unload",
+      "token": 42,
+      "kind": 3,
+      "value": 0,
+      "capture_handle": false
+    },
+    {
+      "label": "final handle absent",
+      "token": 43,
+      "kind": 4,
+      "value": 0,
+      "capture_handle": false
+    }
+  ],
+  "reply_bytes": 440,
+  "request_wire_bytes": 5402,
+  "reply_wire_bytes": 528,
+  "script_bytes": 5926,
+  "source": "probe.asm",
+  "modules": {
+    "numeric-1.vdpl": {
+      "bytes": 1472,
+      "sha256": "f62999262bcae37afee95ad02e40a4160a3d49c8122f0471ef3a34580e2b004e"
+    },
+    "numeric-2.vdpl": {
+      "bytes": 1460,
+      "sha256": "3486e188b752ce6ddd6d566db91b7605c77b41f9031d5998d318616423036bfa"
+    }
+  },
+  "probe_sha256": "84322f65c0022614afd578ae49c58ee382616762691dea634f4b074e19649e6b",
+  "script_sha256": "839c02a5b4e73bd906b5a5114be74f7d73890fe04a00d96c9e49e651e5c97e72",
+  "native_formula_variants": [
+    "1.5*x+0.25",
+    "2*x+0.5"
+  ],
+  "fixture": "numeric",
+  "module_loads": 3,
+  "packed_asset": null,
+  "minimum_normal_invocation_bytes": 17,
+  "resident_invocation_bytes": null,
+  "notes": "Diagnostic replies and resident result reads belong to the proof, not the hot loop."
+}

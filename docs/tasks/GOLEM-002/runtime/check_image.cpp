@@ -1,0 +1,1 @@
+../../../../../agon-vdplet/tests/check_image.cpp

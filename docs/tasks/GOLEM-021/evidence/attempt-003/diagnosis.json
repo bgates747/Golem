@@ -1,0 +1,10 @@
+{
+  "stage": "MOS UART0_wait_CTS",
+  "gp_value": 1,
+  "MOS_pc": "0x00152f",
+  "MOS_gp_address": "0x0bc3f6",
+  "interrupts_enabled": true,
+  "VDP_parser_state": 0,
+  "hypothesis": "Adapter CTS cutoff96 prevents FIFO reaching native interrupt threshold120; baseline bridge allows128",
+  "next_action": "Align adapter CTS and rerun sustained module upload"
+}

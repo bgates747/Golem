@@ -1,0 +1,48 @@
+{
+  "schema": 1,
+  "source_commit": "fbda8e905ccff36a090e4e33b0ffc2337dd79c52",
+  "source_export": "/Agon/mystuff/golem/docs/tasks/GOLEM-021/baseline/build/flexe-source",
+  "host": {
+    "hostname": "raspberrypi",
+    "platform": "Linux-6.18.39+rpt-rpi-2712-aarch64-with-glibc2.41",
+    "machine": "aarch64"
+  },
+  "images": {
+    "vdp": {
+      "path": "/Agon/mystuff/agon-bench/vdp-recovery/2026-08-27_keyboard-clock/release-v2.16.0/firmware.bin",
+      "sha256": "b807beef35823b13a0a056f11b7464cd1b1c6356dce0e4098b78ebe059ded35f"
+    }
+  },
+  "runner": {
+    "path": "/Agon/mystuff/golem/docs/tasks/GOLEM-021/baseline/build/cmake/flexe-agon-vdp-test",
+    "sha256": "df7f2c369d9ffa216171edd245eb5a0076f715d100b0d101400a9510526d75a8"
+  },
+  "python": "/Agon/mystuff/golem/.venv/bin/python",
+  "started_utc": "2026-10-12T13:45:32.701496+00:00",
+  "gates": [
+    {
+      "name": "vdp",
+      "upstream_script": "/Agon/mystuff/golem/docs/tasks/GOLEM-021/baseline/build/flexe-source/scripts/check-agon-vdp.sh",
+      "script_sha256": "256ed4f1188d964cd4dea1cc5aa4700d14ac8dbfcef822f19f8b472e94a3ade2",
+      "embedded_python_sha256": "95fc511147bbd5c5042884edbc51d1b03422e66255fa841abf825dfaa8977efb",
+      "command": [
+        "/Agon/mystuff/golem/.venv/bin/python",
+        "-",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-021/baseline/build/cmake/flexe-agon-vdp-test",
+        "/Agon/mystuff/agon-bench/vdp-recovery/2026-08-27_keyboard-clock/release-v2.16.0/firmware.bin"
+      ],
+      "started_utc": "2026-10-12T13:45:32.708033+00:00",
+      "wall_seconds": 55.01234294800088,
+      "returncode": 1,
+      "artifacts": "/Agon/mystuff/golem/docs/tasks/GOLEM-021/baseline/build/artifacts/vdp",
+      "output": "interp sample 1: PASS, soak 10.146155s\nLoaded ESP32 image /Agon/mystuff/agon-bench/vdp-recovery/2026-08-27_keyboard-clock/release-v2.16.0/firmware.bin: 6 segments, entry=0x40087690\n  Segment 0: 0x3F400020 (277260 bytes) -> flash_data\n  Segment 1: 0x3FFBDB60 (19564 bytes) -> sram_data\n  Segment 2: 0x40080000 (30832 bytes) -> sram_insn\n  Segment 3: 0x400D0020 (686116 bytes) -> flash_insn\n  Segment 4: 0x40087870 (63956 bytes) -> sram_insn\n  Segment 5: 0x50000200 (4 bytes) -> rtc_slow\n[predecode] Built table: 1515516 entries, 19 MB (4 MB flash coverage)\n[APPCPU] boot addr = 0x40087528 (from pc=0x4000689C)\n[     10000] CORE1 started at 0x40087528\n[APPCPU] boot addr = 0x00000000 (from pc=0x4000689C)\nFAIL: Agon VDP jit (exit -4)\n"
+    }
+  ],
+  "limits": [
+    "Automated headless emulation, not physical ESP32 proof or human visual/keyboard review.",
+    "Stock Agon gate uses serial-console input; physical PS/2 is not covered.",
+    "Retained timings are reproducibility receipts, not comparative performance claims."
+  ],
+  "ended_utc": "2026-10-12T13:46:27.720497+00:00",
+  "pass": false
+}

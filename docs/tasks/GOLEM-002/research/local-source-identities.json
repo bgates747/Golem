@@ -1,0 +1,61 @@
+{
+  "agon-6502": {
+    "root": "/Agon/mystuff/agon-6502",
+    "commit": "f4190ae5c2220269809bcfeb41952e189f4f6b00",
+    "files": {
+      "experiments/vdp003/packed_mono.h": "1fdfc65150e67f0ad1565b73c12bf96126c2ba0d38fbbf7d1fdc87592120e134",
+      "experiments/vdp003/build.py": "94b9cd44f431c927b8601cf570d29491f945b20f66161cec91ebeaaa2261f2b2",
+      "experiments/emu001/build.py": "783fdeebeadaa75c8acf2e793edb68cb50007d14e40992a060d7af4463ba08bb",
+      "build/vdp003/source.json": "af847b31e5ac2814b06d992108871795a06cc6c95cc8545839492a1e92437341",
+      "docs/validation/2026-10-12-vdp003-packed-blit.json": "6edd47f3b30f0ce82d9f90d7bcbb6e0e078ea5a1ba65db1a49ecc82a3d8f4a19",
+      "build/vdp003/source/src/vdp/vdp-console8/video/vdu_sys.h": "c5ecd98b7dc005525375ad8f044949f8304251f20a8eeaeaf41020dca3013c4e",
+      "build/vdp003/source/src/vdp/vdp-console8/video/vdu_buffered.h": "4ba74582376ea476dfb3689b8ffb613de95b21c058cdfbd6eb47016a873501de",
+      "build/vdp003/source/src/vdp/vdp-console8/video/updater.h": "abd2b681282afb9cab1b6f0ea493202e32d65bf7f0041726bcd81b3246f0714a",
+      "build/vdp003/source/src/vdp/vdp-console8/video/video.ino": "0743e76728397c56e963baebe98c2746540195732d658d9dad2edf2e768ada27"
+    }
+  },
+  "golem-rally19": {
+    "root": "/Agon/mystuff/golem-rally19",
+    "commit": "4db7e96f70c3d63f4ab53766f3b32063e9357c8b",
+    "files": {
+      "src/hosted.hpp": "930a6f7e1680d3568d2ec82ef3907f8856fc8f87d735364f10a27218bd86445c",
+      "docs/design/rally19-hosted-v1.md": "b6a3ca27ed408a13bd40d9e0c597bd918294f253e99564c231633b84d2d15474"
+    }
+  },
+  "agon-mos": {
+    "root": "/Agon/agon-mos",
+    "commit": "8336409351ee5314e02801a7b72a4f1bb5282519",
+    "files": {
+      "src/vdp_protocol.asm": "56ef61c794ba61d3d9e1ef4a454955343cde0564ef5bbc6059f84fd2dbb55e71",
+      "src/equs.inc": "4cbf0779e32ace92f725fc6cb5e8e32a4389f46bec1e43c7d660b10b95647fbb"
+    }
+  },
+  "agon-vdp-owned": {
+    "root": "/Agon/mystuff/agon-vdp",
+    "commit": "374641448123a041afda97c21e5d3eef242be193",
+    "files": {
+      "platformio.ini": "fb732b8391ebe9aa6f281cf6c986e9bf3a4c4b79b9fcb5377956e8379b340387"
+    }
+  },
+  "agon-vdp-upstream": {
+    "root": "/Agon/agon-vdp",
+    "commit": "c7ac293d2aa81ddfa693390549bcd909069c8fc3",
+    "files": {
+      "platformio.ini": "26b45e13ac91f81123ea62698f1cebab3e30fac02c33d97ade45835ed831d6ad"
+    }
+  },
+  "flexe": {
+    "root": "/Agon/others/levkropp/flexe",
+    "commit": "fbda8e905ccff36a090e4e33b0ffc2337dd79c52",
+    "files": {
+      "README.md": "332dfddb123434e44f90df3a37108912328a708aa1afdea6e7fca71d31bde70a",
+      "docs/compatibility.md": "3a68ed2f88c5bbfdface5745a6d337af1dc28e2bc6517b02bb336454d797bf16",
+      "docs/testing.md": "24981baa431857ba5e2761491216090b6b16f524e651bcb6f86215f4608aabed",
+      "tools/agon-mos-peer/src/main.rs": "a5ae38b9dff43a4b66310adb2898872e1c5f656611dccfd66c838fdf1dd5a989",
+      "tools/agon-mos-peer/Cargo.toml": "7a0f57bae424138b6e37106cbe382428585e6abcd34f69eb15664065541d1ac7",
+      "tools/agon_mos_bridge.h": "3eaa3638e34a8b6b741562e30001cdebc854a555cad5dd95ca98127199331fe6",
+      "tools/agon_vdp_test.c": "fc5efe0910f08b5aac5bf3e58327d1567e640457076ec329c4b6e709acefb979",
+      "scripts/check-agon-mos.sh": "860a235839201c92d1114d9bd2a0acf6ea55ce5daddae296f31a5e8c1786752f"
+    }
+  }
+}

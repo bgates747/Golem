@@ -1,0 +1,6 @@
+{"case":"host_mem_write8","interpreter":43,"jit_before_invalidation":42,"jit_after_invalidation":43,"expected_stale":true,"pass":true}
+{"case":"host_mem_write16","interpreter":43,"jit_before_invalidation":42,"jit_after_invalidation":43,"expected_stale":true,"pass":true}
+{"case":"host_mem_write32","interpreter":43,"jit_before_invalidation":42,"jit_after_invalidation":43,"expected_stale":true,"pass":true}
+{"case":"direct_backing_memcpy","interpreter":43,"jit_before_invalidation":42,"jit_after_invalidation":43,"expected_stale":true,"pass":true}
+{"case":"jit_guest_s32i","interpreter":43,"jit_before_invalidation":42,"jit_after_invalidation":43,"expected_stale":true,"pass":true}
+{"case":"interpreter_guest_s32i","interpreter":43,"jit_before_invalidation":42,"jit_after_invalidation":43,"expected_stale":true,"pass":true}

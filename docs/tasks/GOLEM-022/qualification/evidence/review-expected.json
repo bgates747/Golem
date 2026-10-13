@@ -1,0 +1,586 @@
+{
+  "variant": "default",
+  "entries": [
+    {
+      "name": "drawMarker",
+      "id": 2,
+      "blocks": 1,
+      "bytes": 51
+    },
+    {
+      "name": "drawWolf",
+      "id": 4,
+      "blocks": 1,
+      "bytes": 36
+    }
+  ],
+  "installs": 1,
+  "named_call_wire_bytes": 6,
+  "shared_update_wire_bytes": 21,
+  "owned_buffers": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "borrowed_ids": [
+    8202,
+    8195,
+    8463,
+    8201
+  ],
+  "source": "review.golem",
+  "assembly": "guest.asm",
+  "direct_bitmap_draws": 0,
+  "mode": "review",
+  "checks": [
+    {
+      "label": "A again without reinstall",
+      "start": 0,
+      "bytes": 1,
+      "pixel": [
+        0,
+        0
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 1,
+      "bytes": 1,
+      "pixel": [
+        95,
+        16
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 2,
+      "bytes": 1,
+      "pixel": [
+        96,
+        16
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 3,
+      "bytes": 1,
+      "pixel": [
+        96,
+        23
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 4,
+      "bytes": 1,
+      "pixel": [
+        96,
+        55
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 5,
+      "bytes": 1,
+      "pixel": [
+        96,
+        95
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 6,
+      "bytes": 1,
+      "pixel": [
+        96,
+        135
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 7,
+      "bytes": 1,
+      "pixel": [
+        96,
+        175
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 8,
+      "bytes": 1,
+      "pixel": [
+        96,
+        200
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 9,
+      "bytes": 1,
+      "pixel": [
+        109,
+        16
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 10,
+      "bytes": 1,
+      "pixel": [
+        109,
+        23
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 11,
+      "bytes": 1,
+      "pixel": [
+        109,
+        55
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 12,
+      "bytes": 1,
+      "pixel": [
+        109,
+        95
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 13,
+      "bytes": 1,
+      "pixel": [
+        109,
+        135
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 14,
+      "bytes": 1,
+      "pixel": [
+        109,
+        175
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 15,
+      "bytes": 1,
+      "pixel": [
+        159,
+        16
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 16,
+      "bytes": 1,
+      "pixel": [
+        159,
+        23
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 17,
+      "bytes": 1,
+      "pixel": [
+        159,
+        55
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 18,
+      "bytes": 1,
+      "pixel": [
+        159,
+        95
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 19,
+      "bytes": 1,
+      "pixel": [
+        159,
+        135
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 20,
+      "bytes": 1,
+      "pixel": [
+        159,
+        175
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 21,
+      "bytes": 1,
+      "pixel": [
+        200,
+        200
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 22,
+      "bytes": 1,
+      "pixel": [
+        223,
+        16
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 23,
+      "bytes": 1,
+      "pixel": [
+        223,
+        23
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 24,
+      "bytes": 1,
+      "pixel": [
+        223,
+        55
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 25,
+      "bytes": 1,
+      "pixel": [
+        223,
+        95
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 26,
+      "bytes": 1,
+      "pixel": [
+        223,
+        135
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 27,
+      "bytes": 1,
+      "pixel": [
+        223,
+        175
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 28,
+      "bytes": 1,
+      "pixel": [
+        256,
+        15
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 29,
+      "bytes": 1,
+      "pixel": [
+        256,
+        176
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 30,
+      "bytes": 1,
+      "pixel": [
+        287,
+        16
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 31,
+      "bytes": 1,
+      "pixel": [
+        287,
+        23
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 32,
+      "bytes": 1,
+      "pixel": [
+        287,
+        55
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 33,
+      "bytes": 1,
+      "pixel": [
+        287,
+        95
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 34,
+      "bytes": 1,
+      "pixel": [
+        287,
+        135
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 35,
+      "bytes": 1,
+      "pixel": [
+        287,
+        175
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 36,
+      "bytes": 1,
+      "pixel": [
+        351,
+        16
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 37,
+      "bytes": 1,
+      "pixel": [
+        351,
+        23
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 38,
+      "bytes": 1,
+      "pixel": [
+        351,
+        55
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 39,
+      "bytes": 1,
+      "pixel": [
+        351,
+        95
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 40,
+      "bytes": 1,
+      "pixel": [
+        351,
+        135
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 41,
+      "bytes": 1,
+      "pixel": [
+        351,
+        175
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 42,
+      "bytes": 1,
+      "pixel": [
+        415,
+        16
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 43,
+      "bytes": 1,
+      "pixel": [
+        415,
+        23
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 44,
+      "bytes": 1,
+      "pixel": [
+        415,
+        55
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 45,
+      "bytes": 1,
+      "pixel": [
+        415,
+        95
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 46,
+      "bytes": 1,
+      "pixel": [
+        415,
+        135
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 47,
+      "bytes": 1,
+      "pixel": [
+        415,
+        175
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 48,
+      "bytes": 1,
+      "pixel": [
+        416,
+        96
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 49,
+      "bytes": 1,
+      "pixel": [
+        416,
+        200
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 50,
+      "bytes": 1,
+      "pixel": [
+        511,
+        383
+      ]
+    },
+    {
+      "label": "Final shared inputs persist",
+      "start": 51,
+      "bytes": 5,
+      "id": 1,
+      "offset": 0
+    },
+    {
+      "label": "Cleanup removes compiler-owned buffer",
+      "start": 56,
+      "bytes": 1,
+      "id": 1,
+      "offset": 0
+    },
+    {
+      "label": "Cleanup removes compiler-owned buffer",
+      "start": 57,
+      "bytes": 1,
+      "id": 2,
+      "offset": 0
+    },
+    {
+      "label": "Cleanup removes compiler-owned buffer",
+      "start": 58,
+      "bytes": 1,
+      "id": 3,
+      "offset": 0
+    },
+    {
+      "label": "Cleanup removes compiler-owned buffer",
+      "start": 59,
+      "bytes": 1,
+      "id": 4,
+      "offset": 0
+    },
+    {
+      "label": "Cleanup removes compiler-owned buffer",
+      "start": 60,
+      "bytes": 1,
+      "id": 5,
+      "offset": 0
+    },
+    {
+      "label": "Cleanup preserves borrowed Wolf bytes",
+      "start": 61,
+      "bytes": 8,
+      "id": 8202,
+      "offset": 0
+    },
+    {
+      "label": "Cleanup preserves borrowed Wolf bytes",
+      "start": 69,
+      "bytes": 8,
+      "id": 8195,
+      "offset": 0
+    },
+    {
+      "label": "Cleanup preserves borrowed Wolf bytes",
+      "start": 77,
+      "bytes": 8,
+      "id": 8463,
+      "offset": 0
+    },
+    {
+      "label": "Cleanup preserves borrowed Wolf bytes",
+      "start": 85,
+      "bytes": 8,
+      "id": 8201,
+      "offset": 0
+    },
+    {
+      "label": "Cleanup preserves unrelated external buffer",
+      "start": 93,
+      "bytes": 6,
+      "id": 50000,
+      "offset": 0
+    }
+  ],
+  "observation_bytes": 99,
+  "entry_calls": [
+    "drawMarker",
+    "drawWolf",
+    "drawMarker"
+  ],
+  "expected_sha256": "1a03554640c02a6071d8a0867b879f704c649696e7605da49c1c41fd18121006",
+  "probe_sha256": "68335b38e0a2b775b1874b9631120902c0813cadeed71ec35a3b120204010c69",
+  "assembled_wrappers_and_package_payloads_match": true,
+  "human_validation": "pending",
+  "graphical_emulator_launched": false
+}

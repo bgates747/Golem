@@ -1,0 +1,23 @@
+[  2115][E][esp32-hal-misc.c:143] disableCore1WDT(): Failed to remove Core 1 IDLE task from WDT
+Agon Platform MOS Version 3.0.2 Arthur
+
+Fab + Flexe: real ESP32 firmware
+MOS assembly uploads native vdplets after boot.
+Float work runs on the ESP32, results stay resident.
+VDPL LOAD handle=1 build=4e554d31 entry=40097b8c text=40097b7c/468 data=3ffb94f0/20 relocs=4
+VDPL UNLOAD status=0
+VDPL LOAD handle=2 build=4e554d31 entry=40097b8c text=40097b7c/468 data=3ffb94f0/20 relocs=4
+VDPL UNLOAD status=0
+VDPL LOAD handle=3 build=4e554d32 entry=40097b8c text=40097b7c/456 data=3ffb94f0/20 relocs=4
+VDPL UNLOAD status=0
+VDPL LOAD handle=4 build=5041434b entry=40097b84 text=40097b7c/572 data=3ffb8dc4/4 relocs=1
+VDPL ERROR op=2 status=9
+VDPL ERROR op=2 status=3
+VDPL ERROR op=2 status=3
+VDPL UNLOAD status=0
+VDPLET: packed_mono.cpp draws image
+ASM: probe.asm loads, calls, unloads.
+VDPLET: uploaded native code passed.
+Type dir at the MOS prompt below.
+Close window; report display and dir.
+/vdplet *

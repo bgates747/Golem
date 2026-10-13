@@ -1,0 +1,561 @@
+{
+  "checks": [
+    {
+      "label": "discovery",
+      "token": 0,
+      "kind": 1,
+      "value": null,
+      "capture_handle": false
+    },
+    {
+      "label": "protocol version",
+      "token": 1,
+      "kind": 4,
+      "value": 256,
+      "capture_handle": false
+    },
+    {
+      "label": "buffer and packed framebuffer capabilities",
+      "token": 2,
+      "kind": 4,
+      "value": 3,
+      "capture_handle": false
+    },
+    {
+      "label": "initial handle absent",
+      "token": 3,
+      "kind": 4,
+      "value": 0,
+      "capture_handle": false
+    },
+    {
+      "label": "Apple F2/F3 codec load",
+      "token": 4,
+      "kind": 2,
+      "value": null,
+      "capture_handle": true
+    },
+    {
+      "label": "Apple F2/F3 codec load entry low",
+      "token": 5,
+      "kind": 4,
+      "value": null,
+      "capture_handle": false
+    },
+    {
+      "label": "Apple F2/F3 codec load entry high",
+      "token": 6,
+      "kind": 4,
+      "value": null,
+      "capture_handle": false
+    },
+    {
+      "label": "valid-explicit-prefix-ignores-stale-tail",
+      "token": 7,
+      "kind": 3,
+      "value": 0,
+      "capture_handle": false
+    },
+    {
+      "label": "valid-explicit-prefix-ignores-stale-tail retained word 0",
+      "token": 8,
+      "kind": 4,
+      "value": 32896,
+      "capture_handle": false
+    },
+    {
+      "label": "valid-explicit-prefix-ignores-stale-tail retained word 38",
+      "token": 9,
+      "kind": 4,
+      "value": 32896,
+      "capture_handle": false
+    },
+    {
+      "label": "valid-explicit-prefix-ignores-stale-tail retained word 40",
+      "token": 10,
+      "kind": 4,
+      "value": 32896,
+      "capture_handle": false
+    },
+    {
+      "label": "valid-explicit-prefix-ignores-stale-tail retained word 158",
+      "token": 11,
+      "kind": 4,
+      "value": 32896,
+      "capture_handle": false
+    },
+    {
+      "label": "valid-explicit-prefix-ignores-stale-tail retained word 1000",
+      "token": 12,
+      "kind": 4,
+      "value": 43669,
+      "capture_handle": false
+    },
+    {
+      "label": "valid-explicit-prefix-ignores-stale-tail retained word 2048",
+      "token": 13,
+      "kind": 4,
+      "value": 32896,
+      "capture_handle": false
+    },
+    {
+      "label": "valid-explicit-prefix-ignores-stale-tail retained word 3838",
+      "token": 14,
+      "kind": 4,
+      "value": 32896,
+      "capture_handle": false
+    },
+    {
+      "label": "valid-explicit-prefix-ignores-stale-tail retained word 3840",
+      "token": 15,
+      "kind": 4,
+      "value": 32896,
+      "capture_handle": false
+    },
+    {
+      "label": "valid-explicit-prefix-ignores-stale-tail retained word 6000",
+      "token": 16,
+      "kind": 4,
+      "value": 32896,
+      "capture_handle": false
+    },
+    {
+      "label": "valid-explicit-prefix-ignores-stale-tail retained word 7678",
+      "token": 17,
+      "kind": 4,
+      "value": 38274,
+      "capture_handle": false
+    },
+    {
+      "label": "overflow-after-valid-prefix-is-atomic",
+      "token": 18,
+      "kind": 5,
+      "value": 3,
+      "capture_handle": false
+    },
+    {
+      "label": "overflow-after-valid-prefix-is-atomic retained word 0",
+      "token": 19,
+      "kind": 4,
+      "value": 32896,
+      "capture_handle": false
+    },
+    {
+      "label": "overflow-after-valid-prefix-is-atomic retained word 38",
+      "token": 20,
+      "kind": 4,
+      "value": 32896,
+      "capture_handle": false
+    },
+    {
+      "label": "overflow-after-valid-prefix-is-atomic retained word 40",
+      "token": 21,
+      "kind": 4,
+      "value": 32896,
+      "capture_handle": false
+    },
+    {
+      "label": "overflow-after-valid-prefix-is-atomic retained word 158",
+      "token": 22,
+      "kind": 4,
+      "value": 32896,
+      "capture_handle": false
+    },
+    {
+      "label": "overflow-after-valid-prefix-is-atomic retained word 1000",
+      "token": 23,
+      "kind": 4,
+      "value": 43669,
+      "capture_handle": false
+    },
+    {
+      "label": "overflow-after-valid-prefix-is-atomic retained word 2048",
+      "token": 24,
+      "kind": 4,
+      "value": 32896,
+      "capture_handle": false
+    },
+    {
+      "label": "overflow-after-valid-prefix-is-atomic retained word 3838",
+      "token": 25,
+      "kind": 4,
+      "value": 32896,
+      "capture_handle": false
+    },
+    {
+      "label": "overflow-after-valid-prefix-is-atomic retained word 3840",
+      "token": 26,
+      "kind": 4,
+      "value": 32896,
+      "capture_handle": false
+    },
+    {
+      "label": "overflow-after-valid-prefix-is-atomic retained word 6000",
+      "token": 27,
+      "kind": 4,
+      "value": 32896,
+      "capture_handle": false
+    },
+    {
+      "label": "overflow-after-valid-prefix-is-atomic retained word 7678",
+      "token": 28,
+      "kind": 4,
+      "value": 38274,
+      "capture_handle": false
+    },
+    {
+      "label": "incomplete-stream-is-atomic",
+      "token": 29,
+      "kind": 5,
+      "value": 4,
+      "capture_handle": false
+    },
+    {
+      "label": "incomplete-stream-is-atomic retained word 0",
+      "token": 30,
+      "kind": 4,
+      "value": 32896,
+      "capture_handle": false
+    },
+    {
+      "label": "incomplete-stream-is-atomic retained word 38",
+      "token": 31,
+      "kind": 4,
+      "value": 32896,
+      "capture_handle": false
+    },
+    {
+      "label": "incomplete-stream-is-atomic retained word 40",
+      "token": 32,
+      "kind": 4,
+      "value": 32896,
+      "capture_handle": false
+    },
+    {
+      "label": "incomplete-stream-is-atomic retained word 158",
+      "token": 33,
+      "kind": 4,
+      "value": 32896,
+      "capture_handle": false
+    },
+    {
+      "label": "incomplete-stream-is-atomic retained word 1000",
+      "token": 34,
+      "kind": 4,
+      "value": 43669,
+      "capture_handle": false
+    },
+    {
+      "label": "incomplete-stream-is-atomic retained word 2048",
+      "token": 35,
+      "kind": 4,
+      "value": 32896,
+      "capture_handle": false
+    },
+    {
+      "label": "incomplete-stream-is-atomic retained word 3838",
+      "token": 36,
+      "kind": 4,
+      "value": 32896,
+      "capture_handle": false
+    },
+    {
+      "label": "incomplete-stream-is-atomic retained word 3840",
+      "token": 37,
+      "kind": 4,
+      "value": 32896,
+      "capture_handle": false
+    },
+    {
+      "label": "incomplete-stream-is-atomic retained word 6000",
+      "token": 38,
+      "kind": 4,
+      "value": 32896,
+      "capture_handle": false
+    },
+    {
+      "label": "incomplete-stream-is-atomic retained word 7678",
+      "token": 39,
+      "kind": 4,
+      "value": 38274,
+      "capture_handle": false
+    },
+    {
+      "label": "out-of-bounds-before-apply",
+      "token": 40,
+      "kind": 5,
+      "value": 3,
+      "capture_handle": false
+    },
+    {
+      "label": "out-of-bounds-before-apply retained word 0",
+      "token": 41,
+      "kind": 4,
+      "value": 32896,
+      "capture_handle": false
+    },
+    {
+      "label": "out-of-bounds-before-apply retained word 38",
+      "token": 42,
+      "kind": 4,
+      "value": 32896,
+      "capture_handle": false
+    },
+    {
+      "label": "out-of-bounds-before-apply retained word 40",
+      "token": 43,
+      "kind": 4,
+      "value": 32896,
+      "capture_handle": false
+    },
+    {
+      "label": "out-of-bounds-before-apply retained word 158",
+      "token": 44,
+      "kind": 4,
+      "value": 32896,
+      "capture_handle": false
+    },
+    {
+      "label": "out-of-bounds-before-apply retained word 1000",
+      "token": 45,
+      "kind": 4,
+      "value": 43669,
+      "capture_handle": false
+    },
+    {
+      "label": "out-of-bounds-before-apply retained word 2048",
+      "token": 46,
+      "kind": 4,
+      "value": 32896,
+      "capture_handle": false
+    },
+    {
+      "label": "out-of-bounds-before-apply retained word 3838",
+      "token": 47,
+      "kind": 4,
+      "value": 32896,
+      "capture_handle": false
+    },
+    {
+      "label": "out-of-bounds-before-apply retained word 3840",
+      "token": 48,
+      "kind": 4,
+      "value": 32896,
+      "capture_handle": false
+    },
+    {
+      "label": "out-of-bounds-before-apply retained word 6000",
+      "token": 49,
+      "kind": 4,
+      "value": 32896,
+      "capture_handle": false
+    },
+    {
+      "label": "out-of-bounds-before-apply retained word 7678",
+      "token": 50,
+      "kind": 4,
+      "value": 38274,
+      "capture_handle": false
+    },
+    {
+      "label": "repeat-identical-xor-restores-black",
+      "token": 51,
+      "kind": 3,
+      "value": 0,
+      "capture_handle": false
+    },
+    {
+      "label": "repeat-identical-xor-restores-black retained word 0",
+      "token": 52,
+      "kind": 4,
+      "value": 32896,
+      "capture_handle": false
+    },
+    {
+      "label": "repeat-identical-xor-restores-black retained word 38",
+      "token": 53,
+      "kind": 4,
+      "value": 32896,
+      "capture_handle": false
+    },
+    {
+      "label": "repeat-identical-xor-restores-black retained word 40",
+      "token": 54,
+      "kind": 4,
+      "value": 32896,
+      "capture_handle": false
+    },
+    {
+      "label": "repeat-identical-xor-restores-black retained word 158",
+      "token": 55,
+      "kind": 4,
+      "value": 32896,
+      "capture_handle": false
+    },
+    {
+      "label": "repeat-identical-xor-restores-black retained word 1000",
+      "token": 56,
+      "kind": 4,
+      "value": 32896,
+      "capture_handle": false
+    },
+    {
+      "label": "repeat-identical-xor-restores-black retained word 2048",
+      "token": 57,
+      "kind": 4,
+      "value": 32896,
+      "capture_handle": false
+    },
+    {
+      "label": "repeat-identical-xor-restores-black retained word 3838",
+      "token": 58,
+      "kind": 4,
+      "value": 32896,
+      "capture_handle": false
+    },
+    {
+      "label": "repeat-identical-xor-restores-black retained word 3840",
+      "token": 59,
+      "kind": 4,
+      "value": 32896,
+      "capture_handle": false
+    },
+    {
+      "label": "repeat-identical-xor-restores-black retained word 6000",
+      "token": 60,
+      "kind": 4,
+      "value": 32896,
+      "capture_handle": false
+    },
+    {
+      "label": "repeat-identical-xor-restores-black retained word 7678",
+      "token": 61,
+      "kind": 4,
+      "value": 32896,
+      "capture_handle": false
+    },
+    {
+      "label": "redraw-retained-with-missing-source",
+      "token": 62,
+      "kind": 3,
+      "value": 0,
+      "capture_handle": false
+    },
+    {
+      "label": "redraw-retained-with-missing-source retained word 0",
+      "token": 63,
+      "kind": 4,
+      "value": 32896,
+      "capture_handle": false
+    },
+    {
+      "label": "redraw-retained-with-missing-source retained word 38",
+      "token": 64,
+      "kind": 4,
+      "value": 32896,
+      "capture_handle": false
+    },
+    {
+      "label": "redraw-retained-with-missing-source retained word 40",
+      "token": 65,
+      "kind": 4,
+      "value": 32896,
+      "capture_handle": false
+    },
+    {
+      "label": "redraw-retained-with-missing-source retained word 158",
+      "token": 66,
+      "kind": 4,
+      "value": 32896,
+      "capture_handle": false
+    },
+    {
+      "label": "redraw-retained-with-missing-source retained word 1000",
+      "token": 67,
+      "kind": 4,
+      "value": 32896,
+      "capture_handle": false
+    },
+    {
+      "label": "redraw-retained-with-missing-source retained word 2048",
+      "token": 68,
+      "kind": 4,
+      "value": 32896,
+      "capture_handle": false
+    },
+    {
+      "label": "redraw-retained-with-missing-source retained word 3838",
+      "token": 69,
+      "kind": 4,
+      "value": 32896,
+      "capture_handle": false
+    },
+    {
+      "label": "redraw-retained-with-missing-source retained word 3840",
+      "token": 70,
+      "kind": 4,
+      "value": 32896,
+      "capture_handle": false
+    },
+    {
+      "label": "redraw-retained-with-missing-source retained word 6000",
+      "token": 71,
+      "kind": 4,
+      "value": 32896,
+      "capture_handle": false
+    },
+    {
+      "label": "redraw-retained-with-missing-source retained word 7678",
+      "token": 72,
+      "kind": 4,
+      "value": 32896,
+      "capture_handle": false
+    },
+    {
+      "label": "command task minimum free stack bytes",
+      "token": 73,
+      "kind": 4,
+      "value": null,
+      "capture_handle": false
+    },
+    {
+      "label": "unload",
+      "token": 74,
+      "kind": 3,
+      "value": 0,
+      "capture_handle": false
+    },
+    {
+      "label": "final handle absent",
+      "token": 75,
+      "kind": 4,
+      "value": 0,
+      "capture_handle": false
+    }
+  ],
+  "reply_bytes": 760,
+  "request_wire_bytes": 23355,
+  "reply_wire_bytes": 912,
+  "script_bytes": 24255,
+  "source": "codec/probe.asm",
+  "probe_sha256": "b44243e41682c1ba82d470414511e1a38c0a2f2e86ec0e2b3672031aa5bb6f38",
+  "script_sha256": "bbfc31c2636dc7eff852db03d10caf07c404cf2d375f67263799984655412556",
+  "fixture": "f3-step06",
+  "module_loads": 1,
+  "packed_asset": {
+    "packed_sha256": "53192a12b178687771e5a607727c1a7102e095fc05515a6e827a4eeff529a280",
+    "source": "independent bit-order oracle from owner retained fixtures"
+  },
+  "modules": {
+    "apple-codecs.vdpl": {
+      "bytes": 2288,
+      "sha256": "fd1aa6a5d1c4d51f0f27fd191de896cee4c7e93480f8a611e6e96ac798fd6092"
+    }
+  },
+  "codec_entry": 3,
+  "sequence_prefix": 6,
+  "unsupported_mode_case": false,
+  "retained_bytes_observed_completely": 0,
+  "retained_sha256": "a1fe07859d5a37e43bb6efc89e5cc77a036cc5aeaf244ed1c6c83ca7d00818e4",
+  "notes": "All readback is test-only. Uploaded native code performs decode/render."
+}

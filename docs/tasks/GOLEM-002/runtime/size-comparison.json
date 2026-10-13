@@ -1,0 +1,149 @@
+{
+  "passed": true,
+  "scope": "Matching pinned firmware with only vdplet headers/dispatch removed; no deployment or staged-artifact change",
+  "measurements": {
+    "stock": {
+      "platformio_flash_bytes": 1077305,
+      "static_ram_bytes": 44712,
+      "firmware_bin_bytes": 1077680,
+      "allocated_sections": {
+        ".rtc.data": 1,
+        ".rtc_noinit": 16,
+        ".iram0.vectors": 1027,
+        ".iram0.text": 93759,
+        ".dram0.data": 19560,
+        ".dram0.bss": 25152,
+        ".flash.appdesc": 256,
+        ".flash.rodata": 276860,
+        ".flash.text": 686099,
+        ".iram0.text_end": 1
+      },
+      "artifacts": {
+        "firmware.bin": {
+          "bytes": 1077680,
+          "sha256": "0669106f1fee555d25c2406625e37050412033aa35a6826a81bfe449e308a0bd"
+        },
+        "firmware.elf": {
+          "bytes": 24757532,
+          "sha256": "16a48ca075eeac14d7dde88b1d4ff89ce5fed8de4627c716076932335389b004"
+        },
+        "firmware.map": {
+          "bytes": 17970739,
+          "sha256": "f588ad4e10138da140d726c3530cba7d19bfa483cce5aba382f93546af7371ad"
+        }
+      }
+    },
+    "vdplets": {
+      "platformio_flash_bytes": 1085817,
+      "static_ram_bytes": 45032,
+      "firmware_bin_bytes": 1086192,
+      "allocated_sections": {
+        ".rtc.data": 1,
+        ".rtc_noinit": 16,
+        ".iram0.vectors": 1027,
+        ".iram0.text": 93795,
+        ".dram0.data": 19880,
+        ".dram0.bss": 25152,
+        ".flash.appdesc": 256,
+        ".flash.rodata": 277388,
+        ".flash.text": 693727,
+        ".iram0.text_end": 1
+      },
+      "artifacts": {
+        "firmware.bin": {
+          "bytes": 1086192,
+          "sha256": "31d25eec03a531b336d78d453f0720bbd1312c7c8516fdfa80130769ab15e49f"
+        },
+        "firmware.elf": {
+          "bytes": 24866496,
+          "sha256": "51f196eb7b84ed79394a9fde1dff832ad479417c360525c69582fd093c3a0a3a"
+        },
+        "firmware.map": {
+          "bytes": 17978719,
+          "sha256": "893f526e856b9f5bcfd0ab5914e83d91c8c784b84aa792182d305db33ea0e3e2"
+        }
+      }
+    }
+  },
+  "net_added_bytes": {
+    "platformio_flash_bytes": 8512,
+    "static_ram_bytes": 320,
+    "firmware_bin_bytes": 8512
+  },
+  "allocated_section_differences": {
+    ".dram0.bss": 0,
+    ".dram0.data": 320,
+    ".flash.appdesc": 0,
+    ".flash.rodata": 528,
+    ".flash.text": 7628,
+    ".iram0.text": 36,
+    ".iram0.text_end": 0,
+    ".iram0.vectors": 0,
+    ".rtc.data": 0,
+    ".rtc_noinit": 0
+  },
+  "compiler_sha256": "e091761ac142b87be663aa36c8dc9af10044a9769a540ee0337ebc97ea56a22d",
+  "compiler_version": "xtensa-esp32-elf-gcc (crosstool-NG esp-2021r2-patch5) 8.4.0",
+  "source_comparison": {
+    "baseline_source": "/Agon/mystuff/golem/docs/tasks/GOLEM-002/runtime/build/size-comparison/stock/firmware-src",
+    "vdp_pin": "1056ee38ec1cc68ed327bd32ee47d04b1c30597c",
+    "source_differences": {
+      "video/vdplet.h": {
+        "custom": "2311c7abb3a0470e293ad6c30ef7aefe9aff6375cccc90c181be64c0045a549d",
+        "stock": null
+      },
+      "video/vdplet_image.h": {
+        "custom": "e4dedaa23c588792e49155ce9b67c58776c3570e20c72af530d41b85606bcc44",
+        "stock": null
+      },
+      "video/vdplet_runtime.h": {
+        "custom": "f90d65c4e8ef36d2d78a7fbe6afa5c6feb3dca17a8542c2416ea4c08c7df7d49",
+        "stock": null
+      },
+      "video/vdu_stream_processor.h": {
+        "custom": "c921aa3e91c0e3a3fe58fc0e91d43789ed926892f7c401260641360c6a9fdb70",
+        "stock": "b714a640a7108aec0a242069c5c96b529347655a0d9133e28cd01092bae84753"
+      },
+      "video/vdu_sys.h": {
+        "custom": "35fff838a0942826fd8b63a69bbde9bae17a0d428e6a9289dd03607b225817ef",
+        "stock": "c5ecd98b7dc005525375ad8f044949f8304251f20a8eeaeaf41020dca3013c4e"
+      }
+    },
+    "setup_seconds": 3.962,
+    "custom_artifacts": {
+      "firmware.bin": {
+        "path": "/Agon/mystuff/golem/docs/tasks/GOLEM-002/runtime/build/firmware-src/.pio/build/esp32dev/firmware.bin",
+        "bytes": 1086192,
+        "sha256": "31d25eec03a531b336d78d453f0720bbd1312c7c8516fdfa80130769ab15e49f"
+      },
+      "firmware.elf": {
+        "path": "/Agon/mystuff/golem/docs/tasks/GOLEM-002/runtime/build/firmware-src/.pio/build/esp32dev/firmware.elf",
+        "bytes": 24866496,
+        "sha256": "51f196eb7b84ed79394a9fde1dff832ad479417c360525c69582fd093c3a0a3a"
+      },
+      "firmware.map": {
+        "path": "/Agon/mystuff/golem/docs/tasks/GOLEM-002/runtime/build/firmware-src/.pio/build/esp32dev/firmware.map",
+        "bytes": 17978719,
+        "sha256": "893f526e856b9f5bcfd0ab5914e83d91c8c784b84aa792182d305db33ea0e3e2"
+      }
+    }
+  },
+  "baseline_build": {
+    "exit_code": 0,
+    "seconds": 67.707
+  },
+  "flash_section_names": [
+    ".iram0.text",
+    ".iram0.vectors",
+    ".dram0.data",
+    ".flash.text",
+    ".flash.rodata"
+  ],
+  "static_ram_section_names": [
+    ".dram0.data",
+    ".dram0.bss",
+    ".noinit"
+  ],
+  "dynamic_heap_included": false,
+  "qualified_firmware_unchanged": true
+}

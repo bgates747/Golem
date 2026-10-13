@@ -1,0 +1,56 @@
+{
+  "pass_transcript": true,
+  "checks": 44,
+  "bytes": 440,
+  "observed_sha256": "e06ad6d9fdb791dbaefc495263fa30d0ffefcc9f159c57eb7e8b1ad36e2413c9",
+  "module_handles": [
+    1,
+    2,
+    3
+  ],
+  "native_entry_addresses": [
+    "0x40097b64",
+    "0x40097b64",
+    "0x40097b64"
+  ],
+  "replaced_at_same_entry": true,
+  "human_visual_review": "pending",
+  "engine": "jit",
+  "elapsed_seconds": 8.795,
+  "mapped_vdp_libraries": [
+    "/Agon/mystuff/golem/docs/tasks/GOLEM-021/.emulator/flexe-vdp.so"
+  ],
+  "graphical_instance_launched": false,
+  "returned_to_mos_prompt": true,
+  "backend_stats": {
+    "engine": "jit",
+    "frames": 450,
+    "cycles": 1926120000,
+    "retired": 539804881,
+    "uart_rx": 5990,
+    "uart_tx": 871,
+    "uart_delivered": 871,
+    "isync": 22,
+    "code_invalidations": 3,
+    "keys": 0,
+    "failed": false,
+    "unhandled": 0,
+    "unregistered": 0,
+    "unmapped": 0
+  },
+  "runtime_identities": [
+    "b476068b62c7c85aa50f0bf56953f5075219082e14c0116ec5d292275454227c  fab-agon-emulator.bin",
+    "d564243283972690933a4554296ad6202ca4ef54572279533a942960846bebae  mos_platform.bin",
+    "d69e60bbce61a7b4b3eef318ba395f11c4e1a5b585755755113992dc94edcb86  mos_platform.map",
+    "f1693fa8a6fa2cb1bd5d425807ac4a1a86aea3cb2e32030927a224c6eebd8f62  flexe-vdp.so",
+    "2aa6710fd9eab3443a874b19786a5f2efc5562ddc6ab437c33c8e6b4bcf20b5b  esp32-firmware.bin",
+    "6c90d0bfdb03bc5fd615efb03f51692340dd22b19193e87dda5313aaa86b3fb1  esp32-firmware.elf",
+    "84322f65c0022614afd578ae49c58ee382616762691dea634f4b074e19649e6b  sdcard/vdplet/probe.bin",
+    "839c02a5b4e73bd906b5a5114be74f7d73890fe04a00d96c9e49e651e5c97e72  sdcard/vdplet/script.bin",
+    "0ee9923f5d61ea6bd1f8a4d60e7995e26384265341192581df43259bd775b27e  sdcard/vdplet/expected.json",
+    "f62999262bcae37afee95ad02e40a4160a3d49c8122f0471ef3a34580e2b004e  sdcard/vdplet/numeric-1.vdpl",
+    "3486e188b752ce6ddd6d566db91b7605c77b41f9031d5998d318616423036bfa  sdcard/vdplet/numeric-2.vdpl",
+    "dd4278399250200c72478c22bb5b9df138814fdf9b7712537d5d8a73e80192c2  fab-agon-emulator"
+  ],
+  "expected_sha256": "0ee9923f5d61ea6bd1f8a4d60e7995e26384265341192581df43259bd775b27e"
+}

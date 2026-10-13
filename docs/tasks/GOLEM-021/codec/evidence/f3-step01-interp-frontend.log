@@ -1,0 +1,18 @@
+Video driver: dummy (can override with SDL_VIDEO_DRIVER environment variable)
+Loaded ESP32 image /home/smith/Agon/mystuff/golem/docs/tasks/GOLEM-021/codec/.emulator/esp32-firmware.bin: 6 segments, entry=0x4008768C
+  Segment 0: 0x3F400020 (277644 bytes) -> flash_data
+  Segment 1: 0x3FFBDB60 (19880 bytes) -> sram_data
+  Segment 2: 0x40080000 (30132 bytes) -> sram_insn
+  Segment 3: 0x400D0020 (693728 bytes) -> flash_insn
+  Segment 4: 0x400875B4 (64692 bytes) -> sram_insn
+  Segment 5: 0x50000200 (4 bytes) -> rtc_slow
+[predecode] Built table: 1515516 entries, 19 MB (4 MB flash coverage)
+[fab-flexe] actual Xtensa firmware=/home/smith/Agon/mystuff/golem/docs/tasks/GOLEM-021/codec/.emulator/esp32-firmware.bin engine=interp
+[APPCPU] boot addr = 0x40087524 (from pc=0x4000689C)
+[     10000] CORE1 started at 0x40087524
+[APPCPU] boot addr = 0x00000000 (from pc=0x4000689C)
+[fab-flexe] firmware mode 640x480; scanout 800x525 crop 144/34 repeat 1
+[fab-flexe] firmware mode 640x480; scanout 800x525 crop 144/34 repeat 1
+[fab-flexe] firmware mode 320x240; scanout 400x524 crop 72/33 repeat 2
+[fab-flexe] firmware mode 320x240; scanout 400x524 crop 72/33 repeat 2
+[fab-flexe] firmware mode 320x240; scanout 400x524 crop 72/33 repeat 2

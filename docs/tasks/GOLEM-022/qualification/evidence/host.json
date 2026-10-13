@@ -1,0 +1,13 @@
+{
+  "hostname": "oryx-linuxlite",
+  "uname": [
+    "Linux",
+    "oryx-linuxlite",
+    "7.1.5-76070105-generic",
+    "#202607241434~1787955069~26.04~9520501~dev SMP PREEMPT_DYNAMIC F",
+    "x86_64"
+  ],
+  "emulator_stopped": true,
+  "human_fixture": "review",
+  "result_removed_for_fresh_human_review": true
+}

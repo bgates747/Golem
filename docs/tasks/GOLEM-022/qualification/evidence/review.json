@@ -1,0 +1,33 @@
+{
+  "variant": "review",
+  "passed": true,
+  "checks": 62,
+  "observed_bytes": 99,
+  "expected_sha256": "1a03554640c02a6071d8a0867b879f704c649696e7605da49c1c41fd18121006",
+  "observed_sha256": "1a03554640c02a6071d8a0867b879f704c649696e7605da49c1c41fd18121006",
+  "execution_seconds": 1.932,
+  "host": "oryx-linuxlite",
+  "architecture": "x86_64",
+  "profile": "/home/smith/Agon/mystuff/golem/docs/tasks/GOLEM-022/qualification/.emulator",
+  "loaded_vdp": [
+    "/home/smith/Agon/mystuff/golem/.emulator/runtime/fab-1.2.5/firmware/vdp_platform.so"
+  ],
+  "runtime_identities": {
+    "fab-agon-emulator": "e822acb348e1be281dce6a80128d3924651f41157b407088b23ea73a4eba728c",
+    "fab-agon-emulator.bin": "aec5f8c266117d5bf864c6124d3c8986d042802ed5cbaaf8813e04a9fb8d0bea",
+    "mos_platform.bin": "d564243283972690933a4554296ad6202ca4ef54572279533a942960846bebae",
+    "mos_platform.map": "d69e60bbce61a7b4b3eef318ba395f11c4e1a5b585755755113992dc94edcb86",
+    "firmware/vdp_platform.so": "14338aaeead48cb3df5987bf7fcc1b350d9e08d4a0ee0fcfc1a4a89cf79fae97",
+    "sdcard/golem022/probe.bin": "68335b38e0a2b775b1874b9631120902c0813cadeed71ec35a3b120204010c69",
+    "sdcard/golem022/wolf-review.agnb": "f7b4daccf894ba545566ee6eb2c420cf78394c8e39f4799a30e3a55cd0d9391a"
+  },
+  "entry_calls": [
+    "drawMarker",
+    "drawWolf",
+    "drawMarker"
+  ],
+  "installs": 1,
+  "graphical_emulator_launched": false,
+  "emulator_stopped": true,
+  "MOS_prompt_and_keyboard": "pending human review"
+}

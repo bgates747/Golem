@@ -1,0 +1,389 @@
+{
+  "schema": 1,
+  "created_utc": "2026-10-12T14:35:01.848584+00:00",
+  "host": {
+    "name": "raspberrypi",
+    "machine": "aarch64"
+  },
+  "status": "Automated media and native module gates pass; Oryx desktop build/review pending",
+  "core_identity": {
+    "upstream_commit": "fbda8e905ccff36a090e4e33b0ffc2337dd79c52",
+    "patch_revision": 4,
+    "patch_files": {
+      "src/jit.c": "a7f3c9b5da4515724774121b5f05098c47d6ccf4de69813f53e27a8aa7e6ca42",
+      "src/xtensa.h": "e7f0301139eeac03f1a984df8d1ccc4583cd1176bea59b70908aa535beddc3b1",
+      "src/xtensa.c": "dbc9b13e9d3b9f70b0e9b5b2d2fb21ebb7cf4d10debd3cf2681b7fcf1ba5082f",
+      "src/flexe_session.c": "c77e50aa6412b3a6a8e609cb6a6f5b8087ea4772c690823e43c1cd8be535b664",
+      "src/peripherals.c": "c46147016acb943a80fba729ae688fed9e74582cc0079f1d31de0a7228d81a08"
+    }
+  },
+  "frontend_identity": {
+    "upstream_commit": "c22876d1f7ad903537c308cf65afd6553b37cdb8",
+    "patch_revision": 1,
+    "patch_files": {
+      "src/main.rs": "0e6b9a9c4cafd1b0aa33aeb785491c453bfafa5f6d8621711f047828b8ec1133",
+      "src/vdp_interface.rs": "ec162054028a39f02a5e934ebf745f9d270752f541ff5af878781c37d3ef1c29"
+    }
+  },
+  "built_adapter_sha256": "f1693fa8a6fa2cb1bd5d425807ac4a1a86aea3cb2e32030927a224c6eebd8f62",
+  "built_frontend_sha256": "b476068b62c7c85aa50f0bf56953f5075219082e14c0116ec5d292275454227c",
+  "source_sha256": {
+    "flexe_vdp.c": "f0d6b79908e75d7371c690d706e94cff845f7e68b5741fe5621bd6b9778b63c5",
+    "prepare_core.py": "60802dbbe8f5f4daccd44fb35c87319f30e2de1ec2fc2101483a72f9dbbf1553",
+    "prepare_core.sh": "fe1694cb8fef8bf6548e36392469cd2819755ec33bffe635374e39f92bce2aa9",
+    "prepare_fab.py": "efd6003489ca68f427f0c245be7493fe0576513744f8a8c0ed262630288219b1",
+    "build_fab.sh": "594177dc30a37fb9d7b02a955848eb1e02911dbf11b8e8cc3b312a7a6473a432",
+    "build.sh": "a681507409e29c8b5240d20240ead757b66d3551a18635161baac7c2ecd49190",
+    "check_backend.py": "3cdada81bf3a12eb5f64f65d7be97d55c047e7ed5dd6303d2d94a48f636477b9",
+    "check_tape.py": "58f7a2d2b29c7aa922dcdc46cf79ef049b9bb98e5ee29766364dcf1dcb5594c7"
+  },
+  "media": {
+    "interp": {
+      "firmware_sha256": "2aa6710fd9eab3443a874b19786a5f2efc5562ddc6ab437c33c8e6b4bcf20b5b",
+      "backend_sha256": "f1693fa8a6fa2cb1bd5d425807ac4a1a86aea3cb2e32030927a224c6eebd8f62",
+      "elf_sha256": "6c90d0bfdb03bc5fd615efb03f51692340dd22b19193e87dda5313aaa86b3fb1",
+      "passed": true,
+      "engine": "interp",
+      "width": 320,
+      "height": 240,
+      "glyph_pixels": 115,
+      "frames": 574,
+      "cycles": 2513380000,
+      "wall_seconds": 29.0732876569964,
+      "uart_bytes": 20,
+      "modes": [
+        {
+          "mode": 0,
+          "width": 640,
+          "height": 480,
+          "glyph_pixels": 115,
+          "background": [
+            170,
+            0,
+            0
+          ],
+          "rate": 59.52381134033203
+        },
+        {
+          "mode": 3,
+          "width": 640,
+          "height": 240,
+          "glyph_pixels": 115,
+          "background": [
+            170,
+            0,
+            0
+          ],
+          "rate": 59.63740539550781
+        },
+        {
+          "mode": 8,
+          "width": 320,
+          "height": 240,
+          "glyph_pixels": 115,
+          "background": [
+            170,
+            0,
+            0
+          ],
+          "rate": 58.31212615966797
+        },
+        {
+          "mode": 12,
+          "width": 320,
+          "height": 200,
+          "glyph_pixels": 115,
+          "background": [
+            170,
+            0,
+            0
+          ],
+          "rate": 63.775508880615234
+        },
+        {
+          "mode": 16,
+          "width": 800,
+          "height": 600,
+          "glyph_pixels": 115,
+          "background": [
+            255,
+            0,
+            0
+          ],
+          "rate": 60.3165397644043
+        },
+        {
+          "mode": 18,
+          "width": 1024,
+          "height": 768,
+          "glyph_pixels": 115,
+          "background": [
+            255,
+            255,
+            255
+          ],
+          "rate": 55.388160705566406
+        },
+        {
+          "mode": 20,
+          "width": 512,
+          "height": 384,
+          "glyph_pixels": 115,
+          "background": [
+            170,
+            0,
+            0
+          ],
+          "rate": 55.388160705566406
+        },
+        {
+          "mode": 24,
+          "width": 640,
+          "height": 512,
+          "glyph_pixels": 115,
+          "background": [
+            170,
+            0,
+            0
+          ],
+          "rate": 55.57383346557617
+        },
+        {
+          "mode": 27,
+          "width": 640,
+          "height": 256,
+          "glyph_pixels": 115,
+          "background": [
+            170,
+            0,
+            0
+          ],
+          "rate": 55.46976089477539
+        }
+      ],
+      "audio": {
+        "samples": 16384,
+        "non_silent": 8192,
+        "frequency": 1024.0,
+        "minimum": 27,
+        "maximum": 227
+      },
+      "stats": {
+        "engine": "interp",
+        "frames": 574,
+        "cycles": 2513390000,
+        "retired": 1051225116,
+        "uart_rx": 239,
+        "uart_tx": 186,
+        "uart_delivered": 186,
+        "isync": 11,
+        "code_invalidations": 1,
+        "keys": 1,
+        "failed": false,
+        "unhandled": 0,
+        "unregistered": 0,
+        "unmapped": 0
+      }
+    },
+    "jit": {
+      "firmware_sha256": "2aa6710fd9eab3443a874b19786a5f2efc5562ddc6ab437c33c8e6b4bcf20b5b",
+      "backend_sha256": "f1693fa8a6fa2cb1bd5d425807ac4a1a86aea3cb2e32030927a224c6eebd8f62",
+      "elf_sha256": "6c90d0bfdb03bc5fd615efb03f51692340dd22b19193e87dda5313aaa86b3fb1",
+      "passed": true,
+      "engine": "jit",
+      "width": 320,
+      "height": 240,
+      "glyph_pixels": 115,
+      "frames": 583,
+      "cycles": 2549100000,
+      "wall_seconds": 16.803793023806065,
+      "uart_bytes": 20,
+      "modes": [
+        {
+          "mode": 0,
+          "width": 640,
+          "height": 480,
+          "glyph_pixels": 115,
+          "background": [
+            170,
+            0,
+            0
+          ],
+          "rate": 59.52381134033203
+        },
+        {
+          "mode": 3,
+          "width": 640,
+          "height": 240,
+          "glyph_pixels": 115,
+          "background": [
+            170,
+            0,
+            0
+          ],
+          "rate": 59.63740539550781
+        },
+        {
+          "mode": 8,
+          "width": 320,
+          "height": 240,
+          "glyph_pixels": 115,
+          "background": [
+            170,
+            0,
+            0
+          ],
+          "rate": 58.31212615966797
+        },
+        {
+          "mode": 12,
+          "width": 320,
+          "height": 200,
+          "glyph_pixels": 115,
+          "background": [
+            170,
+            0,
+            0
+          ],
+          "rate": 63.775508880615234
+        },
+        {
+          "mode": 16,
+          "width": 800,
+          "height": 600,
+          "glyph_pixels": 115,
+          "background": [
+            255,
+            0,
+            0
+          ],
+          "rate": 60.3165397644043
+        },
+        {
+          "mode": 18,
+          "width": 1024,
+          "height": 768,
+          "glyph_pixels": 115,
+          "background": [
+            255,
+            255,
+            255
+          ],
+          "rate": 55.388160705566406
+        },
+        {
+          "mode": 20,
+          "width": 512,
+          "height": 384,
+          "glyph_pixels": 115,
+          "background": [
+            170,
+            0,
+            0
+          ],
+          "rate": 55.388160705566406
+        },
+        {
+          "mode": 24,
+          "width": 640,
+          "height": 512,
+          "glyph_pixels": 115,
+          "background": [
+            170,
+            0,
+            0
+          ],
+          "rate": 55.57383346557617
+        },
+        {
+          "mode": 27,
+          "width": 640,
+          "height": 256,
+          "glyph_pixels": 115,
+          "background": [
+            170,
+            0,
+            0
+          ],
+          "rate": 55.46976089477539
+        }
+      ],
+      "audio": {
+        "samples": 16384,
+        "non_silent": 8192,
+        "frequency": 1024.0,
+        "minimum": 27,
+        "maximum": 227
+      },
+      "stats": {
+        "engine": "jit",
+        "frames": 583,
+        "cycles": 2549120000,
+        "retired": 1093267019,
+        "uart_rx": 239,
+        "uart_tx": 186,
+        "uart_delivered": 186,
+        "isync": 11,
+        "code_invalidations": 1,
+        "keys": 1,
+        "failed": false,
+        "unhandled": 0,
+        "unregistered": 0,
+        "unmapped": 0
+      }
+    }
+  },
+  "native_tape": {
+    "interp": {
+      "firmware_sha256": "2aa6710fd9eab3443a874b19786a5f2efc5562ddc6ab437c33c8e6b4bcf20b5b",
+      "backend_sha256": "a5f6b7f88b1ffa6ed6991e600125bc0ea98adb4a42f42bd8f41a606fb7068582",
+      "tape_sha256": "839c02a5b4e73bd906b5a5114be74f7d73890fe04a00d96c9e49e651e5c97e72",
+      "expected_sha256": "5486300588bbfb5a22f9e26683f05c29f043aac0095f58bcc5f72c49d864c4d8",
+      "elf_sha256": "6c90d0bfdb03bc5fd615efb03f51692340dd22b19193e87dda5313aaa86b3fb1",
+      "passed": true,
+      "failure": null,
+      "engine": "interp",
+      "checks": 44,
+      "reply_bytes": 440,
+      "observed_sha256": "e06ad6d9fdb791dbaefc495263fa30d0ffefcc9f159c57eb7e8b1ad36e2413c9",
+      "cycles": 1917190000,
+      "instruction_syncs": 22,
+      "code_invalidations": 3,
+      "wall_seconds": 14.804880580864847,
+      "qualification_scope": "Direct Fab VDP ABI; MOS/SD remains a separate gate"
+    },
+    "jit": {
+      "firmware_sha256": "2aa6710fd9eab3443a874b19786a5f2efc5562ddc6ab437c33c8e6b4bcf20b5b",
+      "backend_sha256": "a5f6b7f88b1ffa6ed6991e600125bc0ea98adb4a42f42bd8f41a606fb7068582",
+      "tape_sha256": "839c02a5b4e73bd906b5a5114be74f7d73890fe04a00d96c9e49e651e5c97e72",
+      "expected_sha256": "5486300588bbfb5a22f9e26683f05c29f043aac0095f58bcc5f72c49d864c4d8",
+      "elf_sha256": "6c90d0bfdb03bc5fd615efb03f51692340dd22b19193e87dda5313aaa86b3fb1",
+      "passed": true,
+      "failure": null,
+      "engine": "jit",
+      "checks": 44,
+      "reply_bytes": 440,
+      "observed_sha256": "e06ad6d9fdb791dbaefc495263fa30d0ffefcc9f159c57eb7e8b1ad36e2413c9",
+      "cycles": 1918240000,
+      "instruction_syncs": 22,
+      "code_invalidations": 3,
+      "wall_seconds": 8.113041657954454,
+      "qualification_scope": "Direct Fab VDP ABI; MOS/SD remains a separate gate"
+    }
+  },
+  "related_evidence": {
+    "baseline/qualification-receipt.json": "8a776dc686696156be79c55b49b2925b46b1425c6e6647aba751b712f0d2572a",
+    "baseline/stock-mos-uart-fixed-receipt.json": "7bc5209cac6e0d94d38f3cff6a7d5cb0fba3c25b0da22096859d84bda5d1cd98",
+    "baseline/iram-qualified-receipt.json": "26661a83ce42af7f917860799ff36d4bae6ddff8cf4d308aa7176950ed2ec30e",
+    "evidence/numeric-interp.json": "feb8582cc3d4721b7d64df3634cf9403a17caedaa8d6a384ceb2f152c95f5efe",
+    "evidence/numeric-jit.json": "fedaa4d289480a27ba4a84cf1fa05292a2add3f29e4c31164fca9f57ff4c53ff"
+  },
+  "limits": [
+    "No graphical emulator was launched.",
+    "Oryx canonical SSH mDNS unavailable during staging attempts; no alternate addresses or routes were substituted.",
+    "Physical ESP32 validation is separate.",
+    "Keyboard uses genuine firmware serial console; PS/2 ULP, mouse and --osk are unsupported.",
+    "VGA geometry is qualified for the nine advertised standard timings; custom modes need their own crop/timing.",
+    "UART clock/divider changes during a pending RX timeout are not qualified."
+  ]
+}

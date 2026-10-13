@@ -1,0 +1,325 @@
+Read-only Oryx inspection, 2026-10-12. No build or hardware connection.
+
+set -eu
+cd ~/Agon/mystuff/agon-6502
+cat ~/.platformio/platforms/espressif32@6.6.0/platform.json
+cat ~/.platformio/packages/framework-arduinoespressif32@3.20014.231204/package.json
+grep 'ESP_IDF_VERSION_\(MAJOR\|MINOR\|PATCH\)' ~/.platformio/packages/framework-arduinoespressif32@3.20014.231204/tools/sdk/esp32/include/esp_common/include/esp_idf_version.h
+~/.platformio/packages/toolchain-xtensa-esp32@8.4.0+2021r2-patch5/bin/xtensa-esp32-elf-gcc --version
+~/.platformio/packages/toolchain-xtensa-esp32@8.4.0+2021r2-patch5/bin/xtensa-esp32-elf-gcc -Q --help=target | head -60
+~/.platformio/packages/toolchain-xtensa-esp32@8.4.0+2021r2-patch5/bin/xtensa-esp32-elf-readelf -p .comment build/vdp003/source/src/vdp/vdp-console8/.pio/build/esp32dev/firmware.elf
+grep -E '^iram0_0_seg|^dram0_0_seg|^\.(iram|dram|flash)|_iram_end =|_heap_start =|_heap_end =' build/vdp003/source/src/vdp/vdp-console8/.pio/build/esp32dev/firmware.map
+sha256sum build/vdp003/source/src/vdp/vdp-console8/.pio/build/esp32dev/firmware.bin build/vdp003/source/src/vdp/vdp-console8/.pio/build/esp32dev/firmware.elf build/vdp003/source/src/vdp/vdp-console8/.pio/build/esp32dev/firmware.map
+grep -E 'CONFIG_SPIRAM|CONFIG_ESP32_IRAM|CONFIG_FREERTOS_HZ|CONFIG_ESP32_REV' ~/.platformio/packages/framework-arduinoespressif32@3.20014.231204/tools/sdk/esp32/include/config/sdkconfig.h | head -45
+
+head -45 build/vdp003/firmware-build.log
+
+STDOUT
+{
+  "name": "espressif32",
+  "title": "Espressif 32",
+  "description": "ESP32 is a series of low-cost, low-power system on a chip microcontrollers with integrated Wi-Fi and Bluetooth. ESP32 integrates an antenna switch, RF balun, power amplifier, low-noise receive amplifier, filters, and power management modules.",
+  "homepage": "https://espressif.com/",
+  "license": "Apache-2.0",
+  "keywords": [
+    "dev-platform",
+    "Wi-Fi",
+    "Bluetooth",
+    "Xtensa",
+    "RISC-V"
+  ],
+  "engines": {
+    "platformio": "^6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/platformio/platform-espressif32.git"
+  },
+  "version": "6.6.0",
+  "frameworks": {
+    "arduino": {
+      "package": "framework-arduinoespressif32",
+      "script": "builder/frameworks/arduino.py"
+    },
+    "espidf": {
+      "package": "framework-espidf",
+      "script": "builder/frameworks/espidf.py"
+    }
+  },
+  "packages": {
+    "toolchain-xtensa-esp32": {
+      "type": "toolchain",
+      "owner": "espressif",
+      "version": "8.4.0+2021r2-patch5",
+      "optionalVersions": ["12.2.0+20230208"]
+    },
+    "toolchain-xtensa-esp32s2": {
+      "type": "toolchain",
+      "optional": true,
+      "owner": "espressif",
+      "version": "8.4.0+2021r2-patch5",
+      "optionalVersions": ["12.2.0+20230208"]
+    },
+     "toolchain-xtensa-esp32s3": {
+      "type": "toolchain",
+      "optional": true,
+      "owner": "espressif",
+      "version": "8.4.0+2021r2-patch5",
+      "optionalVersions": ["12.2.0+20230208"]
+    },
+    "toolchain-riscv32-esp": {
+      "type": "toolchain",
+      "optional": true,
+      "owner": "espressif",
+      "version": "8.4.0+2021r2-patch5",
+      "optionalVersions": ["13.2.0+20230928"]
+    },
+    "toolchain-esp32ulp": {
+      "type": "toolchain",
+      "optional": true,
+      "owner": "platformio",
+      "version": "~1.23500.0"
+    },
+    "tool-xtensa-esp-elf-gdb": {
+      "type": "debugger",
+      "optional": true,
+      "owner": "espressif",
+      "version": "~12.1.0"
+    },
+    "tool-riscv32-esp-elf-gdb": {
+      "type": "debugger",
+      "optional": true,
+      "owner": "espressif",
+      "version": "~12.1.0"
+    },
+    "framework-arduinoespressif32": {
+      "type": "framework",
+      "optional": true,
+      "owner": "platformio",
+      "version": "~3.20014.0"
+    },
+    "framework-espidf": {
+      "type": "framework",
+      "optional": true,
+      "owner": "platformio",
+      "version": "~3.50201.0",
+      "optionalVersions": ["~3.40406.0"]
+    },
+    "tool-esptoolpy": {
+      "type": "uploader",
+      "owner": "platformio",
+      "version": "~1.40501.0"
+    },
+    "tool-dfuutil-arduino": {
+      "type": "uploader",
+      "optional": true,
+      "owner": "platformio",
+      "version": "~1.11.0"
+    },
+    "tool-openocd-esp32": {
+      "type": "debugger",
+      "optional": true,
+      "owner": "platformio",
+      "version": "~2.1100.0"
+    },
+    "tool-mkspiffs": {
+      "type": "uploader",
+      "optional": true,
+      "owner": "platformio",
+      "version": "~2.230.0"
+    },
+    "tool-mklittlefs": {
+      "type": "uploader",
+      "optional": true,
+      "owner": "platformio",
+      "version": "~1.203.0"
+    },
+    "tool-mkfatfs": {
+      "type": "uploader",
+      "optional": true,
+      "owner": "platformio",
+      "version": "~2.0.0"
+    },
+    "tool-cmake": {
+      "optional": true,
+      "owner": "platformio",
+      "version": "~3.16.0"
+    },
+    "tool-ninja": {
+      "optional": true,
+      "owner": "platformio",
+      "version": "^1.7.0"
+    },
+    "tool-mconf": {
+      "optional": true,
+      "owner": "platformio",
+      "version": "~1.4060000.0"
+    },
+    "tool-idf": {
+      "optional": true,
+      "owner": "platformio",
+      "version": "~1.0.1"
+    }
+  }
+}
+{
+  "name": "framework-arduinoespressif32",
+  "version": "3.20014.231204",
+  "description": "Arduino Wiring-based Framework for the Espressif ESP32, ESP32-S and ESP32-C series of SoCs",
+  "keywords": [
+    "framework",
+    "arduino",
+    "espressif",
+    "esp32"
+  ],
+  "license": "LGPL-2.1-or-later",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/espressif/arduino-esp32"
+  }
+}
+#define ESP_IDF_VERSION_MAJOR   4
+#define ESP_IDF_VERSION_MINOR   4
+#define ESP_IDF_VERSION_PATCH   6
+#define ESP_IDF_VERSION  ESP_IDF_VERSION_VAL(ESP_IDF_VERSION_MAJOR, \
+                                             ESP_IDF_VERSION_MINOR, \
+                                             ESP_IDF_VERSION_PATCH)
+xtensa-esp32-elf-gcc (crosstool-NG esp-2021r2-patch5) 8.4.0
+Copyright (C) 2018 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+The following options are target specific:
+  -malways-memw               		[disabled]
+  -mauto-litpools             		[disabled]
+  -mconst16                   		[disabled]
+  -mfix-esp32-psram-cache-issue 	[disabled]
+  -mfix-esp32-psram-cache-strategy= 	memw
+  -mforce-no-pic              		[disabled]
+  -mfused-madd                		
+  -mlongcalls                 		[disabled]
+  -mno-serialize-volatile     		[enabled]
+  -mtarget-align              		[disabled]
+  -mtext-section-literals     		[disabled]
+
+  Psram cache fix strategies (for use with -mfix-esp32-psram-cache-strategy= option):
+    dupldst memw nops
+
+
+String dump of section '.comment':
+  [     0]  GCC: (crosstool-NG esp-2021r2-patch5) 8.4.0
+  [    2c]  GCC: (crosstool-NG crosstool-ng-1.22.0-97-gc752ad5) 5.2.0
+  [    66]  GCC: (crosstool-NG crosstool-ng-1.22.0-53-g46f160f-dirty) 4.8.5
+
+iram0_0_seg      0x0000000040080000 0x0000000000020000 xr
+dram0_0_seg      0x000000003ffbdb5c 0x000000000001e6a4 rw
+                0x0000000040000000                _heap_end = 0x40000000
+.iram0.vectors  0x0000000040080000      0x403
+.iram0.text     0x0000000040080404    0x16fdf
+.dram0.data     0x000000003ffbdb60     0x4c50
+.dram0.bss      0x000000003ffc27b0     0x6240
+.flash.appdesc  0x000000003f400020      0x100
+.flash.rodata   0x000000003f400120    0x4397c
+.flash.rodata_noload
+.flash.text     0x00000000400d0020    0xa7887
+.iram0.text_end
+.iram0.data     0x00000000400973e4        0x0
+                0x00000000400973e4                _coredump_iram_end = ABSOLUTE (.)
+.iram0.bss      0x00000000400973e4        0x0
+                0x00000000400973e4                _iram_end = ABSOLUTE (.)
+.dram0.heap_start
+                0x000000003ffc89f0                _heap_start = ABSOLUTE (.)
+c02a35cb5d91da74fb3ff9d06335a7f69f21fdecc5571394aa7302a3ce778ff6  build/vdp003/source/src/vdp/vdp-console8/.pio/build/esp32dev/firmware.bin
+5075817dc06203f4053aa9b4cb5da937b105fa3d8210ff35e74ceb5b520b469f  build/vdp003/source/src/vdp/vdp-console8/.pio/build/esp32dev/firmware.elf
+aa41e321cdf6ba4bfe34989b8cc00dc81489dea33746bef60c2bd4f5721ae553  build/vdp003/source/src/vdp/vdp-console8/.pio/build/esp32dev/firmware.map
+Processing esp32dev (platform: espressif32@6.6.0; board: esp32dev; framework: arduino)
+--------------------------------------------------------------------------------
+Library Manager: Installing git+https://github.com/AgonPlatform/vdp-gl.git#all-the-plots
+git version 2.53.0
+Cloning into '/home/smith/.platformio/.cache/tmp/pkg-installing-7oscjyhw'...
+Note: switching to 'ac2dd5986daf496c43ae8e7fe41836274aec54a0'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+Library Manager: vdp-gl@1.0.5+sha.ac2dd59 has been installed!
+Library Manager: Installing fbiego/ESP32Time @ ^2.0.0
+Downloading 0% 10%
+Unpacking 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+Library Manager: ESP32Time@2.0.6 has been installed!
+Library Manager: Installing robtillaart/CRC @ ^1.0.3
+Downloading 0% 10%
+Unpacking 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+Library Manager: CRC@1.0.4 has been installed!
+Verbose mode can be enabled via `-v, --verbose` option
+CONFIGURATION: https://docs.platformio.org/page/boards/espressif32/esp32dev.html
+PLATFORM: Espressif 32 (6.6.0) > Espressif ESP32 Dev Module
+HARDWARE: ESP32 240MHz, 320KB RAM, 4MB Flash
+DEBUG: Current (cmsis-dap) External (cmsis-dap, esp-bridge, esp-prog, iot-bus-jtag, jlink, minimodule, olimex-arm-usb-ocd, olimex-arm-usb-ocd-h, olimex-arm-usb-tiny-h, olimex-jtag-tiny, tumpa)
+PACKAGES: 
+ - framework-arduinoespressif32 @ 3.20014.231204 (2.0.14) 
+ - tool-esptoolpy @ 1.40501.0 (4.5.1) 
+ - toolchain-xtensa-esp32 @ 8.4.0+2021r2-patch5
+Converting video.ino
+LDF: Library Dependency Finder -> https://bit.ly/configure-pio-ldf
+LDF Modes: Finder ~ chain, Compatibility ~ soft
+Found 36 compatible libraries
+Scanning dependencies...
+
+STDERR
+grep: /home/smith/.platformio/packages/framework-arduinoespressif32@3.20014.231204/tools/sdk/esp32/include/config/sdkconfig.h: No such file or directory
+
+Additional SDK/ABI read-only inspection:
+set -eu
+sdk=~/.platformio/packages/framework-arduinoespressif32@3.20014.231204/tools/sdk/esp32/qio_qspi/include/sdkconfig.h
+grep -E 'CONFIG_SPIRAM|CONFIG_ESP32_IRAM|CONFIG_FREERTOS_HZ|CONFIG_ESP32_REV' "$sdk" | head -45
+~/.platformio/packages/toolchain-xtensa-esp32@8.4.0+2021r2-patch5/bin/xtensa-esp32-elf-gcc -dM -E - </dev/null | grep -E 'XTENSA|WINDOWED|CALL0|SIZEOF_POINTER|BYTE_ORDER'
+
+#define CONFIG_ESP32_REV_MIN_0 1
+#define CONFIG_ESP32_REV_MIN 0
+#define CONFIG_ESP32_REV_MIN_FULL 0
+#define CONFIG_ESP32_REV_MAX_FULL_STR_OPT 1
+#define CONFIG_ESP32_REV_MAX_FULL 399
+#define CONFIG_SPIRAM_TYPE_AUTO 1
+#define CONFIG_SPIRAM_SIZE -1
+#define CONFIG_SPIRAM_SPEED_80M 1
+#define CONFIG_SPIRAM 1
+#define CONFIG_SPIRAM_USE_MALLOC 1
+#define CONFIG_SPIRAM_MALLOC_ALWAYSINTERNAL 4096
+#define CONFIG_SPIRAM_MALLOC_RESERVE_INTERNAL 0
+#define CONFIG_SPIRAM_CACHE_WORKAROUND 1
+#define CONFIG_SPIRAM_CACHE_WORKAROUND_STRATEGY_MEMW 1
+#define CONFIG_SPIRAM_CACHE_LIBJMP_IN_IRAM 1
+#define CONFIG_SPIRAM_CACHE_LIBMATH_IN_IRAM 1
+#define CONFIG_SPIRAM_CACHE_LIBNUMPARSER_IN_IRAM 1
+#define CONFIG_SPIRAM_CACHE_LIBIO_IN_IRAM 1
+#define CONFIG_SPIRAM_CACHE_LIBTIME_IN_IRAM 1
+#define CONFIG_SPIRAM_CACHE_LIBCHAR_IN_IRAM 1
+#define CONFIG_SPIRAM_CACHE_LIBMEM_IN_IRAM 1
+#define CONFIG_SPIRAM_CACHE_LIBSTR_IN_IRAM 1
+#define CONFIG_SPIRAM_CACHE_LIBRAND_IN_IRAM 1
+#define CONFIG_SPIRAM_CACHE_LIBENV_IN_IRAM 1
+#define CONFIG_SPIRAM_CACHE_LIBFILE_IN_IRAM 1
+#define CONFIG_SPIRAM_CACHE_LIBMISC_IN_IRAM 1
+#define CONFIG_SPIRAM_BANKSWITCH_ENABLE 1
+#define CONFIG_SPIRAM_BANKSWITCH_RESERVE 8
+#define CONFIG_SPIRAM_OCCUPY_HSPI_HOST 1
+#define CONFIG_FREERTOS_HZ 1000
+#define CONFIG_SPIRAM_SUPPORT CONFIG_ESP32_SPIRAM_SUPPORT
+#define __SIZEOF_POINTER__ 4
+#define __XTENSA_EL__ 1
+#define __XTENSA_WINDOWED_ABI__ 1
+#define __XTENSA__ 1
+#define __BYTE_ORDER__ __ORDER_LITTLE_ENDIAN__

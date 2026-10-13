@@ -6,9 +6,10 @@ namespace golem::assembly {
 // A single package per include. Names are checked under assembler case folding.
 struct Export { std::string name; unsigned id, bytes, type, offset = 0; };
 struct Constant { std::string name; unsigned value; };
+struct Entry { std::string name; unsigned id; resident_scalar::Bytes invoke; };
 inline std::string renderPackage(const std::vector<Export> &fields,
-        const std::vector<Constant> &constants, const std::string &entryName,
-        unsigned entryID, unsigned ownedCount, const resident_scalar::Bytes &invoke,
+        const std::vector<Constant> &constants, const std::vector<Entry> &entries,
+        unsigned ownedCount,
         const resident_scalar::Bytes &bootstrap, const resident_scalar::Bytes &cleanup,
         const resident_scalar::Bytes &update) {
     std::ostringstream out;
@@ -47,20 +48,31 @@ inline std::string renderPackage(const std::vector<Export> &fields,
            "; Wrapper clobbers HL/BC; other effects follow MOS RST 18h.\n";
     for (const auto &f : fields) field(f.name, f.id, f.bytes, f.type, f.offset);
     for (const auto &c : constants) equ(c.name, c.value);
-    const auto entry = "golem_" + entryName;
-    equ(entry + "_buffer", entryID);
+    for (const auto &entry : entries) equ("golem_" + entry.name + "_buffer", entry.id);
     equ("golem_package_owned_count", ownedCount);
     // Emit the real eZ80 wrapper before data. The application's include placement
     // must avoid falling through into it or the payloads.
-    out << symbol(entry) << ":\n"
-        << "    ld hl," << entry << "_call\n"
-        << "    ld bc," << entry << "_call_len\n"
-        << "    rst.lil $18\n    ret\n";
-    payload(entry + "_call", invoke);
+    for (const auto &procedure : entries) {
+        const auto entry = "golem_" + procedure.name;
+        out << symbol(entry) << ":\n"
+            << "    ld hl," << entry << "_call\n"
+            << "    ld bc," << entry << "_call_len\n"
+            << "    rst.lil $18\n    ret\n";
+        payload(entry + "_call", procedure.invoke);
+    }
     payload("golem_package_bootstrap", bootstrap);
     payload("golem_package_update_call", update);
     payload("golem_package_cleanup", cleanup);
     return out.str();
+}
+// Preserve the single-entry interface and byte layout for scalar/table callers.
+inline std::string renderPackage(const std::vector<Export> &fields,
+        const std::vector<Constant> &constants, const std::string &entryName,
+        unsigned entryID, unsigned ownedCount, const resident_scalar::Bytes &invoke,
+        const resident_scalar::Bytes &bootstrap, const resident_scalar::Bytes &cleanup,
+        const resident_scalar::Bytes &update) {
+    return renderPackage(fields, constants, {{entryName, entryID, invoke}}, ownedCount,
+                         bootstrap, cleanup, update);
 }
 inline std::string render(const resident::Result &r, const resident_scalar::Bytes &update) {
     std::vector<Export> fields{{r.spec.input,r.layout.input,4,3}, {r.spec.output,r.layout.output,2,2}};
@@ -91,8 +103,10 @@ inline std::string render(const resident_drawing::Result &r, const resident_scal
     std::vector<Constant> constants;
     if (r.input) constants = {{"golem_inputs_buffer", r.input},
                               {"golem_inputs_bytes", static_cast<unsigned>(r.spec.values.size())}};
-    auto text = renderPackage(fields, constants, r.spec.entry, r.entry, static_cast<unsigned>(r.owned.size()),
-                             r.invoke, r.bootstrap, r.cleanup, update);
+    std::vector<Entry> entries;
+    for (const auto &entry : r.entries) entries.push_back({entry.name, entry.id, entry.invoke});
+    auto text = renderPackage(fields, constants, entries, static_cast<unsigned>(r.owned.size()),
+                             r.bootstrap, r.cleanup, update);
     const std::string old = "3=float32.";
     text.replace(text.find(old), old.size(), "3=float32, 4=packed record, 5=uint8.");
     return text;

@@ -1,0 +1,381 @@
+{
+  "passed": true,
+  "host": "oryx-linuxlite",
+  "architecture": "x86_64",
+  "created_utc": "2026-10-12T15:31:03.658487+00:00",
+  "cases": [
+    {
+      "fixture": "f2-step01",
+      "engine": "jit",
+      "checks": 21,
+      "bytes": 210,
+      "pixel_checks": 61440,
+      "elapsed_seconds": 8.641,
+      "command_task_minimum_free_stack_bytes": 2260,
+      "retained_bytes_observed_completely": 0
+    },
+    {
+      "fixture": "f2-step01",
+      "engine": "interp",
+      "checks": 21,
+      "bytes": 210,
+      "pixel_checks": 61440,
+      "elapsed_seconds": 8.544,
+      "command_task_minimum_free_stack_bytes": 2260,
+      "retained_bytes_observed_completely": 0
+    },
+    {
+      "fixture": "f2-step02",
+      "engine": "jit",
+      "checks": 32,
+      "bytes": 320,
+      "pixel_checks": 61440,
+      "elapsed_seconds": 8.491,
+      "command_task_minimum_free_stack_bytes": 2260,
+      "retained_bytes_observed_completely": 0
+    },
+    {
+      "fixture": "f2-step02",
+      "engine": "interp",
+      "checks": 32,
+      "bytes": 320,
+      "pixel_checks": 61440,
+      "elapsed_seconds": 8.786,
+      "command_task_minimum_free_stack_bytes": 2260,
+      "retained_bytes_observed_completely": 0
+    },
+    {
+      "fixture": "f2-step03",
+      "engine": "jit",
+      "checks": 43,
+      "bytes": 430,
+      "pixel_checks": 61440,
+      "elapsed_seconds": 8.832,
+      "command_task_minimum_free_stack_bytes": 2260,
+      "retained_bytes_observed_completely": 0
+    },
+    {
+      "fixture": "f2-step03",
+      "engine": "interp",
+      "checks": 43,
+      "bytes": 430,
+      "pixel_checks": 61440,
+      "elapsed_seconds": 8.836,
+      "command_task_minimum_free_stack_bytes": 2260,
+      "retained_bytes_observed_completely": 0
+    },
+    {
+      "fixture": "f2-step04",
+      "engine": "jit",
+      "checks": 54,
+      "bytes": 540,
+      "pixel_checks": 61440,
+      "elapsed_seconds": 8.831,
+      "command_task_minimum_free_stack_bytes": 2260,
+      "retained_bytes_observed_completely": 0
+    },
+    {
+      "fixture": "f2-step04",
+      "engine": "interp",
+      "checks": 54,
+      "bytes": 540,
+      "pixel_checks": 61440,
+      "elapsed_seconds": 8.82,
+      "command_task_minimum_free_stack_bytes": 2260,
+      "retained_bytes_observed_completely": 0
+    },
+    {
+      "fixture": "f2-step05",
+      "engine": "jit",
+      "checks": 65,
+      "bytes": 650,
+      "pixel_checks": 61440,
+      "elapsed_seconds": 8.825,
+      "command_task_minimum_free_stack_bytes": 2260,
+      "retained_bytes_observed_completely": 0
+    },
+    {
+      "fixture": "f2-step05",
+      "engine": "interp",
+      "checks": 65,
+      "bytes": 650,
+      "pixel_checks": 61440,
+      "elapsed_seconds": 8.792,
+      "command_task_minimum_free_stack_bytes": 2260,
+      "retained_bytes_observed_completely": 0
+    },
+    {
+      "fixture": "f2-step06",
+      "engine": "jit",
+      "checks": 76,
+      "bytes": 760,
+      "pixel_checks": 61440,
+      "elapsed_seconds": 8.843,
+      "command_task_minimum_free_stack_bytes": 2260,
+      "retained_bytes_observed_completely": 0
+    },
+    {
+      "fixture": "f2-step06",
+      "engine": "interp",
+      "checks": 76,
+      "bytes": 760,
+      "pixel_checks": 61440,
+      "elapsed_seconds": 8.853,
+      "command_task_minimum_free_stack_bytes": 2260,
+      "retained_bytes_observed_completely": 0
+    },
+    {
+      "fixture": "f2-step07",
+      "engine": "jit",
+      "checks": 87,
+      "bytes": 870,
+      "pixel_checks": 61440,
+      "elapsed_seconds": 8.858,
+      "command_task_minimum_free_stack_bytes": 2260,
+      "retained_bytes_observed_completely": 0
+    },
+    {
+      "fixture": "f2-step07",
+      "engine": "interp",
+      "checks": 87,
+      "bytes": 870,
+      "pixel_checks": 61440,
+      "elapsed_seconds": 8.846,
+      "command_task_minimum_free_stack_bytes": 2260,
+      "retained_bytes_observed_completely": 0
+    },
+    {
+      "fixture": "f2-step08",
+      "engine": "jit",
+      "checks": 3938,
+      "bytes": 39380,
+      "pixel_checks": 61440,
+      "elapsed_seconds": 13.107,
+      "command_task_minimum_free_stack_bytes": 2260,
+      "retained_bytes_observed_completely": 7680
+    },
+    {
+      "fixture": "f2-step08",
+      "engine": "interp",
+      "checks": 3938,
+      "bytes": 39380,
+      "pixel_checks": 61440,
+      "elapsed_seconds": 12.839,
+      "command_task_minimum_free_stack_bytes": 2260,
+      "retained_bytes_observed_completely": 7680
+    },
+    {
+      "fixture": "f2-mode8",
+      "engine": "jit",
+      "checks": 3861,
+      "bytes": 38610,
+      "pixel_checks": 61440,
+      "elapsed_seconds": 12.835,
+      "command_task_minimum_free_stack_bytes": 2260,
+      "retained_bytes_observed_completely": 7680
+    },
+    {
+      "fixture": "f2-mode8",
+      "engine": "interp",
+      "checks": 3861,
+      "bytes": 38610,
+      "pixel_checks": 61440,
+      "elapsed_seconds": 12.541,
+      "command_task_minimum_free_stack_bytes": 2260,
+      "retained_bytes_observed_completely": 7680
+    },
+    {
+      "fixture": "f3-step01",
+      "engine": "jit",
+      "checks": 21,
+      "bytes": 210,
+      "pixel_checks": 61440,
+      "elapsed_seconds": 8.553,
+      "command_task_minimum_free_stack_bytes": 2260,
+      "retained_bytes_observed_completely": 0
+    },
+    {
+      "fixture": "f3-step01",
+      "engine": "interp",
+      "checks": 21,
+      "bytes": 210,
+      "pixel_checks": 61440,
+      "elapsed_seconds": 8.54,
+      "command_task_minimum_free_stack_bytes": 2260,
+      "retained_bytes_observed_completely": 0
+    },
+    {
+      "fixture": "f3-step02",
+      "engine": "jit",
+      "checks": 32,
+      "bytes": 320,
+      "pixel_checks": 61440,
+      "elapsed_seconds": 8.55,
+      "command_task_minimum_free_stack_bytes": 2260,
+      "retained_bytes_observed_completely": 0
+    },
+    {
+      "fixture": "f3-step02",
+      "engine": "interp",
+      "checks": 32,
+      "bytes": 320,
+      "pixel_checks": 61440,
+      "elapsed_seconds": 8.83,
+      "command_task_minimum_free_stack_bytes": 2260,
+      "retained_bytes_observed_completely": 0
+    },
+    {
+      "fixture": "f3-step03",
+      "engine": "jit",
+      "checks": 43,
+      "bytes": 430,
+      "pixel_checks": 61440,
+      "elapsed_seconds": 8.8,
+      "command_task_minimum_free_stack_bytes": 2196,
+      "retained_bytes_observed_completely": 0
+    },
+    {
+      "fixture": "f3-step03",
+      "engine": "interp",
+      "checks": 43,
+      "bytes": 430,
+      "pixel_checks": 61440,
+      "elapsed_seconds": 8.841,
+      "command_task_minimum_free_stack_bytes": 2260,
+      "retained_bytes_observed_completely": 0
+    },
+    {
+      "fixture": "f3-step04",
+      "engine": "jit",
+      "checks": 54,
+      "bytes": 540,
+      "pixel_checks": 61440,
+      "elapsed_seconds": 8.762,
+      "command_task_minimum_free_stack_bytes": 2260,
+      "retained_bytes_observed_completely": 0
+    },
+    {
+      "fixture": "f3-step04",
+      "engine": "interp",
+      "checks": 54,
+      "bytes": 540,
+      "pixel_checks": 61440,
+      "elapsed_seconds": 8.833,
+      "command_task_minimum_free_stack_bytes": 2260,
+      "retained_bytes_observed_completely": 0
+    },
+    {
+      "fixture": "f3-step05",
+      "engine": "jit",
+      "checks": 65,
+      "bytes": 650,
+      "pixel_checks": 61440,
+      "elapsed_seconds": 8.839,
+      "command_task_minimum_free_stack_bytes": 2260,
+      "retained_bytes_observed_completely": 0
+    },
+    {
+      "fixture": "f3-step05",
+      "engine": "interp",
+      "checks": 65,
+      "bytes": 650,
+      "pixel_checks": 61440,
+      "elapsed_seconds": 8.799,
+      "command_task_minimum_free_stack_bytes": 2260,
+      "retained_bytes_observed_completely": 0
+    },
+    {
+      "fixture": "f3-step06",
+      "engine": "jit",
+      "checks": 76,
+      "bytes": 760,
+      "pixel_checks": 61440,
+      "elapsed_seconds": 8.855,
+      "command_task_minimum_free_stack_bytes": 2260,
+      "retained_bytes_observed_completely": 0
+    },
+    {
+      "fixture": "f3-step06",
+      "engine": "interp",
+      "checks": 76,
+      "bytes": 760,
+      "pixel_checks": 61440,
+      "elapsed_seconds": 8.845,
+      "command_task_minimum_free_stack_bytes": 2260,
+      "retained_bytes_observed_completely": 0
+    },
+    {
+      "fixture": "f3-step07",
+      "engine": "jit",
+      "checks": 87,
+      "bytes": 870,
+      "pixel_checks": 61440,
+      "elapsed_seconds": 8.852,
+      "command_task_minimum_free_stack_bytes": 2260,
+      "retained_bytes_observed_completely": 0
+    },
+    {
+      "fixture": "f3-step07",
+      "engine": "interp",
+      "checks": 87,
+      "bytes": 870,
+      "pixel_checks": 61440,
+      "elapsed_seconds": 8.854,
+      "command_task_minimum_free_stack_bytes": 2260,
+      "retained_bytes_observed_completely": 0
+    },
+    {
+      "fixture": "f3-step08",
+      "engine": "jit",
+      "checks": 3938,
+      "bytes": 39380,
+      "pixel_checks": 61440,
+      "elapsed_seconds": 13.052,
+      "command_task_minimum_free_stack_bytes": 2260,
+      "retained_bytes_observed_completely": 7680
+    },
+    {
+      "fixture": "f3-step08",
+      "engine": "interp",
+      "checks": 3938,
+      "bytes": 39380,
+      "pixel_checks": 61440,
+      "elapsed_seconds": 12.839,
+      "command_task_minimum_free_stack_bytes": 2260,
+      "retained_bytes_observed_completely": 7680
+    },
+    {
+      "fixture": "f3-mode8",
+      "engine": "jit",
+      "checks": 3861,
+      "bytes": 38610,
+      "pixel_checks": 61440,
+      "elapsed_seconds": 12.823,
+      "command_task_minimum_free_stack_bytes": 2260,
+      "retained_bytes_observed_completely": 7680
+    },
+    {
+      "fixture": "f3-mode8",
+      "engine": "interp",
+      "checks": 3861,
+      "bytes": 38610,
+      "pixel_checks": 61440,
+      "elapsed_seconds": 12.543,
+      "command_task_minimum_free_stack_bytes": 2260,
+      "retained_bytes_observed_completely": 7680
+    }
+  ],
+  "total_runs": 36,
+  "total_reply_checks": 32708,
+  "total_saved_bytes": 327080,
+  "total_pixel_checks": 2211840,
+  "completely_observed_retained_bytes": 61440,
+  "minimum_command_task_free_stack_bytes": 2196,
+  "frontend_sha256": "a0e2aebfc6f299ec9905b989841ba000a1471f685078b76004480211c0396812",
+  "adapter_sha256": "817da2e320c206fcb7e423b39434c6452319d71a2f54fac451aa9b7a10fa5a0d",
+  "firmware_sha256": "31d25eec03a531b336d78d453f0720bbd1312c7c8516fdfa80130769ab15e49f",
+  "bundle_sha256": "864aa855c682231a44561ac9d199455ab8edfefbc43d763471a6e90691137d7c",
+  "main_review_unchanged": true,
+  "graphical_instance_launched": false,
+  "emulator_stopped": true
+}

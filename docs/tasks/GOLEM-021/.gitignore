@@ -1,0 +1,4 @@
+**/build/
+**/.emulator/
+*.lst
+**/__pycache__/

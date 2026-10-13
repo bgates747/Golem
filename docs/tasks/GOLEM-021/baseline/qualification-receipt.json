@@ -1,0 +1,123 @@
+{
+  "schema": 1,
+  "created_utc": "2026-10-12T14:28:00.193630+00:00",
+  "source_commit": "fbda8e905ccff36a090e4e33b0ffc2337dd79c52",
+  "status": "PASS corrected-core headless stock VDP/MOS/BASIC and 14 synthetic RAM cases; pristine failures retained",
+  "results": {
+    "pristine_stock_interpreter": "PASS",
+    "pristine_stock_jit": "FAIL SIGILL on Linux AArch64",
+    "corrected_stock_vdp_interp_and_jit": "PASS",
+    "corrected_mos_basic_interp_and_jit": "PASS: 11 commands, filesystem, BASIC arithmetic/loop, VGA a53304ae",
+    "synthetic_iram_cases": 14
+  },
+  "files": {
+    "build-receipt.json": "f1c31e85674db0dcdb79a4ada09b0c5eb0b9246d540544c758aa08936c58b0f3",
+    "stock-receipt.json": "e052656659a60e5e1c634f554c762c0da9e8e3d64b4a2a743b9f15722e41686f",
+    "stock-host-cache-fixed-receipt.json": "4261c54f70ff8376f2defb73455876eb1b7752b717db83eee340452942077b75",
+    "stock-mos-echo-receipt.json": "80e00032340e9269220b32909135a843da9abc0d311134898aa35c137666901b",
+    "stock-mos-uart-fixed-receipt.json": "7bc5209cac6e0d94d38f3cff6a7d5cb0fba3c25b0da22096859d84bda5d1cd98",
+    "prompt-runner-echo-build-receipt.json": "2371e0f758439e1dd056863dc0432399a0676074c85d3f1dc49523dbc9400c18",
+    "prompt-runner-build-receipt.json": "3673b8bef9c5347303eae2a2882bb09c1d5faafa1565efb4f255d98860b49165",
+    "iram-pristine-receipt.json": "e5e1192173b55d54227ec0806ba0c315f5aed24bec001e1e1ea4b3efab104bc3",
+    "iram-qualified-receipt.json": "26661a83ce42af7f917860799ff36d4bae6ddff8cf4d308aa7176950ed2ec30e",
+    "run_stock.py": "28b8180d685f74abaf98f6cda5128c6f1e64e8724088fd877b334075ff76b951",
+    "prepare_runner.py": "ab76b7d43ac1235875c04fb2c35fd0e1171575cf56617d5e3b10374d737c793e",
+    "run_iram.py": "2fd491f8713fe3e53561aa829e97df4d282388f4266a7d8f7159133656af42fc",
+    "iram_reload.c": "e7cadfd0f7f0738f846246717d6502fe128b41801480fc92cd418cae8402d28e",
+    "README.md": "e4c4831a5afe52e30d9d862c164a31ba1b44ac0357e8f8a2d9ec244afacaea28",
+    "executable-ram-notes.md": "6b9157e0af28754f1ad1e69d57cd56422cb04b179ab00e6df20d624caf80f891"
+  },
+  "limits": [
+    "No GUI was launched; human visual/keyboard review remains separate.",
+    "No physical ESP32 was flashed or exercised.",
+    "Serial-console keys, not physical PS/2 input.",
+    "Synthetic RAM coherence checks do not substitute for actual vdplet lifecycle proof.",
+    "Retained times are reproduction evidence, not performance comparisons."
+  ],
+  "final_runner_logs": {
+    "interp": {
+      "path": "/Agon/mystuff/golem/docs/tasks/GOLEM-021/baseline/build/uart-fixed-artifacts/mos/interp/runner.log",
+      "sha256": "33ed787f01dcc4665c06c6c849d2c6c8f4611f1ad2974e56b968f5459181cf65",
+      "pass_lines": [
+        "PASS engine=interp stage=5 wall=14.119916 soak_wall=2.684649 soak_cycles=240000000 cycles=2424270000 retired=1047246088 native=0 soak_retired=241496182 soak_native=0 frames=757 soak_frames=58 pixel_hz=12222222 geometry=400/524 uart=51 uart_digest=1dc20a14 red=56769766 blue=a2dbd34c audio=1 key=1 unhandled=0 unregistered=0 unmapped=0 pc=40092eaa/401749ba",
+        "PASS mos=3.0.2 basic=adl engine=interp commands=11 program=1 pixels=a53304ae uart_rx=845 uart_tx=1193 vsync=243 wall=11.060"
+      ],
+      "artifacts": {
+        "tone.wav": {
+          "bytes": 16364,
+          "sha256": "b8d03a84c0f74f08ad60f0ca291beebcefc44b6105f86683a95a88aee624353b"
+        },
+        "peer.log": {
+          "bytes": 13,
+          "sha256": "c8788f4df5333cde3f8f42b6bc0891775dcc8b9ef84d642939793d8dc8b4d0f7"
+        },
+        "runner.log": {
+          "bytes": 1515,
+          "sha256": "33ed787f01dcc4665c06c6c849d2c6c8f4611f1ad2974e56b968f5459181cf65"
+        },
+        "mos.ppm": {
+          "bytes": 230415,
+          "sha256": "905b92cc4db562e2b423f493111765b86b708ae9e93b630f04e5720525ed7efd"
+        },
+        "mos-uart.bin": {
+          "bytes": 845,
+          "sha256": "1a35eedaf1f60fe65ce40952137bd8cad8053718291c7f5414a21905eb6e5407"
+        },
+        "mos-transcript.txt": {
+          "bytes": 743,
+          "sha256": "cb4db611af91c8745e897da93c43899606b0017806c755d635abdff7f2baf9ac"
+        },
+        "blue-320x240.ppm": {
+          "bytes": 230415,
+          "sha256": "1d87d5b3158c1eca7ba2f2fe05eada989b4994a9cda06c5c5bb03750c1a17247"
+        },
+        "red-640x480.ppm": {
+          "bytes": 921615,
+          "sha256": "bf320a27715cfbb06e11bacf6e0404048f11262f2ce7a09b57e21c63983f8379"
+        }
+      }
+    },
+    "jit": {
+      "path": "/Agon/mystuff/golem/docs/tasks/GOLEM-021/baseline/build/uart-fixed-artifacts/mos/jit/runner.log",
+      "sha256": "5b4cffd1809f281cefe2fb2bd42b77d4aec0f538ef4599b0de19530f3c1a9d43",
+      "pass_lines": [
+        "PASS engine=jit stage=5 wall=12.251203 soak_wall=2.996162 soak_cycles=240000000 cycles=2424270000 retired=1047246088 native=1002311993 soak_retired=241496182 soak_native=233288616 frames=757 soak_frames=58 pixel_hz=12222222 geometry=400/524 uart=51 uart_digest=1dc20a14 red=56769766 blue=a2dbd34c audio=1 key=1 unhandled=0 unregistered=0 unmapped=0 pc=40092eaa/401749ba",
+        "PASS mos=3.0.2 basic=adl engine=jit commands=11 program=1 pixels=a53304ae uart_rx=845 uart_tx=1193 vsync=190 wall=11.074"
+      ],
+      "artifacts": {
+        "tone.wav": {
+          "bytes": 16364,
+          "sha256": "b8d03a84c0f74f08ad60f0ca291beebcefc44b6105f86683a95a88aee624353b"
+        },
+        "peer.log": {
+          "bytes": 13,
+          "sha256": "2fe83a1c84f2ccf33dd364ad5fbc46990d36cad1bc4ee25d8503909c3699916c"
+        },
+        "runner.log": {
+          "bytes": 1526,
+          "sha256": "5b4cffd1809f281cefe2fb2bd42b77d4aec0f538ef4599b0de19530f3c1a9d43"
+        },
+        "mos.ppm": {
+          "bytes": 230415,
+          "sha256": "905b92cc4db562e2b423f493111765b86b708ae9e93b630f04e5720525ed7efd"
+        },
+        "mos-uart.bin": {
+          "bytes": 845,
+          "sha256": "1a35eedaf1f60fe65ce40952137bd8cad8053718291c7f5414a21905eb6e5407"
+        },
+        "mos-transcript.txt": {
+          "bytes": 743,
+          "sha256": "cb4db611af91c8745e897da93c43899606b0017806c755d635abdff7f2baf9ac"
+        },
+        "blue-320x240.ppm": {
+          "bytes": 230415,
+          "sha256": "1d87d5b3158c1eca7ba2f2fe05eada989b4994a9cda06c5c5bb03750c1a17247"
+        },
+        "red-640x480.ppm": {
+          "bytes": 921615,
+          "sha256": "bf320a27715cfbb06e11bacf6e0404048f11262f2ce7a09b57e21c63983f8379"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "pass": false,
+  "engine": "interp",
+  "timeout_seconds": 180,
+  "stage": "No results.dat; bootstrap/frontend handshake still under diagnosis",
+  "firmware_sha256": "70e60f578a5080cec0ef587f90a34a749bebd00f5dbe9a4d8b4c5730cca935b6",
+  "frontend": "official Fab1.2.5",
+  "transcripts_complete": false,
+  "reason_incomplete": "SIGTERM bypassed upstream shutdown; owned frontend will add graceful termination"
+}

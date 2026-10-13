@@ -12,6 +12,10 @@ Wolf demo, including MOS keyboard review. Retrieved human runs match their
 expected results; commit and push were explicitly approved on 2026-10-12.
 Assembly owns graphics setup, installation, updates, invocation and pacing.
 See [GOLEM-018](../tasks/GOLEM-018/README.md) for the staged demo and evidence.
+GOLEM-022 adds multiple independently selectable finite drawing Subs with one
+shared packed input block. Its host/assembler and stock-emulator qualification
+are tracked separately in [the task plan](../tasks/GOLEM-022.md); the earlier
+human acceptance above applies to the single-Sub profiles.
 
 ## Source and compilation
 
@@ -40,8 +44,10 @@ its first Sub statement is a supported drawing call; existing scalar sources
 retain their backend. Globals, if present, are uint8/sint16/uint16, explicitly initialized
 and optionally bounded by Bounds(low,high), inclusive. Colour fields must have
 declared bounds within 0..63; coordinates must be sint16. Matching integer literals
-are accepted as operands. A literal-only Sub needs no input buffer. Source admits
-one finite Sub containing one or more drawing calls. Keywords and builtin names
+are accepted as operands. A package without globals needs no input buffer. Source admits
+one or more finite Subs, each containing one or more drawing calls. All globals
+must precede every Sub; Subs cannot declare locals, accept arguments, call one
+another or contain assignments, branches or loops. Keywords and builtin names
 are case-insensitive; variable names remain case-sensitive. Statements have no
 terminators, and newlines are whitespace. Unknown statements, wrong types, invalid
 literals, unsupported mixed profiles and trailing source reject compilation.
@@ -52,6 +58,26 @@ the existing inclusive ID accounting. IDs 0 and 65535 remain unavailable.
 Input and program blocks are limited to the stock write-command size, 65535 bytes.
 Semantic, allocation and requested assembly-symbol checks precede output writes.
 As elsewhere, an I/O failure during publication is not an atomic transaction.
+
+Multiple entries share the same persistent inputs and are selected by assembly:
+
+```golem
+uint8 colour Bounds(0,63) = 11
+sint16 x = 40
+sint16 y = 30
+Sub drawMarker
+    draw_point(colour, x, y)
+EndSub
+Sub drawLine
+    draw_line(colour, x, y, 100, 80)
+EndSub
+```
+
+Install once, then use `call golem_drawMarker` or `call golem_drawLine`. Updating
+the shared x/y fields affects either entry's next call. Calling one entry does
+not run any other entry. The first declared Sub is the default for invoke.bin
+and update-call.bin. No scheduler, implicit invocation or completion reply is
+added; all entries remain finite and serialized.
 
 ## Drawing behavior
 
@@ -89,7 +115,7 @@ packages retain their prior bootstrap bytes.
 Assembly loads and registers bitmap data before calling the entry. AGNB remains
 an assembly loading mechanism; Golem source contains no asset filenames or MOS
 file requests. Reserve every possible resource ID using --reserve FIRST:LAST
-when compiling. The compiler checks literal and initial bitmap IDs against
+when compiling. The compiler checks literal and initial bitmap IDs in every Sub against
 these reservations before allocating anything. They are excluded from package
 installation and cleanup. The manifest publishes initial_bitmap_ids and the
 reservation ranges.
@@ -128,8 +154,10 @@ Outputs are bootstrap.bin, invoke.bin, update-call.bin, cleanup.bin and
 interface.json, with optional golem.inc. Globals share one packed buffer in
 declaration order: uint8 uses one byte, sint16/uint16 use two little-endian bytes, without
 padding. Initializers are installed once, persist through calls and reset on
-reinstall. Each operation has a private patchable command template; one longer
-entry stream patches and calls these templates. Literal operands are embedded
+reinstall. Each operation has a private patchable command template; each Sub's
+longer entry stream patches and calls only its own templates. Allocation follows
+source order: shared inputs, first entry and its templates, next entry and its
+templates, and so on. Literal operands are embedded
 directly. There is no buffer allocation per individual patch instruction.
 
 Generated call golem_<SubName> transmits the six-byte entry packet. Per-field
@@ -138,14 +166,22 @@ _buffer/_offset/_bytes/_type exports identify VDP storage. Type tags preserve
 exist, golem_inputs_buffer and golem_inputs_bytes expose the full packed block.
 Existing named-call and package payload labels are retained. The JSON manifest
 publishes input storage, fields/bounds/initial values, entry, owned IDs and
-reservations. A literal-only package has input:null and no packed input exports.
+reservations. Multi-Sub packages additionally publish a source-ordered entries
+array of name/id/blocks/bytes objects; entry remains the first Sub. The single-Sub
+schema, field ordering and all existing output bytes remain unchanged. Every
+named entry exports its own wrapper, _buffer, _call and _call_len; common global
+and package symbols are emitted once. Assembly symbol case-folding and length
+checks cover the entire include before output is written. A literal-only package
+has input:null and no packed input exports.
 
-update-call.bin demonstrates restoring the declared input block and invoking;
+update-call.bin demonstrates restoring the declared input block and invoking the
+first Sub;
 it is not an automatic per-call requirement. Assembly may update selected fields,
 a contiguous range or the whole block using the published offsets. Unchanged
 invocation costs six bytes; one N-byte range update plus invocation costs 17+N.
 Many freshly uploaded primitive operands can cost more than direct VDU commands;
-resident reuse and grouped work provide the savings.
+resident reuse and grouped work provide the savings. Multiple Subs share input
+storage and installation; each separately selected call still costs six bytes.
 
 The qualified demo uses 29 input bytes, 13 owned buffers and a 775-byte bootstrap.
 Its whole-block update/call is 46 bytes, unchanged call six, cleanup 78. It draws
@@ -154,6 +190,29 @@ diagnostic observations and any host completion mechanism. Cleanup clears only
 compiler-owned buffers, preserving reservations and leaving graphics state alone.
 
 General plot, arrays/tables driving geometry, assignments/expressions, local
-variables, loops, multiple Subs, functions, bitmap transforms and viewport/scroll
+variables, loops, functions, bitmap transforms and viewport/scroll
 operations remain outside this profile. Their design examples do not imply
 compiler support.
+
+## Deferred idea: autonomous sprite motion
+
+Recorded 2026-10-12 at the Author's request; explicitly deferred, with no
+implementation or feasibility investigation authorized by this note.
+
+The Author suggested TI-99/4A-like sprites: set them in motion and they keep
+going without further program control. Configure a bitmap, initial position and
+velocity once, then let VDP-resident behaviour advance and draw the sprite.
+Later commands can change velocity, reposition it, replace its image or stop it.
+Possible boundary behaviours include wrapping, bouncing, stopping or disappearing;
+these are options for later review, not settled language rules or syntax.
+
+The intended wire benefit is setup and subsequent changes only, with no recurring
+eZ80 frame calls. Moving position arithmetic into Golem while assembly continues
+calling each frame would be an intermediate capability, not full autonomy.
+
+A possible architecture is a short, finite resident update triggered each vblank,
+returning control to normal VDP processing afterward. The required scheduling
+hook and its availability in stock firmware remain unverified. This note does
+not claim existing autonomous sprite support, choose a custom VDP/vdplet route,
+or change the current assembly-owned pacing contract. Keep this as a design idea;
+it is not promoted into the active task queue.

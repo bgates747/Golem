@@ -1,0 +1,11 @@
+// Assembly loads Wolf assets and installs this package once.
+// Both finite Subs read the same persistent x/y inputs.
+uint8 colour Bounds(0,63) = 11
+sint16 x = 96
+sint16 y = 200
+Sub drawMarker
+    draw_line(colour, x, y, 416, 200)
+EndSub
+Sub drawWolf
+    draw_bitmap(8202, x, y)
+EndSub

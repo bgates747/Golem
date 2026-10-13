@@ -1,0 +1,3354 @@
+{
+  "variant": "relocated",
+  "entries": [
+    {
+      "name": "drawMarker",
+      "id": 256,
+      "blocks": 1,
+      "bytes": 51
+    },
+    {
+      "name": "drawWolf",
+      "id": 258,
+      "blocks": 1,
+      "bytes": 36
+    }
+  ],
+  "installs": 1,
+  "named_call_wire_bytes": 6,
+  "shared_update_wire_bytes": 21,
+  "owned_buffers": [
+    255,
+    256,
+    257,
+    258,
+    259
+  ],
+  "borrowed_ids": [
+    8202,
+    8195,
+    8463,
+    8201
+  ],
+  "source": "review.golem",
+  "assembly": "guest.asm",
+  "direct_bitmap_draws": 2,
+  "mode": "automated",
+  "checks": [
+    {
+      "label": "A only: no implicit later bitmap",
+      "start": 0,
+      "bytes": 1,
+      "pixel": [
+        0,
+        0
+      ]
+    },
+    {
+      "label": "A only: no implicit later bitmap",
+      "start": 1,
+      "bytes": 1,
+      "pixel": [
+        96,
+        200
+      ]
+    },
+    {
+      "label": "A only: no implicit later bitmap",
+      "start": 2,
+      "bytes": 1,
+      "pixel": [
+        111,
+        32
+      ]
+    },
+    {
+      "label": "A only: no implicit later bitmap",
+      "start": 3,
+      "bytes": 1,
+      "pixel": [
+        112,
+        32
+      ]
+    },
+    {
+      "label": "A only: no implicit later bitmap",
+      "start": 4,
+      "bytes": 1,
+      "pixel": [
+        112,
+        39
+      ]
+    },
+    {
+      "label": "A only: no implicit later bitmap",
+      "start": 5,
+      "bytes": 1,
+      "pixel": [
+        112,
+        71
+      ]
+    },
+    {
+      "label": "A only: no implicit later bitmap",
+      "start": 6,
+      "bytes": 1,
+      "pixel": [
+        112,
+        111
+      ]
+    },
+    {
+      "label": "A only: no implicit later bitmap",
+      "start": 7,
+      "bytes": 1,
+      "pixel": [
+        112,
+        151
+      ]
+    },
+    {
+      "label": "A only: no implicit later bitmap",
+      "start": 8,
+      "bytes": 1,
+      "pixel": [
+        112,
+        191
+      ]
+    },
+    {
+      "label": "A only: no implicit later bitmap",
+      "start": 9,
+      "bytes": 1,
+      "pixel": [
+        125,
+        32
+      ]
+    },
+    {
+      "label": "A only: no implicit later bitmap",
+      "start": 10,
+      "bytes": 1,
+      "pixel": [
+        125,
+        39
+      ]
+    },
+    {
+      "label": "A only: no implicit later bitmap",
+      "start": 11,
+      "bytes": 1,
+      "pixel": [
+        125,
+        71
+      ]
+    },
+    {
+      "label": "A only: no implicit later bitmap",
+      "start": 12,
+      "bytes": 1,
+      "pixel": [
+        125,
+        111
+      ]
+    },
+    {
+      "label": "A only: no implicit later bitmap",
+      "start": 13,
+      "bytes": 1,
+      "pixel": [
+        125,
+        151
+      ]
+    },
+    {
+      "label": "A only: no implicit later bitmap",
+      "start": 14,
+      "bytes": 1,
+      "pixel": [
+        125,
+        191
+      ]
+    },
+    {
+      "label": "A only: no implicit later bitmap",
+      "start": 15,
+      "bytes": 1,
+      "pixel": [
+        175,
+        32
+      ]
+    },
+    {
+      "label": "A only: no implicit later bitmap",
+      "start": 16,
+      "bytes": 1,
+      "pixel": [
+        175,
+        39
+      ]
+    },
+    {
+      "label": "A only: no implicit later bitmap",
+      "start": 17,
+      "bytes": 1,
+      "pixel": [
+        175,
+        71
+      ]
+    },
+    {
+      "label": "A only: no implicit later bitmap",
+      "start": 18,
+      "bytes": 1,
+      "pixel": [
+        175,
+        111
+      ]
+    },
+    {
+      "label": "A only: no implicit later bitmap",
+      "start": 19,
+      "bytes": 1,
+      "pixel": [
+        175,
+        151
+      ]
+    },
+    {
+      "label": "A only: no implicit later bitmap",
+      "start": 20,
+      "bytes": 1,
+      "pixel": [
+        175,
+        191
+      ]
+    },
+    {
+      "label": "A only: no implicit later bitmap",
+      "start": 21,
+      "bytes": 1,
+      "pixel": [
+        200,
+        200
+      ]
+    },
+    {
+      "label": "A only: no implicit later bitmap",
+      "start": 22,
+      "bytes": 1,
+      "pixel": [
+        239,
+        32
+      ]
+    },
+    {
+      "label": "A only: no implicit later bitmap",
+      "start": 23,
+      "bytes": 1,
+      "pixel": [
+        239,
+        39
+      ]
+    },
+    {
+      "label": "A only: no implicit later bitmap",
+      "start": 24,
+      "bytes": 1,
+      "pixel": [
+        239,
+        71
+      ]
+    },
+    {
+      "label": "A only: no implicit later bitmap",
+      "start": 25,
+      "bytes": 1,
+      "pixel": [
+        239,
+        111
+      ]
+    },
+    {
+      "label": "A only: no implicit later bitmap",
+      "start": 26,
+      "bytes": 1,
+      "pixel": [
+        239,
+        151
+      ]
+    },
+    {
+      "label": "A only: no implicit later bitmap",
+      "start": 27,
+      "bytes": 1,
+      "pixel": [
+        239,
+        191
+      ]
+    },
+    {
+      "label": "A only: no implicit later bitmap",
+      "start": 28,
+      "bytes": 1,
+      "pixel": [
+        272,
+        31
+      ]
+    },
+    {
+      "label": "A only: no implicit later bitmap",
+      "start": 29,
+      "bytes": 1,
+      "pixel": [
+        272,
+        192
+      ]
+    },
+    {
+      "label": "A only: no implicit later bitmap",
+      "start": 30,
+      "bytes": 1,
+      "pixel": [
+        303,
+        32
+      ]
+    },
+    {
+      "label": "A only: no implicit later bitmap",
+      "start": 31,
+      "bytes": 1,
+      "pixel": [
+        303,
+        39
+      ]
+    },
+    {
+      "label": "A only: no implicit later bitmap",
+      "start": 32,
+      "bytes": 1,
+      "pixel": [
+        303,
+        71
+      ]
+    },
+    {
+      "label": "A only: no implicit later bitmap",
+      "start": 33,
+      "bytes": 1,
+      "pixel": [
+        303,
+        111
+      ]
+    },
+    {
+      "label": "A only: no implicit later bitmap",
+      "start": 34,
+      "bytes": 1,
+      "pixel": [
+        303,
+        151
+      ]
+    },
+    {
+      "label": "A only: no implicit later bitmap",
+      "start": 35,
+      "bytes": 1,
+      "pixel": [
+        303,
+        191
+      ]
+    },
+    {
+      "label": "A only: no implicit later bitmap",
+      "start": 36,
+      "bytes": 1,
+      "pixel": [
+        367,
+        32
+      ]
+    },
+    {
+      "label": "A only: no implicit later bitmap",
+      "start": 37,
+      "bytes": 1,
+      "pixel": [
+        367,
+        39
+      ]
+    },
+    {
+      "label": "A only: no implicit later bitmap",
+      "start": 38,
+      "bytes": 1,
+      "pixel": [
+        367,
+        71
+      ]
+    },
+    {
+      "label": "A only: no implicit later bitmap",
+      "start": 39,
+      "bytes": 1,
+      "pixel": [
+        367,
+        111
+      ]
+    },
+    {
+      "label": "A only: no implicit later bitmap",
+      "start": 40,
+      "bytes": 1,
+      "pixel": [
+        367,
+        151
+      ]
+    },
+    {
+      "label": "A only: no implicit later bitmap",
+      "start": 41,
+      "bytes": 1,
+      "pixel": [
+        367,
+        191
+      ]
+    },
+    {
+      "label": "A only: no implicit later bitmap",
+      "start": 42,
+      "bytes": 1,
+      "pixel": [
+        416,
+        200
+      ]
+    },
+    {
+      "label": "A only: no implicit later bitmap",
+      "start": 43,
+      "bytes": 1,
+      "pixel": [
+        431,
+        32
+      ]
+    },
+    {
+      "label": "A only: no implicit later bitmap",
+      "start": 44,
+      "bytes": 1,
+      "pixel": [
+        431,
+        39
+      ]
+    },
+    {
+      "label": "A only: no implicit later bitmap",
+      "start": 45,
+      "bytes": 1,
+      "pixel": [
+        431,
+        71
+      ]
+    },
+    {
+      "label": "A only: no implicit later bitmap",
+      "start": 46,
+      "bytes": 1,
+      "pixel": [
+        431,
+        111
+      ]
+    },
+    {
+      "label": "A only: no implicit later bitmap",
+      "start": 47,
+      "bytes": 1,
+      "pixel": [
+        431,
+        151
+      ]
+    },
+    {
+      "label": "A only: no implicit later bitmap",
+      "start": 48,
+      "bytes": 1,
+      "pixel": [
+        431,
+        191
+      ]
+    },
+    {
+      "label": "A only: no implicit later bitmap",
+      "start": 49,
+      "bytes": 1,
+      "pixel": [
+        432,
+        112
+      ]
+    },
+    {
+      "label": "A only: no implicit later bitmap",
+      "start": 50,
+      "bytes": 1,
+      "pixel": [
+        511,
+        383
+      ]
+    },
+    {
+      "label": "A persistent initial inputs",
+      "start": 51,
+      "bytes": 5,
+      "id": 255,
+      "offset": 0
+    },
+    {
+      "label": "B uses updated shared x/y",
+      "start": 56,
+      "bytes": 1,
+      "pixel": [
+        0,
+        0
+      ]
+    },
+    {
+      "label": "B uses updated shared x/y",
+      "start": 57,
+      "bytes": 1,
+      "pixel": [
+        96,
+        200
+      ]
+    },
+    {
+      "label": "B uses updated shared x/y",
+      "start": 58,
+      "bytes": 1,
+      "pixel": [
+        111,
+        32
+      ]
+    },
+    {
+      "label": "B uses updated shared x/y",
+      "start": 59,
+      "bytes": 1,
+      "pixel": [
+        112,
+        32
+      ]
+    },
+    {
+      "label": "B uses updated shared x/y",
+      "start": 60,
+      "bytes": 1,
+      "pixel": [
+        112,
+        39
+      ]
+    },
+    {
+      "label": "B uses updated shared x/y",
+      "start": 61,
+      "bytes": 1,
+      "pixel": [
+        112,
+        71
+      ]
+    },
+    {
+      "label": "B uses updated shared x/y",
+      "start": 62,
+      "bytes": 1,
+      "pixel": [
+        112,
+        111
+      ]
+    },
+    {
+      "label": "B uses updated shared x/y",
+      "start": 63,
+      "bytes": 1,
+      "pixel": [
+        112,
+        151
+      ]
+    },
+    {
+      "label": "B uses updated shared x/y",
+      "start": 64,
+      "bytes": 1,
+      "pixel": [
+        112,
+        191
+      ]
+    },
+    {
+      "label": "B uses updated shared x/y",
+      "start": 65,
+      "bytes": 1,
+      "pixel": [
+        125,
+        32
+      ]
+    },
+    {
+      "label": "B uses updated shared x/y",
+      "start": 66,
+      "bytes": 1,
+      "pixel": [
+        125,
+        39
+      ]
+    },
+    {
+      "label": "B uses updated shared x/y",
+      "start": 67,
+      "bytes": 1,
+      "pixel": [
+        125,
+        71
+      ]
+    },
+    {
+      "label": "B uses updated shared x/y",
+      "start": 68,
+      "bytes": 1,
+      "pixel": [
+        125,
+        111
+      ]
+    },
+    {
+      "label": "B uses updated shared x/y",
+      "start": 69,
+      "bytes": 1,
+      "pixel": [
+        125,
+        151
+      ]
+    },
+    {
+      "label": "B uses updated shared x/y",
+      "start": 70,
+      "bytes": 1,
+      "pixel": [
+        125,
+        191
+      ]
+    },
+    {
+      "label": "B uses updated shared x/y",
+      "start": 71,
+      "bytes": 1,
+      "pixel": [
+        175,
+        32
+      ]
+    },
+    {
+      "label": "B uses updated shared x/y",
+      "start": 72,
+      "bytes": 1,
+      "pixel": [
+        175,
+        39
+      ]
+    },
+    {
+      "label": "B uses updated shared x/y",
+      "start": 73,
+      "bytes": 1,
+      "pixel": [
+        175,
+        71
+      ]
+    },
+    {
+      "label": "B uses updated shared x/y",
+      "start": 74,
+      "bytes": 1,
+      "pixel": [
+        175,
+        111
+      ]
+    },
+    {
+      "label": "B uses updated shared x/y",
+      "start": 75,
+      "bytes": 1,
+      "pixel": [
+        175,
+        151
+      ]
+    },
+    {
+      "label": "B uses updated shared x/y",
+      "start": 76,
+      "bytes": 1,
+      "pixel": [
+        175,
+        191
+      ]
+    },
+    {
+      "label": "B uses updated shared x/y",
+      "start": 77,
+      "bytes": 1,
+      "pixel": [
+        200,
+        200
+      ]
+    },
+    {
+      "label": "B uses updated shared x/y",
+      "start": 78,
+      "bytes": 1,
+      "pixel": [
+        239,
+        32
+      ]
+    },
+    {
+      "label": "B uses updated shared x/y",
+      "start": 79,
+      "bytes": 1,
+      "pixel": [
+        239,
+        39
+      ]
+    },
+    {
+      "label": "B uses updated shared x/y",
+      "start": 80,
+      "bytes": 1,
+      "pixel": [
+        239,
+        71
+      ]
+    },
+    {
+      "label": "B uses updated shared x/y",
+      "start": 81,
+      "bytes": 1,
+      "pixel": [
+        239,
+        111
+      ]
+    },
+    {
+      "label": "B uses updated shared x/y",
+      "start": 82,
+      "bytes": 1,
+      "pixel": [
+        239,
+        151
+      ]
+    },
+    {
+      "label": "B uses updated shared x/y",
+      "start": 83,
+      "bytes": 1,
+      "pixel": [
+        239,
+        191
+      ]
+    },
+    {
+      "label": "B uses updated shared x/y",
+      "start": 84,
+      "bytes": 1,
+      "pixel": [
+        272,
+        31
+      ]
+    },
+    {
+      "label": "B uses updated shared x/y",
+      "start": 85,
+      "bytes": 1,
+      "pixel": [
+        272,
+        192
+      ]
+    },
+    {
+      "label": "B uses updated shared x/y",
+      "start": 86,
+      "bytes": 1,
+      "pixel": [
+        303,
+        32
+      ]
+    },
+    {
+      "label": "B uses updated shared x/y",
+      "start": 87,
+      "bytes": 1,
+      "pixel": [
+        303,
+        39
+      ]
+    },
+    {
+      "label": "B uses updated shared x/y",
+      "start": 88,
+      "bytes": 1,
+      "pixel": [
+        303,
+        71
+      ]
+    },
+    {
+      "label": "B uses updated shared x/y",
+      "start": 89,
+      "bytes": 1,
+      "pixel": [
+        303,
+        111
+      ]
+    },
+    {
+      "label": "B uses updated shared x/y",
+      "start": 90,
+      "bytes": 1,
+      "pixel": [
+        303,
+        151
+      ]
+    },
+    {
+      "label": "B uses updated shared x/y",
+      "start": 91,
+      "bytes": 1,
+      "pixel": [
+        303,
+        191
+      ]
+    },
+    {
+      "label": "B uses updated shared x/y",
+      "start": 92,
+      "bytes": 1,
+      "pixel": [
+        367,
+        32
+      ]
+    },
+    {
+      "label": "B uses updated shared x/y",
+      "start": 93,
+      "bytes": 1,
+      "pixel": [
+        367,
+        39
+      ]
+    },
+    {
+      "label": "B uses updated shared x/y",
+      "start": 94,
+      "bytes": 1,
+      "pixel": [
+        367,
+        71
+      ]
+    },
+    {
+      "label": "B uses updated shared x/y",
+      "start": 95,
+      "bytes": 1,
+      "pixel": [
+        367,
+        111
+      ]
+    },
+    {
+      "label": "B uses updated shared x/y",
+      "start": 96,
+      "bytes": 1,
+      "pixel": [
+        367,
+        151
+      ]
+    },
+    {
+      "label": "B uses updated shared x/y",
+      "start": 97,
+      "bytes": 1,
+      "pixel": [
+        367,
+        191
+      ]
+    },
+    {
+      "label": "B uses updated shared x/y",
+      "start": 98,
+      "bytes": 1,
+      "pixel": [
+        416,
+        200
+      ]
+    },
+    {
+      "label": "B uses updated shared x/y",
+      "start": 99,
+      "bytes": 1,
+      "pixel": [
+        431,
+        32
+      ]
+    },
+    {
+      "label": "B uses updated shared x/y",
+      "start": 100,
+      "bytes": 1,
+      "pixel": [
+        431,
+        39
+      ]
+    },
+    {
+      "label": "B uses updated shared x/y",
+      "start": 101,
+      "bytes": 1,
+      "pixel": [
+        431,
+        71
+      ]
+    },
+    {
+      "label": "B uses updated shared x/y",
+      "start": 102,
+      "bytes": 1,
+      "pixel": [
+        431,
+        111
+      ]
+    },
+    {
+      "label": "B uses updated shared x/y",
+      "start": 103,
+      "bytes": 1,
+      "pixel": [
+        431,
+        151
+      ]
+    },
+    {
+      "label": "B uses updated shared x/y",
+      "start": 104,
+      "bytes": 1,
+      "pixel": [
+        431,
+        191
+      ]
+    },
+    {
+      "label": "B uses updated shared x/y",
+      "start": 105,
+      "bytes": 1,
+      "pixel": [
+        432,
+        112
+      ]
+    },
+    {
+      "label": "B uses updated shared x/y",
+      "start": 106,
+      "bytes": 1,
+      "pixel": [
+        511,
+        383
+      ]
+    },
+    {
+      "label": "B persistent changed inputs",
+      "start": 107,
+      "bytes": 5,
+      "id": 255,
+      "offset": 0
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 112,
+      "bytes": 1,
+      "pixel": [
+        0,
+        0
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 113,
+      "bytes": 1,
+      "pixel": [
+        96,
+        200
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 114,
+      "bytes": 1,
+      "pixel": [
+        111,
+        32
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 115,
+      "bytes": 1,
+      "pixel": [
+        112,
+        32
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 116,
+      "bytes": 1,
+      "pixel": [
+        112,
+        39
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 117,
+      "bytes": 1,
+      "pixel": [
+        112,
+        71
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 118,
+      "bytes": 1,
+      "pixel": [
+        112,
+        111
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 119,
+      "bytes": 1,
+      "pixel": [
+        112,
+        151
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 120,
+      "bytes": 1,
+      "pixel": [
+        112,
+        191
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 121,
+      "bytes": 1,
+      "pixel": [
+        125,
+        32
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 122,
+      "bytes": 1,
+      "pixel": [
+        125,
+        39
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 123,
+      "bytes": 1,
+      "pixel": [
+        125,
+        71
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 124,
+      "bytes": 1,
+      "pixel": [
+        125,
+        111
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 125,
+      "bytes": 1,
+      "pixel": [
+        125,
+        151
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 126,
+      "bytes": 1,
+      "pixel": [
+        125,
+        191
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 127,
+      "bytes": 1,
+      "pixel": [
+        175,
+        32
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 128,
+      "bytes": 1,
+      "pixel": [
+        175,
+        39
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 129,
+      "bytes": 1,
+      "pixel": [
+        175,
+        71
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 130,
+      "bytes": 1,
+      "pixel": [
+        175,
+        111
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 131,
+      "bytes": 1,
+      "pixel": [
+        175,
+        151
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 132,
+      "bytes": 1,
+      "pixel": [
+        175,
+        191
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 133,
+      "bytes": 1,
+      "pixel": [
+        200,
+        200
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 134,
+      "bytes": 1,
+      "pixel": [
+        239,
+        32
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 135,
+      "bytes": 1,
+      "pixel": [
+        239,
+        39
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 136,
+      "bytes": 1,
+      "pixel": [
+        239,
+        71
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 137,
+      "bytes": 1,
+      "pixel": [
+        239,
+        111
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 138,
+      "bytes": 1,
+      "pixel": [
+        239,
+        151
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 139,
+      "bytes": 1,
+      "pixel": [
+        239,
+        191
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 140,
+      "bytes": 1,
+      "pixel": [
+        272,
+        31
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 141,
+      "bytes": 1,
+      "pixel": [
+        272,
+        192
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 142,
+      "bytes": 1,
+      "pixel": [
+        303,
+        32
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 143,
+      "bytes": 1,
+      "pixel": [
+        303,
+        39
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 144,
+      "bytes": 1,
+      "pixel": [
+        303,
+        71
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 145,
+      "bytes": 1,
+      "pixel": [
+        303,
+        111
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 146,
+      "bytes": 1,
+      "pixel": [
+        303,
+        151
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 147,
+      "bytes": 1,
+      "pixel": [
+        303,
+        191
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 148,
+      "bytes": 1,
+      "pixel": [
+        367,
+        32
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 149,
+      "bytes": 1,
+      "pixel": [
+        367,
+        39
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 150,
+      "bytes": 1,
+      "pixel": [
+        367,
+        71
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 151,
+      "bytes": 1,
+      "pixel": [
+        367,
+        111
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 152,
+      "bytes": 1,
+      "pixel": [
+        367,
+        151
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 153,
+      "bytes": 1,
+      "pixel": [
+        367,
+        191
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 154,
+      "bytes": 1,
+      "pixel": [
+        416,
+        200
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 155,
+      "bytes": 1,
+      "pixel": [
+        431,
+        32
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 156,
+      "bytes": 1,
+      "pixel": [
+        431,
+        39
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 157,
+      "bytes": 1,
+      "pixel": [
+        431,
+        71
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 158,
+      "bytes": 1,
+      "pixel": [
+        431,
+        111
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 159,
+      "bytes": 1,
+      "pixel": [
+        431,
+        151
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 160,
+      "bytes": 1,
+      "pixel": [
+        431,
+        191
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 161,
+      "bytes": 1,
+      "pixel": [
+        432,
+        112
+      ]
+    },
+    {
+      "label": "A again without reinstall",
+      "start": 162,
+      "bytes": 1,
+      "pixel": [
+        511,
+        383
+      ]
+    },
+    {
+      "label": "Final shared inputs persist",
+      "start": 163,
+      "bytes": 5,
+      "id": 255,
+      "offset": 0
+    },
+    {
+      "label": "Independent direct A",
+      "start": 168,
+      "bytes": 1,
+      "pixel": [
+        0,
+        0
+      ]
+    },
+    {
+      "label": "Independent direct A",
+      "start": 169,
+      "bytes": 1,
+      "pixel": [
+        96,
+        200
+      ]
+    },
+    {
+      "label": "Independent direct A",
+      "start": 170,
+      "bytes": 1,
+      "pixel": [
+        111,
+        32
+      ]
+    },
+    {
+      "label": "Independent direct A",
+      "start": 171,
+      "bytes": 1,
+      "pixel": [
+        112,
+        32
+      ]
+    },
+    {
+      "label": "Independent direct A",
+      "start": 172,
+      "bytes": 1,
+      "pixel": [
+        112,
+        39
+      ]
+    },
+    {
+      "label": "Independent direct A",
+      "start": 173,
+      "bytes": 1,
+      "pixel": [
+        112,
+        71
+      ]
+    },
+    {
+      "label": "Independent direct A",
+      "start": 174,
+      "bytes": 1,
+      "pixel": [
+        112,
+        111
+      ]
+    },
+    {
+      "label": "Independent direct A",
+      "start": 175,
+      "bytes": 1,
+      "pixel": [
+        112,
+        151
+      ]
+    },
+    {
+      "label": "Independent direct A",
+      "start": 176,
+      "bytes": 1,
+      "pixel": [
+        112,
+        191
+      ]
+    },
+    {
+      "label": "Independent direct A",
+      "start": 177,
+      "bytes": 1,
+      "pixel": [
+        125,
+        32
+      ]
+    },
+    {
+      "label": "Independent direct A",
+      "start": 178,
+      "bytes": 1,
+      "pixel": [
+        125,
+        39
+      ]
+    },
+    {
+      "label": "Independent direct A",
+      "start": 179,
+      "bytes": 1,
+      "pixel": [
+        125,
+        71
+      ]
+    },
+    {
+      "label": "Independent direct A",
+      "start": 180,
+      "bytes": 1,
+      "pixel": [
+        125,
+        111
+      ]
+    },
+    {
+      "label": "Independent direct A",
+      "start": 181,
+      "bytes": 1,
+      "pixel": [
+        125,
+        151
+      ]
+    },
+    {
+      "label": "Independent direct A",
+      "start": 182,
+      "bytes": 1,
+      "pixel": [
+        125,
+        191
+      ]
+    },
+    {
+      "label": "Independent direct A",
+      "start": 183,
+      "bytes": 1,
+      "pixel": [
+        175,
+        32
+      ]
+    },
+    {
+      "label": "Independent direct A",
+      "start": 184,
+      "bytes": 1,
+      "pixel": [
+        175,
+        39
+      ]
+    },
+    {
+      "label": "Independent direct A",
+      "start": 185,
+      "bytes": 1,
+      "pixel": [
+        175,
+        71
+      ]
+    },
+    {
+      "label": "Independent direct A",
+      "start": 186,
+      "bytes": 1,
+      "pixel": [
+        175,
+        111
+      ]
+    },
+    {
+      "label": "Independent direct A",
+      "start": 187,
+      "bytes": 1,
+      "pixel": [
+        175,
+        151
+      ]
+    },
+    {
+      "label": "Independent direct A",
+      "start": 188,
+      "bytes": 1,
+      "pixel": [
+        175,
+        191
+      ]
+    },
+    {
+      "label": "Independent direct A",
+      "start": 189,
+      "bytes": 1,
+      "pixel": [
+        200,
+        200
+      ]
+    },
+    {
+      "label": "Independent direct A",
+      "start": 190,
+      "bytes": 1,
+      "pixel": [
+        239,
+        32
+      ]
+    },
+    {
+      "label": "Independent direct A",
+      "start": 191,
+      "bytes": 1,
+      "pixel": [
+        239,
+        39
+      ]
+    },
+    {
+      "label": "Independent direct A",
+      "start": 192,
+      "bytes": 1,
+      "pixel": [
+        239,
+        71
+      ]
+    },
+    {
+      "label": "Independent direct A",
+      "start": 193,
+      "bytes": 1,
+      "pixel": [
+        239,
+        111
+      ]
+    },
+    {
+      "label": "Independent direct A",
+      "start": 194,
+      "bytes": 1,
+      "pixel": [
+        239,
+        151
+      ]
+    },
+    {
+      "label": "Independent direct A",
+      "start": 195,
+      "bytes": 1,
+      "pixel": [
+        239,
+        191
+      ]
+    },
+    {
+      "label": "Independent direct A",
+      "start": 196,
+      "bytes": 1,
+      "pixel": [
+        272,
+        31
+      ]
+    },
+    {
+      "label": "Independent direct A",
+      "start": 197,
+      "bytes": 1,
+      "pixel": [
+        272,
+        192
+      ]
+    },
+    {
+      "label": "Independent direct A",
+      "start": 198,
+      "bytes": 1,
+      "pixel": [
+        303,
+        32
+      ]
+    },
+    {
+      "label": "Independent direct A",
+      "start": 199,
+      "bytes": 1,
+      "pixel": [
+        303,
+        39
+      ]
+    },
+    {
+      "label": "Independent direct A",
+      "start": 200,
+      "bytes": 1,
+      "pixel": [
+        303,
+        71
+      ]
+    },
+    {
+      "label": "Independent direct A",
+      "start": 201,
+      "bytes": 1,
+      "pixel": [
+        303,
+        111
+      ]
+    },
+    {
+      "label": "Independent direct A",
+      "start": 202,
+      "bytes": 1,
+      "pixel": [
+        303,
+        151
+      ]
+    },
+    {
+      "label": "Independent direct A",
+      "start": 203,
+      "bytes": 1,
+      "pixel": [
+        303,
+        191
+      ]
+    },
+    {
+      "label": "Independent direct A",
+      "start": 204,
+      "bytes": 1,
+      "pixel": [
+        367,
+        32
+      ]
+    },
+    {
+      "label": "Independent direct A",
+      "start": 205,
+      "bytes": 1,
+      "pixel": [
+        367,
+        39
+      ]
+    },
+    {
+      "label": "Independent direct A",
+      "start": 206,
+      "bytes": 1,
+      "pixel": [
+        367,
+        71
+      ]
+    },
+    {
+      "label": "Independent direct A",
+      "start": 207,
+      "bytes": 1,
+      "pixel": [
+        367,
+        111
+      ]
+    },
+    {
+      "label": "Independent direct A",
+      "start": 208,
+      "bytes": 1,
+      "pixel": [
+        367,
+        151
+      ]
+    },
+    {
+      "label": "Independent direct A",
+      "start": 209,
+      "bytes": 1,
+      "pixel": [
+        367,
+        191
+      ]
+    },
+    {
+      "label": "Independent direct A",
+      "start": 210,
+      "bytes": 1,
+      "pixel": [
+        416,
+        200
+      ]
+    },
+    {
+      "label": "Independent direct A",
+      "start": 211,
+      "bytes": 1,
+      "pixel": [
+        431,
+        32
+      ]
+    },
+    {
+      "label": "Independent direct A",
+      "start": 212,
+      "bytes": 1,
+      "pixel": [
+        431,
+        39
+      ]
+    },
+    {
+      "label": "Independent direct A",
+      "start": 213,
+      "bytes": 1,
+      "pixel": [
+        431,
+        71
+      ]
+    },
+    {
+      "label": "Independent direct A",
+      "start": 214,
+      "bytes": 1,
+      "pixel": [
+        431,
+        111
+      ]
+    },
+    {
+      "label": "Independent direct A",
+      "start": 215,
+      "bytes": 1,
+      "pixel": [
+        431,
+        151
+      ]
+    },
+    {
+      "label": "Independent direct A",
+      "start": 216,
+      "bytes": 1,
+      "pixel": [
+        431,
+        191
+      ]
+    },
+    {
+      "label": "Independent direct A",
+      "start": 217,
+      "bytes": 1,
+      "pixel": [
+        432,
+        112
+      ]
+    },
+    {
+      "label": "Independent direct A",
+      "start": 218,
+      "bytes": 1,
+      "pixel": [
+        511,
+        383
+      ]
+    },
+    {
+      "label": "Independent direct B",
+      "start": 219,
+      "bytes": 1,
+      "pixel": [
+        0,
+        0
+      ]
+    },
+    {
+      "label": "Independent direct B",
+      "start": 220,
+      "bytes": 1,
+      "pixel": [
+        96,
+        200
+      ]
+    },
+    {
+      "label": "Independent direct B",
+      "start": 221,
+      "bytes": 1,
+      "pixel": [
+        111,
+        32
+      ]
+    },
+    {
+      "label": "Independent direct B",
+      "start": 222,
+      "bytes": 1,
+      "pixel": [
+        112,
+        32
+      ]
+    },
+    {
+      "label": "Independent direct B",
+      "start": 223,
+      "bytes": 1,
+      "pixel": [
+        112,
+        39
+      ]
+    },
+    {
+      "label": "Independent direct B",
+      "start": 224,
+      "bytes": 1,
+      "pixel": [
+        112,
+        71
+      ]
+    },
+    {
+      "label": "Independent direct B",
+      "start": 225,
+      "bytes": 1,
+      "pixel": [
+        112,
+        111
+      ]
+    },
+    {
+      "label": "Independent direct B",
+      "start": 226,
+      "bytes": 1,
+      "pixel": [
+        112,
+        151
+      ]
+    },
+    {
+      "label": "Independent direct B",
+      "start": 227,
+      "bytes": 1,
+      "pixel": [
+        112,
+        191
+      ]
+    },
+    {
+      "label": "Independent direct B",
+      "start": 228,
+      "bytes": 1,
+      "pixel": [
+        125,
+        32
+      ]
+    },
+    {
+      "label": "Independent direct B",
+      "start": 229,
+      "bytes": 1,
+      "pixel": [
+        125,
+        39
+      ]
+    },
+    {
+      "label": "Independent direct B",
+      "start": 230,
+      "bytes": 1,
+      "pixel": [
+        125,
+        71
+      ]
+    },
+    {
+      "label": "Independent direct B",
+      "start": 231,
+      "bytes": 1,
+      "pixel": [
+        125,
+        111
+      ]
+    },
+    {
+      "label": "Independent direct B",
+      "start": 232,
+      "bytes": 1,
+      "pixel": [
+        125,
+        151
+      ]
+    },
+    {
+      "label": "Independent direct B",
+      "start": 233,
+      "bytes": 1,
+      "pixel": [
+        125,
+        191
+      ]
+    },
+    {
+      "label": "Independent direct B",
+      "start": 234,
+      "bytes": 1,
+      "pixel": [
+        175,
+        32
+      ]
+    },
+    {
+      "label": "Independent direct B",
+      "start": 235,
+      "bytes": 1,
+      "pixel": [
+        175,
+        39
+      ]
+    },
+    {
+      "label": "Independent direct B",
+      "start": 236,
+      "bytes": 1,
+      "pixel": [
+        175,
+        71
+      ]
+    },
+    {
+      "label": "Independent direct B",
+      "start": 237,
+      "bytes": 1,
+      "pixel": [
+        175,
+        111
+      ]
+    },
+    {
+      "label": "Independent direct B",
+      "start": 238,
+      "bytes": 1,
+      "pixel": [
+        175,
+        151
+      ]
+    },
+    {
+      "label": "Independent direct B",
+      "start": 239,
+      "bytes": 1,
+      "pixel": [
+        175,
+        191
+      ]
+    },
+    {
+      "label": "Independent direct B",
+      "start": 240,
+      "bytes": 1,
+      "pixel": [
+        200,
+        200
+      ]
+    },
+    {
+      "label": "Independent direct B",
+      "start": 241,
+      "bytes": 1,
+      "pixel": [
+        239,
+        32
+      ]
+    },
+    {
+      "label": "Independent direct B",
+      "start": 242,
+      "bytes": 1,
+      "pixel": [
+        239,
+        39
+      ]
+    },
+    {
+      "label": "Independent direct B",
+      "start": 243,
+      "bytes": 1,
+      "pixel": [
+        239,
+        71
+      ]
+    },
+    {
+      "label": "Independent direct B",
+      "start": 244,
+      "bytes": 1,
+      "pixel": [
+        239,
+        111
+      ]
+    },
+    {
+      "label": "Independent direct B",
+      "start": 245,
+      "bytes": 1,
+      "pixel": [
+        239,
+        151
+      ]
+    },
+    {
+      "label": "Independent direct B",
+      "start": 246,
+      "bytes": 1,
+      "pixel": [
+        239,
+        191
+      ]
+    },
+    {
+      "label": "Independent direct B",
+      "start": 247,
+      "bytes": 1,
+      "pixel": [
+        272,
+        31
+      ]
+    },
+    {
+      "label": "Independent direct B",
+      "start": 248,
+      "bytes": 1,
+      "pixel": [
+        272,
+        192
+      ]
+    },
+    {
+      "label": "Independent direct B",
+      "start": 249,
+      "bytes": 1,
+      "pixel": [
+        303,
+        32
+      ]
+    },
+    {
+      "label": "Independent direct B",
+      "start": 250,
+      "bytes": 1,
+      "pixel": [
+        303,
+        39
+      ]
+    },
+    {
+      "label": "Independent direct B",
+      "start": 251,
+      "bytes": 1,
+      "pixel": [
+        303,
+        71
+      ]
+    },
+    {
+      "label": "Independent direct B",
+      "start": 252,
+      "bytes": 1,
+      "pixel": [
+        303,
+        111
+      ]
+    },
+    {
+      "label": "Independent direct B",
+      "start": 253,
+      "bytes": 1,
+      "pixel": [
+        303,
+        151
+      ]
+    },
+    {
+      "label": "Independent direct B",
+      "start": 254,
+      "bytes": 1,
+      "pixel": [
+        303,
+        191
+      ]
+    },
+    {
+      "label": "Independent direct B",
+      "start": 255,
+      "bytes": 1,
+      "pixel": [
+        367,
+        32
+      ]
+    },
+    {
+      "label": "Independent direct B",
+      "start": 256,
+      "bytes": 1,
+      "pixel": [
+        367,
+        39
+      ]
+    },
+    {
+      "label": "Independent direct B",
+      "start": 257,
+      "bytes": 1,
+      "pixel": [
+        367,
+        71
+      ]
+    },
+    {
+      "label": "Independent direct B",
+      "start": 258,
+      "bytes": 1,
+      "pixel": [
+        367,
+        111
+      ]
+    },
+    {
+      "label": "Independent direct B",
+      "start": 259,
+      "bytes": 1,
+      "pixel": [
+        367,
+        151
+      ]
+    },
+    {
+      "label": "Independent direct B",
+      "start": 260,
+      "bytes": 1,
+      "pixel": [
+        367,
+        191
+      ]
+    },
+    {
+      "label": "Independent direct B",
+      "start": 261,
+      "bytes": 1,
+      "pixel": [
+        416,
+        200
+      ]
+    },
+    {
+      "label": "Independent direct B",
+      "start": 262,
+      "bytes": 1,
+      "pixel": [
+        431,
+        32
+      ]
+    },
+    {
+      "label": "Independent direct B",
+      "start": 263,
+      "bytes": 1,
+      "pixel": [
+        431,
+        39
+      ]
+    },
+    {
+      "label": "Independent direct B",
+      "start": 264,
+      "bytes": 1,
+      "pixel": [
+        431,
+        71
+      ]
+    },
+    {
+      "label": "Independent direct B",
+      "start": 265,
+      "bytes": 1,
+      "pixel": [
+        431,
+        111
+      ]
+    },
+    {
+      "label": "Independent direct B",
+      "start": 266,
+      "bytes": 1,
+      "pixel": [
+        431,
+        151
+      ]
+    },
+    {
+      "label": "Independent direct B",
+      "start": 267,
+      "bytes": 1,
+      "pixel": [
+        431,
+        191
+      ]
+    },
+    {
+      "label": "Independent direct B",
+      "start": 268,
+      "bytes": 1,
+      "pixel": [
+        432,
+        112
+      ]
+    },
+    {
+      "label": "Independent direct B",
+      "start": 269,
+      "bytes": 1,
+      "pixel": [
+        511,
+        383
+      ]
+    },
+    {
+      "label": "Independent direct A again",
+      "start": 270,
+      "bytes": 1,
+      "pixel": [
+        0,
+        0
+      ]
+    },
+    {
+      "label": "Independent direct A again",
+      "start": 271,
+      "bytes": 1,
+      "pixel": [
+        96,
+        200
+      ]
+    },
+    {
+      "label": "Independent direct A again",
+      "start": 272,
+      "bytes": 1,
+      "pixel": [
+        111,
+        32
+      ]
+    },
+    {
+      "label": "Independent direct A again",
+      "start": 273,
+      "bytes": 1,
+      "pixel": [
+        112,
+        32
+      ]
+    },
+    {
+      "label": "Independent direct A again",
+      "start": 274,
+      "bytes": 1,
+      "pixel": [
+        112,
+        39
+      ]
+    },
+    {
+      "label": "Independent direct A again",
+      "start": 275,
+      "bytes": 1,
+      "pixel": [
+        112,
+        71
+      ]
+    },
+    {
+      "label": "Independent direct A again",
+      "start": 276,
+      "bytes": 1,
+      "pixel": [
+        112,
+        111
+      ]
+    },
+    {
+      "label": "Independent direct A again",
+      "start": 277,
+      "bytes": 1,
+      "pixel": [
+        112,
+        151
+      ]
+    },
+    {
+      "label": "Independent direct A again",
+      "start": 278,
+      "bytes": 1,
+      "pixel": [
+        112,
+        191
+      ]
+    },
+    {
+      "label": "Independent direct A again",
+      "start": 279,
+      "bytes": 1,
+      "pixel": [
+        125,
+        32
+      ]
+    },
+    {
+      "label": "Independent direct A again",
+      "start": 280,
+      "bytes": 1,
+      "pixel": [
+        125,
+        39
+      ]
+    },
+    {
+      "label": "Independent direct A again",
+      "start": 281,
+      "bytes": 1,
+      "pixel": [
+        125,
+        71
+      ]
+    },
+    {
+      "label": "Independent direct A again",
+      "start": 282,
+      "bytes": 1,
+      "pixel": [
+        125,
+        111
+      ]
+    },
+    {
+      "label": "Independent direct A again",
+      "start": 283,
+      "bytes": 1,
+      "pixel": [
+        125,
+        151
+      ]
+    },
+    {
+      "label": "Independent direct A again",
+      "start": 284,
+      "bytes": 1,
+      "pixel": [
+        125,
+        191
+      ]
+    },
+    {
+      "label": "Independent direct A again",
+      "start": 285,
+      "bytes": 1,
+      "pixel": [
+        175,
+        32
+      ]
+    },
+    {
+      "label": "Independent direct A again",
+      "start": 286,
+      "bytes": 1,
+      "pixel": [
+        175,
+        39
+      ]
+    },
+    {
+      "label": "Independent direct A again",
+      "start": 287,
+      "bytes": 1,
+      "pixel": [
+        175,
+        71
+      ]
+    },
+    {
+      "label": "Independent direct A again",
+      "start": 288,
+      "bytes": 1,
+      "pixel": [
+        175,
+        111
+      ]
+    },
+    {
+      "label": "Independent direct A again",
+      "start": 289,
+      "bytes": 1,
+      "pixel": [
+        175,
+        151
+      ]
+    },
+    {
+      "label": "Independent direct A again",
+      "start": 290,
+      "bytes": 1,
+      "pixel": [
+        175,
+        191
+      ]
+    },
+    {
+      "label": "Independent direct A again",
+      "start": 291,
+      "bytes": 1,
+      "pixel": [
+        200,
+        200
+      ]
+    },
+    {
+      "label": "Independent direct A again",
+      "start": 292,
+      "bytes": 1,
+      "pixel": [
+        239,
+        32
+      ]
+    },
+    {
+      "label": "Independent direct A again",
+      "start": 293,
+      "bytes": 1,
+      "pixel": [
+        239,
+        39
+      ]
+    },
+    {
+      "label": "Independent direct A again",
+      "start": 294,
+      "bytes": 1,
+      "pixel": [
+        239,
+        71
+      ]
+    },
+    {
+      "label": "Independent direct A again",
+      "start": 295,
+      "bytes": 1,
+      "pixel": [
+        239,
+        111
+      ]
+    },
+    {
+      "label": "Independent direct A again",
+      "start": 296,
+      "bytes": 1,
+      "pixel": [
+        239,
+        151
+      ]
+    },
+    {
+      "label": "Independent direct A again",
+      "start": 297,
+      "bytes": 1,
+      "pixel": [
+        239,
+        191
+      ]
+    },
+    {
+      "label": "Independent direct A again",
+      "start": 298,
+      "bytes": 1,
+      "pixel": [
+        272,
+        31
+      ]
+    },
+    {
+      "label": "Independent direct A again",
+      "start": 299,
+      "bytes": 1,
+      "pixel": [
+        272,
+        192
+      ]
+    },
+    {
+      "label": "Independent direct A again",
+      "start": 300,
+      "bytes": 1,
+      "pixel": [
+        303,
+        32
+      ]
+    },
+    {
+      "label": "Independent direct A again",
+      "start": 301,
+      "bytes": 1,
+      "pixel": [
+        303,
+        39
+      ]
+    },
+    {
+      "label": "Independent direct A again",
+      "start": 302,
+      "bytes": 1,
+      "pixel": [
+        303,
+        71
+      ]
+    },
+    {
+      "label": "Independent direct A again",
+      "start": 303,
+      "bytes": 1,
+      "pixel": [
+        303,
+        111
+      ]
+    },
+    {
+      "label": "Independent direct A again",
+      "start": 304,
+      "bytes": 1,
+      "pixel": [
+        303,
+        151
+      ]
+    },
+    {
+      "label": "Independent direct A again",
+      "start": 305,
+      "bytes": 1,
+      "pixel": [
+        303,
+        191
+      ]
+    },
+    {
+      "label": "Independent direct A again",
+      "start": 306,
+      "bytes": 1,
+      "pixel": [
+        367,
+        32
+      ]
+    },
+    {
+      "label": "Independent direct A again",
+      "start": 307,
+      "bytes": 1,
+      "pixel": [
+        367,
+        39
+      ]
+    },
+    {
+      "label": "Independent direct A again",
+      "start": 308,
+      "bytes": 1,
+      "pixel": [
+        367,
+        71
+      ]
+    },
+    {
+      "label": "Independent direct A again",
+      "start": 309,
+      "bytes": 1,
+      "pixel": [
+        367,
+        111
+      ]
+    },
+    {
+      "label": "Independent direct A again",
+      "start": 310,
+      "bytes": 1,
+      "pixel": [
+        367,
+        151
+      ]
+    },
+    {
+      "label": "Independent direct A again",
+      "start": 311,
+      "bytes": 1,
+      "pixel": [
+        367,
+        191
+      ]
+    },
+    {
+      "label": "Independent direct A again",
+      "start": 312,
+      "bytes": 1,
+      "pixel": [
+        416,
+        200
+      ]
+    },
+    {
+      "label": "Independent direct A again",
+      "start": 313,
+      "bytes": 1,
+      "pixel": [
+        431,
+        32
+      ]
+    },
+    {
+      "label": "Independent direct A again",
+      "start": 314,
+      "bytes": 1,
+      "pixel": [
+        431,
+        39
+      ]
+    },
+    {
+      "label": "Independent direct A again",
+      "start": 315,
+      "bytes": 1,
+      "pixel": [
+        431,
+        71
+      ]
+    },
+    {
+      "label": "Independent direct A again",
+      "start": 316,
+      "bytes": 1,
+      "pixel": [
+        431,
+        111
+      ]
+    },
+    {
+      "label": "Independent direct A again",
+      "start": 317,
+      "bytes": 1,
+      "pixel": [
+        431,
+        151
+      ]
+    },
+    {
+      "label": "Independent direct A again",
+      "start": 318,
+      "bytes": 1,
+      "pixel": [
+        431,
+        191
+      ]
+    },
+    {
+      "label": "Independent direct A again",
+      "start": 319,
+      "bytes": 1,
+      "pixel": [
+        432,
+        112
+      ]
+    },
+    {
+      "label": "Independent direct A again",
+      "start": 320,
+      "bytes": 1,
+      "pixel": [
+        511,
+        383
+      ]
+    },
+    {
+      "label": "Cleanup removes compiler-owned buffer",
+      "start": 321,
+      "bytes": 1,
+      "id": 255,
+      "offset": 0
+    },
+    {
+      "label": "Cleanup removes compiler-owned buffer",
+      "start": 322,
+      "bytes": 1,
+      "id": 256,
+      "offset": 0
+    },
+    {
+      "label": "Cleanup removes compiler-owned buffer",
+      "start": 323,
+      "bytes": 1,
+      "id": 257,
+      "offset": 0
+    },
+    {
+      "label": "Cleanup removes compiler-owned buffer",
+      "start": 324,
+      "bytes": 1,
+      "id": 258,
+      "offset": 0
+    },
+    {
+      "label": "Cleanup removes compiler-owned buffer",
+      "start": 325,
+      "bytes": 1,
+      "id": 259,
+      "offset": 0
+    },
+    {
+      "label": "Cleanup preserves borrowed Wolf bytes",
+      "start": 326,
+      "bytes": 8,
+      "id": 8202,
+      "offset": 0
+    },
+    {
+      "label": "Cleanup preserves borrowed Wolf bytes",
+      "start": 334,
+      "bytes": 8,
+      "id": 8195,
+      "offset": 0
+    },
+    {
+      "label": "Cleanup preserves borrowed Wolf bytes",
+      "start": 342,
+      "bytes": 8,
+      "id": 8463,
+      "offset": 0
+    },
+    {
+      "label": "Cleanup preserves borrowed Wolf bytes",
+      "start": 350,
+      "bytes": 8,
+      "id": 8201,
+      "offset": 0
+    },
+    {
+      "label": "Cleanup preserves unrelated external buffer",
+      "start": 358,
+      "bytes": 6,
+      "id": 50000,
+      "offset": 0
+    },
+    {
+      "label": "Borrowed bitmap remains drawable after cleanup",
+      "start": 364,
+      "bytes": 1,
+      "pixel": [
+        0,
+        0
+      ]
+    },
+    {
+      "label": "Borrowed bitmap remains drawable after cleanup",
+      "start": 365,
+      "bytes": 1,
+      "pixel": [
+        96,
+        200
+      ]
+    },
+    {
+      "label": "Borrowed bitmap remains drawable after cleanup",
+      "start": 366,
+      "bytes": 1,
+      "pixel": [
+        111,
+        32
+      ]
+    },
+    {
+      "label": "Borrowed bitmap remains drawable after cleanup",
+      "start": 367,
+      "bytes": 1,
+      "pixel": [
+        112,
+        32
+      ]
+    },
+    {
+      "label": "Borrowed bitmap remains drawable after cleanup",
+      "start": 368,
+      "bytes": 1,
+      "pixel": [
+        112,
+        39
+      ]
+    },
+    {
+      "label": "Borrowed bitmap remains drawable after cleanup",
+      "start": 369,
+      "bytes": 1,
+      "pixel": [
+        112,
+        71
+      ]
+    },
+    {
+      "label": "Borrowed bitmap remains drawable after cleanup",
+      "start": 370,
+      "bytes": 1,
+      "pixel": [
+        112,
+        111
+      ]
+    },
+    {
+      "label": "Borrowed bitmap remains drawable after cleanup",
+      "start": 371,
+      "bytes": 1,
+      "pixel": [
+        112,
+        151
+      ]
+    },
+    {
+      "label": "Borrowed bitmap remains drawable after cleanup",
+      "start": 372,
+      "bytes": 1,
+      "pixel": [
+        112,
+        191
+      ]
+    },
+    {
+      "label": "Borrowed bitmap remains drawable after cleanup",
+      "start": 373,
+      "bytes": 1,
+      "pixel": [
+        125,
+        32
+      ]
+    },
+    {
+      "label": "Borrowed bitmap remains drawable after cleanup",
+      "start": 374,
+      "bytes": 1,
+      "pixel": [
+        125,
+        39
+      ]
+    },
+    {
+      "label": "Borrowed bitmap remains drawable after cleanup",
+      "start": 375,
+      "bytes": 1,
+      "pixel": [
+        125,
+        71
+      ]
+    },
+    {
+      "label": "Borrowed bitmap remains drawable after cleanup",
+      "start": 376,
+      "bytes": 1,
+      "pixel": [
+        125,
+        111
+      ]
+    },
+    {
+      "label": "Borrowed bitmap remains drawable after cleanup",
+      "start": 377,
+      "bytes": 1,
+      "pixel": [
+        125,
+        151
+      ]
+    },
+    {
+      "label": "Borrowed bitmap remains drawable after cleanup",
+      "start": 378,
+      "bytes": 1,
+      "pixel": [
+        125,
+        191
+      ]
+    },
+    {
+      "label": "Borrowed bitmap remains drawable after cleanup",
+      "start": 379,
+      "bytes": 1,
+      "pixel": [
+        175,
+        32
+      ]
+    },
+    {
+      "label": "Borrowed bitmap remains drawable after cleanup",
+      "start": 380,
+      "bytes": 1,
+      "pixel": [
+        175,
+        39
+      ]
+    },
+    {
+      "label": "Borrowed bitmap remains drawable after cleanup",
+      "start": 381,
+      "bytes": 1,
+      "pixel": [
+        175,
+        71
+      ]
+    },
+    {
+      "label": "Borrowed bitmap remains drawable after cleanup",
+      "start": 382,
+      "bytes": 1,
+      "pixel": [
+        175,
+        111
+      ]
+    },
+    {
+      "label": "Borrowed bitmap remains drawable after cleanup",
+      "start": 383,
+      "bytes": 1,
+      "pixel": [
+        175,
+        151
+      ]
+    },
+    {
+      "label": "Borrowed bitmap remains drawable after cleanup",
+      "start": 384,
+      "bytes": 1,
+      "pixel": [
+        175,
+        191
+      ]
+    },
+    {
+      "label": "Borrowed bitmap remains drawable after cleanup",
+      "start": 385,
+      "bytes": 1,
+      "pixel": [
+        200,
+        200
+      ]
+    },
+    {
+      "label": "Borrowed bitmap remains drawable after cleanup",
+      "start": 386,
+      "bytes": 1,
+      "pixel": [
+        239,
+        32
+      ]
+    },
+    {
+      "label": "Borrowed bitmap remains drawable after cleanup",
+      "start": 387,
+      "bytes": 1,
+      "pixel": [
+        239,
+        39
+      ]
+    },
+    {
+      "label": "Borrowed bitmap remains drawable after cleanup",
+      "start": 388,
+      "bytes": 1,
+      "pixel": [
+        239,
+        71
+      ]
+    },
+    {
+      "label": "Borrowed bitmap remains drawable after cleanup",
+      "start": 389,
+      "bytes": 1,
+      "pixel": [
+        239,
+        111
+      ]
+    },
+    {
+      "label": "Borrowed bitmap remains drawable after cleanup",
+      "start": 390,
+      "bytes": 1,
+      "pixel": [
+        239,
+        151
+      ]
+    },
+    {
+      "label": "Borrowed bitmap remains drawable after cleanup",
+      "start": 391,
+      "bytes": 1,
+      "pixel": [
+        239,
+        191
+      ]
+    },
+    {
+      "label": "Borrowed bitmap remains drawable after cleanup",
+      "start": 392,
+      "bytes": 1,
+      "pixel": [
+        272,
+        31
+      ]
+    },
+    {
+      "label": "Borrowed bitmap remains drawable after cleanup",
+      "start": 393,
+      "bytes": 1,
+      "pixel": [
+        272,
+        192
+      ]
+    },
+    {
+      "label": "Borrowed bitmap remains drawable after cleanup",
+      "start": 394,
+      "bytes": 1,
+      "pixel": [
+        303,
+        32
+      ]
+    },
+    {
+      "label": "Borrowed bitmap remains drawable after cleanup",
+      "start": 395,
+      "bytes": 1,
+      "pixel": [
+        303,
+        39
+      ]
+    },
+    {
+      "label": "Borrowed bitmap remains drawable after cleanup",
+      "start": 396,
+      "bytes": 1,
+      "pixel": [
+        303,
+        71
+      ]
+    },
+    {
+      "label": "Borrowed bitmap remains drawable after cleanup",
+      "start": 397,
+      "bytes": 1,
+      "pixel": [
+        303,
+        111
+      ]
+    },
+    {
+      "label": "Borrowed bitmap remains drawable after cleanup",
+      "start": 398,
+      "bytes": 1,
+      "pixel": [
+        303,
+        151
+      ]
+    },
+    {
+      "label": "Borrowed bitmap remains drawable after cleanup",
+      "start": 399,
+      "bytes": 1,
+      "pixel": [
+        303,
+        191
+      ]
+    },
+    {
+      "label": "Borrowed bitmap remains drawable after cleanup",
+      "start": 400,
+      "bytes": 1,
+      "pixel": [
+        367,
+        32
+      ]
+    },
+    {
+      "label": "Borrowed bitmap remains drawable after cleanup",
+      "start": 401,
+      "bytes": 1,
+      "pixel": [
+        367,
+        39
+      ]
+    },
+    {
+      "label": "Borrowed bitmap remains drawable after cleanup",
+      "start": 402,
+      "bytes": 1,
+      "pixel": [
+        367,
+        71
+      ]
+    },
+    {
+      "label": "Borrowed bitmap remains drawable after cleanup",
+      "start": 403,
+      "bytes": 1,
+      "pixel": [
+        367,
+        111
+      ]
+    },
+    {
+      "label": "Borrowed bitmap remains drawable after cleanup",
+      "start": 404,
+      "bytes": 1,
+      "pixel": [
+        367,
+        151
+      ]
+    },
+    {
+      "label": "Borrowed bitmap remains drawable after cleanup",
+      "start": 405,
+      "bytes": 1,
+      "pixel": [
+        367,
+        191
+      ]
+    },
+    {
+      "label": "Borrowed bitmap remains drawable after cleanup",
+      "start": 406,
+      "bytes": 1,
+      "pixel": [
+        416,
+        200
+      ]
+    },
+    {
+      "label": "Borrowed bitmap remains drawable after cleanup",
+      "start": 407,
+      "bytes": 1,
+      "pixel": [
+        431,
+        32
+      ]
+    },
+    {
+      "label": "Borrowed bitmap remains drawable after cleanup",
+      "start": 408,
+      "bytes": 1,
+      "pixel": [
+        431,
+        39
+      ]
+    },
+    {
+      "label": "Borrowed bitmap remains drawable after cleanup",
+      "start": 409,
+      "bytes": 1,
+      "pixel": [
+        431,
+        71
+      ]
+    },
+    {
+      "label": "Borrowed bitmap remains drawable after cleanup",
+      "start": 410,
+      "bytes": 1,
+      "pixel": [
+        431,
+        111
+      ]
+    },
+    {
+      "label": "Borrowed bitmap remains drawable after cleanup",
+      "start": 411,
+      "bytes": 1,
+      "pixel": [
+        431,
+        151
+      ]
+    },
+    {
+      "label": "Borrowed bitmap remains drawable after cleanup",
+      "start": 412,
+      "bytes": 1,
+      "pixel": [
+        431,
+        191
+      ]
+    },
+    {
+      "label": "Borrowed bitmap remains drawable after cleanup",
+      "start": 413,
+      "bytes": 1,
+      "pixel": [
+        432,
+        112
+      ]
+    },
+    {
+      "label": "Borrowed bitmap remains drawable after cleanup",
+      "start": 414,
+      "bytes": 1,
+      "pixel": [
+        511,
+        383
+      ]
+    }
+  ],
+  "observation_bytes": 415,
+  "entry_calls": [
+    "drawMarker",
+    "drawWolf",
+    "drawMarker"
+  ],
+  "expected_sha256": "90c807ac8c0b76954aada79b337fde20c2c1b7489c98da5a6711c06ace6e3542",
+  "probe_sha256": "191e236ca1d7b1461819e2e9b6ebec8166ba8498613de7afae27d7370696132e",
+  "assembled_wrappers_and_package_payloads_match": true,
+  "human_validation": "pending",
+  "graphical_emulator_launched": false
+}

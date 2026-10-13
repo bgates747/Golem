@@ -1,0 +1,51 @@
+{
+  "start_utc": "2026-10-12T13:42:54.072688+00:00",
+  "commands": [
+    [
+      "cmake",
+      "-S",
+      "docs/tasks/GOLEM-021/baseline/build/flexe-source",
+      "-B",
+      "docs/tasks/GOLEM-021/baseline/build/cmake",
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DFLEXE_LTO=OFF",
+      "-DCMAKE_POSITION_INDEPENDENT_CODE=ON",
+      "-DCMAKE_C_FLAGS=-Wno-error=stringop-truncation"
+    ],
+    [
+      "cmake",
+      "--build",
+      "docs/tasks/GOLEM-021/baseline/build/cmake",
+      "--target",
+      "flexe-agon-vdp-test",
+      "-j2"
+    ]
+  ],
+  "initial_build_failure": "GCC14 -Werror=stringop-truncation in upstream rom_stubs.c2064; this retry demotes only that diagnostic; source unchanged.",
+  "end_utc": "2026-10-12T13:45:08.943955+00:00",
+  "wall_seconds": 134.87112571066245,
+  "returncode": 0,
+  "host": {
+    "hostname": "raspberrypi",
+    "machine": "aarch64",
+    "platform": "Linux-6.18.39+rpt-rpi-2712-aarch64-with-glibc2.41"
+  },
+  "source_commit": "fbda8e905ccff36a090e4e33b0ffc2337dd79c52",
+  "source_archive_sha256": "c053dc1dbb35621cf16ad7208efc02800f264f8e30eab2ec921e4a0a86711026",
+  "compiler": "cc (Debian 14.2.0-19) 14.2.0",
+  "cmake": "cmake version 3.31.6",
+  "cargo": "cargo 1.85.1 (d73d2caf9 2024-12-31)",
+  "source_files": {
+    "src/jit.c": "1f609d01e16e3300e6f97d71e31bc74cee8353fc9c5631e828e725f5606ca437",
+    "src/memory.h": "05dfd6fb9f00e2768deb495e1021f81b508e9fabef88b580afc55a52e4e85f99",
+    "tools/agon_vdp_test.c": "fc5efe0910f08b5aac5bf3e58327d1567e640457076ec329c4b6e709acefb979",
+    "scripts/check-agon-vdp.sh": "256ed4f1188d964cd4dea1cc5aa4700d14ac8dbfcef822f19f8b472e94a3ade2",
+    "scripts/check-agon-mos.sh": "860a235839201c92d1114d9bd2a0acf6ea55ce5daddae296f31a5e8c1786752f",
+    "tools/agon-mos-peer/Cargo.lock": "94bcdf1dc3498dcb51bc11e32cb312e9ef26353ecd00c7fd87f2091378a2f7cd"
+  },
+  "outputs": {
+    "build/cmake/libxtensa-emu-lib.a": "1f841484d497a669b0716f9c5c5f56d569ca666f3b095ccd98b10b3626ea6373",
+    "build/cmake/flexe-agon-vdp-test": "df7f2c369d9ffa216171edd245eb5a0076f715d100b0d101400a9510526d75a8",
+    "build/agon-mos-peer/release/flexe-agon-mos-peer": "09aba8a2ba53eb0fd66be1520af2c7c21abf1a6d710c76214a4f795165d87c8a"
+  }
+}
