@@ -1,0 +1,5 @@
+/build/
+/.emulator/
+/.emulator-*/
+/.stock-emulator/
+*.lst

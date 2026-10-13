@@ -116,6 +116,15 @@ explicit commit/push approval was given on 2026-10-13. Production promotion, run
 ranges, other counter types and source drawing remain later work. See
 [the loop tranche](../tasks/GOLEM-027/README.md).
 
+GOLEM-028 extends the task-local model with stored Boolean values and uint16
+comparison expressions. Literal/copy/comparison assignments and Boolean If/ElseIf
+are qualified on both backends using one canonical two-byte 0/1 layout and type
+tag 6. Invalid external encodings are rejected; numeric coercion and compound
+Boolean operators remain unsupported. A distinct traffic-light review exposes
+those stored decisions visually. The Author accepted the visual review and
+saved human results pass. Explicit commit/push approval was given on 2026-10-13.
+See [the Boolean tranche](../tasks/GOLEM-028/README.md).
+
 The first research proposal's whole-module target choice remains useful. Its
 suggestion of making buffered support a later optional concern is superseded by
 REQ-001 through REQ-004: the shared contract is required from the outset, even

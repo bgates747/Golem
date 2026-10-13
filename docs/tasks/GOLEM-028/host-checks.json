@@ -1,0 +1,479 @@
+{
+  "scope": "ASan/UBSan emitter and generated-C HOST behavior, byte-command model, ELF admission; target qualification separate",
+  "packages": [
+    {
+      "source": "lights",
+      "prefix": 0,
+      "cases": 616,
+      "state_bytes": 20,
+      "buffered_install_bytes": 5156,
+      "native_module": {
+        "name": "lights",
+        "source": "/Agon/mystuff/golem/docs/tasks/GOLEM-028/build/lights/native.c",
+        "source_sha256": "ee8cb8f3f4ed98e9a4ba0f260a7066bb1c083885c2cc5a2b9b565047ac2a6ce1",
+        "build_id": "0x474c3238",
+        "capabilities": 1,
+        "envelope_bytes": 64,
+        "elf_bytes": 1472,
+        "package_bytes": 1536,
+        "sha256": "f4fffe1224ad184fd05a72bff159927be7f2d6594de019309249f304cabd27b5",
+        "package": "/Agon/mystuff/golem/docs/tasks/GOLEM-028/build/lights/lights.vdpl",
+        "elf": "/Agon/mystuff/golem/docs/tasks/GOLEM-028/build/lights/lights.elf",
+        "entry_virtual": 332,
+        "resident_text_bytes": 624,
+        "resident_data_bytes": 4,
+        "relative_relocations": 1,
+        "allocated_sections": {
+          ".text": {
+            "virtual_address": 320,
+            "bytes": 622,
+            "type": 1
+          },
+          ".data": {
+            "virtual_address": 5188,
+            "bytes": 4,
+            "type": 1
+          }
+        }
+      },
+      "private_cleanup_preserves_shared_state": true
+    },
+    {
+      "source": "lights",
+      "prefix": 254,
+      "cases": 616,
+      "state_bytes": 20,
+      "buffered_install_bytes": 5156,
+      "native_module": {
+        "name": "lights",
+        "source": "/Agon/mystuff/golem/docs/tasks/GOLEM-028/build/lights-relocated/native.c",
+        "source_sha256": "ee8cb8f3f4ed98e9a4ba0f260a7066bb1c083885c2cc5a2b9b565047ac2a6ce1",
+        "build_id": "0x474c3238",
+        "capabilities": 1,
+        "envelope_bytes": 64,
+        "elf_bytes": 1472,
+        "package_bytes": 1536,
+        "sha256": "f4fffe1224ad184fd05a72bff159927be7f2d6594de019309249f304cabd27b5",
+        "package": "/Agon/mystuff/golem/docs/tasks/GOLEM-028/build/lights-relocated/lights.vdpl",
+        "elf": "/Agon/mystuff/golem/docs/tasks/GOLEM-028/build/lights-relocated/lights.elf",
+        "entry_virtual": 332,
+        "resident_text_bytes": 624,
+        "resident_data_bytes": 4,
+        "relative_relocations": 1,
+        "allocated_sections": {
+          ".text": {
+            "virtual_address": 320,
+            "bytes": 622,
+            "type": 1
+          },
+          ".data": {
+            "virtual_address": 5188,
+            "bytes": 4,
+            "type": 1
+          }
+        }
+      },
+      "private_cleanup_preserves_shared_state": true
+    },
+    {
+      "source": "bools",
+      "prefix": 0,
+      "cases": 542,
+      "state_bytes": 18,
+      "buffered_install_bytes": 16722,
+      "native_module": {
+        "name": "bools",
+        "source": "/Agon/mystuff/golem/docs/tasks/GOLEM-028/build/bools/native.c",
+        "source_sha256": "eeefcd81fc7b617a5d50f7b322a1166693dddbdd86c5012e78c9c3c83e200c3c",
+        "build_id": "0x474c3238",
+        "capabilities": 1,
+        "envelope_bytes": 64,
+        "elf_bytes": 2276,
+        "package_bytes": 2340,
+        "sha256": "c5e4483f8ac2ef94f3b3620eed4fd72e99075a7a1df012630b9347726e3a73c7",
+        "package": "/Agon/mystuff/golem/docs/tasks/GOLEM-028/build/bools/bools.vdpl",
+        "elf": "/Agon/mystuff/golem/docs/tasks/GOLEM-028/build/bools/bools.elf",
+        "entry_virtual": 352,
+        "resident_text_bytes": 1416,
+        "resident_data_bytes": 4,
+        "relative_relocations": 2,
+        "allocated_sections": {
+          ".text": {
+            "virtual_address": 332,
+            "bytes": 1414,
+            "type": 1
+          },
+          ".data": {
+            "virtual_address": 5992,
+            "bytes": 4,
+            "type": 1
+          }
+        }
+      },
+      "private_cleanup_preserves_shared_state": true
+    },
+    {
+      "source": "bools",
+      "prefix": 254,
+      "cases": 542,
+      "state_bytes": 18,
+      "buffered_install_bytes": 16722,
+      "native_module": {
+        "name": "bools",
+        "source": "/Agon/mystuff/golem/docs/tasks/GOLEM-028/build/bools-relocated/native.c",
+        "source_sha256": "eeefcd81fc7b617a5d50f7b322a1166693dddbdd86c5012e78c9c3c83e200c3c",
+        "build_id": "0x474c3238",
+        "capabilities": 1,
+        "envelope_bytes": 64,
+        "elf_bytes": 2276,
+        "package_bytes": 2340,
+        "sha256": "c5e4483f8ac2ef94f3b3620eed4fd72e99075a7a1df012630b9347726e3a73c7",
+        "package": "/Agon/mystuff/golem/docs/tasks/GOLEM-028/build/bools-relocated/bools.vdpl",
+        "elf": "/Agon/mystuff/golem/docs/tasks/GOLEM-028/build/bools-relocated/bools.elf",
+        "entry_virtual": 352,
+        "resident_text_bytes": 1416,
+        "resident_data_bytes": 4,
+        "relative_relocations": 2,
+        "allocated_sections": {
+          ".text": {
+            "virtual_address": 332,
+            "bytes": 1414,
+            "type": 1
+          },
+          ".data": {
+            "virtual_address": 5992,
+            "bytes": 4,
+            "type": 1
+          }
+        }
+      },
+      "private_cleanup_preserves_shared_state": true
+    },
+    {
+      "source": "meter",
+      "prefix": 0,
+      "cases": 622,
+      "state_bytes": 22,
+      "buffered_install_bytes": 5103,
+      "native_module": {
+        "name": "meter",
+        "source": "/Agon/mystuff/golem/docs/tasks/GOLEM-028/build/meter/native.c",
+        "source_sha256": "44628a36c1c77b0425381a7e00675a6e7ca73a275759526ad34afe99261501ed",
+        "build_id": "0x474c3238",
+        "capabilities": 1,
+        "envelope_bytes": 64,
+        "elf_bytes": 1568,
+        "package_bytes": 1632,
+        "sha256": "06ebf6efcfebcfc7490498a6ff193e1788d26d0bea607a7f585b2e3881893849",
+        "package": "/Agon/mystuff/golem/docs/tasks/GOLEM-028/build/meter/meter.vdpl",
+        "elf": "/Agon/mystuff/golem/docs/tasks/GOLEM-028/build/meter/meter.elf",
+        "entry_virtual": 332,
+        "resident_text_bytes": 720,
+        "resident_data_bytes": 4,
+        "relative_relocations": 1,
+        "allocated_sections": {
+          ".text": {
+            "virtual_address": 320,
+            "bytes": 718,
+            "type": 1
+          },
+          ".data": {
+            "virtual_address": 5284,
+            "bytes": 4,
+            "type": 1
+          }
+        }
+      },
+      "private_cleanup_preserves_shared_state": true
+    },
+    {
+      "source": "meter",
+      "prefix": 254,
+      "cases": 622,
+      "state_bytes": 22,
+      "buffered_install_bytes": 5103,
+      "native_module": {
+        "name": "meter",
+        "source": "/Agon/mystuff/golem/docs/tasks/GOLEM-028/build/meter-relocated/native.c",
+        "source_sha256": "44628a36c1c77b0425381a7e00675a6e7ca73a275759526ad34afe99261501ed",
+        "build_id": "0x474c3238",
+        "capabilities": 1,
+        "envelope_bytes": 64,
+        "elf_bytes": 1568,
+        "package_bytes": 1632,
+        "sha256": "06ebf6efcfebcfc7490498a6ff193e1788d26d0bea607a7f585b2e3881893849",
+        "package": "/Agon/mystuff/golem/docs/tasks/GOLEM-028/build/meter-relocated/meter.vdpl",
+        "elf": "/Agon/mystuff/golem/docs/tasks/GOLEM-028/build/meter-relocated/meter.elf",
+        "entry_virtual": 332,
+        "resident_text_bytes": 720,
+        "resident_data_bytes": 4,
+        "relative_relocations": 1,
+        "allocated_sections": {
+          ".text": {
+            "virtual_address": 320,
+            "bytes": 718,
+            "type": 1
+          },
+          ".data": {
+            "virtual_address": 5284,
+            "bytes": 4,
+            "type": 1
+          }
+        }
+      },
+      "private_cleanup_preserves_shared_state": true
+    },
+    {
+      "source": "arithmetic",
+      "prefix": 0,
+      "cases": 46,
+      "state_bytes": 12,
+      "buffered_install_bytes": 3669,
+      "native_module": {
+        "name": "arithmetic",
+        "source": "/Agon/mystuff/golem/docs/tasks/GOLEM-028/build/arithmetic/native.c",
+        "source_sha256": "3cfe3eaa846e82e5ac5eb31b134a5295b2872b441625d0e180dbcaaa72a8f6ea",
+        "build_id": "0x474c3238",
+        "capabilities": 1,
+        "envelope_bytes": 64,
+        "elf_bytes": 1476,
+        "package_bytes": 1540,
+        "sha256": "a5b36ed097c80c9d5780e4831a12a229c27ea106b53c40c3f1a3f0374cc8ffe2",
+        "package": "/Agon/mystuff/golem/docs/tasks/GOLEM-028/build/arithmetic/arithmetic.vdpl",
+        "elf": "/Agon/mystuff/golem/docs/tasks/GOLEM-028/build/arithmetic/arithmetic.elf",
+        "entry_virtual": 348,
+        "resident_text_bytes": 616,
+        "resident_data_bytes": 4,
+        "relative_relocations": 2,
+        "allocated_sections": {
+          ".text": {
+            "virtual_address": 332,
+            "bytes": 614,
+            "type": 1
+          },
+          ".data": {
+            "virtual_address": 5192,
+            "bytes": 4,
+            "type": 1
+          }
+        }
+      },
+      "private_cleanup_preserves_shared_state": true
+    },
+    {
+      "source": "arithmetic",
+      "prefix": 254,
+      "cases": 46,
+      "state_bytes": 12,
+      "buffered_install_bytes": 3669,
+      "native_module": {
+        "name": "arithmetic",
+        "source": "/Agon/mystuff/golem/docs/tasks/GOLEM-028/build/arithmetic-relocated/native.c",
+        "source_sha256": "3cfe3eaa846e82e5ac5eb31b134a5295b2872b441625d0e180dbcaaa72a8f6ea",
+        "build_id": "0x474c3238",
+        "capabilities": 1,
+        "envelope_bytes": 64,
+        "elf_bytes": 1476,
+        "package_bytes": 1540,
+        "sha256": "a5b36ed097c80c9d5780e4831a12a229c27ea106b53c40c3f1a3f0374cc8ffe2",
+        "package": "/Agon/mystuff/golem/docs/tasks/GOLEM-028/build/arithmetic-relocated/arithmetic.vdpl",
+        "elf": "/Agon/mystuff/golem/docs/tasks/GOLEM-028/build/arithmetic-relocated/arithmetic.elf",
+        "entry_virtual": 348,
+        "resident_text_bytes": 616,
+        "resident_data_bytes": 4,
+        "relative_relocations": 2,
+        "allocated_sections": {
+          ".text": {
+            "virtual_address": 332,
+            "bytes": 614,
+            "type": 1
+          },
+          ".data": {
+            "virtual_address": 5192,
+            "bytes": 4,
+            "type": 1
+          }
+        }
+      },
+      "private_cleanup_preserves_shared_state": true
+    },
+    {
+      "source": "conditions",
+      "prefix": 0,
+      "cases": 452,
+      "state_bytes": 12,
+      "buffered_install_bytes": 11608,
+      "native_module": {
+        "name": "conditions",
+        "source": "/Agon/mystuff/golem/docs/tasks/GOLEM-028/build/conditions/native.c",
+        "source_sha256": "72c63c2c50eb5ddee46709f4d12bc68007d3febcd40f97d7c7928778f0095d4b",
+        "build_id": "0x474c3238",
+        "capabilities": 1,
+        "envelope_bytes": 64,
+        "elf_bytes": 2272,
+        "package_bytes": 2336,
+        "sha256": "b74156636662361058826c78bd3cffc1813074d712510b6b7a1c5b09ce5f7eed",
+        "package": "/Agon/mystuff/golem/docs/tasks/GOLEM-028/build/conditions/conditions.vdpl",
+        "elf": "/Agon/mystuff/golem/docs/tasks/GOLEM-028/build/conditions/conditions.elf",
+        "entry_virtual": 352,
+        "resident_text_bytes": 1412,
+        "resident_data_bytes": 4,
+        "relative_relocations": 2,
+        "allocated_sections": {
+          ".text": {
+            "virtual_address": 332,
+            "bytes": 1410,
+            "type": 1
+          },
+          ".data": {
+            "virtual_address": 5988,
+            "bytes": 4,
+            "type": 1
+          }
+        }
+      },
+      "private_cleanup_preserves_shared_state": true
+    },
+    {
+      "source": "conditions",
+      "prefix": 254,
+      "cases": 452,
+      "state_bytes": 12,
+      "buffered_install_bytes": 11608,
+      "native_module": {
+        "name": "conditions",
+        "source": "/Agon/mystuff/golem/docs/tasks/GOLEM-028/build/conditions-relocated/native.c",
+        "source_sha256": "72c63c2c50eb5ddee46709f4d12bc68007d3febcd40f97d7c7928778f0095d4b",
+        "build_id": "0x474c3238",
+        "capabilities": 1,
+        "envelope_bytes": 64,
+        "elf_bytes": 2272,
+        "package_bytes": 2336,
+        "sha256": "b74156636662361058826c78bd3cffc1813074d712510b6b7a1c5b09ce5f7eed",
+        "package": "/Agon/mystuff/golem/docs/tasks/GOLEM-028/build/conditions-relocated/conditions.vdpl",
+        "elf": "/Agon/mystuff/golem/docs/tasks/GOLEM-028/build/conditions-relocated/conditions.elf",
+        "entry_virtual": 352,
+        "resident_text_bytes": 1412,
+        "resident_data_bytes": 4,
+        "relative_relocations": 2,
+        "allocated_sections": {
+          ".text": {
+            "virtual_address": 332,
+            "bytes": 1410,
+            "type": 1
+          },
+          ".data": {
+            "virtual_address": 5988,
+            "bytes": 4,
+            "type": 1
+          }
+        }
+      },
+      "private_cleanup_preserves_shared_state": true
+    },
+    {
+      "source": "loops",
+      "prefix": 0,
+      "cases": 124,
+      "state_bytes": 18,
+      "buffered_install_bytes": 20213,
+      "native_module": {
+        "name": "loops",
+        "source": "/Agon/mystuff/golem/docs/tasks/GOLEM-028/build/loops/native.c",
+        "source_sha256": "bdecf9ee601a6d8440b9b59df8d7c5ef3f2239835fea3133b0e595f59e4057eb",
+        "build_id": "0x474c3238",
+        "capabilities": 1,
+        "envelope_bytes": 64,
+        "elf_bytes": 2904,
+        "package_bytes": 2968,
+        "sha256": "28dccb037213b409a79a7747f6c846c94c1f728c30c422215e63ff8f0ba5f87a",
+        "package": "/Agon/mystuff/golem/docs/tasks/GOLEM-028/build/loops/loops.vdpl",
+        "elf": "/Agon/mystuff/golem/docs/tasks/GOLEM-028/build/loops/loops.elf",
+        "entry_virtual": 356,
+        "resident_text_bytes": 2044,
+        "resident_data_bytes": 4,
+        "relative_relocations": 2,
+        "allocated_sections": {
+          ".text": {
+            "virtual_address": 332,
+            "bytes": 2042,
+            "type": 1
+          },
+          ".data": {
+            "virtual_address": 6620,
+            "bytes": 4,
+            "type": 1
+          }
+        }
+      },
+      "private_cleanup_preserves_shared_state": true
+    },
+    {
+      "source": "loops",
+      "prefix": 254,
+      "cases": 124,
+      "state_bytes": 18,
+      "buffered_install_bytes": 20213,
+      "native_module": {
+        "name": "loops",
+        "source": "/Agon/mystuff/golem/docs/tasks/GOLEM-028/build/loops-relocated/native.c",
+        "source_sha256": "bdecf9ee601a6d8440b9b59df8d7c5ef3f2239835fea3133b0e595f59e4057eb",
+        "build_id": "0x474c3238",
+        "capabilities": 1,
+        "envelope_bytes": 64,
+        "elf_bytes": 2904,
+        "package_bytes": 2968,
+        "sha256": "28dccb037213b409a79a7747f6c846c94c1f728c30c422215e63ff8f0ba5f87a",
+        "package": "/Agon/mystuff/golem/docs/tasks/GOLEM-028/build/loops-relocated/loops.vdpl",
+        "elf": "/Agon/mystuff/golem/docs/tasks/GOLEM-028/build/loops-relocated/loops.elf",
+        "entry_virtual": 356,
+        "resident_text_bytes": 2044,
+        "resident_data_bytes": 4,
+        "relative_relocations": 2,
+        "allocated_sections": {
+          ".text": {
+            "virtual_address": 332,
+            "bytes": 2042,
+            "type": 1
+          },
+          ".data": {
+            "virtual_address": 6620,
+            "bytes": 4,
+            "type": 1
+          }
+        }
+      },
+      "private_cleanup_preserves_shared_state": true
+    }
+  ],
+  "checks": 4804,
+  "source_sha256": {
+    "fixture.py": "186b03040a9a53363c21e8b2308ac1669fd20927aebad35185b629959a798b15",
+    "conditions.golem": "12b540902be07c9b3e77023e1b3667697ee1c53f2995ec3999369470314e2382",
+    "host_checks.py": "53902162f55d8001850496620b97919bc5825cac3302842e10c3bbc877186ccf",
+    "arithmetic.golem": "8fd65b58ddf8d108bda998db6a8a2463d30dfa6cfdf1cca7fda0514fae70a890",
+    "backends.hpp": "6ed9e263d6673b3bce798e5380d0bb7956d098998ce36bff0ce326cc6b6c4b91",
+    "profile.py": "2e690fd7d232437547420c9fa0963ac5b3c4ecf5aaf5d2a02ce51086bcd09b01",
+    "loops.golem": "af6f24ea83fef5d9108819dc273f30b9ff97f174a603f458920e8e07e14915e2",
+    "model.py": "32f6c986ecbf1c44b81287824324127f4d9e2ca1dda919a52f4d57c0935047be",
+    "native_host.c": "e8e48f1f59436d3a4f8ec347843f5277385c0dfe6d2580ea3531b394983df22f",
+    "verify.py": "2fe51dce8047e8d0204eceb0b981967a7624ac979e9100b783151eb3b773525a",
+    "syntax_checks.cpp": "9d9063d26bc99cd0ee74b14ccfe518d3877a3892061a5bbdaf66ab859186cdec",
+    "qualify.py": "dbdf0fa2482948fe4b7294484673f96b19403156491570af6efa785d509da02b",
+    "bools.golem": "d4ffa52ace372cda7623a91d8fab3432c7cef254c6dab3b17d2b536e67bdb8d4",
+    "meter.golem": "76540c1690e114833bcc7baa3fe0bcbc0ce1ba0fb88e2272c02be1c9c248395a",
+    "portable.hpp": "4808cf6d09a72489c2a4069920f3d0217e2588b76fd4568dee8f026cca52b831",
+    "stage_oryx.py": "8cb8e30d5c5603e35244fbcb42253fde2632560b7411c47599834236768c7b4b",
+    "compiler.cpp": "784ab1bdff7b926b564d20f08fc88c8f3eb4c76663e7ab318b074baee403dd39",
+    "lights.golem": "65b471843871d8e73e977a1b6ccafce6e4f36b4ac01cf876fb7bbe12c591dd66"
+  },
+  "shared_frontend_sha256": "4808cf6d09a72489c2a4069920f3d0217e2588b76fd4568dee8f026cca52b831",
+  "grammar_checks": "24 accepted grammar/reference cases; 64 rejections",
+  "maintained_checks": [
+    "make: Entering directory '/Agon/mystuff/golem/src'",
+    "../build/test_compiler",
+    "Maintained raw/resident contract checks pass; 132 rejection cases.",
+    "make: Leaving directory '/Agon/mystuff/golem/src'"
+  ],
+  "elapsed_seconds": 56.42
+}

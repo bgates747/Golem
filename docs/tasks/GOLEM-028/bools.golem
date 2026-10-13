@@ -1,0 +1,136 @@
+// Boolean fields are interleaved with explicitly initialized numeric globals.
+bool flag = false
+uint16 a = 0
+bool saved = true
+uint16 b = 0
+uint16 result = 99
+uint16 earlier = 7
+uint16 i = 0
+bool spare = false
+
+Sub equal
+    earlier = earlier + 1
+    flag = a == b
+    saved = flag
+    If saved Then
+        result = 11
+    Else
+        result = 22
+    EndIf
+    earlier = earlier + 1
+EndSub
+
+Sub unequal
+    earlier = earlier + 1
+    flag = a != b
+    saved = flag
+    If saved Then
+        result = 11
+    Else
+        result = 22
+    EndIf
+    earlier = earlier + 1
+EndSub
+
+Sub less
+    earlier = earlier + 1
+    flag = a < b
+    saved = flag
+    If saved Then
+        result = 11
+    Else
+        result = 22
+    EndIf
+    earlier = earlier + 1
+EndSub
+
+Sub greater
+    earlier = earlier + 1
+    flag = a > b
+    saved = flag
+    If saved Then
+        result = 11
+    Else
+        result = 22
+    EndIf
+    earlier = earlier + 1
+EndSub
+
+Sub atMost
+    earlier = earlier + 1
+    flag = a <= b
+    saved = flag
+    If saved Then
+        result = 11
+    Else
+        result = 22
+    EndIf
+    earlier = earlier + 1
+EndSub
+
+Sub atLeast
+    earlier = earlier + 1
+    flag = a >= b
+    saved = flag
+    If saved Then
+        result = 11
+    Else
+        result = 22
+    EndIf
+    earlier = earlier + 1
+EndSub
+
+Sub copyLiteral
+    flag = true
+    saved = flag
+    spare = false
+    flag = saved
+    If spare Then
+        result = 1
+    ElseIf saved Then
+        result = 2
+    Else
+        result = 3
+    EndIf
+EndSub
+Sub flagBranch
+    If flag Then
+        result = 11
+    ElseIf saved Then
+        result = 22
+    Else
+        result = 33
+    EndIf
+EndSub
+Sub failure
+    earlier = earlier + 1
+    flag = a + 1 < b - 1
+    saved = flag
+    earlier = earlier + 1
+EndSub
+Sub loopFlags
+    For i In Range(0:3)
+        flag = i < b
+        saved = flag
+        If saved Then
+            result = result + 1
+        EndIf
+    Next i
+    spare = true
+EndSub
+Sub skipped
+    If flag Then
+        saved = a + 1 == b
+    Else
+        saved = false
+    EndIf
+    earlier = earlier + 1
+EndSub
+Sub constants
+    flag = 65535 == 65535
+    saved = 0 != 65535
+    spare = true
+    If false Then
+        result = a + 1
+    EndIf
+EndSub

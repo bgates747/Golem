@@ -1,0 +1,597 @@
+{
+  "variant": "stock",
+  "checks": [
+    {
+      "label": "buffered case 0",
+      "offset": 0,
+      "bytes": 18
+    },
+    {
+      "label": "buffered case 1",
+      "offset": 18,
+      "bytes": 18
+    },
+    {
+      "label": "buffered case 2",
+      "offset": 36,
+      "bytes": 18
+    },
+    {
+      "label": "buffered case 3",
+      "offset": 54,
+      "bytes": 18
+    },
+    {
+      "label": "buffered case 4",
+      "offset": 72,
+      "bytes": 18
+    },
+    {
+      "label": "buffered case 5",
+      "offset": 90,
+      "bytes": 18
+    },
+    {
+      "label": "buffered case 6",
+      "offset": 108,
+      "bytes": 18
+    },
+    {
+      "label": "buffered case 7",
+      "offset": 126,
+      "bytes": 18
+    },
+    {
+      "label": "buffered case 8",
+      "offset": 144,
+      "bytes": 18
+    },
+    {
+      "label": "buffered case 9",
+      "offset": 162,
+      "bytes": 18
+    },
+    {
+      "label": "buffered case 10",
+      "offset": 180,
+      "bytes": 18
+    },
+    {
+      "label": "buffered case 11",
+      "offset": 198,
+      "bytes": 18
+    },
+    {
+      "label": "buffered case 12",
+      "offset": 216,
+      "bytes": 18
+    },
+    {
+      "label": "buffered case 13",
+      "offset": 234,
+      "bytes": 18
+    },
+    {
+      "label": "buffered case 14",
+      "offset": 252,
+      "bytes": 18
+    },
+    {
+      "label": "buffered case 15",
+      "offset": 270,
+      "bytes": 18
+    },
+    {
+      "label": "buffered case 16",
+      "offset": 288,
+      "bytes": 18
+    },
+    {
+      "label": "buffered case 17",
+      "offset": 306,
+      "bytes": 18
+    },
+    {
+      "label": "buffered case 18",
+      "offset": 324,
+      "bytes": 18
+    },
+    {
+      "label": "buffered case 19",
+      "offset": 342,
+      "bytes": 18
+    },
+    {
+      "label": "buffered case 20",
+      "offset": 360,
+      "bytes": 18
+    },
+    {
+      "label": "buffered case 21",
+      "offset": 378,
+      "bytes": 18
+    },
+    {
+      "label": "buffered case 22",
+      "offset": 396,
+      "bytes": 18
+    },
+    {
+      "label": "buffered case 23",
+      "offset": 414,
+      "bytes": 18
+    },
+    {
+      "label": "buffered case 24",
+      "offset": 432,
+      "bytes": 18
+    },
+    {
+      "label": "buffered case 25",
+      "offset": 450,
+      "bytes": 18
+    },
+    {
+      "label": "buffered case 26",
+      "offset": 468,
+      "bytes": 18
+    },
+    {
+      "label": "buffered case 27",
+      "offset": 486,
+      "bytes": 18
+    },
+    {
+      "label": "buffered case 28",
+      "offset": 504,
+      "bytes": 18
+    },
+    {
+      "label": "buffered case 29",
+      "offset": 522,
+      "bytes": 18
+    },
+    {
+      "label": "buffered case 30",
+      "offset": 540,
+      "bytes": 18
+    },
+    {
+      "label": "buffered case 31",
+      "offset": 558,
+      "bytes": 18
+    },
+    {
+      "label": "buffered case 32",
+      "offset": 576,
+      "bytes": 18
+    },
+    {
+      "label": "buffered case 33",
+      "offset": 594,
+      "bytes": 18
+    },
+    {
+      "label": "buffered case 34",
+      "offset": 612,
+      "bytes": 18
+    },
+    {
+      "label": "buffered case 35",
+      "offset": 630,
+      "bytes": 18
+    },
+    {
+      "label": "buffered case 36",
+      "offset": 648,
+      "bytes": 18
+    },
+    {
+      "label": "buffered case 37",
+      "offset": 666,
+      "bytes": 18
+    },
+    {
+      "label": "buffered case 38",
+      "offset": 684,
+      "bytes": 18
+    },
+    {
+      "label": "buffered case 39",
+      "offset": 702,
+      "bytes": 18
+    },
+    {
+      "label": "buffered case 40",
+      "offset": 720,
+      "bytes": 18
+    },
+    {
+      "label": "buffered case 41",
+      "offset": 738,
+      "bytes": 18
+    },
+    {
+      "label": "buffered case 42",
+      "offset": 756,
+      "bytes": 18
+    },
+    {
+      "label": "buffered case 43",
+      "offset": 774,
+      "bytes": 18
+    },
+    {
+      "label": "buffered case 44",
+      "offset": 792,
+      "bytes": 18
+    },
+    {
+      "label": "buffered case 45",
+      "offset": 810,
+      "bytes": 18
+    },
+    {
+      "label": "buffered case 46",
+      "offset": 828,
+      "bytes": 18
+    },
+    {
+      "label": "buffered case 47",
+      "offset": 846,
+      "bytes": 18
+    },
+    {
+      "label": "buffered case 48",
+      "offset": 864,
+      "bytes": 18
+    },
+    {
+      "label": "buffered case 49",
+      "offset": 882,
+      "bytes": 18
+    },
+    {
+      "label": "buffered case 50",
+      "offset": 900,
+      "bytes": 18
+    },
+    {
+      "label": "buffered case 51",
+      "offset": 918,
+      "bytes": 18
+    },
+    {
+      "label": "buffered case 52",
+      "offset": 936,
+      "bytes": 18
+    },
+    {
+      "label": "buffered case 53",
+      "offset": 954,
+      "bytes": 18
+    },
+    {
+      "label": "buffered case 54",
+      "offset": 972,
+      "bytes": 18
+    },
+    {
+      "label": "buffered case 55",
+      "offset": 990,
+      "bytes": 18
+    },
+    {
+      "label": "buffered case 56",
+      "offset": 1008,
+      "bytes": 18
+    },
+    {
+      "label": "buffered case 57",
+      "offset": 1026,
+      "bytes": 18
+    },
+    {
+      "label": "buffered case 58",
+      "offset": 1044,
+      "bytes": 18
+    },
+    {
+      "label": "buffered case 59",
+      "offset": 1062,
+      "bytes": 18
+    },
+    {
+      "label": "buffered case 60",
+      "offset": 1080,
+      "bytes": 18
+    },
+    {
+      "label": "buffered case 61",
+      "offset": 1098,
+      "bytes": 18
+    },
+    {
+      "label": "buffered case 62",
+      "offset": 1116,
+      "bytes": 18
+    },
+    {
+      "label": "buffered case 63",
+      "offset": 1134,
+      "bytes": 18
+    },
+    {
+      "label": "shared state survives cleanup",
+      "offset": 1152,
+      "bytes": 18
+    }
+  ],
+  "result_bytes": 1170,
+  "module_loads": 0,
+  "calls": [
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 1,
+      "backend": "buffered"
+    },
+    {
+      "entry": 1,
+      "backend": "buffered"
+    },
+    {
+      "entry": 1,
+      "backend": "buffered"
+    },
+    {
+      "entry": 1,
+      "backend": "buffered"
+    },
+    {
+      "entry": 1,
+      "backend": "buffered"
+    },
+    {
+      "entry": 1,
+      "backend": "buffered"
+    },
+    {
+      "entry": 2,
+      "backend": "buffered"
+    },
+    {
+      "entry": 2,
+      "backend": "buffered"
+    },
+    {
+      "entry": 2,
+      "backend": "buffered"
+    },
+    {
+      "entry": 2,
+      "backend": "buffered"
+    },
+    {
+      "entry": 2,
+      "backend": "buffered"
+    },
+    {
+      "entry": 2,
+      "backend": "buffered"
+    },
+    {
+      "entry": 3,
+      "backend": "buffered"
+    },
+    {
+      "entry": 3,
+      "backend": "buffered"
+    },
+    {
+      "entry": 3,
+      "backend": "buffered"
+    },
+    {
+      "entry": 3,
+      "backend": "buffered"
+    },
+    {
+      "entry": 3,
+      "backend": "buffered"
+    },
+    {
+      "entry": 3,
+      "backend": "buffered"
+    },
+    {
+      "entry": 4,
+      "backend": "buffered"
+    },
+    {
+      "entry": 4,
+      "backend": "buffered"
+    },
+    {
+      "entry": 4,
+      "backend": "buffered"
+    },
+    {
+      "entry": 4,
+      "backend": "buffered"
+    },
+    {
+      "entry": 4,
+      "backend": "buffered"
+    },
+    {
+      "entry": 4,
+      "backend": "buffered"
+    },
+    {
+      "entry": 5,
+      "backend": "buffered"
+    },
+    {
+      "entry": 5,
+      "backend": "buffered"
+    },
+    {
+      "entry": 5,
+      "backend": "buffered"
+    },
+    {
+      "entry": 5,
+      "backend": "buffered"
+    },
+    {
+      "entry": 5,
+      "backend": "buffered"
+    },
+    {
+      "entry": 5,
+      "backend": "buffered"
+    },
+    {
+      "entry": 6,
+      "backend": "buffered"
+    },
+    {
+      "entry": 7,
+      "backend": "buffered"
+    },
+    {
+      "entry": 7,
+      "backend": "buffered"
+    },
+    {
+      "entry": 7,
+      "backend": "buffered"
+    },
+    {
+      "entry": 8,
+      "backend": "buffered"
+    },
+    {
+      "entry": 8,
+      "backend": "buffered"
+    },
+    {
+      "entry": 8,
+      "backend": "buffered"
+    },
+    {
+      "entry": 8,
+      "backend": "buffered"
+    },
+    {
+      "entry": 9,
+      "backend": "buffered"
+    },
+    {
+      "entry": 9,
+      "backend": "buffered"
+    },
+    {
+      "entry": 10,
+      "backend": "buffered"
+    },
+    {
+      "entry": 10,
+      "backend": "buffered"
+    },
+    {
+      "entry": 10,
+      "backend": "buffered"
+    },
+    {
+      "entry": 11,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 9,
+      "backend": "buffered"
+    }
+  ],
+  "visual": null,
+  "source": "bools",
+  "state_id": 1,
+  "probe_sha256": "1e2542497c37ece7d818d8bd76fd391727da431d4ba8e5361ea7514962d8ded2",
+  "script_sha256": "d0b82fef6ac9a8fb91328a4315e55f2a0df6edebe93cea6d91cc3af9d0b9975b",
+  "source_sha256": "d4ffa52ace372cda7623a91d8fab3432c7cef254c6dab3b17d2b536e67bdb8d4",
+  "module_sha256": "c5e4483f8ac2ef94f3b3620eed4fd72e99075a7a1df012630b9347726e3a73c7"
+}

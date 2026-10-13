@@ -581,3 +581,29 @@ review and explicit commit approval. The Author subsequently reported that the
 review worked; retrieved results identify GOLEM-027 and match all 585 observations/
 5769 bytes, including 2400 steps. Human acceptance is recorded; only explicit
 commit/push approval was subsequently given on 2026-10-13. See `docs/tasks/GOLEM-027/README.md`.
+
+## Typed Boolean prototype — GOLEM-028
+
+The task-local GOLEM-028 fork adds bool globals with true/false initializers,
+Boolean copying, all six uint16 comparison assignments and Boolean If/ElseIf.
+Bool uses a canonical two-byte 0/1 representation and assembly type tag 6;
+invalid external encodings fail entry admission with status 32. Numeric/Boolean
+coercion, Boolean arithmetic and compound Boolean operators are unsupported.
+Checked comparison failures preserve their Boolean destination and earlier
+effects. Both emitters share the same typed expression tree and state layout.
+
+Host ASan/UBSan/model/generated-C checks pass 4804 cases, 24 grammar/reference
+acceptances and 64 rejections, plus native ELF and maintained checks. Stock VDP
+and actual Xtensa JIT/interpreter checks pass, including relocated IDs, invalid
+flags, selected/skipped failures and cleanup retention. Production compiler and
+generic runtime/SDK are unchanged.
+
+The visibly distinct traffic-light review uses lights.golem. Golem computes and
+copies Boolean flags, then chooses lamp colours through If flag; resident VDU
+draws, and assembly selects/paces. The 20-byte layout must be installed explicitly.
+All 56320 final pixels, 533 observations/5249 bytes and actual MOS return pass.
+The Oryx profile is staged/stopped at
+`~/Agon/mystuff/golem/docs/tasks/GOLEM-028/.emulator`. Source is beside it. Follow
+the single-terminal human protocol; launch its generated wrapper only. The Author explicitly approved commit/push on 2026-10-13 and accepted
+the visual review; retrieved human results match all 533 observations/5249 bytes.
+Keyboard success was not separately stated. See `docs/tasks/GOLEM-028/README.md`.
