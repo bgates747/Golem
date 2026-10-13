@@ -137,3 +137,13 @@ while emitter implementation is staged.
 - [Existing native research report](../tasks/GOLEM-023/README.md)
 - [Maintained resident assembly contract](resident-scalar.md)
 - [VDPlet runtime contract](../../../agon-vdplet/docs/API-reference.md)
+
+GOLEM-029 adds task-local Boolean Not/And/Or to both targets. Precedence is
+arithmetic, comparison, Not, And, Or, with explicit parentheses. And/Or short
+circuit left to right; skipped arithmetic cannot raise runtime errors. Selected
+failures preserve the Boolean destination and stop the invocation, including
+through buffered logical helper frames. All external globals are still admitted
+at entry. Boolean storage and the shared assembly interface remain unchanged.
+See [the compound-Boolean tranche](../tasks/GOLEM-029/README.md) for qualification
+and accepted human review. The Author explicitly approved commit/push on 2026-10-13.
+Production compiler and generic SDK are unchanged.

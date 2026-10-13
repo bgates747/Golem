@@ -607,3 +607,20 @@ The Oryx profile is staged/stopped at
 the single-terminal human protocol; launch its generated wrapper only. The Author explicitly approved commit/push on 2026-10-13 and accepted
 the visual review; retrieved human results match all 533 observations/5249 bytes.
 Keyboard success was not separately stated. See `docs/tasks/GOLEM-028/README.md`.
+
+## Compound Boolean prototype — GOLEM-029
+
+The task-local GOLEM-029 fork supports typed Not/And/Or with parentheses and
+precedence arithmetic, comparison, Not, And, Or. And/Or short circuit left to
+right. Skipped arithmetic cannot fault; selected failures preserve destinations
+and earlier effects, then halt. Buffered helper calls explicitly propagate
+arithmetic status so a nested failure cannot resume outer writes. Canonical bool
+layout, type tag 6, entry admission, ownership and named assembly calls remain
+unchanged. Production compiler and generic SDK/runtime are unchanged.
+
+Host sanitizer/model/generated-C checks pass 5,284 cases, 59 grammar/reference
+cases and 74 rejections plus maintained checks. Target qualification and stopped
+Oryx visual staging are documented in docs/tasks/GOLEM-029/README.md. The Author accepted human review; saved results pass all 533 observations/5,249
+bytes. The Author explicitly approved commit/push on 2026-10-13. The traffic-light appearance
+is intentionally unchanged; lights.golem now expresses its decisions with the
+new compound operators. Use its task-specific profile and single-terminal review.
