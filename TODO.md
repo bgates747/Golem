@@ -3,8 +3,8 @@
 This is the authoritative register of promoted, unfinished work. Detailed plans
 and task artifacts live under `docs/tasks/`.
 
-Checkpoint 0cabba3 was committed and pushed with the Author's approval on
-2026-10-13, including accepted GOLEM-029 work. Outstanding human/physical
+Checkpoint 3a1c9c8 was committed and pushed with the Author's approval on
+2026-10-13, including accepted GOLEM-030 work. Outstanding human/physical
 reviews below remain open; the checkpoint does not claim those reviews occurred.
 
 - [ ] **GOLEM-023:** Research friendly Golem source compiled to native VDPlets:

@@ -1,0 +1,163 @@
+// Independent qualification entries with explicit initialized globals.
+uint16 i = 37
+uint16 j = 41
+uint16 result = 0
+uint16 visits = 0
+uint16 guard Bounds(0, 100) = 9
+uint16 input = 0
+uint16 earlier = 7
+uint16 k Bounds(10, 14) = 10
+
+Sub ascending
+    earlier = earlier + 1
+    For i In Range(0:9:2)
+        visits = visits + 1
+        result = result + i
+    Next i
+    earlier = earlier + 1
+EndSub
+
+Sub descending
+    For i In Range(9:0:-2)
+        visits = visits + 1
+        result = result + i
+    Next i
+    earlier = earlier + 1
+EndSub
+
+Sub singleton
+    For i In Range(65535:65535)
+        visits = visits + 1
+        result = i
+    Next i
+    earlier = earlier + 1
+EndSub
+
+Sub edgeUp
+    For i In Range(65533:65535)
+        visits = visits + 1
+        result = i
+    Next i
+    earlier = earlier + 1
+EndSub
+
+Sub edgeDown
+    For i In Range(2:0:-1)
+        visits = visits + 1
+        result = i
+    Next i
+    earlier = earlier + 1
+EndSub
+
+Sub nested
+    For i In Range(1:3)
+        For j In Range(2:0:-1)
+            visits = visits + 1
+            result = result + i + j
+        Next j
+    Next i
+    earlier = earlier + 1
+EndSub
+
+Sub branchLoop
+    If input == 0 Then
+        For i In Range(0:2)
+            result = result + i
+        Next i
+    Else
+        For i In Range(5:3:-1)
+            result = result + i
+        Next i
+    EndIf
+    earlier = earlier + 1
+EndSub
+
+Sub loopBranch
+    For i In Range(0:4)
+        If i == 2 Then
+            guard = input
+        Else
+            result = result + i
+        EndIf
+        visits = visits + 1
+    Next i
+    earlier = earlier + 1
+EndSub
+
+Sub conditionFault
+    For i In Range(0:4)
+        earlier = earlier + 1
+        If input + i < 1 Then
+            result = 1
+        Else
+            result = 2
+        EndIf
+        visits = visits + 1
+    Next i
+    earlier = earlier + 1
+EndSub
+
+Sub empty
+    For i In Range(5:1:-2)
+    Next i
+    earlier = earlier + 1
+EndSub
+
+Sub fullAscending
+    For i In Range(0:65535)
+    Next i
+    earlier = earlier + 1
+EndSub
+
+Sub fullDescending
+    For i In Range(65535:0:-1)
+    Next i
+    earlier = earlier + 1
+EndSub
+
+Sub extremeStep
+    For i In Range(0:65535:65535)
+        visits = visits + 1
+        result = i
+    Next i
+    earlier = earlier + 1
+EndSub
+
+Sub resetReuse
+    For i In Range(0:2)
+        result = i
+    Next i
+    For i In Range(2:0:-1)
+        result = i
+    Next i
+    earlier = earlier + 1
+EndSub
+
+Sub nestedFault
+    For i In Range(0:2)
+        For j In Range(0:2)
+            result = result + input
+            visits = visits + 1
+        Next j
+    Next i
+    earlier = earlier + 1
+EndSub
+
+Sub skipped
+    If input == 0 Then
+        result = 5
+    Else
+        For i In Range(0:65535)
+            guard = input
+        Next i
+    EndIf
+    earlier = earlier + 1
+EndSub
+
+Sub boundedCounter
+    For k In Range(10:15:2)
+        visits = visits + 1
+        result = k
+    Next k
+    earlier = earlier + 1
+EndSub

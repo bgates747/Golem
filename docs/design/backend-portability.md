@@ -158,3 +158,13 @@ source, layout and named assembly contract. The visual uses quotient for phase
 and remainder for green blinking. See [the division tranche](../tasks/GOLEM-030/README.md)
 for qualification and human-review status. Production compiler and generic SDK
 remain unchanged.
+
+GOLEM-031 adds task-local signed 16-bit arithmetic and explicit signed/unsigned
+conversions to both targets. Shared two's-complement storage uses signed tag 2.
+Same-type comparisons follow numeric signed ordering; conversions preserve
+numeric values and reject out-of-range results with status 32. Each arithmetic
+intermediate is checked; failure preserves its destination and prior effects.
+For counters and divmod remain uint16. The visual demonstrates signed movement
+and conversion into screen coordinates; source, qualification and human-review
+status are in [the signed tranche](../tasks/GOLEM-031/README.md). Production compiler
+and generic SDK remain unchanged.

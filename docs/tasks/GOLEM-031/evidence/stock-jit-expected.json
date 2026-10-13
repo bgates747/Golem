@@ -1,0 +1,615 @@
+{
+  "variant": "stock",
+  "checks": [
+    {
+      "label": "buffered case 0",
+      "offset": 0,
+      "bytes": 16
+    },
+    {
+      "label": "buffered case 1",
+      "offset": 16,
+      "bytes": 16
+    },
+    {
+      "label": "buffered case 2",
+      "offset": 32,
+      "bytes": 16
+    },
+    {
+      "label": "buffered case 3",
+      "offset": 48,
+      "bytes": 16
+    },
+    {
+      "label": "buffered case 4",
+      "offset": 64,
+      "bytes": 16
+    },
+    {
+      "label": "buffered case 5",
+      "offset": 80,
+      "bytes": 16
+    },
+    {
+      "label": "buffered case 6",
+      "offset": 96,
+      "bytes": 16
+    },
+    {
+      "label": "buffered case 7",
+      "offset": 112,
+      "bytes": 16
+    },
+    {
+      "label": "buffered case 8",
+      "offset": 128,
+      "bytes": 16
+    },
+    {
+      "label": "buffered case 9",
+      "offset": 144,
+      "bytes": 16
+    },
+    {
+      "label": "buffered case 10",
+      "offset": 160,
+      "bytes": 16
+    },
+    {
+      "label": "buffered case 11",
+      "offset": 176,
+      "bytes": 16
+    },
+    {
+      "label": "buffered case 12",
+      "offset": 192,
+      "bytes": 16
+    },
+    {
+      "label": "buffered case 13",
+      "offset": 208,
+      "bytes": 16
+    },
+    {
+      "label": "buffered case 14",
+      "offset": 224,
+      "bytes": 16
+    },
+    {
+      "label": "buffered case 15",
+      "offset": 240,
+      "bytes": 16
+    },
+    {
+      "label": "buffered case 16",
+      "offset": 256,
+      "bytes": 16
+    },
+    {
+      "label": "buffered case 17",
+      "offset": 272,
+      "bytes": 16
+    },
+    {
+      "label": "buffered case 18",
+      "offset": 288,
+      "bytes": 16
+    },
+    {
+      "label": "buffered case 19",
+      "offset": 304,
+      "bytes": 16
+    },
+    {
+      "label": "buffered case 20",
+      "offset": 320,
+      "bytes": 16
+    },
+    {
+      "label": "buffered case 21",
+      "offset": 336,
+      "bytes": 16
+    },
+    {
+      "label": "buffered case 22",
+      "offset": 352,
+      "bytes": 16
+    },
+    {
+      "label": "buffered case 23",
+      "offset": 368,
+      "bytes": 16
+    },
+    {
+      "label": "buffered case 24",
+      "offset": 384,
+      "bytes": 16
+    },
+    {
+      "label": "buffered case 25",
+      "offset": 400,
+      "bytes": 16
+    },
+    {
+      "label": "buffered case 26",
+      "offset": 416,
+      "bytes": 16
+    },
+    {
+      "label": "buffered case 27",
+      "offset": 432,
+      "bytes": 16
+    },
+    {
+      "label": "buffered case 28",
+      "offset": 448,
+      "bytes": 16
+    },
+    {
+      "label": "buffered case 29",
+      "offset": 464,
+      "bytes": 16
+    },
+    {
+      "label": "buffered case 30",
+      "offset": 480,
+      "bytes": 16
+    },
+    {
+      "label": "buffered case 31",
+      "offset": 496,
+      "bytes": 16
+    },
+    {
+      "label": "buffered case 32",
+      "offset": 512,
+      "bytes": 16
+    },
+    {
+      "label": "buffered case 33",
+      "offset": 528,
+      "bytes": 16
+    },
+    {
+      "label": "buffered case 34",
+      "offset": 544,
+      "bytes": 16
+    },
+    {
+      "label": "buffered case 35",
+      "offset": 560,
+      "bytes": 16
+    },
+    {
+      "label": "buffered case 36",
+      "offset": 576,
+      "bytes": 16
+    },
+    {
+      "label": "buffered case 37",
+      "offset": 592,
+      "bytes": 16
+    },
+    {
+      "label": "buffered case 38",
+      "offset": 608,
+      "bytes": 16
+    },
+    {
+      "label": "buffered case 39",
+      "offset": 624,
+      "bytes": 16
+    },
+    {
+      "label": "buffered case 40",
+      "offset": 640,
+      "bytes": 16
+    },
+    {
+      "label": "buffered case 41",
+      "offset": 656,
+      "bytes": 16
+    },
+    {
+      "label": "buffered case 42",
+      "offset": 672,
+      "bytes": 16
+    },
+    {
+      "label": "buffered case 43",
+      "offset": 688,
+      "bytes": 16
+    },
+    {
+      "label": "buffered case 44",
+      "offset": 704,
+      "bytes": 16
+    },
+    {
+      "label": "buffered case 45",
+      "offset": 720,
+      "bytes": 16
+    },
+    {
+      "label": "buffered case 46",
+      "offset": 736,
+      "bytes": 16
+    },
+    {
+      "label": "buffered case 47",
+      "offset": 752,
+      "bytes": 16
+    },
+    {
+      "label": "buffered case 48",
+      "offset": 768,
+      "bytes": 16
+    },
+    {
+      "label": "buffered case 49",
+      "offset": 784,
+      "bytes": 16
+    },
+    {
+      "label": "buffered case 50",
+      "offset": 800,
+      "bytes": 16
+    },
+    {
+      "label": "buffered case 51",
+      "offset": 816,
+      "bytes": 16
+    },
+    {
+      "label": "buffered case 52",
+      "offset": 832,
+      "bytes": 16
+    },
+    {
+      "label": "buffered case 53",
+      "offset": 848,
+      "bytes": 16
+    },
+    {
+      "label": "buffered case 54",
+      "offset": 864,
+      "bytes": 16
+    },
+    {
+      "label": "buffered case 55",
+      "offset": 880,
+      "bytes": 16
+    },
+    {
+      "label": "buffered case 56",
+      "offset": 896,
+      "bytes": 16
+    },
+    {
+      "label": "buffered case 57",
+      "offset": 912,
+      "bytes": 16
+    },
+    {
+      "label": "buffered case 58",
+      "offset": 928,
+      "bytes": 16
+    },
+    {
+      "label": "buffered case 59",
+      "offset": 944,
+      "bytes": 16
+    },
+    {
+      "label": "buffered case 60",
+      "offset": 960,
+      "bytes": 16
+    },
+    {
+      "label": "buffered case 61",
+      "offset": 976,
+      "bytes": 16
+    },
+    {
+      "label": "buffered case 62",
+      "offset": 992,
+      "bytes": 16
+    },
+    {
+      "label": "buffered case 63",
+      "offset": 1008,
+      "bytes": 16
+    },
+    {
+      "label": "buffered case 64",
+      "offset": 1024,
+      "bytes": 16
+    },
+    {
+      "label": "buffered case 65",
+      "offset": 1040,
+      "bytes": 16
+    },
+    {
+      "label": "shared state survives cleanup",
+      "offset": 1056,
+      "bytes": 16
+    }
+  ],
+  "result_bytes": 1072,
+  "module_loads": 0,
+  "calls": [
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 1,
+      "backend": "buffered"
+    },
+    {
+      "entry": 1,
+      "backend": "buffered"
+    },
+    {
+      "entry": 1,
+      "backend": "buffered"
+    },
+    {
+      "entry": 1,
+      "backend": "buffered"
+    },
+    {
+      "entry": 1,
+      "backend": "buffered"
+    },
+    {
+      "entry": 1,
+      "backend": "buffered"
+    },
+    {
+      "entry": 1,
+      "backend": "buffered"
+    },
+    {
+      "entry": 1,
+      "backend": "buffered"
+    },
+    {
+      "entry": 2,
+      "backend": "buffered"
+    },
+    {
+      "entry": 2,
+      "backend": "buffered"
+    },
+    {
+      "entry": 2,
+      "backend": "buffered"
+    },
+    {
+      "entry": 2,
+      "backend": "buffered"
+    },
+    {
+      "entry": 2,
+      "backend": "buffered"
+    },
+    {
+      "entry": 2,
+      "backend": "buffered"
+    },
+    {
+      "entry": 2,
+      "backend": "buffered"
+    },
+    {
+      "entry": 2,
+      "backend": "buffered"
+    },
+    {
+      "entry": 3,
+      "backend": "buffered"
+    },
+    {
+      "entry": 3,
+      "backend": "buffered"
+    },
+    {
+      "entry": 3,
+      "backend": "buffered"
+    },
+    {
+      "entry": 4,
+      "backend": "buffered"
+    },
+    {
+      "entry": 4,
+      "backend": "buffered"
+    },
+    {
+      "entry": 4,
+      "backend": "buffered"
+    },
+    {
+      "entry": 5,
+      "backend": "buffered"
+    },
+    {
+      "entry": 5,
+      "backend": "buffered"
+    },
+    {
+      "entry": 5,
+      "backend": "buffered"
+    },
+    {
+      "entry": 6,
+      "backend": "buffered"
+    },
+    {
+      "entry": 6,
+      "backend": "buffered"
+    },
+    {
+      "entry": 6,
+      "backend": "buffered"
+    },
+    {
+      "entry": 7,
+      "backend": "buffered"
+    },
+    {
+      "entry": 7,
+      "backend": "buffered"
+    },
+    {
+      "entry": 7,
+      "backend": "buffered"
+    },
+    {
+      "entry": 8,
+      "backend": "buffered"
+    },
+    {
+      "entry": 8,
+      "backend": "buffered"
+    },
+    {
+      "entry": 8,
+      "backend": "buffered"
+    },
+    {
+      "entry": 9,
+      "backend": "buffered"
+    },
+    {
+      "entry": 9,
+      "backend": "buffered"
+    },
+    {
+      "entry": 9,
+      "backend": "buffered"
+    },
+    {
+      "entry": 10,
+      "backend": "buffered"
+    },
+    {
+      "entry": 10,
+      "backend": "buffered"
+    },
+    {
+      "entry": 10,
+      "backend": "buffered"
+    },
+    {
+      "entry": 11,
+      "backend": "buffered"
+    },
+    {
+      "entry": 11,
+      "backend": "buffered"
+    },
+    {
+      "entry": 11,
+      "backend": "buffered"
+    },
+    {
+      "entry": 12,
+      "backend": "buffered"
+    },
+    {
+      "entry": 12,
+      "backend": "buffered"
+    },
+    {
+      "entry": 12,
+      "backend": "buffered"
+    },
+    {
+      "entry": 12,
+      "backend": "buffered"
+    },
+    {
+      "entry": 13,
+      "backend": "buffered"
+    },
+    {
+      "entry": 13,
+      "backend": "buffered"
+    },
+    {
+      "entry": 14,
+      "backend": "buffered"
+    },
+    {
+      "entry": 15,
+      "backend": "buffered"
+    },
+    {
+      "entry": 15,
+      "backend": "buffered"
+    },
+    {
+      "entry": 15,
+      "backend": "buffered"
+    },
+    {
+      "entry": 16,
+      "backend": "buffered"
+    },
+    {
+      "entry": 16,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    },
+    {
+      "entry": 0,
+      "backend": "buffered"
+    }
+  ],
+  "visual": null,
+  "source": "signed",
+  "state_id": 1,
+  "probe_sha256": "8c156fcd80ea16c25b01d6e2f4368cef5afeee80e720091a8049c35f7feb7378",
+  "script_sha256": "3161fcd6f44663752d12dedf1f46eff6196581311b5858496d95a15c2b2bfe55",
+  "source_sha256": "550ef7d2e6d569e7bd70e5023adb7d51e64ee6ada4ead587f9f0914ec31c0f73",
+  "module_sha256": "bb7c710576077c485ebaaba3e7386ed6220e94966b021f796df8b9b3a897aa1a"
+}

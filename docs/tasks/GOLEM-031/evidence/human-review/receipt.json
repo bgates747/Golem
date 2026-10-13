@@ -1,0 +1,42 @@
+{
+  "variant": "review",
+  "observations": 481,
+  "calls": 600,
+  "result_bytes": 4729,
+  "result_sha256": "dd6536fa5d74692b5613eb697236a7852b015b162caffc46108809e93beae3fc",
+  "native": {
+    "LOAD native": 1,
+    "native entry 6": 31640,
+    "native entry 7": 16393,
+    "entry_address": "0x40097b98"
+  },
+  "visual": {
+    "frames": 600,
+    "final_words": [
+      48,
+      2,
+      176,
+      192,
+      600,
+      6,
+      12,
+      0,
+      0
+    ],
+    "width": 320,
+    "height": 240,
+    "playfield_rows": 176,
+    "colours": {
+      "negative": 48,
+      "nonnegative": 12,
+      "origin": 21
+    },
+    "private_cleanups_preserve_state": true
+  },
+  "author_report": "looks good",
+  "visual_review_accepted": true,
+  "keyboard_result": "not separately stated",
+  "commit_push_approved": true,
+  "runtime_identities_verified": true,
+  "commit_push_approval_date": "2026-10-13"
+}

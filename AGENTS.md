@@ -643,3 +643,30 @@ and must be explicitly installed. Use its separate Oryx profile and the normal
 single-terminal review protocol. The Author accepted visual review; retrieved
 results pass all 637 observations/6,289 bytes and runtime identities pass.
 The Author explicitly approved commit/push on 2026-10-13.
+
+## Signed integer prototype — GOLEM-031
+
+The task-local GOLEM-031 fork adds sint16 globals/literals with inclusive Bounds,
+checked + / - / * arithmetic, all six same-type comparisons, and explicit
+sint16(...)/uint16(...) conversions. Two-byte two's-complement storage uses type
+tag 2. Mixed operations require a conversion. Negative-to-unsigned or unsigned
+above 32767-to-signed conversions fail with status 32. Arithmetic overflow uses
+operator statuses 1/2/3; failed destinations and prior effects follow the existing
+contract. For counters and paired divmod remain uint16; use 0 - value for checked
+variable negation. Production compiler and generic runtime/SDK remain unchanged.
+
+Signed buffered comparisons flip the sign bit for unsigned byte ordering;
+addition/subtraction inspect sign changes, multiplication uses checked unsigned
+magnitudes and signed result limits. Bounds failures now set private status as
+well as public status, allowing conversion errors to propagate through logical
+helpers before outer writes resume. Native arithmetic uses checked int32
+intermediates and packs only validated results.
+
+Host sanitizer/model/generated-C, ELF and maintained checks pass 14,912 cases,
+75 grammar/reference cases and 93 rejections. Target qualification and Oryx
+visual staging are recorded in docs/tasks/GOLEM-031/README.md. motion.golem owns
+signed velocity, displacement, position, screen conversion and colour. Its state
+is 18 bytes; the square crosses a gray origin marker, red when negative, green
+otherwise. Use its dedicated Oryx profile and single-terminal review protocol.
+The Author accepted signed-motion review; saved results pass 481 observations/4,729
+bytes and runtime identities pass. The Author explicitly approved commit/push on 2026-10-13.

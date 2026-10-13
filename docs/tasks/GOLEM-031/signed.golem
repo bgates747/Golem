@@ -1,0 +1,76 @@
+sint16 a = 0
+sint16 b = 0
+sint16 result = 7
+sint16 small Bounds(-10,10) = 3
+uint16 u = 0
+uint16 earlier = 7
+bool flag = false
+Sub add
+    earlier = earlier + 1
+    result = a + b
+    earlier = earlier + 1
+EndSub
+Sub subtract
+    earlier = earlier + 1
+    result = a - b
+    earlier = earlier + 1
+EndSub
+Sub multiply
+    earlier = earlier + 1
+    result = a * b
+    earlier = earlier + 1
+EndSub
+Sub chain
+    earlier = earlier + 1
+    result = a + b * 2 - 1
+EndSub
+Sub equal
+    flag = a == b
+EndSub
+Sub unequal
+    flag = a != b
+EndSub
+Sub less
+    flag = a < b
+EndSub
+Sub greater
+    flag = a > b
+EndSub
+Sub atMost
+    flag = a <= b
+EndSub
+Sub atLeast
+    flag = a >= b
+EndSub
+Sub toUnsigned
+    earlier = earlier + 1
+    u = uint16(a)
+    earlier = earlier + 1
+EndSub
+Sub toSigned
+    earlier = earlier + 1
+    result = sint16(u)
+    earlier = earlier + 1
+EndSub
+Sub bounded
+    small = a
+EndSub
+Sub shortCircuit
+    flag = flag And uint16(a) == u
+    earlier = earlier + 1
+EndSub
+Sub signedCopy
+    result = sint16(a)
+    u = uint16(u)
+EndSub
+Sub negativeComparison
+    flag = a < -1 Or (0 < a And a <= 32767)
+EndSub
+Sub selectedConversion
+    If flag Then
+        result = sint16(u)
+    Else
+        u = uint16(a)
+    EndIf
+    earlier = earlier + 1
+EndSub
