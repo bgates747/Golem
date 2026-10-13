@@ -473,7 +473,44 @@ generic runtime changes in that repository. GOLEM-023 researches approachable
 Golem source compiled to native VDPlets, with generated C as the candidate route.
 The first research tranche is complete. The Author requires common source,
 semantics and storage for buffered/native targets, including application/end-user
-runtime selection; see `docs/design/backend-portability.md`. GOLEM-024 authorizes
-a task-local shared scalar frontend and layout prototype only. Backend emitters,
-runtime services and physical deployment remain later work. See the detailed
+runtime selection; see `docs/design/backend-portability.md`. GOLEM-024 supplied
+a task-local shared scalar frontend and layout prototype. GOLEM-025 adds bounded
+executable integer emitters; physical deployment remains later work. See the detailed
 task plans and authoritative `TODO.md`.
+
+GOLEM-024's task-local shared scalar frontend/layout prototype was accepted.
+It supports initialized uint16/float32 globals, Bounds, named parameterless Subs
+and typed + / - / * assignments. Both selections produce identical common
+interface/typed-program/state/assembly-layout artifacts for the same reservations.
+Host ASan/UBSan (44 checks/42 rejections), ten CLI rejection cases, two real
+assembler consumers and maintained compiler checks pass. This is not an emitter
+or a production promotion: no native C, VDPlet or buffered executable is generated.
+See `docs/tasks/GOLEM-024/README.md` and the acceptance devlog dated 2026-10-13.
+
+## Shared integer backends and visual review — GOLEM-025
+
+Task-local checked uint16 emitters compile the GOLEM-024 typed model into stock
+buffered commands and SDK-packaged native C. Initialized globals, Bounds, finite
+named parameterless Subs and + / - / * assignments are supported. Float output
+and broader syntax remain rejected. Both packages use identical packed state,
+error behavior and entry order with disjoint private ownership. Fresh native
+handles are explicitly bound to resident wrappers. Native unload and private
+cleanups preserve shared state. Production compiler and generic SDK/runtime code
+are unchanged.
+
+Host ASan/UBSan and model/generated-C checks pass 218 cases. Stock Oryx VDP
+qualifies arithmetic and meter source; actual ESP32/Xtensa JIT and interpreter
+qualify both backends, relocated IDs and failures. The 600-frame review alternates
+buffered cyan and native orange along one continuous moving-square/meter path.
+Golem computes coordinates; resident VDU commands draw; assembly selects/paces
+with stock VSYNC. All 56,320 final playfield pixels, periodic full-state checks,
+cleanup retention and actual MOS return pass. The Author accepted the visual
+tranche and authorized commit/push on 2026-10-13; retrieved human observations
+match all 4,729 bytes. Keyboard success was not separately stated.
+
+The dedicated Oryx review is staged/stopped at
+`~/Agon/mystuff/golem/docs/tasks/GOLEM-025/.emulator`. Launch its generated
+`./fab-agon-emulator` wrapper only. The Author watches, types dir when instructed
+onscreen, closes and reports; the agent retrieves/verifies saved results. Source
+is deployed beside the report. The Author explicitly approved committing and pushing this tranche.
+See `docs/tasks/GOLEM-025/README.md`.

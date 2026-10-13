@@ -1,0 +1,63 @@
+{
+  "purpose": "Shared frontend/layout and HOST reference only; no backend emission or target execution",
+  "base_commit": "3e0251e8fe745d2b425323352d43106c3d8be8a8",
+  "compiler": "g++ (Debian 14.2.0-19) 14.2.0",
+  "source_sha256": {
+    "portable.hpp": "fbfc93f3f063657e4ea5a4e50ce796fa38b0a90fbef568e94b8a81bca348d5f7",
+    "planner.cpp": "9f3202faf4e3898916387f87d66beb1e09b3239a56c2b6cd570d6583c6608583",
+    "test_portable.cpp": "ab39090a28f4d55c33e8468840e068fe96fe05b5dead871ac158a319e114363a",
+    "run_checks.py": "4924e820b16d701ff89e8ed2fa80e51b6d6e075877fe5e5845e025c2ad888a78",
+    "shared-example.golem": "f7a17eb963058c0115916a1a4f33fede2b370d5d78cd906db8aca877fd857b76"
+  },
+  "production_dependency_sha256": {
+    "token_reader.hpp": "397fe169f1a84b47acf8a77a3036fd50ddfeac45e64d07a74b0497ca50f4126d",
+    "buffer_allocator.hpp": "7c8881777decd9e04231adae3ab4050e52451c0fadaafe6b37c7ce0735c7b449"
+  },
+  "sanitized_host_contracts": "Shared frontend/layout/HOST reference: 44 checks, 42 rejection cases pass. No target execution.",
+  "target_artifact_comparisons": [
+    {
+      "layout": "default",
+      "state_buffer": 1,
+      "identical_common_files": {
+        "interface.json": "56a67db7066ddad3e7b4beb01392307e92dbe6408985dc40da1a102703d9d9a1",
+        "program.json": "c0cf93c68a9b71977084d6d8922398577944c2fc57235e9ff282cf4749a4b19b",
+        "state.bin": "350b3062fcc6f1a28d924ec8a1f1902356bb9b33f669c175adc4bfb15742b30d",
+        "layout.inc": "0e51714b5c3138d27109b248a108f304382ea75ec4d933105b2d5deb8d048abb"
+      }
+    },
+    {
+      "layout": "relocated",
+      "state_buffer": 100,
+      "identical_common_files": {
+        "interface.json": "103cbe8e778a8a58be4fda3de8a585c583fade0965e3464f19bbed5100f7b3f4",
+        "program.json": "c0cf93c68a9b71977084d6d8922398577944c2fc57235e9ff282cf4749a4b19b",
+        "state.bin": "350b3062fcc6f1a28d924ec8a1f1902356bb9b33f669c175adc4bfb15742b30d",
+        "layout.inc": "e785a5f201d3bc90493d4c1275263808fe6e3972b6179531aa05390e572c6022"
+      }
+    }
+  ],
+  "real_assembler_consumers": [
+    {
+      "layout": "default",
+      "equates_checked": 33,
+      "binary_bytes": 99,
+      "sha256": "9335203f8d7c730cf41c3ba3695dffdeafefc4eaede85aa7d5c32c1524441c24"
+    },
+    {
+      "layout": "relocated",
+      "equates_checked": 33,
+      "binary_bytes": 99,
+      "sha256": "f5676d0d8f7eeed9182ceb43d1858ce9bfb998c0fc4e32c0e9e1915b4fa30ee0"
+    }
+  ],
+  "cli_rejection_preserves_outputs": 10,
+  "maintained_checks": [
+    "make: Entering directory '/Agon/mystuff/golem/src'",
+    "../build/test_compiler",
+    "Maintained raw/resident contract checks pass; 132 rejection cases.",
+    "make: Leaving directory '/Agon/mystuff/golem/src'"
+  ],
+  "elapsed_build_and_checks_seconds": 23.837,
+  "hardware_executed": false,
+  "backend_emitters_implemented": false
+}

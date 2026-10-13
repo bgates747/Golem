@@ -65,8 +65,8 @@ execution status and checkboxes; this is not another actionable task register.
 
 | Stage | Deliverable | Boundary |
 | --- | --- | --- |
-| Shared foundation | Common typed frontend, deterministic initialized state layout and target requirements | First bounded implementation: GOLEM-024; no executable backend output yet |
-| First portable routine | Same checked uint16 source lowered to buffered commands and a native package | Require actual target qualification before claiming interchangeable execution |
+| Shared foundation | Common typed frontend, deterministic initialized state layout and target requirements | GOLEM-024 accepted; task-local prototype |
+| First portable routine | Same checked uint16 source lowered to buffered commands and a native package | GOLEM-025 accepted task-local emitters; stock/actual-Xtensa and saved human results pass |
 | Common language growth | Expressions, conversions, floats, conditionals, loops and routines, incrementally qualified on both targets | A supported syntax/type does not imply every operation on it is portable |
 | Startup selection | Dual-artifact packaging, named-call dispatch and explicit user choice; qualified capability detection when available | Stock buffered path remains usable without the native loader |
 | Live selection | Quiescent backend change with state/ownership preservation and fresh native handle binding | No mid-call replacement, implicit state reset or error replay |
@@ -76,6 +76,23 @@ compilation can be an interim development artifact, but source compatibility
 and shared storage must remain first-class constraints. The maintained compiler
 currently has separate small resident profiles rather than this shared frontend;
 it has no native output, dual-package dispatcher or live switching implementation.
+
+GOLEM-024's first task-local prototype now parses the same scalar source into a
+typed model and publishes identical common layout/data/assembly artifacts for
+both target selections, including relocated reservations. Sanitized host reference
+and real assembler checks pass. Its target descriptors explicitly state that no
+executable backend is emitted or qualified; this establishes the shared foundation
+without claiming portable execution. See [the prototype report](../tasks/GOLEM-024/README.md).
+
+GOLEM-025 adds task-local executable uint16 emitters to that shared model.
+Initialized globals, Bounds and named Subs with checked + / - / * assignments
+compile into buffered commands or generated C packaged by the native SDK. Both
+implementations coexist with disjoint private ownership and one common state
+buffer. Stock VDP and actual Xtensa checks pass; a labelled moving square/meter
+alternates backends without resetting coordinates or ticks. The application
+explicitly selects and binds calls; no capability probe, automatic replay or
+mid-call switching is added. Float output and production promotion remain later
+work. See [the executable tranche](../tasks/GOLEM-025/README.md).
 
 The first research proposal's whole-module target choice remains useful. Its
 suggestion of making buffered support a later optional concern is superseded by

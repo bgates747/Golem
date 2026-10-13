@@ -1,0 +1,30 @@
+// Both backends run these exact bodies. Assembly selects an entry and paces it.
+// Resident VDU drawing uses x/y/right/bottom/barRight; it does not calculate them.
+uint16 phase Bounds(0, 96) = 0
+uint16 step Bounds(4, 4) = 4
+uint16 x = 48
+uint16 y = 152
+uint16 right = 60
+uint16 bottom = 164
+uint16 barRight = 20
+uint16 ticks = 0
+
+Sub grow
+    phase = phase + step
+    x = phase * 2 + 48
+    y = 152 - phase
+    right = x + 12
+    bottom = y + 12
+    barRight = x - 28
+    ticks = ticks + 1
+EndSub
+
+Sub shrink
+    phase = phase - step
+    x = phase * 2 + 48
+    y = 152 - phase
+    right = x + 12
+    bottom = y + 12
+    barRight = x - 28
+    ticks = ticks + 1
+EndSub

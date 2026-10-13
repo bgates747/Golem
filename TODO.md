@@ -7,11 +7,6 @@ The Author authorized committing and pushing all current work on 2026-10-12.
 Outstanding human/physical reviews below remain open; this checkpoint does not
 claim those reviews occurred.
 
-- [ ] **GOLEM-024:** Implement the shared scalar frontend and state-layout
-  prototype for one source and two execution targets. [First implementation
-  plan](docs/tasks/GOLEM-024.md). Task-local foundation only; no backend emitter
-  or hardware deployment in this tranche.
-
 - [ ] **GOLEM-023:** Research friendly Golem source compiled to native VDPlets:
   compare native library calls, explicit native procedures, whole native modules
   and automatic mixed compilation; recommend a bounded first milestone.

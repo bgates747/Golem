@@ -1,0 +1,21 @@
+uint16 a = 0
+uint16 b = 0
+uint16 result = 99
+uint16 earlier = 7
+uint16 narrow Bounds(0, 100) = 9
+Sub add
+    earlier = earlier + 1
+    result = a + b
+EndSub
+Sub subtract
+    result = a - b
+EndSub
+Sub multiply
+    result = a * b
+EndSub
+Sub chain
+    result = (a + b) * b - a
+EndSub
+Sub accept
+    narrow = a
+EndSub

@@ -82,6 +82,10 @@ order: generated code must preserve the selected Golem rules explicitly.
 
 This independently initialized example records the explicit-procedure option:
 
+The later portability requirement selects ordinary source plus an external target
+choice for portable programs. The Native marker below is retained as a deferred
+option illustration, not the selected common-source spelling.
+
 ```golem
 float32 scale = 1.5
 float32 bias = 0.25
