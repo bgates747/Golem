@@ -57,7 +57,7 @@ not release autonomous scheduling.
 
 [Generic runtime support review](GOLEM-038/runtime-review.md): a bounded static
 review of invocation, leases, cancellation and unload, with source-backed
-findings and owner-specific questions. Awaiting Author review; no scheduler
+findings and owner-specific questions. Released and completed on 2026-10-14: [source-backed findings](GOLEM-038/runtime-findings.md). No scheduler
 implementation, benchmark duplication or new runtime feature is commissioned.
 The broader D3 items above are coordination boundaries, not this agent's
 implementation assignments.

@@ -1,0 +1,81 @@
+{
+  "review": "static only; no build/run/benchmark",
+  "sdk_commit": "9fbb21dd09402e2a3835067dbb4427f2c20dec3c",
+  "golem_plan_commit": "d0700680eaf137b5e8f4bf1e23877576c550c2d9",
+  "firmware_vdp_pin": "1056ee38ec1cc68ed327bd32ee47d04b1c30597c",
+  "firmware_graphics_pin": "ac2dd5986daf496c43ae8e7fe41836274aec54a0",
+  "inputs": {
+    "/Agon/mystuff/agon-vdplet/src/vdplet_runtime.h": {
+      "sha256": "af049fe93f1e64b0ec1135e5c0e55c1938adf022669dc35d906f5fcb6c58d91b",
+      "bytes": 12214
+    },
+    "/Agon/mystuff/agon-vdplet/build/firmware/firmware-src/video/video.ino": {
+      "sha256": "0743e76728397c56e963baebe98c2746540195732d658d9dad2edf2e768ada27",
+      "bytes": 11600
+    },
+    "/Agon/mystuff/agon-vdplet/tools/build_firmware.py": {
+      "sha256": "3e078c051981485e626991819a627279cbf46d9c4883f04d114fb19abca10baf",
+      "bytes": 6688
+    },
+    "/Agon/mystuff/agon-vdplet/src/vdplet_image.h": {
+      "sha256": "db95e97adb1d9fa07a1a89843b70fb9ae12303edb6e0abc3cfb7ea5aa7351dc3",
+      "bytes": 8750
+    },
+    "/Agon/mystuff/agon-vdplet/build/firmware/firmware-src/video/buffers.h": {
+      "sha256": "f04f4da7521192d05725a7f54a52200c0b7cd9ed067335feaf20baf32ec62751",
+      "bytes": 10387
+    },
+    "/Agon/mystuff/agon-vdplet/include/vdplet.h": {
+      "sha256": "fa8385e2906f07d37372d80c40f73d419defdbefe7a3458461ac9d5fe0820d38",
+      "bytes": 2617
+    },
+    "/Agon/mystuff/golem/docs/tasks/GOLEM-033/accepted-contract.md": {
+      "sha256": "b3c79905eafd65139148967902997eba755e4b4c0b81840570f361d6647d2a9f",
+      "bytes": 10868
+    },
+    "/Agon/mystuff/golem/docs/tasks/GOLEM-037/binding/delivery/candidate-48eac7efe8fa51f4/native.c": {
+      "sha256": "94d92d109f9b3b93e8ddfea1427edcdeb9059a87636a6bacfd93d3c3894a1992",
+      "bytes": 69138
+    },
+    "/Agon/mystuff/golem/docs/tasks/GOLEM-037/binding/delivery/candidate-48eac7efe8fa51f4/calls.inc": {
+      "sha256": "d0fce46192f9d63000db46f87f981a7f807416620301a504bf30d33874033e3f",
+      "bytes": 2406
+    },
+    "/Agon/mystuff/agon-vdplet/build/firmware/firmware-src/video/buffer_stream.h": {
+      "sha256": "6b57aedf9e7fee1b8fdb84660e4eaade788c185ec540f94b00f965f2024c418d",
+      "bytes": 3583
+    },
+    "/Agon/mystuff/agon-vdplet/build/firmware/firmware-src/video/vdu_buffered.h": {
+      "sha256": "b9d9d93295ddc5fb05c802071057e32ed9755837f029ce381340072352c262f0",
+      "bytes": 100535
+    },
+    "/Agon/mystuff/golem/docs/tasks/GOLEM-037/binding/delivery/candidate-48eac7efe8fa51f4/helper/rally_render.h": {
+      "sha256": "2adcc445e416f3dd95db2f52afb7ef8803c67e6fc444556be5e9d1505b133e50",
+      "bytes": 3849
+    },
+    "/Agon/mystuff/golem/docs/tasks/GOLEM-037/binding/delivery/candidate-48eac7efe8fa51f4/helper/rally_render.c": {
+      "sha256": "7ae7f03183864e44ffa2488f90fd1e878eb984bd4a2d325313b94a011fcd8001",
+      "bytes": 10972
+    },
+    "/Agon/mystuff/agon-vdplet/docs/API-reference.md": {
+      "sha256": "78beb6dd4705740952f4f1ca554658867033d5d086d899561170741bf7ae1b84",
+      "bytes": 13498
+    },
+    "/Agon/mystuff/golem/docs/tasks/GOLEM-034/README.md": {
+      "sha256": "fcdf38f43e950784100e7f1dcd6b91088b33364b50b912f5d7273a1f2ef417e1",
+      "bytes": 9458
+    },
+    "/Agon/mystuff/golem/docs/tasks/GOLEM-037/v03-CONTRACT.md": {
+      "sha256": "0b1c90c8f22233ca7328155537ca9a59cbe817a90e33eab98d558dbc751db885",
+      "bytes": 5358
+    },
+    "/Agon/mystuff/agon-vdplet/build/firmware/firmware-src/video/vdu_stream_processor.h": {
+      "sha256": "c921aa3e91c0e3a3fe58fc0e91d43789ed926892f7c401260641360c6a9fdb70",
+      "bytes": 26366
+    },
+    "/Agon/mystuff/agon-vdplet/build/firmware/firmware-src/video/context.h": {
+      "sha256": "8ba3ecbc51f46a60c69fdc33f66bc4c2faaf02cf63b338acc3e85a6a90c28d09",
+      "bytes": 40792
+    }
+  }
+}
