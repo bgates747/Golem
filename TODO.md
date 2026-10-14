@@ -12,7 +12,7 @@ claim those reviews occurred.
   Checked multiplication human review accepted and saved results verified; commit/push explicitly approved; paired division accepted; commit/push explicitly approved. Right-shift human review accepted; saved results verified and commit/push explicitly approved. Golem supplies language features/packages; Rally owns game-specific replay/validation. Wider helper needs remain separately scoped.
 
 - [ ] **GOLEM-038:** D3 scheduler/snapshot/collision-event design and ownership gates.
-  [Plan](docs/tasks/GOLEM-038.md). Firmware owner, game policies and implementation authority remain open.
+  [Plan](docs/tasks/GOLEM-038.md). Proposed next Golem tranche: [generic runtime support review](docs/tasks/GOLEM-038/runtime-review.md), awaiting Author approval. Rally proposes ownership of application-specific scheduling/policies; Golem reviews generic hooks and gaps only.
 
 - [ ] **GOLEM-023:** Research friendly Golem source compiled to native VDPlets:
   compare native library calls, explicit native procedures, whole native modules

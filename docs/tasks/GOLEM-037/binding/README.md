@@ -59,3 +59,12 @@ separate keyboard, full-game, physical-hardware or 30-Hz acceptance is inferred.
 Rally owns HUMAN-REVIEW.json and the raw human evidence.
 
 The Author explicitly approved commit and push on 2026-10-14. This completes the bounded composition tranche; physical qualification, broad capacity stress and autonomous scheduling remain separate work.
+
+## Superseding timing interpretation
+
+Rally forty-three corrects the earlier 100-unit/s MOS interpretation: deployed
+MOS adds two units per nominal 60-Hz VBlank, or nominal 120 units/s. Unchanged
+human 900-frame/3,686-unit observations therefore imply nominal 29.300 FPS,
+not 24.42; viewing is 28.846 and full diagnostic 25.580 FPS. Raw observations
+remain unchanged, and these are not calibrated wall-clock/hardware claims.
+Rally owns TIMING-CORRECTION.json and separate manually staged hardware review.

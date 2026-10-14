@@ -40,3 +40,24 @@ A named owner and reviewable runtime/game sub-contract exist before autonomous
 implementation begins. No benchmark, cadence, hardware memory ceiling or
 physical behavior is claimed by this design document. Keep Golem coordination
 artifacts in GOLEM-038/ and firmware source in its explicitly owned repository.
+
+## Rally ownership proposal — 2026-10-14
+
+Rally forty-four proposes Rally ownership of application-specific firmware
+integration, scheduling, snapshot/events and gameplay/recovery policies. Golem
+retains compiler/generated bindings and generic SDK/runtime ownership. This is
+a proposed split for Author review, not an implementation delegation. Requested
+Golem support is coordination/review of an eventual Rally-led D3 draft: existing
+hooks, missing primitives, ABI, lifetime, cancellation and thread restrictions.
+No new compiler feature is currently demonstrated necessary. Rally's proposed
+design-only tranche also awaits Author release; existing demo authorization does
+not release autonomous scheduling.
+
+## Proposed next Golem tranche
+
+[Generic runtime support review](GOLEM-038/runtime-review.md): a bounded static
+review of invocation, leases, cancellation and unload, with source-backed
+findings and owner-specific questions. Awaiting Author review; no scheduler
+implementation, benchmark duplication or new runtime feature is commissioned.
+The broader D3 items above are coordination boundaries, not this agent's
+implementation assignments.
