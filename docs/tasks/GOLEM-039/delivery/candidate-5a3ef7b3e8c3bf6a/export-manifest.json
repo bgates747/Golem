@@ -1,0 +1,154 @@
+{
+  "schema": 1,
+  "status": "built/admitted; bounded host smoke pass; independent target/scene/human review remains Rally-owned",
+  "source_sha256": "c62aee2851a3ac39c859a61bc45684a1ce9e384aab623b3c7730a0f97d39d6b4",
+  "module_sha256": "5a3ef7b3e8c3bf6a040eb2e55c605fce83e93f3868b296b245738f14a1e69400",
+  "old_candidate_preserved": true,
+  "interface": "same layout, entry IDs, wrappers, native handle offset37; changed source-derived visit bounds and initialized data",
+  "firmware": {
+    "firmware.bin": {
+      "path": "/Agon/mystuff/agon-vdplet/build/firmware/firmware-src/.pio/build/esp32dev/firmware.bin",
+      "bytes": 1086192,
+      "sha256": "8da2ebfdfa3b5b00f4a1929ad4885c838845b160f570259792ef370b69d4f473"
+    },
+    "firmware.elf": {
+      "path": "/Agon/mystuff/agon-vdplet/build/firmware/firmware-src/.pio/build/esp32dev/firmware.elf",
+      "bytes": 24866420,
+      "sha256": "b41e4cb37bd44633d14b2e6eea615cbbbdd29a1d4b49c3258b4f49f2e215e567"
+    }
+  },
+  "files": {
+    "array-active.bin": {
+      "bytes": 12,
+      "sha256": "9279aba84b65c836059f143f595b35fa7ff78a64c750da958a15319d1a333f2f"
+    },
+    "array-contacts.bin": {
+      "bytes": 12,
+      "sha256": "15ec7bf0b50732b49f8228e07d24365338f9e3ab994b00af08e5a3bffe55fd8b"
+    },
+    "array-lateral.bin": {
+      "bytes": 24,
+      "sha256": "af56798db0b449e89020df76f24fff6381b2c8a1e52a7599182ba3a9cf05ea79"
+    },
+    "array-position.bin": {
+      "bytes": 24,
+      "sha256": "871ab4d3baf0ab3ca190b0bcd3f5075c612d0bf3533fd14958c6b91d67ac06e4"
+    },
+    "array-progress.bin": {
+      "bytes": 24,
+      "sha256": "871ab4d3baf0ab3ca190b0bcd3f5075c612d0bf3533fd14958c6b91d67ac06e4"
+    },
+    "array-routes.bin": {
+      "bytes": 48,
+      "sha256": "899bc1c3676004731f4751cd50cfe3e363ad19ffe6ab0ac33bd2cfc04f61d561"
+    },
+    "array-sine.bin": {
+      "bytes": 514,
+      "sha256": "6062d337f69ac6ae99b7da9cdf95f87aea1ee04a9110f26839f0a85f74efff68"
+    },
+    "arrays-install.bin": {
+      "bytes": 756,
+      "sha256": "47fe7b8f579aad49c42cd904a18361f45c8e3e6151692b6d862e08cd87ba1a85"
+    },
+    "backends.json": {
+      "bytes": 361,
+      "sha256": "e48626eb71d7a4be0af7bfb25998bbee6a63d0d2fabee8a057786f89b711dfe5"
+    },
+    "calls.inc": {
+      "bytes": 2406,
+      "sha256": "d0fce46192f9d63000db46f87f981a7f807416620301a504bf30d33874033e3f"
+    },
+    "common-install.bin": {
+      "bytes": 1080,
+      "sha256": "36e95fee720342c4f996064cf5393d719ed35a46d641b264920dcc488af5755a"
+    },
+    "delivery-manifest.json": {
+      "bytes": 7971,
+      "sha256": "c0c93322f804446781e794ddf9d55b5066c2bfec4b1a4f49e6327eed67c6b130"
+    },
+    "full-scene.golem": {
+      "bytes": 10910,
+      "sha256": "c62aee2851a3ac39c859a61bc45684a1ce9e384aab623b3c7730a0f97d39d6b4"
+    },
+    "helper/asset_meta.inc": {
+      "bytes": 188,
+      "sha256": "940a4e51c2f06bb34106c858f690bad34d97ed8ab6994b19bb53a945f4eb6cd5"
+    },
+    "helper/rally_render.c": {
+      "bytes": 10972,
+      "sha256": "7ae7f03183864e44ffa2488f90fd1e878eb984bd4a2d325313b94a011fcd8001"
+    },
+    "helper/rally_render.h": {
+      "bytes": 3849,
+      "sha256": "2adcc445e416f3dd95db2f52afb7ef8803c67e6fc444556be5e9d1505b133e50"
+    },
+    "helper/render_core.inc": {
+      "bytes": 11311,
+      "sha256": "2f3eb552538a3e2e8c9a450ae49c319540cc9b774ef925ec02f111d1e8f42f2b"
+    },
+    "interface.json": {
+      "bytes": 17492,
+      "sha256": "5e4eb736642f3ac2eddf08f19ed92e81beb2dbbf4f327590ea1a6d60d01ef029"
+    },
+    "layout.inc": {
+      "bytes": 10117,
+      "sha256": "4825d4d407ce195a531ac425a3aa6c9fc1c140089df8645363e2623cd03e5bb4"
+    },
+    "native-bindings.json": {
+      "bytes": 1591,
+      "sha256": "543022321154595027a0543271fc2656620c90976b0d0a23a8882db546e43d81"
+    },
+    "native-cleanup.bin": {
+      "bytes": 108,
+      "sha256": "01215d3ae806cd2c4ba7717c14b3e32415c9ed694c3d5eb941250d2a7d802de1"
+    },
+    "native-install.bin": {
+      "bytes": 985,
+      "sha256": "3e2cf7b817c4043ac984ca24592992f076330606c4b01e980a2e97a0693dfef7"
+    },
+    "native.c": {
+      "bytes": 68162,
+      "sha256": "9bd2c74f81a1ede7ed15c52a4d4dc748e97eb4fef7b0859580fbd34ec2b4c589"
+    },
+    "program.json": {
+      "bytes": 50923,
+      "sha256": "83de100d695c0874714f95faadff1a8f1025a4bb6586e705bce7f65c74499b18"
+    },
+    "rally-render.disassembly.txt": {
+      "bytes": 673959,
+      "sha256": "827cf5b479f009131c90d3e9ca0c9cfd89d590e038c4f12cca84b2b7542719d9"
+    },
+    "rally-render.elf": {
+      "bytes": 49376,
+      "sha256": "22df8ac1dcd771485211626aab056e29f6cca6491fa4c6b2ba6cac44401dbfed"
+    },
+    "rally-render.json": {
+      "bytes": 1451,
+      "sha256": "69ad07861334117c9e2d58eafb5c75d14162b647f0fb1a674a4622b9e9f9a11d"
+    },
+    "rally-render.readelf.txt": {
+      "bytes": 4537,
+      "sha256": "68adc4a98fb503b7b8ee01aa181ea79e449b3a08a40bc5f9ee11a09cc6287883"
+    },
+    "rally-render.su": {
+      "bytes": 1132,
+      "sha256": "f793afdb4666ddf8bb7902465452d0c1d111de6a3abe5a0c94b400b076b69a7f"
+    },
+    "rally-render.upload.elf": {
+      "bytes": 32712,
+      "sha256": "2c001c341d13e055ca65ee965ee593318ea59e00daadb5dac48aff3dfa974c2a"
+    },
+    "rally-render.vdpl": {
+      "bytes": 32776,
+      "sha256": "5a3ef7b3e8c3bf6a040eb2e55c605fce83e93f3868b296b245738f14a1e69400"
+    },
+    "root.json": {
+      "bytes": 1020,
+      "sha256": "83d74662c81f6cf321cd24269fe2c26dee79bc0cf356fcbe01f57dbd79d435a2"
+    },
+    "state.bin": {
+      "bytes": 310,
+      "sha256": "4e6841d8df12479ae8eb6755c5ac82950254e55a153504c7178f95f0948ca077"
+    }
+  }
+}

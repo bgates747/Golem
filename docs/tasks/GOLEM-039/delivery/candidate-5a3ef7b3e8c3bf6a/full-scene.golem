@@ -1,0 +1,381 @@
+// Full-scene fixture: eZ80 supplies complete player snapshots; VDP owns traffic/contact/rendering.
+// Rally-owned historical units/model. No scheduling, recovery or event transport.
+uint16 slot = 0
+uint16 routeRecord = 0
+uint16 routeRemaining = 60
+uint16 routeIndex = 0
+sint32 routeHeading = 0
+sint32 routeLateral = 0
+uint32 routeForward = 0
+uint32 forwardAdvance = 0
+uint32 worldTick = 0
+sint32 headingInput = 0
+sint32 headingChecked Bounds(-32768,32767) = 0
+sint32 magnitude = 0
+sint32 sineQuotient = 0
+sint32 sineFraction = 0
+uint16 sineIndex = 0
+sint32 sineValue = 0
+sint32 work = 0
+sint32 quotient = 0
+sint32 remainder = 0
+sint32 speed = 0
+sint32 lapInput = 3276800
+sint32 lap Bounds(1,3276800) = 3276800
+sint32 normalizeInput = 0
+uint32 normalPosition = 0
+uint32 playerStation = 3270000
+sint32 playerLateral Bounds(-38400,38400) = 0
+uint32 opponentStation = 0
+sint32 opponentLateral Bounds(-14260,14260) = 0
+sint32 separation = 0
+sint32 lateralSeparation = 0
+sint32 halfLap = 0
+bool contactResult = false
+bool contactAny = false
+uint16 laneQuotient = 0
+uint16 laneRemainder = 0
+sint32 placedLateral Bounds(-14260,14260) = 0
+uint16 activeChecked Bounds(0,1) = 0
+Array uint16 active(0:5) = Fill(1)
+Array sint32 progress(0:5) = Values(60000,50000,40000,30000,20000,10000)
+Array uint32 position(0:5) = Values(60000,50000,40000,30000,20000,10000)
+Array sint32 lateral(0:5) = Values(-14260,5044,4172,-4172,-5044,14260)
+Array uint16 contacts(0:5) = Fill(0)
+ReadOnly Array sint16 routes(0:23)
+ReadOnly Array sint16 sine(0:256)
+// Explicit primitive/error probes used by host conformance, not physics inputs.
+sint32 sa = 0
+sint32 sb = 1
+sint32 sq = 17
+sint32 sr = 19
+uint32 ua = 0
+uint32 ub = 1
+uint32 uq = 17
+uint32 ur = 19
+sint32 boundedQ Bounds(-10,10) = 1
+sint32 boundedR Bounds(-3,3) = 2
+uint16 effect = 5
+uint16 shiftCount = 6
+sint32 signedShift = 17
+uint32 unsignedShift = 17
+// Supplied deterministic fixture presentation; not production telemetry policy.
+uint32 renderSession = 7
+uint32 renderRequest = 0
+uint32 playerUnwrapped = 3270000
+uint16 renderPhase Bounds(0,7999) = 0
+sint16 renderSteering Bounds(-21,21) = 0
+uint16 renderFlags Bounds(0,7) = 3
+Sub Sine
+    headingChecked = headingInput
+    magnitude = headingChecked
+    If magnitude < 0 Then
+        magnitude = 0 - magnitude
+    EndIf
+    If magnitude > 16384 Then
+        magnitude = 32768 - magnitude
+    EndIf
+    (sineQuotient,sineFraction) = divmod(magnitude,64)
+    sineIndex = uint16(sineQuotient)
+    sineValue = sint32(sine(sineIndex))
+    If sineIndex < 256 Then
+        work = (sint32(sine(sineIndex + 1)) - sineValue) * sineFraction
+        (quotient,remainder) = divmod(work,64)
+        sineValue = sineValue + quotient
+    EndIf
+    If headingChecked < 0 Then
+        sineValue = 0 - sineValue
+    EndIf
+EndSub
+Sub RouteTick
+    If routeRemaining == 0 Then
+        routeRecord = routeRecord + 1
+        If routeRecord >= 6 Then
+            routeRecord = 0
+        EndIf
+        routeIndex = routeRecord * 4
+        routeRemaining = uint16(routes(routeIndex))
+        routeHeading = sint32(routes(routeIndex + 2))
+    EndIf
+    routeIndex = routeRecord * 4
+    routeHeading = routeHeading + sint32(routes(routeIndex + 3))
+    headingInput = routeHeading
+    headingChecked = headingInput
+    magnitude = headingChecked
+    If magnitude < 0 Then
+        magnitude = 0 - magnitude
+    EndIf
+    If magnitude > 16384 Then
+        magnitude = 32768 - magnitude
+    EndIf
+    (sineQuotient,sineFraction) = divmod(magnitude,64)
+    sineIndex = uint16(sineQuotient)
+    sineValue = sint32(sine(sineIndex))
+    If sineIndex < 256 Then
+        work = (sint32(sine(sineIndex + 1)) - sineValue) * sineFraction
+        (quotient,remainder) = divmod(work,64)
+        sineValue = sineValue + quotient
+    EndIf
+    If headingChecked < 0 Then
+        sineValue = 0 - sineValue
+    EndIf
+    speed = sint32(routes(routeIndex + 1))
+    work = speed * 2 * sineValue
+    (quotient,remainder) = divmod(work,12800)
+    routeLateral = routeLateral + quotient
+    forwardAdvance = uint32(speed * 2)
+    routeForward = routeForward + forwardAdvance
+    routeRemaining = routeRemaining - 1
+EndSub
+Sub Contact
+    lap = lapInput
+    work = sint32(opponentStation) - sint32(playerStation + 6800)
+    (quotient,remainder) = divmod(work,lap)
+    separation = remainder
+    If separation < 0 Then
+        separation = separation + lap
+    EndIf
+    (halfLap,remainder) = divmod(lap,2)
+    If separation > halfLap Then
+        separation = separation - lap
+    EndIf
+    work = separation
+    If work < 0 Then
+        work = 0 - work
+    EndIf
+    lateralSeparation = opponentLateral - playerLateral
+    If lateralSeparation < 0 Then
+        lateralSeparation = 0 - lateralSeparation
+    EndIf
+    contactResult = work < 3200 And lateralSeparation < 6144
+EndSub
+Sub Tick120
+    If routeRemaining == 0 Then
+        routeRecord = routeRecord + 1
+        If routeRecord >= 6 Then
+            routeRecord = 0
+        EndIf
+        routeIndex = routeRecord * 4
+        routeRemaining = uint16(routes(routeIndex))
+        routeHeading = sint32(routes(routeIndex + 2))
+    EndIf
+    routeIndex = routeRecord * 4
+    routeHeading = routeHeading + sint32(routes(routeIndex + 3))
+    headingInput = routeHeading
+    headingChecked = headingInput
+    magnitude = headingChecked
+    If magnitude < 0 Then
+        magnitude = 0 - magnitude
+    EndIf
+    If magnitude > 16384 Then
+        magnitude = 32768 - magnitude
+    EndIf
+    (sineQuotient,sineFraction) = divmod(magnitude,64)
+    sineIndex = uint16(sineQuotient)
+    sineValue = sint32(sine(sineIndex))
+    If sineIndex < 256 Then
+        work = (sint32(sine(sineIndex + 1)) - sineValue) * sineFraction
+        (quotient,remainder) = divmod(work,64)
+        sineValue = sineValue + quotient
+    EndIf
+    If headingChecked < 0 Then
+        sineValue = 0 - sineValue
+    EndIf
+    speed = sint32(routes(routeIndex + 1))
+    work = speed * 2 * sineValue
+    (quotient,remainder) = divmod(work,12800)
+    routeLateral = routeLateral + quotient
+    forwardAdvance = uint32(speed * 2)
+    routeForward = routeForward + forwardAdvance
+    routeRemaining = routeRemaining - 1
+    lap = lapInput
+    contactAny = false
+    For slot In Range(0:5)
+        activeChecked = active(slot)
+        contacts(slot) = 0
+        If activeChecked == 1 Then
+            progress(slot) = progress(slot) + sint32(forwardAdvance)
+            work = sint32(position(slot)) + sint32(forwardAdvance)
+            (quotient,remainder) = divmod(work,lap)
+            If remainder < 0 Then
+                remainder = remainder + lap
+            EndIf
+            position(slot) = uint32(remainder)
+            (laneQuotient,laneRemainder) = divmod(slot,3)
+            placedLateral = (sint32(laneRemainder) - 1) * 9216
+            (laneQuotient,laneRemainder) = divmod(slot,2)
+            If laneRemainder == 0 Then
+                placedLateral = placedLateral + routeLateral - 5044
+            Else
+                placedLateral = placedLateral - routeLateral + 5044
+            EndIf
+            lateral(slot) = placedLateral
+            opponentStation = position(slot)
+            opponentLateral = lateral(slot)
+    lap = lapInput
+    work = sint32(opponentStation) - sint32(playerStation + 6800)
+    (quotient,remainder) = divmod(work,lap)
+    separation = remainder
+    If separation < 0 Then
+        separation = separation + lap
+    EndIf
+    (halfLap,remainder) = divmod(lap,2)
+    If separation > halfLap Then
+        separation = separation - lap
+    EndIf
+    work = separation
+    If work < 0 Then
+        work = 0 - work
+    EndIf
+    lateralSeparation = opponentLateral - playerLateral
+    If lateralSeparation < 0 Then
+        lateralSeparation = 0 - lateralSeparation
+    EndIf
+    contactResult = work < 3200 And lateralSeparation < 6144
+            If contactResult Then
+                contacts(slot) = 1
+                contactAny = true
+            EndIf
+        EndIf
+    Next slot
+    worldTick = worldTick + 1
+EndSub
+Sub Normalize
+    lap = lapInput
+    (quotient,remainder) = divmod(normalizeInput,lap)
+    If remainder < 0 Then
+        remainder = remainder + lap
+    EndIf
+    normalPosition = uint32(remainder)
+EndSub
+Sub MultiplySigned
+    sq = sa * sb
+EndSub
+Sub MultiplyUnsigned
+    uq = ua * ub
+EndSub
+Sub DivideSigned
+    effect = effect + 1
+    (sq,sr) = divmod(sa,sb)
+EndSub
+Sub DivideUnsigned
+    effect = effect + 1
+    (uq,ur) = divmod(ua,ub)
+EndSub
+Sub BoundedPair
+    effect = effect + 1
+    (boundedQ,boundedR) = divmod(sa,sb)
+EndSub
+Sub AliasPair
+    (sa,sb) = divmod(sa,sb)
+EndSub
+Sub ShiftSigned
+    signedShift = sa >> shiftCount
+EndSub
+Sub ShiftUnsigned
+    unsignedShift = ua >> shiftCount
+EndSub
+Sub InitRace
+    routeRecord = 0
+    routeRemaining = 60
+    routeIndex = 0
+    routeHeading = 0
+    routeLateral = 0
+    routeForward = 0
+    forwardAdvance = 0
+    worldTick = 0
+    playerStation = 3270000
+    playerUnwrapped = 3270000
+    playerLateral = 0
+    renderSession = 7
+    renderRequest = 0
+    renderPhase = 0
+    renderSteering = 0
+    renderFlags = 3
+    contactAny = false
+    active(0) = 1
+    progress(0) = 60000
+    position(0) = 60000
+    lateral(0) = -14260
+    contacts(0) = 0
+    active(1) = 1
+    progress(1) = 50000
+    position(1) = 50000
+    lateral(1) = 5044
+    contacts(1) = 0
+    active(2) = 1
+    progress(2) = 40000
+    position(2) = 40000
+    lateral(2) = 4172
+    contacts(2) = 0
+    active(3) = 1
+    progress(3) = 30000
+    position(3) = 30000
+    lateral(3) = -4172
+    contacts(3) = 0
+    active(4) = 1
+    progress(4) = 20000
+    position(4) = 20000
+    lateral(4) = -5044
+    contacts(4) = 0
+    active(5) = 1
+    progress(5) = 10000
+    position(5) = 10000
+    lateral(5) = 14260
+    contacts(5) = 0
+EndSub
+Sub ResetRace
+    routeRecord = 0
+    routeRemaining = 60
+    routeIndex = 0
+    routeHeading = 0
+    routeLateral = 0
+    routeForward = 0
+    forwardAdvance = 0
+    worldTick = 0
+    playerStation = 3270000
+    playerUnwrapped = 3270000
+    playerLateral = 0
+    renderSession = 7
+    renderRequest = 0
+    renderPhase = 0
+    renderSteering = 0
+    renderFlags = 3
+    contactAny = false
+    active(0) = 1
+    progress(0) = 60000
+    position(0) = 60000
+    lateral(0) = -14260
+    contacts(0) = 0
+    active(1) = 1
+    progress(1) = 50000
+    position(1) = 50000
+    lateral(1) = 5044
+    contacts(1) = 0
+    active(2) = 1
+    progress(2) = 40000
+    position(2) = 40000
+    lateral(2) = 4172
+    contacts(2) = 0
+    active(3) = 1
+    progress(3) = 30000
+    position(3) = 30000
+    lateral(3) = -4172
+    contacts(3) = 0
+    active(4) = 1
+    progress(4) = 20000
+    position(4) = 20000
+    lateral(4) = -5044
+    contacts(4) = 0
+    active(5) = 1
+    progress(5) = 10000
+    position(5) = 10000
+    lateral(5) = 14260
+    contacts(5) = 0
+EndSub
+Sub Render30
+    renderRequest = renderRequest + 1
+EndSub
+Sub StopRace
+    renderFlags = 0
+EndSub

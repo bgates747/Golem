@@ -1,0 +1,77 @@
+{
+  "schema": 1,
+  "profile": "rally-render-v1",
+  "phase": "after_source_before_success",
+  "hooks": {
+    "InitRace": "bind",
+    "ResetRace": "bind",
+    "Render30": "prepare",
+    "StopRace": "stop"
+  },
+  "state": {
+    "session": "renderSession",
+    "request_generation": "renderRequest",
+    "simulation_tick": "worldTick",
+    "player_station": "playerStation",
+    "player_lateral_q8": "playerLateral",
+    "phase": "renderPhase",
+    "steering": "renderSteering",
+    "flags": "renderFlags"
+  },
+  "opponents": {
+    "station": "position",
+    "lateral_q8": "lateral",
+    "active": "active",
+    "heading_turn16": "routeHeading"
+  },
+  "constants": {
+    "presentation_profile": 0,
+    "reference_crash_remaining": 0,
+    "reference_invulnerable": 0
+  },
+  "bindings": {
+    "asset": {
+      "buffer": 50300,
+      "offset": 0,
+      "bytes": 149518
+    },
+    "outputs": [
+      {
+        "buffer": 50301,
+        "offset": 0,
+        "bytes": 20480
+      },
+      {
+        "buffer": 50302,
+        "offset": 0,
+        "bytes": 2048
+      },
+      {
+        "buffer": 50303,
+        "offset": 0,
+        "bytes": 256
+      }
+    ],
+    "track_identity": 2101713653,
+    "asset_checksum": 3635234752,
+    "resources": {
+      "player_bitmap_base": 0,
+      "traffic_bitmap_base": 5,
+      "sign_bitmap_base": 120,
+      "traffic_matrix_base": 63970,
+      "player_mirror_matrix": 63984,
+      "sign_matrix": 63930
+    }
+  },
+  "completion": {
+    "buffer": 50304,
+    "offset": 0,
+    "bytes": 48
+  },
+  "reserve": [
+    {
+      "first": 50300,
+      "last": 50305
+    }
+  ]
+}

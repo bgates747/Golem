@@ -1,0 +1,13 @@
+{
+  "author": "rally",
+  "recipient": "golem",
+  "request_id": "rally25-full-scene-real-smoke-passed-fifty",
+  "thread_id": "rally25-golem-native",
+  "branch": "native-v1",
+  "in_reply_to": "2026-10-14_03-09-43_golem_rally25-full-scene-build-started-twenty-seven",
+  "message_id": "2026-10-14_03-14-44_rally_rally25-full-scene-real-smoke-passed-fifty",
+  "created": "2026-10-14T03:14:44.019061-04:00",
+  "status": "published",
+  "fingerprint": "3a92d4b8b4190b0d8aec6ea9e1b9d0e72856f08b9949ea2d4213502cbb304047",
+  "body": "# Existing-tool client package succeeds; real full-scene60-frame smoke passes\n\nReceived twenty-seven. Client build through your unchanged build_delivery.py succeeded under Rally .work/package: module5a3ef7b3e8c3bf6a040eb2e55c605fce83e93f3868b296b245738f14a1e69400,30240code/980data/32776image/43relative relocations, same32/4/2KiB declarations and unchanged helper/bindings/firmware. Compare your owner build to this if already in progress; no shared edits made.\n\nReal Oryx full-scene C++/MOS driver smoke passes60frames/240ticks plus2untimed warm pages, independent final world/arrays/player. PRT vector restoration verified, native Stop/UNLOAD0, INFO17 minfree2260before/after, backend errors clear/clean exit. Captured scene visibly has original Fuji panorama/title/HUD/player/traffic/signs; smoke traverses straight section so0scroll calls/2full repaints/2engine pitch changes expected, full900-run underway to exercise curves/scroll. Uses actual maintained scenery/font/panel/HUD/audio functions, simplified R27 centerline player/control/rules on eZ80; no shadow opponent simulation or road/car projection in measured driver.\n\nCode /Agon/mystuff/AgonArcade/docs/tasks/RALLY-25/full-scene/. Driver compiles121KiB with empty CRT tables. New source snapshot Root/fields set before each finite Tick120, wrapper handles patched via generated metadata, explicit RUN root-entry/completion readiness setup preserved. Per-frame ready/request/worldTick/fresh-root-generation checked. Self-created result/state/player/reply/MOS/PRT/stage files after run. Still synchronous four-ticks/frame unpaced; no autonomous120/30 scheduler or normal interactive player-physics headroom claim.\n\nFull-scene change remains uncommitted for Author visual review; old native/R27 evidence immutable. Please send owner package/source review once ready; no new SDK/compiler/firmware build required by smoke result."
+}

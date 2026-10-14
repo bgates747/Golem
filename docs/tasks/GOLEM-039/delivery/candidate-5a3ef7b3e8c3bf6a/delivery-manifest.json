@@ -1,0 +1,283 @@
+{
+  "schema": 1,
+  "status": "buildable integration candidate; host/target/human qualification not implied",
+  "source": "/Agon/mystuff/AgonArcade/docs/tasks/RALLY-25/full-scene/full-scene.golem",
+  "source_sha256": "c62aee2851a3ac39c859a61bc45684a1ce9e384aab623b3c7730a0f97d39d6b4",
+  "binding_sha256": "543022321154595027a0543271fc2656620c90976b0d0a23a8882db546e43d81",
+  "compiler_inputs": {
+    "compiler.cpp": "a262e4218002ebc02f77fc94228fd826885da74ee79eb471087d6520b84f5ec1",
+    "native_bindings.hpp": "ac174e9e225dfb7ac2319a0abeee82985f605368cc2214ae39eb66af1ffa49e8",
+    "root.hpp": "eedfc6dac1ce24bdc9eba8a547a53ac378801e30a3703426f39a0f37ced7292d",
+    "portable.hpp": "deae75359e8477a673a934fda29407f5e7ab0d8e5240122626e8d5bf1377d3d1",
+    "backends.hpp": "b9eaa95c8079cc58cd4848dd84542a68bdd0a7fb726556a832eb23de1789fedb"
+  },
+  "sdk_files": {
+    "include/vdplet.h": "fa8385e2906f07d37372d80c40f73d419defdbefe7a3458461ac9d5fe0820d38",
+    "src/vdplet_policy.h": "c69d6f3654b4b5dd4a8ae76e971818f4b13369d61dbded607b844e3268f66419",
+    "src/vdplet_image.h": "db95e97adb1d9fa07a1a89843b70fb9ae12303edb6e0abc3cfb7ea5aa7351dc3",
+    "src/vdplet_runtime.h": "af049fe93f1e64b0ec1135e5c0e55c1938adf022669dc35d906f5fcb6c58d91b",
+    "tools/build_module.py": "a5e8fe550b7906fbd897ec7045d550a20b374d9df4379e80ecb8a2641627ad22"
+  },
+  "module": {
+    "name": "rally-render",
+    "source": "/Agon/mystuff/golem/docs/tasks/GOLEM-039/build/full-scene/native.c",
+    "source_sha256": "9bd2c74f81a1ede7ed15c52a4d4dc748e97eb4fef7b0859580fbd34ec2b4c589",
+    "policy_sha256": "c69d6f3654b4b5dd4a8ae76e971818f4b13369d61dbded607b844e3268f66419",
+    "declared_limits": {
+      "text": 32768,
+      "data": 4096,
+      "stack": 2048,
+      "image": 65536
+    },
+    "build_id": "0x474c3731",
+    "capabilities": 1,
+    "envelope_bytes": 64,
+    "elf_bytes": 32712,
+    "package_bytes": 32776,
+    "sha256": "5a3ef7b3e8c3bf6a040eb2e55c605fce83e93f3868b296b245738f14a1e69400",
+    "package": "/Agon/mystuff/golem/docs/tasks/GOLEM-039/build/full-scene/rally-render.vdpl",
+    "elf": "/Agon/mystuff/golem/docs/tasks/GOLEM-039/build/full-scene/rally-render.elf",
+    "entry_virtual": 8096,
+    "resident_text_bytes": 30240,
+    "resident_data_bytes": 980,
+    "relative_relocations": 43,
+    "allocated_sections": {
+      ".text": {
+        "virtual_address": 824,
+        "bytes": 30240,
+        "type": 1
+      },
+      ".rodata": {
+        "virtual_address": 31064,
+        "bytes": 436,
+        "type": 1
+      },
+      ".data": {
+        "virtual_address": 35840,
+        "bytes": 544,
+        "type": 1
+      }
+    }
+  },
+  "frames": [
+    {
+      "function": "get32",
+      "bytes": 32
+    },
+    {
+      "function": "put32",
+      "bytes": 32
+    },
+    {
+      "function": "byte",
+      "bytes": 32
+    },
+    {
+      "function": "word",
+      "bytes": 32
+    },
+    {
+      "function": "command",
+      "bytes": 32
+    },
+    {
+      "function": "plot",
+      "bytes": 32
+    },
+    {
+      "function": "rect",
+      "bytes": 32
+    },
+    {
+      "function": "viewport",
+      "bytes": 32
+    },
+    {
+      "function": "affine",
+      "bytes": 32
+    },
+    {
+      "function": "bitmap",
+      "bytes": 32
+    },
+    {
+      "function": "centre_exact",
+      "bytes": 48
+    },
+    {
+      "function": "cx",
+      "bytes": 32
+    },
+    {
+      "function": "tangent",
+      "bytes": 32
+    },
+    {
+      "function": "overlap",
+      "bytes": 32
+    },
+    {
+      "function": "clear_completion",
+      "bytes": 32
+    },
+    {
+      "function": "host_ok",
+      "bytes": 32
+    },
+    {
+      "function": "acquire",
+      "bytes": 32
+    },
+    {
+      "function": "view_ok",
+      "bytes": 32
+    },
+    {
+      "function": "asset_ok",
+      "bytes": 64
+    },
+    {
+      "function": "bearing$isra$0",
+      "bytes": 32
+    },
+    {
+      "function": "release$isra$2",
+      "bytes": 32
+    },
+    {
+      "function": "preflight",
+      "bytes": 128
+    },
+    {
+      "function": "rally_render_bind_v1",
+      "bytes": 240
+    },
+    {
+      "function": "rally_render_prepare_v1",
+      "bytes": 352
+    },
+    {
+      "function": "rally_render_stop_v1",
+      "bytes": 32
+    },
+    {
+      "function": "memcpy",
+      "bytes": 32
+    },
+    {
+      "function": "memset",
+      "bytes": 32
+    },
+    {
+      "function": "vdplet_entry",
+      "bytes": 336
+    }
+  ],
+  "build_seconds": 1.676,
+  "artifacts": {
+    "array-active.bin": {
+      "bytes": 12,
+      "sha256": "9279aba84b65c836059f143f595b35fa7ff78a64c750da958a15319d1a333f2f"
+    },
+    "array-contacts.bin": {
+      "bytes": 12,
+      "sha256": "15ec7bf0b50732b49f8228e07d24365338f9e3ab994b00af08e5a3bffe55fd8b"
+    },
+    "array-lateral.bin": {
+      "bytes": 24,
+      "sha256": "af56798db0b449e89020df76f24fff6381b2c8a1e52a7599182ba3a9cf05ea79"
+    },
+    "array-position.bin": {
+      "bytes": 24,
+      "sha256": "871ab4d3baf0ab3ca190b0bcd3f5075c612d0bf3533fd14958c6b91d67ac06e4"
+    },
+    "array-progress.bin": {
+      "bytes": 24,
+      "sha256": "871ab4d3baf0ab3ca190b0bcd3f5075c612d0bf3533fd14958c6b91d67ac06e4"
+    },
+    "array-routes.bin": {
+      "bytes": 48,
+      "sha256": "899bc1c3676004731f4751cd50cfe3e363ad19ffe6ab0ac33bd2cfc04f61d561"
+    },
+    "array-sine.bin": {
+      "bytes": 514,
+      "sha256": "6062d337f69ac6ae99b7da9cdf95f87aea1ee04a9110f26839f0a85f74efff68"
+    },
+    "arrays-install.bin": {
+      "bytes": 756,
+      "sha256": "47fe7b8f579aad49c42cd904a18361f45c8e3e6151692b6d862e08cd87ba1a85"
+    },
+    "backends.json": {
+      "bytes": 361,
+      "sha256": "e48626eb71d7a4be0af7bfb25998bbee6a63d0d2fabee8a057786f89b711dfe5"
+    },
+    "calls.inc": {
+      "bytes": 2406,
+      "sha256": "d0fce46192f9d63000db46f87f981a7f807416620301a504bf30d33874033e3f"
+    },
+    "common-install.bin": {
+      "bytes": 1080,
+      "sha256": "36e95fee720342c4f996064cf5393d719ed35a46d641b264920dcc488af5755a"
+    },
+    "interface.json": {
+      "bytes": 17492,
+      "sha256": "5e4eb736642f3ac2eddf08f19ed92e81beb2dbbf4f327590ea1a6d60d01ef029"
+    },
+    "layout.inc": {
+      "bytes": 10117,
+      "sha256": "4825d4d407ce195a531ac425a3aa6c9fc1c140089df8645363e2623cd03e5bb4"
+    },
+    "native-cleanup.bin": {
+      "bytes": 108,
+      "sha256": "01215d3ae806cd2c4ba7717c14b3e32415c9ed694c3d5eb941250d2a7d802de1"
+    },
+    "native-install.bin": {
+      "bytes": 985,
+      "sha256": "3e2cf7b817c4043ac984ca24592992f076330606c4b01e980a2e97a0693dfef7"
+    },
+    "native.c": {
+      "bytes": 68162,
+      "sha256": "9bd2c74f81a1ede7ed15c52a4d4dc748e97eb4fef7b0859580fbd34ec2b4c589"
+    },
+    "program.json": {
+      "bytes": 50923,
+      "sha256": "83de100d695c0874714f95faadff1a8f1025a4bb6586e705bce7f65c74499b18"
+    },
+    "rally-render.disassembly.txt": {
+      "bytes": 673959,
+      "sha256": "827cf5b479f009131c90d3e9ca0c9cfd89d590e038c4f12cca84b2b7542719d9"
+    },
+    "rally-render.elf": {
+      "bytes": 49376,
+      "sha256": "22df8ac1dcd771485211626aab056e29f6cca6491fa4c6b2ba6cac44401dbfed"
+    },
+    "rally-render.json": {
+      "bytes": 1451,
+      "sha256": "69ad07861334117c9e2d58eafb5c75d14162b647f0fb1a674a4622b9e9f9a11d"
+    },
+    "rally-render.readelf.txt": {
+      "bytes": 4537,
+      "sha256": "68adc4a98fb503b7b8ee01aa181ea79e449b3a08a40bc5f9ee11a09cc6287883"
+    },
+    "rally-render.su": {
+      "bytes": 1132,
+      "sha256": "f793afdb4666ddf8bb7902465452d0c1d111de6a3abe5a0c94b400b076b69a7f"
+    },
+    "rally-render.upload.elf": {
+      "bytes": 32712,
+      "sha256": "2c001c341d13e055ca65ee965ee593318ea59e00daadb5dac48aff3dfa974c2a"
+    },
+    "rally-render.vdpl": {
+      "bytes": 32776,
+      "sha256": "5a3ef7b3e8c3bf6a040eb2e55c605fce83e93f3868b296b245738f14a1e69400"
+    },
+    "root.json": {
+      "bytes": 1020,
+      "sha256": "83d74662c81f6cf321cd24269fe2c26dee79bc0cf356fcbe01f57dbd79d435a2"
+    },
+    "state.bin": {
+      "bytes": 310,
+      "sha256": "4e6841d8df12479ae8eb6755c5ac82950254e55a153504c7178f95f0948ca077"
+    }
+  }
+}

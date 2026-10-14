@@ -1,0 +1,12 @@
+{
+  "supplied_player_ticks": 8,
+  "calls": 16,
+  "peak_leases": 3,
+  "completion_lengths": [
+    1359,
+    306,
+    29
+  ],
+  "status": "pass",
+  "scope": "bounded host generated source/helper smoke; independent target/world/scene checks belong to Rally"
+}
