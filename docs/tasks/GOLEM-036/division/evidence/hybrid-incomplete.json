@@ -1,0 +1,16 @@
+{
+  "profile": "hybrid",
+  "engine": "jit",
+  "results_saved": false,
+  "guest_failure_saved": false,
+  "disposition": "incomplete parallel JIT run interrupted; subsequent serialized JIT and interpreter both pass",
+  "cause": "not established",
+  "serialized_receipts": [
+    "hybrid-jit.json",
+    "hybrid-interp.json"
+  ],
+  "preserved_logs": {
+    "frontend.log": "Warning: unused arguments left: [\"--renderer\", \"sw\"].\nVideo driver: dummy (can override with SDL_VIDEO_DRIVER environment variable)\nLoaded ESP32 image /home/smith/Agon/mystuff/golem/docs/tasks/GOLEM-036/division/.emulator-hybrid/esp32-firmware.bin: 6 segments, entry=0x4008768C\n  Segment 0: 0x3F400020 (277644 bytes) -> flash_data\n  Segment 1: 0x3FFBDB60 (19880 bytes) -> sram_data\n  Segment 2: 0x40080000 (30132 bytes) -> sram_insn\n  Segment 3: 0x400D0020 (693728 bytes) -> flash_insn\n  Segment 4: 0x400875B4 (64692 bytes) -> sram_insn\n  Segment 5: 0x50000200 (4 bytes) -> rtc_slow\n[predecode] Built table: 1515516 entries, 19 MB (4 MB flash coverage)\n[fab-flexe] actual Xtensa firmware=/home/smith/Agon/mystuff/golem/docs/tasks/GOLEM-036/division/.emulator-hybrid/esp32-firmware.bin engine=jit\n[APPCPU] boot addr = 0x40087524 (from pc=0x4000689C)\n[     10000] CORE1 started at 0x40087524\n[APPCPU] boot addr = 0x00000000 (from pc=0x4000689C)\n[fab-flexe] firmware mode 640x480; scanout 800x525 crop 144/34 repeat 1\n[fab-flexe] firmware mode 640x480; scanout 800x525 crop 144/34 repeat 1\n[fab-flexe] firmware mode 320x240; scanout 400x524 crop 72/33 repeat 2\n",
+    "esp32-uart0.log": "[  2115][E][esp32-hal-misc.c:143] disableCore1WDT(): Failed to remove Core 1 IDLE task from WDT\n\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\nAgon Platform MOS Version 3.0.2 Arthur\n\n\n\u0007\u0017\u0016\f\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017\u0017"
+  }
+}

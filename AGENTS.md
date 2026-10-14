@@ -863,3 +863,35 @@ and explicit commit/push approval remain pending. Division remains next separate
 tranche, without an implementation release in this checkpoint.
 
 GOLEM-036 multiplication human review subsequently passed: the Author accepted it; retrieved results match all 460 observations / 4,546 bytes, with runtime/fixture identities verified. See docs/tasks/GOLEM-036/multiplication/evidence/human-review.json. The Author subsequently explicitly approved commit/push; division is a separate next tranche. Rally acknowledged the candidate identity and is planning its own bounded host qualification using generated metadata; this is not independent target acceptance or a shared ABI change.
+
+## Paired wide division — GOLEM-036 third tranche
+
+Artifacts/sources/profiles are under docs/tasks/GOLEM-036/division/, preserving
+accepted foundation/multiplication. `(q,r)=divmod(n,d)` accepts distinct matching
+uint32/sint32 globals and existing uint16 pairing; no signed16/array destinations.
+Arguments evaluate once left to right, including input/output aliases. Signed
+quotient truncates toward zero; remainder is n-q*d, numerator sign or zero. Zero
+is language 4; minimum sint32/-1 overflow 6; either preserves both outputs. Both
+results pass Bounds before either store; failure 32 preserves both and prior
+effects remain. New metadata publishes signed-division overflow 6 when applicable.
+
+One bounded 32-round stock long-division kernel uses private carry/remainder
+storage and signed magnitudes/restoration. Native 32-bit division is guarded
+before zero/minimum-overflow operations. Host 2,528 model/sanitized-C cases pass,
+including 100 supplied Rally division vectors and 600 product-to-delta divisions
+per layout. This does not qualify full route/contact/projection replay. Old
+multiplication executable/layout/C artifacts retain exact bytes; SDK limits/source
+and production src are unchanged. Stock and actual Xtensa/default-relocated pass.
+One incomplete parallel default JIT run is preserved in evidence/hybrid-incomplete.json;
+subsequent serialized JIT/interpreter both pass, with no established cause/fix.
+
+The 300-frame division animation passes 488 observations/4826 bytes, 56,320 final
+playfield pixels and MOS return on both engines. Source computes quadratic x/64
+and signed y/8, with retained fractional remainders; assembly draws/paces VSYNC.
+Ordinary frame wire remains 15 bytes. Oryx review is staged/stopped under the new
+division/.emulator; the Author launches its wrapper, follows onscreen dir, closes/
+reports, and the agent retrieves. Human review and explicit commit/push approval
+remain pending. Wide shifts/exact helpers/full Rally replay remain later work.
+Multiplication was accepted/committed/pushed as 1ddfd64 before this tranche.
+
+GOLEM-036 division human review subsequently passed: the Author reported 'looks good.' Retrieved results match all 488 observations / 4,826 bytes and staged runtime/fixture identities. See docs/tasks/GOLEM-036/division/evidence/human-review.json. WID-002 is accepted; the Author explicitly approved commit/push. Wide shifts/exact helpers and full Rally replay remain open.

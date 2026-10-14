@@ -1,0 +1,64 @@
+{
+  "bundle_sha256": "cd0e922475d08ad4848ec6c044f4c4851cf0148a7b209b8f5fd095f75ec8ed5e",
+  "all_bundle_files_verified": 131,
+  "exported_source_builds_independently": true,
+  "packages": [
+    {
+      "package": "default",
+      "matching_artifacts": [
+        "buffered-install.bin",
+        "native-install.bin",
+        "state.bin",
+        "array-signedNumerators.bin",
+        "buffered-cleanup.bin",
+        "array-numerators.bin",
+        "calls.inc",
+        "arrays-install.bin",
+        "layout.inc",
+        "native.c",
+        "native-cleanup.bin",
+        "common-install.bin"
+      ]
+    },
+    {
+      "package": "relocated",
+      "matching_artifacts": [
+        "buffered-install.bin",
+        "native-install.bin",
+        "state.bin",
+        "array-signedNumerators.bin",
+        "buffered-cleanup.bin",
+        "array-numerators.bin",
+        "calls.inc",
+        "arrays-install.bin",
+        "layout.inc",
+        "native.c",
+        "native-cleanup.bin",
+        "common-install.bin"
+      ]
+    },
+    {
+      "package": "animation",
+      "matching_artifacts": [
+        "array-remainders.bin",
+        "buffered-install.bin",
+        "native-install.bin",
+        "state.bin",
+        "array-lane.bin",
+        "array-phase.bin",
+        "buffered-cleanup.bin",
+        "array-screenX.bin",
+        "calls.inc",
+        "arrays-install.bin",
+        "layout.inc",
+        "array-screenY.bin",
+        "array-direction.bin",
+        "array-colour.bin",
+        "array-fractions.bin",
+        "native.c",
+        "native-cleanup.bin",
+        "common-install.bin"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "module": {
+    "name": "probe",
+    "source": "/Agon/mystuff/golem/docs/tasks/GOLEM-036/division/build/probe/native.c",
+    "source_sha256": "9dee2371f47fb303901e9e7ff85cee2eb73b487b9134371a058835c7f443eb33",
+    "build_id": "0x474c3633",
+    "capabilities": 1,
+    "envelope_bytes": 64,
+    "elf_bytes": 3064,
+    "package_bytes": 3128,
+    "sha256": "939a526325891135928fb8a2af5cbe9e251b71024645c63e0769856ea6adf8dc",
+    "package": "/Agon/mystuff/golem/docs/tasks/GOLEM-036/division/build/probe/probe.vdpl",
+    "elf": "/Agon/mystuff/golem/docs/tasks/GOLEM-036/division/build/probe/probe.elf",
+    "entry_virtual": 436,
+    "resident_text_bytes": 1832,
+    "resident_data_bytes": 268,
+    "relative_relocations": 7,
+    "allocated_sections": {
+      ".text": {
+        "virtual_address": 392,
+        "bytes": 1830,
+        "type": 1
+      },
+      ".rodata": {
+        "virtual_address": 2224,
+        "bytes": 264,
+        "type": 1
+      },
+      ".data": {
+        "virtual_address": 6732,
+        "bytes": 4,
+        "type": 1
+      }
+    }
+  },
+  "stack_frames": [
+    {
+      "function": "get32",
+      "bytes": 32
+    },
+    {
+      "function": "put32",
+      "bytes": 32
+    },
+    {
+      "function": "vdplet_entry",
+      "bytes": 128
+    }
+  ],
+  "conservative_sum_module_static_frames": 192,
+  "stack_scope": "module frames only; excludes firmware/service caller frames",
+  "max_live_leases": 3,
+  "admitted_stack_budget": 512,
+  "admission_policy": "existing SDK limits; no capacity probe or limit change"
+}

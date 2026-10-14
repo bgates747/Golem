@@ -1,0 +1,38 @@
+{
+  "compiler": "xtensa-esp32-elf-gcc (crosstool-NG esp-2021r2-patch5) 8.4.0",
+  "abi_header_sha256": "fa8385e2906f07d37372d80c40f73d419defdbefe7a3458461ac9d5fe0820d38",
+  "module": {
+    "name": "probe",
+    "source": "/Agon/mystuff/golem/docs/tasks/GOLEM-036/division/build/probe-relocated/native.c",
+    "source_sha256": "51e2786211952d596f2aabadb58f41acaea53403c9ae614de6245abcdc8b4335",
+    "build_id": "0x474c3633",
+    "capabilities": 1,
+    "envelope_bytes": 64,
+    "elf_bytes": 3064,
+    "package_bytes": 3128,
+    "sha256": "08239714a833a6525ac42c211f26236f33396eca9b431d483e8fef2ed1651629",
+    "package": "/Agon/mystuff/golem/docs/tasks/GOLEM-036/division/build/probe-relocated/probe.vdpl",
+    "elf": "/Agon/mystuff/golem/docs/tasks/GOLEM-036/division/build/probe-relocated/probe.elf",
+    "entry_virtual": 436,
+    "resident_text_bytes": 1832,
+    "resident_data_bytes": 268,
+    "relative_relocations": 7,
+    "allocated_sections": {
+      ".text": {
+        "virtual_address": 392,
+        "bytes": 1830,
+        "type": 1
+      },
+      ".rodata": {
+        "virtual_address": 2224,
+        "bytes": 264,
+        "type": 1
+      },
+      ".data": {
+        "virtual_address": 6732,
+        "bytes": 4,
+        "type": 1
+      }
+    }
+  }
+}

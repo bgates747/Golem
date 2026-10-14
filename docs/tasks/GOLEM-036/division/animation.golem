@@ -1,0 +1,45 @@
+// Two paired divisions per marker convert curved/signed paths to pixel positions.
+// Assembly installs this state, draws the markers and paces with VSYNC.
+uint16 slot = 0
+uint32 square = 0
+uint32 quotient = 0
+uint32 fraction = 0
+sint32 numerator = 0
+sint32 vertical = 0
+sint32 remainder = 0
+uint32 tick = 65500
+Array uint32 phase(0:2) = Values(0,64,127)
+Array uint32 fractions(0:2) = Values(0,0,1)
+Array sint32 remainders(0:2) = Values(0,0,5)
+Array uint16 lane(0:2) = Values(48,92,136)
+Array uint16 direction(0:2) = Values(1,0,0)
+Array uint16 screenX(0:2) = Values(16,80,268)
+Array uint16 screenY(0:2) = Values(24,92,159)
+Array uint16 colour(0:2) = Values(48,12,12)
+Sub step
+    For slot In Range(0:2)
+        If phase(slot) >= 127 Then
+            direction(slot) = 0
+        ElseIf phase(slot) <= 0 Then
+            direction(slot) = 1
+        EndIf
+        If direction(slot) == 1 Then
+            phase(slot) = phase(slot) + 1
+        Else
+            phase(slot) = phase(slot) - 1
+        EndIf
+        square = phase(slot) * phase(slot)
+        (quotient,fraction) = divmod(square,64)
+        fractions(slot) = fraction
+        numerator = (sint32(phase(slot)) - 64) * 3
+        (vertical,remainder) = divmod(numerator,8)
+        remainders(slot) = remainder
+        screenX(slot) = 16 + uint16(quotient)
+        screenY(slot) = uint16(sint32(lane(slot)) + vertical)
+        colour(slot) = 12
+        If vertical < 0 Then
+            colour(slot) = 48
+        EndIf
+    Next slot
+    tick = tick + 1
+EndSub

@@ -1,0 +1,54 @@
+bool flag = false
+uint32 ua = 0
+uint32 ub = 1
+uint32 uc = 0
+uint32 uq = 17
+uint32 ur = 19
+sint32 sa = 0
+sint32 sb = 1
+sint32 sq = 17
+sint32 sr = 19
+sint32 boundedQ Bounds(-10,10) = 1
+sint32 boundedR Bounds(-3,3) = 2
+uint16 index = 0
+uint16 effect = 5
+Array uint32 numerators(0:1) = Values(4294967295,65536)
+Array sint32 signedNumerators(-1:0) = Values(-2147483648,-38400)
+sint16 signedIndex = -1
+Sub divideUnsigned
+ (uq,ur) = divmod(ua,ub)
+EndSub
+Sub divideSigned
+ (sq,sr) = divmod(sa,sb)
+EndSub
+Sub aliasUnsigned
+ (ua,ub) = divmod(ua,ub)
+EndSub
+Sub aliasSigned
+ (sa,sb) = divmod(sa,sb)
+EndSub
+Sub boundedPair
+ (boundedQ,boundedR) = divmod(sa,sb)
+EndSub
+Sub priorEffect
+ effect = effect + 1
+ (sq,sr) = divmod(sa,sb)
+EndSub
+Sub argumentOrder
+ (uq,ur) = divmod(ua*ub,uc+1)
+EndSub
+Sub unsignedArray
+ (uq,ur) = divmod(numerators(index),ub)
+EndSub
+Sub signedArray
+ (sq,sr) = divmod(signedNumerators(signedIndex),sb)
+EndSub
+Sub skipped
+ If false Then
+     (uq,ur) = divmod(ua,ub)
+ EndIf
+EndSub
+Sub repeated
+ (uq,ur) = divmod(ua,ub)
+ (ua,ub) = divmod(uq,uc)
+EndSub

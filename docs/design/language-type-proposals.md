@@ -1558,3 +1558,26 @@ leases check actual storage while stock uses the installation invariant. See
 [the supported profile and initialized examples](../tasks/GOLEM-035/README.md).
 This does not implement the broader multidimensional/float/wide proposals above,
 and remains a task-local prototype pending human review and agreed promotion.
+
+## Right-shift convention — released GOLEM-036 tranche
+
+`value >> count` uses sint32 arithmetic/sign-extending or uint32 logical right
+shift, with an explicit uint16 count in 0..31. Signed results round toward negative
+infinity, unlike truncating divmod; −65 >> 6 is −2. Count 0 preserves the value.
+Invalid constant counts are compile errors; invalid dynamic counts report
+language 32, preserving the failed destination and prior effects. No count masking.
+Operands evaluate once left to right. Multiplication/addition bind above shifts;
+comparisons bind below shifts. Chained shifts associate left to right. The two
+`>` characters must be adjacent. Other/narrow shifts remain proposed.
+
+```golem
+sint32 value = -65
+uint16 bits = 6
+sint32 result = 0
+Sub scale
+    result = value >> bits
+EndSub
+```
+
+This is the task-local next profile, not production src support. Golem qualifies
+primitives/packages; Rally owns its game-specific replay and validation.

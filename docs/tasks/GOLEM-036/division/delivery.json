@@ -1,0 +1,18 @@
+{
+  "bundle": "delivery/cd0e922475d08ad4",
+  "sha256": "cd0e922475d08ad4848ec6c044f4c4851cf0148a7b209b8f5fd095f75ec8ed5e",
+  "packages": {
+    "default": {
+      "manifest": "packages/default/delivery-manifest.json",
+      "sha256": "e88fa1a349dae9cf2515db8321fbab3d60576d44010ae0f8f9d496f4a67dcd54"
+    },
+    "relocated": {
+      "manifest": "packages/relocated/delivery-manifest.json",
+      "sha256": "b5486efa22b76ad82f7a15ffb3a151f77df86961bd91dc200f261705c1da78d9"
+    },
+    "animation": {
+      "manifest": "packages/animation/delivery-manifest.json",
+      "sha256": "f6cd8562828032188f036c0f8ffa4a626e6f16876f2d249180a70f143d6130e1"
+    }
+  }
+}

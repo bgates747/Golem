@@ -1,0 +1,22 @@
+{
+  "rejections": [
+    "compiler: line 1, column 42: divmod destinations must have the same type",
+    "compiler: line 1, column 22: divmod destinations must be distinct",
+    "compiler: line 1, column 30: divmod requires matching uint16, uint32 or sint32 global destinations",
+    "compiler: line 1, column 53: mixed variable types require an explicit conversion (not supported in this slice)",
+    "compiler: line 1, column 49: divmod requires matching uint16, uint32 or sint32 global destinations",
+    "compiler: line 1, column 51: cannot assign an active loop counter"
+  ],
+  "signed_zero_overflow_metadata": {
+    "ok": 0,
+    "uint16_add_overflow": 1,
+    "uint16_sub_underflow": 2,
+    "uint16_mul_overflow": 3,
+    "zero_divisor": 4,
+    "signed_division_overflow": 6,
+    "bounds_failure": 32,
+    "nonfinite_float": 33
+  },
+  "nested_pair_no_array_sanitizer_admission": true,
+  "actual_assembler_consumer": true
+}

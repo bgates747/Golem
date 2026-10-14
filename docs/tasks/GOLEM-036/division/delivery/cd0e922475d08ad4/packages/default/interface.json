@@ -1,0 +1,40 @@
+{
+  "schema": 1, "profile": "portable-scalar-foundation",
+  "experimental": true, "execution_contract": "r25-g0-root-v1-dual-backend",
+  "state_buffer": 1, "state_bytes": 164,
+  "state_owner": "application_shared",
+  "initialization": "explicit_install_or_reset",
+  "error": {"offset": 14, "bytes": 2, "codes": {"ok": 0, "uint16_add_overflow": 1, "uint16_sub_underflow": 2, "uint16_mul_overflow": 3, "array_index": 5, "zero_divisor": 4, "signed_division_overflow": 6, "bounds_failure": 32, "nonfinite_float": 33}},
+  "globals": [
+    {"name": "flag", "type": "bool", "offset": 112, "bytes": 2, "bounds": [0, 1]},
+    {"name": "ua", "type": "uint32", "offset": 114, "bytes": 4, "bounds": [0, 4294967295]},
+    {"name": "ub", "type": "uint32", "offset": 118, "bytes": 4, "bounds": [0, 4294967295]},
+    {"name": "uc", "type": "uint32", "offset": 122, "bytes": 4, "bounds": [0, 4294967295]},
+    {"name": "uq", "type": "uint32", "offset": 126, "bytes": 4, "bounds": [0, 4294967295]},
+    {"name": "ur", "type": "uint32", "offset": 130, "bytes": 4, "bounds": [0, 4294967295]},
+    {"name": "sa", "type": "sint32", "offset": 134, "bytes": 4, "bounds": [-2147483648, 2147483647]},
+    {"name": "sb", "type": "sint32", "offset": 138, "bytes": 4, "bounds": [-2147483648, 2147483647]},
+    {"name": "sq", "type": "sint32", "offset": 142, "bytes": 4, "bounds": [-2147483648, 2147483647]},
+    {"name": "sr", "type": "sint32", "offset": 146, "bytes": 4, "bounds": [-2147483648, 2147483647]},
+    {"name": "boundedQ", "type": "sint32", "offset": 150, "bytes": 4, "bounds": [-10, 10]},
+    {"name": "boundedR", "type": "sint32", "offset": 154, "bytes": 4, "bounds": [-3, 3]},
+    {"name": "index", "type": "uint16", "offset": 158, "bytes": 2, "bounds": [0, 65535]},
+    {"name": "effect", "type": "uint16", "offset": 160, "bytes": 2, "bounds": [0, 65535]},
+    {"name": "signedIndex", "type": "sint16", "offset": 162, "bytes": 2, "bounds": [-32768, 32767]}
+  ],
+  "arrays":[{"name":"numerators","type":"uint32","buffer":2,"offset":0,"bytes":8,"lower":0,"upper":1,"count":2,"element_bytes":4,"access":3,"owner":"application_retained","initial_data":"array-numerators.bin"},{"name":"signedNumerators","type":"sint32","buffer":3,"offset":0,"bytes":8,"lower":-1,"upper":0,"count":2,"element_bytes":4,"access":3,"owner":"application_retained","initial_data":"array-signedNumerators.bin"}],
+  "entries": [
+    {"name": "divideUnsigned", "logical_id": 0, "parameter_bytes": 0, "result_bytes": 0, "worst_case_visits": 1},
+    {"name": "divideSigned", "logical_id": 1, "parameter_bytes": 0, "result_bytes": 0, "worst_case_visits": 1},
+    {"name": "aliasUnsigned", "logical_id": 2, "parameter_bytes": 0, "result_bytes": 0, "worst_case_visits": 1},
+    {"name": "aliasSigned", "logical_id": 3, "parameter_bytes": 0, "result_bytes": 0, "worst_case_visits": 1},
+    {"name": "boundedPair", "logical_id": 4, "parameter_bytes": 0, "result_bytes": 0, "worst_case_visits": 1},
+    {"name": "priorEffect", "logical_id": 5, "parameter_bytes": 0, "result_bytes": 0, "worst_case_visits": 2},
+    {"name": "argumentOrder", "logical_id": 6, "parameter_bytes": 0, "result_bytes": 0, "worst_case_visits": 1},
+    {"name": "unsignedArray", "logical_id": 7, "parameter_bytes": 0, "result_bytes": 0, "worst_case_visits": 1},
+    {"name": "signedArray", "logical_id": 8, "parameter_bytes": 0, "result_bytes": 0, "worst_case_visits": 1},
+    {"name": "skipped", "logical_id": 9, "parameter_bytes": 0, "result_bytes": 0, "worst_case_visits": 2},
+    {"name": "repeated", "logical_id": 10, "parameter_bytes": 0, "result_bytes": 0, "worst_case_visits": 2}
+  ],
+  "external_reservations": [{"first":60000,"last":60031}]
+}

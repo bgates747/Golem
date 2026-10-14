@@ -1,0 +1,32 @@
+{
+  "variant": "meter-stock",
+  "observations": 208,
+  "calls": 60,
+  "result_bytes": 416,
+  "result_sha256": "a65eff9cdcdf9b15381df968f7adcf5edd11beb0feb8afd4531643ece2aed3f0",
+  "native": {},
+  "visual": null,
+  "engine": "stock-native",
+  "elapsed_seconds": 2.104,
+  "mapped_vdp_libraries": [
+    "/home/smith/Agon/mystuff/golem/.emulator/runtime/fab-1.2.5/firmware/vdp_platform.so"
+  ],
+  "returned_to_mos_prompt": false,
+  "graphical_instance_launched": false,
+  "runtime_identities": [
+    "aec5f8c266117d5bf864c6124d3c8986d042802ed5cbaaf8813e04a9fb8d0bea  fab-agon-emulator.bin",
+    "d564243283972690933a4554296ad6202ca4ef54572279533a942960846bebae  mos_platform.bin",
+    "d69e60bbce61a7b4b3eef318ba395f11c4e1a5b585755755113992dc94edcb86  mos_platform.map",
+    "14338aaeead48cb3df5987bf7fcc1b350d9e08d4a0ee0fcfc1a4a89cf79fae97  firmware/vdp_platform.so",
+    "130bf99e5326fad7412a92147cac42b495303ed71f89468b140167e36e1084f6  sdcard/golem036d/probe.bin",
+    "8cf1d3267ac19831437fd9abe29e66002daec6bcd02313ad5a4e60a13e71b21a  sdcard/golem036d/script.bin",
+    "f0dd8a351cdd0aa4882b116dee3c76443c485b3c271db4cb35f240b40d7af985  sdcard/golem036d/expected.json",
+    "a65eff9cdcdf9b15381df968f7adcf5edd11beb0feb8afd4531643ece2aed3f0  sdcard/golem036d/expected.dat",
+    "9021f9b42681058b179c190ba727a5422fc558feb2d33a9c9c5874682738a824  sdcard/golem036d/mask.dat",
+    "da3e96de15998e4ae7f6b2772565a415c51fa7086c853a04fc4e71856ac13e09  sdcard/golem036d/probe.golem",
+    "59b9107e8497970fabdd0d33076a49e0d6e29d9833ec5453e1a9d645a5ee0124  sdcard/golem036d/animation.golem",
+    "35fd4fe04ec5d7dfedfc5b85f14c9da233d9ec98723f068e0fe2139fc19d1aab  sdcard/golem036d/bindings.json",
+    "c301d17aa9e27db758630fe4bed13c3a97bb4e81565c5cc4e9a6a9a3184a8dbb  sdcard/autoexec.txt",
+    "a0ca12711c3ab33bc8b41c7820172bbdc28a048a6dc57bb0d10a3d74d7cfba52  fab-agon-emulator"
+  ]
+}

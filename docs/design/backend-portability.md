@@ -254,3 +254,25 @@ byte parity. [Source and qualification](../tasks/GOLEM-036/multiplication/README
 include a quadratic/signed-product animation; human review is pending.
 
 GOLEM-036 multiplication human review subsequently passed: the Author accepted it; retrieved results match all 460 observations / 4,546 bytes, with runtime/fixture identities verified. See docs/tasks/GOLEM-036/multiplication/evidence/human-review.json. The Author subsequently explicitly approved commit/push; division is a separate next tranche. Rally acknowledged the candidate identity and is planning its own bounded host qualification using generated metadata; this is not independent target acceptance or a shared ABI change.
+
+GOLEM-036's third task-local tranche adds matching uint32/sint32 paired divmod
+on both targets, retaining existing uint16 pairing. Quotient truncates toward
+zero; remainder follows numerator sign. Zero 4/minimum-signed/-1 overflow 6 and
+either destination Bounds failure preserve both outputs. Arguments evaluate once
+left to right, with explicit widths and no array destinations. New signed-overflow
+metadata extends only programs using the new form; prior multiplication outputs
+remain byte-identical. [Source/qualification](../tasks/GOLEM-036/division/README.md)
+include supplied numeric vectors and a retained quotient/remainder animation.
+Human review/publication remain pending. Wide shifts/helpers/full replay are open.
+
+GOLEM-036 division human review subsequently passed: the Author reported 'looks good.' Retrieved results match all 488 observations / 4,826 bytes and staged runtime/fixture identities. See docs/tasks/GOLEM-036/division/evidence/human-review.json. WID-002 is accepted; the Author explicitly approved commit/push. Wide shifts/exact helpers and full Rally replay remain open.
+
+Author ownership correction: Rally runs its own game-specific route/contact/
+projection checks. Golem owns language semantics, primitive conformance and
+qualified generated packages/interfaces; supplied numeric vectors are primitive
+conformance inputs, not permission to implement Rally gameplay here.
+
+The released next tranche uses typed 32-bit `>>` with uint16 counts 0..31, signed
+floor/sign extension and unsigned zero fill, checked invalid counts and ordinary
+left-to-right evaluation. Precedence is multiplicative/additive, then shifts,
+then comparisons. See the fourth tranche of GOLEM-036 for exact scope.

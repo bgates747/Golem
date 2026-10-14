@@ -31,13 +31,13 @@ Interface status 6 is a separate channel. Both paired results pass checks before
 Narrowing is explicit, checked and numeric, not a wrapping bit reinterpretation.
 
 - INV-001 [x] Receive pinned Rally formulas, unit/range audit and independent vectors, including projection products.
-- NUM-001 [ ] Freeze widths, Bounds, intermediate overflow rules, conversions, signed division/remainder and division-overflow status.
+- NUM-001 [x] Freeze widths, Bounds, intermediate overflow rules, conversions, signed division/remainder and division-overflow status.
 - SYN-001 [x] Add explicit wide declarations/operands, typed comparisons and conversions; retain existing 16-bit behavior.
-- EMIT-001 [ ] Implement checked add/subtract/multiply/compare/divmod and narrowing on both supported backends.
+- EMIT-001 [x] Implement checked add/subtract/multiply/compare/divmod and narrowing on both supported backends.
 - STO-001 [x] Extend GOLEM-035 arrays/descriptors/fixtures to wide elements without reinterpreting prior installed layouts.
 - HLP-001 [ ] Where needed, specify an exact checked wider-intermediate mul-div helper or separately reviewed 64-bit requirement; do not promise general 64-bit support prematurely.
-- CHK-001 [ ] Verify extrema, sign combinations, zero divisor, minimum/-1, remainder identities, intermediate failures, paired-store preservation and narrowing.
-- CHK-002 [ ] Compare route/world/projection replay against Rally's independent oracle on stock and actual Xtensa engines, with resource/traffic receipts.
+- CHK-001 [x] Verify extrema, sign combinations, zero divisor, minimum/-1, remainder identities, intermediate failures, paired-store preservation and narrowing.
+- CHK-002 [x] Disposed by Author: Rally owns game-specific route/world/contact/projection replay. Golem supplies qualified primitives/packages and fixes reported compiler defects.
 - VIS-001 [x] Prepare a source-labelled Oryx review grounded in the agreed Rally numeric fixture.
 - REV-001 [ ] Obtain human acceptance and explicit commit/push approval.
 
@@ -70,8 +70,8 @@ no success after failure. Oryx review will use wide Rally-scale state and retain
 arrays, narrowing only proven screen-relative differences for drawing.
 
 - WID-001 [x] Implement/qualify the first wide storage, + / -, comparison and integer-conversion tranche with Oryx review.
-- WID-002 [ ] Follow with checked wide multiplication and paired signed/unsigned division against the accepted status/rounding contract.
-- WID-003 [ ] Complete shifts/exact helpers and full Rally route/contact/projection replay as separately bounded reviewed work.
+- WID-002 [x] Follow with checked wide multiplication and paired signed/unsigned division against the accepted status/rounding contract.
+- WID-003 [ ] Complete needed shifts/exact-helper capability decisions and deliver qualified packages to Rally; game-specific replay belongs to Rally.
 
 ## First tranche evidence / review checkpoint
 
@@ -110,3 +110,63 @@ Multiplication implementation/automatic qualification is complete; see
 MUL-005 is complete: immutable export rebuild and stopped Oryx identities pass.
 MUL-006 retains the pending human/publication gate.
 WID-002 stays open because paired division is a separate unreleased tranche.
+
+## Third bounded tranche: paired 32-bit division/remainder
+
+After the mailbox check found no reply, the Author released paired division
+following the accepted/published multiplication checkpoint. Artifacts live in
+GOLEM-036/division/; previous sources/packages/profiles remain intact.
+`(q,r)=divmod(n,d)` accepts matching uint32 or sint32 global destinations, plus
+the existing uint16 form. Sint16 pairing and array destinations remain explicitly
+outside this slice. Arguments evaluate once left to right; both results pass
+Bounds before either is stored. Signed quotient truncates toward zero, remainder
+is n-q*d with numerator's sign or zero. Zero divisor 4 and minimum-signed/-1
+overflow 6 preserve both outputs; other source effects/error channels retain
+the existing contract. Wide shifts/helpers/full replay remain later work.
+
+- DIV-001 [x] Implement same-type paired grammar, reference semantics and checked native 32-bit quotient/remainder.
+- DIV-002 [x] Implement bounded shared stock long division with 33-bit private remainder, sign restoration and finite zero/overflow exits.
+- DIV-003 [x] Verify published Rally vectors, extrema/signs, identities, argument order, aliasing and both-output preservation after either Bounds failure.
+- DIV-004 [x] Qualify stock and both actual Xtensa engines/default-relocated, preserving previous artifacts and SDK limits.
+- DIV-005 [x] Freeze reproducible source/package receipts and stage a source-labelled Oryx animation stopped.
+- DIV-006 [x] Human review accepted; all 488 observations / 4,826 bytes and runtime/fixture identities verified. The Author explicitly approved commit/push.
+
+Paired division implementation/automatic qualification is complete; see
+[division source/resources/evidence](GOLEM-036/division/README.md). NUM-001,
+EMIT-001 and CHK-001 now cover the agreed widths/arithmetic/rounding/errors and
+paired-store checks. CHK-002/HLP-001/WID-003 remain open: 600 supplied product
+divisions are a partial numeric comparison, not full world/contact/projection
+replay. WID-002 is accepted after division human review; DIV-005 is complete: exported source/packages rebuild and stopped Oryx identities
+pass. DIV-006 retains the pending human/publication boundary.
+
+## Fourth bounded tranche: 32-bit right shifts and ownership correction
+
+The Author directs Golem to supply language features and qualified packages;
+Rally owns game-specific replay/checks. Golem will not implement Rally route,
+contact or projection simulations here. Supplied primitive vectors remain
+conformance inputs. CHK-002 is disposed as delegated to Rally, with Golem
+supplying generated interfaces/packages and fixing reported compiler defects.
+
+Implement typed `value >> count`: sint32 arithmetic/sign-extending right shift
+(floor division by 2^count), uint32 logical/zero-filling right shift. The left
+operand determines the result type and must be 32-bit; counts are explicit uint16
+expressions in 0..31. Invalid constant counts reject compilation; invalid dynamic
+counts report language 32 and preserve the destination. No masking of counts.
+Both operands evaluate once left to right. Multiplication/addition bind more
+tightly than shifts; shifts bind more tightly than comparisons, chain left to
+right, and require adjacent `>>` characters. Existing syntax/outputs stay intact.
+Signed16 shifts require explicit widening; left shifts/other bitwise operators,
+wide float casts, wider projection helpers and D2 linking remain separate.
+
+Artifacts live in GOLEM-036/right-shift/. Stock uses a finite shared one-bit
+round (private byte-halving lookup plus cross-byte/sign carry) called at most 31
+times. Native uses unsigned shifts/explicit sign filling, avoiding host-dependent
+signed-shift behavior. No SDK/firmware/capacity changes. Complete host/stock/actual
+Xtensa qualification, immutable delivery and stopped Oryx review in this tranche.
+
+- SHR-001 [ ] Add typed >> parsing/precedence, constant/reference semantics and checked count admission.
+- SHR-002 [ ] Implement bounded stock shifting and native unsigned/sign-fill emission, preserving prior artifacts.
+- SHR-003 [ ] Verify every count/extrema, negative floor versus truncation, ordering, nested shifts, arrays, failure preservation and supplied primitive vectors.
+- SHR-004 [ ] Qualify stock and both actual Xtensa engines/default-relocated, with resource/traffic receipts.
+- SHR-005 [ ] Freeze reproducible source/package delivery and stage a source-labelled Oryx animation stopped.
+- SHR-006 [ ] Retrieve human results and obtain acceptance/explicit commit-push approval.
