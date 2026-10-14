@@ -1,0 +1,3621 @@
+processLoop(void*)
+400f4c04:	004136        	entry	a1, 32
+400f4c07:	fed665        	call8	400f396c <boot_screen()>
+400f4c0a:	dfd1e5        	call8	400d4928 <setupKeyboardAndMouse()>
+400f4c0d:	6e5121        	l32r	a2, 400d0554 <_stext+0x534>
+400f4c10:	02a8      	l32i.n	a10, a2, 0
+400f4c12:	ff75e5        	call8	400f4370 <VDUStreamProcessor::wait_eZ80()>
+400f4c15:	fbdfe5        	call8	400f0a14 <processTerminal()>
+400f4c18:	ff9a56        	bnez	a10, 400f4c15 <processLoop(void*)+0x11>
+400f4c1b:	02a8      	l32i.n	a10, a2, 0
+400f4c1d:	ffe225        	call8	400f4a40 <VDUStreamProcessor::processNext()>
+400f4c20:	fffc46        	j	400f4c15 <processLoop(void*)+0x11>
+	...
+
+VDUStreamProcessor::processNext()
+400f4a40:	006136        	entry	a1, 48
+400f4a43:	0238      	l32i.n	a3, a2, 0
+400f4a45:	20a330        	or	a10, a3, a3
+400f4a48:	002332        	l32i	a3, a3, 0
+400f4a4b:	062332        	l32i	a3, a3, 24
+400f4a4e:	0003e0        	callx8	a3
+400f4a51:	31bfa0        	srai	a11, a10, 31
+400f4a54:	c0bba0        	sub	a11, a11, a10
+400f4a57:	0a3d      	mov.n	a3, a10
+400f4a59:	62a8      	l32i.n	a10, a2, 24
+400f4a5b:	05bfb0        	extui	a11, a11, 31, 1
+400f4a5e:	e3cda5        	call8	400d8738 <Context::checkForVSYNC(bool)>
+400f4a61:	5aec      	bnez.n	a10, 400f4a8a <VDUStreamProcessor::processNext()+0x4a>
+400f4a63:	02ad      	mov.n	a10, a2
+400f4a65:	e42965        	call8	400d8cfc <VDUStreamProcessor::processEventQueue()>
+400f4a68:	02ad      	mov.n	a10, a2
+400f4a6a:	ffe2a5        	call8	400f4894 <VDUStreamProcessor::handleKeyboardAndMouse()>
+400f4a6d:	62a8      	l32i.n	a10, a2, 24
+400f4a6f:	e1aaa5        	call8	400d6518 <Context::doCursorFlash()>
+400f4a72:	6298      	l32i.n	a9, a2, 24
+400f4a74:	a988      	l32i.n	a8, a9, 40
+400f4a76:	022866        	bnei	a8, 2, 400f4a7c <VDUStreamProcessor::processNext()+0x3c>
+400f4a79:	0029c6        	j	400f4b24 <VDUStreamProcessor::processNext()+0xe4>
+400f4a7c:	5c3826        	beqi	a8, 3, 400f4adc <VDUStreamProcessor::processNext()+0x9c>
+400f4a7f:	0aa816        	beqz	a8, 400f4b2d <VDUStreamProcessor::processNext()+0xed>
+400f4a82:	02ad      	mov.n	a10, a2
+400f4a84:	e42765        	call8	400d8cfc <VDUStreamProcessor::processEventQueue()>
+400f4a87:	f01d      	retw.n
+400f4a89:	00          	.byte 00
+400f4a8a:	0b0c      	movi.n	a11, 0
+400f4a8c:	02ad      	mov.n	a10, a2
+400f4a8e:	f9a9e5        	call8	400ee52c <VDUStreamProcessor::bufferCallCallbacks(unsigned short)>
+400f4a91:	0213a6        	blti	a3, 1, 400f4a97 <VDUStreamProcessor::processNext()+0x57>
+400f4a94:	003e46        	j	400f4b91 <VDUStreamProcessor::processNext()+0x151>
+400f4a97:	6288      	l32i.n	a8, a2, 24
+400f4a99:	5c0832        	l8ui	a3, a8, 92
+400f4a9c:	022366        	bnei	a3, 2, 400f4aa2 <VDUStreamProcessor::processNext()+0x62>
+400f4a9f:	005186        	j	400f4be9 <VDUStreamProcessor::processNext()+0x1a9>
+400f4aa2:	073366        	bnei	a3, 3, 400f4aad <VDUStreamProcessor::processNext()+0x6d>
+400f4aa5:	130c      	movi.n	a3, 1
+400f4aa7:	5c4832        	s8i	a3, a8, 92
+400f4aaa:	0020c0        	memw
+400f4aad:	4238      	l32i.n	a3, a2, 16
+400f4aaf:	2288      	l32i.n	a8, a2, 8
+400f4ab1:	0e1387        	beq	a3, a8, 400f4ac3 <VDUStreamProcessor::processNext()+0x83>
+400f4ab4:	a2cb      	addi.n	a10, a2, 12
+400f4ab6:	52b8      	l32i.n	a11, a2, 20
+400f4ab8:	2239      	s32i.n	a3, a2, 8
+400f4aba:	0020c0        	memw
+400f4abd:	6d8a81        	l32r	a8, 400d00e8 <_stext+0xc8>
+400f4ac0:	0008e0        	callx8	a8
+400f4ac3:	02ad      	mov.n	a10, a2
+400f4ac5:	e42365        	call8	400d8cfc <VDUStreamProcessor::processEventQueue()>
+400f4ac8:	02ad      	mov.n	a10, a2
+400f4aca:	ffdca5        	call8	400f4894 <VDUStreamProcessor::handleKeyboardAndMouse()>
+400f4acd:	62a8      	l32i.n	a10, a2, 24
+400f4acf:	e1a4a5        	call8	400d6518 <Context::doCursorFlash()>
+400f4ad2:	6238      	l32i.n	a3, a2, 24
+400f4ad4:	a338      	l32i.n	a3, a3, 40
+400f4ad6:	4a2326        	beqi	a3, 2, 400f4b24 <VDUStreamProcessor::processNext()+0xe4>
+400f4ad9:	a53366        	bnei	a3, 3, 400f4a82 <VDUStreamProcessor::processNext()+0x42>
+400f4adc:	dfbaa5        	call8	400d4688 <shiftKeyPressed()>
+400f4adf:	00ca16        	beqz	a10, 400f4aef <VDUStreamProcessor::processNext()+0xaf>
+400f4ae2:	6dce31        	l32r	a3, 400d021c <_stext+0x1fc>
+400f4ae5:	000332        	l8ui	a3, a3, 0
+400f4ae8:	338c      	beqz.n	a3, 400f4aef <VDUStreamProcessor::processNext()+0xaf>
+400f4aea:	dce3a5        	call8	400d1924 <_Z14ctrlKeyPressedv$part$25>
+400f4aed:	5acc      	bnez.n	a10, 400f4af6 <VDUStreamProcessor::processNext()+0xb6>
+400f4aef:	62a8      	l32i.n	a10, a2, 24
+400f4af1:	0b0c      	movi.n	a11, 0
+400f4af3:	e3a7e5        	call8	400d8570 <Context::setProcessorState(VDUProcessorState)>
+400f4af6:	062232        	l32i	a3, a2, 24
+400f4af9:	152382        	l32i	a8, a3, 84
+400f4afc:	f82816        	beqz	a8, 400f4a82 <VDUStreamProcessor::processNext()+0x42>
+400f4aff:	300392        	l8ui	a9, a3, 48
+400f4b02:	f7c916        	beqz	a9, 400f4a82 <VDUStreamProcessor::processNext()+0x42>
+400f4b05:	01a0a2        	movi	a10, 1
+400f4b08:	1d0892        	l8ui	a9, a8, 29
+400f4b0b:	2099a0        	or	a9, a9, a10
+400f4b0e:	20a220        	or	a10, a2, a2
+400f4b11:	1d4892        	s8i	a9, a8, 29
+400f4b14:	080c      	movi.n	a8, 0
+400f4b16:	304382        	s8i	a8, a3, 48
+400f4b19:	0020c0        	memw
+400f4b1c:	0020c0        	memw
+400f4b1f:	e41de5        	call8	400d8cfc <VDUStreamProcessor::processEventQueue()>
+400f4b22:	f01d      	retw.n
+400f4b24:	dfb625        	call8	400d4688 <shiftKeyPressed()>
+400f4b27:	fcba16        	beqz	a10, 400f4af6 <VDUStreamProcessor::processNext()+0xb6>
+400f4b2a:	fff046        	j	400f4aef <VDUStreamProcessor::processNext()+0xaf>
+400f4b2d:	0213e6        	bgei	a3, 1, 400f4b33 <VDUStreamProcessor::processNext()+0xf3>
+400f4b30:	ffd386        	j	400f4a82 <VDUStreamProcessor::processNext()+0x42>
+400f4b33:	290232        	l8ui	a3, a2, 41
+400f4b36:	2a4232        	s8i	a3, a2, 42
+400f4b39:	0020c0        	memw
+400f4b3c:	f38c      	beqz.n	a3, 400f4b4f <VDUStreamProcessor::processNext()+0x10f>
+400f4b3e:	b288      	l32i.n	a8, a2, 44
+400f4b40:	c238      	l32i.n	a3, a2, 48
+400f4b42:	091837        	beq	a8, a3, 400f4b4f <VDUStreamProcessor::processNext()+0x10f>
+400f4b45:	02ad      	mov.n	a10, a2
+400f4b47:	0020c0        	memw
+400f4b4a:	fa4aa5        	call8	400eeff4 <_ZN18VDUStreamProcessor9flushEchoEv$part$1167>
+400f4b4d:	6298      	l32i.n	a9, a2, 24
+400f4b4f:	300932        	l8ui	a3, a9, 48
+400f4b52:	93cc      	bnez.n	a3, 400f4b5f <VDUStreamProcessor::processNext()+0x11f>
+400f4b54:	152932        	l32i	a3, a9, 84
+400f4b57:	438c      	beqz.n	a3, 400f4b5f <VDUStreamProcessor::processNext()+0x11f>
+400f4b59:	1d0382        	l8ui	a8, a3, 29
+400f4b5c:	5ae807        	bbsi	a8, 0, 400f4bba <VDUStreamProcessor::processNext()+0x17a>
+400f4b5f:	0238      	l32i.n	a3, a2, 0
+400f4b61:	03ad      	mov.n	a10, a3
+400f4b63:	0338      	l32i.n	a3, a3, 0
+400f4b65:	7338      	l32i.n	a3, a3, 28
+400f4b67:	0003e0        	callx8	a3
+400f4b6a:	7480a0        	extui	a8, a10, 0, 8
+400f4b6d:	0a3d      	mov.n	a3, a10
+400f4b6f:	2a0292        	l8ui	a9, a2, 42
+400f4b72:	0f4182        	s8i	a8, a1, 15
+400f4b75:	0020c0        	memw
+400f4b78:	054956        	bnez	a9, 400f4bd0 <VDUStreamProcessor::processNext()+0x190>
+400f4b7b:	02ad      	mov.n	a10, a2
+400f4b7d:	1c0c      	movi.n	a12, 1
+400f4b7f:	74b030        	extui	a11, a3, 0, 8
+400f4b82:	0020c0        	memw
+400f4b85:	f8e6a5        	call8	400ed9f0 <VDUStreamProcessor::vdu(unsigned char, bool)>
+400f4b88:	02ad      	mov.n	a10, a2
+400f4b8a:	e41725        	call8	400d8cfc <VDUStreamProcessor::processEventQueue()>
+400f4b8d:	f01d      	retw.n
+400f4b8f:	00          	.byte 00
+400f4b90:	00          	.byte 00
+400f4b91:	02ad      	mov.n	a10, a2
+400f4b93:	e416a5        	call8	400d8cfc <VDUStreamProcessor::processEventQueue()>
+400f4b96:	02ad      	mov.n	a10, a2
+400f4b98:	ffcfa5        	call8	400f4894 <VDUStreamProcessor::handleKeyboardAndMouse()>
+400f4b9b:	62a8      	l32i.n	a10, a2, 24
+400f4b9d:	e197a5        	call8	400d6518 <Context::doCursorFlash()>
+400f4ba0:	6298      	l32i.n	a9, a2, 24
+400f4ba2:	a938      	l32i.n	a3, a9, 40
+400f4ba4:	022366        	bnei	a3, 2, 400f4baa <VDUStreamProcessor::processNext()+0x16a>
+400f4ba7:	ffde46        	j	400f4b24 <VDUStreamProcessor::processNext()+0xe4>
+400f4baa:	023366        	bnei	a3, 3, 400f4bb0 <VDUStreamProcessor::processNext()+0x170>
+400f4bad:	ffcac6        	j	400f4adc <VDUStreamProcessor::processNext()+0x9c>
+400f4bb0:	f7f316        	beqz	a3, 400f4b33 <VDUStreamProcessor::processNext()+0xf3>
+400f4bb3:	02ad      	mov.n	a10, a2
+400f4bb5:	e41465        	call8	400d8cfc <VDUStreamProcessor::processEventQueue()>
+400f4bb8:	f01d      	retw.n
+400f4bba:	ea7c      	movi.n	a10, -2
+400f4bbc:	1088a0        	and	a8, a8, a10
+400f4bbf:	1d4382        	s8i	a8, a3, 29
+400f4bc2:	130c      	movi.n	a3, 1
+400f4bc4:	304932        	s8i	a3, a9, 48
+400f4bc7:	0020c0        	memw
+400f4bca:	0020c0        	memw
+400f4bcd:	ffe386        	j	400f4b5f <VDUStreamProcessor::processNext()+0x11f>
+400f4bd0:	c2b8      	l32i.n	a11, a2, 48
+400f4bd2:	d298      	l32i.n	a9, a2, 52
+400f4bd4:	211b97        	beq	a11, a9, 400f4bf9 <VDUStreamProcessor::processNext()+0x1b9>
+400f4bd7:	004b82        	s8i	a8, a11, 0
+400f4bda:	0020c0        	memw
+400f4bdd:	c288      	l32i.n	a8, a2, 48
+400f4bdf:	881b      	addi.n	a8, a8, 1
+400f4be1:	c289      	s32i.n	a8, a2, 48
+400f4be3:	0020c0        	memw
+400f4be6:	ffe446        	j	400f4b7b <VDUStreamProcessor::processNext()+0x13b>
+400f4be9:	030c      	movi.n	a3, 0
+400f4beb:	5c4832        	s8i	a3, a8, 92
+400f4bee:	0020c0        	memw
+400f4bf1:	0020c0        	memw
+400f4bf4:	ffad46        	j	400f4aad <VDUStreamProcessor::processNext()+0x6d>
+400f4bf7:	00          	.byte 00
+400f4bf8:	00          	.byte 00
+400f4bf9:	c1fb      	addi.n	a12, a1, 15
+400f4bfb:	2cc2a2        	addi	a10, a2, 44
+400f4bfe:	ea03e5        	call8	400dec3c <void std::vector<unsigned char, std::allocator<unsigned char> >::_M_realloc_insert<unsigned char const&>(__gnu_cxx::__normal_iterator<unsigned char*, std::vector<unsigned char, std::allocator<unsigned char> > >, unsigned char const&)>
+400f4c01:	ffdd86        	j	400f4b7b <VDUStreamProcessor::processNext()+0x13b>
+
+VDUStreamProcessor::vdu(unsigned char, bool)
+400ed9f0:	004136        	entry	a1, 32
+400ed9f3:	8b0251        	l32r	a5, 400d05fc <_stext+0x5dc>
+400ed9f6:	743030        	extui	a3, a3, 0, 8
+400ed9f9:	744040        	extui	a4, a4, 0, 8
+400ed9fc:	000562        	l8ui	a6, a5, 0
+400ed9ff:	202656        	bnez	a6, 400edc05 <VDUStreamProcessor::vdu(unsigned char, bool)+0x215>
+400eda02:	8afd61        	l32r	a6, 400d05f8 <_stext+0x5d8>
+400eda05:	000682        	l8ui	a8, a6, 0
+400eda08:	18bc      	beqz.n	a8, 400eda3d <VDUStreamProcessor::vdu(unsigned char, bool)+0x4d>
+400eda0a:	d80c      	movi.n	a8, 13
+400eda0c:	153837        	bltu	a8, a3, 400eda25 <VDUStreamProcessor::vdu(unsigned char, bool)+0x35>
+400eda0f:	0283b6        	bltui	a3, 8, 400eda15 <VDUStreamProcessor::vdu(unsigned char, bool)+0x25>
+400eda12:	007e86        	j	400edc10 <VDUStreamProcessor::vdu(unsigned char, bool)+0x220>
+400eda15:	243366        	bnei	a3, 3, 400eda3d <VDUStreamProcessor::vdu(unsigned char, bool)+0x4d>
+400eda18:	020c      	movi.n	a2, 0
+400eda1a:	004622        	s8i	a2, a6, 0
+400eda1d:	0020c0        	memw
+400eda20:	0020c0        	memw
+400eda23:	f01d      	retw.n
+400eda25:	14c3b6        	bltui	a3, 32, 400eda3d <VDUStreamProcessor::vdu(unsigned char, bool)+0x4d>
+400eda28:	280282        	l8ui	a8, a2, 40
+400eda2b:	029856        	bnez	a8, 400eda58 <VDUStreamProcessor::vdu(unsigned char, bool)+0x68>
+400eda2e:	000582        	l8ui	a8, a5, 0
+400eda31:	00d856        	bnez	a8, 400eda42 <VDUStreamProcessor::vdu(unsigned char, bool)+0x52>
+400eda34:	20b330        	or	a11, a3, a3
+400eda37:	8a4da1        	l32r	a10, 400d036c <_stext+0x34c>
+400eda3a:	36e6e5        	call8	401248a8 <HardwareSerial::write(unsigned char)>
+400eda3d:	280282        	l8ui	a8, a2, 40
+400eda40:	48dc      	bnez.n	a8, 400eda58 <VDUStreamProcessor::vdu(unsigned char, bool)+0x68>
+400eda42:	021366        	bnei	a3, 1, 400eda48 <VDUStreamProcessor::vdu(unsigned char, bool)+0x58>
+400eda45:	003946        	j	400edb2e <VDUStreamProcessor::vdu(unsigned char, bool)+0x13e>
+400eda48:	d46366        	bnei	a3, 6, 400eda20 <VDUStreamProcessor::vdu(unsigned char, bool)+0x30>
+400eda4b:	130c      	movi.n	a3, 1
+400eda4d:	284232        	s8i	a3, a2, 40
+400eda50:	0020c0        	memw
+400eda53:	0020c0        	memw
+400eda56:	f01d      	retw.n
+400eda58:	13a082        	movi	a8, 19
+400eda5b:	029387        	bne	a3, a8, 400eda61 <VDUStreamProcessor::vdu(unsigned char, bool)+0x71>
+400eda5e:	00bb86        	j	400edd50 <VDUStreamProcessor::vdu(unsigned char, bool)+0x360>
+400eda61:	02b837        	bgeu	a8, a3, 400eda67 <VDUStreamProcessor::vdu(unsigned char, bool)+0x77>
+400eda64:	002086        	j	400edaea <VDUStreamProcessor::vdu(unsigned char, bool)+0xfa>
+400eda67:	029366        	bnei	a3, 10, 400eda6d <VDUStreamProcessor::vdu(unsigned char, bool)+0x7d>
+400eda6a:	008586        	j	400edc84 <VDUStreamProcessor::vdu(unsigned char, bool)+0x294>
+400eda6d:	0aa0b2        	movi	a11, 10
+400eda70:	51bb37        	bgeu	a11, a3, 400edac5 <VDUStreamProcessor::vdu(unsigned char, bool)+0xd5>
+400eda73:	0ea052        	movi	a5, 14
+400eda76:	029357        	bne	a3, a5, 400eda7c <VDUStreamProcessor::vdu(unsigned char, bool)+0x8c>
+400eda79:	0085c6        	j	400edc94 <VDUStreamProcessor::vdu(unsigned char, bool)+0x2a4>
+400eda7c:	28b537        	bgeu	a5, a3, 400edaa8 <VDUStreamProcessor::vdu(unsigned char, bool)+0xb8>
+400eda7f:	02b366        	bnei	a3, 16, 400eda85 <VDUStreamProcessor::vdu(unsigned char, bool)+0x95>
+400eda82:	008986        	j	400edcac <VDUStreamProcessor::vdu(unsigned char, bool)+0x2bc>
+400eda85:	02b3f6        	bgeui	a3, 16, 400eda8b <VDUStreamProcessor::vdu(unsigned char, bool)+0x9b>
+400eda88:	006c86        	j	400edc3e <VDUStreamProcessor::vdu(unsigned char, bool)+0x24e>
+400eda8b:	141c      	movi.n	a4, 17
+400eda8d:	079347        	bne	a3, a4, 400eda98 <VDUStreamProcessor::vdu(unsigned char, bool)+0xa8>
+400eda90:	02ad      	mov.n	a10, a2
+400eda92:	f19525        	call8	400df3e4 <VDUStreamProcessor::vdu_colour()>
+400eda95:	f01d      	retw.n
+400eda97:	00          	.byte 00
+400eda98:	12a042        	movi	a4, 18
+400eda9b:	819347        	bne	a3, a4, 400eda20 <VDUStreamProcessor::vdu(unsigned char, bool)+0x30>
+400eda9e:	20a220        	or	a10, a2, a2
+400edaa1:	f1f725        	call8	400dfa14 <VDUStreamProcessor::vdu_gcol()>
+400edaa4:	000090        	retw
+400edaa7:	00          	.byte 00
+400edaa8:	02a366        	bnei	a3, 12, 400edaae <VDUStreamProcessor::vdu(unsigned char, bool)+0xbe>
+400edaab:	006146        	j	400edc34 <VDUStreamProcessor::vdu(unsigned char, bool)+0x244>
+400edaae:	0ca042        	movi	a4, 12
+400edab1:	02b437        	bgeu	a4, a3, 400edab7 <VDUStreamProcessor::vdu(unsigned char, bool)+0xc7>
+400edab4:	00a1c6        	j	400edd3f <VDUStreamProcessor::vdu(unsigned char, bool)+0x34f>
+400edab7:	0622a2        	l32i	a10, a2, 24
+400edaba:	00a0b2        	movi	a11, 0
+400edabd:	e9f825        	call8	400d7a40 <Context::cursorUp(bool)>
+400edac0:	f01d      	retw.n
+400edac2:	00          	.byte 00
+400edac3:	00          	.byte 00
+400edac4:	00          	.byte 00
+400edac5:	025366        	bnei	a3, 5, 400edacb <VDUStreamProcessor::vdu(unsigned char, bool)+0xdb>
+400edac8:	006a06        	j	400edc74 <VDUStreamProcessor::vdu(unsigned char, bool)+0x284>
+400edacb:	0263b6        	bltui	a3, 6, 400edad1 <VDUStreamProcessor::vdu(unsigned char, bool)+0xe1>
+400edace:	0020c6        	j	400edb55 <VDUStreamProcessor::vdu(unsigned char, bool)+0x165>
+400edad1:	022366        	bnei	a3, 2, 400edad7 <VDUStreamProcessor::vdu(unsigned char, bool)+0xe7>
+400edad4:	008246        	j	400edce1 <VDUStreamProcessor::vdu(unsigned char, bool)+0x2f1>
+400edad7:	4d4366        	bnei	a3, 4, 400edb28 <VDUStreamProcessor::vdu(unsigned char, bool)+0x138>
+400edada:	0622a2        	l32i	a10, a2, 24
+400edadd:	00a0b2        	movi	a11, 0
+400edae0:	ef97a5        	call8	400dd45c <Context::setActiveCursor(CursorType)>
+400edae3:	02ad      	mov.n	a10, a2
+400edae5:	00c4a5        	call8	400ee730 <VDUStreamProcessor::sendModeInformation()>
+400edae8:	f01d      	retw.n
+400edaea:	1ca052        	movi	a5, 28
+400edaed:	029357        	bne	a3, a5, 400edaf3 <VDUStreamProcessor::vdu(unsigned char, bool)+0x103>
+400edaf0:	007e86        	j	400edcee <VDUStreamProcessor::vdu(unsigned char, bool)+0x2fe>
+400edaf3:	02b537        	bgeu	a5, a3, 400edaf9 <VDUStreamProcessor::vdu(unsigned char, bool)+0x109>
+400edaf6:	003606        	j	400edbd2 <VDUStreamProcessor::vdu(unsigned char, bool)+0x1e2>
+400edaf9:	17a052        	movi	a5, 23
+400edafc:	029357        	bne	a3, a5, 400edb02 <VDUStreamProcessor::vdu(unsigned char, bool)+0x112>
+400edaff:	007e46        	j	400edcfc <VDUStreamProcessor::vdu(unsigned char, bool)+0x30c>
+400edb02:	023537        	bltu	a5, a3, 400edb08 <VDUStreamProcessor::vdu(unsigned char, bool)+0x118>
+400edb05:	002d06        	j	400edbbd <VDUStreamProcessor::vdu(unsigned char, bool)+0x1cd>
+400edb08:	951c      	movi.n	a5, 25
+400edb0a:	029357        	bne	a3, a5, 400edb10 <VDUStreamProcessor::vdu(unsigned char, bool)+0x120>
+400edb0d:	0052c6        	j	400edc5c <VDUStreamProcessor::vdu(unsigned char, bool)+0x26c>
+400edb10:	02b357        	bgeu	a3, a5, 400edb16 <VDUStreamProcessor::vdu(unsigned char, bool)+0x126>
+400edb13:	0053c6        	j	400edc66 <VDUStreamProcessor::vdu(unsigned char, bool)+0x276>
+400edb16:	a51c      	movi.n	a5, 26
+400edb18:	5e9357        	bne	a3, a5, 400edb7a <VDUStreamProcessor::vdu(unsigned char, bool)+0x18a>
+400edb1b:	02ad      	mov.n	a10, a2
+400edb1d:	ecebe5        	call8	400da9dc <VDUStreamProcessor::vdu_resetViewports()>
+400edb20:	02ad      	mov.n	a10, a2
+400edb22:	00c0e5        	call8	400ee730 <VDUStreamProcessor::sendModeInformation()>
+400edb25:	f01d      	retw.n
+400edb27:	00          	.byte 00
+400edb28:	021326        	beqi	a3, 1, 400edb2e <VDUStreamProcessor::vdu(unsigned char, bool)+0x13e>
+400edb2b:	ffbc46        	j	400eda20 <VDUStreamProcessor::vdu(unsigned char, bool)+0x30>
+400edb2e:	c8a0b2        	movi	a11, 200
+400edb31:	20a220        	or	a10, a2, a2
+400edb34:	f13225        	call8	400dee58 <VDUStreamProcessor::readByte_t(unsigned short)>
+400edb37:	020a66        	bnei	a10, -1, 400edb3d <VDUStreamProcessor::vdu(unsigned char, bool)+0x14d>
+400edb3a:	ffb886        	j	400eda20 <VDUStreamProcessor::vdu(unsigned char, bool)+0x30>
+400edb3d:	000622        	l8ui	a2, a6, 0
+400edb40:	005256        	bnez	a2, 400edb49 <VDUStreamProcessor::vdu(unsigned char, bool)+0x159>
+400edb43:	000522        	l8ui	a2, a5, 0
+400edb46:	ed6216        	beqz	a2, 400eda20 <VDUStreamProcessor::vdu(unsigned char, bool)+0x30>
+400edb49:	74b0a0        	extui	a11, a10, 0, 8
+400edb4c:	8a08a1        	l32r	a10, 400d036c <_stext+0x34c>
+400edb4f:	36d5a5        	call8	401248a8 <HardwareSerial::write(unsigned char)>
+400edb52:	f01d      	retw.n
+400edb54:	00          	.byte 00
+400edb55:	028366        	bnei	a3, 8, 400edb5b <VDUStreamProcessor::vdu(unsigned char, bool)+0x16b>
+400edb58:	005686        	j	400edcb6 <VDUStreamProcessor::vdu(unsigned char, bool)+0x2c6>
+400edb5b:	840c      	movi.n	a4, 8
+400edb5d:	3fb437        	bgeu	a4, a3, 400edba0 <VDUStreamProcessor::vdu(unsigned char, bool)+0x1b0>
+400edb60:	0622a2        	l32i	a10, a2, 24
+400edb63:	ea0ce5        	call8	400d7c30 <Context::cursorAutoNewline()>
+400edb66:	62a8      	l32i.n	a10, a2, 24
+400edb68:	e8a165        	call8	400d6580 <Context::cursorRight()>
+400edb6b:	62a8      	l32i.n	a10, a2, 24
+400edb6d:	ea0c25        	call8	400d7c30 <Context::cursorAutoNewline()>
+400edb70:	eaca16        	beqz	a10, 400eda20 <VDUStreamProcessor::vdu(unsigned char, bool)+0x30>
+400edb73:	62a8      	l32i.n	a10, a2, 24
+400edb75:	eaa625        	call8	400d85d8 <Context::checkPagedMode()>
+400edb78:	f01d      	retw.n
+400edb7a:	1ba052        	movi	a5, 27
+400edb7d:	021357        	beq	a3, a5, 400edb83 <VDUStreamProcessor::vdu(unsigned char, bool)+0x193>
+400edb80:	ffa706        	j	400eda20 <VDUStreamProcessor::vdu(unsigned char, bool)+0x30>
+400edb83:	c8a0b2        	movi	a11, 200
+400edb86:	20a220        	or	a10, a2, a2
+400edb89:	f12ce5        	call8	400dee58 <VDUStreamProcessor::readByte_t(unsigned short)>
+400edb8c:	020a66        	bnei	a10, -1, 400edb92 <VDUStreamProcessor::vdu(unsigned char, bool)+0x1a2>
+400edb8f:	ffa346        	j	400eda20 <VDUStreamProcessor::vdu(unsigned char, bool)+0x30>
+400edb92:	74b0a0        	extui	a11, a10, 0, 8
+400edb95:	04cd      	mov.n	a12, a4
+400edb97:	02ad      	mov.n	a10, a2
+400edb99:	ff2665        	call8	400ece00 <VDUStreamProcessor::vdu_print(char, bool)>
+400edb9c:	f01d      	retw.n
+400edb9e:	00          	.byte 00
+400edb9f:	00          	.byte 00
+400edba0:	027326        	beqi	a3, 7, 400edba6 <VDUStreamProcessor::vdu(unsigned char, bool)+0x1b6>
+400edba3:	ff9e46        	j	400eda20 <VDUStreamProcessor::vdu(unsigned char, bool)+0x30>
+400edba6:	89ab21        	l32r	a2, 400d0254 <_stext+0x234>
+400edba9:	02a8      	l32i.n	a10, a2, 0
+400edbab:	e71a16        	beqz	a10, 400eda20 <VDUStreamProcessor::vdu(unsigned char, bool)+0x30>
+400edbae:	7da0d2        	movi	a13, 125
+400edbb1:	eea2c2        	movi	a12, 0x2ee
+400edbb4:	64a0b2        	movi	a11, 100
+400edbb7:	e75e25        	call8	400d5198 <AudioChannel::playNote(unsigned char, unsigned short, int)>
+400edbba:	f01d      	retw.n
+400edbbc:	00          	.byte 00
+400edbbd:	15a052        	movi	a5, 21
+400edbc0:	029357        	bne	a3, a5, 400edbc6 <VDUStreamProcessor::vdu(unsigned char, bool)+0x1d6>
+400edbc3:	004fc6        	j	400edd06 <VDUStreamProcessor::vdu(unsigned char, bool)+0x316>
+400edbc6:	4f3537        	bltu	a5, a3, 400edc19 <VDUStreamProcessor::vdu(unsigned char, bool)+0x229>
+400edbc9:	20a220        	or	a10, a2, a2
+400edbcc:	037265        	call8	400f12f4 <VDUStreamProcessor::vdu_restorePalette()>
+400edbcf:	000090        	retw
+400edbd2:	7ea052        	movi	a5, 126
+400edbd5:	1b3537        	bltu	a5, a3, 400edbf4 <VDUStreamProcessor::vdu(unsigned char, bool)+0x204>
+400edbd8:	02c3b6        	bltui	a3, 32, 400edbde <VDUStreamProcessor::vdu(unsigned char, bool)+0x1ee>
+400edbdb:	004d46        	j	400edd14 <VDUStreamProcessor::vdu(unsigned char, bool)+0x324>
+400edbde:	1ea052        	movi	a5, 30
+400edbe1:	029357        	bne	a3, a5, 400edbe7 <VDUStreamProcessor::vdu(unsigned char, bool)+0x1f7>
+400edbe4:	004e86        	j	400edd22 <VDUStreamProcessor::vdu(unsigned char, bool)+0x332>
+400edbe7:	673537        	bltu	a5, a3, 400edc52 <VDUStreamProcessor::vdu(unsigned char, bool)+0x262>
+400edbea:	20a220        	or	a10, a2, a2
+400edbed:	f1b825        	call8	400df770 <VDUStreamProcessor::vdu_origin()>
+400edbf0:	000090        	retw
+400edbf3:	00          	.byte 00
+400edbf4:	7fa052        	movi	a5, 127
+400edbf7:	021357        	beq	a3, a5, 400edbfd <VDUStreamProcessor::vdu(unsigned char, bool)+0x20d>
+400edbfa:	004586        	j	400edd14 <VDUStreamProcessor::vdu(unsigned char, bool)+0x324>
+400edbfd:	62a8      	l32i.n	a10, a2, 24
+400edbff:	ea3e25        	call8	400d7fe0 <Context::plotBackspace()>
+400edc02:	f01d      	retw.n
+400edc04:	00          	.byte 00
+400edc05:	89d9a1        	l32r	a10, 400d036c <_stext+0x34c>
+400edc08:	03bd      	mov.n	a11, a3
+400edc0a:	36c9e5        	call8	401248a8 <HardwareSerial::write(unsigned char)>
+400edc0d:	ff7c46        	j	400eda02 <VDUStreamProcessor::vdu(unsigned char, bool)+0x12>
+400edc10:	000582        	l8ui	a8, a5, 0
+400edc13:	e26856        	bnez	a8, 400eda3d <VDUStreamProcessor::vdu(unsigned char, bool)+0x4d>
+400edc16:	ff8686        	j	400eda34 <VDUStreamProcessor::vdu(unsigned char, bool)+0x44>
+400edc19:	c8a0b2        	movi	a11, 200
+400edc1c:	20a220        	or	a10, a2, a2
+400edc1f:	f123a5        	call8	400dee58 <VDUStreamProcessor::readByte_t(unsigned short)>
+400edc22:	020a66        	bnei	a10, -1, 400edc28 <VDUStreamProcessor::vdu(unsigned char, bool)+0x238>
+400edc25:	ff7dc6        	j	400eda20 <VDUStreamProcessor::vdu(unsigned char, bool)+0x30>
+400edc28:	74b0a0        	extui	a11, a10, 0, 8
+400edc2b:	20a220        	or	a10, a2, a2
+400edc2e:	02cea5        	call8	400f0918 <VDUStreamProcessor::vdu_mode(unsigned char)>
+400edc31:	f01d      	retw.n
+400edc33:	00          	.byte 00
+400edc34:	62a8      	l32i.n	a10, a2, 24
+400edc36:	eab9e5        	call8	400d87d4 <Context::cls()>
+400edc39:	f01d      	retw.n
+400edc3b:	00          	.byte 00
+400edc3c:	00          	.byte 00
+400edc3d:	00          	.byte 00
+400edc3e:	6228      	l32i.n	a2, a2, 24
+400edc40:	030c      	movi.n	a3, 0
+400edc42:	02ad      	mov.n	a10, a2
+400edc44:	5c4232        	s8i	a3, a2, 92
+400edc47:	0020c0        	memw
+400edc4a:	0020c0        	memw
+400edc4d:	ea8f25        	call8	400d8540 <Context::resetPagedModeCount()>
+400edc50:	f01d      	retw.n
+400edc52:	02ad      	mov.n	a10, a2
+400edc54:	f2f8a5        	call8	400e0be0 <VDUStreamProcessor::vdu_cursorTab()>
+400edc57:	f01d      	retw.n
+400edc59:	00          	.byte 00
+400edc5a:	00          	.byte 00
+400edc5b:	00          	.byte 00
+400edc5c:	02ad      	mov.n	a10, a2
+400edc5e:	93e965        	call8	40081af4 <VDUStreamProcessor::vdu_plot()>
+400edc61:	f01d      	retw.n
+400edc63:	00          	.byte 00
+400edc64:	00          	.byte 00
+400edc65:	00          	.byte 00
+400edc66:	20a220        	or	a10, a2, a2
+400edc69:	f1a0a5        	call8	400df674 <VDUStreamProcessor::vdu_graphicsViewport()>
+400edc6c:	20a220        	or	a10, a2, a2
+400edc6f:	00ac25        	call8	400ee730 <VDUStreamProcessor::sendModeInformation()>
+400edc72:	f01d      	retw.n
+400edc74:	0622a2        	l32i	a10, a2, 24
+400edc77:	01a0b2        	movi	a11, 1
+400edc7a:	ef7e25        	call8	400dd45c <Context::setActiveCursor(CursorType)>
+400edc7d:	02ad      	mov.n	a10, a2
+400edc7f:	00ab25        	call8	400ee730 <VDUStreamProcessor::sendModeInformation()>
+400edc82:	f01d      	retw.n
+400edc84:	0622a2        	l32i	a10, a2, 24
+400edc87:	ea9525        	call8	400d85d8 <Context::checkPagedMode()>
+400edc8a:	00a0b2        	movi	a11, 0
+400edc8d:	62a8      	l32i.n	a10, a2, 24
+400edc8f:	e9eaa5        	call8	400d7b38 <Context::cursorDown(bool)>
+400edc92:	f01d      	retw.n
+400edc94:	062222        	l32i	a2, a2, 24
+400edc97:	01a032        	movi	a3, 1
+400edc9a:	20a220        	or	a10, a2, a2
+400edc9d:	5c4232        	s8i	a3, a2, 92
+400edca0:	0020c0        	memw
+400edca3:	0020c0        	memw
+400edca6:	ea89a5        	call8	400d8540 <Context::resetPagedModeCount()>
+400edca9:	f01d      	retw.n
+400edcab:	00          	.byte 00
+400edcac:	62a8      	l32i.n	a10, a2, 24
+400edcae:	ea3e25        	call8	400d8090 <Context::clg()>
+400edcb1:	f01d      	retw.n
+400edcb3:	00          	.byte 00
+400edcb4:	00          	.byte 00
+400edcb5:	00          	.byte 00
+400edcb6:	62a8      	l32i.n	a10, a2, 24
+400edcb8:	35ca32        	addi	a3, a10, 53
+400edcbb:	0f2a52        	l32i	a5, a10, 60
+400edcbe:	021537        	beq	a5, a3, 400edcc4 <VDUStreamProcessor::vdu(unsigned char, bool)+0x2d4>
+400edcc1:	007456        	bnez	a4, 400edccc <VDUStreamProcessor::vdu(unsigned char, bool)+0x2dc>
+400edcc4:	e9fa25        	call8	400d7c68 <Context::cursorLeft()>
+400edcc7:	f01d      	retw.n
+400edcc9:	00          	.byte 00
+400edcca:	00          	.byte 00
+400edccb:	00          	.byte 00
+400edccc:	20a220        	or	a10, a2, a2
+400edccf:	eafd65        	call8	400d8ca4 <VDUStreamProcessor::peekByte_t(unsigned short)>
+400edcd2:	02ca66        	bnei	a10, 32, 400edcd8 <VDUStreamProcessor::vdu(unsigned char, bool)+0x2e8>
+400edcd5:	ffc906        	j	400edbfd <VDUStreamProcessor::vdu(unsigned char, bool)+0x20d>
+400edcd8:	0622a2        	l32i	a10, a2, 24
+400edcdb:	e9f8e5        	call8	400d7c68 <Context::cursorLeft()>
+400edcde:	fff946        	j	400edcc7 <VDUStreamProcessor::vdu(unsigned char, bool)+0x2d7>
+400edce1:	120c      	movi.n	a2, 1
+400edce3:	004622        	s8i	a2, a6, 0
+400edce6:	0020c0        	memw
+400edce9:	0020c0        	memw
+400edcec:	f01d      	retw.n
+400edcee:	20a220        	or	a10, a2, a2
+400edcf1:	f2b865        	call8	400e0878 <VDUStreamProcessor::vdu_textViewport()>
+400edcf4:	20a220        	or	a10, a2, a2
+400edcf7:	00a3a5        	call8	400ee730 <VDUStreamProcessor::sendModeInformation()>
+400edcfa:	f01d      	retw.n
+400edcfc:	02ad      	mov.n	a10, a2
+400edcfe:	ffa565        	call8	400ed754 <VDUStreamProcessor::vdu_sys()>
+400edd01:	f01d      	retw.n
+400edd03:	00          	.byte 00
+400edd04:	00          	.byte 00
+400edd05:	00          	.byte 00
+400edd06:	030c      	movi.n	a3, 0
+400edd08:	284232        	s8i	a3, a2, 40
+400edd0b:	0020c0        	memw
+400edd0e:	0020c0        	memw
+400edd11:	f01d      	retw.n
+400edd13:	00          	.byte 00
+400edd14:	20c440        	or	a12, a4, a4
+400edd17:	20b330        	or	a11, a3, a3
+400edd1a:	20a220        	or	a10, a2, a2
+400edd1d:	ff0e25        	call8	400ece00 <VDUStreamProcessor::vdu_print(char, bool)>
+400edd20:	f01d      	retw.n
+400edd22:	062222        	l32i	a2, a2, 24
+400edd25:	20a220        	or	a10, a2, a2
+400edd28:	f238      	l32i.n	a3, a2, 60
+400edd2a:	03bd      	mov.n	a11, a3
+400edd2c:	182242        	l32i	a4, a2, 96
+400edd2f:	04cd      	mov.n	a12, a4
+400edd31:	e89325        	call8	400d6664 <Context::cursorCR(fabgl::Point*, fabgl::Rect*)>
+400edd34:	04cd      	mov.n	a12, a4
+400edd36:	03bd      	mov.n	a11, a3
+400edd38:	02ad      	mov.n	a10, a2
+400edd3a:	e840a5        	call8	400d6144 <Context::cursorTop(fabgl::Point*, fabgl::Rect*)>
+400edd3d:	f01d      	retw.n
+400edd3f:	062222        	l32i	a2, a2, 24
+400edd42:	20a220        	or	a10, a2, a2
+400edd45:	1822c2        	l32i	a12, a2, 96
+400edd48:	0f22b2        	l32i	a11, a2, 60
+400edd4b:	e891a5        	call8	400d6664 <Context::cursorCR(fabgl::Point*, fabgl::Rect*)>
+400edd4e:	f01d      	retw.n
+400edd50:	02ad      	mov.n	a10, a2
+400edd52:	032a25        	call8	400f0ff4 <VDUStreamProcessor::vdu_palette()>
+400edd55:	f01d      	retw.n
+	...
+
+VDUStreamProcessor::vdu_sys()
+400ed754:	006136        	entry	a1, 48
+400ed757:	0238      	l32i.n	a3, a2, 0
+400ed759:	03ad      	mov.n	a10, a3
+400ed75b:	8ad041        	l32r	a4, 400d029c <_stext+0x27c>
+400ed75e:	0338      	l32i.n	a3, a3, 0
+400ed760:	0020c0        	memw
+400ed763:	0488      	l32i.n	a8, a4, 0
+400ed765:	7338      	l32i.n	a3, a3, 28
+400ed767:	0020c0        	memw
+400ed76a:	3189      	s32i.n	a8, a1, 12
+400ed76c:	0020c0        	memw
+400ed76f:	0003e0        	callx8	a3
+400ed772:	0a3d      	mov.n	a3, a10
+400ed774:	020a66        	bnei	a10, -1, 400ed77a <VDUStreamProcessor::vdu_sys()+0x26>
+400ed777:	003046        	j	400ed83c <VDUStreamProcessor::vdu_sys()+0xe8>
+400ed77a:	7450a0        	extui	a5, a10, 0, 8
+400ed77d:	2a0262        	l8ui	a6, a2, 42
+400ed780:	034152        	s8i	a5, a1, 3
+400ed783:	0020c0        	memw
+400ed786:	092656        	bnez	a6, 400ed81c <VDUStreamProcessor::vdu_sys()+0xc8>
+400ed789:	233380        	sext	a3, a3, 15
+400ed78c:	560326        	beqi	a3, -1, 400ed7e6 <VDUStreamProcessor::vdu_sys()+0x92>
+400ed78f:	f51c      	movi.n	a5, 31
+400ed791:	02a537        	bge	a5, a3, 400ed797 <VDUStreamProcessor::vdu_sys()+0x43>
+400ed794:	003f46        	j	400ed895 <VDUStreamProcessor::vdu_sys()+0x141>
+400ed797:	027366        	bnei	a3, 7, 400ed79d <VDUStreamProcessor::vdu_sys()+0x49>
+400ed79a:	007f86        	j	400ed99c <VDUStreamProcessor::vdu_sys()+0x248>
+400ed79d:	5883a6        	blti	a3, 8, 400ed7f9 <VDUStreamProcessor::vdu_sys()+0xa5>
+400ed7a0:	751c      	movi.n	a5, 23
+400ed7a2:	029357        	bne	a3, a5, 400ed7a8 <VDUStreamProcessor::vdu_sys()+0x54>
+400ed7a5:	007306        	j	400ed975 <VDUStreamProcessor::vdu_sys()+0x221>
+400ed7a8:	65a537        	bge	a5, a3, 400ed811 <VDUStreamProcessor::vdu_sys()+0xbd>
+400ed7ab:	b51c      	movi.n	a5, 27
+400ed7ad:	029357        	bne	a3, a5, 400ed7b3 <VDUStreamProcessor::vdu_sys()+0x5f>
+400ed7b0:	003e06        	j	400ed8ac <VDUStreamProcessor::vdu_sys()+0x158>
+400ed7b3:	c51c      	movi.n	a5, 28
+400ed7b5:	2d9357        	bne	a3, a5, 400ed7e6 <VDUStreamProcessor::vdu_sys()+0x92>
+400ed7b8:	060c      	movi.n	a6, 0
+400ed7ba:	b238      	l32i.n	a3, a2, 44
+400ed7bc:	c258      	l32i.n	a5, a2, 48
+400ed7be:	2a4262        	s8i	a6, a2, 42
+400ed7c1:	0020c0        	memw
+400ed7c4:	011357        	beq	a3, a5, 400ed7c9 <VDUStreamProcessor::vdu_sys()+0x75>
+400ed7c7:	c239      	s32i.n	a3, a2, 48
+400ed7c9:	c8a0b2        	movi	a11, 200
+400ed7cc:	02ad      	mov.n	a10, a2
+400ed7ce:	0020c0        	memw
+400ed7d1:	f16865        	call8	400dee58 <VDUStreamProcessor::readByte_t(unsigned short)>
+400ed7d4:	021a66        	bnei	a10, 1, 400ed7da <VDUStreamProcessor::vdu_sys()+0x86>
+400ed7d7:	007b46        	j	400ed9c8 <VDUStreamProcessor::vdu_sys()+0x274>
+400ed7da:	022a66        	bnei	a10, 2, 400ed7e0 <VDUStreamProcessor::vdu_sys()+0x8c>
+400ed7dd:	0077c6        	j	400ed9c0 <VDUStreamProcessor::vdu_sys()+0x26c>
+400ed7e0:	020a66        	bnei	a10, -1, 400ed7e6 <VDUStreamProcessor::vdu_sys()+0x92>
+400ed7e3:	007446        	j	400ed9b8 <VDUStreamProcessor::vdu_sys()+0x264>
+400ed7e6:	0020c0        	memw
+400ed7e9:	3138      	l32i.n	a3, a1, 12
+400ed7eb:	0020c0        	memw
+400ed7ee:	0428      	l32i.n	a2, a4, 0
+400ed7f0:	021327        	beq	a3, a2, 400ed7f6 <VDUStreamProcessor::vdu_sys()+0xa2>
+400ed7f3:	007d46        	j	400ed9ec <VDUStreamProcessor::vdu_sys()+0x298>
+400ed7f6:	f01d      	retw.n
+400ed7f8:	00          	.byte 00
+400ed7f9:	021366        	bnei	a3, 1, 400ed7ff <VDUStreamProcessor::vdu_sys()+0xab>
+400ed7fc:	004306        	j	400ed90c <VDUStreamProcessor::vdu_sys()+0x1b8>
+400ed7ff:	026366        	bnei	a3, 6, 400ed805 <VDUStreamProcessor::vdu_sys()+0xb1>
+400ed802:	003186        	j	400ed8cc <VDUStreamProcessor::vdu_sys()+0x178>
+400ed805:	fdd356        	bnez	a3, 400ed7e6 <VDUStreamProcessor::vdu_sys()+0x92>
+400ed808:	02ad      	mov.n	a10, a2
+400ed80a:	064925        	call8	400f3c9c <VDUStreamProcessor::vdu_sys_video()>
+400ed80d:	fff546        	j	400ed7e6 <VDUStreamProcessor::vdu_sys()+0x92>
+400ed810:	00          	.byte 00
+400ed811:	d1b366        	bnei	a3, 16, 400ed7e6 <VDUStreamProcessor::vdu_sys()+0x92>
+400ed814:	02ad      	mov.n	a10, a2
+400ed816:	015465        	call8	400eed5c <VDUStreamProcessor::vdu_sys_cursorBehaviour()>
+400ed819:	fff246        	j	400ed7e6 <VDUStreamProcessor::vdu_sys()+0x92>
+400ed81c:	c2b8      	l32i.n	a11, a2, 48
+400ed81e:	d268      	l32i.n	a6, a2, 52
+400ed820:	029b67        	bne	a11, a6, 400ed826 <VDUStreamProcessor::vdu_sys()+0xd2>
+400ed823:	0060c6        	j	400ed9aa <VDUStreamProcessor::vdu_sys()+0x256>
+400ed826:	233380        	sext	a3, a3, 15
+400ed829:	004b52        	s8i	a5, a11, 0
+400ed82c:	0020c0        	memw
+400ed82f:	c258      	l32i.n	a5, a2, 48
+400ed831:	551b      	addi.n	a5, a5, 1
+400ed833:	c259      	s32i.n	a5, a2, 48
+400ed835:	0020c0        	memw
+400ed838:	ffd406        	j	400ed78c <VDUStreamProcessor::vdu_sys()+0x38>
+400ed83b:	00          	.byte 00
+400ed83c:	a47a25        	call8	40091fe0 <xTaskGetTickCountFromISR>
+400ed83f:	0a6d      	mov.n	a6, a10
+400ed841:	c7a052        	movi	a5, 199
+400ed844:	000306        	j	400ed854 <VDUStreamProcessor::vdu_sys()+0x100>
+400ed847:	00          	.byte 00
+400ed848:	a47965        	call8	40091fe0 <xTaskGetTickCountFromISR>
+400ed84b:	c0aa60        	sub	a10, a10, a6
+400ed84e:	02b5a7        	bgeu	a5, a10, 400ed854 <VDUStreamProcessor::vdu_sys()+0x100>
+400ed851:	0053c6        	j	400ed9a4 <VDUStreamProcessor::vdu_sys()+0x250>
+400ed854:	002232        	l32i	a3, a2, 0
+400ed857:	20a330        	or	a10, a3, a3
+400ed85a:	002332        	l32i	a3, a3, 0
+400ed85d:	7338      	l32i.n	a3, a3, 28
+400ed85f:	0003e0        	callx8	a3
+400ed862:	0a3d      	mov.n	a3, a10
+400ed864:	e00a26        	beqi	a10, -1, 400ed848 <VDUStreamProcessor::vdu_sys()+0xf4>
+400ed867:	7450a0        	extui	a5, a10, 0, 8
+400ed86a:	233a80        	sext	a3, a10, 15
+400ed86d:	2a0262        	l8ui	a6, a2, 42
+400ed870:	034152        	s8i	a5, a1, 3
+400ed873:	0020c0        	memw
+400ed876:	f12616        	beqz	a6, 400ed78c <VDUStreamProcessor::vdu_sys()+0x38>
+400ed879:	c2b8      	l32i.n	a11, a2, 48
+400ed87b:	d268      	l32i.n	a6, a2, 52
+400ed87d:	029b67        	bne	a11, a6, 400ed883 <VDUStreamProcessor::vdu_sys()+0x12f>
+400ed880:	005346        	j	400ed9d1 <VDUStreamProcessor::vdu_sys()+0x27d>
+400ed883:	004b52        	s8i	a5, a11, 0
+400ed886:	0020c0        	memw
+400ed889:	c258      	l32i.n	a5, a2, 48
+400ed88b:	551b      	addi.n	a5, a5, 1
+400ed88d:	c259      	s32i.n	a5, a2, 48
+400ed88f:	0020c0        	memw
+400ed892:	ffbd86        	j	400ed78c <VDUStreamProcessor::vdu_sys()+0x38>
+400ed895:	89f251        	l32r	a5, 400d0060 <_stext+0x40>
+400ed898:	0b0c      	movi.n	a11, 0
+400ed89a:	05a8      	l32i.n	a10, a5, 0
+400ed89c:	07ca25        	call8	400f5540 <fabgl::Canvas::waitCompletion(bool)>
+400ed89f:	74b030        	extui	a11, a3, 0, 8
+400ed8a2:	20a220        	or	a10, a2, a2
+400ed8a5:	f155e5        	call8	400dee04 <VDUStreamProcessor::vdu_sys_udg(char)>
+400ed8a8:	ffce86        	j	400ed7e6 <VDUStreamProcessor::vdu_sys()+0x92>
+400ed8ab:	00          	.byte 00
+400ed8ac:	00a062        	movi	a6, 0
+400ed8af:	0b2232        	l32i	a3, a2, 44
+400ed8b2:	0c2252        	l32i	a5, a2, 48
+400ed8b5:	2a4262        	s8i	a6, a2, 42
+400ed8b8:	0020c0        	memw
+400ed8bb:	011357        	beq	a3, a5, 400ed8c0 <VDUStreamProcessor::vdu_sys()+0x16c>
+400ed8be:	c239      	s32i.n	a3, a2, 48
+400ed8c0:	02ad      	mov.n	a10, a2
+400ed8c2:	0020c0        	memw
+400ed8c5:	fe3125        	call8	400ebbd8 <VDUStreamProcessor::vdu_sys_sprites()>
+400ed8c8:	ffc686        	j	400ed7e6 <VDUStreamProcessor::vdu_sys()+0x92>
+400ed8cb:	00          	.byte 00
+400ed8cc:	8c0c      	movi.n	a12, 8
+400ed8ce:	b14b      	addi.n	a11, a1, 4
+400ed8d0:	02ad      	mov.n	a10, a2
+400ed8d2:	f140e5        	call8	400dece0 <_ZN18VDUStreamProcessor14readIntoBufferEPhjt$part$1004>
+400ed8d5:	f0da56        	bnez	a10, 400ed7e6 <VDUStreamProcessor::vdu_sys()+0x92>
+400ed8d8:	6288      	l32i.n	a8, a2, 24
+400ed8da:	96a032        	movi	a3, 150
+400ed8dd:	214b      	addi.n	a2, a1, 4
+400ed8df:	383a      	add.n	a3, a8, a3
+400ed8e1:	08a052        	movi	a5, 8
+400ed8e4:	000262        	l8ui	a6, a2, 0
+400ed8e7:	01c222        	addi	a2, a2, 1
+400ed8ea:	004362        	s8i	a6, a3, 0
+400ed8ed:	0020c0        	memw
+400ed8f0:	01c332        	addi	a3, a3, 1
+400ed8f3:	ffc552        	addi	a5, a5, -1
+400ed8f6:	fea556        	bnez	a5, 400ed8e4 <VDUStreamProcessor::vdu_sys()+0x190>
+400ed8f9:	96a0b2        	movi	a11, 150
+400ed8fc:	b8ba      	add.n	a11, a8, a11
+400ed8fe:	89d821        	l32r	a2, 400d0060 <_stext+0x40>
+400ed901:	02a8      	l32i.n	a10, a2, 0
+400ed903:	0020c0        	memw
+400ed906:	080025        	call8	400f5908 <fabgl::Canvas::setLinePattern(fabgl::LinePattern&)>
+400ed909:	ffb646        	j	400ed7e6 <VDUStreamProcessor::vdu_sys()+0x92>
+400ed90c:	c8a0b2        	movi	a11, 200
+400ed90f:	02ad      	mov.n	a10, a2
+400ed911:	f15465        	call8	400dee58 <VDUStreamProcessor::readByte_t(unsigned short)>
+400ed914:	ecea96        	bltz	a10, 400ed7e6 <VDUStreamProcessor::vdu_sys()+0x92>
+400ed917:	6258      	l32i.n	a5, a2, 24
+400ed919:	020c      	movi.n	a2, 0
+400ed91b:	74a0a0        	extui	a10, a10, 0, 8
+400ed91e:	028d      	mov.n	a8, a2
+400ed920:	9383a0        	movnez	a8, a3, a10
+400ed923:	152562        	l32i	a6, a5, 84
+400ed926:	2e4582        	s8i	a8, a5, 46
+400ed929:	0020c0        	memw
+400ed92c:	291627        	beq	a6, a2, 400ed959 <VDUStreamProcessor::vdu_sys()+0x205>
+400ed92f:	0d1a27        	beq	a10, a2, 400ed940 <VDUStreamProcessor::vdu_sys()+0x1ec>
+400ed932:	35c582        	addi	a8, a5, 53
+400ed935:	f598      	l32i.n	a9, a5, 60
+400ed937:	c08980        	sub	a8, a9, a8
+400ed93a:	832380        	moveqz	a2, a3, a8
+400ed93d:	742020        	extui	a2, a2, 0, 8
+400ed940:	1d0632        	l8ui	a3, a6, 29
+400ed943:	e87c      	movi.n	a8, -2
+400ed945:	042020        	extui	a2, a2, 0, 1
+400ed948:	103380        	and	a3, a3, a8
+400ed94b:	202320        	or	a2, a3, a2
+400ed94e:	1d4622        	s8i	a2, a6, 29
+400ed951:	020c      	movi.n	a2, 0
+400ed953:	304522        	s8i	a2, a5, 48
+400ed956:	0020c0        	memw
+400ed959:	022a66        	bnei	a10, 2, 400ed95f <VDUStreamProcessor::vdu_sys()+0x20b>
+400ed95c:	001f06        	j	400ed9dc <VDUStreamProcessor::vdu_sys()+0x288>
+400ed95f:	023a26        	beqi	a10, 3, 400ed965 <VDUStreamProcessor::vdu_sys()+0x211>
+400ed962:	ffa006        	j	400ed7e6 <VDUStreamProcessor::vdu_sys()+0x92>
+400ed965:	120c      	movi.n	a2, 1
+400ed967:	2f4522        	s8i	a2, a5, 47
+400ed96a:	0020c0        	memw
+400ed96d:	0020c0        	memw
+400ed970:	ff9c86        	j	400ed7e6 <VDUStreamProcessor::vdu_sys()+0x92>
+400ed973:	00          	.byte 00
+400ed974:	00          	.byte 00
+400ed975:	c8a0b2        	movi	a11, 200
+400ed978:	02ad      	mov.n	a10, a2
+400ed97a:	f14de5        	call8	400dee58 <VDUStreamProcessor::readByte_t(unsigned short)>
+400ed97d:	e65a96        	bltz	a10, 400ed7e6 <VDUStreamProcessor::vdu_sys()+0x92>
+400ed980:	89b851        	l32r	a5, 400d0060 <_stext+0x40>
+400ed983:	7430a0        	extui	a3, a10, 0, 8
+400ed986:	03bd      	mov.n	a11, a3
+400ed988:	6228      	l32i.n	a2, a2, 24
+400ed98a:	05a8      	l32i.n	a10, a5, 0
+400ed98c:	904232        	s8i	a3, a2, 144
+400ed98f:	0020c0        	memw
+400ed992:	0020c0        	memw
+400ed995:	07f2e5        	call8	400f58c4 <fabgl::Canvas::setPenWidth(int)>
+400ed998:	ff9286        	j	400ed7e6 <VDUStreamProcessor::vdu_sys()+0x92>
+400ed99b:	00          	.byte 00
+400ed99c:	02ad      	mov.n	a10, a2
+400ed99e:	f33f65        	call8	400e0d94 <VDUStreamProcessor::vdu_sys_scroll()>
+400ed9a1:	ff9046        	j	400ed7e6 <VDUStreamProcessor::vdu_sys()+0x92>
+400ed9a4:	ffa052        	movi	a5, 255
+400ed9a7:	ffb086        	j	400ed86d <VDUStreamProcessor::vdu_sys()+0x119>
+400ed9aa:	c13b      	addi.n	a12, a1, 3
+400ed9ac:	2cc2a2        	addi	a10, a2, 44
+400ed9af:	f128e5        	call8	400dec3c <void std::vector<unsigned char, std::allocator<unsigned char> >::_M_realloc_insert<unsigned char const&>(__gnu_cxx::__normal_iterator<unsigned char*, std::vector<unsigned char, std::allocator<unsigned char> > >, unsigned char const&)>
+400ed9b2:	233380        	sext	a3, a3, 15
+400ed9b5:	ff74c6        	j	400ed78c <VDUStreamProcessor::vdu_sys()+0x38>
+400ed9b8:	02ad      	mov.n	a10, a2
+400ed9ba:	05b1a5        	call8	400f34d4 <VDUStreamProcessor::vdu_sys_hexload()>
+400ed9bd:	ff8946        	j	400ed7e6 <VDUStreamProcessor::vdu_sys()+0x92>
+400ed9c0:	02ad      	mov.n	a10, a2
+400ed9c2:	056865        	call8	400f3048 <VDUStreamProcessor::vdu_sys_ymodem_send()>
+400ed9c5:	ff8746        	j	400ed7e6 <VDUStreamProcessor::vdu_sys()+0x92>
+400ed9c8:	02ad      	mov.n	a10, a2
+400ed9ca:	ff7f25        	call8	400ed1bc <VDUStreamProcessor::vdu_sys_ymodem_receive()>
+400ed9cd:	ff8546        	j	400ed7e6 <VDUStreamProcessor::vdu_sys()+0x92>
+400ed9d0:	00          	.byte 00
+400ed9d1:	c13b      	addi.n	a12, a1, 3
+400ed9d3:	2cc2a2        	addi	a10, a2, 44
+400ed9d6:	f12665        	call8	400dec3c <void std::vector<unsigned char, std::allocator<unsigned char> >::_M_realloc_insert<unsigned char const&>(__gnu_cxx::__normal_iterator<unsigned char*, std::vector<unsigned char, std::allocator<unsigned char> > >, unsigned char const&)>
+400ed9d9:	ff6bc6        	j	400ed78c <VDUStreamProcessor::vdu_sys()+0x38>
+400ed9dc:	020c      	movi.n	a2, 0
+400ed9de:	2f4522        	s8i	a2, a5, 47
+400ed9e1:	0020c0        	memw
+400ed9e4:	0020c0        	memw
+400ed9e7:	ff7ec6        	j	400ed7e6 <VDUStreamProcessor::vdu_sys()+0x92>
+400ed9ea:	00          	.byte 00
+400ed9eb:	00          	.byte 00
+400ed9ec:	99b2a5        	call8	40087518 <__stack_chk_fail>
+	...
+
+VDUStreamProcessor::vdu_sys_buffered()
+40081c20:	00e136        	entry	a1, 112
+40081c23:	fa1031        	l32r	a3, 40080464 <_iram_text_start+0x60>
+40081c26:	017d      	mov.n	a7, a1
+40081c28:	c8a0b2        	movi	a11, 200
+40081c2b:	02ad      	mov.n	a10, a2
+40081c2d:	0020c0        	memw
+40081c30:	0348      	l32i.n	a4, a3, 0
+40081c32:	0020c0        	memw
+40081c35:	136742        	s32i	a4, a7, 76
+40081c38:	0020c0        	memw
+40081c3b:	fa0781        	l32r	a8, 40080458 <_iram_text_start+0x54>
+40081c3e:	0008e0        	callx8	a8
+40081c41:	0a5d      	mov.n	a5, a10
+40081c43:	750a26        	beqi	a10, -1, 40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+40081c46:	c8a0b2        	movi	a11, 200
+40081c49:	02ad      	mov.n	a10, a2
+40081c4b:	fa0f81        	l32r	a8, 40080488 <_iram_text_start+0x84>
+40081c4e:	0008e0        	callx8	a8
+40081c51:	670a26        	beqi	a10, -1, 40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+40081c54:	341c      	movi.n	a4, 19
+40081c56:	029a47        	bne	a10, a4, 40081c5c <VDUStreamProcessor::vdu_sys_buffered()+0x3c>
+40081c59:	029bc6        	j	400826cc <VDUStreamProcessor::vdu_sys_buffered()+0xaac>
+40081c5c:	0224a7        	blt	a4, a10, 40081c62 <VDUStreamProcessor::vdu_sys_buffered()+0x42>
+40081c5f:	008686        	j	40081e7d <VDUStreamProcessor::vdu_sys_buffered()+0x25d>
+40081c62:	242c      	movi.n	a4, 34
+40081c64:	029a47        	bne	a10, a4, 40081c6a <VDUStreamProcessor::vdu_sys_buffered()+0x4a>
+40081c67:	028086        	j	4008266d <VDUStreamProcessor::vdu_sys_buffered()+0xa4d>
+40081c6a:	6324a7        	blt	a4, a10, 40081cd1 <VDUStreamProcessor::vdu_sys_buffered()+0xb1>
+40081c6d:	841c      	movi.n	a4, 24
+40081c6f:	029a47        	bne	a10, a4, 40081c75 <VDUStreamProcessor::vdu_sys_buffered()+0x55>
+40081c72:	0260c6        	j	400825f9 <VDUStreamProcessor::vdu_sys_buffered()+0x9d9>
+40081c75:	0224a7        	blt	a4, a10, 40081c7b <VDUStreamProcessor::vdu_sys_buffered()+0x5b>
+40081c78:	007506        	j	40081e50 <VDUStreamProcessor::vdu_sys_buffered()+0x230>
+40081c7b:	a41c      	movi.n	a4, 26
+40081c7d:	029a47        	bne	a10, a4, 40081c83 <VDUStreamProcessor::vdu_sys_buffered()+0x63>
+40081c80:	021446        	j	400824d5 <VDUStreamProcessor::vdu_sys_buffered()+0x8b5>
+40081c83:	02aa47        	bge	a10, a4, 40081c89 <VDUStreamProcessor::vdu_sys_buffered()+0x69>
+40081c86:	017bc6        	j	40082279 <VDUStreamProcessor::vdu_sys_buffered()+0x659>
+40081c89:	02ca66        	bnei	a10, 32, 40081c8f <VDUStreamProcessor::vdu_sys_buffered()+0x6f>
+40081c8c:	016e06        	j	40082248 <VDUStreamProcessor::vdu_sys_buffered()+0x628>
+40081c8f:	142c      	movi.n	a4, 33
+40081c91:	279a47        	bne	a10, a4, 40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+40081c94:	1a0c      	movi.n	a10, 1
+40081c96:	f9fd81        	l32r	a8, 4008048c <_iram_text_start+0x88>
+40081c99:	0008e0        	callx8	a8
+40081c9c:	ca9c      	beqz.n	a10, 40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+40081c9e:	c8a0b2        	movi	a11, 200
+40081ca1:	02ad      	mov.n	a10, a2
+40081ca3:	f9f981        	l32r	a8, 40080488 <_iram_text_start+0x84>
+40081ca6:	0008e0        	callx8	a8
+40081ca9:	0f0a26        	beqi	a10, -1, 40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+40081cac:	74c0a0        	extui	a12, a10, 0, 8
+40081caf:	1d0c      	movi.n	a13, 1
+40081cb1:	f4b050        	extui	a11, a5, 0, 16
+40081cb4:	02ad      	mov.n	a10, a2
+40081cb6:	f9f681        	l32r	a8, 40080490 <_iram_text_start+0x8c>
+40081cb9:	0008e0        	callx8	a8
+40081cbc:	0020c0        	memw
+40081cbf:	132742        	l32i	a4, a7, 76
+40081cc2:	0020c0        	memw
+40081cc5:	0328      	l32i.n	a2, a3, 0
+40081cc7:	021427        	beq	a4, a2, 40081ccd <VDUStreamProcessor::vdu_sys_buffered()+0xad>
+40081cca:	02cbc6        	j	400827fd <VDUStreamProcessor::vdu_sys_buffered()+0xbdd>
+40081ccd:	f01d      	retw.n
+40081ccf:	00          	.byte 00
+40081cd0:	00          	.byte 00
+40081cd1:	144c      	movi.n	a4, 65
+40081cd3:	029a47        	bne	a10, a4, 40081cd9 <VDUStreamProcessor::vdu_sys_buffered()+0xb9>
+40081cd6:	023ec6        	j	400825d5 <VDUStreamProcessor::vdu_sys_buffered()+0x9b5>
+40081cd9:	0224a7        	blt	a4, a10, 40081cdf <VDUStreamProcessor::vdu_sys_buffered()+0xbf>
+40081cdc:	004c46        	j	40081e11 <VDUStreamProcessor::vdu_sys_buffered()+0x1f1>
+40081cdf:	045c      	movi.n	a4, 80
+40081ce1:	029a47        	bne	a10, a4, 40081ce7 <VDUStreamProcessor::vdu_sys_buffered()+0xc7>
+40081ce4:	023246        	j	400825b1 <VDUStreamProcessor::vdu_sys_buffered()+0x991>
+40081ce7:	0224a7        	blt	a4, a10, 40081ced <VDUStreamProcessor::vdu_sys_buffered()+0xcd>
+40081cea:	00f406        	j	400820be <VDUStreamProcessor::vdu_sys_buffered()+0x49e>
+40081ced:	145c      	movi.n	a4, 81
+40081cef:	029a47        	bne	a10, a4, 40081cf5 <VDUStreamProcessor::vdu_sys_buffered()+0xd5>
+40081cf2:	010ac6        	j	40082121 <VDUStreamProcessor::vdu_sys_buffered()+0x501>
+40081cf5:	c3ea66        	bnei	a10, 128, 40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+40081cf8:	f9de61        	l32r	a6, 40080470 <_iram_text_start+0x6c>
+40081cfb:	40c742        	addi	a4, a7, 64
+40081cfe:	04bd      	mov.n	a11, a4
+40081d00:	f42050        	extui	a2, a5, 0, 16
+40081d03:	06ad      	mov.n	a10, a6
+40081d05:	005422        	s16i	a2, a4, 0
+40081d08:	0020c0        	memw
+40081d0b:	0020c0        	memw
+40081d0e:	f9e181        	l32r	a8, 40080494 <_iram_text_start+0x90>
+40081d11:	0008e0        	callx8	a8
+40081d14:	05bd      	mov.n	a11, a5
+40081d16:	0a98      	l32i.n	a9, a10, 0
+40081d18:	1a88      	l32i.n	a8, a10, 4
+40081d1a:	c08890        	sub	a8, a8, a9
+40081d1d:	21c380        	srai	a12, a8, 3
+40081d20:	f9d5a1        	l32r	a10, 40080474 <_iram_text_start+0x70>
+40081d23:	f9dd81        	l32r	a8, 40080498 <_iram_text_start+0x94>
+40081d26:	0008e0        	callx8	a8
+40081d29:	20b440        	or	a11, a4, a4
+40081d2c:	20a660        	or	a10, a6, a6
+40081d2f:	005422        	s16i	a2, a4, 0
+40081d32:	0020c0        	memw
+40081d35:	0020c0        	memw
+40081d38:	f9d781        	l32r	a8, 40080494 <_iram_text_start+0x90>
+40081d3b:	0008e0        	callx8	a8
+40081d3e:	0a98      	l32i.n	a9, a10, 0
+40081d40:	1a88      	l32i.n	a8, a10, 4
+40081d42:	029987        	bne	a9, a8, 40081d48 <VDUStreamProcessor::vdu_sys_buffered()+0x128>
+40081d45:	ffdcc6        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+40081d48:	f49050        	extui	a9, a5, 0, 16
+40081d4b:	09ad      	mov.n	a10, a9
+40081d4d:	6799      	s32i.n	a9, a7, 24
+40081d4f:	0020c0        	memw
+40081d52:	f9d281        	l32r	a8, 4008049c <_iram_text_start+0x98>
+40081d55:	0008e0        	callx8	a8
+40081d58:	7450a0        	extui	a5, a10, 0, 8
+40081d5b:	6798      	l32i.n	a9, a7, 24
+40081d5d:	f5bc      	beqz.n	a5, 40081da0 <VDUStreamProcessor::vdu_sys_buffered()+0x180>
+40081d5f:	3450a0        	extui	a5, a10, 0, 4
+40081d62:	3484a0        	extui	a8, a10, 4, 4
+40081d65:	0acd      	mov.n	a12, a10
+40081d67:	b789      	s32i.n	a8, a7, 44
+40081d69:	828580        	mull	a8, a5, a8
+40081d6c:	1d0c      	movi.n	a13, 1
+40081d6e:	1188e0        	slli	a8, a8, 2
+40081d71:	88fb      	addi.n	a8, a8, 15
+40081d73:	418480        	srli	a8, a8, 4
+40081d76:	1188c0        	slli	a8, a8, 4
+40081d79:	c08180        	sub	a8, a1, a8
+40081d7c:	7719      	s32i.n	a1, a7, 28
+40081d7e:	001810        	movsp	a1, a8
+40081d81:	09ad      	mov.n	a10, a9
+40081d83:	a759      	s32i.n	a5, a7, 40
+40081d85:	10c152        	addi	a5, a1, 16
+40081d88:	9759      	s32i.n	a5, a7, 36
+40081d8a:	97b8      	l32i.n	a11, a7, 36
+40081d8c:	0020c0        	memw
+40081d8f:	f9c481        	l32r	a8, 400804a0 <_iram_text_start+0x9c>
+40081d92:	0008e0        	callx8	a8
+40081d95:	1a8c      	beqz.n	a10, 40081d9a <VDUStreamProcessor::vdu_sys_buffered()+0x17a>
+40081d97:	027e86        	j	40082795 <VDUStreamProcessor::vdu_sys_buffered()+0xb75>
+40081d9a:	072752        	l32i	a5, a7, 28
+40081d9d:	001510        	movsp	a1, a5
+40081da0:	06ad      	mov.n	a10, a6
+40081da2:	20b440        	or	a11, a4, a4
+40081da5:	005422        	s16i	a2, a4, 0
+40081da8:	0020c0        	memw
+40081dab:	0020c0        	memw
+40081dae:	f9b981        	l32r	a8, 40080494 <_iram_text_start+0x90>
+40081db1:	0008e0        	callx8	a8
+40081db4:	0a28      	l32i.n	a2, a10, 0
+40081db6:	1268      	l32i.n	a6, a2, 4
+40081db8:	b769      	s32i.n	a6, a7, 44
+40081dba:	0258      	l32i.n	a5, a2, 0
+40081dbc:	569c      	beqz.n	a6, 40081dd5 <VDUStreamProcessor::vdu_sys_buffered()+0x1b5>
+40081dbe:	0020c0        	memw
+40081dc1:	012622        	l32i	a2, a6, 4
+40081dc4:	024d      	mov.n	a4, a2
+40081dc6:	621b      	addi.n	a6, a2, 1
+40081dc8:	b788      	l32i.n	a8, a7, 44
+40081dca:	130c20        	wsr.scompare1	a2
+40081dcd:	01e862        	s32c1i	a6, a8, 4
+40081dd0:	062d      	mov.n	a2, a6
+40081dd2:	ee9647        	bne	a6, a4, 40081dc4 <VDUStreamProcessor::vdu_sys_buffered()+0x1a4>
+40081dd5:	5548      	l32i.n	a4, a5, 20
+40081dd7:	a49c      	beqz.n	a4, 40081df5 <VDUStreamProcessor::vdu_sys_buffered()+0x1d5>
+40081dd9:	020c      	movi.n	a2, 0
+40081ddb:	f9aa61        	l32r	a6, 40080484 <_iram_text_start+0x80>
+40081dde:	06ad      	mov.n	a10, a6
+40081de0:	4588      	l32i.n	a8, a5, 16
+40081de2:	882a      	add.n	a8, a8, a2
+40081de4:	0008b2        	l8ui	a11, a8, 0
+40081de7:	0020c0        	memw
+40081dea:	f9ab81        	l32r	a8, 40080498 <_iram_text_start+0x94>
+40081ded:	0008e0        	callx8	a8
+40081df0:	221b      	addi.n	a2, a2, 1
+40081df2:	e89427        	bne	a4, a2, 40081dde <VDUStreamProcessor::vdu_sys_buffered()+0x1be>
+40081df5:	f9a2a1        	l32r	a10, 40080480 <_iram_text_start+0x7c>
+40081df8:	f9a881        	l32r	a8, 40080498 <_iram_text_start+0x94>
+40081dfb:	0008e0        	callx8	a8
+40081dfe:	b748      	l32i.n	a4, a7, 44
+40081e00:	eb8416        	beqz	a4, 40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+40081e03:	20a440        	or	a10, a4, a4
+40081e06:	f9a781        	l32r	a8, 400804a4 <_iram_text_start+0xa0>
+40081e09:	0008e0        	callx8	a8
+40081e0c:	ffab06        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+40081e0f:	00          	.byte 00
+40081e10:	00          	.byte 00
+40081e11:	942c      	movi.n	a4, 41
+40081e13:	029a47        	bne	a10, a4, 40081e19 <VDUStreamProcessor::vdu_sys_buffered()+0x1f9>
+40081e16:	01bfc6        	j	40082519 <VDUStreamProcessor::vdu_sys_buffered()+0x8f9>
+40081e19:	0224a7        	blt	a4, a10, 40081e1f <VDUStreamProcessor::vdu_sys_buffered()+0x1ff>
+40081e1c:	008706        	j	4008203c <VDUStreamProcessor::vdu_sys_buffered()+0x41c>
+40081e1f:	043c      	movi.n	a4, 48
+40081e21:	029a47        	bne	a10, a4, 40081e27 <VDUStreamProcessor::vdu_sys_buffered()+0x207>
+40081e24:	00ba46        	j	40082111 <VDUStreamProcessor::vdu_sys_buffered()+0x4f1>
+40081e27:	02da26        	beqi	a10, 64, 40081e2d <VDUStreamProcessor::vdu_sys_buffered()+0x20d>
+40081e2a:	ffa386        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+40081e2d:	c8a0b2        	movi	a11, 200
+40081e30:	02ad      	mov.n	a10, a2
+40081e32:	f98981        	l32r	a8, 40080458 <_iram_text_start+0x54>
+40081e35:	0008e0        	callx8	a8
+40081e38:	020a66        	bnei	a10, -1, 40081e3e <VDUStreamProcessor::vdu_sys_buffered()+0x21e>
+40081e3b:	ff9f46        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+40081e3e:	f4c0a0        	extui	a12, a10, 0, 16
+40081e41:	f4b050        	extui	a11, a5, 0, 16
+40081e44:	02ad      	mov.n	a10, a2
+40081e46:	f99881        	l32r	a8, 400804a8 <_iram_text_start+0xa4>
+40081e49:	0008e0        	callx8	a8
+40081e4c:	ff9b06        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+40081e4f:	00          	.byte 00
+40081e50:	541c      	movi.n	a4, 21
+40081e52:	029a47        	bne	a10, a4, 40081e58 <VDUStreamProcessor::vdu_sys_buffered()+0x238>
+40081e55:	0158c6        	j	400823bc <VDUStreamProcessor::vdu_sys_buffered()+0x79c>
+40081e58:	02aa47        	bge	a10, a4, 40081e5e <VDUStreamProcessor::vdu_sys_buffered()+0x23e>
+40081e5b:	012686        	j	400822f9 <VDUStreamProcessor::vdu_sys_buffered()+0x6d9>
+40081e5e:	641c      	movi.n	a4, 22
+40081e60:	029a47        	bne	a10, a4, 40081e66 <VDUStreamProcessor::vdu_sys_buffered()+0x246>
+40081e63:	00b786        	j	40082145 <VDUStreamProcessor::vdu_sys_buffered()+0x525>
+40081e66:	741c      	movi.n	a4, 23
+40081e68:	021a47        	beq	a10, a4, 40081e6e <VDUStreamProcessor::vdu_sys_buffered()+0x24e>
+40081e6b:	ff9346        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+40081e6e:	f4b050        	extui	a11, a5, 0, 16
+40081e71:	02ad      	mov.n	a10, a2
+40081e73:	f98e81        	l32r	a8, 400804ac <_iram_text_start+0xa8>
+40081e76:	0008e0        	callx8	a8
+40081e79:	ff8fc6        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+40081e7c:	00          	.byte 00
+40081e7d:	940c      	movi.n	a4, 9
+40081e7f:	029a47        	bne	a10, a4, 40081e85 <VDUStreamProcessor::vdu_sys_buffered()+0x265>
+40081e82:	01ee06        	j	4008263e <VDUStreamProcessor::vdu_sys_buffered()+0xa1e>
+40081e85:	5a24a7        	blt	a4, a10, 40081ee3 <VDUStreamProcessor::vdu_sys_buffered()+0x2c3>
+40081e88:	024a66        	bnei	a10, 4, 40081e8e <VDUStreamProcessor::vdu_sys_buffered()+0x26e>
+40081e8b:	01e386        	j	4008261d <VDUStreamProcessor::vdu_sys_buffered()+0x9fd>
+40081e8e:	025ae6        	bgei	a10, 5, 40081e94 <VDUStreamProcessor::vdu_sys_buffered()+0x274>
+40081e91:	004ac6        	j	40081fc0 <VDUStreamProcessor::vdu_sys_buffered()+0x3a0>
+40081e94:	026a66        	bnei	a10, 6, 40081e9a <VDUStreamProcessor::vdu_sys_buffered()+0x27a>
+40081e97:	015946        	j	40082400 <VDUStreamProcessor::vdu_sys_buffered()+0x7e0>
+40081e9a:	026ae6        	bgei	a10, 6, 40081ea0 <VDUStreamProcessor::vdu_sys_buffered()+0x280>
+40081e9d:	014306        	j	400823ad <VDUStreamProcessor::vdu_sys_buffered()+0x78d>
+40081ea0:	027a66        	bnei	a10, 7, 40081ea6 <VDUStreamProcessor::vdu_sys_buffered()+0x286>
+40081ea3:	00dd86        	j	4008221d <VDUStreamProcessor::vdu_sys_buffered()+0x5fd>
+40081ea6:	028a26        	beqi	a10, 8, 40081eac <VDUStreamProcessor::vdu_sys_buffered()+0x28c>
+40081ea9:	ff83c6        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+40081eac:	02ad      	mov.n	a10, a2
+40081eae:	f98081        	l32r	a8, 400804b0 <_iram_text_start+0xac>
+40081eb1:	0008e0        	callx8	a8
+40081eb4:	e04a16        	beqz	a10, 40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+40081eb7:	f96c41        	l32r	a4, 40080468 <_iram_text_start+0x64>
+40081eba:	060c      	movi.n	a6, 0
+40081ebc:	454a      	add.n	a4, a5, a4
+40081ebe:	180c      	movi.n	a8, 1
+40081ec0:	938640        	movnez	a8, a6, a4
+40081ec3:	604080        	neg	a4, a8
+40081ec6:	06cd      	mov.n	a12, a6
+40081ec8:	20d440        	or	a13, a4, a4
+40081ecb:	f4b050        	extui	a11, a5, 0, 16
+40081ece:	20a220        	or	a10, a2, a2
+40081ed1:	106762        	s32i	a6, a7, 64
+40081ed4:	116742        	s32i	a4, a7, 68
+40081ed7:	0020c0        	memw
+40081eda:	f97681        	l32r	a8, 400804b4 <_iram_text_start+0xb0>
+40081edd:	0008e0        	callx8	a8
+40081ee0:	ff7606        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+40081ee3:	e40c      	movi.n	a4, 14
+40081ee5:	029a47        	bne	a10, a4, 40081eeb <VDUStreamProcessor::vdu_sys_buffered()+0x2cb>
+40081ee8:	01d046        	j	4008262d <VDUStreamProcessor::vdu_sys_buffered()+0xa0d>
+40081eeb:	72a4a7        	bge	a4, a10, 40081f61 <VDUStreamProcessor::vdu_sys_buffered()+0x341>
+40081eee:	02ba66        	bnei	a10, 16, 40081ef4 <VDUStreamProcessor::vdu_sys_buffered()+0x2d4>
+40081ef1:	015886        	j	40082457 <VDUStreamProcessor::vdu_sys_buffered()+0x837>
+40081ef4:	02bae6        	bgei	a10, 16, 40081efa <VDUStreamProcessor::vdu_sys_buffered()+0x2da>
+40081ef7:	011c86        	j	4008236d <VDUStreamProcessor::vdu_sys_buffered()+0x74d>
+40081efa:	141c      	movi.n	a4, 17
+40081efc:	029a47        	bne	a10, a4, 40081f02 <VDUStreamProcessor::vdu_sys_buffered()+0x2e2>
+40081eff:	00a186        	j	40082189 <VDUStreamProcessor::vdu_sys_buffered()+0x569>
+40081f02:	241c      	movi.n	a4, 18
+40081f04:	021a47        	beq	a10, a4, 40081f0a <VDUStreamProcessor::vdu_sys_buffered()+0x2ea>
+40081f07:	ff6c46        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+40081f0a:	c8a0b2        	movi	a11, 200
+40081f0d:	02ad      	mov.n	a10, a2
+40081f0f:	f95281        	l32r	a8, 40080458 <_iram_text_start+0x54>
+40081f12:	0008e0        	callx8	a8
+40081f15:	0a4d      	mov.n	a4, a10
+40081f17:	020a66        	bnei	a10, -1, 40081f1d <VDUStreamProcessor::vdu_sys_buffered()+0x2fd>
+40081f1a:	ff6786        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+40081f1d:	c8a0b2        	movi	a11, 200
+40081f20:	02ad      	mov.n	a10, a2
+40081f22:	f94d81        	l32r	a8, 40080458 <_iram_text_start+0x54>
+40081f25:	0008e0        	callx8	a8
+40081f28:	020a66        	bnei	a10, -1, 40081f2e <VDUStreamProcessor::vdu_sys_buffered()+0x30e>
+40081f2b:	ff6346        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+40081f2e:	38c762        	addi	a6, a7, 56
+40081f31:	f4c040        	extui	a12, a4, 0, 16
+40081f34:	140c      	movi.n	a4, 1
+40081f36:	106762        	s32i	a6, a7, 64
+40081f39:	f4d0a0        	extui	a13, a10, 0, 16
+40081f3c:	02ad      	mov.n	a10, a2
+40081f3e:	020c      	movi.n	a2, 0
+40081f40:	f4b050        	extui	a11, a5, 0, 16
+40081f43:	116742        	s32i	a4, a7, 68
+40081f46:	1c5752        	s16i	a5, a7, 56
+40081f49:	0020c0        	memw
+40081f4c:	0129      	s32i.n	a2, a1, 0
+40081f4e:	1027e2        	l32i	a14, a7, 64
+40081f51:	1127f2        	l32i	a15, a7, 68
+40081f54:	0020c0        	memw
+40081f57:	f95881        	l32r	a8, 400804b8 <_iram_text_start+0xb4>
+40081f5a:	0008e0        	callx8	a8
+40081f5d:	ff56c6        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+40081f60:	00          	.byte 00
+40081f61:	b40c      	movi.n	a4, 11
+40081f63:	029a47        	bne	a10, a4, 40081f69 <VDUStreamProcessor::vdu_sys_buffered()+0x349>
+40081f66:	013006        	j	4008242a <VDUStreamProcessor::vdu_sys_buffered()+0x80a>
+40081f69:	02aa47        	bge	a10, a4, 40081f6f <VDUStreamProcessor::vdu_sys_buffered()+0x34f>
+40081f6c:	00d386        	j	400822be <VDUStreamProcessor::vdu_sys_buffered()+0x69e>
+40081f6f:	02aa66        	bnei	a10, 12, 40081f75 <VDUStreamProcessor::vdu_sys_buffered()+0x355>
+40081f72:	009a86        	j	400821e0 <VDUStreamProcessor::vdu_sys_buffered()+0x5c0>
+40081f75:	d40c      	movi.n	a4, 13
+40081f77:	021a47        	beq	a10, a4, 40081f7d <VDUStreamProcessor::vdu_sys_buffered()+0x35d>
+40081f7a:	ff4f86        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+40081f7d:	40c742        	addi	a4, a7, 64
+40081f80:	02bd      	mov.n	a11, a2
+40081f82:	04ad      	mov.n	a10, a4
+40081f84:	f94e81        	l32r	a8, 400804bc <_iram_text_start+0xb8>
+40081f87:	0008e0        	callx8	a8
+40081f8a:	0488      	l32i.n	a8, a4, 0
+40081f8c:	1468      	l32i.n	a6, a4, 4
+40081f8e:	029867        	bne	a8, a6, 40081f94 <VDUStreamProcessor::vdu_sys_buffered()+0x374>
+40081f91:	01ebc6        	j	40082744 <VDUStreamProcessor::vdu_sys_buffered()+0xb24>
+40081f94:	c06680        	sub	a6, a6, a8
+40081f97:	216160        	srai	a6, a6, 1
+40081f9a:	08cd      	mov.n	a12, a8
+40081f9c:	06dd      	mov.n	a13, a6
+40081f9e:	f4b050        	extui	a11, a5, 0, 16
+40081fa1:	02ad      	mov.n	a10, a2
+40081fa3:	e789      	s32i.n	a8, a7, 56
+40081fa5:	0f6762        	s32i	a6, a7, 60
+40081fa8:	0020c0        	memw
+40081fab:	f94581        	l32r	a8, 400804c0 <_iram_text_start+0xbc>
+40081fae:	0008e0        	callx8	a8
+40081fb1:	04a8      	l32i.n	a10, a4, 0
+40081fb3:	d05a16        	beqz	a10, 40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+40081fb6:	f94381        	l32r	a8, 400804c4 <_iram_text_start+0xc0>
+40081fb9:	0008e0        	callx8	a8
+40081fbc:	ff3f06        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+40081fbf:	00          	.byte 00
+40081fc0:	021a66        	bnei	a10, 1, 40081fc6 <VDUStreamProcessor::vdu_sys_buffered()+0x3a6>
+40081fc3:	013c46        	j	400824b8 <VDUStreamProcessor::vdu_sys_buffered()+0x898>
+40081fc6:	4e2aa6        	blti	a10, 2, 40082018 <VDUStreamProcessor::vdu_sys_buffered()+0x3f8>
+40081fc9:	022a66        	bnei	a10, 2, 40081fcf <VDUStreamProcessor::vdu_sys_buffered()+0x3af>
+40081fcc:	004c46        	j	40082101 <VDUStreamProcessor::vdu_sys_buffered()+0x4e1>
+40081fcf:	023a26        	beqi	a10, 3, 40081fd5 <VDUStreamProcessor::vdu_sys_buffered()+0x3b5>
+40081fd2:	ff3986        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+40081fd5:	c8a0b2        	movi	a11, 200
+40081fd8:	02ad      	mov.n	a10, a2
+40081fda:	f91f81        	l32r	a8, 40080458 <_iram_text_start+0x54>
+40081fdd:	0008e0        	callx8	a8
+40081fe0:	0a6d      	mov.n	a6, a10
+40081fe2:	020a66        	bnei	a10, -1, 40081fe8 <VDUStreamProcessor::vdu_sys_buffered()+0x3c8>
+40081fe5:	ff34c6        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+40081fe8:	40c742        	addi	a4, a7, 64
+40081feb:	0add      	mov.n	a13, a10
+40081fed:	02bd      	mov.n	a11, a2
+40081fef:	f4c050        	extui	a12, a5, 0, 16
+40081ff2:	04ad      	mov.n	a10, a4
+40081ff4:	f93581        	l32r	a8, 400804c8 <_iram_text_start+0xc4>
+40081ff7:	0008e0        	callx8	a8
+40081ffa:	0428      	l32i.n	a2, a4, 0
+40081ffc:	a28c      	beqz.n	a2, 4008200a <VDUStreamProcessor::vdu_sys_buffered()+0x3ea>
+40081ffe:	06cd      	mov.n	a12, a6
+40082000:	0b0c      	movi.n	a11, 0
+40082002:	42a8      	l32i.n	a10, a2, 16
+40082004:	201110        	or	a1, a1, a1
+40082007:	0a88a5        	call8	4008c890 <memset>
+4008200a:	14a8      	l32i.n	a10, a4, 4
+4008200c:	caca16        	beqz	a10, 40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+4008200f:	f92581        	l32r	a8, 400804a4 <_iram_text_start+0xa0>
+40082012:	0008e0        	callx8	a8
+40082015:	ff28c6        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+40082018:	ca0a56        	bnez	a10, 40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+4008201b:	c8a0b2        	movi	a11, 200
+4008201e:	02ad      	mov.n	a10, a2
+40082020:	f90e81        	l32r	a8, 40080458 <_iram_text_start+0x54>
+40082023:	0008e0        	callx8	a8
+40082026:	020a66        	bnei	a10, -1, 4008202c <VDUStreamProcessor::vdu_sys_buffered()+0x40c>
+40082029:	ff23c6        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+4008202c:	0acd      	mov.n	a12, a10
+4008202e:	f4b050        	extui	a11, a5, 0, 16
+40082031:	02ad      	mov.n	a10, a2
+40082033:	f92681        	l32r	a8, 400804cc <_iram_text_start+0xc8>
+40082036:	0008e0        	callx8	a8
+40082039:	ff1fc6        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+4008203c:	842c      	movi.n	a4, 40
+4008203e:	021a47        	beq	a10, a4, 40082044 <VDUStreamProcessor::vdu_sys_buffered()+0x424>
+40082041:	ff1dc6        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+40082044:	1a0c      	movi.n	a10, 1
+40082046:	f91181        	l32r	a8, 4008048c <_iram_text_start+0x88>
+40082049:	0008e0        	callx8	a8
+4008204c:	c6ca16        	beqz	a10, 40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+4008204f:	c8a0b2        	movi	a11, 200
+40082052:	02ad      	mov.n	a10, a2
+40082054:	f90d81        	l32r	a8, 40080488 <_iram_text_start+0x84>
+40082057:	0008e0        	callx8	a8
+4008205a:	0acd      	mov.n	a12, a10
+4008205c:	c8a0b2        	movi	a11, 200
+4008205f:	02ad      	mov.n	a10, a2
+40082061:	57c9      	s32i.n	a12, a7, 20
+40082063:	0020c0        	memw
+40082066:	f8fc81        	l32r	a8, 40080458 <_iram_text_start+0x54>
+40082069:	0008e0        	callx8	a8
+4008206c:	0add      	mov.n	a13, a10
+4008206e:	c8a0b2        	movi	a11, 200
+40082071:	02ad      	mov.n	a10, a2
+40082073:	67d9      	s32i.n	a13, a7, 24
+40082075:	0020c0        	memw
+40082078:	f8f881        	l32r	a8, 40080458 <_iram_text_start+0x54>
+4008207b:	0008e0        	callx8	a8
+4008207e:	180c      	movi.n	a8, 1
+40082080:	090c      	movi.n	a9, 0
+40082082:	09bd      	mov.n	a11, a9
+40082084:	57c8      	l32i.n	a12, a7, 20
+40082086:	4c8a      	add.n	a4, a12, a8
+40082088:	83b840        	moveqz	a11, a8, a4
+4008208b:	67d8      	l32i.n	a13, a7, 24
+4008208d:	6d8a      	add.n	a6, a13, a8
+4008208f:	839860        	moveqz	a9, a8, a6
+40082092:	204b90        	or	a4, a11, a9
+40082095:	096d      	mov.n	a6, a9
+40082097:	c21456        	bnez	a4, 40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+4008209a:	806a80        	add	a6, a10, a8
+4008209d:	834860        	moveqz	a4, a8, a6
+400820a0:	c18456        	bnez	a4, 40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+400820a3:	f4e0a0        	extui	a14, a10, 0, 16
+400820a6:	f4d0d0        	extui	a13, a13, 0, 16
+400820a9:	74c0c0        	extui	a12, a12, 0, 8
+400820ac:	f4b050        	extui	a11, a5, 0, 16
+400820af:	20a220        	or	a10, a2, a2
+400820b2:	f90781        	l32r	a8, 400804d0 <_iram_text_start+0xcc>
+400820b5:	0008e0        	callx8	a8
+400820b8:	ff0006        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+400820bb:	00          	.byte 00
+400820bc:	00          	.byte 00
+400820bd:	00          	.byte 00
+400820be:	844c      	movi.n	a4, 72
+400820c0:	021a47        	beq	a10, a4, 400820c6 <VDUStreamProcessor::vdu_sys_buffered()+0x4a6>
+400820c3:	fefd46        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+400820c6:	c8a0b2        	movi	a11, 200
+400820c9:	20a220        	or	a10, a2, a2
+400820cc:	f8ef81        	l32r	a8, 40080488 <_iram_text_start+0x84>
+400820cf:	0008e0        	callx8	a8
+400820d2:	0a4d      	mov.n	a4, a10
+400820d4:	020a66        	bnei	a10, -1, 400820da <VDUStreamProcessor::vdu_sys_buffered()+0x4ba>
+400820d7:	fef846        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+400820da:	c8a0b2        	movi	a11, 200
+400820dd:	02ad      	mov.n	a10, a2
+400820df:	f8de81        	l32r	a8, 40080458 <_iram_text_start+0x54>
+400820e2:	0008e0        	callx8	a8
+400820e5:	020a66        	bnei	a10, -1, 400820eb <VDUStreamProcessor::vdu_sys_buffered()+0x4cb>
+400820e8:	fef406        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+400820eb:	f4d0a0        	extui	a13, a10, 0, 16
+400820ee:	74c040        	extui	a12, a4, 0, 8
+400820f1:	f4b050        	extui	a11, a5, 0, 16
+400820f4:	02ad      	mov.n	a10, a2
+400820f6:	f8f781        	l32r	a8, 400804d4 <_iram_text_start+0xd0>
+400820f9:	0008e0        	callx8	a8
+400820fc:	feef06        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+400820ff:	00          	.byte 00
+40082100:	00          	.byte 00
+40082101:	f4b050        	extui	a11, a5, 0, 16
+40082104:	02ad      	mov.n	a10, a2
+40082106:	f8f481        	l32r	a8, 400804d8 <_iram_text_start+0xd4>
+40082109:	0008e0        	callx8	a8
+4008210c:	feeb06        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+4008210f:	00          	.byte 00
+40082110:	00          	.byte 00
+40082111:	f4b050        	extui	a11, a5, 0, 16
+40082114:	02ad      	mov.n	a10, a2
+40082116:	f8f181        	l32r	a8, 400804dc <_iram_text_start+0xd8>
+40082119:	0008e0        	callx8	a8
+4008211c:	fee706        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+4008211f:	00          	.byte 00
+40082120:	00          	.byte 00
+40082121:	c8a0b2        	movi	a11, 200
+40082124:	02ad      	mov.n	a10, a2
+40082126:	f8cc81        	l32r	a8, 40080458 <_iram_text_start+0x54>
+40082129:	0008e0        	callx8	a8
+4008212c:	020a66        	bnei	a10, -1, 40082132 <VDUStreamProcessor::vdu_sys_buffered()+0x512>
+4008212f:	fee246        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+40082132:	f4c0a0        	extui	a12, a10, 0, 16
+40082135:	f4b050        	extui	a11, a5, 0, 16
+40082138:	02ad      	mov.n	a10, a2
+4008213a:	f8e981        	l32r	a8, 400804e0 <_iram_text_start+0xdc>
+4008213d:	0008e0        	callx8	a8
+40082140:	fede06        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+40082143:	00          	.byte 00
+40082144:	00          	.byte 00
+40082145:	c8a0b2        	movi	a11, 200
+40082148:	02ad      	mov.n	a10, a2
+4008214a:	f8c381        	l32r	a8, 40080458 <_iram_text_start+0x54>
+4008214d:	0008e0        	callx8	a8
+40082150:	f8c761        	l32r	a6, 4008046c <_iram_text_start+0x68>
+40082153:	8a1b      	addi.n	a8, a10, 1
+40082155:	0a4d      	mov.n	a4, a10
+40082157:	028867        	bany	a8, a6, 4008215d <VDUStreamProcessor::vdu_sys_buffered()+0x53d>
+4008215a:	fed786        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+4008215d:	160c      	movi.n	a6, 1
+4008215f:	38c782        	addi	a8, a7, 56
+40082162:	06ed      	mov.n	a14, a6
+40082164:	08cd      	mov.n	a12, a8
+40082166:	20d660        	or	a13, a6, a6
+40082169:	f4b050        	extui	a11, a5, 0, 16
+4008216c:	20a220        	or	a10, a2, a2
+4008216f:	1c5742        	s16i	a4, a7, 56
+40082172:	0020c0        	memw
+40082175:	106782        	s32i	a8, a7, 64
+40082178:	116762        	s32i	a6, a7, 68
+4008217b:	0020c0        	memw
+4008217e:	f8d981        	l32r	a8, 400804e4 <_iram_text_start+0xe0>
+40082181:	0008e0        	callx8	a8
+40082184:	fecd06        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+40082187:	00          	.byte 00
+40082188:	00          	.byte 00
+40082189:	c8a0b2        	movi	a11, 200
+4008218c:	20a220        	or	a10, a2, a2
+4008218f:	f8b281        	l32r	a8, 40080458 <_iram_text_start+0x54>
+40082192:	0008e0        	callx8	a8
+40082195:	0a4d      	mov.n	a4, a10
+40082197:	020a66        	bnei	a10, -1, 4008219d <VDUStreamProcessor::vdu_sys_buffered()+0x57d>
+4008219a:	fec786        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+4008219d:	c8a0b2        	movi	a11, 200
+400821a0:	02ad      	mov.n	a10, a2
+400821a2:	f8ad81        	l32r	a8, 40080458 <_iram_text_start+0x54>
+400821a5:	0008e0        	callx8	a8
+400821a8:	f8b181        	l32r	a8, 4008046c <_iram_text_start+0x68>
+400821ab:	9a1b      	addi.n	a9, a10, 1
+400821ad:	0a6d      	mov.n	a6, a10
+400821af:	028987        	bany	a9, a8, 400821b5 <VDUStreamProcessor::vdu_sys_buffered()+0x595>
+400821b2:	fec186        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+400821b5:	180c      	movi.n	a8, 1
+400821b7:	38c792        	addi	a9, a7, 56
+400821ba:	08fd      	mov.n	a15, a8
+400821bc:	09dd      	mov.n	a13, a9
+400821be:	08ed      	mov.n	a14, a8
+400821c0:	f4c040        	extui	a12, a4, 0, 16
+400821c3:	f4b050        	extui	a11, a5, 0, 16
+400821c6:	02ad      	mov.n	a10, a2
+400821c8:	1c5762        	s16i	a6, a7, 56
+400821cb:	0020c0        	memw
+400821ce:	106792        	s32i	a9, a7, 64
+400821d1:	116782        	s32i	a8, a7, 68
+400821d4:	0020c0        	memw
+400821d7:	f8c481        	l32r	a8, 400804e8 <_iram_text_start+0xe4>
+400821da:	0008e0        	callx8	a8
+400821dd:	feb6c6        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+400821e0:	01a0b2        	movi	a11, 1
+400821e3:	20a220        	or	a10, a2, a2
+400821e6:	f8c181        	l32r	a8, 400804ec <_iram_text_start+0xe8>
+400821e9:	0008e0        	callx8	a8
+400821ec:	1067a2        	s32i	a10, a7, 64
+400821ef:	1167b2        	s32i	a11, a7, 68
+400821f2:	020a66        	bnei	a10, -1, 400821f8 <VDUStreamProcessor::vdu_sys_buffered()+0x5d8>
+400821f5:	feb0c6        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+400821f8:	20a220        	or	a10, a2, a2
+400821fb:	0020c0        	memw
+400821fe:	f8ac81        	l32r	a8, 400804b0 <_iram_text_start+0xac>
+40082201:	0008e0        	callx8	a8
+40082204:	ab4a16        	beqz	a10, 40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+40082207:	1027c2        	l32i	a12, a7, 64
+4008220a:	f4b050        	extui	a11, a5, 0, 16
+4008220d:	02ad      	mov.n	a10, a2
+4008220f:	1127d2        	l32i	a13, a7, 68
+40082212:	f8b781        	l32r	a8, 400804f0 <_iram_text_start+0xec>
+40082215:	0008e0        	callx8	a8
+40082218:	fea806        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+4008221b:	00          	.byte 00
+4008221c:	00          	.byte 00
+4008221d:	f89241        	l32r	a4, 40080468 <_iram_text_start+0x64>
+40082220:	060c      	movi.n	a6, 0
+40082222:	454a      	add.n	a4, a5, a4
+40082224:	180c      	movi.n	a8, 1
+40082226:	938640        	movnez	a8, a6, a4
+40082229:	604080        	neg	a4, a8
+4008222c:	06cd      	mov.n	a12, a6
+4008222e:	04dd      	mov.n	a13, a4
+40082230:	f4b050        	extui	a11, a5, 0, 16
+40082233:	02ad      	mov.n	a10, a2
+40082235:	106762        	s32i	a6, a7, 64
+40082238:	116742        	s32i	a4, a7, 68
+4008223b:	0020c0        	memw
+4008223e:	f89d81        	l32r	a8, 400804b4 <_iram_text_start+0xb0>
+40082241:	0008e0        	callx8	a8
+40082244:	fe9d06        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+40082247:	00          	.byte 00
+40082248:	1a0c      	movi.n	a10, 1
+4008224a:	f89081        	l32r	a8, 4008048c <_iram_text_start+0x88>
+4008224d:	0008e0        	callx8	a8
+40082250:	a68a16        	beqz	a10, 40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+40082253:	c8a0b2        	movi	a11, 200
+40082256:	02ad      	mov.n	a10, a2
+40082258:	f88c81        	l32r	a8, 40080488 <_iram_text_start+0x84>
+4008225b:	0008e0        	callx8	a8
+4008225e:	020a66        	bnei	a10, -1, 40082264 <VDUStreamProcessor::vdu_sys_buffered()+0x644>
+40082261:	fe95c6        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+40082264:	74c0a0        	extui	a12, a10, 0, 8
+40082267:	0d0c      	movi.n	a13, 0
+40082269:	f4b050        	extui	a11, a5, 0, 16
+4008226c:	02ad      	mov.n	a10, a2
+4008226e:	f88881        	l32r	a8, 40080490 <_iram_text_start+0x8c>
+40082271:	0008e0        	callx8	a8
+40082274:	fe9106        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+40082277:	00          	.byte 00
+40082278:	00          	.byte 00
+40082279:	40c742        	addi	a4, a7, 64
+4008227c:	02bd      	mov.n	a11, a2
+4008227e:	04ad      	mov.n	a10, a4
+40082280:	f88f81        	l32r	a8, 400804bc <_iram_text_start+0xb8>
+40082283:	0008e0        	callx8	a8
+40082286:	0488      	l32i.n	a8, a4, 0
+40082288:	1468      	l32i.n	a6, a4, 4
+4008228a:	029867        	bne	a8, a6, 40082290 <VDUStreamProcessor::vdu_sys_buffered()+0x670>
+4008228d:	0130c6        	j	40082754 <VDUStreamProcessor::vdu_sys_buffered()+0xb34>
+40082290:	c06680        	sub	a6, a6, a8
+40082293:	216160        	srai	a6, a6, 1
+40082296:	08cd      	mov.n	a12, a8
+40082298:	06dd      	mov.n	a13, a6
+4008229a:	f4b050        	extui	a11, a5, 0, 16
+4008229d:	02ad      	mov.n	a10, a2
+4008229f:	e789      	s32i.n	a8, a7, 56
+400822a1:	0f6762        	s32i	a6, a7, 60
+400822a4:	0020c0        	memw
+400822a7:	f89381        	l32r	a8, 400804f4 <_iram_text_start+0xf0>
+400822aa:	0008e0        	callx8	a8
+400822ad:	04a8      	l32i.n	a10, a4, 0
+400822af:	a09a16        	beqz	a10, 40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+400822b2:	f88481        	l32r	a8, 400804c4 <_iram_text_start+0xc0>
+400822b5:	0008e0        	callx8	a8
+400822b8:	fe8006        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+400822bb:	00          	.byte 00
+400822bc:	00          	.byte 00
+400822bd:	00          	.byte 00
+400822be:	1b0c      	movi.n	a11, 1
+400822c0:	20a220        	or	a10, a2, a2
+400822c3:	f88a81        	l32r	a8, 400804ec <_iram_text_start+0xe8>
+400822c6:	0008e0        	callx8	a8
+400822c9:	1067a2        	s32i	a10, a7, 64
+400822cc:	1167b2        	s32i	a11, a7, 68
+400822cf:	020a66        	bnei	a10, -1, 400822d5 <VDUStreamProcessor::vdu_sys_buffered()+0x6b5>
+400822d2:	fe7986        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+400822d5:	02ad      	mov.n	a10, a2
+400822d7:	0020c0        	memw
+400822da:	f87581        	l32r	a8, 400804b0 <_iram_text_start+0xac>
+400822dd:	0008e0        	callx8	a8
+400822e0:	9d8a16        	beqz	a10, 40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+400822e3:	1027c2        	l32i	a12, a7, 64
+400822e6:	f4b050        	extui	a11, a5, 0, 16
+400822e9:	02ad      	mov.n	a10, a2
+400822eb:	1127d2        	l32i	a13, a7, 68
+400822ee:	f87181        	l32r	a8, 400804b4 <_iram_text_start+0xb0>
+400822f1:	0008e0        	callx8	a8
+400822f4:	fe7106        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+400822f7:	00          	.byte 00
+400822f8:	00          	.byte 00
+400822f9:	c8a0b2        	movi	a11, 200
+400822fc:	20a220        	or	a10, a2, a2
+400822ff:	f85681        	l32r	a8, 40080458 <_iram_text_start+0x54>
+40082302:	0008e0        	callx8	a8
+40082305:	0a4d      	mov.n	a4, a10
+40082307:	020a66        	bnei	a10, -1, 4008230d <VDUStreamProcessor::vdu_sys_buffered()+0x6ed>
+4008230a:	fe6b86        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+4008230d:	c8a0b2        	movi	a11, 200
+40082310:	20a220        	or	a10, a2, a2
+40082313:	f85181        	l32r	a8, 40080458 <_iram_text_start+0x54>
+40082316:	0008e0        	callx8	a8
+40082319:	0a6d      	mov.n	a6, a10
+4008231b:	020a66        	bnei	a10, -1, 40082321 <VDUStreamProcessor::vdu_sys_buffered()+0x701>
+4008231e:	fe6686        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+40082321:	c8a0b2        	movi	a11, 200
+40082324:	02ad      	mov.n	a10, a2
+40082326:	f84c81        	l32r	a8, 40080458 <_iram_text_start+0x54>
+40082329:	0008e0        	callx8	a8
+4008232c:	f85091        	l32r	a9, 4008046c <_iram_text_start+0x68>
+4008232f:	0a8d      	mov.n	a8, a10
+40082331:	aa1b      	addi.n	a10, a10, 1
+40082333:	028a97        	bany	a10, a9, 40082339 <VDUStreamProcessor::vdu_sys_buffered()+0x719>
+40082336:	fe6086        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+40082339:	38c7e2        	addi	a14, a7, 56
+4008233c:	190c      	movi.n	a9, 1
+4008233e:	1067e2        	s32i	a14, a7, 64
+40082341:	f4d060        	extui	a13, a6, 0, 16
+40082344:	f4c040        	extui	a12, a4, 0, 16
+40082347:	f4b050        	extui	a11, a5, 0, 16
+4008234a:	20a220        	or	a10, a2, a2
+4008234d:	116792        	s32i	a9, a7, 68
+40082350:	1c5782        	s16i	a8, a7, 56
+40082353:	0020c0        	memw
+40082356:	006192        	s32i	a9, a1, 0
+40082359:	1027e2        	l32i	a14, a7, 64
+4008235c:	1127f2        	l32i	a15, a7, 68
+4008235f:	0020c0        	memw
+40082362:	f85581        	l32r	a8, 400804b8 <_iram_text_start+0xb4>
+40082365:	0008e0        	callx8	a8
+40082368:	fe5406        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+4008236b:	00          	.byte 00
+4008236c:	00          	.byte 00
+4008236d:	c8a0b2        	movi	a11, 200
+40082370:	02ad      	mov.n	a10, a2
+40082372:	f83981        	l32r	a8, 40080458 <_iram_text_start+0x54>
+40082375:	0008e0        	callx8	a8
+40082378:	020a66        	bnei	a10, -1, 4008237e <VDUStreamProcessor::vdu_sys_buffered()+0x75e>
+4008237b:	fe4f46        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+4008237e:	38c742        	addi	a4, a7, 56
+40082381:	160c      	movi.n	a6, 1
+40082383:	f4c0a0        	extui	a12, a10, 0, 16
+40082386:	0f0c      	movi.n	a15, 0
+40082388:	04dd      	mov.n	a13, a4
+4008238a:	20e660        	or	a14, a6, a6
+4008238d:	f4b050        	extui	a11, a5, 0, 16
+40082390:	20a220        	or	a10, a2, a2
+40082393:	1c5752        	s16i	a5, a7, 56
+40082396:	0020c0        	memw
+40082399:	106742        	s32i	a4, a7, 64
+4008239c:	116762        	s32i	a6, a7, 68
+4008239f:	0020c0        	memw
+400823a2:	f85181        	l32r	a8, 400804e8 <_iram_text_start+0xe4>
+400823a5:	0008e0        	callx8	a8
+400823a8:	fe4406        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+400823ab:	00          	.byte 00
+400823ac:	00          	.byte 00
+400823ad:	f4b050        	extui	a11, a5, 0, 16
+400823b0:	02ad      	mov.n	a10, a2
+400823b2:	f85181        	l32r	a8, 400804f8 <_iram_text_start+0xf4>
+400823b5:	0008e0        	callx8	a8
+400823b8:	fe4006        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+400823bb:	00          	.byte 00
+400823bc:	40c742        	addi	a4, a7, 64
+400823bf:	02bd      	mov.n	a11, a2
+400823c1:	04ad      	mov.n	a10, a4
+400823c3:	f83e81        	l32r	a8, 400804bc <_iram_text_start+0xb8>
+400823c6:	0008e0        	callx8	a8
+400823c9:	0488      	l32i.n	a8, a4, 0
+400823cb:	1468      	l32i.n	a6, a4, 4
+400823cd:	029867        	bne	a8, a6, 400823d3 <VDUStreamProcessor::vdu_sys_buffered()+0x7b3>
+400823d0:	00e406        	j	40082764 <VDUStreamProcessor::vdu_sys_buffered()+0xb44>
+400823d3:	c06680        	sub	a6, a6, a8
+400823d6:	216160        	srai	a6, a6, 1
+400823d9:	0e0c      	movi.n	a14, 0
+400823db:	08cd      	mov.n	a12, a8
+400823dd:	06dd      	mov.n	a13, a6
+400823df:	f4b050        	extui	a11, a5, 0, 16
+400823e2:	02ad      	mov.n	a10, a2
+400823e4:	e789      	s32i.n	a8, a7, 56
+400823e6:	f769      	s32i.n	a6, a7, 60
+400823e8:	0020c0        	memw
+400823eb:	f83e81        	l32r	a8, 400804e4 <_iram_text_start+0xe0>
+400823ee:	0008e0        	callx8	a8
+400823f1:	04a8      	l32i.n	a10, a4, 0
+400823f3:	8c5a16        	beqz	a10, 40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+400823f6:	f83381        	l32r	a8, 400804c4 <_iram_text_start+0xc0>
+400823f9:	0008e0        	callx8	a8
+400823fc:	fe2f06        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+400823ff:	00          	.byte 00
+40082400:	02ad      	mov.n	a10, a2
+40082402:	f82b81        	l32r	a8, 400804b0 <_iram_text_start+0xac>
+40082405:	0008e0        	callx8	a8
+40082408:	8b0a16        	beqz	a10, 40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+4008240b:	040c      	movi.n	a4, 0
+4008240d:	04cd      	mov.n	a12, a4
+4008240f:	04dd      	mov.n	a13, a4
+40082411:	f4b050        	extui	a11, a5, 0, 16
+40082414:	02ad      	mov.n	a10, a2
+40082416:	106742        	s32i	a4, a7, 64
+40082419:	116742        	s32i	a4, a7, 68
+4008241c:	0020c0        	memw
+4008241f:	f83481        	l32r	a8, 400804f0 <_iram_text_start+0xec>
+40082422:	0008e0        	callx8	a8
+40082425:	fe24c6        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+40082428:	00          	.byte 00
+40082429:	00          	.byte 00
+4008242a:	1b0c      	movi.n	a11, 1
+4008242c:	02ad      	mov.n	a10, a2
+4008242e:	f82f81        	l32r	a8, 400804ec <_iram_text_start+0xe8>
+40082431:	0008e0        	callx8	a8
+40082434:	1067a2        	s32i	a10, a7, 64
+40082437:	1167b2        	s32i	a11, a7, 68
+4008243a:	020a66        	bnei	a10, -1, 40082440 <VDUStreamProcessor::vdu_sys_buffered()+0x820>
+4008243d:	fe1ec6        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+40082440:	f4b050        	extui	a11, a5, 0, 16
+40082443:	02ad      	mov.n	a10, a2
+40082445:	1027c2        	l32i	a12, a7, 64
+40082448:	1127d2        	l32i	a13, a7, 68
+4008244b:	0020c0        	memw
+4008244e:	f82881        	l32r	a8, 400804f0 <_iram_text_start+0xec>
+40082451:	0008e0        	callx8	a8
+40082454:	fe1906        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+40082457:	c8a0b2        	movi	a11, 200
+4008245a:	02ad      	mov.n	a10, a2
+4008245c:	f7ff81        	l32r	a8, 40080458 <_iram_text_start+0x54>
+4008245f:	0008e0        	callx8	a8
+40082462:	0acd      	mov.n	a12, a10
+40082464:	020a66        	bnei	a10, -1, 4008246a <VDUStreamProcessor::vdu_sys_buffered()+0x84a>
+40082467:	fe1446        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+4008246a:	40c742        	addi	a4, a7, 64
+4008246d:	04ad      	mov.n	a10, a4
+4008246f:	02bd      	mov.n	a11, a2
+40082471:	57c9      	s32i.n	a12, a7, 20
+40082473:	0020c0        	memw
+40082476:	f81181        	l32r	a8, 400804bc <_iram_text_start+0xb8>
+40082479:	0008e0        	callx8	a8
+4008247c:	0488      	l32i.n	a8, a4, 0
+4008247e:	14a8      	l32i.n	a10, a4, 4
+40082480:	57c8      	l32i.n	a12, a7, 20
+40082482:	029a87        	bne	a10, a8, 40082488 <VDUStreamProcessor::vdu_sys_buffered()+0x868>
+40082485:	00bf06        	j	40082785 <VDUStreamProcessor::vdu_sys_buffered()+0xb65>
+40082488:	c06a80        	sub	a6, a10, a8
+4008248b:	216160        	srai	a6, a6, 1
+4008248e:	0f0c      	movi.n	a15, 0
+40082490:	08dd      	mov.n	a13, a8
+40082492:	06ed      	mov.n	a14, a6
+40082494:	f4c0c0        	extui	a12, a12, 0, 16
+40082497:	f4b050        	extui	a11, a5, 0, 16
+4008249a:	02ad      	mov.n	a10, a2
+4008249c:	e789      	s32i.n	a8, a7, 56
+4008249e:	f769      	s32i.n	a6, a7, 60
+400824a0:	0020c0        	memw
+400824a3:	f81181        	l32r	a8, 400804e8 <_iram_text_start+0xe4>
+400824a6:	0008e0        	callx8	a8
+400824a9:	04a8      	l32i.n	a10, a4, 0
+400824ab:	80da16        	beqz	a10, 40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+400824ae:	f80581        	l32r	a8, 400804c4 <_iram_text_start+0xc0>
+400824b1:	0008e0        	callx8	a8
+400824b4:	fe0106        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+400824b7:	00          	.byte 00
+400824b8:	040c      	movi.n	a4, 0
+400824ba:	04cd      	mov.n	a12, a4
+400824bc:	04dd      	mov.n	a13, a4
+400824be:	f4b050        	extui	a11, a5, 0, 16
+400824c1:	02ad      	mov.n	a10, a2
+400824c3:	e749      	s32i.n	a4, a7, 56
+400824c5:	f749      	s32i.n	a4, a7, 60
+400824c7:	0020c0        	memw
+400824ca:	f80981        	l32r	a8, 400804f0 <_iram_text_start+0xec>
+400824cd:	0008e0        	callx8	a8
+400824d0:	fdfa06        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+400824d3:	00          	.byte 00
+400824d4:	00          	.byte 00
+400824d5:	40c742        	addi	a4, a7, 64
+400824d8:	02bd      	mov.n	a11, a2
+400824da:	04ad      	mov.n	a10, a4
+400824dc:	f7f881        	l32r	a8, 400804bc <_iram_text_start+0xb8>
+400824df:	0008e0        	callx8	a8
+400824e2:	0488      	l32i.n	a8, a4, 0
+400824e4:	1468      	l32i.n	a6, a4, 4
+400824e6:	029867        	bne	a8, a6, 400824ec <VDUStreamProcessor::vdu_sys_buffered()+0x8cc>
+400824e9:	00a1c6        	j	40082774 <VDUStreamProcessor::vdu_sys_buffered()+0xb54>
+400824ec:	c06680        	sub	a6, a6, a8
+400824ef:	216160        	srai	a6, a6, 1
+400824f2:	08cd      	mov.n	a12, a8
+400824f4:	06dd      	mov.n	a13, a6
+400824f6:	f4b050        	extui	a11, a5, 0, 16
+400824f9:	02ad      	mov.n	a10, a2
+400824fb:	0e6782        	s32i	a8, a7, 56
+400824fe:	f769      	s32i.n	a6, a7, 60
+40082500:	0020c0        	memw
+40082503:	f7fe81        	l32r	a8, 400804fc <_iram_text_start+0xf8>
+40082506:	0008e0        	callx8	a8
+40082509:	04a8      	l32i.n	a10, a4, 0
+4008250b:	1acc      	bnez.n	a10, 40082510 <VDUStreamProcessor::vdu_sys_buffered()+0x8f0>
+4008250d:	fdeac6        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+40082510:	f7ed81        	l32r	a8, 400804c4 <_iram_text_start+0xc0>
+40082513:	0008e0        	callx8	a8
+40082516:	fde886        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+40082519:	1a0c      	movi.n	a10, 1
+4008251b:	f7dc81        	l32r	a8, 4008048c <_iram_text_start+0x88>
+4008251e:	0008e0        	callx8	a8
+40082521:	1acc      	bnez.n	a10, 40082526 <VDUStreamProcessor::vdu_sys_buffered()+0x906>
+40082523:	fde546        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+40082526:	c8a0b2        	movi	a11, 200
+40082529:	02ad      	mov.n	a10, a2
+4008252b:	f7d781        	l32r	a8, 40080488 <_iram_text_start+0x84>
+4008252e:	0008e0        	callx8	a8
+40082531:	0a6d      	mov.n	a6, a10
+40082533:	c8a0b2        	movi	a11, 200
+40082536:	02ad      	mov.n	a10, a2
+40082538:	f7d481        	l32r	a8, 40080488 <_iram_text_start+0x84>
+4008253b:	0008e0        	callx8	a8
+4008253e:	0add      	mov.n	a13, a10
+40082540:	c8a0b2        	movi	a11, 200
+40082543:	02ad      	mov.n	a10, a2
+40082545:	67d9      	s32i.n	a13, a7, 24
+40082547:	0020c0        	memw
+4008254a:	f7c381        	l32r	a8, 40080458 <_iram_text_start+0x54>
+4008254d:	0008e0        	callx8	a8
+40082550:	c8a0b2        	movi	a11, 200
+40082553:	461b      	addi.n	a4, a6, 1
+40082555:	b7a9      	s32i.n	a10, a7, 44
+40082557:	02ad      	mov.n	a10, a2
+40082559:	0020c0        	memw
+4008255c:	f7bf81        	l32r	a8, 40080458 <_iram_text_start+0x54>
+4008255f:	0008e0        	callx8	a8
+40082562:	180c      	movi.n	a8, 1
+40082564:	090c      	movi.n	a9, 0
+40082566:	839840        	moveqz	a9, a8, a4
+40082569:	744090        	extui	a4, a9, 0, 8
+4008256c:	67d8      	l32i.n	a13, a7, 24
+4008256e:	148c      	beqz.n	a4, 40082573 <VDUStreamProcessor::vdu_sys_buffered()+0x953>
+40082570:	fdd206        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+40082573:	9d8a      	add.n	a9, a13, a8
+40082575:	834890        	moveqz	a4, a8, a9
+40082578:	148c      	beqz.n	a4, 4008257d <VDUStreamProcessor::vdu_sys_buffered()+0x95d>
+4008257a:	fdcf86        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+4008257d:	b7b8      	l32i.n	a11, a7, 44
+4008257f:	9b8a      	add.n	a9, a11, a8
+40082581:	834890        	moveqz	a4, a8, a9
+40082584:	148c      	beqz.n	a4, 40082589 <VDUStreamProcessor::vdu_sys_buffered()+0x969>
+40082586:	fdcc86        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+40082589:	809a80        	add	a9, a10, a8
+4008258c:	834890        	moveqz	a4, a8, a9
+4008258f:	148c      	beqz.n	a4, 40082594 <VDUStreamProcessor::vdu_sys_buffered()+0x974>
+40082591:	fdc9c6        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+40082594:	f4f0a0        	extui	a15, a10, 0, 16
+40082597:	f4e0b0        	extui	a14, a11, 0, 16
+4008259a:	74d0d0        	extui	a13, a13, 0, 8
+4008259d:	74c060        	extui	a12, a6, 0, 8
+400825a0:	f4b050        	extui	a11, a5, 0, 16
+400825a3:	20a220        	or	a10, a2, a2
+400825a6:	f7d681        	l32r	a8, 40080500 <_iram_text_start+0xfc>
+400825a9:	0008e0        	callx8	a8
+400825ac:	fdc306        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+400825af:	00          	.byte 00
+400825b0:	00          	.byte 00
+400825b1:	c8a0b2        	movi	a11, 200
+400825b4:	02ad      	mov.n	a10, a2
+400825b6:	f7a881        	l32r	a8, 40080458 <_iram_text_start+0x54>
+400825b9:	0008e0        	callx8	a8
+400825bc:	020a66        	bnei	a10, -1, 400825c2 <VDUStreamProcessor::vdu_sys_buffered()+0x9a2>
+400825bf:	fdbe46        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+400825c2:	f4c0a0        	extui	a12, a10, 0, 16
+400825c5:	f4b050        	extui	a11, a5, 0, 16
+400825c8:	02ad      	mov.n	a10, a2
+400825ca:	f7ce81        	l32r	a8, 40080504 <_iram_text_start+0x100>
+400825cd:	0008e0        	callx8	a8
+400825d0:	fdba06        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+400825d3:	00          	.byte 00
+400825d4:	00          	.byte 00
+400825d5:	c8a0b2        	movi	a11, 200
+400825d8:	02ad      	mov.n	a10, a2
+400825da:	f79f81        	l32r	a8, 40080458 <_iram_text_start+0x54>
+400825dd:	0008e0        	callx8	a8
+400825e0:	020a66        	bnei	a10, -1, 400825e6 <VDUStreamProcessor::vdu_sys_buffered()+0x9c6>
+400825e3:	fdb546        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+400825e6:	f4c0a0        	extui	a12, a10, 0, 16
+400825e9:	f4b050        	extui	a11, a5, 0, 16
+400825ec:	02ad      	mov.n	a10, a2
+400825ee:	f7c681        	l32r	a8, 40080508 <_iram_text_start+0x104>
+400825f1:	0008e0        	callx8	a8
+400825f4:	fdb106        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+400825f7:	00          	.byte 00
+400825f8:	00          	.byte 00
+400825f9:	c8a0b2        	movi	a11, 200
+400825fc:	02ad      	mov.n	a10, a2
+400825fe:	f7a281        	l32r	a8, 40080488 <_iram_text_start+0x84>
+40082601:	0008e0        	callx8	a8
+40082604:	020a66        	bnei	a10, -1, 4008260a <VDUStreamProcessor::vdu_sys_buffered()+0x9ea>
+40082607:	fdac46        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+4008260a:	74c0a0        	extui	a12, a10, 0, 8
+4008260d:	f4b050        	extui	a11, a5, 0, 16
+40082610:	02ad      	mov.n	a10, a2
+40082612:	f7be81        	l32r	a8, 4008050c <_iram_text_start+0x108>
+40082615:	0008e0        	callx8	a8
+40082618:	fda806        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+4008261b:	00          	.byte 00
+4008261c:	00          	.byte 00
+4008261d:	f4b050        	extui	a11, a5, 0, 16
+40082620:	02ad      	mov.n	a10, a2
+40082622:	f7bb81        	l32r	a8, 40080510 <_iram_text_start+0x10c>
+40082625:	0008e0        	callx8	a8
+40082628:	fda406        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+4008262b:	00          	.byte 00
+4008262c:	00          	.byte 00
+4008262d:	f4b050        	extui	a11, a5, 0, 16
+40082630:	02ad      	mov.n	a10, a2
+40082632:	f7b881        	l32r	a8, 40080514 <_iram_text_start+0x110>
+40082635:	0008e0        	callx8	a8
+40082638:	fda006        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+4008263b:	00          	.byte 00
+4008263c:	00          	.byte 00
+4008263d:	00          	.byte 00
+4008263e:	1b0c      	movi.n	a11, 1
+40082640:	20a220        	or	a10, a2, a2
+40082643:	f7aa81        	l32r	a8, 400804ec <_iram_text_start+0xe8>
+40082646:	0008e0        	callx8	a8
+40082649:	1067a2        	s32i	a10, a7, 64
+4008264c:	0acd      	mov.n	a12, a10
+4008264e:	1167b2        	s32i	a11, a7, 68
+40082651:	020a66        	bnei	a10, -1, 40082657 <VDUStreamProcessor::vdu_sys_buffered()+0xa37>
+40082654:	fd9906        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+40082657:	f4b050        	extui	a11, a5, 0, 16
+4008265a:	02ad      	mov.n	a10, a2
+4008265c:	1127d2        	l32i	a13, a7, 68
+4008265f:	0020c0        	memw
+40082662:	f79481        	l32r	a8, 400804b4 <_iram_text_start+0xb0>
+40082665:	0008e0        	callx8	a8
+40082668:	fd9406        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+4008266b:	00          	.byte 00
+4008266c:	00          	.byte 00
+4008266d:	1a0c      	movi.n	a10, 1
+4008266f:	f78781        	l32r	a8, 4008048c <_iram_text_start+0x88>
+40082672:	0008e0        	callx8	a8
+40082675:	1acc      	bnez.n	a10, 4008267a <VDUStreamProcessor::vdu_sys_buffered()+0xa5a>
+40082677:	fd9046        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+4008267a:	c8a0b2        	movi	a11, 200
+4008267d:	20a220        	or	a10, a2, a2
+40082680:	f78281        	l32r	a8, 40080488 <_iram_text_start+0x84>
+40082683:	0008e0        	callx8	a8
+40082686:	0a4d      	mov.n	a4, a10
+40082688:	020a66        	bnei	a10, -1, 4008268e <VDUStreamProcessor::vdu_sys_buffered()+0xa6e>
+4008268b:	fd8b46        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+4008268e:	c8a0b2        	movi	a11, 200
+40082691:	02ad      	mov.n	a10, a2
+40082693:	f77d81        	l32r	a8, 40080488 <_iram_text_start+0x84>
+40082696:	0008e0        	callx8	a8
+40082699:	0a6d      	mov.n	a6, a10
+4008269b:	020a66        	bnei	a10, -1, 400826a1 <VDUStreamProcessor::vdu_sys_buffered()+0xa81>
+4008269e:	fd8686        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+400826a1:	c8a0b2        	movi	a11, 200
+400826a4:	02ad      	mov.n	a10, a2
+400826a6:	f77881        	l32r	a8, 40080488 <_iram_text_start+0x84>
+400826a9:	0008e0        	callx8	a8
+400826ac:	020a66        	bnei	a10, -1, 400826b2 <VDUStreamProcessor::vdu_sys_buffered()+0xa92>
+400826af:	fd8246        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+400826b2:	346060        	extui	a6, a6, 0, 4
+400826b5:	11aac0        	slli	a10, a10, 4
+400826b8:	20d6a0        	or	a13, a6, a10
+400826bb:	74c040        	extui	a12, a4, 0, 8
+400826be:	f4b050        	extui	a11, a5, 0, 16
+400826c1:	02ad      	mov.n	a10, a2
+400826c3:	f79581        	l32r	a8, 40080518 <_iram_text_start+0x114>
+400826c6:	0008e0        	callx8	a8
+400826c9:	fd7bc6        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+400826cc:	c8a0b2        	movi	a11, 200
+400826cf:	20a220        	or	a10, a2, a2
+400826d2:	f76181        	l32r	a8, 40080458 <_iram_text_start+0x54>
+400826d5:	0008e0        	callx8	a8
+400826d8:	0acd      	mov.n	a12, a10
+400826da:	020a66        	bnei	a10, -1, 400826e0 <VDUStreamProcessor::vdu_sys_buffered()+0xac0>
+400826dd:	fd76c6        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+400826e0:	40c742        	addi	a4, a7, 64
+400826e3:	04ad      	mov.n	a10, a4
+400826e5:	02bd      	mov.n	a11, a2
+400826e7:	57c9      	s32i.n	a12, a7, 20
+400826e9:	0020c0        	memw
+400826ec:	f77481        	l32r	a8, 400804bc <_iram_text_start+0xb8>
+400826ef:	0008e0        	callx8	a8
+400826f2:	04a8      	l32i.n	a10, a4, 0
+400826f4:	1468      	l32i.n	a6, a4, 4
+400826f6:	c066a0        	sub	a6, a6, a10
+400826f9:	216160        	srai	a6, a6, 1
+400826fc:	57c8      	l32i.n	a12, a7, 20
+400826fe:	00e656        	bnez	a6, 40082710 <VDUStreamProcessor::vdu_sys_buffered()+0xaf0>
+40082701:	1acc      	bnez.n	a10, 40082706 <VDUStreamProcessor::vdu_sys_buffered()+0xae6>
+40082703:	fd6d46        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+40082706:	f76f81        	l32r	a8, 400804c4 <_iram_text_start+0xc0>
+40082709:	0008e0        	callx8	a8
+4008270c:	fd6b06        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+4008270f:	00          	.byte 00
+40082710:	e7a9      	s32i.n	a10, a7, 56
+40082712:	02ad      	mov.n	a10, a2
+40082714:	020c      	movi.n	a2, 0
+40082716:	f4d060        	extui	a13, a6, 0, 16
+40082719:	f4c0c0        	extui	a12, a12, 0, 16
+4008271c:	f769      	s32i.n	a6, a7, 60
+4008271e:	f4b050        	extui	a11, a5, 0, 16
+40082721:	0129      	s32i.n	a2, a1, 0
+40082723:	0e27e2        	l32i	a14, a7, 56
+40082726:	0f27f2        	l32i	a15, a7, 60
+40082729:	0020c0        	memw
+4008272c:	f76381        	l32r	a8, 400804b8 <_iram_text_start+0xb4>
+4008272f:	0008e0        	callx8	a8
+40082732:	04a8      	l32i.n	a10, a4, 0
+40082734:	029a27        	bne	a10, a2, 4008273a <VDUStreamProcessor::vdu_sys_buffered()+0xb1a>
+40082737:	fd6046        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+4008273a:	f76281        	l32r	a8, 400804c4 <_iram_text_start+0xc0>
+4008273d:	0008e0        	callx8	a8
+40082740:	fd5e06        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+40082743:	00          	.byte 00
+40082744:	18cc      	bnez.n	a8, 40082749 <VDUStreamProcessor::vdu_sys_buffered()+0xb29>
+40082746:	fd5c86        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+40082749:	08ad      	mov.n	a10, a8
+4008274b:	f75e81        	l32r	a8, 400804c4 <_iram_text_start+0xc0>
+4008274e:	0008e0        	callx8	a8
+40082751:	fd59c6        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+40082754:	18cc      	bnez.n	a8, 40082759 <VDUStreamProcessor::vdu_sys_buffered()+0xb39>
+40082756:	fd5886        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+40082759:	08ad      	mov.n	a10, a8
+4008275b:	f75a81        	l32r	a8, 400804c4 <_iram_text_start+0xc0>
+4008275e:	0008e0        	callx8	a8
+40082761:	fd55c6        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+40082764:	18cc      	bnez.n	a8, 40082769 <VDUStreamProcessor::vdu_sys_buffered()+0xb49>
+40082766:	fd5486        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+40082769:	08ad      	mov.n	a10, a8
+4008276b:	f75681        	l32r	a8, 400804c4 <_iram_text_start+0xc0>
+4008276e:	0008e0        	callx8	a8
+40082771:	fd51c6        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+40082774:	18cc      	bnez.n	a8, 40082779 <VDUStreamProcessor::vdu_sys_buffered()+0xb59>
+40082776:	fd5086        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+40082779:	08ad      	mov.n	a10, a8
+4008277b:	f75281        	l32r	a8, 400804c4 <_iram_text_start+0xc0>
+4008277e:	0008e0        	callx8	a8
+40082781:	fd4dc6        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+40082784:	00          	.byte 00
+40082785:	1acc      	bnez.n	a10, 4008278a <VDUStreamProcessor::vdu_sys_buffered()+0xb6a>
+40082787:	fd4c46        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+4008278a:	f74e81        	l32r	a8, 400804c4 <_iram_text_start+0xc0>
+4008278d:	0008e0        	callx8	a8
+40082790:	fd4a06        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+40082793:	00          	.byte 00
+40082794:	00          	.byte 00
+40082795:	f738a1        	l32r	a10, 40080478 <_iram_text_start+0x74>
+40082798:	b7c8      	l32i.n	a12, a7, 44
+4008279a:	a7b8      	l32i.n	a11, a7, 40
+4008279c:	f73f81        	l32r	a8, 40080498 <_iram_text_start+0x94>
+4008279f:	0008e0        	callx8	a8
+400827a2:	a768      	l32i.n	a6, a7, 40
+400827a4:	04d616        	beqz	a6, 400827f5 <VDUStreamProcessor::vdu_sys_buffered()+0xbd5>
+400827a7:	060c      	movi.n	a6, 0
+400827a9:	b788      	l32i.n	a8, a7, 44
+400827ab:	1188e0        	slli	a8, a8, 2
+400827ae:	604080        	neg	a4, a8
+400827b1:	258a      	add.n	a2, a5, a8
+400827b3:	9749      	s32i.n	a4, a7, 36
+400827b5:	f73141        	l32r	a4, 4008047c <_iram_text_start+0x78>
+400827b8:	8789      	s32i.n	a8, a7, 32
+400827ba:	b758      	l32i.n	a5, a7, 44
+400827bc:	05ac      	beqz.n	a5, 400827e0 <VDUStreamProcessor::vdu_sys_buffered()+0xbc0>
+400827be:	9788      	l32i.n	a8, a7, 36
+400827c0:	528a      	add.n	a5, a2, a8
+400827c2:	05a8      	l32i.n	a10, a5, 0
+400827c4:	04c552        	addi	a5, a5, 4
+400827c7:	0020c0        	memw
+400827ca:	f75481        	l32r	a8, 4008051c <_iram_text_start+0x118>
+400827cd:	0008e0        	callx8	a8
+400827d0:	0acd      	mov.n	a12, a10
+400827d2:	0bdd      	mov.n	a13, a11
+400827d4:	20a440        	or	a10, a4, a4
+400827d7:	f73081        	l32r	a8, 40080498 <_iram_text_start+0x94>
+400827da:	0008e0        	callx8	a8
+400827dd:	e19257        	bne	a2, a5, 400827c2 <VDUStreamProcessor::vdu_sys_buffered()+0xba2>
+400827e0:	f728a1        	l32r	a10, 40080480 <_iram_text_start+0x7c>
+400827e3:	01c662        	addi	a6, a6, 1
+400827e6:	f72c81        	l32r	a8, 40080498 <_iram_text_start+0x94>
+400827e9:	0008e0        	callx8	a8
+400827ec:	a788      	l32i.n	a8, a7, 40
+400827ee:	8758      	l32i.n	a5, a7, 32
+400827f0:	225a      	add.n	a2, a2, a5
+400827f2:	c49867        	bne	a8, a6, 400827ba <VDUStreamProcessor::vdu_sys_buffered()+0xb9a>
+400827f5:	7728      	l32i.n	a2, a7, 28
+400827f7:	001210        	movsp	a1, a2
+400827fa:	fd2f86        	j	40081cbc <VDUStreamProcessor::vdu_sys_buffered()+0x9c>
+400827fd:	201110        	or	a1, a1, a1
+40082800:	04d165        	call8	40087518 <__stack_chk_fail>
+40082803:	04a8      	l32i.n	a10, a4, 0
+40082805:	fa9c      	beqz.n	a10, 40082828 <VDUStreamProcessor::vdu_sys_buffered()+0xc08>
+40082807:	f72f81        	l32r	a8, 400804c4 <_iram_text_start+0xc0>
+4008280a:	0008e0        	callx8	a8
+4008280d:	0005c6        	j	40082828 <VDUStreamProcessor::vdu_sys_buffered()+0xc08>
+40082810:	fffbc6        	j	40082803 <VDUStreamProcessor::vdu_sys_buffered()+0xbe3>
+40082813:	fffb06        	j	40082803 <VDUStreamProcessor::vdu_sys_buffered()+0xbe3>
+40082816:	fffa46        	j	40082803 <VDUStreamProcessor::vdu_sys_buffered()+0xbe3>
+40082819:	fff986        	j	40082803 <VDUStreamProcessor::vdu_sys_buffered()+0xbe3>
+4008281c:	b758      	l32i.n	a5, a7, 44
+4008281e:	658c      	beqz.n	a5, 40082828 <VDUStreamProcessor::vdu_sys_buffered()+0xc08>
+40082820:	05ad      	mov.n	a10, a5
+40082822:	f72081        	l32r	a8, 400804a4 <_iram_text_start+0xa0>
+40082825:	0008e0        	callx8	a8
+40082828:	02ad      	mov.n	a10, a2
+4008282a:	f73d81        	l32r	a8, 40080520 <_iram_text_start+0x11c>
+4008282d:	0008e0        	callx8	a8
+40082830:	fff3c6        	j	40082803 <VDUStreamProcessor::vdu_sys_buffered()+0xbe3>
+	...
+
+VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)
+400eddc8:	00c136        	entry	a1, 96
+400eddcb:	f43030        	extui	a3, a3, 0, 16
+400eddce:	5139      	s32i.n	a3, a1, 20
+400eddd0:	047d      	mov.n	a7, a4
+400eddd2:	15d232        	addmi	a3, a2, 0x1500
+400eddd5:	056d      	mov.n	a6, a5
+400eddd7:	a149      	s32i.n	a4, a1, 40
+400eddd9:	889691        	l32r	a9, 400d0034 <_stext+0x14>
+400edddc:	5148      	l32i.n	a4, a1, 20
+400eddde:	3139      	s32i.n	a3, a1, 12
+400edde0:	b159      	s32i.n	a5, a1, 44
+400edde2:	035d      	mov.n	a5, a3
+400edde4:	191332        	l16ui	a3, a3, 50
+400edde7:	029497        	bne	a4, a9, 400edded <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x25>
+400eddea:	0070c6        	j	400edfb1 <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x1e9>
+400edded:	8891a1        	l32r	a10, 400d0034 <_stext+0x14>
+400eddf0:	0293a7        	bne	a3, a10, 400eddf6 <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x2e>
+400eddf3:	0047c6        	j	400edf16 <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x14e>
+400eddf6:	0238      	l32i.n	a3, a2, 0
+400eddf8:	03ad      	mov.n	a10, a3
+400eddfa:	0338      	l32i.n	a3, a3, 0
+400eddfc:	062332        	l32i	a3, a3, 24
+400eddff:	0020c0        	memw
+400ede02:	0003e0        	callx8	a3
+400ede05:	1bfa16        	beqz	a10, 400edfc8 <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x200>
+400ede08:	02b8      	l32i.n	a11, a2, 0
+400ede0a:	4b88      	l32i.n	a8, a11, 16
+400ede0c:	5bd8      	l32i.n	a13, a11, 20
+400ede0e:	c0dd80        	sub	a13, a13, a8
+400ede11:	88adc1        	l32r	a12, 400d00c8 <_stext+0xa8>
+400ede14:	2129      	s32i.n	a2, a1, 8
+400ede16:	202bb0        	or	a2, a11, a11
+400ede19:	072232        	l32i	a3, a2, 28
+400ede1c:	2193d0        	srai	a9, a13, 3
+400ede1f:	023397        	bltu	a3, a9, 400ede25 <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x5d>
+400ede22:	006c86        	j	400edfd8 <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x210>
+400ede25:	1153d0        	slli	a5, a3, 3
+400ede28:	585a      	add.n	a5, a8, a5
+400ede2a:	05a8      	l32i.n	a10, a5, 0
+400ede2c:	0a58      	l32i.n	a5, a10, 0
+400ede2e:	6558      	l32i.n	a5, a5, 24
+400ede30:	1e95c7        	bne	a5, a12, 400ede52 <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x8a>
+400ede33:	5a58      	l32i.n	a5, a10, 20
+400ede35:	6aa8      	l32i.n	a10, a10, 24
+400ede37:	c0a5a0        	sub	a10, a5, a10
+400ede3a:	eaec      	bnez.n	a10, 400ede6c <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0xa4>
+400ede3c:	331b      	addi.n	a3, a3, 1
+400ede3e:	7239      	s32i.n	a3, a2, 28
+400ede40:	d8b397        	bgeu	a3, a9, 400ede1c <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x54>
+400ede43:	1133d0        	slli	a3, a3, 3
+400ede46:	383a      	add.n	a3, a8, a3
+400ede48:	0338      	l32i.n	a3, a3, 0
+400ede4a:	63a9      	s32i.n	a10, a3, 24
+400ede4c:	0020c0        	memw
+400ede4f:	fff186        	j	400ede19 <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x51>
+400ede52:	11c9      	s32i.n	a12, a1, 4
+400ede54:	0020c0        	memw
+400ede57:	0005e0        	callx8	a5
+400ede5a:	4288      	l32i.n	a8, a2, 16
+400ede5c:	52d8      	l32i.n	a13, a2, 20
+400ede5e:	c0dd80        	sub	a13, a13, a8
+400ede61:	2193d0        	srai	a9, a13, 3
+400ede64:	7238      	l32i.n	a3, a2, 28
+400ede66:	0121c2        	l32i	a12, a1, 4
+400ede69:	fcfa16        	beqz	a10, 400ede3c <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x74>
+400ede6c:	02bd      	mov.n	a11, a2
+400ede6e:	2128      	l32i.n	a2, a1, 8
+400ede70:	023397        	bltu	a3, a9, 400ede76 <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0xae>
+400ede73:	00fd86        	j	400ee26d <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x4a5>
+400ede76:	1153d0        	slli	a5, a3, 3
+400ede79:	585a      	add.n	a5, a8, a5
+400ede7b:	0558      	l32i.n	a5, a5, 0
+400ede7d:	3e4516        	beqz	a5, 400ee265 <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x49d>
+400ede80:	6558      	l32i.n	a5, a5, 24
+400ede82:	6159      	s32i.n	a5, a1, 24
+400ede84:	f4d040        	extui	a13, a4, 0, 16
+400ede87:	31a8      	l32i.n	a10, a1, 12
+400ede89:	191a52        	l16ui	a5, a10, 50
+400ede8c:	021547        	beq	a5, a4, 400ede92 <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0xca>
+400ede8f:	002246        	j	400edf1c <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x154>
+400ede92:	2bb697        	bgeu	a6, a9, 400edec1 <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0xf9>
+400ede95:	11a6d0        	slli	a10, a6, 3
+400ede98:	48aa      	add.n	a4, a8, a10
+400ede9a:	0458      	l32i.n	a5, a4, 0
+400ede9c:	aa8b      	addi.n	a10, a10, 8
+400ede9e:	88aa      	add.n	a8, a8, a10
+400edea0:	5548      	l32i.n	a4, a5, 20
+400edea2:	13b747        	bgeu	a7, a4, 400edeb9 <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0xf1>
+400edea5:	0020c0        	memw
+400edea8:	00e886        	j	400ee24e <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x486>
+400edeab:	00          	.byte 00
+400edeac:	00          	.byte 00
+400edead:	0858      	l32i.n	a5, a8, 0
+400edeaf:	888b      	addi.n	a8, a8, 8
+400edeb1:	5548      	l32i.n	a4, a5, 20
+400edeb3:	02b747        	bgeu	a7, a4, 400edeb9 <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0xf1>
+400edeb6:	00e506        	j	400ee24e <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x486>
+400edeb9:	661b      	addi.n	a6, a6, 1
+400edebb:	c07740        	sub	a7, a7, a4
+400edebe:	eb9697        	bne	a6, a9, 400edead <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0xe5>
+400edec1:	7b99      	s32i.n	a9, a11, 28
+400edec3:	02ad      	mov.n	a10, a2
+400edec5:	11b9      	s32i.n	a11, a1, 4
+400edec7:	0020c0        	memw
+400edeca:	201110        	or	a1, a1, a1
+400edecd:	ffe8a5        	call8	400edd58 <VDUStreamProcessor::processAllAvailable()>
+400eded0:	11b8      	l32i.n	a11, a1, 4
+400eded2:	4b28      	l32i.n	a2, a11, 16
+400eded4:	5b68      	l32i.n	a6, a11, 20
+400eded6:	c06620        	sub	a6, a6, a2
+400eded9:	216360        	srai	a6, a6, 3
+400ededc:	2eb367        	bgeu	a3, a6, 400edf0e <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x146>
+400ededf:	1173d0        	slli	a7, a3, 3
+400edee2:	427a      	add.n	a4, a2, a7
+400edee4:	0458      	l32i.n	a5, a4, 0
+400edee6:	6188      	l32i.n	a8, a1, 24
+400edee8:	5548      	l32i.n	a4, a5, 20
+400edeea:	02b847        	bgeu	a8, a4, 400edef0 <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x128>
+400edeed:	00da46        	j	400ee25a <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x492>
+400edef0:	778b      	addi.n	a7, a7, 8
+400edef2:	227a      	add.n	a2, a2, a7
+400edef4:	6178      	l32i.n	a7, a1, 24
+400edef6:	000306        	j	400edf06 <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x13e>
+400edef9:	00          	.byte 00
+400edefa:	0258      	l32i.n	a5, a2, 0
+400edefc:	228b      	addi.n	a2, a2, 8
+400edefe:	5548      	l32i.n	a4, a5, 20
+400edf00:	02b747        	bgeu	a7, a4, 400edf06 <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x13e>
+400edf03:	00d446        	j	400ee258 <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x490>
+400edf06:	331b      	addi.n	a3, a3, 1
+400edf08:	c07740        	sub	a7, a7, a4
+400edf0b:	eb9637        	bne	a6, a3, 400edefa <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x132>
+400edf0e:	7b69      	s32i.n	a6, a11, 28
+400edf10:	0020c0        	memw
+400edf13:	f01d      	retw.n
+400edf15:	00          	.byte 00
+400edf16:	030c      	movi.n	a3, 0
+400edf18:	51d8      	l32i.n	a13, a1, 20
+400edf1a:	6139      	s32i.n	a3, a1, 24
+400edf1c:	887081        	l32r	a8, 400d00dc <_stext+0xbc>
+400edf1f:	18c8      	l32i.n	a12, a8, 4
+400edf21:	e2b4c0        	remu	a11, a4, a12
+400edf24:	119be0        	slli	a9, a11, 2
+400edf27:	0858      	l32i.n	a5, a8, 0
+400edf29:	559a      	add.n	a5, a5, a9
+400edf2b:	05a8      	l32i.n	a10, a5, 0
+400edf2d:	7a9c      	beqz.n	a10, 400edf48 <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x180>
+400edf2f:	0a88      	l32i.n	a8, a10, 0
+400edf31:	021852        	l16ui	a5, a8, 4
+400edf34:	221d57        	beq	a13, a5, 400edf5a <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x192>
+400edf37:	0858      	l32i.n	a5, a8, 0
+400edf39:	b58c      	beqz.n	a5, 400edf48 <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x180>
+400edf3b:	08ad      	mov.n	a10, a8
+400edf3d:	058d      	mov.n	a8, a5
+400edf3f:	021552        	l16ui	a5, a5, 4
+400edf42:	e295c0        	remu	a9, a5, a12
+400edf45:	eb19b7        	beq	a9, a11, 400edf34 <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x16c>
+400edf48:	883bc1        	l32r	a12, 400d0034 <_stext+0x14>
+400edf4b:	04bd      	mov.n	a11, a4
+400edf4d:	02ad      	mov.n	a10, a2
+400edf4f:	0020c0        	memw
+400edf52:	201110        	or	a1, a1, a1
+400edf55:	fd1425        	call8	400eb098 <VDUStreamProcessor::bufferRemoveCallback(unsigned short, unsigned short)>
+400edf58:	f01d      	retw.n
+400edf5a:	0a58      	l32i.n	a5, a10, 0
+400edf5c:	fe8516        	beqz	a5, 400edf48 <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x180>
+400edf5f:	201110        	or	a1, a1, a1
+400edf62:	37b365        	call8	40125a98 <psramInit>
+400edf65:	07da16        	beqz	a10, 400edfe6 <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x21e>
+400edf68:	ca2c      	movi.n	a10, 44
+400edf6a:	201110        	or	a1, a1, a1
+400edf6d:	37c425        	call8	40125bb0 <ps_malloc>
+400edf70:	21a9      	s32i.n	a10, a1, 8
+400edf72:	190c      	movi.n	a9, 1
+400edf74:	080c      	movi.n	a8, 0
+400edf76:	2148      	l32i.n	a4, a1, 8
+400edf78:	44cb      	addi.n	a4, a4, 12
+400edf7a:	21a8      	l32i.n	a10, a1, 8
+400edf7c:	9149      	s32i.n	a4, a1, 36
+400edf7e:	89b041        	l32r	a4, 400d0640 <_stext+0x620>
+400edf81:	0a49      	s32i.n	a4, a10, 0
+400edf83:	2548      	l32i.n	a4, a5, 8
+400edf85:	35b8      	l32i.n	a11, a5, 12
+400edf87:	c04b40        	sub	a4, a11, a4
+400edf8a:	1a99      	s32i.n	a9, a10, 4
+400edf8c:	2a99      	s32i.n	a9, a10, 8
+400edf8e:	d189      	s32i.n	a8, a1, 52
+400edf90:	e189      	s32i.n	a8, a1, 56
+400edf92:	0f6182        	s32i	a8, a1, 60
+400edf95:	5d1487        	beq	a4, a8, 400edff6 <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x22e>
+400edf98:	0020c0        	memw
+400edf9b:	201110        	or	a1, a1, a1
+400edf9e:	37afa5        	call8	40125a98 <psramInit>
+400edfa1:	27da16        	beqz	a10, 400ee222 <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x45a>
+400edfa4:	04ad      	mov.n	a10, a4
+400edfa6:	201110        	or	a1, a1, a1
+400edfa9:	37c065        	call8	40125bb0 <ps_malloc>
+400edfac:	35b8      	l32i.n	a11, a5, 12
+400edfae:	001186        	j	400edff8 <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x230>
+400edfb1:	029347        	bne	a3, a4, 400edfb7 <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x1ef>
+400edfb4:	ffd606        	j	400edf10 <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x148>
+400edfb7:	034d      	mov.n	a4, a3
+400edfb9:	0238      	l32i.n	a3, a2, 0
+400edfbb:	03ad      	mov.n	a10, a3
+400edfbd:	0338      	l32i.n	a3, a3, 0
+400edfbf:	062332        	l32i	a3, a3, 24
+400edfc2:	0003e0        	callx8	a3
+400edfc5:	e3fa56        	bnez	a10, 400ede08 <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x40>
+400edfc8:	04bd      	mov.n	a11, a4
+400edfca:	a1c8      	l32i.n	a12, a1, 40
+400edfcc:	02ad      	mov.n	a10, a2
+400edfce:	b1d8      	l32i.n	a13, a1, 44
+400edfd0:	201110        	or	a1, a1, a1
+400edfd3:	002de5        	call8	400ee2b0 <VDUStreamProcessor::bufferJump(unsigned short, AdvancedOffset)>
+400edfd6:	f01d      	retw.n
+400edfd8:	050c      	movi.n	a5, 0
+400edfda:	02bd      	mov.n	a11, a2
+400edfdc:	6159      	s32i.n	a5, a1, 24
+400edfde:	2128      	l32i.n	a2, a1, 8
+400edfe0:	0020c0        	memw
+400edfe3:	ffa746        	j	400ede84 <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0xbc>
+400edfe6:	ca2c      	movi.n	a10, 44
+400edfe8:	201110        	or	a1, a1, a1
+400edfeb:	a80125        	call8	40095ffc <malloc>
+400edfee:	21a9      	s32i.n	a10, a1, 8
+400edff0:	0020c0        	memw
+400edff3:	ffdec6        	j	400edf72 <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x1aa>
+400edff6:	04ad      	mov.n	a10, a4
+400edff8:	4a4a      	add.n	a4, a10, a4
+400edffa:	f149      	s32i.n	a4, a1, 60
+400edffc:	25e8      	l32i.n	a14, a5, 8
+400edffe:	d1a9      	s32i.n	a10, a1, 52
+400ee000:	e1a9      	s32i.n	a10, a1, 56
+400ee002:	029be7        	bne	a11, a14, 400ee008 <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x240>
+400ee005:	009006        	j	400ee249 <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x481>
+400ee008:	208ee0        	or	a8, a14, a14
+400ee00b:	209aa0        	or	a9, a10, a10
+400ee00e:	0858      	l32i.n	a5, a8, 0
+400ee010:	1848      	l32i.n	a4, a8, 4
+400ee012:	0959      	s32i.n	a5, a9, 0
+400ee014:	1949      	s32i.n	a4, a9, 4
+400ee016:	449c      	beqz.n	a4, 400ee02e <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x266>
+400ee018:	0020c0        	memw
+400ee01b:	1458      	l32i.n	a5, a4, 4
+400ee01d:	05cd      	mov.n	a12, a5
+400ee01f:	01c5d2        	addi	a13, a5, 1
+400ee022:	130c50        	wsr.scompare1	a5
+400ee025:	01e4d2        	s32c1i	a13, a4, 4
+400ee028:	205dd0        	or	a5, a13, a13
+400ee02b:	ee9dc7        	bne	a13, a12, 400ee01d <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x255>
+400ee02e:	888b      	addi.n	a8, a8, 8
+400ee030:	998b      	addi.n	a9, a9, 8
+400ee032:	d89b87        	bne	a11, a8, 400ee00e <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x246>
+400ee035:	c04be0        	sub	a4, a11, a14
+400ee038:	f8c442        	addi	a4, a4, -8
+400ee03b:	414340        	srli	a4, a4, 3
+400ee03e:	441b      	addi.n	a4, a4, 1
+400ee040:	1144d0        	slli	a4, a4, 3
+400ee043:	aa4a      	add.n	a10, a10, a4
+400ee045:	d188      	l32i.n	a8, a1, 52
+400ee047:	f148      	l32i.n	a4, a1, 60
+400ee049:	e8a392        	movi	a9, 0x3e8
+400ee04c:	050c      	movi.n	a5, 0
+400ee04e:	21b8      	l32i.n	a11, a1, 8
+400ee050:	5b99      	s32i.n	a9, a11, 20
+400ee052:	882191        	l32r	a9, 400d00d8 <_stext+0xb8>
+400ee055:	4b59      	s32i.n	a5, a11, 16
+400ee057:	6b59      	s32i.n	a5, a11, 24
+400ee059:	3b99      	s32i.n	a9, a11, 12
+400ee05b:	7b89      	s32i.n	a8, a11, 28
+400ee05d:	d159      	s32i.n	a5, a1, 52
+400ee05f:	8ba9      	s32i.n	a10, a11, 32
+400ee061:	e159      	s32i.n	a5, a1, 56
+400ee063:	9b49      	s32i.n	a4, a11, 36
+400ee065:	f159      	s32i.n	a5, a1, 60
+400ee067:	ab59      	s32i.n	a5, a11, 40
+400ee069:	031a87        	beq	a10, a8, 400ee070 <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x2a8>
+400ee06c:	0848      	l32i.n	a4, a8, 0
+400ee06e:	6459      	s32i.n	a5, a4, 24
+400ee070:	34c1a2        	addi	a10, a1, 52
+400ee073:	0020c0        	memw
+400ee076:	201110        	or	a1, a1, a1
+400ee079:	ede0a5        	call8	400dbe84 <std::vector<std::shared_ptr<BufferStream>, psram_allocator<std::shared_ptr<BufferStream> > >::~vector()>
+400ee07c:	164756        	bnez	a7, 400ee1e4 <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x41c>
+400ee07f:	161656        	bnez	a6, 400ee1e4 <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x41c>
+400ee082:	3248      	l32i.n	a4, a2, 12
+400ee084:	2258      	l32i.n	a5, a2, 8
+400ee086:	4149      	s32i.n	a4, a1, 16
+400ee088:	8159      	s32i.n	a5, a1, 32
+400ee08a:	449c      	beqz.n	a4, 400ee0a2 <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x2da>
+400ee08c:	0020c0        	memw
+400ee08f:	1448      	l32i.n	a4, a4, 4
+400ee091:	045d      	mov.n	a5, a4
+400ee093:	641b      	addi.n	a6, a4, 1
+400ee095:	4188      	l32i.n	a8, a1, 16
+400ee097:	130c40        	wsr.scompare1	a4
+400ee09a:	01e862        	s32c1i	a6, a8, 4
+400ee09d:	064d      	mov.n	a4, a6
+400ee09f:	ee9657        	bne	a6, a5, 400ee091 <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x2c9>
+400ee0a2:	4258      	l32i.n	a5, a2, 16
+400ee0a4:	040c      	movi.n	a4, 0
+400ee0a6:	5278      	l32i.n	a7, a2, 20
+400ee0a8:	7159      	s32i.n	a5, a1, 28
+400ee0aa:	161747        	beq	a7, a4, 400ee0c4 <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x2fc>
+400ee0ad:	0020c0        	memw
+400ee0b0:	1748      	l32i.n	a4, a7, 4
+400ee0b2:	045d      	mov.n	a5, a4
+400ee0b4:	641b      	addi.n	a6, a4, 1
+400ee0b6:	130c40        	wsr.scompare1	a4
+400ee0b9:	01e762        	s32c1i	a6, a7, 4
+400ee0bc:	064d      	mov.n	a4, a6
+400ee0be:	f09657        	bne	a6, a5, 400ee0b2 <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x2ea>
+400ee0c1:	052242        	l32i	a4, a2, 20
+400ee0c4:	2268      	l32i.n	a6, a2, 8
+400ee0c6:	3258      	l32i.n	a5, a2, 12
+400ee0c8:	4269      	s32i.n	a6, a2, 16
+400ee0ca:	641547        	beq	a5, a4, 400ee132 <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x36a>
+400ee0cd:	459c      	beqz.n	a5, 400ee0e5 <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x31d>
+400ee0cf:	0020c0        	memw
+400ee0d2:	1548      	l32i.n	a4, a5, 4
+400ee0d4:	046d      	mov.n	a6, a4
+400ee0d6:	841b      	addi.n	a8, a4, 1
+400ee0d8:	130c40        	wsr.scompare1	a4
+400ee0db:	01e582        	s32c1i	a8, a5, 4
+400ee0de:	084d      	mov.n	a4, a8
+400ee0e0:	f09867        	bne	a8, a6, 400ee0d4 <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x30c>
+400ee0e3:	5248      	l32i.n	a4, a2, 20
+400ee0e5:	047416        	beqz	a4, 400ee130 <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x368>
+400ee0e8:	0020c0        	memw
+400ee0eb:	1468      	l32i.n	a6, a4, 4
+400ee0ed:	068d      	mov.n	a8, a6
+400ee0ef:	960b      	addi.n	a9, a6, -1
+400ee0f1:	130c60        	wsr.scompare1	a6
+400ee0f4:	01e492        	s32c1i	a9, a4, 4
+400ee0f7:	096d      	mov.n	a6, a9
+400ee0f9:	c09980        	sub	a9, a9, a8
+400ee0fc:	fed956        	bnez	a9, 400ee0ed <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x325>
+400ee0ff:	2d1866        	bnei	a8, 1, 400ee130 <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x368>
+400ee102:	002462        	l32i	a6, a4, 0
+400ee105:	04ad      	mov.n	a10, a4
+400ee107:	022662        	l32i	a6, a6, 8
+400ee10a:	0020c0        	memw
+400ee10d:	0006e0        	callx8	a6
+400ee110:	0020c0        	memw
+400ee113:	2468      	l32i.n	a6, a4, 8
+400ee115:	068d      	mov.n	a8, a6
+400ee117:	960b      	addi.n	a9, a6, -1
+400ee119:	130c60        	wsr.scompare1	a6
+400ee11c:	02e492        	s32c1i	a9, a4, 8
+400ee11f:	096d      	mov.n	a6, a9
+400ee121:	f09987        	bne	a9, a8, 400ee115 <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x34d>
+400ee124:	081866        	bnei	a8, 1, 400ee130 <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x368>
+400ee127:	0468      	l32i.n	a6, a4, 0
+400ee129:	04ad      	mov.n	a10, a4
+400ee12b:	3648      	l32i.n	a4, a6, 12
+400ee12d:	0004e0        	callx8	a4
+400ee130:	5259      	s32i.n	a5, a2, 20
+400ee132:	02ad      	mov.n	a10, a2
+400ee134:	3188      	l32i.n	a8, a1, 12
+400ee136:	5198      	l32i.n	a9, a1, 20
+400ee138:	191862        	l16ui	a6, a8, 50
+400ee13b:	91b8      	l32i.n	a11, a1, 36
+400ee13d:	195892        	s16i	a9, a8, 50
+400ee140:	0020c0        	memw
+400ee143:	2188      	l32i.n	a8, a1, 8
+400ee145:	0258      	l32i.n	a5, a2, 0
+400ee147:	1248      	l32i.n	a4, a2, 4
+400ee149:	02b9      	s32i.n	a11, a2, 0
+400ee14b:	1289      	s32i.n	a8, a2, 4
+400ee14d:	0020c0        	memw
+400ee150:	201110        	or	a1, a1, a1
+400ee153:	ffc065        	call8	400edd58 <VDUStreamProcessor::processAllAvailable()>
+400ee156:	3198      	l32i.n	a9, a1, 12
+400ee158:	195962        	s16i	a6, a9, 50
+400ee15b:	0020c0        	memw
+400ee15e:	12a8      	l32i.n	a10, a2, 4
+400ee160:	0259      	s32i.n	a5, a2, 0
+400ee162:	1249      	s32i.n	a4, a2, 4
+400ee164:	008a16        	beqz	a10, 400ee170 <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x3a8>
+400ee167:	0020c0        	memw
+400ee16a:	88c581        	l32r	a8, 400d0480 <_stext+0x460>
+400ee16d:	0008e0        	callx8	a8
+400ee170:	8148      	l32i.n	a4, a1, 32
+400ee172:	4158      	l32i.n	a5, a1, 16
+400ee174:	32a8      	l32i.n	a10, a2, 12
+400ee176:	2249      	s32i.n	a4, a2, 8
+400ee178:	3259      	s32i.n	a5, a2, 12
+400ee17a:	7a8c      	beqz.n	a10, 400ee185 <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x3bd>
+400ee17c:	0020c0        	memw
+400ee17f:	88c081        	l32r	a8, 400d0480 <_stext+0x460>
+400ee182:	0008e0        	callx8	a8
+400ee185:	7148      	l32i.n	a4, a1, 28
+400ee187:	52a8      	l32i.n	a10, a2, 20
+400ee189:	4249      	s32i.n	a4, a2, 16
+400ee18b:	5279      	s32i.n	a7, a2, 20
+400ee18d:	7a8c      	beqz.n	a10, 400ee198 <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x3d0>
+400ee18f:	0020c0        	memw
+400ee192:	88bb81        	l32r	a8, 400d0480 <_stext+0x460>
+400ee195:	0008e0        	callx8	a8
+400ee198:	3158      	l32i.n	a5, a1, 12
+400ee19a:	87a681        	l32r	a8, 400d0034 <_stext+0x14>
+400ee19d:	191542        	l16ui	a4, a5, 50
+400ee1a0:	029487        	bne	a4, a8, 400ee1a6 <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x3de>
+400ee1a3:	ff5a46        	j	400edf10 <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x148>
+400ee1a6:	0288      	l32i.n	a8, a2, 0
+400ee1a8:	4828      	l32i.n	a2, a8, 16
+400ee1aa:	5868      	l32i.n	a6, a8, 20
+400ee1ac:	c06620        	sub	a6, a6, a2
+400ee1af:	216360        	srai	a6, a6, 3
+400ee1b2:	27b367        	bgeu	a3, a6, 400ee1dd <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x415>
+400ee1b5:	1173d0        	slli	a7, a3, 3
+400ee1b8:	427a      	add.n	a4, a2, a7
+400ee1ba:	0458      	l32i.n	a5, a4, 0
+400ee1bc:	6198      	l32i.n	a9, a1, 24
+400ee1be:	5548      	l32i.n	a4, a5, 20
+400ee1c0:	7a3947        	bltu	a9, a4, 400ee23e <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x476>
+400ee1c3:	778b      	addi.n	a7, a7, 8
+400ee1c5:	227a      	add.n	a2, a2, a7
+400ee1c7:	6178      	l32i.n	a7, a1, 24
+400ee1c9:	000206        	j	400ee1d5 <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x40d>
+400ee1cc:	0258      	l32i.n	a5, a2, 0
+400ee1ce:	228b      	addi.n	a2, a2, 8
+400ee1d0:	5548      	l32i.n	a4, a5, 20
+400ee1d2:	663747        	bltu	a7, a4, 400ee23c <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x474>
+400ee1d5:	331b      	addi.n	a3, a3, 1
+400ee1d7:	c07740        	sub	a7, a7, a4
+400ee1da:	ee9367        	bne	a3, a6, 400ee1cc <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x404>
+400ee1dd:	7869      	s32i.n	a6, a8, 28
+400ee1df:	0020c0        	memw
+400ee1e2:	f01d      	retw.n
+400ee1e4:	2158      	l32i.n	a5, a1, 8
+400ee1e6:	7548      	l32i.n	a4, a5, 28
+400ee1e8:	8598      	l32i.n	a9, a5, 32
+400ee1ea:	c09940        	sub	a9, a9, a4
+400ee1ed:	219390        	srai	a9, a9, 3
+400ee1f0:	24b697        	bgeu	a6, a9, 400ee218 <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x450>
+400ee1f3:	11a6d0        	slli	a10, a6, 3
+400ee1f6:	54aa      	add.n	a5, a4, a10
+400ee1f8:	0588      	l32i.n	a8, a5, 0
+400ee1fa:	aa8b      	addi.n	a10, a10, 8
+400ee1fc:	44aa      	add.n	a4, a4, a10
+400ee1fe:	5858      	l32i.n	a5, a8, 20
+400ee200:	0cb757        	bgeu	a7, a5, 400ee210 <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x448>
+400ee203:	000a46        	j	400ee230 <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x468>
+400ee206:	0488      	l32i.n	a8, a4, 0
+400ee208:	448b      	addi.n	a4, a4, 8
+400ee20a:	052852        	l32i	a5, a8, 20
+400ee20d:	1f3757        	bltu	a7, a5, 400ee230 <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x468>
+400ee210:	661b      	addi.n	a6, a6, 1
+400ee212:	c07750        	sub	a7, a7, a5
+400ee215:	ed9697        	bne	a6, a9, 400ee206 <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x43e>
+400ee218:	2158      	l32i.n	a5, a1, 8
+400ee21a:	a599      	s32i.n	a9, a5, 40
+400ee21c:	0020c0        	memw
+400ee21f:	ff97c6        	j	400ee082 <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x2ba>
+400ee222:	04ad      	mov.n	a10, a4
+400ee224:	201110        	or	a1, a1, a1
+400ee227:	a7dd65        	call8	40095ffc <malloc>
+400ee22a:	35b8      	l32i.n	a11, a5, 12
+400ee22c:	ff7206        	j	400edff8 <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x230>
+400ee22f:	00          	.byte 00
+400ee230:	2148      	l32i.n	a4, a1, 8
+400ee232:	a469      	s32i.n	a6, a4, 40
+400ee234:	6879      	s32i.n	a7, a8, 24
+400ee236:	0020c0        	memw
+400ee239:	ff9146        	j	400ee082 <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x2ba>
+400ee23c:	6179      	s32i.n	a7, a1, 24
+400ee23e:	6128      	l32i.n	a2, a1, 24
+400ee240:	7839      	s32i.n	a3, a8, 28
+400ee242:	6529      	s32i.n	a2, a5, 24
+400ee244:	0020c0        	memw
+400ee247:	f01d      	retw.n
+400ee249:	0a8d      	mov.n	a8, a10
+400ee24b:	ff7e86        	j	400ee049 <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x281>
+400ee24e:	7b69      	s32i.n	a6, a11, 28
+400ee250:	6579      	s32i.n	a7, a5, 24
+400ee252:	0020c0        	memw
+400ee255:	ff1a86        	j	400edec3 <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0xfb>
+400ee258:	6179      	s32i.n	a7, a1, 24
+400ee25a:	6128      	l32i.n	a2, a1, 24
+400ee25c:	7b39      	s32i.n	a3, a11, 28
+400ee25e:	6529      	s32i.n	a2, a5, 24
+400ee260:	0020c0        	memw
+400ee263:	f01d      	retw.n
+400ee265:	6159      	s32i.n	a5, a1, 24
+400ee267:	0020c0        	memw
+400ee26a:	ff0586        	j	400ede84 <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0xbc>
+400ee26d:	050c      	movi.n	a5, 0
+400ee26f:	6159      	s32i.n	a5, a1, 24
+400ee271:	0020c0        	memw
+400ee274:	ff0306        	j	400ede84 <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0xbc>
+400ee277:	00          	.byte 00
+400ee278:	21a8      	l32i.n	a10, a1, 8
+400ee27a:	201110        	or	a1, a1, a1
+400ee27d:	a7d9e5        	call8	4009601c <cfree>
+400ee280:	02ad      	mov.n	a10, a2
+400ee282:	201110        	or	a1, a1, a1
+400ee285:	6514a5        	call8	401533d0 <_Unwind_Resume>
+400ee288:	678c      	beqz.n	a7, 400ee292 <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x4ca>
+400ee28a:	07ad      	mov.n	a10, a7
+400ee28c:	887d81        	l32r	a8, 400d0480 <_stext+0x460>
+400ee28f:	0008e0        	callx8	a8
+400ee292:	4158      	l32i.n	a5, a1, 16
+400ee294:	658c      	beqz.n	a5, 400ee29e <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x4d6>
+400ee296:	05ad      	mov.n	a10, a5
+400ee298:	887a81        	l32r	a8, 400d0480 <_stext+0x460>
+400ee29b:	0008e0        	callx8	a8
+400ee29e:	648c      	beqz.n	a4, 400ee2a8 <VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)+0x4e0>
+400ee2a0:	04ad      	mov.n	a10, a4
+400ee2a2:	887781        	l32r	a8, 400d0480 <_stext+0x460>
+400ee2a5:	0008e0        	callx8	a8
+400ee2a8:	02ad      	mov.n	a10, a2
+400ee2aa:	201110        	or	a1, a1, a1
+400ee2ad:	651225        	call8	401533d0 <_Unwind_Resume>
+
+VDUStreamProcessor::processAllAvailable()
+400edd58:	006136        	entry	a1, 48
+400edd5b:	2cc252        	addi	a5, a2, 44
+400edd5e:	140c      	movi.n	a4, 1
+400edd60:	000306        	j	400edd70 <VDUStreamProcessor::processAllAvailable()+0x18>
+400edd63:	00          	.byte 00
+400edd64:	20c440        	or	a12, a4, a4
+400edd67:	74b030        	extui	a11, a3, 0, 8
+400edd6a:	20a220        	or	a10, a2, a2
+400edd6d:	ffc825        	call8	400ed9f0 <VDUStreamProcessor::vdu(unsigned char, bool)>
+400edd70:	0288      	l32i.n	a8, a2, 0
+400edd72:	08ad      	mov.n	a10, a8
+400edd74:	0838      	l32i.n	a3, a8, 0
+400edd76:	6338      	l32i.n	a3, a3, 24
+400edd78:	0003e0        	callx8	a3
+400edd7b:	0a3d      	mov.n	a3, a10
+400edd7d:	02ad      	mov.n	a10, a2
+400edd7f:	3713a6        	blti	a3, 1, 400eddba <VDUStreamProcessor::processAllAvailable()+0x62>
+400edd82:	0131e5        	call8	400ef0a0 <VDUStreamProcessor::flushEcho()>
+400edd85:	0238      	l32i.n	a3, a2, 0
+400edd87:	03ad      	mov.n	a10, a3
+400edd89:	0338      	l32i.n	a3, a3, 0
+400edd8b:	7338      	l32i.n	a3, a3, 28
+400edd8d:	0003e0        	callx8	a3
+400edd90:	7480a0        	extui	a8, a10, 0, 8
+400edd93:	0a3d      	mov.n	a3, a10
+400edd95:	2a0292        	l8ui	a9, a2, 42
+400edd98:	0f4182        	s8i	a8, a1, 15
+400edd9b:	0020c0        	memw
+400edd9e:	fc2916        	beqz	a9, 400edd64 <VDUStreamProcessor::processAllAvailable()+0xc>
+400edda1:	c2b8      	l32i.n	a11, a2, 48
+400edda3:	d298      	l32i.n	a9, a2, 52
+400edda5:	151b97        	beq	a11, a9, 400eddbe <VDUStreamProcessor::processAllAvailable()+0x66>
+400edda8:	004b82        	s8i	a8, a11, 0
+400eddab:	0020c0        	memw
+400eddae:	c288      	l32i.n	a8, a2, 48
+400eddb0:	881b      	addi.n	a8, a8, 1
+400eddb2:	c289      	s32i.n	a8, a2, 48
+400eddb4:	0020c0        	memw
+400eddb7:	ffea46        	j	400edd64 <VDUStreamProcessor::processAllAvailable()+0xc>
+400eddba:	f01d      	retw.n
+400eddbc:	00          	.byte 00
+400eddbd:	00          	.byte 00
+400eddbe:	c1fb      	addi.n	a12, a1, 15
+400eddc0:	05ad      	mov.n	a10, a5
+400eddc2:	f0e7a5        	call8	400dec3c <void std::vector<unsigned char, std::allocator<unsigned char> >::_M_realloc_insert<unsigned char const&>(__gnu_cxx::__normal_iterator<unsigned char*, std::vector<unsigned char, std::allocator<unsigned char> > >, unsigned char const&)>
+400eddc5:	ffe6c6        	j	400edd64 <VDUStreamProcessor::processAllAvailable()+0xc>
+
+VDUStreamProcessor::vdu_sys_vdplet(bool)
+400f23f8:	010136        	entry	a1, 128
+400f23fb:	77a841        	l32r	a4, 400d029c <_stext+0x27c>
+400f23fe:	743030        	extui	a3, a3, 0, 8
+400f2401:	0020c0        	memw
+400f2404:	0458      	l32i.n	a5, a4, 0
+400f2406:	0020c0        	memw
+400f2409:	176152        	s32i	a5, a1, 92
+400f240c:	04c356        	bnez	a3, 400f245c <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x64>
+400f240f:	c8a0b2        	movi	a11, 200
+400f2412:	02ad      	mov.n	a10, a2
+400f2414:	0020c0        	memw
+400f2417:	201110        	or	a1, a1, a1
+400f241a:	ed0925        	call8	400df4ac <VDUStreamProcessor::readWord_t(unsigned short)>
+400f241d:	0a5d      	mov.n	a5, a10
+400f241f:	025a96        	bltz	a10, 400f2448 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x50>
+400f2422:	072c      	movi.n	a7, 32
+400f2424:	0a6d      	mov.n	a6, a10
+400f2426:	3cc132        	addi	a3, a1, 60
+400f2429:	0927a7        	blt	a7, a10, 400f2436 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x3e>
+400f242c:	002046        	j	400f24b1 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0xb9>
+400f242f:	00          	.byte 00
+400f2430:	c06650        	sub	a6, a6, a5
+400f2433:	069616        	beqz	a6, 400f24a0 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0xa8>
+400f2436:	635670        	minu	a5, a6, a7
+400f2439:	05cd      	mov.n	a12, a5
+400f243b:	03bd      	mov.n	a11, a3
+400f243d:	02ad      	mov.n	a10, a2
+400f243f:	201110        	or	a1, a1, a1
+400f2442:	ec89e5        	call8	400dece0 <_ZN18VDUStreamProcessor14readIntoBufferEPhjt$part$1004>
+400f2445:	fe7a16        	beqz	a10, 400f2430 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x38>
+400f2448:	0020c0        	memw
+400f244b:	172132        	l32i	a3, a1, 92
+400f244e:	0020c0        	memw
+400f2451:	0428      	l32i.n	a2, a4, 0
+400f2453:	021327        	beq	a3, a2, 400f2459 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x61>
+400f2456:	010ac6        	j	400f2885 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x48d>
+400f2459:	f01d      	retw.n
+400f245b:	00          	.byte 00
+400f245c:	02ad      	mov.n	a10, a2
+400f245e:	625c      	movi.n	a2, 86
+400f2460:	3c4122        	s8i	a2, a1, 60
+400f2463:	424c      	movi.n	a2, 68
+400f2465:	030c      	movi.n	a3, 0
+400f2467:	150c      	movi.n	a5, 1
+400f2469:	3cc1d2        	addi	a13, a1, 60
+400f246c:	3d4122        	s8i	a2, a1, 61
+400f246f:	025c      	movi.n	a2, 80
+400f2471:	ac0c      	movi.n	a12, 10
+400f2473:	1b0c      	movi.n	a11, 1
+400f2475:	3e4122        	s8i	a2, a1, 62
+400f2478:	c24c      	movi.n	a2, 76
+400f247a:	3f4122        	s8i	a2, a1, 63
+400f247d:	320c      	movi.n	a2, 3
+400f247f:	404152        	s8i	a5, a1, 64
+400f2482:	414152        	s8i	a5, a1, 65
+400f2485:	424132        	s8i	a3, a1, 66
+400f2488:	434132        	s8i	a3, a1, 67
+400f248b:	444122        	s8i	a2, a1, 68
+400f248e:	454132        	s8i	a3, a1, 69
+400f2491:	0020c0        	memw
+400f2494:	0020c0        	memw
+400f2497:	201110        	or	a1, a1, a1
+400f249a:	fc22e5        	call8	400ee6c8 <VDUStreamProcessor::send_packet(unsigned char, unsigned short, unsigned char*)>
+400f249d:	ffe9c6        	j	400f2448 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x50>
+400f24a0:	76ef21        	l32r	a2, 400d005c <_stext+0x3c>
+400f24a3:	130c      	movi.n	a3, 1
+400f24a5:	925232        	s16i	a3, a2, 0x124
+400f24a8:	0020c0        	memw
+400f24ab:	0020c0        	memw
+400f24ae:	ffe586        	j	400f2448 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x50>
+400f24b1:	0acd      	mov.n	a12, a10
+400f24b3:	03bd      	mov.n	a11, a3
+400f24b5:	02ad      	mov.n	a10, a2
+400f24b7:	201110        	or	a1, a1, a1
+400f24ba:	ec8265        	call8	400dece0 <_ZN18VDUStreamProcessor14readIntoBufferEPhjt$part$1004>
+400f24bd:	fdfa56        	bnez	a10, 400f24a0 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0xa8>
+400f24c0:	dc65a6        	blti	a5, 6, 400f24a0 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0xa8>
+400f24c3:	020362        	l8ui	a6, a3, 2
+400f24c6:	9169      	s32i.n	a6, a1, 36
+400f24c8:	030362        	l8ui	a6, a3, 3
+400f24cb:	000382        	l8ui	a8, a3, 0
+400f24ce:	a169      	s32i.n	a6, a1, 40
+400f24d0:	040372        	l8ui	a7, a3, 4
+400f24d3:	010362        	l8ui	a6, a3, 1
+400f24d6:	7d1826        	beqi	a8, 1, 400f2557 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x15f>
+400f24d9:	530c      	movi.n	a3, 5
+400f24db:	590c      	movi.n	a9, 5
+400f24dd:	035d      	mov.n	a5, a3
+400f24df:	76df81        	l32r	a8, 400d005c <_stext+0x3c>
+400f24e2:	925892        	s16i	a9, a8, 0x124
+400f24e5:	0020c0        	memw
+400f24e8:	06bd      	mov.n	a11, a6
+400f24ea:	20c550        	or	a12, a5, a5
+400f24ed:	05a062        	movi	a6, 5
+400f24f0:	786ba1        	l32r	a10, 400d069c <_stext+0x67c>
+400f24f3:	0020c0        	memw
+400f24f6:	201110        	or	a1, a1, a1
+400f24f9:	e98f25        	call8	400dbdec <force_debug_log(char const*, ...)>
+400f24fc:	02e707        	bbsi	a7, 0, 400f2502 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x10a>
+400f24ff:	ffd146        	j	400f2448 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x50>
+400f2502:	217830        	srai	a7, a3, 8
+400f2505:	a198      	l32i.n	a9, a1, 40
+400f2507:	32c1d2        	addi	a13, a1, 50
+400f250a:	115980        	slli	a5, a9, 8
+400f250d:	ac0c      	movi.n	a12, 10
+400f250f:	1b0c      	movi.n	a11, 1
+400f2511:	91a8      	l32i.n	a10, a1, 36
+400f2513:	2055a0        	or	a5, a5, a10
+400f2516:	02ad      	mov.n	a10, a2
+400f2518:	625c      	movi.n	a2, 86
+400f251a:	324122        	s8i	a2, a1, 50
+400f251d:	424c      	movi.n	a2, 68
+400f251f:	235580        	sext	a5, a5, 15
+400f2522:	748850        	extui	a8, a5, 8, 8
+400f2525:	334122        	s8i	a2, a1, 51
+400f2528:	025c      	movi.n	a2, 80
+400f252a:	344122        	s8i	a2, a1, 52
+400f252d:	4ca022        	movi	a2, 76
+400f2530:	354122        	s8i	a2, a1, 53
+400f2533:	01a022        	movi	a2, 1
+400f2536:	364122        	s8i	a2, a1, 54
+400f2539:	374162        	s8i	a6, a1, 55
+400f253c:	384152        	s8i	a5, a1, 56
+400f253f:	394182        	s8i	a8, a1, 57
+400f2542:	3a4132        	s8i	a3, a1, 58
+400f2545:	3b4172        	s8i	a7, a1, 59
+400f2548:	0020c0        	memw
+400f254b:	0020c0        	memw
+400f254e:	201110        	or	a1, a1, a1
+400f2551:	fc1765        	call8	400ee6c8 <VDUStreamProcessor::send_packet(unsigned char, unsigned short, unsigned char*)>
+400f2554:	ffbc06        	j	400f2448 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x50>
+400f2557:	e87c      	movi.n	a8, -2
+400f2559:	1f8787        	bany	a7, a8, 400f257c <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x184>
+400f255c:	050382        	l8ui	a8, a3, 5
+400f255f:	98dc      	bnez.n	a8, 400f257c <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x184>
+400f2561:	023666        	bnei	a6, 3, 400f2567 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x16f>
+400f2564:	003546        	j	400f263d <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x245>
+400f2567:	2646f6        	bgeui	a6, 4, 400f2591 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x199>
+400f256a:	021666        	bnei	a6, 1, 400f2570 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x178>
+400f256d:	0062c6        	j	400f26fc <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x304>
+400f2570:	022626        	beqi	a6, 2, 400f2576 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x17e>
+400f2573:	005c06        	j	400f26e7 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x2ef>
+400f2576:	02a566        	bnei	a5, 12, 400f257c <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x184>
+400f2579:	0095c6        	j	400f27d4 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x3dc>
+400f257c:	76b881        	l32r	a8, 400d005c <_stext+0x3c>
+400f257f:	130c      	movi.n	a3, 1
+400f2581:	190c      	movi.n	a9, 1
+400f2583:	035d      	mov.n	a5, a3
+400f2585:	925892        	s16i	a9, a8, 0x124
+400f2588:	0020c0        	memw
+400f258b:	0020c0        	memw
+400f258e:	ffd586        	j	400f24e8 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0xf0>
+400f2591:	584626        	beqi	a6, 4, 400f25ed <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x1f5>
+400f2594:	025626        	beqi	a6, 5, 400f259a <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x1a2>
+400f2597:	005306        	j	400f26e7 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x2ef>
+400f259a:	dea566        	bnei	a5, 12, 400f257c <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x184>
+400f259d:	76cf81        	l32r	a8, 400d00dc <_stext+0xbc>
+400f25a0:	070352        	l8ui	a5, a3, 7
+400f25a3:	115580        	slli	a5, a5, 8
+400f25a6:	060392        	l8ui	a9, a3, 6
+400f25a9:	209950        	or	a9, a9, a5
+400f25ac:	18b8      	l32i.n	a11, a8, 4
+400f25ae:	e2c9b0        	remu	a12, a9, a11
+400f25b1:	11ace0        	slli	a10, a12, 2
+400f25b4:	0858      	l32i.n	a5, a8, 0
+400f25b6:	55aa      	add.n	a5, a5, a10
+400f25b8:	0558      	l32i.n	a5, a5, 0
+400f25ba:	a59c      	beqz.n	a5, 400f25d8 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x1e0>
+400f25bc:	0588      	l32i.n	a8, a5, 0
+400f25be:	0218a2        	l16ui	a10, a8, 4
+400f25c1:	0299a7        	bne	a9, a10, 400f25c7 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x1cf>
+400f25c4:	00f806        	j	400f29a8 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x5b0>
+400f25c7:	08a8      	l32i.n	a10, a8, 0
+400f25c9:	ba8c      	beqz.n	a10, 400f25d8 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x1e0>
+400f25cb:	085d      	mov.n	a5, a8
+400f25cd:	0a8d      	mov.n	a8, a10
+400f25cf:	021aa2        	l16ui	a10, a10, 4
+400f25d2:	e2dab0        	remu	a13, a10, a11
+400f25d5:	e81cd7        	beq	a12, a13, 400f25c1 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x1c9>
+400f25d8:	76a181        	l32r	a8, 400d005c <_stext+0x3c>
+400f25db:	230c      	movi.n	a3, 2
+400f25dd:	290c      	movi.n	a9, 2
+400f25df:	035d      	mov.n	a5, a3
+400f25e1:	925892        	s16i	a9, a8, 0x124
+400f25e4:	0020c0        	memw
+400f25e7:	0020c0        	memw
+400f25ea:	ffbe86        	j	400f24e8 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0xf0>
+400f25ed:	8b8566        	bnei	a5, 8, 400f257c <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x184>
+400f25f0:	070382        	l8ui	a8, a3, 7
+400f25f3:	119880        	slli	a9, a8, 8
+400f25f6:	060382        	l8ui	a8, a3, 6
+400f25f9:	208890        	or	a8, a8, a9
+400f25fc:	238880        	sext	a8, a8, 15
+400f25ff:	f43080        	extui	a3, a8, 0, 16
+400f2602:	028866        	bnei	a8, 8, 400f2608 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x210>
+400f2605:	00c5c6        	j	400f2920 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x528>
+400f2608:	02a587        	bge	a5, a8, 400f260e <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x216>
+400f260b:	009f06        	j	400f288b <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x493>
+400f260e:	023866        	bnei	a8, 3, 400f2614 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x21c>
+400f2611:	00bfc6        	j	400f2914 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x51c>
+400f2614:	0248e6        	bgei	a8, 4, 400f261a <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x222>
+400f2617:	002e86        	j	400f26d5 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x2dd>
+400f261a:	025866        	bnei	a8, 5, 400f2620 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x228>
+400f261d:	00cac6        	j	400f294c <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x554>
+400f2620:	0258e6        	bgei	a8, 5, 400f2626 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x22e>
+400f2623:	00c646        	j	400f2940 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x548>
+400f2626:	026866        	bnei	a8, 6, 400f262c <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x234>
+400f2629:	00cac6        	j	400f2958 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x560>
+400f262c:	027826        	beqi	a8, 7, 400f2632 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x23a>
+400f262f:	002d06        	j	400f26e7 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x2ef>
+400f2632:	768a31        	l32r	a3, 400d005c <_stext+0x3c>
+400f2635:	460c      	movi.n	a6, 4
+400f2637:	4b1332        	l16ui	a3, a3, 150
+400f263a:	ffaf86        	j	400f24fc <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x104>
+400f263d:	028526        	beqi	a5, 8, 400f2643 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x24b>
+400f2640:	ffce06        	j	400f257c <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x184>
+400f2643:	768681        	l32r	a8, 400d005c <_stext+0x3c>
+400f2646:	8189      	s32i.n	a8, a1, 32
+400f2648:	01d882        	addmi	a8, a8, 0x100
+400f264b:	2808b2        	l8ui	a11, a8, 40
+400f264e:	342b56        	bnez	a11, 400f2994 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x59c>
+400f2651:	81a8      	l32i.n	a10, a1, 32
+400f2653:	8a1a92        	l16ui	a9, a10, 0x114
+400f2656:	327916        	beqz	a9, 400f2981 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x589>
+400f2659:	070382        	l8ui	a8, a3, 7
+400f265c:	118880        	slli	a8, a8, 8
+400f265f:	060332        	l8ui	a3, a3, 6
+400f2662:	203380        	or	a3, a3, a8
+400f2665:	021397        	beq	a3, a9, 400f266b <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x273>
+400f2668:	00c546        	j	400f2981 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x589>
+400f266b:	20dbb0        	or	a13, a11, a11
+400f266e:	7671c1        	l32r	a12, 400d0034 <_stext+0x14>
+400f2671:	03a0a2        	movi	a10, 3
+400f2674:	0020c0        	memw
+400f2677:	201110        	or	a1, a1, a1
+400f267a:	e02165        	call8	400d2890 <vdpl_runtime::call(unsigned short, unsigned short, unsigned short, unsigned int)>
+400f267d:	0a5d      	mov.n	a5, a10
+400f267f:	8138      	l32i.n	a3, a1, 32
+400f2681:	1e23a2        	l32i	a10, a3, 120
+400f2684:	4a8c      	beqz.n	a10, 400f268c <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x294>
+400f2686:	201110        	or	a1, a1, a1
+400f2689:	95ef65        	call8	40088580 <heap_caps_free>
+400f268c:	8138      	l32i.n	a3, a1, 32
+400f268e:	1f23a2        	l32i	a10, a3, 124
+400f2691:	4a8c      	beqz.n	a10, 400f2699 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x2a1>
+400f2693:	201110        	or	a1, a1, a1
+400f2696:	95eea5        	call8	40088580 <heap_caps_free>
+400f2699:	9ca0c2        	movi	a12, 156
+400f269c:	81a8      	l32i.n	a10, a1, 32
+400f269e:	0b0c      	movi.n	a11, 0
+400f26a0:	201110        	or	a1, a1, a1
+400f26a3:	9a1ee5        	call8	4008c890 <memset>
+400f26a6:	030c      	movi.n	a3, 0
+400f26a8:	05bd      	mov.n	a11, a5
+400f26aa:	8188      	l32i.n	a8, a1, 32
+400f26ac:	77fba1        	l32r	a10, 400d0698 <_stext+0x678>
+400f26af:	8a5832        	s16i	a3, a8, 0x114
+400f26b2:	0020c0        	memw
+400f26b5:	0020c0        	memw
+400f26b8:	201110        	or	a1, a1, a1
+400f26bb:	e97325        	call8	400dbdec <force_debug_log(char const*, ...)>
+400f26be:	068d      	mov.n	a8, a6
+400f26c0:	030c      	movi.n	a3, 0
+400f26c2:	1ae556        	bnez	a5, 400f2874 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x47c>
+400f26c5:	8168      	l32i.n	a6, a1, 32
+400f26c7:	925652        	s16i	a5, a6, 0x124
+400f26ca:	0020c0        	memw
+400f26cd:	086d      	mov.n	a6, a8
+400f26cf:	0020c0        	memw
+400f26d2:	ff8986        	j	400f24fc <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x104>
+400f26d5:	021866        	bnei	a8, 1, 400f26db <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x2e3>
+400f26d8:	009706        	j	400f2938 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x540>
+400f26db:	0228a6        	blti	a8, 2, 400f26e1 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x2e9>
+400f26de:	009286        	j	400f292c <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x534>
+400f26e1:	00a132        	movi	a3, 0x100
+400f26e4:	e14816        	beqz	a8, 400f24fc <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x104>
+400f26e7:	765d81        	l32r	a8, 400d005c <_stext+0x3c>
+400f26ea:	930c      	movi.n	a3, 9
+400f26ec:	990c      	movi.n	a9, 9
+400f26ee:	035d      	mov.n	a5, a3
+400f26f0:	925892        	s16i	a9, a8, 0x124
+400f26f3:	0020c0        	memw
+400f26f6:	0020c0        	memw
+400f26f9:	ff7ac6        	j	400f24e8 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0xf0>
+400f26fc:	e80c      	movi.n	a8, 14
+400f26fe:	021587        	beq	a5, a8, 400f2704 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x30c>
+400f2701:	ff9dc6        	j	400f257c <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x184>
+400f2704:	0d0352        	l8ui	a5, a3, 13
+400f2707:	118580        	slli	a8, a5, 8
+400f270a:	0c0352        	l8ui	a5, a3, 12
+400f270d:	205580        	or	a5, a5, a8
+400f2710:	e68556        	bnez	a5, 400f257c <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x184>
+400f2713:	765251        	l32r	a5, 400d005c <_stext+0x3c>
+400f2716:	8159      	s32i.n	a5, a1, 32
+400f2718:	01d552        	addmi	a5, a5, 0x100
+400f271b:	280552        	l8ui	a5, a5, 40
+400f271e:	363556        	bnez	a5, 400f2a85 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x68d>
+400f2721:	8188      	l32i.n	a8, a1, 32
+400f2723:	8a1852        	l16ui	a5, a8, 0x114
+400f2726:	35b556        	bnez	a5, 400f2a85 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x68d>
+400f2729:	8198      	l32i.n	a9, a1, 32
+400f272b:	77d781        	l32r	a8, 400d0688 <_stext+0x668>
+400f272e:	462952        	l32i	a5, a9, 0x118
+400f2731:	02b857        	bgeu	a8, a5, 400f2737 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x33f>
+400f2734:	00d206        	j	400f2a80 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x688>
+400f2737:	766981        	l32r	a8, 400d00dc <_stext+0xbc>
+400f273a:	070352        	l8ui	a5, a3, 7
+400f273d:	115580        	slli	a5, a5, 8
+400f2740:	060392        	l8ui	a9, a3, 6
+400f2743:	209950        	or	a9, a9, a5
+400f2746:	18b8      	l32i.n	a11, a8, 4
+400f2748:	e2c9b0        	remu	a12, a9, a11
+400f274b:	11ace0        	slli	a10, a12, 2
+400f274e:	0858      	l32i.n	a5, a8, 0
+400f2750:	55aa      	add.n	a5, a5, a10
+400f2752:	0588      	l32i.n	a8, a5, 0
+400f2754:	2cc816        	beqz	a8, 400f2a24 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x62c>
+400f2757:	0858      	l32i.n	a5, a8, 0
+400f2759:	0020c0        	memw
+400f275c:	000586        	j	400f2776 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x37e>
+400f275f:	00          	.byte 00
+400f2760:	00          	.byte 00
+400f2761:	05a8      	l32i.n	a10, a5, 0
+400f2763:	2bda16        	beqz	a10, 400f2a24 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x62c>
+400f2766:	058d      	mov.n	a8, a5
+400f2768:	0a5d      	mov.n	a5, a10
+400f276a:	021aa2        	l16ui	a10, a10, 4
+400f276d:	e2aab0        	remu	a10, a10, a11
+400f2770:	021ca7        	beq	a12, a10, 400f2776 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x37e>
+400f2773:	00ab46        	j	400f2a24 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x62c>
+400f2776:	0215a2        	l16ui	a10, a5, 4
+400f2779:	e49a97        	bne	a10, a9, 400f2761 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x369>
+400f277c:	0858      	l32i.n	a5, a8, 0
+400f277e:	2a2516        	beqz	a5, 400f2a24 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x62c>
+400f2781:	2598      	l32i.n	a9, a5, 8
+400f2783:	3558      	l32i.n	a5, a5, 12
+400f2785:	c05590        	sub	a5, a5, a9
+400f2788:	028526        	beqi	a5, 8, 400f278e <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x396>
+400f278b:	00a546        	j	400f2a24 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x62c>
+400f278e:	0988      	l32i.n	a8, a9, 0
+400f2790:	290816        	beqz	a8, 400f2a24 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x62c>
+400f2793:	1998      	l32i.n	a9, a9, 4
+400f2795:	b199      	s32i.n	a9, a1, 44
+400f2797:	23b8      	l32i.n	a11, a3, 8
+400f2799:	2ed916        	beqz	a9, 400f2a8a <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x692>
+400f279c:	0020c0        	memw
+400f279f:	1938      	l32i.n	a3, a9, 4
+400f27a1:	035d      	mov.n	a5, a3
+400f27a3:	931b      	addi.n	a9, a3, 1
+400f27a5:	b1a8      	l32i.n	a10, a1, 44
+400f27a7:	130c30        	wsr.scompare1	a3
+400f27aa:	01ea92        	s32c1i	a9, a10, 4
+400f27ad:	093d      	mov.n	a3, a9
+400f27af:	ee9957        	bne	a9, a5, 400f27a1 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x3a9>
+400f27b2:	5838      	l32i.n	a3, a8, 20
+400f27b4:	03a052        	movi	a5, 3
+400f27b7:	029b37        	bne	a11, a3, 400f27bd <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x3c5>
+400f27ba:	00b586        	j	400f2a94 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x69c>
+400f27bd:	b1a8      	l32i.n	a10, a1, 44
+400f27bf:	0020c0        	memw
+400f27c2:	772f81        	l32r	a8, 400d0480 <_stext+0x460>
+400f27c5:	0008e0        	callx8	a8
+400f27c8:	8188      	l32i.n	a8, a1, 32
+400f27ca:	8a1832        	l16ui	a3, a8, 0x114
+400f27cd:	280c      	movi.n	a8, 2
+400f27cf:	ffbbc6        	j	400f26c2 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x2ca>
+400f27d2:	00          	.byte 00
+400f27d3:	00          	.byte 00
+400f27d4:	0b0352        	l8ui	a5, a3, 11
+400f27d7:	115580        	slli	a5, a5, 8
+400f27da:	0a0382        	l8ui	a8, a3, 10
+400f27dd:	205850        	or	a5, a8, a5
+400f27e0:	761f81        	l32r	a8, 400d005c <_stext+0x3c>
+400f27e3:	8189      	s32i.n	a8, a1, 32
+400f27e5:	8198      	l32i.n	a9, a1, 32
+400f27e7:	070382        	l8ui	a8, a3, 7
+400f27ea:	118880        	slli	a8, a8, 8
+400f27ed:	0603a2        	l8ui	a10, a3, 6
+400f27f0:	20aa80        	or	a10, a10, a8
+400f27f3:	8a19b2        	l16ui	a11, a9, 0x114
+400f27f6:	185152        	s16i	a5, a1, 48
+400f27f9:	0020c0        	memw
+400f27fc:	080382        	l8ui	a8, a3, 8
+400f27ff:	090392        	l8ui	a9, a3, 9
+400f2802:	223b16        	beqz	a11, 400f2a29 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x631>
+400f2805:	021ab7        	beq	a10, a11, 400f280b <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x413>
+400f2808:	008746        	j	400f2a29 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x631>
+400f280b:	30c1c2        	addi	a12, a1, 48
+400f280e:	763331        	l32r	a3, 400d00dc <_stext+0xbc>
+400f2811:	03ad      	mov.n	a10, a3
+400f2813:	13b8      	l32i.n	a11, a3, 4
+400f2815:	e2b5b0        	remu	a11, a5, a11
+400f2818:	7189      	s32i.n	a8, a1, 28
+400f281a:	6199      	s32i.n	a9, a1, 24
+400f281c:	0020c0        	memw
+400f281f:	773081        	l32r	a8, 400d04e0 <_stext+0x4c0>
+400f2822:	0008e0        	callx8	a8
+400f2825:	7188      	l32i.n	a8, a1, 28
+400f2827:	6198      	l32i.n	a9, a1, 24
+400f2829:	1f7a16        	beqz	a10, 400f2a24 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x62c>
+400f282c:	2a38      	l32i.n	a3, a10, 8
+400f282e:	3a58      	l32i.n	a5, a10, 12
+400f2830:	c05530        	sub	a5, a5, a3
+400f2833:	028526        	beqi	a5, 8, 400f2839 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x441>
+400f2836:	007a86        	j	400f2a24 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x62c>
+400f2839:	0358      	l32i.n	a5, a3, 0
+400f283b:	1e5516        	beqz	a5, 400f2a24 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x62c>
+400f283e:	1338      	l32i.n	a3, a3, 4
+400f2840:	b139      	s32i.n	a3, a1, 44
+400f2842:	1ae316        	beqz	a3, 400f29f4 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x5fc>
+400f2845:	0020c0        	memw
+400f2848:	1338      	l32i.n	a3, a3, 4
+400f284a:	03ad      	mov.n	a10, a3
+400f284c:	b31b      	addi.n	a11, a3, 1
+400f284e:	b1c8      	l32i.n	a12, a1, 44
+400f2850:	130c30        	wsr.scompare1	a3
+400f2853:	01ecb2        	s32c1i	a11, a12, 4
+400f2856:	0b3d      	mov.n	a3, a11
+400f2858:	ee9ba7        	bne	a11, a10, 400f284a <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x452>
+400f285b:	55d8      	l32i.n	a13, a5, 20
+400f285d:	032c      	movi.n	a3, 32
+400f285f:	0233d7        	bltu	a3, a13, 400f2865 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x46d>
+400f2862:	0065c6        	j	400f29fd <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x605>
+400f2865:	01a052        	movi	a5, 1
+400f2868:	0b21a2        	l32i	a10, a1, 44
+400f286b:	0020c0        	memw
+400f286e:	770481        	l32r	a8, 400d0480 <_stext+0x460>
+400f2871:	0008e0        	callx8	a8
+400f2874:	f43050        	extui	a3, a5, 0, 16
+400f2877:	8188      	l32i.n	a8, a1, 32
+400f2879:	925832        	s16i	a3, a8, 0x124
+400f287c:	0020c0        	memw
+400f287f:	0020c0        	memw
+400f2882:	ff1886        	j	400f24e8 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0xf0>
+400f2885:	201110        	or	a1, a1, a1
+400f2888:	94c8e5        	call8	40087518 <__stack_chk_fail>
+400f288b:	e50c      	movi.n	a5, 14
+400f288d:	282587        	blt	a5, a8, 400f28b9 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x4c1>
+400f2890:	d50c      	movi.n	a5, 13
+400f2892:	42a857        	bge	a8, a5, 400f28d8 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x4e0>
+400f2895:	a50c      	movi.n	a5, 10
+400f2897:	022587        	blt	a5, a8, 400f289d <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x4a5>
+400f289a:	0031c6        	j	400f2965 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x56d>
+400f289d:	3a0c      	movi.n	a10, 3
+400f289f:	f5c332        	addi	a3, a3, -11
+400f28a2:	201110        	or	a1, a1, a1
+400f28a5:	3eeda5        	call8	40131780 <heap_caps_get_largest_free_block>
+400f28a8:	1133c0        	slli	a3, a3, 4
+400f28ab:	400300        	ssr	a3
+400f28ae:	9130a0        	srl	a3, a10
+400f28b1:	f43030        	extui	a3, a3, 0, 16
+400f28b4:	460c      	movi.n	a6, 4
+400f28b6:	ff1086        	j	400f24fc <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x104>
+400f28b9:	051c      	movi.n	a5, 16
+400f28bb:	36a587        	bge	a5, a8, 400f28f5 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x4fd>
+400f28be:	11a032        	movi	a3, 17
+400f28c1:	021837        	beq	a8, a3, 400f28c7 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x4cf>
+400f28c4:	ff87c6        	j	400f26e7 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x2ef>
+400f28c7:	00a0a2        	movi	a10, 0
+400f28ca:	201110        	or	a1, a1, a1
+400f28cd:	a013e5        	call8	40092a0c <uxTaskGetStackHighWaterMark>
+400f28d0:	f430a0        	extui	a3, a10, 0, 16
+400f28d3:	460c      	movi.n	a6, 4
+400f28d5:	ff08c6        	j	400f24fc <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x104>
+400f28d8:	75e0a1        	l32r	a10, 400d0058 <_stext+0x38>
+400f28db:	f3c332        	addi	a3, a3, -13
+400f28de:	201110        	or	a1, a1, a1
+400f28e1:	3ee065        	call8	401316e8 <heap_caps_get_free_size>
+400f28e4:	1133c0        	slli	a3, a3, 4
+400f28e7:	400300        	ssr	a3
+400f28ea:	9130a0        	srl	a3, a10
+400f28ed:	f43030        	extui	a3, a3, 0, 16
+400f28f0:	460c      	movi.n	a6, 4
+400f28f2:	ff0186        	j	400f24fc <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x104>
+400f28f5:	75d8a1        	l32r	a10, 400d0058 <_stext+0x38>
+400f28f8:	f1c332        	addi	a3, a3, -15
+400f28fb:	201110        	or	a1, a1, a1
+400f28fe:	3ee825        	call8	40131780 <heap_caps_get_largest_free_block>
+400f2901:	1133c0        	slli	a3, a3, 4
+400f2904:	400300        	ssr	a3
+400f2907:	9130a0        	srl	a3, a10
+400f290a:	f43030        	extui	a3, a3, 0, 16
+400f290d:	460c      	movi.n	a6, 4
+400f290f:	fefa46        	j	400f24fc <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x104>
+400f2912:	00          	.byte 00
+400f2913:	00          	.byte 00
+400f2914:	75d231        	l32r	a3, 400d005c <_stext+0x3c>
+400f2917:	460c      	movi.n	a6, 4
+400f2919:	921332        	l16ui	a3, a3, 0x124
+400f291c:	fef706        	j	400f24fc <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x104>
+400f291f:	00          	.byte 00
+400f2920:	75cf31        	l32r	a3, 400d005c <_stext+0x3c>
+400f2923:	460c      	movi.n	a6, 4
+400f2925:	901332        	l16ui	a3, a3, 0x120
+400f2928:	fef406        	j	400f24fc <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x104>
+400f292b:	00          	.byte 00
+400f292c:	75cc31        	l32r	a3, 400d005c <_stext+0x3c>
+400f292f:	460c      	movi.n	a6, 4
+400f2931:	8a1332        	l16ui	a3, a3, 0x114
+400f2934:	fef106        	j	400f24fc <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x104>
+400f2937:	00          	.byte 00
+400f2938:	330c      	movi.n	a3, 3
+400f293a:	460c      	movi.n	a6, 4
+400f293c:	feef06        	j	400f24fc <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x104>
+400f293f:	00          	.byte 00
+400f2940:	75c731        	l32r	a3, 400d005c <_stext+0x3c>
+400f2943:	460c      	movi.n	a6, 4
+400f2945:	401332        	l16ui	a3, a3, 128
+400f2948:	feec06        	j	400f24fc <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x104>
+400f294b:	00          	.byte 00
+400f294c:	75c431        	l32r	a3, 400d005c <_stext+0x3c>
+400f294f:	460c      	movi.n	a6, 4
+400f2951:	421332        	l16ui	a3, a3, 132
+400f2954:	fee906        	j	400f24fc <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x104>
+400f2957:	00          	.byte 00
+400f2958:	75c131        	l32r	a3, 400d005c <_stext+0x3c>
+400f295b:	460c      	movi.n	a6, 4
+400f295d:	4a1332        	l16ui	a3, a3, 148
+400f2960:	fee606        	j	400f24fc <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x104>
+400f2963:	00          	.byte 00
+400f2964:	00          	.byte 00
+400f2965:	3a0c      	movi.n	a10, 3
+400f2967:	f7c332        	addi	a3, a3, -9
+400f296a:	201110        	or	a1, a1, a1
+400f296d:	3ed7a5        	call8	401316e8 <heap_caps_get_free_size>
+400f2970:	1133c0        	slli	a3, a3, 4
+400f2973:	400300        	ssr	a3
+400f2976:	9130a0        	srl	a3, a10
+400f2979:	f43030        	extui	a3, a3, 0, 16
+400f297c:	460c      	movi.n	a6, 4
+400f297e:	fede86        	j	400f24fc <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x104>
+400f2981:	81c8      	l32i.n	a12, a1, 32
+400f2983:	880c      	movi.n	a8, 8
+400f2985:	830c      	movi.n	a3, 8
+400f2987:	925c82        	s16i	a8, a12, 0x124
+400f298a:	0020c0        	memw
+400f298d:	0020c0        	memw
+400f2990:	fed506        	j	400f24e8 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0xf0>
+400f2993:	00          	.byte 00
+400f2994:	8198      	l32i.n	a9, a1, 32
+400f2996:	730c      	movi.n	a3, 7
+400f2998:	750c      	movi.n	a5, 7
+400f299a:	925932        	s16i	a3, a9, 0x124
+400f299d:	0020c0        	memw
+400f29a0:	053d      	mov.n	a3, a5
+400f29a2:	0020c0        	memw
+400f29a5:	fecfc6        	j	400f24e8 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0xf0>
+400f29a8:	0558      	l32i.n	a5, a5, 0
+400f29aa:	c2a516        	beqz	a5, 400f25d8 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x1e0>
+400f29ad:	2588      	l32i.n	a8, a5, 8
+400f29af:	3558      	l32i.n	a5, a5, 12
+400f29b1:	c05580        	sub	a5, a5, a8
+400f29b4:	028526        	beqi	a5, 8, 400f29ba <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x5c2>
+400f29b7:	ff0746        	j	400f25d8 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x1e0>
+400f29ba:	0858      	l32i.n	a5, a8, 0
+400f29bc:	c18516        	beqz	a5, 400f25d8 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x1e0>
+400f29bf:	18a8      	l32i.n	a10, a8, 4
+400f29c1:	2338      	l32i.n	a3, a3, 8
+400f29c3:	08ba16        	beqz	a10, 400f2a52 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x65a>
+400f29c6:	0020c0        	memw
+400f29c9:	012a82        	l32i	a8, a10, 4
+400f29cc:	089d      	mov.n	a9, a8
+400f29ce:	b81b      	addi.n	a11, a8, 1
+400f29d0:	130c80        	wsr.scompare1	a8
+400f29d3:	01eab2        	s32c1i	a11, a10, 4
+400f29d6:	0b8d      	mov.n	a8, a11
+400f29d8:	f09b97        	bne	a11, a9, 400f29cc <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x5d4>
+400f29db:	5588      	l32i.n	a8, a5, 20
+400f29dd:	50b837        	bgeu	a8, a3, 400f2a31 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x639>
+400f29e0:	76a881        	l32r	a8, 400d0480 <_stext+0x460>
+400f29e3:	0008e0        	callx8	a8
+400f29e6:	350c      	movi.n	a5, 3
+400f29e8:	759d31        	l32r	a3, 400d005c <_stext+0x3c>
+400f29eb:	8139      	s32i.n	a3, a1, 32
+400f29ed:	0020c0        	memw
+400f29f0:	ffa006        	j	400f2874 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x47c>
+400f29f3:	00          	.byte 00
+400f29f4:	55d8      	l32i.n	a13, a5, 20
+400f29f6:	032c      	movi.n	a3, 32
+400f29f8:	150c      	movi.n	a5, 1
+400f29fa:	1e33d7        	bltu	a3, a13, 400f2a1c <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x624>
+400f29fd:	119980        	slli	a9, a9, 8
+400f2a00:	1811c2        	l16ui	a12, a1, 48
+400f2a03:	20b980        	or	a11, a9, a8
+400f2a06:	2a0c      	movi.n	a10, 2
+400f2a08:	201110        	or	a1, a1, a1
+400f2a0b:	dfe865        	call8	400d2890 <vdpl_runtime::call(unsigned short, unsigned short, unsigned short, unsigned int)>
+400f2a0e:	0a5d      	mov.n	a5, a10
+400f2a10:	b138      	l32i.n	a3, a1, 44
+400f2a12:	638c      	beqz.n	a3, 400f2a1c <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x624>
+400f2a14:	03ad      	mov.n	a10, a3
+400f2a16:	769a81        	l32r	a8, 400d0480 <_stext+0x460>
+400f2a19:	0008e0        	callx8	a8
+400f2a1c:	030c      	movi.n	a3, 0
+400f2a1e:	380c      	movi.n	a8, 3
+400f2a20:	ff2786        	j	400f26c2 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x2ca>
+400f2a23:	00          	.byte 00
+400f2a24:	250c      	movi.n	a5, 2
+400f2a26:	ff9286        	j	400f2874 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x47c>
+400f2a29:	850c      	movi.n	a5, 8
+400f2a2b:	ff9146        	j	400f2874 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x47c>
+400f2a2e:	00          	.byte 00
+400f2a2f:	00          	.byte 00
+400f2a30:	00          	.byte 00
+400f2a31:	c08830        	sub	a8, a8, a3
+400f2a34:	a828b6        	bltui	a8, 2, 400f29e0 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x5e8>
+400f2a37:	4558      	l32i.n	a5, a5, 16
+400f2a39:	460c      	movi.n	a6, 4
+400f2a3b:	353a      	add.n	a3, a5, a3
+400f2a3d:	010352        	l8ui	a5, a3, 1
+400f2a40:	115580        	slli	a5, a5, 8
+400f2a43:	000332        	l8ui	a3, a3, 0
+400f2a46:	768e81        	l32r	a8, 400d0480 <_stext+0x460>
+400f2a49:	0008e0        	callx8	a8
+400f2a4c:	203350        	or	a3, a3, a5
+400f2a4f:	feaa46        	j	400f24fc <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x104>
+400f2a52:	5588      	l32i.n	a8, a5, 20
+400f2a54:	053837        	bltu	a8, a3, 400f2a5d <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x665>
+400f2a57:	c08830        	sub	a8, a8, a3
+400f2a5a:	0c28f6        	bgeui	a8, 2, 400f2a6a <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x672>
+400f2a5d:	757f31        	l32r	a3, 400d005c <_stext+0x3c>
+400f2a60:	350c      	movi.n	a5, 3
+400f2a62:	8139      	s32i.n	a3, a1, 32
+400f2a64:	0020c0        	memw
+400f2a67:	ff8246        	j	400f2874 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x47c>
+400f2a6a:	4558      	l32i.n	a5, a5, 16
+400f2a6c:	460c      	movi.n	a6, 4
+400f2a6e:	353a      	add.n	a3, a5, a3
+400f2a70:	010352        	l8ui	a5, a3, 1
+400f2a73:	115580        	slli	a5, a5, 8
+400f2a76:	000332        	l8ui	a3, a3, 0
+400f2a79:	203350        	or	a3, a3, a5
+400f2a7c:	fe9f06        	j	400f24fc <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x104>
+400f2a7f:	00          	.byte 00
+400f2a80:	d50c      	movi.n	a5, 13
+400f2a82:	ff7b86        	j	400f2874 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x47c>
+400f2a85:	750c      	movi.n	a5, 7
+400f2a87:	ff7a46        	j	400f2874 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x47c>
+400f2a8a:	5838      	l32i.n	a3, a8, 20
+400f2a8c:	350c      	movi.n	a5, 3
+400f2a8e:	021b37        	beq	a11, a3, 400f2a94 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x69c>
+400f2a91:	ff4cc6        	j	400f27c8 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x3d0>
+400f2a94:	3f0c      	movi.n	a15, 3
+400f2a96:	81c8      	l32i.n	a12, a1, 32
+400f2a98:	76fde1        	l32r	a14, 400d068c <_stext+0x66c>
+400f2a9b:	76fdd1        	l32r	a13, 400d0690 <_stext+0x670>
+400f2a9e:	48a8      	l32i.n	a10, a8, 16
+400f2aa0:	201110        	or	a1, a1, a1
+400f2aa3:	e73d65        	call8	400d9e78 <vdpl::load(unsigned char const*, unsigned int, vdpl::Image&, void* (*)(unsigned int, bool), void (*)(void*), unsigned int)>
+400f2aa6:	0a5d      	mov.n	a5, a10
+400f2aa8:	9afc      	bnez.n	a10, 400f2ae5 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x6ed>
+400f2aaa:	7562c1        	l32r	a12, 400d0034 <_stext+0x14>
+400f2aad:	0add      	mov.n	a13, a10
+400f2aaf:	0abd      	mov.n	a11, a10
+400f2ab1:	1a0c      	movi.n	a10, 1
+400f2ab3:	201110        	or	a1, a1, a1
+400f2ab6:	dfdda5        	call8	400d2890 <vdpl_runtime::call(unsigned short, unsigned short, unsigned short, unsigned int)>
+400f2ab9:	8138      	l32i.n	a3, a1, 32
+400f2abb:	0a5d      	mov.n	a5, a10
+400f2abd:	1e23a2        	l32i	a10, a3, 120
+400f2ac0:	95ac      	beqz.n	a5, 400f2aed <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x6f5>
+400f2ac2:	4a8c      	beqz.n	a10, 400f2aca <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x6d2>
+400f2ac4:	201110        	or	a1, a1, a1
+400f2ac7:	95aba5        	call8	40088580 <heap_caps_free>
+400f2aca:	8138      	l32i.n	a3, a1, 32
+400f2acc:	1f23a2        	l32i	a10, a3, 124
+400f2acf:	005a16        	beqz	a10, 400f2ad8 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x6e0>
+400f2ad2:	201110        	or	a1, a1, a1
+400f2ad5:	95aaa5        	call8	40088580 <heap_caps_free>
+400f2ad8:	9ca0c2        	movi	a12, 156
+400f2adb:	81a8      	l32i.n	a10, a1, 32
+400f2add:	0b0c      	movi.n	a11, 0
+400f2adf:	201110        	or	a1, a1, a1
+400f2ae2:	99dae5        	call8	4008c890 <memset>
+400f2ae5:	b1c8      	l32i.n	a12, a1, 44
+400f2ae7:	cd2c56        	bnez	a12, 400f27bd <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x3c5>
+400f2aea:	ff3686        	j	400f27c8 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x3d0>
+400f2aed:	8188      	l32i.n	a8, a1, 32
+400f2aef:	0aed      	mov.n	a14, a10
+400f2af1:	462832        	l32i	a3, a8, 0x118
+400f2af4:	331b      	addi.n	a3, a3, 1
+400f2af6:	f4b030        	extui	a11, a3, 0, 16
+400f2af9:	81a8      	l32i.n	a10, a1, 32
+400f2afb:	482882        	l32i	a8, a8, 0x120
+400f2afe:	881b      	addi.n	a8, a8, 1
+400f2b00:	262a92        	l32i	a9, a10, 152
+400f2b03:	466a32        	s32i	a3, a10, 0x118
+400f2b06:	8a5a32        	s16i	a3, a10, 0x114
+400f2b09:	0020c0        	memw
+400f2b0c:	486a82        	s32i	a8, a10, 0x120
+400f2b0f:	2199      	s32i.n	a9, a1, 8
+400f2b11:	212a32        	l32i	a3, a10, 132
+400f2b14:	1139      	s32i.n	a3, a1, 4
+400f2b16:	1f2a32        	l32i	a3, a10, 124
+400f2b19:	0139      	s32i.n	a3, a1, 0
+400f2b1b:	202af2        	l32i	a15, a10, 128
+400f2b1e:	252ad2        	l32i	a13, a10, 148
+400f2b21:	232ac2        	l32i	a12, a10, 140
+400f2b24:	76dca1        	l32r	a10, 400d0694 <_stext+0x674>
+400f2b27:	0020c0        	memw
+400f2b2a:	201110        	or	a1, a1, a1
+400f2b2d:	e92be5        	call8	400dbdec <force_debug_log(char const*, ...)>
+400f2b30:	ffec46        	j	400f2ae5 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x6ed>
+400f2b33:	b158      	l32i.n	a5, a1, 44
+400f2b35:	758c      	beqz.n	a5, 400f2b40 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x748>
+400f2b37:	20a550        	or	a10, a5, a5
+400f2b3a:	765181        	l32r	a8, 400d0480 <_stext+0x460>
+400f2b3d:	0008e0        	callx8	a8
+400f2b40:	02ad      	mov.n	a10, a2
+400f2b42:	201110        	or	a1, a1, a1
+400f2b45:	6088a5        	call8	401533d0 <_Unwind_Resume>
+400f2b48:	fff9c6        	j	400f2b33 <VDUStreamProcessor::vdu_sys_vdplet(bool)+0x73b>
+	...
+
+vdpl_runtime::call(unsigned short, unsigned short, unsigned short, unsigned int)
+400d2890:	008136        	entry	a1, 64
+400d2893:	f5f261        	l32r	a6, 400d005c <_stext+0x3c>
+400d2896:	028d      	mov.n	a8, a2
+400d2898:	01d692        	addmi	a9, a6, 0x100
+400d289b:	720c      	movi.n	a2, 7
+400d289d:	280972        	l8ui	a7, a9, 40
+400d28a0:	0f9756        	bnez	a7, 400d299d <vdpl_runtime::call(unsigned short, unsigned short, unsigned short, unsigned int)+0x10d>
+400d28a3:	820c      	movi.n	a2, 8
+400d28a5:	2526a2        	l32i	a10, a6, 148
+400d28a8:	0f1a16        	beqz	a10, 400d299d <vdpl_runtime::call(unsigned short, unsigned short, unsigned short, unsigned int)+0x10d>
+400d28ab:	0d5172        	s16i	a7, a1, 26
+400d28ae:	071c      	movi.n	a7, 16
+400d28b0:	0b5132        	s16i	a3, a1, 22
+400d28b3:	0020c0        	memw
+400d28b6:	130c      	movi.n	a3, 1
+400d28b8:	f5df21        	l32r	a2, 400d0034 <_stext+0x14>
+400d28bb:	4179      	s32i.n	a7, a1, 16
+400d28bd:	0a5182        	s16i	a8, a1, 20
+400d28c0:	0c5142        	s16i	a4, a1, 24
+400d28c3:	7159      	s32i.n	a5, a1, 28
+400d28c5:	284932        	s8i	a3, a9, 40
+400d28c8:	935642        	s16i	a4, a6, 0x126
+400d28cb:	0020c0        	memw
+400d28ce:	021427        	beq	a4, a2, 400d28d4 <vdpl_runtime::call(unsigned short, unsigned short, unsigned short, unsigned int)+0x44>
+400d28d1:	0033c6        	j	400d29a4 <vdpl_runtime::call(unsigned short, unsigned short, unsigned short, unsigned int)+0x114>
+400d28d4:	0020c0        	memw
+400d28d7:	002000        	isync
+400d28da:	10c1b2        	addi	a11, a1, 16
+400d28dd:	70c672        	addi	a7, a6, 112
+400d28e0:	252622        	l32i	a2, a6, 148
+400d28e3:	203660        	or	a3, a6, a6
+400d28e6:	00a052        	movi	a5, 0
+400d28e9:	f5fea1        	l32r	a10, 400d00e4 <_stext+0xc4>
+400d28ec:	036192        	s32i	a9, a1, 12
+400d28ef:	0020c0        	memw
+400d28f2:	0002e0        	callx8	a2
+400d28f5:	0a2d      	mov.n	a2, a10
+400d28f7:	fef725        	call8	400d1868 <vdpl_runtime::close_frame()>
+400d28fa:	3198      	l32i.n	a9, a1, 12
+400d28fc:	282342        	l32i	a4, a3, 160
+400d28ff:	276352        	s32i	a5, a3, 156
+400d2902:	286352        	s32i	a5, a3, 160
+400d2905:	849c      	beqz.n	a4, 400d2921 <vdpl_runtime::call(unsigned short, unsigned short, unsigned short, unsigned int)+0x91>
+400d2907:	0020c0        	memw
+400d290a:	1488      	l32i.n	a8, a4, 4
+400d290c:	08ad      	mov.n	a10, a8
+400d290e:	b80b      	addi.n	a11, a8, -1
+400d2910:	130c80        	wsr.scompare1	a8
+400d2913:	01e4b2        	s32c1i	a11, a4, 4
+400d2916:	0b8d      	mov.n	a8, a11
+400d2918:	f09ba7        	bne	a11, a10, 400d290c <vdpl_runtime::call(unsigned short, unsigned short, unsigned short, unsigned int)+0x7c>
+400d291b:	021a66        	bnei	a10, 1, 400d2921 <vdpl_runtime::call(unsigned short, unsigned short, unsigned short, unsigned int)+0x91>
+400d291e:	002d06        	j	400d29d6 <vdpl_runtime::call(unsigned short, unsigned short, unsigned short, unsigned int)+0x146>
+400d2921:	1cc332        	addi	a3, a3, 28
+400d2924:	226352        	s32i	a5, a3, 136
+400d2927:	236352        	s32i	a5, a3, 140
+400d292a:	246352        	s32i	a5, a3, 144
+400d292d:	256352        	s32i	a5, a3, 148
+400d2930:	4c5352        	s16i	a5, a3, 152
+400d2933:	0020c0        	memw
+400d2936:	c29737        	bne	a7, a3, 400d28fc <vdpl_runtime::call(unsigned short, unsigned short, unsigned short, unsigned int)+0x6c>
+400d2939:	442632        	l32i	a3, a6, 0x110
+400d293c:	436652        	s32i	a5, a6, 0x10c
+400d293f:	446652        	s32i	a5, a6, 0x110
+400d2942:	04a316        	beqz	a3, 400d2990 <vdpl_runtime::call(unsigned short, unsigned short, unsigned short, unsigned int)+0x100>
+400d2945:	0020c0        	memw
+400d2948:	1348      	l32i.n	a4, a3, 4
+400d294a:	740b      	addi.n	a7, a4, -1
+400d294c:	045d      	mov.n	a5, a4
+400d294e:	078d      	mov.n	a8, a7
+400d2950:	130c40        	wsr.scompare1	a4
+400d2953:	01e382        	s32c1i	a8, a3, 4
+400d2956:	c07850        	sub	a7, a8, a5
+400d2959:	084d      	mov.n	a4, a8
+400d295b:	feb756        	bnez	a7, 400d294a <vdpl_runtime::call(unsigned short, unsigned short, unsigned short, unsigned int)+0xba>
+400d295e:	2e1566        	bnei	a5, 1, 400d2990 <vdpl_runtime::call(unsigned short, unsigned short, unsigned short, unsigned int)+0x100>
+400d2961:	0348      	l32i.n	a4, a3, 0
+400d2963:	03ad      	mov.n	a10, a3
+400d2965:	022442        	l32i	a4, a4, 8
+400d2968:	036192        	s32i	a9, a1, 12
+400d296b:	0020c0        	memw
+400d296e:	0004e0        	callx8	a4
+400d2971:	0020c0        	memw
+400d2974:	2348      	l32i.n	a4, a3, 8
+400d2976:	032192        	l32i	a9, a1, 12
+400d2979:	740b      	addi.n	a7, a4, -1
+400d297b:	045d      	mov.n	a5, a4
+400d297d:	078d      	mov.n	a8, a7
+400d297f:	130c40        	wsr.scompare1	a4
+400d2982:	02e382        	s32c1i	a8, a3, 8
+400d2985:	084d      	mov.n	a4, a8
+400d2987:	ee9857        	bne	a8, a5, 400d2979 <vdpl_runtime::call(unsigned short, unsigned short, unsigned short, unsigned int)+0xe9>
+400d298a:	021566        	bnei	a5, 1, 400d2990 <vdpl_runtime::call(unsigned short, unsigned short, unsigned short, unsigned int)+0x100>
+400d298d:	002c46        	j	400d2a42 <vdpl_runtime::call(unsigned short, unsigned short, unsigned short, unsigned int)+0x1b2>
+400d2990:	f37c      	movi.n	a3, -1
+400d2992:	935632        	s16i	a3, a6, 0x126
+400d2995:	030c      	movi.n	a3, 0
+400d2997:	284932        	s8i	a3, a9, 40
+400d299a:	0020c0        	memw
+400d299d:	0020c0        	memw
+400d29a0:	f01d      	retw.n
+400d29a2:	00          	.byte 00
+400d29a3:	00          	.byte 00
+400d29a4:	f5ce31        	l32r	a3, 400d00dc <_stext+0xbc>
+400d29a7:	1388      	l32i.n	a8, a3, 4
+400d29a9:	e2a480        	remu	a10, a4, a8
+400d29ac:	115ae0        	slli	a5, a10, 2
+400d29af:	0328      	l32i.n	a2, a3, 0
+400d29b1:	225a      	add.n	a2, a2, a5
+400d29b3:	0278      	l32i.n	a7, a2, 0
+400d29b5:	f1b716        	beqz	a7, 400d28d4 <vdpl_runtime::call(unsigned short, unsigned short, unsigned short, unsigned int)+0x44>
+400d29b8:	0758      	l32i.n	a5, a7, 0
+400d29ba:	021522        	l16ui	a2, a5, 4
+400d29bd:	541247        	beq	a2, a4, 400d2a15 <vdpl_runtime::call(unsigned short, unsigned short, unsigned short, unsigned int)+0x185>
+400d29c0:	057d      	mov.n	a7, a5
+400d29c2:	0538      	l32i.n	a3, a5, 0
+400d29c4:	f0c316        	beqz	a3, 400d28d4 <vdpl_runtime::call(unsigned short, unsigned short, unsigned short, unsigned int)+0x44>
+400d29c7:	035d      	mov.n	a5, a3
+400d29c9:	021322        	l16ui	a2, a3, 4
+400d29cc:	e23280        	remu	a3, a2, a8
+400d29cf:	ea1a37        	beq	a10, a3, 400d29bd <vdpl_runtime::call(unsigned short, unsigned short, unsigned short, unsigned int)+0x12d>
+400d29d2:	ffbf86        	j	400d28d4 <vdpl_runtime::call(unsigned short, unsigned short, unsigned short, unsigned int)+0x44>
+400d29d5:	00          	.byte 00
+400d29d6:	0488      	l32i.n	a8, a4, 0
+400d29d8:	04ad      	mov.n	a10, a4
+400d29da:	2888      	l32i.n	a8, a8, 8
+400d29dc:	036192        	s32i	a9, a1, 12
+400d29df:	0020c0        	memw
+400d29e2:	0008e0        	callx8	a8
+400d29e5:	0020c0        	memw
+400d29e8:	2488      	l32i.n	a8, a4, 8
+400d29ea:	032192        	l32i	a9, a1, 12
+400d29ed:	08ad      	mov.n	a10, a8
+400d29ef:	b80b      	addi.n	a11, a8, -1
+400d29f1:	130c80        	wsr.scompare1	a8
+400d29f4:	02e4b2        	s32c1i	a11, a4, 8
+400d29f7:	0b8d      	mov.n	a8, a11
+400d29f9:	f09ba7        	bne	a11, a10, 400d29ed <vdpl_runtime::call(unsigned short, unsigned short, unsigned short, unsigned int)+0x15d>
+400d29fc:	021a26        	beqi	a10, 1, 400d2a02 <vdpl_runtime::call(unsigned short, unsigned short, unsigned short, unsigned int)+0x172>
+400d29ff:	ffc786        	j	400d2921 <vdpl_runtime::call(unsigned short, unsigned short, unsigned short, unsigned int)+0x91>
+400d2a02:	0488      	l32i.n	a8, a4, 0
+400d2a04:	04ad      	mov.n	a10, a4
+400d2a06:	3848      	l32i.n	a4, a8, 12
+400d2a08:	3199      	s32i.n	a9, a1, 12
+400d2a0a:	0020c0        	memw
+400d2a0d:	0004e0        	callx8	a4
+400d2a10:	3198      	l32i.n	a9, a1, 12
+400d2a12:	ffc2c6        	j	400d2921 <vdpl_runtime::call(unsigned short, unsigned short, unsigned short, unsigned int)+0x91>
+400d2a15:	0728      	l32i.n	a2, a7, 0
+400d2a17:	eb9216        	beqz	a2, 400d28d4 <vdpl_runtime::call(unsigned short, unsigned short, unsigned short, unsigned int)+0x44>
+400d2a1a:	2238      	l32i.n	a3, a2, 8
+400d2a1c:	3228      	l32i.n	a2, a2, 12
+400d2a1e:	c02230        	sub	a2, a2, a3
+400d2a21:	028226        	beqi	a2, 8, 400d2a27 <vdpl_runtime::call(unsigned short, unsigned short, unsigned short, unsigned int)+0x197>
+400d2a24:	ffab06        	j	400d28d4 <vdpl_runtime::call(unsigned short, unsigned short, unsigned short, unsigned int)+0x44>
+400d2a27:	0328      	l32i.n	a2, a3, 0
+400d2a29:	13b8      	l32i.n	a11, a3, 4
+400d2a2b:	f5ada1        	l32r	a10, 400d00e0 <_stext+0xc0>
+400d2a2e:	436622        	s32i	a2, a6, 0x10c
+400d2a31:	3199      	s32i.n	a9, a1, 12
+400d2a33:	0020c0        	memw
+400d2a36:	f5ac81        	l32r	a8, 400d00e8 <_stext+0xc8>
+400d2a39:	0008e0        	callx8	a8
+400d2a3c:	3198      	l32i.n	a9, a1, 12
+400d2a3e:	ffa486        	j	400d28d4 <vdpl_runtime::call(unsigned short, unsigned short, unsigned short, unsigned int)+0x44>
+400d2a41:	00          	.byte 00
+400d2a42:	0348      	l32i.n	a4, a3, 0
+400d2a44:	03ad      	mov.n	a10, a3
+400d2a46:	3438      	l32i.n	a3, a4, 12
+400d2a48:	3199      	s32i.n	a9, a1, 12
+400d2a4a:	0020c0        	memw
+400d2a4d:	0003e0        	callx8	a3
+400d2a50:	3198      	l32i.n	a9, a1, 12
+400d2a52:	ffce86        	j	400d2990 <vdpl_runtime::call(unsigned short, unsigned short, unsigned short, unsigned int)+0x100>
+400d2a55:	000000        	ill
+
+vdpl_runtime::acquire(void*, unsigned short, unsigned short, unsigned int, unsigned int, vdplet_view_v1*)
+400dd708:	008136        	entry	a1, 64
+400dd70b:	ca5491        	l32r	a9, 400d005c <_stext+0x3c>
+400dd70e:	01d922        	addmi	a2, a9, 0x100
+400dd711:	f43030        	extui	a3, a3, 0, 16
+400dd714:	f44040        	extui	a4, a4, 0, 16
+400dd717:	280282        	l8ui	a8, a2, 40
+400dd71a:	120c      	movi.n	a2, 1
+400dd71c:	308820        	xor	a8, a8, a2
+400dd71f:	748080        	extui	a8, a8, 0, 8
+400dd722:	050856        	bnez	a8, 400dd776 <vdpl_runtime::acquire(void*, unsigned short, unsigned short, unsigned int, unsigned int, vdplet_view_v1*)+0x6e>
+400dd725:	120c      	movi.n	a2, 1
+400dd727:	838270        	moveqz	a8, a2, a7
+400dd72a:	048856        	bnez	a8, 400dd776 <vdpl_runtime::acquire(void*, unsigned short, unsigned short, unsigned int, unsigned int, vdplet_view_v1*)+0x6e>
+400dd72d:	0788      	l32i.n	a8, a7, 0
+400dd72f:	3a1c      	movi.n	a10, 19
+400dd731:	3fba87        	bgeu	a10, a8, 400dd774 <vdpl_runtime::acquire(void*, unsigned short, unsigned short, unsigned int, unsigned int, vdplet_view_v1*)+0x6c>
+400dd734:	840b      	addi.n	a8, a4, -1
+400dd736:	f48080        	extui	a8, a8, 0, 16
+400dd739:	3728f6        	bgeui	a8, 2, 400dd774 <vdpl_runtime::acquire(void*, unsigned short, unsigned short, unsigned int, unsigned int, vdplet_view_v1*)+0x6c>
+400dd73c:	052466        	bnei	a4, 2, 400dd745 <vdpl_runtime::acquire(void*, unsigned short, unsigned short, unsigned int, unsigned int, vdplet_view_v1*)+0x3d>
+400dd73f:	931982        	l16ui	a8, a9, 0x126
+400dd742:	2e1837        	beq	a8, a3, 400dd774 <vdpl_runtime::acquire(void*, unsigned short, unsigned short, unsigned int, unsigned int, vdplet_view_v1*)+0x6c>
+400dd745:	ca6581        	l32r	a8, 400d00dc <_stext+0xbc>
+400dd748:	18d8      	l32i.n	a13, a8, 4
+400dd74a:	e2c3d0        	remu	a12, a3, a13
+400dd74d:	11ace0        	slli	a10, a12, 2
+400dd750:	0828      	l32i.n	a2, a8, 0
+400dd752:	22aa      	add.n	a2, a2, a10
+400dd754:	02b8      	l32i.n	a11, a2, 0
+400dd756:	8b9c      	beqz.n	a11, 400dd772 <vdpl_runtime::acquire(void*, unsigned short, unsigned short, unsigned int, unsigned int, vdplet_view_v1*)+0x6a>
+400dd758:	0b88      	l32i.n	a8, a11, 0
+400dd75a:	021822        	l16ui	a2, a8, 4
+400dd75d:	191237        	beq	a2, a3, 400dd77a <vdpl_runtime::acquire(void*, unsigned short, unsigned short, unsigned int, unsigned int, vdplet_view_v1*)+0x72>
+400dd760:	08bd      	mov.n	a11, a8
+400dd762:	0828      	l32i.n	a2, a8, 0
+400dd764:	a28c      	beqz.n	a2, 400dd772 <vdpl_runtime::acquire(void*, unsigned short, unsigned short, unsigned int, unsigned int, vdplet_view_v1*)+0x6a>
+400dd766:	208220        	or	a8, a2, a2
+400dd769:	021222        	l16ui	a2, a2, 4
+400dd76c:	e2a2d0        	remu	a10, a2, a13
+400dd76f:	ea1ca7        	beq	a12, a10, 400dd75d <vdpl_runtime::acquire(void*, unsigned short, unsigned short, unsigned int, unsigned int, vdplet_view_v1*)+0x55>
+400dd772:	220c      	movi.n	a2, 2
+400dd774:	f01d      	retw.n
+400dd776:	120c      	movi.n	a2, 1
+400dd778:	f01d      	retw.n
+400dd77a:	0b88      	l32i.n	a8, a11, 0
+400dd77c:	ff2816        	beqz	a8, 400dd772 <vdpl_runtime::acquire(void*, unsigned short, unsigned short, unsigned int, unsigned int, vdplet_view_v1*)+0x6a>
+400dd77f:	220c      	movi.n	a2, 2
+400dd781:	28a8      	l32i.n	a10, a8, 8
+400dd783:	3888      	l32i.n	a8, a8, 12
+400dd785:	c088a0        	sub	a8, a8, a10
+400dd788:	e88866        	bnei	a8, 8, 400dd774 <vdpl_runtime::acquire(void*, unsigned short, unsigned short, unsigned int, unsigned int, vdplet_view_v1*)+0x6c>
+400dd78b:	0ac8      	l32i.n	a12, a10, 0
+400dd78d:	fe3c16        	beqz	a12, 400dd774 <vdpl_runtime::acquire(void*, unsigned short, unsigned short, unsigned int, unsigned int, vdplet_view_v1*)+0x6c>
+400dd790:	1a88      	l32i.n	a8, a10, 4
+400dd792:	289c      	beqz.n	a8, 400dd7a8 <vdpl_runtime::acquire(void*, unsigned short, unsigned short, unsigned int, unsigned int, vdplet_view_v1*)+0xa0>
+400dd794:	0020c0        	memw
+400dd797:	1828      	l32i.n	a2, a8, 4
+400dd799:	02ad      	mov.n	a10, a2
+400dd79b:	b21b      	addi.n	a11, a2, 1
+400dd79d:	130c20        	wsr.scompare1	a2
+400dd7a0:	01e8b2        	s32c1i	a11, a8, 4
+400dd7a3:	0b2d      	mov.n	a2, a11
+400dd7a5:	f09ba7        	bne	a11, a10, 400dd799 <vdpl_runtime::acquire(void*, unsigned short, unsigned short, unsigned int, unsigned int, vdplet_view_v1*)+0x91>
+400dd7a8:	022466        	bnei	a4, 2, 400dd7ae <vdpl_runtime::acquire(void*, unsigned short, unsigned short, unsigned int, unsigned int, vdplet_view_v1*)+0xa6>
+400dd7ab:	002f46        	j	400dd86c <vdpl_runtime::acquire(void*, unsigned short, unsigned short, unsigned int, unsigned int, vdplet_view_v1*)+0x164>
+400dd7ae:	5cd8      	l32i.n	a13, a12, 20
+400dd7b0:	320c      	movi.n	a2, 3
+400dd7b2:	7e3d57        	bltu	a13, a5, 400dd834 <vdpl_runtime::acquire(void*, unsigned short, unsigned short, unsigned int, unsigned int, vdplet_view_v1*)+0x12c>
+400dd7b5:	c0dd50        	sub	a13, a13, a5
+400dd7b8:	050626        	beqi	a6, -1, 400dd7c1 <vdpl_runtime::acquire(void*, unsigned short, unsigned short, unsigned int, unsigned int, vdplet_view_v1*)+0xb9>
+400dd7bb:	753d67        	bltu	a13, a6, 400dd834 <vdpl_runtime::acquire(void*, unsigned short, unsigned short, unsigned int, unsigned int, vdplet_view_v1*)+0x12c>
+400dd7be:	20d660        	or	a13, a6, a6
+400dd7c1:	cb2e21        	l32r	a2, 400d047c <_stext+0x45c>
+400dd7c4:	00a0e2        	movi	a14, 0
+400dd7c7:	04a062        	movi	a6, 4
+400dd7ca:	22a8      	l32i.n	a10, a2, 8
+400dd7cc:	094a16        	beqz	a10, 400dd864 <vdpl_runtime::acquire(void*, unsigned short, unsigned short, unsigned int, unsigned int, vdplet_view_v1*)+0x15c>
+400dd7cf:	02a8      	l32i.n	a10, a2, 0
+400dd7d1:	6f1ca7        	beq	a12, a10, 400dd844 <vdpl_runtime::acquire(void*, unsigned short, unsigned short, unsigned int, unsigned int, vdplet_view_v1*)+0x13c>
+400dd7d4:	1cc222        	addi	a2, a2, 28
+400dd7d7:	660b      	addi.n	a6, a6, -1
+400dd7d9:	fed656        	bnez	a6, 400dd7ca <vdpl_runtime::acquire(void*, unsigned short, unsigned short, unsigned int, unsigned int, vdplet_view_v1*)+0xc2>
+400dd7dc:	0a8e16        	beqz	a14, 400dd888 <vdpl_runtime::acquire(void*, unsigned short, unsigned short, unsigned int, unsigned int, vdplet_view_v1*)+0x180>
+400dd7df:	472962        	l32i	a6, a9, 0x11c
+400dd7e2:	d20c      	movi.n	a2, 13
+400dd7e4:	4c0626        	beqi	a6, -1, 400dd834 <vdpl_runtime::acquire(void*, unsigned short, unsigned short, unsigned int, unsigned int, vdplet_view_v1*)+0x12c>
+400dd7e7:	08bd      	mov.n	a11, a8
+400dd7e9:	ae4b      	addi.n	a10, a14, 4
+400dd7eb:	0ec9      	s32i.n	a12, a14, 0
+400dd7ed:	020c      	movi.n	a2, 0
+400dd7ef:	4189      	s32i.n	a8, a1, 16
+400dd7f1:	3199      	s32i.n	a9, a1, 12
+400dd7f3:	51c9      	s32i.n	a12, a1, 20
+400dd7f5:	61d9      	s32i.n	a13, a1, 24
+400dd7f7:	71e9      	s32i.n	a14, a1, 28
+400dd7f9:	0020c0        	memw
+400dd7fc:	ca3b81        	l32r	a8, 400d00e8 <_stext+0xc8>
+400dd7ff:	0008e0        	callx8	a8
+400dd802:	3198      	l32i.n	a9, a1, 12
+400dd804:	71e8      	l32i.n	a14, a1, 28
+400dd806:	472962        	l32i	a6, a9, 0x11c
+400dd809:	661b      	addi.n	a6, a6, 1
+400dd80b:	61d8      	l32i.n	a13, a1, 24
+400dd80d:	51c8      	l32i.n	a12, a1, 20
+400dd80f:	0c5e32        	s16i	a3, a14, 24
+400dd812:	0020c0        	memw
+400dd815:	3e59      	s32i.n	a5, a14, 12
+400dd817:	4c38      	l32i.n	a3, a12, 16
+400dd819:	335a      	add.n	a3, a3, a5
+400dd81b:	451c      	movi.n	a5, 20
+400dd81d:	4ed9      	s32i.n	a13, a14, 16
+400dd81f:	5e49      	s32i.n	a4, a14, 20
+400dd821:	476962        	s32i	a6, a9, 0x11c
+400dd824:	2e69      	s32i.n	a6, a14, 8
+400dd826:	4188      	l32i.n	a8, a1, 16
+400dd828:	0759      	s32i.n	a5, a7, 0
+400dd82a:	1769      	s32i.n	a6, a7, 4
+400dd82c:	2739      	s32i.n	a3, a7, 8
+400dd82e:	0367d2        	s32i	a13, a7, 12
+400dd831:	046742        	s32i	a4, a7, 16
+400dd834:	f3c816        	beqz	a8, 400dd774 <vdpl_runtime::acquire(void*, unsigned short, unsigned short, unsigned int, unsigned int, vdplet_view_v1*)+0x6c>
+400dd837:	08ad      	mov.n	a10, a8
+400dd839:	0020c0        	memw
+400dd83c:	cb1181        	l32r	a8, 400d0480 <_stext+0x460>
+400dd83f:	0008e0        	callx8	a8
+400dd842:	f01d      	retw.n
+400dd844:	042426        	beqi	a4, 2, 400dd84c <vdpl_runtime::acquire(void*, unsigned short, unsigned short, unsigned int, unsigned int, vdplet_view_v1*)+0x144>
+400dd847:	52a8      	l32i.n	a10, a2, 20
+400dd849:	872a66        	bnei	a10, 2, 400dd7d4 <vdpl_runtime::acquire(void*, unsigned short, unsigned short, unsigned int, unsigned int, vdplet_view_v1*)+0xcc>
+400dd84c:	32a8      	l32i.n	a10, a2, 12
+400dd84e:	c0fa50        	sub	a15, a10, a5
+400dd851:	c0b5a0        	sub	a11, a5, a10
+400dd854:	223a57        	bltu	a10, a5, 400dd87a <vdpl_runtime::acquire(void*, unsigned short, unsigned short, unsigned int, unsigned int, vdplet_view_v1*)+0x172>
+400dd857:	023fd7        	bltu	a15, a13, 400dd85d <vdpl_runtime::acquire(void*, unsigned short, unsigned short, unsigned int, unsigned int, vdplet_view_v1*)+0x155>
+400dd85a:	ffdd86        	j	400dd7d4 <vdpl_runtime::acquire(void*, unsigned short, unsigned short, unsigned int, unsigned int, vdplet_view_v1*)+0xcc>
+400dd85d:	720c      	movi.n	a2, 7
+400dd85f:	fff446        	j	400dd834 <vdpl_runtime::acquire(void*, unsigned short, unsigned short, unsigned int, unsigned int, vdplet_view_v1*)+0x12c>
+400dd862:	00          	.byte 00
+400dd863:	00          	.byte 00
+400dd864:	83e2e0        	moveqz	a14, a2, a14
+400dd867:	ffda46        	j	400dd7d4 <vdpl_runtime::acquire(void*, unsigned short, unsigned short, unsigned int, unsigned int, vdplet_view_v1*)+0xcc>
+400dd86a:	00          	.byte 00
+400dd86b:	00          	.byte 00
+400dd86c:	432922        	l32i	a2, a9, 0x10c
+400dd86f:	021c27        	beq	a12, a2, 400dd875 <vdpl_runtime::acquire(void*, unsigned short, unsigned short, unsigned int, unsigned int, vdplet_view_v1*)+0x16d>
+400dd872:	ffce06        	j	400dd7ae <vdpl_runtime::acquire(void*, unsigned short, unsigned short, unsigned int, unsigned int, vdplet_view_v1*)+0xa6>
+400dd875:	120c      	movi.n	a2, 1
+400dd877:	ffee46        	j	400dd834 <vdpl_runtime::acquire(void*, unsigned short, unsigned short, unsigned int, unsigned int, vdplet_view_v1*)+0x12c>
+400dd87a:	42a8      	l32i.n	a10, a2, 16
+400dd87c:	023ba7        	bltu	a11, a10, 400dd882 <vdpl_runtime::acquire(void*, unsigned short, unsigned short, unsigned int, unsigned int, vdplet_view_v1*)+0x17a>
+400dd87f:	ffd446        	j	400dd7d4 <vdpl_runtime::acquire(void*, unsigned short, unsigned short, unsigned int, unsigned int, vdplet_view_v1*)+0xcc>
+400dd882:	720c      	movi.n	a2, 7
+400dd884:	ffeb06        	j	400dd834 <vdpl_runtime::acquire(void*, unsigned short, unsigned short, unsigned int, unsigned int, vdplet_view_v1*)+0x12c>
+400dd887:	00          	.byte 00
+400dd888:	d20c      	movi.n	a2, 13
+400dd88a:	ffe986        	j	400dd834 <vdpl_runtime::acquire(void*, unsigned short, unsigned short, unsigned int, unsigned int, vdplet_view_v1*)+0x12c>
+400dd88d:	000000        	ill
+
+vdpl_runtime::relinquish(void*, unsigned int)
+400dc2a0:	004136        	entry	a1, 32
+400dc2a3:	cf6e41        	l32r	a4, 400d005c <_stext+0x3c>
+400dc2a6:	120c      	movi.n	a2, 1
+400dc2a8:	01d442        	addmi	a4, a4, 0x100
+400dc2ab:	280482        	l8ui	a8, a4, 40
+400dc2ae:	308820        	xor	a8, a8, a2
+400dc2b1:	748080        	extui	a8, a8, 0, 8
+400dc2b4:	98dc      	bnez.n	a8, 400dc2d1 <vdpl_runtime::relinquish(void*, unsigned int)+0x31>
+400dc2b6:	140c      	movi.n	a4, 1
+400dc2b8:	838430        	moveqz	a8, a4, a3
+400dc2bb:	28dc      	bnez.n	a8, 400dc2d1 <vdpl_runtime::relinquish(void*, unsigned int)+0x31>
+400dc2bd:	d06f41        	l32r	a4, 400d047c <_stext+0x45c>
+400dc2c0:	480c      	movi.n	a8, 4
+400dc2c2:	078876        	loop	a8, 400dc2cd <vdpl_runtime::relinquish(void*, unsigned int)+0x2d>
+400dc2c5:	2498      	l32i.n	a9, a4, 8
+400dc2c7:	0a1397        	beq	a3, a9, 400dc2d5 <vdpl_runtime::relinquish(void*, unsigned int)+0x35>
+400dc2ca:	1cc442        	addi	a4, a4, 28
+400dc2cd:	820c      	movi.n	a2, 8
+400dc2cf:	f01d      	retw.n
+400dc2d1:	120c      	movi.n	a2, 1
+400dc2d3:	f01d      	retw.n
+400dc2d5:	020c      	movi.n	a2, 0
+400dc2d7:	14a8      	l32i.n	a10, a4, 4
+400dc2d9:	0429      	s32i.n	a2, a4, 0
+400dc2db:	1429      	s32i.n	a2, a4, 4
+400dc2dd:	081a27        	beq	a10, a2, 400dc2e9 <vdpl_runtime::relinquish(void*, unsigned int)+0x49>
+400dc2e0:	0020c0        	memw
+400dc2e3:	d06781        	l32r	a8, 400d0480 <_stext+0x460>
+400dc2e6:	0008e0        	callx8	a8
+400dc2e9:	030c      	movi.n	a3, 0
+400dc2eb:	032d      	mov.n	a2, a3
+400dc2ed:	2439      	s32i.n	a3, a4, 8
+400dc2ef:	3439      	s32i.n	a3, a4, 12
+400dc2f1:	4439      	s32i.n	a3, a4, 16
+400dc2f3:	5439      	s32i.n	a3, a4, 20
+400dc2f5:	0c5432        	s16i	a3, a4, 24
+400dc2f8:	0020c0        	memw
+400dc2fb:	0020c0        	memw
+400dc2fe:	f01d      	retw.n

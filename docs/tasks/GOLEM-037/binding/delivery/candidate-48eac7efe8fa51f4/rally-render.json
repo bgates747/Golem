@@ -1,0 +1,45 @@
+{
+  "compiler": "xtensa-esp32-elf-gcc (crosstool-NG esp-2021r2-patch5) 8.4.0",
+  "abi_header_sha256": "fa8385e2906f07d37372d80c40f73d419defdbefe7a3458461ac9d5fe0820d38",
+  "module": {
+    "name": "rally-render",
+    "source": "/Agon/mystuff/golem/docs/tasks/GOLEM-037/binding/build/default/native.c",
+    "source_sha256": "94d92d109f9b3b93e8ddfea1427edcdeb9059a87636a6bacfd93d3c3894a1992",
+    "policy_sha256": "c69d6f3654b4b5dd4a8ae76e971818f4b13369d61dbded607b844e3268f66419",
+    "declared_limits": {
+      "text": 32768,
+      "data": 4096,
+      "stack": 2048,
+      "image": 65536
+    },
+    "build_id": "0x474c3731",
+    "capabilities": 1,
+    "envelope_bytes": 64,
+    "elf_bytes": 32900,
+    "package_bytes": 32964,
+    "sha256": "48eac7efe8fa51f4996c44bc799bee53ce86896a689dad239b531c4ea22fac15",
+    "package": "/Agon/mystuff/golem/docs/tasks/GOLEM-037/binding/build/default/rally-render.vdpl",
+    "elf": "/Agon/mystuff/golem/docs/tasks/GOLEM-037/binding/build/default/rally-render.elf",
+    "entry_virtual": 8080,
+    "resident_text_bytes": 30428,
+    "resident_data_bytes": 980,
+    "relative_relocations": 43,
+    "allocated_sections": {
+      ".text": {
+        "virtual_address": 824,
+        "bytes": 30428,
+        "type": 1
+      },
+      ".rodata": {
+        "virtual_address": 31252,
+        "bytes": 436,
+        "type": 1
+      },
+      ".data": {
+        "virtual_address": 36028,
+        "bytes": 544,
+        "type": 1
+      }
+    }
+  }
+}

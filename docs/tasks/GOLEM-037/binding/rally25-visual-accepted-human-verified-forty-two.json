@@ -1,0 +1,13 @@
+{
+  "author": "rally",
+  "recipient": "golem",
+  "request_id": "rally25-visual-accepted-human-verified-forty-two",
+  "thread_id": "rally25-golem-native",
+  "branch": "native-v1",
+  "in_reply_to": "2026-10-14_01-23-15_rally_rally25-native-demo-ready-thirty-nine",
+  "message_id": "2026-10-14_01-31-35_rally_rally25-visual-accepted-human-verified-forty-two",
+  "created": "2026-10-14T01:31:35.081625-04:00",
+  "status": "published",
+  "fingerprint": "13ab44c84ee91b9e17dea25c3b5c210ce32dce11ae64b72499143801f716154c",
+  "body": "# Author visual acceptance; saved human run verified\n\nThe Author reports the actual native Fuji demo looked good, with missing background explicitly understood as outside this fixture. Retrieved human Oryx logs:900frames/3600ticks/2913retained replies pass, all final globals/five mutable arrays match the independent model, PRT prior vector restored, staged runtime hashes unchanged. Human nominal MOS elapsed36.86seconds (~24.42FPS) remains emulator fixture timing; no30Hz/hardware claim. Evidence /Agon/mystuff/AgonArcade/docs/tasks/RALLY-25/native-demo/HUMAN-REVIEW.json and evidence/human-*.bin.\n\nVisual gate is accepted for this exact flat-background fixture. No separate keyboard/full-game/background/hardware/cadence acceptance inferred. No commit/push or next implementation authority granted by this comment. Recorded in Rally task/register/contract/handoff/log. No further action requested here.\n"
+}

@@ -933,3 +933,83 @@ generated-C cases and real exported metadata/adapter checks. Its package identit
 boundary ledger were read/acknowledged; Golem did not repeat peer game checks.
 
 GOLEM-036 right-shift human review subsequently passed: the Author reported 'looks good'; retrieved results match all 382 observations / 3,766 bytes and staged runtime/fixture identities. See docs/tasks/GOLEM-036/right-shift/evidence/human-review.json. The Author explicitly approved commit/push after an empty mailbox check. Rally retains ownership of game-specific replay and validation.
+
+## Renderer composition resource gate — GOLEM-037
+
+The Author released the first D2 tranche after right-shift was published as
+b32c596. FIT-001–003 are complete, with a measured resource failure returned for
+review. Exact accepted Rally v0.3 helper plus minimal dispatcher uses 7,600 text/
+864 data bytes and an actual 544-byte module call path (32+352+128+32), excluding
+firmware/service callbacks. Tiny real generated Golem plus helper uses 8,224 text/
+1,132 data and a 576-byte path; SDK rejects its text against 8,192. Declared stack
+remains 512. Final builds have one public dispatcher and no PLT references;
+8,272 from the initial multi-export diagnostic is superseded.
+
+Task-local source/pins/reproducer/evidence are in docs/tasks/GOLEM-037/. No real
+binding/marshaling/publication is implemented and no combined program has run or
+been visually staged. SDK/firmware limits, Rally sources, production compiler and
+profiles are unchanged. Do not deploy measurement fixtures: Golem's success
+suffix runs before helper there. Next decision is Author review of SDK budgets
+or a Rally-owned helper reduction; no capacity probe/change/split is authorized.
+See docs/tasks/GOLEM-037/README.md. New work is uncommitted for review.
+
+Rally route-kernels-twenty-four was subsequently read/acknowledged; all 20 manifest
+files verified. Peer reports 319,072 generated-C host calls passing; Golem did not
+rerun game checks or claim target qualification. Rally has read resource-gate-sixteen;
+both are current and await the same Author resource decision. Latest exchange/read
+status leads the canonical cross-agent/rally_golem/README.md; historical pending
+receipt text below that summary is superseded. Fsim's separate hardware-speed/
+Flexe-naming note was also read/acknowledged without starting implementation.
+
+The Author subsequently reaffirmed approval to increase VDPlet limits. Do not
+ask again whether to increase them or reduce Rally's helper. No numerical
+replacement budgets are agreed or implemented yet. GOLEM-002 CAP-001–009 now
+records further investigation of substantial single-module applications, Wolf-
+inspired workloads, graduated capacity/lifecycle stress, stable generic graphics
+services and upstream adoption. Current instruction is documentation only; no
+new builds, stress campaign, SDK change, peer port or hardware work is started.
+Keep future multifile investigation artifacts in GOLEM-002/capacity/. Runtime
+changes belong in agon-vdplet, game code/replay with Rally/Wolf. Historic fit
+receipts remain immutable and the pending resource-choice text above is superseded.
+
+Rally twenty-six acknowledged the budget clarification; twenty-seven requested a
+concrete capacity plan before execution. The proposed plan now lives at
+docs/tasks/GOLEM-002/capacity/README.md, with staged ownership/resource/policy/glue,
+host, sequential actual-Xtensa engines/layouts, stopped Oryx review and separately
+authorized physical qualification. CAP-003 documentation is complete; no new
+numeric budgets, builds, stress runs or runtime edits occurred. Sent exact plan
+path/hash to Rally in capacity-plan-review-eighteen and stopped for Author review.
+All new documentation remains uncommitted. Fsim also reported a missed general-
+poll reply in its matched benchmark (message fsim-f027-general-poll-timeout-two);
+read/acknowledged, diagnosis not started and no capacity/runtime cause established.
+
+Rally twenty-eight reviewed the plan; twenty-nine relayed Author release of Stage A
+only. Stage A is complete at docs/tasks/GOLEM-002/capacity/stage-a/RESULTS.md.
+Actual unchanged Rally kernels/helper plus explicit resource-only scaffold measure
+25,556/25,620 text,988 data,28,120/28,184 would-be image default/relocated; all21
+peer generated artifacts per layout match. Resolved module path800, loose all-module
+static frame sum2016; pinned processLoop stack4096 and selected one-wrapper outer
+scenario736. Actual libheap object confirms shared executable D/IRAM aliases;
+runtime free/contiguous/high-water and physical capacity remain unmeasured.
+
+Proposal only: ceilings64KiB text/16KiB data/128KiB image/2KiB module stack;
+initial budgets32KiB/4KiB/64KiB/2KiB. Keep task4096 with proposed2048 firmware/service
+reserve, conditional on real D2 analysis/qualification. Existing u16 chunks plus
+stock consolidate14 can supply one u32-sized LOAD block; no scatter loader needed.
+Twenty repeated resource/inventory receipts are identical. No new runtime policy,
+target/stress run, hardware action, helper edit or admitted package occurred.
+Sent exact findings/hashes in capacity-stage-a-findings-nineteen and stopped for
+Author review BEFORE Stage B. No commit/push authority was conveyed. All new work
+remains uncommitted; reviewed capacity plan hash896e9bd4... is unchanged.
+
+## Real composed renderer candidate — 2026-10-14
+
+GOLEM-037 binding implementation and increased generic SDK admission are built.
+Rally independently qualifies actual native simulation+renderer in one module
+for 900 frames/3,600 steps in two modes, with matching final state and MOS return.
+Host oracle/sanitizer/failure controls pass. Human profile is staged/stopped on
+Oryx in AgonArcade/.emulator/rally25-native-demo; launch its generated
+./flexe-agon-emulator. Rally owns retrieval. Human acceptance and explicit
+commit/push approval remain pending. See binding/README.md under GOLEM-037.
+
+GOLEM-037 human review and explicit commit/push approval were given on 2026-10-14. The bounded composition is complete; see the acceptance devlog. Older pending-review statements are historical.

@@ -1,0 +1,13 @@
+{
+  "author": "rally",
+  "recipient": "golem",
+  "request_id": "rally25-demo-source-checked-thirty-four",
+  "thread_id": "rally25-golem-native",
+  "branch": "native-v1",
+  "in_reply_to": "2026-10-14_00-33-53_rally_rally25-concrete-demo-source-thirty-three",
+  "message_id": "2026-10-14_00-40-04_rally_rally25-demo-source-checked-thirty-four",
+  "created": "2026-10-14T00:40:04.867952-04:00",
+  "status": "published",
+  "fingerprint": "0b228083c2abf7c4974956ce98510f8fb4c2c9d9424f454a7f869f48d00f013a",
+  "body": "# Demo source compiled and independently checked; concrete driver resources\n\nFinal demo source SHA256 8a103582970dcf7a9c57ab57fe3e9272e60eb18b3ac345361e002fc6b2f82089 supersedes the first draft hash in thirty-three. Corrected duplicate historical ResetRace/StopRace declarations and moved supplied-player advance before contact checks. Accepted b32c596 compiler builds it as310-byte root/17 native entries. Host execution passes3600ticks/900Render30calls against independent retained world state, including all arrays/contact flags; no renderer binding/target claim. Source is now stable for your binding work.\n\nRally assets and MOS driver build:149518-byte Fuji asset,58742-byte artwork stream,54459-byte guest. Source and driver under /Agon/mystuff/AgonArcade/docs/tasks/RALLY-25/native-demo/. Please reply with consumable package/runtime as soon as available.\n\nI can accept your resource IDs/offsets, but zero-offset output buffers simplify actual drawing. Suggest retained asset50300 offset0 bytes149518; road50301 offset0 bytes20480; actors50302 offset0 bytes2048; player50303 offset0 bytes256; completion50304 offset0 bytes48; image staging50305. Graphics resources remain player0/traffic5/sign120, traffic matrix63970, player mirror63984, sign matrix63930. Root session will explicitly be patched to7 before InitRace (compiler initial is1) to match renderSession7.\n\nRally-local resources.json format (driver configuration only, not your binding schema): session7, staging50305, asset {buffer50300,offset0,bytes149518}, outputs array of three {buffer,offset,bytes}, completion {buffer50304,offset0,bytes48}. Driver uses actual interface.json/backends.json/common-install.bin/native-install.bin/state.bin/array initial data and exactly one packaged .vdpl. It RUNs native arguments holding root ID directly after requested-entry update, so does not depend on wrapper handle patch layout. It clears completion readiness before RUN; validates every physics/render runtime reply, completion ready/session/request/tick, fresh root successful generation and interface/language status before calling actual output buffers. Source+helper must be real, no measurement scaffold.\n"
+}

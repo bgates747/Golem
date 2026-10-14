@@ -1,0 +1,17 @@
+{
+  "schema": 1, "profile": "portable-scalar-foundation",
+  "experimental": true, "execution_contract": "r25-g0-root-v1-dual-backend",
+  "state_buffer": 1, "state_bytes": 116,
+  "state_owner": "application_shared",
+  "initialization": "explicit_install_or_reset",
+  "error": {"offset": 14, "bytes": 2, "codes": {"ok": 0, "uint16_add_overflow": 1, "uint16_sub_underflow": 2, "uint16_mul_overflow": 3, "bounds_failure": 32, "nonfinite_float": 33}},
+  "globals": [
+    {"name": "tick", "type": "uint32", "offset": 112, "bytes": 4, "bounds": [0, 4294967295]}
+  ],
+  "entries": [
+    {"name": "InitRace", "logical_id": 0, "parameter_bytes": 0, "result_bytes": 0, "worst_case_visits": 1},
+    {"name": "Render30", "logical_id": 1, "parameter_bytes": 0, "result_bytes": 0, "worst_case_visits": 1},
+    {"name": "StopRace", "logical_id": 2, "parameter_bytes": 0, "result_bytes": 0, "worst_case_visits": 1}
+  ],
+  "external_reservations": [{"first":60000,"last":60031}]
+}

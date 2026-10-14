@@ -1,0 +1,287 @@
+{
+  "schema": 1,
+  "status": "buildable integration candidate; host/target/human qualification not implied",
+  "source": "/Agon/mystuff/AgonArcade/docs/tasks/RALLY-25/native-demo/demo.golem",
+  "source_sha256": "8a103582970dcf7a9c57ab57fe3e9272e60eb18b3ac345361e002fc6b2f82089",
+  "binding_sha256": "543022321154595027a0543271fc2656620c90976b0d0a23a8882db546e43d81",
+  "compiler_inputs": {
+    "compiler.cpp": "a262e4218002ebc02f77fc94228fd826885da74ee79eb471087d6520b84f5ec1",
+    "native_bindings.hpp": "ac174e9e225dfb7ac2319a0abeee82985f605368cc2214ae39eb66af1ffa49e8",
+    "root.hpp": "eedfc6dac1ce24bdc9eba8a547a53ac378801e30a3703426f39a0f37ced7292d",
+    "portable.hpp": "deae75359e8477a673a934fda29407f5e7ab0d8e5240122626e8d5bf1377d3d1",
+    "backends.hpp": "b9eaa95c8079cc58cd4848dd84542a68bdd0a7fb726556a832eb23de1789fedb"
+  },
+  "sdk_files": {
+    "include/vdplet.h": "fa8385e2906f07d37372d80c40f73d419defdbefe7a3458461ac9d5fe0820d38",
+    "src/vdplet_policy.h": "c69d6f3654b4b5dd4a8ae76e971818f4b13369d61dbded607b844e3268f66419",
+    "src/vdplet_image.h": "db95e97adb1d9fa07a1a89843b70fb9ae12303edb6e0abc3cfb7ea5aa7351dc3",
+    "src/vdplet_runtime.h": "af049fe93f1e64b0ec1135e5c0e55c1938adf022669dc35d906f5fcb6c58d91b",
+    "tools/build_module.py": "a5e8fe550b7906fbd897ec7045d550a20b374d9df4379e80ecb8a2641627ad22"
+  },
+  "module": {
+    "name": "rally-render",
+    "source": "/Agon/mystuff/golem/docs/tasks/GOLEM-037/binding/build/default/native.c",
+    "source_sha256": "94d92d109f9b3b93e8ddfea1427edcdeb9059a87636a6bacfd93d3c3894a1992",
+    "policy_sha256": "c69d6f3654b4b5dd4a8ae76e971818f4b13369d61dbded607b844e3268f66419",
+    "declared_limits": {
+      "text": 32768,
+      "data": 4096,
+      "stack": 2048,
+      "image": 65536
+    },
+    "build_id": "0x474c3731",
+    "capabilities": 1,
+    "envelope_bytes": 64,
+    "elf_bytes": 32900,
+    "package_bytes": 32964,
+    "sha256": "48eac7efe8fa51f4996c44bc799bee53ce86896a689dad239b531c4ea22fac15",
+    "package": "/Agon/mystuff/golem/docs/tasks/GOLEM-037/binding/build/default/rally-render.vdpl",
+    "elf": "/Agon/mystuff/golem/docs/tasks/GOLEM-037/binding/build/default/rally-render.elf",
+    "entry_virtual": 8080,
+    "resident_text_bytes": 30428,
+    "resident_data_bytes": 980,
+    "relative_relocations": 43,
+    "allocated_sections": {
+      ".text": {
+        "virtual_address": 824,
+        "bytes": 30428,
+        "type": 1
+      },
+      ".rodata": {
+        "virtual_address": 31252,
+        "bytes": 436,
+        "type": 1
+      },
+      ".data": {
+        "virtual_address": 36028,
+        "bytes": 544,
+        "type": 1
+      }
+    }
+  },
+  "frames": [
+    {
+      "function": "get32",
+      "bytes": 32
+    },
+    {
+      "function": "put32",
+      "bytes": 32
+    },
+    {
+      "function": "byte",
+      "bytes": 32
+    },
+    {
+      "function": "word",
+      "bytes": 32
+    },
+    {
+      "function": "command",
+      "bytes": 32
+    },
+    {
+      "function": "plot",
+      "bytes": 32
+    },
+    {
+      "function": "rect",
+      "bytes": 32
+    },
+    {
+      "function": "viewport",
+      "bytes": 32
+    },
+    {
+      "function": "affine",
+      "bytes": 32
+    },
+    {
+      "function": "bitmap",
+      "bytes": 32
+    },
+    {
+      "function": "centre_exact",
+      "bytes": 48
+    },
+    {
+      "function": "cx",
+      "bytes": 32
+    },
+    {
+      "function": "tangent",
+      "bytes": 32
+    },
+    {
+      "function": "overlap",
+      "bytes": 32
+    },
+    {
+      "function": "clear_completion",
+      "bytes": 32
+    },
+    {
+      "function": "host_ok",
+      "bytes": 32
+    },
+    {
+      "function": "acquire",
+      "bytes": 32
+    },
+    {
+      "function": "view_ok",
+      "bytes": 32
+    },
+    {
+      "function": "asset_ok",
+      "bytes": 64
+    },
+    {
+      "function": "bearing$isra$0",
+      "bytes": 32
+    },
+    {
+      "function": "release$isra$2",
+      "bytes": 32
+    },
+    {
+      "function": "preflight",
+      "bytes": 128
+    },
+    {
+      "function": "rally_render_bind_v1",
+      "bytes": 240
+    },
+    {
+      "function": "rally_render_prepare_v1",
+      "bytes": 352
+    },
+    {
+      "function": "rally_render_stop_v1",
+      "bytes": 32
+    },
+    {
+      "function": "memcpy",
+      "bytes": 32
+    },
+    {
+      "function": "memset",
+      "bytes": 32
+    },
+    {
+      "function": "vdplet_entry",
+      "bytes": 336
+    }
+  ],
+  "build_seconds": 5.26,
+  "artifacts": {
+    "array-active.bin": {
+      "bytes": 12,
+      "sha256": "9279aba84b65c836059f143f595b35fa7ff78a64c750da958a15319d1a333f2f"
+    },
+    "array-contacts.bin": {
+      "bytes": 12,
+      "sha256": "15ec7bf0b50732b49f8228e07d24365338f9e3ab994b00af08e5a3bffe55fd8b"
+    },
+    "array-lateral.bin": {
+      "bytes": 24,
+      "sha256": "9d908ecfb6b256def8b49a7c504e6c889c4b0e41fe6ce3e01863dd7b61a20aa0"
+    },
+    "array-position.bin": {
+      "bytes": 24,
+      "sha256": "8fb5224a9f8a0c7aee4d96d7209b99446a9dcc6e5626e13f2609835d623d7997"
+    },
+    "array-progress.bin": {
+      "bytes": 24,
+      "sha256": "b791541c28cb6757574c12ecc5d20d17abc7677be0aba5c025b2d302229eef15"
+    },
+    "array-routes.bin": {
+      "bytes": 48,
+      "sha256": "899bc1c3676004731f4751cd50cfe3e363ad19ffe6ab0ac33bd2cfc04f61d561"
+    },
+    "array-sine.bin": {
+      "bytes": 514,
+      "sha256": "6062d337f69ac6ae99b7da9cdf95f87aea1ee04a9110f26839f0a85f74efff68"
+    },
+    "arrays-install.bin": {
+      "bytes": 756,
+      "sha256": "2eac936d70092510e029d1cb9d030a734736c3c4eaee140891027eabfce5d465"
+    },
+    "backends.json": {
+      "bytes": 361,
+      "sha256": "e48626eb71d7a4be0af7bfb25998bbee6a63d0d2fabee8a057786f89b711dfe5"
+    },
+    "calls.inc": {
+      "bytes": 2406,
+      "sha256": "d0fce46192f9d63000db46f87f981a7f807416620301a504bf30d33874033e3f"
+    },
+    "common-install.bin": {
+      "bytes": 1080,
+      "sha256": "1320393f76881eb4a25429e780143b8cdbcee3d0a2bdacff42a2f6a30d2c0380"
+    },
+    "interface.json": {
+      "bytes": 17492,
+      "sha256": "e8d04756bb3abfe212635ea39ce8ccc27fb1d6d69ac08ab98d190b9f7c989491"
+    },
+    "layout.inc": {
+      "bytes": 10117,
+      "sha256": "4825d4d407ce195a531ac425a3aa6c9fc1c140089df8645363e2623cd03e5bb4"
+    },
+    "native-cleanup.bin": {
+      "bytes": 108,
+      "sha256": "01215d3ae806cd2c4ba7717c14b3e32415c9ed694c3d5eb941250d2a7d802de1"
+    },
+    "native-install.bin": {
+      "bytes": 985,
+      "sha256": "3e2cf7b817c4043ac984ca24592992f076330606c4b01e980a2e97a0693dfef7"
+    },
+    "native.c": {
+      "bytes": 69138,
+      "sha256": "94d92d109f9b3b93e8ddfea1427edcdeb9059a87636a6bacfd93d3c3894a1992"
+    },
+    "program.json": {
+      "bytes": 52069,
+      "sha256": "68c00f6151c3e54f2f92e542a6065d18ad39e8498673e3d59f0aa704f675d7fa"
+    },
+    "rally-render.disassembly.txt": {
+      "bytes": 677210,
+      "sha256": "239921eea5a34d3e50d794e3ae9ed19f60d276d86edfda6292e723a2f1263501"
+    },
+    "rally-render.elf": {
+      "bytes": 49600,
+      "sha256": "4cb7c86a5a25e5b4ea57da7daa8f0149adfde6230a652ad5b55afef2ded55c6a"
+    },
+    "rally-render.json": {
+      "bytes": 1466,
+      "sha256": "4c2e5c4e70bfddd2979d65f8a0644af69e210e3dcd8fd49deaa1a9a0d5366c17"
+    },
+    "rally-render.o": {
+      "bytes": 92196,
+      "sha256": "1cb8ab26a62d733cb8fb53abdb318a0232e12d3c741bf0b1795a417f8db55816"
+    },
+    "rally-render.readelf.txt": {
+      "bytes": 4537,
+      "sha256": "cf172aabf6c76e77645af33cfd32e919a63e3751b9b33adfc695a534f36fb55a"
+    },
+    "rally-render.su": {
+      "bytes": 1132,
+      "sha256": "f793afdb4666ddf8bb7902465452d0c1d111de6a3abe5a0c94b400b076b69a7f"
+    },
+    "rally-render.upload.elf": {
+      "bytes": 32900,
+      "sha256": "3b748c9395d5ffd1b1972e1ba4eadab77f7eb53e39c9c6844d480349ed42b260"
+    },
+    "rally-render.vdpl": {
+      "bytes": 32964,
+      "sha256": "48eac7efe8fa51f4996c44bc799bee53ce86896a689dad239b531c4ea22fac15"
+    },
+    "root.json": {
+      "bytes": 1020,
+      "sha256": "83d74662c81f6cf321cd24269fe2c26dee79bc0cf356fcbe01f57dbd79d435a2"
+    },
+    "state.bin": {
+      "bytes": 310,
+      "sha256": "dc2187929eee56076d40e5e55c1eb574432aa98e17b554962cad6d1057b223c2"
+    }
+  }
+}

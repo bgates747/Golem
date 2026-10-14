@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "result": "identical repeated native builds and receipts",
+  "files": {
+    "fit.json": "2b7cd7b2a0fdec10ecf60feeed70533b0193ba8bd9975f461e03f6553d070097",
+    "helper-disassembly.txt": "762b8deb2076f3abf39421674ddd8a54f65759d792d2068669a39f6338ceb11e",
+    "fit-dispatch.readelf.txt": "309519096888cfaeb6de1c275c19c0aff0131e9799e61b808390bb4acd75028b",
+    "fit-dispatch.disassembly.txt": "3f7125a706c68034988bfad46f5fe482abf0d2310fc5b0d3b33cac566e691884",
+    "fit-combined.readelf.txt": "5b48f860b0f131be8432664c9ec5e9592daa96736d82341b8e41eb1d83f8e319",
+    "generated-root.json": "3cdc51e56a1b4c91c83deb51ab6cc2262022515b44d15728f4f5b77449893f10",
+    "generated-interface.json": "86cada9d92fd48113683ca418bccceeca54ac4d92c82f741edb794e9721be6ab",
+    "generated-native.c": "dc7dd53bec203572fe8848effe78fb45e5e480141f5d2aee3b52c7a1773a61c7",
+    "fit-combined.disassembly.txt": "cfbb00500ed6500f668418cd6b7a56f6a9a8e8bb270f1d744137e36ffa6fe0a5"
+  },
+  "duration_seconds": 12.263,
+  "scope": "same host/toolchain/source paths; no target execution or capacity change"
+}

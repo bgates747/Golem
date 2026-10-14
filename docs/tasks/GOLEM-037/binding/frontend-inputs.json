@@ -1,0 +1,7 @@
+{
+  "repository": "/Agon/mystuff/flexe-agon-emulator",
+  "commit": "1f7ea21d41a7e1f11fe89848a559e27ce7828423",
+  "source_archive_sha256": "30ea5af2b12b799b989d88a222a7f50f1abc61e76d895bff264479012743e34d",
+  "patch_sha256": "b9f75bdf59c7e1482304606bfbb812728b5af96bfa1c367ab8ccbe188f1bcf35",
+  "scope": "owned generated export only; maintained frontend and concurrent FX-006 UART work untouched"
+}

@@ -1,0 +1,11 @@
+{
+  "schema": 1,
+  "message_id": "2026-10-13_21-22-33_rally_rally25-route-kernels-qualified-twenty-four",
+  "manifest_path": "/Agon/mystuff/AgonArcade/docs/tasks/RALLY-25/route-kernels/MANIFEST.json",
+  "manifest_sha256": "d9e5238859d6faa402dd069f145834cd3eabb47f46db5b91e1d276ad359e8296",
+  "files_verified": 20,
+  "owner_reported_host_calls": 319072,
+  "golem_scope": "Read README/RESULTS and verified source/result identities; peer checks were not rerun. No independent target qualification or shared ABI amendment.",
+  "rally_read_golem_message": "2026-10-13_21-04-47_golem_rally25-d2-resource-gate-sixteen",
+  "rally_received_fit_sha256": "2b7cd7b2a0fdec10ecf60feeed70533b0193ba8bd9975f461e03f6553d070097"
+}

@@ -1,0 +1,979 @@
+{
+  "schema": 1,
+  "scope": "resource gate only; no generated binding or execution qualification",
+  "compiler": "xtensa-esp32-elf-gcc (crosstool-NG esp-2021r2-patch5) 8.4.0",
+  "compiler_sha256": "e091761ac142b87be663aa36c8dc9af10044a9769a540ee0337ebc97ea56a22d",
+  "measurement_script_sha256": "c59f326db9c47921a0e05e6ca34e59dbf2ecce78ea36fc346e4409b790342259",
+  "compile_flags": [
+    "-I",
+    "/Agon/mystuff/agon-vdplet/include",
+    "-Os",
+    "-fPIC",
+    "-mlongcalls",
+    "-mtext-section-literals",
+    "-fvisibility=hidden",
+    "-ffunction-sections",
+    "-fdata-sections",
+    "-fno-builtin",
+    "-ffp-contract=off",
+    "-fstack-usage",
+    "-fno-common"
+  ],
+  "host_compiler": "g++ (Debian 14.2.0-19) 14.2.0",
+  "tool_sha256": {
+    "ld": "fd641bedc57930941b7b7d9e3d51ece550bf663fb4d9d13ec0a2188082c47245",
+    "strip": "cef0e79caf472d12d87063c8cbc6ed21880ab41dce99fab12671d50e02adcaae",
+    "objdump": "c38b6b6d84ddd2644c72e68c2e38129766f5d5f109f5ada94c30b0c2918a4943",
+    "readelf": "3cf4abdda5bd293eedcee260f52856327e4e9f7e1736aed0a2ab4d20f2f45d19"
+  },
+  "sdk_builder_sha256": "c2353057f2b00545378bc6727752a247df8254dbe51a44c5b99d1478de96bd62",
+  "sdk_header_sha256": "fa8385e2906f07d37372d80c40f73d419defdbefe7a3458461ac9d5fe0820d38",
+  "dispatcher_sha256": "df4ff515b5de59152552466637c1a20bd1c84f99d103e4f1da35e15da9cd8bc7",
+  "helper_pin": {
+    "owner": "Rally / AgonArcade",
+    "source_manifest": "/Agon/mystuff/AgonArcade/docs/tasks/RALLY-25/renderer-helper/MANIFEST.json",
+    "source_manifest_sha256": "3fc5d32f16d84f8ecc53aabe2d418e317a5323aee1ea2543c85fd657b1d6f62c",
+    "verified_manifest_files": 14,
+    "copied_sources": {
+      "rally_render.c": "7ae7f03183864e44ffa2488f90fd1e878eb984bd4a2d325313b94a011fcd8001",
+      "rally_render.h": "2adcc445e416f3dd95db2f52afb7ef8803c67e6fc444556be5e9d1505b133e50",
+      "asset_meta.inc": "940a4e51c2f06bb34106c858f690bad34d97ed8ab6994b19bb53a945f4eb6cd5",
+      "render_core.inc": "2f3eb552538a3e2e8c9a450ae49c319540cc9b774ef925ec02f111d1e8f42f2b"
+    },
+    "sdk_builder_sha256": "c2353057f2b00545378bc6727752a247df8254dbe51a44c5b99d1478de96bd62",
+    "sdk_header_sha256": "fa8385e2906f07d37372d80c40f73d419defdbefe7a3458461ac9d5fe0820d38",
+    "golem_source_inputs": {
+      "docs/tasks/GOLEM-036/right-shift/compiler.cpp": "1be2c0181257aaa71305498791c8b09a9ec2c6f86d9fe20e8999cce4c9691c69",
+      "docs/tasks/GOLEM-036/right-shift/portable.hpp": "deae75359e8477a673a934fda29407f5e7ab0d8e5240122626e8d5bf1377d3d1",
+      "docs/tasks/GOLEM-036/right-shift/backends.hpp": "b9eaa95c8079cc58cd4848dd84542a68bdd0a7fb726556a832eb23de1789fedb",
+      "docs/tasks/GOLEM-036/right-shift/root.hpp": "eedfc6dac1ce24bdc9eba8a547a53ac378801e30a3703426f39a0f37ced7292d",
+      "src/ordinary.hpp": "7c8fe20f4e63c6e57de70b9931696b87c88c9c4ea499679b1bc239f09480c5da",
+      "src/token_reader.hpp": "397fe169f1a84b47acf8a77a3036fd50ddfeac45e64d07a74b0497ca50f4126d",
+      "src/buffer_allocator.hpp": "7c8881777decd9e04231adae3ab4050e52451c0fadaafe6b37c7ce0735c7b449"
+    }
+  },
+  "limits_unchanged": {
+    "text": 8192,
+    "data": 4096,
+    "declared_stack": 512,
+    "image": 16384
+  },
+  "helper_object": {
+    "allocated_sections": {
+      ".literal.word": {
+        "bytes": 0,
+        "flags": 6,
+        "type": 1
+      },
+      ".literal.command": {
+        "bytes": 0,
+        "flags": 6,
+        "type": 1
+      },
+      ".literal.plot": {
+        "bytes": 0,
+        "flags": 6,
+        "type": 1
+      },
+      ".literal.rect": {
+        "bytes": 0,
+        "flags": 6,
+        "type": 1
+      },
+      ".literal.viewport": {
+        "bytes": 0,
+        "flags": 6,
+        "type": 1
+      },
+      ".literal.affine": {
+        "bytes": 0,
+        "flags": 6,
+        "type": 1
+      },
+      ".literal.bitmap": {
+        "bytes": 0,
+        "flags": 6,
+        "type": 1
+      },
+      ".literal.centre_exact": {
+        "bytes": 0,
+        "flags": 6,
+        "type": 1
+      },
+      ".literal.cx": {
+        "bytes": 0,
+        "flags": 6,
+        "type": 1
+      },
+      ".literal.tangent": {
+        "bytes": 0,
+        "flags": 6,
+        "type": 1
+      },
+      ".literal.clear_completion": {
+        "bytes": 0,
+        "flags": 6,
+        "type": 1
+      },
+      ".literal.asset_ok": {
+        "bytes": 0,
+        "flags": 6,
+        "type": 1
+      },
+      ".literal.preflight": {
+        "bytes": 0,
+        "flags": 6,
+        "type": 1
+      },
+      ".literal.rally_render_bind_v1": {
+        "bytes": 0,
+        "flags": 6,
+        "type": 1
+      },
+      ".literal.rally_render_prepare_v1": {
+        "bytes": 0,
+        "flags": 6,
+        "type": 1
+      },
+      ".literal.rally_render_stop_v1": {
+        "bytes": 0,
+        "flags": 6,
+        "type": 1
+      },
+      ".text": {
+        "bytes": 0,
+        "flags": 6,
+        "type": 1
+      },
+      ".data": {
+        "bytes": 0,
+        "flags": 3,
+        "type": 1
+      },
+      ".bss": {
+        "bytes": 0,
+        "flags": 3,
+        "type": 8
+      },
+      ".text.u32": {
+        "bytes": 35,
+        "flags": 6,
+        "type": 1
+      },
+      ".text.byte": {
+        "bytes": 30,
+        "flags": 6,
+        "type": 1
+      },
+      ".text.word": {
+        "bytes": 27,
+        "flags": 6,
+        "type": 1
+      },
+      ".text.command": {
+        "bytes": 55,
+        "flags": 6,
+        "type": 1
+      },
+      ".text.plot": {
+        "bytes": 47,
+        "flags": 6,
+        "type": 1
+      },
+      ".text.rect": {
+        "bytes": 80,
+        "flags": 6,
+        "type": 1
+      },
+      ".text.viewport": {
+        "bytes": 76,
+        "flags": 6,
+        "type": 1
+      },
+      ".text.affine": {
+        "bytes": 56,
+        "flags": 6,
+        "type": 1
+      },
+      ".text.bitmap": {
+        "bytes": 99,
+        "flags": 6,
+        "type": 1
+      },
+      ".text.centre_exact": {
+        "bytes": 201,
+        "flags": 6,
+        "type": 1
+      },
+      ".text.cx": {
+        "bytes": 33,
+        "flags": 6,
+        "type": 1
+      },
+      ".text.tangent": {
+        "bytes": 99,
+        "flags": 6,
+        "type": 1
+      },
+      ".text.overlap": {
+        "bytes": 40,
+        "flags": 6,
+        "type": 1
+      },
+      ".text.clear_completion": {
+        "bytes": 30,
+        "flags": 6,
+        "type": 1
+      },
+      ".text.host_ok": {
+        "bytes": 40,
+        "flags": 6,
+        "type": 1
+      },
+      ".text.acquire": {
+        "bytes": 40,
+        "flags": 6,
+        "type": 1
+      },
+      ".text.view_ok": {
+        "bytes": 42,
+        "flags": 6,
+        "type": 1
+      },
+      ".text.asset_ok": {
+        "bytes": 491,
+        "flags": 6,
+        "type": 1
+      },
+      ".text.bearing$isra$0": {
+        "bytes": 98,
+        "flags": 6,
+        "type": 1
+      },
+      ".text.release$isra$2": {
+        "bytes": 24,
+        "flags": 6,
+        "type": 1
+      },
+      ".text.preflight": {
+        "bytes": 360,
+        "flags": 6,
+        "type": 1
+      },
+      ".rodata": {
+        "bytes": 24,
+        "flags": 2,
+        "type": 1
+      },
+      ".text.rally_render_bind_v1": {
+        "bytes": 802,
+        "flags": 6,
+        "type": 1
+      },
+      ".text.rally_render_prepare_v1": {
+        "bytes": 4776,
+        "flags": 6,
+        "type": 1
+      },
+      ".text.rally_render_stop_v1": {
+        "bytes": 92,
+        "flags": 6,
+        "type": 1
+      },
+      ".rodata.left$1266": {
+        "bytes": 20,
+        "flags": 2,
+        "type": 1
+      },
+      ".rodata.right$1267": {
+        "bytes": 20,
+        "flags": 2,
+        "type": 1
+      },
+      ".rodata.widths$1518": {
+        "bytes": 40,
+        "flags": 2,
+        "type": 1
+      },
+      ".rodata.counts$1519": {
+        "bytes": 32,
+        "flags": 2,
+        "type": 1
+      },
+      ".rodata.asset_meta": {
+        "bytes": 32,
+        "flags": 2,
+        "type": 1
+      }
+    },
+    "frames": [
+      {
+        "function": "u32",
+        "bytes": 32
+      },
+      {
+        "function": "byte",
+        "bytes": 32
+      },
+      {
+        "function": "word",
+        "bytes": 32
+      },
+      {
+        "function": "command",
+        "bytes": 32
+      },
+      {
+        "function": "plot",
+        "bytes": 32
+      },
+      {
+        "function": "rect",
+        "bytes": 32
+      },
+      {
+        "function": "viewport",
+        "bytes": 32
+      },
+      {
+        "function": "affine",
+        "bytes": 32
+      },
+      {
+        "function": "bitmap",
+        "bytes": 32
+      },
+      {
+        "function": "centre_exact",
+        "bytes": 48
+      },
+      {
+        "function": "cx",
+        "bytes": 32
+      },
+      {
+        "function": "tangent",
+        "bytes": 32
+      },
+      {
+        "function": "overlap",
+        "bytes": 32
+      },
+      {
+        "function": "clear_completion",
+        "bytes": 32
+      },
+      {
+        "function": "host_ok",
+        "bytes": 32
+      },
+      {
+        "function": "acquire",
+        "bytes": 32
+      },
+      {
+        "function": "view_ok",
+        "bytes": 32
+      },
+      {
+        "function": "asset_ok",
+        "bytes": 64
+      },
+      {
+        "function": "bearing$isra$0",
+        "bytes": 32
+      },
+      {
+        "function": "release$isra$2",
+        "bytes": 32
+      },
+      {
+        "function": "preflight",
+        "bytes": 128
+      },
+      {
+        "function": "rally_render_bind_v1",
+        "bytes": 240
+      },
+      {
+        "function": "rally_render_prepare_v1",
+        "bytes": 352
+      },
+      {
+        "function": "rally_render_stop_v1",
+        "bytes": 32
+      }
+    ],
+    "object_sha256": "6141386eb8e04e61b27c372825c47d031c5c7df92bb79b3240b55db7d0a468fb"
+  },
+  "dispatcher": {
+    "includes": "unchanged helper in one translation unit",
+    "omits": [
+      "Golem source execution",
+      "argument/root leases",
+      "typed marshaling",
+      "retained completion publication",
+      "root success/error handling"
+    ],
+    "resident_text_bytes": 7600,
+    "resident_data_bytes": 864,
+    "would_be_image_bytes": 9796,
+    "frames": [
+      {
+        "function": "u32",
+        "bytes": 32
+      },
+      {
+        "function": "byte",
+        "bytes": 32
+      },
+      {
+        "function": "word",
+        "bytes": 32
+      },
+      {
+        "function": "command",
+        "bytes": 32
+      },
+      {
+        "function": "plot",
+        "bytes": 32
+      },
+      {
+        "function": "rect",
+        "bytes": 32
+      },
+      {
+        "function": "viewport",
+        "bytes": 32
+      },
+      {
+        "function": "affine",
+        "bytes": 32
+      },
+      {
+        "function": "bitmap",
+        "bytes": 32
+      },
+      {
+        "function": "centre_exact",
+        "bytes": 48
+      },
+      {
+        "function": "cx",
+        "bytes": 32
+      },
+      {
+        "function": "tangent",
+        "bytes": 32
+      },
+      {
+        "function": "overlap",
+        "bytes": 32
+      },
+      {
+        "function": "clear_completion",
+        "bytes": 32
+      },
+      {
+        "function": "host_ok",
+        "bytes": 32
+      },
+      {
+        "function": "acquire",
+        "bytes": 32
+      },
+      {
+        "function": "view_ok",
+        "bytes": 32
+      },
+      {
+        "function": "asset_ok",
+        "bytes": 64
+      },
+      {
+        "function": "bearing$isra$0",
+        "bytes": 32
+      },
+      {
+        "function": "release$isra$2",
+        "bytes": 32
+      },
+      {
+        "function": "preflight",
+        "bytes": 128
+      },
+      {
+        "function": "rally_render_bind_v1",
+        "bytes": 240
+      },
+      {
+        "function": "rally_render_prepare_v1",
+        "bytes": 352
+      },
+      {
+        "function": "rally_render_stop_v1",
+        "bytes": 32
+      },
+      {
+        "function": "memcpy",
+        "bytes": 32
+      },
+      {
+        "function": "vdplet_entry",
+        "bytes": 32
+      }
+    ],
+    "relative_relocations": 36,
+    "elf_sha256": "46d3ad6206a5b109270325e4f7f5bc693256231209b78e9d5ec188b0c6ad047b",
+    "stripped_elf_sha256": "f674e9841c35f60754f7849701a994401e6a8da58c370bb15ed51054a918a4a6",
+    "sdk_package_error": null,
+    "sdk_admitted": true,
+    "allocated_sections": {
+      ".hash": {
+        "bytes": 40,
+        "flags": 2,
+        "type": 5
+      },
+      ".dynsym": {
+        "bytes": 80,
+        "flags": 2,
+        "type": 11
+      },
+      ".dynstr": {
+        "bytes": 38,
+        "flags": 2,
+        "type": 3
+      },
+      ".rela.dyn": {
+        "bytes": 432,
+        "flags": 2,
+        "type": 4
+      },
+      ".text": {
+        "bytes": 7597,
+        "flags": 6,
+        "type": 1
+      },
+      ".rodata": {
+        "bytes": 168,
+        "flags": 2,
+        "type": 1
+      },
+      ".got.loc": {
+        "bytes": 104,
+        "flags": 2,
+        "type": 1
+      },
+      ".dynamic": {
+        "bytes": 136,
+        "flags": 3,
+        "type": 6
+      },
+      ".got": {
+        "bytes": 4,
+        "flags": 3,
+        "type": 1
+      },
+      ".data": {
+        "bytes": 512,
+        "flags": 3,
+        "type": 1
+      },
+      ".bss": {
+        "bytes": 184,
+        "flags": 3,
+        "type": 8
+      }
+    },
+    "relocation_check": "only symbol-zero R_XTENSA_RELATIVE; no PLT section",
+    "sdk_package": {
+      "name": "fit-dispatch",
+      "source_sha256": "df4ff515b5de59152552466637c1a20bd1c84f99d103e4f1da35e15da9cd8bc7",
+      "build_id": "0x474c3730",
+      "capabilities": 1,
+      "envelope_bytes": 64,
+      "elf_bytes": 9732,
+      "package_bytes": 9796,
+      "sha256": "93ad7a8a4f878398f76487d12c0941eba12ccaca431ef2049bc1446448a8ba50",
+      "entry_virtual": 7856,
+      "resident_text_bytes": 7600,
+      "resident_data_bytes": 864,
+      "relative_relocations": 36,
+      "allocated_sections": {
+        ".text": {
+          "virtual_address": 740,
+          "bytes": 7597,
+          "type": 1
+        },
+        ".rodata": {
+          "virtual_address": 8340,
+          "bytes": 168,
+          "type": 1
+        },
+        ".data": {
+          "virtual_address": 12848,
+          "bytes": 512,
+          "type": 1
+        },
+        ".bss": {
+          "virtual_address": 13360,
+          "bytes": 184,
+          "type": 8
+        }
+      }
+    },
+    "sdk_image_validator": "pass (structure/relocations; not stack or execution qualification)",
+    "stack_path": {
+      "functions": [
+        "vdplet_entry",
+        "rally_render_prepare_v1",
+        "preflight",
+        "acquire"
+      ],
+      "module_frame_bytes": 544,
+      "excludes": "firmware caller and service callback frames; no runtime high-water measurement",
+      "within_declared_stack": false,
+      "evidence": "Xtensa entry instructions, call8/callx8 and resolved literal targets; preserved disassembly",
+      "call_edges": [
+        {
+          "caller": "vdplet_entry",
+          "callee": "rally_render_prepare_v1",
+          "instructions": [
+            "1ef9:\tffeb21        \tl32r\ta2, 1ea8 <rally_render_stop_v1+0x64>",
+            "1efc:\t0002e0        \tcallx8\ta2"
+          ]
+        },
+        {
+          "caller": "rally_render_prepare_v1",
+          "callee": "preflight",
+          "instructions": [
+            "f3b:\tfe8221        \tl32r\ta2, 944 <preflight+0x17c>",
+            "f3e:\t0189      \ts32i.n\ta8, a1, 0",
+            "f40:\t6ca0f2        \tmovi\ta15, 108",
+            "f43:\t04ed      \tmov.n\ta14, a4",
+            "f45:\t05cd      \tmov.n\ta12, a5",
+            "f47:\t0002e0        \tcallx8\ta2"
+          ]
+        },
+        {
+          "caller": "preflight",
+          "callee": "acquire",
+          "instructions": [
+            "7e8:\t017be5        \tcall8\t1fa8 <acquire>"
+          ]
+        }
+      ]
+    }
+  },
+  "combined": {
+    "resident_text_bytes": 8224,
+    "resident_data_bytes": 1132,
+    "would_be_image_bytes": 10776,
+    "frames": [
+      {
+        "function": "get32",
+        "bytes": 32
+      },
+      {
+        "function": "byte",
+        "bytes": 32
+      },
+      {
+        "function": "word",
+        "bytes": 32
+      },
+      {
+        "function": "command",
+        "bytes": 32
+      },
+      {
+        "function": "plot",
+        "bytes": 32
+      },
+      {
+        "function": "rect",
+        "bytes": 32
+      },
+      {
+        "function": "viewport",
+        "bytes": 32
+      },
+      {
+        "function": "affine",
+        "bytes": 32
+      },
+      {
+        "function": "bitmap",
+        "bytes": 32
+      },
+      {
+        "function": "centre_exact",
+        "bytes": 48
+      },
+      {
+        "function": "cx",
+        "bytes": 32
+      },
+      {
+        "function": "tangent",
+        "bytes": 32
+      },
+      {
+        "function": "overlap",
+        "bytes": 32
+      },
+      {
+        "function": "clear_completion",
+        "bytes": 32
+      },
+      {
+        "function": "host_ok",
+        "bytes": 32
+      },
+      {
+        "function": "acquire",
+        "bytes": 32
+      },
+      {
+        "function": "view_ok",
+        "bytes": 32
+      },
+      {
+        "function": "asset_ok",
+        "bytes": 64
+      },
+      {
+        "function": "bearing$isra$0",
+        "bytes": 32
+      },
+      {
+        "function": "release$isra$2",
+        "bytes": 32
+      },
+      {
+        "function": "preflight",
+        "bytes": 128
+      },
+      {
+        "function": "golem_fit_entry",
+        "bytes": 96
+      },
+      {
+        "function": "rally_render_bind_v1",
+        "bytes": 240
+      },
+      {
+        "function": "rally_render_prepare_v1",
+        "bytes": 352
+      },
+      {
+        "function": "rally_render_stop_v1",
+        "bytes": 32
+      },
+      {
+        "function": "memcpy",
+        "bytes": 32
+      },
+      {
+        "function": "helper_fit_entry",
+        "bytes": 32
+      },
+      {
+        "function": "vdplet_entry",
+        "bytes": 32
+      }
+    ],
+    "relative_relocations": 42,
+    "elf_sha256": "827c6720c74eb002defd621276efbbebea85a80d9eab778f291d9c430dc23507",
+    "stripped_elf_sha256": "e35f26a465fdbba746df79d67ae78d32eee81965406b52d490df67ef3352d86e",
+    "sdk_package_error": "module exceeds admitted text/data envelope",
+    "sdk_admitted": false,
+    "allocated_sections": {
+      ".hash": {
+        "bytes": 40,
+        "flags": 2,
+        "type": 5
+      },
+      ".dynsym": {
+        "bytes": 80,
+        "flags": 2,
+        "type": 11
+      },
+      ".dynstr": {
+        "bytes": 38,
+        "flags": 2,
+        "type": 3
+      },
+      ".rela.dyn": {
+        "bytes": 504,
+        "flags": 2,
+        "type": 4
+      },
+      ".text": {
+        "bytes": 8221,
+        "flags": 6,
+        "type": 1
+      },
+      ".rodata": {
+        "bytes": 432,
+        "flags": 2,
+        "type": 1
+      },
+      ".got.loc": {
+        "bytes": 120,
+        "flags": 2,
+        "type": 1
+      },
+      ".dynamic": {
+        "bytes": 136,
+        "flags": 3,
+        "type": 6
+      },
+      ".got": {
+        "bytes": 4,
+        "flags": 3,
+        "type": 1
+      },
+      ".data": {
+        "bytes": 516,
+        "flags": 3,
+        "type": 1
+      },
+      ".bss": {
+        "bytes": 184,
+        "flags": 3,
+        "type": 8
+      }
+    },
+    "relocation_check": "only symbol-zero R_XTENSA_RELATIVE; no PLT section",
+    "source_sha256": "ca1eda6d8cb8440018d750aaed83986f706ea41c9956660acc21154c2b702e95",
+    "composition_source_sha256": "93eb3b677cafc3d1ef8a7b633f8afcc9ad10246fd5f7526e72bb2ccdaa24d662",
+    "generated_native_sha256": "dc7dd53bec203572fe8848effe78fb45e5e480141f5d2aee3b52c7a1773a61c7",
+    "internalized_native_sha256": "4c7082250b55911550fe20f3e8746b64e85a2654ca2c72445a40a9283eaffc1e",
+    "internalization": "only generated entry visibility changes default to hidden; one public SDK dispatcher",
+    "generated_root": {
+      "family": "R25-G0/root-v1",
+      "schema": 1,
+      "header_bytes": 112,
+      "root_bytes": 116,
+      "globals_bytes": 4,
+      "byte_order": "little",
+      "argument_bytes": 2,
+      "fields": {
+        "magic": 0,
+        "schema": 2,
+        "header_bytes": 4,
+        "root_bytes": 6,
+        "session": 8,
+        "interface_status": 12,
+        "language_status": 14,
+        "runtime_result": 16,
+        "last_success_generation": 20,
+        "last_success_entry": 24,
+        "descriptor_count": 26,
+        "requested_entry": 28,
+        "last_success_session": 32,
+        "entry_count": 36,
+        "globals_bytes": 38,
+        "contract_tag": 44,
+        "descriptors": 48
+      },
+      "bindings": [
+        {
+          "role": 1,
+          "buffer": 0,
+          "offset": 0,
+          "bytes": 0,
+          "access": 0,
+          "installed_min_bytes": 0
+        },
+        {
+          "role": 2,
+          "buffer": 0,
+          "offset": 0,
+          "bytes": 0,
+          "access": 0,
+          "installed_min_bytes": 0
+        },
+        {
+          "role": 3,
+          "buffer": 0,
+          "offset": 0,
+          "bytes": 0,
+          "access": 0,
+          "installed_min_bytes": 0
+        },
+        {
+          "role": 4,
+          "buffer": 0,
+          "offset": 0,
+          "bytes": 0,
+          "access": 0,
+          "installed_min_bytes": 0
+        }
+      ],
+      "runtime_result_owner": "invocation_transport_owner",
+      "generation": "successful-invocation-modulo-2^32",
+      "stock_storage_admission": "host-installed-manifest-invariant",
+      "native_storage_admission": "actual-root-and-bound-range-leases"
+    },
+    "omits": [
+      "argument/root leases",
+      "typed marshaling",
+      "retained completion publication",
+      "root success/error handling"
+    ],
+    "scope": "real generated C plus helper; measurement-only sequence, not accepted execution/publication contract",
+    "stack_path": {
+      "functions": [
+        "vdplet_entry",
+        "helper_fit_entry",
+        "rally_render_prepare_v1",
+        "preflight",
+        "acquire"
+      ],
+      "module_frame_bytes": 576,
+      "excludes": "firmware caller and service callback frames; Golem returns before helper in this measurement fixture",
+      "call_edges": [
+        {
+          "caller": "vdplet_entry",
+          "callee": "helper_fit_entry",
+          "instructions": [
+            "21bd:\tfffa21        \tl32r\ta2, 21a8 <helper_fit_entry+0x68>",
+            "21c0:\t03bd      \tmov.n\ta11, a3",
+            "21c2:\t0002e0        \tcallx8\ta2"
+          ]
+        },
+        {
+          "caller": "helper_fit_entry",
+          "callee": "rally_render_prepare_v1",
+          "instructions": [
+            "2189:\tffeb21        \tl32r\ta2, 2138 <rally_render_stop_v1+0x68>",
+            "218c:\t0002e0        \tcallx8\ta2"
+          ]
+        },
+        {
+          "caller": "rally_render_prepare_v1",
+          "callee": "preflight",
+          "instructions": [
+            "11c7:\tfe8221        \tl32r\ta2, bd0 <golem_fit_entry+0x258>",
+            "11ca:\t0189      \ts32i.n\ta8, a1, 0",
+            "11cc:\t6ca0f2        \tmovi\ta15, 108",
+            "11cf:\t04ed      \tmov.n\ta14, a4",
+            "11d1:\t05cd      \tmov.n\ta12, a5",
+            "11d3:\t0002e0        \tcallx8\ta2"
+          ]
+        },
+        {
+          "caller": "preflight",
+          "callee": "acquire",
+          "instructions": [
+            "830:\t01a2e5        \tcall8\t2260 <acquire>"
+          ]
+        }
+      ]
+    }
+  },
+  "outcome": "resource failure; return to Author before implementing bindings"
+}

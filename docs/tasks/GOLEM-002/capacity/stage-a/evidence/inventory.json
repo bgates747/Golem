@@ -1,0 +1,271 @@
+{
+  "schema": 1,
+  "scope": "existing build/source inventory; no new firmware or target runs",
+  "inventory_script_sha256": "1c1f9f1a464ee7c9d9f7486a91f90f46847c1fe15476eb1bd8da3f9372475f12",
+  "firmware_artifact_receipt_sha256": "4af68d2a2dfe196bc42adc81ed78db66cb04674fb268c2fa6d1e13645521a956",
+  "firmware_source_receipt_sha256": "ae8990f8e110cfe8d9be23a923ac7ebb5658127c96f2336bfdc81da485e56916",
+  "firmware_artifacts": {
+    "firmware.bin": {
+      "path": "/Agon/mystuff/agon-vdplet/build/firmware/firmware-src/.pio/build/esp32dev/firmware.bin",
+      "bytes": 1086192,
+      "sha256": "65d81aaf49b88dc39414cf458f3c8b465efa5a84f4ae59921a97431a3d748946"
+    },
+    "firmware.elf": {
+      "path": "/Agon/mystuff/agon-vdplet/build/firmware/firmware-src/.pio/build/esp32dev/firmware.elf",
+      "bytes": 24866468,
+      "sha256": "bc1ab788b5890e4dfb68b1439e8264f911cec43f17bc466c110a05e23392fe3b"
+    },
+    "firmware.map": {
+      "path": "/Agon/mystuff/agon-vdplet/build/firmware/firmware-src/.pio/build/esp32dev/firmware.map",
+      "bytes": 17978719,
+      "sha256": "fa3857cde2deb7ff7f50e6530fb5d796ed892791fa56a872db4285067f2d25db"
+    },
+    "bootloader.bin": {
+      "path": "/Agon/mystuff/agon-vdplet/build/firmware/firmware-src/.pio/build/esp32dev/bootloader.bin",
+      "bytes": 18992,
+      "sha256": "f2dfacdea6ae72d0aeeb7c30e525c4c6fc768a041849feac694cbb2ee2224448"
+    },
+    "partitions.bin": {
+      "path": "/Agon/mystuff/agon-vdplet/build/firmware/firmware-src/.pio/build/esp32dev/partitions.bin",
+      "bytes": 3072,
+      "sha256": "148b959cbff1c38aa8e1d5c0ba9d612c54997b945e56a63f41223eef650653a1"
+    }
+  },
+  "source_receipt": {
+    "project": "VDPlet Runtime",
+    "vdp_repository": "https://github.com/tomm/agon-vdp.git",
+    "vdp_pin": "1056ee38ec1cc68ed327bd32ee47d04b1c30597c",
+    "graphics_pin": "ac2dd5986daf496c43ae8e7fe41836274aec54a0",
+    "source": "/Agon/mystuff/agon-vdplet/build/firmware/firmware-src",
+    "upstream_modified": false,
+    "builder_sha256": "be30a312f74fe079f0d288d47559d812a425c73330e33dd689f9dd971878607f",
+    "dispatch_sha256": "35fff838a0942826fd8b63a69bbde9bae17a0d428e6a9289dd03607b225817ef",
+    "processor_sha256": "c921aa3e91c0e3a3fe58fc0e91d43789ed926892f7c401260641360c6a9fdb70",
+    "configuration_sha256": "7947cbd2e5fcb38e12ca3b8dee44b97700da0ca1d05c19914b100d47885f0bb1",
+    "headers": {
+      "vdplet.h": "fa8385e2906f07d37372d80c40f73d419defdbefe7a3458461ac9d5fe0820d38",
+      "vdplet_image.h": "6a28226a138ec2c54f1b456b1bf3f33372db1a2477cb1f92afc7547ba5007fff",
+      "vdplet_runtime.h": "af049fe93f1e64b0ec1135e5c0e55c1938adf022669dc35d906f5fcb6c58d91b"
+    }
+  },
+  "source_inputs": {
+    "/Agon/mystuff/agon-vdplet/build/firmware/firmware-src/video/video.ino": "0743e76728397c56e963baebe98c2746540195732d658d9dad2edf2e768ada27",
+    "/Agon/mystuff/agon-vdplet/build/firmware/firmware-src/video/vdu_buffered.h": "b9d9d93295ddc5fb05c802071057e32ed9755837f029ce381340072352c262f0",
+    "/Agon/mystuff/agon-vdplet/build/firmware/firmware-src/video/buffers.h": "f04f4da7521192d05725a7f54a52200c0b7cd9ed067335feaf20baf32ec62751",
+    "/home/smith/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freertos/include/freertos/task.h": "7bb7ecfae47900bb10e6e38e4fb1ddba04b95adc14f43704f1972c2c41f7397b",
+    "/Agon/mystuff/agon-vdplet/src/vdplet_runtime.h": "af049fe93f1e64b0ec1135e5c0e55c1938adf022669dc35d906f5fcb6c58d91b"
+  },
+  "firmware_selected_frames": {
+    "processLoop(void*)": 32,
+    "VDUStreamProcessor::processNext()": 48,
+    "VDUStreamProcessor::vdu(unsigned char, bool)": 32,
+    "VDUStreamProcessor::vdu_sys()": 48,
+    "VDUStreamProcessor::vdu_sys_buffered()": 112,
+    "VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)": 96,
+    "VDUStreamProcessor::processAllAvailable()": 48,
+    "VDUStreamProcessor::vdu_sys_vdplet(bool)": 128,
+    "vdpl_runtime::call(unsigned short, unsigned short, unsigned short, unsigned int)": 64,
+    "vdpl_runtime::acquire(void*, unsigned short, unsigned short, unsigned int, unsigned int, vdplet_view_v1*)": 64,
+    "vdpl_runtime::relinquish(void*, unsigned int)": 32
+  },
+  "command_task_stack_bytes": 4096,
+  "task_stack_units": "bytes, confirmed by pinned ESP-IDF FreeRTOS header; upstream source comment about words is not a capacity measurement",
+  "one_wrapper_source_path": {
+    "functions": [
+      "processLoop(void*)",
+      "VDUStreamProcessor::processNext()",
+      "VDUStreamProcessor::vdu(unsigned char, bool)",
+      "VDUStreamProcessor::vdu_sys()",
+      "VDUStreamProcessor::vdu_sys_buffered()",
+      "VDUStreamProcessor::bufferCall(unsigned short, AdvancedOffset)",
+      "VDUStreamProcessor::processAllAvailable()",
+      "VDUStreamProcessor::processNext()",
+      "VDUStreamProcessor::vdu(unsigned char, bool)",
+      "VDUStreamProcessor::vdu_sys()",
+      "VDUStreamProcessor::vdu_sys_vdplet(bool)",
+      "vdpl_runtime::call(unsigned short, unsigned short, unsigned short, unsigned int)"
+    ],
+    "selected_live_frames": 736,
+    "scope": "source-derived scenario only; not full callgraph, unlimited nested buffer-call bound or observed high-water"
+  },
+  "firmware_allocated_sections": {
+    ".iram0.vectors": 1027,
+    ".iram0.text": 93795,
+    ".dram0.data": 19880,
+    ".dram0.bss": 25152,
+    ".flash.rodata": 277388,
+    ".flash.text": 693727
+  },
+  "heap_layout": {
+    "archive_sha256": "4d234dcddf50bb8fd521666451c5b7770da4a6e1d2b0bf7451475625001458fd",
+    "object_sha256": "f27ce3ffd9340294335d48e89bba979d7ce44a163c0cad6e452d5aa952a2d651",
+    "type_descriptor_header_sha256": "a25d63ba4e98eb37e498fcfffce2b07458807da7670bca0e68129137bee72c25",
+    "soc_header_sha256": "cff3a449615f9b773494d0458dd60c41bad872c5827bd8bff579c56c0f071fa5",
+    "d_iram_type_caps": [
+      0,
+      6156,
+      3
+    ],
+    "aliased_iram": true,
+    "raw_alias_regions": [
+      {
+        "start": 1073610752,
+        "bytes": 16384,
+        "type": 1,
+        "iram_alias": 1074511872
+      },
+      {
+        "start": 1073627136,
+        "bytes": 16384,
+        "type": 1,
+        "iram_alias": 1074495488
+      },
+      {
+        "start": 1073643520,
+        "bytes": 32768,
+        "type": 1,
+        "iram_alias": 1074462720
+      },
+      {
+        "start": 1073676288,
+        "bytes": 32768,
+        "type": 1,
+        "iram_alias": 1074429952
+      },
+      {
+        "start": 1073709056,
+        "bytes": 16384,
+        "type": 1,
+        "iram_alias": 1074413568
+      },
+      {
+        "start": 1073725440,
+        "bytes": 16384,
+        "type": 1,
+        "iram_alias": 1074397184
+      }
+    ],
+    "interpretation": "executable allocations may consume aliased internal data RAM as well as dedicated IRAM; do not add alias sizes twice or infer runtime availability from the linker IRAM remainder"
+  },
+  "module_stack_paths": {
+    "default": {
+      "path": [
+        "vdplet_entry",
+        "rally_render_prepare_v1",
+        "preflight",
+        "acquire"
+      ],
+      "module_frame_bytes": 800,
+      "conservative_all_module_static_frames": 2016,
+      "scope": "no recursion in supplied source/helper; excludes external service/library/firmware frames; not a runtime measurement",
+      "call_edges": [
+        {
+          "caller": "vdplet_entry",
+          "callee": "rally_render_prepare_v1",
+          "instructions": [
+            "654f:\tff6721        \tl32r\ta2, 62ec <rally_render_stop_v1+0x78>",
+            "6552:\t6cc1d2        \taddi\ta13, a1, 108",
+            "6555:\t01cd      \tmov.n\ta12, a1",
+            "6557:\t04ad      \tmov.n\ta10, a4",
+            "6559:\t0002e0        \tcallx8\ta2"
+          ]
+        },
+        {
+          "caller": "rally_render_prepare_v1",
+          "callee": "preflight",
+          "instructions": [
+            "536b:\tfe8521        \tl32r\ta2, 4d80 <source_entry+0x4368>",
+            "536e:\t0189      \ts32i.n\ta8, a1, 0",
+            "5370:\t6ca0f2        \tmovi\ta15, 108",
+            "5373:\t04ed      \tmov.n\ta14, a4",
+            "5375:\t05cd      \tmov.n\ta12, a5",
+            "5377:\t0002e0        \tcallx8\ta2"
+          ]
+        },
+        {
+          "caller": "preflight",
+          "callee": "acquire",
+          "instructions": [
+            "848:\t05dce5        \tcall8\t6618 <acquire>"
+          ]
+        }
+      ]
+    },
+    "relocated": {
+      "path": [
+        "vdplet_entry",
+        "rally_render_prepare_v1",
+        "preflight",
+        "acquire"
+      ],
+      "module_frame_bytes": 800,
+      "conservative_all_module_static_frames": 2016,
+      "scope": "no recursion in supplied source/helper; excludes external service/library/firmware frames; not a runtime measurement",
+      "call_edges": [
+        {
+          "caller": "vdplet_entry",
+          "callee": "rally_render_prepare_v1",
+          "instructions": [
+            "658f:\tff6621        \tl32r\ta2, 6328 <rally_render_stop_v1+0x78>",
+            "6592:\t6cc1d2        \taddi\ta13, a1, 108",
+            "6595:\t01cd      \tmov.n\ta12, a1",
+            "6597:\t04ad      \tmov.n\ta10, a4",
+            "6599:\t0002e0        \tcallx8\ta2"
+          ]
+        },
+        {
+          "caller": "rally_render_prepare_v1",
+          "callee": "preflight",
+          "instructions": [
+            "53a7:\tfe8521        \tl32r\ta2, 4dbc <source_entry+0x43a4>",
+            "53aa:\t0189      \ts32i.n\ta8, a1, 0",
+            "53ac:\t6ca0f2        \tmovi\ta15, 108",
+            "53af:\t04ed      \tmov.n\ta14, a4",
+            "53b1:\t05cd      \tmov.n\ta12, a5",
+            "53b3:\t0002e0        \tcallx8\ta2"
+          ]
+        },
+        {
+          "caller": "preflight",
+          "callee": "acquire",
+          "instructions": [
+            "848:\t05e0e5        \tcall8\t6658 <acquire>"
+          ]
+        }
+      ]
+    }
+  },
+  "unmeasured": [
+    "current free/largest executable block",
+    "current free/largest internal byte-accessible block",
+    "actual command-task high-water under composition",
+    "full service/library/interrupt stack maxima",
+    "video/audio/asset allocation contention and fragmentation",
+    "physical capacity/cache/timing"
+  ],
+  "transport": "stock write chunks are u16; consolidate command14 can form one larger uint32-sized block; LOAD length u32; runtime still requires exactly one block",
+  "peak_load": "consolidation retains old chunks while allocating/copying final block; load holds upload while allocating separate text/data; no second module slot",
+  "proposal_not_implementation": {
+    "runtime_ceilings": {
+      "text": 65536,
+      "data": 16384,
+      "image": 131072,
+      "declared_module_stack": 2048
+    },
+    "recommended_initial_budgets": {
+      "text": 32768,
+      "data": 4096,
+      "image": 65536,
+      "declared_module_stack": 2048
+    },
+    "current_scaffold_declarations_rounded": {
+      "text": 28672,
+      "data": 2048,
+      "image_requirement": 28184,
+      "declared_module_stack": 2048
+    },
+    "task_stack": 4096,
+    "firmware_service_reserve": 2048,
+    "qualification_gate": "real D2 static paths must fit declared module stack, full firmware/services must fit reserve; confirm >=1024 bytes command-task high-water in selected configurations before expanding stress; unknown paths remain unqualified"
+  }
+}

@@ -2,13 +2,27 @@
 
 ## Executive summary
 
+**2026-10-13 extension:** investigate substantial downloadable VDP applications,
+including a Wolf-class renderer/engine in one resident VDPlet. The Author has
+reaffirmed approval to increase the conservative limits; that direction is
+settled. The capacity/stress investigation below will establish justified
+budgets and practical ceilings. This update records work for later investigation;
+it does not start builds, stress runs, firmware changes or physical deployment.
+Rally is the first customer, not the intended capacity ceiling.
+
+Stage A was subsequently released through Rally twenty-nine and is now returned
+for review: [measurements and budget proposal](GOLEM-002/capacity/stage-a/RESULTS.md).
+Only resource builds/offline inventory were performed; proposed ceilings are
+64 KiB text/16 KiB data/128 KiB image/2 KiB module stack, with smaller starting
+budgets. No runtime/target/stress change occurred; Stage B remains unreleased.
+
 Research a small VDP facility that loads PC-compiled C/C++ modules onto physical
 Agon at runtime. Establish executable loading and a versioned C service interface
 first; use agon-6502's packed monochrome renderer as the first substantial
 application. Numeric modules remain an intended use. Golem may call vdplets later,
 but neither a native Golem compiler nor emulator support is a prerequisite.
 
-**Current authorization:** the Author's 2026-10-12 eight-hour goal authorizes
+**Prior implementation authorization:** the Author's 2026-10-12 eight-hour goal authorized
 implementation of the loader/modules, emulator integration and a service offer to
 the agon-6502 agent. GOLEM-021 coordinates that work. Earlier Gate A research-only
 restriction is superseded by this explicit instruction. Physical flashing remains
@@ -371,6 +385,140 @@ are complete; stop at Gate A. The report recommends the next implementation scop
 and gives a provisional effort range. The subsequent eight-hour GOLEM-021
 instruction authorized the implementation and coordination now recorded above.
 LOD-004/005, BLT-004 and packaging/adoption remain physical or later-review work.
+
+## Further investigation — substantial single-module applications
+
+The ambition is a generic runtime/service facility suitable for eventual upstream
+adoption. Once that runtime is included in distributed VDP firmware, applications
+could upload substantial native functionality without asking users to flash
+application-specific firmware. Upstream acceptance is an objective, not an existing
+feature or promise: present stock VDP still lacks this loader. The generic runtime
+belongs in [agon-vdplet](../../../agon-vdplet/README.md); application code/assets
+remain with their owners. Golem offers an approachable source language alongside
+C/C++. Common Golem source can select buffered/native targets where semantics and
+services permit; complex native-only features must declare their requirements.
+
+A whole renderer or game engine can remain loaded and be driven by compact
+commands and retained data, reducing recurring wire traffic. This does not imply
+a permanently blocking entry: finite returns, event-loop responsiveness and
+explicit drawing/teardown ownership remain required. Background scheduling and
+autonomous execution remain separate reviewed work.
+
+### Evidence and settled direction
+
+GOLEM-037's [resource gate](GOLEM-037/README.md) measured the accepted Rally helper
+with minimal dispatcher at 7,600 text/864 resident data and a resolved 544-byte
+module stack path before service callbacks. Tiny generated Golem plus helper
+uses 8,224 text/1,132 data and a 576-byte path, before real binding glue. Current
+policies are 8,192 text, 4,096 data, 512 declared stack and 16,384 image bytes;
+combined packaging rejects text. These are exact-build observations, not universal
+minima or established hardware ceilings. Historical receipts remain unchanged.
+The Author subsequently reaffirmed **increase the limits**; do not return that
+same increase-versus-reduce decision for approval again. Numerical replacement
+budgets have not been selected, and no SDK/firmware policy has changed yet.
+
+Wolf3DOrig and its separate bespoke renderer are a larger inspiration: raycasting,
+doors, sprite projection/sorting/occlusion, scaled textures, HUD/weapon composition,
+double buffering and death fizzle. VDP-local work, retained assets/world mirrors
+and compact updates/completions support the intended model. Scratch bitmap storage
+outlives queued drawing, and completion follows a final drain. These are source-
+reviewed examples, not measurements of a Wolf VDPlet or authority to port Wolf.
+Firmware-linked flash code is not automatically equivalent to uploaded executable
+allocation, and private firmware graphics calls are not current SDK services.
+Capacity and service coverage both need investigation.
+
+### Investigation items
+
+- CAP-001 [x] Inventory actual loader/build/transport limits and physical memory
+  allocation routes against pinned SDK/firmware/toolchain sources. Separate code/
+  literals, rodata, data/BSS, stack, retained assets, framebuffers and temporary
+  ELF/relocation/upload allocations, including peak load memory. Distinguish flash
+  from executable RAM and total free memory from the largest suitable contiguous
+  allocation; verify original-ESP32 alignment/cache/access and PSRAM restrictions.
+  Stage A source/map/ELF/heap-table inventory is delivered; actual free/contiguous
+  capacity, contention and physical timing remain CAP-004/007 work.
+- CAP-002 [x] Propose distinct runtime ceilings, module-declared requirements and
+  recommended/default budgets. Select justified increases with room for real
+  glue/application growth, not merely Rally's 32-byte text overage. Include
+  composed call paths and firmware/service stack reserve. Trace builder, envelope,
+  loader and wire/storage constraints, including current one-block/image handling;
+  identify compatible changes rather than enlarging only one check. Stage A
+  delivers numerical ceilings, smaller initial budgets, task/service reserve,
+  coherent changed-file proposal and chunk/consolidate plan; none implemented.
+- CAP-003 [x] Write the proposed [capacity protocol](GOLEM-002/capacity/README.md),
+  returned for Author review, with independent graduated code/
+  literal, initialized-data, BSS, relocation and bounded call-depth/local-storage
+  workloads, followed by combined-pressure cases. Execute real code/data so
+  optimization cannot erase the workload. Exercise admission boundaries, malformed
+  or overstated requirements and allocation refusal. Specify safe stopping
+  criteria/headroom; do not deliberately overflow physical stack or assume a
+  native-code sandbox. Documentation complete; generators/execution remain
+  unimplemented and unqualified.
+- CAP-004 [ ] Include repeated load/init/invoke/fini/unload and rejected-load cycles
+  under varied retained-buffer/asset allocation histories. Measure peak/remaining
+  memory, largest suitable allocation, fragmentation, relocation/load costs and
+  stack high-water/call paths. Check partial initialization, stale handles, refused
+  acquire/release, retained application state, resource recovery and usable normal
+  VDP/MOS afterward. One successful load does not establish practical capacity.
+- CAP-005 [ ] Define useful workloads: real Rally generated source plus renderer/
+  bindings first, then a substantial Wolf-inspired rendering workload with world/
+  sprite scratch, textures, HUD and queued drawing. Include representative video
+  modes, audio/input/event pressure and repeated scene/asset changes. Keep game
+  code/replay with Rally/Wolf; use approved extracted fixtures or self-contained
+  workloads. No complete Wolf migration is implied.
+- CAP-006 [ ] Assess stable generic services for retained buffers, appropriate
+  bitmap/pixel/framebuffer access, drawing submission/drain, completion and safe
+  storage/module lifetime. Identify private C++ facilities needing a bounded public
+  service rather than importing addresses/object layouts. Distinguish submission,
+  drawing completion and presentation; quiesce before scratch reuse or unload.
+  Propose version/capability negotiation without silently adding a scheduler or
+  every graphics/audio facility used by an example.
+- CAP-007 [ ] Separate host format/kernel tests, actual Xtensa emulation and
+  physical capacity/timing evidence. Use emulation for behavior/preflight, then
+  measure executable-memory, stack/cache and contention on expressly authorized
+  hardware. Pin sources, tools, firmware, module sizes, video/assets/audio setup
+  and duration. Report per-configuration observations, not universal maxima or
+  assumed emulator/hardware timing equivalence.
+- CAP-008 [ ] Assess upstream suitability: minimal generic runtime changes,
+  separately distributed useful modules, discoverable versions/capabilities,
+  clear behavior on older stock firmware, readable assembly/SDK integration and
+  approachable Golem use. Keep game-specific rules/renderers out of the generic
+  firmware. Explain today's one-time custom runtime installation versus eventual
+  upstream inclusion; no adoption commitment exists.
+- CAP-009 [ ] Deliver the protocol, evidence matrix, proposed increased budgets,
+  service gaps and staged implementation/qualification recommendation for review.
+  Separate install/load traffic from steady calls/resident updates; include time/
+  copies as supporting measurements, not a performance-optimization campaign.
+  Mark measured/inferred/untested claims and the next concrete execution scope.
+  Stop for review before running the new stress campaign or hardware work.
+  Stage A protocol/proposal/static evidence are delivered; actual qualification,
+  physical capacity evidence and final recommendations remain open.
+
+### Deliverables and boundaries
+
+Future protocol/workloads/reports belong together under
+`docs/tasks/GOLEM-002/capacity/`. The [concrete proposed protocol and qualification
+sequence](GOLEM-002/capacity/README.md) now exist; no executable protocol tools or
+new measurements are produced by this planning update. Generic runtime changes belong in agon-vdplet when implemented
+under the selected tranche. GOLEM-037 consumes the revised policy for its binding
+work. Do not clutter production Golem code or edit peer projects to host fixtures.
+
+Acceptance is a reviewable stress protocol and budget/service recommendation for
+substantial single modules, clean failure and useful remaining VDP resources.
+No predetermined maximum, universal FPS target, optimizer, automatic partitioner,
+multi-module system or finished game port is required. Existing physical/human
+review gates remain in force. Increasing limits is already decided; numerical
+budgets, execution sequence and any new services remain design work.
+
+Read-only inspiration reviewed on 2026-10-13:
+
+- [Wolf3DOrig architecture](../../../Wolf3dOrig/README.md).
+- [Renderer pipeline/lifetime](../../../agon-vdp-wolf3d/video/wolf3d/render/README.md)
+  and [firmware glue](../../../agon-vdp-wolf3d/video/wolf3d.h).
+- [Wolf completion ownership](../../../Wolf3dOrig/src/asm/wolf3d/src/wolf3d_render_async.inc).
+- [Prior return-channel review](GOLEM-002/vdplet-return-channel-notes.md).
+- [Common backend requirements](../design/backend-portability.md)
+  and [friendly native-language research](GOLEM-023.md).
 
 ## Research leads to verify, not feasibility conclusions
 

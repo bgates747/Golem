@@ -1,0 +1,12 @@
+// Resource measurement only. This is a small source workload, not Rally logic.
+// No native binding syntax is implemented by this fixture.
+uint32 tick = 0
+Sub InitRace
+    tick = 0
+EndSub
+Sub Render30
+    tick = tick + 1
+EndSub
+Sub StopRace
+    tick = 0
+EndSub

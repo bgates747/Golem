@@ -1,0 +1,947 @@
+{
+  "schema": 1,
+  "profile": "portable-scalar-foundation",
+  "experimental": true,
+  "execution_contract": "r25-g0-root-v1-dual-backend",
+  "state_buffer": 1,
+  "state_bytes": 310,
+  "state_owner": "application_shared",
+  "initialization": "explicit_install_or_reset",
+  "error": {
+    "offset": 14,
+    "bytes": 2,
+    "codes": {
+      "ok": 0,
+      "uint16_add_overflow": 1,
+      "uint16_sub_underflow": 2,
+      "uint16_mul_overflow": 3,
+      "array_index": 5,
+      "zero_divisor": 4,
+      "signed_division_overflow": 6,
+      "bounds_failure": 32,
+      "nonfinite_float": 33
+    }
+  },
+  "globals": [
+    {
+      "name": "slot",
+      "type": "uint16",
+      "offset": 112,
+      "bytes": 2,
+      "bounds": [
+        0,
+        65535
+      ]
+    },
+    {
+      "name": "routeRecord",
+      "type": "uint16",
+      "offset": 114,
+      "bytes": 2,
+      "bounds": [
+        0,
+        65535
+      ]
+    },
+    {
+      "name": "routeRemaining",
+      "type": "uint16",
+      "offset": 116,
+      "bytes": 2,
+      "bounds": [
+        0,
+        65535
+      ]
+    },
+    {
+      "name": "routeIndex",
+      "type": "uint16",
+      "offset": 118,
+      "bytes": 2,
+      "bounds": [
+        0,
+        65535
+      ]
+    },
+    {
+      "name": "routeHeading",
+      "type": "sint32",
+      "offset": 120,
+      "bytes": 4,
+      "bounds": [
+        -2147483648,
+        2147483647
+      ]
+    },
+    {
+      "name": "routeLateral",
+      "type": "sint32",
+      "offset": 124,
+      "bytes": 4,
+      "bounds": [
+        -2147483648,
+        2147483647
+      ]
+    },
+    {
+      "name": "routeForward",
+      "type": "uint32",
+      "offset": 128,
+      "bytes": 4,
+      "bounds": [
+        0,
+        4294967295
+      ]
+    },
+    {
+      "name": "forwardAdvance",
+      "type": "uint32",
+      "offset": 132,
+      "bytes": 4,
+      "bounds": [
+        0,
+        4294967295
+      ]
+    },
+    {
+      "name": "worldTick",
+      "type": "uint32",
+      "offset": 136,
+      "bytes": 4,
+      "bounds": [
+        0,
+        4294967295
+      ]
+    },
+    {
+      "name": "headingInput",
+      "type": "sint32",
+      "offset": 140,
+      "bytes": 4,
+      "bounds": [
+        -2147483648,
+        2147483647
+      ]
+    },
+    {
+      "name": "headingChecked",
+      "type": "sint32",
+      "offset": 144,
+      "bytes": 4,
+      "bounds": [
+        -32768,
+        32767
+      ]
+    },
+    {
+      "name": "magnitude",
+      "type": "sint32",
+      "offset": 148,
+      "bytes": 4,
+      "bounds": [
+        -2147483648,
+        2147483647
+      ]
+    },
+    {
+      "name": "sineQuotient",
+      "type": "sint32",
+      "offset": 152,
+      "bytes": 4,
+      "bounds": [
+        -2147483648,
+        2147483647
+      ]
+    },
+    {
+      "name": "sineFraction",
+      "type": "sint32",
+      "offset": 156,
+      "bytes": 4,
+      "bounds": [
+        -2147483648,
+        2147483647
+      ]
+    },
+    {
+      "name": "sineIndex",
+      "type": "uint16",
+      "offset": 160,
+      "bytes": 2,
+      "bounds": [
+        0,
+        65535
+      ]
+    },
+    {
+      "name": "sineValue",
+      "type": "sint32",
+      "offset": 162,
+      "bytes": 4,
+      "bounds": [
+        -2147483648,
+        2147483647
+      ]
+    },
+    {
+      "name": "work",
+      "type": "sint32",
+      "offset": 166,
+      "bytes": 4,
+      "bounds": [
+        -2147483648,
+        2147483647
+      ]
+    },
+    {
+      "name": "quotient",
+      "type": "sint32",
+      "offset": 170,
+      "bytes": 4,
+      "bounds": [
+        -2147483648,
+        2147483647
+      ]
+    },
+    {
+      "name": "remainder",
+      "type": "sint32",
+      "offset": 174,
+      "bytes": 4,
+      "bounds": [
+        -2147483648,
+        2147483647
+      ]
+    },
+    {
+      "name": "speed",
+      "type": "sint32",
+      "offset": 178,
+      "bytes": 4,
+      "bounds": [
+        -2147483648,
+        2147483647
+      ]
+    },
+    {
+      "name": "lapInput",
+      "type": "sint32",
+      "offset": 182,
+      "bytes": 4,
+      "bounds": [
+        -2147483648,
+        2147483647
+      ]
+    },
+    {
+      "name": "lap",
+      "type": "sint32",
+      "offset": 186,
+      "bytes": 4,
+      "bounds": [
+        1,
+        3276800
+      ]
+    },
+    {
+      "name": "normalizeInput",
+      "type": "sint32",
+      "offset": 190,
+      "bytes": 4,
+      "bounds": [
+        -2147483648,
+        2147483647
+      ]
+    },
+    {
+      "name": "normalPosition",
+      "type": "uint32",
+      "offset": 194,
+      "bytes": 4,
+      "bounds": [
+        0,
+        4294967295
+      ]
+    },
+    {
+      "name": "playerStation",
+      "type": "uint32",
+      "offset": 198,
+      "bytes": 4,
+      "bounds": [
+        0,
+        4294967295
+      ]
+    },
+    {
+      "name": "playerLateral",
+      "type": "sint32",
+      "offset": 202,
+      "bytes": 4,
+      "bounds": [
+        -38400,
+        38400
+      ]
+    },
+    {
+      "name": "opponentStation",
+      "type": "uint32",
+      "offset": 206,
+      "bytes": 4,
+      "bounds": [
+        0,
+        4294967295
+      ]
+    },
+    {
+      "name": "opponentLateral",
+      "type": "sint32",
+      "offset": 210,
+      "bytes": 4,
+      "bounds": [
+        -14260,
+        14260
+      ]
+    },
+    {
+      "name": "separation",
+      "type": "sint32",
+      "offset": 214,
+      "bytes": 4,
+      "bounds": [
+        -2147483648,
+        2147483647
+      ]
+    },
+    {
+      "name": "lateralSeparation",
+      "type": "sint32",
+      "offset": 218,
+      "bytes": 4,
+      "bounds": [
+        -2147483648,
+        2147483647
+      ]
+    },
+    {
+      "name": "halfLap",
+      "type": "sint32",
+      "offset": 222,
+      "bytes": 4,
+      "bounds": [
+        -2147483648,
+        2147483647
+      ]
+    },
+    {
+      "name": "contactResult",
+      "type": "bool",
+      "offset": 226,
+      "bytes": 2,
+      "bounds": [
+        0,
+        1
+      ]
+    },
+    {
+      "name": "contactAny",
+      "type": "bool",
+      "offset": 228,
+      "bytes": 2,
+      "bounds": [
+        0,
+        1
+      ]
+    },
+    {
+      "name": "laneQuotient",
+      "type": "uint16",
+      "offset": 230,
+      "bytes": 2,
+      "bounds": [
+        0,
+        65535
+      ]
+    },
+    {
+      "name": "laneRemainder",
+      "type": "uint16",
+      "offset": 232,
+      "bytes": 2,
+      "bounds": [
+        0,
+        65535
+      ]
+    },
+    {
+      "name": "placedLateral",
+      "type": "sint32",
+      "offset": 234,
+      "bytes": 4,
+      "bounds": [
+        -14260,
+        14260
+      ]
+    },
+    {
+      "name": "activeChecked",
+      "type": "uint16",
+      "offset": 238,
+      "bytes": 2,
+      "bounds": [
+        0,
+        1
+      ]
+    },
+    {
+      "name": "sa",
+      "type": "sint32",
+      "offset": 240,
+      "bytes": 4,
+      "bounds": [
+        -2147483648,
+        2147483647
+      ]
+    },
+    {
+      "name": "sb",
+      "type": "sint32",
+      "offset": 244,
+      "bytes": 4,
+      "bounds": [
+        -2147483648,
+        2147483647
+      ]
+    },
+    {
+      "name": "sq",
+      "type": "sint32",
+      "offset": 248,
+      "bytes": 4,
+      "bounds": [
+        -2147483648,
+        2147483647
+      ]
+    },
+    {
+      "name": "sr",
+      "type": "sint32",
+      "offset": 252,
+      "bytes": 4,
+      "bounds": [
+        -2147483648,
+        2147483647
+      ]
+    },
+    {
+      "name": "ua",
+      "type": "uint32",
+      "offset": 256,
+      "bytes": 4,
+      "bounds": [
+        0,
+        4294967295
+      ]
+    },
+    {
+      "name": "ub",
+      "type": "uint32",
+      "offset": 260,
+      "bytes": 4,
+      "bounds": [
+        0,
+        4294967295
+      ]
+    },
+    {
+      "name": "uq",
+      "type": "uint32",
+      "offset": 264,
+      "bytes": 4,
+      "bounds": [
+        0,
+        4294967295
+      ]
+    },
+    {
+      "name": "ur",
+      "type": "uint32",
+      "offset": 268,
+      "bytes": 4,
+      "bounds": [
+        0,
+        4294967295
+      ]
+    },
+    {
+      "name": "boundedQ",
+      "type": "sint32",
+      "offset": 272,
+      "bytes": 4,
+      "bounds": [
+        -10,
+        10
+      ]
+    },
+    {
+      "name": "boundedR",
+      "type": "sint32",
+      "offset": 276,
+      "bytes": 4,
+      "bounds": [
+        -3,
+        3
+      ]
+    },
+    {
+      "name": "effect",
+      "type": "uint16",
+      "offset": 280,
+      "bytes": 2,
+      "bounds": [
+        0,
+        65535
+      ]
+    },
+    {
+      "name": "shiftCount",
+      "type": "uint16",
+      "offset": 282,
+      "bytes": 2,
+      "bounds": [
+        0,
+        65535
+      ]
+    },
+    {
+      "name": "signedShift",
+      "type": "sint32",
+      "offset": 284,
+      "bytes": 4,
+      "bounds": [
+        -2147483648,
+        2147483647
+      ]
+    },
+    {
+      "name": "unsignedShift",
+      "type": "uint32",
+      "offset": 288,
+      "bytes": 4,
+      "bounds": [
+        0,
+        4294967295
+      ]
+    },
+    {
+      "name": "renderSession",
+      "type": "uint32",
+      "offset": 292,
+      "bytes": 4,
+      "bounds": [
+        0,
+        4294967295
+      ]
+    },
+    {
+      "name": "renderRequest",
+      "type": "uint32",
+      "offset": 296,
+      "bytes": 4,
+      "bounds": [
+        0,
+        4294967295
+      ]
+    },
+    {
+      "name": "playerUnwrapped",
+      "type": "uint32",
+      "offset": 300,
+      "bytes": 4,
+      "bounds": [
+        0,
+        4294967295
+      ]
+    },
+    {
+      "name": "renderPhase",
+      "type": "uint16",
+      "offset": 304,
+      "bytes": 2,
+      "bounds": [
+        0,
+        7999
+      ]
+    },
+    {
+      "name": "renderSteering",
+      "type": "sint16",
+      "offset": 306,
+      "bytes": 2,
+      "bounds": [
+        -21,
+        21
+      ]
+    },
+    {
+      "name": "renderFlags",
+      "type": "uint16",
+      "offset": 308,
+      "bytes": 2,
+      "bounds": [
+        0,
+        7
+      ]
+    }
+  ],
+  "arrays": [
+    {
+      "name": "active",
+      "type": "uint16",
+      "buffer": 2,
+      "offset": 0,
+      "bytes": 12,
+      "lower": 0,
+      "upper": 5,
+      "count": 6,
+      "element_bytes": 2,
+      "access": 3,
+      "owner": "application_retained",
+      "initial_data": "array-active.bin"
+    },
+    {
+      "name": "progress",
+      "type": "sint32",
+      "buffer": 3,
+      "offset": 0,
+      "bytes": 24,
+      "lower": 0,
+      "upper": 5,
+      "count": 6,
+      "element_bytes": 4,
+      "access": 3,
+      "owner": "application_retained",
+      "initial_data": "array-progress.bin"
+    },
+    {
+      "name": "position",
+      "type": "uint32",
+      "buffer": 4,
+      "offset": 0,
+      "bytes": 24,
+      "lower": 0,
+      "upper": 5,
+      "count": 6,
+      "element_bytes": 4,
+      "access": 3,
+      "owner": "application_retained",
+      "initial_data": "array-position.bin"
+    },
+    {
+      "name": "lateral",
+      "type": "sint32",
+      "buffer": 5,
+      "offset": 0,
+      "bytes": 24,
+      "lower": 0,
+      "upper": 5,
+      "count": 6,
+      "element_bytes": 4,
+      "access": 3,
+      "owner": "application_retained",
+      "initial_data": "array-lateral.bin"
+    },
+    {
+      "name": "contacts",
+      "type": "uint16",
+      "buffer": 6,
+      "offset": 0,
+      "bytes": 12,
+      "lower": 0,
+      "upper": 5,
+      "count": 6,
+      "element_bytes": 2,
+      "access": 3,
+      "owner": "application_retained",
+      "initial_data": "array-contacts.bin"
+    },
+    {
+      "name": "routes",
+      "type": "sint16",
+      "buffer": 7,
+      "offset": 0,
+      "bytes": 48,
+      "lower": 0,
+      "upper": 23,
+      "count": 24,
+      "element_bytes": 2,
+      "access": 1,
+      "owner": "application_retained",
+      "initial_data": "array-routes.bin"
+    },
+    {
+      "name": "sine",
+      "type": "sint16",
+      "buffer": 8,
+      "offset": 0,
+      "bytes": 514,
+      "lower": 0,
+      "upper": 256,
+      "count": 257,
+      "element_bytes": 2,
+      "access": 1,
+      "owner": "application_retained",
+      "initial_data": "array-sine.bin"
+    }
+  ],
+  "entries": [
+    {
+      "name": "Sine",
+      "logical_id": 0,
+      "parameter_bytes": 0,
+      "result_bytes": 0,
+      "worst_case_visits": 15
+    },
+    {
+      "name": "RouteTick",
+      "logical_id": 1,
+      "parameter_bytes": 0,
+      "result_bytes": 0,
+      "worst_case_visits": 32
+    },
+    {
+      "name": "Contact",
+      "logical_id": 2,
+      "parameter_bytes": 0,
+      "result_bytes": 0,
+      "worst_case_visits": 16
+    },
+    {
+      "name": "Tick120",
+      "logical_id": 3,
+      "parameter_bytes": 0,
+      "result_bytes": 0,
+      "worst_case_visits": 264
+    },
+    {
+      "name": "Normalize",
+      "logical_id": 4,
+      "parameter_bytes": 0,
+      "result_bytes": 0,
+      "worst_case_visits": 5
+    },
+    {
+      "name": "MultiplySigned",
+      "logical_id": 5,
+      "parameter_bytes": 0,
+      "result_bytes": 0,
+      "worst_case_visits": 1
+    },
+    {
+      "name": "MultiplyUnsigned",
+      "logical_id": 6,
+      "parameter_bytes": 0,
+      "result_bytes": 0,
+      "worst_case_visits": 1
+    },
+    {
+      "name": "DivideSigned",
+      "logical_id": 7,
+      "parameter_bytes": 0,
+      "result_bytes": 0,
+      "worst_case_visits": 2
+    },
+    {
+      "name": "DivideUnsigned",
+      "logical_id": 8,
+      "parameter_bytes": 0,
+      "result_bytes": 0,
+      "worst_case_visits": 2
+    },
+    {
+      "name": "BoundedPair",
+      "logical_id": 9,
+      "parameter_bytes": 0,
+      "result_bytes": 0,
+      "worst_case_visits": 2
+    },
+    {
+      "name": "AliasPair",
+      "logical_id": 10,
+      "parameter_bytes": 0,
+      "result_bytes": 0,
+      "worst_case_visits": 1
+    },
+    {
+      "name": "ShiftSigned",
+      "logical_id": 11,
+      "parameter_bytes": 0,
+      "result_bytes": 0,
+      "worst_case_visits": 1
+    },
+    {
+      "name": "ShiftUnsigned",
+      "logical_id": 12,
+      "parameter_bytes": 0,
+      "result_bytes": 0,
+      "worst_case_visits": 1
+    },
+    {
+      "name": "InitRace",
+      "logical_id": 13,
+      "parameter_bytes": 0,
+      "result_bytes": 0,
+      "worst_case_visits": 47
+    },
+    {
+      "name": "ResetRace",
+      "logical_id": 14,
+      "parameter_bytes": 0,
+      "result_bytes": 0,
+      "worst_case_visits": 47
+    },
+    {
+      "name": "Render30",
+      "logical_id": 15,
+      "parameter_bytes": 0,
+      "result_bytes": 0,
+      "worst_case_visits": 1
+    },
+    {
+      "name": "StopRace",
+      "logical_id": 16,
+      "parameter_bytes": 0,
+      "result_bytes": 0,
+      "worst_case_visits": 1
+    }
+  ],
+  "external_reservations": [
+    {
+      "first": 60000,
+      "last": 60031
+    },
+    {
+      "first": 50300,
+      "last": 50300
+    },
+    {
+      "first": 50301,
+      "last": 50301
+    },
+    {
+      "first": 50302,
+      "last": 50302
+    },
+    {
+      "first": 50303,
+      "last": 50303
+    },
+    {
+      "first": 50304,
+      "last": 50304
+    },
+    {
+      "first": 50305,
+      "last": 50305
+    }
+  ],
+  "native_bindings": {
+    "configuration": {
+      "schema": 1,
+      "profile": "rally-render-v1",
+      "phase": "after_source_before_success",
+      "hooks": {
+        "InitRace": "bind",
+        "ResetRace": "bind",
+        "Render30": "prepare",
+        "StopRace": "stop"
+      },
+      "state": {
+        "session": "renderSession",
+        "request_generation": "renderRequest",
+        "simulation_tick": "worldTick",
+        "player_station": "playerStation",
+        "player_lateral_q8": "playerLateral",
+        "phase": "renderPhase",
+        "steering": "renderSteering",
+        "flags": "renderFlags"
+      },
+      "opponents": {
+        "station": "position",
+        "lateral_q8": "lateral",
+        "active": "active",
+        "heading_turn16": "routeHeading"
+      },
+      "constants": {
+        "presentation_profile": 0,
+        "reference_crash_remaining": 0,
+        "reference_invulnerable": 0
+      },
+      "bindings": {
+        "asset": {
+          "buffer": 50300,
+          "offset": 0,
+          "bytes": 149518
+        },
+        "outputs": [
+          {
+            "buffer": 50301,
+            "offset": 0,
+            "bytes": 20480
+          },
+          {
+            "buffer": 50302,
+            "offset": 0,
+            "bytes": 2048
+          },
+          {
+            "buffer": 50303,
+            "offset": 0,
+            "bytes": 256
+          }
+        ],
+        "track_identity": 2101713653,
+        "asset_checksum": 3635234752,
+        "resources": {
+          "player_bitmap_base": 0,
+          "traffic_bitmap_base": 5,
+          "sign_bitmap_base": 120,
+          "traffic_matrix_base": 63970,
+          "player_mirror_matrix": 63984,
+          "sign_matrix": 63930
+        }
+      },
+      "completion": {
+        "buffer": 50304,
+        "offset": 0,
+        "bytes": 48
+      },
+      "reserve": [
+        {
+          "first": 50300,
+          "last": 50305
+        }
+      ]
+    },
+    "context_bytes": 464,
+    "state_struct_bytes": 108,
+    "completion_bytes": 48,
+    "required_capabilities": 1,
+    "phase": "after_source_before_success",
+    "native_only": true,
+    "helper_header_sha256": "2adcc445e416f3dd95db2f52afb7ef8803c67e6fc444556be5e9d1505b133e50",
+    "helper_symbols": [
+      "rally_render_bind_v1",
+      "rally_render_prepare_v1",
+      "rally_render_stop_v1"
+    ],
+    "context_owner": "module_private_value_only",
+    "completion_owner": "application_retained",
+    "completion": {
+      "buffer": 50304,
+      "offset": 0,
+      "bytes": 48
+    },
+    "configuration_sha256": "543022321154595027a0543271fc2656620c90976b0d0a23a8882db546e43d81"
+  }
+}

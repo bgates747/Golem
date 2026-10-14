@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "result": "identical repeated resource builds and existing-artifact inventory",
+  "files": {
+    "relocated-native.c": "4f322bcb6056700036531810cbfa644c6905371f895add259d11eba57e335836",
+    "default-interface.json": "3c2695ebe31b243058b8392700e8adace962316fed719b02e657ad2b581d0b95",
+    "default-combined.disassembly.txt": "9842d527686be1304a810c26c1a4ec6a5999f33fa8dbc81ec5adc100d63865b5",
+    "default-native.c": "160178613d024594d7e53994f55e166bbac70af6dba8e589568f55ef42aecf2d",
+    "inventory.json": "56d0f41e3ab85ac13a78eb6ff16c8be0aff2e2ea524c3623c18c9e92cd762604",
+    "relocated-source.disassembly.txt": "1d0c62e8b312a9ac3bcf6e0d1f7f719bceddbe04d9de5911ec8c295f364a3a24",
+    "default-root.json": "02119fcf52594390285411eaea6c1284fa34fe215d762c779f98397412f81381",
+    "relocated-scaffold.c": "2b58f101ade128534a01b08add620b998d5906d1f9f6ab0badf5b18b6dfaeb8f",
+    "relocated-combined.readelf.txt": "e98601a6e89d344cfdb70a539ab9f55c17b574c053bc80ad03b61fe86090dfde",
+    "relocated-root.json": "a58203da2dedfea4c7929fb1f3e647d27c6679a6d9826f17c02fe70c255e95a7",
+    "heap-memory-layout.txt": "00575eaee4ec5fef35e2b9be3434c480831d887257940256af2eb3caba702de8",
+    "firmware-selected-disassembly.txt": "3e68f51d786a22972c3de0dd392d8ba28426861976ea16dfb8dc3832e985d365",
+    "relocated-combined.disassembly.txt": "9bff2f354aeac2fe05e12171f3f45c08b2c4616879cb749cebb747c26194024b",
+    "relocated-interface.json": "ff64ce2ada5120d3947b0f8539a93aeeaebaa9081aeadae2aca6df58d755caf2",
+    "default-source.readelf.txt": "d8486a87d42fa3da47da288eec2fd45a305d7b9604c9de1a0fdb7fa5059578ff",
+    "resources.json": "2cdac2399acb655b7dc017785b3484f4919202136fa23f082cd4cfe1cacee4d5",
+    "default-scaffold.c": "bfa01e4849c1da4a024c720b4f8e28b00dd15ef5cc91a85691070e0c36e777d9",
+    "default-combined.readelf.txt": "63099988da1b108f2244c573910d3f7951570a9211a39cc92e04b05b648b06c1",
+    "default-source.disassembly.txt": "80e4735f26fbdf2e611124c735ea6cddf9ac3e021ede03f6bf7078e4696f279a",
+    "relocated-source.readelf.txt": "94af47d9d7805ce280b0f21cf1a3f87e1145816153ef09601bf3edb81b710c51"
+  },
+  "duration_seconds": 16.966,
+  "execution_scope": "same host/source paths/toolchain; compilers and offline ELF/source inspection only; no target/stress run"
+}

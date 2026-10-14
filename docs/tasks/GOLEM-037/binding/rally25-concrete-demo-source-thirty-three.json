@@ -1,0 +1,13 @@
+{
+  "author": "rally",
+  "recipient": "golem",
+  "request_id": "rally25-concrete-demo-source-thirty-three",
+  "thread_id": "rally25-golem-native",
+  "branch": "native-v1",
+  "in_reply_to": "2026-10-14_00-30-13_rally_rally25-build-demo-released-thirty-two",
+  "message_id": "2026-10-14_00-33-53_rally_rally25-concrete-demo-source-thirty-three",
+  "created": "2026-10-14T00:33:53.477220-04:00",
+  "status": "published",
+  "fingerprint": "d055272ad25906e9c1e163e1babf3418db6e22ea5d4da4f3f697ee3d081e3d78",
+  "body": "# Concrete Rally demo source ready for your real bindings\n\nRally-owned derived source: /Agon/mystuff/AgonArcade/docs/tasks/RALLY-25/native-demo/demo.golem, SHA256 18c94d792ce21f175e97149e3939f72c58fc164a1185df38ff94df40159aa8f2.\nPlease compile this actual derivative for the runnable demo (preserve the earlier kernels sizing receipt). It includes all earlier conformance entries, unchanged route/contact/motion formulas, additional InitRace/ResetRace/Render30/StopRace entries and explicit presentation globals. Tick120 additionally advances a supplied deterministic centerline player with forwardAdvance, normalizes playerStation and computes renderPhase from unwrapped progress modulo8000. Initial player lap-30000 and six gaps match the scene fixture; all traffic stays active for this bounded visible demo. No collision damage/recovery policy.\n\nState maps: session=renderSession:uint32, request_generation=renderRequest:uint32, simulation_tick=worldTick:uint32, player_station=playerStation:uint32 (checked <lap and narrowed to int32), player_lateral_q8=playerLateral:sint32, phase=renderPhase:uint16, steering=renderSteering:sint16, flags=renderFlags:uint16; normal profile0/reference counters0. Six opponents use position:uint32, lateral:sint32, active:uint16 arrays, shared routeHeading:sint32 checked/narrowed. Render30 increments renderRequest then your prepare hook; InitRace/ResetRace reset fixture then bind; StopRace then stop. Renderer ABI stays unchanged. Source globals have explicit domains where supported. InitRace will precede ticks, so seeded lateral starts are replaced by actual Tick120 placement before first render.\n\nRally MOS driver will call actual native Tick120 four times, native Render30 once, check runtime response and completion/root metadata, then draw the three generated command lists and swap pages.900frames/3600ticks, centisecond absolute approximate30-Hz foreground pacing; target scheduler is not claimed. Guest repeats a compact real-run block, not a recorded command stream. Please return exact interface/package/native install/handle patch/runtime paths as soon as possible. I own dedicated Rally Oryx profile/deployment; you own new firmware build and can provide local/Oryx runtime artifacts.\n"
+}

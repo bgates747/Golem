@@ -1,0 +1,23 @@
+{
+  "owner": "Rally / AgonArcade",
+  "source_manifest": "/Agon/mystuff/AgonArcade/docs/tasks/RALLY-25/renderer-helper/MANIFEST.json",
+  "source_manifest_sha256": "3fc5d32f16d84f8ecc53aabe2d418e317a5323aee1ea2543c85fd657b1d6f62c",
+  "verified_manifest_files": 14,
+  "copied_sources": {
+    "rally_render.c": "7ae7f03183864e44ffa2488f90fd1e878eb984bd4a2d325313b94a011fcd8001",
+    "rally_render.h": "2adcc445e416f3dd95db2f52afb7ef8803c67e6fc444556be5e9d1505b133e50",
+    "asset_meta.inc": "940a4e51c2f06bb34106c858f690bad34d97ed8ab6994b19bb53a945f4eb6cd5",
+    "render_core.inc": "2f3eb552538a3e2e8c9a450ae49c319540cc9b774ef925ec02f111d1e8f42f2b"
+  },
+  "sdk_builder_sha256": "c2353057f2b00545378bc6727752a247df8254dbe51a44c5b99d1478de96bd62",
+  "sdk_header_sha256": "fa8385e2906f07d37372d80c40f73d419defdbefe7a3458461ac9d5fe0820d38",
+  "golem_source_inputs": {
+    "docs/tasks/GOLEM-036/right-shift/compiler.cpp": "1be2c0181257aaa71305498791c8b09a9ec2c6f86d9fe20e8999cce4c9691c69",
+    "docs/tasks/GOLEM-036/right-shift/portable.hpp": "deae75359e8477a673a934fda29407f5e7ab0d8e5240122626e8d5bf1377d3d1",
+    "docs/tasks/GOLEM-036/right-shift/backends.hpp": "b9eaa95c8079cc58cd4848dd84542a68bdd0a7fb726556a832eb23de1789fedb",
+    "docs/tasks/GOLEM-036/right-shift/root.hpp": "eedfc6dac1ce24bdc9eba8a547a53ac378801e30a3703426f39a0f37ced7292d",
+    "src/ordinary.hpp": "7c8fe20f4e63c6e57de70b9931696b87c88c9c4ea499679b1bc239f09480c5da",
+    "src/token_reader.hpp": "397fe169f1a84b47acf8a77a3036fd50ddfeac45e64d07a74b0497ca50f4126d",
+    "src/buffer_allocator.hpp": "7c8881777decd9e04231adae3ab4050e52451c0fadaafe6b37c7ce0735c7b449"
+  }
+}

@@ -1,0 +1,916 @@
+{
+  "schema": 1,
+  "scope": "resource-only real-source composition; no execution or D2 qualification",
+  "manifest_inputs": [
+    {
+      "path": "/Agon/mystuff/AgonArcade/docs/tasks/RALLY-25/route-kernels/MANIFEST.json",
+      "sha256": "d9e5238859d6faa402dd069f145834cd3eabb47f46db5b91e1d276ad359e8296",
+      "files_verified": 20
+    },
+    {
+      "path": "/Agon/mystuff/AgonArcade/docs/tasks/RALLY-25/renderer-helper/MANIFEST.json",
+      "sha256": "3fc5d32f16d84f8ecc53aabe2d418e317a5323aee1ea2543c85fd657b1d6f62c",
+      "files_verified": 14
+    }
+  ],
+  "compiler_inputs": {
+    "docs/tasks/GOLEM-036/right-shift/compiler.cpp": "1be2c0181257aaa71305498791c8b09a9ec2c6f86d9fe20e8999cce4c9691c69",
+    "docs/tasks/GOLEM-036/right-shift/portable.hpp": "deae75359e8477a673a934fda29407f5e7ab0d8e5240122626e8d5bf1377d3d1",
+    "docs/tasks/GOLEM-036/right-shift/backends.hpp": "b9eaa95c8079cc58cd4848dd84542a68bdd0a7fb726556a832eb23de1789fedb",
+    "docs/tasks/GOLEM-036/right-shift/root.hpp": "eedfc6dac1ce24bdc9eba8a547a53ac378801e30a3703426f39a0f37ced7292d",
+    "src/ordinary.hpp": "7c8fe20f4e63c6e57de70b9931696b87c88c9c4ea499679b1bc239f09480c5da",
+    "src/token_reader.hpp": "397fe169f1a84b47acf8a77a3036fd50ddfeac45e64d07a74b0497ca50f4126d",
+    "src/buffer_allocator.hpp": "7c8881777decd9e04231adae3ab4050e52451c0fadaafe6b37c7ce0735c7b449"
+  },
+  "fixture_bindings_sha256": "5f59e6e4c0297f5b3446c8c3fabf3c60b364d5aa85d08aa8cde0c87555d0eca6",
+  "plan_sha256": "896e9bd4467a5ef0ec32a817ed6a627798d5d638ed46857fdacbc12ab87d8ae2",
+  "measurement_script_sha256": "bc33cc2d32516c3c55c5bcb7f9fa312ecb583b6adfef9b72d237317a16e91030",
+  "scaffold_template_sha256": "21623d8146ccd49b0a3682715012b4497b838d24b9cf7079f194028cffafe453",
+  "sdk_commit": "33a554c82377b10d428f0d2ec258d1b48f27ed22",
+  "sdk_files": {
+    "include/vdplet.h": "fa8385e2906f07d37372d80c40f73d419defdbefe7a3458461ac9d5fe0820d38",
+    "src/vdplet_runtime.h": "af049fe93f1e64b0ec1135e5c0e55c1938adf022669dc35d906f5fcb6c58d91b",
+    "src/vdplet_image.h": "6a28226a138ec2c54f1b456b1bf3f33372db1a2477cb1f92afc7547ba5007fff",
+    "tools/build_module.py": "c2353057f2b00545378bc6727752a247df8254dbe51a44c5b99d1478de96bd62"
+  },
+  "compiler": "xtensa-esp32-elf-gcc (crosstool-NG esp-2021r2-patch5) 8.4.0",
+  "compiler_sha256": "e091761ac142b87be663aa36c8dc9af10044a9769a540ee0337ebc97ea56a22d",
+  "layouts": {
+    "default": {
+      "matched_peer_generated_files": 21,
+      "root_bytes": 292,
+      "retained_array_bytes": 658,
+      "source_native_sha256": "160178613d024594d7e53994f55e166bbac70af6dba8e589568f55ef42aecf2d",
+      "scaffold_sha256": "bfa01e4849c1da4a024c720b4f8e28b00dd15ef5cc91a85691070e0c36e777d9",
+      "layout": {
+        "root": 1,
+        "globals": {
+          "slot": 112,
+          "routeRecord": 114,
+          "routeRemaining": 116,
+          "routeIndex": 118,
+          "routeHeading": 120,
+          "routeLateral": 124,
+          "routeForward": 128,
+          "forwardAdvance": 132,
+          "worldTick": 136,
+          "headingInput": 140,
+          "headingChecked": 144,
+          "magnitude": 148,
+          "sineQuotient": 152,
+          "sineFraction": 156,
+          "sineIndex": 160,
+          "sineValue": 162,
+          "work": 166,
+          "quotient": 170,
+          "remainder": 174,
+          "speed": 178,
+          "lapInput": 182,
+          "lap": 186,
+          "normalizeInput": 190,
+          "normalPosition": 194,
+          "playerStation": 198,
+          "playerLateral": 202,
+          "opponentStation": 206,
+          "opponentLateral": 210,
+          "separation": 214,
+          "lateralSeparation": 218,
+          "halfLap": 222,
+          "contactResult": 226,
+          "contactAny": 228,
+          "laneQuotient": 230,
+          "laneRemainder": 232,
+          "placedLateral": 234,
+          "activeChecked": 238,
+          "sa": 240,
+          "sb": 244,
+          "sq": 248,
+          "sr": 252,
+          "ua": 256,
+          "ub": 260,
+          "uq": 264,
+          "ur": 268,
+          "boundedQ": 272,
+          "boundedR": 276,
+          "effect": 280,
+          "shiftCount": 282,
+          "signedShift": 284,
+          "unsignedShift": 288
+        },
+        "arrays": {
+          "active": {
+            "name": "active",
+            "type": "uint16",
+            "buffer": 2,
+            "offset": 0,
+            "bytes": 12,
+            "lower": 0,
+            "upper": 5,
+            "count": 6,
+            "element_bytes": 2,
+            "access": 3,
+            "owner": "application_retained",
+            "initial_data": "array-active.bin"
+          },
+          "progress": {
+            "name": "progress",
+            "type": "sint32",
+            "buffer": 3,
+            "offset": 0,
+            "bytes": 24,
+            "lower": 0,
+            "upper": 5,
+            "count": 6,
+            "element_bytes": 4,
+            "access": 3,
+            "owner": "application_retained",
+            "initial_data": "array-progress.bin"
+          },
+          "position": {
+            "name": "position",
+            "type": "uint32",
+            "buffer": 4,
+            "offset": 0,
+            "bytes": 24,
+            "lower": 0,
+            "upper": 5,
+            "count": 6,
+            "element_bytes": 4,
+            "access": 3,
+            "owner": "application_retained",
+            "initial_data": "array-position.bin"
+          },
+          "lateral": {
+            "name": "lateral",
+            "type": "sint32",
+            "buffer": 5,
+            "offset": 0,
+            "bytes": 24,
+            "lower": 0,
+            "upper": 5,
+            "count": 6,
+            "element_bytes": 4,
+            "access": 3,
+            "owner": "application_retained",
+            "initial_data": "array-lateral.bin"
+          },
+          "contacts": {
+            "name": "contacts",
+            "type": "uint16",
+            "buffer": 6,
+            "offset": 0,
+            "bytes": 12,
+            "lower": 0,
+            "upper": 5,
+            "count": 6,
+            "element_bytes": 2,
+            "access": 3,
+            "owner": "application_retained",
+            "initial_data": "array-contacts.bin"
+          },
+          "routes": {
+            "name": "routes",
+            "type": "sint16",
+            "buffer": 7,
+            "offset": 0,
+            "bytes": 48,
+            "lower": 0,
+            "upper": 23,
+            "count": 24,
+            "element_bytes": 2,
+            "access": 1,
+            "owner": "application_retained",
+            "initial_data": "array-routes.bin"
+          },
+          "sine": {
+            "name": "sine",
+            "type": "sint16",
+            "buffer": 8,
+            "offset": 0,
+            "bytes": 514,
+            "lower": 0,
+            "upper": 256,
+            "count": 257,
+            "element_bytes": 2,
+            "access": 1,
+            "owner": "application_retained",
+            "initial_data": "array-sine.bin"
+          }
+        },
+        "entries": {
+          "Sine": 0,
+          "RouteTick": 1,
+          "Contact": 2,
+          "Tick120": 3,
+          "Normalize": 4,
+          "MultiplySigned": 5,
+          "MultiplyUnsigned": 6,
+          "DivideSigned": 7,
+          "DivideUnsigned": 8,
+          "BoundedPair": 9,
+          "AliasPair": 10,
+          "ShiftSigned": 11,
+          "ShiftUnsigned": 12,
+          "ResetRace": 13,
+          "StopRace": 14
+        }
+      },
+      "source_only": {
+        "resident_text_bytes": 17440,
+        "resident_data_bytes": 268,
+        "would_be_image_bytes": 18736,
+        "frames": [
+          {
+            "function": "get32",
+            "bytes": 32
+          },
+          {
+            "function": "put32",
+            "bytes": 32
+          },
+          {
+            "function": "vdplet_entry",
+            "bytes": 192
+          }
+        ],
+        "relative_relocations": 7,
+        "elf_sha256": "d8de5c810f654e8cedcdf87b20d1635c36525fa6e00f08bf98e67972936cb579",
+        "stripped_elf_sha256": "153f28bfb616be538af094bfa8e604a916aabf5e8c01d6b295bc46dfa97d97c6",
+        "sdk_package_error": "module exceeds admitted text/data envelope",
+        "sdk_admitted": false,
+        "allocated_sections": {
+          ".hash": {
+            "bytes": 40,
+            "flags": 2,
+            "type": 5
+          },
+          ".dynsym": {
+            "bytes": 80,
+            "flags": 2,
+            "type": 11
+          },
+          ".dynstr": {
+            "bytes": 38,
+            "flags": 2,
+            "type": 3
+          },
+          ".rela.dyn": {
+            "bytes": 84,
+            "flags": 2,
+            "type": 4
+          },
+          ".text": {
+            "bytes": 17438,
+            "flags": 6,
+            "type": 1
+          },
+          ".rodata": {
+            "bytes": 264,
+            "flags": 2,
+            "type": 1
+          },
+          ".got.loc": {
+            "bytes": 8,
+            "flags": 2,
+            "type": 1
+          },
+          ".dynamic": {
+            "bytes": 136,
+            "flags": 3,
+            "type": 6
+          },
+          ".got": {
+            "bytes": 4,
+            "flags": 3,
+            "type": 1
+          },
+          ".data": {
+            "bytes": 4,
+            "flags": 3,
+            "type": 1
+          }
+        },
+        "relocation_check": "only symbol-zero R_XTENSA_RELATIVE; no PLT section"
+      },
+      "combined": {
+        "resident_text_bytes": 25556,
+        "resident_data_bytes": 988,
+        "would_be_image_bytes": 28120,
+        "frames": [
+          {
+            "function": "get32",
+            "bytes": 32
+          },
+          {
+            "function": "put32",
+            "bytes": 32
+          },
+          {
+            "function": "byte",
+            "bytes": 32
+          },
+          {
+            "function": "word",
+            "bytes": 32
+          },
+          {
+            "function": "command",
+            "bytes": 32
+          },
+          {
+            "function": "plot",
+            "bytes": 32
+          },
+          {
+            "function": "rect",
+            "bytes": 32
+          },
+          {
+            "function": "viewport",
+            "bytes": 32
+          },
+          {
+            "function": "affine",
+            "bytes": 32
+          },
+          {
+            "function": "bitmap",
+            "bytes": 32
+          },
+          {
+            "function": "centre_exact",
+            "bytes": 48
+          },
+          {
+            "function": "cx",
+            "bytes": 32
+          },
+          {
+            "function": "tangent",
+            "bytes": 32
+          },
+          {
+            "function": "overlap",
+            "bytes": 32
+          },
+          {
+            "function": "clear_completion",
+            "bytes": 32
+          },
+          {
+            "function": "host_ok",
+            "bytes": 32
+          },
+          {
+            "function": "acquire",
+            "bytes": 32
+          },
+          {
+            "function": "view_ok",
+            "bytes": 32
+          },
+          {
+            "function": "asset_ok",
+            "bytes": 64
+          },
+          {
+            "function": "bearing$isra$0",
+            "bytes": 32
+          },
+          {
+            "function": "release$isra$2",
+            "bytes": 32
+          },
+          {
+            "function": "preflight",
+            "bytes": 128
+          },
+          {
+            "function": "source_entry",
+            "bytes": 192
+          },
+          {
+            "function": "rally_render_bind_v1",
+            "bytes": 240
+          },
+          {
+            "function": "rally_render_prepare_v1",
+            "bytes": 352
+          },
+          {
+            "function": "rally_render_stop_v1",
+            "bytes": 32
+          },
+          {
+            "function": "memcpy",
+            "bytes": 32
+          },
+          {
+            "function": "memset",
+            "bytes": 32
+          },
+          {
+            "function": "vdplet_entry",
+            "bytes": 288
+          }
+        ],
+        "relative_relocations": 44,
+        "elf_sha256": "31d50c195471f5c13ba6394f96b20f0d37cb6246fcc4fd63e35400b5e30494c5",
+        "stripped_elf_sha256": "279bb09bde1c5062511d661bec2106c1439a5d748a0f091a74a57f70ea4b404b",
+        "sdk_package_error": "module exceeds admitted text/data envelope",
+        "sdk_admitted": false,
+        "allocated_sections": {
+          ".hash": {
+            "bytes": 40,
+            "flags": 2,
+            "type": 5
+          },
+          ".dynsym": {
+            "bytes": 80,
+            "flags": 2,
+            "type": 11
+          },
+          ".dynstr": {
+            "bytes": 38,
+            "flags": 2,
+            "type": 3
+          },
+          ".rela.dyn": {
+            "bytes": 528,
+            "flags": 2,
+            "type": 4
+          },
+          ".text": {
+            "bytes": 25556,
+            "flags": 6,
+            "type": 1
+          },
+          ".rodata": {
+            "bytes": 444,
+            "flags": 2,
+            "type": 1
+          },
+          ".got.loc": {
+            "bytes": 112,
+            "flags": 2,
+            "type": 1
+          },
+          ".dynamic": {
+            "bytes": 136,
+            "flags": 3,
+            "type": 6
+          },
+          ".got": {
+            "bytes": 4,
+            "flags": 3,
+            "type": 1
+          },
+          ".data": {
+            "bytes": 544,
+            "flags": 3,
+            "type": 1
+          }
+        },
+        "relocation_check": "only symbol-zero R_XTENSA_RELATIVE; no PLT section"
+      }
+    },
+    "relocated": {
+      "matched_peer_generated_files": 21,
+      "root_bytes": 292,
+      "retained_array_bytes": 658,
+      "source_native_sha256": "4f322bcb6056700036531810cbfa644c6905371f895add259d11eba57e335836",
+      "scaffold_sha256": "2b58f101ade128534a01b08add620b998d5906d1f9f6ab0badf5b18b6dfaeb8f",
+      "layout": {
+        "root": 501,
+        "globals": {
+          "slot": 112,
+          "routeRecord": 114,
+          "routeRemaining": 116,
+          "routeIndex": 118,
+          "routeHeading": 120,
+          "routeLateral": 124,
+          "routeForward": 128,
+          "forwardAdvance": 132,
+          "worldTick": 136,
+          "headingInput": 140,
+          "headingChecked": 144,
+          "magnitude": 148,
+          "sineQuotient": 152,
+          "sineFraction": 156,
+          "sineIndex": 160,
+          "sineValue": 162,
+          "work": 166,
+          "quotient": 170,
+          "remainder": 174,
+          "speed": 178,
+          "lapInput": 182,
+          "lap": 186,
+          "normalizeInput": 190,
+          "normalPosition": 194,
+          "playerStation": 198,
+          "playerLateral": 202,
+          "opponentStation": 206,
+          "opponentLateral": 210,
+          "separation": 214,
+          "lateralSeparation": 218,
+          "halfLap": 222,
+          "contactResult": 226,
+          "contactAny": 228,
+          "laneQuotient": 230,
+          "laneRemainder": 232,
+          "placedLateral": 234,
+          "activeChecked": 238,
+          "sa": 240,
+          "sb": 244,
+          "sq": 248,
+          "sr": 252,
+          "ua": 256,
+          "ub": 260,
+          "uq": 264,
+          "ur": 268,
+          "boundedQ": 272,
+          "boundedR": 276,
+          "effect": 280,
+          "shiftCount": 282,
+          "signedShift": 284,
+          "unsignedShift": 288
+        },
+        "arrays": {
+          "active": {
+            "name": "active",
+            "type": "uint16",
+            "buffer": 502,
+            "offset": 0,
+            "bytes": 12,
+            "lower": 0,
+            "upper": 5,
+            "count": 6,
+            "element_bytes": 2,
+            "access": 3,
+            "owner": "application_retained",
+            "initial_data": "array-active.bin"
+          },
+          "progress": {
+            "name": "progress",
+            "type": "sint32",
+            "buffer": 503,
+            "offset": 0,
+            "bytes": 24,
+            "lower": 0,
+            "upper": 5,
+            "count": 6,
+            "element_bytes": 4,
+            "access": 3,
+            "owner": "application_retained",
+            "initial_data": "array-progress.bin"
+          },
+          "position": {
+            "name": "position",
+            "type": "uint32",
+            "buffer": 504,
+            "offset": 0,
+            "bytes": 24,
+            "lower": 0,
+            "upper": 5,
+            "count": 6,
+            "element_bytes": 4,
+            "access": 3,
+            "owner": "application_retained",
+            "initial_data": "array-position.bin"
+          },
+          "lateral": {
+            "name": "lateral",
+            "type": "sint32",
+            "buffer": 505,
+            "offset": 0,
+            "bytes": 24,
+            "lower": 0,
+            "upper": 5,
+            "count": 6,
+            "element_bytes": 4,
+            "access": 3,
+            "owner": "application_retained",
+            "initial_data": "array-lateral.bin"
+          },
+          "contacts": {
+            "name": "contacts",
+            "type": "uint16",
+            "buffer": 506,
+            "offset": 0,
+            "bytes": 12,
+            "lower": 0,
+            "upper": 5,
+            "count": 6,
+            "element_bytes": 2,
+            "access": 3,
+            "owner": "application_retained",
+            "initial_data": "array-contacts.bin"
+          },
+          "routes": {
+            "name": "routes",
+            "type": "sint16",
+            "buffer": 507,
+            "offset": 0,
+            "bytes": 48,
+            "lower": 0,
+            "upper": 23,
+            "count": 24,
+            "element_bytes": 2,
+            "access": 1,
+            "owner": "application_retained",
+            "initial_data": "array-routes.bin"
+          },
+          "sine": {
+            "name": "sine",
+            "type": "sint16",
+            "buffer": 508,
+            "offset": 0,
+            "bytes": 514,
+            "lower": 0,
+            "upper": 256,
+            "count": 257,
+            "element_bytes": 2,
+            "access": 1,
+            "owner": "application_retained",
+            "initial_data": "array-sine.bin"
+          }
+        },
+        "entries": {
+          "Sine": 0,
+          "RouteTick": 1,
+          "Contact": 2,
+          "Tick120": 3,
+          "Normalize": 4,
+          "MultiplySigned": 5,
+          "MultiplyUnsigned": 6,
+          "DivideSigned": 7,
+          "DivideUnsigned": 8,
+          "BoundedPair": 9,
+          "AliasPair": 10,
+          "ShiftSigned": 11,
+          "ShiftUnsigned": 12,
+          "ResetRace": 13,
+          "StopRace": 14
+        }
+      },
+      "source_only": {
+        "resident_text_bytes": 17504,
+        "resident_data_bytes": 268,
+        "would_be_image_bytes": 18800,
+        "frames": [
+          {
+            "function": "get32",
+            "bytes": 32
+          },
+          {
+            "function": "put32",
+            "bytes": 32
+          },
+          {
+            "function": "vdplet_entry",
+            "bytes": 192
+          }
+        ],
+        "relative_relocations": 7,
+        "elf_sha256": "82080342ece2ffed1befa67de77a1a404af837c9958e63c61e66e4bda6d81655",
+        "stripped_elf_sha256": "7be004c8917fa823a139db79408d79cdd82c3cfa245b8033841c3ff65be586a9",
+        "sdk_package_error": "module exceeds admitted text/data envelope",
+        "sdk_admitted": false,
+        "allocated_sections": {
+          ".hash": {
+            "bytes": 40,
+            "flags": 2,
+            "type": 5
+          },
+          ".dynsym": {
+            "bytes": 80,
+            "flags": 2,
+            "type": 11
+          },
+          ".dynstr": {
+            "bytes": 38,
+            "flags": 2,
+            "type": 3
+          },
+          ".rela.dyn": {
+            "bytes": 84,
+            "flags": 2,
+            "type": 4
+          },
+          ".text": {
+            "bytes": 17502,
+            "flags": 6,
+            "type": 1
+          },
+          ".rodata": {
+            "bytes": 264,
+            "flags": 2,
+            "type": 1
+          },
+          ".got.loc": {
+            "bytes": 8,
+            "flags": 2,
+            "type": 1
+          },
+          ".dynamic": {
+            "bytes": 136,
+            "flags": 3,
+            "type": 6
+          },
+          ".got": {
+            "bytes": 4,
+            "flags": 3,
+            "type": 1
+          },
+          ".data": {
+            "bytes": 4,
+            "flags": 3,
+            "type": 1
+          }
+        },
+        "relocation_check": "only symbol-zero R_XTENSA_RELATIVE; no PLT section"
+      },
+      "combined": {
+        "resident_text_bytes": 25620,
+        "resident_data_bytes": 988,
+        "would_be_image_bytes": 28184,
+        "frames": [
+          {
+            "function": "get32",
+            "bytes": 32
+          },
+          {
+            "function": "put32",
+            "bytes": 32
+          },
+          {
+            "function": "byte",
+            "bytes": 32
+          },
+          {
+            "function": "word",
+            "bytes": 32
+          },
+          {
+            "function": "command",
+            "bytes": 32
+          },
+          {
+            "function": "plot",
+            "bytes": 32
+          },
+          {
+            "function": "rect",
+            "bytes": 32
+          },
+          {
+            "function": "viewport",
+            "bytes": 32
+          },
+          {
+            "function": "affine",
+            "bytes": 32
+          },
+          {
+            "function": "bitmap",
+            "bytes": 32
+          },
+          {
+            "function": "centre_exact",
+            "bytes": 48
+          },
+          {
+            "function": "cx",
+            "bytes": 32
+          },
+          {
+            "function": "tangent",
+            "bytes": 32
+          },
+          {
+            "function": "overlap",
+            "bytes": 32
+          },
+          {
+            "function": "clear_completion",
+            "bytes": 32
+          },
+          {
+            "function": "host_ok",
+            "bytes": 32
+          },
+          {
+            "function": "acquire",
+            "bytes": 32
+          },
+          {
+            "function": "view_ok",
+            "bytes": 32
+          },
+          {
+            "function": "asset_ok",
+            "bytes": 64
+          },
+          {
+            "function": "bearing$isra$0",
+            "bytes": 32
+          },
+          {
+            "function": "release$isra$2",
+            "bytes": 32
+          },
+          {
+            "function": "preflight",
+            "bytes": 128
+          },
+          {
+            "function": "source_entry",
+            "bytes": 192
+          },
+          {
+            "function": "rally_render_bind_v1",
+            "bytes": 240
+          },
+          {
+            "function": "rally_render_prepare_v1",
+            "bytes": 352
+          },
+          {
+            "function": "rally_render_stop_v1",
+            "bytes": 32
+          },
+          {
+            "function": "memcpy",
+            "bytes": 32
+          },
+          {
+            "function": "memset",
+            "bytes": 32
+          },
+          {
+            "function": "vdplet_entry",
+            "bytes": 288
+          }
+        ],
+        "relative_relocations": 44,
+        "elf_sha256": "26434535c554def9514238c0d4d88683a5b19fbc76e0fbbce49f72b643189ecc",
+        "stripped_elf_sha256": "f72eaf4c67071385a87ac7e003057199ad09de368c53ae12fb6ca1976cbd39e8",
+        "sdk_package_error": "module exceeds admitted text/data envelope",
+        "sdk_admitted": false,
+        "allocated_sections": {
+          ".hash": {
+            "bytes": 40,
+            "flags": 2,
+            "type": 5
+          },
+          ".dynsym": {
+            "bytes": 80,
+            "flags": 2,
+            "type": 11
+          },
+          ".dynstr": {
+            "bytes": 38,
+            "flags": 2,
+            "type": 3
+          },
+          ".rela.dyn": {
+            "bytes": 528,
+            "flags": 2,
+            "type": 4
+          },
+          ".text": {
+            "bytes": 25620,
+            "flags": 6,
+            "type": 1
+          },
+          ".rodata": {
+            "bytes": 444,
+            "flags": 2,
+            "type": 1
+          },
+          ".got.loc": {
+            "bytes": 112,
+            "flags": 2,
+            "type": 1
+          },
+          ".dynamic": {
+            "bytes": 136,
+            "flags": 3,
+            "type": 6
+          },
+          ".got": {
+            "bytes": 4,
+            "flags": 3,
+            "type": 1
+          },
+          ".data": {
+            "bytes": 544,
+            "flags": 3,
+            "type": 1
+          }
+        },
+        "relocation_check": "only symbol-zero R_XTENSA_RELATIVE; no PLT section"
+      }
+    }
+  }
+}

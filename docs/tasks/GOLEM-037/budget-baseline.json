@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "status": "unchanged historical/current policy, not a raised-limit release",
+  "sdk_commit": "33a554c82377b10d428f0d2ec258d1b48f27ed22",
+  "sdk_worktree": "clean",
+  "sdk_files": {
+    "include/vdplet.h": "fa8385e2906f07d37372d80c40f73d419defdbefe7a3458461ac9d5fe0820d38",
+    "src/vdplet_runtime.h": "af049fe93f1e64b0ec1135e5c0e55c1938adf022669dc35d906f5fcb6c58d91b",
+    "src/vdplet_image.h": "6a28226a138ec2c54f1b456b1bf3f33372db1a2477cb1f92afc7547ba5007fff",
+    "tools/build_module.py": "c2353057f2b00545378bc6727752a247df8254dbe51a44c5b99d1478de96bd62"
+  },
+  "native_compiler": "xtensa-esp32-elf-gcc (crosstool-NG esp-2021r2-patch5) 8.4.0",
+  "native_compiler_sha256": "e091761ac142b87be663aa36c8dc9af10044a9769a540ee0337ebc97ea56a22d",
+  "tool_sha256": {
+    "ld": "fd641bedc57930941b7b7d9e3d51ece550bf663fb4d9d13ec0a2188082c47245",
+    "strip": "cef0e79caf472d12d87063c8cbc6ed21880ab41dce99fab12671d50e02adcaae",
+    "objdump": "c38b6b6d84ddd2644c72e68c2e38129766f5d5f109f5ada94c30b0c2918a4943",
+    "readelf": "3cf4abdda5bd293eedcee260f52856327e4e9f7e1736aed0a2ab4d20f2f45d19"
+  },
+  "implemented_limits": {
+    "text": 8192,
+    "data": 4096,
+    "declared_stack": 512,
+    "image": 16384
+  },
+  "fit_sha256": "2b7cd7b2a0fdec10ecf60feeed70533b0193ba8bd9975f461e03f6553d070097",
+  "planned_replacement_limits": null,
+  "new_runtime_artifact": null
+}

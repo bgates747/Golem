@@ -1,0 +1,3499 @@
+
+/Agon/mystuff/golem/docs/tasks/GOLEM-037/build/helper.o:     file format elf32-xtensa-le
+
+
+Disassembly of section .text.u32:
+
+00000000 <u32>:
+   0:	004136        	entry	a1, 32
+   3:	030282        	l8ui	a8, a2, 3
+   6:	119880        	slli	a9, a8, 8
+   9:	020282        	l8ui	a8, a2, 2
+   c:	208890        	or	a8, a8, a9
+   f:	010292        	l8ui	a9, a2, 1
+  12:	000222        	l8ui	a2, a2, 0
+  15:	119980        	slli	a9, a9, 8
+  18:	118800        	slli	a8, a8, 16
+  1b:	202290        	or	a2, a2, a9
+  1e:	202820        	or	a2, a8, a2
+  21:	f01d      	retw.n
+
+Disassembly of section .text.byte:
+
+00000000 <byte>:
+   0:	004136        	entry	a1, 32
+   3:	1298      	l32i.n	a9, a2, 4
+   5:	2288      	l32i.n	a8, a2, 8
+   7:	0db987        	bgeu	a9, a8, 18 <byte+0x18>
+			7: R_XTENSA_SLOT0_OP	.text.byte+0x18
+   a:	0288      	l32i.n	a8, a2, 0
+   c:	a91b      	addi.n	a10, a9, 1
+   e:	12a9      	s32i.n	a10, a2, 4
+  10:	889a      	add.n	a8, a8, a9
+  12:	004832        	s8i	a3, a8, 0
+  15:	0000c6        	j	1c <byte+0x1c>
+			15: R_XTENSA_SLOT0_OP	.text.byte+0x1c
+  18:	180c      	movi.n	a8, 1
+  1a:	3289      	s32i.n	a8, a2, 12
+  1c:	f01d      	retw.n
+
+Disassembly of section .text.word:
+
+00000000 <word-0x4>:
+   0:	00 00 00 00 	
+			0: R_XTENSA_32	.text.byte
+
+00000004 <word>:
+   4:	004136        	entry	a1, 32
+   7:	fffe41        	l32r	a4, 0 <word-0x4>
+			7: R_XTENSA_SLOT0_OP	.text.word
+   a:	03bd      	mov.n	a11, a3
+   c:	02ad      	mov.n	a10, a2
+   e:	0004e0        	callx8	a4
+  11:	41b830        	srli	a11, a3, 8
+  14:	02ad      	mov.n	a10, a2
+  16:	0004e0        	callx8	a4
+  19:	f01d      	retw.n
+
+Disassembly of section .text.command:
+
+00000000 <command-0x8>:
+   0:	00 00 00 00 	
+			0: R_XTENSA_32	.text.byte
+   4:	04 00 00 00 	
+			4: R_XTENSA_32	.text.word
+
+00000008 <command>:
+   8:	004136        	entry	a1, 32
+   b:	fffd51        	l32r	a5, 0 <command-0x8>
+			b: R_XTENSA_SLOT0_OP	.text.command
+   e:	02ad      	mov.n	a10, a2
+  10:	7b1c      	movi.n	a11, 23
+  12:	0005e0        	callx8	a5
+  15:	02ad      	mov.n	a10, a2
+  17:	0b0c      	movi.n	a11, 0
+  19:	0005e0        	callx8	a5
+  1c:	02ad      	mov.n	a10, a2
+  1e:	a0a0b2        	movi	a11, 160
+  21:	0005e0        	callx8	a5
+  24:	fff881        	l32r	a8, 4 <command-0x4>
+			24: R_XTENSA_SLOT0_OP	.text.command+0x4
+  27:	03bd      	mov.n	a11, a3
+  29:	02ad      	mov.n	a10, a2
+  2b:	0008e0        	callx8	a8
+  2e:	04bd      	mov.n	a11, a4
+  30:	02ad      	mov.n	a10, a2
+  32:	0005e0        	callx8	a5
+  35:	f01d      	retw.n
+
+Disassembly of section .text.plot:
+
+00000000 <plot-0x8>:
+   0:	00 00 00 00 	
+			0: R_XTENSA_32	.text.byte
+   4:	04 00 00 00 	
+			4: R_XTENSA_32	.text.word
+
+00000008 <plot>:
+   8:	004136        	entry	a1, 32
+   b:	fffd61        	l32r	a6, 0 <plot-0x8>
+			b: R_XTENSA_SLOT0_OP	.text.plot
+   e:	02ad      	mov.n	a10, a2
+  10:	9b1c      	movi.n	a11, 25
+  12:	0006e0        	callx8	a6
+  15:	03bd      	mov.n	a11, a3
+  17:	02ad      	mov.n	a10, a2
+  19:	0006e0        	callx8	a6
+  1c:	fffa31        	l32r	a3, 4 <plot-0x4>
+			1c: R_XTENSA_SLOT0_OP	.text.plot+0x4
+  1f:	04bd      	mov.n	a11, a4
+  21:	02ad      	mov.n	a10, a2
+  23:	0003e0        	callx8	a3
+  26:	05bd      	mov.n	a11, a5
+  28:	02ad      	mov.n	a10, a2
+  2a:	0003e0        	callx8	a3
+  2d:	f01d      	retw.n
+
+Disassembly of section .text.rect:
+
+00000000 <rect-0x10>:
+   0:	08 00 00 00 	
+			0: R_XTENSA_32	.text.plot
+	...
+			4: R_XTENSA_32	.text.byte
+			8: R_XTENSA_32	.text.byte
+			c: R_XTENSA_32	.text.byte
+
+00000010 <rect>:
+  10:	004136        	entry	a1, 32
+  13:	02ad      	mov.n	a10, a2
+  15:	12a0b2        	movi	a11, 18
+  18:	fffb81        	l32r	a8, 4 <rect-0xc>
+			18: R_XTENSA_SLOT0_OP	.text.rect+0x4
+			18: R_XTENSA_ASM_EXPAND	.text.byte
+  1b:	0008e0        	callx8	a8
+  1e:	20a220        	or	a10, a2, a2
+  21:	00a0b2        	movi	a11, 0
+  24:	fff981        	l32r	a8, 8 <rect-0x8>
+			24: R_XTENSA_SLOT0_OP	.text.rect+0x8
+			24: R_XTENSA_ASM_EXPAND	.text.byte
+  27:	0008e0        	callx8	a8
+  2a:	07bd      	mov.n	a11, a7
+  2c:	02ad      	mov.n	a10, a2
+  2e:	fff781        	l32r	a8, c <rect-0x4>
+			2e: R_XTENSA_SLOT0_OP	.text.rect+0xc
+			2e: R_XTENSA_ASM_EXPAND	.text.byte
+  31:	0008e0        	callx8	a8
+  34:	fff371        	l32r	a7, 0 <rect-0x10>
+			34: R_XTENSA_SLOT0_OP	.text.rect
+  37:	04dd      	mov.n	a13, a4
+  39:	03cd      	mov.n	a12, a3
+  3b:	02ad      	mov.n	a10, a2
+  3d:	4b0c      	movi.n	a11, 4
+  3f:	0007e0        	callx8	a7
+  42:	06dd      	mov.n	a13, a6
+  44:	05cd      	mov.n	a12, a5
+  46:	65a0b2        	movi	a11, 101
+  49:	02ad      	mov.n	a10, a2
+  4b:	0007e0        	callx8	a7
+  4e:	f01d      	retw.n
+
+Disassembly of section .text.viewport:
+
+00000000 <viewport-0xc>:
+   0:	00 00 00 00 	
+			0: R_XTENSA_32	.text.byte
+   4:	04 00 00 00 	
+			4: R_XTENSA_32	.text.word
+   8:	08 00 00 00 	
+			8: R_XTENSA_32	.text.plot
+
+0000000c <viewport>:
+   c:	004136        	entry	a1, 32
+   f:	fffc41        	l32r	a4, 0 <viewport-0xc>
+			f: R_XTENSA_SLOT0_OP	.text.viewport
+  12:	02ad      	mov.n	a10, a2
+  14:	8b1c      	movi.n	a11, 24
+  16:	0004e0        	callx8	a4
+  19:	fffa41        	l32r	a4, 4 <viewport-0x8>
+			19: R_XTENSA_SLOT0_OP	.text.viewport+0x4
+  1c:	20a220        	or	a10, a2, a2
+  1f:	00a0b2        	movi	a11, 0
+  22:	0004e0        	callx8	a4
+  25:	02ad      	mov.n	a10, a2
+  27:	dfa0b2        	movi	a11, 223
+  2a:	0004e0        	callx8	a4
+  2d:	02ad      	mov.n	a10, a2
+  2f:	3fa1b2        	movi	a11, 0x13f
+  32:	0004e0        	callx8	a4
+  35:	03bd      	mov.n	a11, a3
+  37:	02ad      	mov.n	a10, a2
+  39:	0004e0        	callx8	a4
+  3c:	02ad      	mov.n	a10, a2
+  3e:	fff221        	l32r	a2, 8 <viewport-0x4>
+			3e: R_XTENSA_SLOT0_OP	.text.viewport+0x8
+  41:	03dd      	mov.n	a13, a3
+  43:	0c0c      	movi.n	a12, 0
+  45:	4b0c      	movi.n	a11, 4
+  47:	0002e0        	callx8	a2
+  4a:	f01d      	retw.n
+
+Disassembly of section .text.affine:
+
+00000000 <affine-0x8>:
+   0:	00 00 00 00 	
+			0: R_XTENSA_32	.text.byte
+   4:	04 00 00 00 	
+			4: R_XTENSA_32	.text.word
+
+00000008 <affine>:
+   8:	004136        	entry	a1, 32
+   b:	fffd41        	l32r	a4, 0 <affine-0x8>
+			b: R_XTENSA_SLOT0_OP	.text.affine
+   e:	02ad      	mov.n	a10, a2
+  10:	17a0b2        	movi	a11, 23
+  13:	0004e0        	callx8	a4
+  16:	02ad      	mov.n	a10, a2
+  18:	0b0c      	movi.n	a11, 0
+  1a:	0004e0        	callx8	a4
+  1d:	02ad      	mov.n	a10, a2
+  1f:	96a0b2        	movi	a11, 150
+  22:	0004e0        	callx8	a4
+  25:	02ad      	mov.n	a10, a2
+  27:	1b0c      	movi.n	a11, 1
+  29:	0004e0        	callx8	a4
+  2c:	02ad      	mov.n	a10, a2
+  2e:	fff521        	l32r	a2, 4 <affine-0x4>
+			2e: R_XTENSA_SLOT0_OP	.text.affine+0x4
+  31:	03bd      	mov.n	a11, a3
+  33:	0002e0        	callx8	a2
+  36:	f01d      	retw.n
+
+Disassembly of section .text.bitmap:
+
+00000000 <bitmap-0xc>:
+   0:	00 00 00 00 	
+			0: R_XTENSA_32	.text.byte
+   4:	08 00 00 00 	
+			4: R_XTENSA_32	.text.affine
+   8:	04 00 00 00 	
+			8: R_XTENSA_32	.text.word
+
+0000000c <bitmap>:
+   c:	004136        	entry	a1, 32
+   f:	fffc71        	l32r	a7, 0 <bitmap-0xc>
+			f: R_XTENSA_SLOT0_OP	.text.bitmap
+  12:	02ad      	mov.n	a10, a2
+  14:	17a0b2        	movi	a11, 23
+  17:	0007e0        	callx8	a7
+  1a:	02ad      	mov.n	a10, a2
+  1c:	1ba0b2        	movi	a11, 27
+  1f:	0007e0        	callx8	a7
+  22:	02ad      	mov.n	a10, a2
+  24:	0b0c      	movi.n	a11, 0
+  26:	0007e0        	callx8	a7
+  29:	03bd      	mov.n	a11, a3
+  2b:	02ad      	mov.n	a10, a2
+  2d:	0007e0        	callx8	a7
+  30:	fff581        	l32r	a8, 4 <bitmap-0x8>
+			30: R_XTENSA_SLOT0_OP	.text.bitmap+0x4
+  33:	04bd      	mov.n	a11, a4
+  35:	02ad      	mov.n	a10, a2
+  37:	0008e0        	callx8	a8
+  3a:	02ad      	mov.n	a10, a2
+  3c:	17a0b2        	movi	a11, 23
+  3f:	0007e0        	callx8	a7
+  42:	02ad      	mov.n	a10, a2
+  44:	bb1c      	movi.n	a11, 27
+  46:	0007e0        	callx8	a7
+  49:	02ad      	mov.n	a10, a2
+  4b:	3b0c      	movi.n	a11, 3
+  4d:	0007e0        	callx8	a7
+  50:	ffee71        	l32r	a7, 8 <bitmap-0x4>
+			50: R_XTENSA_SLOT0_OP	.text.bitmap+0x8
+  53:	05bd      	mov.n	a11, a5
+  55:	02ad      	mov.n	a10, a2
+  57:	0007e0        	callx8	a7
+  5a:	06bd      	mov.n	a11, a6
+  5c:	02ad      	mov.n	a10, a2
+  5e:	0007e0        	callx8	a7
+  61:	f01d      	retw.n
+
+Disassembly of section .text.centre_exact:
+
+00000000 <centre_exact-0xc>:
+   0:	00 a0 00 00 	
+   4:	00 00 00 00 	
+			4: R_XTENSA_32	.text.u32
+   8:	ff 0f 00 00 	
+
+0000000c <centre_exact>:
+   c:	006136        	entry	a1, 48
+   f:	99c352        	addi	a5, a3, -103
+  12:	79a062        	movi	a6, 121
+  15:	fffa81        	l32r	a8, 0 <centre_exact-0xc>
+			15: R_XTENSA_SLOT0_OP	.text.centre_exact
+  18:	02b657        	bgeu	a6, a5, 1e <centre_exact+0x12>
+			18: R_XTENSA_SLOT0_OP	.text.centre_exact+0x1e
+  1b:	002986        	j	c5 <centre_exact+0xb9>
+			1b: R_XTENSA_SLOT0_OP	.text.centre_exact+0xc5
+  1e:	72a8      	l32i.n	a10, a2, 28
+  20:	a0c332        	addi	a3, a3, -96
+  23:	fff871        	l32r	a7, 4 <centre_exact-0x8>
+			23: R_XTENSA_SLOT0_OP	.text.centre_exact+0x4
+  26:	1153e0        	slli	a5, a3, 2
+  29:	aa5a      	add.n	a10, a10, a5
+  2b:	0007e0        	callx8	a7
+  2e:	aa4a      	add.n	a10, a10, a4
+  30:	21aea0        	srai	a10, a10, 14
+  33:	116af0        	slli	a6, a10, 1
+  36:	a6aa      	add.n	a10, a6, a10
+  38:	132262        	l32i	a6, a2, 76
+  3b:	11aae0        	slli	a10, a10, 2
+  3e:	66aa      	add.n	a6, a6, a10
+  40:	030682        	l8ui	a8, a6, 3
+  43:	d298      	l32i.n	a9, a2, 52
+  45:	114880        	slli	a4, a8, 8
+  48:	020682        	l8ui	a8, a6, 2
+  4b:	ffef51        	l32r	a5, 8 <centre_exact-0x4>
+			4b: R_XTENSA_SLOT0_OP	.text.centre_exact+0x8
+  4e:	208840        	or	a8, a8, a4
+  51:	238880        	sext	a8, a8, 15
+  54:	828890        	mull	a8, a8, a9
+  57:	485a      	add.n	a4, a8, a5
+  59:	a38480        	movltz	a8, a4, a8
+  5c:	010642        	l8ui	a4, a6, 1
+  5f:	218c80        	srai	a8, a8, 12
+  62:	11a480        	slli	a10, a4, 8
+  65:	000642        	l8ui	a4, a6, 0
+  68:	006192        	s32i	a9, a1, 0
+  6b:	2044a0        	or	a4, a4, a10
+  6e:	234480        	sext	a4, a4, 15
+  71:	1144e0        	slli	a4, a4, 2
+  74:	a64b      	addi.n	a10, a6, 4
+  76:	804840        	add	a4, a8, a4
+  79:	0007e0        	callx8	a7
+  7c:	0906b2        	l8ui	a11, a6, 9
+  7f:	0198      	l32i.n	a9, a1, 0
+  81:	117b80        	slli	a7, a11, 8
+  84:	0806b2        	l8ui	a11, a6, 8
+  87:	e228      	l32i.n	a2, a2, 56
+  89:	20bb70        	or	a11, a11, a7
+  8c:	23bb80        	sext	a11, a11, 15
+  8f:	82bb90        	mull	a11, a11, a9
+  92:	0b0692        	l8ui	a9, a6, 11
+  95:	7b5a      	add.n	a7, a11, a5
+  97:	a3b7b0        	movltz	a11, a7, a11
+  9a:	117980        	slli	a7, a9, 8
+  9d:	0a0692        	l8ui	a9, a6, 10
+  a0:	21bcb0        	srai	a11, a11, 12
+  a3:	209970        	or	a9, a9, a7
+  a6:	239980        	sext	a9, a9, 15
+  a9:	829920        	mull	a9, a9, a2
+  ac:	abaa      	add.n	a10, a11, a10
+  ae:	595a      	add.n	a5, a9, a5
+  b0:	a39590        	movltz	a9, a5, a9
+  b3:	219c90        	srai	a9, a9, 12
+  b6:	aa9a      	add.n	a10, a10, a9
+  b8:	82aa30        	mull	a10, a10, a3
+  bb:	8afb      	addi.n	a8, a10, 15
+  bd:	a3a8a0        	movltz	a10, a8, a10
+  c0:	2184a0        	srai	a8, a10, 4
+  c3:	884a      	add.n	a8, a8, a4
+  c5:	082d      	mov.n	a2, a8
+  c7:	f01d      	retw.n
+
+Disassembly of section .text.cx:
+
+00000000 <cx-0x4>:
+   0:	0c 00 00 00 	
+			0: R_XTENSA_32	.text.centre_exact
+
+00000004 <cx>:
+   4:	004136        	entry	a1, 32
+   7:	f2c8      	l32i.n	a12, a2, 60
+   9:	02ad      	mov.n	a10, a2
+   b:	fffd21        	l32r	a2, 0 <cx-0x4>
+			b: R_XTENSA_SLOT0_OP	.text.cx
+   e:	20b330        	or	a11, a3, a3
+  11:	0002e0        	callx8	a2
+  14:	ffa022        	movi	a2, 255
+  17:	2a2a      	add.n	a2, a10, a2
+  19:	a3a2a0        	movltz	a10, a2, a10
+  1c:	2128a0        	srai	a2, a10, 8
+  1f:	f01d      	retw.n
+
+Disassembly of section .text.tangent:
+
+00000000 <tangent-0x4>:
+   0:	1f 85 eb 51 	
+
+00000004 <tangent>:
+   4:	004136        	entry	a1, 32
+   7:	fffe81        	l32r	a8, 0 <tangent-0x4>
+			7: R_XTENSA_SLOT0_OP	.text.tangent
+   a:	b28380        	mulsh	a8, a3, a8
+   d:	313f30        	srai	a3, a3, 31
+  10:	218580        	srai	a8, a8, 5
+  13:	c08830        	sub	a8, a8, a3
+  16:	118880        	slli	a8, a8, 8
+  19:	21ae80        	srai	a10, a8, 14
+  1c:	b238      	l32i.n	a3, a2, 44
+  1e:	d49080        	extui	a9, a8, 0, 14
+  21:	8a1b      	addi.n	a8, a10, 1
+  23:	019837        	bne	a8, a3, 28 <tangent+0x24>
+			23: R_XTENSA_SLOT0_OP	.text.tangent+0x28
+  26:	080c      	movi.n	a8, 0
+  28:	12b8      	l32i.n	a11, a2, 4
+  2a:	11aad0        	slli	a10, a10, 3
+  2d:	aa4a      	add.n	a10, a10, a4
+  2f:	abaa      	add.n	a10, a11, a10
+  31:	010a22        	l8ui	a2, a10, 1
+  34:	1188d0        	slli	a8, a8, 3
+  37:	113280        	slli	a3, a2, 8
+  3a:	884a      	add.n	a8, a8, a4
+  3c:	000a22        	l8ui	a2, a10, 0
+  3f:	8b8a      	add.n	a8, a11, a8
+  41:	202230        	or	a2, a2, a3
+  44:	010832        	l8ui	a3, a8, 1
+  47:	000882        	l8ui	a8, a8, 0
+  4a:	113380        	slli	a3, a3, 8
+  4d:	208830        	or	a8, a8, a3
+  50:	232280        	sext	a2, a2, 15
+  53:	238880        	sext	a8, a8, 15
+  56:	c08820        	sub	a8, a8, a2
+  59:	828890        	mull	a8, a8, a9
+  5c:	218e80        	srai	a8, a8, 14
+  5f:	282a      	add.n	a2, a8, a2
+  61:	f01d      	retw.n
+
+Disassembly of section .text.overlap:
+
+00000000 <overlap>:
+   0:	004136        	entry	a1, 32
+   3:	090c      	movi.n	a9, 0
+   5:	180c      	movi.n	a8, 1
+   7:	191397        	beq	a3, a9, 24 <overlap+0x24>
+			7: R_XTENSA_SLOT0_OP	.text.overlap+0x24
+   a:	161597        	beq	a5, a9, 24 <overlap+0x24>
+			a: R_XTENSA_SLOT0_OP	.text.overlap+0x24
+   d:	0b3427        	bltu	a4, a2, 1c <overlap+0x1c>
+			d: R_XTENSA_SLOT0_OP	.text.overlap+0x1c
+  10:	c04420        	sub	a4, a4, a2
+  13:	082d      	mov.n	a2, a8
+  15:	0d3437        	bltu	a4, a3, 26 <overlap+0x26>
+			15: R_XTENSA_SLOT0_OP	.text.overlap+0x26
+  18:	000206        	j	24 <overlap+0x24>
+			18: R_XTENSA_SLOT0_OP	.text.overlap+0x24
+  1b:	00          	.byte 00
+  1c:	c04240        	sub	a4, a2, a4
+  1f:	082d      	mov.n	a2, a8
+  21:	013457        	bltu	a4, a5, 26 <overlap+0x26>
+			21: R_XTENSA_SLOT0_OP	.text.overlap+0x26
+  24:	020c      	movi.n	a2, 0
+  26:	f01d      	retw.n
+
+Disassembly of section .text.clear_completion:
+
+00000000 <clear_completion-0x4>:
+   0:	30 00 01 00 	
+
+00000004 <clear_completion>:
+   4:	004136        	entry	a1, 32
+   7:	080c      	movi.n	a8, 0
+   9:	08bd      	mov.n	a11, a8
+   b:	093c      	movi.n	a9, 48
+   d:	068976        	loop	a9, 17 <clear_completion+0x13>
+			d: R_XTENSA_SLOT0_OP	.text.clear_completion+0x17
+  10:	a28a      	add.n	a10, a2, a8
+  12:	004ab2        	s8i	a11, a10, 0
+  15:	881b      	addi.n	a8, a8, 1
+  17:	fffa81        	l32r	a8, 0 <clear_completion-0x4>
+			17: R_XTENSA_SLOT0_OP	.text.clear_completion
+  1a:	0289      	s32i.n	a8, a2, 0
+  1c:	f01d      	retw.n
+
+Disassembly of section .text.host_ok:
+
+00000000 <host_ok>:
+   0:	004136        	entry	a1, 32
+   3:	028d      	mov.n	a8, a2
+   5:	020c      	movi.n	a2, 0
+   7:	1b1827        	beq	a8, a2, 26 <host_ok+0x26>
+			7: R_XTENSA_SLOT0_OP	.text.host_ok+0x26
+   a:	0898      	l32i.n	a9, a8, 0
+   c:	3a2c      	movi.n	a10, 35
+   e:	14ba97        	bgeu	a10, a9, 26 <host_ok+0x26>
+			e: R_XTENSA_SLOT0_OP	.text.host_ok+0x26
+  11:	021892        	l16ui	a9, a8, 4
+  14:	0e1966        	bnei	a9, 1, 26 <host_ok+0x26>
+			14: R_XTENSA_SLOT0_OP	.text.host_ok+0x26
+  17:	28a8      	l32i.n	a10, a8, 8
+  19:	095a27        	bbc	a10, a2, 26 <host_ok+0x26>
+			19: R_XTENSA_SLOT0_OP	.text.host_ok+0x26
+  1c:	48a8      	l32i.n	a10, a8, 16
+  1e:	041a27        	beq	a10, a2, 26 <host_ok+0x26>
+			1e: R_XTENSA_SLOT0_OP	.text.host_ok+0x26
+  21:	5888      	l32i.n	a8, a8, 20
+  23:	932980        	movnez	a2, a9, a8
+  26:	f01d      	retw.n
+
+Disassembly of section .text.acquire:
+
+00000000 <acquire>:
+   0:	004136        	entry	a1, 32
+   3:	481c      	movi.n	a8, 20
+   5:	0489      	s32i.n	a8, a4, 0
+   7:	080c      	movi.n	a8, 0
+   9:	1489      	s32i.n	a8, a4, 4
+   b:	2489      	s32i.n	a8, a4, 8
+   d:	3489      	s32i.n	a8, a4, 12
+   f:	4489      	s32i.n	a8, a4, 16
+  11:	23e8      	l32i.n	a14, a3, 8
+  13:	4288      	l32i.n	a8, a2, 16
+  15:	13d8      	l32i.n	a13, a3, 4
+  17:	0113c2        	l16ui	a12, a3, 2
+  1a:	0013b2        	l16ui	a11, a3, 0
+  1d:	32a8      	l32i.n	a10, a2, 12
+  1f:	04fd      	mov.n	a15, a4
+  21:	0008e0        	callx8	a8
+  24:	0a2d      	mov.n	a2, a10
+  26:	f01d      	retw.n
+
+Disassembly of section .text.view_ok:
+
+00000000 <view_ok>:
+   0:	004136        	entry	a1, 32
+   3:	1288      	l32i.n	a8, a2, 4
+   5:	029d      	mov.n	a9, a2
+   7:	020c      	movi.n	a2, 0
+   9:	1b1827        	beq	a8, a2, 28 <view_ok+0x28>
+			9: R_XTENSA_SLOT0_OP	.text.view_ok+0x28
+   c:	2988      	l32i.n	a8, a9, 8
+   e:	161827        	beq	a8, a2, 28 <view_ok+0x28>
+			e: R_XTENSA_SLOT0_OP	.text.view_ok+0x28
+  11:	39a8      	l32i.n	a10, a9, 12
+  13:	2388      	l32i.n	a8, a3, 8
+  15:	0f9a87        	bne	a10, a8, 28 <view_ok+0x28>
+			15: R_XTENSA_SLOT0_OP	.text.view_ok+0x28
+  18:	0113a2        	l16ui	a10, a3, 2
+  1b:	4988      	l32i.n	a8, a9, 16
+  1d:	130c      	movi.n	a3, 1
+  1f:	108a80        	and	a8, a10, a8
+  22:	c088a0        	sub	a8, a8, a10
+  25:	832380        	moveqz	a2, a3, a8
+  28:	f01d      	retw.n
+
+Disassembly of section .text.asset_ok:
+
+00000000 <asset_ok-0x20>:
+   0:	c5 9d 1c 81 	
+   4:	0b 65 ba 82 	
+	...
+			8: R_XTENSA_32	.rodata.asset_meta
+			c: R_XTENSA_32	.text.u32
+  10:	52 32 34 54 	
+  14:	93 01 00 01 	
+	...
+			18: R_XTENSA_32	.rodata.counts$1519
+			1c: R_XTENSA_32	.rodata.widths$1518
+
+00000020 <asset_ok>:
+  20:	008136        	entry	a1, 64
+  23:	2149      	s32i.n	a4, a1, 8
+  25:	e368      	l32i.n	a6, a3, 56
+  27:	fff741        	l32r	a4, 4 <asset_ok-0x1c>
+			27: R_XTENSA_SLOT0_OP	.text.asset_ok+0x4
+  2a:	028d      	mov.n	a8, a2
+  2c:	464a      	add.n	a4, a6, a4
+  2e:	020c      	movi.n	a2, 0
+  30:	150c      	movi.n	a5, 1
+  32:	835240        	moveqz	a5, a2, a4
+  35:	fff471        	l32r	a7, 8 <asset_ok-0x18>
+			35: R_XTENSA_SLOT0_OP	.text.asset_ok+0x8
+  38:	1145c0        	slli	a4, a5, 4
+  3b:	774a      	add.n	a7, a7, a4
+  3d:	0748      	l32i.n	a4, a7, 0
+  3f:	021647        	beq	a6, a4, 45 <asset_ok+0x25>
+			3f: R_XTENSA_SLOT0_OP	.text.asset_ok+0x45
+  42:	0068c6        	j	1e9 <asset_ok+0x1c9>
+			42: R_XTENSA_SLOT0_OP	.text.asset_ok+0x1e9
+  45:	f338      	l32i.n	a3, a3, 60
+  47:	0139      	s32i.n	a3, a1, 0
+  49:	0148      	l32i.n	a4, a1, 0
+  4b:	1738      	l32i.n	a3, a7, 4
+  4d:	021437        	beq	a4, a3, 53 <asset_ok+0x33>
+			4d: R_XTENSA_SLOT0_OP	.text.asset_ok+0x53
+  50:	006546        	j	1e9 <asset_ok+0x1c9>
+			50: R_XTENSA_SLOT0_OP	.text.asset_ok+0x1e9
+  53:	3858      	l32i.n	a5, a8, 12
+  55:	2738      	l32i.n	a3, a7, 8
+  57:	021357        	beq	a3, a5, 5d <asset_ok+0x3d>
+			57: R_XTENSA_SLOT0_OP	.text.asset_ok+0x5d
+  5a:	006246        	j	1e7 <asset_ok+0x1c7>
+			5a: R_XTENSA_SLOT0_OP	.text.asset_ok+0x1e7
+  5d:	bfa032        	movi	a3, 191
+  60:	023357        	bltu	a3, a5, 66 <asset_ok+0x46>
+			60: R_XTENSA_SLOT0_OP	.text.asset_ok+0x66
+  63:	006006        	j	1e7 <asset_ok+0x1c7>
+			63: R_XTENSA_SLOT0_OP	.text.asset_ok+0x1e7
+  66:	2848      	l32i.n	a4, a8, 8
+  68:	ffe931        	l32r	a3, c <asset_ok-0x14>
+			68: R_XTENSA_SLOT0_OP	.text.asset_ok+0xc
+  6b:	04ad      	mov.n	a10, a4
+  6d:	0003e0        	callx8	a3
+  70:	ffe891        	l32r	a9, 10 <asset_ok-0x10>
+			70: R_XTENSA_SLOT0_OP	.text.asset_ok+0x10
+  73:	021a97        	beq	a10, a9, 79 <asset_ok+0x59>
+			73: R_XTENSA_SLOT0_OP	.text.asset_ok+0x79
+  76:	005bc6        	j	1e9 <asset_ok+0x1c9>
+			76: R_XTENSA_SLOT0_OP	.text.asset_ok+0x1e9
+  79:	050492        	l8ui	a9, a4, 5
+  7c:	11a980        	slli	a10, a9, 8
+  7f:	040492        	l8ui	a9, a4, 4
+  82:	2099a0        	or	a9, a9, a10
+  85:	021926        	beqi	a9, 1, 8b <asset_ok+0x6b>
+			85: R_XTENSA_SLOT0_OP	.text.asset_ok+0x8b
+  88:	005746        	j	1e9 <asset_ok+0x1c9>
+			88: R_XTENSA_SLOT0_OP	.text.asset_ok+0x1e9
+  8b:	070492        	l8ui	a9, a4, 7
+  8e:	11a980        	slli	a10, a9, 8
+  91:	060492        	l8ui	a9, a4, 6
+  94:	2099a0        	or	a9, a9, a10
+  97:	029926        	beqi	a9, 10, 9d <asset_ok+0x7d>
+			97: R_XTENSA_SLOT0_OP	.text.asset_ok+0x9d
+  9a:	0052c6        	j	1e9 <asset_ok+0x1c9>
+			9a: R_XTENSA_SLOT0_OP	.text.asset_ok+0x1e9
+  9d:	a48b      	addi.n	a10, a4, 8
+  9f:	0003e0        	callx8	a3
+  a2:	0215a7        	beq	a5, a10, a8 <asset_ok+0x88>
+			a2: R_XTENSA_SLOT0_OP	.text.asset_ok+0xa8
+  a5:	005006        	j	1e9 <asset_ok+0x1c9>
+			a5: R_XTENSA_SLOT0_OP	.text.asset_ok+0x1e9
+  a8:	a4cb      	addi.n	a10, a4, 12
+  aa:	0003e0        	callx8	a3
+  ad:	0216a7        	beq	a6, a10, b3 <asset_ok+0x93>
+			ad: R_XTENSA_SLOT0_OP	.text.asset_ok+0xb3
+  b0:	004d46        	j	1e9 <asset_ok+0x1c9>
+			b0: R_XTENSA_SLOT0_OP	.text.asset_ok+0x1e9
+  b3:	032762        	l32i	a6, a7, 12
+  b6:	110472        	l8ui	a7, a4, 17
+  b9:	016162        	s32i	a6, a1, 4
+  bc:	119780        	slli	a9, a7, 8
+  bf:	100472        	l8ui	a7, a4, 16
+  c2:	207790        	or	a7, a7, a9
+  c5:	021767        	beq	a7, a6, cb <asset_ok+0xab>
+			c5: R_XTENSA_SLOT0_OP	.text.asset_ok+0xcb
+  c8:	004746        	j	1e9 <asset_ok+0x1c9>
+			c8: R_XTENSA_SLOT0_OP	.text.asset_ok+0x1e9
+  cb:	130472        	l8ui	a7, a4, 19
+  ce:	112780        	slli	a2, a7, 8
+  d1:	120472        	l8ui	a7, a4, 18
+  d4:	207720        	or	a7, a7, a2
+  d7:	237780        	sext	a7, a7, 15
+  da:	00a022        	movi	a2, 0
+  dd:	021727        	beq	a7, a2, e3 <asset_ok+0xc3>
+			dd: R_XTENSA_SLOT0_OP	.text.asset_ok+0xe3
+  e0:	004146        	j	1e9 <asset_ok+0x1c9>
+			e0: R_XTENSA_SLOT0_OP	.text.asset_ok+0x1e9
+  e3:	14c4a2        	addi	a10, a4, 20
+  e6:	0003e0        	callx8	a3
+  e9:	1196a0        	slli	a9, a6, 6
+  ec:	072d      	mov.n	a2, a7
+  ee:	021a97        	beq	a10, a9, f4 <asset_ok+0xd4>
+			ee: R_XTENSA_SLOT0_OP	.text.asset_ok+0xf4
+  f1:	003d06        	j	1e9 <asset_ok+0x1c9>
+			f1: R_XTENSA_SLOT0_OP	.text.asset_ok+0x1e9
+  f4:	18c4a2        	addi	a10, a4, 24
+  f7:	0003e0        	callx8	a3
+  fa:	0188      	l32i.n	a8, a1, 0
+  fc:	0218a7        	beq	a8, a10, 102 <asset_ok+0xe2>
+			fc: R_XTENSA_SLOT0_OP	.text.asset_ok+0x102
+  ff:	003986        	j	1e9 <asset_ok+0x1c9>
+			ff: R_XTENSA_SLOT0_OP	.text.asset_ok+0x1e9
+ 102:	1cc4a2        	addi	a10, a4, 28
+ 105:	0003e0        	callx8	a3
+ 108:	0a6d      	mov.n	a6, a10
+ 10a:	0dba56        	bnez	a10, 1e9 <asset_ok+0x1c9>
+			10a: R_XTENSA_SLOT0_OP	.text.asset_ok+0x1e9
+ 10d:	2128      	l32i.n	a2, a1, 8
+ 10f:	20c492        	addi	a9, a4, 32
+ 112:	32ac      	beqz.n	a2, 139 <asset_ok+0x119>
+			112: R_XTENSA_SLOT0_OP	.text.asset_ok+0x139
+ 114:	092d      	mov.n	a2, a9
+ 116:	a45a      	add.n	a10, a4, a5
+ 118:	ffba71        	l32r	a7, 0 <asset_ok-0x20>
+			118: R_XTENSA_SLOT0_OP	.text.asset_ok
+ 11b:	ffbe81        	l32r	a8, 14 <asset_ok-0xc>
+			11b: R_XTENSA_SLOT0_OP	.text.asset_ok+0x14
+ 11e:	000286        	j	12c <asset_ok+0x10c>
+			11e: R_XTENSA_SLOT0_OP	.text.asset_ok+0x12c
+ 121:	0002c2        	l8ui	a12, a2, 0
+ 124:	221b      	addi.n	a2, a2, 1
+ 126:	307c70        	xor	a7, a12, a7
+ 129:	827780        	mull	a7, a7, a8
+ 12c:	f192a7        	bne	a2, a10, 121 <asset_ok+0x101>
+			12c: R_XTENSA_SLOT0_OP	.text.asset_ok+0x121
+ 12f:	0148      	l32i.n	a4, a1, 0
+ 131:	020c      	movi.n	a2, 0
+ 133:	021477        	beq	a4, a7, 139 <asset_ok+0x119>
+			133: R_XTENSA_SLOT0_OP	.text.asset_ok+0x139
+ 136:	002bc6        	j	1e9 <asset_ok+0x1c9>
+			136: R_XTENSA_SLOT0_OP	.text.asset_ok+0x1e9
+ 139:	c0a082        	movi	a8, 192
+ 13c:	097d      	mov.n	a7, a9
+ 13e:	006182        	s32i	a8, a1, 0
+ 141:	01a042        	movi	a4, 1
+ 144:	11d6e0        	slli	a13, a6, 2
+ 147:	0d26f6        	bgeui	a6, 2, 158 <asset_ok+0x138>
+			147: R_XTENSA_SLOT0_OP	.text.asset_ok+0x158
+ 14a:	381c      	movi.n	a8, 19
+ 14c:	1198      	l32i.n	a9, a1, 4
+ 14e:	938460        	movnez	a8, a4, a6
+ 151:	822890        	mull	a2, a8, a9
+ 154:	000286        	j	162 <asset_ok+0x142>
+			154: R_XTENSA_SLOT0_OP	.text.asset_ok+0x162
+ 157:	00          	.byte 00
+ 158:	ffb021        	l32r	a2, 18 <asset_ok-0x8>
+			158: R_XTENSA_SLOT0_OP	.text.asset_ok+0x18
+ 15b:	f8cd82        	addi	a8, a13, -8
+ 15e:	882a      	add.n	a8, a8, a2
+ 160:	0828      	l32i.n	a2, a8, 0
+ 162:	41d9      	s32i.n	a13, a1, 16
+ 164:	a78b      	addi.n	a10, a7, 8
+ 166:	0003e0        	callx8	a3
+ 169:	0acd      	mov.n	a12, a10
+ 16b:	41d8      	l32i.n	a13, a1, 16
+ 16d:	0107a2        	l8ui	a10, a7, 1
+ 170:	ffab81        	l32r	a8, 1c <asset_ok-0x4>
+			170: R_XTENSA_SLOT0_OP	.text.asset_ok+0x1c
+ 173:	11fa80        	slli	a15, a10, 8
+ 176:	d8da      	add.n	a13, a8, a13
+ 178:	0007a2        	l8ui	a10, a7, 0
+ 17b:	0de8      	l32i.n	a14, a13, 0
+ 17d:	661b      	addi.n	a6, a6, 1
+ 17f:	20aaf0        	or	a10, a10, a15
+ 182:	82de20        	mull	a13, a14, a2
+ 185:	5e9a67        	bne	a10, a6, 1e7 <asset_ok+0x1c7>
+			185: R_XTENSA_SLOT0_OP	.text.asset_ok+0x1e7
+ 188:	0307a2        	l8ui	a10, a7, 3
+ 18b:	11fa80        	slli	a15, a10, 8
+ 18e:	0207a2        	l8ui	a10, a7, 2
+ 191:	20aaf0        	or	a10, a10, a15
+ 194:	4f9ea7        	bne	a14, a10, 1e7 <asset_ok+0x1c7>
+			194: R_XTENSA_SLOT0_OP	.text.asset_ok+0x1e7
+ 197:	a74b      	addi.n	a10, a7, 4
+ 199:	31c9      	s32i.n	a12, a1, 12
+ 19b:	41d9      	s32i.n	a13, a1, 16
+ 19d:	0003e0        	callx8	a3
+ 1a0:	439a27        	bne	a10, a2, 1e7 <asset_ok+0x1c7>
+			1a0: R_XTENSA_SLOT0_OP	.text.asset_ok+0x1e7
+ 1a3:	a7cb      	addi.n	a10, a7, 12
+ 1a5:	0003e0        	callx8	a3
+ 1a8:	41d8      	l32i.n	a13, a1, 16
+ 1aa:	31c8      	l32i.n	a12, a1, 12
+ 1ac:	379ad7        	bne	a10, a13, 1e7 <asset_ok+0x1c7>
+			1ac: R_XTENSA_SLOT0_OP	.text.asset_ok+0x1e7
+ 1af:	1480c0        	extui	a8, a12, 0, 2
+ 1b2:	090c      	movi.n	a9, 0
+ 1b4:	0128      	l32i.n	a2, a1, 0
+ 1b6:	939480        	movnez	a9, a4, a8
+ 1b9:	098d      	mov.n	a8, a9
+ 1bb:	01a0a2        	movi	a10, 1
+ 1be:	023c27        	bltu	a12, a2, 1c4 <asset_ok+0x1a4>
+			1be: R_XTENSA_SLOT0_OP	.text.asset_ok+0x1c4
+ 1c1:	00a0a2        	movi	a10, 0
+ 1c4:	2028a0        	or	a2, a8, a10
+ 1c7:	742020        	extui	a2, a2, 0, 8
+ 1ca:	92dc      	bnez.n	a2, 1e7 <asset_ok+0x1c7>
+			1ca: R_XTENSA_SLOT0_OP	.text.asset_ok+0x1e7
+ 1cc:	1735c7        	bltu	a5, a12, 1e7 <asset_ok+0x1c7>
+			1cc: R_XTENSA_SLOT0_OP	.text.asset_ok+0x1e7
+ 1cf:	c085c0        	sub	a8, a5, a12
+ 1d2:	1338d7        	bltu	a8, a13, 1e9 <asset_ok+0x1c9>
+			1d2: R_XTENSA_SLOT0_OP	.text.asset_ok+0x1e9
+ 1d5:	dcda      	add.n	a13, a12, a13
+ 1d7:	01d9      	s32i.n	a13, a1, 0
+ 1d9:	10c772        	addi	a7, a7, 16
+ 1dc:	029626        	beqi	a6, 10, 1e2 <asset_ok+0x1c2>
+			1dc: R_XTENSA_SLOT0_OP	.text.asset_ok+0x1e2
+ 1df:	ffd846        	j	144 <asset_ok+0x124>
+			1df: R_XTENSA_SLOT0_OP	.text.asset_ok+0x144
+ 1e2:	120c      	movi.n	a2, 1
+ 1e4:	000046        	j	1e9 <asset_ok+0x1c9>
+			1e4: R_XTENSA_SLOT0_OP	.text.asset_ok+0x1e9
+ 1e7:	020c      	movi.n	a2, 0
+ 1e9:	f01d      	retw.n
+
+Disassembly of section .text.bearing$isra$0:
+
+00000000 <bearing$isra$0>:
+   0:	004136        	entry	a1, 32
+   3:	60afb2        	movi	a11, -160
+   6:	80b3b0        	add	a11, a3, a11
+   9:	0b9d      	mov.n	a9, a11
+   b:	005bd6        	bgez	a11, 14 <bearing$isra$0+0x14>
+			b: R_XTENSA_SLOT0_OP	.text.bearing$isra$0+0x14
+   e:	a0a092        	movi	a9, 160
+  11:	c09930        	sub	a9, a9, a3
+  14:	00a232        	movi	a3, 0x200
+  17:	439930        	min	a9, a9, a3
+  1a:	21a190        	srai	a10, a9, 1
+  1d:	11aaf0        	slli	a10, a10, 1
+  20:	d2aa      	add.n	a13, a2, a10
+  22:	010d82        	l8ui	a8, a13, 1
+  25:	11c880        	slli	a12, a8, 8
+  28:	000d82        	l8ui	a8, a13, 0
+  2b:	2088c0        	or	a8, a8, a12
+  2e:	238880        	sext	a8, a8, 15
+  31:	236907        	bbci	a9, 0, 58 <bearing$isra$0+0x58>
+			31: R_XTENSA_SLOT0_OP	.text.bearing$isra$0+0x58
+  34:	aa2b      	addi.n	a10, a10, 2
+  36:	a2aa      	add.n	a10, a2, a10
+  38:	010a92        	l8ui	a9, a10, 1
+  3b:	112980        	slli	a2, a9, 8
+  3e:	000a92        	l8ui	a9, a10, 0
+  41:	209920        	or	a9, a9, a2
+  44:	239980        	sext	a9, a9, 15
+  47:	c09980        	sub	a9, a9, a8
+  4a:	991b      	addi.n	a9, a9, 1
+  4c:	05af90        	extui	a10, a9, 31, 1
+  4f:	809a90        	add	a9, a10, a9
+  52:	219190        	srai	a9, a9, 1
+  55:	808890        	add	a8, a8, a9
+  58:	002bd6        	bgez	a11, 5e <bearing$isra$0+0x5e>
+			58: R_XTENSA_SLOT0_OP	.text.bearing$isra$0+0x5e
+  5b:	608080        	neg	a8, a8
+  5e:	082d      	mov.n	a2, a8
+  60:	f01d      	retw.n
+
+Disassembly of section .text.release$isra$2:
+
+00000000 <release$isra$2>:
+   0:	004136        	entry	a1, 32
+   3:	03b8      	l32i.n	a11, a3, 0
+   5:	0a0c      	movi.n	a10, 0
+   7:	091ba7        	beq	a11, a10, 14 <release$isra$2+0x14>
+			7: R_XTENSA_SLOT0_OP	.text.release$isra$2+0x14
+   a:	03a9      	s32i.n	a10, a3, 0
+   c:	5238      	l32i.n	a3, a2, 20
+   e:	0322a2        	l32i	a10, a2, 12
+  11:	0003e0        	callx8	a3
+  14:	0a2d      	mov.n	a2, a10
+  16:	f01d      	retw.n
+
+Disassembly of section .text.preflight:
+
+00000000 <preflight-0x10>:
+	...
+			0: R_XTENSA_32	.text.view_ok
+			4: R_XTENSA_32	.text.overlap
+			8: R_XTENSA_32	.text.release$isra$2
+			c: R_XTENSA_32	.text.acquire
+
+00000010 <preflight>:
+  10:	010136        	entry	a1, 128
+  13:	e149      	s32i.n	a4, a1, 56
+  15:	14c332        	addi	a3, a3, 20
+  18:	202142        	l32i	a4, a1, 128
+  1b:	d129      	s32i.n	a2, a1, 52
+  1d:	136172        	s32i	a7, a1, 76
+  20:	116152        	s32i	a5, a1, 68
+  23:	126162        	s32i	a6, a1, 72
+  26:	c139      	s32i.n	a3, a1, 48
+  28:	020c      	movi.n	a2, 0
+  2a:	c1b8      	l32i.n	a11, a1, 48
+  2c:	d1a8      	l32i.n	a10, a1, 52
+  2e:	01cd      	mov.n	a12, a1
+  30:	fff781        	l32r	a8, c <preflight-0x4>
+			30: R_XTENSA_SLOT0_OP	.text.preflight+0xc
+			30: R_XTENSA_ASM_EXPAND	.text.acquire
+  33:	0008e0        	callx8	a8
+  36:	0acd      	mov.n	a12, a10
+  38:	630c      	movi.n	a3, 6
+  3a:	0d7a56        	bnez	a10, 115 <preflight+0x105>
+			3a: R_XTENSA_SLOT0_OP	.text.preflight+0x115
+  3d:	fff031        	l32r	a3, 0 <preflight-0x10>
+			3d: R_XTENSA_SLOT0_OP	.text.preflight
+  40:	c1b8      	l32i.n	a11, a1, 48
+  42:	20a110        	or	a10, a1, a1
+  45:	0003e0        	callx8	a3
+  48:	3c0c      	movi.n	a12, 3
+  4a:	530c      	movi.n	a3, 5
+  4c:	0c5a16        	beqz	a10, 115 <preflight+0x105>
+			4c: R_XTENSA_SLOT0_OP	.text.preflight+0x115
+  4f:	14c182        	addi	a8, a1, 20
+  52:	1132e0        	slli	a3, a2, 2
+  55:	20c152        	addi	a5, a1, 32
+  58:	2168      	l32i.n	a6, a1, 8
+  5a:	f159      	s32i.n	a5, a1, 60
+  5c:	106182        	s32i	a8, a1, 64
+  5f:	553a      	add.n	a5, a5, a3
+  61:	383a      	add.n	a3, a8, a3
+  63:	e188      	l32i.n	a8, a1, 56
+  65:	3178      	l32i.n	a7, a1, 12
+  67:	0569      	s32i.n	a6, a5, 0
+  69:	28c8      	l32i.n	a12, a8, 8
+  6b:	38d8      	l32i.n	a13, a8, 12
+  6d:	ffe551        	l32r	a5, 4 <preflight-0xc>
+			6d: R_XTENSA_SLOT0_OP	.text.preflight+0x4
+  70:	0379      	s32i.n	a7, a3, 0
+  72:	07bd      	mov.n	a11, a7
+  74:	06ad      	mov.n	a10, a6
+  76:	0005e0        	callx8	a5
+  79:	430c      	movi.n	a3, 4
+  7b:	1c0c      	movi.n	a12, 1
+  7d:	094a56        	bnez	a10, 115 <preflight+0x105>
+			7d: R_XTENSA_SLOT0_OP	.text.preflight+0x115
+  80:	1121c2        	l32i	a12, a1, 68
+  83:	d0a1d2        	movi	a13, 0x1d0
+  86:	07bd      	mov.n	a11, a7
+  88:	20a660        	or	a10, a6, a6
+  8b:	0005e0        	callx8	a5
+  8e:	1c0c      	movi.n	a12, 1
+  90:	081a56        	bnez	a10, 115 <preflight+0x105>
+			90: R_XTENSA_SLOT0_OP	.text.preflight+0x115
+  93:	1221c2        	l32i	a12, a1, 72
+  96:	1321d2        	l32i	a13, a1, 76
+  99:	07bd      	mov.n	a11, a7
+  9b:	06ad      	mov.n	a10, a6
+  9d:	0005e0        	callx8	a5
+  a0:	1c0c      	movi.n	a12, 1
+  a2:	06fa56        	bnez	a10, 115 <preflight+0x105>
+			a2: R_XTENSA_SLOT0_OP	.text.preflight+0x115
+  a5:	04cd      	mov.n	a12, a4
+  a7:	0d3c      	movi.n	a13, 48
+  a9:	07bd      	mov.n	a11, a7
+  ab:	06ad      	mov.n	a10, a6
+  ad:	0005e0        	callx8	a5
+  b0:	1c0c      	movi.n	a12, 1
+  b2:	05fa56        	bnez	a10, 115 <preflight+0x105>
+			b2: R_XTENSA_SLOT0_OP	.text.preflight+0x115
+  b5:	d1c8      	l32i.n	a12, a1, 52
+  b7:	4d2c      	movi.n	a13, 36
+  b9:	07bd      	mov.n	a11, a7
+  bb:	06ad      	mov.n	a10, a6
+  bd:	0005e0        	callx8	a5
+  c0:	0acd      	mov.n	a12, a10
+  c2:	04ba56        	bnez	a10, 111 <preflight+0x101>
+			c2: R_XTENSA_SLOT0_OP	.text.preflight+0x111
+  c5:	0a3d      	mov.n	a3, a10
+  c7:	0a8d      	mov.n	a8, a10
+  c9:	14c192        	addi	a9, a1, 20
+  cc:	20c1e2        	addi	a14, a1, 32
+  cf:	4f0c      	movi.n	a15, 4
+  d1:	000cc6        	j	108 <preflight+0xf8>
+			d1: R_XTENSA_SLOT0_OP	.text.preflight+0x108
+  d4:	11a8e0        	slli	a10, a8, 2
+  d7:	b9aa      	add.n	a11, a9, a10
+  d9:	aeaa      	add.n	a10, a14, a10
+  db:	0ac8      	l32i.n	a12, a10, 0
+  dd:	0bd8      	l32i.n	a13, a11, 0
+  df:	06ad      	mov.n	a10, a6
+  e1:	146182        	s32i	a8, a1, 80
+  e4:	156192        	s32i	a9, a1, 84
+  e7:	1661e2        	s32i	a14, a1, 88
+  ea:	1761f2        	s32i	a15, a1, 92
+  ed:	07bd      	mov.n	a11, a7
+  ef:	0005e0        	callx8	a5
+  f2:	0acd      	mov.n	a12, a10
+  f4:	142182        	l32i	a8, a1, 80
+  f7:	152192        	l32i	a9, a1, 84
+  fa:	1621e2        	l32i	a14, a1, 88
+  fd:	1721f2        	l32i	a15, a1, 92
+ 100:	2a8c      	beqz.n	a10, 106 <preflight+0xf6>
+			100: R_XTENSA_SLOT0_OP	.text.preflight+0x106
+ 102:	0f3d      	mov.n	a3, a15
+ 104:	1c0c      	movi.n	a12, 1
+ 106:	881b      	addi.n	a8, a8, 1
+ 108:	09b827        	bgeu	a8, a2, 115 <preflight+0x105>
+			108: R_XTENSA_SLOT0_OP	.text.preflight+0x115
+ 10b:	c56c07        	bbci	a12, 0, d4 <preflight+0xc4>
+			10b: R_XTENSA_SLOT0_OP	.text.preflight+0xd4
+ 10e:	0000c6        	j	115 <preflight+0x105>
+			10e: R_XTENSA_SLOT0_OP	.text.preflight+0x115
+ 111:	430c      	movi.n	a3, 4
+ 113:	1c0c      	movi.n	a12, 1
+ 115:	d1a8      	l32i.n	a10, a1, 52
+ 117:	ffbc51        	l32r	a5, 8 <preflight-0x8>
+			117: R_XTENSA_SLOT0_OP	.text.preflight+0x8
+ 11a:	1461c2        	s32i	a12, a1, 80
+ 11d:	b14b      	addi.n	a11, a1, 4
+ 11f:	0005e0        	callx8	a5
+ 122:	1421c2        	l32i	a12, a1, 80
+ 125:	fa8c      	beqz.n	a10, 138 <preflight+0x128>
+			125: R_XTENSA_SLOT0_OP	.text.preflight+0x138
+ 127:	020c      	movi.n	a2, 0
+ 129:	165422        	s16i	a2, a4, 44
+ 12c:	720c      	movi.n	a2, 7
+ 12e:	155422        	s16i	a2, a4, 42
+ 131:	14a9      	s32i.n	a10, a4, 4
+ 133:	24a9      	s32i.n	a10, a4, 8
+ 135:	000a46        	j	162 <preflight+0x152>
+			135: R_XTENSA_SLOT0_OP	.text.preflight+0x162
+ 138:	5c9c      	beqz.n	a12, 151 <preflight+0x141>
+			138: R_XTENSA_SLOT0_OP	.text.preflight+0x151
+ 13a:	fac322        	addi	a2, a3, -6
+ 13d:	83ac20        	moveqz	a10, a12, a2
+ 140:	020c      	movi.n	a2, 0
+ 142:	24a9      	s32i.n	a10, a4, 8
+ 144:	165422        	s16i	a2, a4, 44
+ 147:	155432        	s16i	a3, a4, 42
+ 14a:	14c9      	s32i.n	a12, a4, 4
+ 14c:	0cad      	mov.n	a10, a12
+ 14e:	000406        	j	162 <preflight+0x152>
+			14e: R_XTENSA_SLOT0_OP	.text.preflight+0x162
+ 151:	c138      	l32i.n	a3, a1, 48
+ 153:	221b      	addi.n	a2, a2, 1
+ 155:	33cb      	addi.n	a3, a3, 12
+ 157:	c139      	s32i.n	a3, a1, 48
+ 159:	023226        	beqi	a2, 3, 15f <preflight+0x14f>
+			159: R_XTENSA_SLOT0_OP	.text.preflight+0x15f
+ 15c:	ffb286        	j	2a <preflight+0x1a>
+			15c: R_XTENSA_SLOT0_OP	.text.preflight+0x2a
+ 15f:	000046        	j	164 <preflight+0x154>
+			15f: R_XTENSA_SLOT0_OP	.text.preflight+0x164
+ 162:	0acd      	mov.n	a12, a10
+ 164:	0c2d      	mov.n	a2, a12
+ 166:	f01d      	retw.n
+
+Disassembly of section .text.rally_render_bind_v1:
+
+00000000 <rally_render_bind_v1-0x40>:
+   0:	d0 ff fe ff 	
+   4:	00 00 00 00 	
+			4: R_XTENSA_32	.text.overlap
+   8:	04 00 00 00 	
+			8: R_XTENSA_32	.text.clear_completion
+	...
+			c: R_XTENSA_32	.text.host_ok
+			10: R_XTENSA_PLT	memcpy
+  14:	b4 ff fe ff 	
+  18:	00 00 00 00 	
+			18: R_XTENSA_32	.rodata
+  1c:	0c 00 00 00 	
+			1c: R_XTENSA_32	.rodata
+  20:	ff ff 00 00 	
+	...
+			24: R_XTENSA_32	.text.acquire
+			28: R_XTENSA_32	.text.view_ok
+  2c:	20 00 00 00 	
+			2c: R_XTENSA_32	.text.asset_ok
+  30:	10 00 00 00 	
+			30: R_XTENSA_32	.text.preflight
+	...
+			34: R_XTENSA_32	.text.release$isra$2
+			38: R_XTENSA_32	.text.overlap
+			3c: R_XTENSA_32	.text.overlap
+
+00000040 <rally_render_bind_v1>:
+  40:	01e136        	entry	a1, 240
+  43:	286122        	s32i	a2, a1, 160
+  46:	057d      	mov.n	a7, a5
+  48:	120c      	movi.n	a2, 1
+  4a:	025d      	mov.n	a5, a2
+  4c:	2d0716        	beqz	a7, 320 <rally_render_bind_v1+0x2e0>
+			4c: R_XTENSA_SLOT0_OP	.text.rally_render_bind_v1+0x320
+  4f:	ffec91        	l32r	a9, 0 <rally_render_bind_v1-0x40>
+			4f: R_XTENSA_SLOT0_OP	.text.rally_render_bind_v1
+  52:	0768      	l32i.n	a6, a7, 0
+  54:	669a      	add.n	a6, a6, a9
+  56:	090c      	movi.n	a9, 0
+  58:	939260        	movnez	a9, a2, a6
+  5b:	746090        	extui	a6, a9, 0, 8
+  5e:	2aa656        	bnez	a6, 30c <rally_render_bind_v1+0x2cc>
+			5e: R_XTENSA_SLOT0_OP	.text.rally_render_bind_v1+0x30c
+  61:	836230        	moveqz	a6, a2, a3
+  64:	2a4656        	bnez	a6, 30c <rally_render_bind_v1+0x2cc>
+			64: R_XTENSA_SLOT0_OP	.text.rally_render_bind_v1+0x30c
+  67:	0398      	l32i.n	a9, a3, 0
+  69:	30aea2        	movi	a10, 0xfffffe30
+  6c:	99aa      	add.n	a9, a9, a10
+  6e:	936290        	movnez	a6, a2, a9
+  71:	297656        	bnez	a6, 30c <rally_render_bind_v1+0x2cc>
+			71: R_XTENSA_SLOT0_OP	.text.rally_render_bind_v1+0x30c
+  74:	836240        	moveqz	a6, a2, a4
+  77:	291656        	bnez	a6, 30c <rally_render_bind_v1+0x2cc>
+			77: R_XTENSA_SLOT0_OP	.text.rally_render_bind_v1+0x30c
+  7a:	ffe261        	l32r	a6, 4 <rally_render_bind_v1-0x3c>
+			7a: R_XTENSA_SLOT0_OP	.text.rally_render_bind_v1+0x4
+  7d:	0d3c      	movi.n	a13, 48
+  7f:	07cd      	mov.n	a12, a7
+  81:	d0a1b2        	movi	a11, 0x1d0
+  84:	03ad      	mov.n	a10, a3
+  86:	0006e0        	callx8	a6
+  89:	293a56        	bnez	a10, 320 <rally_render_bind_v1+0x2e0>
+			89: R_XTENSA_SLOT0_OP	.text.rally_render_bind_v1+0x320
+  8c:	d0a1d2        	movi	a13, 0x1d0
+  8f:	03cd      	mov.n	a12, a3
+  91:	cb4c      	movi.n	a11, 76
+  93:	20a440        	or	a10, a4, a4
+  96:	0006e0        	callx8	a6
+  99:	283a56        	bnez	a10, 320 <rally_render_bind_v1+0x2e0>
+			99: R_XTENSA_SLOT0_OP	.text.rally_render_bind_v1+0x320
+  9c:	0d3c      	movi.n	a13, 48
+  9e:	20c770        	or	a12, a7, a7
+  a1:	4ca0b2        	movi	a11, 76
+  a4:	04ad      	mov.n	a10, a4
+  a6:	0006e0        	callx8	a6
+  a9:	206aa0        	or	a6, a10, a10
+  ac:	270a56        	bnez	a10, 320 <rally_render_bind_v1+0x2e0>
+			ac: R_XTENSA_SLOT0_OP	.text.rally_render_bind_v1+0x320
+  af:	ffd691        	l32r	a9, 8 <rally_render_bind_v1-0x38>
+			af: R_XTENSA_SLOT0_OP	.text.rally_render_bind_v1+0x8
+  b2:	20a770        	or	a10, a7, a7
+  b5:	0009e0        	callx8	a9
+  b8:	2821a2        	l32i	a10, a1, 160
+  bb:	ffd491        	l32r	a9, c <rally_render_bind_v1-0x34>
+			bb: R_XTENSA_SLOT0_OP	.text.rally_render_bind_v1+0xc
+  be:	016362        	s32i	a6, a3, 4
+  c1:	0009e0        	callx8	a9
+  c4:	dacc      	bnez.n	a10, d5 <rally_render_bind_v1+0x95>
+			c4: R_XTENSA_SLOT0_OP	.text.rally_render_bind_v1+0xd5
+  c6:	155722        	s16i	a2, a7, 42
+  c9:	520c      	movi.n	a2, 5
+  cb:	1657a2        	s16i	a10, a7, 44
+  ce:	1729      	s32i.n	a2, a7, 4
+  d0:	27a9      	s32i.n	a10, a7, 8
+  d2:	009286        	j	320 <rally_render_bind_v1+0x2e0>
+			d2: R_XTENSA_SLOT0_OP	.text.rally_render_bind_v1+0x320
+  d5:	ffce21        	l32r	a2, 10 <rally_render_bind_v1-0x30>
+			d5: R_XTENSA_SLOT0_OP	.text.rally_render_bind_v1+0x10
+  d8:	4ca0c2        	movi	a12, 76
+  db:	20b440        	or	a11, a4, a4
+  de:	10c1a2        	addi	a10, a1, 16
+  e1:	0002e0        	callx8	a2
+  e4:	ffcca1        	l32r	a10, 14 <rally_render_bind_v1-0x2c>
+			e4: R_XTENSA_SLOT0_OP	.text.rally_render_bind_v1+0x14
+  e7:	4128      	l32i.n	a2, a1, 16
+  e9:	5198      	l32i.n	a9, a1, 20
+  eb:	22aa      	add.n	a2, a2, a10
+  ed:	936520        	movnez	a6, a5, a2
+  f0:	3799      	s32i.n	a9, a7, 12
+  f2:	746060        	extui	a6, a6, 0, 8
+  f5:	128656        	bnez	a6, 221 <rally_render_bind_v1+0x1e1>
+			f5: R_XTENSA_SLOT0_OP	.text.rally_render_bind_v1+0x221
+  f8:	150c      	movi.n	a5, 1
+  fa:	020c      	movi.n	a2, 0
+  fc:	832590        	moveqz	a2, a5, a9
+  ff:	749020        	extui	a9, a2, 0, 8
+ 102:	11b956        	bnez	a9, 221 <rally_render_bind_v1+0x1e1>
+			102: R_XTENSA_SLOT0_OP	.text.rally_render_bind_v1+0x221
+ 105:	0c1122        	l16ui	a2, a1, 24
+ 108:	d57c      	movi.n	a5, -3
+ 10a:	220b      	addi.n	a2, a2, -1
+ 10c:	f42020        	extui	a2, a2, 0, 16
+ 10f:	f45050        	extui	a5, a5, 0, 16
+ 112:	02b527        	bgeu	a5, a2, 118 <rally_render_bind_v1+0xd8>
+			112: R_XTENSA_SLOT0_OP	.text.rally_render_bind_v1+0x118
+ 115:	004206        	j	221 <rally_render_bind_v1+0x1e1>
+			115: R_XTENSA_SLOT0_OP	.text.rally_render_bind_v1+0x221
+ 118:	0d1122        	l16ui	a2, a1, 26
+ 11b:	021226        	beqi	a2, 1, 121 <rally_render_bind_v1+0xe1>
+			11b: R_XTENSA_SLOT0_OP	.text.rally_render_bind_v1+0x121
+ 11e:	003fc6        	j	221 <rally_render_bind_v1+0x1e1>
+			11e: R_XTENSA_SLOT0_OP	.text.rally_render_bind_v1+0x221
+ 121:	8158      	l32i.n	a5, a1, 32
+ 123:	0fa516        	beqz	a5, 221 <rally_render_bind_v1+0x1e1>
+			123: R_XTENSA_SLOT0_OP	.text.rally_render_bind_v1+0x221
+ 126:	f27c      	movi.n	a2, -1
+ 128:	302250        	xor	a2, a2, a5
+ 12b:	7158      	l32i.n	a5, a1, 28
+ 12d:	02b257        	bgeu	a2, a5, 133 <rally_render_bind_v1+0xf3>
+			12d: R_XTENSA_SLOT0_OP	.text.rally_render_bind_v1+0x133
+ 130:	003b46        	j	221 <rally_render_bind_v1+0x1e1>
+			130: R_XTENSA_SLOT0_OP	.text.rally_render_bind_v1+0x221
+ 133:	281122        	l16ui	a2, a1, 80
+ 136:	7cc152        	addi	a5, a1, 124
+ 139:	226122        	s32i	a2, a1, 136
+ 13c:	291122        	l16ui	a2, a1, 82
+ 13f:	2d6152        	s32i	a5, a1, 180
+ 142:	236122        	s32i	a2, a1, 140
+ 145:	2a1122        	l16ui	a2, a1, 84
+ 148:	246122        	s32i	a2, a1, 144
+ 14b:	ffb321        	l32r	a2, 18 <rally_render_bind_v1-0x28>
+			14b: R_XTENSA_SLOT0_OP	.text.rally_render_bind_v1+0x18
+ 14e:	02a8      	l32i.n	a10, a2, 0
+ 150:	1268      	l32i.n	a6, a2, 4
+ 152:	2228      	l32i.n	a2, a2, 8
+ 154:	206162        	s32i	a6, a1, 128
+ 157:	216122        	s32i	a2, a1, 132
+ 15a:	2b1122        	l16ui	a2, a1, 86
+ 15d:	ffaf61        	l32r	a6, 1c <rally_render_bind_v1-0x24>
+			15d: R_XTENSA_SLOT0_OP	.text.rally_render_bind_v1+0x1c
+ 160:	1c6122        	s32i	a2, a1, 112
+ 163:	2c1122        	l16ui	a2, a1, 88
+ 166:	06b8      	l32i.n	a11, a6, 0
+ 168:	1f61a2        	s32i	a10, a1, 124
+ 16b:	16a8      	l32i.n	a10, a6, 4
+ 16d:	2668      	l32i.n	a6, a6, 8
+ 16f:	1d6122        	s32i	a2, a1, 116
+ 172:	2d1122        	l16ui	a2, a1, 90
+ 175:	196162        	s32i	a6, a1, 100
+ 178:	10c162        	addi	a6, a1, 16
+ 17b:	1e6122        	s32i	a2, a1, 120
+ 17e:	78c682        	addi	a8, a6, 120
+ 181:	5cc122        	addi	a2, a1, 92
+ 184:	1761b2        	s32i	a11, a1, 92
+ 187:	1861a2        	s32i	a10, a1, 96
+ 18a:	2c6182        	s32i	a8, a1, 176
+ 18d:	2e6122        	s32i	a2, a1, 184
+ 190:	2c2152        	l32i	a5, a1, 176
+ 193:	7cc182        	addi	a8, a1, 124
+ 196:	259a      	add.n	a2, a5, a9
+ 198:	0228      	l32i.n	a2, a2, 0
+ 19a:	296122        	s32i	a2, a1, 164
+ 19d:	289a      	add.n	a2, a8, a9
+ 19f:	0228      	l32i.n	a2, a2, 0
+ 1a1:	292152        	l32i	a5, a1, 164
+ 1a4:	2a6122        	s32i	a2, a1, 168
+ 1a7:	00a182        	movi	a8, 0x100
+ 1aa:	252a      	add.n	a2, a5, a2
+ 1ac:	713827        	bltu	a8, a2, 221 <rally_render_bind_v1+0x1e1>
+			1ac: R_XTENSA_SLOT0_OP	.text.rally_render_bind_v1+0x221
+ 1af:	70c1a2        	addi	a10, a1, 112
+ 1b2:	2a9a      	add.n	a2, a10, a9
+ 1b4:	0228      	l32i.n	a2, a2, 0
+ 1b6:	ff9ac1        	l32r	a12, 20 <rally_render_bind_v1-0x20>
+			1b6: R_XTENSA_SLOT0_OP	.text.rally_render_bind_v1+0x20
+ 1b9:	2b6122        	s32i	a2, a1, 172
+ 1bc:	5cc122        	addi	a2, a1, 92
+ 1bf:	529a      	add.n	a5, a2, a9
+ 1c1:	0558      	l32i.n	a5, a5, 0
+ 1c3:	2b2182        	l32i	a8, a1, 172
+ 1c6:	b85a      	add.n	a11, a8, a5
+ 1c8:	553cb7        	bltu	a12, a11, 221 <rally_render_bind_v1+0x1e1>
+			1c8: R_XTENSA_SLOT0_OP	.text.rally_render_bind_v1+0x221
+ 1cb:	020c      	movi.n	a2, 0
+ 1cd:	2f61a2        	s32i	a10, a1, 188
+ 1d0:	000fc6        	j	213 <rally_render_bind_v1+0x1d3>
+			1d0: R_XTENSA_SLOT0_OP	.text.rally_render_bind_v1+0x213
+ 1d3:	7cc182        	addi	a8, a1, 124
+ 1d6:	b82a      	add.n	a11, a8, a2
+ 1d8:	2c2182        	l32i	a8, a1, 176
+ 1db:	0bd8      	l32i.n	a13, a11, 0
+ 1dd:	a82a      	add.n	a10, a8, a2
+ 1df:	002ac2        	l32i	a12, a10, 0
+ 1e2:	2a21b2        	l32i	a11, a1, 168
+ 1e5:	2921a2        	l32i	a10, a1, 164
+ 1e8:	306192        	s32i	a9, a1, 192
+ 1eb:	ff9381        	l32r	a8, 38 <rally_render_bind_v1-0x8>
+			1eb: R_XTENSA_SLOT0_OP	.text.rally_render_bind_v1+0x38
+			1eb: R_XTENSA_ASM_EXPAND	.text.overlap
+ 1ee:	0008e0        	callx8	a8
+ 1f1:	caec      	bnez.n	a10, 221 <rally_render_bind_v1+0x1e1>
+			1f1: R_XTENSA_SLOT0_OP	.text.rally_render_bind_v1+0x221
+ 1f3:	5cc182        	addi	a8, a1, 92
+ 1f6:	b82a      	add.n	a11, a8, a2
+ 1f8:	70c182        	addi	a8, a1, 112
+ 1fb:	a82a      	add.n	a10, a8, a2
+ 1fd:	0bd8      	l32i.n	a13, a11, 0
+ 1ff:	0ac8      	l32i.n	a12, a10, 0
+ 201:	2b21a2        	l32i	a10, a1, 172
+ 204:	05bd      	mov.n	a11, a5
+ 206:	ff8d81        	l32r	a8, 3c <rally_render_bind_v1-0x4>
+			206: R_XTENSA_SLOT0_OP	.text.rally_render_bind_v1+0x3c
+			206: R_XTENSA_ASM_EXPAND	.text.overlap
+ 209:	0008e0        	callx8	a8
+ 20c:	224b      	addi.n	a2, a2, 4
+ 20e:	302192        	l32i	a9, a1, 192
+ 211:	cacc      	bnez.n	a10, 221 <rally_render_bind_v1+0x1e1>
+			211: R_XTENSA_SLOT0_OP	.text.rally_render_bind_v1+0x221
+ 213:	bc9297        	bne	a2, a9, 1d3 <rally_render_bind_v1+0x193>
+			213: R_XTENSA_SLOT0_OP	.text.rally_render_bind_v1+0x1d3
+ 216:	924b      	addi.n	a9, a2, 4
+ 218:	02a966        	bnei	a9, 12, 21e <rally_render_bind_v1+0x1de>
+			218: R_XTENSA_SLOT0_OP	.text.rally_render_bind_v1+0x21e
+ 21b:	003c86        	j	311 <rally_render_bind_v1+0x2d1>
+			21b: R_XTENSA_SLOT0_OP	.text.rally_render_bind_v1+0x311
+ 21e:	ffdb86        	j	190 <rally_render_bind_v1+0x150>
+			21e: R_XTENSA_SLOT0_OP	.text.rally_render_bind_v1+0x190
+ 221:	020c      	movi.n	a2, 0
+ 223:	165722        	s16i	a2, a7, 44
+ 226:	120c      	movi.n	a2, 1
+ 228:	155722        	s16i	a2, a7, 42
+ 22b:	030c      	movi.n	a3, 0
+ 22d:	120c      	movi.n	a2, 1
+ 22f:	1729      	s32i.n	a2, a7, 4
+ 231:	2739      	s32i.n	a3, a7, 8
+ 233:	003a46        	j	320 <rally_render_bind_v1+0x2e0>
+			233: R_XTENSA_SLOT0_OP	.text.rally_render_bind_v1+0x320
+ 236:	00          	.byte 00
+ 237:	00          	.byte 00
+ 238:	00          	.byte 00
+ 239:	0a1252        	l16ui	a5, a2, 20
+ 23c:	550b      	addi.n	a5, a5, -1
+ 23e:	f45050        	extui	a5, a5, 0, 16
+ 241:	dc3957        	bltu	a9, a5, 221 <rally_render_bind_v1+0x1e1>
+			241: R_XTENSA_SLOT0_OP	.text.rally_render_bind_v1+0x221
+ 244:	0b1252        	l16ui	a5, a2, 22
+ 247:	d62566        	bnei	a5, 2, 221 <rally_render_bind_v1+0x1e1>
+			247: R_XTENSA_SLOT0_OP	.text.rally_render_bind_v1+0x221
+ 24a:	7258      	l32i.n	a5, a2, 28
+ 24c:	fd1516        	beqz	a5, 221 <rally_render_bind_v1+0x1e1>
+			24c: R_XTENSA_SLOT0_OP	.text.rally_render_bind_v1+0x221
+ 24f:	62c8      	l32i.n	a12, a2, 24
+ 251:	305b50        	xor	a5, a11, a5
+ 254:	c935c7        	bltu	a5, a12, 221 <rally_render_bind_v1+0x1e1>
+			254: R_XTENSA_SLOT0_OP	.text.rally_render_bind_v1+0x221
+ 257:	aa1b      	addi.n	a10, a10, 1
+ 259:	22cb      	addi.n	a2, a2, 12
+ 25b:	da3a66        	bnei	a10, 3, 239 <rally_render_bind_v1+0x1f9>
+			25b: R_XTENSA_SLOT0_OP	.text.rally_render_bind_v1+0x239
+ 25e:	18c192        	addi	a9, a1, 24
+ 261:	ff7021        	l32r	a2, 24 <rally_render_bind_v1-0x1c>
+			261: R_XTENSA_SLOT0_OP	.text.rally_render_bind_v1+0x24
+ 264:	5cc152        	addi	a5, a1, 92
+ 267:	2821a2        	l32i	a10, a1, 160
+ 26a:	09bd      	mov.n	a11, a9
+ 26c:	306192        	s32i	a9, a1, 192
+ 26f:	05cd      	mov.n	a12, a5
+ 271:	0002e0        	callx8	a2
+ 274:	0a2d      	mov.n	a2, a10
+ 276:	302192        	l32i	a9, a1, 192
+ 279:	fa8c      	beqz.n	a10, 28c <rally_render_bind_v1+0x24c>
+			279: R_XTENSA_SLOT0_OP	.text.rally_render_bind_v1+0x28c
+ 27b:	040c      	movi.n	a4, 0
+ 27d:	165742        	s16i	a4, a7, 44
+ 280:	640c      	movi.n	a4, 6
+ 282:	155742        	s16i	a4, a7, 42
+ 285:	17a9      	s32i.n	a10, a7, 4
+ 287:	27a9      	s32i.n	a10, a7, 8
+ 289:	0011c6        	j	2d4 <rally_render_bind_v1+0x294>
+			289: R_XTENSA_SLOT0_OP	.text.rally_render_bind_v1+0x2d4
+ 28c:	ff6721        	l32r	a2, 28 <rally_render_bind_v1-0x18>
+			28c: R_XTENSA_SLOT0_OP	.text.rally_render_bind_v1+0x28
+ 28f:	09bd      	mov.n	a11, a9
+ 291:	05ad      	mov.n	a10, a5
+ 293:	0002e0        	callx8	a2
+ 296:	ca8c      	beqz.n	a10, 2a6 <rally_render_bind_v1+0x266>
+			296: R_XTENSA_SLOT0_OP	.text.rally_render_bind_v1+0x2a6
+ 298:	ff6521        	l32r	a2, 2c <rally_render_bind_v1-0x14>
+			298: R_XTENSA_SLOT0_OP	.text.rally_render_bind_v1+0x2c
+ 29b:	1c0c      	movi.n	a12, 1
+ 29d:	06bd      	mov.n	a11, a6
+ 29f:	05ad      	mov.n	a10, a5
+ 2a1:	0002e0        	callx8	a2
+ 2a4:	4adc      	bnez.n	a10, 2bc <rally_render_bind_v1+0x27c>
+			2a4: R_XTENSA_SLOT0_OP	.text.rally_render_bind_v1+0x2bc
+ 2a6:	020c      	movi.n	a2, 0
+ 2a8:	165722        	s16i	a2, a7, 44
+ 2ab:	320c      	movi.n	a2, 3
+ 2ad:	155722        	s16i	a2, a7, 42
+ 2b0:	040c      	movi.n	a4, 0
+ 2b2:	420c      	movi.n	a2, 4
+ 2b4:	1729      	s32i.n	a2, a7, 4
+ 2b6:	2749      	s32i.n	a4, a7, 8
+ 2b8:	000606        	j	2d4 <rally_render_bind_v1+0x294>
+			2b8: R_XTENSA_SLOT0_OP	.text.rally_render_bind_v1+0x2d4
+ 2bb:	00          	.byte 00
+ 2bc:	ff5d21        	l32r	a2, 30 <rally_render_bind_v1-0x10>
+			2bc: R_XTENSA_SLOT0_OP	.text.rally_render_bind_v1+0x30
+ 2bf:	2821a2        	l32i	a10, a1, 160
+ 2c2:	0179      	s32i.n	a7, a1, 0
+ 2c4:	cf4c      	movi.n	a15, 76
+ 2c6:	04ed      	mov.n	a14, a4
+ 2c8:	03dd      	mov.n	a13, a3
+ 2ca:	05cd      	mov.n	a12, a5
+ 2cc:	20b660        	or	a11, a6, a6
+ 2cf:	0002e0        	callx8	a2
+ 2d2:	0a2d      	mov.n	a2, a10
+ 2d4:	2821a2        	l32i	a10, a1, 160
+ 2d7:	ff5741        	l32r	a4, 34 <rally_render_bind_v1-0xc>
+			2d7: R_XTENSA_SLOT0_OP	.text.rally_render_bind_v1+0x34
+ 2da:	60c1b2        	addi	a11, a1, 96
+ 2dd:	0004e0        	callx8	a4
+ 2e0:	2a9c      	beqz.n	a10, 2f6 <rally_render_bind_v1+0x2b6>
+			2e0: R_XTENSA_SLOT0_OP	.text.rally_render_bind_v1+0x2f6
+ 2e2:	020c      	movi.n	a2, 0
+ 2e4:	165722        	s16i	a2, a7, 44
+ 2e7:	720c      	movi.n	a2, 7
+ 2e9:	155722        	s16i	a2, a7, 42
+ 2ec:	17a9      	s32i.n	a10, a7, 4
+ 2ee:	27a9      	s32i.n	a10, a7, 8
+ 2f0:	0a2d      	mov.n	a2, a10
+ 2f2:	000a86        	j	320 <rally_render_bind_v1+0x2e0>
+			2f2: R_XTENSA_SLOT0_OP	.text.rally_render_bind_v1+0x320
+ 2f5:	00          	.byte 00
+ 2f6:	62ec      	bnez.n	a2, 320 <rally_render_bind_v1+0x2e0>
+			2f6: R_XTENSA_SLOT0_OP	.text.rally_render_bind_v1+0x320
+ 2f8:	ff4641        	l32r	a4, 10 <rally_render_bind_v1-0x30>
+			2f8: R_XTENSA_SLOT0_OP	.text.rally_render_bind_v1+0x10
+ 2fb:	cc4c      	movi.n	a12, 76
+ 2fd:	06bd      	mov.n	a11, a6
+ 2ff:	a38b      	addi.n	a10, a3, 8
+ 301:	0004e0        	callx8	a4
+ 304:	140c      	movi.n	a4, 1
+ 306:	1349      	s32i.n	a4, a3, 4
+ 308:	000506        	j	320 <rally_render_bind_v1+0x2e0>
+			308: R_XTENSA_SLOT0_OP	.text.rally_render_bind_v1+0x320
+ 30b:	00          	.byte 00
+ 30c:	120c      	movi.n	a2, 1
+ 30e:	000386        	j	320 <rally_render_bind_v1+0x2e0>
+			30e: R_XTENSA_SLOT0_OP	.text.rally_render_bind_v1+0x320
+ 311:	d97c      	movi.n	a9, -3
+ 313:	062d      	mov.n	a2, a6
+ 315:	0a0c      	movi.n	a10, 0
+ 317:	f49090        	extui	a9, a9, 0, 16
+ 31a:	fb7c      	movi.n	a11, -1
+ 31c:	ffc646        	j	239 <rally_render_bind_v1+0x1f9>
+			31c: R_XTENSA_SLOT0_OP	.text.rally_render_bind_v1+0x239
+ 31f:	00          	.byte 00
+ 320:	f01d      	retw.n
+
+Disassembly of section .text.rally_render_prepare_v1:
+
+00000000 <rally_render_prepare_v1-0x10c>:
+       0:	00 10 00 00 	
+       4:	ff ff 00 00 	
+       8:	d0 ff fe ff 	
+       c:	00 00 00 00 	
+			c: R_XTENSA_32	.text.overlap
+      10:	04 00 00 00 	
+			10: R_XTENSA_32	.text.clear_completion
+	...
+			14: R_XTENSA_32	.text.host_ok
+			18: R_XTENSA_PLT	memcpy
+			1c: R_XTENSA_32	.rodata.asset_meta
+      20:	0b 65 ba 82 	
+      24:	94 ff fe ff 	
+      28:	00 96 00 00 	
+      2c:	00 2c 01 00 	
+      30:	3f 1f 00 00 	
+      34:	b4 37 00 00 	
+      38:	68 6f 00 00 	
+      3c:	00 0f 00 00 	
+      40:	00 00 00 00 	
+			40: R_XTENSA_32	.text.view_ok
+      44:	20 00 00 00 	
+			44: R_XTENSA_32	.text.asset_ok
+      48:	10 00 00 00 	
+			48: R_XTENSA_32	.text.preflight
+      4c:	f5 9a 45 7d 	
+      50:	00 00 00 00 	
+			50: R_XTENSA_32	.text.u32
+      54:	1f 85 eb 51 	
+      58:	ff 0f 00 00 	
+      5c:	00 00 00 00 	
+			5c: R_XTENSA_32	.text.acquire
+      60:	9f 0f 00 00 	
+      64:	d3 4d 62 10 	
+      68:	0c 00 00 00 	
+			68: R_XTENSA_32	.text.centre_exact
+      6c:	10 00 00 00 	
+			6c: R_XTENSA_32	.text.rect
+      70:	0a d7 a3 3c 	
+      74:	8f c2 f5 3f 	
+      78:	0a d7 a3 bc 	
+	...
+			7c: R_XTENSA_32	.text.byte
+			80: R_XTENSA_32	.rodata.left$1266
+			84: R_XTENSA_32	.rodata.right$1267
+      88:	08 00 00 00 	
+			88: R_XTENSA_32	.text.plot
+      8c:	08 00 00 00 	
+			8c: R_XTENSA_32	.text.command
+      90:	40 1f 00 00 	
+      94:	04 00 00 00 	
+			94: R_XTENSA_32	.text.cx
+      98:	40 de ff ff 	
+      9c:	ab aa aa aa 	
+      a0:	ab aa aa 2a 	
+      a4:	04 00 00 00 	
+			a4: R_XTENSA_32	.text.tangent
+      a8:	01 f0 ff ff 	
+      ac:	00 0e 00 00 	
+      b0:	80 0f 00 00 	
+      b4:	20 f1 ff ff 	
+      b8:	00 00 00 00 	
+			b8: R_XTENSA_32	.text.bearing$isra$0
+      bc:	0f c3 30 0c 	
+      c0:	31 0c c3 30 	
+      c4:	f1 19 76 05 	
+      c8:	c0 5d 00 00 	
+      cc:	07 00 00 80 	
+      d0:	0c 00 00 00 	
+			d0: R_XTENSA_32	.text.viewport
+      d4:	04 00 00 00 	
+			d4: R_XTENSA_32	.text.word
+      d8:	0c 00 00 00 	
+			d8: R_XTENSA_32	.text.bitmap
+      dc:	08 00 00 00 	
+			dc: R_XTENSA_32	.text.affine
+      e0:	56 55 55 55 	
+      e4:	67 66 66 66 	
+      e8:	cd cc cc cc 	
+      ec:	00 00 00 00 	
+			ec: R_XTENSA_32	.text.release$isra$2
+      f0:	04 00 00 00 	
+			f0: R_XTENSA_32	.text.cx
+      f4:	04 00 00 00 	
+			f4: R_XTENSA_32	.text.tangent
+      f8:	04 00 00 00 	
+			f8: R_XTENSA_32	.text.tangent
+      fc:	04 00 00 00 	
+			fc: R_XTENSA_32	.text.cx
+     100:	0c 00 00 00 	
+			100: R_XTENSA_32	.text.viewport
+     104:	08 00 00 00 	
+			104: R_XTENSA_32	.text.command
+     108:	08 00 00 00 	
+			108: R_XTENSA_32	.text.command
+
+0000010c <rally_render_prepare_v1>:
+     10c:	02c136        	entry	a1, 0x160
+     10f:	3c6122        	s32i	a2, a1, 240
+     112:	316132        	s32i	a3, a1, 196
+     115:	306152        	s32i	a5, a1, 192
+     118:	180c      	movi.n	a8, 1
+     11a:	15cc      	bnez.n	a5, 11f <rally_render_prepare_v1+0x13>
+			11a: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x11f
+     11c:	046106        	j	12a4 <rally_render_prepare_v1+0x1198>
+			11c: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x12a4
+     11f:	ffba31        	l32r	a3, 8 <rally_render_prepare_v1-0x104>
+			11f: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x8
+     122:	0528      	l32i.n	a2, a5, 0
+     124:	223a      	add.n	a2, a2, a3
+     126:	030c      	movi.n	a3, 0
+     128:	933820        	movnez	a3, a8, a2
+     12b:	742030        	extui	a2, a3, 0, 8
+     12e:	128c      	beqz.n	a2, 133 <rally_render_prepare_v1+0x27>
+			12e: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x133
+     130:	044f46        	j	1271 <rally_render_prepare_v1+0x1165>
+			130: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x1271
+     133:	312132        	l32i	a3, a1, 196
+     136:	832830        	moveqz	a2, a8, a3
+     139:	128c      	beqz.n	a2, 13e <rally_render_prepare_v1+0x32>
+			139: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x13e
+     13b:	044c86        	j	1271 <rally_render_prepare_v1+0x1165>
+			13b: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x1271
+     13e:	0338      	l32i.n	a3, a3, 0
+     140:	30ae52        	movi	a5, 0xfffffe30
+     143:	335a      	add.n	a3, a3, a5
+     145:	932830        	movnez	a2, a8, a3
+     148:	128c      	beqz.n	a2, 14d <rally_render_prepare_v1+0x41>
+			148: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x14d
+     14a:	0448c6        	j	1271 <rally_render_prepare_v1+0x1165>
+			14a: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x1271
+     14d:	832840        	moveqz	a2, a8, a4
+     150:	128c      	beqz.n	a2, 155 <rally_render_prepare_v1+0x49>
+			150: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x155
+     152:	0446c6        	j	1271 <rally_render_prepare_v1+0x1165>
+			152: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x1271
+     155:	3021c2        	l32i	a12, a1, 192
+     158:	3121a2        	l32i	a10, a1, 196
+     15b:	ffac21        	l32r	a2, c <rally_render_prepare_v1-0x100>
+			15b: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xc
+     15e:	4d6182        	s32i	a8, a1, 0x134
+     161:	0d3c      	movi.n	a13, 48
+     163:	d0a1b2        	movi	a11, 0x1d0
+     166:	0002e0        	callx8	a2
+     169:	4d2182        	l32i	a8, a1, 0x134
+     16c:	1a8c      	beqz.n	a10, 171 <rally_render_prepare_v1+0x65>
+			16c: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x171
+     16e:	044c86        	j	12a4 <rally_render_prepare_v1+0x1198>
+			16e: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x12a4
+     171:	3121c2        	l32i	a12, a1, 196
+     174:	d0a1d2        	movi	a13, 0x1d0
+     177:	6ca0b2        	movi	a11, 108
+     17a:	20a440        	or	a10, a4, a4
+     17d:	0002e0        	callx8	a2
+     180:	4d2182        	l32i	a8, a1, 0x134
+     183:	1a8c      	beqz.n	a10, 188 <rally_render_prepare_v1+0x7c>
+			183: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x188
+     185:	0446c6        	j	12a4 <rally_render_prepare_v1+0x1198>
+			185: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x12a4
+     188:	3021c2        	l32i	a12, a1, 192
+     18b:	0d3c      	movi.n	a13, 48
+     18d:	6ca0b2        	movi	a11, 108
+     190:	04ad      	mov.n	a10, a4
+     192:	0002e0        	callx8	a2
+     195:	4d2182        	l32i	a8, a1, 0x134
+     198:	1a8c      	beqz.n	a10, 19d <rally_render_prepare_v1+0x91>
+			198: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x19d
+     19a:	044186        	j	12a4 <rally_render_prepare_v1+0x1198>
+			19a: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x12a4
+     19d:	3021a2        	l32i	a10, a1, 192
+     1a0:	ff9c21        	l32r	a2, 10 <rally_render_prepare_v1-0xfc>
+			1a0: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x10
+     1a3:	0002e0        	callx8	a2
+     1a6:	3c21a2        	l32i	a10, a1, 240
+     1a9:	ff9a21        	l32r	a2, 14 <rally_render_prepare_v1-0xf8>
+			1a9: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x14
+     1ac:	0002e0        	callx8	a2
+     1af:	4d2182        	l32i	a8, a1, 0x134
+     1b2:	2adc      	bnez.n	a10, 1c8 <rally_render_prepare_v1+0xbc>
+			1b2: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x1c8
+     1b4:	302142        	l32i	a4, a1, 192
+     1b7:	155482        	s16i	a8, a4, 42
+     1ba:	580c      	movi.n	a8, 5
+     1bc:	1654a2        	s16i	a10, a4, 44
+     1bf:	1489      	s32i.n	a8, a4, 4
+     1c1:	24a9      	s32i.n	a10, a4, 8
+     1c3:	043746        	j	12a4 <rally_render_prepare_v1+0x1198>
+			1c3: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x12a4
+     1c6:	00          	.byte 00
+     1c7:	00          	.byte 00
+     1c8:	312162        	l32i	a6, a1, 196
+     1cb:	1628      	l32i.n	a2, a6, 4
+     1cd:	111226        	beqi	a2, 1, 1e2 <rally_render_prepare_v1+0xd6>
+			1cd: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x1e2
+     1d0:	302182        	l32i	a8, a1, 192
+     1d3:	020c      	movi.n	a2, 0
+     1d5:	165822        	s16i	a2, a8, 44
+     1d8:	820c      	movi.n	a2, 8
+     1da:	155822        	s16i	a2, a8, 42
+     1dd:	c80c      	movi.n	a8, 12
+     1df:	004f06        	j	31f <rally_render_prepare_v1+0x213>
+			1df: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x31f
+     1e2:	312122        	l32i	a2, a1, 196
+     1e5:	6ca0c2        	movi	a12, 108
+     1e8:	54c222        	addi	a2, a2, 84
+     1eb:	346122        	s32i	a2, a1, 208
+     1ee:	02ad      	mov.n	a10, a2
+     1f0:	ff8a21        	l32r	a2, 18 <rally_render_prepare_v1-0xf4>
+			1f0: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x18
+     1f3:	20b440        	or	a11, a4, a4
+     1f6:	0002e0        	callx8	a2
+     1f9:	312132        	l32i	a3, a1, 196
+     1fc:	060c      	movi.n	a6, 0
+     1fe:	102332        	l32i	a3, a3, 64
+     201:	068d      	mov.n	a8, a6
+     203:	326132        	s32i	a3, a1, 200
+     206:	322152        	l32i	a5, a1, 200
+     209:	ff8531        	l32r	a3, 20 <rally_render_prepare_v1-0xec>
+			209: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x20
+     20c:	312192        	l32i	a9, a1, 196
+     20f:	353a      	add.n	a3, a5, a3
+     211:	150c      	movi.n	a5, 1
+     213:	938530        	movnez	a8, a5, a3
+     216:	ff8121        	l32r	a2, 1c <rally_render_prepare_v1-0xf0>
+			216: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x1c
+     219:	1138c0        	slli	a3, a8, 4
+     21c:	323a      	add.n	a3, a2, a3
+     21e:	162982        	l32i	a8, a9, 88
+     221:	302122        	l32i	a2, a1, 192
+     224:	3378      	l32i.n	a7, a3, 12
+     226:	3289      	s32i.n	a8, a2, 12
+     228:	302132        	l32i	a3, a1, 192
+     22b:	172922        	l32i	a2, a9, 92
+     22e:	4329      	s32i.n	a2, a3, 16
+     230:	182922        	l32i	a2, a9, 96
+     233:	5329      	s32i.n	a2, a3, 20
+     235:	152922        	l32i	a2, a9, 84
+     238:	ff7b31        	l32r	a3, 24 <rally_render_prepare_v1-0xe8>
+			238: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x24
+     23b:	223a      	add.n	a2, a2, a3
+     23d:	936520        	movnez	a6, a5, a2
+     240:	742060        	extui	a2, a6, 0, 8
+     243:	0c9256        	bnez	a2, 310 <rally_render_prepare_v1+0x204>
+			243: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x310
+     246:	3938      	l32i.n	a3, a9, 12
+     248:	c03380        	sub	a3, a3, a8
+     24b:	932530        	movnez	a2, a5, a3
+     24e:	0be256        	bnez	a2, 310 <rally_render_prepare_v1+0x204>
+			24e: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x310
+     251:	1137e0        	slli	a3, a7, 2
+     254:	337a      	add.n	a3, a3, a7
+     256:	1123e0        	slli	a2, a3, 2
+     259:	332a      	add.n	a3, a3, a2
+     25b:	192922        	l32i	a2, a9, 100
+     25e:	113380        	slli	a3, a3, 8
+     261:	0ab296        	bltz	a2, 310 <rally_render_prepare_v1+0x204>
+			261: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x310
+     264:	022237        	blt	a2, a3, 26a <rally_render_prepare_v1+0x15e>
+			264: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x26a
+     267:	002946        	j	310 <rally_render_prepare_v1+0x204>
+			267: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x310
+     26a:	ff6f51        	l32r	a5, 28 <rally_render_prepare_v1-0xe4>
+			26a: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x28
+     26d:	1a2922        	l32i	a2, a9, 104
+     270:	225a      	add.n	a2, a2, a5
+     272:	ff6e51        	l32r	a5, 2c <rally_render_prepare_v1-0xe0>
+			272: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x2c
+     275:	02b527        	bgeu	a5, a2, 27b <rally_render_prepare_v1+0x16f>
+			275: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x27b
+     278:	002506        	j	310 <rally_render_prepare_v1+0x204>
+			278: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x310
+     27b:	ff6d21        	l32r	a2, 30 <rally_render_prepare_v1-0xdc>
+			27b: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x30
+     27e:	361952        	l16ui	a5, a9, 108
+     281:	f42020        	extui	a2, a2, 0, 16
+     284:	02b257        	bgeu	a2, a5, 28a <rally_render_prepare_v1+0x17e>
+			284: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x28a
+     287:	002146        	j	310 <rally_render_prepare_v1+0x204>
+			287: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x310
+     28a:	371922        	l16ui	a2, a9, 110
+     28d:	a52c      	movi.n	a5, 42
+     28f:	15c222        	addi	a2, a2, 21
+     292:	f42020        	extui	a2, a2, 0, 16
+     295:	773527        	bltu	a5, a2, 310 <rally_render_prepare_v1+0x204>
+			295: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x310
+     298:	381922        	l16ui	a2, a9, 112
+     29b:	7182f6        	bgeui	a2, 8, 310 <rally_render_prepare_v1+0x204>
+			29b: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x310
+     29e:	391922        	l16ui	a2, a9, 114
+     2a1:	6b22f6        	bgeui	a2, 2, 310 <rally_render_prepare_v1+0x204>
+			2a1: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x310
+     2a4:	42cc      	bnez.n	a2, 2ac <rally_render_prepare_v1+0x1a0>
+			2a4: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x2ac
+     2a6:	1d2922        	l32i	a2, a9, 116
+     2a9:	063256        	bnez	a2, 310 <rally_render_prepare_v1+0x204>
+			2a9: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x310
+     2ac:	312162        	l32i	a6, a1, 196
+     2af:	96a052        	movi	a5, 150
+     2b2:	3a1622        	l16ui	a2, a6, 116
+     2b5:	573527        	bltu	a5, a2, 310 <rally_render_prepare_v1+0x204>
+			2b5: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x310
+     2b8:	3b1622        	l16ui	a2, a6, 118
+     2bb:	78a052        	movi	a5, 120
+     2be:	4e3527        	bltu	a5, a2, 310 <rally_render_prepare_v1+0x204>
+			2be: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x310
+     2c1:	ff5c81        	l32r	a8, 34 <rally_render_prepare_v1-0xd8>
+			2c1: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x34
+     2c4:	ff5d91        	l32r	a9, 38 <rally_render_prepare_v1-0xd4>
+			2c4: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x38
+     2c7:	ff5db1        	l32r	a11, 3c <rally_render_prepare_v1-0xd0>
+			2c7: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x3c
+     2ca:	265a      	add.n	a2, a6, a5
+     2cc:	80a7a2        	movi	a10, 0x780
+     2cf:	660c      	movi.n	a6, 6
+     2d1:	0512c2        	l16ui	a12, a2, 10
+     2d4:	382cf6        	bgeui	a12, 2, 310 <rally_render_prepare_v1+0x204>
+			2d4: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x310
+     2d7:	0258      	l32i.n	a5, a2, 0
+     2d9:	cccc      	bnez.n	a12, 2e9 <rally_render_prepare_v1+0x1dd>
+			2d9: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x2e9
+     2db:	15fc      	bnez.n	a5, 310 <rally_render_prepare_v1+0x204>
+			2db: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x310
+     2dd:	1258      	l32i.n	a5, a2, 4
+     2df:	d5ec      	bnez.n	a5, 310 <rally_render_prepare_v1+0x204>
+			2df: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x310
+     2e1:	049252        	l16si	a5, a2, 8
+     2e4:	c59c      	beqz.n	a5, 304 <rally_render_prepare_v1+0x1f8>
+			2e4: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x304
+     2e6:	000986        	j	310 <rally_render_prepare_v1+0x204>
+			2e6: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x310
+     2e9:	023596        	bltz	a5, 310 <rally_render_prepare_v1+0x204>
+			2e9: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x310
+     2ec:	20a537        	bge	a5, a3, 310 <rally_render_prepare_v1+0x204>
+			2ec: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x310
+     2ef:	1258      	l32i.n	a5, a2, 4
+     2f1:	558a      	add.n	a5, a5, a8
+     2f3:	193957        	bltu	a9, a5, 310 <rally_render_prepare_v1+0x204>
+			2f3: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x310
+     2f6:	041252        	l16ui	a5, a2, 8
+     2f9:	f4c0b0        	extui	a12, a11, 0, 16
+     2fc:	55aa      	add.n	a5, a5, a10
+     2fe:	f45050        	extui	a5, a5, 0, 16
+     301:	0b3c57        	bltu	a12, a5, 310 <rally_render_prepare_v1+0x204>
+			301: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x310
+     304:	22cb      	addi.n	a2, a2, 12
+     306:	660b      	addi.n	a6, a6, -1
+     308:	fc5656        	bnez	a6, 2d1 <rally_render_prepare_v1+0x1c5>
+			308: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x2d1
+     30b:	03d9c6        	j	1276 <rally_render_prepare_v1+0x116a>
+			30b: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x1276
+     30e:	00          	.byte 00
+     30f:	00          	.byte 00
+     310:	302182        	l32i	a8, a1, 192
+     313:	020c      	movi.n	a2, 0
+     315:	165822        	s16i	a2, a8, 44
+     318:	220c      	movi.n	a2, 2
+     31a:	155822        	s16i	a2, a8, 42
+     31d:	180c      	movi.n	a8, 1
+     31f:	302192        	l32i	a9, a1, 192
+     322:	020c      	movi.n	a2, 0
+     324:	1989      	s32i.n	a8, a9, 4
+     326:	2929      	s32i.n	a2, a9, 8
+     328:	03de06        	j	12a4 <rally_render_prepare_v1+0x1198>
+			328: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x12a4
+     32b:	00          	.byte 00
+     32c:	302132        	l32i	a3, a1, 192
+     32f:	020c      	movi.n	a2, 0
+     331:	165322        	s16i	a2, a3, 44
+     334:	620c      	movi.n	a2, 6
+     336:	155322        	s16i	a2, a3, 42
+     339:	1389      	s32i.n	a8, a3, 4
+     33b:	2389      	s32i.n	a8, a3, 8
+     33d:	03b9c6        	j	1228 <rally_render_prepare_v1+0x111c>
+			33d: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x1228
+     340:	09bd      	mov.n	a11, a9
+     342:	ff3f91        	l32r	a9, 40 <rally_render_prepare_v1-0xcc>
+			342: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x40
+     345:	4d6182        	s32i	a8, a1, 0x134
+     348:	05ad      	mov.n	a10, a5
+     34a:	0009e0        	callx8	a9
+     34d:	4d2182        	l32i	a8, a1, 0x134
+     350:	ca8c      	beqz.n	a10, 360 <rally_render_prepare_v1+0x254>
+			350: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x360
+     352:	08cd      	mov.n	a12, a8
+     354:	ff3c81        	l32r	a8, 44 <rally_render_prepare_v1-0xc8>
+			354: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x44
+     357:	02bd      	mov.n	a11, a2
+     359:	05ad      	mov.n	a10, a5
+     35b:	0008e0        	callx8	a8
+     35e:	6adc      	bnez.n	a10, 378 <rally_render_prepare_v1+0x26c>
+			35e: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x378
+     360:	302142        	l32i	a4, a1, 192
+     363:	020c      	movi.n	a2, 0
+     365:	165422        	s16i	a2, a4, 44
+     368:	320c      	movi.n	a2, 3
+     36a:	155422        	s16i	a2, a4, 42
+     36d:	480c      	movi.n	a8, 4
+     36f:	020c      	movi.n	a2, 0
+     371:	1489      	s32i.n	a8, a4, 4
+     373:	2429      	s32i.n	a2, a4, 8
+     375:	03abc6        	j	1228 <rally_render_prepare_v1+0x111c>
+			375: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x1228
+     378:	302182        	l32i	a8, a1, 192
+     37b:	02bd      	mov.n	a11, a2
+     37d:	3121d2        	l32i	a13, a1, 196
+     380:	3c21a2        	l32i	a10, a1, 240
+     383:	ff3121        	l32r	a2, 48 <rally_render_prepare_v1-0xc4>
+			383: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x48
+     386:	0189      	s32i.n	a8, a1, 0
+     388:	6ca0f2        	movi	a15, 108
+     38b:	04ed      	mov.n	a14, a4
+     38d:	05cd      	mov.n	a12, a5
+     38f:	0002e0        	callx8	a2
+     392:	0a8d      	mov.n	a8, a10
+     394:	1a8c      	beqz.n	a10, 399 <rally_render_prepare_v1+0x28d>
+			394: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x399
+     396:	03a386        	j	1228 <rally_render_prepare_v1+0x111c>
+			396: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x1228
+     399:	ff2c21        	l32r	a2, 4c <rally_render_prepare_v1-0xc0>
+			399: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x4c
+     39c:	322192        	l32i	a9, a1, 200
+     39f:	e139      	s32i.n	a3, a1, 56
+     3a1:	c02920        	sub	a2, a9, a2
+     3a4:	68a132        	movi	a3, 0x168
+     3a7:	838320        	moveqz	a8, a3, a2
+     3aa:	312132        	l32i	a3, a1, 196
+     3ad:	342122        	l32i	a2, a1, 208
+     3b0:	262152        	l32i	a5, a1, 152
+     3b3:	146122        	s32i	a2, a1, 80
+     3b6:	166132        	s32i	a3, a1, 88
+     3b9:	48c322        	addi	a2, a3, 72
+     3bc:	ff2541        	l32r	a4, 50 <rally_render_prepare_v1-0xbc>
+			3bc: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x50
+     3bf:	c8a032        	movi	a3, 200
+     3c2:	156122        	s32i	a2, a1, 84
+     3c5:	f179      	s32i.n	a7, a1, 60
+     3c7:	106182        	s32i	a8, a1, 64
+     3ca:	28c522        	addi	a2, a5, 40
+     3cd:	803530        	add	a3, a5, a3
+     3d0:	02ad      	mov.n	a10, a2
+     3d2:	0004e0        	callx8	a4
+     3d5:	a5aa      	add.n	a10, a5, a10
+     3d7:	06a9      	s32i.n	a10, a6, 0
+     3d9:	10c222        	addi	a2, a2, 16
+     3dc:	664b      	addi.n	a6, a6, 4
+     3de:	ee9327        	bne	a3, a2, 3d0 <rally_render_prepare_v1+0x2c4>
+			3de: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x3d0
+     3e1:	312182        	l32i	a8, a1, 196
+     3e4:	ff1c31        	l32r	a3, 54 <rally_render_prepare_v1-0xb8>
+			3e4: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x54
+     3e7:	192862        	l32i	a6, a8, 100
+     3ea:	1cc892        	addi	a9, a8, 28
+     3ed:	b25630        	mulsh	a5, a6, a3
+     3f0:	312f60        	srai	a2, a6, 31
+     3f3:	215b50        	srai	a5, a5, 11
+     3f6:	c05520        	sub	a5, a5, a2
+     3f9:	054d      	mov.n	a4, a5
+     3fb:	1155e0        	slli	a5, a5, 2
+     3fe:	554a      	add.n	a5, a5, a4
+     400:	1125e0        	slli	a2, a5, 2
+     403:	552a      	add.n	a5, a5, a2
+     405:	115580        	slli	a5, a5, 8
+     408:	c05650        	sub	a5, a6, a5
+     40b:	b26530        	mulsh	a6, a5, a3
+     40e:	312f50        	srai	a2, a5, 31
+     411:	216560        	srai	a6, a6, 5
+     414:	c06620        	sub	a6, a6, a2
+     417:	1126e0        	slli	a2, a6, 2
+     41a:	226a      	add.n	a2, a2, a6
+     41c:	1172e0        	slli	a7, a2, 2
+     41f:	227a      	add.n	a2, a2, a7
+     421:	1122e0        	slli	a2, a2, 2
+     424:	c05520        	sub	a5, a5, a2
+     427:	115580        	slli	a5, a5, 8
+     42a:	b22530        	mulsh	a2, a5, a3
+     42d:	315f50        	srai	a5, a5, 31
+     430:	212520        	srai	a2, a2, 5
+     433:	c02250        	sub	a2, a2, a5
+     436:	116680        	slli	a6, a6, 8
+     439:	226a      	add.n	a2, a2, a6
+     43b:	323b      	addi.n	a3, a2, 3
+     43d:	136122        	s32i	a2, a1, 76
+     440:	a32320        	movltz	a2, a3, a2
+     443:	212220        	srai	a2, a2, 2
+     446:	116122        	s32i	a2, a1, 68
+     449:	ff0331        	l32r	a3, 58 <rally_render_prepare_v1-0xb4>
+			449: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x58
+     44c:	822220        	mull	a2, a2, a2
+     44f:	a4a052        	movi	a5, 164
+     452:	323a      	add.n	a3, a2, a3
+     454:	a32320        	movltz	a2, a3, a2
+     457:	212c20        	srai	a2, a2, 12
+     45a:	126122        	s32i	a2, a1, 72
+     45d:	1124d0        	slli	a2, a4, 3
+     460:	c02240        	sub	a2, a2, a4
+     463:	1122d0        	slli	a2, a2, 3
+     466:	424a      	add.n	a4, a2, a4
+     468:	4128      	l32i.n	a2, a1, 16
+     46a:	1144e0        	slli	a4, a4, 2
+     46d:	424a      	add.n	a4, a2, a4
+     46f:	176142        	s32i	a4, a1, 92
+     472:	00a022        	movi	a2, 0
+     475:	7cc132        	addi	a3, a1, 124
+     478:	10c142        	addi	a4, a1, 16
+     47b:	805150        	add	a5, a1, a5
+     47e:	406192        	s32i	a9, a1, 0x100
+     481:	366122        	s32i	a2, a1, 216
+     484:	436132        	s32i	a3, a1, 0x10c
+     487:	346142        	s32i	a4, a1, 208
+     48a:	326152        	s32i	a5, a1, 200
+     48d:	4021b2        	l32i	a11, a1, 0x100
+     490:	3c21a2        	l32i	a10, a1, 240
+     493:	fef221        	l32r	a2, 5c <rally_render_prepare_v1-0xb0>
+			493: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x5c
+     496:	7cc1c2        	addi	a12, a1, 124
+     499:	0002e0        	callx8	a2
+     49c:	0a8d      	mov.n	a8, a10
+     49e:	3a9c      	beqz.n	a10, 4b5 <rally_render_prepare_v1+0x3a9>
+			49e: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x4b5
+     4a0:	302162        	l32i	a6, a1, 192
+     4a3:	020c      	movi.n	a2, 0
+     4a5:	165622        	s16i	a2, a6, 44
+     4a8:	620c      	movi.n	a2, 6
+     4aa:	155622        	s16i	a2, a6, 42
+     4ad:	16a9      	s32i.n	a10, a6, 4
+     4af:	26a9      	s32i.n	a10, a6, 8
+     4b1:	034c46        	j	11e6 <rally_render_prepare_v1+0x10da>
+			4b1: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x11e6
+     4b4:	00          	.byte 00
+     4b5:	4021b2        	l32i	a11, a1, 0x100
+     4b8:	fee221        	l32r	a2, 40 <rally_render_prepare_v1-0xcc>
+			4b8: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x40
+     4bb:	4d6182        	s32i	a8, a1, 0x134
+     4be:	7cc1a2        	addi	a10, a1, 124
+     4c1:	0002e0        	callx8	a2
+     4c4:	4d2182        	l32i	a8, a1, 0x134
+     4c7:	5adc      	bnez.n	a10, 4e0 <rally_render_prepare_v1+0x3d4>
+			4c7: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x4e0
+     4c9:	302192        	l32i	a9, a1, 192
+     4cc:	520c      	movi.n	a2, 5
+     4ce:	155922        	s16i	a2, a9, 42
+     4d1:	320c      	movi.n	a2, 3
+     4d3:	165982        	s16i	a8, a9, 44
+     4d6:	2989      	s32i.n	a8, a9, 8
+     4d8:	1929      	s32i.n	a2, a9, 4
+     4da:	028d      	mov.n	a8, a2
+     4dc:	034186        	j	11e6 <rally_render_prepare_v1+0x10da>
+			4dc: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x11e6
+     4df:	00          	.byte 00
+     4e0:	212122        	l32i	a2, a1, 132
+     4e3:	2a6182        	s32i	a8, a1, 168
+     4e6:	296122        	s32i	a2, a1, 164
+     4e9:	222122        	l32i	a2, a1, 136
+     4ec:	2c6182        	s32i	a8, a1, 176
+     4ef:	2b6122        	s32i	a2, a1, 172
+     4f2:	362122        	l32i	a2, a1, 216
+     4f5:	142152        	l32i	a5, a1, 80
+     4f8:	425256        	bnez	a2, 921 <rally_render_prepare_v1+0x815>
+			4f8: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x921
+     4fb:	130c      	movi.n	a3, 1
+     4fd:	0c1542        	l16ui	a4, a5, 24
+     500:	fed821        	l32r	a2, 60 <rally_render_prepare_v1-0xac>
+			500: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x60
+     503:	416132        	s32i	a3, a1, 0x104
+     506:	4578      	l32i.n	a7, a5, 16
+     508:	05a247        	bge	a2, a4, 511 <rally_render_prepare_v1+0x405>
+			508: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x511
+     50b:	362152        	l32i	a5, a1, 216
+     50e:	416152        	s32i	a5, a1, 0x104
+     511:	fed421        	l32r	a2, 64 <rally_render_prepare_v1-0xa8>
+			511: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x64
+     514:	1321c2        	l32i	a12, a1, 76
+     517:	a22420        	muluh	a2, a4, a2
+     51a:	68a0b2        	movi	a11, 104
+     51d:	413820        	srli	a3, a2, 8
+     520:	1123b0        	slli	a2, a3, 5
+     523:	c02230        	sub	a2, a2, a3
+     526:	1122e0        	slli	a2, a2, 2
+     529:	223a      	add.n	a2, a2, a3
+     52b:	1122b0        	slli	a2, a2, 5
+     52e:	c02420        	sub	a2, a4, a2
+     531:	8148      	l32i.n	a4, a1, 32
+     533:	10c1a2        	addi	a10, a1, 16
+     536:	242a      	add.n	a2, a4, a2
+     538:	000222        	l8ui	a2, a2, 0
+     53b:	1132f0        	slli	a3, a2, 1
+     53e:	9128      	l32i.n	a2, a1, 36
+     540:	223a      	add.n	a2, a2, a3
+     542:	010232        	l8ui	a3, a2, 1
+     545:	000222        	l8ui	a2, a2, 0
+     548:	113380        	slli	a3, a3, 8
+     54b:	202230        	or	a2, a2, a3
+     54e:	a138      	l32i.n	a3, a1, 40
+     550:	332a      	add.n	a3, a3, a2
+     552:	fec021        	l32r	a2, 54 <rally_render_prepare_v1-0xb8>
+			552: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x54
+     555:	396132        	s32i	a3, a1, 228
+     558:	b22720        	mulsh	a2, a7, a2
+     55b:	313f70        	srai	a3, a7, 31
+     55e:	212920        	srai	a2, a2, 9
+     561:	c02230        	sub	a2, a2, a3
+     564:	102132        	l32i	a3, a1, 64
+     567:	223a      	add.n	a2, a2, a3
+     569:	6138      	l32i.n	a3, a1, 24
+     56b:	1122f0        	slli	a2, a2, 1
+     56e:	232a      	add.n	a2, a3, a2
+     570:	010232        	l8ui	a3, a2, 1
+     573:	000222        	l8ui	a2, a2, 0
+     576:	113380        	slli	a3, a3, 8
+     579:	202230        	or	a2, a2, a3
+     57c:	7138      	l32i.n	a3, a1, 28
+     57e:	4d6182        	s32i	a8, a1, 0x134
+     581:	332a      	add.n	a3, a3, a2
+     583:	feb921        	l32r	a2, 68 <rally_render_prepare_v1-0xa4>
+			583: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x68
+     586:	3b6132        	s32i	a3, a1, 236
+     589:	0002e0        	callx8	a2
+     58c:	4d2182        	l32i	a8, a1, 0x134
+     58f:	80a022        	movi	a2, 128
+     592:	007a96        	bltz	a10, 59d <rally_render_prepare_v1+0x491>
+			592: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x59d
+     595:	aa2a      	add.n	a10, a10, a2
+     597:	21a8a0        	srai	a10, a10, 8
+     59a:	000406        	j	5ae <rally_render_prepare_v1+0x4a2>
+			59a: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x5ae
+     59d:	c0a2a0        	sub	a10, a2, a10
+     5a0:	ffa022        	movi	a2, 255
+     5a3:	2a2a      	add.n	a2, a10, a2
+     5a5:	a3a2a0        	movltz	a10, a2, a10
+     5a8:	21a8a0        	srai	a10, a10, 8
+     5ab:	60a0a0        	neg	a10, a10
+     5ae:	94a092        	movi	a9, 148
+     5b1:	feae21        	l32r	a2, 6c <rally_render_prepare_v1-0xa0>
+			5b1: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x6c
+     5b4:	10c162        	addi	a6, a1, 16
+     5b7:	3561a2        	s32i	a10, a1, 212
+     5ba:	2f0c      	movi.n	a15, 2
+     5bc:	4d6182        	s32i	a8, a1, 0x134
+     5bf:	dfa0e2        	movi	a14, 223
+     5c2:	3fa1d2        	movi	a13, 0x13f
+     5c5:	68a0c2        	movi	a12, 104
+     5c8:	0b0c      	movi.n	a11, 0
+     5ca:	80a690        	add	a10, a6, a9
+     5cd:	0002e0        	callx8	a2
+     5d0:	4d2182        	l32i	a8, a1, 0x134
+     5d3:	362122        	l32i	a2, a1, 216
+     5d6:	68a032        	movi	a3, 104
+     5d9:	376122        	s32i	a2, a1, 220
+     5dc:	08fd      	mov.n	a15, a8
+     5de:	336132        	s32i	a3, a1, 204
+     5e1:	3b2142        	l32i	a4, a1, 236
+     5e4:	392152        	l32i	a5, a1, 228
+     5e7:	000422        	l8ui	a2, a4, 0
+     5ea:	000552        	l8ui	a5, a5, 0
+     5ed:	221b      	addi.n	a2, a2, 1
+     5ef:	332162        	l32i	a6, a1, 204
+     5f2:	386122        	s32i	a2, a1, 224
+     5f5:	3a6152        	s32i	a5, a1, 232
+     5f8:	432250        	min	a2, a2, a5
+     5fb:	29a627        	bge	a6, a2, 628 <rally_render_prepare_v1+0x51c>
+			5fb: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x628
+     5fe:	e0a092        	movi	a9, 224
+     601:	232927        	blt	a9, a2, 628 <rally_render_prepare_v1+0x51c>
+			601: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x628
+     604:	fe9931        	l32r	a3, 68 <rally_render_prepare_v1-0xa4>
+			604: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x68
+     607:	1321c2        	l32i	a12, a1, 76
+     60a:	4d6182        	s32i	a8, a1, 0x134
+     60d:	4c61f2        	s32i	a15, a1, 0x130
+     610:	02bd      	mov.n	a11, a2
+     612:	10c1a2        	addi	a10, a1, 16
+     615:	0003e0        	callx8	a3
+     618:	4d2182        	l32i	a8, a1, 0x134
+     61b:	80a032        	movi	a3, 128
+     61e:	4c21f2        	l32i	a15, a1, 0x130
+     621:	00bad6        	bgez	a10, 630 <rally_render_prepare_v1+0x524>
+			621: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x630
+     624:	000406        	j	638 <rally_render_prepare_v1+0x52c>
+			624: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x638
+     627:	00          	.byte 00
+     628:	120c      	movi.n	a2, 1
+     62a:	2c6122        	s32i	a2, a1, 176
+     62d:	007646        	j	80a <rally_render_prepare_v1+0x6fe>
+			62d: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x80a
+     630:	aa3a      	add.n	a10, a10, a3
+     632:	21a8a0        	srai	a10, a10, 8
+     635:	000406        	j	649 <rally_render_prepare_v1+0x53d>
+			635: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x649
+     638:	c0a3a0        	sub	a10, a3, a10
+     63b:	ffa032        	movi	a3, 255
+     63e:	3a3a      	add.n	a3, a10, a3
+     640:	a3a3a0        	movltz	a10, a3, a10
+     643:	21a8a0        	srai	a10, a10, 8
+     646:	60a0a0        	neg	a10, a10
+     649:	3321e2        	l32i	a14, a1, 204
+     64c:	fe8931        	l32r	a3, 70 <rally_render_prepare_v1-0x9c>
+			64c: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x70
+     64f:	ca0e00        	float.s	f0, a14, 0
+     652:	fa2350        	wfr	f2, a3
+     655:	2a1020        	mul.s	f1, f0, f2
+     658:	fe8731        	l32r	a3, 74 <rally_render_prepare_v1-0x98>
+			658: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x74
+     65b:	3d61a2        	s32i	a10, a1, 244
+     65e:	fa3350        	wfr	f3, a3
+     661:	1a1130        	sub.s	f1, f1, f3
+     664:	3d2142        	l32i	a4, a1, 244
+     667:	352152        	l32i	a5, a1, 212
+     66a:	086d      	mov.n	a6, a8
+     66c:	c03450        	sub	a3, a4, a5
+     66f:	3e4113        	ssi	f1, a1, 248
+     672:	ca1300        	float.s	f1, a3, 0
+     675:	fe8031        	l32r	a3, 78 <rally_render_prepare_v1-0x94>
+			675: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x78
+     678:	444113        	ssi	f1, a1, 0x110
+     67b:	ca1200        	float.s	f1, a2, 0
+     67e:	540c      	movi.n	a4, 5
+     680:	2a1120        	mul.s	f1, f1, f2
+     683:	fa2350        	wfr	f2, a3
+     686:	2a0020        	mul.s	f0, f0, f2
+     689:	430c      	movi.n	a3, 4
+     68b:	9334f0        	movnez	a3, a4, a15
+     68e:	456132        	s32i	a3, a1, 0x114
+     691:	0a0100        	add.s	f0, f1, f0
+     694:	f30c      	movi.n	a3, 15
+     696:	b50c      	movi.n	a5, 11
+     698:	940c      	movi.n	a4, 9
+     69a:	8353f0        	moveqz	a5, a3, a15
+     69d:	3f4103        	ssi	f0, a1, 252
+     6a0:	8343f0        	moveqz	a4, a3, a15
+     6a3:	466152        	s32i	a5, a1, 0x118
+     6a6:	000246        	j	6b3 <rally_render_prepare_v1+0x5a7>
+			6a6: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x6b3
+     6a9:	462152        	l32i	a5, a1, 0x118
+     6ac:	840c      	movi.n	a4, 8
+     6ae:	360b      	addi.n	a3, a6, -1
+     6b0:	934530        	movnez	a4, a5, a3
+     6b3:	fe7231        	l32r	a3, 7c <rally_render_prepare_v1-0x90>
+			6b3: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x7c
+     6b6:	a4a0a2        	movi	a10, 164
+     6b9:	4d6182        	s32i	a8, a1, 0x134
+     6bc:	4c61f2        	s32i	a15, a1, 0x130
+     6bf:	12a0b2        	movi	a11, 18
+     6c2:	80aa10        	add	a10, a10, a1
+     6c5:	0003e0        	callx8	a3
+     6c8:	a4a0a2        	movi	a10, 164
+     6cb:	00a0b2        	movi	a11, 0
+     6ce:	80aa10        	add	a10, a10, a1
+     6d1:	0003e0        	callx8	a3
+     6d4:	a4a0a2        	movi	a10, 164
+     6d7:	20b440        	or	a11, a4, a4
+     6da:	80aa10        	add	a10, a10, a1
+     6dd:	0003e0        	callx8	a3
+     6e0:	fe6891        	l32r	a9, 80 <rally_render_prepare_v1-0x8c>
+			6e0: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x80
+     6e3:	fe6831        	l32r	a3, 84 <rally_render_prepare_v1-0x88>
+			6e3: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x84
+     6e6:	4d2182        	l32i	a8, a1, 0x134
+     6e9:	1146e0        	slli	a4, a6, 2
+     6ec:	949a      	add.n	a9, a4, a9
+     6ee:	4c21f2        	l32i	a15, a1, 0x130
+     6f1:	443a      	add.n	a4, a4, a3
+     6f3:	083d      	mov.n	a3, a8
+     6f5:	000046        	j	6fa <rally_render_prepare_v1+0x5ee>
+			6f5: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x6fa
+     6f8:	130c      	movi.n	a3, 1
+     6fa:	5a5c      	movi.n	a10, 85
+     6fc:	450c      	movi.n	a5, 4
+     6fe:	935a30        	movnez	a5, a10, a3
+     701:	440103        	lsi	f0, a1, 0x110
+     704:	426152        	s32i	a5, a1, 0x108
+     707:	ca1300        	float.s	f1, a3, 0
+     70a:	0958      	l32i.n	a5, a9, 0
+     70c:	2a3100        	mul.s	f3, f1, f0
+     70f:	3e0123        	lsi	f2, a1, 248
+     712:	ca1500        	float.s	f1, a5, 0
+     715:	825530        	mull	a5, a5, a3
+     718:	2a1120        	mul.s	f1, f1, f2
+     71b:	3f0143        	lsi	f4, a1, 252
+     71e:	3321e2        	l32i	a14, a1, 204
+     721:	4221b2        	l32i	a11, a1, 0x108
+     724:	0a2310        	add.s	f2, f3, f1
+     727:	ca1500        	float.s	f1, a5, 0
+     72a:	352152        	l32i	a5, a1, 212
+     72d:	2a1140        	mul.s	f1, f1, f4
+     730:	93e230        	movnez	a14, a2, a3
+     733:	a4a0a2        	movi	a10, 164
+     736:	0edd      	mov.n	a13, a14
+     738:	0a1120        	add.s	f1, f1, f2
+     73b:	ca2500        	float.s	f2, a5, 0
+     73e:	fe5251        	l32r	a5, 88 <rally_render_prepare_v1-0x84>
+			73e: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x88
+     741:	4d6182        	s32i	a8, a1, 0x134
+     744:	0a1210        	add.s	f1, f2, f1
+     747:	4b6192        	s32i	a9, a1, 0x12c
+     74a:	4c61f2        	s32i	a15, a1, 0x130
+     74d:	aa1a      	add.n	a10, a10, a1
+     74f:	9ac100        	trunc.s	a12, f1, 0
+     752:	4a61e2        	s32i	a14, a1, 0x128
+     755:	494123        	ssi	f2, a1, 0x124
+     758:	484133        	ssi	f3, a1, 0x120
+     75b:	0005e0        	callx8	a5
+     75e:	04a8      	l32i.n	a10, a4, 0
+     760:	3e0143        	lsi	f4, a1, 248
+     763:	ca1a00        	float.s	f1, a10, 0
+     766:	480133        	lsi	f3, a1, 0x120
+     769:	2a0140        	mul.s	f0, f1, f4
+     76c:	82aa30        	mull	a10, a10, a3
+     76f:	490123        	lsi	f2, a1, 0x124
+     772:	4a21e2        	l32i	a14, a1, 0x128
+     775:	0a1030        	add.s	f1, f0, f3
+     778:	ca0a00        	float.s	f0, a10, 0
+     77b:	3f0133        	lsi	f3, a1, 252
+     77e:	4221b2        	l32i	a11, a1, 0x108
+     781:	2a0030        	mul.s	f0, f0, f3
+     784:	a4a0a2        	movi	a10, 164
+     787:	20dee0        	or	a13, a14, a14
+     78a:	aa1a      	add.n	a10, a10, a1
+     78c:	0a0010        	add.s	f0, f0, f1
+     78f:	0a0020        	add.s	f0, f0, f2
+     792:	9ac000        	trunc.s	a12, f0, 0
+     795:	0005e0        	callx8	a5
+     798:	4d2182        	l32i	a8, a1, 0x134
+     79b:	4b2192        	l32i	a9, a1, 0x12c
+     79e:	4c21f2        	l32i	a15, a1, 0x130
+     7a1:	021326        	beqi	a3, 1, 7a7 <rally_render_prepare_v1+0x69b>
+			7a1: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x7a7
+     7a4:	ffd406        	j	6f8 <rally_render_prepare_v1+0x5ec>
+			7a4: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x6f8
+     7a7:	452132        	l32i	a3, a1, 0x114
+     7aa:	661b      	addi.n	a6, a6, 1
+     7ac:	021637        	beq	a6, a3, 7b2 <rally_render_prepare_v1+0x6a6>
+			7ac: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x7b2
+     7af:	ffbd86        	j	6a9 <rally_render_prepare_v1+0x59d>
+			7af: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x6a9
+     7b2:	372142        	l32i	a4, a1, 220
+     7b5:	3a2152        	l32i	a5, a1, 232
+     7b8:	01c442        	addi	a4, a4, 1
+     7bb:	382162        	l32i	a6, a1, 224
+     7be:	376142        	s32i	a4, a1, 220
+     7c1:	0b2567        	blt	a5, a6, 7d0 <rally_render_prepare_v1+0x6c4>
+			7c1: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x7d0
+     7c4:	3b2192        	l32i	a9, a1, 236
+     7c7:	01c992        	addi	a9, a9, 1
+     7ca:	3b6192        	s32i	a9, a1, 236
+     7cd:	1b9657        	bne	a6, a5, 7ec <rally_render_prepare_v1+0x6e0>
+			7cd: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x7ec
+     7d0:	74a032        	movi	a3, 116
+     7d3:	0a1237        	beq	a2, a3, 7e1 <rally_render_prepare_v1+0x6d5>
+			7d3: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x7e1
+     7d6:	130c      	movi.n	a3, 1
+     7d8:	30ff30        	xor	a15, a15, a3
+     7db:	000146        	j	7e4 <rally_render_prepare_v1+0x6d8>
+			7db: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x7e4
+     7de:	00          	.byte 00
+     7df:	00          	.byte 00
+     7e0:	00          	.byte 00
+     7e1:	4121f2        	l32i	a15, a1, 0x104
+     7e4:	392132        	l32i	a3, a1, 228
+     7e7:	331b      	addi.n	a3, a3, 1
+     7e9:	396132        	s32i	a3, a1, 228
+     7ec:	336122        	s32i	a2, a1, 204
+     7ef:	3d2142        	l32i	a4, a1, 244
+     7f2:	332152        	l32i	a5, a1, 204
+     7f5:	356142        	s32i	a4, a1, 212
+     7f8:	dfa022        	movi	a2, 223
+     7fb:	0b2257        	blt	a2, a5, 80a <rally_render_prepare_v1+0x6fe>
+			7fb: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x80a
+     7fe:	372162        	l32i	a6, a1, 220
+     801:	77a022        	movi	a2, 119
+     804:	023267        	bltu	a2, a6, 80a <rally_render_prepare_v1+0x6fe>
+			804: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x80a
+     807:	ff7586        	j	5e1 <rally_render_prepare_v1+0x4d5>
+			807: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x5e1
+     80a:	0f0c      	movi.n	a15, 0
+     80c:	a4a0a2        	movi	a10, 164
+     80f:	fe1721        	l32r	a2, 6c <rally_render_prepare_v1-0xa0>
+			80f: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x6c
+     812:	4d6182        	s32i	a8, a1, 0x134
+     815:	efa0e2        	movi	a14, 239
+     818:	3fa1d2        	movi	a13, 0x13f
+     81b:	e0a0c2        	movi	a12, 224
+     81e:	0fbd      	mov.n	a11, a15
+     820:	80aa10        	add	a10, a10, a1
+     823:	0002e0        	callx8	a2
+     826:	e138      	l32i.n	a3, a1, 56
+     828:	4d2182        	l32i	a8, a1, 0x134
+     82b:	c03370        	sub	a3, a3, a7
+     82e:	0217e6        	bgei	a7, 1, 834 <rally_render_prepare_v1+0x728>
+			82e: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x834
+     831:	603070        	neg	a3, a7
+     834:	fe0821        	l32r	a2, 54 <rally_render_prepare_v1-0xb8>
+			834: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x54
+     837:	a8a342        	movi	a4, 0x3a8
+     83a:	b22320        	mulsh	a2, a3, a2
+     83d:	313f30        	srai	a3, a3, 31
+     840:	212520        	srai	a2, a2, 5
+     843:	c02230        	sub	a2, a2, a3
+     846:	c0c232        	addi	a3, a2, -64
+     849:	1bb437        	bgeu	a4, a3, 868 <rally_render_prepare_v1+0x75c>
+			849: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x868
+     84c:	fdeeb1        	l32r	a11, 4 <rally_render_prepare_v1-0x108>
+			84c: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x4
+     84f:	a4a0a2        	movi	a10, 164
+     852:	fe0e21        	l32r	a2, 8c <rally_render_prepare_v1-0x80>
+			852: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x8c
+     855:	7c0c      	movi.n	a12, 7
+     857:	aa1a      	add.n	a10, a10, a1
+     859:	0002e0        	callx8	a2
+     85c:	372192        	l32i	a9, a1, 220
+     85f:	302182        	l32i	a8, a1, 192
+     862:	125892        	s16i	a9, a8, 36
+     865:	0253c6        	j	11b8 <rally_render_prepare_v1+0x10ac>
+			865: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x11b8
+     868:	fe0a31        	l32r	a3, 90 <rally_render_prepare_v1-0x7c>
+			868: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x90
+     86b:	f40c      	movi.n	a4, 15
+     86d:	d23320        	quos	a3, a3, a2
+     870:	60c322        	addi	a2, a3, 96
+     873:	170c      	movi.n	a7, 1
+     875:	08a437        	bge	a4, a3, 881 <rally_render_prepare_v1+0x775>
+			875: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x881
+     878:	217430        	srai	a7, a3, 4
+     87b:	000086        	j	881 <rally_render_prepare_v1+0x775>
+			87b: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x881
+     87e:	00          	.byte 00
+     87f:	180c      	movi.n	a8, 1
+     881:	dfa0a2        	movi	a10, 223
+     884:	c42a27        	blt	a10, a2, 84c <rally_render_prepare_v1+0x740>
+			884: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x84c
+     887:	fe0331        	l32r	a3, 94 <rally_render_prepare_v1-0x78>
+			887: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x94
+     88a:	02bd      	mov.n	a11, a2
+     88c:	4d6182        	s32i	a8, a1, 0x134
+     88f:	1142f0        	slli	a4, a2, 1
+     892:	10c1a2        	addi	a10, a1, 16
+     895:	0003e0        	callx8	a3
+     898:	342a      	add.n	a3, a4, a2
+     89a:	1143c0        	slli	a4, a3, 4
+     89d:	c04430        	sub	a4, a4, a3
+     8a0:	fdfe31        	l32r	a3, 98 <rally_render_prepare_v1-0x74>
+			8a0: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x98
+     8a3:	1144f0        	slli	a4, a4, 1
+     8a6:	443a      	add.n	a4, a4, a3
+     8a8:	fdeb31        	l32r	a3, 54 <rally_render_prepare_v1-0xb8>
+			8a8: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x54
+     8ab:	362152        	l32i	a5, a1, 216
+     8ae:	b23430        	mulsh	a3, a4, a3
+     8b1:	314f40        	srai	a4, a4, 31
+     8b4:	213430        	srai	a3, a3, 4
+     8b7:	c03340        	sub	a3, a3, a4
+     8ba:	470b      	addi.n	a4, a7, -1
+     8bc:	442a      	add.n	a4, a4, a2
+     8be:	dfa0b2        	movi	a11, 223
+     8c1:	4d2182        	l32i	a8, a1, 0x134
+     8c4:	3361a2        	s32i	a10, a1, 204
+     8c7:	4344b0        	min	a4, a4, a11
+     8ca:	056d      	mov.n	a6, a5
+     8cc:	fdf4b1        	l32r	a11, 9c <rally_render_prepare_v1-0x70>
+			8cc: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x9c
+     8cf:	332192        	l32i	a9, a1, 204
+     8d2:	a2b5b0        	muluh	a11, a5, a11
+     8d5:	c0d930        	sub	a13, a9, a3
+     8d8:	41b2b0        	srli	a11, a11, 2
+     8db:	0d9d      	mov.n	a9, a13
+     8dd:	bbda      	add.n	a11, a11, a13
+     8df:	fdf0d1        	l32r	a13, a0 <rally_render_prepare_v1-0x6c>
+			8df: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xa0
+     8e2:	553a      	add.n	a5, a5, a3
+     8e4:	b2d5d0        	mulsh	a13, a5, a13
+     8e7:	31af50        	srai	a10, a5, 31
+     8ea:	c0dda0        	sub	a13, a13, a10
+     8ed:	f86a      	add.n	a15, a8, a6
+     8ef:	dd9a      	add.n	a13, a13, a9
+     8f1:	04f0f0        	extui	a15, a15, 0, 1
+     8f4:	dd0b      	addi.n	a13, a13, -1
+     8f6:	002f16        	beqz	a15, 8fc <rally_render_prepare_v1+0x7f0>
+			8f6: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x8fc
+     8f9:	0fa0f2        	movi	a15, 15
+     8fc:	a4a0a2        	movi	a10, 164
+     8ff:	fddb91        	l32r	a9, 6c <rally_render_prepare_v1-0xa0>
+			8ff: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x6c
+     902:	4d6182        	s32i	a8, a1, 0x134
+     905:	04ed      	mov.n	a14, a4
+     907:	02cd      	mov.n	a12, a2
+     909:	aa1a      	add.n	a10, a10, a1
+     90b:	0009e0        	callx8	a9
+     90e:	661b      	addi.n	a6, a6, 1
+     910:	4d2182        	l32i	a8, a1, 0x134
+     913:	b5a666        	bnei	a6, 12, 8cc <rally_render_prepare_v1+0x7c0>
+			913: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x8cc
+     916:	227a      	add.n	a2, a2, a7
+     918:	021866        	bnei	a8, 1, 91e <rally_render_prepare_v1+0x812>
+			918: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x91e
+     91b:	ffcb46        	j	84c <rally_render_prepare_v1+0x740>
+			91b: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x84c
+     91e:	ffd746        	j	87f <rally_render_prepare_v1+0x773>
+			91e: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x87f
+     921:	362122        	l32i	a2, a1, 216
+     924:	021226        	beqi	a2, 1, 92a <rally_render_prepare_v1+0x81e>
+			924: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x92a
+     927:	018e86        	j	f65 <rally_render_prepare_v1+0xe59>
+			927: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xf65
+     92a:	1621f2        	l32i	a15, a1, 88
+     92d:	c0a022        	movi	a2, 192
+     930:	2f2a      	add.n	a2, a15, a2
+     932:	3a6122        	s32i	a2, a1, 232
+     935:	68a122        	movi	a2, 0x168
+     938:	2f2a      	add.n	a2, a15, a2
+     93a:	4538      	l32i.n	a3, a5, 16
+     93c:	0e1542        	l16ui	a4, a5, 28
+     93f:	3d6122        	s32i	a2, a1, 244
+     942:	a0a1e2        	movi	a14, 0x1a0
+     945:	b8a122        	movi	a2, 0x1b8
+     948:	2f2a      	add.n	a2, a15, a2
+     94a:	efea      	add.n	a14, a15, a14
+     94c:	376132        	s32i	a3, a1, 220
+     94f:	3b6142        	s32i	a4, a1, 236
+     952:	336122        	s32i	a2, a1, 204
+     955:	24c532        	addi	a3, a5, 36
+     958:	0e4d      	mov.n	a4, a14
+     95a:	087d      	mov.n	a7, a8
+     95c:	660c      	movi.n	a6, 6
+     95e:	1f8676        	loop	a6, 981 <rally_render_prepare_v1+0x875>
+			95e: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x981
+     961:	051392        	l16ui	a9, a3, 10
+     964:	0479      	s32i.n	a7, a4, 0
+     966:	082d      	mov.n	a2, a8
+     968:	d98c      	beqz.n	a9, 979 <rally_render_prepare_v1+0x86d>
+			968: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x979
+     96a:	0328      	l32i.n	a2, a3, 0
+     96c:	3721d2        	l32i	a13, a1, 220
+     96f:	e198      	l32i.n	a9, a1, 56
+     971:	c022d0        	sub	a2, a2, a13
+     974:	0012d6        	bgez	a2, 979 <rally_render_prepare_v1+0x86d>
+			974: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x979
+     977:	229a      	add.n	a2, a2, a9
+     979:	6429      	s32i.n	a2, a4, 24
+     97b:	771b      	addi.n	a7, a7, 1
+     97d:	444b      	addi.n	a4, a4, 4
+     97f:	33cb      	addi.n	a3, a3, 12
+     981:	14cf72        	addi	a7, a15, 20
+     984:	0f2d      	mov.n	a2, a15
+     986:	023d      	mov.n	a3, a2
+     988:	682292        	l32i	a9, a2, 0x1a0
+     98b:	332142        	l32i	a4, a1, 204
+     98e:	6923a2        	l32i	a10, a3, 0x1a4
+     991:	1169e0        	slli	a6, a9, 2
+     994:	3321d2        	l32i	a13, a1, 204
+     997:	646a      	add.n	a6, a4, a6
+     999:	114ae0        	slli	a4, a10, 2
+     99c:	804d40        	add	a4, a13, a4
+     99f:	002662        	l32i	a6, a6, 0
+     9a2:	0448      	l32i.n	a4, a4, 0
+     9a4:	05a647        	bge	a6, a4, 9ad <rally_render_prepare_v1+0x8a1>
+			9a4: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x9ad
+     9a7:	6862a2        	s32i	a10, a2, 0x1a0
+     9aa:	696392        	s32i	a9, a3, 0x1a4
+     9ad:	334b      	addi.n	a3, a3, 4
+     9af:	d59737        	bne	a7, a3, 988 <rally_render_prepare_v1+0x87c>
+			9af: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x988
+     9b2:	04c222        	addi	a2, a2, 4
+     9b5:	cd9727        	bne	a7, a2, 986 <rally_render_prepare_v1+0x87a>
+			9b5: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x986
+     9b8:	fdbb21        	l32r	a2, a4 <rally_render_prepare_v1-0x68>
+			9b8: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xa4
+     9bb:	3721b2        	l32i	a11, a1, 220
+     9be:	4d6182        	s32i	a8, a1, 0x134
+     9c1:	4a61e2        	s32i	a14, a1, 0x128
+     9c4:	4c61f2        	s32i	a15, a1, 0x130
+     9c7:	04a0c2        	movi	a12, 4
+     9ca:	10c1a2        	addi	a10, a1, 16
+     9cd:	0002e0        	callx8	a2
+     9d0:	3721b2        	l32i	a11, a1, 220
+     9d3:	4161a2        	s32i	a10, a1, 0x104
+     9d6:	6c0c      	movi.n	a12, 6
+     9d8:	10c1a2        	addi	a10, a1, 16
+     9db:	0002e0        	callx8	a2
+     9de:	d128      	l32i.n	a2, a1, 52
+     9e0:	4c21f2        	l32i	a15, a1, 0x130
+     9e3:	3f6122        	s32i	a2, a1, 252
+     9e6:	b8a122        	movi	a2, 0x1b8
+     9e9:	2f2a      	add.n	a2, a15, a2
+     9eb:	3b2162        	l32i	a6, a1, 236
+     9ee:	3b2192        	l32i	a9, a1, 236
+     9f1:	c138      	l32i.n	a3, a1, 48
+     9f3:	152142        	l32i	a4, a1, 84
+     9f6:	456122        	s32i	a2, a1, 0x114
+     9f9:	4d2182        	l32i	a8, a1, 0x134
+     9fc:	420c      	movi.n	a2, 4
+     9fe:	046060        	extui	a6, a6, 0, 1
+     a01:	102920        	and	a2, a9, a2
+     a04:	4a21e2        	l32i	a14, a1, 0x128
+     a07:	4261a2        	s32i	a10, a1, 0x108
+     a0a:	446132        	s32i	a3, a1, 0x110
+     a0d:	386142        	s32i	a4, a1, 224
+     a10:	356182        	s32i	a8, a1, 212
+     a13:	466162        	s32i	a6, a1, 0x118
+     a16:	476122        	s32i	a2, a1, 0x11c
+     a19:	4621d2        	l32i	a13, a1, 0x118
+     a1c:	228d16        	beqz	a13, c48 <rally_render_prepare_v1+0xb3c>
+			a1c: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xc48
+     a1f:	0e68      	l32i.n	a6, a14, 0
+     a21:	1126f0        	slli	a2, a6, 1
+     a24:	226a      	add.n	a2, a2, a6
+     a26:	1122e0        	slli	a2, a2, 2
+     a29:	252a      	add.n	a2, a5, a2
+     a2b:	171232        	l16ui	a3, a2, 46
+     a2e:	216316        	beqz	a3, c48 <rally_render_prepare_v1+0xb3c>
+			a2e: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xc48
+     a31:	332142        	l32i	a4, a1, 204
+     a34:	1136e0        	slli	a3, a6, 2
+     a37:	343a      	add.n	a3, a4, a3
+     a39:	0348      	l32i.n	a4, a3, 0
+     a3b:	fd8691        	l32r	a9, 54 <rally_render_prepare_v1-0xb8>
+			a3b: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x54
+     a3e:	0ca4a2        	movi	a10, 0x40c
+     a41:	b23490        	mulsh	a3, a4, a9
+     a44:	314f40        	srai	a4, a4, 31
+     a47:	213530        	srai	a3, a3, 5
+     a4a:	c03340        	sub	a3, a3, a4
+     a4d:	c0c342        	addi	a4, a3, -64
+     a50:	02ba47        	bgeu	a10, a4, a56 <rally_render_prepare_v1+0x94a>
+			a50: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xa56
+     a53:	007c46        	j	c48 <rally_render_prepare_v1+0xb3c>
+			a53: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xc48
+     a56:	fd8eb1        	l32r	a11, 90 <rally_render_prepare_v1-0x7c>
+			a56: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x90
+     a59:	10c1a2        	addi	a10, a1, 16
+     a5c:	d23b30        	quos	a3, a11, a3
+     a5f:	60c3d2        	addi	a13, a3, 96
+     a62:	0dbd      	mov.n	a11, a13
+     a64:	4d6182        	s32i	a8, a1, 0x134
+     a67:	4a61e2        	s32i	a14, a1, 0x128
+     a6a:	4c61f2        	s32i	a15, a1, 0x130
+     a6d:	3961d2        	s32i	a13, a1, 228
+     a70:	fda081        	l32r	a8, f0 <rally_render_prepare_v1-0x1c>
+			a70: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xf0
+			a70: R_XTENSA_ASM_EXPAND	.text.cx+0x4
+     a73:	0008e0        	callx8	a8
+     a76:	a248      	l32i.n	a4, a2, 40
+     a78:	ffa072        	movi	a7, 255
+     a7b:	747a      	add.n	a7, a4, a7
+     a7d:	a34740        	movltz	a4, a7, a4
+     a80:	214840        	srai	a4, a4, 8
+     a83:	fd7491        	l32r	a9, 54 <rally_render_prepare_v1-0xb8>
+			a83: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x54
+     a86:	824430        	mull	a4, a4, a3
+     a89:	6c0c      	movi.n	a12, 6
+     a8b:	b27490        	mulsh	a7, a4, a9
+     a8e:	314f40        	srai	a4, a4, 31
+     a91:	217470        	srai	a7, a7, 4
+     a94:	c04740        	sub	a4, a7, a4
+     a97:	44aa      	add.n	a4, a4, a10
+     a99:	3e6142        	s32i	a4, a1, 248
+     a9c:	9248      	l32i.n	a4, a2, 36
+     a9e:	10c1a2        	addi	a10, a1, 16
+     aa1:	04bd      	mov.n	a11, a4
+     aa3:	fd9481        	l32r	a8, f4 <rally_render_prepare_v1-0x18>
+			aa3: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xf4
+			aa3: R_XTENSA_ASM_EXPAND	.text.tangent+0x4
+     aa6:	0008e0        	callx8	a8
+     aa9:	4121d2        	l32i	a13, a1, 0x104
+     aac:	04bd      	mov.n	a11, a4
+     aae:	822da0        	mull	a2, a13, a10
+     ab1:	4c0c      	movi.n	a12, 4
+     ab3:	10c1a2        	addi	a10, a1, 16
+     ab6:	fd9081        	l32r	a8, f8 <rally_render_prepare_v1-0x14>
+			ab6: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xf8
+			ab6: R_XTENSA_ASM_EXPAND	.text.tangent+0x4
+     ab9:	0008e0        	callx8	a8
+     abc:	422142        	l32i	a4, a1, 0x108
+     abf:	1173f0        	slli	a7, a3, 1
+     ac2:	82a4a0        	mull	a10, a4, a10
+     ac5:	fd7841        	l32r	a4, a8 <rally_render_prepare_v1-0x64>
+			ac5: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xa8
+     ac8:	c0a2a0        	sub	a10, a2, a10
+     acb:	fd6321        	l32r	a2, 58 <rally_render_prepare_v1-0xb4>
+			acb: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x58
+     ace:	4d2182        	l32i	a8, a1, 0x134
+     ad1:	2a2a      	add.n	a2, a10, a2
+     ad3:	b32aa0        	movgez	a2, a10, a10
+     ad6:	212c20        	srai	a2, a2, 12
+     ad9:	4a21e2        	l32i	a14, a1, 0x128
+     adc:	4c21f2        	l32i	a15, a1, 0x130
+     adf:	02aa47        	bge	a10, a4, ae5 <rally_render_prepare_v1+0x9d9>
+			adf: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xae5
+     ae2:	602020        	neg	a2, a2
+     ae5:	fd4641        	l32r	a4, 0 <rally_render_prepare_v1-0x10c>
+			ae5: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1
+     ae8:	2a2427        	blt	a4, a2, b16 <rally_render_prepare_v1+0xa0a>
+			ae8: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xb16
+     aeb:	fd7041        	l32r	a4, ac <rally_render_prepare_v1-0x60>
+			aeb: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xac
+     aee:	0a2427        	blt	a4, a2, afc <rally_render_prepare_v1+0x9f0>
+			aee: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xafc
+     af1:	21d520        	srai	a13, a2, 5
+     af4:	5b0c      	movi.n	a11, 5
+     af6:	442020        	extui	a2, a2, 0, 5
+     af9:	000906        	j	b21 <rally_render_prepare_v1+0xa15>
+			af9: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xb21
+     afc:	fd6d41        	l32r	a4, b0 <rally_render_prepare_v1-0x5c>
+			afc: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xb0
+     aff:	152427        	blt	a4, a2, b18 <rally_render_prepare_v1+0xa0c>
+			aff: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xb18
+     b02:	f2d2d2        	addmi	a13, a2, 0xfffff200
+     b05:	21d3d0        	srai	a13, a13, 3
+     b08:	70cdd2        	addi	a13, a13, 112
+     b0b:	242020        	extui	a2, a2, 0, 3
+     b0e:	3b0c      	movi.n	a11, 3
+     b10:	000346        	j	b21 <rally_render_prepare_v1+0xa15>
+			b10: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xb21
+     b13:	00          	.byte 00
+     b14:	00          	.byte 00
+     b15:	00          	.byte 00
+     b16:	042d      	mov.n	a2, a4
+     b18:	fd67d1        	l32r	a13, b4 <rally_render_prepare_v1-0x58>
+			b18: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xb4
+     b1b:	08bd      	mov.n	a11, a8
+     b1d:	d2da      	add.n	a13, a2, a13
+     b1f:	082d      	mov.n	a2, a8
+     b21:	3f2192        	l32i	a9, a1, 252
+     b24:	11ddf0        	slli	a13, a13, 1
+     b27:	c9da      	add.n	a12, a9, a13
+     b29:	010c42        	l8ui	a4, a12, 1
+     b2c:	000c92        	l8ui	a9, a12, 0
+     b2f:	114480        	slli	a4, a4, 8
+     b32:	209940        	or	a9, a9, a4
+     b35:	239980        	sext	a9, a9, 15
+     b38:	42ac      	beqz.n	a2, b60 <rally_render_prepare_v1+0xa54>
+			b38: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xb60
+     b3a:	3f2142        	l32i	a4, a1, 252
+     b3d:	02cdd2        	addi	a13, a13, 2
+     b40:	d4da      	add.n	a13, a4, a13
+     b42:	010dc2        	l8ui	a12, a13, 1
+     b45:	000d42        	l8ui	a4, a13, 0
+     b48:	11cc80        	slli	a12, a12, 8
+     b4b:	2044c0        	or	a4, a4, a12
+     b4e:	234480        	sext	a4, a4, 15
+     b51:	c04490        	sub	a4, a4, a9
+     b54:	822420        	mull	a2, a4, a2
+     b57:	400b00        	ssr	a11
+     b5a:	b12020        	sra	a2, a2
+     b5d:	809920        	add	a9, a9, a2
+     b60:	fd5221        	l32r	a2, a8 <rally_render_prepare_v1-0x64>
+			b60: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xa8
+     b63:	02aa27        	bge	a10, a2, b69 <rally_render_prepare_v1+0xa5d>
+			b63: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xb69
+     b66:	609090        	neg	a9, a9
+     b69:	11b6f0        	slli	a11, a6, 1
+     b6c:	bb6a      	add.n	a11, a11, a6
+     b6e:	11bbe0        	slli	a11, a11, 2
+     b71:	042060        	extui	a2, a6, 0, 1
+     b74:	fa7c      	movi.n	a10, -1
+     b76:	140c      	movi.n	a4, 1
+     b78:	b5ba      	add.n	a11, a5, a11
+     b7a:	934a20        	movnez	a4, a10, a2
+     b7d:	169ba2        	l16si	a10, a11, 44
+     b80:	822a40        	mull	a2, a10, a4
+     b83:	229a      	add.n	a2, a2, a9
+     b85:	472192        	l32i	a9, a1, 0x11c
+     b88:	020916        	beqz	a9, bac <rally_render_prepare_v1+0xaa0>
+			b88: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xbac
+     b8b:	3e21b2        	l32i	a11, a1, 248
+     b8e:	4421a2        	l32i	a10, a1, 0x110
+     b91:	fd4941        	l32r	a4, b8 <rally_render_prepare_v1-0x54>
+			b91: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xb8
+     b94:	4d6182        	s32i	a8, a1, 0x134
+     b97:	4a61e2        	s32i	a14, a1, 0x128
+     b9a:	4c61f2        	s32i	a15, a1, 0x130
+     b9d:	0004e0        	callx8	a4
+     ba0:	4c21f2        	l32i	a15, a1, 0x130
+     ba3:	4a21e2        	l32i	a14, a1, 0x128
+     ba6:	4d2182        	l32i	a8, a1, 0x134
+     ba9:	c022a0        	sub	a2, a2, a10
+     bac:	a0a292        	movi	a9, 0x2a0
+     baf:	604120        	abs	a4, a2
+     bb2:	449a      	add.n	a4, a4, a9
+     bb4:	fd4291        	l32r	a9, bc <rally_render_prepare_v1-0x50>
+			bb4: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xbc
+     bb7:	414640        	srli	a4, a4, 6
+     bba:	a24490        	muluh	a4, a4, a9
+     bbd:	3821d2        	l32i	a13, a1, 224
+     bc0:	490c      	movi.n	a9, 4
+     bc2:	434940        	min	a4, a9, a4
+     bc5:	11a6e0        	slli	a10, a6, 2
+     bc8:	011d92        	l16ui	a9, a13, 2
+     bcb:	aa6a      	add.n	a10, a10, a6
+     bcd:	99aa      	add.n	a9, a9, a10
+     bcf:	449a      	add.n	a4, a4, a9
+     bd1:	031d92        	l16ui	a9, a13, 6
+     bd4:	07ad      	mov.n	a10, a7
+     bd6:	806960        	add	a6, a9, a6
+     bd9:	209880        	or	a9, a8, a8
+     bdc:	0812a6        	blti	a2, 1, be8 <rally_render_prepare_v1+0xadc>
+			bdc: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xbe8
+     bdf:	caa092        	movi	a9, 202
+     be2:	829390        	mull	a9, a3, a9
+     be5:	60a070        	neg	a10, a7
+     be8:	3521b2        	l32i	a11, a1, 212
+     beb:	3a21d2        	l32i	a13, a1, 232
+     bee:	112bd0        	slli	a2, a11, 3
+     bf1:	c022b0        	sub	a2, a2, a11
+     bf4:	1122e0        	slli	a2, a2, 2
+     bf7:	2d2a      	add.n	a2, a13, a2
+     bf9:	0249      	s32i.n	a4, a2, 0
+     bfb:	1143f0        	slli	a4, a3, 1
+     bfe:	443a      	add.n	a4, a4, a3
+     c00:	1269      	s32i.n	a6, a2, 4
+     c02:	1164c0        	slli	a6, a4, 4
+     c05:	446a      	add.n	a4, a4, a6
+     c07:	1144f0        	slli	a4, a4, 1
+     c0a:	ffa062        	movi	a6, 255
+     c0d:	2279      	s32i.n	a7, a2, 8
+     c0f:	746a      	add.n	a7, a4, a6
+     c11:	4299      	s32i.n	a9, a2, 16
+     c13:	a34740        	movltz	a4, a7, a4
+     c16:	3e2192        	l32i	a9, a1, 248
+     c19:	214840        	srai	a4, a4, 8
+     c1c:	c04940        	sub	a4, a9, a4
+     c1f:	5249      	s32i.n	a4, a2, 20
+     c21:	1143e0        	slli	a4, a3, 2
+     c24:	443a      	add.n	a4, a4, a3
+     c26:	1134d0        	slli	a3, a4, 3
+     c29:	c03340        	sub	a3, a3, a4
+     c2c:	1133e0        	slli	a3, a3, 2
+     c2f:	636a      	add.n	a6, a3, a6
+     c31:	a33630        	movltz	a3, a6, a3
+     c34:	3921d2        	l32i	a13, a1, 228
+     c37:	213830        	srai	a3, a3, 8
+     c3a:	c03d30        	sub	a3, a13, a3
+     c3d:	bb1b      	addi.n	a11, a11, 1
+     c3f:	0362a2        	s32i	a10, a2, 12
+     c42:	066232        	s32i	a3, a2, 24
+     c45:	3561b2        	s32i	a11, a1, 212
+     c48:	452122        	l32i	a2, a1, 0x114
+     c4b:	ee4b      	addi.n	a14, a14, 4
+     c4d:	0212e7        	beq	a2, a14, c53 <rally_render_prepare_v1+0xb47>
+			c4d: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xc53
+     c50:	ff7146        	j	a19 <rally_render_prepare_v1+0x90d>
+			c50: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xa19
+     c53:	e178      	l32i.n	a7, a1, 56
+     c55:	fd1b31        	l32r	a3, c4 <rally_render_prepare_v1-0x48>
+			c55: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xc4
+     c58:	312f70        	srai	a2, a7, 31
+     c5b:	b23730        	mulsh	a3, a7, a3
+     c5e:	372142        	l32i	a4, a1, 220
+     c61:	213a30        	srai	a3, a3, 10
+     c64:	c03320        	sub	a3, a3, a2
+     c67:	822430        	mull	a2, a4, a3
+     c6a:	336182        	s32i	a8, a1, 204
+     c6d:	d22270        	quos	a2, a2, a7
+     c70:	223a      	add.n	a2, a2, a3
+     c72:	ffaf92        	movi	a9, -1
+     c75:	396122        	s32i	a2, a1, 228
+     c78:	392152        	l32i	a5, a1, 228
+     c7b:	fd1361        	l32r	a6, c8 <rally_render_prepare_v1-0x44>
+			c7b: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xc8
+     c7e:	459a      	add.n	a4, a5, a9
+     c80:	f24430        	rems	a4, a4, a3
+     c83:	822740        	mull	a2, a7, a4
+     c86:	3721d2        	l32i	a13, a1, 220
+     c89:	d22230        	quos	a2, a2, a3
+     c8c:	226a      	add.n	a2, a2, a6
+     c8e:	f22270        	rems	a2, a2, a7
+     c91:	c022d0        	sub	a2, a2, a13
+     c94:	0012d6        	bgez	a2, c99 <rally_render_prepare_v1+0xb8d>
+			c94: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xc99
+     c97:	227a      	add.n	a2, a2, a7
+     c99:	fceee1        	l32r	a14, 54 <rally_render_prepare_v1-0xb8>
+			c99: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x54
+     c9c:	b4a152        	movi	a5, 0x1b4
+     c9f:	b2c2e0        	mulsh	a12, a2, a14
+     ca2:	312f20        	srai	a2, a2, 31
+     ca5:	21c5c0        	srai	a12, a12, 5
+     ca8:	c0cc20        	sub	a12, a12, a2
+     cab:	c0cc22        	addi	a2, a12, -64
+     cae:	02b527        	bgeu	a5, a2, cb4 <rally_render_prepare_v1+0xba8>
+			cae: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xcb4
+     cb1:	003306        	j	d81 <rally_render_prepare_v1+0xc75>
+			cb1: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xd81
+     cb4:	fcf761        	l32r	a6, 90 <rally_render_prepare_v1-0x7c>
+			cb4: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x90
+     cb7:	67a0a2        	movi	a10, 103
+     cba:	d2c6c0        	quos	a12, a6, a12
+     cbd:	115cf0        	slli	a5, a12, 1
+     cc0:	653b      	addi.n	a6, a5, 3
+     cc2:	b36550        	movgez	a6, a5, a5
+     cc5:	60ccb2        	addi	a11, a12, 96
+     cc8:	216260        	srai	a6, a6, 2
+     ccb:	c06b60        	sub	a6, a11, a6
+     cce:	022a67        	blt	a10, a6, cd4 <rally_render_prepare_v1+0xbc8>
+			cce: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xcd4
+     cd1:	002b06        	j	d81 <rally_render_prepare_v1+0xc75>
+			cd1: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xd81
+     cd4:	10c1a2        	addi	a10, a1, 16
+     cd7:	4d6182        	s32i	a8, a1, 0x134
+     cda:	4b6192        	s32i	a9, a1, 0x12c
+     cdd:	4861c2        	s32i	a12, a1, 0x120
+     ce0:	4c61f2        	s32i	a15, a1, 0x130
+     ce3:	fd0681        	l32r	a8, fc <rally_render_prepare_v1-0x10>
+			ce3: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xfc
+			ce3: R_XTENSA_ASM_EXPAND	.text.cx+0x4
+     ce6:	0008e0        	callx8	a8
+     ce9:	042040        	extui	a2, a4, 0, 1
+     cec:	86a0b2        	movi	a11, 134
+     cef:	7aafd2        	movi	a13, -134
+     cf2:	4821c2        	l32i	a12, a1, 0x120
+     cf5:	83db20        	moveqz	a13, a11, a2
+     cf8:	82ccd0        	mull	a12, a12, a13
+     cfb:	fcd6d1        	l32r	a13, 54 <rally_render_prepare_v1-0xb8>
+			cfb: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x54
+     cfe:	4d2182        	l32i	a8, a1, 0x134
+     d01:	b2dcd0        	mulsh	a13, a12, a13
+     d04:	31cfc0        	srai	a12, a12, 31
+     d07:	21d4d0        	srai	a13, a13, 4
+     d0a:	c0cdc0        	sub	a12, a13, a12
+     d0d:	ccaa      	add.n	a12, a12, a10
+     d0f:	a57b      	addi.n	a10, a5, 7
+     d11:	b3a550        	movgez	a10, a5, a5
+     d14:	2123a0        	srai	a2, a10, 3
+     d17:	c0ac20        	sub	a10, a12, a2
+     d1a:	3fa122        	movi	a2, 0x13f
+     d1d:	4b2192        	l32i	a9, a1, 0x12c
+     d20:	4c21f2        	l32i	a15, a1, 0x130
+     d23:	5a22a7        	blt	a2, a10, d81 <rally_render_prepare_v1+0xc75>
+			d23: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xd81
+     d26:	212250        	srai	a2, a5, 2
+     d29:	22aa      	add.n	a2, a2, a10
+     d2b:	31bf20        	srai	a11, a2, 31
+     d2e:	c02b20        	sub	a2, a11, a2
+     d31:	04c2d6        	bgez	a2, d81 <rally_render_prepare_v1+0xc75>
+			d31: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xd81
+     d34:	332122        	l32i	a2, a1, 204
+     d37:	4622e6        	bgei	a2, 2, d81 <rally_render_prepare_v1+0xc75>
+			d37: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xd81
+     d3a:	3821d2        	l32i	a13, a1, 224
+     d3d:	3321e2        	l32i	a14, a1, 204
+     d40:	b21b      	addi.n	a11, a2, 1
+     d42:	1122d0        	slli	a2, a2, 3
+     d45:	c022e0        	sub	a2, a2, a14
+     d48:	051dc2        	l16ui	a12, a13, 10
+     d4b:	3821e2        	l32i	a14, a1, 224
+     d4e:	3d21d2        	l32i	a13, a1, 244
+     d51:	1122e0        	slli	a2, a2, 2
+     d54:	2d2a      	add.n	a2, a13, a2
+     d56:	021ed2        	l16ui	a13, a14, 4
+     d59:	fcdce1        	l32r	a14, cc <rally_render_prepare_v1-0x40>
+			d59: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xcc
+     d5c:	1044e0        	and	a4, a4, a14
+     d5f:	0094d6        	bgez	a4, d6c <rally_render_prepare_v1+0xc60>
+			d5f: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xd6c
+     d62:	440b      	addi.n	a4, a4, -1
+     d64:	8e7c      	movi.n	a14, -8
+     d66:	2044e0        	or	a4, a4, a14
+     d69:	01c442        	addi	a4, a4, 1
+     d6c:	4d4a      	add.n	a4, a13, a4
+     d6e:	0249      	s32i.n	a4, a2, 0
+     d70:	040c      	movi.n	a4, 0
+     d72:	12c9      	s32i.n	a12, a2, 4
+     d74:	2259      	s32i.n	a5, a2, 8
+     d76:	3259      	s32i.n	a5, a2, 12
+     d78:	4249      	s32i.n	a4, a2, 16
+     d7a:	52a9      	s32i.n	a10, a2, 20
+     d7c:	6269      	s32i.n	a6, a2, 24
+     d7e:	3361b2        	s32i	a11, a1, 204
+     d81:	991b      	addi.n	a9, a9, 1
+     d83:	023926        	beqi	a9, 3, d89 <rally_render_prepare_v1+0xc7d>
+			d83: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xd89
+     d86:	ffbb86        	j	c78 <rally_render_prepare_v1+0xb6c>
+			d86: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xc78
+     d89:	332122        	l32i	a2, a1, 204
+     d8c:	022226        	beqi	a2, 2, d92 <rally_render_prepare_v1+0xc86>
+			d8c: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xd92
+     d8f:	005e06        	j	f0b <rally_render_prepare_v1+0xdff>
+			d8f: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xf0b
+     d92:	5c2f22        	l32i	a2, a15, 0x170
+     d95:	632f42        	l32i	a4, a15, 0x18c
+     d98:	01df32        	addmi	a3, a15, 0x100
+     d9b:	022427        	blt	a4, a2, da1 <rally_render_prepare_v1+0xc95>
+			d9b: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xda1
+     d9e:	005a46        	j	f0b <rally_render_prepare_v1+0xdff>
+			d9e: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xf0b
+     da1:	68c352        	addi	a5, a3, 104
+     da4:	fc9d21        	l32r	a2, 18 <rally_render_prepare_v1-0xf4>
+			da4: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x18
+     da7:	60c142        	addi	a4, a1, 96
+     daa:	4d6182        	s32i	a8, a1, 0x134
+     dad:	cc1c      	movi.n	a12, 28
+     daf:	20b550        	or	a11, a5, a5
+     db2:	20a440        	or	a10, a4, a4
+     db5:	0002e0        	callx8	a2
+     db8:	84a0f2        	movi	a15, 132
+     dbb:	33fa      	add.n	a3, a3, a15
+     dbd:	cc1c      	movi.n	a12, 28
+     dbf:	03bd      	mov.n	a11, a3
+     dc1:	05ad      	mov.n	a10, a5
+     dc3:	0002e0        	callx8	a2
+     dc6:	cc1c      	movi.n	a12, 28
+     dc8:	04bd      	mov.n	a11, a4
+     dca:	20a330        	or	a10, a3, a3
+     dcd:	0002e0        	callx8	a2
+     dd0:	4d2182        	l32i	a8, a1, 0x134
+     dd3:	004d06        	j	f0b <rally_render_prepare_v1+0xdff>
+			dd3: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xf0b
+     dd6:	00          	.byte 00
+     dd7:	00          	.byte 00
+     dd8:	00          	.byte 00
+     dd9:	332142        	l32i	a4, a1, 204
+     ddc:	28a647        	bge	a6, a4, e08 <rally_render_prepare_v1+0xcfc>
+			ddc: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xe08
+     ddf:	1126d0        	slli	a2, a6, 3
+     de2:	c02260        	sub	a2, a2, a6
+     de5:	3d2192        	l32i	a9, a1, 244
+     de8:	352142        	l32i	a4, a1, 212
+     deb:	1122e0        	slli	a2, a2, 2
+     dee:	292a      	add.n	a2, a9, a2
+     df0:	291347        	beq	a3, a4, e1d <rally_render_prepare_v1+0xd11>
+			df0: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xe1d
+     df3:	1143d0        	slli	a4, a3, 3
+     df6:	c04430        	sub	a4, a4, a3
+     df9:	3a2192        	l32i	a9, a1, 232
+     dfc:	1144e0        	slli	a4, a4, 2
+     dff:	494a      	add.n	a4, a9, a4
+     e01:	2278      	l32i.n	a7, a2, 8
+     e03:	2448      	l32i.n	a4, a4, 8
+     e05:	14a477        	bge	a4, a7, e1d <rally_render_prepare_v1+0xd11>
+			e05: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xe1d
+     e08:	1123d0        	slli	a2, a3, 3
+     e0b:	c02230        	sub	a2, a2, a3
+     e0e:	3a2142        	l32i	a4, a1, 232
+     e11:	1122e0        	slli	a2, a2, 2
+     e14:	242a      	add.n	a2, a4, a2
+     e16:	331b      	addi.n	a3, a3, 1
+     e18:	08fd      	mov.n	a15, a8
+     e1a:	0005c6        	j	e35 <rally_render_prepare_v1+0xd29>
+			e1a: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xe35
+     e1d:	a4a0a2        	movi	a10, 164
+     e20:	68a0b2        	movi	a11, 104
+     e23:	aa1a      	add.n	a10, a10, a1
+     e25:	4d6182        	s32i	a8, a1, 0x134
+     e28:	fcb681        	l32r	a8, 100 <rally_render_prepare_v1-0xc>
+			e28: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x100
+			e28: R_XTENSA_ASM_EXPAND	.text.viewport+0xc
+     e2b:	0008e0        	callx8	a8
+     e2e:	4d2182        	l32i	a8, a1, 0x134
+     e31:	661b      	addi.n	a6, a6, 1
+     e33:	1f0c      	movi.n	a15, 1
+     e35:	1278      	l32i.n	a7, a2, 4
+     e37:	2298      	l32i.n	a9, a2, 8
+     e39:	42d8      	l32i.n	a13, a2, 16
+     e3b:	32e8      	l32i.n	a14, a2, 12
+     e3d:	a4a0a2        	movi	a10, 164
+     e40:	0c2c      	movi.n	a12, 32
+     e42:	07bd      	mov.n	a11, a7
+     e44:	80aa10        	add	a10, a10, a1
+     e47:	4d6182        	s32i	a8, a1, 0x134
+     e4a:	4c61f2        	s32i	a15, a1, 0x130
+     e4d:	4b6192        	s32i	a9, a1, 0x12c
+     e50:	4861d2        	s32i	a13, a1, 0x120
+     e53:	4a61e2        	s32i	a14, a1, 0x128
+     e56:	fcab81        	l32r	a8, 104 <rally_render_prepare_v1-0x8>
+			e56: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x104
+			e56: R_XTENSA_ASM_EXPAND	.text.command+0x8
+     e59:	0008e0        	callx8	a8
+     e5c:	a4a0a2        	movi	a10, 164
+     e5f:	fc8741        	l32r	a4, 7c <rally_render_prepare_v1-0x90>
+			e5f: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x7c
+     e62:	0b0c      	movi.n	a11, 0
+     e64:	aa1a      	add.n	a10, a10, a1
+     e66:	0004e0        	callx8	a4
+     e69:	a4a0a2        	movi	a10, 164
+     e6c:	0c2c      	movi.n	a12, 32
+     e6e:	07bd      	mov.n	a11, a7
+     e70:	80aa10        	add	a10, a10, a1
+     e73:	fca581        	l32r	a8, 108 <rally_render_prepare_v1-0x4>
+			e73: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x108
+			e73: R_XTENSA_ASM_EXPAND	.text.command+0x8
+     e76:	0008e0        	callx8	a8
+     e79:	a4a0a2        	movi	a10, 164
+     e7c:	bb0c      	movi.n	a11, 11
+     e7e:	80aa10        	add	a10, a10, a1
+     e81:	0004e0        	callx8	a4
+     e84:	a4a0a2        	movi	a10, 164
+     e87:	c8a0b2        	movi	a11, 200
+     e8a:	80aa10        	add	a10, a10, a1
+     e8d:	0004e0        	callx8	a4
+     e90:	4a21e2        	l32i	a14, a1, 0x128
+     e93:	fc9041        	l32r	a4, d4 <rally_render_prepare_v1-0x38>
+			e93: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xd4
+     e96:	a4a0a2        	movi	a10, 164
+     e99:	0ebd      	mov.n	a11, a14
+     e9b:	80aa10        	add	a10, a10, a1
+     e9e:	0004e0        	callx8	a4
+     ea1:	a4a0a2        	movi	a10, 164
+     ea4:	0b0c      	movi.n	a11, 0
+     ea6:	80aa10        	add	a10, a10, a1
+     ea9:	0004e0        	callx8	a4
+     eac:	4821d2        	l32i	a13, a1, 0x120
+     eaf:	a4a0a2        	movi	a10, 164
+     eb2:	0dbd      	mov.n	a11, a13
+     eb4:	aa1a      	add.n	a10, a10, a1
+     eb6:	0004e0        	callx8	a4
+     eb9:	a4a0a2        	movi	a10, 164
+     ebc:	0b0c      	movi.n	a11, 0
+     ebe:	80aa10        	add	a10, a10, a1
+     ec1:	0004e0        	callx8	a4
+     ec4:	4b2192        	l32i	a9, a1, 0x12c
+     ec7:	a4a0a2        	movi	a10, 164
+     eca:	09bd      	mov.n	a11, a9
+     ecc:	aa1a      	add.n	a10, a10, a1
+     ece:	0004e0        	callx8	a4
+     ed1:	a4a0a2        	movi	a10, 164
+     ed4:	0b0c      	movi.n	a11, 0
+     ed6:	80aa10        	add	a10, a10, a1
+     ed9:	0004e0        	callx8	a4
+     edc:	62e8      	l32i.n	a14, a2, 24
+     ede:	52d8      	l32i.n	a13, a2, 20
+     ee0:	12c8      	l32i.n	a12, a2, 4
+     ee2:	02b8      	l32i.n	a11, a2, 0
+     ee4:	a4a0a2        	movi	a10, 164
+     ee7:	fc7c21        	l32r	a2, d8 <rally_render_prepare_v1-0x34>
+			ee7: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xd8
+     eea:	80aa10        	add	a10, a10, a1
+     eed:	0002e0        	callx8	a2
+     ef0:	4c21f2        	l32i	a15, a1, 0x130
+     ef3:	4d2182        	l32i	a8, a1, 0x134
+     ef6:	6fac      	beqz.n	a15, f20 <rally_render_prepare_v1+0xe14>
+			ef6: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xf20
+     ef8:	a4a0a2        	movi	a10, 164
+     efb:	fc7521        	l32r	a2, d0 <rally_render_prepare_v1-0x3c>
+			efb: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xd0
+     efe:	05bd      	mov.n	a11, a5
+     f00:	aa1a      	add.n	a10, a10, a1
+     f02:	0002e0        	callx8	a2
+     f05:	4d2182        	l32i	a8, a1, 0x134
+     f08:	000506        	j	f20 <rally_render_prepare_v1+0xe14>
+			f08: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xf20
+     f0b:	3b2152        	l32i	a5, a1, 236
+     f0e:	831c      	movi.n	a3, 24
+     f10:	042150        	extui	a2, a5, 1, 1
+     f13:	845c      	movi.n	a4, 88
+     f15:	205330        	or	a5, a3, a3
+     f18:	935420        	movnez	a5, a4, a2
+     f1b:	206880        	or	a6, a8, a8
+     f1e:	083d      	mov.n	a3, a8
+     f20:	352192        	l32i	a9, a1, 212
+     f23:	02a397        	bge	a3, a9, f29 <rally_render_prepare_v1+0xe1d>
+			f23: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xf29
+     f26:	ffabc6        	j	dd9 <rally_render_prepare_v1+0xccd>
+			f26: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xdd9
+     f29:	332122        	l32i	a2, a1, 204
+     f2c:	02a627        	bge	a6, a2, f32 <rally_render_prepare_v1+0xe26>
+			f2c: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xf32
+     f2f:	ffa986        	j	dd9 <rally_render_prepare_v1+0xccd>
+			f2f: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xdd9
+     f32:	fc3421        	l32r	a2, 4 <rally_render_prepare_v1-0x108>
+			f32: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x4
+     f35:	fc6931        	l32r	a3, dc <rally_render_prepare_v1-0x30>
+			f35: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xdc
+     f38:	a4a0a2        	movi	a10, 164
+     f3b:	02bd      	mov.n	a11, a2
+     f3d:	aa1a      	add.n	a10, a10, a1
+     f3f:	0003e0        	callx8	a3
+     f42:	02bd      	mov.n	a11, a2
+     f44:	a4a0a2        	movi	a10, 164
+     f47:	fc5121        	l32r	a2, 8c <rally_render_prepare_v1-0x80>
+			f47: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x8c
+     f4a:	7c0c      	movi.n	a12, 7
+     f4c:	aa1a      	add.n	a10, a10, a1
+     f4e:	0002e0        	callx8	a2
+     f51:	302132        	l32i	a3, a1, 192
+     f54:	352142        	l32i	a4, a1, 212
+     f57:	332152        	l32i	a5, a1, 204
+     f5a:	135342        	s16i	a4, a3, 38
+     f5d:	145352        	s16i	a5, a3, 40
+     f60:	009506        	j	11b8 <rally_render_prepare_v1+0x10ac>
+			f60: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x11b8
+     f63:	00          	.byte 00
+     f64:	00          	.byte 00
+     f65:	fc4b21        	l32r	a2, 94 <rally_render_prepare_v1-0x78>
+			f65: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x94
+     f68:	4d6182        	s32i	a8, a1, 0x134
+     f6b:	d6a0b2        	movi	a11, 214
+     f6e:	10c1a2        	addi	a10, a1, 16
+     f71:	0002e0        	callx8	a2
+     f74:	5548      	l32i.n	a4, a5, 20
+     f76:	4d2182        	l32i	a8, a1, 0x134
+     f79:	1124c0        	slli	a2, a4, 4
+     f7c:	c02240        	sub	a2, a2, a4
+     f7f:	1122e0        	slli	a2, a2, 2
+     f82:	c02240        	sub	a2, a2, a4
+     f85:	fc3341        	l32r	a4, 54 <rally_render_prepare_v1-0xb8>
+			f85: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x54
+     f88:	1122f0        	slli	a2, a2, 1
+     f8b:	b24240        	mulsh	a4, a2, a4
+     f8e:	312f20        	srai	a2, a2, 31
+     f91:	214c40        	srai	a4, a4, 12
+     f94:	c02420        	sub	a2, a4, a2
+     f97:	42aa      	add.n	a4, a2, a10
+     f99:	101522        	l16ui	a2, a5, 32
+     f9c:	158216        	beqz	a2, 10f8 <rally_render_prepare_v1+0xfec>
+			f9c: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x10f8
+     f9f:	96a032        	movi	a3, 150
+     fa2:	c03320        	sub	a3, a3, a2
+     fa5:	b53c      	movi.n	a5, 59
+     fa7:	172537        	blt	a5, a3, fc2 <rally_render_prepare_v1+0xeb6>
+			fa7: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xfc2
+     faa:	fc4d21        	l32r	a2, e0 <rally_render_prepare_v1-0x2c>
+			faa: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xe0
+     fad:	315f30        	srai	a5, a3, 31
+     fb0:	b22320        	mulsh	a2, a3, a2
+     fb3:	c02250        	sub	a2, a2, a5
+     fb6:	228b      	addi.n	a2, a2, 8
+     fb8:	450c      	movi.n	a5, 4
+     fba:	532250        	max	a2, a2, a5
+     fbd:	000606        	j	fd9 <rally_render_prepare_v1+0xecd>
+			fbd: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xfd9
+     fc0:	00          	.byte 00
+     fc1:	00          	.byte 00
+     fc2:	a55c      	movi.n	a5, 90
+     fc4:	c05520        	sub	a5, a5, a2
+     fc7:	fc4721        	l32r	a2, e4 <rally_render_prepare_v1-0x28>
+			fc7: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xe4
+     fca:	b22520        	mulsh	a2, a5, a2
+     fcd:	216120        	srai	a6, a2, 1
+     fd0:	312f50        	srai	a2, a5, 31
+     fd3:	c02260        	sub	a2, a2, a6
+     fd6:	1cc222        	addi	a2, a2, 28
+     fd9:	957c      	movi.n	a5, -7
+     fdb:	b94152        	s8i	a5, a1, 185
+     fde:	bb4152        	s8i	a5, a1, 187
+     fe1:	614152        	s8i	a5, a1, 97
+     fe4:	674152        	s8i	a5, a1, 103
+     fe7:	537b      	addi.n	a5, a3, 7
+     fe9:	b35330        	movgez	a5, a3, a3
+     fec:	215350        	srai	a5, a5, 3
+     fef:	336152        	s32i	a5, a1, 204
+     ff2:	fc2b51        	l32r	a5, a0 <rally_render_prepare_v1-0x6c>
+			ff2: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xa0
+     ff5:	060c      	movi.n	a6, 0
+     ff7:	b25350        	mulsh	a5, a3, a5
+     ffa:	313f30        	srai	a3, a3, 31
+     ffd:	770c      	movi.n	a7, 7
+     fff:	a90c      	movi.n	a9, 10
+    1001:	6a7c      	movi.n	a10, -10
+    1003:	b44162        	s8i	a6, a1, 180
+    1006:	b84162        	s8i	a6, a1, 184
+    1009:	624162        	s8i	a6, a1, 98
+    100c:	664162        	s8i	a6, a1, 102
+    100f:	c05530        	sub	a5, a5, a3
+    1012:	b4a062        	movi	a6, 180
+    1015:	60c132        	addi	a3, a1, 96
+    1018:	b64192        	s8i	a9, a1, 182
+    101b:	644192        	s8i	a9, a1, 100
+    101e:	b54172        	s8i	a7, a1, 181
+    1021:	b74172        	s8i	a7, a1, 183
+    1024:	ba41a2        	s8i	a10, a1, 186
+    1027:	6041a2        	s8i	a10, a1, 96
+    102a:	634172        	s8i	a7, a1, 99
+    102d:	654172        	s8i	a7, a1, 101
+    1030:	809160        	add	a9, a1, a6
+    1033:	356132        	s32i	a3, a1, 212
+    1036:	398a      	add.n	a3, a9, a8
+    1038:	000332        	l8ui	a3, a3, 0
+    103b:	fc2a61        	l32r	a6, e4 <rally_render_prepare_v1-0x28>
+			103b: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xe4
+    103e:	233300        	sext	a3, a3, 7
+    1041:	823320        	mull	a3, a3, a2
+    1044:	60c1a2        	addi	a10, a1, 96
+    1047:	b2d360        	mulsh	a13, a3, a6
+    104a:	313f30        	srai	a3, a3, 31
+    104d:	21d2d0        	srai	a13, a13, 2
+    1050:	c0dd30        	sub	a13, a13, a3
+    1053:	3a8a      	add.n	a3, a10, a8
+    1055:	000362        	l8ui	a6, a3, 0
+    1058:	fc23b1        	l32r	a11, e4 <rally_render_prepare_v1-0x28>
+			1058: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xe4
+    105b:	236600        	sext	a6, a6, 7
+    105e:	826620        	mull	a6, a6, a2
+    1061:	c1a0e2        	movi	a14, 193
+    1064:	b236b0        	mulsh	a3, a6, a11
+    1067:	316f60        	srai	a6, a6, 31
+    106a:	213230        	srai	a3, a3, 2
+    106d:	c06360        	sub	a6, a3, a6
+    1070:	36ea      	add.n	a3, a6, a14
+    1072:	332162        	l32i	a6, a1, 204
+    1075:	dd4a      	add.n	a13, a13, a4
+    1077:	e68a      	add.n	a14, a6, a8
+    1079:	fc0961        	l32r	a6, a0 <rally_render_prepare_v1-0x6c>
+			1079: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xa0
+    107c:	317fe0        	srai	a7, a14, 31
+    107f:	b26e60        	mulsh	a6, a14, a6
+    1082:	ff0c      	movi.n	a15, 15
+    1084:	c06670        	sub	a6, a6, a7
+    1087:	1176f0        	slli	a7, a6, 1
+    108a:	676a      	add.n	a6, a7, a6
+    108c:	1166f0        	slli	a6, a6, 1
+    108f:	c0ee60        	sub	a14, a14, a6
+    1092:	ee3b      	addi.n	a14, a14, 3
+    1094:	c0bde0        	sub	a11, a13, a14
+    1097:	c0c3e0        	sub	a12, a3, a14
+    109a:	ddea      	add.n	a13, a13, a14
+    109c:	e3ea      	add.n	a14, a3, a14
+    109e:	fc1031        	l32r	a3, e0 <rally_render_prepare_v1-0x2c>
+			109e: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xe0
+    10a1:	658a      	add.n	a6, a5, a8
+    10a3:	b27630        	mulsh	a7, a6, a3
+    10a6:	313f60        	srai	a3, a6, 31
+    10a9:	c03730        	sub	a3, a7, a3
+    10ac:	1173f0        	slli	a7, a3, 1
+    10af:	373a      	add.n	a3, a7, a3
+    10b1:	0b1637        	beq	a6, a3, 10c0 <rally_render_prepare_v1+0xfb4>
+			10b1: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x10c0
+    10b4:	04f080        	extui	a15, a8, 0, 1
+    10b7:	b60c      	movi.n	a6, 11
+    10b9:	930c      	movi.n	a3, 9
+    10bb:	9336f0        	movnez	a3, a6, a15
+    10be:	03fd      	mov.n	a15, a3
+    10c0:	a4a0a2        	movi	a10, 164
+    10c3:	fbea31        	l32r	a3, 6c <rally_render_prepare_v1-0xa0>
+			10c3: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x6c
+    10c6:	4d6182        	s32i	a8, a1, 0x134
+    10c9:	4b6192        	s32i	a9, a1, 0x12c
+    10cc:	aa1a      	add.n	a10, a10, a1
+    10ce:	0003e0        	callx8	a3
+    10d1:	4d2182        	l32i	a8, a1, 0x134
+    10d4:	4b2192        	l32i	a9, a1, 0x12c
+    10d7:	881b      	addi.n	a8, a8, 1
+    10d9:	028826        	beqi	a8, 8, 10df <rally_render_prepare_v1+0xfd3>
+			10d9: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x10df
+    10dc:	ffd586        	j	1036 <rally_render_prepare_v1+0xf2a>
+			10dc: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x1036
+    10df:	a4a0a2        	movi	a10, 164
+    10e2:	ff0c      	movi.n	a15, 15
+    10e4:	c7a0e2        	movi	a14, 199
+    10e7:	d46b      	addi.n	a13, a4, 6
+    10e9:	bba0c2        	movi	a12, 187
+    10ec:	fac4b2        	addi	a11, a4, -6
+    10ef:	aa1a      	add.n	a10, a10, a1
+    10f1:	0003e0        	callx8	a3
+    10f4:	002c06        	j	11a8 <rally_render_prepare_v1+0x109c>
+			10f4: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x11a8
+    10f7:	00          	.byte 00
+    10f8:	111522        	l16ui	a2, a5, 34
+    10fb:	a28c      	beqz.n	a2, 1109 <rally_render_prepare_v1+0xffd>
+			10fb: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x1109
+    10fd:	fbfa31        	l32r	a3, e8 <rally_render_prepare_v1-0x24>
+			10fd: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xe8
+    1100:	a22230        	muluh	a2, a2, a3
+    1103:	026237        	bbci	a2, 3, 1109 <rally_render_prepare_v1+0xffd>
+			1103: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x1109
+    1106:	002786        	j	11a8 <rally_render_prepare_v1+0x109c>
+			1106: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x11a8
+    1109:	fbeb31        	l32r	a3, b8 <rally_render_prepare_v1-0x54>
+			1109: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xb8
+    110c:	0c21a2        	l32i	a10, a1, 48
+    110f:	20b440        	or	a11, a4, a4
+    1112:	0003e0        	callx8	a3
+    1115:	0e1532        	l16ui	a3, a5, 28
+    1118:	0d9522        	l16si	a2, a5, 26
+    111b:	326327        	bbci	a3, 2, 1151 <rally_render_prepare_v1+0x1045>
+			111b: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x1151
+    111e:	112280        	slli	a2, a2, 8
+    1121:	c052a0        	sub	a5, a2, a10
+    1124:	053d      	mov.n	a3, a5
+    1126:	0025d6        	bgez	a5, 112c <rally_render_prepare_v1+0x1020>
+			1126: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x112c
+    1129:	c03a20        	sub	a3, a10, a2
+    112c:	a0a222        	movi	a2, 0x2a0
+    112f:	332a      	add.n	a3, a3, a2
+    1131:	fbe321        	l32r	a2, c0 <rally_render_prepare_v1-0x4c>
+			1131: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xc0
+    1134:	316f50        	srai	a6, a5, 31
+    1137:	b22320        	mulsh	a2, a3, a2
+    113a:	313f30        	srai	a3, a3, 31
+    113d:	212820        	srai	a2, a2, 8
+    1140:	c03230        	sub	a3, a2, a3
+    1143:	c05650        	sub	a5, a6, a5
+    1146:	420c      	movi.n	a2, 4
+    1148:	433320        	min	a3, a3, a2
+    114b:	055f50        	extui	a5, a5, 31, 1
+    114e:	0007c6        	j	1171 <rally_render_prepare_v1+0x1065>
+			114e: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x1171
+    1151:	315f20        	srai	a5, a2, 31
+    1154:	c05520        	sub	a5, a5, a2
+    1157:	602120        	abs	a2, a2
+    115a:	1122e0        	slli	a2, a2, 2
+    115d:	fbd831        	l32r	a3, c0 <rally_render_prepare_v1-0x4c>
+			115d: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xc0
+    1160:	22ab      	addi.n	a2, a2, 10
+    1162:	b23230        	mulsh	a3, a2, a3
+    1165:	312f20        	srai	a2, a2, 31
+    1168:	213230        	srai	a3, a3, 2
+    116b:	055f50        	extui	a5, a5, 31, 1
+    116e:	c03320        	sub	a3, a3, a2
+    1171:	152162        	l32i	a6, a1, 84
+    1174:	fba4c1        	l32r	a12, 4 <rally_render_prepare_v1-0x108>
+			1174: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x4
+    1177:	0016b2        	l16ui	a11, a6, 0
+    117a:	3d3c      	movi.n	a13, 51
+    117c:	bb3a      	add.n	a11, a11, a3
+    117e:	358c      	beqz.n	a5, 1185 <rally_render_prepare_v1+0x1079>
+			117e: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x1185
+    1180:	0416c2        	l16ui	a12, a6, 8
+    1183:	2d3c      	movi.n	a13, 50
+    1185:	10c182        	addi	a8, a1, 16
+    1188:	94a092        	movi	a9, 148
+    118b:	802890        	add	a2, a8, a9
+    118e:	fbd231        	l32r	a3, d8 <rally_render_prepare_v1-0x34>
+			118e: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xd8
+    1191:	20a220        	or	a10, a2, a2
+    1194:	9aa0e2        	movi	a14, 154
+    1197:	c0d4d0        	sub	a13, a4, a13
+    119a:	0003e0        	callx8	a3
+    119d:	02ad      	mov.n	a10, a2
+    119f:	fb99b1        	l32r	a11, 4 <rally_render_prepare_v1-0x108>
+			119f: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x4
+    11a2:	fbce21        	l32r	a2, dc <rally_render_prepare_v1-0x30>
+			11a2: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xdc
+    11a5:	0002e0        	callx8	a2
+    11a8:	a4a0a2        	movi	a10, 164
+    11ab:	fb96b1        	l32r	a11, 4 <rally_render_prepare_v1-0x108>
+			11ab: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x4
+    11ae:	fbb721        	l32r	a2, 8c <rally_render_prepare_v1-0x80>
+			11ae: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x8c
+    11b1:	7c0c      	movi.n	a12, 7
+    11b3:	aa1a      	add.n	a10, a10, a1
+    11b5:	0002e0        	callx8	a2
+    11b8:	2c2182        	l32i	a8, a1, 176
+    11bb:	689c      	beqz.n	a8, 11d5 <rally_render_prepare_v1+0x10c9>
+			11bb: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x11d5
+    11bd:	302132        	l32i	a3, a1, 192
+    11c0:	020c      	movi.n	a2, 0
+    11c2:	165322        	s16i	a2, a3, 44
+    11c5:	520c      	movi.n	a2, 5
+    11c7:	155322        	s16i	a2, a3, 42
+    11ca:	380c      	movi.n	a8, 3
+    11cc:	020c      	movi.n	a2, 0
+    11ce:	1389      	s32i.n	a8, a3, 4
+    11d0:	2329      	s32i.n	a2, a3, 8
+    11d2:	000406        	j	11e6 <rally_render_prepare_v1+0x10da>
+			11d2: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x11e6
+    11d5:	362142        	l32i	a4, a1, 216
+    11d8:	302152        	l32i	a5, a1, 192
+    11db:	1124e0        	slli	a2, a4, 2
+    11de:	2a2132        	l32i	a3, a1, 168
+    11e1:	802520        	add	a2, a5, a2
+    11e4:	6239      	s32i.n	a3, a2, 24
+    11e6:	7cc162        	addi	a6, a1, 124
+    11e9:	3c21a2        	l32i	a10, a1, 240
+    11ec:	fbc021        	l32r	a2, ec <rally_render_prepare_v1-0x20>
+			11ec: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xec
+    11ef:	4d6182        	s32i	a8, a1, 0x134
+    11f2:	04c6b2        	addi	a11, a6, 4
+    11f5:	0002e0        	callx8	a2
+    11f8:	4d2182        	l32i	a8, a1, 0x134
+    11fb:	1a9c      	beqz.n	a10, 1210 <rally_render_prepare_v1+0x1104>
+			11fb: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x1210
+    11fd:	302182        	l32i	a8, a1, 192
+    1200:	020c      	movi.n	a2, 0
+    1202:	165822        	s16i	a2, a8, 44
+    1205:	720c      	movi.n	a2, 7
+    1207:	155822        	s16i	a2, a8, 42
+    120a:	18a9      	s32i.n	a10, a8, 4
+    120c:	28a9      	s32i.n	a10, a8, 8
+    120e:	0a8d      	mov.n	a8, a10
+    1210:	362192        	l32i	a9, a1, 216
+    1213:	402122        	l32i	a2, a1, 0x100
+    1216:	991b      	addi.n	a9, a9, 1
+    1218:	22cb      	addi.n	a2, a2, 12
+    121a:	366192        	s32i	a9, a1, 216
+    121d:	406122        	s32i	a2, a1, 0x100
+    1220:	0439f6        	bgeui	a9, 3, 1228 <rally_render_prepare_v1+0x111c>
+			1220: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x1228
+    1223:	18cc      	bnez.n	a8, 1228 <rally_render_prepare_v1+0x111c>
+			1223: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x1228
+    1225:	fc9906        	j	48d <rally_render_prepare_v1+0x381>
+			1225: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x48d
+    1228:	94a0b2        	movi	a11, 148
+    122b:	3c21a2        	l32i	a10, a1, 240
+    122e:	fbaf21        	l32r	a2, ec <rally_render_prepare_v1-0x20>
+			122e: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0xec
+    1231:	4d6182        	s32i	a8, a1, 0x134
+    1234:	b1ba      	add.n	a11, a1, a11
+    1236:	0002e0        	callx8	a2
+    1239:	4d2182        	l32i	a8, a1, 0x134
+    123c:	4a9c      	beqz.n	a10, 1254 <rally_render_prepare_v1+0x1148>
+			123c: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x1254
+    123e:	302132        	l32i	a3, a1, 192
+    1241:	020c      	movi.n	a2, 0
+    1243:	165322        	s16i	a2, a3, 44
+    1246:	720c      	movi.n	a2, 7
+    1248:	155322        	s16i	a2, a3, 42
+    124b:	13a9      	s32i.n	a10, a3, 4
+    124d:	23a9      	s32i.n	a10, a3, 8
+    124f:	0a8d      	mov.n	a8, a10
+    1251:	000206        	j	125d <rally_render_prepare_v1+0x1151>
+			1251: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x125d
+    1254:	302142        	l32i	a4, a1, 192
+    1257:	151422        	l16ui	a2, a4, 42
+    125a:	067266        	bnei	a2, 7, 1264 <rally_render_prepare_v1+0x1158>
+			125a: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x1264
+    125d:	312162        	l32i	a6, a1, 196
+    1260:	020c      	movi.n	a2, 0
+    1262:	1629      	s32i.n	a2, a6, 4
+    1264:	c8fc      	bnez.n	a8, 12a4 <rally_render_prepare_v1+0x1198>
+			1264: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x12a4
+    1266:	302192        	l32i	a9, a1, 192
+    1269:	120c      	movi.n	a2, 1
+    126b:	165922        	s16i	a2, a9, 44
+    126e:	000c86        	j	12a4 <rally_render_prepare_v1+0x1198>
+			126e: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x12a4
+    1271:	180c      	movi.n	a8, 1
+    1273:	000b46        	j	12a4 <rally_render_prepare_v1+0x1198>
+			1273: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x12a4
+    1276:	312162        	l32i	a6, a1, 196
+    1279:	90a082        	movi	a8, 144
+    127c:	10c692        	addi	a9, a6, 16
+    127f:	518a      	add.n	a5, a1, a8
+    1281:	3c21a2        	l32i	a10, a1, 240
+    1284:	fb7681        	l32r	a8, 5c <rally_render_prepare_v1-0xb0>
+			1284: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x5c
+    1287:	09bd      	mov.n	a11, a9
+    1289:	4b6192        	s32i	a9, a1, 0x12c
+    128c:	05cd      	mov.n	a12, a5
+    128e:	0008e0        	callx8	a8
+    1291:	268b      	addi.n	a2, a6, 8
+    1293:	0a8d      	mov.n	a8, a10
+    1295:	10c162        	addi	a6, a1, 16
+    1298:	4b2192        	l32i	a9, a1, 0x12c
+    129b:	1a8c      	beqz.n	a10, 12a0 <rally_render_prepare_v1+0x1194>
+			129b: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x12a0
+    129d:	fc22c6        	j	32c <rally_render_prepare_v1+0x220>
+			129d: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x32c
+    12a0:	fc2706        	j	340 <rally_render_prepare_v1+0x234>
+			12a0: R_XTENSA_SLOT0_OP	.text.rally_render_prepare_v1+0x340
+    12a3:	00          	.byte 00
+    12a4:	082d      	mov.n	a2, a8
+    12a6:	f01d      	retw.n
+
+Disassembly of section .text.rally_render_stop_v1:
+
+00000000 <rally_render_stop_v1-0xc>:
+   0:	d0 ff fe ff 	
+   4:	00 00 00 00 	
+			4: R_XTENSA_32	.text.overlap
+   8:	04 00 00 00 	
+			8: R_XTENSA_32	.text.clear_completion
+
+0000000c <rally_render_stop_v1>:
+   c:	004136        	entry	a1, 32
+   f:	024d      	mov.n	a4, a2
+  11:	120c      	movi.n	a2, 1
+  13:	025d      	mov.n	a5, a2
+  15:	041316        	beqz	a3, 5a <rally_render_stop_v1+0x4e>
+			15: R_XTENSA_SLOT0_OP	.text.rally_render_stop_v1+0x5a
+  18:	fffa91        	l32r	a9, 0 <rally_render_stop_v1-0xc>
+			18: R_XTENSA_SLOT0_OP	.text.rally_render_stop_v1
+  1b:	0388      	l32i.n	a8, a3, 0
+  1d:	889a      	add.n	a8, a8, a9
+  1f:	090c      	movi.n	a9, 0
+  21:	939280        	movnez	a9, a2, a8
+  24:	748090        	extui	a8, a9, 0, 8
+  27:	88ec      	bnez.n	a8, 53 <rally_render_stop_v1+0x47>
+			27: R_XTENSA_SLOT0_OP	.text.rally_render_stop_v1+0x53
+  29:	838240        	moveqz	a8, a2, a4
+  2c:	38ec      	bnez.n	a8, 53 <rally_render_stop_v1+0x47>
+			2c: R_XTENSA_SLOT0_OP	.text.rally_render_stop_v1+0x53
+  2e:	04b8      	l32i.n	a11, a4, 0
+  30:	d0a182        	movi	a8, 0x1d0
+  33:	239b87        	bne	a11, a8, 5a <rally_render_stop_v1+0x4e>
+			33: R_XTENSA_SLOT0_OP	.text.rally_render_stop_v1+0x5a
+  36:	fff321        	l32r	a2, 4 <rally_render_stop_v1-0x8>
+			36: R_XTENSA_SLOT0_OP	.text.rally_render_stop_v1+0x4
+  39:	0d3c      	movi.n	a13, 48
+  3b:	03cd      	mov.n	a12, a3
+  3d:	04ad      	mov.n	a10, a4
+  3f:	0002e0        	callx8	a2
+  42:	0a2d      	mov.n	a2, a10
+  44:	0adc      	bnez.n	a10, 58 <rally_render_stop_v1+0x4c>
+			44: R_XTENSA_SLOT0_OP	.text.rally_render_stop_v1+0x58
+  46:	03ad      	mov.n	a10, a3
+  48:	fff031        	l32r	a3, 8 <rally_render_stop_v1-0x4>
+			48: R_XTENSA_SLOT0_OP	.text.rally_render_stop_v1+0x8
+  4b:	0003e0        	callx8	a3
+  4e:	1429      	s32i.n	a2, a4, 4
+  50:	000186        	j	5a <rally_render_stop_v1+0x4e>
+			50: R_XTENSA_SLOT0_OP	.text.rally_render_stop_v1+0x5a
+  53:	120c      	movi.n	a2, 1
+  55:	000046        	j	5a <rally_render_stop_v1+0x4e>
+			55: R_XTENSA_SLOT0_OP	.text.rally_render_stop_v1+0x5a
+  58:	052d      	mov.n	a2, a5
+  5a:	f01d      	retw.n

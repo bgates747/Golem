@@ -11,9 +11,6 @@ claim those reviews occurred.
   [Plan](docs/tasks/GOLEM-036.md). First wide storage/add/subtract/comparison/conversion tranche qualified; human review accepted and saved results verified; commit/push explicitly approved.
   Checked multiplication human review accepted and saved results verified; commit/push explicitly approved; paired division accepted; commit/push explicitly approved. Right-shift human review accepted; saved results verified and commit/push explicitly approved. Golem supplies language features/packages; Rally owns game-specific replay/validation. Wider helper needs remain separately scoped.
 
-- [ ] **GOLEM-037:** D2 single-module Golem/Rally renderer and helper composition.
-  [Plan](docs/tasks/GOLEM-037.md). Depends on D0/D1; awaiting Author plan review/release.
-
 - [ ] **GOLEM-038:** D3 scheduler/snapshot/collision-event design and ownership gates.
   [Plan](docs/tasks/GOLEM-038.md). Firmware owner, game policies and implementation authority remain open.
 
@@ -31,7 +28,10 @@ claim those reviews occurred.
   application, with numeric modules and Golem calls later. [Detailed plan](docs/tasks/GOLEM-002.md).
   Loader, numeric and packed modules pass actual Xtensa emulation through
   GOLEM-021. Physical qualification/adoption remains open; flashing is outside
-  the current authorization.
+  the current authorization. CAP-001–009 add substantial single-module/Wolf-inspired
+  capacity, stress/lifecycle protocol, generic services and upstream-adoption
+  investigation. Stage A inventory/resource builds are complete; [numerical proposal](docs/tasks/GOLEM-002/capacity/stage-a/RESULTS.md)
+  is followed by accepted GOLEM-037 composition with implemented SDK policy increases and actual-target/human qualification. CAP-001–003 research/documentation complete; broad stress and physical qualification remain open.
 
 - [ ] **GOLEM-021:** Eight-hour Flexe/Fab hybrid emulator, working native vdplets,
   then service offer to agon-6502; optional Golem tranche afterward.

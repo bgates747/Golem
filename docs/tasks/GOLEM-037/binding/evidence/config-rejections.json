@@ -1,0 +1,94 @@
+[
+  {
+    "case": "schema",
+    "diagnostic": "compiler: unsupported native binding profile/phase"
+  },
+  {
+    "case": "profile",
+    "diagnostic": "compiler: unsupported native binding profile/phase"
+  },
+  {
+    "case": "phase",
+    "diagnostic": "compiler: unsupported native binding profile/phase"
+  },
+  {
+    "case": "unknown top key",
+    "diagnostic": "compiler: unexpected/missing native binding fields"
+  },
+  {
+    "case": "missing field",
+    "diagnostic": "compiler: unexpected/missing native binding fields"
+  },
+  {
+    "case": "unknown global",
+    "diagnostic": "compiler: unknown native binding global: notDefined"
+  },
+  {
+    "case": "wrong global type",
+    "diagnostic": "compiler: native binding global type mismatch: worldTick"
+  },
+  {
+    "case": "unknown array",
+    "diagnostic": "compiler: unknown native binding array: noArray"
+  },
+  {
+    "case": "wrong array type",
+    "diagnostic": "compiler: native binding requires six zero-based typed elements: position"
+  },
+  {
+    "case": "unknown hook",
+    "diagnostic": "compiler: unknown hook Sub: MissingSub"
+  },
+  {
+    "case": "unknown operation",
+    "diagnostic": "compiler: unknown renderer hook operation"
+  },
+  {
+    "case": "normal constants",
+    "diagnostic": "compiler: only normal presentation constants are supported"
+  },
+  {
+    "case": "zero ID",
+    "diagnostic": "compiler: invalid native binding range"
+  },
+  {
+    "case": "reserved ID",
+    "diagnostic": "compiler: invalid native binding range"
+  },
+  {
+    "case": "completion width",
+    "diagnostic": "compiler: renderer completion must be 48 bytes"
+  },
+  {
+    "case": "offset overflow",
+    "diagnostic": "compiler: invalid native binding range"
+  },
+  {
+    "case": "output count",
+    "diagnostic": "compiler: three renderer outputs required"
+  },
+  {
+    "case": "reservation",
+    "diagnostic": "compiler: invalid native reservation"
+  },
+  {
+    "case": "duplicate key",
+    "diagnostic": "compiler: duplicate binding key: schema"
+  },
+  {
+    "case": "truncated",
+    "diagnostic": "compiler: truncated native binding JSON"
+  },
+  {
+    "case": "negative",
+    "diagnostic": "compiler: unsupported binding JSON value"
+  },
+  {
+    "case": "overflow",
+    "diagnostic": "compiler: binding number overflow"
+  },
+  {
+    "case": "explicit buffered rejection",
+    "diagnostic": "compiler: native renderer bindings require --target native; buffered target unsupported"
+  }
+]

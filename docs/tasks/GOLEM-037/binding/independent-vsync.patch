@@ -1,0 +1,38 @@
+--- a/src/main.rs
++++ b/src/main.rs
+@@ -320,7 +320,6 @@
+ 
+     // VDP thread
+     let hybrid_backend = vdp_interface.flexe_vdp_frames.is_some();
+-    let mut last_native_frame = 0u64;
+     let vdp_thread = thread::Builder::new()
+         .name("VDP".to_string())
+         .spawn(move || unsafe {
+@@ -433,22 +432,11 @@
+                 .checked_add(frame_duration)
+                 .unwrap_or(std::time::Instant::now());
+ 
+-            // Hybrid ESP32 backends own physical scanout timing. Presenting
+-            // an unchanged frame must not generate another eZ80 VSync.
+-            let native_frame_changed = if let Some(ref frames) = vdp_interface.flexe_vdp_frames {
+-                let now = unsafe { (**frames)() };
+-                let changed = now != last_native_frame;
+-                last_native_frame = now;
+-                changed
+-            } else { true };
+-            // signal vsync to ez80 via GPIO (pin 1 (from 0) of GPIO port B)
+-            if native_frame_changed {
+-                // XXX note this is wrong, should be asserted for the whole vblank duration.
+-                // but we do it here just for an instant since that's sufficient to trigger
+-                // the interrupt.
+-                gpios.b.set_input_pin(1, true);
+-                gpios.b.set_input_pin(1, false);
+-            }
++            // MOS frame interrupts advance with the emulator scanout clock even
++            // when native drawing has not produced a new framebuffer. Coupling
++            // them to image changes deadlocks foreground deadline waits.
++            gpios.b.set_input_pin(1, true);
++            gpios.b.set_input_pin(1, false);
+             // signal vblank to VDP
+             unsafe {
+                 (*vdp_interface.signal_vblank)();
