@@ -1,0 +1,20 @@
+{
+  "packages": [
+    {
+      "package": "probe",
+      "identical_files": 16,
+      "manifest_sha256": "6c6acefa4d3ce25e17d9ae208be2080d5f558c78fe25eebb72ec129773dc19bc"
+    },
+    {
+      "package": "probe-relocated",
+      "identical_files": 16,
+      "manifest_sha256": "b65e87c633e343744f57901647cd74e01965070173e7c0affcda74b11ca40e64"
+    },
+    {
+      "package": "animation",
+      "identical_files": 20,
+      "manifest_sha256": "4ed435d3e680659ce0c477e9d9387b2f839aea276f3746a308b4b09a9a8036a4"
+    }
+  ],
+  "target_package_identities_preserved": true
+}

@@ -1,0 +1,69 @@
+bool flag = false
+uint32 ua = 0
+uint32 ub = 1
+uint32 ur = 17
+sint32 sa = 0
+sint32 sb = 1
+sint32 sr = 19
+uint16 bits = 6
+uint16 more = 1
+uint16 index = 0
+uint16 effect = 5
+sint32 bounded Bounds(-2,2) = 1
+Array uint32 unsignedValues(0:1) = Values(4294967295,65536)
+Array sint32 signedValues(-1:0) = Values(-2147483648,-65)
+Array uint16 counts(0:1) = Values(6,31)
+sint16 signedIndex = -1
+Sub shiftUnsigned
+ ur = ua >> bits
+EndSub
+Sub shiftSigned
+ sr = sa >> bits
+EndSub
+Sub chain
+ sr = sa >> bits >> more
+EndSub
+Sub precedence
+ ur = ua + ub >> bits + 1
+EndSub
+Sub parentheses
+ ur = ua + (ub >> bits)
+EndSub
+Sub nested
+ ur = (ua >> bits) + (ub >> more)
+EndSub
+Sub countExpression
+ ur = ua >> uint16(ub >> more)
+EndSub
+Sub boundedShift
+ bounded = sa >> bits
+EndSub
+Sub priorEffect
+ effect = effect + 1
+ ur = ua >> bits
+EndSub
+Sub argumentOrder
+ ur = (ua * ub) >> bits * 2
+EndSub
+Sub unsignedArray
+ ur = unsignedValues(index) >> bits
+EndSub
+Sub signedArray
+ sr = signedValues(signedIndex) >> bits
+EndSub
+Sub countArray
+ ur = ua >> counts(index)
+EndSub
+Sub storeUnsigned
+ unsignedValues(index) = ua >> bits
+EndSub
+Sub storeSigned
+ signedValues(signedIndex) = sa >> bits
+EndSub
+Sub skipped
+ flag = false And ua >> bits == 0
+EndSub
+Sub constants
+ ur = 4294967295 >> 31
+ sr = -65 >> 6
+EndSub

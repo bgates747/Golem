@@ -1,0 +1,59 @@
+{
+  "variant": "review",
+  "observations": 382,
+  "calls": 300,
+  "result_bytes": 3766,
+  "result_sha256": "67679ffbba1b56b70d69d5a36320fdac3c23d3771b32b6d54aa5eb538a799a8d",
+  "native": {
+    "LOAD native": 1,
+    "native entry 6": 32680,
+    "native entry 7": 16393,
+    "entry_address": "0x40097fa8"
+  },
+  "visual": {
+    "frames": 300,
+    "successful_invocations": 300,
+    "rectangles": [
+      {
+        "x": 41,
+        "y": 43,
+        "right": 55,
+        "bottom": 53,
+        "colour": 48
+      },
+      {
+        "x": 100,
+        "y": 99,
+        "right": 114,
+        "bottom": 109,
+        "colour": 12
+      },
+      {
+        "x": 43,
+        "y": 139,
+        "right": 57,
+        "bottom": 149,
+        "colour": 12
+      }
+    ],
+    "guides": [
+      53,
+      97,
+      141
+    ],
+    "width": 320,
+    "height": 240,
+    "playfield_rows": 176,
+    "horizontal_shift_counts": [
+      2,
+      3,
+      4
+    ],
+    "vertical_shift_count": 2,
+    "scheduler_implemented": false
+  },
+  "author_report": "looks good",
+  "human_review_accepted": true,
+  "runtime_fixture_identities_verified": true,
+  "commit_push_approval": true
+}

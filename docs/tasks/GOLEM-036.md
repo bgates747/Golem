@@ -164,9 +164,16 @@ times. Native uses unsigned shifts/explicit sign filling, avoiding host-dependen
 signed-shift behavior. No SDK/firmware/capacity changes. Complete host/stock/actual
 Xtensa qualification, immutable delivery and stopped Oryx review in this tranche.
 
-- SHR-001 [ ] Add typed >> parsing/precedence, constant/reference semantics and checked count admission.
-- SHR-002 [ ] Implement bounded stock shifting and native unsigned/sign-fill emission, preserving prior artifacts.
-- SHR-003 [ ] Verify every count/extrema, negative floor versus truncation, ordering, nested shifts, arrays, failure preservation and supplied primitive vectors.
-- SHR-004 [ ] Qualify stock and both actual Xtensa engines/default-relocated, with resource/traffic receipts.
-- SHR-005 [ ] Freeze reproducible source/package delivery and stage a source-labelled Oryx animation stopped.
-- SHR-006 [ ] Retrieve human results and obtain acceptance/explicit commit-push approval.
+- SHR-001 [x] Add typed >> parsing/precedence, constant/reference semantics and checked count admission.
+- SHR-002 [x] Implement bounded stock shifting and native unsigned/sign-fill emission, preserving prior artifacts.
+- SHR-003 [x] Verify every count/extrema, negative floor versus truncation, ordering, nested shifts, arrays, failure preservation and supplied primitive vectors.
+- SHR-004 [x] Qualify stock and both actual Xtensa engines/default-relocated, with resource/traffic receipts.
+- SHR-005 [x] Freeze reproducible source/package delivery and stage a source-labelled Oryx animation stopped.
+- SHR-006 [x] Human review accepted; all 382 observations / 3,766 bytes and runtime/fixture identities verified. The Author explicitly approved commit/push after an empty mailbox check.
+
+Right-shift implementation/automatic qualification is complete; see
+[right-shift source/resources/receipts](GOLEM-036/right-shift/README.md).
+SHR-005 is complete: exported source/package bytes and stopped Oryx identities
+pass. SHR-006 retains the human/publication gate. Rally owns
+all game-specific replay; Golem's remaining scope is capability decisions and
+qualified interfaces/packages, including separately released D2 bindings.

@@ -895,3 +895,41 @@ remain pending. Wide shifts/exact helpers/full Rally replay remain later work.
 Multiplication was accepted/committed/pushed as 1ddfd64 before this tranche.
 
 GOLEM-036 division human review subsequently passed: the Author reported 'looks good.' Retrieved results match all 488 observations / 4,826 bytes and staged runtime/fixture identities. See docs/tasks/GOLEM-036/division/evidence/human-review.json. WID-002 is accepted; the Author explicitly approved commit/push. Wide shifts/exact helpers and full Rally replay remain open.
+
+## Typed32-bit right shifts — GOLEM-036 fourth tranche
+
+The Author directs Golem to supply language features/qualified packages; Rally
+owns game-specific replay and checks. CHK-002 is disposed as delegated to Rally;
+no game implementation/replay is authorized here. New artifacts/sources/profiles
+are siloed in docs/tasks/GOLEM-036/right-shift/, preserving prior packages.
+
+`value >> count` accepts uint32 logical or sint32 arithmetic/sign-extending
+shifts with uint16 counts 0..31. Signed results round down; −65 >> 6 is −2. Invalid
+constant counts reject; dynamic counts report 32 before store. Multiplication/
+addition bind above shifts, comparisons below; shifts associate left to right
+and require adjacent >>. Operands evaluate once left to right. Narrow/float/left
+shifts and other bitwise operators remain deferred. Production src is unchanged.
+
+One stock 256-byte half lookup and shared one-bit round execute at most 31 times,
+with private carry/count and per-expression snapshots. Native uses unsigned
+shifts and explicit sign filling, guarding zero/count width. Host 2,032 sanitized
+C/model cases cover all counts/extrema/ordering/arrays and 20 supplied primitive
+vectors per layout. Prior division executable/layout/C bytes are identical;
+maintained checks, parser sanitizer and actual assembler pass. Stock and both
+actual Xtensa/default-relocated qualify, run sequentially. The 300-frame review
+passes 382 observations/3766 bytes, 56,320 final pixels and MOS return. SDK policy/
+source remain unchanged; frame wire 15 bytes. Native animation text/data 3,108/268,
+module static-frame sum 192 excluding service/firmware callers, peak 3 views.
+
+Oryx review is staged/stopped under docs/tasks/GOLEM-036/right-shift/.emulator.
+Golem moves three curves with unsigned lane shifts 2/3/4 and signed vertical >>2;
+assembly draws/paces VSYNC. The Author launches its wrapper, follows onscreen
+dir, closes/reports; agent retrieves. Human review/explicit commit-push approval
+remain pending. Division and the shift plan/ownership fence were published as
+df7a647 before implementation. Wider helper decisions/D2 remain separately scoped.
+
+Rally reports its own independent foundation host qualification passes 2,924
+generated-C cases and real exported metadata/adapter checks. Its package identity/
+boundary ledger were read/acknowledged; Golem did not repeat peer game checks.
+
+GOLEM-036 right-shift human review subsequently passed: the Author reported 'looks good'; retrieved results match all 382 observations / 3,766 bytes and staged runtime/fixture identities. See docs/tasks/GOLEM-036/right-shift/evidence/human-review.json. The Author explicitly approved commit/push after an empty mailbox check. Rally retains ownership of game-specific replay and validation.

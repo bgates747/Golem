@@ -1,0 +1,25 @@
+{
+  "host": "oryx-linuxlite",
+  "profile": "~/Agon/mystuff/golem/docs/tasks/GOLEM-036/right-shift/.emulator",
+  "runtime_fixture_identities_pass": true,
+  "previous_results_absent": true,
+  "graphical_instance_launched": false,
+  "runtime_identities": [
+    "a0e2aebfc6f299ec9905b989841ba000a1471f685078b76004480211c0396812  fab-agon-emulator.bin",
+    "d564243283972690933a4554296ad6202ca4ef54572279533a942960846bebae  mos_platform.bin",
+    "d69e60bbce61a7b4b3eef318ba395f11c4e1a5b585755755113992dc94edcb86  mos_platform.map",
+    "817da2e320c206fcb7e423b39434c6452319d71a2f54fac451aa9b7a10fa5a0d  flexe-vdp.so",
+    "31d25eec03a531b336d78d453f0720bbd1312c7c8516fdfa80130769ab15e49f  esp32-firmware.bin",
+    "51f196eb7b84ed79394a9fde1dff832ad479417c360525c69582fd093c3a0a3a  esp32-firmware.elf",
+    "58b43b2d66bc62b6eb0ab7e2215bf0f1adbd12638bcddcc4a5430bc5146bc9a9  sdcard/golem036s/probe.bin",
+    "8eb7c9b452571b3720b755dfa7e5c46b6d0ba4e833e235a0067a65d59f2dd9d2  sdcard/golem036s/script.bin",
+    "0c3beb8ad7e5cbd2a53c12e112fc16bd5fb3e3c581bb83a8fa4a447e42e392f1  sdcard/golem036s/expected.json",
+    "c0b87f257814cc1c78426895542e65b6e5becd0c0310cafaf455072b9f552d32  sdcard/golem036s/expected.dat",
+    "df77333757373fdd8f18a29fb674f1b64fef841e17587f4faa49c6c07c234271  sdcard/golem036s/mask.dat",
+    "b22b3ceedf56fc7558481f580d660502b0ba6813bf0525387a6c351c578c228a  sdcard/golem036s/probe.golem",
+    "dfb5c4eed763ba955bf0148387f5557e0c26a2ba92804c99d31085c0569d6474  sdcard/golem036s/animation.golem",
+    "35fd4fe04ec5d7dfedfc5b85f14c9da233d9ec98723f068e0fe2139fc19d1aab  sdcard/golem036s/bindings.json",
+    "7a52418f979631d5ae78e80d82268838391ee59d88c858f524a33696062b1bcd  sdcard/autoexec.txt",
+    "26b3e0f7bfce6fba1b012f196d552a8238ce01136ebe7275b39bb75e07639a5e  fab-agon-emulator"
+  ]
+}

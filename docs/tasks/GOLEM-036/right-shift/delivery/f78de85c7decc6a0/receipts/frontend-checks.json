@@ -1,0 +1,16 @@
+{
+  "rejections": [
+    "compiler: line 1, column 22: shift count must be 0..31 (language status 32)",
+    "compiler: line 1, column 24: literal does not fit uint16",
+    "compiler: line 1, column 22: shift count must be 0..31 (language status 32)",
+    "compiler: line 1, column 22: right shift requires uint32 or sint32 operand; widen explicitly",
+    "compiler: line 1, column 22: right shift requires uint32 or sint32 operand; widen explicitly",
+    "compiler: line 1, column 25: right shift requires uint32 or sint32 operand; widen explicitly",
+    "compiler: line 1, column 38: mixed variable types require an explicit conversion (not supported in this slice)",
+    "compiler: line 1, column 22: expected global assignment, If or For",
+    "compiler: line 1, column 24: expected identifier",
+    "compiler: line 1, column 36: shift count must be 0..31 (language status 32)"
+  ],
+  "sanitized_chain_comparison_grammar": true,
+  "actual_assembler_consumer": true
+}

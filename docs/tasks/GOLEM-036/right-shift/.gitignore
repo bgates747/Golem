@@ -1,0 +1,8 @@
+/build/
+/.emulator/
+/.emulator-*/
+/.stock-emulator/
+*.lst
+
+# Immutable delivered command/state binaries are release artifacts.
+!delivery/**/*.bin

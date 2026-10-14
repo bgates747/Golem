@@ -1,0 +1,26 @@
+{
+  "packages": [
+    {
+      "prefix": 0,
+      "cases": 1016,
+      "direct_published_primitive_shift_checks": 20,
+      "all_counts_0_to_31": true
+    },
+    {
+      "prefix": 254,
+      "cases": 1016,
+      "direct_published_primitive_shift_checks": 20,
+      "all_counts_0_to_31": true
+    }
+  ],
+  "checks": 2032,
+  "prior_division_outputs_unchanged": true,
+  "maintained_checks": [
+    "make: Entering directory '/Agon/mystuff/golem/src'",
+    "../build/test_compiler",
+    "Maintained raw/resident contract checks pass; 132 rejection cases.",
+    "make: Leaving directory '/Agon/mystuff/golem/src'"
+  ],
+  "elapsed_seconds": 68.903,
+  "game_replay_performed": false
+}

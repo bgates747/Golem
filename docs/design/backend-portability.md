@@ -276,3 +276,14 @@ The released next tranche uses typed 32-bit `>>` with uint16 counts 0..31, signe
 floor/sign extension and unsigned zero fill, checked invalid counts and ordinary
 left-to-right evaluation. Precedence is multiplicative/additive, then shifts,
 then comparisons. See the fourth tranche of GOLEM-036 for exact scope.
+
+The task-local right-shift profile is implemented/automatically qualified on
+both backends, preserving previous division bytes. Signed 32-bit floor and
+unsigned zero fill use explicit uint16 counts 0..31, left-to-right evaluation,
+checked counts (status 32) and destination preservation. Stock uses bounded byte lookup
+rounds; native uses unsigned shifts/explicit sign fill.
+[Source/resources/qualification](../tasks/GOLEM-036/right-shift/README.md).
+Human review/publication remains pending. Rally owns all game-specific replay;
+only supplied primitive examples are consumed here.
+
+GOLEM-036 right-shift human review subsequently passed: the Author reported 'looks good'; retrieved results match all 382 observations / 3,766 bytes and staged runtime/fixture identities. See docs/tasks/GOLEM-036/right-shift/evidence/human-review.json. The Author explicitly approved commit/push after an empty mailbox check. Rally retains ownership of game-specific replay and validation.
