@@ -1,0 +1,955 @@
+{
+  "engine": "interp",
+  "host": "raspberrypi",
+  "scope": "Pi VDP-only actual Xtensa plus stock command renderer; no MOS/client/physical test",
+  "graphical_launch": false,
+  "oryx_accessed": false,
+  "firmware_sha256": "8da2ebfdfa3b5b00f4a1929ad4885c838845b160f570259792ef370b69d4f473",
+  "elf_sha256": "b41e4cb37bd44633d14b2e6eea615cbbbdd29a1d4b49c3258b4f49f2e215e567",
+  "adapter_sha256": "f1693fa8a6fa2cb1bd5d425807ac4a1a86aea3cb2e32030927a224c6eebd8f62",
+  "renderer_cases": [
+    {
+      "layout": "default",
+      "count": 0,
+      "pixels_exact": true,
+      "state_arrays_preserved": true
+    },
+    {
+      "layout": "default",
+      "count": 1,
+      "pixels_exact": true,
+      "state_arrays_preserved": true
+    },
+    {
+      "layout": "default",
+      "count": 31,
+      "pixels_exact": true,
+      "state_arrays_preserved": true
+    },
+    {
+      "layout": "default",
+      "count": 32,
+      "pixels_exact": true,
+      "state_arrays_preserved": true
+    },
+    {
+      "layout": "default",
+      "count": 33,
+      "pixels_exact": true,
+      "state_arrays_preserved": true
+    },
+    {
+      "layout": "default",
+      "count": 256,
+      "pixels_exact": true,
+      "state_arrays_preserved": true
+    },
+    {
+      "layout": "default",
+      "count": 65535,
+      "pixels_exact": true,
+      "state_arrays_preserved": true
+    },
+    {
+      "layout": "relocated",
+      "count": 0,
+      "pixels_exact": true,
+      "state_arrays_preserved": true
+    },
+    {
+      "layout": "relocated",
+      "count": 1,
+      "pixels_exact": true,
+      "state_arrays_preserved": true
+    },
+    {
+      "layout": "relocated",
+      "count": 31,
+      "pixels_exact": true,
+      "state_arrays_preserved": true
+    },
+    {
+      "layout": "relocated",
+      "count": 32,
+      "pixels_exact": true,
+      "state_arrays_preserved": true
+    },
+    {
+      "layout": "relocated",
+      "count": 33,
+      "pixels_exact": true,
+      "state_arrays_preserved": true
+    },
+    {
+      "layout": "relocated",
+      "count": 256,
+      "pixels_exact": true,
+      "state_arrays_preserved": true
+    },
+    {
+      "layout": "relocated",
+      "count": 65535,
+      "pixels_exact": true,
+      "state_arrays_preserved": true
+    }
+  ],
+  "curves": [
+    {
+      "layout": "default",
+      "case": "defaults",
+      "segments": 396,
+      "batch_sizes": [
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        12
+      ],
+      "pixels_sha256": "91093b514ab9b58a66da687ce15c52d90fa078a076931bb382b83ba700fdd6d2",
+      "max_float_ulps": 1,
+      "direct_stock_pixels_identical": true
+    },
+    {
+      "layout": "default",
+      "case": "fractional-angle",
+      "segments": 396,
+      "batch_sizes": [
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        12
+      ],
+      "pixels_sha256": "a2a75a6b68e8eab479e36981e7c0246da02230adf7a557bf11fd25bccce68f3e",
+      "max_float_ulps": 1,
+      "direct_stock_pixels_identical": true
+    },
+    {
+      "layout": "default",
+      "case": "full-circle",
+      "segments": 396,
+      "batch_sizes": [
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        12
+      ],
+      "pixels_sha256": "91093b514ab9b58a66da687ce15c52d90fa078a076931bb382b83ba700fdd6d2",
+      "max_float_ulps": 1,
+      "direct_stock_pixels_identical": true
+    },
+    {
+      "layout": "default",
+      "case": "integer-count",
+      "segments": 13,
+      "batch_sizes": [
+        13
+      ],
+      "pixels_sha256": "9dcb57dff804bd7e2e1be339f1f916112d94942b05b614494a565c84ad9085bd",
+      "max_float_ulps": 0,
+      "direct_stock_pixels_identical": true
+    },
+    {
+      "layout": "default",
+      "case": "zero-shrink",
+      "segments": 396,
+      "batch_sizes": [
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        12
+      ],
+      "pixels_sha256": "da6453d514d2504798dbdc82deda2f5815ddf73b97eab3d8d827254e897bd883",
+      "max_float_ulps": 1,
+      "direct_stock_pixels_identical": true
+    },
+    {
+      "layout": "default",
+      "case": "full-shrink",
+      "segments": 396,
+      "batch_sizes": [
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        12
+      ],
+      "pixels_sha256": "b61ea33b336e436dd02b6da5f496525198f8823905f538d849b299d5b73f48b6",
+      "max_float_ulps": 1,
+      "direct_stock_pixels_identical": true
+    },
+    {
+      "layout": "default",
+      "case": "zero-radius",
+      "segments": 396,
+      "batch_sizes": [
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        12
+      ],
+      "pixels_sha256": "8736afa9d80eb864990b8164ceee87de98fa562ca19303cb62b8622a4fa88b09",
+      "max_float_ulps": 1,
+      "direct_stock_pixels_identical": true
+    },
+    {
+      "layout": "relocated",
+      "case": "defaults",
+      "segments": 396,
+      "batch_sizes": [
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        12
+      ],
+      "pixels_sha256": "91093b514ab9b58a66da687ce15c52d90fa078a076931bb382b83ba700fdd6d2",
+      "max_float_ulps": 1,
+      "direct_stock_pixels_identical": true
+    }
+  ],
+  "pixel_comparisons": 24883200,
+  "timings": [
+    {
+      "layout": "default",
+      "case": "defaults",
+      "outbound_bytes": 49,
+      "guest_cycles": 1600000,
+      "wall_seconds": 0.05787118570879102
+    },
+    {
+      "layout": "default",
+      "case": "defaults",
+      "outbound_bytes": 49,
+      "guest_cycles": 1460000,
+      "wall_seconds": 0.05339948832988739
+    },
+    {
+      "layout": "default",
+      "case": "defaults",
+      "outbound_bytes": 49,
+      "guest_cycles": 1610000,
+      "wall_seconds": 0.057831760961562395
+    },
+    {
+      "layout": "default",
+      "case": "defaults",
+      "outbound_bytes": 49,
+      "guest_cycles": 1600000,
+      "wall_seconds": 0.05528194922953844
+    },
+    {
+      "layout": "default",
+      "case": "defaults",
+      "outbound_bytes": 49,
+      "guest_cycles": 1450000,
+      "wall_seconds": 0.05257782293483615
+    },
+    {
+      "layout": "default",
+      "case": "defaults",
+      "outbound_bytes": 49,
+      "guest_cycles": 1480000,
+      "wall_seconds": 0.05167556367814541
+    },
+    {
+      "layout": "default",
+      "case": "defaults",
+      "outbound_bytes": 49,
+      "guest_cycles": 1600000,
+      "wall_seconds": 0.05716222524642944
+    },
+    {
+      "layout": "default",
+      "case": "defaults",
+      "outbound_bytes": 49,
+      "guest_cycles": 1520000,
+      "wall_seconds": 0.05337302526459098
+    },
+    {
+      "layout": "default",
+      "case": "defaults",
+      "outbound_bytes": 49,
+      "guest_cycles": 1500000,
+      "wall_seconds": 0.052649452816694975
+    },
+    {
+      "layout": "default",
+      "case": "defaults",
+      "outbound_bytes": 49,
+      "guest_cycles": 1510000,
+      "wall_seconds": 0.05299091478809714
+    },
+    {
+      "layout": "default",
+      "case": "defaults",
+      "outbound_bytes": 49,
+      "guest_cycles": 1410000,
+      "wall_seconds": 0.04851756803691387
+    },
+    {
+      "layout": "default",
+      "case": "defaults",
+      "outbound_bytes": 49,
+      "guest_cycles": 1400000,
+      "wall_seconds": 0.05014788219705224
+    },
+    {
+      "layout": "default",
+      "case": "defaults",
+      "outbound_bytes": 49,
+      "guest_cycles": 730000,
+      "wall_seconds": 0.02545165317133069
+    },
+    {
+      "layout": "default",
+      "case": "fractional-angle",
+      "outbound_bytes": 49,
+      "guest_cycles": 1630000,
+      "wall_seconds": 0.0586250931955874
+    },
+    {
+      "layout": "default",
+      "case": "fractional-angle",
+      "outbound_bytes": 49,
+      "guest_cycles": 1480000,
+      "wall_seconds": 0.0510919732041657
+    },
+    {
+      "layout": "default",
+      "case": "fractional-angle",
+      "outbound_bytes": 49,
+      "guest_cycles": 1610000,
+      "wall_seconds": 0.057529058307409286
+    },
+    {
+      "layout": "default",
+      "case": "fractional-angle",
+      "outbound_bytes": 49,
+      "guest_cycles": 1560000,
+      "wall_seconds": 0.05413943296298385
+    },
+    {
+      "layout": "default",
+      "case": "fractional-angle",
+      "outbound_bytes": 49,
+      "guest_cycles": 1470000,
+      "wall_seconds": 0.05176808312535286
+    },
+    {
+      "layout": "default",
+      "case": "fractional-angle",
+      "outbound_bytes": 49,
+      "guest_cycles": 1470000,
+      "wall_seconds": 0.05291180405765772
+    },
+    {
+      "layout": "default",
+      "case": "fractional-angle",
+      "outbound_bytes": 49,
+      "guest_cycles": 1610000,
+      "wall_seconds": 0.05683626187965274
+    },
+    {
+      "layout": "default",
+      "case": "fractional-angle",
+      "outbound_bytes": 49,
+      "guest_cycles": 1530000,
+      "wall_seconds": 0.053469765931367874
+    },
+    {
+      "layout": "default",
+      "case": "fractional-angle",
+      "outbound_bytes": 49,
+      "guest_cycles": 1500000,
+      "wall_seconds": 0.05162280611693859
+    },
+    {
+      "layout": "default",
+      "case": "fractional-angle",
+      "outbound_bytes": 49,
+      "guest_cycles": 1490000,
+      "wall_seconds": 0.05291926674544811
+    },
+    {
+      "layout": "default",
+      "case": "fractional-angle",
+      "outbound_bytes": 49,
+      "guest_cycles": 1420000,
+      "wall_seconds": 0.04855084698647261
+    },
+    {
+      "layout": "default",
+      "case": "fractional-angle",
+      "outbound_bytes": 49,
+      "guest_cycles": 1400000,
+      "wall_seconds": 0.04921973496675491
+    },
+    {
+      "layout": "default",
+      "case": "fractional-angle",
+      "outbound_bytes": 49,
+      "guest_cycles": 730000,
+      "wall_seconds": 0.025456560775637627
+    },
+    {
+      "layout": "default",
+      "case": "full-circle",
+      "outbound_bytes": 49,
+      "guest_cycles": 1630000,
+      "wall_seconds": 0.0593177592381835
+    },
+    {
+      "layout": "default",
+      "case": "full-circle",
+      "outbound_bytes": 49,
+      "guest_cycles": 1440000,
+      "wall_seconds": 0.05104643618687987
+    },
+    {
+      "layout": "default",
+      "case": "full-circle",
+      "outbound_bytes": 49,
+      "guest_cycles": 1570000,
+      "wall_seconds": 0.05752911325544119
+    },
+    {
+      "layout": "default",
+      "case": "full-circle",
+      "outbound_bytes": 49,
+      "guest_cycles": 1570000,
+      "wall_seconds": 0.054704802110791206
+    },
+    {
+      "layout": "default",
+      "case": "full-circle",
+      "outbound_bytes": 49,
+      "guest_cycles": 1450000,
+      "wall_seconds": 0.052346082869917154
+    },
+    {
+      "layout": "default",
+      "case": "full-circle",
+      "outbound_bytes": 49,
+      "guest_cycles": 1480000,
+      "wall_seconds": 0.053532266058027744
+    },
+    {
+      "layout": "default",
+      "case": "full-circle",
+      "outbound_bytes": 49,
+      "guest_cycles": 1620000,
+      "wall_seconds": 0.055321245919913054
+    },
+    {
+      "layout": "default",
+      "case": "full-circle",
+      "outbound_bytes": 49,
+      "guest_cycles": 1520000,
+      "wall_seconds": 0.05327813699841499
+    },
+    {
+      "layout": "default",
+      "case": "full-circle",
+      "outbound_bytes": 49,
+      "guest_cycles": 1530000,
+      "wall_seconds": 0.052085398230701685
+    },
+    {
+      "layout": "default",
+      "case": "full-circle",
+      "outbound_bytes": 49,
+      "guest_cycles": 1510000,
+      "wall_seconds": 0.053037526085972786
+    },
+    {
+      "layout": "default",
+      "case": "full-circle",
+      "outbound_bytes": 49,
+      "guest_cycles": 1410000,
+      "wall_seconds": 0.04874686477705836
+    },
+    {
+      "layout": "default",
+      "case": "full-circle",
+      "outbound_bytes": 49,
+      "guest_cycles": 1370000,
+      "wall_seconds": 0.049016531091183424
+    },
+    {
+      "layout": "default",
+      "case": "full-circle",
+      "outbound_bytes": 49,
+      "guest_cycles": 720000,
+      "wall_seconds": 0.025241746101528406
+    },
+    {
+      "layout": "default",
+      "case": "integer-count",
+      "outbound_bytes": 49,
+      "guest_cycles": 750000,
+      "wall_seconds": 0.02793107694014907
+    },
+    {
+      "layout": "default",
+      "case": "zero-shrink",
+      "outbound_bytes": 49,
+      "guest_cycles": 1640000,
+      "wall_seconds": 0.0592125179246068
+    },
+    {
+      "layout": "default",
+      "case": "zero-shrink",
+      "outbound_bytes": 49,
+      "guest_cycles": 1500000,
+      "wall_seconds": 0.05259419325739145
+    },
+    {
+      "layout": "default",
+      "case": "zero-shrink",
+      "outbound_bytes": 49,
+      "guest_cycles": 1680000,
+      "wall_seconds": 0.06071801669895649
+    },
+    {
+      "layout": "default",
+      "case": "zero-shrink",
+      "outbound_bytes": 49,
+      "guest_cycles": 1700000,
+      "wall_seconds": 0.05946325929835439
+    },
+    {
+      "layout": "default",
+      "case": "zero-shrink",
+      "outbound_bytes": 49,
+      "guest_cycles": 1580000,
+      "wall_seconds": 0.05704098381102085
+    },
+    {
+      "layout": "default",
+      "case": "zero-shrink",
+      "outbound_bytes": 49,
+      "guest_cycles": 1650000,
+      "wall_seconds": 0.060444201808422804
+    },
+    {
+      "layout": "default",
+      "case": "zero-shrink",
+      "outbound_bytes": 49,
+      "guest_cycles": 1850000,
+      "wall_seconds": 0.06514575239270926
+    },
+    {
+      "layout": "default",
+      "case": "zero-shrink",
+      "outbound_bytes": 49,
+      "guest_cycles": 1710000,
+      "wall_seconds": 0.062174143735319376
+    },
+    {
+      "layout": "default",
+      "case": "zero-shrink",
+      "outbound_bytes": 49,
+      "guest_cycles": 1800000,
+      "wall_seconds": 0.06428877217695117
+    },
+    {
+      "layout": "default",
+      "case": "zero-shrink",
+      "outbound_bytes": 49,
+      "guest_cycles": 1850000,
+      "wall_seconds": 0.06484875222668052
+    },
+    {
+      "layout": "default",
+      "case": "zero-shrink",
+      "outbound_bytes": 49,
+      "guest_cycles": 1720000,
+      "wall_seconds": 0.061389238107949495
+    },
+    {
+      "layout": "default",
+      "case": "zero-shrink",
+      "outbound_bytes": 49,
+      "guest_cycles": 1780000,
+      "wall_seconds": 0.062455051112920046
+    },
+    {
+      "layout": "default",
+      "case": "zero-shrink",
+      "outbound_bytes": 49,
+      "guest_cycles": 910000,
+      "wall_seconds": 0.03210834879428148
+    },
+    {
+      "layout": "default",
+      "case": "full-shrink",
+      "outbound_bytes": 49,
+      "guest_cycles": 1610000,
+      "wall_seconds": 0.05842433404177427
+    },
+    {
+      "layout": "default",
+      "case": "full-shrink",
+      "outbound_bytes": 49,
+      "guest_cycles": 1440000,
+      "wall_seconds": 0.05241934210062027
+    },
+    {
+      "layout": "default",
+      "case": "full-shrink",
+      "outbound_bytes": 49,
+      "guest_cycles": 1600000,
+      "wall_seconds": 0.056913780979812145
+    },
+    {
+      "layout": "default",
+      "case": "full-shrink",
+      "outbound_bytes": 49,
+      "guest_cycles": 1530000,
+      "wall_seconds": 0.05362006276845932
+    },
+    {
+      "layout": "default",
+      "case": "full-shrink",
+      "outbound_bytes": 49,
+      "guest_cycles": 1420000,
+      "wall_seconds": 0.05082421423867345
+    },
+    {
+      "layout": "default",
+      "case": "full-shrink",
+      "outbound_bytes": 49,
+      "guest_cycles": 1460000,
+      "wall_seconds": 0.050449770875275135
+    },
+    {
+      "layout": "default",
+      "case": "full-shrink",
+      "outbound_bytes": 49,
+      "guest_cycles": 1540000,
+      "wall_seconds": 0.054587394930422306
+    },
+    {
+      "layout": "default",
+      "case": "full-shrink",
+      "outbound_bytes": 49,
+      "guest_cycles": 1470000,
+      "wall_seconds": 0.051445398945361376
+    },
+    {
+      "layout": "default",
+      "case": "full-shrink",
+      "outbound_bytes": 49,
+      "guest_cycles": 1420000,
+      "wall_seconds": 0.0491281608119607
+    },
+    {
+      "layout": "default",
+      "case": "full-shrink",
+      "outbound_bytes": 49,
+      "guest_cycles": 1400000,
+      "wall_seconds": 0.04956554900854826
+    },
+    {
+      "layout": "default",
+      "case": "full-shrink",
+      "outbound_bytes": 49,
+      "guest_cycles": 1340000,
+      "wall_seconds": 0.04555994272232056
+    },
+    {
+      "layout": "default",
+      "case": "full-shrink",
+      "outbound_bytes": 49,
+      "guest_cycles": 1340000,
+      "wall_seconds": 0.04599692393094301
+    },
+    {
+      "layout": "default",
+      "case": "full-shrink",
+      "outbound_bytes": 49,
+      "guest_cycles": 690000,
+      "wall_seconds": 0.022502546198666096
+    },
+    {
+      "layout": "default",
+      "case": "zero-radius",
+      "outbound_bytes": 49,
+      "guest_cycles": 1050000,
+      "wall_seconds": 0.03742549009621143
+    },
+    {
+      "layout": "default",
+      "case": "zero-radius",
+      "outbound_bytes": 49,
+      "guest_cycles": 1100000,
+      "wall_seconds": 0.038667247630655766
+    },
+    {
+      "layout": "default",
+      "case": "zero-radius",
+      "outbound_bytes": 49,
+      "guest_cycles": 1130000,
+      "wall_seconds": 0.03857750725001097
+    },
+    {
+      "layout": "default",
+      "case": "zero-radius",
+      "outbound_bytes": 49,
+      "guest_cycles": 1140000,
+      "wall_seconds": 0.04004317242652178
+    },
+    {
+      "layout": "default",
+      "case": "zero-radius",
+      "outbound_bytes": 49,
+      "guest_cycles": 1130000,
+      "wall_seconds": 0.03852141508832574
+    },
+    {
+      "layout": "default",
+      "case": "zero-radius",
+      "outbound_bytes": 49,
+      "guest_cycles": 1180000,
+      "wall_seconds": 0.040641820058226585
+    },
+    {
+      "layout": "default",
+      "case": "zero-radius",
+      "outbound_bytes": 49,
+      "guest_cycles": 1270000,
+      "wall_seconds": 0.042570521123707294
+    },
+    {
+      "layout": "default",
+      "case": "zero-radius",
+      "outbound_bytes": 49,
+      "guest_cycles": 1260000,
+      "wall_seconds": 0.04418774135410786
+    },
+    {
+      "layout": "default",
+      "case": "zero-radius",
+      "outbound_bytes": 49,
+      "guest_cycles": 1300000,
+      "wall_seconds": 0.04270098404958844
+    },
+    {
+      "layout": "default",
+      "case": "zero-radius",
+      "outbound_bytes": 49,
+      "guest_cycles": 1270000,
+      "wall_seconds": 0.04453583387658
+    },
+    {
+      "layout": "default",
+      "case": "zero-radius",
+      "outbound_bytes": 49,
+      "guest_cycles": 1290000,
+      "wall_seconds": 0.04370616702362895
+    },
+    {
+      "layout": "default",
+      "case": "zero-radius",
+      "outbound_bytes": 49,
+      "guest_cycles": 1270000,
+      "wall_seconds": 0.04576625768095255
+    },
+    {
+      "layout": "default",
+      "case": "zero-radius",
+      "outbound_bytes": 49,
+      "guest_cycles": 670000,
+      "wall_seconds": 0.02356167370453477
+    },
+    {
+      "layout": "relocated",
+      "case": "defaults",
+      "outbound_bytes": 49,
+      "guest_cycles": 1620000,
+      "wall_seconds": 0.05663692997768521
+    },
+    {
+      "layout": "relocated",
+      "case": "defaults",
+      "outbound_bytes": 49,
+      "guest_cycles": 1470000,
+      "wall_seconds": 0.0529110636562109
+    },
+    {
+      "layout": "relocated",
+      "case": "defaults",
+      "outbound_bytes": 49,
+      "guest_cycles": 1580000,
+      "wall_seconds": 0.05719537287950516
+    },
+    {
+      "layout": "relocated",
+      "case": "defaults",
+      "outbound_bytes": 49,
+      "guest_cycles": 1560000,
+      "wall_seconds": 0.05506022786721587
+    },
+    {
+      "layout": "relocated",
+      "case": "defaults",
+      "outbound_bytes": 49,
+      "guest_cycles": 1470000,
+      "wall_seconds": 0.051994694862514734
+    },
+    {
+      "layout": "relocated",
+      "case": "defaults",
+      "outbound_bytes": 49,
+      "guest_cycles": 1480000,
+      "wall_seconds": 0.05173839861527085
+    },
+    {
+      "layout": "relocated",
+      "case": "defaults",
+      "outbound_bytes": 49,
+      "guest_cycles": 1600000,
+      "wall_seconds": 0.05731787392869592
+    },
+    {
+      "layout": "relocated",
+      "case": "defaults",
+      "outbound_bytes": 49,
+      "guest_cycles": 1510000,
+      "wall_seconds": 0.05335024883970618
+    },
+    {
+      "layout": "relocated",
+      "case": "defaults",
+      "outbound_bytes": 49,
+      "guest_cycles": 1530000,
+      "wall_seconds": 0.053117877803742886
+    },
+    {
+      "layout": "relocated",
+      "case": "defaults",
+      "outbound_bytes": 49,
+      "guest_cycles": 1490000,
+      "wall_seconds": 0.05260493466630578
+    },
+    {
+      "layout": "relocated",
+      "case": "defaults",
+      "outbound_bytes": 49,
+      "guest_cycles": 1430000,
+      "wall_seconds": 0.04840723564848304
+    },
+    {
+      "layout": "relocated",
+      "case": "defaults",
+      "outbound_bytes": 49,
+      "guest_cycles": 1390000,
+      "wall_seconds": 0.04906103201210499
+    },
+    {
+      "layout": "relocated",
+      "case": "defaults",
+      "outbound_bytes": 49,
+      "guest_cycles": 720000,
+      "wall_seconds": 0.02371563808992505
+    }
+  ],
+  "lifecycle": [
+    {
+      "layout": "default",
+      "partial_failed_batch_count": 1,
+      "partial_failed_language_status": 33,
+      "failure_preserves_prior_picture": true,
+      "cleanup_preserves_state_arrays_picture": true
+    },
+    {
+      "layout": "relocated",
+      "partial_failed_batch_count": 1,
+      "partial_failed_language_status": 33,
+      "failure_preserves_prior_picture": true,
+      "cleanup_preserves_state_arrays_picture": true
+    }
+  ],
+  "stack_floor_bytes": 2120,
+  "passed": true,
+  "failure": null,
+  "elapsed_seconds": 103.66119255311787,
+  "backend_stats": {
+    "engine": "interp",
+    "frames": 1109,
+    "cycles": 4603510000,
+    "retired": 3883057383,
+    "uart_rx": 410711,
+    "uart_tx": 242235,
+    "uart_delivered": 242235,
+    "isync": 125,
+    "code_invalidations": 3,
+    "keys": 0,
+    "failed": false,
+    "unhandled": 0,
+    "unregistered": 0,
+    "unmapped": 0
+  },
+  "outbound_bytes": 410711,
+  "vdplet_reply_bytes": 200610
+}

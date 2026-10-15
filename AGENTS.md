@@ -1148,3 +1148,42 @@ commit/push of both repositories on 2026-10-15. This supersedes the pending
 publication statements above. Next is DRAW-001, the resident batch renderer.
 All emulator work now uses the Pi 5; leave Oryx untouched while the Author runs
 controlled thermal workloads. Visual staging remains deferred.
+
+## Flower resident rendering — GOLEM-044
+
+Accepted native math is pushed as `52ed327`; SDK opt-in library linking as
+`580a5d8`. The following DRAW-001/RND-001..004 tranche adds a task-local stock
+command bridge generated from the unchanged native Flower layout. It patches
+and draws up to 32 resident endpoints, with zero/count/status guards and no
+per-point host traffic. Four private reserved buffers retain 2187 bytes;
+installation sends 2243 bytes. A successful complete batch protocol uses 49
+outbound/30 inbound bytes, including status, remaining-count read and stock
+plot-completion query. Core compute/render calls are 12 outbound bytes.
+
+Pi JIT and interpreter each pass 24,883,200 pixel comparisons / eight curves,
+including relocated state/array/private IDs, padded tails, signed/clipped lines,
+failed-batch suppression and cleanup retention. All 200610 retained reply bytes
+and all curve images match across engines. Whole-task free stack floor is 2120
+bytes. Two real assembler consumers and sanitized module admission pass. The
+finite tested protocol takes 2.79..7.80 ms of modeled guest time; this does not
+establish physical serial or Escape latency. No production/compiler/SDK/runtime
+changes were needed for this renderer. See docs/tasks/GOLEM-044/renderer/README.md.
+
+The host must check native runtime success before submitting the renderer;
+root guards alone cannot distinguish a stale success after a rejected native
+invocation. VDU 26 resets origin, so apply it before the centred logical origin.
+Buffer conditionals require buffer-backed operands and padded byte guards to
+avoid sentinel/literal-extension quirks. Both are qualified without firmware
+changes. The complete C/C++ transport/input application remains ABI-001/APP-001.
+
+All new runs used the Pi 5, windowless/silent. Oryx was untouched during the
+Author's thermal workloads. Visual staging stays deferred; no MOS/client or
+physical run is claimed. New renderer implementation/evidence remains
+uncommitted pending review/publication approval.
+
+The Author accepted keeping the 32-point batch size as a transparent internal
+detail and explicitly approved commit/push of the renderer on 2026-10-15. The
+next tranche is the complete interactive C++ client, including headless checks
+and a stopped Oryx visual review profile. Oryx is available again; the Author
+explicitly requests launch commands and forbids launching interactive sessions
+for them. This supersedes the earlier thermal restriction/visual-staging deferral.

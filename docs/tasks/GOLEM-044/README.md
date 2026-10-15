@@ -1,11 +1,13 @@
-# Interactive Flower — reference and native mathematics
+# Interactive Flower — mathematics and resident rendering
 
 Flower's Golem calculation now builds and passes actual ESP32 headless checks
 with floating division, sin/cos and floor. Read the [native math report](native-math/README.md)
-for current evidence and the [initialized source](flower.golem). The first
-feasibility findings below establish the reference/input/C++ contracts. Resident
-rendering and the interactive client remain ahead; visual staging is deferred
-until after the Author wakes.
+for the accepted mathematical evidence and [initialized source](flower.golem).
+The [resident renderer](renderer/README.md) now also passes Pi JIT/interpreter
+checks: eight curves per engine, all pixels verified, with endpoints kept on
+the VDP. The interactive client remains ahead; visual staging is deferred and
+all emulator work currently uses Pi 5 only. The first feasibility findings
+below establish the reference/input/C++ contracts.
 
 1. Preserve the original formula order and inclusive loop: defaults draw 396
    segments. Keep the original logical scale so radius 512 fits the display.

@@ -3,8 +3,9 @@
 This report records the first feasibility tranche: a real C++ consumer links
 at two buffer layouts and a mathematical module admits through the unchanged
 loader. The [subsequent native implementation](native-math/README.md) now also
-qualifies mathematical execution under actual ESP32 firmware. The interactive
-client and rendering integration are still ahead.
+qualifies mathematical execution under actual ESP32 firmware. The [resident renderer](renderer/README.md) subsequently qualifies connected
+lines from resident arrays with actual Pi JIT/interpreter pixels. The complete
+interactive client remains ahead.
 
 ## C/C++ interface proof
 

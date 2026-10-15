@@ -1,0 +1,198 @@
+[
+  {
+    "layout": "default",
+    "actual_assembler": true,
+    "loader": {
+      "status": 0,
+      "text_bytes": 11336,
+      "data_bytes": 1244,
+      "relocations": 15
+    },
+    "module_sha256": "dec96465017b0ebadf215db09bc04a0381584fb4ca02c4fbc5d1fae47399d170",
+    "renderer": {
+      "schema": 1,
+      "scope": "GOLEM-044 task-local stock VDU bridge",
+      "entry": 60002,
+      "owned": [
+        60002,
+        60003,
+        60004,
+        60005
+      ],
+      "borrowed": [
+        1,
+        2,
+        3
+      ],
+      "state_buffer": 1,
+      "batch_entry": 1,
+      "batch_native_wrapper": 6,
+      "count_offset": 206,
+      "max_segments": 32,
+      "root_fields": {
+        "magic": 0,
+        "schema": 2,
+        "header_bytes": 4,
+        "root_bytes": 6,
+        "session": 8,
+        "interface_status": 12,
+        "language_status": 14,
+        "runtime_result": 16,
+        "last_success_generation": 20,
+        "last_success_entry": 24,
+        "descriptor_count": 26,
+        "requested_entry": 28,
+        "last_success_session": 32,
+        "entry_count": 36,
+        "globals_bytes": 38,
+        "contract_tag": 44,
+        "descriptors": 48
+      },
+      "logical_coordinates": {
+        "width": 1280,
+        "height": 1024,
+        "origin": [
+          640,
+          512
+        ],
+        "y_direction": "up"
+      },
+      "screen": {
+        "mode": 0,
+        "width": 640,
+        "height": 480
+      },
+      "runtime_completion_owner": "host must check invocation runtime result before render; six-byte calls are submission only",
+      "zero_error_or_invalid_count": "no plotting; shared mathematical state and arrays unchanged",
+      "blocks": [
+        {
+          "buffer": 60002,
+          "bytes": 2103,
+          "sha256": "7ec227d96e85c0bdadd97e31c4a9baf1069ab59729d7227641a0396859f0e8e1"
+        },
+        {
+          "buffer": 60003,
+          "bytes": 6,
+          "sha256": "bcea930824194792092638f17d9810d035ce2a781ed6a72fded020a246233710"
+        },
+        {
+          "buffer": 60004,
+          "bytes": 6,
+          "sha256": "7d44f666b7f6f56d7fbdae373c9bd61d80ab44f0c6a5a802879f6b094fb9324a"
+        },
+        {
+          "buffer": 60005,
+          "bytes": 72,
+          "sha256": "2d7ca9d770b0d528a5c7a3471f936a2e7648c3ee1f82ffe412969142f6e9007d"
+        }
+      ],
+      "resident_bytes": 2187,
+      "installation_wire_bytes": 2243,
+      "render_call_wire_bytes": 6,
+      "cleanup_wire_bytes": 24,
+      "source_hashes": {
+        "interface.json": "3e37db439efd85f9b21d6f3e3a8b76b2cc3d58a5f18a0a238a6f8dcc8cbbe691",
+        "root.json": "f4f5b737a91ff49b08b72573136766c7093d5678d2de55f5b979feb8cdd8e549",
+        "backends.json": "0224902698dff2c8fe3b8ef240372784c88fb238a11c29f642bda5bf4d313015"
+      }
+    }
+  },
+  {
+    "layout": "relocated",
+    "actual_assembler": true,
+    "loader": {
+      "status": 0,
+      "text_bytes": 11344,
+      "data_bytes": 1244,
+      "relocations": 15
+    },
+    "module_sha256": "e49dd8469b48af6d798c443a66f523d32f685e24c994c831cad29f83b6d9dd25",
+    "renderer": {
+      "schema": 1,
+      "scope": "GOLEM-044 task-local stock VDU bridge",
+      "entry": 60020,
+      "owned": [
+        60020,
+        60021,
+        60022,
+        60023
+      ],
+      "borrowed": [
+        4096,
+        4097,
+        4098
+      ],
+      "state_buffer": 4096,
+      "batch_entry": 1,
+      "batch_native_wrapper": 4101,
+      "count_offset": 206,
+      "max_segments": 32,
+      "root_fields": {
+        "magic": 0,
+        "schema": 2,
+        "header_bytes": 4,
+        "root_bytes": 6,
+        "session": 8,
+        "interface_status": 12,
+        "language_status": 14,
+        "runtime_result": 16,
+        "last_success_generation": 20,
+        "last_success_entry": 24,
+        "descriptor_count": 26,
+        "requested_entry": 28,
+        "last_success_session": 32,
+        "entry_count": 36,
+        "globals_bytes": 38,
+        "contract_tag": 44,
+        "descriptors": 48
+      },
+      "logical_coordinates": {
+        "width": 1280,
+        "height": 1024,
+        "origin": [
+          640,
+          512
+        ],
+        "y_direction": "up"
+      },
+      "screen": {
+        "mode": 0,
+        "width": 640,
+        "height": 480
+      },
+      "runtime_completion_owner": "host must check invocation runtime result before render; six-byte calls are submission only",
+      "zero_error_or_invalid_count": "no plotting; shared mathematical state and arrays unchanged",
+      "blocks": [
+        {
+          "buffer": 60020,
+          "bytes": 2103,
+          "sha256": "e22f0f75952ce6829d43ef614ab041f423c1b61afa0a24f89c299b6bb336f5b2"
+        },
+        {
+          "buffer": 60021,
+          "bytes": 6,
+          "sha256": "bcea930824194792092638f17d9810d035ce2a781ed6a72fded020a246233710"
+        },
+        {
+          "buffer": 60022,
+          "bytes": 6,
+          "sha256": "7d44f666b7f6f56d7fbdae373c9bd61d80ab44f0c6a5a802879f6b094fb9324a"
+        },
+        {
+          "buffer": 60023,
+          "bytes": 72,
+          "sha256": "2d7ca9d770b0d528a5c7a3471f936a2e7648c3ee1f82ffe412969142f6e9007d"
+        }
+      ],
+      "resident_bytes": 2187,
+      "installation_wire_bytes": 2243,
+      "render_call_wire_bytes": 6,
+      "cleanup_wire_bytes": 24,
+      "source_hashes": {
+        "interface.json": "97322a7db5fb2b9b97df85a2443c84b4c6e422c3a74d9a4ebe2ee3a5e3e72873",
+        "root.json": "f4f5b737a91ff49b08b72573136766c7093d5678d2de55f5b979feb8cdd8e549",
+        "backends.json": "a033e667e5108bd88094a4d0897956c687a75d364c96e383e280e2d638bc6161"
+      }
+    }
+  }
+]

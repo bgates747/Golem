@@ -10,9 +10,11 @@ The Author requested this task and the behavior below on 2026-10-15.
 The reference/interaction/integration feasibility tranche and native
 mathematical implementation are complete. See the [native math report](GOLEM-044/native-math/README.md)
 and initialized [Flower source](GOLEM-044/flower.golem). Real C++ compile/link
-and actual ESP32 headless JIT/interpreter checks pass. Stock math, drawing
-integration and the interactive application remain ahead; visual staging is
-deferred until after the Author's sleep. The native mathematical tranche was accepted and authorized for publication on 2026-10-15.
+and actual ESP32 headless JIT/interpreter checks pass. The resident batch
+renderer now also passes Pi headless checks; stock math and the interactive
+application remain ahead. Visual staging is deferred until after the Author's
+sleep. The native mathematical tranche was accepted and authorized for
+publication on 2026-10-15.
 
 ## Required application behavior
 
@@ -203,7 +205,11 @@ and reviewed as a deliberate change rather than slipped in with the port.
 - MTH-003 [x] Qualify parser/type/error/precedence cases, generated C and full Flower math against independent host references; 1,244 sanitized generated-C cases, C++ sanitizers, three actual assembler consumers, 55 prior unchanged files and three default SDK images pass. First-tranche C++ proof remains valid; complete C transport remains ABI-001.
 - MTH-004 [x] Execute installed Xtensa math and relocated packages under both engines, including library argument reduction, cleanup and command-task stack headroom. Pi JIT and matched Oryx JIT/interpreter each pass 278 calls / 27,092 replies, including six Flower parameter sets. This is VDP-only execution; MOS/SD and physical hardware are not qualified by these runs.
 - MTH-005 [ ] Stage a finite visual Flower mathematics review on Oryx, identifying the Golem source and surrounding renderer. Deferred by the Author until after sleep (2026-10-15); current work uses headless correctness runs only. Full interactive input remains APP-001.
-- DRAW-001 [ ] Integrate portable calculations with VDP-resident connected-line drawing and finite batches, retaining shared storage and useful Escape responsiveness.
+- DRAW-001 [x] Integrate native portable calculations with a stock VDP-resident connected-line bridge and finite 32-point batches. Pi JIT/interpreter qualify rendering, shared storage and bounded batch duration. Actual Escape/input behavior remains APP-001/CHK-002; see renderer/README.md.
+- RND-001 [x] Generate a task-local stock command renderer from Flower's common metadata: own disjoint buffers, patch start/end coordinates residently, draw only the valid batch prefix and suppress zero/error/invalid-count batches without modifying mathematical state.
+- RND-002 [x] Qualify count boundaries 0/1/31/32/33, stale array tails, signed coordinates, clipping, repeated calls, failure suppression and cleanup retention; assemble the generated symbolic interface at default and relocated layouts.
+- RND-003 [x] Run actual uploaded Flower plus resident rendering on the Pi 5 headlessly. Compare complete curves with direct stock rendering from observed coordinates and independent geometry expectations, including default/fractional/full-circle/integer/shrink cases. Record finite batch duration and steady wire bytes separately from diagnostics.
+- RND-004 [x] Document renderer ownership, logical-coordinate mapping, completion and error boundaries, retained evidence and remaining C++/human work. Leave this new tranche uncommitted pending review.
 - APP-001 [ ] Build the ordinary AgonDev C++ Flower client with sequential prompts, preserved strings, startup mode capture, 640x480 setup and owned resource lifecycle.
 - CHK-001 [ ] Compare numeric traces and geometry with the independent higher-precision reference, separating intentional float32 differences from legacy binary16 differences and algorithm mistakes. Test cardinal/fractional degree inputs, all defaults, noninteger/integer step products, shrink cases, domain errors and repeated redraws.
 - CHK-002 [ ] Test exact text round trips, Enter-keeps-value, corrections/backspace, rejected values, return-key consumption, every Escape phase including drawing, mode failures and completion-before-unload/restore. Verify retained curves during parameter entry and the agreed exit display policy.
@@ -217,13 +223,14 @@ feasibility needed to choose a small implementation sequence. Deliver concrete
 decisions and initialized source/interface prototypes before starting the full
 application. Writing this task is not a claim that its missing features exist.
 
-That tranche is now complete. Next implementation tranche: add and qualify the
-native float division/sin/cos/floor slice, preserving current semantics and
-outputs, with an explicit unsupported-stock capability boundary. Add an opt-in
-SDK math-library link option rather than changing the runtime ABI. Stock float
-division remains an investigation within MATH-001, not a completed lowering.
-Follow with the resident batch renderer and full C++ interactive client; include
-the full visual review when those executable application changes are staged.
+The feasibility and native mathematical tranches are accepted and published as
+f17f805 and 52ed327; SDK library linking is published as 580a5d8 in agon-vdplet.
+The following resident renderer tranche now passes Pi headless qualification;
+see [its report](GOLEM-044/renderer/README.md). Next is the complete C transport
+and interactive application (ABI-001/APP-001). Stock float division remains an
+investigation within MATH-001, not a completed lowering. Include full visual
+review when executable application changes can be staged under the Author's
+current host/visual-review instructions.
 The Author subsequently deferred visual staging until after sleep and directed
 headless emulator correctness checks in the meantime. Do not stage or launch a
 visual review during this interval; this supersedes the earlier same-tranche
@@ -254,3 +261,33 @@ review in its implementation tranche; do not stop with staging still unfinished.
 5. [AgonDev C buffer call](/Agon/agondev/src/lib/libvdp/vdp_adv_call_buffer.c:9), [screen-mode query](/Agon/agondev/src/lib/libmos/mos_getsysvar_scrMode.src:6), and [C++ build conventions](/Agon/mystuff/agondev-tests/README.md).
 6. [VDP mode command clears the screen](/Agon/agon-vdp/video/vdu.h:299), [stock screen modes](/Agon/agon-docs/docs/vdp/Screen-Modes.md:70), and [existing firmware trig use](/Agon/agon-vdp/video/vdu_buffered.h:1657).
 7. [Current module builder/link boundary](/Agon/mystuff/agon-vdplet/tools/build_module.py:49) and [public runtime services](/Agon/mystuff/agon-vdplet/include/vdplet.h:69).
+
+## Resident renderer tranche — released 2026-10-15
+
+The Author accepted the native mathematical slice, authorized its commit/push,
+and released the next tranche. Execute RND-001 through RND-004 as DRAW-001's
+renderer integration: finite 32-point batches, stock VDU drawing, resident
+coordinates and a generated task-local interface. Keep the complete interactive
+client for APP-001. Use only the Pi 5 for emulator work and leave Oryx untouched
+during controlled thermal testing. Visual staging remains deferred; qualification
+in this tranche is windowless and silent, with no physical flashing.
+
+RND-001..004 are complete: both Pi engines pass 24,883,200 pixel comparisons
+each, eight full curves each, two assembler consumers and sanitized module
+admission. All 200,610 retained reply bytes and all curve images match between
+engines. Renderer installation is 2,243 wire bytes / 2,187 resident bytes.
+A measured compute/status/render/remaining/plot-completion sequence uses 49
+outbound / 30 inbound bytes per batch, with no point coordinates transmitted.
+The 92 measured batches per engine return in 2.79..7.80 ms of modeled guest
+time; this is not physical UART or Escape-latency qualification. No Oryx access,
+visual staging, MOS client run or physical deployment occurred. The renderer
+tranche remains uncommitted for review.
+
+## C++ client tranche — released 2026-10-15
+
+The Author accepts retaining the transparent 32-point batch design and explicitly
+authorizes publication of the renderer. Execute ABI-001/APP-001/CHK-002 and
+applicable QUA/VIS/DOC items: implement the actual interactive application,
+headlessly qualify it, and stage a stopped dedicated Oryx review instance in
+the same tranche. Oryx is available again. Never launch its interactive session
+for the Author; provide CLI launch commands and expected review behavior.

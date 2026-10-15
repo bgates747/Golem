@@ -1,0 +1,43 @@
+{
+  "passed": true,
+  "engines": [
+    "jit",
+    "interp"
+  ],
+  "scope": "identical final Pi fixture; no Oryx or physical qualification",
+  "identical_vdplet_reply_bytes": 200610,
+  "reply_sha256": "f367ac4f00d0ef5a6d9753a437b1cb3fb41f0e819180c136ec3953cbda3009a8",
+  "pixel_comparisons_per_engine": 24883200,
+  "curve_count_per_engine": 8,
+  "all_curve_images_counts_and_numeric_ULPs_identical": true,
+  "default_equals_full_circle": true,
+  "layout_relocation_preserves_default_image": true,
+  "per_batch_outbound_bytes": 49,
+  "per_batch_reply_bytes": 30,
+  "core_compute_render_outbound_bytes": 12,
+  "per_engine_steady_batches": 92,
+  "sources": {
+    "docs/tasks/GOLEM-044/renderer/build_renderer.py": "c449eeee997a5948b9f260b69fa81e4485b78a87f227d64217bd5e8c9aba75df",
+    "docs/tasks/GOLEM-044/renderer/qualify.py": "c580268313012f20347ccad33bf24dc83146c79ca934b174609ec08a29427d17",
+    "docs/tasks/GOLEM-044/renderer/compare_runs.py": "93932bae9b61be6b23d644a64c80aaf5977344562707c269f382541efd169ec2",
+    "docs/tasks/GOLEM-044/flower.golem": "8a2483a286608fb5cc51435e8d8a941ced63beb4b70c4521cf93d9a717162c01"
+  },
+  "images": {
+    "default-defaults-interp.png": "208bdff2207e7deca4b367cd658dab83ad435c09bed73f75df9845ff1847dfef",
+    "default-defaults-jit.png": "208bdff2207e7deca4b367cd658dab83ad435c09bed73f75df9845ff1847dfef",
+    "default-fractional-angle-interp.png": "d69828d4d206b6d531adb5810e8b03280df7cbd47f5cfb4fe2e79b57bffb51c9",
+    "default-fractional-angle-jit.png": "d69828d4d206b6d531adb5810e8b03280df7cbd47f5cfb4fe2e79b57bffb51c9",
+    "default-full-circle-interp.png": "208bdff2207e7deca4b367cd658dab83ad435c09bed73f75df9845ff1847dfef",
+    "default-full-circle-jit.png": "208bdff2207e7deca4b367cd658dab83ad435c09bed73f75df9845ff1847dfef",
+    "default-full-shrink-interp.png": "baa3245352bbf30991769b7026230efffaa8a8a6aaab7e537b7fe8d0b5b17c70",
+    "default-full-shrink-jit.png": "baa3245352bbf30991769b7026230efffaa8a8a6aaab7e537b7fe8d0b5b17c70",
+    "default-integer-count-interp.png": "de846a7e4f608744c7ac67267e58c8612cdbab27d0ac8bc4c19ccd454e880373",
+    "default-integer-count-jit.png": "de846a7e4f608744c7ac67267e58c8612cdbab27d0ac8bc4c19ccd454e880373",
+    "default-zero-radius-interp.png": "c418f5c31362a36dd0414fc82f33ac679b1b141e6e0c7f619d22711ea0fde423",
+    "default-zero-radius-jit.png": "c418f5c31362a36dd0414fc82f33ac679b1b141e6e0c7f619d22711ea0fde423",
+    "default-zero-shrink-interp.png": "101bc2054280e0f821196ab989408295304edf589fb7feb7e6b6e572f8edc0e5",
+    "default-zero-shrink-jit.png": "101bc2054280e0f821196ab989408295304edf589fb7feb7e6b6e572f8edc0e5",
+    "relocated-defaults-interp.png": "208bdff2207e7deca4b367cd658dab83ad435c09bed73f75df9845ff1847dfef",
+    "relocated-defaults-jit.png": "208bdff2207e7deca4b367cd658dab83ad435c09bed73f75df9845ff1847dfef"
+  }
+}
