@@ -1,5 +1,6 @@
 """Prepare isolated, stopped stock or uploaded-Xtensa review profiles."""
 from pathlib import Path
+from runpy import run_path
 import argparse
 import hashlib
 import importlib.util
@@ -56,6 +57,10 @@ mkdir -p "$AGON_FLEXE_ARTIFACTS"
     launcher.write_text(script)
     inputs.append('fab-agon-emulator')
     (profile/'.runtime.sha256').write_text(''.join(hashlib.sha256((profile/name).read_bytes()).hexdigest()+'  '+name+'\n' for name in inputs))
+    # Apply current product naming after the frozen template and pins.
+    if not stock:
+        naming = run_path(str(Path.home() / 'Agon/mystuff/agon-dev-env/scripts/setup_emulator.py'))
+        naming['name_flexe_profile'](profile)
     print('Prepared stopped profile:',profile)
     return profile
 

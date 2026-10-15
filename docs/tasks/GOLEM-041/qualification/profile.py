@@ -1,5 +1,6 @@
 """Stage this task's stopped Oryx Flexe profile using accepted runtime bytes."""
 from pathlib import Path
+from runpy import run_path
 import argparse
 import hashlib
 import importlib.util
@@ -49,6 +50,9 @@ mkdir -p "$AGON_FLEXE_ARTIFACTS"
                ['probe.bin', 'script.bin', 'expected.json', 'expected.dat', 'mask.dat', 'probe.golem', 'animation.golem']]
     (profile / '.runtime.sha256').write_text(''.join(hashlib.sha256((profile / name).read_bytes()).hexdigest() +
                                                    '  ' + name + '\n' for name in inputs))
+    # Apply current product naming after the frozen template and pins.
+    naming = run_path(str(Path.home() / 'Agon/mystuff/agon-dev-env/scripts/setup_emulator.py'))
+    naming['name_flexe_profile'](profile)
     print('Prepared stopped profile:', profile)
 
 

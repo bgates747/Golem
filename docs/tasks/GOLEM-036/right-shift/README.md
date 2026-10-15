@@ -21,7 +21,7 @@ On Oryx, in one terminal:
 
 ```bash
 cd ~/Agon/mystuff/golem/docs/tasks/GOLEM-036/right-shift/.emulator
-./fab-agon-emulator
+./flexe-agon-emulator
 ```
 
 Watch the three ranges/curves, follow the onscreen `dir` instruction, then close

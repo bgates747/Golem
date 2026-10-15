@@ -454,7 +454,7 @@ codec/README.md beneath that task silo. GOLEM-002 owns loader/service source.
 
 The main human profile is staged and stopped on Oryx at
 `~/Agon/mystuff/golem/docs/tasks/GOLEM-021/.emulator`; launch only its generated
-`./fab-agon-emulator` wrapper. The separate codec profile is under codec/.emulator.
+`./flexe-agon-emulator` wrapper. The separate codec profile is under codec/.emulator.
 Do not overwrite the accepted root .emulator profile. Keyboard uses the VDP
 serial console, not physical PS/2 ULP emulation. Timing is functional, with
 possible frame coalescing; native modules are trusted and must return.
@@ -523,7 +523,7 @@ match all 4,729 bytes. Keyboard success was not separately stated.
 
 The dedicated Oryx review is staged/stopped at
 `~/Agon/mystuff/golem/docs/tasks/GOLEM-025/.emulator`. Launch its generated
-`./fab-agon-emulator` wrapper only. The Author watches, types dir when instructed
+`./flexe-agon-emulator` wrapper only. The Author watches, types dir when instructed
 onscreen, closes and reports; the agent retrieves/verifies saved results. Source
 is deployed beside the report. The Author explicitly approved committing and pushing this tranche.
 See `docs/tasks/GOLEM-025/README.md`.
@@ -552,7 +552,7 @@ that layout. Full-state observations and all 56,320 final playfield pixels pass.
 
 Human review is staged/stopped on Oryx at
 `~/Agon/mystuff/golem/docs/tasks/GOLEM-026/.emulator`. Source is beside that
-profile. Launch only the generated `./fab-agon-emulator` wrapper; follow the
+profile. Launch only the generated `./flexe-agon-emulator` wrapper; follow the
 existing single-terminal review protocol. The Author explicitly approved
 commit/push on 2026-10-13 and accepted the visual review;
 retrieved human results match all 533 observations/5,249 bytes. Keyboard success
@@ -1187,3 +1187,15 @@ next tranche is the complete interactive C++ client, including headless checks
 and a stopped Oryx visual review profile. Oryx is available again; the Author
 explicitly requests launch commands and forbids launching interactive sessions
 for them. This supersedes the earlier thermal restriction/visual-staging deferral.
+
+## Emulator product names
+
+Select the name from the runtime and VDP backend: Fab uses a native host VDP;
+Flexe executes actual ESP32 VDP firmware. From the profile directory, launch
+Fab with `./fab-agon-emulator` and raw link `fab-agon-emulator.bin`, or Flexe
+with `./flexe-agon-emulator` and raw link `flexe-agon-emulator.bin`.
+Each entry must be a real generated wrapper with its existing host-library,
+MOS/runtime identity and backend guards. Flexe must have no Fab-named launcher,
+symlink or compatibility shim. Existing Fab launch instructions apply only to
+Fab profiles. For Flexe, call the canonical setup tool's `name_flexe_profile`
+after customization and before recording deployment checksums.

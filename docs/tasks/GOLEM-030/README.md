@@ -43,7 +43,7 @@ On Oryx, once staging finishes:
 
 ```bash
 cd ~/Agon/mystuff/golem/docs/tasks/GOLEM-030/.emulator
-./fab-agon-emulator
+./flexe-agon-emulator
 ```
 
 Follow the onscreen dir instruction, close the emulator and report whether it

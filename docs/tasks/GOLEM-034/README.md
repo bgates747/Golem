@@ -20,7 +20,7 @@ On Oryx, run in one terminal:
 
 ```bash
 cd ~/Agon/mystuff/golem/docs/tasks/GOLEM-034/.emulator
-./fab-agon-emulator
+./flexe-agon-emulator
 ```
 
 Watch the animation. Follow its onscreen instruction to type `dir` at the MOS

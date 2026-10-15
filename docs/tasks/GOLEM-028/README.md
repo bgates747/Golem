@@ -24,7 +24,7 @@ On Oryx:
 
 ```bash
 cd ~/Agon/mystuff/golem/docs/tasks/GOLEM-028/.emulator
-./fab-agon-emulator
+./flexe-agon-emulator
 ```
 
 Follow the single onscreen keyboard instruction, close the emulator and report

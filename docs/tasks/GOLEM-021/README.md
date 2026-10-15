@@ -17,7 +17,7 @@ resident globals. Nothing has been flashed, committed or pushed.
 
 ```bash
 cd ~/Agon/mystuff/golem/docs/tasks/GOLEM-021/.emulator
-./fab-agon-emulator
+./flexe-agon-emulator
 ```
 
 After startup and the finite tests, the display shows a real Lode Runner image.

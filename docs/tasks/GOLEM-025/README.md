@@ -34,7 +34,7 @@ In a terminal on Oryx:
 
 ```bash
 cd ~/Agon/mystuff/golem/docs/tasks/GOLEM-025/.emulator
-./fab-agon-emulator
+./flexe-agon-emulator
 ```
 
 Watch the square move and the meter fill/empty, alternating cyan and orange.

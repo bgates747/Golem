@@ -5,6 +5,7 @@ import hashlib
 import importlib.util
 import json
 from pathlib import Path
+from runpy import run_path
 import shutil
 
 HERE = Path(__file__).resolve().parent
@@ -68,6 +69,9 @@ rm -f -- "$profile_dir/sdcard/vdplet/results.dat" "$profile_dir/sdcard/vdplet/fa
     launcher.write_text(script.replace('\nvdp_name=', environment + '\nvdp_name=', 1))
     identity_names.append('fab-agon-emulator')
     (profile / '.runtime.sha256').write_text(''.join(f'{sha(profile/name)}  {name}\n' for name in identity_names))
+    # Apply current product naming after the frozen template and pins.
+    naming = run_path(str(Path.home() / 'Agon/mystuff/agon-dev-env/scripts/setup_emulator.py'))
+    naming['name_flexe_profile'](profile)
     print(f'Prepared stopped profile: {profile}')
     return profile
 

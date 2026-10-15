@@ -23,7 +23,7 @@ def qualify(variant,engine,timeout):
     start=time.monotonic();mapped=set();process=None
     try:
         with (artifacts/'frontend.log').open('w') as log:
-            process=subprocess.Popen(['./fab-agon-emulator','--renderer','sw'],cwd=profile,env=env,
+            process=subprocess.Popen([('./fab-agon-emulator' if stock else './flexe-agon-emulator'),'--renderer','sw'],cwd=profile,env=env,
                                      stdout=log,stderr=subprocess.STDOUT,start_new_session=True)
             while True:
                 if (app/'failure.dat').exists():raise RuntimeError('Guest reported failure; inspect '+str(artifacts))
@@ -49,7 +49,7 @@ def qualify(variant,engine,timeout):
             for child in Path('/proc').glob('[0-9]*'):
                 try:
                     pid=int(child.name)
-                    if os.getpgid(pid)==process.pid and (child/'exe').resolve()==(profile/'fab-agon-emulator.bin').resolve():
+                    if os.getpgid(pid)==process.pid and (child/'exe').resolve()==(profile/('fab-agon-emulator.bin' if stock else 'flexe-agon-emulator.bin')).resolve():
                         os.kill(pid,signal.SIGTERM)
                 except OSError:pass
             try:process.wait(timeout=10)

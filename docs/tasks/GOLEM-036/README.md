@@ -25,7 +25,7 @@ On Oryx, use one terminal:
 
 ```bash
 cd ~/Agon/mystuff/golem/docs/tasks/GOLEM-036/.emulator
-./fab-agon-emulator
+./flexe-agon-emulator
 ```
 
 Watch all three markers, follow the onscreen `dir` instruction, then close the

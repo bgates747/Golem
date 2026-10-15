@@ -73,7 +73,7 @@ def qualify(profile: Path, engine: str, timeout: float):
             for child in Path('/proc').glob('[0-9]*'):
                 try:
                     pid = int(child.name)
-                    if os.getpgid(pid) == process.pid and (child / 'exe').resolve() == (profile / 'fab-agon-emulator.bin').resolve():
+                    if os.getpgid(pid) == process.pid and (child / 'exe').resolve() == (profile / 'flexe-agon-emulator.bin').resolve():
                         os.kill(pid, signal.SIGTERM)
                 except (PermissionError, FileNotFoundError, ProcessLookupError):
                     pass

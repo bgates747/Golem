@@ -99,7 +99,7 @@ identity. No outer environment setup or alternate raw-binary launch is needed:
 
 ```bash
 cd ~/Agon/mystuff/golem/docs/tasks/GOLEM-021/.emulator
-./fab-agon-emulator
+./flexe-agon-emulator
 ```
 
 Run those commands on Oryx only after its staging is announced ready. The agent
