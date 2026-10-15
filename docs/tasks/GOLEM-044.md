@@ -7,6 +7,12 @@ between drawings. This task includes the language/runtime and C-call interface
 work required for that application; the curve mathematics belongs on the ESP32.
 The Author requested this task and the behavior below on 2026-10-15.
 
+The first reference/interaction/integration feasibility tranche is complete.
+See the [tranche report](GOLEM-044/README.md) and the explicitly proposed,
+initialized [Flower source](GOLEM-044/flower.golem). Real C++ compilation/linking
+and unchanged-loader math admission pass; new target math execution and the
+interactive application remain implementation work.
+
 ## Required application behavior
 
 ### Parameters and retained text
@@ -184,8 +190,11 @@ and reviewed as a deliberate change rather than slipped in with the port.
 
 ## Work tranches
 
-- REF-001 [ ] Audit and pin original Flower formulas, operation order, segment count, shrink behavior, defaults and coordinate mapping; define reference cases and the numeric precision contract.
-- UX-001 [ ] Specify the interactive field editor/state transitions, exact string retention, blank-entry defaults, validation and Escape behavior, including the approved exit-clear exception.
+- REF-001 [x] Audit and pin original Flower formulas, operation order, segment count, shrink behavior, defaults and coordinate mapping; define reference cases and the numeric precision contract. See the reference audit and 16-case model receipt; actual BBC/Xtensa numeric comparisons remain CHK-001/QUA-001.
+- UX-001 [x] Specify the interactive field editor/state transitions, exact string retention, blank-entry defaults, validation and Escape behavior, including the approved exit-clear exception. See interaction.md; implementation/human tests remain APP-001/CHK-002/VIS-001.
+- FEA-001 [x] Generate a task-local C metadata/setter/named-entry header and compile/link a real AgonDev C++ consumer at default/relocated layouts. Host C/C++ sanitizer checks pass; runtime installation/completion transport remains ABI-001.
+- FEA-002 [x] Probe ordinary Xtensa division/sinf/cosf linking and actual unchanged-loader admission. Static libm/libgcc candidate admits without imports or runtime ABI changes; target execution/stack/accuracy remains MATH-001/QUA-001.
+- FEA-003 [x] Select a finite resident-array/VDU renderer bridge and write the initialized Flower prototype, with pending math operations labeled. Full drawing integration and wire/latency measurements remain DRAW-001.
 - ABI-001 [ ] Define the minimal C/C++ entry/input/status/completion interface and generate it from compiler metadata; prove it with an AgonDev C++ consumer.
 - MATH-001 [ ] Add and qualify required floating division, degree-to-radian conversion and sin/cos support; choose module linking/runtime services and establish native/stock capability boundaries and accuracy/error rules.
 - DRAW-001 [ ] Integrate portable calculations with VDP-resident connected-line drawing and finite batches, retaining shared storage and useful Escape responsiveness.
@@ -201,6 +210,14 @@ First execution tranche, released by the Author on 2026-10-15: REF-001 and UX-00
 feasibility needed to choose a small implementation sequence. Deliver concrete
 decisions and initialized source/interface prototypes before starting the full
 application. Writing this task is not a claim that its missing features exist.
+
+That tranche is now complete. Next implementation tranche: add and qualify the
+native float division/sin/cos/floor slice, preserving current semantics and
+outputs, with an explicit unsupported-stock capability boundary. Add an opt-in
+SDK math-library link option rather than changing the runtime ABI. Stock float
+division remains an investigation within MATH-001, not a completed lowering.
+Follow with the resident batch renderer and full C++ interactive client; include
+the full visual review when those executable application changes are staged.
 
 ## Artifact layout and acceptance
 

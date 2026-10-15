@@ -1099,3 +1099,18 @@ deferred. GOLEM-044 Flower's reference/interaction/ABI/math/drawing feasibility
 tranche is released. Clearing the screen on application exit is an approved
 exception so the saved screen mode can be restored; returning to parameter entry
 must still preserve the curve. See the GOLEM-044 task for full requirements.
+
+GOLEM-042 implementation is published as `850c3f5`; deferred GOLEM-043 research
+and released GOLEM-044 plan are published as `7b9e07f`. GOLEM-044's first tranche
+audits original operation order, floor conversion and floor(Q)+1 segments (396
+at defaults), specifies input/lifetime behavior and supplies initialized source
+and C interface prototypes. Real AgonDev C++ links and host C/C++ sanitizer
+packing/call checks pass at default/relocated layouts. An ordinary Xtensa
+division/sinf/cosf probe linked with libm/libgcc admits under the unchanged SDK
+loader (5296-byte package); actual target execution/stack/accuracy is not tested.
+Float32 default model drift is 0.108 pixels; long-run accumulation can be large.
+Stock radians trig has a candidate affine lowering; exact stock float division
+is unresolved. Next is native mathematical implementation with an explicit
+capability boundary, then resident rendering and the complete client. No new
+emulator profile/deployment or production/compiler/SDK changes were made in
+this feasibility tranche. See docs/tasks/GOLEM-044/README.md.

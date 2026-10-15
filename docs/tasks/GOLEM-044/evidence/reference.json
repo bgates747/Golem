@@ -1,0 +1,821 @@
+{
+  "reference": "host binary64 libm; not BBC-FPP emulation",
+  "float32_model": "round every operation; host binary64 trig rounded to f32",
+  "pixel_metric": "unquantized dx*0.5, dy*480/1024; not a raster comparison",
+  "pinned_sources": [
+    {
+      "path": "/Agon/mystuff/agon-utils/examples/flower/bbc/src/flower.asm",
+      "commit": "ca7dde5052c44d731da4184d662000bc9e7a497e",
+      "sha256": "038dd782f6deb9c22d70ada11227a4d07df920d1ceca97ff489c9450b7c09601"
+    },
+    {
+      "path": "/Agon/mystuff/agon-utils/examples/flower/bbc/src/fpp_ext.inc",
+      "commit": "ca7dde5052c44d731da4184d662000bc9e7a497e",
+      "sha256": "76809b3deb1096f4eed004dfb3dbed3d0d4f6ae3e220185e269c9c5702901e47"
+    },
+    {
+      "path": "/Agon/mystuff/agon-utils/examples/flower/bbc/src/flower_demo.asm",
+      "commit": "ca7dde5052c44d731da4184d662000bc9e7a497e",
+      "sha256": "cc551e90d5e3eeb1e945c2de5e1a5d6e06c7c5fdd90deb42c4b63de4d59c1e56"
+    },
+    {
+      "path": "/Agon/mystuff/agon-utils/examples/flower/bs/src/main.inc",
+      "commit": "ca7dde5052c44d731da4184d662000bc9e7a497e",
+      "sha256": "98d9a0e95e9edf80b832fd9a0feeb561074be7cd1e8a39344101b4311bf1b619"
+    },
+    {
+      "path": "/Agon/agon-vdp/video/vdu_buffered.h",
+      "commit": "c7ac293d2aa81ddfa693390549bcd909069c8fc3",
+      "sha256": "b9d9d93295ddc5fb05c802071057e32ed9755837f029ce381340072352c262f0"
+    },
+    {
+      "path": "/Agon/agon-vdp/video/vdu.h",
+      "commit": "c7ac293d2aa81ddfa693390549bcd909069c8fc3",
+      "sha256": "24923b53a83d77ebf729795d7ecb7343e6f2fed0e9d748d48fc83c8b75e805cb"
+    },
+    {
+      "path": "/Agon/agon-vdp/video/vdu_sys.h",
+      "commit": "c7ac293d2aa81ddfa693390549bcd909069c8fc3",
+      "sha256": "29ad91d4bcbede801f3c8da3453f900a6a6cf98fc1a17e6dad5ba274e76e6b77"
+    },
+    {
+      "path": "/Agon/agon-vdp/video/agon_screen.h",
+      "commit": "c7ac293d2aa81ddfa693390549bcd909069c8fc3",
+      "sha256": "648dbc7d0ba9d98a3115a4ba307ff7585c6c5e28189c1e8961eff7a3c3d60343"
+    },
+    {
+      "path": "/Agon/agon-vdp/video/context/viewport.h",
+      "commit": "c7ac293d2aa81ddfa693390549bcd909069c8fc3",
+      "sha256": "2f69546602eb5b765719b8186688edece1e38b3b0bb0e276325391887451d5ff"
+    },
+    {
+      "path": "/Agon/agondev/release/include/agon/vdp.h",
+      "commit": "b67ab2444a63267a42193f204889d466765d8dd2",
+      "sha256": "401d979e5936a953778915e2b03eebc29b5733d6629195b2af42b087df50ba5d"
+    },
+    {
+      "path": "/Agon/agondev/release/include/agon/mos.h",
+      "commit": "b67ab2444a63267a42193f204889d466765d8dd2",
+      "sha256": "2dbcf8c081b81149188f00bbe00e2dc288c62ae74e659d40de05d947fa606949"
+    },
+    {
+      "path": "/Agon/agondev/src/lib/libkeyboard/keyboard.asm",
+      "commit": "b67ab2444a63267a42193f204889d466765d8dd2",
+      "sha256": "57015c2c9cd86c420ca10c5bedca19342880690494ed98e1245f98cbe405aff0"
+    }
+  ],
+  "cases": [
+    {
+      "name": "defaults",
+      "strings": {
+        "petals": "3.03",
+        "vectors": "1.98",
+        "depth": "0.6",
+        "periods": "66",
+        "shrink": "0.8",
+        "radius_scale": "512",
+        "theta_init": "0"
+      },
+      "binary64": {
+        "raw_steps": 395.9604,
+        "segments": 396,
+        "initial_base_radius": 320.0,
+        "final_base_radius": 63.9743974397465,
+        "main_step": 1.0473022814247404,
+        "petal_step": 3.1733259127169626,
+        "shrink_step": -0.6465292993945859
+      },
+      "float32_model": {
+        "raw_steps": 395.9604187011719,
+        "segments": 396,
+        "initial_base_radius": 320.0,
+        "final_base_radius": 63.975555419921875,
+        "main_step": 1.04730224609375,
+        "petal_step": 3.173326015472412,
+        "shrink_step": -0.6465292572975159
+      },
+      "max_unquantized_pixel_distance": 0.10777853787641352,
+      "float32_first": [
+        512.0,
+        0.0
+      ],
+      "float32_last": [
+        102.27257537841797,
+        4.242568016052246
+      ],
+      "binary64_first": [
+        512.0,
+        0.0
+      ],
+      "binary64_last": [
+        102.27101852874864,
+        4.243936875788459
+      ]
+    },
+    {
+      "name": "cardinal-90",
+      "strings": {
+        "petals": "3.03",
+        "vectors": "1.98",
+        "depth": "0.6",
+        "periods": "66",
+        "shrink": "0.8",
+        "radius_scale": "512",
+        "theta_init": "90"
+      },
+      "binary64": {
+        "raw_steps": 395.9604,
+        "segments": 396,
+        "initial_base_radius": 320.0,
+        "final_base_radius": 63.9743974397465,
+        "main_step": 1.0473022814247404,
+        "petal_step": 3.1733259127169626,
+        "shrink_step": -0.6465292993945859
+      },
+      "float32_model": {
+        "raw_steps": 395.9604187011719,
+        "segments": 396,
+        "initial_base_radius": 320.0,
+        "final_base_radius": 63.975555419921875,
+        "main_step": 1.04730224609375,
+        "petal_step": 3.173326015472412,
+        "shrink_step": -0.6465292572975159
+      },
+      "max_unquantized_pixel_distance": 0.10592755118978928,
+      "float32_first": [
+        -2.238023080280982e-05,
+        512.0
+      ],
+      "float32_last": [
+        -4.24302339553833,
+        102.27255249023438
+      ],
+      "binary64_first": [
+        3.135095805817224e-14,
+        512.0
+      ],
+      "binary64_last": [
+        -4.2439368757820946,
+        102.27101852874891
+      ]
+    },
+    {
+      "name": "cardinal-180",
+      "strings": {
+        "petals": "3.03",
+        "vectors": "1.98",
+        "depth": "0.6",
+        "periods": "66",
+        "shrink": "0.8",
+        "radius_scale": "512",
+        "theta_init": "180"
+      },
+      "binary64": {
+        "raw_steps": 395.9604,
+        "segments": 396,
+        "initial_base_radius": 320.0,
+        "final_base_radius": 63.9743974397465,
+        "main_step": 1.0473022814247404,
+        "petal_step": 3.1733259127169626,
+        "shrink_step": -0.6465292993945859
+      },
+      "float32_model": {
+        "raw_steps": 395.9604187011719,
+        "segments": 396,
+        "initial_base_radius": 320.0,
+        "final_base_radius": 63.975555419921875,
+        "main_step": 1.04730224609375,
+        "petal_step": 3.173326015472412,
+        "shrink_step": -0.6465292572975159
+      },
+      "max_unquantized_pixel_distance": 0.10777788280380605,
+      "float32_first": [
+        -512.0,
+        -4.476046160561964e-05
+      ],
+      "float32_last": [
+        -102.27253723144531,
+        -4.243479251861572
+      ],
+      "binary64_first": [
+        -512.0,
+        6.270191611634448e-14
+      ],
+      "binary64_last": [
+        -102.27101852874894,
+        -4.243936875781544
+      ]
+    },
+    {
+      "name": "cardinal-270",
+      "strings": {
+        "petals": "3.03",
+        "vectors": "1.98",
+        "depth": "0.6",
+        "periods": "66",
+        "shrink": "0.8",
+        "radius_scale": "512",
+        "theta_init": "270"
+      },
+      "binary64": {
+        "raw_steps": 395.9604,
+        "segments": 396,
+        "initial_base_radius": 320.0,
+        "final_base_radius": 63.9743974397465,
+        "main_step": 1.0473022814247404,
+        "petal_step": 3.1733259127169626,
+        "shrink_step": -0.6465292993945859
+      },
+      "float32_model": {
+        "raw_steps": 395.9604187011719,
+        "segments": 396,
+        "initial_base_radius": 320.0,
+        "final_base_radius": 63.975555419921875,
+        "main_step": 1.04730224609375,
+        "petal_step": 3.173326015472412,
+        "shrink_step": -0.6465292572975159
+      },
+      "max_unquantized_pixel_distance": 0.10593062336852505,
+      "float32_first": [
+        6.105538886913564e-06,
+        -512.0
+      ],
+      "float32_last": [
+        4.2439351081848145,
+        -102.27252197265625
+      ],
+      "binary64_first": [
+        -9.405287417451672e-14,
+        -512.0
+      ],
+      "binary64_last": [
+        4.243936875775179,
+        -102.2710185287492
+      ]
+    },
+    {
+      "name": "full-circle",
+      "strings": {
+        "petals": "3.03",
+        "vectors": "1.98",
+        "depth": "0.6",
+        "periods": "66",
+        "shrink": "0.8",
+        "radius_scale": "512",
+        "theta_init": "360"
+      },
+      "binary64": {
+        "raw_steps": 395.9604,
+        "segments": 396,
+        "initial_base_radius": 320.0,
+        "final_base_radius": 63.9743974397465,
+        "main_step": 1.0473022814247404,
+        "petal_step": 3.1733259127169626,
+        "shrink_step": -0.6465292993945859
+      },
+      "float32_model": {
+        "raw_steps": 395.9604187011719,
+        "segments": 396,
+        "initial_base_radius": 320.0,
+        "final_base_radius": 63.975555419921875,
+        "main_step": 1.04730224609375,
+        "petal_step": 3.173326015472412,
+        "shrink_step": -0.6465292572975159
+      },
+      "max_unquantized_pixel_distance": 0.10777853787641352,
+      "float32_first": [
+        512.0,
+        0.0
+      ],
+      "float32_last": [
+        102.27257537841797,
+        4.242568016052246
+      ],
+      "binary64_first": [
+        512.0,
+        0.0
+      ],
+      "binary64_last": [
+        102.27101852874864,
+        4.243936875788459
+      ]
+    },
+    {
+      "name": "fractional-angle",
+      "strings": {
+        "petals": "3.03",
+        "vectors": "1.98",
+        "depth": "0.6",
+        "periods": "66",
+        "shrink": "0.8",
+        "radius_scale": "512",
+        "theta_init": "22.5"
+      },
+      "binary64": {
+        "raw_steps": 395.9604,
+        "segments": 396,
+        "initial_base_radius": 320.0,
+        "final_base_radius": 63.9743974397465,
+        "main_step": 1.0473022814247404,
+        "petal_step": 3.1733259127169626,
+        "shrink_step": -0.6465292993945859
+      },
+      "float32_model": {
+        "raw_steps": 395.9604187011719,
+        "segments": 396,
+        "initial_base_radius": 320.0,
+        "final_base_radius": 63.975555419921875,
+        "main_step": 1.04730224609375,
+        "petal_step": 3.173326015472412,
+        "shrink_step": -0.6465292572975159
+      },
+      "max_unquantized_pixel_distance": 0.10672400052221176,
+      "float32_first": [
+        473.02630615234375,
+        195.93392944335938
+      ],
+      "float32_last": [
+        92.86393737792969,
+        43.05774688720703
+      ],
+      "binary64_first": [
+        473.0263206457788,
+        195.93391737092597
+      ],
+      "binary64_last": [
+        92.8620164574266,
+        43.05831081886463
+      ]
+    },
+    {
+      "name": "integer-product",
+      "strings": {
+        "petals": "3",
+        "vectors": "2",
+        "depth": "0.6",
+        "periods": "2",
+        "shrink": "0.8",
+        "radius_scale": "512",
+        "theta_init": "0"
+      },
+      "binary64": {
+        "raw_steps": 12.0,
+        "segments": 13,
+        "initial_base_radius": 320.0,
+        "final_base_radius": 42.666666666666686,
+        "main_step": 1.0471975511965976,
+        "petal_step": 3.141592653589793,
+        "shrink_step": -21.333333333333332
+      },
+      "float32_model": {
+        "raw_steps": 12.0,
+        "segments": 13,
+        "initial_base_radius": 320.0,
+        "final_base_radius": 42.66667175292969,
+        "main_step": 1.0471975803375244,
+        "petal_step": 3.1415927410125732,
+        "shrink_step": -21.33333396911621
+      },
+      "max_unquantized_pixel_distance": 9.992905093719363e-05,
+      "float32_first": [
+        512.0,
+        0.0
+      ],
+      "float32_last": [
+        8.533360481262207,
+        14.780152320861816
+      ],
+      "binary64_first": [
+        512.0,
+        0.0
+      ],
+      "binary64_last": [
+        8.53333333333331,
+        14.780166891254442
+      ]
+    },
+    {
+      "name": "noninteger-product",
+      "strings": {
+        "petals": "3",
+        "vectors": "2",
+        "depth": "0.6",
+        "periods": "2.1",
+        "shrink": "0.8",
+        "radius_scale": "512",
+        "theta_init": "0"
+      },
+      "binary64": {
+        "raw_steps": 12.600000000000001,
+        "segments": 13,
+        "initial_base_radius": 320.0,
+        "final_base_radius": 55.873015873016016,
+        "main_step": 1.0471975511965976,
+        "petal_step": 3.141592653589793,
+        "shrink_step": -20.317460317460316
+      },
+      "float32_model": {
+        "raw_steps": 12.59999942779541,
+        "segments": 13,
+        "initial_base_radius": 320.0,
+        "final_base_radius": 55.87298583984375,
+        "main_step": 1.0471975803375244,
+        "petal_step": 3.1415927410125732,
+        "shrink_step": -20.317461013793945
+      },
+      "max_unquantized_pixel_distance": 0.00010576975327267181,
+      "float32_first": [
+        512.0,
+        0.0
+      ],
+      "float32_last": [
+        11.174631118774414,
+        19.354949951171875
+      ],
+      "binary64_first": [
+        512.0,
+        0.0
+      ],
+      "binary64_last": [
+        11.174603174603167,
+        19.35498045283324
+      ]
+    },
+    {
+      "name": "zero-shrink",
+      "strings": {
+        "petals": "3.03",
+        "vectors": "1.98",
+        "depth": "0.6",
+        "periods": "66",
+        "shrink": "0",
+        "radius_scale": "512",
+        "theta_init": "0"
+      },
+      "binary64": {
+        "raw_steps": 395.9604,
+        "segments": 396,
+        "initial_base_radius": 320.0,
+        "final_base_radius": 320.0,
+        "main_step": 1.0473022814247404,
+        "petal_step": 3.1733259127169626,
+        "shrink_step": 0.0
+      },
+      "float32_model": {
+        "raw_steps": 395.9604187011719,
+        "segments": 396,
+        "initial_base_radius": 320.0,
+        "final_base_radius": 320.0,
+        "main_step": 1.04730224609375,
+        "petal_step": 3.173326015472412,
+        "shrink_step": 0.0
+      },
+      "max_unquantized_pixel_distance": 0.3485108540009348,
+      "float32_first": [
+        512.0,
+        0.0
+      ],
+      "float32_last": [
+        511.5582580566406,
+        21.220947265625
+      ],
+      "binary64_first": [
+        512.0,
+        0.0
+      ],
+      "binary64_last": [
+        511.55973700296016,
+        21.228176498752944
+      ]
+    },
+    {
+      "name": "full-shrink",
+      "strings": {
+        "petals": "3.03",
+        "vectors": "1.98",
+        "depth": "0.6",
+        "periods": "66",
+        "shrink": "1",
+        "radius_scale": "512",
+        "theta_init": "0"
+      },
+      "binary64": {
+        "raw_steps": 395.9604,
+        "segments": 396,
+        "initial_base_radius": 320.0,
+        "final_base_radius": -0.03200320031922943,
+        "main_step": 1.0473022814247404,
+        "petal_step": 3.1733259127169626,
+        "shrink_step": -0.8081616242432325
+      },
+      "float32_model": {
+        "raw_steps": 395.9604187011719,
+        "segments": 396,
+        "initial_base_radius": 320.0,
+        "final_base_radius": -0.03296935558319092,
+        "main_step": 1.04730224609375,
+        "petal_step": 3.173326015472412,
+        "shrink_step": -0.8081615567207336
+      },
+      "max_unquantized_pixel_distance": 0.08070624648277303,
+      "float32_first": [
+        512.0,
+        0.0
+      ],
+      "float32_last": [
+        -0.05270545929670334,
+        -0.0021863779984414577
+      ],
+      "binary64_first": [
+        512.0,
+        0.0
+      ],
+      "binary64_last": [
+        -0.05116108980799393,
+        -0.0021230299528173405
+      ]
+    },
+    {
+      "name": "negative-shrink",
+      "strings": {
+        "petals": "3.03",
+        "vectors": "1.98",
+        "depth": "0.6",
+        "periods": "66",
+        "shrink": "-0.25",
+        "radius_scale": "512",
+        "theta_init": "0"
+      },
+      "binary64": {
+        "raw_steps": 395.9604,
+        "segments": 396,
+        "initial_base_radius": 320.0,
+        "final_base_radius": 400.008000800078,
+        "main_step": 1.0473022814247404,
+        "petal_step": 3.1733259127169626,
+        "shrink_step": 0.20204040606080811
+      },
+      "float32_model": {
+        "raw_steps": 395.9604187011719,
+        "segments": 396,
+        "initial_base_radius": 320.0,
+        "final_base_radius": 400.00244140625,
+        "main_step": 1.04730224609375,
+        "petal_step": 3.173326015472412,
+        "shrink_step": 0.2020403891801834
+      },
+      "max_unquantized_pixel_distance": 0.4280162010939085,
+      "float32_first": [
+        512.0,
+        0.0
+      ],
+      "float32_last": [
+        639.4517211914062,
+        26.52634620666504
+      ],
+      "binary64_first": [
+        512.0,
+        0.0
+      ],
+      "binary64_last": [
+        639.4624615261494,
+        26.535751380929263
+      ]
+    },
+    {
+      "name": "over-shrink",
+      "strings": {
+        "petals": "3.03",
+        "vectors": "1.98",
+        "depth": "0.6",
+        "periods": "66",
+        "shrink": "1.25",
+        "radius_scale": "512",
+        "theta_init": "0"
+      },
+      "binary64": {
+        "raw_steps": 395.9604,
+        "segments": 396,
+        "initial_base_radius": 320.0,
+        "final_base_radius": -80.04000400039915,
+        "main_step": 1.0473022814247404,
+        "petal_step": 3.1733259127169626,
+        "shrink_step": -1.0102020303040404
+      },
+      "float32_model": {
+        "raw_steps": 395.9604187011719,
+        "segments": 396,
+        "initial_base_radius": 320.0,
+        "final_base_radius": -80.04000091552734,
+        "main_step": 1.04730224609375,
+        "petal_step": 3.173326015472412,
+        "shrink_step": -1.0102019309997559
+      },
+      "max_unquantized_pixel_distance": 0.048076088572984156,
+      "float32_first": [
+        512.0,
+        0.0
+      ],
+      "float32_last": [
+        -127.95352172851562,
+        -5.307889461517334
+      ],
+      "binary64_first": [
+        512.0,
+        0.0
+      ],
+      "binary64_last": [
+        -127.95388561300022,
+        -5.309697912129265
+      ]
+    },
+    {
+      "name": "zero-radius",
+      "strings": {
+        "petals": "3.03",
+        "vectors": "1.98",
+        "depth": "0.6",
+        "periods": "66",
+        "shrink": "0.8",
+        "radius_scale": "0",
+        "theta_init": "0"
+      },
+      "binary64": {
+        "raw_steps": 395.9604,
+        "segments": 396,
+        "initial_base_radius": 0.0,
+        "final_base_radius": 0.0,
+        "main_step": 1.0473022814247404,
+        "petal_step": 3.1733259127169626,
+        "shrink_step": 0.0
+      },
+      "float32_model": {
+        "raw_steps": 395.9604187011719,
+        "segments": 396,
+        "initial_base_radius": 0.0,
+        "final_base_radius": 0.0,
+        "main_step": 1.04730224609375,
+        "petal_step": 3.173326015472412,
+        "shrink_step": 0.0
+      },
+      "max_unquantized_pixel_distance": 0.0,
+      "float32_first": [
+        0.0,
+        0.0
+      ],
+      "float32_last": [
+        0.0,
+        0.0
+      ],
+      "binary64_first": [
+        0.0,
+        0.0
+      ],
+      "binary64_last": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "long-run",
+      "strings": {
+        "petals": "3",
+        "vectors": "2",
+        "depth": "0.6",
+        "periods": "10000",
+        "shrink": "0.8",
+        "radius_scale": "512",
+        "theta_init": "0"
+      },
+      "binary64": {
+        "raw_steps": 60000.0,
+        "segments": 60001,
+        "initial_base_radius": 320.0,
+        "final_base_radius": 63.99573333293523,
+        "main_step": 1.0471975511965976,
+        "petal_step": 3.141592653589793,
+        "shrink_step": -0.004266666666666667
+      },
+      "float32_model": {
+        "raw_steps": 60000.0,
+        "segments": 60001,
+        "initial_base_radius": 320.0,
+        "final_base_radius": 63.76299285888672,
+        "main_step": 1.0471975803375244,
+        "petal_step": 3.1415927410125732,
+        "shrink_step": -0.00426666671410203
+      },
+      "max_unquantized_pixel_distance": 382.246875764871,
+      "float32_first": [
+        512.0,
+        0.0
+      ],
+      "float32_last": [
+        -88.29569244384766,
+        -43.356719970703125
+      ],
+      "binary64_first": [
+        512.0,
+        0.0
+      ],
+      "binary64_last": [
+        12.799145862033365,
+        22.168772784564613
+      ]
+    },
+    {
+      "name": "count-near-integer",
+      "strings": {
+        "petals": "1.00000001",
+        "vectors": "1",
+        "depth": "0.6",
+        "periods": "1",
+        "shrink": "0.8",
+        "radius_scale": "512",
+        "theta_init": "0"
+      },
+      "binary64": {
+        "raw_steps": 1.00000001,
+        "segments": 2,
+        "initial_base_radius": 320.0,
+        "final_base_radius": -191.9999948800001,
+        "main_step": 6.2831852443477345,
+        "petal_step": 6.283185307179586,
+        "shrink_step": -255.99999744000004
+      },
+      "float32_model": {
+        "raw_steps": 1.0,
+        "segments": 2,
+        "initial_base_radius": 320.0,
+        "final_base_radius": -192.0,
+        "main_step": 6.2831854820251465,
+        "petal_step": 6.2831854820251465,
+        "shrink_step": -256.0
+      },
+      "max_unquantized_pixel_distance": 6.920680923448162e-05,
+      "float32_first": [
+        512.0,
+        0.0
+      ],
+      "float32_last": [
+        -307.20001220703125,
+        -0.0001074251122190617
+      ],
+      "binary64_first": [
+        512.0,
+        0.0
+      ],
+      "binary64_last": [
+        -307.1999918079977,
+        3.860388881874447e-05
+      ]
+    },
+    {
+      "name": "round-up-count",
+      "strings": {
+        "petals": "1.99999999",
+        "vectors": "1",
+        "depth": "0.6",
+        "periods": "1",
+        "shrink": "0.8",
+        "radius_scale": "512",
+        "theta_init": "0"
+      },
+      "binary64": {
+        "raw_steps": 1.99999999,
+        "segments": 2,
+        "initial_base_radius": 320.0,
+        "final_base_radius": 63.99999872000001,
+        "main_step": 3.1415926692977565,
+        "petal_step": 6.283185307179586,
+        "shrink_step": -128.00000064
+      },
+      "float32_model": {
+        "raw_steps": 2.0,
+        "segments": 3,
+        "initial_base_radius": 320.0,
+        "final_base_radius": -64.0,
+        "main_step": 3.1415927410125732,
+        "petal_step": 6.2831854820251465,
+        "shrink_step": -128.0
+      },
+      "max_unquantized_pixel_distance": 1.2264200161283281e-05,
+      "float32_first": [
+        512.0,
+        0.0
+      ],
+      "float32_last": [
+        102.4000015258789,
+        2.442215645714896e-06
+      ],
+      "binary64_first": [
+        512.0,
+        0.0
+      ],
+      "binary64_last": [
+        102.39999795199996,
+        3.216990809670304e-06
+      ]
+    }
+  ]
+}

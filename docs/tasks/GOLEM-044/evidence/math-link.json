@@ -1,0 +1,47 @@
+{
+  "compiler": "xtensa-esp32-elf-gcc (crosstool-NG esp-2021r2-patch5) 8.4.0",
+  "sdk_commit": "9fbb21dd09402e2a3835067dbb4427f2c20dec3c",
+  "source_sha256": "07b4d3c75a3d82075c25638f3fc188ca0742fa45f9dc1175b774ccea3ff8d79a",
+  "undefined_in_object": [
+    "         U cosf",
+    "         U __divsf3",
+    "         U sinf"
+  ],
+  "execution_tested": false,
+  "variants": {
+    "sdk-default": {
+      "link_exit": 1,
+      "link_options": [],
+      "diagnostic": "/home/smith/.platformio/packages/toolchain-xtensa-esp32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/../../../../xtensa-esp32-elf/bin/ld: /Agon/mystuff/golem/docs/tasks/GOLEM-044/build/math/math.o:(.text.vdplet_entry+0x4): undefined reference to `__divsf3'\n/home/smith/.platformio/packages/toolchain-xtensa-esp32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/../../../../xtensa-esp32-elf/bin/ld: /Agon/mystuff/golem/docs/tasks/GOLEM-044/build/math/math.o:(.text.vdplet_entry+0x8): undefined reference to `sinf'\n/home/smith/.platformio/packages/toolchain-xtensa-esp32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/../../../../xtensa-esp32-elf/bin/ld: /Agon/mystuff/golem/docs/tasks/GOLEM-044/build/math/math.o:(.text.vdplet_entry+0xc): undefined reference to `cosf'\ncollect2: error: ld returned 1 exit status"
+    },
+    "static-libraries": {
+      "link_exit": 0,
+      "link_options": [
+        "-lm",
+        "-lgcc"
+      ],
+      "status": 0,
+      "text_bytes": 3296,
+      "data_bytes": 996,
+      "relocations": 8,
+      "package_bytes": 5296,
+      "sha256": "9bdcad5fbabd2ba639f01eb5ad3ce20fb07dea08e2c7086ef857893f99966e14",
+      "undefined_after_link": []
+    },
+    "bound-libraries": {
+      "link_exit": 0,
+      "link_options": [
+        "-Wl,-Bsymbolic",
+        "-lm",
+        "-lgcc"
+      ],
+      "status": 0,
+      "text_bytes": 3296,
+      "data_bytes": 996,
+      "relocations": 8,
+      "package_bytes": 5304,
+      "sha256": "275e84d1deff647bc62be23325cfc9bce4286279bb52230b8a31c2b4432d4d0f",
+      "undefined_after_link": []
+    }
+  }
+}

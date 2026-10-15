@@ -1,0 +1,84 @@
+// Design prototype, NOT currently compilable: /, sin, cos and floor are pending.
+// Golem computes a batch of logical coordinates entirely on the VDP.
+// A resident VDU renderer consumes the arrays; C++ submits batches and handles input.
+// Host establishes 1280x1024 logical coordinates and origin (640,512).
+float32 petals = 3.03
+float32 vectors = 1.98
+float32 depth = 0.6
+float32 periods = 66.0
+float32 shrink = 0.8
+float32 radius_scale = 512.0
+float32 theta_init Bounds(0,360) = 0.0
+float32 pi = 3.141592653589793
+float32 twoPi = 6.283185307179586
+float32 petalsVectors = 1.0
+float32 rawSteps Bounds(1.1754943508222875e-38,65534.99609375) = 1.0
+float32 mainStep = 0.0
+float32 petalStep = 0.0
+float32 mainAngle = 0.0
+float32 petalAngle = 0.0
+float32 baseRadius = 0.0
+float32 radiusStep = 0.0
+float32 modulation = 0.0
+float32 radius = 0.0
+float32 x = 0.0
+float32 y = 0.0
+sint16 previousX = 0
+sint16 previousY = 0
+sint16 startX = 0
+sint16 startY = 0
+uint16 remaining = 0
+uint16 batchCount Bounds(0,32) = 0
+uint16 slot = 0
+Array sint16 pointsX(0:31) = Fill(0)
+Array sint16 pointsY(0:31) = Fill(0)
+
+// Client checks field domains before submitting prepare; derived values are
+// checked on the VDP. Failed prepare must not clear the previous curve.
+Sub prepare
+    petalsVectors = petals * vectors
+    rawSteps = petalsVectors * periods
+    mainStep = twoPi / petalsVectors
+    petalStep = twoPi / vectors
+    mainAngle = (theta_init * pi) / 180.0
+    If theta_init == 360.0
+        mainAngle = 0.0
+    EndIf
+    petalAngle = 0.0
+    baseRadius = radius_scale / (1.0 + depth)
+    radiusStep = 0.0 - ((shrink * baseRadius) / rawSteps)
+    remaining = uint16(rawSteps) + 1
+    batchCount = 0
+    modulation = cos(petalAngle) * depth
+    radius = (modulation * baseRadius) + baseRadius
+    y = sin(mainAngle) * radius
+    x = cos(mainAngle) * radius
+    previousX = sint16(floor(x))
+    previousY = sint16(floor(y))
+EndSub
+
+// At most 32 segments per call; no unbounded event-starving loop.
+// Renderer moves to startX/startY, then joins exactly batchCount array entries.
+// It draws no padding slots and does not close the curve automatically.
+Sub batch
+    startX = previousX
+    startY = previousY
+    batchCount = 0
+    For slot In Range(0:31)
+        If remaining != 0
+            mainAngle = mainStep + mainAngle
+            petalAngle = petalStep + petalAngle
+            baseRadius = radiusStep + baseRadius
+            modulation = cos(petalAngle) * depth
+            radius = (modulation * baseRadius) + baseRadius
+            y = sin(mainAngle) * radius
+            x = cos(mainAngle) * radius
+            previousX = sint16(floor(x))
+            previousY = sint16(floor(y))
+            pointsX(slot) = previousX
+            pointsY(slot) = previousY
+            batchCount = batchCount + 1
+            remaining = remaining - 1
+        EndIf
+    Next slot
+EndSub

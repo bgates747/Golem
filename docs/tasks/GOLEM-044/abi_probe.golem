@@ -1,0 +1,15 @@
+// Existing syntax only. Tests C++ integration; does not calculate or draw Flower.
+float32 petals = 3.03
+float32 vectors = 1.98
+float32 depth = 0.6
+float32 periods = 66.0
+float32 shrink = 0.8
+float32 radius_scale = 512.0
+float32 theta_init = 0.0
+uint16 batches = 0
+Sub reset
+    batches = 0
+EndSub
+Sub step
+    batches = batches + 1
+EndSub

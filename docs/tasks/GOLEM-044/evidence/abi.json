@@ -1,0 +1,48 @@
+{
+  "variants": [
+    {
+      "variant": "default",
+      "state_buffer": 1,
+      "buffered_entries": [
+        110,
+        111
+      ],
+      "native_entries": [
+        113,
+        114
+      ],
+      "eZ80_int_bytes": 3,
+      "eZ80_pointer_bytes": 3,
+      "uint16_bytes": 2,
+      "uint32_bytes": 4,
+      "float_bytes": 4,
+      "vdp_call_bytes": 6,
+      "host_C_and_Cxx_sanitizers": "pass",
+      "target_binary_bytes": 1470,
+      "target_binary_sha256": "5cd4b8807ab8067ede995492627de695dd17945f299f09af5005bb89c278ce04",
+      "target_execution_tested": false
+    },
+    {
+      "variant": "relocated",
+      "state_buffer": 4096,
+      "buffered_entries": [
+        4205,
+        4206
+      ],
+      "native_entries": [
+        4208,
+        4209
+      ],
+      "eZ80_int_bytes": 3,
+      "eZ80_pointer_bytes": 3,
+      "uint16_bytes": 2,
+      "uint32_bytes": 4,
+      "float_bytes": 4,
+      "vdp_call_bytes": 6,
+      "host_C_and_Cxx_sanitizers": "pass",
+      "target_binary_bytes": 1470,
+      "target_binary_sha256": "18c1c3328208d4c012334e8d7731bcbb860e35df64091c3e641e8fc904f7856c",
+      "target_execution_tested": false
+    }
+  ]
+}
