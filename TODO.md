@@ -7,6 +7,7 @@ GOLEM-035 was accepted and explicitly approved for commit/push on 2026-10-13.
 Outstanding human/physical reviews below remain open; this checkpoint does not
 claim those reviews occurred.
 
+- [ ] **GOLEM-042:** Add typed integer XOR (`^`) to both maintained portable backends. [Plan](docs/tasks/GOLEM-042.md). Released for four integer types, focused conformance/target qualification and a stopped Oryx visual review; SDK/firmware unchanged.
 
 - [ ] **GOLEM-036:** D1b faithful wide integer primitives, signed division and checked narrowing.
   [Plan](docs/tasks/GOLEM-036.md). First wide storage/add/subtract/comparison/conversion tranche qualified; human review accepted and saved results verified; commit/push explicitly approved.
