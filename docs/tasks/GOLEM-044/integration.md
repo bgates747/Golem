@@ -1,10 +1,10 @@
 # Flower integration feasibility
 
-An AgonDev C++ application can call named Golem entries through generated
-metadata. A real eZ80 C++ consumer compiles and links at two buffer layouts.
-Ordinary Xtensa float division/sinf/cosf also link into a self-contained module
-accepted by the unchanged loader. These are compile/admission proofs; the new
-mathematics and interactive Flower application have not executed on the target.
+This report records the first feasibility tranche: a real C++ consumer links
+at two buffer layouts and a mathematical module admits through the unchanged
+loader. The [subsequent native implementation](native-math/README.md) now also
+qualifies mathematical execution under actual ESP32 firmware. The interactive
+client and rendering integration are still ahead.
 
 ## C/C++ interface proof
 
@@ -103,8 +103,8 @@ Its start coordinate and count live in the same shared layout. The C++ client
 transfers parameters and calls batches, never coordinates per point.
 
 [flower.golem](flower.golem) is the complete initialized design prototype.
-It uses current finite Range/If/array syntax plus the four identified missing
-math operations. This file is explicitly not currently compilable. `prepare`
+It uses current finite Range/If/array syntax plus the four mathematical
+operations now implemented for explicit --target native. `prepare`
 checks derived initialization before any screen clear; `batch` preserves angle,
 radius and previous point across calls. It computes exactly the original
 floor(Q)+1 segments, with no padded final segments or automatic closing line.

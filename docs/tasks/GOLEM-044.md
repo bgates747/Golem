@@ -7,11 +7,12 @@ between drawings. This task includes the language/runtime and C-call interface
 work required for that application; the curve mathematics belongs on the ESP32.
 The Author requested this task and the behavior below on 2026-10-15.
 
-The first reference/interaction/integration feasibility tranche is complete.
-See the [tranche report](GOLEM-044/README.md) and the explicitly proposed,
-initialized [Flower source](GOLEM-044/flower.golem). Real C++ compilation/linking
-and unchanged-loader math admission pass; new target math execution and the
-interactive application remain implementation work.
+The reference/interaction/integration feasibility tranche and native
+mathematical implementation are complete. See the [native math report](GOLEM-044/native-math/README.md)
+and initialized [Flower source](GOLEM-044/flower.golem). Real C++ compile/link
+and actual ESP32 headless JIT/interpreter checks pass. Stock math, drawing
+integration and the interactive application remain ahead; visual staging is
+deferred until after the Author's sleep. The native mathematical tranche was accepted and authorized for publication on 2026-10-15.
 
 ## Required application behavior
 
@@ -197,6 +198,11 @@ and reviewed as a deliberate change rather than slipped in with the port.
 - FEA-003 [x] Select a finite resident-array/VDU renderer bridge and write the initialized Flower prototype, with pending math operations labeled. Full drawing integration and wire/latency measurements remain DRAW-001.
 - ABI-001 [ ] Define the minimal C/C++ entry/input/status/completion interface and generate it from compiler metadata; prove it with an AgonDev C++ consumer.
 - MATH-001 [ ] Add and qualify required floating division, degree-to-radian conversion and sin/cos support; choose module linking/runtime services and establish native/stock capability boundaries and accuracy/error rules.
+- MTH-001 [x] Implement typed float division/sin/cos/floor, reference evaluation and native emission; explicitly select native output and reject unsupported stock math without changing existing default packages. See the native mathematical capability in the maintained contract.
+- MTH-002 [x] Add an opt-in math-library SDK link setting with unchanged default images and loader/runtime ABI; generic SDK ownership is VDPL-002. SDK implementation was accepted and authorized for publication on 2026-10-15.
+- MTH-003 [x] Qualify parser/type/error/precedence cases, generated C and full Flower math against independent host references; 1,244 sanitized generated-C cases, C++ sanitizers, three actual assembler consumers, 55 prior unchanged files and three default SDK images pass. First-tranche C++ proof remains valid; complete C transport remains ABI-001.
+- MTH-004 [x] Execute installed Xtensa math and relocated packages under both engines, including library argument reduction, cleanup and command-task stack headroom. Pi JIT and matched Oryx JIT/interpreter each pass 278 calls / 27,092 replies, including six Flower parameter sets. This is VDP-only execution; MOS/SD and physical hardware are not qualified by these runs.
+- MTH-005 [ ] Stage a finite visual Flower mathematics review on Oryx, identifying the Golem source and surrounding renderer. Deferred by the Author until after sleep (2026-10-15); current work uses headless correctness runs only. Full interactive input remains APP-001.
 - DRAW-001 [ ] Integrate portable calculations with VDP-resident connected-line drawing and finite batches, retaining shared storage and useful Escape responsiveness.
 - APP-001 [ ] Build the ordinary AgonDev C++ Flower client with sequential prompts, preserved strings, startup mode capture, 640x480 setup and owned resource lifecycle.
 - CHK-001 [ ] Compare numeric traces and geometry with the independent higher-precision reference, separating intentional float32 differences from legacy binary16 differences and algorithm mistakes. Test cardinal/fractional degree inputs, all defaults, noninteger/integer step products, shrink cases, domain errors and repeated redraws.
@@ -218,6 +224,10 @@ SDK math-library link option rather than changing the runtime ABI. Stock float
 division remains an investigation within MATH-001, not a completed lowering.
 Follow with the resident batch renderer and full C++ interactive client; include
 the full visual review when those executable application changes are staged.
+The Author subsequently deferred visual staging until after sleep and directed
+headless emulator correctness checks in the meantime. Do not stage or launch a
+visual review during this interval; this supersedes the earlier same-tranche
+staging instruction for the mathematical slice.
 
 ## Artifact layout and acceptance
 

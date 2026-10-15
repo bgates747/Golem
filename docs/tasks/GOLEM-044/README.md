@@ -1,10 +1,11 @@
-# Interactive Flower — first tranche
+# Interactive Flower — reference and native mathematics
 
-Flower can use a normal C++ application for input and readable Golem for its
-curve calculations. The original algorithm is audited, the interaction is
-specified, and real compile/link probes establish the C++ and native-library
-routes. The next implementation slice is floating division, sin/cos and floor;
-the complete interactive application is still ahead.
+Flower's Golem calculation now builds and passes actual ESP32 headless checks
+with floating division, sin/cos and floor. Read the [native math report](native-math/README.md)
+for current evidence and the [initialized source](flower.golem). The first
+feasibility findings below establish the reference/input/C++ contracts. Resident
+rendering and the interactive client remain ahead; visual staging is deferred
+until after the Author wakes.
 
 1. Preserve the original formula order and inclusive loop: defaults draw 396
    segments. Keep the original logical scale so radius 512 fits the display.
@@ -15,9 +16,8 @@ the complete interactive application is still ahead.
    compiles/links at default and relocated buffer IDs; host C/C++ packing and
    dispatch checks pass under sanitizers.
 4. Linking ordinary libm/libgcc makes a 5296-byte math probe that the unchanged
-   VDPlet loader accepts. Actual Xtensa math execution, stack and accuracy still
-   need qualification. No firmware/math-service ABI change appears necessary
-   for this candidate route.
+   VDPlet loader accepts. The subsequent native tranche qualifies generated math
+   execution, stack and accuracy; no firmware/math-service ABI change was needed.
 5. Float32's default curve drifts by at most 0.108 model pixels from binary64;
    a 60001-segment case drifts substantially. Long-run precision needs deliberate
    treatment. Stock division also needs further investigation; a rounded
@@ -25,8 +25,9 @@ the complete interactive application is still ahead.
 
 Read the [initialized Flower source prototype](flower.golem), [algorithm/precision audit](reference-audit.md),
 [interaction contract](interaction.md), and [integration evidence/decisions](integration.md).
-The prototype labels its unimplemented operations. The compile-only client is
-not a runnable Flower demo. No emulator profile or physical deployment changed.
+The Flower math source now compiles with explicit --target native. The
+compile-only C++ interface client remains a separate proof. No visual emulator
+profile or physical deployment changed.
 
 Reproduce this tranche from the repository root:
 

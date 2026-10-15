@@ -148,6 +148,9 @@ def source_reference(interface, program, state, entry,arrays=None):
             return struct.unpack_from('<I' if field['element_bytes']==4 else '<H',arrays[field['buffer']],offset)[0]
         a = expression(node['left'])
         op = node['operator']
+        if op in ('sin','cos','floor'):
+            f=float_value(a)
+            return normalize(float_bits(math.sin(f) if op=='sin' else math.cos(f) if op=='cos' else math.floor(f)))
         integer_types={'uint16':(0,65535,16),'sint16':(-32768,32767,16),'uint32':(0,4294967295,32),'sint32':(-2147483648,2147483647,32)}
         if op in integer_types and node['left']['type'] in integer_types:
             source=node['left']['type'];n=signed(a,integer_types[source][2]) if source.startswith('sint') else a
@@ -178,7 +181,8 @@ def source_reference(interface, program, state, entry,arrays=None):
         if node['left']['type']=='float32':a=float_value(a);b=float_value(b)
         if op in ('==','!=','<','>','<=','>='):
             return int({'==':a==b,'!=':a!=b,'<':a<b,'>':a>b,'<=':a<=b,'>=':a>=b}[op])
-        candidate = a+b if op=='+' else a-b if op=='-' else a*b
+        if op=='/' and b==0:raise ReferenceError(4)
+        candidate = a+b if op=='+' else a-b if op=='-' else a/b if op=='/' else a*b
         if node['type']=='float32':return normalize(float_bits(candidate))
         low,high,bits=integer_types[node['type']]
         if candidate<low or candidate>high:

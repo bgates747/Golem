@@ -1,0 +1,20 @@
+{
+  "cases": 468,
+  "relocated": false,
+  "sanitized_generated_c": true,
+  "buffered_model": true,
+  "actual_assembler": true,
+  "language_statuses": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    32
+  ],
+  "expected_sha256": "d127759c3fc1a31c186686a4a67bb3951d98b7e86cb429da591e7f1d50b9bfb7",
+  "elapsed_seconds": 1.395,
+  "abi_header_sha256": "fa8385e2906f07d37372d80c40f73d419defdbefe7a3458461ac9d5fe0820d38",
+  "scope": "host XOR/reference/commands/generated-C; not target execution"
+}

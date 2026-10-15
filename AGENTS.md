@@ -1114,3 +1114,37 @@ is unresolved. Next is native mathematical implementation with an explicit
 capability boundary, then resident rendering and the complete client. No new
 emulator profile/deployment or production/compiler/SDK changes were made in
 this feasibility tranche. See docs/tasks/GOLEM-044/README.md.
+
+## Flower native mathematical slice — GOLEM-044
+
+The Author approved/published the feasibility tranche as `f17f805` and released
+native mathematics. Maintained --portable --target native now supports float32
+division, sin/cos (radians) and floor with current normalization, checked Bounds,
+partial effects and finite control flow. Default/both output rejects these new
+operations until stock lowering qualifies; all 55 prior compared outputs remain
+unchanged. Explicit native packages have target metadata and no buffered
+artifacts; changing target selection requires a fresh output directory.
+
+The SDK adds only opt-in --math library linking (VDPL-002). Its three default
+images, loader/runtime/ABI and existing firmware are unchanged. Host contracts,
+C++ sanitizers, 1244 generated-C cases, three assembler consumers, six sanitized
+loader packages and the 468-case XOR/array regression pass. Actual firmware
+runs on Pi JIT and matched Oryx JIT/interpreter each pass 278 calls / 27092
+replies, including six Flower parameter sets and 4608 coordinate observations.
+Largest observed floating separation is one ULP; Oryx engine reply bytes differ
+only at the explicit stack diagnostics. Minimum observed free command-task stack
+is 1844 Pi JIT / 2120 Oryx JIT / 2008 Oryx interpreter bytes. These are VDP-only
+headless checks, not MOS/SD or physical hardware acceptance.
+
+Flower math compiles to a 13668-byte module; prepare plus finite 32-point batches
+reproduce 396 default segments using resident arrays. Rendering and the complete
+C++ client remain ahead. The Author explicitly deferred visual staging until
+after sleep and requested headless correctness runs meanwhile. No visual profile
+was staged or desktop launched. New compiler/SDK/qualification work remains
+uncommitted for review; see docs/tasks/GOLEM-044/native-math/README.md.
+
+The Author accepted the native mathematics tranche and explicitly authorized
+commit/push of both repositories on 2026-10-15. This supersedes the pending
+publication statements above. Next is DRAW-001, the resident batch renderer.
+All emulator work now uses the Pi 5; leave Oryx untouched while the Author runs
+controlled thermal workloads. Visual staging remains deferred.

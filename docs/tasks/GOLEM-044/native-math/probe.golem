@@ -1,0 +1,51 @@
+// Native float mathematical qualification. All inputs/results are explicit.
+float32 a = 0.5
+float32 b = 2.0
+float32 c = 3.0
+float32 result = 7.0
+float32 bounded Bounds(-1,1) = 0.0
+sint16 whole = 77
+uint16 effect = 0
+bool flag = false
+Sub divide
+    result = a / b
+EndSub
+Sub sine
+    result = sin(a)
+EndSub
+Sub cosine
+    result = cos(a)
+EndSub
+Sub floorValue
+    result = floor(a)
+EndSub
+Sub floorConvert
+    whole = sint16(floor(a))
+EndSub
+Sub precedence
+    result = a / b * c + 1.0
+EndSub
+Sub chain
+    result = a / b / c
+EndSub
+Sub boundedDivide
+    bounded = a / b
+EndSub
+Sub partial
+    result = 5.0
+    effect = effect + 1
+    result = sin(a) / b
+    whole = 0
+EndSub
+Sub operandOrder
+    result = (a * b) / (c - c)
+EndSub
+Sub skipped
+    flag = false And sin(a) / b == 0.0
+EndSub
+Sub nested
+    result = sin(cos(floor(a)))
+EndSub
+Sub constants
+    result = 1.0 / 3.0 + cos(0.0)
+EndSub

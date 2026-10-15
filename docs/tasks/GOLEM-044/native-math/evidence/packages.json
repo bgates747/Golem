@@ -1,0 +1,170 @@
+[
+  {
+    "package": "probe",
+    "module": {
+      "name": "probe",
+      "source": "/Agon/mystuff/golem/docs/tasks/GOLEM-044/native-math/build/probe/native.c",
+      "source_sha256": "ea9fd8b1f3d2db8ecd85fafc69ae704648c64dd09490bff5e050775748756dc7",
+      "policy_sha256": "c69d6f3654b4b5dd4a8ae76e971818f4b13369d61dbded607b844e3268f66419",
+      "declared_limits": {
+        "text": 32768,
+        "data": 4096,
+        "stack": 2048,
+        "image": 65536
+      },
+      "build_id": "0x474c3434",
+      "capabilities": 1,
+      "envelope_bytes": 64,
+      "elf_bytes": 7520,
+      "package_bytes": 7584,
+      "sha256": "6d0675df6792d0e2b554be7a076d7e724d00abc0b2f8dcace82eceb0d42da9c7",
+      "package": "/Agon/mystuff/golem/docs/tasks/GOLEM-044/native-math/build/probe/probe.vdpl",
+      "elf": "/Agon/mystuff/golem/docs/tasks/GOLEM-044/native-math/build/probe/probe.elf",
+      "entry_virtual": 700,
+      "resident_text_bytes": 5240,
+      "resident_data_bytes": 1244,
+      "relative_relocations": 16,
+      "allocated_sections": {
+        ".text": {
+          "virtual_address": 408,
+          "bytes": 5237,
+          "type": 1
+        },
+        ".rodata": {
+          "virtual_address": 5648,
+          "bytes": 1240,
+          "type": 1
+        },
+        ".data": {
+          "virtual_address": 11188,
+          "bytes": 4,
+          "type": 1
+        }
+      },
+      "linked_libraries": [
+        {
+          "name": "libm.a",
+          "path": "/home/smith/.platformio/packages/toolchain-xtensa-esp32/xtensa-esp32-elf/lib/libm.a",
+          "sha256": "89565dc52d561a7145679685683a9d0f05110889dd14925aac487bd646043d69"
+        },
+        {
+          "name": "libgcc.a",
+          "path": "/home/smith/.platformio/packages/toolchain-xtensa-esp32/lib/gcc/xtensa-esp32-elf/8.4.0/libgcc.a",
+          "sha256": "fe2bda6df58227d33ed36af602c7a540f2d7d3adf83d0592a262d94eccd4a3a5"
+        }
+      ]
+    }
+  },
+  {
+    "package": "probe-relocated",
+    "module": {
+      "name": "probe",
+      "source": "/Agon/mystuff/golem/docs/tasks/GOLEM-044/native-math/build/probe-relocated/native.c",
+      "source_sha256": "ea9fd8b1f3d2db8ecd85fafc69ae704648c64dd09490bff5e050775748756dc7",
+      "policy_sha256": "c69d6f3654b4b5dd4a8ae76e971818f4b13369d61dbded607b844e3268f66419",
+      "declared_limits": {
+        "text": 32768,
+        "data": 4096,
+        "stack": 2048,
+        "image": 65536
+      },
+      "build_id": "0x474c3434",
+      "capabilities": 1,
+      "envelope_bytes": 64,
+      "elf_bytes": 7520,
+      "package_bytes": 7584,
+      "sha256": "6d0675df6792d0e2b554be7a076d7e724d00abc0b2f8dcace82eceb0d42da9c7",
+      "package": "/Agon/mystuff/golem/docs/tasks/GOLEM-044/native-math/build/probe-relocated/probe.vdpl",
+      "elf": "/Agon/mystuff/golem/docs/tasks/GOLEM-044/native-math/build/probe-relocated/probe.elf",
+      "entry_virtual": 700,
+      "resident_text_bytes": 5240,
+      "resident_data_bytes": 1244,
+      "relative_relocations": 16,
+      "allocated_sections": {
+        ".text": {
+          "virtual_address": 408,
+          "bytes": 5237,
+          "type": 1
+        },
+        ".rodata": {
+          "virtual_address": 5648,
+          "bytes": 1240,
+          "type": 1
+        },
+        ".data": {
+          "virtual_address": 11188,
+          "bytes": 4,
+          "type": 1
+        }
+      },
+      "linked_libraries": [
+        {
+          "name": "libm.a",
+          "path": "/home/smith/.platformio/packages/toolchain-xtensa-esp32/xtensa-esp32-elf/lib/libm.a",
+          "sha256": "89565dc52d561a7145679685683a9d0f05110889dd14925aac487bd646043d69"
+        },
+        {
+          "name": "libgcc.a",
+          "path": "/home/smith/.platformio/packages/toolchain-xtensa-esp32/lib/gcc/xtensa-esp32-elf/8.4.0/libgcc.a",
+          "sha256": "fe2bda6df58227d33ed36af602c7a540f2d7d3adf83d0592a262d94eccd4a3a5"
+        }
+      ]
+    }
+  },
+  {
+    "package": "flower",
+    "module": {
+      "name": "flower",
+      "source": "/Agon/mystuff/golem/docs/tasks/GOLEM-044/native-math/build/flower/native.c",
+      "source_sha256": "eae75484aff4fed779c161105377fc47cf6cdf8d7c17af2df042f0c194c63980",
+      "policy_sha256": "c69d6f3654b4b5dd4a8ae76e971818f4b13369d61dbded607b844e3268f66419",
+      "declared_limits": {
+        "text": 32768,
+        "data": 4096,
+        "stack": 2048,
+        "image": 65536
+      },
+      "build_id": "0x474c3434",
+      "capabilities": 1,
+      "envelope_bytes": 64,
+      "elf_bytes": 13604,
+      "package_bytes": 13668,
+      "sha256": "dec96465017b0ebadf215db09bc04a0381584fb4ca02c4fbc5d1fae47399d170",
+      "package": "/Agon/mystuff/golem/docs/tasks/GOLEM-044/native-math/build/flower/flower.vdpl",
+      "elf": "/Agon/mystuff/golem/docs/tasks/GOLEM-044/native-math/build/flower/flower.elf",
+      "entry_virtual": 700,
+      "resident_text_bytes": 11336,
+      "resident_data_bytes": 1244,
+      "relative_relocations": 15,
+      "allocated_sections": {
+        ".text": {
+          "virtual_address": 396,
+          "bytes": 11333,
+          "type": 1
+        },
+        ".rodata": {
+          "virtual_address": 11732,
+          "bytes": 1240,
+          "type": 1
+        },
+        ".data": {
+          "virtual_address": 17272,
+          "bytes": 4,
+          "type": 1
+        }
+      },
+      "linked_libraries": [
+        {
+          "name": "libm.a",
+          "path": "/home/smith/.platformio/packages/toolchain-xtensa-esp32/xtensa-esp32-elf/lib/libm.a",
+          "sha256": "89565dc52d561a7145679685683a9d0f05110889dd14925aac487bd646043d69"
+        },
+        {
+          "name": "libgcc.a",
+          "path": "/home/smith/.platformio/packages/toolchain-xtensa-esp32/lib/gcc/xtensa-esp32-elf/8.4.0/libgcc.a",
+          "sha256": "fe2bda6df58227d33ed36af602c7a540f2d7d3adf83d0592a262d94eccd4a3a5"
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "package": "sdk-default/numeric-1",
+    "relative_relocations": 4,
+    "sanitized_loader_admission_and_mutation_rejections": "pass"
+  },
+  {
+    "package": "sdk-default/numeric-2",
+    "relative_relocations": 4,
+    "sanitized_loader_admission_and_mutation_rejections": "pass"
+  },
+  {
+    "package": "sdk-default/packed-mono",
+    "relative_relocations": 1,
+    "sanitized_loader_admission_and_mutation_rejections": "pass"
+  },
+  {
+    "package": "probe/probe",
+    "relative_relocations": 16,
+    "sanitized_loader_admission_and_mutation_rejections": "pass"
+  },
+  {
+    "package": "probe-relocated/probe",
+    "relative_relocations": 16,
+    "sanitized_loader_admission_and_mutation_rejections": "pass"
+  },
+  {
+    "package": "flower/flower",
+    "relative_relocations": 15,
+    "sanitized_loader_admission_and_mutation_rejections": "pass"
+  }
+]

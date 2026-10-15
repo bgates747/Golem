@@ -417,6 +417,7 @@ class BufferEmitter {
         return {result,0};
     }
     Location expression(Bytes &code, const Expression &expression) {
+        if(mathOperation(expression->op))throw std::runtime_error("float /, sin, cos and floor currently require --target native");
         if (expression->constant)
             return {data(width(expression->type)==4?bitsBytes(expression->constant->bits):le16Bytes(expression->constant->bits), "constant"), 0};
         if(expression->op==Op::ArrayRead) {
@@ -681,6 +682,7 @@ inline std::string nativeC(const Program &program, const Layout &layout) {
     for(const auto&a:program.arrays)usesWide|=wide(a.type);
     for(const auto&p:program.procedures)usesWide|=usesWideBody(p.statements);
     std::ostringstream out;
+    if(requiresNativeMath(program))out << "#include <math.h>\n";
     out << "/* Generated from the shared Golem model; module state stays in VDP buffers. */\n"
         << "#include \"vdplet.h\"\nstatic volatile uint32_t identity=0x474c3332u;\n"
         << "static uint16_t get(const uint8_t*p){return (uint16_t)p[0]|(uint16_t)p[1]<<8;}\n"
@@ -789,6 +791,12 @@ inline std::string nativeC(const Program &program, const Layout &layout) {
             }
             return result;
         }
+        if(e->op==Op::Sin||e->op==Op::Cos||e->op==Op::Floor) {
+            const auto result="v"+std::to_string(temporary++);
+            out << "uint32_t " << result << "=fbits(" << (e->op==Op::Sin?"sinf":e->op==Op::Cos?"cosf":"floorf")
+                << "(fvalue(" << left << ")));\nFP_RESULT(" << result << ");\n";
+            return result;
+        }
         const auto right = expression(e->right);
         const auto result = "v" + std::to_string(temporary++);
         if (e->op == Op::Compare) {
@@ -824,7 +832,8 @@ inline std::string nativeC(const Program &program, const Layout &layout) {
             return result;
         }
         if(e->type==Type::F32) {
-            out << "uint32_t " << result << "=fbits(fvalue(" << left << ")" << (e->op==Op::Add?'+':e->op==Op::Subtract?'-':'*') << "fvalue(" << right << "));\nFP_RESULT(" << result << ");\n";
+            if(e->op==Op::Divide)out << "if(!(" << right << "&2147483647u))FAIL(4);\n";
+            out << "uint32_t " << result << "=fbits(fvalue(" << left << ")" << (e->op==Op::Add?'+':e->op==Op::Subtract?'-':e->op==Op::Divide?'/':'*') << "fvalue(" << right << "));\nFP_RESULT(" << result << ");\n";
             return result;
         }
         if(e->type==Type::S16) {

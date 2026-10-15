@@ -40,10 +40,17 @@ inline int run(int argc, char **argv) {
         std::set<unsigned> roles,ids;
         std::map<std::string,std::string> arrayFiles;
         std::vector<portable::Reservation> external{{60000,60031}};
+        bool nativeOnly=false,targetSeen=false;
         int option=2;
         while(option<argc && std::string(argv[option]).rfind("--",0)==0) {
             const std::string flag=argv[option++];
             if(flag=="--")break;
+            if(flag=="--target") {
+                if(targetSeen||option>=argc)throw std::runtime_error("--target requires one selection: both or native");
+                targetSeen=true;const std::string target=argv[option++];
+                if(target!="native"&&target!="both")throw std::runtime_error("--target requires both or native");
+                nativeOnly=target=="native";continue;
+            }
             if(flag=="--reserve") {
                 if(option>=argc)throw std::runtime_error("--reserve requires FIRST:LAST");
                 const std::string range=argv[option++];const auto colon=range.find(':');
@@ -76,6 +83,12 @@ inline int run(int argc, char **argv) {
         std::ifstream input(argv[option]); if (!input) throw std::runtime_error("could not read source");
         const std::string source{std::istreambuf_iterator<char>(input), {}};
         auto program = portable::Parser(source).parse();
+        const bool math=portable::requiresNativeMath(program);
+        if(math&&!nativeOnly)throw std::runtime_error("float /, sin, cos and floor currently require --target native; stock math is not qualified");
+        const std::filesystem::path output(argv[option+1]);
+        if((nativeOnly&&std::filesystem::exists(output/"buffered-install.bin")) ||
+           (!nativeOnly&&std::filesystem::exists(output/"targets.json")))
+            throw std::runtime_error("target selection changed; use a fresh output directory");
         for(auto&a:program.arrays) {
             const auto supplied=arrayFiles.find(a.name);
             if(supplied!=arrayFiles.end()) {
@@ -95,8 +108,11 @@ inline int run(int argc, char **argv) {
         for (size_t i = 0; i < external.size(); ++i) allocator.reserve(external[i].first, external[i].last, "external." + std::to_string(i));
         allocator.reserve(layout.buffer, layout.buffer, "application.shared_state");
         for(size_t i=0;i<program.arrays.size();++i)allocator.reserve(layout.arrayBuffers[i],layout.arrayBuffers[i],"application.array."+program.arrays[i].name);
-        auto buffered = BufferEmitter(program, layout, allocator).emit();
-        const auto envelope=root_v1::envelope(buffered,program,layout,allocator);
+        Buffered buffered;root_v1::Envelope envelope;
+        if(!nativeOnly) {
+            buffered=BufferEmitter(program, layout, allocator).emit();
+            envelope=root_v1::envelope(buffered,program,layout,allocator);
+        }
         const auto native = root_v1::native(program, layout,bindings);
         const unsigned arguments = allocator.allocate("dual.native.arguments");
         Bytes nativeInstall = write(arguments, le16Bytes(layout.buffer)), nativeCleanup = clear(arguments);
@@ -114,7 +130,10 @@ inline int run(int argc, char **argv) {
         std::ostringstream calls;
         calls << "; Include layout.inc separately. Explicit backend wrappers send six bytes only.\n";
         for (size_t i = 0; i < program.procedures.size(); ++i) {
-            for (const auto &choice : std::vector<std::pair<std::string, unsigned>>{{"buffered", buffered.entries[i]}, {"native", nativeEntries[i]}}) {
+            std::vector<std::pair<std::string,unsigned>> choices;
+            if(!nativeOnly)choices.push_back({"buffered",buffered.entries[i]});
+            choices.push_back({"native",nativeEntries[i]});
+            for (const auto &choice : choices) {
                 const auto stem = "golem_" + choice.first + "_" + program.procedures[i].name;
                 if (stem.size() + 5 > 64) throw std::runtime_error("assembly wrapper name too long");
                 calls << stem << ":\n ld hl," << stem << "_call\n ld bc,6\n rst.lil $18\n ret\n"
@@ -135,8 +154,9 @@ inline int run(int argc, char **argv) {
             meta << '"' << item.first << "\":";
             numbers(meta, std::vector<unsigned>(item.second.begin(), item.second.end()));
         }
-        meta << "}}\n";
-        const std::filesystem::path output(argv[option+1]);
+        meta << '}';
+        if(nativeOnly)meta << ",\"available_backends\":[\"native\"],\"required_module_libraries\":" << (math?"[\"m\",\"gcc\"]":"[]");
+        meta << "}\n";
         std::filesystem::create_directories(output);
         auto interface = portable::interfaceJson(program, layout);
         const std::string oldContract = "host_reference_only";
@@ -165,15 +185,19 @@ inline int run(int argc, char **argv) {
         Bytes common=write(layout.buffer,layout.initial);append(common,arrayInstall);
         writeFile(output/"common-install.bin",common);
         if(!program.arrays.empty())writeFile(output/"arrays-install.bin",arrayInstall);
-        writeFile(output/"buffered-install.bin", buffered.install);
-        writeFile(output/"buffered-cleanup.bin", buffered.cleanup);
+        if(!nativeOnly) {
+            writeFile(output/"buffered-install.bin", buffered.install);
+            writeFile(output/"buffered-cleanup.bin", buffered.cleanup);
+        } else writeFile(output/"targets.json",std::string("{\"selection\":\"native\",\"available_backends\":[\"native\"],\"requires_math_libraries\":")+(math?"true":"false")+"}\n");
         writeFile(output/"native-install.bin", nativeInstall);
         writeFile(output/"native-cleanup.bin", nativeCleanup);
         writeFile(output/"native.c", native);
         writeFile(output/"calls.inc", calls.str());
         writeFile(output/"backends.json", meta.str());
-        std::cout << "Shared state " << layout.bytes << " bytes; buffered install " << buffered.install.size()
-                  << " bytes; " << program.procedures.size() << " native entries.\n";
+        std::cout << "Shared state " << layout.bytes << " bytes; ";
+        if(nativeOnly)std::cout << "native-only package; ";
+        else std::cout << "buffered install " << buffered.install.size() << " bytes; ";
+        std::cout << program.procedures.size() << " native entries.\n";
         return 0;
     } catch (const std::exception &error) { std::cerr << "compiler: " << error.what() << '\n'; return 1; }
 }

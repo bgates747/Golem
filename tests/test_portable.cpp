@@ -63,7 +63,7 @@ int main(int argc, char **argv) {
     bad({"--bind", "1", "8", "0", "0"});
     bad({"--bind", "1", "8", "0", "2", "--bind", "1", "9", "0", "2"});
     bad({"--bind", "1", "8", "0", "2", "--bind", "2", "8", "0", "2"});
-    bad({"--target", "native"}); bad({"--array-data", "unknown=missing"});
+    bad({"--target", "unsupported"}); bad({"--array-data", "unknown=missing"});
     bad({"--array-data", "x="}); bad({"--array-data", "=file"});
     bad({"--array-data", "x=first", "--array-data", "x=second"});
     assert(invoke({"golemc", "--portable"}) == 1);
@@ -113,6 +113,43 @@ int main(int argc, char **argv) {
     assert(folded.procedures[0].statements[0].value->constant->bits==19);
     const auto chained=portable::Parser("uint16 a=1 uint16 b=2 uint16 c=3 Sub f a=a^b^c EndSub").parse();
     assert(chained.procedures[0].statements[0].value->left->op==portable::Op::Xor);
+    const auto mathProgram=portable::Parser(
+        "float32 x=-0.25 float32 d=2.0 float32 result=7.0 sint16 whole=5 bool flag=false "
+        "Sub f result=SiN(0.0)+COS(0.0) whole=sint16(FLOOR(x)) "
+        "result=8.0/d*3.0+1.0 flag=false And x/d==1.0 EndSub "
+        "Sub fail result=3.0 result=x/d whole=0 EndSub").parse();
+    const auto mathLayout=portable::layout(mathProgram);auto mathState=mathLayout.initial;
+    assert(portable::requiresNativeMath(mathProgram));
+    assert(portable::invokeReference(mathProgram,mathLayout,mathState,0)==0);
+    assert(portable::get(mathState,mathLayout.offsets[2],portable::Type::F32).number()==13.0);
+    assert(portable::get(mathState,mathLayout.offsets[3],portable::Type::S16).number()==-1);
+    portable::put(mathState,mathLayout.offsets[1],portable::floating(-0.0f));
+    assert(portable::invokeReference(mathProgram,mathLayout,mathState,1)==4);
+    assert(portable::get(mathState,mathLayout.offsets[2],portable::Type::F32).number()==3.0);
+    assert(portable::get(mathState,mathLayout.offsets[3],portable::Type::S16).number()==-1);
+    const auto third=portable::binary(portable::Op::Divide,portable::floating(1.0f),portable::floating(3.0f));
+    assert(third.bits==0x3eaaaaabu);
+    const auto constantMath=portable::Parser("float32 x=0.0 Sub f x=1.0/3.0 EndSub").parse();
+    assert(constantMath.procedures[0].statements[0].value->constant->bits==third.bits);
+    const auto mathSource=work/"math.golem";
+    write(mathSource,"float32 x=0.5 float32 y=2.0 Sub step x=sin(x)/y EndSub");
+    for(const auto &options:std::vector<std::vector<std::string>>{{},{"--target","both"}}) {
+        std::vector<std::string> args{"golemc","--portable"};args.insert(args.end(),options.begin(),options.end());
+        args.insert(args.end(),{mathSource.string(),(work/"unsupported-stock-math").string()});
+        assert(invoke(args)==1);assert(!fs::exists(work/"unsupported-stock-math"));++rejected;
+    }
+    assert(invoke({"golemc","--portable","--target","native",mathSource.string(),(work/"native-math").string()})==0);
+    assert(!fs::exists(work/"native-math/buffered-install.bin"));
+    assert(read(work/"native-math/native.c").find("sinf(")!=std::string::npos);
+    assert(read(work/"native-math/backends.json").find("\"available_backends\":[\"native\"]")!=std::string::npos);
+    write(source,"uint16 x=0 Sub step x=x+1 EndSub");
+    assert(invoke({"golemc","--portable",source.string(),(work/"both-selection").string()})==0);
+    assert(invoke({"golemc","--portable","--target","native",source.string(),(work/"native-selection").string()})==0);
+    for(const char *file:{"interface.json","root.json","program.json","layout.inc","state.bin","common-install.bin"})
+        assert(read(work/"both-selection"/file)==read(work/"native-selection"/file));
+    assert(invoke({"golemc","--portable","--target","native",source.string(),(work/"both-selection").string()})==1);
+    assert(invoke({"golemc","--portable",source.string(),(work/"native-selection").string()})==1);
+    bad({"--target","native","--target","native"});
     for (const char *text : {"uint16 x Sub f x=1 EndSub", "uint16 x=0; Sub f x=1 EndSub",
                             "uint16 x=0 Sub f x=x >> 1 EndSub",
                             "uint32 x=1 Sub f x=x >>32 EndSub",
@@ -127,7 +164,15 @@ int main(int argc, char **argv) {
                             "uint16 x=1^2 Sub f x=0 EndSub",
                             "uint16 x=1 Sub f x=x^true EndSub",
                             "uint16 x=1 Sub f x=x^65536 EndSub",
-                            "sint16 x=1 Sub f x=x^32768 EndSub"}) {
+                            "sint16 x=1 Sub f x=x^32768 EndSub",
+                            "uint16 x=1 Sub f x=x/2 EndSub",
+                            "float32 x=0.0 Sub f x=1.0/0.0 EndSub",
+                            "float32 x=0.0 uint16 y=1 Sub f x=sin(y) EndSub",
+                            "uint16 x=0 Sub f x=cos(1.0) EndSub",
+                            "float32 x=0.0 Sub f x=floor(true) EndSub",
+                            "float32 x=0.0 Sub f x=sin(1.0,2.0) EndSub",
+                            "float32 x=0.0 Sub f x=cos() EndSub",
+                            "float32 sin=0.0 Sub f sin=1.0 EndSub"}) {
         bool failed = false;
         try { portable::Parser(text).parse(); } catch (const std::exception &) { failed = true; }
         assert(failed); ++rejected;

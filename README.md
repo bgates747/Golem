@@ -57,6 +57,12 @@ native C uses the external VDPlet SDK. Read the
 [portable compiler guide](docs/design/portable-compiler.md) for exact supported
 syntax, errors, options and assembly integration.
 
+Explicit `--target native` also supports float32 division, sin/cos in radians
+and floor. The [Flower mathematical tranche](docs/tasks/GOLEM-044/native-math/README.md)
+qualifies these operations under actual ESP32 firmware; stock lowering remains
+unsupported. Package its generated C with the VDPlet SDK's opt-in `--math` flag.
+The interactive Flower client and visual review are still ahead.
+
 Raw mode
 supports literal print, uint16 declarations, assignment/addition and For/Next.
 Explicit `--resident` mode adds bounded float32 floor-to-sint16 jobs with

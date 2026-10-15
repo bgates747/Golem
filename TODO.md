@@ -7,7 +7,7 @@ GOLEM-035 was accepted and explicitly approved for commit/push on 2026-10-13.
 Outstanding human/physical reviews below remain open; this checkpoint does not
 claim those reviews occurred.
 
-- [ ] **GOLEM-044:** Interactive Flower: Golem floating division/trig/drawing plus an AgonDev C++ client, decimal-degree angles, retained parameter strings and defined screen/keyboard lifecycle. [Task and requirements](docs/tasks/GOLEM-044.md), [first tranche report](docs/tasks/GOLEM-044/README.md). Reference/interaction/C++/math-link feasibility complete; native float math implementation is next. Exit clearing when restoring the saved mode is approved; stock float division remains unresolved.
+- [ ] **GOLEM-044:** Interactive Flower: Golem floating division/trig/drawing plus an AgonDev C++ client, decimal-degree angles, retained parameter strings and defined screen/keyboard lifecycle. [Task](docs/tasks/GOLEM-044.md), [native math report](docs/tasks/GOLEM-044/native-math/README.md). Native division/sin/cos/floor and six Flower math cases pass host and actual Xtensa headless checks; stock math remains unsupported. Rendering/C++ client remain ahead; visual staging is deferred until the Author wakes. Native mathematics accepted and authorized for publication on 2026-10-15. Next: resident batch rendering; emulator work uses Pi 5 only.
 
 - [ ] **GOLEM-036:** D1b faithful wide integer primitives, signed division and checked narrowing.
   [Plan](docs/tasks/GOLEM-036.md). First wide storage/add/subtract/comparison/conversion tranche qualified; human review accepted and saved results verified; commit/push explicitly approved.

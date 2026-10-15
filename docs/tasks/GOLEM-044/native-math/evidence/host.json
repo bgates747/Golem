@@ -1,0 +1,29 @@
+{
+  "packages": [
+    {
+      "package": "probe",
+      "cases": 615,
+      "max_float_ulps": 1,
+      "sanitized_generated_C": true,
+      "actual_assembler": true
+    },
+    {
+      "package": "probe-relocated",
+      "cases": 615,
+      "max_float_ulps": 1,
+      "sanitized_generated_C": true,
+      "actual_assembler": true
+    },
+    {
+      "package": "flower",
+      "cases": 14,
+      "max_float_ulps": 1,
+      "sanitized_generated_C": true,
+      "actual_assembler": true
+    }
+  ],
+  "prior_files_unchanged": 55,
+  "default_SDK_images_unchanged": 3,
+  "elapsed_seconds": 2.435,
+  "scope": "host/generated-C/assembler; not Xtensa execution"
+}

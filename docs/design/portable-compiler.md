@@ -39,9 +39,14 @@ asset-directory metadata=4. Roles 1/3/4 are read; role 2 is read/write. These
 descriptors declare externally installed ranges, not working synchronization,
 event transport or automatic asset loading.
 
-The current mode emits both backends. `--target` filtering and native renderer
-bindings are outside this maintained profile. Existing raw and `--resident`
-commands keep their own grammar and output contracts.
+The default mode emits both backends. `--target native` explicitly emits only
+native source/install/cleanup and named native wrappers, retaining the common
+typed state/root/layout. `--target both` is the default. Native-only packages
+include targets.json and capability/library metadata; they omit buffered
+install/cleanup and buffered wrappers. Changing selection requires a fresh
+output directory so stale artifacts cannot imply support. Native renderer
+bindings remain outside this profile. Existing raw and `--resident` commands
+keep their own grammar and output contracts.
 
 ## Supported language
 
@@ -59,6 +64,7 @@ commands keep their own grammar and output contracts.
 4. Typed Not/And/Or with short-circuiting; no numeric truthiness. Multiplication
    precedes addition/subtraction, then >>, ^, comparisons, Not, And, Or.
    Parentheses override grouping; arithmetic operands evaluate left to right.
+   Native float division shares multiplication precedence and associates left.
 5. `(q,r)=divmod(n,d)` with distinct matching uint16, uint32 or sint32 global
    destinations. Arguments evaluate once; both outputs must pass checks before
    either is stored. Signed quotient truncates toward zero and remainder has
@@ -100,9 +106,35 @@ reads/writes, conversions, comparisons and divmod arguments. It uses stock
 bytewise buffer adjustment or native unsigned bit patterns, with identical
 shared storage and no extra per-operation host traffic.
 
+## Native mathematical capability
+
+With explicit `--target native`, float32 expressions additionally support `/`,
+`sin(x)`, `cos(x)` and `floor(x)`. Arguments/results are float32, with explicit
+conversion required for other types. Sin/cos take radians; degree conversion
+is ordinary Golem arithmetic. Floor returns float32, so `sint16(floor(x))`
+performs the separate checked integer conversion. Keywords/builtins are
+case-insensitive; integer `/` is rejected in favour of divmod.
+
+Division evaluates its two operands once, left to right, then checks a zero
+divisor (including signed zero), reporting language status 4. Nonfinite input
+or output reports 33; destination Bounds still report 32. Each assignment
+preserves its failed destination and retains earlier source effects. Existing
+normalization/subnormal and short-circuit rules apply to all four operations.
+Native C uses ordinary `/`, sinf/cosf/floorf with contraction disabled. Constant
+division retains checked binary32 folding; trig calls are not folded using the
+build host's library. Qualify trig accuracy against a higher-precision reference;
+portable bit identity across different mathematical libraries is not assumed.
+
+Compile the emitted C with the SDK's opt-in `--math` setting. The compiler does
+not build or load the module. Stock lowering of these new mathematical
+operations is not qualified: default/both compilation rejects them, including
+operations in skipped branches. This capability does not change accepted
+programs' default dual-backend outputs. See [Flower's mathematical tranche](../tasks/GOLEM-044/native-math/README.md)
+for exact execution scope, accuracy cases and evidence.
+
 General Functions/parameters/locals/inter-Sub calls, Do/Loop, Switch/jump tables,
 strings/print, fixed-point, multidimensional arrays/matrices, left shifts/other
-bitwise operators and sqrt/pow/float division remain outside this profile.
+bitwise operators and sqrt/pow remain outside this profile.
 The legacy resident floor/table/drawing profiles remain separately available.
 
 ## Generated files and assembly use

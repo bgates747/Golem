@@ -1,0 +1,45 @@
+{
+  "scope": "same Oryx fixtures/firmware/adapter/modules, only observed command-task stack high-water replies differ",
+  "stack_differences": [
+    {
+      "reply_index": 7214,
+      "token": 7215,
+      "jit_stack_bytes": 2120,
+      "interp_stack_bytes": 2008
+    },
+    {
+      "reply_index": 7357,
+      "token": 7358,
+      "jit_stack_bytes": 2120,
+      "interp_stack_bytes": 2008
+    },
+    {
+      "reply_index": 14568,
+      "token": 14569,
+      "jit_stack_bytes": 2120,
+      "interp_stack_bytes": 2008
+    },
+    {
+      "reply_index": 14711,
+      "token": 14712,
+      "jit_stack_bytes": 2120,
+      "interp_stack_bytes": 2008
+    },
+    {
+      "reply_index": 26880,
+      "token": 26881,
+      "jit_stack_bytes": 2120,
+      "interp_stack_bytes": 2008
+    }
+  ],
+  "other_reply_bytes_identical": true,
+  "masked_reply_sha256": "a5a605ae4c5d8e4f6528c8d0382329acf40bf5d2aa5592f78b8d5bc7907eabc0",
+  "expected_stack_reply_indices": [
+    3,
+    7214,
+    7357,
+    14568,
+    14711,
+    26880
+  ]
+}

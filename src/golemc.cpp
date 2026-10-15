@@ -118,7 +118,7 @@ int main(int argc, char **argv) {
         if (argc != 3 || std::string(argv[1]).compare(0, 2, "--") == 0) {
             std::cerr << "usage: golemc <source> <payload>\n"
                       << "       golemc --resident [--emit-asm] [--table-data NAME=PATH] [--reserve FIRST:LAST ...] <source> <directory> [example-input]\n";
-            std::cerr << "       golemc --portable [--reserve FIRST:LAST ...] [--bind ROLE ID OFFSET BYTES ...] [--array-data NAME=PATH ...] <source> <directory>\n";
+            std::cerr << "       golemc --portable [--target both|native] [--reserve FIRST:LAST ...] [--bind ROLE ID OFFSET BYTES ...] [--array-data NAME=PATH ...] <source> <directory>\n";
             return 2;
         }
         auto bytes = compile(readFile(argv[1]));

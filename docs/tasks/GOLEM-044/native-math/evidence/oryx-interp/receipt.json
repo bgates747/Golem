@@ -1,0 +1,81 @@
+{
+  "engine": "interp",
+  "firmware_sha256": "8da2ebfdfa3b5b00f4a1929ad4885c838845b160f570259792ef370b69d4f473",
+  "elf_sha256": "b41e4cb37bd44633d14b2e6eea615cbbbdd29a1d4b49c3258b4f49f2e215e567",
+  "adapter_sha256": "200f28cbe399b1fdc60cba1e5fed4c2bb86042b5e92f6e422539a5388c079a30",
+  "scope": "actual ESP32 firmware/VDP-only ABI; no MOS/SD or physical hardware",
+  "graphical_instance_launched": false,
+  "visual_staging_deferred_by_author": true,
+  "packages": [
+    {
+      "name": "probe",
+      "module_sha256": "6d0675df6792d0e2b554be7a076d7e724d00abc0b2f8dcace82eceb0d42da9c7",
+      "entry_address": "0x40098080",
+      "calls": 103,
+      "max_float_ulps": 1,
+      "coordinates_checked": 0,
+      "stack_before": 2424,
+      "stack_after": 2008,
+      "language_statuses": [
+        0,
+        1,
+        4,
+        32,
+        33
+      ],
+      "cleanup_preserves_shared_state": true
+    },
+    {
+      "name": "probe-relocated",
+      "module_sha256": "6d0675df6792d0e2b554be7a076d7e724d00abc0b2f8dcace82eceb0d42da9c7",
+      "entry_address": "0x40098080",
+      "calls": 103,
+      "max_float_ulps": 1,
+      "coordinates_checked": 0,
+      "stack_before": 2008,
+      "stack_after": 2008,
+      "language_statuses": [
+        0,
+        1,
+        4,
+        32,
+        33
+      ],
+      "cleanup_preserves_shared_state": true
+    },
+    {
+      "name": "flower",
+      "module_sha256": "dec96465017b0ebadf215db09bc04a0381584fb4ca02c4fbc5d1fae47399d170",
+      "entry_address": "0x4009808c",
+      "calls": 72,
+      "max_float_ulps": 1,
+      "coordinates_checked": 4608,
+      "stack_before": 2008,
+      "stack_after": 2008,
+      "language_statuses": [],
+      "cleanup_preserves_shared_state": true
+    }
+  ],
+  "passed": true,
+  "failure": null,
+  "elapsed_seconds": 25.852,
+  "outbound_bytes": 526342,
+  "replies": 27092,
+  "reply_bytes": 270920,
+  "backend_stats": {
+    "engine": "interp",
+    "frames": 619,
+    "cycles": 2616143512,
+    "retired": 2296321135,
+    "uart_rx": 526342,
+    "uart_tx": 325117,
+    "uart_delivered": 325117,
+    "isync": 295,
+    "code_invalidations": 3,
+    "keys": 0,
+    "failed": false,
+    "unhandled": 0,
+    "unregistered": 0,
+    "unmapped": 0
+  }
+}

@@ -3,6 +3,7 @@
 #include "../token_reader.hpp"
 #include "../buffer_allocator.hpp"
 #include <cstdint>
+#include <cmath>
 #include <functional>
 #include <cstring>
 #include <iomanip>
@@ -79,7 +80,7 @@ inline float floatBound(double bound,bool lower) {
     if(!lower && static_cast<double>(value)>bound) value=std::nextafter(value,-std::numeric_limits<float>::infinity());
     return value;
 }
-enum class Op { Literal, Global, ArrayRead, Add, Subtract, Multiply, Convert, Compare, Not, And, Or, ShiftRight, Xor };
+enum class Op { Literal, Global, ArrayRead, Add, Subtract, Multiply, Convert, Compare, Not, And, Or, ShiftRight, Xor, Divide, Sin, Cos, Floor };
 struct Expr {
     Type type;
     Op op;
@@ -121,6 +122,26 @@ struct Assignment {
 };
 struct Procedure { std::string name; std::vector<Assignment> statements; uint64_t workVisits = 0; };
 struct Program { std::vector<Global> globals; std::vector<Procedure> procedures; std::vector<Array> arrays; };
+inline bool mathOperation(Op op) { return op==Op::Divide || op==Op::Sin || op==Op::Cos || op==Op::Floor; }
+inline bool requiresNativeMath(const Expression &e) {
+    return e && (mathOperation(e->op) || requiresNativeMath(e->left) || requiresNativeMath(e->right));
+}
+inline bool requiresNativeMath(const std::vector<Assignment> &body) {
+    for(const auto&s:body)
+        if(requiresNativeMath(s.value)||requiresNativeMath(s.index)||requiresNativeMath(s.left)||requiresNativeMath(s.right)||
+           requiresNativeMath(s.yes)||requiresNativeMath(s.no))return true;
+    return false;
+}
+inline bool requiresNativeMath(const Program &p) {
+    for(const auto&s:p.procedures)if(requiresNativeMath(s.statements))return true;
+    return false;
+}
+inline Value mathUnary(Op op,Value value) {
+    value=normalize(value);
+    if(value.type!=Type::F32)throw std::logic_error("float math requires float32");
+    const auto x=static_cast<float>(value.number());
+    return normalize(floating(op==Op::Sin?std::sin(x):op==Op::Cos?std::cos(x):std::floor(x)));
+}
 struct Reservation { unsigned first, last; };
 struct Layout {
     unsigned buffer, bytes, errorOffset;
@@ -139,6 +160,11 @@ inline Value binary(Op op, Value a, Value b) {
         return {a.type,result};
     }
     if (a.type != b.type) throw std::logic_error("invalid typed expression");
+    if(op==Op::Divide) {
+        if(a.type!=Type::F32)throw std::logic_error("division requires float32");
+        if(b.number()==0)throw Fault{4};
+        return normalize(floating(static_cast<float>(a.number())/static_cast<float>(b.number())));
+    }
     if(op==Op::Xor) {
         if(!integer(a.type))throw std::logic_error("XOR requires integer operands");
         return {a.type,(a.bits^b.bits)&(width(a.type)==2?65535u:UINT32_MAX)};
@@ -191,6 +217,7 @@ inline bool reserved(const std::string &word) {
     const auto lower = golem::syntax::lower(word);
     return golem::syntax::reserved(word) || lower == "bounds" || lower == "bool" ||
            lower == "function" || lower == "endfunction" || lower == "return" ||
+           lower == "sin" || lower == "cos" || lower == "floor" ||
            lower == "uint32" || lower == "sint32" || lower == "array" || lower == "readonly" || lower == "not" || lower == "and" || lower == "or" || lower == "true" || lower == "false" || lower == "native" || lower == "in" || lower == "runtime_error";
 }
 class Parser {
@@ -232,6 +259,13 @@ class Parser {
     }
     Expression atom(Type type) {
         const auto at = reader_.peek().begin;
+        if(reader_.keyword("sin")||reader_.keyword("cos")||reader_.keyword("floor")) {
+            if(type!=Type::F32)golem::syntax::fail(at,"sin/cos/floor require float32 operands and result; convert explicitly");
+            const auto op=reader_.takeKeyword("sin")?Op::Sin:reader_.takeKeyword("cos")?Op::Cos:(reader_.needKeyword("floor"),Op::Floor);
+            reader_.need('(');auto argument=expression(Type::F32);reader_.need(')');
+            auto result=std::make_shared<Expr>();result->type=Type::F32;result->op=op;result->at=at;result->left=argument;
+            return result;
+        }
         if(reader_.keyword("uint16")||reader_.keyword("sint16")||reader_.keyword("uint32")||reader_.keyword("sint32")||reader_.keyword("float32")) {
             const auto target=reader_.takeKeyword("sint16")?Type::S16:reader_.takeKeyword("uint16")?Type::U16:
                 reader_.takeKeyword("uint32")?Type::U32:reader_.takeKeyword("sint32")?Type::S32:(reader_.needKeyword("float32"),Type::F32);
@@ -324,9 +358,10 @@ class Parser {
     }
     Expression product(Type type) {
         auto result = atom(type);
-        while (reader_.peek().text == "*") {
-            const auto at = reader_.pop().begin;
-            result = combine(Op::Multiply, result, atom(type), at);
+        while (reader_.peek().text == "*" || reader_.peek().text == "/") {
+            const auto token = reader_.pop();
+            if(token.text=="/" && type!=Type::F32)golem::syntax::fail(token.begin,"/ requires float32; use divmod for integers");
+            result = combine(token.text=="*"?Op::Multiply:Op::Divide, result, atom(type), token.begin);
         }
         return result;
     }
@@ -644,6 +679,7 @@ inline Value evaluate(const Expression &e, const Layout &layout, const std::vect
     if (e->op == Op::Convert) {
         return convert(left,e->type);
     }
+    if(e->op==Op::Sin||e->op==Op::Cos||e->op==Op::Floor)return mathUnary(e->op,left);
     if (e->op == Op::Not) return {Type::Bool, left.bits ? 0u : 1u};
     if (e->op == Op::And && !left.bits) return {Type::Bool, 0};
     if (e->op == Op::Or && left.bits) return {Type::Bool, 1};
@@ -760,7 +796,7 @@ inline std::string interfaceJson(const Program &program, const Layout &layout) {
            " \"codes\": {\"ok\": 0, \"uint16_add_overflow\": 1, \"uint16_sub_underflow\": 2,"
            " \"uint16_mul_overflow\": 3";
     if(!program.arrays.empty())out << ", \"array_index\": 5, \"zero_divisor\": 4";
-    else if(wideDivision)out << ", \"zero_divisor\": 4";
+    else if(wideDivision||requiresNativeMath(program))out << ", \"zero_divisor\": 4";
     if(signedDivision)out << ", \"signed_division_overflow\": 6";
     out << ", \"bounds_failure\": 32, \"nonfinite_float\": 33}},\n"
         << "  \"globals\": [\n";
@@ -806,7 +842,7 @@ inline void expressionJson(std::ostream &out, const Expression &e) {
     else if (e->op == Op::Global) out << ",\"global\":" << e->global;
     else if(e->op==Op::ArrayRead) {out << ",\"array\":" << e->global << ",\"index\":";expressionJson(out,e->left);}
     else {
-        out << ",\"operator\":\"" << (e->op == Op::Convert ? name(e->type) : e->op == Op::Not ? "Not" : e->op == Op::And ? "And" : e->op == Op::Or ? "Or" : e->op == Op::Compare ? e->relation : e->op == Op::Add ? "+" : e->op == Op::Subtract ? "-" : e->op == Op::ShiftRight ? ">>" : e->op == Op::Xor ? "^" : "*")
+        out << ",\"operator\":\"" << (e->op == Op::Convert ? name(e->type) : e->op == Op::Not ? "Not" : e->op == Op::And ? "And" : e->op == Op::Or ? "Or" : e->op == Op::Compare ? e->relation : e->op == Op::Add ? "+" : e->op == Op::Subtract ? "-" : e->op == Op::ShiftRight ? ">>" : e->op == Op::Xor ? "^" : e->op==Op::Divide?"/":e->op==Op::Sin?"sin":e->op==Op::Cos?"cos":e->op==Op::Floor?"floor":"*")
             << "\",\"left\":";
         expressionJson(out, e->left); out << ",\"right\":"; expressionJson(out, e->right);
     }
