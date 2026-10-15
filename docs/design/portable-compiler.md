@@ -57,7 +57,7 @@ commands keep their own grammar and output contracts.
    and float32 conversions to/from 16-bit integers. Mixed variable types require
    explicit conversion. Wide integer/float conversion is not supported.
 4. Typed Not/And/Or with short-circuiting; no numeric truthiness. Multiplication
-   precedes addition/subtraction, then >>, comparisons, Not, And, Or.
+   precedes addition/subtraction, then >>, ^, comparisons, Not, And, Or.
    Parentheses override grouping; arithmetic operands evaluate left to right.
 5. `(q,r)=divmod(n,d)` with distinct matching uint16, uint32 or sint32 global
    destinations. Arguments evaluate once; both outputs must pass checks before
@@ -72,6 +72,12 @@ commands keep their own grammar and output contracts.
    each array's packed bytes fit a single block. Array writes check the index
    before evaluating the value. ReadOnly is source permission, not protection
    against trusted assembly changing storage while execution is stopped.
+8. Same-type integer `^` is bitwise XOR for uint16/sint16/uint32/sint32.
+   It evaluates both operands once, left to right, and chains left to right.
+   Signed operands use their full-width two's-complement bit patterns; XOR
+   cannot overflow. Destination Bounds checks still apply. Bool/float32 XOR
+   and implicit mixed-type XOR reject. Existing conversions are numeric range
+   conversions, not bit reinterpretation. See [the initialized example](../../examples/portable/xor.golem).
 
 Statements have no terminators; newlines are whitespace. Keywords are case
 insensitive and user identifiers retain case, with generated assembly-name
@@ -85,6 +91,14 @@ and subnormal results become positive zero. Float-to-integer conversion truncate
 toward zero and checks range. Build relevant host/native code with contraction
 disabled and without fast-math. This is a bounded float environment, not all
 IEEE-754 behaviors.
+
+The XOR example produces toggled=6 and signedResult=2147483647. `a + b ^ c`
+means `(a + b) ^ c`; `a >> count ^ b` means `(a >> count) ^ b`; and
+`a ^ b == c` means `(a ^ b) == c`. Parentheses override these rules. XOR is
+available throughout current integer expressions, including array indices,
+reads/writes, conversions, comparisons and divmod arguments. It uses stock
+bytewise buffer adjustment or native unsigned bit patterns, with identical
+shared storage and no extra per-operation host traffic.
 
 General Functions/parameters/locals/inter-Sub calls, Do/Loop, Switch/jump tables,
 strings/print, fixed-point, multidimensional arrays/matrices, left shifts/other

@@ -79,7 +79,7 @@ inline float floatBound(double bound,bool lower) {
     if(!lower && static_cast<double>(value)>bound) value=std::nextafter(value,-std::numeric_limits<float>::infinity());
     return value;
 }
-enum class Op { Literal, Global, ArrayRead, Add, Subtract, Multiply, Convert, Compare, Not, And, Or, ShiftRight };
+enum class Op { Literal, Global, ArrayRead, Add, Subtract, Multiply, Convert, Compare, Not, And, Or, ShiftRight, Xor };
 struct Expr {
     Type type;
     Op op;
@@ -139,6 +139,10 @@ inline Value binary(Op op, Value a, Value b) {
         return {a.type,result};
     }
     if (a.type != b.type) throw std::logic_error("invalid typed expression");
+    if(op==Op::Xor) {
+        if(!integer(a.type))throw std::logic_error("XOR requires integer operands");
+        return {a.type,(a.bits^b.bits)&(width(a.type)==2?65535u:UINT32_MAX)};
+    }
     if(wide(a.type)) {
         const auto left=static_cast<int64_t>(a.number()),right=static_cast<int64_t>(b.number());
         if(op==Op::Multiply && a.type==Type::U32) {
@@ -341,13 +345,22 @@ class Parser {
         if(reader_.peek().text==">" && reader_.peek().begin.offset==first.end.offset){reader_.pop();return true;}
         reader_=saved;return false;
     }
-    Expression expression(Type type) {
+    Expression shifted(Type type) {
         auto result=additive(type);
         while(true) {
             const auto at=reader_.peek().begin;
             if(!takeShift())break;
             if(!wide(type))golem::syntax::fail(at,"right shift requires uint32 or sint32 operand; widen explicitly");
             result=combine(Op::ShiftRight,result,additive(Type::U16),at);
+        }
+        return result;
+    }
+    Expression expression(Type type) {
+        auto result=shifted(type);
+        while(reader_.peek().text=="^") {
+            const auto at=reader_.pop().begin;
+            if(!integer(type))golem::syntax::fail(at,"XOR requires matching integer operands");
+            result=combine(Op::Xor,result,shifted(type),at);
         }
         return result;
     }
@@ -793,7 +806,7 @@ inline void expressionJson(std::ostream &out, const Expression &e) {
     else if (e->op == Op::Global) out << ",\"global\":" << e->global;
     else if(e->op==Op::ArrayRead) {out << ",\"array\":" << e->global << ",\"index\":";expressionJson(out,e->left);}
     else {
-        out << ",\"operator\":\"" << (e->op == Op::Convert ? name(e->type) : e->op == Op::Not ? "Not" : e->op == Op::And ? "And" : e->op == Op::Or ? "Or" : e->op == Op::Compare ? e->relation : e->op == Op::Add ? "+" : e->op == Op::Subtract ? "-" : e->op == Op::ShiftRight ? ">>" : "*")
+        out << ",\"operator\":\"" << (e->op == Op::Convert ? name(e->type) : e->op == Op::Not ? "Not" : e->op == Op::And ? "And" : e->op == Op::Or ? "Or" : e->op == Op::Compare ? e->relation : e->op == Op::Add ? "+" : e->op == Op::Subtract ? "-" : e->op == Op::ShiftRight ? ">>" : e->op == Op::Xor ? "^" : "*")
             << "\",\"left\":";
         expressionJson(out, e->left); out << ",\"right\":"; expressionJson(out, e->right);
     }

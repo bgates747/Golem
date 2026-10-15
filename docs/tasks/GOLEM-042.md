@@ -47,14 +47,14 @@ After the call, toggled is 6 and signedResult is 2147483647.
 
 ## Subtasks
 
-- SYN-001 [ ] Add the typed operator, precedence, constant/reference evaluation and expression serialization; document initialized examples.
-- EMIT-001 [ ] Implement stock bytewise and native unsigned-pattern emission without changing output for source that does not use XOR.
-- CHK-001 [ ] Add maintained type/rejection/precedence tests and independent buffered-model/generated-C checks for all four types, sign/extreme/bit patterns, arrays, Bounds, operand failures and short-circuit skips.
-- CHK-002 [ ] Run maintained checks, focused sanitizers, default/relocated parity and a real assembler consumer; retain accepted fixture hashes.
-- QUA-001 [ ] Package/pin new native code against the unchanged SDK, then qualify stock and actual Xtensa JIT/interpreter default/relocated behavior with bounded finite fixtures.
-- VIS-001 [ ] Prepare and qualify a source-labelled XOR animation on a new dedicated Oryx profile, leave it stopped and provide the launch command. Automated runs must be both windowless and silent.
-- DOC-001 [ ] Record implementation, resource/traffic evidence and limits under docs/tasks/GOLEM-042; update the maintained contract and task register.
-- REV-001 [ ] Obtain human review and explicit publication approval before committing/pushing the new implementation.
+- SYN-001 [x] Add the typed operator, precedence, constant/reference evaluation and expression serialization; document initialized examples. Maintained compiler and examples updated.
+- EMIT-001 [x] Implement stock bytewise and native unsigned-pattern emission without changing output for source that does not use XOR. All 55 no-XOR baseline output files match.
+- CHK-001 [x] Add maintained type/rejection/precedence tests and independent buffered-model/generated-C checks for all four types, sign/extreme/bit patterns, arrays, Bounds, operand failures and short-circuit skips. 468 cases per layout pass.
+- CHK-002 [x] Run maintained checks, focused sanitizers, default/relocated parity and a real assembler consumer; retain accepted fixture hashes. C++ and generated-C sanitizers, both assembly consumers, 55-file parity and 58-file frozen provenance pass.
+- QUA-001 [x] Package/pin new native code against the unchanged SDK, then qualify stock and actual Xtensa JIT/interpreter default/relocated behavior with bounded finite fixtures. Six arithmetic runs pass; package receipts pin all three modules.
+- VIS-001 [x] Prepare and qualify a source-labelled XOR animation on a new dedicated Oryx profile, leave it stopped and provide the launch command. Both engines pass 300 frames and 56,320 final playfield pixels; automated runs were windowless and silent. Human acceptance remains below.
+- DOC-001 [x] Record implementation, resource/traffic evidence and limits under docs/tasks/GOLEM-042; update the maintained contract and task register. See [results and launch instructions](GOLEM-042/README.md).
+- REV-001 [x] Human review accepted: the Author reported "passed" on 2026-10-15. Retrieved results verify 270 observations / 2,646 bytes, all 56,320 final playfield pixels, runtime/fixture identities and MOS return. The Author explicitly approved committing/pushing all pending work on 2026-10-15.
 
 ## Acceptance and boundaries
 

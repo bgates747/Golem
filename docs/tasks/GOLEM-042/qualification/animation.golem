@@ -1,0 +1,23 @@
+// Golem moves three squares. XOR mirrors a lane and toggles direction/colour.
+// Assembly installs the packages, draws these arrays and paces with VSYNC.
+uint16 slot = 0
+Array uint16 phase(0:2) = Values(0,42,84)
+Array uint16 direction(0:2) = Values(1,1,1)
+ReadOnly Array uint16 mirror(0:2) = Values(0,127,0)
+Array uint16 screenX(0:2) = Values(16,186,184)
+Array uint16 screenY(0:2) = Values(48,92,136)
+Array uint16 colour(0:2) = Values(12,48,12)
+Sub step
+    For slot In Range(0:2)
+        If phase(slot) == 127 And direction(slot) == 1 Or phase(slot) == 0 And direction(slot) == 0 Then
+            direction(slot) = direction(slot) ^ 1
+            colour(slot) = colour(slot) ^ 60
+        EndIf
+        If direction(slot) == 1 Then
+            phase(slot) = phase(slot) + 1
+        Else
+            phase(slot) = phase(slot) - 1
+        EndIf
+        screenX(slot) = 16 + (phase(slot) ^ mirror(slot)) * 2
+    Next slot
+EndSub

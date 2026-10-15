@@ -1,0 +1,99 @@
+// Standalone integer-XOR conformance; every invocation starts from explicit state.
+uint16 a16 = 5
+uint16 b16 = 3
+uint16 mask16 = 1
+uint16 r16 = 17
+sint16 as16 = -1
+sint16 bs16 = -32768
+sint16 rs16 = 19
+uint32 a32 = 5
+uint32 b32 = 3
+uint32 c32 = 1
+uint32 r32 = 23
+sint32 as32 = -1
+sint32 bs32 = -2147483648
+sint32 rs32 = 29
+uint16 count = 1
+uint16 index = 0
+sint16 signedIndex = -1
+uint16 effect = 5
+uint16 bounded16 Bounds(0,7) = 3
+sint32 bounded32 Bounds(-2,2) = 1
+uint32 quotient = 0
+uint32 remainder = 0
+bool flag = false
+Array uint16 u16values(0:1) = Values(65535,43690)
+Array sint16 s16values(-1:0) = Values(-32768,-1)
+Array uint32 u32values(0:1) = Values(4294967295,2863311530)
+Array sint32 s32values(-1:0) = Values(-2147483648,-1)
+Sub xorU16
+    r16 = a16 ^ b16
+EndSub
+Sub xorS16
+    rs16 = as16 ^ bs16
+EndSub
+Sub xorU32
+    r32 = a32 ^ b32
+EndSub
+Sub xorS32
+    rs32 = as32 ^ bs32
+EndSub
+Sub chain
+    r16 = a16 ^ b16 ^ mask16
+EndSub
+Sub precedence
+    r32 = a32 + b32 * 2 >> count ^ c32 >> 1
+EndSub
+Sub parentheses
+    r32 = (a32 ^ b32) + c32
+EndSub
+Sub comparison
+    flag = Not a32 ^ b32 == c32 Or false
+EndSub
+Sub boundedUnsigned
+    bounded16 = a16 ^ b16
+EndSub
+Sub boundedSigned
+    bounded32 = as32 ^ bs32
+EndSub
+Sub priorEffect
+    effect = effect + 1
+    bounded16 = a16 ^ b16
+EndSub
+Sub operandOrder
+    r32 = a32 * b32 ^ c32 - 1
+EndSub
+Sub rightFailure
+    r32 = a32 ^ b32 - 1
+EndSub
+Sub skipped
+    flag = false And a32 ^ b32 - 1 == 0
+EndSub
+Sub arrayRead
+    r16 = u16values(index ^ 1) ^ a16
+    rs16 = s16values(signedIndex) ^ as16
+    r32 = u32values(index) ^ a32
+    rs32 = s32values(signedIndex) ^ as32
+EndSub
+Sub arrayWrite
+    u16values(index) = u16values(index) ^ a16
+    s16values(signedIndex) = s16values(signedIndex) ^ as16
+    u32values(index) = u32values(index) ^ a32
+    s32values(signedIndex) = s32values(signedIndex) ^ as32
+EndSub
+Sub conversion
+    r32 = uint32(a16 ^ b16) ^ a32
+    r16 = uint16(a32 ^ b32)
+EndSub
+Sub countExpression
+    r32 = a32 >> (a16 ^ b16)
+EndSub
+Sub paired
+    (quotient, remainder) = divmod(a32 ^ b32, c32)
+EndSub
+Sub constants
+    r16 = 65535 ^ 43690
+    rs16 = -32768 ^ -1
+    r32 = 4294967295 ^ 2863311530
+    rs32 = -2147483648 ^ -1
+EndSub

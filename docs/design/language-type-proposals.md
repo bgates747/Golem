@@ -1581,3 +1581,35 @@ EndSub
 
 This is the task-local next profile, not production src support. Golem qualifies
 primitives/packages; Rally owns its game-specific replay and validation.
+
+## Integer XOR — GOLEM-042 implementation slice
+
+The maintained `--portable` compiler accepts binary `^` for matching uint16,
+sint16, uint32 or sint32 operands. The result has the same type and width.
+Signed operands use their two's-complement patterns; toggling the sign bit is
+valid and XOR itself cannot overflow. Destination Bounds remain checked, with
+status 32 and failed-destination preservation. Bool/float XOR and implicit mixed
+types reject; explicit integer conversions retain their numeric range rules.
+
+Multiplication, addition/subtraction and shifts bind above XOR; comparisons,
+Not, And and Or bind below it. XOR chains associate left to right. Both operands
+evaluate once, left to right, with the existing operand-error semantics.
+`^` is not exponentiation: `**` remains the selected future power spelling.
+
+```golem
+uint16 flags = 5
+uint16 mask = 3
+uint16 toggled = 0
+sint32 signedValue = -1
+sint32 signMask = -2147483648
+sint32 signedResult = 0
+Sub toggle
+    toggled = flags ^ mask
+    signedResult = signedValue ^ signMask
+EndSub
+```
+
+Results are 6 and 2147483647 respectively. Stock uses bytewise buffer XOR;
+native C uses unsigned stored patterns. The source and shared storage are the
+same for both backends. GOLEM-042 owns qualification and human-review evidence;
+other bitwise operators and left shift remain separate proposed work.

@@ -98,15 +98,41 @@ int main(int argc, char **argv) {
     auto value = [&](size_t index) {return portable::get(state, layout.offsets[index], program.globals[index].type);};
     assert(value(0).bits == 4 && value(1).bits == 6 && value(5).number() == -2);
     assert(value(6).number() == 3.0 && value(7).number() == 1 && value(8).bits == 1);
+    const auto xorProgram=portable::Parser(
+        "uint16 a=65535 uint16 b=43690 uint16 r=0 "
+        "sint16 c=-1 sint16 d=-32768 sint16 s=0 "
+        "uint32 e=4294967295 uint32 f=2863311530 uint32 t=0 "
+        "sint32 g=-1 sint32 h=-2147483648 sint32 u=0 bool flag=false "
+        "Sub step r=a^b s=c^d t=e^f u=g^h "
+        "flag=Not a^b!=21845 And e^f==1431655765 EndSub").parse();
+    const auto xorLayout=portable::layout(xorProgram);auto xorState=xorLayout.initial;
+    assert(portable::invokeReference(xorProgram,xorLayout,xorState,0)==0);
+    for(const auto &expected:std::vector<std::pair<size_t,uint32_t>>{{2,21845},{5,32767},{8,1431655765},{11,2147483647},{12,1}})
+        assert(portable::get(xorState,xorLayout.offsets[expected.first],xorProgram.globals[expected.first].type).bits==expected.second);
+    const auto folded=portable::Parser("uint32 x=0 Sub f x=32+2*2>>1^3>>1 EndSub").parse();
+    assert(folded.procedures[0].statements[0].value->constant->bits==19);
+    const auto chained=portable::Parser("uint16 a=1 uint16 b=2 uint16 c=3 Sub f a=a^b^c EndSub").parse();
+    assert(chained.procedures[0].statements[0].value->left->op==portable::Op::Xor);
     for (const char *text : {"uint16 x Sub f x=1 EndSub", "uint16 x=0; Sub f x=1 EndSub",
                             "uint16 x=0 Sub f x=x >> 1 EndSub",
                             "uint32 x=1 Sub f x=x >>32 EndSub",
-                            "uint16 x=0 Sub f x=true EndSub"}) {
+                            "uint16 x=0 Sub f x=true EndSub",
+                            "float32 x=1.0 Sub f x=x^1.0 EndSub",
+                            "bool x=false Sub f x=x^true EndSub",
+                            "uint16 x=1 uint32 y=1 Sub f x=x^y EndSub",
+                            "uint16 x=1 sint16 y=1 Sub f x=x^y EndSub",
+                            "uint32 x=1 sint32 y=1 Sub f x=x^y EndSub",
+                            "uint16 x=1 Sub f x=x^^1 EndSub",
+                            "uint16 x=1 Sub f x=x^ EndSub",
+                            "uint16 x=1^2 Sub f x=0 EndSub",
+                            "uint16 x=1 Sub f x=x^true EndSub",
+                            "uint16 x=1 Sub f x=x^65536 EndSub",
+                            "sint16 x=1 Sub f x=x^32768 EndSub"}) {
         bool failed = false;
         try { portable::Parser(text).parse(); } catch (const std::exception &) { failed = true; }
         assert(failed); ++rejected;
     }
     std::cout << "Portable contracts pass: " << files << " frozen output files, "
               << nativeSources << " intentionally changed native sources, " << rejected
-              << " rejections, mapped/reserved/bound inputs and combined reference behavior.\n";
+              << " rejections, mapped/reserved/bound inputs, XOR types/precedence and combined reference behavior.\n";
 }

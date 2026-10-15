@@ -467,6 +467,12 @@ class BufferEmitter {
         }
         const auto left = this->expression(code, expression->left);
         auto right = this->expression(code, expression->right);
+        if(expression->op==Op::Xor) {
+            const auto bytes=width(expression->type),result=data(Bytes(bytes,0),"xor_result");
+            copy(code,{result,0},left,bytes);
+            emitAdjustMultiBufferFetched(code,result,7,0,bytes,right.buffer,right.offset);
+            return {result,0};
+        }
         if(expression->op==Op::ShiftRight)return shiftRight(code,expression->type,left,right);
         if(wide(expression->type))return wideArithmetic(code,expression,left,right);
         if(expression->type==Type::F32) {
@@ -793,6 +799,11 @@ inline std::string nativeC(const Program &program, const Layout &layout) {
             out << "uint32_t " << result << "=(" << (e->left->type==Type::S32?"signed32("+left+")":e->left->type==Type::S16?"signed16("+left+")":left)
                 << e->relation << (e->right->type==Type::S32?"signed32("+right+")":e->right->type==Type::S16?"signed16("+right+")":right) << ")?1u:0u;\n";
             return result;
+        }
+        if(e->op==Op::Xor) {
+            out << "uint32_t " << result << "=(" << left << "^" << right << ")";
+            if(width(e->type)==2)out << "&65535u";
+            out << ";\n";return result;
         }
         if(e->op==Op::ShiftRight) {
             out << "if(" << right << ">31u)FAIL(32);\nuint32_t " << result << "=" << left << ">>" << right << ";\n";

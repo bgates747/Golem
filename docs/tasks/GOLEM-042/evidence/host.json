@@ -1,0 +1,83 @@
+{
+  "accepted_baseline_commit": "cd930ae",
+  "plan_commit": "ecb981f",
+  "source_sha256": {
+    "src/portable/portable.hpp": "cb72b3dea146e8632c57df1731219579b0ed96548aeda250f89bbbbdbb55ea27",
+    "src/portable/backends.hpp": "ea72a4ef72564f33dcaf5c9c7573d33a59eeb18f759fd56989210ea101d91e93",
+    "tests/test_portable.cpp": "786cf77967e8190ce884d758f6c38fae2e4030bb3741928b93d00796c22b9782",
+    "tests/portable/command_model.py": "b68ccc57b59f5d619348c25099eed4f336fd407466a534beef43cd5d4f3fdb44",
+    "tests/portable/xor.golem": "39e5b6ae26cc628881c1c11077a6a4295eb9582f32151ac1bef660094be4453a",
+    "tests/portable/check_xor.py": "1baaaa5e1e83c4b283b34c9cf202a77509681793259c7d2b79ed7bc25be6644d"
+  },
+  "checks": {
+    "xor-default": {
+      "cases": 468,
+      "relocated": false,
+      "sanitized_generated_c": true,
+      "buffered_model": true,
+      "actual_assembler": true,
+      "language_statuses": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        32
+      ],
+      "expected_sha256": "d127759c3fc1a31c186686a4a67bb3951d98b7e86cb429da591e7f1d50b9bfb7",
+      "elapsed_seconds": 1.569,
+      "abi_header_sha256": "fa8385e2906f07d37372d80c40f73d419defdbefe7a3458461ac9d5fe0820d38",
+      "scope": "host XOR/reference/commands/generated-C; not target execution"
+    },
+    "xor-relocated": {
+      "cases": 468,
+      "relocated": true,
+      "sanitized_generated_c": true,
+      "buffered_model": true,
+      "actual_assembler": true,
+      "language_statuses": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        32
+      ],
+      "expected_sha256": "d127759c3fc1a31c186686a4a67bb3951d98b7e86cb429da591e7f1d50b9bfb7",
+      "elapsed_seconds": 1.884,
+      "abi_header_sha256": "fa8385e2906f07d37372d80c40f73d419defdbefe7a3458461ac9d5fe0820d38",
+      "scope": "host XOR/reference/commands/generated-C; not target execution"
+    }
+  },
+  "resources": {
+    "probe": {
+      "state.bin": 178,
+      "buffered-install.bin": 31794,
+      "native-install.bin": 896,
+      "common-install.bin": 272,
+      "array_storage_bytes": 24,
+      "static_stack_frames": "native.c:8:16:finish_views\t48\tstatic\nnative.c:15:24:get32\t32\tstatic\nnative.c:16:20:put32\t32\tstatic\nnative.c:23:9:vdplet_entry\t128\tstatic\n"
+    },
+    "probe-relocated": {
+      "state.bin": 178,
+      "buffered-install.bin": 31794,
+      "native-install.bin": 896,
+      "common-install.bin": 272,
+      "array_storage_bytes": 24,
+      "static_stack_frames": "native.c:8:16:finish_views\t48\tstatic\nnative.c:15:24:get32\t32\tstatic\nnative.c:16:20:put32\t32\tstatic\nnative.c:23:9:vdplet_entry\t128\tstatic\n"
+    },
+    "animation": {
+      "state.bin": 114,
+      "buffered-install.bin": 13556,
+      "native-install.bin": 60,
+      "common-install.bin": 248,
+      "array_storage_bytes": 36,
+      "static_stack_frames": "native.c:7:16:finish_views\t48\tstatic\nnative.c:14:24:get32\t32\tstatic\nnative.c:22:9:vdplet_entry\t128\tstatic\n"
+    }
+  },
+  "maintained_check_log": "make: Entering directory '/Agon/mystuff/golem/src'\ng++ -std=c++17 -Wall -Wextra -O2 -ffp-contract=off -o ../build/test_portable ../tests/test_portable.cpp\n../build/test_compiler\nMaintained raw/resident contract checks pass; 132 rejection cases.\n../build/test_portable ../tests/portable/fixtures ../build/test-portable-output\nPortable contracts pass: 52 frozen output files, 3 intentionally changed native sources, 46 rejections, mapped/reserved/bound inputs, XOR types/precedence and combined reference behavior.\nmake: Leaving directory '/Agon/mystuff/golem/src'\n",
+  "sanitized_cpp_log": "Portable contracts pass: 52 frozen output files, 3 intentionally changed native sources, 46 rejections, mapped/reserved/bound inputs, XOR types/precedence and combined reference behavior.\n",
+  "sdk_commit": "9fbb21dd09402e2a3835067dbb4427f2c20dec3c"
+}

@@ -1,0 +1,31 @@
+{
+  "variant": "stock",
+  "observations": 1025,
+  "calls": 28,
+  "result_bytes": 2050,
+  "result_sha256": "6b095863cab481cc038efc2d0b96f996864355cd428ae86e69e232cd91f2a4db",
+  "native": {},
+  "visual": null,
+  "engine": "stock-native",
+  "elapsed_seconds": 5.214,
+  "mapped_vdp_libraries": [
+    "/home/smith/Agon/mystuff/golem/.emulator/runtime/fab-1.2.5/firmware/vdp_platform.so"
+  ],
+  "returned_to_mos_prompt": false,
+  "graphical_instance_launched": false,
+  "runtime_identities": [
+    "aec5f8c266117d5bf864c6124d3c8986d042802ed5cbaaf8813e04a9fb8d0bea  fab-agon-emulator.bin",
+    "d564243283972690933a4554296ad6202ca4ef54572279533a942960846bebae  mos_platform.bin",
+    "d69e60bbce61a7b4b3eef318ba395f11c4e1a5b585755755113992dc94edcb86  mos_platform.map",
+    "14338aaeead48cb3df5987bf7fcc1b350d9e08d4a0ee0fcfc1a4a89cf79fae97  firmware/vdp_platform.so",
+    "0b3ba5bbd1ff1ec5de50a8ef9762119c37c7d329b4892c91d8f162f13d686550  flexe-agon-emulator",
+    "c65e0ec431d299137811953642f037988f8bc34fac0723216d992ab96fd7f14c  sdcard/autoexec.txt",
+    "079972ae9133dd4d0937a03220a4876abf87c3f28d2c3ba613488dc114b00fad  sdcard/golem042/probe.bin",
+    "a77b66081c379c45de30cd7ce93ca7ebf5dd3f03c383bfc9a90b4fd968b6eae6  sdcard/golem042/script.bin",
+    "72ac6ed5d6487847b0a3a51983ee07dc67f48c29093a5298672400c220de986f  sdcard/golem042/expected.json",
+    "6b095863cab481cc038efc2d0b96f996864355cd428ae86e69e232cd91f2a4db  sdcard/golem042/expected.dat",
+    "deeeb56649a6c0f0a9e2a35cb72efaf1faf0a24f5be6c07ddbac3d4b5c9a58e3  sdcard/golem042/mask.dat",
+    "39e5b6ae26cc628881c1c11077a6a4295eb9582f32151ac1bef660094be4453a  sdcard/golem042/probe.golem",
+    "27c0151861b5bb77f7cb9d1b3d5d914f41e439e67eb9a5863802bb81419bf07f  sdcard/golem042/animation.golem"
+  ]
+}

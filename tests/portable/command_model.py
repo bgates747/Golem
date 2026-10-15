@@ -168,6 +168,7 @@ def source_reference(interface, program, state, entry,arrays=None):
         if op == 'Or' and a:return 1
         b = expression(node['right'])
         if op in ('And','Or'):return b
+        if op=='^':return (a^b)&((1<<integer_types[node['type']][2])-1)
         if op=='>>':
             if b>31:raise ReferenceError(32)
             n=signed(a,32) if node['left']['type']=='sint32' else a

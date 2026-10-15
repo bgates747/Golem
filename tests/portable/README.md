@@ -47,3 +47,18 @@ partial effects and generation/runtime-result gating. Failed callbacks either
 release the view or refuse release; root/argument memory is poisoned after each
 release attempt to detect subsequent access. Add `--relocated` for changed IDs.
 No SDK implementation or historical task compiler is imported.
+
+Focused integer-XOR checks use initialized `xor.golem`:
+
+```bash
+.venv/bin/python tests/portable/check_xor.py \
+  --compiler build/golemc --sdk ../agon-vdplet --output build/portable-xor
+```
+
+468 cases compare the independent command machine/reference and sanitized
+generated C: all four integer types, sign bits/extrema/alternating patterns,
+precedence, arrays, Bounds, conversions, operand failure order and skipped
+Boolean branches. The suite includes explicit expected syntax results rather
+than relying solely on the serialized tree. Add `--relocated` and optionally
+`--assembler /path/to/ez80asm`. This is host qualification; GOLEM-042 records
+actual stock/Xtensa and human review separately.
