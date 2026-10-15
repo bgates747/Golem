@@ -1,0 +1,41 @@
+{
+  "checks": [
+    {
+      "profile": "raw",
+      "relocated": false,
+      "identical_files": 1
+    },
+    {
+      "profile": "scalar",
+      "relocated": false,
+      "identical_files": 6
+    },
+    {
+      "profile": "scalar",
+      "relocated": true,
+      "identical_files": 6
+    },
+    {
+      "profile": "drawing",
+      "relocated": false,
+      "identical_files": 6
+    },
+    {
+      "profile": "drawing",
+      "relocated": true,
+      "identical_files": 6
+    },
+    {
+      "profile": "table",
+      "relocated": false,
+      "identical_files": 6
+    },
+    {
+      "profile": "table",
+      "relocated": true,
+      "identical_files": 6
+    }
+  ],
+  "before_compiler_sha256": "a7aa24ed1ea3ce3c9e86f1a98b936736d1310e0e3fb972683d8e72f226f463e9",
+  "all_match": true
+}

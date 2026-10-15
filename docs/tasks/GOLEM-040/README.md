@@ -125,3 +125,5 @@ if later released, must be both windowless and silent.
 
 The report and supporting receipts are newly written and uncommitted. The plan
 was committed/pushed first at `43e072e`; that release covered this audit only.
+
+The Author subsequently released implementation after audit publication at f2ed568. The [maintained mode and qualification](implementation.md) are now ready for review; this report above preserves the audit rationale. New implementation remains uncommitted.

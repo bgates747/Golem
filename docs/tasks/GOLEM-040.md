@@ -53,14 +53,14 @@ These boundaries guide the first-tranche recommendation; they are not a fixed
 claim about how the current forked sources can be separated. The inventory must
 establish the actual dependency order before implementation begins.
 
-- PRO-001 [ ] Promote an agreed common frontend/types/layout slice into maintained source and tests, preserving existing compiler modes. Supply initialized standalone examples and a documented build path.
-- PRO-002 [ ] Integrate the accepted generic buffered/native emitters and scalar/control-flow behavior through that shared boundary. Keep native SDK packaging outside ordinary host-compiler prerequisites where practical.
-- PRO-003 [ ] Integrate the accepted root/interface, indexed storage and wider numeric features in the dependency order established by the inventory. Preserve public layouts and named assembly contracts or explicitly document a reviewed migration.
-- PRO-004 [ ] Decide separately whether generic native-binding support or additional drawing-profile changes are ready for promotion. Rally-specific helper implementations, assets and game policies remain outside the core compiler.
-- TST-001 [ ] Move necessary regression coverage into maintained tests without task-code dependencies. Reuse established oracles and qualify changed integration paths; do not rerun every historical emulator demo by default.
-- DOC-001 [ ] Update README, maintained language/backend contracts, examples and handoff so supported features, proposed syntax and external requirements are accurately distinguished.
-- QUA-001 [ ] For any implementation that changes emitted commands, layouts, native behavior or emulator deployment, define and complete focused target qualification. Stage any required Oryx human review fully, stopped, with dummy video/audio for automated runs and the Author launching the visual fixture.
-- PUB-001 [ ] Obtain applicable acceptance and explicit commit/push approval, then publish coherent implementation groups. Leave frozen historical evidence unchanged.
+- PRO-001 [x] Promote an agreed common frontend/types/layout slice into maintained source and tests, preserving existing compiler modes. Supply initialized standalone examples and a documented build path.
+- PRO-002 [x] Integrate the accepted generic buffered/native emitters and scalar/control-flow behavior through that shared boundary. Keep native SDK packaging outside ordinary host-compiler prerequisites where practical.
+- PRO-003 [x] Integrate the accepted root/interface, indexed storage and wider numeric features in the dependency order established by the inventory. Preserve public layouts and named assembly contracts or explicitly document a reviewed migration.
+- PRO-004 [x] Disposed for this tranche: generic native-binding support is deferred and multiple drawing Subs already reside in maintained source. Decide separately whether further changes are ready for promotion. Rally-specific helper implementations, assets and game policies remain outside the core compiler.
+- TST-001 [x] Move necessary regression coverage into maintained tests without task-code dependencies. Reuse established oracles and qualify changed integration paths; do not rerun every historical emulator demo by default.
+- DOC-001 [x] Update README, maintained language/backend contracts, examples and handoff so supported features, proposed syntax and external requirements are accurately distinguished.
+- QUA-001 [x] For any implementation that changes emitted commands, layouts, native behavior or emulator deployment, define and complete focused target qualification. Stage any required Oryx human review fully, stopped, with dummy video/audio for automated runs and the Author launching the visual fixture.
+- PUB-001 [x] Obtain applicable acceptance and explicit commit/push approval, then publish coherent implementation groups. Leave frozen historical evidence unchanged.
 
 ## Acceptance
 
@@ -107,3 +107,18 @@ not historical receipt edits. No builds, tests, emulator sessions or production
 changes occurred. Implementation remains a later review/release boundary.
 
 The Author accepted the recommendation and released the additive portable implementation tranche on 2026-10-14, after requesting commit/push of the audit first.
+
+## Additive implementation outcome — 2026-10-14
+
+[Implementation/use/evidence](GOLEM-040/implementation.md) and
+[qualification receipt](GOLEM-040/implementation-checks.json) complete the
+released production tranche. --portable now builds through src/, with preserved
+legacy modes and no required task/SDK implementation dependency. Fifty-five
+accepted portable outputs and 37 legacy outputs remain byte-identical; normal
+and sanitized C++ checks, 766 independent buffered-model/generated-C cases and
+a real assembly consumer pass. No new module deployment/emulator session was
+needed because the accepted emitted files remain unchanged. Renderer bindings
+remain deferred. PUB-001 awaits Author acceptance/commit/push; new work is
+uncommitted. Later error-propagation/filtering features are not started.
+
+The Author accepted GOLEM-040 and explicitly requested commit/push on 2026-10-14 before executing GOLEM-041. Promotion is complete.

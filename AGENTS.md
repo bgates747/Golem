@@ -10,13 +10,26 @@ Golem is a compiled, low-to-medium-level, C/Pascal-like language targeting the
 Agon Console8 VDP's **Buffered Commands API** directly (rather than the eZ80
 via MOS). See the root [README.md](README.md) for the elevator pitch.
 
-Status: **early design/exploration**, with a maintained compiler in `src/`.
+Current maintained portable profile (GOLEM-040): `build/golemc --portable`
+emits stock commands and native C through shared typed syntax/state/root/layout.
+Supports accepted 16/32-bit integers, float32, bool, checked arithmetic/conversions,
+If/ElseIf/Else, finite Range loops, paired division and integer arrays/right shift.
+Read `docs/design/portable-compiler.md` for exact limits and assembly ownership.
+The promoted code and required tests have no task implementation dependency.
+`make -C src check` uses the host C++ toolchain only; SDK/generated-C/assembler
+checks are optional separate integration commands. GOLEM-040 implementation
+was accepted and explicitly approved for commit/push on 2026-10-14, with
+unchanged accepted output bytes. No emulator run or new package deployment was
+needed for this promotion. Older summaries below describe legacy profiles.
+
+Status: **bounded implemented profiles**, with a maintained compiler in `src/`.
 Raw mode implements literal print, uint16 declarations/assignment/addition and
 For/Next. GOLEM-008 promotes the qualified scalar backend and explicit resident
 output mode: one bounded float32 floor-to-sint16 job, with optional persistent
 uint16 globals. See `docs/design/resident-scalar.md` for the supported grammar,
 package/host contract and initialized examples. Broader expressions and
-If/Do/Switch remain proposed. `make -C src check` runs maintained contract tests.
+If is available in portable mode; Do/Switch remain proposed.
+`make -C src check` runs maintained contract tests.
 
 GOLEM-012 adds checked resident uint16 addition, per-invocation error status and
 a finite overflow exit preserving the failed destination. Host/sanitizer checks

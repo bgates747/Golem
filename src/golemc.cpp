@@ -1,5 +1,6 @@
 // Host compiler CLI: explicit raw payload or resident package output.
 #include "assembly_output.hpp"
+#include "portable/driver.hpp"
 #include <filesystem>
 
 namespace {
@@ -33,6 +34,7 @@ void write(const std::filesystem::path &path, const golem::resident_scalar::Byte
 int main(int argc, char **argv) {
     using namespace golem::cli;
     try {
+        if (argc >= 2 && std::string(argv[1]) == "--portable") return golem::portable_cli::run(argc, argv);
         if (argc >= 2 && std::string(argv[1]) == "--resident") {
             int pos = 2;
             bool emitAssembly = false;
@@ -116,6 +118,7 @@ int main(int argc, char **argv) {
         if (argc != 3 || std::string(argv[1]).compare(0, 2, "--") == 0) {
             std::cerr << "usage: golemc <source> <payload>\n"
                       << "       golemc --resident [--emit-asm] [--table-data NAME=PATH] [--reserve FIRST:LAST ...] <source> <directory> [example-input]\n";
+            std::cerr << "       golemc --portable [--reserve FIRST:LAST ...] [--bind ROLE ID OFFSET BYTES ...] [--array-data NAME=PATH ...] <source> <directory>\n";
             return 2;
         }
         auto bytes = compile(readFile(argv[1]));

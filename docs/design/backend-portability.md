@@ -5,8 +5,11 @@ Commands API execution or native VDPlet execution. Developers can select a targe
 for local requirements; an application can ship both versions and let end users
 choose, including at runtime. Shared language semantics, persistent storage and
 entry interfaces must be designed before backend-specific emission. This is an
-accepted direction recorded on 2026-10-12; the mechanisms below are requirements
-and a staged roadmap, not claims of implemented dual-backend support.
+accepted direction recorded on 2026-10-12. The maintained
+[portable compiler profile](portable-compiler.md) now implements the accepted
+bounded shared language, root/storage and both emitters through `--portable`.
+Broader mechanisms below remain requirements and staged roadmap items; they
+are not claims of general automatic runtime selection or unimplemented syntax.
 
 ## Requirements
 

@@ -1,0 +1,24 @@
+// Compile with: build/golemc --portable examples/portable/counter.golem build/counter
+// Assembly installs shared data, selects a backend and invokes a finite Sub.
+uint16 slot = 0
+uint16 total = 0
+sint32 numerator = -65
+uint16 shiftBits = 6
+sint32 shifted = 0
+float32 fraction = 1.5
+sint16 truncated = 0
+bool ready = false
+ReadOnly Array uint16 values(0:2) = Values(1,2,3)
+Sub step
+    total = 0
+    For slot In Range(0:2)
+        total = total + values(slot)
+    Next slot
+    shifted = numerator >> shiftBits
+    truncated = sint16(fraction)
+    ready = total == 6
+EndSub
+Sub reset
+    total = 0
+    ready = false
+EndSub

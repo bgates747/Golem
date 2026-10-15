@@ -6,8 +6,9 @@ The intended language supports [one source with interchangeable execution
 backends](docs/design/backend-portability.md): stock VDP buffered commands or
 native VDPlets, selected by developers or application end users. Shared semantics,
 storage and call interfaces will support startup choice and later state-preserving
-runtime selection. The current compiler implements only the small buffered
-profiles described below; native output and runtime selection are planned.
+runtime selection. The maintained `--portable` mode emits buffered commands and
+native C with shared storage and named entries; assembly owns backend selection.
+Smaller buffered profiles remain available separately.
 
 Golem is a low-to-medium-level compiled programming language targeting the
 Agon Console8 VDP's **Buffered Commands API** — a byte-addressable,
@@ -41,7 +42,22 @@ Goals for Golem:
 Early design/exploration stage. See [docs/devlog](docs/devlog/) for
 progress notes and [docs/design](docs/design/) for design documents.
 
-`make -C src check` builds and checks the maintained host compiler. Raw mode
+`make -C src check` builds and checks the maintained host compiler. To compile
+the [initialized portable example](examples/portable/counter.golem):
+
+```bash
+make -C src check
+build/golemc --portable examples/portable/counter.golem build/counter
+```
+
+Portable mode supports typed 16/32-bit integers, float32, bool, checked arithmetic,
+comparisons/Boolean expressions, finite If/Range control flow and indexed integer
+arrays. It emits both backends and shared assembly/layout artifacts; packaging
+native C uses the external VDPlet SDK. Read the
+[portable compiler guide](docs/design/portable-compiler.md) for exact supported
+syntax, errors, options and assembly integration.
+
+Raw mode
 supports literal print, uint16 declarations, assignment/addition and For/Next.
 Explicit `--resident` mode adds bounded float32 floor-to-sint16 jobs with
 persistent uint16 state, checked addition/subtraction/multiplication and paired
@@ -62,7 +78,8 @@ chains; automated qualification and human review pass.
 qualification and Oryx human review pass.
 [GOLEM-015](docs/tasks/GOLEM-015/README.md) adds paired uint16 quotient/remainder;
 automated qualification and Oryx human review pass.
-Broader syntax shown in design examples remains proposed.
+Additional portable syntax is documented in the guide above; other syntax
+shown in design proposals remains proposed.
 
 The intended integration is PC compilation followed by an eZ80 assembly
 application that loads, updates and calls the resident VDP buffers. Compiler
@@ -110,7 +127,7 @@ reference/    Vendored/curated reference material (not a build dependency)
 runtime/
   legacy-asm/ Hand-written ZDS/ez80asm-style eZ80 runtime library code
   agondev/    (future) eZ80/MOS-side loader/runtime built via agondev
-src/          Maintained toy C++ compiler and host Makefile
+src/          Maintained C++ compiler, portable backends and host Makefile
 tools/        Auxiliary tooling/scripts (not the compiler itself)
 examples/     Example Golem programs
 tests/        Test suite

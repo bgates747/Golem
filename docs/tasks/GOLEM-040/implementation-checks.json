@@ -1,0 +1,126 @@
+{
+  "audit_checkpoint": "f2ed568",
+  "scope": "host promotion qualification; unchanged accepted artifacts reuse prior target evidence; no target deployment/emulator run",
+  "source_files": {
+    "src/portable/backends.hpp": "f891f2d17a30e5a986db00261098f955726cd71799cad17a7d3fa6b650b41d09",
+    "src/portable/driver.hpp": "0661aa256f647b4fddff9909a362ba0d4d0c1259ccf15eb7d9c0e4faf69cb33b",
+    "src/portable/portable.hpp": "b173629a4355f36ec9621368341ccce59c8d07fcf3d3c374707614ee92f41429",
+    "src/portable/root.hpp": "eedfc6dac1ce24bdc9eba8a547a53ac378801e30a3703426f39a0f37ced7292d",
+    "src/golemc.cpp": "0709e23f4d7c28be6948cbbd582cd60f8fa88376db114b985fce2c5f18799c4f",
+    "src/Makefile": "8f263866eae1d66361573ed54a35f7e9634755ea6eb5b92cc3be0a36c0b81cda",
+    "tests/test_portable.cpp": "9e0cae9d3b245b8fcbb512f625f68e44963bd366f0f37eb249cf6c30c2353643",
+    "tests/portable/.gitignore": "62ff6e09fb9a60c6f85afe8a48992eb6f4540080bc5501e3c151f38f6d367265",
+    "tests/portable/README.md": "cfc546ec419011dc1da5623146dcf6ba188556b15ee88e6b2a17719d3e881beb",
+    "tests/portable/check_integration.py": "6ead15338c43da1c8cabcbd3eca6eb6471bd2e80dc680d2d59445e57e8cc8557",
+    "tests/portable/command_model.py": "d72a15e0e944f8ff4862152b9e9b4884710b2ba7a1a60ee873295a0c57059db0",
+    "tests/portable/native_host.c": "309c8532b41cff4e5ef8ee372c697d81bc049de29b92eaffec8db793f536f5d8",
+    "tests/portable/numeric.golem": "89c94d92045a67f02d79724c349817fbe088a6f620e4343bc2704e5462a3416e"
+  },
+  "normal_cpp_checks": [
+    "make: Entering directory '/Agon/mystuff/golem/src'",
+    "g++ -std=c++17 -Wall -Wextra -O2 -ffp-contract=off -o ../build/golemc golemc.cpp",
+    "g++ -std=c++17 -Wall -Wextra -O2 -ffp-contract=off -o ../build/test_portable ../tests/test_portable.cpp",
+    "../build/test_compiler",
+    "Maintained raw/resident contract checks pass; 132 rejection cases.",
+    "../build/test_portable ../tests/portable/fixtures ../build/test-portable-output",
+    "Portable contracts pass: 55 frozen output files, 35 rejections, mapped/reserved/bound inputs and combined reference behavior.",
+    "make: Leaving directory '/Agon/mystuff/golem/src'"
+  ],
+  "sanitized_cpp_checks": [
+    "Portable contracts pass: 55 frozen output files, 35 rejections, mapped/reserved/bound inputs and combined reference behavior."
+  ],
+  "legacy_parity": {
+    "checks": [
+      {
+        "profile": "raw",
+        "relocated": false,
+        "identical_files": 1
+      },
+      {
+        "profile": "scalar",
+        "relocated": false,
+        "identical_files": 6
+      },
+      {
+        "profile": "scalar",
+        "relocated": true,
+        "identical_files": 6
+      },
+      {
+        "profile": "drawing",
+        "relocated": false,
+        "identical_files": 6
+      },
+      {
+        "profile": "drawing",
+        "relocated": true,
+        "identical_files": 6
+      },
+      {
+        "profile": "table",
+        "relocated": false,
+        "identical_files": 6
+      },
+      {
+        "profile": "table",
+        "relocated": true,
+        "identical_files": 6
+      }
+    ],
+    "before_compiler_sha256": "a7aa24ed1ea3ce3c9e86f1a98b936736d1310e0e3fb972683d8e72f226f463e9",
+    "all_match": true
+  },
+  "integration": [
+    {
+      "cases": 383,
+      "relocated": false,
+      "observed_language_statuses": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        32,
+        33
+      ],
+      "sanitized_generated_c": true,
+      "buffered_model": true,
+      "actual_assembler": true,
+      "expected_sha256": "ad003dda80ff0771cd5443e81bb08e89c5dc2dd4b05ce638f61a5f03fb53dfc9",
+      "elapsed_seconds": 2.361,
+      "abi_header_sha256": "fa8385e2906f07d37372d80c40f73d419defdbefe7a3458461ac9d5fe0820d38",
+      "scope": "host model/generated-C integration; no target execution"
+    },
+    {
+      "cases": 383,
+      "relocated": true,
+      "observed_language_statuses": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        32,
+        33
+      ],
+      "sanitized_generated_c": true,
+      "buffered_model": true,
+      "actual_assembler": false,
+      "expected_sha256": "ad003dda80ff0771cd5443e81bb08e89c5dc2dd4b05ce638f61a5f03fb53dfc9",
+      "elapsed_seconds": 2.358,
+      "abi_header_sha256": "fa8385e2906f07d37372d80c40f73d419defdbefe7a3458461ac9d5fe0820d38",
+      "scope": "host model/generated-C integration; no target execution"
+    }
+  ],
+  "frozen_output_matches": 55,
+  "provenance_payloads_verified": 58,
+  "required_include_graph_files": 15,
+  "required_task_dependencies": false,
+  "example_compiles": true,
+  "native_package_built_or_deployed": false,
+  "emulator_runs": 0
+}

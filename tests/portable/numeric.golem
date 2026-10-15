@@ -1,0 +1,74 @@
+// General compiler regression inputs; assembly supplies updates between finite calls.
+uint32 ua = 0
+uint32 ub = 1
+uint32 ur = 17
+sint32 sa = 0
+sint32 sb = 1
+sint32 sr = 19
+sint32 quotient = 7
+sint32 remainder = 9
+sint32 boundedQ Bounds(-2,2) = 1
+sint32 boundedR Bounds(-2,2) = 1
+uint16 count = 0
+sint16 index = 0
+sint16 narrow = 0
+uint16 effect = 0
+uint16 counter = 0
+float32 fa = 1.5
+float32 fb = 2.0
+float32 fc = 0.5
+float32 fr = 0.0
+bool flag = false
+Array sint32 values(-1:1) = Values(-65,0,65)
+Sub addUnsigned
+    ur = ua + ub
+EndSub
+Sub multiplyUnsigned
+    ur = ua * ub
+EndSub
+Sub subtractSigned
+    sr = sa - sb
+EndSub
+Sub divideSigned
+    (quotient,remainder) = divmod(sa,sb)
+EndSub
+Sub boundedPair
+    (boundedQ,boundedR) = divmod(sa,sb)
+EndSub
+Sub shiftSigned
+    sr = sa >> count
+EndSub
+Sub narrowInteger
+    narrow = sint16(sa)
+EndSub
+Sub floatMath
+    fr = fa + fb * fc
+EndSub
+Sub floatConvert
+    narrow = sint16(fa)
+EndSub
+Sub skippedOverflow
+    flag = true Or ua + ub > 0
+EndSub
+Sub readArray
+    sr = values(index)
+EndSub
+Sub writeArray
+    values(index) = sa * sb
+EndSub
+Sub priorEffect
+    effect = effect + 1
+    ur = ua + ub
+EndSub
+Sub descendingLoop
+    For counter In Range(2:0:-1)
+        effect = effect + counter
+    Next counter
+    If effect > 2 And Not flag Then
+        narrow = 3
+    ElseIf effect == 0 Then
+        narrow = 2
+    Else
+        narrow = 1
+    EndIf
+EndSub
