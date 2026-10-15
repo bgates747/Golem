@@ -1,0 +1,785 @@
+
+/Agon/mystuff/agon-vdplet/build/firmware/firmware-src/.pio/build/esp32dev/firmware.elf:     file format elf32-xtensa-le
+
+
+Disassembly of section .iram0.vectors:
+
+Disassembly of section .iram0.text:
+
+Disassembly of section .flash.text:
+
+401284a8 <uart_rx_intr_handler_default>:
+401284a8:	00e136        	entry	a1, 112
+401284ab:	000242        	l8ui	a4, a2, 0
+401284ae:	030c      	movi.n	a3, 0
+401284b0:	1154c0        	slli	a5, a4, 4
+401284b3:	9ce561        	l32r	a6, 4010f848 <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0xfc8>
+401284b6:	856a      	add.n	a8, a5, a6
+401284b8:	8139      	s32i.n	a3, a1, 32
+401284ba:	9139      	s32i.n	a3, a1, 36
+401284bc:	354b      	addi.n	a3, a5, 4
+401284be:	336a      	add.n	a3, a3, a6
+401284c0:	5189      	s32i.n	a8, a1, 20
+401284c2:	4159      	s32i.n	a5, a1, 16
+401284c4:	6189      	s32i.n	a8, a1, 24
+401284c6:	6198      	l32i.n	a9, a1, 24
+401284c8:	0988      	l32i.n	a8, a9, 0
+401284ca:	0020c0        	memw
+401284cd:	2878      	l32i.n	a7, a8, 8
+401284cf:	7a9716        	beqz	a7, 40128c7c <uart_rx_intr_handler_default+0x7d4>
+401284d2:	890c      	movi.n	a9, 8
+401284d4:	260c      	movi.n	a6, 2
+401284d6:	116192        	s32i	a9, a1, 68
+401284d9:	105760        	and	a5, a7, a6
+401284dc:	1f8516        	beqz	a5, 401286d8 <uart_rx_intr_handler_default+0x230>
+401284df:	fb7c      	movi.n	a11, -1
+401284e1:	03ad      	mov.n	a10, a3
+401284e3:	0020c0        	memw
+401284e6:	9c7b81        	l32r	a8, 4010f6d4 <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0xe54>
+401284e9:	0008e0        	callx8	a8
+401284ec:	6158      	l32i.n	a5, a1, 24
+401284ee:	d87c      	movi.n	a8, -3
+401284f0:	03ad      	mov.n	a10, a3
+401284f2:	0578      	l32i.n	a7, a5, 0
+401284f4:	0020c0        	memw
+401284f7:	3758      	l32i.n	a5, a7, 12
+401284f9:	105580        	and	a5, a5, a8
+401284fc:	0020c0        	memw
+401284ff:	3759      	s32i.n	a5, a7, 12
+40128501:	0020c0        	memw
+40128504:	9c7581        	l32r	a8, 4010f6d8 <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0xe58>
+40128507:	0008e0        	callx8	a8
+4012850a:	6188      	l32i.n	a8, a1, 24
+4012850c:	0878      	l32i.n	a7, a8, 0
+4012850e:	0020c0        	memw
+40128511:	4769      	s32i.n	a6, a7, 16
+40128513:	de0252        	l8ui	a5, a2, 222
+40128516:	fac556        	bnez	a5, 401284c6 <uart_rx_intr_handler_default+0x1e>
+40128519:	c80262        	l8ui	a6, a2, 200
+4012851c:	312252        	l32i	a5, a2, 196
+4012851f:	a69c      	beqz.n	a6, 4012853d <uart_rx_intr_handler_default+0x95>
+40128521:	b5dc      	bnez.n	a5, 40128540 <uart_rx_intr_handler_default+0x98>
+40128523:	24c1b2        	addi	a11, a1, 36
+40128526:	3e22a2        	l32i	a10, a2, 248
+40128529:	c84252        	s8i	a5, a2, 200
+4012852c:	0020c0        	memw
+4012852f:	0020c0        	memw
+40128532:	9ccd81        	l32r	a8, 4010f868 <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0xfe8>
+40128535:	0008e0        	callx8	a8
+40128538:	001806        	j	4012859c <uart_rx_intr_handler_default+0xf4>
+4012853b:	00          	.byte 00
+4012853c:	00          	.byte 00
+4012853d:	f85516        	beqz	a5, 401284c6 <uart_rx_intr_handler_default+0x1e>
+40128540:	0020c0        	memw
+40128543:	7758      	l32i.n	a5, a7, 28
+40128545:	070c      	movi.n	a7, 0
+40128547:	0020c0        	memw
+4012854a:	b159      	s32i.n	a5, a1, 44
+4012854c:	80a052        	movi	a5, 128
+4012854f:	0020c0        	memw
+40128552:	b168      	l32i.n	a6, a1, 44
+40128554:	756060        	extui	a6, a6, 16, 8
+40128557:	c06560        	sub	a6, a5, a6
+4012855a:	01a052        	movi	a5, 1
+4012855d:	048656        	bnez	a6, 401285a9 <uart_rx_intr_handler_default+0x101>
+40128560:	87bc      	beqz.n	a7, 4012859c <uart_rx_intr_handler_default+0xf4>
+40128562:	9cb961        	l32r	a6, 4010f848 <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0xfc8>
+40128565:	270c      	movi.n	a7, 2
+40128567:	fb7c      	movi.n	a11, -1
+40128569:	03ad      	mov.n	a10, a3
+4012856b:	4188      	l32i.n	a8, a1, 16
+4012856d:	805680        	add	a5, a6, a8
+40128570:	002562        	l32i	a6, a5, 0
+40128573:	0020c0        	memw
+40128576:	046672        	s32i	a7, a6, 16
+40128579:	0020c0        	memw
+4012857c:	9c5681        	l32r	a8, 4010f6d4 <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0xe54>
+4012857f:	0008e0        	callx8	a8
+40128582:	0568      	l32i.n	a6, a5, 0
+40128584:	0020c0        	memw
+40128587:	3658      	l32i.n	a5, a6, 12
+40128589:	205570        	or	a5, a5, a7
+4012858c:	0020c0        	memw
+4012858f:	3659      	s32i.n	a5, a6, 12
+40128591:	03ad      	mov.n	a10, a3
+40128593:	0020c0        	memw
+40128596:	9c5081        	l32r	a8, 4010f6d8 <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0xe58>
+40128599:	0008e0        	callx8	a8
+4012859c:	112152        	l32i	a5, a1, 68
+4012859f:	028566        	bnei	a5, 8, 401285a5 <uart_rx_intr_handler_default+0xfd>
+401285a2:	ffc806        	j	401284c6 <uart_rx_intr_handler_default+0x1e>
+401285a5:	00fc06        	j	40128999 <uart_rx_intr_handler_default+0x4f1>
+401285a8:	00          	.byte 00
+401285a9:	352282        	l32i	a8, a2, 212
+401285ac:	988c      	beqz.n	a8, 401285b9 <uart_rx_intr_handler_default+0x111>
+401285ae:	332282        	l32i	a8, a2, 204
+401285b1:	488c      	beqz.n	a8, 401285b9 <uart_rx_intr_handler_default+0x111>
+401285b3:	362282        	l32i	a8, a2, 216
+401285b6:	04b856        	bnez	a8, 40128605 <uart_rx_intr_handler_default+0x15d>
+401285b9:	28c1b2        	addi	a11, a1, 40
+401285bc:	3b22a2        	l32i	a10, a2, 236
+401285bf:	9cab81        	l32r	a8, 4010f86c <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0xfec>
+401285c2:	0008e0        	callx8	a8
+401285c5:	3462a2        	s32i	a10, a2, 208
+401285c8:	f94a16        	beqz	a10, 40128560 <uart_rx_intr_handler_default+0xb8>
+401285cb:	352282        	l32i	a8, a2, 212
+401285ce:	0ee856        	bnez	a8, 401286c0 <uart_rx_intr_handler_default+0x218>
+401285d1:	336282        	s32i	a8, a2, 204
+401285d4:	2a88      	l32i.n	a8, a10, 8
+401285d6:	356282        	s32i	a8, a2, 212
+401285d9:	0a88      	l32i.n	a8, a10, 0
+401285db:	0f6866        	bnei	a8, 6, 401285ee <uart_rx_intr_handler_default+0x146>
+401285de:	180c      	movi.n	a8, 1
+401285e0:	dc4282        	s8i	a8, a2, 220
+401285e3:	0020c0        	memw
+401285e6:	1a88      	l32i.n	a8, a10, 4
+401285e8:	dd4282        	s8i	a8, a2, 221
+401285eb:	0020c0        	memw
+401285ee:	0abd      	mov.n	a11, a10
+401285f0:	24c1c2        	addi	a12, a1, 36
+401285f3:	3b22a2        	l32i	a10, a2, 236
+401285f6:	0020c0        	memw
+401285f9:	9c9d81        	l32r	a8, 4010f870 <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0xff0>
+401285fc:	0008e0        	callx8	a8
+401285ff:	352282        	l32i	a8, a2, 212
+40128602:	f57816        	beqz	a8, 4012855d <uart_rx_intr_handler_default+0xb5>
+40128605:	3322b2        	l32i	a11, a2, 204
+40128608:	f51b16        	beqz	a11, 4012855d <uart_rx_intr_handler_default+0xb5>
+4012860b:	3622c2        	l32i	a12, a2, 216
+4012860e:	f4bc16        	beqz	a12, 4012855d <uart_rx_intr_handler_default+0xb5>
+40128611:	63cc60        	minu	a12, a12, a6
+40128614:	04ad      	mov.n	a10, a4
+40128616:	ffe125        	call8	40128428 <uart_enable_tx_write_fifo>
+40128619:	332272        	l32i	a7, a2, 204
+4012861c:	c066a0        	sub	a6, a6, a10
+4012861f:	77aa      	add.n	a7, a7, a10
+40128621:	362282        	l32i	a8, a2, 216
+40128624:	c088a0        	sub	a8, a8, a10
+40128627:	336272        	s32i	a7, a2, 204
+4012862a:	352272        	l32i	a7, a2, 212
+4012862d:	c077a0        	sub	a7, a7, a10
+40128630:	356272        	s32i	a7, a2, 212
+40128633:	057d      	mov.n	a7, a5
+40128635:	366282        	s32i	a8, a2, 216
+40128638:	f21856        	bnez	a8, 4012855d <uart_rx_intr_handler_default+0xb5>
+4012863b:	24c1c2        	addi	a12, a1, 36
+4012863e:	3422b2        	l32i	a11, a2, 208
+40128641:	3b22a2        	l32i	a10, a2, 236
+40128644:	3189      	s32i.n	a8, a1, 12
+40128646:	0020c0        	memw
+40128649:	9c8981        	l32r	a8, 4010f870 <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0xff0>
+4012864c:	0008e0        	callx8	a8
+4012864f:	3188      	l32i.n	a8, a1, 12
+40128651:	352292        	l32i	a9, a2, 212
+40128654:	346282        	s32i	a8, a2, 208
+40128657:	336282        	s32i	a8, a2, 204
+4012865a:	eff956        	bnez	a9, 4012855d <uart_rx_intr_handler_default+0xb5>
+4012865d:	dc02c2        	l8ui	a12, a2, 220
+40128660:	021c26        	beqi	a12, 1, 40128666 <uart_rx_intr_handler_default+0x1be>
+40128663:	ffbd86        	j	4012855d <uart_rx_intr_handler_default+0xb5>
+40128666:	4188      	l32i.n	a8, a1, 16
+40128668:	9c78a1        	l32r	a10, 4010f848 <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0xfc8>
+4012866b:	7a8a      	add.n	a7, a10, a8
+4012866d:	07a8      	l32i.n	a10, a7, 0
+4012866f:	9a15b1        	l32r	a11, 4010eec4 <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0x644>
+40128672:	0020c0        	memw
+40128675:	4ab9      	s32i.n	a11, a10, 16
+40128677:	fb7c      	movi.n	a11, -1
+40128679:	03ad      	mov.n	a10, a3
+4012867b:	2199      	s32i.n	a9, a1, 8
+4012867d:	31c9      	s32i.n	a12, a1, 12
+4012867f:	0020c0        	memw
+40128682:	9c1481        	l32r	a8, 4010f6d4 <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0xe54>
+40128685:	0008e0        	callx8	a8
+40128688:	dd02b2        	l8ui	a11, a2, 221
+4012868b:	51a8      	l32i.n	a10, a1, 20
+4012868d:	0754e5        	call8	4012fbdc <uart_hal_tx_break>
+40128690:	07a8      	l32i.n	a10, a7, 0
+40128692:	9a0cb1        	l32r	a11, 4010eec4 <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0x644>
+40128695:	0020c0        	memw
+40128698:	3a88      	l32i.n	a8, a10, 12
+4012869a:	2078b0        	or	a7, a8, a11
+4012869d:	0020c0        	memw
+401286a0:	3a79      	s32i.n	a7, a10, 12
+401286a2:	03ad      	mov.n	a10, a3
+401286a4:	0020c0        	memw
+401286a7:	9c0c81        	l32r	a8, 4010f6d8 <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0xe58>
+401286aa:	0008e0        	callx8	a8
+401286ad:	31c8      	l32i.n	a12, a1, 12
+401286af:	de42c2        	s8i	a12, a2, 222
+401286b2:	0020c0        	memw
+401286b5:	2198      	l32i.n	a9, a1, 8
+401286b7:	097d      	mov.n	a7, a9
+401286b9:	0020c0        	memw
+401286bc:	ffa746        	j	4012855d <uart_rx_intr_handler_default+0xb5>
+401286bf:	00          	.byte 00
+401286c0:	332282        	l32i	a8, a2, 204
+401286c3:	f38856        	bnez	a8, 401285ff <uart_rx_intr_handler_default+0x157>
+401286c6:	a178      	l32i.n	a7, a1, 40
+401286c8:	3362a2        	s32i	a10, a2, 204
+401286cb:	366272        	s32i	a7, a2, 216
+401286ce:	057d      	mov.n	a7, a5
+401286d0:	0020c0        	memw
+401286d3:	ffca06        	j	401285ff <uart_rx_intr_handler_default+0x157>
+401286d6:	00          	.byte 00
+401286d7:	00          	.byte 00
+401286d8:	9c5da1        	l32r	a10, 4010f84c <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0xfcc>
+401286db:	0287a7        	bany	a7, a10, 401286e1 <uart_rx_intr_handler_default+0x239>
+401286de:	00b486        	j	401289b4 <uart_rx_intr_handler_default+0x50c>
+401286e1:	9c5b61        	l32r	a6, 4010f850 <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0xfd0>
+401286e4:	0006a2        	l8ui	a10, a6, 0
+401286e7:	9a2491        	l32r	a9, 4010ef78 <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0x6f8>
+401286ea:	081a66        	bnei	a10, 1, 401286f6 <uart_rx_intr_handler_default+0x24e>
+401286ed:	207790        	or	a7, a7, a9
+401286f0:	004652        	s8i	a5, a6, 0
+401286f3:	0020c0        	memw
+401286f6:	106790        	and	a6, a7, a9
+401286f9:	1c02a2        	l8ui	a10, a2, 28
+401286fc:	23da56        	bnez	a10, 4012893d <uart_rx_intr_handler_default+0x495>
+401286ff:	0020c0        	memw
+40128702:	7898      	l32i.n	a9, a8, 28
+40128704:	0020c0        	memw
+40128707:	d199      	s32i.n	a9, a1, 52
+40128709:	0020c0        	memw
+4012870c:	d198      	l32i.n	a9, a1, 52
+4012870e:	749090        	extui	a9, a9, 0, 8
+40128711:	0020c0        	memw
+40128714:	182882        	l32i	a8, a8, 96
+40128717:	0020c0        	memw
+4012871a:	c189      	s32i.n	a8, a1, 48
+4012871c:	0020c0        	memw
+4012871f:	c188      	l32i.n	a8, a1, 48
+40128721:	a48d80        	extui	a8, a8, 13, 11
+40128724:	0020c0        	memw
+40128727:	c1a8      	l32i.n	a10, a1, 48
+40128729:	a4a2a0        	extui	a10, a10, 2, 11
+4012872c:	023a87        	bltu	a10, a8, 40128732 <uart_rx_intr_handler_default+0x28a>
+4012872f:	004c06        	j	40128863 <uart_rx_intr_handler_default+0x3bb>
+40128732:	0020c0        	memw
+40128735:	c158      	l32i.n	a5, a1, 48
+40128737:	a48d50        	extui	a8, a5, 13, 11
+4012873a:	0020c0        	memw
+4012873d:	c158      	l32i.n	a5, a1, 48
+4012873f:	a45250        	extui	a5, a5, 2, 11
+40128742:	c05850        	sub	a5, a8, a5
+40128745:	1194e0        	slli	a9, a4, 2
+40128748:	9c3e81        	l32r	a8, 4010f840 <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0xfc0>
+4012874b:	889a      	add.n	a8, a8, a9
+4012874d:	0888      	l32i.n	a8, a8, 0
+4012874f:	110882        	l8ui	a8, a8, 17
+40128752:	8159      	s32i.n	a5, a1, 32
+40128754:	588c      	beqz.n	a8, 4012875d <uart_rx_intr_handler_default+0x2b5>
+40128756:	03e787        	bbsi	a7, 8, 4012875d <uart_rx_intr_handler_default+0x2b5>
+40128759:	550b      	addi.n	a5, a5, -1
+4012875b:	8159      	s32i.n	a5, a1, 32
+4012875d:	2cc292        	addi	a9, a2, 44
+40128760:	20b990        	or	a11, a9, a9
+40128763:	20c1c2        	addi	a12, a1, 32
+40128766:	0521a2        	l32i	a10, a1, 20
+40128769:	076192        	s32i	a9, a1, 28
+4012876c:	0020c0        	memw
+4012876f:	075265        	call8	4012fc94 <uart_hal_read_rxfifo>
+40128772:	4188      	l32i.n	a8, a1, 16
+40128774:	9c3551        	l32r	a5, 4010f848 <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0xfc8>
+40128777:	558a      	add.n	a5, a5, a8
+40128779:	0588      	l32i.n	a8, a5, 0
+4012877b:	0020c0        	memw
+4012877e:	152852        	l32i	a5, a8, 84
+40128781:	0020c0        	memw
+40128784:	e159      	s32i.n	a5, a1, 56
+40128786:	0020c0        	memw
+40128789:	e1a8      	l32i.n	a10, a1, 56
+4012878b:	74a0a0        	extui	a10, a10, 0, 8
+4012878e:	0020c0        	memw
+40128791:	152852        	l32i	a5, a8, 84
+40128794:	0020c0        	memw
+40128797:	f159      	s32i.n	a5, a1, 60
+40128799:	0020c0        	memw
+4012879c:	f158      	l32i.n	a5, a1, 60
+4012879e:	745850        	extui	a5, a5, 8, 8
+401287a1:	8198      	l32i.n	a9, a1, 32
+401287a3:	10e616        	beqz	a6, 401288b5 <uart_rx_intr_handler_default+0x40d>
+401287a6:	99f471        	l32r	a7, 4010ef78 <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0x6f8>
+401287a9:	0020c0        	memw
+401287ac:	4879      	s32i.n	a7, a8, 16
+401287ae:	770c      	movi.n	a7, 7
+401287b0:	080c      	movi.n	a8, 0
+401287b2:	116172        	s32i	a7, a1, 68
+401287b5:	790b      	addi.n	a7, a9, -1
+401287b7:	126192        	s32i	a9, a1, 72
+401287ba:	0dc7d6        	bgez	a7, 4012889a <uart_rx_intr_handler_default+0x3f2>
+401287bd:	81c8      	l32i.n	a12, a1, 32
+401287bf:	24c1d2        	addi	a13, a1, 36
+401287c2:	71b8      	l32i.n	a11, a1, 28
+401287c4:	3a22a2        	l32i	a10, a2, 232
+401287c7:	ac42c2        	s8i	a12, a2, 172
+401287ca:	0020c0        	memw
+401287cd:	74c0c0        	extui	a12, a12, 0, 8
+401287d0:	0020c0        	memw
+401287d3:	9c2881        	l32r	a8, 4010f874 <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0xff4>
+401287d6:	0008e0        	callx8	a8
+401287d9:	129a56        	bnez	a10, 40128906 <uart_rx_intr_handler_default+0x45e>
+401287dc:	160c      	movi.n	a6, 1
+401287de:	1c4262        	s8i	a6, a2, 28
+401287e1:	0020c0        	memw
+401287e4:	fb7c      	movi.n	a11, -1
+401287e6:	03ad      	mov.n	a10, a3
+401287e8:	0020c0        	memw
+401287eb:	9bba81        	l32r	a8, 4010f6d4 <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0xe54>
+401287ee:	0008e0        	callx8	a8
+401287f1:	03ad      	mov.n	a10, a3
+401287f3:	4198      	l32i.n	a9, a1, 16
+401287f5:	9c1461        	l32r	a6, 4010f848 <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0xfc8>
+401287f8:	669a      	add.n	a6, a6, a9
+401287fa:	feae92        	movi	a9, 0xfffffefe
+401287fd:	0688      	l32i.n	a8, a6, 0
+401287ff:	0020c0        	memw
+40128802:	3868      	l32i.n	a6, a8, 12
+40128804:	106690        	and	a6, a6, a9
+40128807:	0020c0        	memw
+4012880a:	3869      	s32i.n	a6, a8, 12
+4012880c:	0020c0        	memw
+4012880f:	9bb281        	l32r	a8, 4010f6d8 <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0xe58>
+40128812:	0008e0        	callx8	a8
+40128815:	112162        	l32i	a6, a1, 68
+40128818:	3c7666        	bnei	a6, 7, 40128858 <uart_rx_intr_handler_default+0x3b0>
+4012881b:	fb7c      	movi.n	a11, -1
+4012881d:	03ad      	mov.n	a10, a3
+4012881f:	9bad81        	l32r	a8, 4010f6d4 <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0xe54>
+40128822:	0008e0        	callx8	a8
+40128825:	8168      	l32i.n	a6, a1, 32
+40128827:	5288      	l32i.n	a8, a2, 20
+40128829:	022657        	blt	a6, a5, 4012882f <uart_rx_intr_handler_default+0x387>
+4012882c:	003246        	j	401288f9 <uart_rx_intr_handler_default+0x451>
+4012882f:	c05560        	sub	a5, a5, a6
+40128832:	c0b850        	sub	a11, a8, a5
+40128835:	20a440        	or	a10, a4, a4
+40128838:	ffaca5        	call8	40128304 <uart_pattern_enqueue>
+4012883b:	20a330        	or	a10, a3, a3
+4012883e:	9ba681        	l32r	a8, 4010f6d8 <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0xe58>
+40128841:	0008e0        	callx8	a8
+40128844:	3922a2        	l32i	a10, a2, 228
+40128847:	00da16        	beqz	a10, 40128858 <uart_rx_intr_handler_default+0x3b0>
+4012884a:	0d0c      	movi.n	a13, 0
+4012884c:	24c1c2        	addi	a12, a1, 36
+4012884f:	44c1b2        	addi	a11, a1, 68
+40128852:	9a3081        	l32r	a8, 4010f114 <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0x894>
+40128855:	0008e0        	callx8	a8
+40128858:	250c      	movi.n	a5, 2
+4012885a:	116152        	s32i	a5, a1, 68
+4012885d:	0020c0        	memw
+40128860:	004d46        	j	40128999 <uart_rx_intr_handler_default+0x4f1>
+40128863:	0020c0        	memw
+40128866:	c1a8      	l32i.n	a10, a1, 48
+40128868:	a4ada0        	extui	a10, a10, 13, 11
+4012886b:	0020c0        	memw
+4012886e:	c188      	l32i.n	a8, a1, 48
+40128870:	a48280        	extui	a8, a8, 2, 11
+40128873:	1aba87        	bgeu	a10, a8, 40128891 <uart_rx_intr_handler_default+0x3e9>
+40128876:	80a092        	movi	a9, 128
+40128879:	0020c0        	memw
+4012887c:	c158      	l32i.n	a5, a1, 48
+4012887e:	a45d50        	extui	a5, a5, 13, 11
+40128881:	559a      	add.n	a5, a5, a9
+40128883:	0020c0        	memw
+40128886:	c188      	l32i.n	a8, a1, 48
+40128888:	a48280        	extui	a8, a8, 2, 11
+4012888b:	c05580        	sub	a5, a5, a8
+4012888e:	ffacc6        	j	40128745 <uart_rx_intr_handler_default+0x29d>
+40128891:	80a082        	movi	a8, 128
+40128894:	935890        	movnez	a5, a8, a9
+40128897:	ffaa86        	j	40128745 <uart_rx_intr_handler_default+0x29d>
+4012889a:	927a      	add.n	a9, a2, a7
+4012889c:	2c0992        	l8ui	a9, a9, 44
+4012889f:	01c882        	addi	a8, a8, 1
+401288a2:	0219a7        	beq	a9, a10, 401288a8 <uart_rx_intr_handler_default+0x400>
+401288a5:	00a082        	movi	a8, 0
+401288a8:	022857        	blt	a8, a5, 401288ae <uart_rx_intr_handler_default+0x406>
+401288ab:	ffc386        	j	401287bd <uart_rx_intr_handler_default+0x315>
+401288ae:	770b      	addi.n	a7, a7, -1
+401288b0:	ffc186        	j	401287ba <uart_rx_intr_handler_default+0x312>
+401288b3:	00          	.byte 00
+401288b4:	00          	.byte 00
+401288b5:	047870        	extui	a7, a7, 8, 1
+401288b8:	4c4172        	s8i	a7, a1, 76
+401288bb:	0020c0        	memw
+401288be:	01a1a2        	movi	a10, 0x101
+401288c1:	fb7c      	movi.n	a11, -1
+401288c3:	9be471        	l32r	a7, 4010f854 <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0xfd4>
+401288c6:	0020c0        	memw
+401288c9:	48a9      	s32i.n	a10, a8, 16
+401288cb:	20a770        	or	a10, a7, a7
+401288ce:	116162        	s32i	a6, a1, 68
+401288d1:	126192        	s32i	a9, a1, 72
+401288d4:	0020c0        	memw
+401288d7:	9b7f81        	l32r	a8, 4010f6d4 <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0xe54>
+401288da:	0008e0        	callx8	a8
+401288dd:	382282        	l32i	a8, a2, 224
+401288e0:	888c      	beqz.n	a8, 401288ec <uart_rx_intr_handler_default+0x444>
+401288e2:	24c1c2        	addi	a12, a1, 36
+401288e5:	06bd      	mov.n	a11, a6
+401288e7:	04ad      	mov.n	a10, a4
+401288e9:	0008e0        	callx8	a8
+401288ec:	07ad      	mov.n	a10, a7
+401288ee:	9b7a81        	l32r	a8, 4010f6d8 <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0xe58>
+401288f1:	0008e0        	callx8	a8
+401288f4:	f77c      	movi.n	a7, -1
+401288f6:	ffb0c6        	j	401287bd <uart_rx_intr_handler_default+0x315>
+401288f9:	b78a      	add.n	a11, a7, a8
+401288fb:	f367d6        	bgez	a7, 40128835 <uart_rx_intr_handler_default+0x38d>
+401288fe:	ac02b2        	l8ui	a11, a2, 172
+40128901:	bb8a      	add.n	a11, a11, a8
+40128903:	ffcb86        	j	40128835 <uart_rx_intr_handler_default+0x38d>
+40128906:	fb7c      	movi.n	a11, -1
+40128908:	03ad      	mov.n	a10, a3
+4012890a:	9b7281        	l32r	a8, 4010f6d4 <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0xe54>
+4012890d:	0008e0        	callx8	a8
+40128910:	069c      	beqz.n	a6, 40128924 <uart_rx_intr_handler_default+0x47c>
+40128912:	8168      	l32i.n	a6, a1, 32
+40128914:	52b8      	l32i.n	a11, a2, 20
+40128916:	1aa657        	bge	a6, a5, 40128934 <uart_rx_intr_handler_default+0x48c>
+40128919:	c05560        	sub	a5, a5, a6
+4012891c:	c0bb50        	sub	a11, a11, a5
+4012891f:	04ad      	mov.n	a10, a4
+40128921:	ff9e25        	call8	40128304 <uart_pattern_enqueue>
+40128924:	5258      	l32i.n	a5, a2, 20
+40128926:	ac0262        	l8ui	a6, a2, 172
+40128929:	556a      	add.n	a5, a5, a6
+4012892b:	5259      	s32i.n	a5, a2, 20
+4012892d:	0020c0        	memw
+40128930:	ff1746        	j	40128591 <uart_rx_intr_handler_default+0xe9>
+40128933:	00          	.byte 00
+40128934:	fec796        	bltz	a7, 40128924 <uart_rx_intr_handler_default+0x47c>
+40128937:	b7ba      	add.n	a11, a7, a11
+40128939:	fff886        	j	4012891f <uart_rx_intr_handler_default+0x477>
+4012893c:	00          	.byte 00
+4012893d:	fb7c      	movi.n	a11, -1
+4012893f:	03ad      	mov.n	a10, a3
+40128941:	2199      	s32i.n	a9, a1, 8
+40128943:	0020c0        	memw
+40128946:	9b6381        	l32r	a8, 4010f6d4 <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0xe54>
+40128949:	0008e0        	callx8	a8
+4012894c:	9bbfa1        	l32r	a10, 4010f848 <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0xfc8>
+4012894f:	4158      	l32i.n	a5, a1, 16
+40128951:	7a5a      	add.n	a7, a10, a5
+40128953:	feaea2        	movi	a10, 0xfffffefe
+40128956:	0788      	l32i.n	a8, a7, 0
+40128958:	0020c0        	memw
+4012895b:	3858      	l32i.n	a5, a8, 12
+4012895d:	1055a0        	and	a5, a5, a10
+40128960:	03ad      	mov.n	a10, a3
+40128962:	0020c0        	memw
+40128965:	3859      	s32i.n	a5, a8, 12
+40128967:	0020c0        	memw
+4012896a:	9b5b81        	l32r	a8, 4010f6d8 <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0xe58>
+4012896d:	0008e0        	callx8	a8
+40128970:	0758      	l32i.n	a5, a7, 0
+40128972:	01a172        	movi	a7, 0x101
+40128975:	0020c0        	memw
+40128978:	4579      	s32i.n	a7, a5, 16
+4012897a:	2198      	l32i.n	a9, a1, 8
+4012897c:	c1c616        	beqz	a6, 4012859c <uart_rx_intr_handler_default+0xf4>
+4012897f:	160c      	movi.n	a6, 1
+40128981:	0020c0        	memw
+40128984:	4599      	s32i.n	a9, a5, 16
+40128986:	750c      	movi.n	a5, 7
+40128988:	116152        	s32i	a5, a1, 68
+4012898b:	8158      	l32i.n	a5, a1, 32
+4012898d:	126152        	s32i	a5, a1, 72
+40128990:	9bb051        	l32r	a5, 4010f850 <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0xfd0>
+40128993:	004562        	s8i	a6, a5, 0
+40128996:	0020c0        	memw
+40128999:	3922a2        	l32i	a10, a2, 228
+4012899c:	b26a16        	beqz	a10, 401284c6 <uart_rx_intr_handler_default+0x1e>
+4012899f:	0d0c      	movi.n	a13, 0
+401289a1:	24c1c2        	addi	a12, a1, 36
+401289a4:	44c1b2        	addi	a11, a1, 68
+401289a7:	0020c0        	memw
+401289aa:	99da81        	l32r	a8, 4010f114 <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0x894>
+401289ad:	0008e0        	callx8	a8
+401289b0:	fec486        	j	401284c6 <uart_rx_intr_handler_default+0x1e>
+401289b3:	00          	.byte 00
+401289b4:	546747        	bbci	a7, 4, 40128a0c <uart_rx_intr_handler_default+0x564>
+401289b7:	fb7c      	movi.n	a11, -1
+401289b9:	03ad      	mov.n	a10, a3
+401289bb:	9b4681        	l32r	a8, 4010f6d4 <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0xe54>
+401289be:	0008e0        	callx8	a8
+401289c1:	51a8      	l32i.n	a10, a1, 20
+401289c3:	071be5        	call8	4012fb80 <uart_hal_rxfifo_rst>
+401289c6:	03ad      	mov.n	a10, a3
+401289c8:	9b4481        	l32r	a8, 4010f6d8 <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0xe58>
+401289cb:	0008e0        	callx8	a8
+401289ce:	9ba151        	l32r	a5, 4010f854 <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0xfd4>
+401289d1:	fb7c      	movi.n	a11, -1
+401289d3:	20a550        	or	a10, a5, a5
+401289d6:	9b3f81        	l32r	a8, 4010f6d4 <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0xe54>
+401289d9:	0008e0        	callx8	a8
+401289dc:	382272        	l32i	a7, a2, 224
+401289df:	978c      	beqz.n	a7, 401289ec <uart_rx_intr_handler_default+0x544>
+401289e1:	24c1c2        	addi	a12, a1, 36
+401289e4:	06bd      	mov.n	a11, a6
+401289e6:	20a440        	or	a10, a4, a4
+401289e9:	0007e0        	callx8	a7
+401289ec:	05ad      	mov.n	a10, a5
+401289ee:	9b3a81        	l32r	a8, 4010f6d8 <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0xe58>
+401289f1:	0008e0        	callx8	a8
+401289f4:	4188      	l32i.n	a8, a1, 16
+401289f6:	9b9461        	l32r	a6, 4010f848 <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0xfc8>
+401289f9:	568a      	add.n	a5, a6, a8
+401289fb:	061c      	movi.n	a6, 16
+401289fd:	0558      	l32i.n	a5, a5, 0
+401289ff:	0020c0        	memw
+40128a02:	4569      	s32i.n	a6, a5, 16
+40128a04:	350c      	movi.n	a5, 3
+40128a06:	0020c0        	memw
+40128a09:	ff9346        	j	4012885a <uart_rx_intr_handler_default+0x3b2>
+40128a0c:	80a052        	movi	a5, 128
+40128a0f:	0e0757        	bnone	a7, a5, 40128a21 <uart_rx_intr_handler_default+0x579>
+40128a12:	0020c0        	memw
+40128a15:	4859      	s32i.n	a5, a8, 16
+40128a17:	150c      	movi.n	a5, 1
+40128a19:	0020c0        	memw
+40128a1c:	ff8e86        	j	4012885a <uart_rx_intr_handler_default+0x3b2>
+40128a1f:	00          	.byte 00
+40128a20:	00          	.byte 00
+40128a21:	9b8951        	l32r	a5, 4010f848 <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0xfc8>
+40128a24:	390797        	bnone	a7, a9, 40128a61 <uart_rx_intr_handler_default+0x5b9>
+40128a27:	fb7c      	movi.n	a11, -1
+40128a29:	9b8a71        	l32r	a7, 4010f854 <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0xfd4>
+40128a2c:	20a770        	or	a10, a7, a7
+40128a2f:	9b2981        	l32r	a8, 4010f6d4 <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0xe54>
+40128a32:	0008e0        	callx8	a8
+40128a35:	382282        	l32i	a8, a2, 224
+40128a38:	888c      	beqz.n	a8, 40128a44 <uart_rx_intr_handler_default+0x59c>
+40128a3a:	24c1c2        	addi	a12, a1, 36
+40128a3d:	06bd      	mov.n	a11, a6
+40128a3f:	04ad      	mov.n	a10, a4
+40128a41:	0008e0        	callx8	a8
+40128a44:	07ad      	mov.n	a10, a7
+40128a46:	9b2481        	l32r	a8, 4010f6d8 <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0xe58>
+40128a49:	0008e0        	callx8	a8
+40128a4c:	4198      	l32i.n	a9, a1, 16
+40128a4e:	860c      	movi.n	a6, 8
+40128a50:	559a      	add.n	a5, a5, a9
+40128a52:	0558      	l32i.n	a5, a5, 0
+40128a54:	0020c0        	memw
+40128a57:	4569      	s32i.n	a6, a5, 16
+40128a59:	450c      	movi.n	a5, 4
+40128a5b:	0020c0        	memw
+40128a5e:	ff7e06        	j	4012885a <uart_rx_intr_handler_default+0x3b2>
+40128a61:	490c      	movi.n	a9, 4
+40128a63:	109790        	and	a9, a7, a9
+40128a66:	79bc      	beqz.n	a9, 40128aa1 <uart_rx_intr_handler_default+0x5f9>
+40128a68:	9b7b71        	l32r	a7, 4010f854 <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0xfd4>
+40128a6b:	fb7c      	movi.n	a11, -1
+40128a6d:	07ad      	mov.n	a10, a7
+40128a6f:	9b1981        	l32r	a8, 4010f6d4 <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0xe54>
+40128a72:	0008e0        	callx8	a8
+40128a75:	382282        	l32i	a8, a2, 224
+40128a78:	888c      	beqz.n	a8, 40128a84 <uart_rx_intr_handler_default+0x5dc>
+40128a7a:	24c1c2        	addi	a12, a1, 36
+40128a7d:	06bd      	mov.n	a11, a6
+40128a7f:	04ad      	mov.n	a10, a4
+40128a81:	0008e0        	callx8	a8
+40128a84:	07ad      	mov.n	a10, a7
+40128a86:	9b1481        	l32r	a8, 4010f6d8 <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0xe58>
+40128a89:	0008e0        	callx8	a8
+40128a8c:	4168      	l32i.n	a6, a1, 16
+40128a8e:	556a      	add.n	a5, a5, a6
+40128a90:	460c      	movi.n	a6, 4
+40128a92:	0558      	l32i.n	a5, a5, 0
+40128a94:	0020c0        	memw
+40128a97:	4569      	s32i.n	a6, a5, 16
+40128a99:	550c      	movi.n	a5, 5
+40128a9b:	0020c0        	memw
+40128a9e:	ff6e06        	j	4012885a <uart_rx_intr_handler_default+0x3b2>
+40128aa1:	02e7c7        	bbsi	a7, 12, 40128aa7 <uart_rx_intr_handler_default+0x5ff>
+40128aa4:	001f46        	j	40128b25 <uart_rx_intr_handler_default+0x67d>
+40128aa7:	ffafb2        	movi	a11, -1
+40128aaa:	20a330        	or	a10, a3, a3
+40128aad:	026192        	s32i	a9, a1, 8
+40128ab0:	0020c0        	memw
+40128ab3:	9b0881        	l32r	a8, 4010f6d4 <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0xe54>
+40128ab6:	0008e0        	callx8	a8
+40128ab9:	2198      	l32i.n	a9, a1, 8
+40128abb:	09bd      	mov.n	a11, a9
+40128abd:	51a8      	l32i.n	a10, a1, 20
+40128abf:	0711e5        	call8	4012fbdc <uart_hal_tx_break>
+40128ac2:	6188      	l32i.n	a8, a1, 24
+40128ac4:	0878      	l32i.n	a7, a8, 0
+40128ac6:	9b6491        	l32r	a9, 4010f858 <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0xfd8>
+40128ac9:	0020c0        	memw
+40128acc:	3788      	l32i.n	a8, a7, 12
+40128ace:	108890        	and	a8, a8, a9
+40128ad1:	0020c0        	memw
+40128ad4:	3789      	s32i.n	a8, a7, 12
+40128ad6:	dc0282        	l8ui	a8, a2, 220
+40128ad9:	0c1866        	bnei	a8, 1, 40128ae9 <uart_rx_intr_handler_default+0x641>
+40128adc:	0020c0        	memw
+40128adf:	3788      	l32i.n	a8, a7, 12
+40128ae1:	206860        	or	a6, a8, a6
+40128ae4:	0020c0        	memw
+40128ae7:	3769      	s32i.n	a6, a7, 12
+40128ae9:	03ad      	mov.n	a10, a3
+40128aeb:	0020c0        	memw
+40128aee:	9afa81        	l32r	a8, 4010f6d8 <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0xe58>
+40128af1:	0008e0        	callx8	a8
+40128af4:	4198      	l32i.n	a9, a1, 16
+40128af6:	559a      	add.n	a5, a5, a9
+40128af8:	0558      	l32i.n	a5, a5, 0
+40128afa:	98f261        	l32r	a6, 4010eec4 <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0x644>
+40128afd:	0020c0        	memw
+40128b00:	4569      	s32i.n	a6, a5, 16
+40128b02:	dc0252        	l8ui	a5, a2, 220
+40128b05:	101566        	bnei	a5, 1, 40128b19 <uart_rx_intr_handler_default+0x671>
+40128b08:	050c      	movi.n	a5, 0
+40128b0a:	dc4252        	s8i	a5, a2, 220
+40128b0d:	de4252        	s8i	a5, a2, 222
+40128b10:	0020c0        	memw
+40128b13:	0020c0        	memw
+40128b16:	fea086        	j	4012859c <uart_rx_intr_handler_default+0xf4>
+40128b19:	24c1b2        	addi	a11, a1, 36
+40128b1c:	4022a2        	l32i	a10, a2, 0x100
+40128b1f:	fe8306        	j	4012852f <uart_rx_intr_handler_default+0x87>
+40128b22:	00          	.byte 00
+40128b23:	00          	.byte 00
+40128b24:	00          	.byte 00
+40128b25:	993d61        	l32r	a6, 4010f01c <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0x79c>
+40128b28:	380767        	bnone	a7, a6, 40128b64 <uart_rx_intr_handler_default+0x6bc>
+40128b2b:	fb7c      	movi.n	a11, -1
+40128b2d:	03ad      	mov.n	a10, a3
+40128b2f:	9ae981        	l32r	a8, 4010f6d4 <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0xe54>
+40128b32:	0008e0        	callx8	a8
+40128b35:	6158      	l32i.n	a5, a1, 24
+40128b37:	03ad      	mov.n	a10, a3
+40128b39:	0578      	l32i.n	a7, a5, 0
+40128b3b:	9b4881        	l32r	a8, 4010f85c <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0xfdc>
+40128b3e:	0020c0        	memw
+40128b41:	3758      	l32i.n	a5, a7, 12
+40128b43:	105580        	and	a5, a5, a8
+40128b46:	0020c0        	memw
+40128b49:	3759      	s32i.n	a5, a7, 12
+40128b4b:	0020c0        	memw
+40128b4e:	9ae281        	l32r	a8, 4010f6d8 <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0xe58>
+40128b51:	0008e0        	callx8	a8
+40128b54:	6188      	l32i.n	a8, a1, 24
+40128b56:	0858      	l32i.n	a5, a8, 0
+40128b58:	0020c0        	memw
+40128b5b:	4569      	s32i.n	a6, a5, 16
+40128b5d:	0020c0        	memw
+40128b60:	fe8e06        	j	4012859c <uart_rx_intr_handler_default+0xf4>
+40128b63:	00          	.byte 00
+40128b64:	990561        	l32r	a6, 4010ef78 <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0x6f8>
+40128b67:	0d0767        	bnone	a7, a6, 40128b78 <uart_rx_intr_handler_default+0x6d0>
+40128b6a:	750c      	movi.n	a5, 7
+40128b6c:	0020c0        	memw
+40128b6f:	4869      	s32i.n	a6, a8, 16
+40128b71:	0020c0        	memw
+40128b74:	ff3886        	j	4012885a <uart_rx_intr_handler_default+0x3b2>
+40128b77:	00          	.byte 00
+40128b78:	9b3a61        	l32r	a6, 4010f860 <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0xfe0>
+40128b7b:	460767        	bnone	a7, a6, 40128bc5 <uart_rx_intr_handler_default+0x71d>
+40128b7e:	ffafb2        	movi	a11, -1
+40128b81:	20a330        	or	a10, a3, a3
+40128b84:	9ad481        	l32r	a8, 4010f6d4 <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0xe54>
+40128b87:	0008e0        	callx8	a8
+40128b8a:	0521a2        	l32i	a10, a1, 20
+40128b8d:	06ff25        	call8	4012fb80 <uart_hal_rxfifo_rst>
+40128b90:	1184e0        	slli	a8, a4, 2
+40128b93:	03ad      	mov.n	a10, a3
+40128b95:	9b2a71        	l32r	a7, 4010f840 <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0xfc0>
+40128b98:	778a      	add.n	a7, a7, a8
+40128b9a:	180c      	movi.n	a8, 1
+40128b9c:	0778      	l32i.n	a7, a7, 0
+40128b9e:	104782        	s8i	a8, a7, 16
+40128ba1:	0020c0        	memw
+40128ba4:	0020c0        	memw
+40128ba7:	9acc81        	l32r	a8, 4010f6d8 <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0xe58>
+40128baa:	0008e0        	callx8	a8
+40128bad:	4198      	l32i.n	a9, a1, 16
+40128baf:	559a      	add.n	a5, a5, a9
+40128bb1:	0558      	l32i.n	a5, a5, 0
+40128bb3:	0020c0        	memw
+40128bb6:	4569      	s32i.n	a6, a5, 16
+40128bb8:	850c      	movi.n	a5, 8
+40128bba:	116152        	s32i	a5, a1, 68
+40128bbd:	0020c0        	memw
+40128bc0:	fe4086        	j	401284c6 <uart_rx_intr_handler_default+0x1e>
+40128bc3:	00          	.byte 00
+40128bc4:	00          	.byte 00
+40128bc5:	02e7e7        	bbsi	a7, 14, 40128bcb <uart_rx_intr_handler_default+0x723>
+40128bc8:	002946        	j	40128c71 <uart_rx_intr_handler_default+0x7c9>
+40128bcb:	9b1d51        	l32r	a5, 4010f840 <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0xfc0>
+40128bce:	1164e0        	slli	a6, a4, 2
+40128bd1:	756a      	add.n	a7, a5, a6
+40128bd3:	0778      	l32i.n	a7, a7, 0
+40128bd5:	3778      	l32i.n	a7, a7, 12
+40128bd7:	6d1726        	beqi	a7, 1, 40128c48 <uart_rx_intr_handler_default+0x7a0>
+40128bda:	fb7c      	movi.n	a11, -1
+40128bdc:	03ad      	mov.n	a10, a3
+40128bde:	997771        	l32r	a7, 4010f1bc <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0x93c>
+40128be1:	0020c0        	memw
+40128be4:	4879      	s32i.n	a7, a8, 16
+40128be6:	0020c0        	memw
+40128be9:	9aba81        	l32r	a8, 4010f6d4 <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0xe54>
+40128bec:	0008e0        	callx8	a8
+40128bef:	9b16a1        	l32r	a10, 4010f848 <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0xfc8>
+40128bf2:	4198      	l32i.n	a9, a1, 16
+40128bf4:	8a9a      	add.n	a8, a10, a9
+40128bf6:	0898      	l32i.n	a9, a8, 0
+40128bf8:	9b1ba1        	l32r	a10, 4010f864 <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0xfe4>
+40128bfb:	0020c0        	memw
+40128bfe:	3978      	l32i.n	a7, a9, 12
+40128c00:	1077a0        	and	a7, a7, a10
+40128c03:	0020c0        	memw
+40128c06:	3979      	s32i.n	a7, a9, 12
+40128c08:	756a      	add.n	a7, a5, a6
+40128c0a:	0778      	l32i.n	a7, a7, 0
+40128c0c:	3778      	l32i.n	a7, a7, 12
+40128c0e:	1c1766        	bnei	a7, 1, 40128c2e <uart_rx_intr_handler_default+0x786>
+40128c11:	51a8      	l32i.n	a10, a1, 20
+40128c13:	3189      	s32i.n	a8, a1, 12
+40128c15:	0020c0        	memw
+40128c18:	06f665        	call8	4012fb80 <uart_hal_rxfifo_rst>
+40128c1b:	094c      	movi.n	a9, 64
+40128c1d:	3188      	l32i.n	a8, a1, 12
+40128c1f:	0888      	l32i.n	a8, a8, 0
+40128c21:	0020c0        	memw
+40128c24:	8878      	l32i.n	a7, a8, 32
+40128c26:	207790        	or	a7, a7, a9
+40128c29:	0020c0        	memw
+40128c2c:	8879      	s32i.n	a7, a8, 32
+40128c2e:	03ad      	mov.n	a10, a3
+40128c30:	805560        	add	a5, a5, a6
+40128c33:	0020c0        	memw
+40128c36:	9aa881        	l32r	a8, 4010f6d8 <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0xe58>
+40128c39:	0008e0        	callx8	a8
+40128c3c:	24c1b2        	addi	a11, a1, 36
+40128c3f:	0558      	l32i.n	a5, a5, 0
+40128c41:	3f25a2        	l32i	a10, a5, 252
+40128c44:	fe39c6        	j	4012852f <uart_rx_intr_handler_default+0x87>
+40128c47:	00          	.byte 00
+40128c48:	0020c0        	memw
+40128c4b:	7878      	l32i.n	a7, a8, 28
+40128c4d:	0020c0        	memw
+40128c50:	106172        	s32i	a7, a1, 64
+40128c53:	0020c0        	memw
+40128c56:	102172        	l32i	a7, a1, 64
+40128c59:	757070        	extui	a7, a7, 16, 8
+40128c5c:	866756        	bnez	a7, 401284c6 <uart_rx_intr_handler_default+0x1e>
+40128c5f:	0020c0        	memw
+40128c62:	102172        	l32i	a7, a1, 64
+40128c65:	357870        	extui	a7, a7, 24, 4
+40128c68:	f6e716        	beqz	a7, 40128bda <uart_rx_intr_handler_default+0x732>
+40128c6b:	0020c0        	memw
+40128c6e:	fe1506        	j	401284c6 <uart_rx_intr_handler_default+0x1e>
+40128c71:	0020c0        	memw
+40128c74:	4879      	s32i.n	a7, a8, 16
+40128c76:	0020c0        	memw
+40128c79:	fe1246        	j	401284c6 <uart_rx_intr_handler_default+0x1e>
+40128c7c:	9128      	l32i.n	a2, a1, 36
+40128c7e:	071266        	bnei	a2, 1, 40128c89 <uart_rx_intr_handler_default+0x7e1>
+40128c81:	07ad      	mov.n	a10, a7
+40128c83:	9afd81        	l32r	a8, 4010f878 <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0xff8>
+40128c86:	0008e0        	callx8	a8
+40128c89:	f01d      	retw.n

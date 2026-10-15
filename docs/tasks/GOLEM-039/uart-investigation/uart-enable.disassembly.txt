@@ -1,0 +1,57 @@
+
+/Agon/mystuff/agon-vdplet/build/firmware/firmware-src/.pio/build/esp32dev/firmware.elf:     file format elf32-xtensa-le
+
+
+Disassembly of section .iram0.vectors:
+
+Disassembly of section .iram0.text:
+
+Disassembly of section .flash.text:
+
+40128cf8 <uart_reenable_intr_mask$constprop$9>:
+40128cf8:	006136        	entry	a1, 48
+40128cfb:	2632a6        	blti	a2, 3, 40128d25 <uart_reenable_intr_mask$constprop$9+0x2d>
+40128cfe:	99b481        	l32r	a8, 4010f3d0 <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0xb50>
+40128d01:	0008e0        	callx8	a8
+40128d04:	9ae0b1        	l32r	a11, 4010f884 <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0x1004>
+40128d07:	8da122        	movi	a2, 0x18d
+40128d0a:	20daa0        	or	a13, a10, a10
+40128d0d:	20ebb0        	or	a14, a11, a11
+40128d10:	01a0a2        	movi	a10, 1
+40128d13:	9adbf1        	l32r	a15, 4010f880 <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0x1000>
+40128d16:	9adcc1        	l32r	a12, 4010f888 <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0x1008>
+40128d19:	0129      	s32i.n	a2, a1, 0
+40128d1b:	0020c0        	memw
+40128d1e:	0b41e5        	call8	4013413c <__wrap_esp_log_write>
+40128d21:	f27c      	movi.n	a2, -1
+40128d23:	f01d      	retw.n
+40128d25:	1152c0        	slli	a5, a2, 4
+40128d28:	9ac841        	l32r	a4, 4010f848 <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0xfc8>
+40128d2b:	354b      	addi.n	a3, a5, 4
+40128d2d:	334a      	add.n	a3, a3, a4
+40128d2f:	fb7c      	movi.n	a11, -1
+40128d31:	03ad      	mov.n	a10, a3
+40128d33:	9a6881        	l32r	a8, 4010f6d4 <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0xe54>
+40128d36:	0008e0        	callx8	a8
+40128d39:	9ac181        	l32r	a8, 4010f840 <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0xfc0>
+40128d3c:	1122e0        	slli	a2, a2, 2
+40128d3f:	282a      	add.n	a2, a8, a2
+40128d41:	445a      	add.n	a4, a4, a5
+40128d43:	01a182        	movi	a8, 0x101
+40128d46:	0228      	l32i.n	a2, a2, 0
+40128d48:	03ad      	mov.n	a10, a3
+40128d4a:	2c2222        	l32i	a2, a2, 176
+40128d4d:	108820        	and	a8, a8, a2
+40128d50:	0428      	l32i.n	a2, a4, 0
+40128d52:	0020c0        	memw
+40128d55:	4289      	s32i.n	a8, a2, 16
+40128d57:	0020c0        	memw
+40128d5a:	3248      	l32i.n	a4, a2, 12
+40128d5c:	208840        	or	a8, a8, a4
+40128d5f:	0020c0        	memw
+40128d62:	3289      	s32i.n	a8, a2, 12
+40128d64:	0020c0        	memw
+40128d67:	9a5c81        	l32r	a8, 4010f6d8 <_ZN5fabgl15VGA64Controller11drawEllipseERKNS_4SizeERNS_4RectE+0xe58>
+40128d6a:	0008e0        	callx8	a8
+40128d6d:	020c      	movi.n	a2, 0
+40128d6f:	ffec06        	j	40128d23 <uart_reenable_intr_mask$constprop$9+0x2b>

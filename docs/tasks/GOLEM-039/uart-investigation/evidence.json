@@ -1,0 +1,45 @@
+{
+  "scope": "offline capture comparison and exact-ELF disassembly; no new runs or firmware changes",
+  "inputs": {
+    "/Agon/mystuff/AgonArcade/docs/tasks/RALLY-25/full-scene/.work/failed-human/mos-to-vdp.bin": {
+      "bytes": 121112,
+      "sha256": "f41a4921d338a9212259b0a65455863a1b996c5ae331f0bfe48d449067078da8"
+    },
+    "/Agon/mystuff/AgonArcade/docs/tasks/RALLY-25/full-scene/.work/failed-human/stats.json": {
+      "bytes": 228,
+      "sha256": "2b05899eb32907572358092018141e4ad9384ea5683a5fa780a7aa4cd940ec73"
+    },
+    "/Agon/mystuff/AgonArcade/docs/tasks/RALLY-25/full-scene/.work/headless02/mos-to-vdp.bin": {
+      "bytes": 749584,
+      "sha256": "76f6541a83c3ca017398a59088fe683fb01c9b0ffbe5543228dea6734ad1f2ee"
+    },
+    "/Agon/mystuff/agon-vdplet/build/firmware/firmware-src/.pio/build/esp32dev/firmware.elf": {
+      "bytes": 24866420,
+      "sha256": "b41e4cb37bd44633d14b2e6eea615cbbbdd29a1d4b49c3258b4f49f2e215e567"
+    },
+    "/Agon/mystuff/flexe-agon-emulator/adapter/flexe_vdp.c": {
+      "bytes": 22027,
+      "sha256": "ce5dc9019f459ceef137ec5132b844bb417fed5b3809dde8cd3d2a5e4a7861be"
+    },
+    "/Agon/mystuff/flexe-agon-emulator/docs/tasks/FX-006/trace/findings.md": {
+      "bytes": 8142,
+      "sha256": "187af049d28e3fb1a5014679b955043c3a032d42c8bdbe9ddd74d0341955e73b"
+    }
+  },
+  "prefix_equal": true,
+  "received_bytes": 121112,
+  "write_buffer": 63800,
+  "write_command_offset": 120688,
+  "declared_payload": 2048,
+  "received_payload": 416,
+  "expected_end": 122744,
+  "exact_elf_sites": {
+    "full_flag_store": "0x401287de",
+    "subsequent_lock_call": "0x401287ee",
+    "rx_disable_store": "0x4012880a",
+    "reader_clear_flag": "0x40128dc6",
+    "reader_reenable_store": "0x40128d62",
+    "p_uart_obj": "0x3ffc6230"
+  },
+  "attribution": "exact firmware contains previously demonstrated vulnerable ordering; failed graphical run lacks live UART/ring/MMIO history so its causal attribution remains unproved"
+}

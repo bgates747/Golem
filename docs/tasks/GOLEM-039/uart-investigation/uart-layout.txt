@@ -1,0 +1,44 @@
+Symbol "p_uart_obj" is static storage at address 0x3ffc6230.
+type = struct {
+/*    0      |     4 */    uart_port_t uart_num;
+/*    4      |     4 */    int event_queue_size;
+/*    8      |     4 */    intr_handle_t intr_handle;
+/*   12      |     4 */    uart_mode_t uart_mode;
+/*   16      |     1 */    _Bool coll_det_flg;
+/*   17      |     1 */    _Bool rx_always_timeout_flg;
+/* XXX  2-byte hole  */
+/*   20      |     4 */    int rx_buffered_len;
+/*   24      |     4 */    int rx_buf_size;
+/*   28      |     1 */    _Bool rx_buffer_full_flg;
+/* XXX  3-byte hole  */
+/*   32      |     4 */    uint32_t rx_cur_remain;
+/*   36      |     4 */    uint8_t *rx_ptr;
+/*   40      |     4 */    uint8_t *rx_head_ptr;
+/*   44      |   128 */    uint8_t rx_data_buf[128];
+/*  172      |     1 */    uint8_t rx_stash_len;
+/* XXX  3-byte hole  */
+/*  176      |     4 */    uint32_t rx_int_usr_mask;
+/*  180      |    16 */    uart_pat_rb_t rx_pattern_pos;
+/*  196      |     4 */    int tx_buf_size;
+/*  200      |     1 */    _Bool tx_waiting_fifo;
+/* XXX  3-byte hole  */
+/*  204      |     4 */    uint8_t *tx_ptr;
+/*  208      |     4 */    uart_tx_data_t *tx_head;
+/*  212      |     4 */    uint32_t tx_len_tot;
+/*  216      |     4 */    uint32_t tx_len_cur;
+/*  220      |     1 */    uint8_t tx_brk_flg;
+/*  221      |     1 */    uint8_t tx_brk_len;
+/*  222      |     1 */    uint8_t tx_waiting_brk;
+/* XXX  1-byte hole  */
+/*  224      |     4 */    uart_select_notif_callback_t uart_select_notif_callback;
+/*  228      |     4 */    QueueHandle_t event_queue;
+/*  232      |     4 */    RingbufHandle_t rx_ring_buf;
+/*  236      |     4 */    RingbufHandle_t tx_ring_buf;
+/*  240      |     4 */    SemaphoreHandle_t rx_mux;
+/*  244      |     4 */    SemaphoreHandle_t tx_mux;
+/*  248      |     4 */    SemaphoreHandle_t tx_fifo_sem;
+/*  252      |     4 */    SemaphoreHandle_t tx_done_sem;
+/*  256      |     4 */    SemaphoreHandle_t tx_brk_sem;
+
+                           /* total size (bytes):  260 */
+                         }
