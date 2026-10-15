@@ -7,7 +7,7 @@ GOLEM-035 was accepted and explicitly approved for commit/push on 2026-10-13.
 Outstanding human/physical reviews below remain open; this checkpoint does not
 claim those reviews occurred.
 
-- [ ] **GOLEM-042:** Add typed integer XOR (`^`) to both maintained portable backends. [Plan](docs/tasks/GOLEM-042.md). Released for four integer types, focused conformance/target qualification and a stopped Oryx visual review; SDK/firmware unchanged.
+- [ ] **GOLEM-044:** Interactive Flower: Golem floating division/trig/drawing plus an AgonDev C++ client, decimal-degree angles, retained parameter strings and defined screen/keyboard lifecycle. [Task and requirements](docs/tasks/GOLEM-044.md). First reference/interaction/integration feasibility tranche released; the Author permits clearing on exit when restoring the saved mode.
 
 - [ ] **GOLEM-036:** D1b faithful wide integer primitives, signed division and checked narrowing.
   [Plan](docs/tasks/GOLEM-036.md). First wide storage/add/subtract/comparison/conversion tranche qualified; human review accepted and saved results verified; commit/push explicitly approved.
@@ -26,6 +26,8 @@ claim those reviews occurred.
   Generated C remains the candidate native route. The accepted shared-source,
   stock/native portability requirement is in [the requirements/roadmap](docs/design/backend-portability.md);
   the first common implementation is GOLEM-024.
+
+- [ ] **GOLEM-043:** Investigate concurrent native computation alongside buffered commands. [Research plan](docs/tasks/GOLEM-043.md). Deferred follow-up: possible overlap gains versus buffer/drawing races, lifecycle, resource and timing problems. Filed only; research execution and implementation are not released.
 
 - [ ] **GOLEM-002:** Research and develop a standalone C/C++ vdplet facility,
   targeting physical Agon; packed monochrome rendering is the first substantial

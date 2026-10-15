@@ -1061,3 +1061,41 @@ human-review statements are superseded.
 The Author explicitly approved committing/pushing GOLEM-041 on 2026-10-15,
 then executing the proposed integer-XOR tranche. The cleanup acceptance and
 qualification are published before XOR implementation starts.
+
+## Portable integer XOR — GOLEM-042
+
+GOLEM-041 was committed/pushed as `cd930ae`, followed by XOR plan `ecb981f`.
+The maintained `--portable` compiler now accepts matching uint16/sint16/uint32/
+sint32 `^` expressions. Signed operands use same-width bit patterns; destination
+Bounds remain checked. XOR binds below shifts and above comparisons, evaluates
+left to right and is available throughout current integer expressions.
+
+Maintained contracts, C++ sanitizers, 936 generated-C/model sanitizer cases and
+both assembly consumers pass. All 55 no-XOR outputs match accepted GOLEM-041
+bytes; all 58 frozen fixture files are intact. Stock default/relocated and actual
+Xtensa JIT/interpreter default/relocated checks pass. Both engines pass the new
+300-frame animation, 270 observations / 2,646 bytes, all 56,320 playfield pixels
+and actual MOS return. SDK/firmware/peer sources are unchanged.
+
+Human review is staged/stopped on Oryx at
+`~/Agon/mystuff/golem/docs/tasks/GOLEM-042/qualification/.emulator`; launch its
+generated `./flexe-agon-emulator`. Source `animation.golem / step` uses XOR for
+mirroring, direction and colour; assembly draws arrays and paces with VSYNC.
+The Author follows the single guest keyboard instruction, closes/reports, and
+the agent retrieves results. New implementation remains uncommitted pending
+human acceptance and explicit publication approval. See the task README and TODO.
+
+GOLEM-042 human review was subsequently accepted on 2026-10-15: the Author
+reported "passed". Retrieved results verify 270 observations / 2,646 bytes,
+all 56,320 final playfield pixels, runtime/fixture identities and MOS return.
+GOLEM-042 is removed from TODO as accepted; explicit implementation commit/push
+approval remains pending. See the acceptance devlog and task human receipt.
+The Author's subsequent multithreading question is discussion only, not a
+release to change runtime/firmware scheduling or concurrency.
+
+The Author subsequently explicitly approved committing/pushing all pending work
+on 2026-10-15, including accepted GOLEM-042. GOLEM-043 concurrency research stays
+deferred. GOLEM-044 Flower's reference/interaction/ABI/math/drawing feasibility
+tranche is released. Clearing the screen on application exit is an approved
+exception so the saved screen mode can be restored; returning to parameter entry
+must still preserve the curve. See the GOLEM-044 task for full requirements.
