@@ -1,0 +1,54 @@
+{
+  "variant": "relocated",
+  "observations": 1569,
+  "calls": 52,
+  "result_bytes": 15690,
+  "result_sha256": "17f327f19177e8ab3ac8c8c534199929f7bed49e943ddc0273a3c1572c2bb36b",
+  "native": {
+    "LOAD native": 1,
+    "native entry 6": 32684,
+    "native entry 7": 16393,
+    "entry_address": "0x40097fac"
+  },
+  "visual": null,
+  "backend_stats": {
+    "engine": "jit",
+    "frames": 388,
+    "cycles": 1693042257,
+    "retired": 843054194,
+    "uart_rx": 79288,
+    "uart_tx": 19171,
+    "uart_delivered": 19171,
+    "isync": 42,
+    "code_invalidations": 2,
+    "keys": 0,
+    "failed": false,
+    "unhandled": 0,
+    "unregistered": 0,
+    "unmapped": 0
+  },
+  "engine": "jit",
+  "elapsed_seconds": 7.291,
+  "mapped_vdp_libraries": [
+    "/home/smith/Agon/mystuff/golem/docs/tasks/GOLEM-041/qualification/.emulator-relocated/flexe-vdp.so"
+  ],
+  "returned_to_mos_prompt": true,
+  "graphical_instance_launched": false,
+  "runtime_identities": [
+    "28f50e87190f00de4039dc90c94432347f01c4771c4ea4a5dea8595d6cef7670  fab-agon-emulator.bin",
+    "200f28cbe399b1fdc60cba1e5fed4c2bb86042b5e92f6e422539a5388c079a30  flexe-vdp.so",
+    "8da2ebfdfa3b5b00f4a1929ad4885c838845b160f570259792ef370b69d4f473  esp32-firmware.bin",
+    "b41e4cb37bd44633d14b2e6eea615cbbbdd29a1d4b49c3258b4f49f2e215e567  esp32-firmware.elf",
+    "d564243283972690933a4554296ad6202ca4ef54572279533a942960846bebae  mos_platform.bin",
+    "d69e60bbce61a7b4b3eef318ba395f11c4e1a5b585755755113992dc94edcb86  mos_platform.map",
+    "383f9e5aeab61c3cbd7c9b89972cc8e07e22ef870d1b579ce1707401b85475ec  flexe-agon-emulator",
+    "1c29da34077b5947173df3b795819a0a9b2d0d3b32cc5c3c25f2b475f9584194  sdcard/autoexec.txt",
+    "8a7684277ce1b47dddb7617dc33cdb73c9cb3c61fb8da17bebff8c6407c29739  sdcard/golem041/probe.bin",
+    "550a92cdbddbe9fd27c5970e56c3da00dca310bee139840bc235e969ebc3f0ed  sdcard/golem041/script.bin",
+    "18997daa4e07e3dfeee7727a05a855208e76c62e3d23a52eb9488310c956cf6c  sdcard/golem041/expected.json",
+    "4d41c90a11060f2b0a26bc2f2cf221e403bed39feb1dd95b070ef3cbc364618d  sdcard/golem041/expected.dat",
+    "45a249fec2bc899a89539e82b3732b0b9fb40f5371eca8fdf086971952b64fab  sdcard/golem041/mask.dat",
+    "b22b3ceedf56fc7558481f580d660502b0ba6813bf0525387a6c351c578c228a  sdcard/golem041/probe.golem",
+    "dfb5c4eed763ba955bf0148387f5557e0c26a2ba92804c99d31085c0569d6474  sdcard/golem041/animation.golem"
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "scope": "host conformance and build receipts; target evidence recorded separately",
+  "promotion_commit": "b1186be",
+  "plan_commit": "8e3e815",
+  "release-default": {
+    "cases": 80,
+    "relocated": false,
+    "sanitized": true,
+    "post_release_access_poisoned": true,
+    "cleanup_order": "root then argument; both attempted once",
+    "error_precedence": "first cleanup error, else primary",
+    "refused_release_cleanup": "modeled runtime normal-return cleanup",
+    "scope": "injected host callbacks; not actual firmware failure injection"
+  },
+  "release-relocated": {
+    "cases": 80,
+    "relocated": true,
+    "sanitized": true,
+    "post_release_access_poisoned": true,
+    "cleanup_order": "root then argument; both attempted once",
+    "error_precedence": "first cleanup error, else primary",
+    "refused_release_cleanup": "modeled runtime normal-return cleanup",
+    "scope": "injected host callbacks; not actual firmware failure injection"
+  },
+  "integration-default": {
+    "cases": 383,
+    "relocated": false,
+    "observed_language_statuses": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      32,
+      33
+    ],
+    "sanitized_generated_c": true,
+    "buffered_model": true,
+    "actual_assembler": true,
+    "expected_sha256": "ad003dda80ff0771cd5443e81bb08e89c5dc2dd4b05ce638f61a5f03fb53dfc9",
+    "elapsed_seconds": 1.205,
+    "abi_header_sha256": "fa8385e2906f07d37372d80c40f73d419defdbefe7a3458461ac9d5fe0820d38",
+    "scope": "host model/generated-C integration; no target execution"
+  },
+  "integration-relocated": {
+    "cases": 383,
+    "relocated": true,
+    "observed_language_statuses": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      32,
+      33
+    ],
+    "sanitized_generated_c": true,
+    "buffered_model": true,
+    "actual_assembler": false,
+    "expected_sha256": "ad003dda80ff0771cd5443e81bb08e89c5dc2dd4b05ce638f61a5f03fb53dfc9",
+    "elapsed_seconds": 1.169,
+    "abi_header_sha256": "fa8385e2906f07d37372d80c40f73d419defdbefe7a3458461ac9d5fe0820d38",
+    "scope": "host model/generated-C integration; no target execution"
+  },
+  "maintained_check_log": "make: Entering directory '/Agon/mystuff/golem/src'\ng++ -std=c++17 -Wall -Wextra -O2 -ffp-contract=off -o ../build/golemc golemc.cpp\ng++ -std=c++17 -Wall -Wextra -O2 -ffp-contract=off -o ../build/test_portable ../tests/test_portable.cpp\n../build/test_compiler\nMaintained raw/resident contract checks pass; 132 rejection cases.\n../build/test_portable ../tests/portable/fixtures ../build/test-portable-output\nPortable contracts pass: 52 frozen output files, 3 intentionally changed native sources, 35 rejections, mapped/reserved/bound inputs and combined reference behavior.\nmake: Leaving directory '/Agon/mystuff/golem/src'\n",
+  "sdk_commit": "9fbb21dd09402e2a3835067dbb4427f2c20dec3c",
+  "source_sha256": {
+    "src/portable/root.hpp": "0467b78d28e73dd7becef5def1ef78f23f1fd3daac15998aa458b526ac3c7661",
+    "tests/test_portable.cpp": "bdc8f4dce5f1cc477c3792f81eba96dfa27677297c6595ae3303ee8d7582c8f9",
+    "tests/portable/check_release_errors.py": "128578c80d4d8be1d7a01ef1af6691332e1acd3600cbede6c0f1a1ff5248b803",
+    "tests/portable/release_host.c": "1fca56b2e9d230c97934eb9a0703af945bc9c0cb2e409fe1e61f6962bb2a92f7"
+  },
+  "stack_usage": {
+    "probe": "native.c:8:16:finish_views\t48\tstatic\nnative.c:15:24:get32\t32\tstatic\nnative.c:16:20:put32\t32\tstatic\nnative.c:23:9:vdplet_entry\t128\tstatic\n",
+    "probe-relocated": "native.c:8:16:finish_views\t48\tstatic\nnative.c:15:24:get32\t32\tstatic\nnative.c:16:20:put32\t32\tstatic\nnative.c:23:9:vdplet_entry\t128\tstatic\n",
+    "animation": "native.c:8:16:finish_views\t48\tstatic\nnative.c:15:24:get32\t32\tstatic\nnative.c:16:20:put32\t32\tstatic\nnative.c:23:9:vdplet_entry\t128\tstatic\n"
+  }
+}

@@ -18,7 +18,7 @@ promote useful generic checks into maintained `tests/portable/`.
    skip the other release. Do not release zero/unacquired tokens or retry a
    failed callback. The runtime retains responsibility for outstanding lease
    cleanup after normal native return.
-2. Return the first cleanup error if any; otherwise retain the primary result.
+2. Return the first root/argument exit-cleanup error if any; otherwise retain the primary result.
    This matches the existing composed helper's cleanup-error precedence without
    importing its application glue. Preserve language/interface status fields
    already written while the root is valid. Do not write root bytes after its
@@ -37,14 +37,14 @@ promote useful generic checks into maintained `tests/portable/`.
 
 ## Subtasks
 
-- SRC-001 [ ] Trace acquired-view exits and implement one bounded generated cleanup path, with error precedence and no post-release root access.
-- CHK-001 [ ] Add maintained generated-C callback-failure cases for success, language/interface errors, root-acquire failure and checked temporary views; test both released-but-error and refused-release behavior.
-- CHK-002 [ ] Verify cleanup of both views when either/both callbacks fail, first-error precedence, unchanged failed destinations/prior effects, and final-generation/runtime-result gating.
-- CHK-003 [ ] Run maintained contracts and focused sanitizer/model/generated-C/default-relocated checks; verify all non-native artifact/layout parity and preserve frozen fixture provenance.
-- QUA-001 [ ] Build/pin changed native output and perform bounded actual-Xtensa qualification against the unchanged SDK/runtime, separating injected host failures from actual runtime behavior.
-- VIS-001 [ ] If deploying an updated emulator fixture, stage a complete stopped Oryx human review in this task, preserving accepted profiles. Automated sessions must be both windowless and silent; only the Author launches the visual instance.
-- DOC-001 [ ] Document cleanup precedence, runtime-result obligation, source/target evidence and limits; update the maintained guide and task register.
-- REV-001 [ ] Return results for review and obtain applicable human acceptance and explicit commit/push approval before publishing new implementation.
+- SRC-001 [x] Trace acquired-view exits and implement one bounded generated cleanup path, with error precedence and no post-release root access. Implemented in maintained `src/portable/root.hpp`.
+- CHK-001 [x] Add maintained generated-C callback-failure cases for success, language/interface errors, root-acquire failure and checked temporary views; test both released-but-error and refused-release behavior. 80 cases per layout pass.
+- CHK-002 [x] Verify cleanup of both views when either/both callbacks fail, first-error precedence, unchanged failed destinations/prior effects, and final-generation/runtime-result gating. Sanitizer-poisoned released storage detects later access.
+- CHK-003 [x] Run maintained contracts and focused sanitizer/model/generated-C/default-relocated checks; verify all non-native artifact/layout parity and preserve frozen fixture provenance. 160 fault cases, 766 integration cases, real assembly consumption and 52 frozen output comparisons pass.
+- QUA-001 [x] Build/pin changed native output and perform bounded actual-Xtensa qualification against the unchanged SDK/runtime, separating injected host failures from actual runtime behavior. Both engines/default-relocated pass; see [results](GOLEM-041/README.md).
+- VIS-001 [x] Stage a complete stopped Oryx human review in this task, preserving accepted profiles. Automated sessions were both windowless and silent; only the Author launches the visual instance. Human acceptance is tracked separately below.
+- DOC-001 [x] Document cleanup precedence, runtime-result obligation, source/target evidence and limits; update the maintained guide and task register. [Report and instructions](GOLEM-041/README.md).
+- REV-001 [x] Return results for review and obtain applicable human acceptance. The Author reported "passed" on 2026-10-15; retrieved results verify 382 observations / 3,766 bytes, all 56,320 playfield pixels, runtime/fixture identities and MOS return. The Author explicitly approved commit/push on 2026-10-15 before proceeding to XOR.
 
 ## Acceptance
 

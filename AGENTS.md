@@ -1026,3 +1026,38 @@ Oryx in AgonArcade/.emulator/rally25-native-demo; launch its generated
 commit/push approval remain pending. See binding/README.md under GOLEM-037.
 
 GOLEM-037 human review and explicit commit/push approval were given on 2026-10-14. The bounded composition is complete; see the acceptance devlog. Older pending-review statements are historical.
+
+## Maintained portable compiler and native cleanup — 2026-10-14
+
+GOLEM-040 promotes the accepted generic dual backend to maintained
+`build/golemc --portable`; existing raw/resident modes retain their contracts.
+The Author accepted the promotion and explicitly approved publication as
+`b1186be`. See `docs/design/portable-compiler.md` and the promotion devlog.
+
+GOLEM-041's plan was published as `8e3e815` before implementation. Generated
+native root/argument cleanup now reports release failures, attempts both
+acquired releases once and avoids root-byte access after release. Runtime
+return must gate success even if generation advanced. Maintained host checks
+and actual Oryx Xtensa JIT/interpreter/default-relocated/animation checks pass;
+one interpreter boot stall and identical-byte passing retry are recorded.
+SDK, firmware, Rally and UART source remain unchanged.
+
+Human review is staged/stopped at
+`~/Agon/mystuff/golem/docs/tasks/GOLEM-041/qualification/.emulator` on Oryx.
+Launch its generated `./flexe-agon-emulator` wrapper (the Author's preferred
+name). The Author watches the 300-frame three-lane example, follows the single
+onscreen dir instruction, closes/reports; the agent retrieves results. New
+implementation remains uncommitted pending human acceptance and explicit
+publication approval. See `docs/tasks/GOLEM-041/README.md`; TODO owns status.
+
+GOLEM-041 human review was subsequently accepted on 2026-10-15: the Author
+reported "passed". Retrieved evidence verifies 382 observations / 3,766 bytes,
+all 56,320 final playfield pixels, runtime/fixture identities and MOS return.
+The emulator is stopped; GOLEM-041 is removed from TODO as accepted. New
+implementation remains uncommitted pending explicit commit/push approval.
+See the 2026-10-15 acceptance devlog and task human receipt; prior pending
+human-review statements are superseded.
+
+The Author explicitly approved committing/pushing GOLEM-041 on 2026-10-15,
+then executing the proposed integer-XOR tranche. The cleanup acceptance and
+qualification are published before XOR implementation starts.

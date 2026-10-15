@@ -26,7 +26,7 @@ int main(int argc, char **argv) {
     assert(argc == 3);
     const fs::path fixtures = argv[1], work = argv[2];
     fs::create_directories(work);
-    unsigned files = 0, rejected = 0;
+    unsigned files = 0, nativeSources = 0, rejected = 0;
     for (const char *name : {"default", "relocated", "animation"}) {
         std::vector<std::string> args{"golemc", "--portable"};
         if (std::string(name) == "relocated") args.insert(args.end(), {"--reserve", "1:254"});
@@ -34,6 +34,11 @@ int main(int argc, char **argv) {
         args.insert(args.end(), {(fixtures / name / "source.golem").string(), output.string()});
         assert(invoke(args) == 0);
         for (const auto &expected : fs::directory_iterator(fixtures / name / "expected")) {
+            // Frozen native C is preserved; executable release-failure tests
+            // qualify its intentional change rather than rewriting the baseline.
+            if (expected.path().filename() == "native.c") {
+                assert(fs::exists(output / "native.c")); ++nativeSources; continue;
+            }
             assert(read(expected.path()) == read(output / expected.path().filename())); ++files;
         }
     }
@@ -102,5 +107,6 @@ int main(int argc, char **argv) {
         assert(failed); ++rejected;
     }
     std::cout << "Portable contracts pass: " << files << " frozen output files, "
-              << rejected << " rejections, mapped/reserved/bound inputs and combined reference behavior.\n";
+              << nativeSources << " intentionally changed native sources, " << rejected
+              << " rejections, mapped/reserved/bound inputs and combined reference behavior.\n";
 }

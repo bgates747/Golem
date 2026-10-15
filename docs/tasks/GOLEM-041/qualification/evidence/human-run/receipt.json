@@ -1,0 +1,96 @@
+{
+  "variant": "review",
+  "observations": 382,
+  "calls": 300,
+  "result_bytes": 3766,
+  "result_sha256": "29fd3ad2a23770fde0c77587e63d34d47f0c79422f615c649a4985d16b61d14e",
+  "native": {
+    "LOAD native": 1,
+    "native entry 6": 32684,
+    "native entry 7": 16393,
+    "entry_address": "0x40097fac"
+  },
+  "visual": {
+    "frames": 300,
+    "successful_invocations": 300,
+    "rectangles": [
+      {
+        "x": 41,
+        "y": 43,
+        "right": 55,
+        "bottom": 53,
+        "colour": 48
+      },
+      {
+        "x": 100,
+        "y": 99,
+        "right": 114,
+        "bottom": 109,
+        "colour": 12
+      },
+      {
+        "x": 43,
+        "y": 139,
+        "right": 57,
+        "bottom": 149,
+        "colour": 12
+      }
+    ],
+    "guides": [
+      53,
+      97,
+      141
+    ],
+    "width": 320,
+    "height": 240,
+    "playfield_rows": 176,
+    "horizontal_shift_counts": [
+      2,
+      3,
+      4
+    ],
+    "vertical_shift_count": 2,
+    "scheduler_implemented": false
+  },
+  "playfield_pixels": 56320,
+  "backend_stats": {
+    "engine": "jit",
+    "frames": 1240,
+    "cycles": 5217210641,
+    "retired": 3985116151,
+    "uart_rx": 43692,
+    "uart_tx": 4951,
+    "uart_delivered": 4951,
+    "isync": 157,
+    "code_invalidations": 4,
+    "keys": 0,
+    "failed": false,
+    "unhandled": 0,
+    "unregistered": 0,
+    "unmapped": 0
+  },
+  "author_report": "passed",
+  "human_review_accepted": true,
+  "review_date": "2026-10-15",
+  "runtime_fixture_identities_verified": true,
+  "runtime_identities": [
+    "28f50e87190f00de4039dc90c94432347f01c4771c4ea4a5dea8595d6cef7670  fab-agon-emulator.bin",
+    "200f28cbe399b1fdc60cba1e5fed4c2bb86042b5e92f6e422539a5388c079a30  flexe-vdp.so",
+    "8da2ebfdfa3b5b00f4a1929ad4885c838845b160f570259792ef370b69d4f473  esp32-firmware.bin",
+    "b41e4cb37bd44633d14b2e6eea615cbbbdd29a1d4b49c3258b4f49f2e215e567  esp32-firmware.elf",
+    "d564243283972690933a4554296ad6202ca4ef54572279533a942960846bebae  mos_platform.bin",
+    "d69e60bbce61a7b4b3eef318ba395f11c4e1a5b585755755113992dc94edcb86  mos_platform.map",
+    "383f9e5aeab61c3cbd7c9b89972cc8e07e22ef870d1b579ce1707401b85475ec  flexe-agon-emulator",
+    "1c29da34077b5947173df3b795819a0a9b2d0d3b32cc5c3c25f2b475f9584194  sdcard/autoexec.txt",
+    "f6bc9b3e68aafd1bc57dd25e76723b767fe95623de3d8bf28bd7b7af746675a0  sdcard/golem041/probe.bin",
+    "e5716f143f522aa3597d09dba72c95f41603fef972fdaaa711aacc6292cbd207  sdcard/golem041/script.bin",
+    "7165d8275bb47e104b6a42213900881c177161b06e7e6dd3d650298d0b1262ba  sdcard/golem041/expected.json",
+    "c0b87f257814cc1c78426895542e65b6e5becd0c0310cafaf455072b9f552d32  sdcard/golem041/expected.dat",
+    "df77333757373fdd8f18a29fb674f1b64fef841e17587f4faa49c6c07c234271  sdcard/golem041/mask.dat",
+    "b22b3ceedf56fc7558481f580d660502b0ba6813bf0525387a6c351c578c228a  sdcard/golem041/probe.golem",
+    "dfb5c4eed763ba955bf0148387f5557e0c26a2ba92804c99d31085c0569d6474  sdcard/golem041/animation.golem"
+  ],
+  "commit_push_approval": true,
+  "returned_to_mos_prompt": true,
+  "commit_push_approval_date": "2026-10-15"
+}

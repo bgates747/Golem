@@ -1,0 +1,8 @@
+{
+  "outcome": "stopped after boot stalled before fixture execution",
+  "result_file_present": false,
+  "engine": "interp",
+  "profile": "GOLEM-041/qualification/.emulator",
+  "graphical_instance_launched": false,
+  "source_or_runtime_changes_for_retry": false
+}

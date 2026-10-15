@@ -8,8 +8,6 @@ Outstanding human/physical reviews below remain open; this checkpoint does not
 claim those reviews occurred.
 
 
-- [ ] **GOLEM-041:** Report native buffer-release failures consistently. [Plan](docs/tasks/GOLEM-041.md). Released for bounded generated-C cleanup, fault conformance and native qualification; syntax/layout/buffered behavior unchanged.
-
 - [ ] **GOLEM-036:** D1b faithful wide integer primitives, signed division and checked narrowing.
   [Plan](docs/tasks/GOLEM-036.md). First wide storage/add/subtract/comparison/conversion tranche qualified; human review accepted and saved results verified; commit/push explicitly approved.
   Checked multiplication human review accepted and saved results verified; commit/push explicitly approved; paired division accepted; commit/push explicitly approved. Right-shift human review accepted; saved results verified and commit/push explicitly approved. Golem supplies language features/packages; Rally owns game-specific replay/validation. Wider helper needs remain separately scoped.

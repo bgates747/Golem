@@ -100,12 +100,17 @@ inline void replaceOne(std::string &text,const std::string&from,const std::strin
 inline std::string native(const Program&p,const Layout&l,const Bindings&bindings) {
     auto text=dual::nativeC(p,l);
     replaceOne(text,"#define FAIL(n) do {put(state+14,n);return VDPL_E_ARGUMENT;}while(0)",
-        "#define FAIL(n) do {put(state+14,n);h->buffer_release(h->context,view.lease);h->buffer_release(h->context,args.lease);return VDPL_E_ARGUMENT;}while(0)\n"
-        "#define ROOT_FAIL(n,rc) do{put(state+12,n);h->buffer_release(h->context,view.lease);h->buffer_release(h->context,args.lease);return (rc);}while(0)");
+        "static int32_t finish_views(const vdplet_host_v1*h,vdplet_view_v1*root,vdplet_view_v1*args,int32_t result){\n"
+        "int32_t cleanup=0;vdplet_view_v1*views[]={root,args};\n"
+        "for(unsigned i=0;i<2;++i){uint32_t token=views[i]->lease;if(!token)continue;views[i]->lease=0;\n"
+        "int32_t rc=h->buffer_release(h->context,token);if(rc&&!cleanup)cleanup=rc;}\n"
+        "return cleanup?cleanup:result;}\n"
+        "#define FAIL(n) do {put(state+14,n);return finish_views(h,&view,&args,VDPL_E_ARGUMENT);}while(0)\n"
+        "#define ROOT_FAIL(n,rc) do{put(state+12,n);return finish_views(h,&view,&args,(rc));}while(0)");
     replaceOne(text,"if(view.bytes!="+std::to_string(l.bytes)+")return VDPL_E_BOUNDS;",
-        "if(view.bytes!="+std::to_string(l.bytes)+"){h->buffer_release(h->context,view.lease);h->buffer_release(h->context,args.lease);return VDPL_E_BOUNDS;}");
+        "if(view.bytes!="+std::to_string(l.bytes)+"){return finish_views(h,&view,&args,VDPL_E_BOUNDS);}");
     replaceOne(text,"VDPL_WHOLE_BUFFER,&view);if(rc)return rc;",
-        "VDPL_WHOLE_BUFFER,&view);if(rc){h->buffer_release(h->context,args.lease);return rc;}");
+        "VDPL_WHOLE_BUFFER,&view);if(rc){return finish_views(h,&view,&args,rc);}");
     std::ostringstream guard;guard << "uint8_t*state=view.data;put(state+12,0);\n";
     const auto offsets=fixedOffsets();
     auto array=[&](const char*name,auto get){guard << "static const uint8_t " << name << "[] __attribute__((aligned(4)))={";for(auto o:offsets)guard << get(o) << ',';guard << "};\n";};
@@ -128,7 +133,7 @@ inline std::string native(const Program&p,const Layout&l,const Bindings&bindings
     replaceOne(text,"uint8_t*state=view.data;put(state+14,0);\n",guard.str());
     replaceOne(text,"h->buffer_release(h->context,view.lease);h->buffer_release(h->context,args.lease);return 0;",
         "put32(state+20,get32(state+20)+1u);put(state+24,r->entry_id);put32(state+32,get32(state+8));\n"
-        "h->buffer_release(h->context,view.lease);h->buffer_release(h->context,args.lease);return 0;");
+        "return finish_views(h,&view,&args,0);");
     return text;
 }
 inline std::string rootAssembly() {

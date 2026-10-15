@@ -126,9 +126,18 @@ generation is not a simulation tick and does not mean a frame was displayed.
 Private cleanup/native unload preserve shared data; reinstalling common data
 resets it. Complete pending execution before switching implementations or
 unloading. Assembly owns updates, synchronization, pacing and all file loading.
-The generic native emitter retains its qualified limitation of ignoring release
-return values on several exit paths; error-propagation improvement is separate
-work, not silently included in this promotion.
+On exit, native code attempts each acquired root/argument release once, root
+first, and still attempts the other release after a failure. It returns the
+first exit-cleanup error, or the primary result if cleanup succeeds. Previously
+written interface/language status and earlier source effects remain intact;
+root bytes are never accessed after their release attempt. Temporary array and
+bound-view release errors also propagate through this exit cleanup.
+
+Success markers advance before final cleanup. A release failure can therefore
+coexist with an advanced success generation: assembly must check the native
+runtime result as well as root status/generation. This contract provides no
+rollback or callback retry; the runtime handles outstanding leases after normal
+entry return. See [GOLEM-041](../tasks/GOLEM-041.md).
 
 For native packaging, use the separately maintained
 [VDPlet Runtime SDK](/Agon/mystuff/agon-vdplet/docs/API-reference.md). It requires
@@ -139,8 +148,11 @@ compiler build. Pin SDK/settings when comparing native package hashes.
 ## Maintained checks
 
 `make -C src check` runs legacy contracts and portable grammar/reference/CLI
-checks, including 55 frozen accepted output files. It needs only the host C++
-toolchain and repository files. Fixture provenance is under `tests/portable/fixtures/`.
+checks, including 52 frozen non-native-C output files. The three historical
+native-C fixtures remain unchanged; current native output intentionally differs
+for release-error propagation and has separate fault checks. The normal checks
+need only the host C++ toolchain and repository files. Fixture provenance is
+under `tests/portable/fixtures/`.
 
 Optional model/generated-C/sanitizer integration, with the SDK checkout supplying
 only its public header:
@@ -152,5 +164,16 @@ only its public header:
 
 Add `--relocated` for relocated allocation and `--assembler /path/to/ez80asm`
 for a real assembly consumer. This checks host models and generated C, not target
-execution. The promotion retains accepted emitted bytes and earlier target
-evidence; it did not launch an emulator or deploy a new native package.
+execution. The promotion itself retained accepted emitted bytes and earlier
+target evidence without launching an emulator. GOLEM-041 separately qualifies
+its changed native packages through actual Xtensa execution on Oryx.
+
+Optional generated-C release fault checks use the same public SDK header:
+
+```bash
+.venv/bin/python tests/portable/check_release_errors.py \
+  --compiler build/golemc --sdk ../agon-vdplet --output build/portable-release
+```
+
+Add `--relocated` to repeat with changed IDs. These sanitizer checks inject
+release failures and refused releases; they do not imply hardware fault tests.

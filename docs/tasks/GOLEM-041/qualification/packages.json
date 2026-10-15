@@ -1,0 +1,137 @@
+[
+  {
+    "package": "probe",
+    "module": {
+      "name": "probe",
+      "source": "/Agon/mystuff/golem/docs/tasks/GOLEM-041/qualification/build/probe/native.c",
+      "source_sha256": "ac8d39cf60497d8ae7650344acd1bb78d2473743364e7ae416d5ffa09a97ffba",
+      "policy_sha256": "c69d6f3654b4b5dd4a8ae76e971818f4b13369d61dbded607b844e3268f66419",
+      "declared_limits": {
+        "text": 32768,
+        "data": 4096,
+        "stack": 2048,
+        "image": 65536
+      },
+      "build_id": "0x474c3431",
+      "capabilities": 1,
+      "envelope_bytes": 64,
+      "elf_bytes": 4124,
+      "package_bytes": 4188,
+      "sha256": "c5afd3e3540e4dcaf0af947ff26f2c3465dca901540a2d22370959e3710fcd0b",
+      "package": "/Agon/mystuff/golem/docs/tasks/GOLEM-041/qualification/build/probe/probe.vdpl",
+      "elf": "/Agon/mystuff/golem/docs/tasks/GOLEM-041/qualification/build/probe/probe.elf",
+      "entry_virtual": 452,
+      "resident_text_bytes": 2880,
+      "resident_data_bytes": 268,
+      "relative_relocations": 8,
+      "allocated_sections": {
+        ".text": {
+          "virtual_address": 404,
+          "bytes": 2878,
+          "type": 1
+        },
+        ".rodata": {
+          "virtual_address": 3284,
+          "bytes": 264,
+          "type": 1
+        },
+        ".data": {
+          "virtual_address": 7792,
+          "bytes": 4,
+          "type": 1
+        }
+      }
+    },
+    "native_c_sha256": "ac8d39cf60497d8ae7650344acd1bb78d2473743364e7ae416d5ffa09a97ffba"
+  },
+  {
+    "package": "probe-relocated",
+    "module": {
+      "name": "probe",
+      "source": "/Agon/mystuff/golem/docs/tasks/GOLEM-041/qualification/build/probe-relocated/native.c",
+      "source_sha256": "d0cc9a320feaeb34b0ff5f06de88cacc5dca5948bf83e68d1a0b573258b814f8",
+      "policy_sha256": "c69d6f3654b4b5dd4a8ae76e971818f4b13369d61dbded607b844e3268f66419",
+      "declared_limits": {
+        "text": 32768,
+        "data": 4096,
+        "stack": 2048,
+        "image": 65536
+      },
+      "build_id": "0x474c3431",
+      "capabilities": 1,
+      "envelope_bytes": 64,
+      "elf_bytes": 4128,
+      "package_bytes": 4192,
+      "sha256": "e144fe62a90f9eae68be8f10d72c9d9892896968fa28b9b11b85e16b03d9ebca",
+      "package": "/Agon/mystuff/golem/docs/tasks/GOLEM-041/qualification/build/probe-relocated/probe.vdpl",
+      "elf": "/Agon/mystuff/golem/docs/tasks/GOLEM-041/qualification/build/probe-relocated/probe.elf",
+      "entry_virtual": 452,
+      "resident_text_bytes": 2884,
+      "resident_data_bytes": 268,
+      "relative_relocations": 8,
+      "allocated_sections": {
+        ".text": {
+          "virtual_address": 404,
+          "bytes": 2882,
+          "type": 1
+        },
+        ".rodata": {
+          "virtual_address": 3288,
+          "bytes": 264,
+          "type": 1
+        },
+        ".data": {
+          "virtual_address": 7796,
+          "bytes": 4,
+          "type": 1
+        }
+      }
+    },
+    "native_c_sha256": "d0cc9a320feaeb34b0ff5f06de88cacc5dca5948bf83e68d1a0b573258b814f8"
+  },
+  {
+    "package": "animation",
+    "module": {
+      "name": "animation",
+      "source": "/Agon/mystuff/golem/docs/tasks/GOLEM-041/qualification/build/animation/native.c",
+      "source_sha256": "98cc2dadbed5fb17ab39c99cb1d592c53211f0fe74053918baf569fabd8dca8e",
+      "policy_sha256": "c69d6f3654b4b5dd4a8ae76e971818f4b13369d61dbded607b844e3268f66419",
+      "declared_limits": {
+        "text": 32768,
+        "data": 4096,
+        "stack": 2048,
+        "image": 65536
+      },
+      "build_id": "0x474c3431",
+      "capabilities": 1,
+      "envelope_bytes": 64,
+      "elf_bytes": 6284,
+      "package_bytes": 6348,
+      "sha256": "e59c41a1f5a3380fd9f02c16df93b505a1b875e038ef18a86ad262b911c9ce1e",
+      "package": "/Agon/mystuff/golem/docs/tasks/GOLEM-041/qualification/build/animation/animation.vdpl",
+      "elf": "/Agon/mystuff/golem/docs/tasks/GOLEM-041/qualification/build/animation/animation.elf",
+      "entry_virtual": 440,
+      "resident_text_bytes": 5052,
+      "resident_data_bytes": 268,
+      "relative_relocations": 7,
+      "allocated_sections": {
+        ".text": {
+          "virtual_address": 392,
+          "bytes": 5050,
+          "type": 1
+        },
+        ".rodata": {
+          "virtual_address": 5444,
+          "bytes": 264,
+          "type": 1
+        },
+        ".data": {
+          "virtual_address": 9952,
+          "bytes": 4,
+          "type": 1
+        }
+      }
+    },
+    "native_c_sha256": "98cc2dadbed5fb17ab39c99cb1d592c53211f0fe74053918baf569fabd8dca8e"
+  }
+]

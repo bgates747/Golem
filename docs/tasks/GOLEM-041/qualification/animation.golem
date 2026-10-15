@@ -1,0 +1,40 @@
+// Three lanes use unsigned >>2, >>3 and >>4; signed vertical motion uses >>2.
+// Golem computes all motion/colour. Assembly installs, draws and paces VSYNC.
+uint16 slot = 0
+uint32 square = 0
+uint32 horizontal = 0
+sint32 numerator = 0
+sint32 vertical = 0
+uint32 tick = 65500
+Array uint32 phase(0:2) = Values(0,16,31)
+ReadOnly Array uint16 scales(0:2) = Values(2,3,4)
+Array uint16 lane(0:2) = Values(48,92,136)
+Array uint16 direction(0:2) = Values(1,0,0)
+Array uint16 screenX(0:2) = Values(16,48,76)
+Array uint16 screenY(0:2) = Values(36,92,147)
+Array uint16 colour(0:2) = Values(48,12,12)
+Sub step
+    For slot In Range(0:2)
+        If phase(slot) >= 31 Then
+            direction(slot) = 0
+        ElseIf phase(slot) <= 0 Then
+            direction(slot) = 1
+        EndIf
+        If direction(slot) == 1 Then
+            phase(slot) = phase(slot) + 1
+        Else
+            phase(slot) = phase(slot) - 1
+        EndIf
+        square = phase(slot) * phase(slot)
+        horizontal = square >> scales(slot)
+        numerator = (sint32(phase(slot)) - 16) * 3
+        vertical = numerator >> 2
+        screenX(slot) = 16 + uint16(horizontal)
+        screenY(slot) = uint16(sint32(lane(slot)) + vertical)
+        colour(slot) = 12
+        If vertical < 0 Then
+            colour(slot) = 48
+        EndIf
+    Next slot
+    tick = tick + 1
+EndSub
