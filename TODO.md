@@ -7,7 +7,7 @@ GOLEM-035 was accepted and explicitly approved for commit/push on 2026-10-13.
 Outstanding human/physical reviews below remain open; this checkpoint does not
 claim those reviews occurred.
 
-- [ ] **GOLEM-040:** Promote accepted compiler prototypes into the maintained toolchain. [Plan](docs/tasks/GOLEM-040.md). First inventory/design tranche released on 2026-10-14; production implementation remains a later review boundary.
+- [ ] **GOLEM-040:** Promote accepted compiler prototypes into the maintained toolchain. [Plan](docs/tasks/GOLEM-040.md). Inventory/design complete: [recommendation](docs/tasks/GOLEM-040/README.md). Propose coherent accepted general compiler promotion behind additive --portable; existing modes retained. Additive portable implementation released on 2026-10-14; preserve existing modes and qualify emitted parity.
 
 - [ ] **GOLEM-036:** D1b faithful wide integer primitives, signed division and checked narrowing.
   [Plan](docs/tasks/GOLEM-036.md). First wide storage/add/subtract/comparison/conversion tranche qualified; human review accepted and saved results verified; commit/push explicitly approved.

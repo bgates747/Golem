@@ -1,0 +1,251 @@
+{
+  "scope": "static source/include/receipt audit only; no compiler builds or tests executed",
+  "golem_checkpoint": "43e072e253460c631be532cb7687a510a4be0ac4",
+  "sdk_checkpoint": "9fbb21dd09402e2a3835067dbb4427f2c20dec3c",
+  "selected_entry": "docs/tasks/GOLEM-036/right-shift/compiler.cpp",
+  "portable_closure": {
+    "docs/tasks/GOLEM-036/right-shift/compiler.cpp": {
+      "sha256": "1be2c0181257aaa71305498791c8b09a9ec2c6f86d9fe20e8999cce4c9691c69",
+      "lines": 151,
+      "includes": [
+        "docs/tasks/GOLEM-036/right-shift/root.hpp"
+      ]
+    },
+    "docs/tasks/GOLEM-036/right-shift/root.hpp": {
+      "sha256": "eedfc6dac1ce24bdc9eba8a547a53ac378801e30a3703426f39a0f37ced7292d",
+      "lines": 141,
+      "includes": [
+        "docs/tasks/GOLEM-036/right-shift/backends.hpp"
+      ]
+    },
+    "docs/tasks/GOLEM-036/right-shift/backends.hpp": {
+      "sha256": "b9eaa95c8079cc58cd4848dd84542a68bdd0a7fb726556a832eb23de1789fedb",
+      "lines": 886,
+      "includes": [
+        "docs/tasks/GOLEM-036/right-shift/portable.hpp",
+        "src/ordinary.hpp"
+      ]
+    },
+    "docs/tasks/GOLEM-036/right-shift/portable.hpp": {
+      "sha256": "deae75359e8477a673a934fda29407f5e7ab0d8e5240122626e8d5bf1377d3d1",
+      "lines": 841,
+      "includes": [
+        "src/token_reader.hpp",
+        "src/buffer_allocator.hpp"
+      ]
+    },
+    "src/token_reader.hpp": {
+      "sha256": "397fe169f1a84b47acf8a77a3036fd50ddfeac45e64d07a74b0497ca50f4126d",
+      "lines": 156,
+      "includes": []
+    },
+    "src/buffer_allocator.hpp": {
+      "sha256": "7c8881777decd9e04231adae3ab4050e52451c0fadaafe6b37c7ce0735c7b449",
+      "lines": 68,
+      "includes": []
+    },
+    "src/ordinary.hpp": {
+      "sha256": "7c8fe20f4e63c6e57de70b9931696b87c88c9c4ea499679b1bc239f09480c5da",
+      "lines": 648,
+      "includes": [
+        "src/token_reader.hpp",
+        "src/buffer_allocator.hpp"
+      ]
+    }
+  },
+  "maintained_closure": {
+    "src/golemc.cpp": {
+      "sha256": "a7b30dacaa79523d7e31cde654bcc0f8de0167316932465636c659d55062c1f4",
+      "lines": 129,
+      "includes": [
+        "src/assembly_output.hpp"
+      ]
+    },
+    "src/assembly_output.hpp": {
+      "sha256": "f1306d7038d8460bdd4e4a4ad7e4dde1d424a12089f152758186b957c1c5b54c",
+      "lines": 114,
+      "includes": [
+        "src/resident_table.hpp",
+        "src/resident_drawing.hpp"
+      ]
+    },
+    "src/resident_table.hpp": {
+      "sha256": "6c40b1b620b74c15c2cc17aef2d3a5eb42b5ad3393738c4b2c0440ab3a24d546",
+      "lines": 207,
+      "includes": [
+        "src/resident.hpp"
+      ]
+    },
+    "src/resident.hpp": {
+      "sha256": "1ff0d71cedc28310121b45ec34297d27401f5b79a02802c18af6526b698447a3",
+      "lines": 135,
+      "includes": [
+        "src/ordinary.hpp",
+        "src/scalar_backend.hpp"
+      ]
+    },
+    "src/ordinary.hpp": {
+      "sha256": "7c8fe20f4e63c6e57de70b9931696b87c88c9c4ea499679b1bc239f09480c5da",
+      "lines": 648,
+      "includes": [
+        "src/token_reader.hpp",
+        "src/buffer_allocator.hpp"
+      ]
+    },
+    "src/token_reader.hpp": {
+      "sha256": "397fe169f1a84b47acf8a77a3036fd50ddfeac45e64d07a74b0497ca50f4126d",
+      "lines": 156,
+      "includes": []
+    },
+    "src/buffer_allocator.hpp": {
+      "sha256": "7c8881777decd9e04231adae3ab4050e52451c0fadaafe6b37c7ce0735c7b449",
+      "lines": 68,
+      "includes": []
+    },
+    "src/scalar_backend.hpp": {
+      "sha256": "cdad521fa96586d32321d3335e2c038188e1b0046e12da4e082045b875455c79",
+      "lines": 293,
+      "includes": [
+        "src/buffer_allocator.hpp"
+      ]
+    },
+    "src/resident_drawing.hpp": {
+      "sha256": "8daf1a0199b6a38c6b023397d8288439492cf73e7156c20167487aa2ccfe139d",
+      "lines": 258,
+      "includes": [
+        "src/resident.hpp"
+      ]
+    }
+  },
+  "generic_vs_renderer_copy_equal": {
+    "portable.hpp": true,
+    "backends.hpp": true,
+    "root.hpp": true,
+    "compiler.cpp": false
+  },
+  "historical_baseline_files": [
+    {
+      "path": "docs/tasks/GOLEM-035/portable.hpp",
+      "matches": true
+    },
+    {
+      "path": "docs/tasks/GOLEM-035/backends.hpp",
+      "matches": true
+    },
+    {
+      "path": "docs/tasks/GOLEM-035/root.hpp",
+      "matches": true
+    },
+    {
+      "path": "docs/tasks/GOLEM-035/compiler.cpp",
+      "matches": true
+    },
+    {
+      "path": "src/ordinary.hpp",
+      "matches": true
+    },
+    {
+      "path": "src/token_reader.hpp",
+      "matches": true
+    },
+    {
+      "path": "src/buffer_allocator.hpp",
+      "matches": true
+    },
+    {
+      "path": "docs/tasks/GOLEM-036/portable.hpp",
+      "matches": true
+    },
+    {
+      "path": "docs/tasks/GOLEM-036/backends.hpp",
+      "matches": true
+    },
+    {
+      "path": "docs/tasks/GOLEM-036/root.hpp",
+      "matches": true
+    },
+    {
+      "path": "docs/tasks/GOLEM-036/compiler.cpp",
+      "matches": true
+    },
+    {
+      "path": "docs/tasks/GOLEM-036/multiplication/portable.hpp",
+      "matches": true
+    },
+    {
+      "path": "docs/tasks/GOLEM-036/multiplication/backends.hpp",
+      "matches": true
+    },
+    {
+      "path": "docs/tasks/GOLEM-036/multiplication/root.hpp",
+      "matches": true
+    },
+    {
+      "path": "docs/tasks/GOLEM-036/multiplication/compiler.cpp",
+      "matches": true
+    },
+    {
+      "path": "docs/tasks/GOLEM-036/division/portable.hpp",
+      "matches": true
+    },
+    {
+      "path": "docs/tasks/GOLEM-036/division/backends.hpp",
+      "matches": true
+    },
+    {
+      "path": "docs/tasks/GOLEM-036/division/root.hpp",
+      "matches": true
+    },
+    {
+      "path": "docs/tasks/GOLEM-036/division/compiler.cpp",
+      "matches": true
+    }
+  ],
+  "historical_sdk_mismatches": [
+    {
+      "path": "src/vdplet_image.h",
+      "historical_sha256": "6a28226a138ec2c54f1b456b1bf3f33372db1a2477cb1f92afc7547ba5007fff",
+      "current_sha256": "db95e97adb1d9fa07a1a89843b70fb9ae12303edb6e0abc3cfb7ea5aa7351dc3"
+    },
+    {
+      "path": "tests/check_image.cpp",
+      "historical_sha256": "7812b6fc7fef7b3b9d4d9faf16d324e4a0155efc98ca64198af0da764e4b0a3c",
+      "current_sha256": "b8900430512740802900c15c771d811c64e3d478c9ad0e9fca37b53781094382"
+    },
+    {
+      "path": "build/check_image",
+      "historical_sha256": "0cb638527c6ec94f78393ce21fbe8698147fe9ca61618c740778cc91e806a464",
+      "current_sha256": "e056c89a40347c541f227ae508e4756c730e7a656b31f7eab7fdbb8432775bbb"
+    },
+    {
+      "path": "tools/build_module.py",
+      "historical_sha256": "c2353057f2b00545378bc6727752a247df8254dbe51a44c5b99d1478de96bd62",
+      "current_sha256": "a5e8fe550b7906fbd897ec7045d550a20b374d9df4379e80ecb8a2641627ad22"
+    }
+  ],
+  "delivery": {
+    "bundle": "delivery/f78de85c7decc6a0",
+    "sha256": "f78de85c7decc6a056d9450dd7ea2b3aca47733b9919c121bb0c47cfd720f600",
+    "packages": {
+      "default": {
+        "manifest": "packages/default/delivery-manifest.json",
+        "sha256": "6c6acefa4d3ce25e17d9ae208be2080d5f558c78fe25eebb72ec129773dc19bc"
+      },
+      "relocated": {
+        "manifest": "packages/relocated/delivery-manifest.json",
+        "sha256": "b65e87c633e343744f57901647cd74e01965070173e7c0affcda74b11ca40e64"
+      },
+      "animation": {
+        "manifest": "packages/animation/delivery-manifest.json",
+        "sha256": "4ed435d3e680659ce0c477e9d9387b2f839aea276f3746a308b4b09a9a8036a4"
+      }
+    }
+  },
+  "verified_package_manifests": [
+    "default",
+    "relocated",
+    "animation"
+  ],
+  "selected_source_commit": "b32c5960c394df29f6f9c70e87340aeb4f041080",
+  "selected_generic_lines": 2019
+}

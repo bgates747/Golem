@@ -36,16 +36,16 @@ result is a concrete promotion sequence and file/test boundary, ready for review
 It does not change production code or promise that all prototypes can be merged
 as independent pieces.
 
-- INV-001 [ ] Map maintained `src/`, build/CLI, tests and examples to their current supported contracts.
-- INV-002 [ ] Inventory accepted shared frontend, scalar and control-flow work from GOLEM-024–032; locate final implementations and acceptance/qualification evidence rather than reviewing every intermediate artifact.
-- INV-003 [ ] Trace root-interface, typed-array and wide-integer successor implementations from GOLEM-034–036, including multiplication, division and right shifts; identify inherited code, duplicate forks and cross-task includes.
-- INV-004 [ ] Classify GOLEM-022's multiple drawing Subs and GOLEM-037's renderer binding extension separately; verify their review status and keep application-specific code out of the portable core.
-- DEP-001 [ ] Select a pinned candidate source base for promotion and map its complete dependency closure. Distinguish generic compiler code, maintained helpers, historical fixtures and external SDK tooling.
-- CON-001 [ ] Record the contracts promotion must preserve: explicit types/initialization, terminator-free grammar, evaluation order, checked errors/prior effects, inclusive bounds, entry IDs, packed state, reservations, ownership and generated assembly/layout artifacts.
-- CLI-001 [ ] Propose the maintained user-facing build/target-selection commands, dependency setup and coexistence with current raw/resident profiles. Identify any interface/versioning decision requiring review; do not silently pick a breaking replacement.
-- MAP-001 [ ] Produce a feature/evidence matrix and exact proposed file moves/extractions. Recommend a coherent first implementation slice, followed by ordered dependent slices; shared scalar syntax/types/layout are the starting point unless actual coupling requires a larger slice.
-- CHK-001 [ ] Map existing useful checks to those slices: compiler rejection/contracts, byte/layout parity, generated-C/native checks, assembler consumers and selected prior target evidence. Separate immediately reusable checks from fixtures that need adaptation or new qualification.
-- REV-001 [ ] Return a concise integration recommendation, uncertainties and acceptance criteria to the Author. Stop before production edits, test execution, emulator deployment or publication.
+- INV-001 [x] Map maintained `src/`, build/CLI, tests and examples to their current supported contracts.
+- INV-002 [x] Inventory accepted shared frontend, scalar and control-flow work from GOLEM-024–032; locate final implementations and acceptance/qualification evidence rather than reviewing every intermediate artifact.
+- INV-003 [x] Trace root-interface, typed-array and wide-integer successor implementations from GOLEM-034–036, including multiplication, division and right shifts; identify inherited code, duplicate forks and cross-task includes.
+- INV-004 [x] Classify GOLEM-022's multiple drawing Subs and GOLEM-037's renderer binding extension separately; verify their review status and keep application-specific code out of the portable core.
+- DEP-001 [x] Select a pinned candidate source base for promotion and map its complete dependency closure. Distinguish generic compiler code, maintained helpers, historical fixtures and external SDK tooling.
+- CON-001 [x] Record the contracts promotion must preserve: explicit types/initialization, terminator-free grammar, evaluation order, checked errors/prior effects, inclusive bounds, entry IDs, packed state, reservations, ownership and generated assembly/layout artifacts.
+- CLI-001 [x] Propose the maintained user-facing build/target-selection commands, dependency setup and coexistence with current raw/resident profiles. Identify any interface/versioning decision requiring review; do not silently pick a breaking replacement.
+- MAP-001 [x] Produce a feature/evidence matrix and exact proposed file moves/extractions. Recommend a coherent first implementation slice, followed by ordered dependent slices; shared scalar syntax/types/layout are the starting point unless actual coupling requires a larger slice.
+- CHK-001 [x] Map existing useful checks to those slices: compiler rejection/contracts, byte/layout parity, generated-C/native checks, assembler consumers and selected prior target evidence. Separate immediately reusable checks from fixtures that need adaptation or new qualification.
+- REV-001 [x] Return a concise integration recommendation, uncertainties and acceptance criteria to the Author. Stop before production edits, test execution, emulator deployment or publication.
 
 ## Subsequent implementation boundaries
 
@@ -91,3 +91,19 @@ The next review is of that concrete integration recommendation. Implementation
 is a later tranche, sized from the evidence rather than promised in advance.
 
 The Author released the first inventory/design tranche on 2026-10-14 with an instruction to commit/push first, then execute. This does not release production implementation.
+
+## First-tranche outcome — 2026-10-14
+
+[Recommendation](GOLEM-040/README.md), [feature/evidence matrix](GOLEM-040/feature-matrix.md),
+[exact integration/validation sequence](GOLEM-040/integration-plan.md) and
+[source/SDK identity inventory](GOLEM-040/source-inventory.json) complete the
+released static audit. Seven-file source closure matches accepted b32c596;
+four task-local generic files total 2,019 C++ lines and already contain the
+cumulative accepted features. Recommend promoting them coherently behind
+additive --portable, preserving existing modes and excluding renderer glue.
+GOLEM-022's multiple drawing Subs are already maintained; its recorded human
+status remains pending. Historical SDK pin mismatches require adapted checks,
+not historical receipt edits. No builds, tests, emulator sessions or production
+changes occurred. Implementation remains a later review/release boundary.
+
+The Author accepted the recommendation and released the additive portable implementation tranche on 2026-10-14, after requesting commit/push of the audit first.
