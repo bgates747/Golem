@@ -1188,6 +1188,45 @@ and a stopped Oryx visual review profile. Oryx is available again; the Author
 explicitly requests launch commands and forbids launching interactive sessions
 for them. This supersedes the earlier thermal restriction/visual-staging deferral.
 
+## Interactive Flower C++ client — GOLEM-044
+
+Renderer publication is `4b18679`. The Author released the complete client
+and Oryx headless/interactive staging, superseding the thermal restriction and
+visual deferral. Never launch an interactive emulator for the Author.
+
+`docs/tasks/GOLEM-044/app/` owns the actual ordinary AgonDev C++ application,
+metadata-derived native C header/embedded package, one assembly keyboard/reply
+callback and tests. The earlier client/ ABI proof is preserved. Current native
+math source/compiler/SDK/firmware/emulator sources are unchanged. The executable
+is 34760 bytes with the accepted 13668-byte module embedded; no loose module or
+asset filenames are needed by the running app. Parameters retain exact strings.
+Only Golem computes points; resident stock commands draw; C++ owns calls/input.
+
+Seventeen Oryx headless scenarios pass, including both-engine edit/redraw/error
+workflows, startup/seven-field/drawing Escape, mode136 restoration, legacy 640x480
+fallback, relocation, full-circle input, 31-character correction, busy/absent
+runtime. There are 2580480 exact playfield comparisons; settled workflow images
+and application logs match between engines. Ninety-five observed batches each
+send 49 wire bytes. Sixteen native scenarios return to MOS and execute dir.
+Host sanitizer contracts and two unchanged legacy ABI headers pass. The callback
+withholds character input while preserving MOS physical key/release state.
+
+The task's dedicated Oryx profile is staged/stopped at
+`~/Agon/mystuff/golem/docs/tasks/GOLEM-044/.emulator`. Launch its canonical
+`./flexe-agon-emulator` wrapper. Seven Enters retain defaults; any key (including
+F1) returns to editing without clearing outside the four-row pane. Esc restores
+the saved mode and presents the sole onscreen MOS keyboard instruction. The
+Author closes/reports; retrieve saved flower.log/stats and run app/verify_review.py
+as agent work. Do not ask the Author to run another verifier/terminal.
+
+Actual captured workflow text is asynchronous; app/qualify.py lets queued glyphs
+settle before full-image comparisons. Complete code/report/qualification is in
+app/README.md and app/evidence/summary.json. Controlled fault injection and
+physical behavior remain unqualified. Unconfirmed load/unload or unresponsive
+VDP retains resources and requires reset, with no fictitious successful exit.
+New application/profile changes are uncommitted pending human acceptance and
+explicit publication approval. No interactive session or board flash occurred.
+
 ## Emulator product names
 
 Select the name from the runtime and VDP backend: Fab uses a native host VDP;
@@ -1199,3 +1238,27 @@ MOS/runtime identity and backend guards. Flexe must have no Fab-named launcher,
 symlink or compatibility shim. Existing Fab launch instructions apply only to
 Fab profiles. For Flexe, call the canonical setup tool's `name_flexe_profile`
 after customization and before recording deployment checksums.
+
+
+### Flower display revision — 2026-10-15
+
+The Author replaced the earlier 640x480 display preference with mode 19:
+1024x768, four colours, white text and curves on black. The application checks
+mode/dimensions, retains the original mode family and restores the saved mode
+on exit. Golem math, logical coordinates and resident bridge bytes are unchanged.
+The four-row prompt pane derives its placement from the actual text dimensions.
+Current headless qualification and images live under
+`docs/tasks/GOLEM-044/app/evidence/mode19/`; earlier 640x480 evidence is historical.
+Review uses the stopped task profile's `./flexe-agon-emulator` generated wrapper.
+No graphical instance is launched by the agent; changes remain uncommitted.
+
+
+### Acceptance and publication — 2026-10-15
+
+The Author accepted the mode 19 white-on-black review and explicitly requested
+commit and push of all pending work. REV-001 is satisfied. Retrieval of the
+saved human log found no controlled Escape exit, so no separate human exit or
+MOS keyboard pass is claimed; the 17 passing headless scenarios retain the
+independent lifecycle evidence. Earlier pending-publication statements above
+are historical and superseded by this approval. Controlled fault injection
+and physical qualification remain open.

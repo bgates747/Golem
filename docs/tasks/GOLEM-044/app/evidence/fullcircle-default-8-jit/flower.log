@@ -1,0 +1,42 @@
+START
+SAVED_MODE 8 320 240
+READY mode=0
+PROMPT 0 3.03
+ACCEPT 0 3.03 4041eb85
+PROMPT 1 1.98
+ACCEPT 1 1.98 3ffd70a4
+PROMPT 2 0.6
+ACCEPT 2 0.6 3f19999a
+PROMPT 3 66
+ACCEPT 3 66 42840000
+PROMPT 4 0.8
+ACCEPT 4 0.8 3f4ccccd
+PROMPT 5 512
+ACCEPT 5 512 44000000
+PROMPT 6 0
+EDIT 6 3
+EDIT 6 36
+EDIT 6 360
+EDIT 6 360.
+EDIT 6 360.0
+EDIT 6 360.00
+EDIT 6 360.000
+ACCEPT 6 360.000 43b40000
+PREPARE
+DRAW 1
+BATCH 32 remaining=364 count=32
+BATCH 64 remaining=332 count=32
+BATCH 96 remaining=300 count=32
+BATCH 128 remaining=268 count=32
+BATCH 160 remaining=236 count=32
+BATCH 192 remaining=204 count=32
+BATCH 224 remaining=172 count=32
+BATCH 256 remaining=140 count=32
+BATCH 288 remaining=108 count=32
+BATCH 320 remaining=76 count=32
+BATCH 352 remaining=44 count=32
+BATCH 384 remaining=12 count=32
+BATCH 396 remaining=0 count=12
+DONE 1 segments=396
+REENTER key=27
+EXIT saved=8 restored=8 cleanup=1 overflow=0 curves=1

@@ -7,7 +7,7 @@ GOLEM-035 was accepted and explicitly approved for commit/push on 2026-10-13.
 Outstanding human/physical reviews below remain open; this checkpoint does not
 claim those reviews occurred.
 
-- [ ] **GOLEM-044:** Interactive Flower: native Golem float math and resident batch rendering pass actual Pi headless JIT/interpreter checks; stock math remains unsupported. [Task](docs/tasks/GOLEM-044.md), [renderer report](docs/tasks/GOLEM-044/renderer/README.md). Next: complete C transport and AgonDev C++ input client. Renderer accepted and authorized for publication. C++ client released; Oryx is available for headless checks and a stopped interactive review profile.
+- [ ] **GOLEM-044:** Interactive Flower native Golem math, resident rendering and AgonDev C++ client implemented; mode 19 (1024x768), white on black requested and implemented. [Task](docs/tasks/GOLEM-044.md), [application/review](docs/tasks/GOLEM-044/app/README.md). Seventeen Oryx headless scenarios pass; dedicated interactive profile staged/stopped for the Author. Mode 19 visual review accepted and commit/push explicitly approved on 2026-10-15. Controlled fault-injection and physical follow-up remain open; saved human log does not establish controlled exit.
 
 - [ ] **GOLEM-036:** D1b faithful wide integer primitives, signed division and checked narrowing.
   [Plan](docs/tasks/GOLEM-036.md). First wide storage/add/subtract/comparison/conversion tranche qualified; human review accepted and saved results verified; commit/push explicitly approved.

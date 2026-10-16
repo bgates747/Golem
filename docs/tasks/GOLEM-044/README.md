@@ -1,13 +1,17 @@
-# Interactive Flower — mathematics and resident rendering
+# Interactive Flower — application ready for review
 
-Flower's Golem calculation now builds and passes actual ESP32 headless checks
-with floating division, sin/cos and floor. Read the [native math report](native-math/README.md)
-for the accepted mathematical evidence and [initialized source](flower.golem).
-The [resident renderer](renderer/README.md) now also passes Pi JIT/interpreter
-checks: eight curves per engine, all pixels verified, with endpoints kept on
-the VDP. The interactive client remains ahead; visual staging is deferred and
-all emulator work currently uses Pi 5 only. The first feasibility findings
-below establish the reference/input/C++ contracts.
+The [ordinary C++ application](app/README.md) now runs the complete Flower
+calculation and resident renderer under the emulator. It asks for seven values,
+keeps their exact accepted strings, preserves the old curve during re-entry,
+and restores the original mode on Escape. Seventeen Oryx headless scenarios
+pass; the dedicated interactive profile is staged and stopped for the Author.
+New client/profile work remains uncommitted for review.
+
+Read [flower.golem](flower.golem) for the actual mathematics and
+[app/src/main.cpp](app/src/main.cpp) for input/transport. The accepted
+[native math](native-math/README.md) and [resident renderer](renderer/README.md)
+reports establish their earlier qualification. Stock math remains unsupported.
+The first feasibility findings below establish the reference/input/C++ contracts.
 
 1. Preserve the original formula order and inclusive loop: defaults draw 396
    segments. Keep the original logical scale so radius 512 fits the display.
@@ -28,8 +32,9 @@ below establish the reference/input/C++ contracts.
 Read the [initialized Flower source prototype](flower.golem), [algorithm/precision audit](reference-audit.md),
 [interaction contract](interaction.md), and [integration evidence/decisions](integration.md).
 The Flower math source now compiles with explicit --target native. The
-compile-only C++ interface client remains a separate proof. No visual emulator
-profile or physical deployment changed.
+earlier compile-only C++ interface client remains a separate proof; app/ now
+contains the actual application. A dedicated Oryx review profile is staged, with
+no graphical launch or physical deployment.
 
 Reproduce this tranche from the repository root:
 
@@ -43,3 +48,14 @@ The ABI probe needs `build/golemc` and installed AgonDev under `/Agon/agondev/re
 the math probe needs the pinned Xtensa compiler and sibling agon-vdplet SDK.
 All generated build products stay ignored under this task. Source identities
 and reproducible JSON receipts are in [evidence](evidence/).
+
+
+### Acceptance and publication — 2026-10-15
+
+The Author accepted the mode 19 white-on-black review and explicitly requested
+commit and push of all pending work. REV-001 is satisfied. Retrieval of the
+saved human log found no controlled Escape exit, so no separate human exit or
+MOS keyboard pass is claimed; the 17 passing headless scenarios retain the
+independent lifecycle evidence. Earlier pending-publication statements above
+are historical and superseded by this approval. Controlled fault injection
+and physical qualification remain open.

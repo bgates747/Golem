@@ -1,0 +1,5 @@
+{
+  "passed": true,
+  "ASan_UBSan": true,
+  "earlier_dual_headers_unchanged": 2
+}

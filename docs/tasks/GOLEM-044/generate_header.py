@@ -13,6 +13,7 @@ def generate(package, output):
     interface = json.loads((package / "interface.json").read_text())
     backend = json.loads((package / "backends.json").read_text())
     root = json.loads((package / "root.json").read_text())
+    native_only = not backend['buffered_entries']
     if interface["state_buffer"] != backend["shared_state"] or interface["state_bytes"] != backend["state_bytes"]:
         raise ValueError("inconsistent shared package layout")
     lines = ["/* Generated from compiler metadata; task-local C interface prototype. */",
@@ -36,6 +37,8 @@ def generate(package, output):
         lines.append(f"#define GOLEM_ROOT_{name.upper()}_OFFSET {offset}u")
     for filename in ("common-install.bin", "buffered-install.bin", "native-install.bin",
                      "buffered-cleanup.bin", "native-cleanup.bin"):
+        if native_only and filename.startswith('buffered-'):
+            continue
         lines.append(f"#define GOLEM_{filename.removesuffix('.bin').replace('-', '_').upper()}_BYTES {(package / filename).stat().st_size}u")
     for field in interface["globals"]:
         name, kind, size = field["name"], field["type"], field["bytes"]
@@ -51,6 +54,11 @@ def generate(package, output):
         lines.append("}")
     for entry in interface["entries"]:
         index, name = entry["logical_id"], entry["name"]
+        if native_only:
+            lines += [f"#define GOLEM_{name}_LOGICAL_ID {index}u",
+                      f"#define GOLEM_{name}_NATIVE {backend['native_wrappers'][index]}u",
+                      f"static inline void golem_{name}(void) {{golem_host_call(GOLEM_{name}_NATIVE);}}"]
+            continue
         lines += [f"#define GOLEM_{name}_LOGICAL_ID {index}u",
                   f"#define GOLEM_{name}_BUFFERED {backend['buffered_entries'][index]}u",
                   f"#define GOLEM_{name}_NATIVE {backend['native_wrappers'][index]}u",

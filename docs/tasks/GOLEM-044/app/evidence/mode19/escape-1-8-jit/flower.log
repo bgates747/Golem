@@ -1,0 +1,7 @@
+START
+SAVED_MODE 8 320 240
+READY mode=19
+PROMPT 0 3.03
+ACCEPT 0 3.03 4041eb85
+PROMPT 1 1.98
+EXIT saved=8 restored=8 cleanup=1 overflow=0 curves=0

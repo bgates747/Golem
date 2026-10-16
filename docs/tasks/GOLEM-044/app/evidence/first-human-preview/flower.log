@@ -1,0 +1,177 @@
+START
+SAVED_MODE 8 320 240
+READY mode=0
+PROMPT 0 3.03
+ACCEPT 0 3.03 4041eb85
+PROMPT 1 1.98
+ACCEPT 1 1.98 3ffd70a4
+PROMPT 2 0.6
+ACCEPT 2 0.6 3f19999a
+PROMPT 3 66
+ACCEPT 3 66 42840000
+PROMPT 4 0.8
+ACCEPT 4 0.8 3f4ccccd
+PROMPT 5 512
+ACCEPT 5 512 44000000
+PROMPT 6 0
+ACCEPT 6 0 00000000
+PREPARE
+DRAW 1
+BATCH 32 remaining=364 count=32
+BATCH 64 remaining=332 count=32
+BATCH 96 remaining=300 count=32
+BATCH 128 remaining=268 count=32
+BATCH 160 remaining=236 count=32
+BATCH 192 remaining=204 count=32
+BATCH 224 remaining=172 count=32
+BATCH 256 remaining=140 count=32
+BATCH 288 remaining=108 count=32
+BATCH 320 remaining=76 count=32
+BATCH 352 remaining=44 count=32
+BATCH 384 remaining=12 count=32
+BATCH 396 remaining=0 count=12
+DONE 1 segments=396
+REENTER key=13
+PROMPT 0 3.03
+EDIT 0 3
+EDIT 0 3.
+EDIT 0 3.0
+EDIT 0 3.03
+EDIT 0 3.035
+ACCEPT 0 3.035 40423d71
+PROMPT 1 1.98
+ACCEPT 1 1.98 3ffd70a4
+PROMPT 2 0.6
+ACCEPT 2 0.6 3f19999a
+PROMPT 3 66
+ACCEPT 3 66 42840000
+PROMPT 4 0.8
+ACCEPT 4 0.8 3f4ccccd
+PROMPT 5 512
+ACCEPT 5 512 44000000
+PROMPT 6 0
+ACCEPT 6 0 00000000
+PREPARE
+DRAW 2
+BATCH 32 remaining=365 count=32
+BATCH 64 remaining=333 count=32
+BATCH 96 remaining=301 count=32
+BATCH 128 remaining=269 count=32
+BATCH 160 remaining=237 count=32
+BATCH 192 remaining=205 count=32
+BATCH 224 remaining=173 count=32
+BATCH 256 remaining=141 count=32
+BATCH 288 remaining=109 count=32
+BATCH 320 remaining=77 count=32
+BATCH 352 remaining=45 count=32
+BATCH 384 remaining=13 count=32
+BATCH 397 remaining=0 count=13
+DONE 2 segments=397
+REENTER key=13
+PROMPT 0 3.035
+EDIT 0 3
+EDIT 0 30
+EDIT 0 3
+EDIT 0 3.
+EDIT 0 3.0
+EDIT 0 3.03
+ACCEPT 0 3.03 4041eb86
+PROMPT 1 1.98
+ACCEPT 1 1.98 3ffd70a4
+PROMPT 2 0.6
+ACCEPT 2 0.6 3f19999a
+PROMPT 3 66
+ACCEPT 3 66 42840000
+PROMPT 4 0.8
+ACCEPT 4 0.8 3f4ccccd
+PROMPT 5 512
+ACCEPT 5 512 44000000
+PROMPT 6 0
+ACCEPT 6 0 00000000
+PREPARE
+DRAW 3
+BATCH 32 remaining=364 count=32
+BATCH 64 remaining=332 count=32
+BATCH 96 remaining=300 count=32
+BATCH 128 remaining=268 count=32
+BATCH 160 remaining=236 count=32
+BATCH 192 remaining=204 count=32
+BATCH 224 remaining=172 count=32
+BATCH 256 remaining=140 count=32
+BATCH 288 remaining=108 count=32
+BATCH 320 remaining=76 count=32
+BATCH 352 remaining=44 count=32
+BATCH 384 remaining=12 count=32
+BATCH 396 remaining=0 count=12
+DONE 3 segments=396
+REENTER key=13
+PROMPT 0 3.03
+EDIT 0 3
+EDIT 0 3.
+EDIT 0 3.0
+EDIT 0 3.03
+EDIT 0 3.035
+ACCEPT 0 3.035 40423d71
+PROMPT 1 1.98
+ACCEPT 1 1.98 3ffd70a4
+PROMPT 2 0.6
+ACCEPT 2 0.6 3f19999a
+PROMPT 3 66
+ACCEPT 3 66 42840000
+PROMPT 4 0.8
+ACCEPT 4 0.8 3f4ccccd
+PROMPT 5 512
+ACCEPT 5 512 44000000
+PROMPT 6 0
+ACCEPT 6 0 00000000
+PREPARE
+DRAW 4
+BATCH 32 remaining=365 count=32
+BATCH 64 remaining=333 count=32
+BATCH 96 remaining=301 count=32
+BATCH 128 remaining=269 count=32
+BATCH 160 remaining=237 count=32
+BATCH 192 remaining=205 count=32
+BATCH 224 remaining=173 count=32
+BATCH 256 remaining=141 count=32
+BATCH 288 remaining=109 count=32
+BATCH 320 remaining=77 count=32
+BATCH 352 remaining=45 count=32
+BATCH 384 remaining=13 count=32
+BATCH 397 remaining=0 count=13
+DONE 4 segments=397
+REENTER key=13
+PROMPT 0 3.035
+EDIT 0 3
+EDIT 0 3.
+EDIT 0 3.0
+EDIT 0 3.05
+ACCEPT 0 3.05 40433333
+PROMPT 1 1.98
+ACCEPT 1 1.98 3ffd70a4
+PROMPT 2 0.6
+ACCEPT 2 0.6 3f19999a
+PROMPT 3 66
+ACCEPT 3 66 42840000
+PROMPT 4 0.8
+ACCEPT 4 0.8 3f4ccccd
+PROMPT 5 512
+ACCEPT 5 512 44000000
+PROMPT 6 0
+ACCEPT 6 0 00000000
+PREPARE
+DRAW 5
+BATCH 32 remaining=367 count=32
+BATCH 64 remaining=335 count=32
+BATCH 96 remaining=303 count=32
+BATCH 128 remaining=271 count=32
+BATCH 160 remaining=239 count=32
+BATCH 192 remaining=207 count=32
+BATCH 224 remaining=175 count=32
+BATCH 256 remaining=143 count=32
+BATCH 288 remaining=111 count=32
+BATCH 320 remaining=79 count=32
+BATCH 352 remaining=47 count=32
+BATCH 384 remaining=15 count=32
+BATCH 399 remaining=0 count=15
+DONE 5 segments=399

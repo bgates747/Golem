@@ -1,0 +1,149 @@
+{
+  "passed": true,
+  "scenarios": [
+    {
+      "scenario": "busy-default-8-jit",
+      "engine": "jit",
+      "elapsed_seconds": 5.843465975999607,
+      "complete_49_byte_batches_observed": 0,
+      "native_MOS_dir_witness": true
+    },
+    {
+      "scenario": "default-default-legacy-jit",
+      "engine": "jit",
+      "elapsed_seconds": 7.388113968000653,
+      "complete_49_byte_batches_observed": 13,
+      "native_MOS_dir_witness": true
+    },
+    {
+      "scenario": "default-relocated-8-jit",
+      "engine": "jit",
+      "elapsed_seconds": 7.389975670999775,
+      "complete_49_byte_batches_observed": 13,
+      "native_MOS_dir_witness": true
+    },
+    {
+      "scenario": "drawing-default-136-jit",
+      "engine": "jit",
+      "elapsed_seconds": 7.625962701999924,
+      "complete_49_byte_batches_observed": 4,
+      "native_MOS_dir_witness": true
+    },
+    {
+      "scenario": "escape-0-8-jit",
+      "engine": "jit",
+      "elapsed_seconds": 5.883616361999884,
+      "complete_49_byte_batches_observed": 0,
+      "native_MOS_dir_witness": true
+    },
+    {
+      "scenario": "escape-1-8-jit",
+      "engine": "jit",
+      "elapsed_seconds": 5.925928300000123,
+      "complete_49_byte_batches_observed": 0,
+      "native_MOS_dir_witness": true
+    },
+    {
+      "scenario": "escape-2-8-jit",
+      "engine": "jit",
+      "elapsed_seconds": 6.1244875920001505,
+      "complete_49_byte_batches_observed": 0,
+      "native_MOS_dir_witness": true
+    },
+    {
+      "scenario": "escape-3-8-jit",
+      "engine": "jit",
+      "elapsed_seconds": 6.398295239999243,
+      "complete_49_byte_batches_observed": 0,
+      "native_MOS_dir_witness": true
+    },
+    {
+      "scenario": "escape-4-8-jit",
+      "engine": "jit",
+      "elapsed_seconds": 6.402368906999982,
+      "complete_49_byte_batches_observed": 0,
+      "native_MOS_dir_witness": true
+    },
+    {
+      "scenario": "escape-5-8-jit",
+      "engine": "jit",
+      "elapsed_seconds": 6.61695942499955,
+      "complete_49_byte_batches_observed": 0,
+      "native_MOS_dir_witness": true
+    },
+    {
+      "scenario": "escape-6-8-jit",
+      "engine": "jit",
+      "elapsed_seconds": 6.6246349500006545,
+      "complete_49_byte_batches_observed": 0,
+      "native_MOS_dir_witness": true
+    },
+    {
+      "scenario": "fullcircle-default-8-jit",
+      "engine": "jit",
+      "elapsed_seconds": 8.125533091999387,
+      "complete_49_byte_batches_observed": 13,
+      "native_MOS_dir_witness": true
+    },
+    {
+      "scenario": "length-default-8-jit",
+      "engine": "jit",
+      "elapsed_seconds": 10.102493857999434,
+      "complete_49_byte_batches_observed": 0,
+      "native_MOS_dir_witness": true
+    },
+    {
+      "scenario": "startup-default-8-jit",
+      "engine": "jit",
+      "elapsed_seconds": 5.641219424000155,
+      "complete_49_byte_batches_observed": 0,
+      "native_MOS_dir_witness": true
+    },
+    {
+      "scenario": "stock-default-8-jit",
+      "engine": "jit",
+      "elapsed_seconds": 1.1489981329996226,
+      "complete_49_byte_batches_observed": 0,
+      "native_MOS_dir_witness": false
+    },
+    {
+      "scenario": "workflow-default-8-interp",
+      "engine": "interp",
+      "elapsed_seconds": 24.41503456800092,
+      "complete_49_byte_batches_observed": 26,
+      "native_MOS_dir_witness": true
+    },
+    {
+      "scenario": "workflow-default-8-jit",
+      "engine": "jit",
+      "elapsed_seconds": 20.374000079000325,
+      "complete_49_byte_batches_observed": 26,
+      "native_MOS_dir_witness": true
+    }
+  ],
+  "scenario_count": 17,
+  "exact_playfield_pixel_comparisons": 2580480,
+  "complete_49_byte_batches_observed": 95,
+  "per_batch_reply_bytes": 30,
+  "JIT_interpreter_workflow_images_and_application_log_identical": true,
+  "default_binary": "cd48d05d776a38b313898ca4168b45a55d0d096cefb16711f4d157cbab491838",
+  "default_binary_bytes": 34760,
+  "relocated_binary": "c6549991fb79adc245aa1ac37446d4eec4704586a5f8129b984abfc369a05125",
+  "native_module": "dec96465017b0ebadf215db09bc04a0381584fb4ca02c4fbc5d1fae47399d170",
+  "production_compiler_SDK_firmware_emulator_source_changed": false,
+  "scope": "real eZ80/MOS app plus actual Xtensa firmware; SDL/PS2; Oryx headless",
+  "human_review": "staged, not launched by agent; acceptance pending",
+  "unqualified": [
+    "physical hardware",
+    "deliberate missing-ACK/hung-module/mode-failure injection"
+  ],
+  "source_hashes": {
+    "src/main.cpp": "c02e5c9ec6fefae21ccb40d978ed06e4dafa94474439ffbb947303cf61ff67ea",
+    "src/packets.src": "77ec27177c4b2aa8b7e0f1a608a3f68aa5edfce0a860225511684b54af76da1b",
+    "include/parameters.hpp": "658badbcf27dda5b162de39f6f8fb3b807d80014b58d32b6c1aa07a06b3dec07",
+    "build_app.py": "0192fbface8fbbca1cb85ef6ce9e5b93c2128ed4625505ba9610e4e753296975",
+    "profile.py": "2f842393a0e62a8b1f17237e480cd5212a8b4249f288dc825382a2beb70cad55",
+    "qualify.py": "6afeeab7ced6904d76ed2757186f1de7ed8e11ab04a53cbb13de060c338c2c7a",
+    "sdl_input.c": "917106388869e59c04724f2671b394fa84956962fa2c8b958b86b5733483bd47"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "passed": true,
+  "failure": null,
+  "scenario": "default-relocated-8-jit",
+  "engine": "jit",
+  "checks": [
+    {
+      "check": "default image at alternate mode/layout",
+      "exact_pixels": 286720
+    },
+    {
+      "check": "saved mode, owned cleanup and live MOS dir",
+      "saved_mode": 8
+    }
+  ],
+  "elapsed_seconds": 7.389975670999775,
+  "stock": false,
+  "backend_stats": {
+    "engine": "jit",
+    "frames": 310,
+    "cycles": 1378263895,
+    "retired": 596916356,
+    "uart_rx": 21823,
+    "uart_tx": 1029,
+    "uart_delivered": 1029,
+    "isync": 27,
+    "code_invalidations": 3,
+    "keys": 24,
+    "failed": false,
+    "unhandled": 0,
+    "unregistered": 0,
+    "unmapped": 0
+  },
+  "frontend_exit_status": 0,
+  "graphical_launch": false,
+  "returned_to_MOS_and_dir": true,
+  "identities": [
+    "28f50e87190f00de4039dc90c94432347f01c4771c4ea4a5dea8595d6cef7670  fab-agon-emulator.bin",
+    "d564243283972690933a4554296ad6202ca4ef54572279533a942960846bebae  mos_platform.bin",
+    "d69e60bbce61a7b4b3eef318ba395f11c4e1a5b585755755113992dc94edcb86  mos_platform.map",
+    "200f28cbe399b1fdc60cba1e5fed4c2bb86042b5e92f6e422539a5388c079a30  flexe-vdp.so",
+    "8da2ebfdfa3b5b00f4a1929ad4885c838845b160f570259792ef370b69d4f473  esp32-firmware.bin",
+    "b41e4cb37bd44633d14b2e6eea615cbbbdd29a1d4b49c3258b4f49f2e215e567  esp32-firmware.elf",
+    "acbcbec2e1bc4810f541ea294f479058d401fa5105c20cf588d30eaca95f58fb  fab-agon-emulator",
+    "380b1254e6b4b2542f068cdb38655d0f92840353620c16b0178a8ff04d652a0b  sdcard/autoexec.txt",
+    "c6549991fb79adc245aa1ac37446d4eec4704586a5f8129b984abfc369a05125  sdcard/flower/flower.bin",
+    "8a2483a286608fb5cc51435e8d8a941ced63beb4b70c4521cf93d9a717162c01  sdcard/flower/flower.golem",
+    "c02e5c9ec6fefae21ccb40d978ed06e4dafa94474439ffbb947303cf61ff67ea  sdcard/flower/main.cpp"
+  ],
+  "images": {
+    "defaults": "cffd3ef0b8c93b42083ae18f302a172df6a3b718aefd08d0a06f1166060d78f6"
+  }
+}

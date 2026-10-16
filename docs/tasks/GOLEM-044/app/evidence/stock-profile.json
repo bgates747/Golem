@@ -1,0 +1,20 @@
+{
+  "layout": "default",
+  "stock": true,
+  "start_mode": 8,
+  "legacy": false,
+  "busy": false,
+  "profile": "/home/smith/Agon/mystuff/golem/docs/tasks/GOLEM-044/.emulator-stock",
+  "stopped": true,
+  "identities": {
+    "fab-agon-emulator.bin": "aec5f8c266117d5bf864c6124d3c8986d042802ed5cbaaf8813e04a9fb8d0bea",
+    "mos_platform.bin": "d564243283972690933a4554296ad6202ca4ef54572279533a942960846bebae",
+    "mos_platform.map": "d69e60bbce61a7b4b3eef318ba395f11c4e1a5b585755755113992dc94edcb86",
+    "firmware/vdp_platform.so": "14338aaeead48cb3df5987bf7fcc1b350d9e08d4a0ee0fcfc1a4a89cf79fae97",
+    "fab-agon-emulator": "e822acb348e1be281dce6a80128d3924651f41157b407088b23ea73a4eba728c",
+    "sdcard/autoexec.txt": "380b1254e6b4b2542f068cdb38655d0f92840353620c16b0178a8ff04d652a0b",
+    "sdcard/flower/flower.bin": "cd48d05d776a38b313898ca4168b45a55d0d096cefb16711f4d157cbab491838",
+    "sdcard/flower/flower.golem": "8a2483a286608fb5cc51435e8d8a941ced63beb4b70c4521cf93d9a717162c01",
+    "sdcard/flower/main.cpp": "c02e5c9ec6fefae21ccb40d978ed06e4dafa94474439ffbb947303cf61ff67ea"
+  }
+}

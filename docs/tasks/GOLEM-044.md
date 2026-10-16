@@ -7,14 +7,12 @@ between drawings. This task includes the language/runtime and C-call interface
 work required for that application; the curve mathematics belongs on the ESP32.
 The Author requested this task and the behavior below on 2026-10-15.
 
-The reference/interaction/integration feasibility tranche and native
-mathematical implementation are complete. See the [native math report](GOLEM-044/native-math/README.md)
-and initialized [Flower source](GOLEM-044/flower.golem). Real C++ compile/link
-and actual ESP32 headless JIT/interpreter checks pass. The resident batch
-renderer now also passes Pi headless checks; stock math and the interactive
-application remain ahead. Visual staging is deferred until after the Author's
-sleep. The native mathematical tranche was accepted and authorized for
-publication on 2026-10-15.
+The native mathematics and resident renderer are accepted and published. The
+[complete C++ application](GOLEM-044/app/README.md) now passes seventeen Oryx
+headless scenarios, with its dedicated interactive profile staged and stopped.
+Read the [Golem source](GOLEM-044/flower.golem) and [actual client](GOLEM-044/app/src/main.cpp).
+Human visual acceptance and publication approval were given on 2026-10-15; stock mathematical
+lowering, controlled fault injection and physical behavior are not claimed.
 
 ## Required application behavior
 
@@ -59,11 +57,10 @@ Use the actual original parameter order and these exact initial strings:
 1. At startup, detect and save the actual active screen mode before changing
    display state. Do not assume MOS started in a particular mode. Save relevant
    mode flags and use fresh mode information rather than stale cached values.
-2. Establish a 640x480 application display. The original Flower MOSlet inherits
-   its caller's mode; the separate historical demo selects 1024x768. Neither is
-   a suitable fixed default for this new requirement. Proposed application mode
-   is stock mode 0: 640x480, 16 colours, single-buffered. Verify actual dimensions
-   and mode availability. Avoid redundant mode changes when already configured.
+2. Establish mode 19: 1024x768, four colours, single buffered, with white text
+   and curves on black. This is the Author's 2026-10-15 revision of the earlier
+   640x480 requirement. Verify the actual mode and dimensions; preserve the
+   existing legacy family and restore the original full mode byte on exit.
 3. After the final parameter has been accepted and the complete parameter set
    passes validation, clear the screen and draw the curve. Do not clear early
    merely because the user has begun entering replacements.
@@ -198,25 +195,30 @@ and reviewed as a deliberate change rather than slipped in with the port.
 - FEA-001 [x] Generate a task-local C metadata/setter/named-entry header and compile/link a real AgonDev C++ consumer at default/relocated layouts. Host C/C++ sanitizer checks pass; runtime installation/completion transport remains ABI-001.
 - FEA-002 [x] Probe ordinary Xtensa division/sinf/cosf linking and actual unchanged-loader admission. Static libm/libgcc candidate admits without imports or runtime ABI changes; target execution/stack/accuracy remains MATH-001/QUA-001.
 - FEA-003 [x] Select a finite resident-array/VDU renderer bridge and write the initialized Flower prototype, with pending math operations labeled. Full drawing integration and wire/latency measurements remain DRAW-001.
-- ABI-001 [ ] Define the minimal C/C++ entry/input/status/completion interface and generate it from compiler metadata; prove it with an AgonDev C++ consumer.
+- ABI-001 [x] Define the minimal C/C++ entry/input/status/completion interface and generate it from compiler metadata; prove it with an AgonDev C++ consumer.
 - MATH-001 [ ] Add and qualify required floating division, degree-to-radian conversion and sin/cos support; choose module linking/runtime services and establish native/stock capability boundaries and accuracy/error rules.
 - MTH-001 [x] Implement typed float division/sin/cos/floor, reference evaluation and native emission; explicitly select native output and reject unsupported stock math without changing existing default packages. See the native mathematical capability in the maintained contract.
 - MTH-002 [x] Add an opt-in math-library SDK link setting with unchanged default images and loader/runtime ABI; generic SDK ownership is VDPL-002. SDK implementation was accepted and authorized for publication on 2026-10-15.
 - MTH-003 [x] Qualify parser/type/error/precedence cases, generated C and full Flower math against independent host references; 1,244 sanitized generated-C cases, C++ sanitizers, three actual assembler consumers, 55 prior unchanged files and three default SDK images pass. First-tranche C++ proof remains valid; complete C transport remains ABI-001.
 - MTH-004 [x] Execute installed Xtensa math and relocated packages under both engines, including library argument reduction, cleanup and command-task stack headroom. Pi JIT and matched Oryx JIT/interpreter each pass 278 calls / 27,092 replies, including six Flower parameter sets. This is VDP-only execution; MOS/SD and physical hardware are not qualified by these runs.
-- MTH-005 [ ] Stage a finite visual Flower mathematics review on Oryx, identifying the Golem source and surrounding renderer. Deferred by the Author until after sleep (2026-10-15); current work uses headless correctness runs only. Full interactive input remains APP-001.
+- MTH-005 [x] Disposed by staging the complete interactive Flower application under VIS-001 after the Author released Oryx review. The scene identifies Golem mathematics, C++ input/calls and resident VDP drawing; human acceptance remains REV-001.
 - DRAW-001 [x] Integrate native portable calculations with a stock VDP-resident connected-line bridge and finite 32-point batches. Pi JIT/interpreter qualify rendering, shared storage and bounded batch duration. Actual Escape/input behavior remains APP-001/CHK-002; see renderer/README.md.
 - RND-001 [x] Generate a task-local stock command renderer from Flower's common metadata: own disjoint buffers, patch start/end coordinates residently, draw only the valid batch prefix and suppress zero/error/invalid-count batches without modifying mathematical state.
 - RND-002 [x] Qualify count boundaries 0/1/31/32/33, stale array tails, signed coordinates, clipping, repeated calls, failure suppression and cleanup retention; assemble the generated symbolic interface at default and relocated layouts.
 - RND-003 [x] Run actual uploaded Flower plus resident rendering on the Pi 5 headlessly. Compare complete curves with direct stock rendering from observed coordinates and independent geometry expectations, including default/fractional/full-circle/integer/shrink cases. Record finite batch duration and steady wire bytes separately from diagnostics.
 - RND-004 [x] Document renderer ownership, logical-coordinate mapping, completion and error boundaries, retained evidence and remaining C++/human work. Leave this new tranche uncommitted pending review.
-- APP-001 [ ] Build the ordinary AgonDev C++ Flower client with sequential prompts, preserved strings, startup mode capture, 640x480 setup and owned resource lifecycle.
+- CLI-001 [x] Generate a native-only C interface and embedded application package from the same compiler/renderer metadata, preserving the earlier ABI proof.
+- CLI-002 [x] Implement one ISR-safe keyboard/reply demultiplexer, bounded discovery/completion, installation/binding and owned cleanup with saved-mode restoration.
+- CLI-003 [x] Build the actual AgonDev C++ field editor and drawing lifecycle with exact retained strings, domain validation, no-clear re-entry and Escape in every phase; keep batching internal.
+- CLI-004 [x] Qualify shared parsing/editing under host sanitizers and execute the real eZ80 client with scripted SDL key input under both engines. Check repeated curves, key release, mode restoration and return to usable MOS; retain evidence.
+- CLI-005 [x] Stage the qualified application/source in a stopped dedicated Oryx profile, document launch/review commands and complete technical documentation. Leave new emulator-related changes uncommitted for human review.
+- APP-001 [x] Build the ordinary AgonDev C++ Flower client with sequential prompts, preserved strings, startup mode capture, 640x480 setup and owned resource lifecycle.
 - CHK-001 [ ] Compare numeric traces and geometry with the independent higher-precision reference, separating intentional float32 differences from legacy binary16 differences and algorithm mistakes. Test cardinal/fractional degree inputs, all defaults, noninteger/integer step products, shrink cases, domain errors and repeated redraws.
 - CHK-002 [ ] Test exact text round trips, Enter-keeps-value, corrections/backspace, rejected values, return-key consumption, every Escape phase including drawing, mode failures and completion-before-unload/restore. Verify retained curves during parameter entry and the agreed exit display policy.
-- QUA-001 [ ] Run appropriate maintained host/sanitizer/C++/assembler checks and actual stock/native target qualification for supported capabilities; record module resources, installation and steady-state wire traffic separately. Preserve prior outputs/profiles and distinguish emulator evidence from physical hardware.
-- VIS-001 [ ] Stage the complete interactive 640x480 application on a dedicated stopped Oryx profile with readable Golem/client source links. The human review exercises prompts, fractional degrees, multiple curves, retained strings, no-clear re-entry and Escape/mode restoration. Automated runs are both windowless and silent.
-- DOC-001 [ ] Record build/run instructions, the user-visible contract, supported numeric limits and exact qualification evidence; promote generic compiler/SDK/C-interface improvements only through their agreed ownership boundaries.
-- REV-001 [ ] Obtain applicable human acceptance and explicit publication approval before committing/pushing emulator-related implementation.
+- QUA-001 [x] Run appropriate maintained host/sanitizer/C++/assembler checks and actual stock/native target qualification for supported capabilities; record module resources, installation and steady-state wire traffic separately. Preserve prior outputs/profiles and distinguish emulator evidence from physical hardware.
+- VIS-001 [x] Stage the complete interactive 640x480 application on a dedicated stopped Oryx profile with readable Golem/client source links. The human review exercises prompts, fractional degrees, multiple curves, retained strings, no-clear re-entry and Escape/mode restoration. Automated runs are both windowless and silent.
+- DOC-001 [x] Record build/run instructions, the user-visible contract, supported numeric limits and exact qualification evidence; promote generic compiler/SDK/C-interface improvements only through their agreed ownership boundaries.
+- REV-001 [x] Author accepted the mode 19 visual review and explicitly approved commit/push on 2026-10-15. Saved human log lacks a controlled exit; exit/keyboard qualification remains automated evidence.
 
 First execution tranche, released by the Author on 2026-10-15: REF-001 and UX-001 plus the ABI/math/drawing
 feasibility needed to choose a small implementation sequence. Deliver concrete
@@ -226,8 +228,8 @@ application. Writing this task is not a claim that its missing features exist.
 The feasibility and native mathematical tranches are accepted and published as
 f17f805 and 52ed327; SDK library linking is published as 580a5d8 in agon-vdplet.
 The following resident renderer tranche now passes Pi headless qualification;
-see [its report](GOLEM-044/renderer/README.md). Next is the complete C transport
-and interactive application (ABI-001/APP-001). Stock float division remains an
+see [its report](GOLEM-044/renderer/README.md). The complete C transport
+and interactive application (ABI-001/APP-001) are now implemented and staged. Stock float division remains an
 investigation within MATH-001, not a completed lowering. Include full visual
 review when executable application changes can be staged under the Author's
 current host/visual-review instructions.
@@ -281,7 +283,7 @@ outbound / 30 inbound bytes per batch, with no point coordinates transmitted.
 The 92 measured batches per engine return in 2.79..7.80 ms of modeled guest
 time; this is not physical UART or Escape-latency qualification. No Oryx access,
 visual staging, MOS client run or physical deployment occurred. The renderer
-tranche remains uncommitted for review.
+tranche was subsequently accepted and published as 4b18679.
 
 ## C++ client tranche — released 2026-10-15
 
@@ -291,3 +293,56 @@ applicable QUA/VIS/DOC items: implement the actual interactive application,
 headlessly qualify it, and stage a stopped dedicated Oryx review instance in
 the same tranche. Oryx is available again. Never launch its interactive session
 for the Author; provide CLI launch commands and expected review behavior.
+
+## C++ application result — 2026-10-15
+
+The renderer is published as `4b18679`. The actual application is implemented
+and staged, stopped, on Oryx at `docs/tasks/GOLEM-044/.emulator`. Launch only its
+generated `./fab-agon-emulator`. See [application/source/review instructions](GOLEM-044/app/README.md)
+and [saved qualification](GOLEM-044/app/evidence/summary.json). The user keeps
+seven exact strings; batching is internal, with no settings or point traffic.
+The complete executable is 34,760 bytes, including the unchanged 13,668-byte
+native mathematical image. Compiler/SDK/firmware/emulator source is unchanged.
+
+Seventeen headless scenarios pass: both-engine full edit/redraw/error workflows,
+startup Escape, seven prompt exits, a long-curve cancellation, legacy mode
+selection, relocated buffers, full-circle input, length correction, busy slot
+and absent runtime. There are 2,580,480 exact playfield pixel comparisons; all
+four settled workflow pictures and the application log match across engines.
+Ninety-five complete batches independently measure 49 outbound bytes in wire
+transcripts. Sixteen native scenarios include a successful MOS dir after exit;
+the stock control separately checks controlled return, original mode and screen.
+The application preserves MOS physical key/release state while withholding its
+characters, and handles non-ASCII keys such as F1 for re-entry.
+
+CHK-002 remains open only for deliberately injected missing replies, hung
+modules and mode failures. These are documented boundaries, not claimed passes;
+normal input, retained text, corrections, failure-preserved drawing, full saved
+mode restoration and controlled cleanup are qualified. Native calls/ownership
+that cannot be confirmed retain resources and require reset. Human review and
+explicit publication approval remain REV-001. New application/profile changes
+are uncommitted. No graphical instance or physical flashing was performed.
+
+
+### Flower display revision — 2026-10-15
+
+The Author replaced the earlier 640x480 display preference with mode 19:
+1024x768, four colours, white text and curves on black. The application checks
+mode/dimensions, retains the original mode family and restores the saved mode
+on exit. Golem math, logical coordinates and resident bridge bytes are unchanged.
+The four-row prompt pane derives its placement from the actual text dimensions.
+Current headless qualification and images live under
+`docs/tasks/GOLEM-044/app/evidence/mode19/`; earlier 640x480 evidence is historical.
+Review uses the stopped task profile's `./flexe-agon-emulator` generated wrapper.
+No graphical instance is launched by the agent; changes remain uncommitted.
+
+
+### Acceptance and publication — 2026-10-15
+
+The Author accepted the mode 19 white-on-black review and explicitly requested
+commit and push of all pending work. REV-001 is satisfied. Retrieval of the
+saved human log found no controlled Escape exit, so no separate human exit or
+MOS keyboard pass is claimed; the 17 passing headless scenarios retain the
+independent lifecycle evidence. Earlier pending-publication statements above
+are historical and superseded by this approval. Controlled fault injection
+and physical qualification remain open.

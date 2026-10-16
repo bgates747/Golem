@@ -4,8 +4,8 @@ This report records the first feasibility tranche: a real C++ consumer links
 at two buffer layouts and a mathematical module admits through the unchanged
 loader. The [subsequent native implementation](native-math/README.md) now also
 qualifies mathematical execution under actual ESP32 firmware. The [resident renderer](renderer/README.md) subsequently qualifies connected
-lines from resident arrays with actual Pi JIT/interpreter pixels. The complete
-interactive client remains ahead.
+lines from resident arrays with actual Pi JIT/interpreter pixels. The [complete C++ client](app/README.md) subsequently passes real eZ80/MOS
+and actual Xtensa headless checks; its stopped Oryx human review is staged.
 
 ## C/C++ interface proof
 
@@ -131,3 +131,27 @@ For the first implementation, suppress a failed batch and leave the preceding
 image. After successful preparation, drawing starts only after the client's
 single clear. Future direct draw_line statements can use the same shared state
 and lifecycle after this smaller application is accepted.
+
+
+### Flower display revision — 2026-10-15
+
+The Author replaced the earlier 640x480 display preference with mode 19:
+1024x768, four colours, white text and curves on black. The application checks
+mode/dimensions, retains the original mode family and restores the saved mode
+on exit. Golem math, logical coordinates and resident bridge bytes are unchanged.
+The four-row prompt pane derives its placement from the actual text dimensions.
+Current headless qualification and images live under
+`docs/tasks/GOLEM-044/app/evidence/mode19/`; earlier 640x480 evidence is historical.
+Review uses the stopped task profile's `./flexe-agon-emulator` generated wrapper.
+No graphical instance is launched by the agent; changes remain uncommitted.
+
+
+### Acceptance and publication — 2026-10-15
+
+The Author accepted the mode 19 white-on-black review and explicitly requested
+commit and push of all pending work. REV-001 is satisfied. Retrieval of the
+saved human log found no controlled Escape exit, so no separate human exit or
+MOS keyboard pass is claimed; the 17 passing headless scenarios retain the
+independent lifecycle evidence. Earlier pending-publication statements above
+are historical and superseded by this approval. Controlled fault injection
+and physical qualification remain open.

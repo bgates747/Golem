@@ -1,0 +1,87 @@
+; Single MOS keyboard callback: private key ring plus matched VDPL mailbox.
+; No libc, VDU or file work from the interrupt. Registers and payload address kept.
+    .assume adl=1
+    .section .text
+    .global _flower_packet_callback
+_flower_packet_callback:
+    push af
+    push bc
+    push de
+    push hl
+    push ix
+    push iy
+    push de
+    pop ix
+    ld a,(ix+0)
+    cp 'V'
+    jr nz,ordinary_key
+    ld a,(ix+1)
+    cp 'D'
+    jr nz,ordinary_key
+    ld a,(ix+2)
+    cp 'P'
+    jr nz,ordinary_key
+    ld a,(ix+3)
+    cp 'L'
+    jr nz,ordinary_key
+    push ix
+    pop hl
+    ld de,_flower_reply
+    ld bc,10
+    ldir
+    ld a,1
+    ld (_flower_reply_ready),a
+    xor a
+    ld (ix+1),a
+    ld (ix+2),a
+    ld (ix+3),a
+    jr neutralize
+ordinary_key:
+    ld a,(ix+0)
+    cp 27
+    jr nz,ring
+    ld a,(ix+3)
+    or a
+    jr z,ring
+    ld a,1
+    ld (_flower_escape),a
+ring:
+    ld a,(_flower_key_write)
+    inc a
+    and 63
+    ld c,a
+    ld a,(_flower_key_read)
+    cp c
+    jr nz,append_key
+    ld a,1
+    ld (_flower_key_overflow),a
+    jr neutralize
+append_key:
+    ld hl,0
+    ld a,(_flower_key_write)
+    ld l,a
+    add hl,hl
+    add hl,hl
+    ld de,_flower_keys
+    add hl,de
+    ex de,hl
+    push ix
+    pop hl
+    push bc
+    ld bc,4
+    ldir
+    pop bc
+    ld a,c
+    ld (_flower_key_write),a
+neutralize:
+    ; Suppress character input to MOS. Ordinary virtual key/down/modifier bytes
+    ; remain intact so MOS's physical key map follows releases during the app.
+    xor a
+    ld (ix+0),a
+    pop iy
+    pop ix
+    pop hl
+    pop de
+    pop bc
+    pop af
+    ret
