@@ -7,6 +7,8 @@ GOLEM-035 was accepted and explicitly approved for commit/push on 2026-10-13.
 Outstanding human/physical reviews below remain open; this checkpoint does not
 claim those reviews occurred.
 
+- [ ] **GOLEM-046:** Stream Golem packages through generic AGNB plain-buffer loading. [Task](docs/tasks/GOLEM-046.md). AGNB generic format/tool/loader work is separately owned under agon-utils AGNB-001; explicit Author assignment includes documentation and scoped publication.
+
 - [ ] **GOLEM-044:** Interactive Flower native Golem math, resident rendering and AgonDev C++ client implemented; mode 19 (1024x768), white on black requested and implemented. [Task](docs/tasks/GOLEM-044.md), [application/review](docs/tasks/GOLEM-044/app/README.md). Seventeen Oryx headless scenarios pass; dedicated interactive profile staged/stopped for the Author. Mode 19 visual review accepted and commit/push explicitly approved on 2026-10-15. Controlled fault-injection and physical follow-up remain open; saved human log does not establish controlled exit.
 
 - [ ] **GOLEM-036:** D1b faithful wide integer primitives, signed division and checked narrowing.

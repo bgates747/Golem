@@ -1262,3 +1262,15 @@ MOS keyboard pass is claimed; the 17 passing headless scenarios retain the
 independent lifecycle evidence. Earlier pending-publication statements above
 are historical and superseded by this approval. Controlled fault injection
 and physical qualification remain open.
+
+
+## Generic AGNB ownership — 2026-10-23
+
+The Author assigned this agent ownership of generic AGNB development in
+`/Agon/mystuff/agon-utils/examples/agnb`, including formal tasks, documentation
+and scoped commits/pushes. Generic format/writer/validator/bounded eZ80 loading
+lives there under AGNB-001 and its own TODO; compiler allocation, package symbols,
+setup/native binding and host integration live here under GOLEM-046. Preserve
+unrelated agon-utils work. Host tools are published on its isolated
+`codex/agnb-plain-buffers` branch; runtime/profile work requires qualification and
+applicable human acceptance. No implicit ownership of other utility examples.
