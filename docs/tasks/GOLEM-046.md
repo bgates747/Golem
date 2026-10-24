@@ -30,3 +30,14 @@ record is e6f1bcc. Divergent unrelated agon-utils history was preserved by
 publishing a cherry-pick on a clean upstream worktree. Actual stock Pi loading
 of an aggregate package above0x70000 passes; runtime/profile publication is
 held for review. Golem producer/bootstrap integration is not implemented yet.
+
+
+### Generic dependency accepted — 2026-10-23
+
+The Author reports AGNB's Oryx stock-Fab review worked. Agent retrieval matches
+all66 expected result bytes and pinned runtime identities. Generic AGNB-001 is
+complete and published on agon-utils codex/agnb-plain-buffers: host tools3edf8bc,
+qualified loader35dd8ef (canonical local records e6f1bcc/24596fc). The existing
+image/audio behavior is preserved. Generic dependency entry predicate is now
+satisfied; PKG-001/BOOT-001/HOST-001 remain Golem-owned implementation work.
+No current Golem package silently acquires AGNB output from this dependency.
