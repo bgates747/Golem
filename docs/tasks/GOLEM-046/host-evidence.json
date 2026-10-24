@@ -1,0 +1,8 @@
+{
+  "embedded_artifact_and_component_comparisons": 152,
+  "profiles": 8,
+  "relocated": true,
+  "package_rejections": 7,
+  "real_assembler": true,
+  "cxx_header": true
+}

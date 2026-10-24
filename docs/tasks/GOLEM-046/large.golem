@@ -1,0 +1,23 @@
+// Aggregate resident data exceeds MOS application RAM. It stays in an AGNB file.
+// The build assigns every buffer ID; assembly loads and explicitly calls tick.
+uint16 total = 0
+ReadOnly Array uint16 first(0:29999) = Fill(1)
+ReadOnly Array uint16 second(0:29999) = Fill(2)
+ReadOnly Array uint16 third(0:29999) = Fill(3)
+ReadOnly Array uint16 fourth(0:29999) = Fill(4)
+ReadOnly Array uint16 fifth(0:29999) = Fill(5)
+ReadOnly Array uint16 sixth(0:29999) = Fill(6)
+ReadOnly Array uint16 seventh(0:29999) = Fill(7)
+ReadOnly Array uint16 eighth(0:29999) = Fill(8)
+ReadOnly Array uint16 ninth(0:29999) = Fill(9)
+Sub tick
+    total = total + first(29999)
+    total = total + second(29999)
+    total = total + third(29999)
+    total = total + fourth(29999)
+    total = total + fifth(29999)
+    total = total + sixth(29999)
+    total = total + seventh(29999)
+    total = total + eighth(29999)
+    total = total + ninth(29999)
+EndSub

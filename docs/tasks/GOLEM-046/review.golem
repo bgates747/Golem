@@ -1,0 +1,15 @@
+// Visible review only: nine tiers represent large.golem's nine resident arrays.
+// Assembly sets the display, loads this separate package, then calls drawPackage.
+Sub drawPackage
+    draw_line(15, 320, 48, 104, 280)
+    draw_line(15, 320, 48, 536, 280)
+    draw_line(15, 104, 280, 536, 280)
+    draw_line(15, 296, 74, 344, 74)
+    draw_line(15, 272, 100, 368, 100)
+    draw_line(15, 248, 126, 392, 126)
+    draw_line(15, 224, 152, 416, 152)
+    draw_line(15, 200, 178, 440, 178)
+    draw_line(15, 176, 204, 464, 204)
+    draw_line(15, 152, 230, 488, 230)
+    draw_line(15, 128, 256, 512, 256)
+EndSub

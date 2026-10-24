@@ -1,6 +1,7 @@
 #pragma once
 // Promoted from b32c596; portable CLI adaptation, unchanged emission pipeline.
 #include "root.hpp"
+#include "../load_plan.hpp"
 #include <filesystem>
 #include <fstream>
 #include <iostream>
@@ -40,11 +41,15 @@ inline int run(int argc, char **argv) {
         std::set<unsigned> roles,ids;
         std::map<std::string,std::string> arrayFiles;
         std::vector<portable::Reservation> external{{60000,60031}};
-        bool nativeOnly=false,targetSeen=false;
+        bool nativeOnly=false,targetSeen=false,emitLoadPlan=false;
         int option=2;
         while(option<argc && std::string(argv[option]).rfind("--",0)==0) {
             const std::string flag=argv[option++];
             if(flag=="--")break;
+            if(flag=="--emit-load-plan") {
+                if(emitLoadPlan)throw std::runtime_error("duplicate --emit-load-plan");
+                emitLoadPlan=true;continue;
+            }
             if(flag=="--target") {
                 if(targetSeen||option>=argc)throw std::runtime_error("--target requires one selection: both or native");
                 targetSeen=true;const std::string target=argv[option++];
@@ -115,6 +120,7 @@ inline int run(int argc, char **argv) {
         }
         const auto native = root_v1::native(program, layout,bindings);
         const unsigned arguments = allocator.allocate("dual.native.arguments");
+        std::map<unsigned,Bytes> nativeRecords{{arguments,le16Bytes(layout.buffer)}};
         Bytes nativeInstall = write(arguments, le16Bytes(layout.buffer)), nativeCleanup = clear(arguments);
         std::vector<unsigned> nativeEntries, nativeOwned{arguments};
         for (size_t i = 0; i < program.procedures.size(); ++i) {
@@ -125,6 +131,7 @@ inline int run(int argc, char **argv) {
             if (run.size() != 17) throw std::logic_error("RUN packet size");
             Bytes request;emitAdjustMultiLiteral(request,layout.buffer,kOpSet,root_v1::Requested,le16Bytes(i));
             append(request,run);
+            nativeRecords.emplace(id,request);
             append(nativeInstall, write(id, request)); append(nativeCleanup, clear(id));
         }
         std::ostringstream calls;
@@ -157,6 +164,26 @@ inline int run(int argc, char **argv) {
         meta << '}';
         if(nativeOnly)meta << ",\"available_backends\":[\"native\"],\"required_module_libraries\":" << (math?"[\"m\",\"gcc\"]":"[]");
         meta << "}\n";
+        golem::loading::Plan loadPlan;
+        if(emitLoadPlan) {
+            loadPlan.profile="portable";loadPlan.symbols=assemblyLayout+calls.str();loadPlan.nativeHandleOffset=24;
+            for(size_t i=0;i<program.globals.size();++i)loadPlan.fields.push_back({program.globals[i].name,layout.buffer,layout.offsets[i],width(program.globals[i].type)});
+            for(size_t i=0;i<program.arrays.size();++i)loadPlan.fields.push_back({program.arrays[i].name,layout.arrayBuffers[i],0,program.arrays[i].bytes()});
+            for(auto span:external)loadPlan.reservations.push_back({span.first,span.last});
+            loadPlan.common.emplace(layout.buffer,layout.initial);loadPlan.commonOwned.push_back(layout.buffer);
+            for(size_t i=0;i<program.arrays.size();++i){loadPlan.common.emplace(layout.arrayBuffers[i],program.arrays[i].initial);loadPlan.commonOwned.push_back(layout.arrayBuffers[i]);}
+            if(!nativeOnly) {
+                golem::loading::Component c;c.name="buffered";c.entries=buffered.entries;c.resources=buffered.owned;
+                for(const auto&p:program.procedures)c.entryNames.push_back(p.name);
+                c.records=buffered.data;
+                for(const auto&p:buffered.ordinaryData)if(!c.records.emplace(p).second)throw std::logic_error("duplicate buffered load data");
+                for(const auto&p:buffered.programs)if(!c.records.emplace(p).second)throw std::logic_error("duplicate buffered load program");
+                c.setup={23,0,248,1,0,1,0};loadPlan.components.push_back(c);
+            }
+            golem::loading::Component c;c.name="native";c.entries=nativeEntries;c.resources=nativeOwned;c.records=nativeRecords;
+            for(const auto&p:program.procedures)c.entryNames.push_back(p.name);
+            loadPlan.components.push_back(c);loadPlan.finalize();
+        }
         std::filesystem::create_directories(output);
         auto interface = portable::interfaceJson(program, layout);
         const std::string oldContract = "host_reference_only";
@@ -194,6 +221,7 @@ inline int run(int argc, char **argv) {
         writeFile(output/"native.c", native);
         writeFile(output/"calls.inc", calls.str());
         writeFile(output/"backends.json", meta.str());
+        if(emitLoadPlan)loadPlan.write(output);
         std::cout << "Shared state " << layout.bytes << " bytes; ";
         if(nativeOnly)std::cout << "native-only package; ";
         else std::cout << "buffered install " << buffered.install.size() << " bytes; ";

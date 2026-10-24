@@ -10,7 +10,7 @@ using namespace golem::ordinary;
 struct Location { unsigned buffer, offset; };
 struct Buffered {
     Bytes install, cleanup;
-    std::map<unsigned, Bytes> programs, data;
+    std::map<unsigned, Bytes> programs, data, ordinaryData;
     std::vector<unsigned> entries, owned;
 };
 inline Bytes call(unsigned id) { Bytes b; emitBufferHeader(b, id); b.push_back(1); return b; }
@@ -666,6 +666,7 @@ public:
             if (!claim.second.external && claim.second.owner.rfind("dual.native.", 0) != 0) owned.insert(claim.first);
         output_.owned.assign(owned.begin(), owned.end());
         for (auto id : output_.owned) append(output_.cleanup, clear(id));
+        output_.ordinaryData=compiler_.initialBuffers();
         append(output_.install, output_.cleanup); append(output_.install, compiler_.out);
         for (const auto &item : output_.data) emitWriteBlock(output_.install, item.first, item.second);
         for (const auto &item : output_.programs) emitWriteBlock(output_.install, item.first, item.second);

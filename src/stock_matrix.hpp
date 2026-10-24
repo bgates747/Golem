@@ -36,8 +36,8 @@ struct Result {
     std::map<unsigned,Bytes> blocks;
     std::set<unsigned> owned;
     unsigned input=0;
-    Bytes values, bootstrap, cleanup, invoke, update;
-    std::string json, assembly;
+    Bytes values, bootstrap, cleanup, invoke, update, setup;
+    std::string json, assembly, thinAssembly;
 };
 inline Result compile(const std::string &source, const std::vector<resident::Reservation> &reservations={}) {
     syntax::Reader r(source);
@@ -155,10 +155,12 @@ inline Result compile(const std::string &source, const std::vector<resident::Res
         out.blocks.emplace(p.id,code);
     }
     // Matrix IDs have no command blocks: command33 creates their special typed storage.
-    out.bootstrap={23,0,248,1,0,1,0};
+    out.setup={23,0,248,1,0,1,0};
+    out.bootstrap=out.setup;
     if (out.input) append(out.bootstrap,upload(out.input,out.values));
     for (const auto &v:out.resources) if(v.kind==Resource::Matrix) {
         append(out.bootstrap,command(v.id,2)); append(out.bootstrap,command(v.id,33)); out.bootstrap.push_back(0);
+        append(out.setup,command(v.id,2)); append(out.setup,command(v.id,33)); out.setup.push_back(0);
     }
     for (const auto &block:out.blocks) append(out.bootstrap,upload(block.first,block.second));
     for (unsigned id:out.owned) append(out.cleanup,command(id,2));
@@ -204,6 +206,8 @@ inline Result compile(const std::string &source, const std::vector<resident::Res
     std::vector<assembly::Export> fields;
     for(auto &v:out.resources) fields.push_back({v.name,v.id,v.kind==Resource::Control?4u:v.kind==Resource::Matrix?64u:v.count*6,
         v.kind==Resource::Control?3u:v.kind==Resource::Matrix?6u:7u,v.offset});
+    out.thinAssembly=assembly::renderPackage(fields,{{"golem_inputs_buffer",out.input},{"golem_inputs_bytes",unsigned(out.values.size())}},
+        exports,out.owned.size(),out.bootstrap,out.cleanup,out.update,false);
     out.assembly=assembly::renderPackage(fields,{{"golem_inputs_buffer",out.input},{"golem_inputs_bytes",unsigned(out.values.size())}},
         exports,out.owned.size(),out.bootstrap,out.cleanup,out.update);
     auto at=out.assembly.find("golemc --resident --emit-asm");

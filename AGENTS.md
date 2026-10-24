@@ -1274,3 +1274,48 @@ setup/native binding and host integration live here under GOLEM-046. Preserve
 unrelated agon-utils work. Host tools are published on its isolated
 `codex/agnb-plain-buffers` branch; runtime/profile work requires qualification and
 applicable human acceptance. No implicit ownership of other utility examples.
+
+### Streamed Golem producer — GOLEM-046 (human review accepted)
+
+`--emit-load-plan` explicitly exports structured command/data records, thin
+`agnb.inc` and C/C++ transport hooks in `agnb.h`. `tools/package_agnb.py` uses
+agon-utils' generic0.3 writer; optional SDK-built `--module` goes into the assigned
+staging buffer. Existing embedded artifacts stay unchanged. Loading is distinct
+from stock setup, native LOAD/fresh-handle binding and calls. See
+`docs/design/agnb-packages.md`. This was the assembly checkpoint; the subsequent
+C++ continuation below now supplies the reusable AgonDev reader.
+
+The dedicated **new** profile is root `.emulator/golem-046`, leaving all accepted
+profiles intact. Its launcher starts a fresh result transcript. Target fixture
+and host tests live in `docs/tasks/GOLEM-046/`; its README distinguishes the
+large-data calculation from the visible Golem pyramid and gives review commands.
+The Author accepted the review on2026-10-23 ("good test."). Retrieved results
+match all95 expected bytes; runtime pins and absence of failure output verify,
+and the profile is stopped. Publication was authorized on2026-10-23; the C++
+continuation below implements the file adapter. The Author explicitly released all pending work for scoped commit/push.
+
+The Author directly released fsim drawing-interface consultation and task
+planning on2026-10-23 after publication of the existing backlog. Questions and
+planning are authorized; no new firmware/compiler implementation is released.
+
+
+### C++ streamed host — GOLEM-046 (human review accepted)
+
+The Author released the C++ continuation after accepting the assembly review.
+Generic reader/stdio/AgonDev headers live in agon-utils api/ under AGNB-002;
+`runtime/agondev/agnb_host.cpp` supplies the generated Golem hooks using one
+static8KiB workspace. Production code has no task implementation dependency.
+Loading still does not execute/setup code or admit a native module.
+
+`docs/tasks/GOLEM-046/cpp` owns the ordinary AgonDev consumer, builders, evidence
+and agent verifier. It reuses the original Golem sources and preserves the
+accepted assembly profile/results. The new project profile is
+`.emulator/golem-046-cpp`, using its generated `./flexe-agon-emulator` wrapper for
+Oryx review. The screen explicitly labels C++ loading versus Golem math/drawing.
+Stock Pi/Oryx and both native engines pass; malformed/late-file/recovery paths
+pass. Native image10,603bytes, static RAM19,001bytes including8,192-byte window;
+libc/stack bounds remain documented separately. The Author reports "works."
+on2026-10-23. Retrieved results match all95 bytes and the completed application
+log; runtime pins verify, no failure output exists and the profile is stopped.
+`docs/tasks/GOLEM-046/cpp/human-review.json` records acceptance. Publication
+was explicitly approved on2026-10-23; publish only owned changes.

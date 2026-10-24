@@ -173,6 +173,8 @@ public:
     const std::map<std::string, int> &variables() const { return variables_; }
     const std::map<unsigned, unsigned> &dataBuffers() const { return dataBuffers_; }
     const std::map<unsigned, std::vector<unsigned char>> &programs() const { return programs_; }
+    const std::map<unsigned,std::vector<unsigned char>> &initialBuffers() const { return initial_; }
+    void writeInitial(unsigned id,const std::vector<unsigned char>&bytes) { initial_[id]=bytes;emitWriteBlock(out,id,bytes); }
     Addition addition = Addition::Wrapping;
     unsigned errorStatus() const { return errorStatus_; }
 
@@ -183,7 +185,7 @@ public:
             zeroWord_ = allocator_->allocate("runtime.zero_word");
             overflowExit_ = allocator_->allocate("runtime.overflow_exit");
             for (unsigned id : {errorStatus_, carryWord_, zeroWord_}) {
-                emitWriteBlock(out, id, {0, 0});
+                writeInitial(id, {0, 0});
                 dataBuffers_[id] = 2;
             }
             emitAdjustMultiLiteral(programs_[overflowExit_], errorStatus_, kOpSet, 0, {1, 0});
@@ -201,7 +203,7 @@ public:
         if (!complement_) {
             complement_ = allocator_->allocate("runtime.subtrahend_complement");
             underflowExit_ = allocator_->allocate("runtime.underflow_exit");
-            emitWriteBlock(out, complement_, {0, 0});
+            writeInitial(complement_, {0, 0});
             dataBuffers_[complement_] = 2;
             emitAdjustMultiLiteral(programs_[underflowExit_], errorStatus_, kOpSet, 0, {2, 0});
         }
@@ -219,7 +221,7 @@ public:
     unsigned productOperandBuffer() {
         if (!productOperand_) {
             productOperand_ = allocator_->allocate("ordinary.product_operand");
-            emitWriteBlock(out, productOperand_, {0, 0});
+            writeInitial(productOperand_, {0, 0});
             dataBuffers_[productOperand_] = 2;
         }
         return productOperand_;
@@ -230,7 +232,7 @@ public:
         if (!divNumerator_) {
             auto data = [&](const char *role, unsigned size) {
                 unsigned id = allocator_->allocate(role);
-                emitWriteBlock(out, id, std::vector<unsigned char>(size, 0));
+                writeInitial(id, std::vector<unsigned char>(size, 0));
                 dataBuffers_[id] = size;
                 return id;
             };
@@ -309,7 +311,7 @@ public:
             mulKernel_ = allocator_->allocate("runtime.multiply_kernel");
             for (unsigned id : {mulProduct_, mulShift_, mulOperand_, mulBit_}) {
                 unsigned size = (id == mulProduct_ || id == mulShift_) ? 5 : 2;
-                emitWriteBlock(out, id, std::vector<unsigned char>(size, 0));
+                writeInitial(id, std::vector<unsigned char>(size, 0));
                 dataBuffers_[id] = size;
             }
             // This helper cannot fail: the full uint16 product fits in uint32.
@@ -346,7 +348,7 @@ public:
     // pay for an unused ACC buffer.
     void ensureAcc() {
         if (!accInitialized_) {
-            emitWriteBlock(out, accBufferId_, {0, 0, 0});
+            writeInitial(accBufferId_, {0, 0, 0});
             dataBuffers_[accBufferId_] = 3;
             accInitialized_ = true;
         }
@@ -384,6 +386,7 @@ public:
     }
 
 private:
+    std::map<unsigned,std::vector<unsigned char>> initial_;
     std::map<std::string, int> variables_;
     golem::BufferAllocator localAllocator_;
     golem::BufferAllocator *allocator_ = &localAllocator_;

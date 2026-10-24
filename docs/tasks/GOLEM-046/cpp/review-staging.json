@@ -1,0 +1,29 @@
+{
+  "backend": "native",
+  "profile": "/home/smith/Agon/mystuff/golem/.emulator/golem-046-cpp",
+  "container_bytes": 545168,
+  "app_bytes": 10603,
+  "transfer_window_bytes": 8192,
+  "expected_bytes": 95,
+  "pins": {
+    "flexe-agon-emulator": "4fa033a532ecceac72eba0af69c0070d0723f27050d0e12c7d11b1aa575ba20d",
+    "flexe-agon-emulator.bin": "28f50e87190f00de4039dc90c94432347f01c4771c4ea4a5dea8595d6cef7670",
+    "mos_platform.bin": "d564243283972690933a4554296ad6202ca4ef54572279533a942960846bebae",
+    "mos_platform.map": "d69e60bbce61a7b4b3eef318ba395f11c4e1a5b585755755113992dc94edcb86",
+    "flexe-vdp.so": "200f28cbe399b1fdc60cba1e5fed4c2bb86042b5e92f6e422539a5388c079a30",
+    "esp32-firmware.bin": "8da2ebfdfa3b5b00f4a1929ad4885c838845b160f570259792ef370b69d4f473",
+    "esp32-firmware.elf": "b41e4cb37bd44633d14b2e6eea615cbbbdd29a1d4b49c3258b4f49f2e215e567",
+    "sdcard/golem046/program-buffered.agnb": "1de6d34950896132d957cb0a68b73df758537156e419ec07fa701af5f2a0becc",
+    "sdcard/golem046/program-native.agnb": "c6c4e5533fff9723b786bc8d05034999884944353f6695e983067964e9fca828",
+    "sdcard/golem046/program-stock.agnb": "e9b4b14081954600d081325e101a85301393cf791dbc719c9c5e022cd2bdcda0",
+    "sdcard/golem046/probe.bin": "63011366129a0d1668a281a203b473b8ae0aa198d5f5ed1020778607da46a848",
+    "sdcard/golem046/large.golem": "4ae860a44618be10bfbf2e4e950b3c0e4dc18d4a25c5468097ed74444497c511",
+    "sdcard/golem046/review.golem": "c3a47d86e3b8495f5c73dc44d9c57237212faa4fe069ce12a13f4bf5e1f76499",
+    "sdcard/autoexec.txt": "d87b95d30ea052edb3d7c81027d116e2c64a9476b4e78e5c21371a8613280f32",
+    "sdcard/golem046/bad.agnb": "7c8e9c4291a1dc5db6436f81eb5330d87d850b6f695341e6549de9bab8a9b8ff",
+    "sdcard/golem046/truncated.agnb": "e704b993da1c75883e5f3b3cbb81b91907a2ec3105c9045f6c891c72403e3edd",
+    "sdcard/golem046/late.agnb": "2e7e13b612cf391e740d282ef90e3a39ea3dec9c2b4b1d3893a43e9d7cdc9cdc",
+    "sdcard/golem046/probe.agnb": "1702903e02ea13912503a41855df0d927f4586d799a657e13c557d7460eb27e7"
+  },
+  "stopped": true
+}

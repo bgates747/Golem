@@ -11,7 +11,7 @@ inline std::string renderPackage(const std::vector<Export> &fields,
         const std::vector<Constant> &constants, const std::vector<Entry> &entries,
         unsigned ownedCount,
         const resident_scalar::Bytes &bootstrap, const resident_scalar::Bytes &cleanup,
-        const resident_scalar::Bytes &update) {
+        const resident_scalar::Bytes &update, bool embedPayloads=true) {
     std::ostringstream out;
     std::set<std::string> symbols;
     auto symbol = [&](const std::string &name) {
@@ -60,6 +60,7 @@ inline std::string renderPackage(const std::vector<Export> &fields,
             << "    rst.lil $18\n    ret\n";
         payload(entry + "_call", procedure.invoke);
     }
+    if(!embedPayloads)return out.str();
     payload("golem_package_bootstrap", bootstrap);
     payload("golem_package_update_call", update);
     payload("golem_package_cleanup", cleanup);
@@ -70,18 +71,18 @@ inline std::string renderPackage(const std::vector<Export> &fields,
         const std::vector<Constant> &constants, const std::string &entryName,
         unsigned entryID, unsigned ownedCount, const resident_scalar::Bytes &invoke,
         const resident_scalar::Bytes &bootstrap, const resident_scalar::Bytes &cleanup,
-        const resident_scalar::Bytes &update) {
+        const resident_scalar::Bytes &update, bool embedPayloads=true) {
     return renderPackage(fields, constants, {{entryName, entryID, invoke}}, ownedCount,
-                         bootstrap, cleanup, update);
+                         bootstrap, cleanup, update, embedPayloads);
 }
-inline std::string render(const resident::Result &r, const resident_scalar::Bytes &update) {
+inline std::string render(const resident::Result &r, const resident_scalar::Bytes &update, bool embedPayloads=true) {
     std::vector<Export> fields{{r.spec.input,r.layout.input,4,3}, {r.spec.output,r.layout.output,2,2}};
     for (const auto &g : r.extras.globals) fields.push_back({g.first,static_cast<unsigned>(g.second),2,1});
     if (r.extras.errorStatus) fields.push_back({"runtime_error",r.extras.errorStatus,2,1});
     return renderPackage(fields, {}, r.spec.entry, r.layout.entry, static_cast<unsigned>(r.owned.size()),
-                         r.invoke, r.bootstrap, r.cleanup, update);
+                         r.invoke, r.bootstrap, r.cleanup, update, embedPayloads);
 }
-inline std::string render(const resident_table::Result &r, const resident_scalar::Bytes &update) {
+inline std::string render(const resident_table::Result &r, const resident_scalar::Bytes &update, bool embedPayloads=true) {
     // Type tag 4 identifies a packed record; field tags retain their scalar types.
     std::vector<Export> fields{{r.spec.index,r.index,2,1}, {r.spec.output,r.output,r.spec.rowBytes(),4},
                                {"runtime_error",r.status,2,1}};
@@ -91,12 +92,12 @@ inline std::string render(const resident_table::Result &r, const resident_scalar
     std::vector<Constant> constants{{stem+"_base_buffer",r.base}, {stem+"_lower",0},
         {stem+"_upper",r.spec.rows-1}, {stem+"_rows",r.spec.rows}, {stem+"_row_bytes",r.spec.rowBytes()}};
     auto text = renderPackage(fields, constants, r.spec.entry, r.entry, static_cast<unsigned>(r.owned.size()),
-                             r.invoke, r.bootstrap, r.cleanup, update);
+                             r.invoke, r.bootstrap, r.cleanup, update, embedPayloads);
     const std::string old = "3=float32.";
     text.replace(text.find(old), old.size(), "3=float32, 4=packed record.");
     return text;
 }
-inline std::string render(const resident_drawing::Result &r, const resident_scalar::Bytes &update) {
+inline std::string render(const resident_drawing::Result &r, const resident_scalar::Bytes &update, bool embedPayloads=true) {
     std::vector<Export> fields;
     for (const auto &g : r.spec.globals)
         fields.push_back({g.name, r.input, g.width(), g.typeTag(), g.offset});
@@ -106,7 +107,7 @@ inline std::string render(const resident_drawing::Result &r, const resident_scal
     std::vector<Entry> entries;
     for (const auto &entry : r.entries) entries.push_back({entry.name, entry.id, entry.invoke});
     auto text = renderPackage(fields, constants, entries, static_cast<unsigned>(r.owned.size()),
-                             r.bootstrap, r.cleanup, update);
+                             r.bootstrap, r.cleanup, update, embedPayloads);
     const std::string old = "3=float32.";
     text.replace(text.find(old), old.size(), "3=float32, 4=packed record, 5=uint8.");
     return text;

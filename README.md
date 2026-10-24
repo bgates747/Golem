@@ -145,3 +145,7 @@ tools/        Auxiliary tooling/scripts (not the compiler itself)
 examples/     Example Golem programs
 tests/        Test suite
 ```
+
+Streamed installation is available explicitly through `--emit-load-plan` and
+`tools/package_agnb.py`: see [AGNB packages](docs/design/agnb-packages.md).
+Assembly owns loading/setup/calls; the existing embedded form remains available.

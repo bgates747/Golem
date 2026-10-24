@@ -1,0 +1,32 @@
+{
+  "backend": "buffered",
+  "profile": "/Agon/mystuff/golem/.emulator/golem-046",
+  "container_bytes": 553664,
+  "app_bytes": 13223,
+  "transfer_window_bytes": 8192,
+  "expected_bytes": 83,
+  "pins": {
+    "fab-agon-emulator": "d3b94d576b95f3732c6178a35c5666283c4fcba7663b2a538c826065765f21be",
+    "fab-agon-emulator.bin": "c63b5a45b9eec9b989bdde73af6d12add92887e3f4e6ac8ffe9291d98979fb66",
+    "mos_platform.bin": "d564243283972690933a4554296ad6202ca4ef54572279533a942960846bebae",
+    "mos_platform.map": "d69e60bbce61a7b4b3eef318ba395f11c4e1a5b585755755113992dc94edcb86",
+    "firmware/vdp_platform.so": "ef5cc21d4df685970680bc5a3564852d5d312e8af77a6dfc880735d64c2e4e8e",
+    "sdcard/golem046/program-buffered.agnb": "1de6d34950896132d957cb0a68b73df758537156e419ec07fa701af5f2a0becc",
+    "sdcard/golem046/program-native.agnb": "2d401810ce5a9f58f6ac5bf5995f06c855f8dc779f573f59cfa6f7f3fa1522e5",
+    "sdcard/golem046/program-stock.agnb": "e9b4b14081954600d081325e101a85301393cf791dbc719c9c5e022cd2bdcda0",
+    "sdcard/golem046/probe.bin": "3952597a742a9217b4f45259f58c7e5c448cceb03c6d2e2de8eb487c6664f9dd",
+    "sdcard/golem046/large.golem": "4ae860a44618be10bfbf2e4e950b3c0e4dc18d4a25c5468097ed74444497c511",
+    "sdcard/golem046/review.golem": "c3a47d86e3b8495f5c73dc44d9c57237212faa4fe069ce12a13f4bf5e1f76499",
+    "sdcard/autoexec.txt": "d87b95d30ea052edb3d7c81027d116e2c64a9476b4e78e5c21371a8613280f32"
+  },
+  "stopped": true,
+  "passed": true,
+  "backend_stats": {},
+  "engine": "native-stock-vdp",
+  "host": "raspberrypi",
+  "elapsed_seconds": 10.802,
+  "graphical_launch": false,
+  "physical": false,
+  "human_review": "pending",
+  "mos_return_observed": false
+}

@@ -1,0 +1,45 @@
+; Qualification callback: copy VDPL replies only; leave ordinary MOS keys intact.
+ .assume adl=1
+ .section .text
+ .global _cpp_packet_callback
+_cpp_packet_callback:
+ push af
+ push bc
+ push de
+ push hl
+ push ix
+ push iy
+ push de
+ pop ix
+ ld a,(ix+0)
+ cp 'V'
+ jr nz,done
+ ld a,(ix+1)
+ cp 'D'
+ jr nz,done
+ ld a,(ix+2)
+ cp 'P'
+ jr nz,done
+ ld a,(ix+3)
+ cp 'L'
+ jr nz,done
+ push ix
+ pop hl
+ ld de,_cpp_reply
+ ld bc,10
+ ldir
+ xor a
+ ld (ix+0),a
+ ld (ix+1),a
+ ld (ix+2),a
+ ld (ix+3),a
+ inc a
+ ld (_cpp_reply_ready),a
+done:
+ pop iy
+ pop ix
+ pop hl
+ pop de
+ pop bc
+ pop af
+ ret
