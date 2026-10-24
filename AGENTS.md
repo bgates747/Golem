@@ -1382,3 +1382,32 @@ actual VDPlet rendering speed, independent of whether modules are C++ or Golem.
 Portable Golem integration is expressly secondary. Current aggregate timings
 do not isolate rasterization; no new rendering implementation is authorized
 merely by the performance discussion. Physical qualification remains separate.
+
+
+### VDPlet native line batches — GOLEM-048 / 2026-10-24
+
+The Author explicitly released profiling/native batches ("ok, go"). Generic
+ABI1.2/capability8 implementation lives in agon-vdplet VDPL-004, retaining old
+ABI1.0/1.1 tables and package bytes. The new callback establishes graphics state
+once and queues copied endpoints through the existing rasterizer; no new
+thread or custom pixel algorithm. Compiler integration remains secondary.
+
+Both engines pass 24 context/service cases and five pending-path/Canvas cases.
+Matched production Corsair medians: 780→220ms JIT,1,390→360ms interpreter, same
+geometry/fences/pixels and221wirebytes/frame. Separate task-only counters show
+39,225→10,423queued operations with4903line executions unchanged. No physical
+speed claim. Firmware +624bytes/staticDRAM unchanged; module8004bytes.
+
+Read docs/tasks/GOLEM-048/README.md. Dedicated Oryx .emulator/golem-048 uses
+production firmware and its Flexe wrapper; finite120-frame white Corsair review
+in mode19 passes headlessly and is staged/stopped. Human review/publication
+remain pending; keep new coupled changes uncommitted. Agent-only verifier
+follows the Author's report, with no repeated keyboard instruction.
+
+
+2026-10-24 acceptance supersedes the GOLEM-048 pending checkpoint above: Author
+reports "worked. a substantial visual improvement." Retrieved 120-frame/20-byte
+results, PASS log, runtime pins and actual MOS dir verify with no execution
+faults; the profile is stopped. The Author then explicitly approved commit/push.
+GOLEM-048 is complete and removed from TODO; human-review.json retains the
+receipt. Physical qualification remains separate; compiler adoption is deferred.

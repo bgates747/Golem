@@ -1,0 +1,32 @@
+{
+  "diagnostic_only": true,
+  "trace_during_native_draw": true,
+  "counter_names": [
+    "queue_calls",
+    "queue_cycles",
+    "line_calls",
+    "line_cycles",
+    "state_calls",
+    "state_cycles",
+    "trace_calls",
+    "trace_cycles",
+    "wait_calls",
+    "wait_cycles",
+    "submit_calls",
+    "submit_cycles",
+    "entry_cycles",
+    "entry_id"
+  ],
+  "cycle_units": "local-core CCOUNT; nominal240MHz; emulation only",
+  "overlap": "queue/submit/entry intervals overlap raster on the other core; do not add",
+  "firmware": {
+    "firmware.bin": {
+      "bytes": 1087968,
+      "sha256": "3f7e54994b1cdbba93682701552625ca513477961d5e180e187096076ca25720"
+    },
+    "firmware.elf": {
+      "bytes": 24888352,
+      "sha256": "bec30efbfa8b50e2062363320fe24e48ef01df37141b7cbad1c419e904b72a09"
+    }
+  }
+}

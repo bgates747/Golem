@@ -1,0 +1,61 @@
+{
+  "fixture_pins_verified": true,
+  "source_owner_unchanged": true,
+  "vertices": 2685,
+  "edges": 4903,
+  "chunk_edges": 32,
+  "submits_per_frame": 154,
+  "four_draw_leases": true,
+  "scene_bytes": 60484,
+  "transform_sha256": "4a2ac380446463388ee8e03c63a12a985b72250c5ae2589a5cba39f4ac839e17",
+  "module": {
+    "name": "worker",
+    "source": "/Agon/mystuff/golem/docs/tasks/GOLEM-048/worker.cpp",
+    "source_sha256": "00b2d1d7e23cfc3c2d24c1144974be7eece8c023d1e64efbd3fcbd8465a684c0",
+    "policy_sha256": "c69d6f3654b4b5dd4a8ae76e971818f4b13369d61dbded607b844e3268f66419",
+    "declared_limits": {
+      "text": 32768,
+      "data": 4096,
+      "stack": 2048,
+      "image": 65536
+    },
+    "build_id": "0x4c494e32",
+    "capabilities": 13,
+    "abi_major": 1,
+    "abi_minor": 2,
+    "envelope_bytes": 64,
+    "elf_bytes": 7940,
+    "package_bytes": 8004,
+    "sha256": "dba7f793f92a18ee3066dbdf666d2c97bf5326c03e20dd4611f29b06783af536",
+    "package": "/Agon/mystuff/golem/docs/tasks/GOLEM-048/build/worker.vdpl",
+    "elf": "/Agon/mystuff/golem/docs/tasks/GOLEM-048/build/worker.elf",
+    "entry_virtual": 3140,
+    "resident_text_bytes": 5800,
+    "resident_data_bytes": 1340,
+    "relative_relocations": 17,
+    "allocated_sections": {
+      ".text": {
+        "virtual_address": 420,
+        "bytes": 5797,
+        "type": 1
+      },
+      ".rodata": {
+        "virtual_address": 6220,
+        "bytes": 1340,
+        "type": 1
+      }
+    },
+    "linked_libraries": [
+      {
+        "name": "libm.a",
+        "path": "/home/smith/.platformio/packages/toolchain-xtensa-esp32/xtensa-esp32-elf/lib/libm.a",
+        "sha256": "89565dc52d561a7145679685683a9d0f05110889dd14925aac487bd646043d69"
+      },
+      {
+        "name": "libgcc.a",
+        "path": "/home/smith/.platformio/packages/toolchain-xtensa-esp32/lib/gcc/xtensa-esp32-elf/8.4.0/libgcc.a",
+        "sha256": "fe2bda6df58227d33ed36af602c7a540f2d7d3adf83d0592a262d94eccd4a3a5"
+      }
+    ]
+  }
+}

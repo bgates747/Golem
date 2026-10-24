@@ -1,0 +1,24 @@
+{
+  "variant": "review",
+  "pins": {
+    "flexe-agon-emulator": "29c80e870085bf58a2fe8d1b8424f29ed5127a8d0d81d70ff8a041e13e5ff151",
+    "flexe-agon-emulator.bin": "28f50e87190f00de4039dc90c94432347f01c4771c4ea4a5dea8595d6cef7670",
+    "mos_platform.bin": "d564243283972690933a4554296ad6202ca4ef54572279533a942960846bebae",
+    "mos_platform.map": "d69e60bbce61a7b4b3eef318ba395f11c4e1a5b585755755113992dc94edcb86",
+    "flexe-vdp.so": "200f28cbe399b1fdc60cba1e5fed4c2bb86042b5e92f6e422539a5388c079a30",
+    "esp32-firmware.bin": "211a81d2b28836b2e0da80d9c387673c37ef7fb0acad4ff0d1b67f6fa0bc433a",
+    "esp32-firmware.elf": "5bb9f72949cb6942e4f5a7d1ca418916e9d941aa75eb9f1d2f9431447862ec38",
+    "sdcard/autoexec.txt": "133b13ec4483acbfcd8d9d938d9e8ff6719855d8cd9f49e2fe50ea065c61162b",
+    "sdcard/golem048/probe.bin": "432e48b2da9866de30326f87ac5fec869a353c40c82d3a922d840334912a801f",
+    "sdcard/golem048/scene.agnb": "0c48412463de772bd12063bc58c97647c329c6625d3e089ac662eeadfd9c26c8"
+  },
+  "profile": "/home/smith/Agon/mystuff/golem/.emulator/golem-048",
+  "stopped": true,
+  "label": "",
+  "host": "oryx-linuxlite",
+  "verified_at": "2026-10-24T01:22:07.295788-04:00",
+  "runtime_pins_verified": true,
+  "prior_results_cleared": true,
+  "graphical_launch": false,
+  "human_review": "pending"
+}

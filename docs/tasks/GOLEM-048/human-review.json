@@ -1,0 +1,48 @@
+{
+  "accepted_at": "2026-10-24T01:33:43.139934-04:00",
+  "author_report": "worked. a substantial visual improvement.",
+  "human_visual_and_keyboard_review": "accepted",
+  "animation_frames": 120,
+  "results_bytes": 20,
+  "artifacts": {
+    "results.dat": {
+      "bytes": 20,
+      "sha256": "ed09494168cae37b92b033b18294a9fdf56f53b51935b4ef8c7dc29e6f8f5349"
+    },
+    "review.log": {
+      "bytes": 13,
+      "sha256": "933d1611f5cbb5d057064896f4c4b990f7d389029ac94016e3f97f030fb63ea2"
+    },
+    "stats.json": {
+      "bytes": 228,
+      "sha256": "9a032efb596f95e6811c380f7abdfa7d89ff10e375743bae46ad17d5e49d585a"
+    },
+    "mos-to-vdp.bin": {
+      "bytes": 94117,
+      "sha256": "5ca875696ba8e221d954ba02dece869e5842b4fd42172c218f5a91e396ca16fa"
+    }
+  },
+  "runtime_pins_verified": true,
+  "saved_log_passed": true,
+  "actual_dir_listing_verified": true,
+  "emulator_stopped": true,
+  "execution_stats": {
+    "engine": "jit",
+    "frames": 1823,
+    "cycles": 7941437477,
+    "retired": 5970140622,
+    "uart_rx": 94117,
+    "uart_tx": 6651,
+    "uart_delivered": 6651,
+    "isync": 253,
+    "code_invalidations": 3,
+    "keys": 8,
+    "failed": false,
+    "unhandled": 0,
+    "unregistered": 0,
+    "unmapped": 0
+  },
+  "publication_authority": "Direct Author instruction on 2026-10-24: go ahead and commit and push them.",
+  "physical_qualification": false,
+  "firmware_sha256": "211a81d2b28836b2e0da80d9c387673c37ef7fb0acad4ff0d1b67f6fa0bc433a"
+}

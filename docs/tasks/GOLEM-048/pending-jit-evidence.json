@@ -1,0 +1,31 @@
+{
+  "passed": true,
+  "engine": "jit",
+  "firmware_sha256": "666671abff7b75de402274fe1c54d6f973e343741ba298590c06130378053a4e",
+  "diagnostic_only": true,
+  "cases": [
+    "prior pending path then whole batch",
+    "prior pending path then chunked batch",
+    "empty batch does not commit pending path",
+    "batch followed by ordinary path/history drawing",
+    "graphics text observes same final Canvas cursor"
+  ],
+  "pixels_compared": 983040,
+  "execution_stats": {
+    "engine": "jit",
+    "frames": 512,
+    "cycles": 2252700000,
+    "retired": 756952985,
+    "uart_rx": 2087,
+    "uart_tx": 509,
+    "uart_delivered": 509,
+    "isync": 18,
+    "code_invalidations": 3,
+    "keys": 0,
+    "failed": false,
+    "unhandled": 0,
+    "unregistered": 0,
+    "unmapped": 0
+  },
+  "scope": "task hook prepares pending Context state; implemented service and literal PLOT pairs compared"
+}
