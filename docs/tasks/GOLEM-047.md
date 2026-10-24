@@ -3,13 +3,14 @@
 Keep approachable drawing operations in the source language while letting a
 native backend generate ordinary VDU bytes locally and submit them to existing
 firmware drawing routines. The stock path remains available. The first
-dependency is a correct generic runtime submission service; this is a planning
-task, not an implemented language feature or a promised performance gain.
+dependency is a correct generic runtime submission service. That service and a
+C++ consumer are now implemented/qualified for review; portable language adoption
+remains unfinished, and no performance gain is promised.
 
-The Author released consultation and planning on2026-10-23, after publication
-of the earlier matrix/AGNB work. The prior fsim discussion hold is lifted for
-this purpose. No new compiler, SDK or firmware implementation is authorized by
-this planning instruction.
+The Author initially released consultation/planning on 2026-10-23, then
+explicitly released implementation/qualification after publication of the
+earlier work and plans. The prior fsim discussion hold is lifted for this scope.
+The release and current executable checkpoint are recorded below.
 
 ## Separation of concerns
 
@@ -33,7 +34,9 @@ replay after partial drawing.
 - PLN-002 [x] Incorporated consultation-three in VDPL-003 and the requirements below. Fixture hashes independently match unchanged files/data; no API acceptance or implementation release is inferred.
 - SEM-001 [ ] After the service contract is agreed, select a small drawing slice that can retain the same source operation and visible effects on both backends. Existing resident drawing syntax is a reference, not evidence it is already accepted by the portable frontend.
 - SEM-002 [ ] Specify operand typing, conversions, coordinate units, graphics-state effects, earlier drawing on failure and completion. Treat bitmap/asset lifetimes as separate from simple PLOT coordinates; do not infer full drawing coverage from line success.
-- SEM-003 [ ] Publish retained edge-index storage/bindings for the native consumer without changing the source geometry. Keep transform/status admission before clear/labels/draw, so transform failure preserves the previous frame. Fit the draw phase's root/argument/projected-vertex/edge leases within the existing four-lease budget; do not silently request a fifth lease or embed a large edge table in module data.
+- SEM-003 [x] Publish retained edge-index storage/bindings for the native consumer without changing the source geometry. Keep transform/status admission before clear/labels/draw, so transform failure preserves the previous frame. Fit the draw phase's root/argument/projected-vertex/edge leases within the existing four-lease budget; do not silently request a fifth lease or embed a large edge table in module data.
+- CON-001 [x] Compose the unchanged owner C++ transform with a separate submitted-byte drawing entry in an isolated consumer; retain root/argument/projected-vertex/edge bindings and application-owned setup/fences. No peer source changes.
+- CON-002 [x] Qualify generic compatibility/misuse, full MOS consumer execution, matched frame/pixel/wire behavior and firmware cost; stage the finite review stopped on Oryx. [Report](GOLEM-047/README.md). The Author accepted visual/keyboard review and approved publication on 2026-10-24.
 - CMP-001 [ ] After explicit implementation release, add the supported operation through shared frontend/typed representation and target-specific emission. Stock uses existing resident command mechanisms; native emits complete-command chunks and the negotiated service callback. Keep buffer IDs/layout/entries generated and app-owned installation/pacing/cleanup explicit.
 - CHK-001 [ ] Compare the same source, initialized state and graphics context on stock/native backends, including clipping, chunk boundaries, unsupported capabilities and partial-failure behavior. Preserve existing package bytes when the new facility is unused.
 - REV-001 [ ] Stage an honest visual review showing the actual source program, source roles and expected scene in the same tranche as qualification. Record retrieved acceptance and applicable publication authority before publishing coupled runtime/profile changes.
@@ -108,3 +111,35 @@ the durable mailbox. Generic service correctness is the deliverable; mode20,
 edge count/table and scratch sizing are the initial consumer fixture, not global
 application restrictions. No physical flash or automatic graphical launch is
 released. New emulator-coupled implementation remains uncommitted for review.
+
+
+## Executable checkpoint — 2026-10-24
+
+The generic service is implemented, with a complete C++ consumer proof and
+stopped Oryx visual review. [Results and launch instructions](GOLEM-047/README.md)
+identify source roles, compatibility and measured limits. Existing Golem
+compiler/package behavior is unchanged. SEM-001/002 and CMP-001/CHK-001 remain
+the subsequent portable-language tranche; the C++ proof does not dispose them.
+The current runtime/consumer visual and keyboard review is accepted; saved
+results, runtime pins and actual MOS directory output verify. REV-001 remains
+applicable to later portable compiler adoption. Publication is directly approved.
+
+The runtime grows by 784 image bytes and 16 static RAM bytes. Both execution
+engines pass the generic service checks and full MOS consumer runs. Final
+Corsair playfields match exactly. Paired JIT full-frame medians are about
+780 ms for both paths; interpreter medians improve from 1,760 to 940 ms. The
+installation/storage reduction is measured separately from per-frame wire.
+Console consultation-six is incorporated; the intervening stale hold was
+explicitly corrected by its sender. No current peer question blocks review.
+
+
+## Author priority and acceptance — 2026-10-24
+
+The Author reports "it worked" and explicitly permits commit/push. The agent
+retrieved all 20 result bytes, the completed log and actual MOS directory listing;
+runtime pins and stopped profile verify. Receipt: GOLEM-047/wireframe/human-review.json.
+Actual rendering speed through VDPlet technology is the immediate priority,
+regardless of whether the module is written in C++ or Golem. Portable language
+integration is expressly secondary. Further rendering design must separate
+PLOT/state/queue overhead from pixel rasterization and presentation waits; no
+new renderer implementation is inferred from this discussion.

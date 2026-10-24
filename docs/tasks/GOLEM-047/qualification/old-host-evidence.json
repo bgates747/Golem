@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "firmware_sha256": "8da2ebfdfa3b5b00f4a1929ad4885c838845b160f570259792ef370b69d4f473",
+  "new_package_rejected": 10,
+  "slot_empty_after_rejection": true,
+  "legacy_execution_after_rejection": true,
+  "scope": "unchanged pre-extension firmware, actual ESP32 execution; no hardware claim"
+}

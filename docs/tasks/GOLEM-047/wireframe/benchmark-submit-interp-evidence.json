@@ -1,0 +1,239 @@
+{
+  "passed": true,
+  "variant": "benchmark-submit",
+  "frames": 25,
+  "result_bytes": 20,
+  "stack_free_bytes": 1844,
+  "results_sha256": "f2be890c22b8ff855c4a7699190230fd5d9e262d45a8c0554c427baed9cd419a",
+  "runtime_pins_verified": true,
+  "application_log_passed": true,
+  "samples": [
+    [
+      0,
+      0,
+      0,
+      0,
+      176,
+      176
+    ],
+    [
+      0,
+      0,
+      1,
+      0,
+      94,
+      94
+    ],
+    [
+      0,
+      1,
+      0,
+      0,
+      176,
+      176
+    ],
+    [
+      0,
+      1,
+      1,
+      0,
+      96,
+      96
+    ],
+    [
+      0,
+      2,
+      0,
+      0,
+      176,
+      176
+    ],
+    [
+      0,
+      2,
+      1,
+      0,
+      94,
+      94
+    ],
+    [
+      0,
+      3,
+      0,
+      0,
+      174,
+      174
+    ],
+    [
+      0,
+      3,
+      1,
+      2,
+      92,
+      94
+    ],
+    [
+      0,
+      4,
+      0,
+      2,
+      176,
+      178
+    ],
+    [
+      0,
+      4,
+      1,
+      0,
+      96,
+      96
+    ],
+    [
+      0,
+      5,
+      0,
+      2,
+      174,
+      176
+    ],
+    [
+      0,
+      5,
+      1,
+      0,
+      94,
+      94
+    ],
+    [
+      1,
+      0,
+      1,
+      2,
+      94,
+      96
+    ],
+    [
+      1,
+      0,
+      0,
+      0,
+      174,
+      174
+    ],
+    [
+      1,
+      1,
+      1,
+      2,
+      96,
+      98
+    ],
+    [
+      1,
+      1,
+      0,
+      2,
+      176,
+      178
+    ],
+    [
+      1,
+      2,
+      1,
+      2,
+      94,
+      96
+    ],
+    [
+      1,
+      2,
+      0,
+      2,
+      176,
+      178
+    ],
+    [
+      1,
+      3,
+      1,
+      0,
+      94,
+      94
+    ],
+    [
+      1,
+      3,
+      0,
+      0,
+      174,
+      174
+    ],
+    [
+      1,
+      4,
+      1,
+      0,
+      92,
+      92
+    ],
+    [
+      1,
+      4,
+      0,
+      0,
+      174,
+      174
+    ],
+    [
+      1,
+      5,
+      1,
+      2,
+      92,
+      94
+    ],
+    [
+      1,
+      5,
+      0,
+      2,
+      174,
+      176
+    ]
+  ],
+  "clock": "MOS centisecond units; effective20ms resolution",
+  "physical": false,
+  "elapsed_seconds": 38.666,
+  "engine": "interp",
+  "mos_return": true,
+  "stopped": true,
+  "pins": {
+    "flexe-agon-emulator": "72d69f5f61bcfda8573fc91c4ec197daa6a4d637fc987b6fbd56373e999880d3",
+    "flexe-agon-emulator.bin": "28f50e87190f00de4039dc90c94432347f01c4771c4ea4a5dea8595d6cef7670",
+    "mos_platform.bin": "d564243283972690933a4554296ad6202ca4ef54572279533a942960846bebae",
+    "mos_platform.map": "d69e60bbce61a7b4b3eef318ba395f11c4e1a5b585755755113992dc94edcb86",
+    "flexe-vdp.so": "200f28cbe399b1fdc60cba1e5fed4c2bb86042b5e92f6e422539a5388c079a30",
+    "esp32-firmware.bin": "c63b3148eb6f7a2fa54c5ccb59b200d40b81f8fb6ab0c44d8ce8b2865168175b",
+    "esp32-firmware.elf": "62339ba186ef75629fbe20ef17262a7271c96393dde65a033ab06e7161194cb2",
+    "sdcard/autoexec.txt": "07bccd2128631e423f6ac3e1f46f1dd16d9ecd292d120343e7466d543183e646",
+    "sdcard/golem047/probe.bin": "171f7b6b702091b2e5b7f795a9d6cf34f08fbae530390a1a467257de2d853e60",
+    "sdcard/golem047/scene.agnb": "5a33da2abb8f802810a3d93a8b230b9bc8cefb2e27fcca05c82ea20d7fc5ee83",
+    "sdcard/golem047/baseline.agnb": "5471a30a2b100c534753b5be248a5e643bdda45b0b946734304a6b49e8b91f60"
+  },
+  "execution_stats": {
+    "engine": "interp",
+    "frames": 1368,
+    "cycles": 5931515825,
+    "retired": 3127521849,
+    "uart_rx": 243388,
+    "uart_tx": 1736,
+    "uart_delivered": 1736,
+    "isync": 51,
+    "code_invalidations": 3,
+    "keys": 0,
+    "failed": false,
+    "unhandled": 0,
+    "unregistered": 0,
+    "unmapped": 0
+  }
+}

@@ -7,7 +7,7 @@ GOLEM-035 was accepted and explicitly approved for commit/push on 2026-10-13.
 Outstanding human/physical reviews below remain open; this checkpoint does not
 claim those reviews occurred.
 
-- [ ] **GOLEM-047:** Plan native drawing through a generic VDU-byte submission service while preserving stock/native source compatibility. [Task](docs/tasks/GOLEM-047.md). Runtime plan is owned by agon-vdplet VDPL-003; wireframe consultation is incorporated; fixture pins verify. Plan ready for review; no implementation released.
+- [ ] **GOLEM-047:** Native drawing through a generic VDU-byte submission service. [Task](docs/tasks/GOLEM-047.md), [executable report/review](docs/tasks/GOLEM-047/README.md). Runtime ABI1.1 and isolated C++ Corsair consumer pass compatibility, both execution engines, full MOS, matched pixels/wire and size checks. Oryx visual/keyboard review accepted; saved results and actual MOS dir verify; commit/push expressly approved on 2026-10-24. JIT frame times unchanged; interpreter comparison faster. Portable Golem frontend/backend adoption is expressly secondary to VDPlet rendering performance; generic service belongs to agon-vdplet VDPL-003.
 
 
 - [ ] **GOLEM-045:** Bounded stock-only matrix/vertex interface for fsim implemented; maintained regressions, 26 rejection cases, sanitizer and two assembler consumers pass. Fsim independently qualifies the unchanged compiler on stock VDP: cube and supplied tank each pass1080frames, projection/PLOT/control/reset and cleanup checks. Human visual review remains fsim-owned; compiler publication is explicitly approved. No physical authority. [Task](docs/tasks/GOLEM-045.md).

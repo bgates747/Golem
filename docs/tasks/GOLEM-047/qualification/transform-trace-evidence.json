@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "poses": [
+    {
+      "pose": 0,
+      "matching_observed_bytes": 356,
+      "sha256": "0c986178c2b19d62091da6fdde360fa519f45c06c05a3b75b586c24494db51c5"
+    },
+    {
+      "pose": 1,
+      "matching_observed_bytes": 356,
+      "sha256": "2edae77dc295465aa49bc9e9ee5e32a017c357bcf5d7110d6c8100627d4209c3"
+    },
+    {
+      "pose": 2,
+      "matching_observed_bytes": 356,
+      "sha256": "114b9ab416b4646cb7efed2313a9a39e6475552570d01842bd39093e61700f58"
+    },
+    {
+      "pose": 3,
+      "matching_observed_bytes": 356,
+      "sha256": "1f2dcb3f7ca36f65d549920d8e15e86277a99b0346fd4b6634044a2e83f33f7c"
+    },
+    {
+      "pose": 4,
+      "matching_observed_bytes": 356,
+      "sha256": "1bacfe755eaaccd2dbece19ec171462fcb011a2f1e0cbf7502c20988c9d3f4fd"
+    },
+    {
+      "pose": 5,
+      "matching_observed_bytes": 356,
+      "sha256": "0e866bbb295e112d97ca69b19190c3539cbce80e2ec152893ada5895f46cc8d1"
+    }
+  ],
+  "bytes_compared": 2136,
+  "observation": "all224 root bytes plus22 XYZ16 vertices per pose; exact old precompiled vs composed transform",
+  "tx_sha256": "50045cfe34d03a6adc629172ab42912e9e770b84d5ccfa0382b43625f381e9b8",
+  "rx_sha256": "7cd31955a11f017677b40ef69a9493022c4445f7a2011f2fae6f29b5fe1c95a4",
+  "later_bulk_upload": "interrupted; no VDP-only full-fixture pass claimed",
+  "full_consumer_authority": "wireframe/profile.py full MOS qualification"
+}

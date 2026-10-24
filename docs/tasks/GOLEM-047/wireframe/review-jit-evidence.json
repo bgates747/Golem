@@ -1,0 +1,43 @@
+{
+  "passed": true,
+  "variant": "review",
+  "frames": 24,
+  "result_bytes": 20,
+  "stack_free_bytes": 1828,
+  "results_sha256": "8228c4a15a2bd04b1ad393374a2c06600f157304e6a5c67a6e87ec997707eb5f",
+  "runtime_pins_verified": true,
+  "application_log_passed": true,
+  "elapsed_seconds": 23.4,
+  "engine": "jit",
+  "mos_return": true,
+  "stopped": true,
+  "pins": {
+    "flexe-agon-emulator": "72d69f5f61bcfda8573fc91c4ec197daa6a4d637fc987b6fbd56373e999880d3",
+    "flexe-agon-emulator.bin": "28f50e87190f00de4039dc90c94432347f01c4771c4ea4a5dea8595d6cef7670",
+    "mos_platform.bin": "d564243283972690933a4554296ad6202ca4ef54572279533a942960846bebae",
+    "mos_platform.map": "d69e60bbce61a7b4b3eef318ba395f11c4e1a5b585755755113992dc94edcb86",
+    "flexe-vdp.so": "200f28cbe399b1fdc60cba1e5fed4c2bb86042b5e92f6e422539a5388c079a30",
+    "esp32-firmware.bin": "c63b3148eb6f7a2fa54c5ccb59b200d40b81f8fb6ab0c44d8ce8b2865168175b",
+    "esp32-firmware.elf": "62339ba186ef75629fbe20ef17262a7271c96393dde65a033ab06e7161194cb2",
+    "sdcard/autoexec.txt": "07bccd2128631e423f6ac3e1f46f1dd16d9ecd292d120343e7466d543183e646",
+    "sdcard/golem047/probe.bin": "fdaffe067914c9293e1082e6120773264cd6e4c63cb1f20a739c267ad4c1c062",
+    "sdcard/golem047/scene.agnb": "5a33da2abb8f802810a3d93a8b230b9bc8cefb2e27fcca05c82ea20d7fc5ee83",
+    "sdcard/golem047/baseline.agnb": "5471a30a2b100c534753b5be248a5e643bdda45b0b946734304a6b49e8b91f60"
+  },
+  "execution_stats": {
+    "engine": "jit",
+    "frames": 1264,
+    "cycles": 5511716916,
+    "retired": 3589055485,
+    "uart_rx": 67647,
+    "uart_tx": 1685,
+    "uart_delivered": 1685,
+    "isync": 61,
+    "code_invalidations": 3,
+    "keys": 0,
+    "failed": false,
+    "unhandled": 0,
+    "unregistered": 0,
+    "unmapped": 0
+  }
+}

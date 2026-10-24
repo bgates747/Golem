@@ -1347,3 +1347,38 @@ through applicable correctness/compatibility/size checks and a stopped Oryx
 visual staging before review. Wireframe can be awakened for questions, but all
 substantive conversation uses the mailbox. No physical flash or graphical
 launch is authorized; leave new coupled runtime/profile work uncommitted.
+
+
+### Native VDU service executable checkpoint — GOLEM-047 / 2026-10-24
+
+Generic runtime/SDK ABI1.1 submission is implemented in agon-vdplet VDPL-003.
+It accepts complete VDU25 PLOT4/5 spans through the existing interpreter, with
+legacy ABI1.0 table/package compatibility. Both engines pass 19 generic cases
+and 1,179,648 pixel comparisons each; old firmware rejects new images cleanly.
+Pinned firmware grows 784 image bytes/16 static DRAM bytes. No physical flash.
+
+The isolated GOLEM-047 C++ Corsair worker keeps the owner transform unchanged
+and adds a separate draw entry (384-byte scratch, four leases). Full MOS runs
+pass under both engines, with matching final playfields and successful unload.
+Matched JIT full-frame medians are about 780 ms for each drawing arm: no measured
+JIT speed gain; interpreter medians improve from 1,760 to 940 ms. Installation/
+storage savings are distinct from frame wire traffic.
+Portable Golem drawing adoption remains the next compiler tranche; this C++
+proof is not Golem source. Read docs/tasks/GOLEM-047/README.md and receipts.
+
+Dedicated Oryx .emulator/golem-047 is staged/stopped for a finite white Corsair
+turntable in mode19. Launch only ./flexe-agon-emulator from that directory.
+The onscreen dir instruction is the sole human keyboard instruction; agent-only
+wireframe/verify_review.py retrieves saved results afterward. Human review and
+publication approval remain pending; keep this coupled implementation uncommitted.
+Substantive wireframe consultation stays in the canonical mailbox.
+
+
+2026-10-24 acceptance supersedes the pending-review checkpoint above: Author
+reports "it worked" and explicitly authorizes commit/push. Retrieved 20 result
+bytes, PASS log, runtime pins and actual MOS directory listing verify; profile
+is stopped. Human visual/keyboard review is accepted. The immediate priority is
+actual VDPlet rendering speed, independent of whether modules are C++ or Golem.
+Portable Golem integration is expressly secondary. Current aggregate timings
+do not isolate rasterization; no new rendering implementation is authorized
+merely by the performance discussion. Physical qualification remains separate.

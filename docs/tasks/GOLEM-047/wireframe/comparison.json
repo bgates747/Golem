@@ -1,0 +1,142 @@
+{
+  "passed": true,
+  "pixel_comparison": {
+    "pixels_per_image": 159744,
+    "images": [
+      "benchmark-resident-jit",
+      "benchmark-submit-jit",
+      "benchmark-submit-interp"
+    ],
+    "matching_rgb_sha256": "09a0efe777e10a3f78e5a20012ab54048210ba26a6d66c18c7719d5c1ae177f3",
+    "crop": "x0:511,y16:327 inclusive"
+  },
+  "timings": {
+    "jit": {
+      "resident": {
+        "samples": 24,
+        "transform_status_ms": {
+          "minimum": 0,
+          "median": 0.0,
+          "maximum": 20
+        },
+        "drawing_and_fence_ms": {
+          "minimum": 760,
+          "median": 770.0,
+          "maximum": 780
+        },
+        "full_frame_ms": {
+          "minimum": 760,
+          "median": 780.0,
+          "maximum": 780
+        }
+      },
+      "submit": {
+        "samples": 24,
+        "transform_status_ms": {
+          "minimum": 0,
+          "median": 0.0,
+          "maximum": 20
+        },
+        "drawing_and_fence_ms": {
+          "minimum": 760,
+          "median": 760.0,
+          "maximum": 780
+        },
+        "full_frame_ms": {
+          "minimum": 760,
+          "median": 780.0,
+          "maximum": 780
+        }
+      }
+    },
+    "interp": {
+      "resident": {
+        "samples": 12,
+        "transform_status_ms": {
+          "minimum": 0,
+          "median": 0.0,
+          "maximum": 20
+        },
+        "drawing_and_fence_ms": {
+          "minimum": 1740,
+          "median": 1750.0,
+          "maximum": 1760
+        },
+        "full_frame_ms": {
+          "minimum": 1740,
+          "median": 1760.0,
+          "maximum": 1780
+        }
+      },
+      "submit": {
+        "samples": 12,
+        "transform_status_ms": {
+          "minimum": 0,
+          "median": 0.0,
+          "maximum": 20
+        },
+        "drawing_and_fence_ms": {
+          "minimum": 920,
+          "median": 940.0,
+          "maximum": 960
+        },
+        "full_frame_ms": {
+          "minimum": 920,
+          "median": 940.0,
+          "maximum": 980
+        }
+      }
+    }
+  },
+  "clock": "MOS centisecond units, effective20ms quantization; no physical speed claim",
+  "frame_wire": {
+    "benchmark-resident-jit": {
+      "frame_bytes_by_arm": {
+        "0": [
+          221
+        ],
+        "1": [
+          221
+        ]
+      },
+      "tx_sha256": "3012ee6cb32c39d795c1ae2ffe13810df227dcb9bf5fe90a8664c6ea04e10f2a"
+    },
+    "benchmark-submit-jit": {
+      "frame_bytes_by_arm": {
+        "0": [
+          221
+        ],
+        "1": [
+          221
+        ]
+      },
+      "tx_sha256": "6bf1c77efdbb4e815c62c102af6d440743eae026ac19bf333274c8492c663361"
+    },
+    "benchmark-submit-interp": {
+      "frame_bytes_by_arm": {
+        "0": [
+          221
+        ],
+        "1": [
+          221
+        ]
+      },
+      "tx_sha256": "6bf1c77efdbb4e815c62c102af6d440743eae026ac19bf333274c8492c663361"
+    }
+  },
+  "pure_scene_container_bytes": {
+    "resident": 216960,
+    "submit": 60200,
+    "saved": 156760
+  },
+  "resident_drawing_command_bytes": 176508,
+  "native_edge_table_bytes": 19612,
+  "native_raw_generated_plot_bytes_per_frame": 58836,
+  "timing_memory_layout": "Both drawing paths and edge table coinstalled in each matched run",
+  "unmeasured": [
+    "physical hardware",
+    "isolated raster time",
+    "separate clear/HUD or generation-only time",
+    "comparison with a direct native primitive callback implementation"
+  ]
+}

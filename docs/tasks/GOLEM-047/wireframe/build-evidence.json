@@ -1,0 +1,64 @@
+{
+  "geometry_and_transform_pins_checked": true,
+  "vertices": 2685,
+  "edges": 4903,
+  "edge_bytes": 19612,
+  "chunk_bytes": 384,
+  "submits": 154,
+  "raw_draw_bytes": 58836,
+  "baseline_resident_command_bytes": 176508,
+  "baseline_install_bytes": 177044,
+  "scene_bytes": 60200,
+  "transform_source_sha256": "4a2ac380446463388ee8e03c63a12a985b72250c5ae2589a5cba39f4ac839e17",
+  "module": {
+    "name": "worker",
+    "source": "/Agon/mystuff/golem/docs/tasks/GOLEM-047/wireframe/worker.cpp",
+    "source_sha256": "041ec85d13909c0c25f27653b398651b016bd84537c2b3f08da5be8c12964be9",
+    "policy_sha256": "c69d6f3654b4b5dd4a8ae76e971818f4b13369d61dbded607b844e3268f66419",
+    "declared_limits": {
+      "text": 32768,
+      "data": 4096,
+      "stack": 2048,
+      "image": 65536
+    },
+    "build_id": "0x56445532",
+    "capabilities": 5,
+    "abi_major": 1,
+    "abi_minor": 1,
+    "envelope_bytes": 64,
+    "elf_bytes": 7720,
+    "package_bytes": 7784,
+    "sha256": "9f6160c7b89c7c1bd145e55eb8667411a33d29ae12a78996344e5f1e30a9595d",
+    "package": "/Agon/mystuff/golem/docs/tasks/GOLEM-047/wireframe/build/worker.vdpl",
+    "elf": "/Agon/mystuff/golem/docs/tasks/GOLEM-047/wireframe/build/worker.elf",
+    "entry_virtual": 2932,
+    "resident_text_bytes": 5580,
+    "resident_data_bytes": 1340,
+    "relative_relocations": 17,
+    "allocated_sections": {
+      ".text": {
+        "virtual_address": 420,
+        "bytes": 5577,
+        "type": 1
+      },
+      ".rodata": {
+        "virtual_address": 6000,
+        "bytes": 1340,
+        "type": 1
+      }
+    },
+    "linked_libraries": [
+      {
+        "name": "libm.a",
+        "path": "/home/smith/.platformio/packages/toolchain-xtensa-esp32/xtensa-esp32-elf/lib/libm.a",
+        "sha256": "89565dc52d561a7145679685683a9d0f05110889dd14925aac487bd646043d69"
+      },
+      {
+        "name": "libgcc.a",
+        "path": "/home/smith/.platformio/packages/toolchain-xtensa-esp32/lib/gcc/xtensa-esp32-elf/8.4.0/libgcc.a",
+        "sha256": "fe2bda6df58227d33ed36af602c7a540f2d7d3adf83d0592a262d94eccd4a3a5"
+      }
+    ]
+  },
+  "source_owner_unchanged": true
+}
