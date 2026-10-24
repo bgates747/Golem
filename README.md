@@ -100,6 +100,13 @@ the packed rows. [GOLEM-017](docs/tasks/GOLEM-017/README.md) passes host, assemb
 and stock Pi/Oryx headless qualification. Oryx human review passed; the agent
 verified the saved results.
 
+The separate [`--stock-matrix` profile](docs/design/stock-matrix.md) adds bounded
+stock-only 4x4 affine composition, matrix multiplication and signed16 XYZ buffer
+transforms. It exports controls, owned matrices, borrowed vertex storage and
+named assembly calls; drawing and completion remain application-owned. Host
+contracts and fsim's independent stock-target cube/tank qualification pass;
+human visual review remains fsim-owned; compiler publication was authorized.
+
 The separate [resident drawing profile](docs/design/resident-drawing.md) supports
 named points, lines and filled convex quads with initialized packed inputs and
 assembly call wrappers. [GOLEM-018](docs/tasks/GOLEM-018/README.md) passes host,

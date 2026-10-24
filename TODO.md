@@ -7,6 +7,8 @@ GOLEM-035 was accepted and explicitly approved for commit/push on 2026-10-13.
 Outstanding human/physical reviews below remain open; this checkpoint does not
 claim those reviews occurred.
 
+- [ ] **GOLEM-045:** Bounded stock-only matrix/vertex interface for fsim implemented; maintained regressions, 26 rejection cases, sanitizer and two assembler consumers pass. Fsim independently qualifies the unchanged compiler on stock VDP: cube and supplied tank each pass1080frames, projection/PLOT/control/reset and cleanup checks. Human visual review remains fsim-owned; compiler publication is explicitly approved. No physical authority. [Task](docs/tasks/GOLEM-045.md).
+
 - [ ] **GOLEM-046:** Stream Golem packages through generic AGNB plain-buffer loading. [Task](docs/tasks/GOLEM-046.md). AGNB generic format/tool/loader work is separately owned under agon-utils AGNB-001; explicit Author assignment includes documentation and scoped publication.
 
 - [ ] **GOLEM-044:** Interactive Flower native Golem math, resident rendering and AgonDev C++ client implemented; mode 19 (1024x768), white on black requested and implemented. [Task](docs/tasks/GOLEM-044.md), [application/review](docs/tasks/GOLEM-044/app/README.md). Seventeen Oryx headless scenarios pass; dedicated interactive profile staged/stopped for the Author. Mode 19 visual review accepted and commit/push explicitly approved on 2026-10-15. Controlled fault-injection and physical follow-up remain open; saved human log does not establish controlled exit.

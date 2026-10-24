@@ -1,0 +1,46 @@
+{
+  "passed": true,
+  "packages": [
+    {
+      "layout": "default",
+      "actual_assembler": true,
+      "bootstrap_bytes": 508,
+      "owned_buffers": 15,
+      "inputs": {
+        "id": 1,
+        "bytes": 12
+      },
+      "sha256": {
+        "update-call.bin": "79e818c0a589a76e6eb6da588145abcd99d1517af24e7822791be4a75c4fd3df",
+        "consumer.asm": "ab3a10ab2f4c045a8c4706e609da93b7559953e7d05be03396e317b248ff9035",
+        "golem.inc": "c941ff8343a39f247cbc29f71efd3c9239198c741af69d20f2a02bb0f3611cf1",
+        "invoke.bin": "0a6b6be27ca654ba0d790c7981873f567fe1b33e8051b5f89bd9f8b02b313dab",
+        "cleanup.bin": "5b5839c4d6bb218af902db60b1a2c990b50fae06381f92b1f38181cf11695c62",
+        "bootstrap.bin": "18970d6caab45d627caf1af1ad03f6a89bdacda8e84863098c84cc935a126d4f",
+        "consumer.bin": "91da63d50050b09e93b81da6972a8125c0f8059a3b07ef7a86142a3831fb17d8",
+        "interface.json": "ccd804103f1a0648980dbedd019c7b436ad3cb957e9cbc1c74730e17248ab69e"
+      }
+    },
+    {
+      "layout": "relocated",
+      "actual_assembler": true,
+      "bootstrap_bytes": 508,
+      "owned_buffers": 15,
+      "inputs": {
+        "id": 1002,
+        "bytes": 12
+      },
+      "sha256": {
+        "update-call.bin": "0b217e37c4e6966864092d80fbd5e613fd9b3610dc73c12d1211acfb0f6ed0df",
+        "consumer.asm": "ab3a10ab2f4c045a8c4706e609da93b7559953e7d05be03396e317b248ff9035",
+        "golem.inc": "98a6efbbbb0bbe6f0ce6ec1be0a35a8eaa41dd6b8ae8e4cf33e8cfdb03e58849",
+        "invoke.bin": "1123a4d9c95725f4beea46bad57570f3041b03ee565391728f7ce548372d3179",
+        "cleanup.bin": "0ad6730350cd75fac8f83ace16763e3b11559aad1023ac869857509e6f3fffad",
+        "bootstrap.bin": "910523b0a0c35565fed000b3af9a297052ef285b2571e096cb0a02a603fed2d9",
+        "consumer.bin": "c82d7fcf0285895de2873da9be1e04777ab7101c52d1606bfea27b5e2e6314c8",
+        "interface.json": "05879840c7dec0c796be2317f797d8d972326cf3be1ddb3f6ad41961f9c1fea4"
+      }
+    }
+  ],
+  "invalid_source_did_not_mutate_output": true
+}

@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "host_only": true,
+  "compiler_sha256": "bff25d29cc0e08a7e1ae09867fb462e81c12dc28836f58f38ce32f610f0dcb55",
+  "source_sha256": {
+    "src/stock_matrix.hpp": "d9eb7a3b689bd7ff7c4de33cf8216d91b6ed067eea5810cd46d6f81ec4d9077c",
+    "src/golemc.cpp": "c3aa334177ce84a6d588c1bd0e7bba5b5a66524390c463cf813ebaf5f2dbb122",
+    "src/Makefile": "54065d9a18cda2b7422c1e30a59716c1994ed36591e4727963ec50c3c18a881a",
+    "tests/test_stock_matrix.cpp": "1f54195a074e41dc9578c3a6bc4c5befd6c3d388f5d9aa1416fc8f64b9c2386d"
+  },
+  "new_rejections": 26,
+  "prior_raw_resident_rejections": 132,
+  "prior_portable_rejections": 57,
+  "sanitizers": "ASan+UBSan pass",
+  "actual_assembler_consumers": 2,
+  "target_qualification": "fsim-owned; pending",
+  "published": false
+}

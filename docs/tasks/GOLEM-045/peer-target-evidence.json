@@ -1,0 +1,64 @@
+{
+  "passed": true,
+  "qualification_owner": "fsim",
+  "immutable_message_id": "2026-10-23_16-28-27_fsim_fsim-stock-matrix-target-qualified-four",
+  "compiler_sha256": "bff25d29cc0e08a7e1ae09867fb462e81c12dc28836f58f38ce32f610f0dcb55",
+  "target": "actual unchanged stock VDP 2.16 / Fab / MOS 3.0.2 ARM64",
+  "cases": {
+    "cube": {
+      "source": "/Agon/mystuff/agon-fsim/tests/0107-stock-vdp-wireframe/cube-final/summary.json",
+      "sha256": "7235dd85d91cda9f531abf66e7937191c07d1e1d01f43f7f3c67822a64822336",
+      "summary": {
+        "application": "wire.bin",
+        "stock_vdp": "2.16.0",
+        "native_arch": "ARM64",
+        "source": "Synthetic cube: stock VDP qualification fixture",
+        "initial_white_model_pixels": 634,
+        "distance_span_ratios": [
+          2.021276595744681,
+          1.9795918367346939
+        ],
+        "replay": "stock wireframe frames=1080 status=PASS",
+        "controls": "model yaw/pitch/roll, camera yaw/pitch, distance, reset, Esc",
+        "profile_restored": true,
+        "all_owned_buffers_cleared": [
+          "interactive",
+          "replay",
+          "missing-setup"
+        ],
+        "qualification_seconds": 71.92304171714932,
+        "replay_seconds_including_launch_and_file_io": 37.27275635814294,
+        "timing_note": "Host wall-clock functional qualification; emulator pacing and SD/UART overhead included. No physical speed claim."
+      }
+    },
+    "tank": {
+      "source": "/Agon/mystuff/agon-fsim/tests/0107-stock-vdp-wireframe/tank-final/summary.json",
+      "sha256": "c3412860eb3a691908cfb474cf2575dcacbf75193489bc1249774fec8a6b4422",
+      "summary": {
+        "application": "wire.bin",
+        "stock_vdp": "2.16.0",
+        "native_arch": "ARM64",
+        "source": "/Agon/mystuff/agon-fsim/tests/0107-stock-vdp-wireframe/models/heavytank.blend",
+        "initial_white_model_pixels": 867,
+        "distance_span_ratios": [
+          2.0,
+          2.0
+        ],
+        "replay": "stock wireframe frames=1080 status=PASS",
+        "controls": "model yaw/pitch/roll, camera yaw/pitch, distance, reset, Esc",
+        "profile_restored": true,
+        "all_owned_buffers_cleared": [
+          "interactive",
+          "replay",
+          "missing-setup"
+        ],
+        "qualification_seconds": 73.72056030994281,
+        "replay_seconds_including_launch_and_file_io": 37.2584540899843,
+        "timing_note": "Host wall-clock functional qualification; emulator pacing and SD/UART overhead included. No physical speed claim."
+      }
+    }
+  },
+  "human_review": "pending; selected Lenovo canonical hostname unavailable",
+  "publication": "not authorized",
+  "physical_qualification": "not performed"
+}

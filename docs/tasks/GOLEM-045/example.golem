@@ -1,0 +1,31 @@
+// Stock-only matrix pipeline; host installs exactly 8 packed XYZ16 records
+// into buffer 1000. Buffer 1001 is the drawing package's packed XYZ input.
+float32 yaw = 0
+float32 cameraYaw = 0
+float32 reciprocalDistance = 1
+Matrix(4,4) model = Identity
+Matrix(4,4) camera = Identity
+Matrix(4,4) scale = Identity
+Matrix(4,4) screen = Identity
+Matrix(4,4) view = Identity
+Matrix(4,4) clip = Identity
+Matrix(4,4) final = Identity
+Borrowed XYZ16 vertices = Buffer(1000,8)
+Borrowed XYZ16 projected = Buffer(1001,8)
+Sub setup
+    matrix_identity(screen)
+    matrix_scale(screen, 0.02197265625, -0.02197265625, 1)
+    matrix_translate(screen, 160, 120, 0)
+EndSub
+Sub transformFrame
+    matrix_identity(model)
+    matrix_rotate(model, 0, yaw, 0)
+    matrix_identity(camera)
+    matrix_rotate(camera, 0, cameraYaw, 0)
+    matrix_identity(scale)
+    matrix_scale(scale, reciprocalDistance, reciprocalDistance, reciprocalDistance)
+    matrix_multiply(view, camera, model)
+    matrix_multiply(clip, scale, view)
+    matrix_multiply(final, screen, clip)
+    transform_vertices(projected, final, vertices)
+EndSub

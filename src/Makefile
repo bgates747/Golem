@@ -20,7 +20,7 @@ BIN := $(BUILD_DIR)/golemc
 
 all: $(BIN)
 
-$(BIN): golemc.cpp assembly_output.hpp resident_drawing.hpp resident_table.hpp ordinary.hpp resident.hpp scalar_backend.hpp token_reader.hpp buffer_allocator.hpp $(PORTABLE_HEADERS) | $(BUILD_DIR)
+$(BIN): golemc.cpp stock_matrix.hpp assembly_output.hpp resident_drawing.hpp resident_table.hpp ordinary.hpp resident.hpp scalar_backend.hpp token_reader.hpp buffer_allocator.hpp $(PORTABLE_HEADERS) | $(BUILD_DIR)
 	$(CXX) $(CXXFLAGS) $(PORTABLE_FLAGS) -o $@ $<
 
 $(BUILD_DIR):
@@ -32,9 +32,13 @@ $(BUILD_DIR)/test_compiler: ../tests/test_compiler.cpp assembly_output.hpp resid
 $(BUILD_DIR)/test_portable: ../tests/test_portable.cpp $(PORTABLE_HEADERS) ordinary.hpp token_reader.hpp buffer_allocator.hpp | $(BUILD_DIR)
 	$(CXX) $(CXXFLAGS) $(PORTABLE_FLAGS) -o $@ $<
 
-check: $(BIN) $(BUILD_DIR)/test_compiler $(BUILD_DIR)/test_portable
+$(BUILD_DIR)/test_stock_matrix: ../tests/test_stock_matrix.cpp stock_matrix.hpp assembly_output.hpp resident_drawing.hpp resident_table.hpp ordinary.hpp resident.hpp scalar_backend.hpp token_reader.hpp buffer_allocator.hpp | $(BUILD_DIR)
+	$(CXX) $(CXXFLAGS) $(PORTABLE_FLAGS) -o $@ $<
+
+check: $(BIN) $(BUILD_DIR)/test_compiler $(BUILD_DIR)/test_portable $(BUILD_DIR)/test_stock_matrix
 	$(BUILD_DIR)/test_compiler
+	$(BUILD_DIR)/test_stock_matrix
 	$(BUILD_DIR)/test_portable ../tests/portable/fixtures $(BUILD_DIR)/test-portable-output
 
 clean:
-	rm -f $(BIN) $(BUILD_DIR)/test_compiler $(BUILD_DIR)/test_portable
+	rm -f $(BIN) $(BUILD_DIR)/test_compiler $(BUILD_DIR)/test_portable $(BUILD_DIR)/test_stock_matrix

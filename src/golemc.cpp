@@ -1,6 +1,7 @@
 // Host compiler CLI: explicit raw payload or resident package output.
 #include "assembly_output.hpp"
 #include "portable/driver.hpp"
+#include "stock_matrix.hpp"
 #include <filesystem>
 
 namespace {
@@ -34,6 +35,28 @@ void write(const std::filesystem::path &path, const golem::resident_scalar::Byte
 int main(int argc, char **argv) {
     using namespace golem::cli;
     try {
+        if (argc >= 2 && std::string(argv[1]) == "--stock-matrix") {
+            int pos=2; bool assemblySeen=false;
+            std::vector<golem::resident::Reservation> reservations;
+            while(pos<argc && (std::string(argv[pos])=="--reserve" || std::string(argv[pos])=="--emit-asm")) {
+                if(std::string(argv[pos])=="--emit-asm") {
+                    if(assemblySeen) throw std::runtime_error("duplicate --emit-asm");
+                    assemblySeen=true; ++pos; continue;
+                }
+                if(++pos==argc) throw std::runtime_error("--reserve requires FIRST:LAST");
+                reservations.push_back(reservation(argv[pos++]));
+            }
+            if(argc-pos!=2) throw std::runtime_error("--stock-matrix requires source and output directory");
+            auto result=golem::stock_matrix::compile(readFile(argv[pos]),reservations);
+            const std::filesystem::path output(argv[pos+1]);
+            std::filesystem::create_directories(output);
+            write(output/"bootstrap.bin",result.bootstrap); write(output/"cleanup.bin",result.cleanup);
+            write(output/"invoke.bin",result.invoke); write(output/"update-call.bin",result.update);
+            write(output/"interface.json",golem::stock_matrix::Bytes(result.json.begin(),result.json.end()));
+            write(output/"golem.inc",golem::stock_matrix::Bytes(result.assembly.begin(),result.assembly.end()));
+            std::cout << "stock matrix installation " << result.bootstrap.size() << " bytes; " << result.entries.size() << " finite entries\n";
+            return 0;
+        }
         if (argc >= 2 && std::string(argv[1]) == "--portable") return golem::portable_cli::run(argc, argv);
         if (argc >= 2 && std::string(argv[1]) == "--resident") {
             int pos = 2;
@@ -118,6 +141,7 @@ int main(int argc, char **argv) {
         if (argc != 3 || std::string(argv[1]).compare(0, 2, "--") == 0) {
             std::cerr << "usage: golemc <source> <payload>\n"
                       << "       golemc --resident [--emit-asm] [--table-data NAME=PATH] [--reserve FIRST:LAST ...] <source> <directory> [example-input]\n";
+            std::cerr << "       golemc --stock-matrix [--reserve FIRST:LAST ...] [--emit-asm] <source> <directory>\n";
             std::cerr << "       golemc --portable [--target both|native] [--reserve FIRST:LAST ...] [--bind ROLE ID OFFSET BYTES ...] [--array-data NAME=PATH ...] <source> <directory>\n";
             return 2;
         }

@@ -1,0 +1,9 @@
+make: Entering directory '/Agon/mystuff/golem/src'
+g++ -std=c++17 -Wall -Wextra -O2 -ffp-contract=off -o ../build/golemc golemc.cpp
+../build/test_compiler
+Maintained raw/resident contract checks pass; 132 rejection cases.
+../build/test_stock_matrix
+Stock matrix encoding, ownership, relocation and 26 rejection cases pass.
+../build/test_portable ../tests/portable/fixtures ../build/test-portable-output
+Portable contracts pass: 52 frozen output files, 3 intentionally changed native sources, 57 rejections, mapped/reserved/bound inputs, XOR types/precedence and combined reference behavior.
+make: Leaving directory '/Agon/mystuff/golem/src'
