@@ -1319,3 +1319,31 @@ on2026-10-23. Retrieved results match all95 bytes and the completed application
 log; runtime pins verify, no failure output exists and the profile is stopped.
 `docs/tasks/GOLEM-046/cpp/human-review.json` records acceptance. Publication
 was explicitly approved on2026-10-23; publish only owned changes.
+
+
+### Publication and VDU submission planning — 2026-10-23
+
+The Author explicitly approved publishing all pending work in logical groups.
+Stock matrix compiler b48aae7 and accepted AGNB integration ba1511c are pushed
+on feature/standardized-deployment. Generic AGNB C++ is pushed as6467b74 on
+agon-utils codex/agnb-plain-buffers (canonical local d337783). Unrelated utility
+changes/history are preserved. Both Golem AGNB human reviews pass; the matrix
+consumer's human visual review remains fsim-owned.
+
+The same instruction released wireframe questions and task planning, superseding
+the earlier discussion hold for that scope. Generic service plan is agon-vdplet
+VDPL-003; Golem adoption plan is GOLEM-047. Finite synchronous VDU byte submission
+through the existing parser is a candidate, not an implemented capability.
+Wireframe consultation-three is incorporated in both plans;8 fixture files
+and packed vertex/edge hashes independently verify. No new runtime/compiler
+implementation or flash is released. Preserve one portable source language and
+explicit host ownership. Direct desktop messaging successfully activated the
+existing wireframe thread for the Author-authorized consultation.
+
+
+The Author released implementation/qualification of VDPL-003 and its consumer
+integration on2026-10-23 after publication of the plans. Work autonomously
+through applicable correctness/compatibility/size checks and a stopped Oryx
+visual staging before review. Wireframe can be awakened for questions, but all
+substantive conversation uses the mailbox. No physical flash or graphical
+launch is authorized; leave new coupled runtime/profile work uncommitted.

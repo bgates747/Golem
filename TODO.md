@@ -7,6 +7,8 @@ GOLEM-035 was accepted and explicitly approved for commit/push on 2026-10-13.
 Outstanding human/physical reviews below remain open; this checkpoint does not
 claim those reviews occurred.
 
+- [ ] **GOLEM-047:** Plan native drawing through a generic VDU-byte submission service while preserving stock/native source compatibility. [Task](docs/tasks/GOLEM-047.md). Runtime plan is owned by agon-vdplet VDPL-003; wireframe consultation is incorporated; fixture pins verify. Plan ready for review; no implementation released.
+
 
 - [ ] **GOLEM-045:** Bounded stock-only matrix/vertex interface for fsim implemented; maintained regressions, 26 rejection cases, sanitizer and two assembler consumers pass. Fsim independently qualifies the unchanged compiler on stock VDP: cube and supplied tank each pass1080frames, projection/PLOT/control/reset and cleanup checks. Human visual review remains fsim-owned; compiler publication is explicitly approved. No physical authority. [Task](docs/tasks/GOLEM-045.md).
 
