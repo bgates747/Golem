@@ -7,6 +7,8 @@ GOLEM-035 was accepted and explicitly approved for commit/push on 2026-10-13.
 Outstanding human/physical reviews below remain open; this checkpoint does not
 claim those reviews occurred.
 
+- [ ] **GOLEM-050:** Compact stock-matrix runtime loops/indexed access. [Plan](docs/tasks/GOLEM-050.md), [contract](docs/tasks/GOLEM-050/contract.md). Contract v0.2 mutually accepted (SHA406ffc96); implementation blocked until the scoped freeze commit AND push is verified and its receipt sent. Pending GOLEM-049 implementation is excluded from freeze authority.
+
 - [ ] **GOLEM-047:** Native drawing through a generic VDU-byte submission service. [Task](docs/tasks/GOLEM-047.md), [executable report/review](docs/tasks/GOLEM-047/README.md). Runtime ABI1.1 and isolated C++ Corsair consumer pass compatibility, both execution engines, full MOS, matched pixels/wire and size checks. Oryx visual/keyboard review accepted; saved results and actual MOS dir verify; commit/push expressly approved on 2026-10-24. JIT frame times unchanged; interpreter comparison faster. Portable Golem frontend/backend adoption is expressly secondary to VDPlet rendering performance; generic service belongs to agon-vdplet VDPL-003.
 
 

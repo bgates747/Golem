@@ -1,0 +1,21 @@
+{
+  "head_before_freeze": "7f1f41fd7c2bde76f62e9263aae5dd6a05b2db3c",
+  "dependency": "GOLEM-049 locally qualified implementation remains unpublished; this documentation freeze does not authorize its publication",
+  "compiler_pins": {
+    "src/stock_matrix.hpp": "12fc3eabf9181c8efc704ee7af227b887c85840c9889b565e0a5e4df78f61861",
+    "src/golemc.cpp": "68686ad08246857c2b4b9204baa0f529fa0369f490e9de35d67a8ad3e3bb639b",
+    "tests/test_stock_matrix.cpp": "a07bf76e82949e2ffc5ecf7259882fc289cdf681f747d3b11df966ad0d27c776",
+    "build/golemc": "fdea2f968a2819e00e1bb5b357966df36a87e562b8a4c4019ff20d5730bfebc1"
+  },
+  "shared_fixture": {
+    "path": "/Agon/mystuff/agon-fsim/tests/0114-stock-vdp-perspective/corsair/comparison/shared-v2/corsair-comparison-v2.json",
+    "sha256": "1fc93e2b857a1b53a076886689cacd7f4a48226f01bf2dc406179e4b23ae9581"
+  },
+  "author_instruction": "Ok, tell agent golem to write up a task to support that and negotiate with you about whatever you need. It may begin its task once both of you have a contract, and it has frozen it with a commit and push.",
+  "authority_thread": "01a16a53-6d76-72a0-94eb-51a7abded231",
+  "implementation_started": false,
+  "consumer_baseline": {
+    "path": "/Agon/mystuff/agon-fsim/tests/0114-stock-vdp-perspective/loop-contract/consumer-baseline.json",
+    "sha256": "5ce2cd9f304f8ea05a0944a284e022e3bb28f3bb7a0b6e221aa9c0bb1a4d3add"
+  }
+}
