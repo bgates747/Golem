@@ -154,6 +154,35 @@ XOR. It also has no visible numerical output. Read its source to see the syntax;
 these calculation examples introduce compilation and integration, rather than
 an interactive results viewer.
 
+## Integer bitwise operators
+
+The calculation profile supports `&` (AND), `|` (OR), `^` (XOR) and unary `~`
+(complement). These operate on integer bits, rather than Boolean true/false.
+Use matching integer types; no conversion is implicit. The supplied
+`examples/bitwise.golem` contains:
+
+```golem
+uint16 flags = 5
+uint16 mask = 3
+uint16 both = 0
+uint16 either = 0
+uint16 different = 0
+uint16 inverted = 0
+Sub inspectBits
+    both = flags & mask
+    either = flags | mask
+    different = flags ^ mask
+    inverted = ~flags
+EndSub
+```
+
+The calculated values are 1, 7, 6 and 65530. `~` flips exactly 16 bits for uint16;
+it does not mean arithmetic minus. The same operators work with signed and
+unsigned 32-bit integers and signed 16-bit integers. Boolean `And`, `Or` and
+`Not` remain separate. Full precedence rules are in `LANGUAGE.md`.
+Numeric printing is not yet implemented, so this is a source illustration,
+not an additional visible-output exercise.
+
 ## Exercise 4: Compile a record/table example
 
 Enter:

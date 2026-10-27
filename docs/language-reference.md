@@ -85,10 +85,13 @@ From tighter to looser binding:
 | Operations | Meaning |
 | --- | --- |
 | Parentheses, builtin calls and conversions | Explicit grouping |
+| Unary `~` | Integer bitwise complement, right associative |
 | `*`, native float `/` | Multiplication/division, left associative |
 | `+`, `-` | Addition/subtraction, left associative |
 | `>>` | uint32 logical or sint32 arithmetic right shift |
+| `&` | Integer bitwise AND, left associative |
 | `^` | Integer bitwise XOR, left associative |
+| `\|` | Integer bitwise OR, left associative |
 | `==`, `!=`, `<`, `>`, `<=`, `>=` | Same-type comparisons yielding bool |
 | `Not` | Boolean negation |
 | `And` | Short-circuit Boolean conjunction |
@@ -96,6 +99,38 @@ From tighter to looser binding:
 
 Arithmetic operands evaluate once, left to right. Integer operations check every
 intermediate result; a later operation cannot repair an earlier overflow.
+`&`, `|` and `^` require matching uint16, sint16, uint32 or sint32 operands;
+`~` accepts one of those integer types. They preserve the declared type and
+operate on exactly its 16 or 32 bits, including signed two's-complement bits.
+They reject bool/float operands and implicit mixed-type conversion. For example,
+uint16 `~0` is 65535, while sint16 `~0` is -1. The operations cannot overflow,
+but destination Bounds and operand evaluation/conversion errors still apply.
+Binary bitwise operations evaluate both operands once, left to right; Boolean
+`And` and `Or` instead short-circuit. Unary `~` binds above arithmetic (at most
+16 consecutive prefixes); bitwise precedence is `&`, then `^`, then `|`, all
+above comparisons. Thus `flags & mask == expected` compares the masked value.
+These operations are available in procedure expressions; declaration initializers
+remain literals. `&&`, `||`, compound assignment and left shift are not supported.
+
+```golem
+uint16 flags = 5
+uint16 mask = 3
+uint16 both = 0
+uint16 either = 0
+uint16 different = 0
+uint16 inverted = 0
+bool masked = false
+Sub inspectBits
+    both = flags & mask
+    either = flags | mask
+    different = flags ^ mask
+    inverted = ~flags
+    masked = flags & mask == 1
+EndSub
+```
+
+The results are 1, 7, 6, 65530 and true, respectively.
+
 `^` is XOR, not exponentiation. Shift counts are uint16 in 0..31; invalid counts
 fail rather than being masked. A signed right shift rounds toward negative
 infinity. Widen a 16-bit operand explicitly before shifting.

@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "packages": [
+    {
+      "package": "default",
+      "cases": 27,
+      "observed_bytes": 2484,
+      "native_sanitizers": true
+    },
+    {
+      "package": "relocated",
+      "cases": 27,
+      "observed_bytes": 2484,
+      "native_sanitizers": true
+    }
+  ]
+}

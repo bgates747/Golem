@@ -1,0 +1,47 @@
+{
+  "passed": true,
+  "cases": [
+    {
+      "case": "example",
+      "same": true,
+      "status": 0
+    },
+    {
+      "case": "uint16",
+      "same": true,
+      "status": 0
+    },
+    {
+      "case": "sint16",
+      "same": true,
+      "status": 0
+    },
+    {
+      "case": "uint32",
+      "same": true,
+      "status": 0
+    },
+    {
+      "case": "sint32",
+      "same": true,
+      "status": 0
+    },
+    {
+      "case": "reject-0",
+      "same": true,
+      "status": 1
+    },
+    {
+      "case": "reject-1",
+      "same": true,
+      "status": 1
+    },
+    {
+      "case": "reject-2",
+      "same": true,
+      "status": 1
+    }
+  ],
+  "sanitizers": true,
+  "ASAN_OPTIONS": "detect_stack_use_after_return=0 (canonical explicit stack-unwind adapter configuration)"
+}

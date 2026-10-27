@@ -439,6 +439,13 @@ class BufferEmitter {
             if(expression->type!=expression->left->type) bound(code,value,32767,false);
             return value;
         }
+        if(expression->op==Op::BitNot) {
+            const auto value=this->expression(code,expression->left);
+            const auto bytes=width(expression->type),result=data(Bytes(bytes,0),"bitnot_result");
+            copy(code,{result,0},value,bytes);
+            emitAdjustMultiLiteral(code,result,7,0,Bytes(bytes,255));
+            return {result,0};
+        }
         if (expression->op == Op::Not || expression->op == Op::And || expression->op == Op::Or) {
             const auto left = this->expression(code, expression->left);
             const auto result = data({0,0}, "logical");
@@ -468,10 +475,10 @@ class BufferEmitter {
         }
         const auto left = this->expression(code, expression->left);
         auto right = this->expression(code, expression->right);
-        if(expression->op==Op::Xor) {
-            const auto bytes=width(expression->type),result=data(Bytes(bytes,0),"xor_result");
+        if(expression->op==Op::Xor || expression->op==Op::BitAnd || expression->op==Op::BitOr) {
+            const auto bytes=width(expression->type),result=data(Bytes(bytes,0),expression->op==Op::Xor?"xor_result":expression->op==Op::BitAnd?"bitand_result":"bitor_result");
             copy(code,{result,0},left,bytes);
-            emitAdjustMultiBufferFetched(code,result,7,0,bytes,right.buffer,right.offset);
+            emitAdjustMultiBufferFetched(code,result,expression->op==Op::BitAnd?5:expression->op==Op::BitOr?6:7,0,bytes,right.buffer,right.offset);
             return {result,0};
         }
         if(expression->op==Op::ShiftRight)return shiftRight(code,expression->type,left,right);
@@ -782,6 +789,12 @@ inline std::string nativeC(const Program &program, const Layout &layout) {
             if(e->type!=e->left->type) out << "if(" << left << ">32767u)FAIL(32);\n";
             return left;
         }
+        if(e->op==Op::BitNot) {
+            const auto result="v"+std::to_string(temporary++);
+            out << "uint32_t " << result << "=(~" << left << ")";
+            if(width(e->type)==2)out << "&65535u";
+            out << ";\n";return result;
+        }
         if (e->op == Op::Not || e->op == Op::And || e->op == Op::Or) {
             const auto result="v"+std::to_string(temporary++);
             if(e->op == Op::Not) out << "uint32_t " << result << "=!" << left << ";\n";
@@ -809,8 +822,8 @@ inline std::string nativeC(const Program &program, const Layout &layout) {
                 << e->relation << (e->right->type==Type::S32?"signed32("+right+")":e->right->type==Type::S16?"signed16("+right+")":right) << ")?1u:0u;\n";
             return result;
         }
-        if(e->op==Op::Xor) {
-            out << "uint32_t " << result << "=(" << left << "^" << right << ")";
+        if(e->op==Op::Xor || e->op==Op::BitAnd || e->op==Op::BitOr) {
+            out << "uint32_t " << result << "=(" << left << (e->op==Op::BitAnd?"&":e->op==Op::BitOr?"|":"^") << right << ")";
             if(width(e->type)==2)out << "&65535u";
             out << ";\n";return result;
         }

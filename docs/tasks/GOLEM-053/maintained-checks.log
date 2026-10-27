@@ -1,0 +1,15 @@
+make: Entering directory '/Agon/mystuff/golem/src'
+../build/test_bitwise
+Bitwise contracts pass: 230 values/folds, 20 rejections.
+../build/test_load_plan
+Load-plan allocation, lifecycle and 12 rejection cases pass.
+../build/test_compiler
+Maintained raw/resident contract checks pass; 132 rejection cases.
+../build/test_stock_matrix
+Stock matrix encoding, ownership, relocation and 26 rejection cases pass.
+Stock perspective exact93-byte peer sequence, typed views/calls/bounds and 25 rejection cases pass.
+../build/test_stock_loops
+Compact stock loops: full2685 copies/repeat,65536-iteration termination/carries/continuation,constant footprint and 25 rejections pass.
+../build/test_portable ../tests/portable/fixtures ../build/test-portable-output
+Portable contracts pass: 52 frozen output files, 3 intentionally changed native sources, 57 rejections, mapped/reserved/bound inputs, XOR types/precedence and combined reference behavior.
+make: Leaving directory '/Agon/mystuff/golem/src'

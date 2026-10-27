@@ -1613,3 +1613,14 @@ Results are 6 and 2147483647 respectively. Stock uses bytewise buffer XOR;
 native C uses unsigned stored patterns. The source and shared storage are the
 same for both backends. GOLEM-042 owns qualification and human-review evidence;
 other bitwise operators and left shift remain separate proposed work.
+
+
+## Integer bitwise operators — decision 2026-10-27
+
+The Author selected conventional symbols: `&` AND, `|` OR, `~` complement,
+and existing `^` XOR. Boolean And/Or/Not retain their short-circuit semantics
+(And/Or) and bool operands. GOLEM-053 formalizes fixed-width integer semantics,
+precedence and stock buffered lowering; the maintained language reference is
+normative. This supersedes earlier notes deferring these three operators.
+No string concatenation operator was selected. Comma-separated print operands
+remain a proposal; numeric conversion/printing is queued as GOLEM-052.

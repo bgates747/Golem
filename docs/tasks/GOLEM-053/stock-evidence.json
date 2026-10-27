@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "seconds": 24.11336229648441,
+  "actual_MOS_compiled_packages": 4,
+  "matching_package_files": 82,
+  "stock_byte_observations": 4968,
+  "calls": 54,
+  "keyboard_and_MOS_return": true,
+  "compiler_sha256": "905f174987e7face9dc5dd0463ba021d5ce23428c7864978c7fa37189057d18e",
+  "picture": "/Agon/mystuff/golem/docs/tasks/GOLEM-051/build/runs/bitwise-053/screen.ppm",
+  "human": "pending",
+  "frontend_exit": 0
+}

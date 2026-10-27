@@ -133,8 +133,8 @@ programs' default dual-backend outputs. See [Flower's mathematical tranche](../t
 for exact execution scope, accuracy cases and evidence.
 
 General Functions/parameters/locals/inter-Sub calls, Do/Loop, Switch/jump tables,
-strings/print, fixed-point, multidimensional arrays/matrices, left shifts/other
-bitwise operators and sqrt/pow remain outside this profile.
+strings/print, fixed-point, multidimensional arrays/matrices, left shifts
+and sqrt/pow remain outside this profile.
 The legacy resident floor/table/drawing profiles remain separately available.
 
 ## Generated files and assembly use
@@ -223,3 +223,16 @@ Optional generated-C release fault checks use the same public SDK header:
 
 Add `--relocated` to repeat with changed IDs. These sanitizer checks inject
 release failures and refused releases; they do not imply hardware fault tests.
+
+
+## Integer bitwise family — GOLEM-053
+
+The maintained typed profile supports `&` (AND), `|` (OR), unary `~`
+(complement) and existing `^` (XOR) for all four integer types. Matching types
+are required; results retain their 16/32-bit width and signed bit pattern.
+Unary complement binds above arithmetic; after arithmetic and right shift,
+binary precedence is &, ^, |, then comparisons. All binary operators associate
+left and evaluate both operands in order. Boolean And/Or/Not remain separate.
+Bounds admission and failure preservation are unchanged. Stock emission uses
+bytewise Adjust operations; native C uses unsigned storage with width masking.
+See the language reference for initialized examples. Left shift remains deferred.

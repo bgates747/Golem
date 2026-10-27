@@ -1,0 +1,60 @@
+uint16 ua = 5
+uint16 ub = 3
+uint16 uand = 0
+uint16 uor = 0
+uint16 uxor = 0
+uint16 unot = 0
+sint16 sa = 5
+sint16 sb = 3
+sint16 sand = 0
+sint16 sor = 0
+sint16 sxor = 0
+sint16 snot = 0
+uint32 wa = 5
+uint32 wb = 3
+uint32 wand = 0
+uint32 wor = 0
+uint32 wxor = 0
+uint32 wnot = 0
+sint32 na = 5
+sint32 nb = 3
+sint32 nand = 0
+sint32 nor = 0
+sint32 nxor = 0
+sint32 nnot = 0
+uint16 one = 1
+uint16 two = 2
+uint16 three = 3
+uint16 grouping = 0
+bool flag = false
+uint16 index = 1
+uint16 selected = 0
+uint16 limited Bounds(0,15) = 7
+Array uint16 samples(0:2) = Values(0,43690,65535)
+Sub compute
+    uand = ua & ub
+    uor = ua | ub
+    uxor = ua ^ ub
+    unot = ~ua
+    sand = sa & sb
+    sor = sa | sb
+    sxor = sa ^ sb
+    snot = ~sa
+    wand = wa & wb
+    wor = wa | wb
+    wxor = wa ^ wb
+    wnot = ~wa
+    nand = na & nb
+    nor = na | nb
+    nxor = na ^ nb
+    nnot = ~na
+    grouping = one | two ^ three & one
+    flag = Not one | two == 0 And one & two == 0
+    selected = ~samples(index) & 255
+EndSub
+Sub boundsFailure
+    limited = ua | one
+EndSub
+Sub eagerFailure
+    limited = one & (ua + one)
+EndSub

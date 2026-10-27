@@ -1,0 +1,5 @@
+{"target": "eZ80/MOS", "sanitizers": false, "binary_bytes": 61528, "sha256": "262e93876f7ffae73f0d1787aaa0500f6967434f3c5d7aade05da70189cdb8bd", "seconds": 1.38697665091604}
+{"target": "eZ80/MOS", "sanitizers": false, "binary_bytes": 176527, "sha256": "b584ff9b12fbec0668f2fb46042c2e1361ddb0fca562eb171b835be036f958bb", "seconds": 2.595975144766271}
+{"target": "eZ80/MOS", "sanitizers": false, "binary_bytes": 279921, "sha256": "905f174987e7face9dc5dd0463ba021d5ce23428c7864978c7fa37189057d18e", "seconds": 3.3242904851213098}
+{"target": "eZ80/MOS", "sanitizers": false, "binary_bytes": 120108, "sha256": "40fde86ea0aefa812d1ee543b7a26787abcbfcabf32422ecaaab77181ffbe0f7", "seconds": 2.0354931857436895}
+[{"name": "golemc", "bytes": 10795, "sha256": "2e1025a7b497e68fcfc84ab0819bf00452c3ffcfa5cab2124e2a69e8be338c5d", "address": "0xb0000"}, {"name": "golemrun", "bytes": 12746, "sha256": "04b64eb3d8797129e2d6f9ffdc3add5a30837cf09d184197388ff69becad9637", "address": "0x40000"}]

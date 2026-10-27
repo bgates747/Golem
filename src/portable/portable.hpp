@@ -80,7 +80,7 @@ inline float floatBound(double bound,bool lower) {
     if(!lower && static_cast<double>(value)>bound) value=std::nextafter(value,-std::numeric_limits<float>::infinity());
     return value;
 }
-enum class Op { Literal, Global, ArrayRead, Add, Subtract, Multiply, Convert, Compare, Not, And, Or, ShiftRight, Xor, Divide, Sin, Cos, Floor };
+enum class Op { Literal, Global, ArrayRead, Add, Subtract, Multiply, Convert, Compare, Not, And, Or, ShiftRight, Xor, Divide, Sin, Cos, Floor, BitAnd, BitOr, BitNot };
 struct Expr {
     Type type;
     Op op;
@@ -142,6 +142,10 @@ inline Value mathUnary(Op op,Value value) {
     const auto x=static_cast<float>(value.number());
     return normalize(floating(op==Op::Sin?std::sin(x):op==Op::Cos?std::cos(x):std::floor(x)));
 }
+inline Value complement(Value value) {
+    if(!integer(value.type))throw std::logic_error("~ requires an integer operand");
+    return {value.type,~value.bits&(width(value.type)==2?65535u:UINT32_MAX)};
+}
 struct Reservation { unsigned first, last; };
 struct Layout {
     unsigned buffer, bytes, errorOffset;
@@ -165,9 +169,10 @@ inline Value binary(Op op, Value a, Value b) {
         if(b.number()==0)throw Fault{4};
         return normalize(floating(static_cast<float>(a.number())/static_cast<float>(b.number())));
     }
-    if(op==Op::Xor) {
-        if(!integer(a.type))throw std::logic_error("XOR requires integer operands");
-        return {a.type,(a.bits^b.bits)&(width(a.type)==2?65535u:UINT32_MAX)};
+    if(op==Op::Xor || op==Op::BitAnd || op==Op::BitOr) {
+        if(!integer(a.type))throw std::logic_error("bitwise operators require integer operands");
+        const auto bits=op==Op::BitAnd?(a.bits&b.bits):op==Op::BitOr?(a.bits|b.bits):(a.bits^b.bits);
+        return {a.type,bits&(width(a.type)==2?65535u:UINT32_MAX)};
     }
     if(wide(a.type)) {
         const auto left=static_cast<int64_t>(a.number()),right=static_cast<int64_t>(b.number());
@@ -356,12 +361,23 @@ class Parser {
         }
         return result;
     }
+    Expression bitwiseUnary(Type type, unsigned depth=0) {
+        if(reader_.peek().text!="~")return atom(type);
+        const auto at=reader_.pop().begin;
+        if(!integer(type))golem::syntax::fail(at,"~ requires an integer operand");
+        if(depth==16)golem::syntax::fail(at,"bitwise complement nesting exceeds 16");
+        auto result=std::make_shared<Expr>();
+        result->type=type;result->op=Op::BitNot;result->at=at;
+        result->left=bitwiseUnary(type,depth+1);
+        if(result->left->constant)result->constant=complement(*result->left->constant);
+        return result;
+    }
     Expression product(Type type) {
-        auto result = atom(type);
+        auto result = bitwiseUnary(type);
         while (reader_.peek().text == "*" || reader_.peek().text == "/") {
             const auto token = reader_.pop();
             if(token.text=="/" && type!=Type::F32)golem::syntax::fail(token.begin,"/ requires float32; use divmod for integers");
-            result = combine(token.text=="*"?Op::Multiply:Op::Divide, result, atom(type), token.begin);
+            result = combine(token.text=="*"?Op::Multiply:Op::Divide, result, bitwiseUnary(type), token.begin);
         }
         return result;
     }
@@ -390,12 +406,30 @@ class Parser {
         }
         return result;
     }
-    Expression expression(Type type) {
+    Expression bitwiseAnd(Type type) {
         auto result=shifted(type);
+        while(reader_.peek().text=="&") {
+            const auto at=reader_.pop().begin;
+            if(!integer(type))golem::syntax::fail(at,"& requires matching integer operands");
+            result=combine(Op::BitAnd,result,shifted(type),at);
+        }
+        return result;
+    }
+    Expression bitwiseXor(Type type) {
+        auto result=bitwiseAnd(type);
         while(reader_.peek().text=="^") {
             const auto at=reader_.pop().begin;
             if(!integer(type))golem::syntax::fail(at,"XOR requires matching integer operands");
-            result=combine(Op::Xor,result,shifted(type),at);
+            result=combine(Op::Xor,result,bitwiseAnd(type),at);
+        }
+        return result;
+    }
+    Expression expression(Type type) {
+        auto result=bitwiseXor(type);
+        while(reader_.peek().text=="|") {
+            const auto at=reader_.pop().begin;
+            if(!integer(type))golem::syntax::fail(at,"| requires matching integer operands");
+            result=combine(Op::BitOr,result,bitwiseXor(type),at);
         }
         return result;
     }
@@ -680,6 +714,7 @@ inline Value evaluate(const Expression &e, const Layout &layout, const std::vect
         return convert(left,e->type);
     }
     if(e->op==Op::Sin||e->op==Op::Cos||e->op==Op::Floor)return mathUnary(e->op,left);
+    if (e->op == Op::BitNot) return complement(left);
     if (e->op == Op::Not) return {Type::Bool, left.bits ? 0u : 1u};
     if (e->op == Op::And && !left.bits) return {Type::Bool, 0};
     if (e->op == Op::Or && left.bits) return {Type::Bool, 1};
@@ -842,7 +877,7 @@ inline void expressionJson(std::ostream &out, const Expression &e) {
     else if (e->op == Op::Global) out << ",\"global\":" << e->global;
     else if(e->op==Op::ArrayRead) {out << ",\"array\":" << e->global << ",\"index\":";expressionJson(out,e->left);}
     else {
-        out << ",\"operator\":\"" << (e->op == Op::Convert ? name(e->type) : e->op == Op::Not ? "Not" : e->op == Op::And ? "And" : e->op == Op::Or ? "Or" : e->op == Op::Compare ? e->relation : e->op == Op::Add ? "+" : e->op == Op::Subtract ? "-" : e->op == Op::ShiftRight ? ">>" : e->op == Op::Xor ? "^" : e->op==Op::Divide?"/":e->op==Op::Sin?"sin":e->op==Op::Cos?"cos":e->op==Op::Floor?"floor":"*")
+        out << ",\"operator\":\"" << (e->op == Op::Convert ? name(e->type) : e->op == Op::Not ? "Not" : e->op == Op::And ? "And" : e->op == Op::Or ? "Or" : e->op == Op::Compare ? e->relation : e->op == Op::Add ? "+" : e->op == Op::Subtract ? "-" : e->op == Op::ShiftRight ? ">>" : e->op == Op::Xor ? "^" : e->op == Op::BitAnd ? "&" : e->op == Op::BitOr ? "|" : e->op == Op::BitNot ? "~" : e->op==Op::Divide?"/":e->op==Op::Sin?"sin":e->op==Op::Cos?"cos":e->op==Op::Floor?"floor":"*")
             << "\",\"left\":";
         expressionJson(out, e->left); out << ",\"right\":"; expressionJson(out, e->right);
     }

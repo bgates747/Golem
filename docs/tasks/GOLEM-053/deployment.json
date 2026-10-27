@@ -1,0 +1,7 @@
+{
+  "host": "oryx-linuxlite",
+  "profile": "Agon/mystuff/golem/.emulator/golem-053",
+  "gui_launched": false,
+  "stock_vdp": "2.16",
+  "compiler_sha256": "905f174987e7face9dc5dd0463ba021d5ce23428c7864978c7fa37189057d18e"
+}

@@ -1,0 +1,13 @@
+// Compile with --portable. Golem computes; this source does not print numbers.
+uint16 flags = 5
+uint16 mask = 3
+uint16 both = 0
+uint16 either = 0
+uint16 different = 0
+uint16 inverted = 0
+Sub inspectBits
+    both = flags & mask
+    either = flags | mask
+    different = flags ^ mask
+    inverted = ~flags
+EndSub

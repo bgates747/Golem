@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "archive_sha256": "dcf72b31cd9a5a4c24119a300fbaaccb7a75ffabd90f3434daf20ac9da5eb1db",
+  "member_checks": 113,
+  "safe_paths": true,
+  "binaries_match_qualified": 6,
+  "language_reference_matches": true,
+  "top_level_guides": true,
+  "consumer_evidence_removed": true,
+  "standalone_howto": true,
+  "bitwise_extension": "GOLEM-053",
+  "repeat_build_identical": true
+}

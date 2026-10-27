@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "seconds": 29.94870950800032,
+  "stock_VDP": "2.16",
+  "actual_ESP32_Flexe": true,
+  "byte_observations": 4968,
+  "human": "pending",
+  "frontend_exit": 0,
+  "retrieved_results_match": true
+}
