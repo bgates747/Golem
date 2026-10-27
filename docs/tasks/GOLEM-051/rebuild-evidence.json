@@ -1,0 +1,37 @@
+{
+  "passed": true,
+  "binaries": 6,
+  "standalone_source_tree": true,
+  "results": [
+    {
+      "file": "support/golemc.bin",
+      "same": true,
+      "sha256": "2e1025a7b497e68fcfc84ab0819bf00452c3ffcfa5cab2124e2a69e8be338c5d"
+    },
+    {
+      "file": "support/golemrun.bin",
+      "same": true,
+      "sha256": "04b64eb3d8797129e2d6f9ffdc3add5a30837cf09d184197388ff69becad9637"
+    },
+    {
+      "file": "port/ez80-raw/golemc.bin",
+      "same": true,
+      "sha256": "262e93876f7ffae73f0d1787aaa0500f6967434f3c5d7aade05da70189cdb8bd"
+    },
+    {
+      "file": "port/ez80-resident/golemc.bin",
+      "same": true,
+      "sha256": "b584ff9b12fbec0668f2fb46042c2e1361ddb0fca562eb171b835be036f958bb"
+    },
+    {
+      "file": "port/ez80-portable/golemc.bin",
+      "same": true,
+      "sha256": "e684344183a3a16f49a30bce96dd3d52a43cd1ac1de34c27ac505c5922702107"
+    },
+    {
+      "file": "port/ez80-stock-matrix/golemc.bin",
+      "same": true,
+      "sha256": "40fde86ea0aefa812d1ee543b7a26787abcbfcabf32422ecaaab77181ffbe0f7"
+    }
+  ]
+}

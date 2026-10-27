@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "seconds": 6.716903035994619,
+  "actual_eZ80_compile": true,
+  "normal_MOS_continuation": true,
+  "picture": "/Agon/mystuff/golem/docs/tasks/GOLEM-051/build/runs/smoke/screen.ppm",
+  "binary_sha256": "f59a0377f1f31b7ce52349ba7fa38dbc367e043608ba0d092314354d8c11edde",
+  "outputs": {
+    "buffered-install.bin": "b255be3027f428ddd663c6c87f73caf574ebb73258c70504da9253811915b5e4",
+    "root.json": "3cdc51e56a1b4c91c83deb51ab6cc2262022515b44d15728f4f5b77449893f10",
+    "native-install.bin": "a45071e3299fc3f9661eaa7e268de556d9e12da7af85d6dd9b32f74e2aa1c18d",
+    "state.bin": "850ebca4f5ac3c26d7508d4852115c485552265c47c6a4884df988e7b8e9c3f3",
+    "buffered-cleanup.bin": "d629478ce507333280805d3c26f8a98e57da33dee7f07161fe91c2d857b4b4a4",
+    "program.json": "0a41091f8ac2478552ca31cb9fd7d446442597ce96e55b1b4732666f76d1d729",
+    "backends.json": "5929828e76352c96c1133ff6565695d9abf4af45594842c6a3ecaf9b0ed45209",
+    "calls.inc": "1a00244717a8c42aeee47955c8fc3049890008fc5b8940d51a630e6e4f98ffbb",
+    "layout.inc": "2e3a2c233d239ee49ff4be3c6bb9894c4b32cad0c9cba804521dd798c2a0247e",
+    "native.c": "c0332f3a244ebc5212390e2ea9e2bafc98c39d97f3ee7196ed475d0c2f70e950",
+    "native-cleanup.bin": "ab98e7315ed6a88020ab7a6b0e5764d550fef26613a43dde3a745cd377a2ce3c",
+    "interface.json": "762644a197491d57a6f6e698c4414d749a5581fa6b3fb86a9b53929073338242",
+    "common-install.bin": "1f4b837d5d3ebfcceb6b81b1b34c15ed0605c3dac0385d5ef8ba28f80257a1eb"
+  },
+  "human": "pending",
+  "frontend_exit": 0
+}

@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "seconds": 6.815214043948799,
+  "actual_installed_compiler": true,
+  "actual_installed_runner": true,
+  "MOS_dir_and_save": true,
+  "picture": "/Agon/mystuff/golem/docs/tasks/GOLEM-051/build/runs/review/screen.png",
+  "initial_picture": "/Agon/mystuff/golem/docs/tasks/GOLEM-051/build/runs/review/initial.png",
+  "profile": "/Agon/mystuff/golem/.emulator/golem-051",
+  "human": "pending",
+  "physical": false,
+  "frontend_exit": 0,
+  "dispatcher_sha256": "2e1025a7b497e68fcfc84ab0819bf00452c3ffcfa5cab2124e2a69e8be338c5d",
+  "runner_sha256": "04b64eb3d8797129e2d6f9ffdc3add5a30837cf09d184197388ff69becad9637"
+}

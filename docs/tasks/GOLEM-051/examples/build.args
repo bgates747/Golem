@@ -1,0 +1,5 @@
+--portable
+--emit-load-plan
+--reserve 1000:1001
+examples/counter.golem
+output/counter-with-load-plan

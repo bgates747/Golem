@@ -1,0 +1,23 @@
+// Mode 19: 1024x768, white edges. The runner supplies pixel coordinates.
+sint16 frontLeft = 256
+sint16 frontRight = 576
+sint16 frontTop = 288
+sint16 frontBottom = 608
+sint16 backLeft = 448
+sint16 backRight = 768
+sint16 backTop = 128
+sint16 backBottom = 448
+Sub drawCube
+    draw_line(15, frontLeft, frontTop, frontRight, frontTop)
+    draw_line(15, frontRight, frontTop, frontRight, frontBottom)
+    draw_line(15, frontRight, frontBottom, frontLeft, frontBottom)
+    draw_line(15, frontLeft, frontBottom, frontLeft, frontTop)
+    draw_line(15, backLeft, backTop, backRight, backTop)
+    draw_line(15, backRight, backTop, backRight, backBottom)
+    draw_line(15, backRight, backBottom, backLeft, backBottom)
+    draw_line(15, backLeft, backBottom, backLeft, backTop)
+    draw_line(15, frontLeft, frontTop, backLeft, backTop)
+    draw_line(15, frontRight, frontTop, backRight, backTop)
+    draw_line(15, frontRight, frontBottom, backRight, backBottom)
+    draw_line(15, frontLeft, frontBottom, backLeft, backBottom)
+EndSub

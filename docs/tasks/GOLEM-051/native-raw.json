@@ -1,0 +1,170 @@
+{
+  "profile": "raw",
+  "cases": 9,
+  "matched": 9,
+  "resource_limited": 0,
+  "seconds": 4.457153112161905,
+  "frontend_exit": 0,
+  "MOS_keyboard_continuation": true,
+  "picture": "/Agon/mystuff/golem/docs/tasks/GOLEM-051/build/runs/raw-corpus/screen.ppm",
+  "human": "pending",
+  "binary_sha256": "262e93876f7ffae73f0d1787aaa0500f6967434f3c5d7aade05da70189cdb8bd",
+  "results": [
+    {
+      "label": "c197",
+      "key": "a7ec6f6e25127ba1",
+      "mode": "raw",
+      "output": "out/c197.bin",
+      "response": "cases/c197/compile.args",
+      "reference": {
+        "status": 0,
+        "files": {
+          "payload": "37f994f179b46d51d7bf055e53a2b784137158c74023f8574fb612591ddf1b78"
+        }
+      },
+      "native_status": 0,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {
+        "payload": "37f994f179b46d51d7bf055e53a2b784137158c74023f8574fb612591ddf1b78"
+      },
+      "diagnostics": ""
+    },
+    {
+      "label": "c198",
+      "key": "a87b8690139d0e4b",
+      "mode": "raw",
+      "output": "out/c198.bin",
+      "response": "cases/c198/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c213",
+      "key": "b2a1b1658941defb",
+      "mode": "raw",
+      "output": "out/c213.bin",
+      "response": "cases/c213/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c214",
+      "key": "b2e6a2a7f686b545",
+      "mode": "raw",
+      "output": "out/c214.bin",
+      "response": "cases/c214/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c248",
+      "key": "cb63c2b86071a7fe",
+      "mode": "raw",
+      "output": "out/c248.bin",
+      "response": "cases/c248/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c255",
+      "key": "cf8e325721cc015e",
+      "mode": "raw",
+      "output": "out/c255.bin",
+      "response": "cases/c255/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c258",
+      "key": "d1826c526abcb9c7",
+      "mode": "raw",
+      "output": "out/c258.bin",
+      "response": "cases/c258/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c288",
+      "key": "ed4453ff3588b69a",
+      "mode": "raw",
+      "output": "out/c288.bin",
+      "response": "cases/c288/compile.args",
+      "reference": {
+        "status": 0,
+        "files": {
+          "payload": "37f994f179b46d51d7bf055e53a2b784137158c74023f8574fb612591ddf1b78"
+        }
+      },
+      "native_status": 0,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {
+        "payload": "37f994f179b46d51d7bf055e53a2b784137158c74023f8574fb612591ddf1b78"
+      },
+      "diagnostics": ""
+    },
+    {
+      "label": "c309",
+      "key": "fbe71378d21709e0",
+      "mode": "raw",
+      "output": "out/c309.bin",
+      "response": "cases/c309/compile.args",
+      "reference": {
+        "status": 0,
+        "files": {
+          "payload": "2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824"
+        }
+      },
+      "native_status": 0,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {
+        "payload": "2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824"
+      },
+      "diagnostics": ""
+    }
+  ]
+}

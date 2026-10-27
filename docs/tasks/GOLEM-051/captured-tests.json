@@ -1,0 +1,25 @@
+{
+  "maintained_tests": [
+    {
+      "test": "test_compiler",
+      "result": "Maintained raw/resident contract checks pass; 132 rejection cases."
+    },
+    {
+      "test": "test_portable",
+      "result": "Portable contracts pass: 52 frozen output files, 3 intentionally changed native sources, 57 rejections, mapped/reserved/bound inputs, XOR types/precedence and combined reference behavior."
+    },
+    {
+      "test": "test_stock_matrix",
+      "result": "Stock matrix encoding, ownership, relocation and 26 rejection cases pass.\nStock perspective exact93-byte peer sequence, typed views/calls/bounds and 25 rejection cases pass."
+    },
+    {
+      "test": "test_stock_loops",
+      "result": "Compact stock loops: full2685 copies/repeat,65536-iteration termination/carries/continuation,constant footprint and 25 rejections pass."
+    },
+    {
+      "test": "test_load_plan",
+      "result": "Load-plan allocation, lifecycle and 12 rejection cases pass."
+    }
+  ],
+  "captured_sources": 280
+}

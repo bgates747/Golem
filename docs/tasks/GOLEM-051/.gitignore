@@ -1,0 +1,5 @@
+build/
+bin/
+obj/
+*.zip
+__pycache__/

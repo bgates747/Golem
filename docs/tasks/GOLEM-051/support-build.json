@@ -1,0 +1,14 @@
+[
+  {
+    "name": "golemc",
+    "bytes": 10795,
+    "sha256": "2e1025a7b497e68fcfc84ab0819bf00452c3ffcfa5cab2124e2a69e8be338c5d",
+    "address": "0xb0000"
+  },
+  {
+    "name": "golemrun",
+    "bytes": 12746,
+    "sha256": "04b64eb3d8797129e2d6f9ffdc3add5a30837cf09d184197388ff69becad9637",
+    "address": "0x40000"
+  }
+]

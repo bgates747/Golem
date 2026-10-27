@@ -1,0 +1,7 @@
+uint16 i = 0
+uint16 total = 0
+Sub accumulate
+    For i In Range(1:10)
+        total = total + i
+    Next i
+EndSub

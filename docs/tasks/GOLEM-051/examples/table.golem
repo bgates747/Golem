@@ -1,0 +1,10 @@
+Record Sample
+    uint16 tag
+    sint16 delta
+EndRecord
+Table Sample samples(0:3)
+Sample selected = Sample(0,0)
+uint16 index = 2
+Sub fetch
+    selected = samples(index)
+EndSub

@@ -1,0 +1,7 @@
+Matrix(4,4) model = Identity
+Borrowed XYZ16 source = Buffer(1000,3)
+Borrowed XYZ16 target = Buffer(1001,3)
+Sub project
+    matrix_translate(model,100,120,0)
+    transform_vertices(target,model,source)
+EndSub

@@ -1,0 +1,5 @@
+uint16 value = 65535
+uint16 result = 17
+Sub compute
+    result = value + 1
+EndSub

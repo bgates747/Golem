@@ -1,0 +1,4 @@
+uint16 i = 0
+For i = 1 To 12
+    print "*"
+Next i

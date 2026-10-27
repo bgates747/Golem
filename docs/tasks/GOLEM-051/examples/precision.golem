@@ -1,0 +1,8 @@
+uint32 maximum = 4294967295
+sint32 minimum = -2147483648
+float32 decimal Bounds(0.1,0.3) = 0.2
+float32 negative Bounds(-0.3,-0.1) = -0.2
+float32 result = 0.0
+Sub compute
+    result = decimal + decimal
+EndSub

@@ -1,0 +1,12 @@
+SET KEYBOARD 1
+VDU 22 19
+cd /golem
+golemc examples/hello.golem output/review-hello.bin
+golemrun output/review-hello.bin
+golemc --resident --emit-asm examples/cube.golem output/review-cube
+VDU 12
+VDU 28 0 95 127 81
+echo Golem source: examples/cube.golem, Sub drawCube
+echo Compiled here on the eZ80. Source draws all 12 white edges.
+golemrun --review --resident output/review-cube
+save review-done.dat 40000 3

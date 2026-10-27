@@ -1,0 +1,1770 @@
+{
+  "profile": "stock-matrix",
+  "cases": 94,
+  "matched": 94,
+  "resource_limited": 0,
+  "seconds": 152.64144967589527,
+  "frontend_exit": 0,
+  "MOS_keyboard_continuation": true,
+  "picture": "/Agon/mystuff/golem/docs/tasks/GOLEM-051/build/runs/stock-matrix-corpus/screen.ppm",
+  "human": "pending",
+  "binary_sha256": "40fde86ea0aefa812d1ee543b7a26787abcbfcabf32422ecaaab77181ffbe0f7",
+  "results": [
+    {
+      "label": "c004",
+      "key": "04926fa345385006",
+      "mode": "stock-matrix",
+      "output": "out/c004",
+      "response": "cases/c004/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c013",
+      "key": "09807167f7585641",
+      "mode": "stock-matrix",
+      "output": "out/c013",
+      "response": "cases/c013/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c020",
+      "key": "10e6bd8fdb596e6f",
+      "mode": "stock-matrix",
+      "output": "out/c020",
+      "response": "cases/c020/compile.args",
+      "reference": {
+        "status": 0,
+        "files": {
+          "update-call.bin": "c84f6256090e7968560fdd7db5d5c668dc754422baaa67b74704fd83abea5264",
+          "golem.inc": "c39bab1ee4d70651d391062d145f14b33b2dbe07f7566aeb47d0421865cc81a7",
+          "invoke.bin": "c84f6256090e7968560fdd7db5d5c668dc754422baaa67b74704fd83abea5264",
+          "cleanup.bin": "9e771a81135f58fc6b5e3564298ec543e94b44b2959282dcba282b346caed5f4",
+          "bootstrap.bin": "af76a7bf5e9aee1092fedd7f4bec9364d026f6fbaf94682714efe221abb119f7",
+          "interface.json": "b1a41de1af4efd42c9d7a565d499c4c43adf68a10f6e0eaf4e94b2ece44cfb8d"
+        }
+      },
+      "native_status": 0,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {
+        "update-call.bin": "c84f6256090e7968560fdd7db5d5c668dc754422baaa67b74704fd83abea5264",
+        "golem.inc": "c39bab1ee4d70651d391062d145f14b33b2dbe07f7566aeb47d0421865cc81a7",
+        "invoke.bin": "c84f6256090e7968560fdd7db5d5c668dc754422baaa67b74704fd83abea5264",
+        "cleanup.bin": "9e771a81135f58fc6b5e3564298ec543e94b44b2959282dcba282b346caed5f4",
+        "bootstrap.bin": "af76a7bf5e9aee1092fedd7f4bec9364d026f6fbaf94682714efe221abb119f7",
+        "interface.json": "b1a41de1af4efd42c9d7a565d499c4c43adf68a10f6e0eaf4e94b2ece44cfb8d"
+      },
+      "diagnostics": ""
+    },
+    {
+      "label": "c026",
+      "key": "14ef3476a339e836",
+      "mode": "stock-matrix",
+      "output": "out/c026",
+      "response": "cases/c026/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c028",
+      "key": "17fc5e3a6fb64f75",
+      "mode": "stock-matrix",
+      "output": "out/c028",
+      "response": "cases/c028/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c035",
+      "key": "1d294371f399894b",
+      "mode": "stock-matrix",
+      "output": "out/c035",
+      "response": "cases/c035/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c037",
+      "key": "1edfdf6ba03b655e",
+      "mode": "stock-matrix",
+      "output": "out/c037",
+      "response": "cases/c037/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c046",
+      "key": "2719aaca64429cdc",
+      "mode": "stock-matrix",
+      "output": "out/c046",
+      "response": "cases/c046/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c047",
+      "key": "2772a28b2cccc670",
+      "mode": "stock-matrix",
+      "output": "out/c047",
+      "response": "cases/c047/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c054",
+      "key": "2d4a1d98d1b76e84",
+      "mode": "stock-matrix",
+      "output": "out/c054",
+      "response": "cases/c054/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c056",
+      "key": "2fc51eeccc193433",
+      "mode": "stock-matrix",
+      "output": "out/c056",
+      "response": "cases/c056/compile.args",
+      "reference": {
+        "status": 0,
+        "files": {
+          "update-call.bin": "a626ec959ce03e02f681682d4b61cf7b6a146f09a03839ee37d74bb9be56afa9",
+          "golem.inc": "dad2cfcbbf14310deee31988d65c2c9116779cb2680bb6581b36966a069c1158",
+          "invoke.bin": "ed8d70b1a815e4d6c56df3166a69dd87e8cbbd403ae69ada92498bbe14bac02d",
+          "cleanup.bin": "5230bbd7ab156da5e9ed756c0900ef308f42f6f0e312a270f11daf02c17a31d1",
+          "bootstrap.bin": "bee61f24dc8380076005505a0d0217ee71359b8385e9734d5fc5676a7e98ffbc",
+          "interface.json": "fb3a0e96c1de8bb877a545cf040067fbb9aad86f40c22c1fe470cb3ea9e03a4a"
+        }
+      },
+      "native_status": 0,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {
+        "update-call.bin": "a626ec959ce03e02f681682d4b61cf7b6a146f09a03839ee37d74bb9be56afa9",
+        "golem.inc": "dad2cfcbbf14310deee31988d65c2c9116779cb2680bb6581b36966a069c1158",
+        "invoke.bin": "ed8d70b1a815e4d6c56df3166a69dd87e8cbbd403ae69ada92498bbe14bac02d",
+        "cleanup.bin": "5230bbd7ab156da5e9ed756c0900ef308f42f6f0e312a270f11daf02c17a31d1",
+        "bootstrap.bin": "bee61f24dc8380076005505a0d0217ee71359b8385e9734d5fc5676a7e98ffbc",
+        "interface.json": "fb3a0e96c1de8bb877a545cf040067fbb9aad86f40c22c1fe470cb3ea9e03a4a"
+      },
+      "diagnostics": ""
+    },
+    {
+      "label": "c057",
+      "key": "2ffec6cfa67ae093",
+      "mode": "stock-matrix",
+      "output": "out/c057",
+      "response": "cases/c057/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c063",
+      "key": "33cfff7649743c1e",
+      "mode": "stock-matrix",
+      "output": "out/c063",
+      "response": "cases/c063/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c066",
+      "key": "34d6cd2340310a8b",
+      "mode": "stock-matrix",
+      "output": "out/c066",
+      "response": "cases/c066/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c068",
+      "key": "3612b041cb70dd97",
+      "mode": "stock-matrix",
+      "output": "out/c068",
+      "response": "cases/c068/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c069",
+      "key": "3728d28beb42fe2e",
+      "mode": "stock-matrix",
+      "output": "out/c069",
+      "response": "cases/c069/compile.args",
+      "reference": {
+        "status": 0,
+        "files": {
+          "update-call.bin": "010bf449cdd019152a7564fc8f28e5b3ad49de5d90905fab5fe74ae38fbbb971",
+          "golem.inc": "00469c3caef19f20708c4ce9878b25b62d16a07cdee615e08f097d719a54cb3f",
+          "invoke.bin": "010bf449cdd019152a7564fc8f28e5b3ad49de5d90905fab5fe74ae38fbbb971",
+          "cleanup.bin": "4e038aff6ac44082bc405e5771e907895f9cfcc903031698c7ae2f0f4c1459a2",
+          "bootstrap.bin": "1b5994965d9a1d68cca1268a83228672e9e2af98d7bb854bb0c3b542f2235b1b",
+          "interface.json": "e6ef85e0459b957529d0e4ea5ab82a9f6fe71393a59d248fd9e7aa9ff0fbd026"
+        }
+      },
+      "native_status": 0,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {
+        "update-call.bin": "010bf449cdd019152a7564fc8f28e5b3ad49de5d90905fab5fe74ae38fbbb971",
+        "golem.inc": "00469c3caef19f20708c4ce9878b25b62d16a07cdee615e08f097d719a54cb3f",
+        "invoke.bin": "010bf449cdd019152a7564fc8f28e5b3ad49de5d90905fab5fe74ae38fbbb971",
+        "cleanup.bin": "4e038aff6ac44082bc405e5771e907895f9cfcc903031698c7ae2f0f4c1459a2",
+        "bootstrap.bin": "1b5994965d9a1d68cca1268a83228672e9e2af98d7bb854bb0c3b542f2235b1b",
+        "interface.json": "e6ef85e0459b957529d0e4ea5ab82a9f6fe71393a59d248fd9e7aa9ff0fbd026"
+      },
+      "diagnostics": ""
+    },
+    {
+      "label": "c071",
+      "key": "3863acc483aeb2d2",
+      "mode": "stock-matrix",
+      "output": "out/c071",
+      "response": "cases/c071/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c076",
+      "key": "3aa3148b1070573d",
+      "mode": "stock-matrix",
+      "output": "out/c076",
+      "response": "cases/c076/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c079",
+      "key": "3af35ca788b3bd17",
+      "mode": "stock-matrix",
+      "output": "out/c079",
+      "response": "cases/c079/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c080",
+      "key": "3fa7e05ef1585c3a",
+      "mode": "stock-matrix",
+      "output": "out/c080",
+      "response": "cases/c080/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c081",
+      "key": "411d721b1f730381",
+      "mode": "stock-matrix",
+      "output": "out/c081",
+      "response": "cases/c081/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c087",
+      "key": "44f4351b72774f04",
+      "mode": "stock-matrix",
+      "output": "out/c087",
+      "response": "cases/c087/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c088",
+      "key": "461bfdaf8e57b214",
+      "mode": "stock-matrix",
+      "output": "out/c088",
+      "response": "cases/c088/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c089",
+      "key": "46b5bba062002772",
+      "mode": "stock-matrix",
+      "output": "out/c089",
+      "response": "cases/c089/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c090",
+      "key": "475df47b4f6f2987",
+      "mode": "stock-matrix",
+      "output": "out/c090",
+      "response": "cases/c090/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c092",
+      "key": "4ae0c9839dce87bd",
+      "mode": "stock-matrix",
+      "output": "out/c092",
+      "response": "cases/c092/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c098",
+      "key": "50ab8d1e6d80758b",
+      "mode": "stock-matrix",
+      "output": "out/c098",
+      "response": "cases/c098/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c100",
+      "key": "52655f117905efc9",
+      "mode": "stock-matrix",
+      "output": "out/c100",
+      "response": "cases/c100/compile.args",
+      "reference": {
+        "status": 0,
+        "files": {
+          "update-call.bin": "010bf449cdd019152a7564fc8f28e5b3ad49de5d90905fab5fe74ae38fbbb971",
+          "golem.inc": "ff95b5b64d49e42e5310a561ca98f88b085cb020542259eda506f804d1a71a68",
+          "invoke.bin": "010bf449cdd019152a7564fc8f28e5b3ad49de5d90905fab5fe74ae38fbbb971",
+          "cleanup.bin": "f34dc205638f9fe336546493f3fefc10e8795bed6cdc59ad82b906abcfc9bf70",
+          "bootstrap.bin": "a9f08c00fd7e59cc0a27d578cd7397cbdb64a6bcc3100ce20f24663f3dfbf356",
+          "interface.json": "b187a09e6c593515b6b1cf060742a2effd130c44b1cc4ba82a0d335f30b42010"
+        }
+      },
+      "native_status": 0,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {
+        "update-call.bin": "010bf449cdd019152a7564fc8f28e5b3ad49de5d90905fab5fe74ae38fbbb971",
+        "golem.inc": "ff95b5b64d49e42e5310a561ca98f88b085cb020542259eda506f804d1a71a68",
+        "invoke.bin": "010bf449cdd019152a7564fc8f28e5b3ad49de5d90905fab5fe74ae38fbbb971",
+        "cleanup.bin": "f34dc205638f9fe336546493f3fefc10e8795bed6cdc59ad82b906abcfc9bf70",
+        "bootstrap.bin": "a9f08c00fd7e59cc0a27d578cd7397cbdb64a6bcc3100ce20f24663f3dfbf356",
+        "interface.json": "b187a09e6c593515b6b1cf060742a2effd130c44b1cc4ba82a0d335f30b42010"
+      },
+      "diagnostics": ""
+    },
+    {
+      "label": "c103",
+      "key": "5599f868b76117c7",
+      "mode": "stock-matrix",
+      "output": "out/c103",
+      "response": "cases/c103/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c109",
+      "key": "5d82d0e41b929e3d",
+      "mode": "stock-matrix",
+      "output": "out/c109",
+      "response": "cases/c109/compile.args",
+      "reference": {
+        "status": 0,
+        "files": {
+          "update-call.bin": "3554d925cdaef0581b6d209150efdebf63be44b9e324e74061d66d01463ee36d",
+          "golem.inc": "9c5688e89a8a091b21a41a84094f5dfeabd197fc2da2d74665eb47bb3872681f",
+          "invoke.bin": "d3cf9cc33bf70ba891669f58e4a73a4ac467f14042bd8a651a0da0eb9460d767",
+          "cleanup.bin": "073bae6ac7e205bec4de0b28ae36f4a2762f2c1c937c490cd559dfc888635ae4",
+          "bootstrap.bin": "6530bedbd7140c83683912245127d1ca654b5d5fda0666414f76397e15201d2c",
+          "interface.json": "120290b6791a84d7f8b6db0cdfc13767a834661a254791f83c9535196f9e2b36"
+        }
+      },
+      "native_status": 0,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {
+        "update-call.bin": "3554d925cdaef0581b6d209150efdebf63be44b9e324e74061d66d01463ee36d",
+        "golem.inc": "9c5688e89a8a091b21a41a84094f5dfeabd197fc2da2d74665eb47bb3872681f",
+        "invoke.bin": "d3cf9cc33bf70ba891669f58e4a73a4ac467f14042bd8a651a0da0eb9460d767",
+        "cleanup.bin": "073bae6ac7e205bec4de0b28ae36f4a2762f2c1c937c490cd559dfc888635ae4",
+        "bootstrap.bin": "6530bedbd7140c83683912245127d1ca654b5d5fda0666414f76397e15201d2c",
+        "interface.json": "120290b6791a84d7f8b6db0cdfc13767a834661a254791f83c9535196f9e2b36"
+      },
+      "diagnostics": ""
+    },
+    {
+      "label": "c114",
+      "key": "63a1996fa4e16aee",
+      "mode": "stock-matrix",
+      "output": "out/c114",
+      "response": "cases/c114/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c115",
+      "key": "64a44fb7d555da6e",
+      "mode": "stock-matrix",
+      "output": "out/c115",
+      "response": "cases/c115/compile.args",
+      "reference": {
+        "status": 0,
+        "files": {
+          "update-call.bin": "010bf449cdd019152a7564fc8f28e5b3ad49de5d90905fab5fe74ae38fbbb971",
+          "golem.inc": "eb1bcbf0693e6dc7557bb429da1a720bbd2184cae448b44505ee7892dcb2b807",
+          "invoke.bin": "010bf449cdd019152a7564fc8f28e5b3ad49de5d90905fab5fe74ae38fbbb971",
+          "cleanup.bin": "f34dc205638f9fe336546493f3fefc10e8795bed6cdc59ad82b906abcfc9bf70",
+          "bootstrap.bin": "b9f3cfbed21d21b181fdfc45cd5f0fae36f31c0ddb6c8bcf27c9254bd2081488",
+          "interface.json": "2c624192e48fea1afd96895a77a0cfd341a4b1c7370d2d3b86f0ad685047fce5"
+        }
+      },
+      "native_status": 0,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {
+        "update-call.bin": "010bf449cdd019152a7564fc8f28e5b3ad49de5d90905fab5fe74ae38fbbb971",
+        "golem.inc": "eb1bcbf0693e6dc7557bb429da1a720bbd2184cae448b44505ee7892dcb2b807",
+        "invoke.bin": "010bf449cdd019152a7564fc8f28e5b3ad49de5d90905fab5fe74ae38fbbb971",
+        "cleanup.bin": "f34dc205638f9fe336546493f3fefc10e8795bed6cdc59ad82b906abcfc9bf70",
+        "bootstrap.bin": "b9f3cfbed21d21b181fdfc45cd5f0fae36f31c0ddb6c8bcf27c9254bd2081488",
+        "interface.json": "2c624192e48fea1afd96895a77a0cfd341a4b1c7370d2d3b86f0ad685047fce5"
+      },
+      "diagnostics": ""
+    },
+    {
+      "label": "c123",
+      "key": "680d86f3961c34f8",
+      "mode": "stock-matrix",
+      "output": "out/c123",
+      "response": "cases/c123/compile.args",
+      "reference": {
+        "status": 0,
+        "files": {
+          "update-call.bin": "010bf449cdd019152a7564fc8f28e5b3ad49de5d90905fab5fe74ae38fbbb971",
+          "golem.inc": "66364039fbbaaa122584cbf037431bee0b2d9534d74468bf37faf3b30635ce2f",
+          "invoke.bin": "010bf449cdd019152a7564fc8f28e5b3ad49de5d90905fab5fe74ae38fbbb971",
+          "cleanup.bin": "f34dc205638f9fe336546493f3fefc10e8795bed6cdc59ad82b906abcfc9bf70",
+          "bootstrap.bin": "3f97a413c336692c143dcea5511cb41ee272ecb1d1d75e54af2443b39bcac742",
+          "interface.json": "d78701e1af84534aa16dc724d0e467a6ee951b96c508a86314273e9967d98ec6"
+        }
+      },
+      "native_status": 0,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {
+        "update-call.bin": "010bf449cdd019152a7564fc8f28e5b3ad49de5d90905fab5fe74ae38fbbb971",
+        "golem.inc": "66364039fbbaaa122584cbf037431bee0b2d9534d74468bf37faf3b30635ce2f",
+        "invoke.bin": "010bf449cdd019152a7564fc8f28e5b3ad49de5d90905fab5fe74ae38fbbb971",
+        "cleanup.bin": "f34dc205638f9fe336546493f3fefc10e8795bed6cdc59ad82b906abcfc9bf70",
+        "bootstrap.bin": "3f97a413c336692c143dcea5511cb41ee272ecb1d1d75e54af2443b39bcac742",
+        "interface.json": "d78701e1af84534aa16dc724d0e467a6ee951b96c508a86314273e9967d98ec6"
+      },
+      "diagnostics": ""
+    },
+    {
+      "label": "c126",
+      "key": "6947c94de299e4d4",
+      "mode": "stock-matrix",
+      "output": "out/c126",
+      "response": "cases/c126/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c135",
+      "key": "6ee93a2fc9c2980c",
+      "mode": "stock-matrix",
+      "output": "out/c135",
+      "response": "cases/c135/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c136",
+      "key": "7175a4e02916619a",
+      "mode": "stock-matrix",
+      "output": "out/c136",
+      "response": "cases/c136/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c138",
+      "key": "74ace57a49e4fdfc",
+      "mode": "stock-matrix",
+      "output": "out/c138",
+      "response": "cases/c138/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c139",
+      "key": "75f0c185d45436a6",
+      "mode": "stock-matrix",
+      "output": "out/c139",
+      "response": "cases/c139/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c142",
+      "key": "7b4dd4a10aaa3d29",
+      "mode": "stock-matrix",
+      "output": "out/c142",
+      "response": "cases/c142/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c144",
+      "key": "7d3df73237d56776",
+      "mode": "stock-matrix",
+      "output": "out/c144",
+      "response": "cases/c144/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c145",
+      "key": "7e8b2281caedd922",
+      "mode": "stock-matrix",
+      "output": "out/c145",
+      "response": "cases/c145/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c146",
+      "key": "8020f143fb9938b4",
+      "mode": "stock-matrix",
+      "output": "out/c146",
+      "response": "cases/c146/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c149",
+      "key": "810df267bf5a369b",
+      "mode": "stock-matrix",
+      "output": "out/c149",
+      "response": "cases/c149/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c150",
+      "key": "82222fdf9c5cadb0",
+      "mode": "stock-matrix",
+      "output": "out/c150",
+      "response": "cases/c150/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c151",
+      "key": "848d2a70526dee67",
+      "mode": "stock-matrix",
+      "output": "out/c151",
+      "response": "cases/c151/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c153",
+      "key": "8545433fa7d30006",
+      "mode": "stock-matrix",
+      "output": "out/c153",
+      "response": "cases/c153/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c155",
+      "key": "85b814be90b39130",
+      "mode": "stock-matrix",
+      "output": "out/c155",
+      "response": "cases/c155/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c160",
+      "key": "8d51b6d246d55fab",
+      "mode": "stock-matrix",
+      "output": "out/c160",
+      "response": "cases/c160/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c164",
+      "key": "8fab87569a9888b8",
+      "mode": "stock-matrix",
+      "output": "out/c164",
+      "response": "cases/c164/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c165",
+      "key": "90eddce9cc9b0180",
+      "mode": "stock-matrix",
+      "output": "out/c165",
+      "response": "cases/c165/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c167",
+      "key": "9216e2c56c7cb80c",
+      "mode": "stock-matrix",
+      "output": "out/c167",
+      "response": "cases/c167/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c168",
+      "key": "92cbb9773e3c5dfb",
+      "mode": "stock-matrix",
+      "output": "out/c168",
+      "response": "cases/c168/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c170",
+      "key": "95d7a2dd9696ddec",
+      "mode": "stock-matrix",
+      "output": "out/c170",
+      "response": "cases/c170/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c175",
+      "key": "98fadf80aad9fa79",
+      "mode": "stock-matrix",
+      "output": "out/c175",
+      "response": "cases/c175/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c185",
+      "key": "9dedc7ae028fbf55",
+      "mode": "stock-matrix",
+      "output": "out/c185",
+      "response": "cases/c185/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c186",
+      "key": "9f6e4cb61d7ea57d",
+      "mode": "stock-matrix",
+      "output": "out/c186",
+      "response": "cases/c186/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c187",
+      "key": "a0236529113919e9",
+      "mode": "stock-matrix",
+      "output": "out/c187",
+      "response": "cases/c187/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c190",
+      "key": "a2b9ef346f5082b4",
+      "mode": "stock-matrix",
+      "output": "out/c190",
+      "response": "cases/c190/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c191",
+      "key": "a36c504917d0f667",
+      "mode": "stock-matrix",
+      "output": "out/c191",
+      "response": "cases/c191/compile.args",
+      "reference": {
+        "status": 0,
+        "files": {
+          "update-call.bin": "010bf449cdd019152a7564fc8f28e5b3ad49de5d90905fab5fe74ae38fbbb971",
+          "golem.inc": "17585364ffb1fe22a204a6b249282a43c74bac99cc3cbefdd8ffb6a90a26c984",
+          "invoke.bin": "010bf449cdd019152a7564fc8f28e5b3ad49de5d90905fab5fe74ae38fbbb971",
+          "cleanup.bin": "f34dc205638f9fe336546493f3fefc10e8795bed6cdc59ad82b906abcfc9bf70",
+          "bootstrap.bin": "24b32bac7ca39df239140b132f9572b05f5ed5cab853ab745383bc6725777449",
+          "interface.json": "e060fa1ae99276f102a09ca4c944ae14133f1b504afc29412f266a15ee115ea8"
+        }
+      },
+      "native_status": 0,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {
+        "update-call.bin": "010bf449cdd019152a7564fc8f28e5b3ad49de5d90905fab5fe74ae38fbbb971",
+        "golem.inc": "17585364ffb1fe22a204a6b249282a43c74bac99cc3cbefdd8ffb6a90a26c984",
+        "invoke.bin": "010bf449cdd019152a7564fc8f28e5b3ad49de5d90905fab5fe74ae38fbbb971",
+        "cleanup.bin": "f34dc205638f9fe336546493f3fefc10e8795bed6cdc59ad82b906abcfc9bf70",
+        "bootstrap.bin": "24b32bac7ca39df239140b132f9572b05f5ed5cab853ab745383bc6725777449",
+        "interface.json": "e060fa1ae99276f102a09ca4c944ae14133f1b504afc29412f266a15ee115ea8"
+      },
+      "diagnostics": ""
+    },
+    {
+      "label": "c193",
+      "key": "a482c7e3b0c2132e",
+      "mode": "stock-matrix",
+      "output": "out/c193",
+      "response": "cases/c193/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c196",
+      "key": "a5d479f7e8691499",
+      "mode": "stock-matrix",
+      "output": "out/c196",
+      "response": "cases/c196/compile.args",
+      "reference": {
+        "status": 0,
+        "files": {
+          "update-call.bin": "a626ec959ce03e02f681682d4b61cf7b6a146f09a03839ee37d74bb9be56afa9",
+          "golem.inc": "dad2cfcbbf14310deee31988d65c2c9116779cb2680bb6581b36966a069c1158",
+          "invoke.bin": "ed8d70b1a815e4d6c56df3166a69dd87e8cbbd403ae69ada92498bbe14bac02d",
+          "cleanup.bin": "5230bbd7ab156da5e9ed756c0900ef308f42f6f0e312a270f11daf02c17a31d1",
+          "bootstrap.bin": "bee61f24dc8380076005505a0d0217ee71359b8385e9734d5fc5676a7e98ffbc",
+          "interface.json": "fb3a0e96c1de8bb877a545cf040067fbb9aad86f40c22c1fe470cb3ea9e03a4a"
+        }
+      },
+      "native_status": 0,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {
+        "update-call.bin": "a626ec959ce03e02f681682d4b61cf7b6a146f09a03839ee37d74bb9be56afa9",
+        "golem.inc": "dad2cfcbbf14310deee31988d65c2c9116779cb2680bb6581b36966a069c1158",
+        "invoke.bin": "ed8d70b1a815e4d6c56df3166a69dd87e8cbbd403ae69ada92498bbe14bac02d",
+        "cleanup.bin": "5230bbd7ab156da5e9ed756c0900ef308f42f6f0e312a270f11daf02c17a31d1",
+        "bootstrap.bin": "bee61f24dc8380076005505a0d0217ee71359b8385e9734d5fc5676a7e98ffbc",
+        "interface.json": "fb3a0e96c1de8bb877a545cf040067fbb9aad86f40c22c1fe470cb3ea9e03a4a"
+      },
+      "diagnostics": ""
+    },
+    {
+      "label": "c199",
+      "key": "a8981822fc86e316",
+      "mode": "stock-matrix",
+      "output": "out/c199",
+      "response": "cases/c199/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c202",
+      "key": "aa1ec3fd7f00a0cb",
+      "mode": "stock-matrix",
+      "output": "out/c202",
+      "response": "cases/c202/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c205",
+      "key": "ab64669933b2365c",
+      "mode": "stock-matrix",
+      "output": "out/c205",
+      "response": "cases/c205/compile.args",
+      "reference": {
+        "status": 0,
+        "files": {
+          "update-call.bin": "010bf449cdd019152a7564fc8f28e5b3ad49de5d90905fab5fe74ae38fbbb971",
+          "golem.inc": "6d8f53f3d66da85eb96ac0cc822e23e4607d6db81e17d7cf36c3307a0c91d4d9",
+          "invoke.bin": "010bf449cdd019152a7564fc8f28e5b3ad49de5d90905fab5fe74ae38fbbb971",
+          "cleanup.bin": "f34dc205638f9fe336546493f3fefc10e8795bed6cdc59ad82b906abcfc9bf70",
+          "bootstrap.bin": "8f421a8aef1e9ffee27141be58b3cad3bb258143db61691810e85a886b06fe34",
+          "interface.json": "bf90b3a15bdf979c9bbd84c7b66e396c7e1005d13ee5b9272392bfe68d66c53d"
+        }
+      },
+      "native_status": 0,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {
+        "update-call.bin": "010bf449cdd019152a7564fc8f28e5b3ad49de5d90905fab5fe74ae38fbbb971",
+        "golem.inc": "6d8f53f3d66da85eb96ac0cc822e23e4607d6db81e17d7cf36c3307a0c91d4d9",
+        "invoke.bin": "010bf449cdd019152a7564fc8f28e5b3ad49de5d90905fab5fe74ae38fbbb971",
+        "cleanup.bin": "f34dc205638f9fe336546493f3fefc10e8795bed6cdc59ad82b906abcfc9bf70",
+        "bootstrap.bin": "8f421a8aef1e9ffee27141be58b3cad3bb258143db61691810e85a886b06fe34",
+        "interface.json": "bf90b3a15bdf979c9bbd84c7b66e396c7e1005d13ee5b9272392bfe68d66c53d"
+      },
+      "diagnostics": ""
+    },
+    {
+      "label": "c206",
+      "key": "aba8bf7e506fb66b",
+      "mode": "stock-matrix",
+      "output": "out/c206",
+      "response": "cases/c206/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c207",
+      "key": "ac14d5adb6a7b57e",
+      "mode": "stock-matrix",
+      "output": "out/c207",
+      "response": "cases/c207/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c208",
+      "key": "ac6a56be5b5018c1",
+      "mode": "stock-matrix",
+      "output": "out/c208",
+      "response": "cases/c208/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c211",
+      "key": "b063be8daf534683",
+      "mode": "stock-matrix",
+      "output": "out/c211",
+      "response": "cases/c211/compile.args",
+      "reference": {
+        "status": 0,
+        "files": {
+          "update-call.bin": "159e9391525fa974508748d07496f04f846e4971756243cccace8a2b44d43a3d",
+          "golem.inc": "66a545f5438d96aba9b42efbd920e546e2ba8413f944a104a71747c5ac964d78",
+          "invoke.bin": "159e9391525fa974508748d07496f04f846e4971756243cccace8a2b44d43a3d",
+          "cleanup.bin": "e674361d70f6a6d0a7327e83f5b14d8e19d909a1a4f83eab34d5368d032f335a",
+          "bootstrap.bin": "e222875b5cad550b23b79f07ae4f88f08cf2816b0cbc0209aa02cd343f7c7ae4",
+          "interface.json": "12ba186904057343cd9d5a63ff585fceb2667e5739b09e41e67175d941f287b1"
+        }
+      },
+      "native_status": 0,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {
+        "update-call.bin": "159e9391525fa974508748d07496f04f846e4971756243cccace8a2b44d43a3d",
+        "golem.inc": "66a545f5438d96aba9b42efbd920e546e2ba8413f944a104a71747c5ac964d78",
+        "invoke.bin": "159e9391525fa974508748d07496f04f846e4971756243cccace8a2b44d43a3d",
+        "cleanup.bin": "e674361d70f6a6d0a7327e83f5b14d8e19d909a1a4f83eab34d5368d032f335a",
+        "bootstrap.bin": "e222875b5cad550b23b79f07ae4f88f08cf2816b0cbc0209aa02cd343f7c7ae4",
+        "interface.json": "12ba186904057343cd9d5a63ff585fceb2667e5739b09e41e67175d941f287b1"
+      },
+      "diagnostics": ""
+    },
+    {
+      "label": "c217",
+      "key": "b56cec72cfa24089",
+      "mode": "stock-matrix",
+      "output": "out/c217",
+      "response": "cases/c217/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c219",
+      "key": "b6fee3d9d989682f",
+      "mode": "stock-matrix",
+      "output": "out/c219",
+      "response": "cases/c219/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c223",
+      "key": "ba3a68564dd8c3fd",
+      "mode": "stock-matrix",
+      "output": "out/c223",
+      "response": "cases/c223/compile.args",
+      "reference": {
+        "status": 0,
+        "files": {
+          "update-call.bin": "c84f6256090e7968560fdd7db5d5c668dc754422baaa67b74704fd83abea5264",
+          "golem.inc": "1288480e627070e8322d3a3f249fe7b8443769e2ccd920e599753b56c6b194a7",
+          "invoke.bin": "c84f6256090e7968560fdd7db5d5c668dc754422baaa67b74704fd83abea5264",
+          "cleanup.bin": "b435d98d90d4e6b8def50cd2d025a283c1cd26bb72a01e926bc7b69698bb08b5",
+          "bootstrap.bin": "d57b35f50bf8bb27da14a1e24cd1bc131cc787f7c986b1f16ba81f76be38d820",
+          "interface.json": "c41a265ace70d46498b0ea38f4d6a0c6322213f160b039c4dcefe3eac56d354f"
+        }
+      },
+      "native_status": 0,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {
+        "update-call.bin": "c84f6256090e7968560fdd7db5d5c668dc754422baaa67b74704fd83abea5264",
+        "golem.inc": "1288480e627070e8322d3a3f249fe7b8443769e2ccd920e599753b56c6b194a7",
+        "invoke.bin": "c84f6256090e7968560fdd7db5d5c668dc754422baaa67b74704fd83abea5264",
+        "cleanup.bin": "b435d98d90d4e6b8def50cd2d025a283c1cd26bb72a01e926bc7b69698bb08b5",
+        "bootstrap.bin": "d57b35f50bf8bb27da14a1e24cd1bc131cc787f7c986b1f16ba81f76be38d820",
+        "interface.json": "c41a265ace70d46498b0ea38f4d6a0c6322213f160b039c4dcefe3eac56d354f"
+      },
+      "diagnostics": ""
+    },
+    {
+      "label": "c225",
+      "key": "bb64dd8397e22cd7",
+      "mode": "stock-matrix",
+      "output": "out/c225",
+      "response": "cases/c225/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c231",
+      "key": "bfca88a9bad2c8cd",
+      "mode": "stock-matrix",
+      "output": "out/c231",
+      "response": "cases/c231/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c232",
+      "key": "c0d14e2e0783ae5b",
+      "mode": "stock-matrix",
+      "output": "out/c232",
+      "response": "cases/c232/compile.args",
+      "reference": {
+        "status": 0,
+        "files": {
+          "update-call.bin": "159e9391525fa974508748d07496f04f846e4971756243cccace8a2b44d43a3d",
+          "golem.inc": "47a83ede20ab02413187ccf68c992c8654e824a7524239945226297e884d4203",
+          "invoke.bin": "159e9391525fa974508748d07496f04f846e4971756243cccace8a2b44d43a3d",
+          "cleanup.bin": "e674361d70f6a6d0a7327e83f5b14d8e19d909a1a4f83eab34d5368d032f335a",
+          "bootstrap.bin": "59ab74416ff5148b1c4c030004526706ecd440aec2b38fbe2f941417e85569b3",
+          "interface.json": "a3809c3809e291e8a23546aeff11edeedd622a9f1e7ab833efd72f8879af8e84"
+        }
+      },
+      "native_status": 0,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {
+        "update-call.bin": "159e9391525fa974508748d07496f04f846e4971756243cccace8a2b44d43a3d",
+        "golem.inc": "47a83ede20ab02413187ccf68c992c8654e824a7524239945226297e884d4203",
+        "invoke.bin": "159e9391525fa974508748d07496f04f846e4971756243cccace8a2b44d43a3d",
+        "cleanup.bin": "e674361d70f6a6d0a7327e83f5b14d8e19d909a1a4f83eab34d5368d032f335a",
+        "bootstrap.bin": "59ab74416ff5148b1c4c030004526706ecd440aec2b38fbe2f941417e85569b3",
+        "interface.json": "a3809c3809e291e8a23546aeff11edeedd622a9f1e7ab833efd72f8879af8e84"
+      },
+      "diagnostics": ""
+    },
+    {
+      "label": "c243",
+      "key": "c839e6ef8a837b54",
+      "mode": "stock-matrix",
+      "output": "out/c243",
+      "response": "cases/c243/compile.args",
+      "reference": {
+        "status": 0,
+        "files": {
+          "update-call.bin": "159e9391525fa974508748d07496f04f846e4971756243cccace8a2b44d43a3d",
+          "golem.inc": "732b0a29f45a088969eea97015980985a8d581a0d6d0c3dd1a73ca7665a21254",
+          "invoke.bin": "159e9391525fa974508748d07496f04f846e4971756243cccace8a2b44d43a3d",
+          "cleanup.bin": "479cdac4d0a9a5b7c5f34d82d95a910350428e37411f57a29e7095d5c1f66616",
+          "bootstrap.bin": "9163e5a280665955c27fa1fd60de2e9e5e87a1101ab6f30b54063f9c69e472bd",
+          "interface.json": "c6c3b94381456a8095a236a52ac354105d0cdbae87e46ebc03587acffceb4f9e"
+        }
+      },
+      "native_status": 0,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {
+        "update-call.bin": "159e9391525fa974508748d07496f04f846e4971756243cccace8a2b44d43a3d",
+        "golem.inc": "732b0a29f45a088969eea97015980985a8d581a0d6d0c3dd1a73ca7665a21254",
+        "invoke.bin": "159e9391525fa974508748d07496f04f846e4971756243cccace8a2b44d43a3d",
+        "cleanup.bin": "479cdac4d0a9a5b7c5f34d82d95a910350428e37411f57a29e7095d5c1f66616",
+        "bootstrap.bin": "9163e5a280665955c27fa1fd60de2e9e5e87a1101ab6f30b54063f9c69e472bd",
+        "interface.json": "c6c3b94381456a8095a236a52ac354105d0cdbae87e46ebc03587acffceb4f9e"
+      },
+      "diagnostics": ""
+    },
+    {
+      "label": "c246",
+      "key": "c9966cee88a62928",
+      "mode": "stock-matrix",
+      "output": "out/c246",
+      "response": "cases/c246/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c249",
+      "key": "cbbf817cf230e9a6",
+      "mode": "stock-matrix",
+      "output": "out/c249",
+      "response": "cases/c249/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c250",
+      "key": "cc9493a230091431",
+      "mode": "stock-matrix",
+      "output": "out/c250",
+      "response": "cases/c250/compile.args",
+      "reference": {
+        "status": 0,
+        "files": {
+          "update-call.bin": "010bf449cdd019152a7564fc8f28e5b3ad49de5d90905fab5fe74ae38fbbb971",
+          "golem.inc": "103872957f1228227f8b0f243c8e9982d01adf1ae20fbc6fb81e30042a2b4989",
+          "invoke.bin": "010bf449cdd019152a7564fc8f28e5b3ad49de5d90905fab5fe74ae38fbbb971",
+          "cleanup.bin": "5230bbd7ab156da5e9ed756c0900ef308f42f6f0e312a270f11daf02c17a31d1",
+          "bootstrap.bin": "71f4809e9c292543915e996170550aeaffec93bd38cb847dbae3d5938327c95f",
+          "interface.json": "5ae1ecdbd65c408cd98df40c38dae265be4f73433afc228cb0a553d68f8dbe98"
+        }
+      },
+      "native_status": 0,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {
+        "update-call.bin": "010bf449cdd019152a7564fc8f28e5b3ad49de5d90905fab5fe74ae38fbbb971",
+        "golem.inc": "103872957f1228227f8b0f243c8e9982d01adf1ae20fbc6fb81e30042a2b4989",
+        "invoke.bin": "010bf449cdd019152a7564fc8f28e5b3ad49de5d90905fab5fe74ae38fbbb971",
+        "cleanup.bin": "5230bbd7ab156da5e9ed756c0900ef308f42f6f0e312a270f11daf02c17a31d1",
+        "bootstrap.bin": "71f4809e9c292543915e996170550aeaffec93bd38cb847dbae3d5938327c95f",
+        "interface.json": "5ae1ecdbd65c408cd98df40c38dae265be4f73433afc228cb0a553d68f8dbe98"
+      },
+      "diagnostics": ""
+    },
+    {
+      "label": "c251",
+      "key": "cd6f1574f7fbffaf",
+      "mode": "stock-matrix",
+      "output": "out/c251",
+      "response": "cases/c251/compile.args",
+      "reference": {
+        "status": 0,
+        "files": {
+          "update-call.bin": "010bf449cdd019152a7564fc8f28e5b3ad49de5d90905fab5fe74ae38fbbb971",
+          "golem.inc": "1a74777964bdd0fefc343a9ea69429bc97bb002eceb83cc4bba62e8d10736ac9",
+          "invoke.bin": "010bf449cdd019152a7564fc8f28e5b3ad49de5d90905fab5fe74ae38fbbb971",
+          "cleanup.bin": "4e038aff6ac44082bc405e5771e907895f9cfcc903031698c7ae2f0f4c1459a2",
+          "bootstrap.bin": "23528a70a3792583bdd143394203b11265f0a7feb5bcfaaaa051791622671cdc",
+          "interface.json": "79e8361f0c6fb0f345ac88051a8cce570f01f8bcfd00224151f78fcc5cb2f1d6"
+        }
+      },
+      "native_status": 0,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {
+        "update-call.bin": "010bf449cdd019152a7564fc8f28e5b3ad49de5d90905fab5fe74ae38fbbb971",
+        "golem.inc": "1a74777964bdd0fefc343a9ea69429bc97bb002eceb83cc4bba62e8d10736ac9",
+        "invoke.bin": "010bf449cdd019152a7564fc8f28e5b3ad49de5d90905fab5fe74ae38fbbb971",
+        "cleanup.bin": "4e038aff6ac44082bc405e5771e907895f9cfcc903031698c7ae2f0f4c1459a2",
+        "bootstrap.bin": "23528a70a3792583bdd143394203b11265f0a7feb5bcfaaaa051791622671cdc",
+        "interface.json": "79e8361f0c6fb0f345ac88051a8cce570f01f8bcfd00224151f78fcc5cb2f1d6"
+      },
+      "diagnostics": ""
+    },
+    {
+      "label": "c252",
+      "key": "cefe0149fb882739",
+      "mode": "stock-matrix",
+      "output": "out/c252",
+      "response": "cases/c252/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c259",
+      "key": "d24dfd82c71662d6",
+      "mode": "stock-matrix",
+      "output": "out/c259",
+      "response": "cases/c259/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c261",
+      "key": "d40e97ffed8903f7",
+      "mode": "stock-matrix",
+      "output": "out/c261",
+      "response": "cases/c261/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c262",
+      "key": "d4a3c0e35a1bd487",
+      "mode": "stock-matrix",
+      "output": "out/c262",
+      "response": "cases/c262/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c265",
+      "key": "d877df27dd40ddc6",
+      "mode": "stock-matrix",
+      "output": "out/c265",
+      "response": "cases/c265/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c277",
+      "key": "e4e8ece18258bff7",
+      "mode": "stock-matrix",
+      "output": "out/c277",
+      "response": "cases/c277/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c283",
+      "key": "e9f17b641d620b34",
+      "mode": "stock-matrix",
+      "output": "out/c283",
+      "response": "cases/c283/compile.args",
+      "reference": {
+        "status": 0,
+        "files": {
+          "update-call.bin": "6bcfc0e138fe018552c530efe278c811795214ebaf5ccf6dee487521f5de7483",
+          "golem.inc": "29bbf6fc05a65ef93c360b696499f32c74cc2bded79f8aadfe12b7f198ba615c",
+          "invoke.bin": "010bf449cdd019152a7564fc8f28e5b3ad49de5d90905fab5fe74ae38fbbb971",
+          "cleanup.bin": "b060e41bbcfc9b40c172dd7a25164fdadbadee91276c7da92d6e81862820031a",
+          "bootstrap.bin": "6612de932b517485684352d0429a7da2222296eeb6dc3523316d3e124f29c436",
+          "interface.json": "e868484fe817bfb3eb1c43cfda6c7a2fe05e3a883b83e77b6c9e1afe61054326"
+        }
+      },
+      "native_status": 0,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {
+        "update-call.bin": "6bcfc0e138fe018552c530efe278c811795214ebaf5ccf6dee487521f5de7483",
+        "golem.inc": "29bbf6fc05a65ef93c360b696499f32c74cc2bded79f8aadfe12b7f198ba615c",
+        "invoke.bin": "010bf449cdd019152a7564fc8f28e5b3ad49de5d90905fab5fe74ae38fbbb971",
+        "cleanup.bin": "b060e41bbcfc9b40c172dd7a25164fdadbadee91276c7da92d6e81862820031a",
+        "bootstrap.bin": "6612de932b517485684352d0429a7da2222296eeb6dc3523316d3e124f29c436",
+        "interface.json": "e868484fe817bfb3eb1c43cfda6c7a2fe05e3a883b83e77b6c9e1afe61054326"
+      },
+      "diagnostics": ""
+    },
+    {
+      "label": "c293",
+      "key": "f0340a93a2f591f2",
+      "mode": "stock-matrix",
+      "output": "out/c293",
+      "response": "cases/c293/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c295",
+      "key": "f1c7f004c18e20d8",
+      "mode": "stock-matrix",
+      "output": "out/c295",
+      "response": "cases/c295/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c296",
+      "key": "f3504864432b5e8d",
+      "mode": "stock-matrix",
+      "output": "out/c296",
+      "response": "cases/c296/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c298",
+      "key": "f6344a53fd0d6527",
+      "mode": "stock-matrix",
+      "output": "out/c298",
+      "response": "cases/c298/compile.args",
+      "reference": {
+        "status": 0,
+        "files": {
+          "update-call.bin": "159e9391525fa974508748d07496f04f846e4971756243cccace8a2b44d43a3d",
+          "golem.inc": "f8b3e4b8afb268e3045687e40dbd49c61c95bd0a27918b680e06435128ccf1d7",
+          "invoke.bin": "159e9391525fa974508748d07496f04f846e4971756243cccace8a2b44d43a3d",
+          "cleanup.bin": "e674361d70f6a6d0a7327e83f5b14d8e19d909a1a4f83eab34d5368d032f335a",
+          "bootstrap.bin": "a703265ce97018f3a23c407b7cb060003c606580c0ed814fe98a41f2a8869d24",
+          "interface.json": "bf21da660e9176ad1b5fb5fca755512f0dc3c640ae4e037aff74cdd53f7df40f"
+        }
+      },
+      "native_status": 0,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {
+        "update-call.bin": "159e9391525fa974508748d07496f04f846e4971756243cccace8a2b44d43a3d",
+        "golem.inc": "f8b3e4b8afb268e3045687e40dbd49c61c95bd0a27918b680e06435128ccf1d7",
+        "invoke.bin": "159e9391525fa974508748d07496f04f846e4971756243cccace8a2b44d43a3d",
+        "cleanup.bin": "e674361d70f6a6d0a7327e83f5b14d8e19d909a1a4f83eab34d5368d032f335a",
+        "bootstrap.bin": "a703265ce97018f3a23c407b7cb060003c606580c0ed814fe98a41f2a8869d24",
+        "interface.json": "bf21da660e9176ad1b5fb5fca755512f0dc3c640ae4e037aff74cdd53f7df40f"
+      },
+      "diagnostics": ""
+    },
+    {
+      "label": "c299",
+      "key": "f6717b1c5c8e2a7c",
+      "mode": "stock-matrix",
+      "output": "out/c299",
+      "response": "cases/c299/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c301",
+      "key": "f7bed15f751f459f",
+      "mode": "stock-matrix",
+      "output": "out/c301",
+      "response": "cases/c301/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c306",
+      "key": "fb36c253a54c5678",
+      "mode": "stock-matrix",
+      "output": "out/c306",
+      "response": "cases/c306/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    },
+    {
+      "label": "c310",
+      "key": "fbfa7511e0f6a848",
+      "mode": "stock-matrix",
+      "output": "out/c310",
+      "response": "cases/c310/compile.args",
+      "reference": {
+        "status": 1,
+        "files": {}
+      },
+      "native_status": 1,
+      "same": true,
+      "resource_limited": false,
+      "native_files": {},
+      "diagnostics": ""
+    }
+  ]
+}

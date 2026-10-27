@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "seconds": 28.71842091018334,
+  "observations": 56,
+  "picture": "/Agon/mystuff/golem/docs/tasks/GOLEM-051/build/runs/examples/screen.png",
+  "white_cube_anchors": 13,
+  "actual_native_compilation": true,
+  "stock_VDP_execution": true,
+  "MOS_keyboard_continuation": true,
+  "human": "pending",
+  "example_packages": 10,
+  "compiler_binaries": {
+    "raw": "262e93876f7ffae73f0d1787aaa0500f6967434f3c5d7aade05da70189cdb8bd",
+    "resident": "b584ff9b12fbec0668f2fb46042c2e1361ddb0fca562eb171b835be036f958bb",
+    "portable": "e684344183a3a16f49a30bce96dd3d52a43cd1ac1de34c27ac505c5922702107",
+    "stock-matrix": "40fde86ea0aefa812d1ee543b7a26787abcbfcabf32422ecaaab77181ffbe0f7"
+  },
+  "dispatcher_sha256": "2e1025a7b497e68fcfc84ab0819bf00452c3ffcfa5cab2124e2a69e8be338c5d",
+  "runner_sha256": "04b64eb3d8797129e2d6f9ffdc3add5a30837cf09d184197388ff69becad9637",
+  "frontend_exit": 0
+}

@@ -1,0 +1,11 @@
+float32 degrees = 30.0
+float32 radians = 0.0
+float32 sine = 0.0
+float32 fraction = 0.0
+sint16 whole = 0
+Sub compute
+    radians = degrees * 0.017453292519943295
+    sine = sin(radians)
+    fraction = sine / 2.0
+    whole = sint16(floor(fraction))
+EndSub
