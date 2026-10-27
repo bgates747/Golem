@@ -7,7 +7,22 @@ GOLEM-035 was accepted and explicitly approved for commit/push on 2026-10-13.
 Outstanding human/physical reviews below remain open; this checkpoint does not
 claim those reviews occurred.
 
-- [ ] **GOLEM-050:** Compact stock-matrix runtime loops/indexed access. [Plan](docs/tasks/GOLEM-050.md), [contract](docs/tasks/GOLEM-050/contract.md). Contract v0.2 mutually accepted (SHA406ffc96); implementation blocked until the scoped freeze commit AND push is verified and its receipt sent. Pending GOLEM-049 implementation is excluded from freeze authority.
+- [ ] **GOLEM-052:** Resident integer-to-text conversion and printing on stock
+  VDP, reusing arithmetic helpers and bounded compile-time storage. Visible
+  numeric examples and distribution update. [Plan](docs/tasks/GOLEM-052.md).
+  Planned only; concatenation and float formatting remain separate decisions.
+
+- [ ] **GOLEM-051:** Native AgonDev/MOS compiler for all implemented profiles,
+  runner and standalone distribution. [Plan](docs/tasks/GOLEM-051.md),
+  [results](docs/tasks/GOLEM-051/RESULTS.md), [how-to](docs/tasks/GOLEM-051/HOWTO.md).
+  All 316 native comparisons, 13 CLI cases, ten examples and six-binary isolated
+  rebuild pass. Oryx stock instance boot/keyboard accepted; distribution walkthrough
+  is in progress. GOLEM-053 adds integer bitwise operators to the package.
+  Publication was explicitly authorized on 2026-10-27.
+
+- [ ] **GOLEM-050:** Compact stock-matrix runtime loops/indexed access. [Plan](docs/tasks/GOLEM-050.md), [contract](docs/tasks/GOLEM-050/contract.md). Contract v0.2 mutually accepted (SHA406ffc96), frozen/pushed as89b9670; remote/hash verified and receipt sent. Compact implementation/host and bounded actual-stock checks pass; both matrix installs1047bytes with unchanged32-byte float controls. Independent consumer/timing/human gates remain with wireframe; publication authorized on 2026-10-27. Pending GOLEM-049 implementation is excluded from freeze authority.
+
+- [ ] **GOLEM-049:** Bounded maintained stock perspective primitives for wireframe:3x3 inverse, buffer-backed matrix values, float XYZ/XY16 transforms and finite compiled chunks. [Plan](docs/tasks/GOLEM-049.md). Implemented: exact93-byte stock proof,51matrix rejections, ASan/UBSan,68legacy files unchanged, two assembler consumers and2685-vertex source generation pass. Both peer generated streams and full Pi/Oryx MOS application/control/cleanup gates pass; fsim owns the open human gate. Publication authorized on 2026-10-27; human review remains peer-owned.
 
 - [ ] **GOLEM-047:** Native drawing through a generic VDU-byte submission service. [Task](docs/tasks/GOLEM-047.md), [executable report/review](docs/tasks/GOLEM-047/README.md). Runtime ABI1.1 and isolated C++ Corsair consumer pass compatibility, both execution engines, full MOS, matched pixels/wire and size checks. Oryx visual/keyboard review accepted; saved results and actual MOS dir verify; commit/push expressly approved on 2026-10-24. JIT frame times unchanged; interpreter comparison faster. Portable Golem frontend/backend adoption is expressly secondary to VDPlet rendering performance; generic service belongs to agon-vdplet VDPL-003.
 

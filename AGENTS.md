@@ -1367,7 +1367,7 @@ Portable Golem drawing adoption remains the next compiler tranche; this C++
 proof is not Golem source. Read docs/tasks/GOLEM-047/README.md and receipts.
 
 Dedicated Oryx .emulator/golem-047 is staged/stopped for a finite white Corsair
-turntable in mode19. Launch only ./flexe-agon-emulator from that directory.
+turntable in mode 19. Launch only ./flexe-agon-emulator from that directory.
 The onscreen dir instruction is the sole human keyboard instruction; agent-only
 wireframe/verify_review.py retrieves saved results afterward. Human review and
 publication approval remain pending; keep this coupled implementation uncommitted.
@@ -1400,7 +1400,7 @@ speed claim. Firmware +624bytes/staticDRAM unchanged; module8004bytes.
 
 Read docs/tasks/GOLEM-048/README.md. Dedicated Oryx .emulator/golem-048 uses
 production firmware and its Flexe wrapper; finite120-frame white Corsair review
-in mode19 passes headlessly and is staged/stopped. Human review/publication
+in mode 19 passes headlessly and is staged/stopped. Human review/publication
 remain pending; keep new coupled changes uncommitted. Agent-only verifier
 follows the Author's report, with no repeated keyboard instruction.
 
@@ -1411,3 +1411,130 @@ results, PASS log, runtime pins and actual MOS dir verify with no execution
 faults; the profile is stopped. The Author then explicitly approved commit/push.
 GOLEM-048 is complete and removed from TODO; human-review.json retains the
 receipt. Physical qualification remains separate; compiler adoption is deferred.
+
+
+### Stock perspective primitives — GOLEM-049 / 2026-10-25
+
+The Author's heavy-tank/Corsair stock perspective request was independently
+verified in the wireframe chat. Fsim supplied the actual-stock93-byte inverse/
+final-conversion proof; Golem owns reusable compiler support, fsim owns its
+application and target/human review. No private compiler or new firmware.
+
+--stock-matrix now supports3x3/4x4 initialized matrices,3x3 matrix_invert,
+matrix_set_value with read_float32, XYZF32/XY16 borrowed records, bounded
+copy_bytes and finite forward parameterless Sub calls (no cycles, depth<=4).
+Existing4x4/XYZ16 package outputs remain byte-identical across68frozen files.
+Typed record format/count/matrix dimensions must match; command41 does not
+implicitly convert formats. Final perspective uses inverse translation on a
+zero XY16 point. Stock negative output clamps to zero in the peer proof; use
+its strictly positive depth/final-coordinate domain, no signed-truncation claim.
+
+Maintained tests/51matrix rejections, ASan/UBSan, two actual assembler consumers,
+load-plan3x3/record sizes and2685-vertex source chunking pass. Both peer sources
+compile read-only. Docs/design/stock-matrix.md and task report own exact grammar,
+limits and hashes. Compiler-handoff-three was sent through the mailbox. All
+changes remain uncommitted pending independent consumer/human review and direct
+publication approval. No target/graphical emulator or physical flash here.
+
+Fsim's subsequent generated-target-five qualifies both complete Golem-generated
+stock mesh streams/six poses,32,580XYcomponents and raster comparisons. Hash
+pins match; peer-target-evidence.json retains the VDP-only result. Full MOS
+Corsair upload stalls on Pi before projection; runtime-guidance-four points
+to the preserved Oryx stock pair without claiming an ARM64 large-upload fix.
+Consumer owns that comparison. No compiler/profile/firmware repair is implied.
+Human review/publication remain pending.
+
+Fsim deployed-eight supersedes the Pi transport follow-up: both full Pi/Oryx
+MOS applications now pass with same stock firmware/runtime, controls/reset/
+repeat/cleanup and missing-setup handling. Bounded acknowledged installation
+avoids continuous ingress without a diagnosed runtime/firmware repair.
+GOLEM-049/peer-mos-evidence.json retains provenance; human/publication remain
+pending. GOLEM-050 contract-only freeze authority must not publish these
+separately pending implementation changes.
+
+
+### Compact stock loops — GOLEM-050 / 2026-10-25
+
+Author directly required task negotiation and a mutual contract freeze commit/
+push before implementation. Accepted v0.2 SHA406ffc96 is frozen as89b9670;
+remote hash and receipt were independently verified BEFORE code changes. The
+freeze published seven new task/contract/provenance/TODO paths only, excluding
+pending GOLEM-049 implementation. Contract bytes remain immutable.
+
+--stock-matrix now has declared uint16 loop counters, inclusive literal unit
+For/Range/Next, stride*activeCounter[+bias] offsets, static span/alignment proofs
+and <=65536primitive executions per loop. No nested loops/body Sub calls;
+counter/cursors reset on entry and retain the final visited index. Counter
+state is separate from float inputs; manifest.counters describes2logical/3stored
+bytes, loops publishes body/state metadata. Existing source outputs stay exact.
+
+Real stock's FFFF/-1partial-int32 comparison quirk caused the first endpoint
+probe not to terminate. Corrected byte probes and a conditional backedge pass
+the real65535endpoint and host65536iterations. Private carry guards prevent
+adjacent corruption. Stock tests compare singleton/30/full2685/subrange/repeat
+outputs byte-for-byte with the unrolled baseline; guards/Z/cleanup retention
+pass. Numerical evidence and zero-fault shutdown stats complete, but host exits
+143during shutdown with unisolated cause; no normal process-exit claim.
+
+Both full matrix sources now install in1047bytes with18resources and unchanged
+32-byte float input. Loop body324bytes/state21/counter3 are constant in N;
+drawing and mesh storage remain separate. Maintained tests/25new rejections,
+ASan/UBSan,68legacy files and two new assembler/load-plan consumers pass.
+Wireframe owns independent73pose/reference/pixel/MOS/timing/human staging;
+compiler-handoff-four supplies pins. New code is uncommitted pending its review/
+publication gate. Native-bulk TEST-007 remains a separate plan-only successor.
+
+## On-Agon compiler — GOLEM-051
+
+The Author reversed the earlier host-only restriction for an optional native
+Agon compiler. The task-local AgonDev C++ port in `docs/tasks/GOLEM-051/port/`
+reuses current parsers/emitters for every implemented raw/resident/portable/
+stock-matrix profile, including native C emission. It is not a promotion into
+`src/` and adds no SDK dependency to maintained host checks. Compiler source,
+adapter, SDK and runtime identities are pinned in its qualification report.
+
+All 316 actual eZ80/MOS comparisons and host/sanitizer comparisons, 13 CLI cases,
+ten native-compiled examples, stock numerical/pixel observations and a standalone
+source rebuild of all six executables pass. The roughly 600 KiB distribution under
+`dist/` contains SD binaries, examples, how-to, language reference and source.
+Native C still needs a separate C-to-Xtensa toolchain. Finite eZ80 RAM remains a
+limit; dispatcher batches reload workers rather than reusing a fragmented heap.
+
+Pi headless Fab/MOS checks and the installed compiler/runner review pass. The
+owned `.emulator/golem-051` profile is staged and stopped; Oryx and physical
+hardware were not contacted. Human review/publication are pending. Do not commit
+or push this coupled work before explicit approval. See the task plan, RESULTS.md
+and HOWTO.md beneath its silo; `docs/language-reference.md` is the maintained
+cross-profile reference. Existing GOLEM-049/050 dirt remains separate.
+
+
+## Integer bitwise family — GOLEM-053
+
+Maintained calculation profile (--portable) now supports same-type uint16,
+sint16, uint32 and sint32 &, | and unary ~ alongside ^ and existing >>.
+Complement is width-defined; no implicit conversions or Boolean coercion.
+Precedence: unary~, arithmetic, >>, &, ^, |, comparisons, Boolean Not/And/Or.
+Stock lowering uses existing bytewise Adjust operations, with no firmware changes.
+Native C and on-Agon compiler match. Maintained contracts/sanitizers, four native
+MOS compilations and 4,968 byte observations on Pi Fab and Oryx actual-ESP32
+Flexe pass. Task docs/tasks/GOLEM-053.md records exact scope/evidence.
+Separate Oryx .emulator/golem-053 is staged/stopped for human review. C client
+readback displays actual results and is explicitly distinguished from Golem.
+Distribution ZIP/guides are updated; human/publication gate remains open.
+The existing golem-051-stock walkthrough profile remains the Author's session.
+Integer numeric printing is queued as GOLEM-052, not part of this tranche.
+
+GOLEM-053 human review passed on 2026-10-27: Author screenshot shows expected
+values/PASS/MOS dir, and fresh retrieved results match all 4,968 bytes.
+Explicit publication approval remains open; no commit/push is implied.
+
+## Publication checkpoint — 2026-10-27
+
+The Author explicitly approved commit/push of all pending Golem work in logical
+groups. This supersedes earlier publication holds for GOLEM-049/050/051/053.
+GOLEM-053 is accepted and complete; its human results/keyboard passed.
+GOLEM-049/050 consumer-owned human/timing evidence and the rest of the GOLEM-051
+walkthrough remain separate open items; publication does not assert those tests.
+GOLEM-052 numeric printing is planning only. Generated task build directories,
+project .emulator and dist ZIP stay ignored; reproducible source/recipes are
+versioned. Physical devices were not flashed.

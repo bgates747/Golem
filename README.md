@@ -39,8 +39,15 @@ Goals for Golem:
 
 ## Status
 
-Early design/exploration stage. See [docs/devlog](docs/devlog/) for
-progress notes and [docs/design](docs/design/) for design documents.
+The [language reference](docs/language-reference.md) distinguishes implemented
+profiles from proposed syntax. [GOLEM-051](docs/tasks/GOLEM-051.md) adds the
+AgonDev-built on-Agon compiler package: edit, compile and run buffered programs
+under MOS without a PC or LLM. Its standalone [how-to](docs/tasks/GOLEM-051/HOWTO.md)
+and qualification record describe the native-development workflow.
+
+Implemented, bounded compiler profiles; broader language design remains in
+progress. See [docs/devlog](docs/devlog/) for evidence and [docs/design](docs/design/)
+for detailed contracts and proposals.
 
 `make -C src check` builds and checks the maintained host compiler. To compile
 the [initialized portable example](examples/portable/counter.golem):
@@ -87,7 +94,7 @@ automated qualification and Oryx human review pass.
 Additional portable syntax is documented in the guide above; other syntax
 shown in design proposals remains proposed.
 
-The intended integration is PC compilation followed by an eZ80 assembly
+Assembly integration uses precompiled VDP programs followed by an eZ80 assembly
 application that loads, updates and calls the resident VDP buffers. Compiler
 output publishes their assigned locations. Optional `--emit-asm` now generates
 assembly symbols, payload bytes and a named eZ80 call wrapper for current resident
@@ -106,6 +113,12 @@ transforms. It exports controls, owned matrices, borrowed vertex storage and
 named assembly calls; drawing and completion remain application-owned. Host
 contracts and fsim's independent stock-target cube/tank qualification pass;
 human visual review remains fsim-owned; compiler publication was authorized.
+The [GOLEM-049 extension](docs/tasks/GOLEM-049/README.md) adds 3x3 inversion,
+literal/buffer-backed matrix values, float XYZ/XY16 records and finite Sub chunks
+for stock perspective. [GOLEM-050](docs/tasks/GOLEM-050/README.md) adds compact
+runtime loops and indexed access. Host, stock-target and full MOS consumer checks
+pass; independent human/timing review remains wireframe-owned. Publication was
+authorized on 2026-10-27.
 
 The separate [resident drawing profile](docs/design/resident-drawing.md) supports
 named points, lines and filled convex quads with initialized packed inputs and
