@@ -1,0 +1,88 @@
+{
+  "source_owner": "fsim",
+  "firmware_pin": "c7ac293d2aa81ddfa693390549bcd909069c8fc3",
+  "message": "2026-10-25_14-20-22_fsim_fsim-stock-perspective-complete-proof-three",
+  "proof": "Independent actual-stock API diagnostic; not qualification of the new compiler",
+  "sha256": {
+    "probe_sequence.py": "a1ff4d288db4487c0239e73495856f671f08bc22017b22ac6388278fce87af77",
+    "probe-complete/sequence.vdu": "e75851aa170b1759e21a39c12dec9f0df7f081ea429310d7e684f78db724a9c3",
+    "probe-complete/summary.json": "4809f743218976be653ecd47fbab21af628dae83bf29c85a053d26c1f019a08b",
+    "stock_target.py": "1789c63ca602c8390d02793b871344b3f98594ae44d17a18f58aac50313283fe"
+  },
+  "report": {
+    "cases": [
+      {
+        "screen": [
+          280.0,
+          704.0
+        ],
+        "w": 4.0,
+        "actual": [
+          280,
+          704
+        ]
+      },
+      {
+        "screen": [
+          640.8,
+          512.9
+        ],
+        "w": 3.0,
+        "actual": [
+          640,
+          512
+        ]
+      },
+      {
+        "screen": [
+          10.9,
+          20.1
+        ],
+        "w": 0.5,
+        "actual": [
+          10,
+          20
+        ]
+      },
+      {
+        "screen": [
+          -10.9,
+          -20.1
+        ],
+        "w": 2.0,
+        "actual": [
+          0,
+          0
+        ]
+      },
+      {
+        "screen": [
+          1000.75,
+          999.5
+        ],
+        "w": 12.0,
+        "actual": [
+          1000,
+          999
+        ]
+      },
+      {
+        "screen": [
+          280.0,
+          704.0
+        ],
+        "w": 4.0,
+        "actual": [
+          280,
+          704
+        ]
+      }
+    ],
+    "record": "three float32 values (-U,-V,W), 12 bytes",
+    "result": "two signed16 values X,Y, 4 bytes",
+    "sequence_bytes": 93,
+    "full_stock_sequence": true,
+    "near_plane": "W strictly positive; zero excluded",
+    "target_cast": "positive values truncate toward zero; negative values clamp to zero on this firmware; demo requires positive final screen coordinates"
+  }
+}

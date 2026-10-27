@@ -1,0 +1,276 @@
+{
+  "owner": "fsim",
+  "message_id": "2026-10-25_14-37-23_fsim_fsim-stock-perspective-generated-target-five",
+  "scope": "Independent VDP-only actual unchanged stock2.16 execution of generated application streams; full MOS and human review remain pending",
+  "compiler_sha256": "fdea2f968a2819e00e1bb5b357966df36a87e562b8a4c4019ff20d5730bfebc1",
+  "models": [
+    {
+      "model": "heavytank",
+      "summary": "/Agon/mystuff/agon-fsim/tests/0114-stock-vdp-perspective/heavytank/qualification/summary.json",
+      "summary_sha256": "215635d5a57fde6bf7030329b891103ff2249051e0a62d1f8d772b9601b6e1d7",
+      "report": {
+        "model": "heavytank",
+        "vertices": 30,
+        "edges": 47,
+        "poses": [
+          {
+            "pose": [
+              20,
+              30,
+              0,
+              0,
+              0,
+              0,
+              3
+            ],
+            "frame_wall_seconds": 0.16735194576904178,
+            "coordinates": 60,
+            "exact_coordinates": 60,
+            "max_integer_difference": 0,
+            "expected_line_pixels": 1493,
+            "bright_model_pixels": 1493,
+            "missing": 0,
+            "extra": 0
+          },
+          {
+            "pose": [
+              20,
+              90,
+              0,
+              0,
+              0,
+              0,
+              3
+            ],
+            "frame_wall_seconds": 0.15551461279392242,
+            "coordinates": 60,
+            "exact_coordinates": 60,
+            "max_integer_difference": 0,
+            "expected_line_pixels": 1797,
+            "bright_model_pixels": 1797,
+            "missing": 0,
+            "extra": 0
+          },
+          {
+            "pose": [
+              -25,
+              30,
+              0,
+              0,
+              0,
+              0,
+              3
+            ],
+            "frame_wall_seconds": 0.13450565235689282,
+            "coordinates": 60,
+            "exact_coordinates": 60,
+            "max_integer_difference": 0,
+            "expected_line_pixels": 1479,
+            "bright_model_pixels": 1479,
+            "missing": 0,
+            "extra": 0
+          },
+          {
+            "pose": [
+              20,
+              30,
+              40,
+              0,
+              0,
+              0,
+              3
+            ],
+            "frame_wall_seconds": 0.15552806109189987,
+            "coordinates": 60,
+            "exact_coordinates": 60,
+            "max_integer_difference": 0,
+            "expected_line_pixels": 1374,
+            "bright_model_pixels": 1374,
+            "missing": 0,
+            "extra": 0
+          },
+          {
+            "pose": [
+              20,
+              30,
+              0,
+              10,
+              -15,
+              0,
+              3
+            ],
+            "frame_wall_seconds": 0.13034219900146127,
+            "coordinates": 60,
+            "exact_coordinates": 60,
+            "max_integer_difference": 0,
+            "expected_line_pixels": 1650,
+            "bright_model_pixels": 1650,
+            "missing": 0,
+            "extra": 0
+          },
+          {
+            "pose": [
+              20,
+              30,
+              0,
+              0,
+              0,
+              0,
+              2
+            ],
+            "frame_wall_seconds": 0.15715159103274345,
+            "coordinates": 60,
+            "exact_coordinates": 60,
+            "max_integer_difference": 0,
+            "expected_line_pixels": 2361,
+            "bright_model_pixels": 2361,
+            "missing": 0,
+            "extra": 0
+          }
+        ],
+        "coordinate_components": 360,
+        "frame_wall_note": "VDP-only Flexe host elapsed including command dispatch and C3/GP; not physical speed",
+        "stock_firmware": true,
+        "projection": "true per-vertex perspective through 3x3 inverse"
+      },
+      "source_hashes": {
+        "transform.golem": "084666c01ff8860dd281caf8fd53ec60acfec74c6b7f7ebab23af8f668e17735"
+      }
+    },
+    {
+      "model": "corsair",
+      "summary": "/Agon/mystuff/agon-fsim/tests/0114-stock-vdp-perspective/corsair/qualification/summary.json",
+      "summary_sha256": "61d434e9f046c758e1693574806ebe7c355526245877655724757f485a846725",
+      "report": {
+        "model": "corsair",
+        "vertices": 2685,
+        "edges": 4903,
+        "poses": [
+          {
+            "pose": [
+              20,
+              30,
+              0,
+              0,
+              0,
+              0,
+              3
+            ],
+            "frame_wall_seconds": 10.579614977817982,
+            "coordinates": 5370,
+            "exact_coordinates": 5370,
+            "max_integer_difference": 0,
+            "expected_line_pixels": 4550,
+            "bright_model_pixels": 4550,
+            "missing": 0,
+            "extra": 0
+          },
+          {
+            "pose": [
+              20,
+              90,
+              0,
+              0,
+              0,
+              0,
+              3
+            ],
+            "frame_wall_seconds": 10.417081760708243,
+            "coordinates": 5370,
+            "exact_coordinates": 5370,
+            "max_integer_difference": 0,
+            "expected_line_pixels": 4361,
+            "bright_model_pixels": 4361,
+            "missing": 0,
+            "extra": 0
+          },
+          {
+            "pose": [
+              -25,
+              30,
+              0,
+              0,
+              0,
+              0,
+              3
+            ],
+            "frame_wall_seconds": 10.591247378848493,
+            "coordinates": 5370,
+            "exact_coordinates": 5370,
+            "max_integer_difference": 0,
+            "expected_line_pixels": 4515,
+            "bright_model_pixels": 4515,
+            "missing": 0,
+            "extra": 0
+          },
+          {
+            "pose": [
+              20,
+              30,
+              40,
+              0,
+              0,
+              0,
+              3
+            ],
+            "frame_wall_seconds": 10.465008894912899,
+            "coordinates": 5370,
+            "exact_coordinates": 5370,
+            "max_integer_difference": 0,
+            "expected_line_pixels": 3383,
+            "bright_model_pixels": 3383,
+            "missing": 0,
+            "extra": 0
+          },
+          {
+            "pose": [
+              20,
+              30,
+              0,
+              10,
+              -15,
+              0,
+              3
+            ],
+            "frame_wall_seconds": 10.521485375240445,
+            "coordinates": 5370,
+            "exact_coordinates": 5369,
+            "max_integer_difference": 1,
+            "expected_line_pixels": 3919,
+            "bright_model_pixels": 3919,
+            "missing": 0,
+            "extra": 0
+          },
+          {
+            "pose": [
+              20,
+              30,
+              0,
+              0,
+              0,
+              0,
+              2
+            ],
+            "frame_wall_seconds": 10.542850830126554,
+            "coordinates": 5370,
+            "exact_coordinates": 5369,
+            "max_integer_difference": 1,
+            "expected_line_pixels": 9332,
+            "bright_model_pixels": 9332,
+            "missing": 0,
+            "extra": 0
+          }
+        ],
+        "coordinate_components": 32220,
+        "frame_wall_note": "VDP-only Flexe host elapsed including command dispatch and C3/GP; not physical speed",
+        "stock_firmware": true,
+        "projection": "true per-vertex perspective through 3x3 inverse"
+      },
+      "source_hashes": {
+        "transform.golem": "a22e5525bba7bd5dd445eb7c5064e7bae8e11a10fbe923686f6724c9822c5e88"
+      }
+    }
+  ],
+  "physical_qualification": false,
+  "new_target_run_by_golem": false
+}

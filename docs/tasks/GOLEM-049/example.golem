@@ -1,0 +1,42 @@
+// Stock-only two-vertex perspective example, compiled with --stock-matrix.
+// Reserve1000:1005. Before setup, the host installs these borrowed single blocks:
+// vertices: float32 triples (0.5,-0.25,0), (-0.5,0.25,0); camera/clipped:24 zero bytes each
+// zero: signed16 XY(0,0); pixel:4 zero bytes; projected:12 zero bytes (retained Z=0).
+// Controls remain finite; depth is positive; final endpoints stay positive/in range.
+float32 distance = 4
+Matrix(4,4) cameraMatrix = Identity
+Matrix(4,4) clip = matrix_values(720,0,-640,0, 0,-768,-512,0, 0,0,1,0, 0,0,0,1)
+Matrix(3,3) base = Identity
+Matrix(3,3) work = Identity
+Borrowed XYZF32 vertices = Buffer(1000,2)
+Borrowed XYZF32 camera = Buffer(1001,2)
+Borrowed XYZF32 clipped = Buffer(1002,2)
+Borrowed XY16 zero = Buffer(1003,1)
+Borrowed XY16 pixel = Buffer(1004,1)
+Borrowed XYZ16 projected = Buffer(1005,2)
+Sub projectFrame
+    matrix_identity(cameraMatrix)
+    matrix_translate(cameraMatrix,0,0,distance)
+    transform_vertices(camera,cameraMatrix,vertices)
+    transform_vertices(clipped,clip,camera)
+    projectFirst()
+    projectSecond()
+EndSub
+Sub projectFirst
+    matrix_set_value(work,base,0,0,read_float32(clipped,8))
+    matrix_set_value(work,work,1,1,read_float32(clipped,8))
+    matrix_set_value(work,work,0,2,read_float32(clipped,0))
+    matrix_set_value(work,work,1,2,read_float32(clipped,4))
+    matrix_invert(work)
+    transform_vertices(pixel,work,zero)
+    copy_bytes(projected,0,pixel,0,4)
+EndSub
+Sub projectSecond
+    matrix_set_value(work,base,0,0,read_float32(clipped,20))
+    matrix_set_value(work,work,1,1,read_float32(clipped,20))
+    matrix_set_value(work,work,0,2,read_float32(clipped,12))
+    matrix_set_value(work,work,1,2,read_float32(clipped,16))
+    matrix_invert(work)
+    transform_vertices(pixel,work,zero)
+    copy_bytes(projected,6,pixel,0,4)
+EndSub

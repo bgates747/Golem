@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "contract_commit": "89b96704c59bf86199e53d99e1d56eb126284b37",
+  "contract_sha256": "406ffc969635295448da03f6a7cd7c0815ad092e92ccd67d1c4b08e74b0b694f",
+  "implementation_started_after_verified_push_and_sent_receipt": true,
+  "host_loop_rejections": 25,
+  "host_full_uint16_iterations": 65536,
+  "host_all_records": 2685,
+  "host_loop_sanitizers_passed": true,
+  "legacy_output_files_unchanged": 68,
+  "actual_assembler_consumers": 2,
+  "actual_stock_output_byte_equivalence": true,
+  "actual_stock_uint16_endpoint_without_wrap": true,
+  "stock_host_shutdown_status": 143,
+  "stock_shutdown_cause": "unisolated; assertions/evidence/zero-fault stats completed",
+  "production_compiler_inputs_unchanged_since_handoff": true,
+  "tests_only_followup": "Added1024static-body/65536work-admission boundaries; compiler-pins-final.json supersedes the test-file pin only",
+  "consumer_full_scene_and_timing": "fsim-wireframe-owned, pending",
+  "human_review": "pending",
+  "implementation_publication_approved": false,
+  "physical_action": false
+}

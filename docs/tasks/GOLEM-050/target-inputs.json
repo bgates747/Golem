@@ -1,0 +1,18 @@
+{
+  "transport_source": {
+    "path": "/Agon/mystuff/agon-fsim/tests/0114-stock-vdp-perspective/stock_target.py",
+    "sha256": "1789c63ca602c8390d02793b871344b3f98594ae44d17a18f58aac50313283fe"
+  },
+  "transport_copy": {
+    "path": "/Agon/mystuff/golem/docs/tasks/GOLEM-050/build/intake/stock_target.py",
+    "sha256": "1789c63ca602c8390d02793b871344b3f98594ae44d17a18f58aac50313283fe"
+  },
+  "adapter": {
+    "path": "/Agon/mystuff/golem/docs/tasks/GOLEM-044/native-math/build/headless-runtime/flexe-vdp.so",
+    "sha256": "f1693fa8a6fa2cb1bd5d425807ac4a1a86aea3cb2e32030927a224c6eebd8f62"
+  },
+  "firmware": {
+    "path": "/Agon/mystuff/agon-fsim/tests/0107-stock-vdp-wireframe/stock-esp32/firmware.bin",
+    "sha256": "b807beef35823b13a0a056f11b7464cd1b1c6356dce0e4098b78ebe059ded35f"
+  }
+}

@@ -1,0 +1,184 @@
+{
+  "passed": true,
+  "engine": "actual unchanged stock2.16 / ARM64 VDP-only JIT",
+  "firmware_sha256": "b807beef35823b13a0a056f11b7464cd1b1c6356dce0e4098b78ebe059ded35f",
+  "cases": [
+    {
+      "records": 1,
+      "start": 0,
+      "end": 0,
+      "loop_bootstrap_bytes": 489,
+      "unrolled_bootstrap_bytes": 175,
+      "owned_buffers": 6,
+      "loop": {
+        "entry": "project",
+        "counter_buffer": 2001,
+        "body_buffer": 2005,
+        "state_buffer": 2006,
+        "start": 0,
+        "end": 0,
+        "iterations": 1,
+        "body_operations": 7,
+        "cursors": 5,
+        "body_bytes": 324,
+        "state_bytes": 21
+      },
+      "cases": [
+        {
+          "repeat": 0,
+          "exact_output_bytes": 6,
+          "retained_z": true,
+          "counter": 0,
+          "guards_zero": true
+        },
+        {
+          "repeat": 1,
+          "exact_output_bytes": 6,
+          "retained_z": true,
+          "counter": 0,
+          "guards_zero": true
+        }
+      ],
+      "cleanup_retains_borrowed": true
+    },
+    {
+      "records": 30,
+      "start": 0,
+      "end": 29,
+      "loop_bootstrap_bytes": 489,
+      "unrolled_bootstrap_bytes": 3307,
+      "owned_buffers": 6,
+      "loop": {
+        "entry": "project",
+        "counter_buffer": 2001,
+        "body_buffer": 2005,
+        "state_buffer": 2006,
+        "start": 0,
+        "end": 29,
+        "iterations": 30,
+        "body_operations": 7,
+        "cursors": 5,
+        "body_bytes": 324,
+        "state_bytes": 21
+      },
+      "cases": [
+        {
+          "repeat": 0,
+          "exact_output_bytes": 180,
+          "retained_z": true,
+          "counter": 29,
+          "guards_zero": true
+        },
+        {
+          "repeat": 1,
+          "exact_output_bytes": 180,
+          "retained_z": true,
+          "counter": 29,
+          "guards_zero": true
+        }
+      ],
+      "cleanup_retains_borrowed": true
+    },
+    {
+      "records": 2685,
+      "start": 0,
+      "end": 2684,
+      "loop_bootstrap_bytes": 489,
+      "unrolled_bootstrap_bytes": 290447,
+      "owned_buffers": 6,
+      "loop": {
+        "entry": "project",
+        "counter_buffer": 2001,
+        "body_buffer": 2005,
+        "state_buffer": 2006,
+        "start": 0,
+        "end": 2684,
+        "iterations": 2685,
+        "body_operations": 7,
+        "cursors": 5,
+        "body_bytes": 324,
+        "state_bytes": 21
+      },
+      "cases": [
+        {
+          "repeat": 0,
+          "exact_output_bytes": 16110,
+          "retained_z": true,
+          "counter": 2684,
+          "guards_zero": true
+        },
+        {
+          "repeat": 1,
+          "exact_output_bytes": 16110,
+          "retained_z": true,
+          "counter": 2684,
+          "guards_zero": true
+        }
+      ],
+      "cleanup_retains_borrowed": true
+    },
+    {
+      "records": 30,
+      "start": 3,
+      "end": 17,
+      "loop_bootstrap_bytes": 489,
+      "unrolled_bootstrap_bytes": 1687,
+      "owned_buffers": 6,
+      "loop": {
+        "entry": "project",
+        "counter_buffer": 2001,
+        "body_buffer": 2005,
+        "state_buffer": 2006,
+        "start": 3,
+        "end": 17,
+        "iterations": 15,
+        "body_operations": 7,
+        "cursors": 5,
+        "body_bytes": 324,
+        "state_bytes": 21
+      },
+      "cases": [
+        {
+          "repeat": 0,
+          "exact_output_bytes": 180,
+          "retained_z": true,
+          "counter": 17,
+          "guards_zero": true
+        },
+        {
+          "repeat": 1,
+          "exact_output_bytes": 180,
+          "retained_z": true,
+          "counter": 17,
+          "guards_zero": true
+        }
+      ],
+      "cleanup_retains_borrowed": true
+    }
+  ],
+  "uint16_endpoint_without_wrap": true,
+  "production_readback": false,
+  "physical": false,
+  "mos_or_human_qualification": false,
+  "contract_sha256": "406ffc969635295448da03f6a7cd7c0815ad092e92ccd67d1c4b08e74b0b694f",
+  "host_process_exit_status": 143,
+  "exit_note": "All target assertions and receipt completed; host exited143 during shutdown. Shutdown stats exist with zero execution faults; this does not claim a normal process exit.",
+  "execution_stats": {
+    "engine": "jit",
+    "frames": 1456,
+    "cycles": 5983430000,
+    "retired": 5553520727,
+    "uart_rx": 516284,
+    "uart_tx": 319,
+    "uart_delivered": 319,
+    "isync": 11,
+    "code_invalidations": 1,
+    "keys": 0,
+    "failed": false,
+    "unhandled": 0,
+    "unregistered": 0,
+    "unmapped": 0
+  },
+  "elapsed_seconds": null,
+  "timing_note": "First corrected run did not serialize host monotonic elapsed. Harness now records it for future runs; modeled cycle counts are not wall time or physical speed."
+}

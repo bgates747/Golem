@@ -18,6 +18,72 @@ matrix_multiply(screen, screen, model)
 transform_vertices(projected, screen, vertices)
 EndSub
 )";
+// Exact sequence independently executed against stock2.16 by fsim, 2026-10-25.
+// SHA256 e75851aa170b1759e21a39c12dec9f0df7f081ea429310d7e684f78db724a9c3.
+unsigned perspectiveChecks() {
+    const std::string inverse=R"(
+Matrix(3,3) base = Identity
+Matrix(3,3) a = Identity
+Borrowed XYZF32 clipped = Buffer(103,1)
+Borrowed XY16 zero = Buffer(104,1)
+Borrowed XY16 pixel = Buffer(105,1)
+Sub project
+ matrix_set_value(a,base,0,0,read_float32(clipped,8))
+ matrix_set_value(a,a,1,1,read_float32(clipped,8))
+ matrix_set_value(a,a,0,2,read_float32(clipped,0))
+ matrix_set_value(a,a,1,2,read_float32(clipped,4))
+ matrix_invert(a)
+ transform_vertices(pixel,a,zero)
+EndSub
+)";
+    auto r=compile(inverse,{{1,100},{103,105}});
+    assert(r.resources[0].id==101 && r.resources[1].id==102);
+    std::istringstream hex("17 00 a0 66 00 22 21 03 03 65 00 00 00 00 67 00 08 00 "
+      "17 00 a0 66 00 22 21 03 03 66 00 01 01 00 67 00 08 00 "
+      "17 00 a0 66 00 22 21 03 03 66 00 00 02 00 67 00 00 00 "
+      "17 00 a0 66 00 22 21 03 03 66 00 01 02 00 67 00 04 00 "
+      "17 00 a0 66 00 20 01 17 00 a0 69 00 29 08 c0 66 00 68 00 01 00");
+    Bytes expected;unsigned byte;while(hex>>std::hex>>byte)expected.push_back(byte);
+    assert(expected.size()==93 && r.blocks.at(r.entries.front().id)==expected);
+    assert(r.resources[0].byteSize()==36 && r.resources[2].byteSize()==12);
+    assert(r.resources[0].typeTag()==8 && r.resources[2].typeTag()==9 && r.resources[3].typeTag()==10);
+    auto replaced=[&](std::string from,std::string to) {auto text=inverse;auto at=text.find(from);assert(at!=text.npos);text.replace(at,from.size(),to);return text;};
+    unsigned rejected=0;
+    auto bad=[&](const std::string &text) {try {compile(text,{{1,100},{103,105}});}catch(const std::exception&){++rejected;return;}throw std::runtime_error("accepted invalid perspective source: "+text);};
+    bad(replaced("clipped,8","clipped,9"));bad(replaced("clipped,8","clipped,12"));
+    bad(replaced("clipped,8","zero,0"));bad(replaced("clipped,8","missing,0"));
+    bad(replaced("base,0,0","base,3,0"));bad(replaced("base,0,0","base,0,3"));
+    bad(replaced("Matrix(3,3) a","Matrix(4,4) a"));
+    bad(replaced("XYZF32 clipped","XYZ16 clipped"));bad(replaced("XY16 pixel","XYZ16 pixel"));
+    bad(replaced("103,1","103,5462"));bad(replaced("104,1","104,16384"));
+    bad(replaced("matrix_invert(a)","copy_bytes(pixel,1,zero,0,4)"));
+    bad(replaced("matrix_invert(a)","copy_bytes(pixel,0,zero,1,4)"));
+    bad(replaced("matrix_invert(a)","copy_bytes(pixel,0,zero,0,0)"));
+    bad(replaced("matrix_invert(a)","copy_bytes(pixel,1,pixel,0,3)"));
+    bad(replaced("matrix_invert(a)","copy_bytes(a,0,zero,0,4)"));
+    bad(replaced("matrix_invert(a)","project()"));bad(replaced("matrix_invert(a)","missing()"));
+    bad(inverse+"Sub cycle project() cycle() EndSub");
+    bad(inverse+"Sub one two() EndSub Sub two one() EndSub");
+    bad(inverse+"Sub one two() EndSub Sub two three() EndSub Sub three four() EndSub Sub four project() EndSub");
+    bad(replaced("Matrix(3,3) a = Identity","Matrix(3,3) a = matrix_values(1,0,0,0,1,0,0,0)"));
+    bad(replaced("Matrix(3,3) a = Identity","Matrix(3,3) a = matrix_values(1,0,0,0,1,0,0,0,1,0)"));
+    bad(replaced("Matrix(3,3) a = Identity","Matrix(3,3) a = matrix_values(1,0,0,0,1,0,0,0,1e40)"));
+    const std::string leaf="Matrix(3,3) m = matrix_values(1,0,0,0,1,0,0,0,1) ";
+    auto nested=compile(leaf+"Sub frame child() child() EndSub Sub child matrix_invert(m) EndSub");
+    Bytes calls=call(nested.entries[1].id);append(calls,call(nested.entries[1].id));
+    assert(nested.blocks.at(nested.entries[0].id)==calls);
+    bad(leaf+"Sub frame Child() EndSub Sub child matrix_invert(m) EndSub");
+    auto limit=compile("Matrix(4,4) m = Identity Borrowed XYZF32 src = Buffer(103,5461) Borrowed XYZF32 dst = Buffer(104,5461) Sub tick transform_vertices(dst,m,src) EndSub",{{103,104}});
+    assert(limit.resources[1].byteSize()==65532 && limit.resources[1].format==0);
+    auto maximum=compile("Matrix(3,3) m = Identity Borrowed XY16 src = Buffer(103,16383) Borrowed XY16 dst = Buffer(104,16383) Sub tick transform_vertices(dst,m,src) EndSub",{{103,104}});
+    assert(maximum.resources[1].byteSize()==65532);
+    auto controls=compile("float32 x = 0 float32 read_float32 = 1 Matrix(3,3) m = Identity Sub tick matrix_set_value(m,m,0,2,read_float32) matrix_translate(m,read_float32(x,0),2) EndSub");
+    const auto &set=controls.blocks.at(controls.entries.front().id);
+    assert(set[6]==0x21 && set[14]==controls.input && set[16]==4);
+    auto same=compile(inverse+"Sub copy copy_bytes(pixel,0,pixel,0,4) EndSub",{{1,100},{103,105}});
+    assert(same.blocks.at(same.entries.back().id).size()==15);
+    return rejected;
+}
 int main() {
     auto r=compile(source,{{1000,1001}});
     assert(r.input==1 && r.values==Bytes({0,0,180,66,0,0,0,64}));
@@ -73,4 +139,5 @@ int main() {
     auto mixed=compile("mAtRiX(4,4) m = iDeNtItY sUb tick MATRIX_IDENTITY(m) eNdSuB");
     assert(!mixed.input && mixed.invoke.size()==6);
     std::cout<<"Stock matrix encoding, ownership, relocation and "<<rejected<<" rejection cases pass.\n";
+    std::cout<<"Stock perspective exact93-byte peer sequence, typed views/calls/bounds and "<<perspectiveChecks()<<" rejection cases pass.\n";
 }

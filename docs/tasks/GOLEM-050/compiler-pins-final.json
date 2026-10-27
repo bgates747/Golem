@@ -1,0 +1,8 @@
+{
+  "src/stock_matrix.hpp": "b352233e2d4f5a28243e4d5e412ef64bfae6cedfc77e1d726110346aef583dce",
+  "src/golemc.cpp": "68686ad08246857c2b4b9204baa0f529fa0369f490e9de35d67a8ad3e3bb639b",
+  "src/Makefile": "09a229f319adca52c5749fd495dd159e84a5675ac06237d1750dde9880bfc372",
+  "tests/test_stock_matrix.cpp": "a07bf76e82949e2ffc5ecf7259882fc289cdf681f747d3b11df966ad0d27c776",
+  "tests/test_stock_loops.cpp": "aa5514412b8a72575a1a90410a96f0511908c9e109e8896626ec9b8e6d06ff6a",
+  "build/golemc": "59e832598c3223c18d934ce9e682c56118469f40d310a9f9214789de08d5e135"
+}

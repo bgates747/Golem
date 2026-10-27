@@ -1,0 +1,36 @@
+[
+  {
+    "model": "heavytank",
+    "source": "/Agon/mystuff/agon-fsim/tests/0114-stock-vdp-perspective/heavytank/transform.golem",
+    "source_sha256": "fa182be879e734f435323c1c37813cf49f391648fe8406d4da4bfba92dd39bae",
+    "source_unchanged": true,
+    "compiler_output": "/Agon/mystuff/golem/docs/tasks/GOLEM-049/build/peer-source/heavytank",
+    "entry_count": 3,
+    "bootstrap_bytes": 3865,
+    "all_borrowed_ids_reserved": [
+      1,
+      1000,
+      1002,
+      1003,
+      1004
+    ],
+    "no_target_execution": true
+  },
+  {
+    "model": "corsair",
+    "source": "/Agon/mystuff/agon-fsim/tests/0114-stock-vdp-perspective/corsair/transform.golem",
+    "source_sha256": "849cacad43ecd6c4542a1cdfde6e79502e71021ab5c50daac47fda12dbfb2aa5",
+    "source_unchanged": true,
+    "compiler_output": "/Agon/mystuff/golem/docs/tasks/GOLEM-049/build/peer-source/corsair",
+    "entry_count": 23,
+    "bootstrap_bytes": 291005,
+    "all_borrowed_ids_reserved": [
+      1,
+      1000,
+      1002,
+      1003,
+      1004
+    ],
+    "no_target_execution": true
+  }
+]

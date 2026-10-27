@@ -1,0 +1,6 @@
+{
+  "src/stock_matrix.hpp": "12fc3eabf9181c8efc704ee7af227b887c85840c9889b565e0a5e4df78f61861",
+  "src/golemc.cpp": "68686ad08246857c2b4b9204baa0f529fa0369f490e9de35d67a8ad3e3bb639b",
+  "tests/test_stock_matrix.cpp": "a07bf76e82949e2ffc5ecf7259882fc289cdf681f747d3b11df966ad0d27c776",
+  "build/golemc": "fdea2f968a2819e00e1bb5b357966df36a87e562b8a4c4019ff20d5730bfebc1"
+}

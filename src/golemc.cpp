@@ -61,7 +61,7 @@ int main(int argc, char **argv) {
                 if(result.input)c.records.emplace(result.input,result.values);
                 c.resources.assign(result.owned.begin(),result.owned.end());
                 for(auto &e:result.entries){c.entries.push_back(e.id);c.entryNames.push_back(e.name);}
-                for(const auto&f:result.resources)loadPlan.fields.push_back({f.name,f.id,f.offset,f.kind==golem::stock_matrix::Resource::Control?4u:f.kind==golem::stock_matrix::Resource::Matrix?64u:f.count*6});
+                for(const auto&f:result.resources)loadPlan.fields.push_back({f.name,f.id,f.offset,f.byteSize()});
                 loadPlan.components.push_back(c);loadPlan.finalize();
             }
             const std::filesystem::path output(argv[pos+1]);

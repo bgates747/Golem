@@ -1,0 +1,104 @@
+{
+  "passed": true,
+  "unchanged_legacy_files": 68,
+  "actual_assembler_consumers": [
+    {
+      "layout": "default",
+      "passed": true,
+      "owned_ids": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "counter": {
+        "name": "vertex",
+        "type": "uint16",
+        "buffer": 1,
+        "offset": 0,
+        "bytes": 2,
+        "storage_bytes": 3
+      },
+      "loop": {
+        "entry": "project",
+        "counter_buffer": 1,
+        "body_buffer": 5,
+        "state_buffer": 6,
+        "start": 0,
+        "end": 29,
+        "iterations": 30,
+        "body_operations": 7,
+        "cursors": 5,
+        "body_bytes": 324,
+        "state_bytes": 21
+      }
+    },
+    {
+      "layout": "relocated",
+      "passed": true,
+      "owned_ids": [
+        1004,
+        1005,
+        1006,
+        1007,
+        1008,
+        1009
+      ],
+      "counter": {
+        "name": "vertex",
+        "type": "uint16",
+        "buffer": 1004,
+        "offset": 0,
+        "bytes": 2,
+        "storage_bytes": 3
+      },
+      "loop": {
+        "entry": "project",
+        "counter_buffer": 1004,
+        "body_buffer": 1008,
+        "state_buffer": 1009,
+        "start": 0,
+        "end": 29,
+        "iterations": 30,
+        "body_operations": 7,
+        "cursors": 5,
+        "body_bytes": 324,
+        "state_bytes": 21
+      }
+    }
+  ],
+  "peer_sources": [
+    {
+      "model": "heavytank",
+      "source": "/Agon/mystuff/agon-fsim/tests/0114-stock-vdp-perspective/heavytank/transform.golem",
+      "source_sha256": "084666c01ff8860dd281caf8fd53ec60acfec74c6b7f7ebab23af8f668e17735",
+      "source_unchanged": true,
+      "output": "/Agon/mystuff/golem/docs/tasks/GOLEM-050/build/consumer-heavytank",
+      "bootstrap_bytes": 1047,
+      "owned_buffers": 18,
+      "control_bytes": 32,
+      "body_bytes": 324,
+      "state_bytes": 21,
+      "entry_count": 2,
+      "no_target_execution": true
+    },
+    {
+      "model": "corsair",
+      "source": "/Agon/mystuff/agon-fsim/tests/0114-stock-vdp-perspective/corsair/transform.golem",
+      "source_sha256": "a22e5525bba7bd5dd445eb7c5064e7bae8e11a10fbe923686f6724c9822c5e88",
+      "source_unchanged": true,
+      "output": "/Agon/mystuff/golem/docs/tasks/GOLEM-050/build/consumer-corsair",
+      "bootstrap_bytes": 1047,
+      "owned_buffers": 18,
+      "control_bytes": 32,
+      "body_bytes": 324,
+      "state_bytes": 21,
+      "entry_count": 2,
+      "no_target_execution": true
+    }
+  ],
+  "rejected_output_preserved": true,
+  "contract_sha256": "406ffc969635295448da03f6a7cd7c0815ad092e92ccd67d1c4b08e74b0b694f"
+}

@@ -1,0 +1,20 @@
+// Host installs the borrowed30-record float clip buffer, zero XY, pixel scratch and initialized XYZ16 output.
+// Compile --stock-matrix with --reserve1000:1003. See contract.md for positive-depth/output bounds.
+uint16 vertex = 0
+Matrix(3,3) base = Identity
+Matrix(3,3) a = Identity
+Borrowed XYZF32 clip = Buffer(1000,30)
+Borrowed XY16 zero = Buffer(1001,1)
+Borrowed XY16 pixel = Buffer(1002,1)
+Borrowed XYZ16 screen = Buffer(1003,30)
+Sub project
+    For vertex In Range(0:29)
+        matrix_set_value(a,base,0,0,read_float32(clip,12*vertex+8))
+        matrix_set_value(a,a,1,1,read_float32(clip,12*vertex+8))
+        matrix_set_value(a,a,0,2,read_float32(clip,12*vertex))
+        matrix_set_value(a,a,1,2,read_float32(clip,12*vertex+4))
+        matrix_invert(a)
+        transform_vertices(pixel,a,zero)
+        copy_bytes(screen,6*vertex,pixel,0,4)
+    Next vertex
+EndSub

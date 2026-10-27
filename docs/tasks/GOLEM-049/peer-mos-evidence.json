@@ -1,0 +1,110 @@
+{
+  "owner": "fsim",
+  "message_id": "2026-10-25_15-01-32_fsim_fsim-stock-perspective-deployed-eight",
+  "scope": "Independent full MOS applications on Pi and Oryx; human review and publication remain pending",
+  "compiler_sha256": "fdea2f968a2819e00e1bb5b357966df36a87e562b8a4c4019ff20d5730bfebc1",
+  "files": {
+    "provenance.json": {
+      "path": "/Agon/mystuff/agon-fsim/tests/0114-stock-vdp-perspective/provenance.json",
+      "sha256": "f15ca2c6cdd8de41a1ea0198704ab803ed6e97e6aca4f9a2182efc11d6a44976",
+      "report": {
+        "compiler": {
+          "src/stock_matrix.hpp": "12fc3eabf9181c8efc704ee7af227b887c85840c9889b565e0a5e4df78f61861",
+          "src/golemc.cpp": "68686ad08246857c2b4b9204baa0f529fa0369f490e9de35d67a8ad3e3bb639b",
+          "tests/test_stock_matrix.cpp": "a07bf76e82949e2ffc5ecf7259882fc289cdf681f747d3b11df966ad0d27c776",
+          "build/golemc": "fdea2f968a2819e00e1bb5b357966df36a87e562b8a4c4019ff20d5730bfebc1"
+        },
+        "stock_firmware_sha256": "b807beef35823b13a0a056f11b7464cd1b1c6356dce0e4098b78ebe059ded35f",
+        "models": {
+          "heavytank": {
+            "geometry.json": "9e269716924040539c83ebb526f28966c48c56a5ee61f3f6e7b1bebf5d3cc607",
+            "transform.golem": "084666c01ff8860dd281caf8fd53ec60acfec74c6b7f7ebab23af8f668e17735",
+            "wireframe.golem": "eb9864a739059e566d97b0c9546421a90ec1e18b96b97baaeedbc99fb519d0a1",
+            "setup.vdu": "07ade3eaba049bcab7dfaf20d8e6c2fc76f990ddce990f1e269637ff0f275ac7",
+            "wire.bin": "d0bd896d6613bae85cc7f8a148f6406fd2ca2e33a461a9eaf72fdd959a30f2d2"
+          },
+          "corsair": {
+            "geometry.json": "5ae7714beefb41e39f11786f19a33fab6fd672e7ceccbe9bfc3c56751bfb5457",
+            "transform.golem": "a22e5525bba7bd5dd445eb7c5064e7bae8e11a10fbe923686f6724c9822c5e88",
+            "wireframe.golem": "e9ac9c91b2514886091ad87f0ee6cdd297916891b17d398048387c92a6742fd5",
+            "setup.vdu": "5493c7bf78f73316529be3b09f6fe5afbc860d4d3c3f4d741c0e18cc8dfb91fd",
+            "wire.bin": "abf7ff2cb4a238e78d05cd522e58957ed04c30b1a99c6718852d80cc54d93a0c"
+          }
+        },
+        "common_sources": {
+          "prepare.py": "896e05ecda86703c5784d7f7687331b598c4be80ed58e048384bae4cf9dc5c75",
+          "build.py": "a8fad4bd59411d1ea79e376e240b1e83291418141920b29c7efc9184fe720b9f",
+          "app/src/main.cpp": "adc836f6891beec1ff98f1ad404e0ece8c27f5cc7f94d025e13fecd1168dbd30",
+          "reference.py": "5cf92f2cb375c8b1ccc2739b13e6120c535f197231efae00aae2ce4be312f893"
+        }
+      }
+    },
+    "oryx-validation.json": {
+      "path": "/Agon/mystuff/agon-fsim/tests/0114-stock-vdp-perspective/oryx-validation.json",
+      "sha256": "1aaa4a3732f423f421662e83e60822cd6966fc9c03385e58b84ed160824586b8",
+      "report": {
+        "models": {
+          "heavytank": {
+            "model": "heavytank",
+            "actual_mos_application": true,
+            "actual_stock_esp32": true,
+            "clean_exits": 2,
+            "handled_missing_setup": true,
+            "reset_and_repeat_identical": true,
+            "controls": "model yaw/pitch/roll, camera yaw/pitch, distance, reset, Escape",
+            "control_to_completion_wall_seconds": [
+              0.5010261790002914,
+              0.5010906280003837,
+              0.5011769669999921,
+              0.5010773570002129,
+              0.5012433769998097,
+              0.5009676079998826,
+              0.5011357969997334,
+              0.5014874539992888,
+              0.5018539820002843,
+              0.50087111799985,
+              0.501404974000252,
+              0.5012242949997017
+            ],
+            "total_wall_seconds": 35.77088868999999,
+            "console_mode": "enabled for serial PS2 adapter; ordinary opcode tracing retained",
+            "timing_note": "headless emulator functional latency, not physical rendering speed",
+            "graphical_launch": false
+          },
+          "corsair": {
+            "model": "corsair",
+            "actual_mos_application": true,
+            "actual_stock_esp32": true,
+            "clean_exits": 2,
+            "handled_missing_setup": true,
+            "reset_and_repeat_identical": true,
+            "controls": "model yaw/pitch/roll, camera yaw/pitch, distance, reset, Escape",
+            "control_to_completion_wall_seconds": [
+              2.6991710279999097,
+              2.615494272000433,
+              2.659612706000189,
+              2.663339067999914,
+              2.652098670000669,
+              2.652153447999808,
+              2.6112864079996143,
+              2.767216814000676,
+              2.7575456460008354,
+              2.7175898810000945,
+              2.648767587999828,
+              2.9021192720001636
+            ],
+            "total_wall_seconds": 92.79032886499954,
+            "console_mode": "enabled for serial PS2 adapter; ordinary opcode tracing retained",
+            "timing_note": "headless emulator functional latency, not physical rendering speed",
+            "graphical_launch": false
+          }
+        },
+        "profile_stopped": true,
+        "identity_verified": true,
+        "prior_runtime_and_orthographic_payload_unchanged": true,
+        "startup_load_only": true,
+        "initial_images_pixel_identical_to_pi": true
+      }
+    }
+  }
+}

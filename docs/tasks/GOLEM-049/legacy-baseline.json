@@ -1,0 +1,129 @@
+{
+  "compiler_commit": "7f1f41fd7c2bde76f62e9263aae5dd6a05b2db3c",
+  "cases": [
+    {
+      "name": "example",
+      "source": "docs/tasks/GOLEM-045/example.golem",
+      "reservations": [
+        "1000:1001"
+      ],
+      "load": false,
+      "sha256": {
+        "bootstrap.bin": "18970d6caab45d627caf1af1ad03f6a89bdacda8e84863098c84cc935a126d4f",
+        "cleanup.bin": "5b5839c4d6bb218af902db60b1a2c990b50fae06381f92b1f38181cf11695c62",
+        "golem.inc": "c941ff8343a39f247cbc29f71efd3c9239198c741af69d20f2a02bb0f3611cf1",
+        "interface.json": "ccd804103f1a0648980dbedd019c7b436ad3cb957e9cbc1c74730e17248ab69e",
+        "invoke.bin": "0a6b6be27ca654ba0d790c7981873f567fe1b33e8051b5f89bd9f8b02b313dab",
+        "update-call.bin": "79e818c0a589a76e6eb6da588145abcd99d1517af24e7822791be4a75c4fd3df"
+      }
+    },
+    {
+      "name": "example-load",
+      "source": "docs/tasks/GOLEM-045/example.golem",
+      "reservations": [
+        "1000:1001"
+      ],
+      "load": true,
+      "sha256": {
+        "agnb.h": "caae37c7db9183df0feb5bbb88d357947fa27d24f3eb106a4c7bb5b893dfc9f6",
+        "agnb.inc": "2b782d80daeedbdb6b6f4d1501aaaa72cc10ab4529c7ad747596839cd46f31f9",
+        "bootstrap.bin": "18970d6caab45d627caf1af1ad03f6a89bdacda8e84863098c84cc935a126d4f",
+        "cleanup.bin": "5b5839c4d6bb218af902db60b1a2c990b50fae06381f92b1f38181cf11695c62",
+        "golem.inc": "c941ff8343a39f247cbc29f71efd3c9239198c741af69d20f2a02bb0f3611cf1",
+        "interface.json": "ccd804103f1a0648980dbedd019c7b436ad3cb957e9cbc1c74730e17248ab69e",
+        "invoke.bin": "0a6b6be27ca654ba0d790c7981873f567fe1b33e8051b5f89bd9f8b02b313dab",
+        "load-buffers/stock-1.bin": "caccb9a8fbd2401135207066c4b53d6e88467839318ea2f1e8bfadf8fef6844e",
+        "load-buffers/stock-10.bin": "013692af7b1ec2f07b0161ce1308d64d6bc5da6e60b93a569087bc02f1153d34",
+        "load-buffers/stock-11.bin": "ca8ae792a6c693b0786b08c2a8bc0e4fdcbfebde5dec041c0e9be6b5e0d2de74",
+        "load-buffers/stock-12.bin": "8418abde19438ff8d9f24684fb91f932160087ce734828864a8aaddc8216e1db",
+        "load-buffers/stock-13.bin": "1f4ec78a1e9d66c6fb22d5c2abf2a9869f5581d1b68eb632afe290d003015c4b",
+        "load-buffers/stock-14.bin": "c9e200a14c3a588f3da0ca42426a86de6d7f7791ef87650d15acfee435fb5279",
+        "load-buffers/stock-15.bin": "c1ee736ec59d8e8e243c0adcb12074284ed23addbaf4f9139d55a52ae85161de",
+        "load-buffers/stock-16.bin": "055a71202fc1f5547b9fe883fec970f7a66e1c5b3684197e45a346081a588da0",
+        "load-buffers/stock-17.bin": "e816973faef6604957a9421a1019aaf86f72b304b67eaedb80b662ac2e94b7ce",
+        "load-buffers/stock-9.bin": "e6963c99217a61529a204a10d395d31d3db0df0436486986ac8a2cc89d49cd8e",
+        "load-plan.json": "0edcde372545f691d04d931af294e888d7f8f1e72b74f617674aed9723319aa0",
+        "update-call.bin": "79e818c0a589a76e6eb6da588145abcd99d1517af24e7822791be4a75c4fd3df"
+      }
+    },
+    {
+      "name": "relocated",
+      "source": "docs/tasks/GOLEM-045/example.golem",
+      "reservations": [
+        "1:1001"
+      ],
+      "load": false,
+      "sha256": {
+        "bootstrap.bin": "910523b0a0c35565fed000b3af9a297052ef285b2571e096cb0a02a603fed2d9",
+        "cleanup.bin": "0ad6730350cd75fac8f83ace16763e3b11559aad1023ac869857509e6f3fffad",
+        "golem.inc": "98a6efbbbb0bbe6f0ce6ec1be0a35a8eaa41dd6b8ae8e4cf33e8cfdb03e58849",
+        "interface.json": "05879840c7dec0c796be2317f797d8d972326cf3be1ddb3f6ad41961f9c1fea4",
+        "invoke.bin": "1123a4d9c95725f4beea46bad57570f3041b03ee565391728f7ce548372d3179",
+        "update-call.bin": "0b217e37c4e6966864092d80fbd5e613fd9b3610dc73c12d1211acfb0f6ed0df"
+      }
+    },
+    {
+      "name": "relocated-load",
+      "source": "docs/tasks/GOLEM-045/example.golem",
+      "reservations": [
+        "1:1001"
+      ],
+      "load": true,
+      "sha256": {
+        "agnb.h": "5117ec548da0a4eb6daf1ef355f5e56e60f9a0aee5754275c79f1fef6684c4ef",
+        "agnb.inc": "070157823323543969834610028e89b18e1596aeceffaf4332001db953f397c5",
+        "bootstrap.bin": "910523b0a0c35565fed000b3af9a297052ef285b2571e096cb0a02a603fed2d9",
+        "cleanup.bin": "0ad6730350cd75fac8f83ace16763e3b11559aad1023ac869857509e6f3fffad",
+        "golem.inc": "98a6efbbbb0bbe6f0ce6ec1be0a35a8eaa41dd6b8ae8e4cf33e8cfdb03e58849",
+        "interface.json": "05879840c7dec0c796be2317f797d8d972326cf3be1ddb3f6ad41961f9c1fea4",
+        "invoke.bin": "1123a4d9c95725f4beea46bad57570f3041b03ee565391728f7ce548372d3179",
+        "load-buffers/stock-1002.bin": "caccb9a8fbd2401135207066c4b53d6e88467839318ea2f1e8bfadf8fef6844e",
+        "load-buffers/stock-1010.bin": "4769ed0040e62329fe52d961146ab4446750f47771f070c0aa1f3619191a5175",
+        "load-buffers/stock-1011.bin": "b586bc33d36acd6833f0ddfbdb60ffcc108e20a261f9bab5b2f8967dd449c2b5",
+        "load-buffers/stock-1012.bin": "2f6dfe6dae44f47d3b93d4e1c92607677c74cf48ecdbee4dabfb46259fb75db6",
+        "load-buffers/stock-1013.bin": "bae90073984def09ec6431ad416720ed5cafe8b95459ac0b0686654b9116f179",
+        "load-buffers/stock-1014.bin": "2411c378363ffb77d727aa89ce69823191a5d0f1e960a30405123094ebfecfcf",
+        "load-buffers/stock-1015.bin": "a8fd3ebe608fd7d6c28e085b7acf4e17e9273916d14b55d67a2ca1859a938523",
+        "load-buffers/stock-1016.bin": "45f13185a555efd309048a2cf711b9c7100cfa89a92147be94462685518f531b",
+        "load-buffers/stock-1017.bin": "bc06681e76f32ac04d3fce8c525711d0e11a6c39127d485e7c694eafb2f2ac9e",
+        "load-buffers/stock-1018.bin": "52d636b3f8f35c147c2c17bda8ba1156ead181391df2ffee0b1fb887ae908dde",
+        "load-plan.json": "40d7897ce7d617c2594e712a3a10be4a0b82a9f98e5a631d035b6d8f73a7b964",
+        "update-call.bin": "0b217e37c4e6966864092d80fbd5e613fd9b3610dc73c12d1211acfb0f6ed0df"
+      }
+    },
+    {
+      "name": "minimal",
+      "source": "docs/tasks/GOLEM-049/build/legacy-minimal.golem",
+      "reservations": [],
+      "load": false,
+      "sha256": {
+        "bootstrap.bin": "e222875b5cad550b23b79f07ae4f88f08cf2816b0cbc0209aa02cd343f7c7ae4",
+        "cleanup.bin": "e674361d70f6a6d0a7327e83f5b14d8e19d909a1a4f83eab34d5368d032f335a",
+        "golem.inc": "d6b8a5bcb42fd8f64c5fc2a83d001ab8fe9237f8b39eb9d4a2657e79f5896542",
+        "interface.json": "18be09e9f698f3386078a188eb6776f4032d1983fb5e3f135b06ce5ffbf16772",
+        "invoke.bin": "159e9391525fa974508748d07496f04f846e4971756243cccace8a2b44d43a3d",
+        "update-call.bin": "159e9391525fa974508748d07496f04f846e4971756243cccace8a2b44d43a3d"
+      }
+    },
+    {
+      "name": "minimal-load",
+      "source": "docs/tasks/GOLEM-049/build/legacy-minimal.golem",
+      "reservations": [],
+      "load": true,
+      "sha256": {
+        "agnb.h": "5c48f5d351f8f85f6036b5825f5a4a5e22526f94c38c52019f1d8f345726c5da",
+        "agnb.inc": "f026f68a59b849d660b9692e472ec361907989e57f5d902f488dc261086da370",
+        "bootstrap.bin": "e222875b5cad550b23b79f07ae4f88f08cf2816b0cbc0209aa02cd343f7c7ae4",
+        "cleanup.bin": "e674361d70f6a6d0a7327e83f5b14d8e19d909a1a4f83eab34d5368d032f335a",
+        "golem.inc": "d6b8a5bcb42fd8f64c5fc2a83d001ab8fe9237f8b39eb9d4a2657e79f5896542",
+        "interface.json": "18be09e9f698f3386078a188eb6776f4032d1983fb5e3f135b06ce5ffbf16772",
+        "invoke.bin": "159e9391525fa974508748d07496f04f846e4971756243cccace8a2b44d43a3d",
+        "load-buffers/stock-2.bin": "18ed3e6857c0ae18c6b4d0b5f9b0932c68393ea1820dc6dcdec70f3ab083f24b",
+        "load-buffers/stock-3.bin": "ba526238afd3a24af617d31c4d42ec397696afca9ba84b1085f8f097d977a55c",
+        "load-buffers/stock-4.bin": "479cdac4d0a9a5b7c5f34d82d95a910350428e37411f57a29e7095d5c1f66616",
+        "load-plan.json": "50624ade586dd1cb3a210de5908d65d31f42dc702d992b3b0efcf4603fc87c62",
+        "update-call.bin": "159e9391525fa974508748d07496f04f846e4971756243cccace8a2b44d43a3d"
+      }
+    }
+  ]
+}

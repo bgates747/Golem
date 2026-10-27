@@ -1,0 +1,17 @@
+{
+  "maintained_check_log": "build/check.log",
+  "maintained_checks_passed": true,
+  "matrix_rejection_cases": 51,
+  "sanitizers": "ASan/UBSan with leak detection",
+  "sanitizer_log": "build/sanitizer.log",
+  "sanitizers_passed": true,
+  "peer_sequence_bytes": 93,
+  "peer_sequence_sha256": "e75851aa170b1759e21a39c12dec9f0df7f081ea429310d7e684f78db724a9c3",
+  "legacy_output_files_unchanged": 68,
+  "assembler_consumers": 2,
+  "independent_consumer_target_review": "fsim-owned actual-stock generated-stream and full Pi/Oryx MOS application gates pass; human/publication pending",
+  "human_review": "pending",
+  "publication_approved": false,
+  "physical_action": false,
+  "new_target_run_by_golem": false
+}
