@@ -473,6 +473,16 @@ Capacity and service coverage both need investigation.
   drawing completion and presentation; quiesce before scratch reuse or unload.
   Propose version/capability negotiation without silently adding a scheduler or
   every graphics/audio facility used by an example.
+  The Author approved a generic color/continuous-PCM planning consultation on
+  2026-10-28. Its detailed work now belongs to
+  [VDPL-005](../../../agon-vdplet/docs/tasks/VDPL-005.md) and the
+  [supported-functions roadmap](../../../agon-vdplet/docs/supported-functions.md).
+  Current source inventory is recorded there; mode20 needs the 64-color path.
+  The Author subsequently released implementation after checkpoint commit/push
+  on the same date. Interfaces must cover formats/geometry generally; mode20
+  is a qualification case. No physical flash is released and the consumer's
+  current finite execution/memory tranche remains independent. Broader CAP-006
+  service research remains open.
 - CAP-007 [ ] Separate host format/kernel tests, actual Xtensa emulation and
   physical capacity/timing evidence. Use emulation for behavior/preflight, then
   measure executable-memory, stack/cache and contention on expressly authorized
