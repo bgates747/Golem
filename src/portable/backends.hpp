@@ -33,6 +33,8 @@ class BufferEmitter {
     unsigned wideMulA_=0,wideMulB_=0,wideMulProduct_=0,wideMulKernel_=0;
     unsigned wideDivN_=0,wideDivD_=0,wideDivR_=0,wideDivQ_=0,wideDivKernel_=0;
     unsigned shiftValue_=0,shiftCount_=0,shiftSign_=0,shiftRound_=0;
+    struct DecimalFormatter {unsigned input=0,negative=0,text=0,first=0,entry=0;};
+    DecimalFormatter decimal16_,decimal32_;
     unsigned allocate(const std::string &role) {
         const auto id = allocation_.allocate("dual.buffered." + role);
         output_.owned.push_back(id);
@@ -553,6 +555,65 @@ class BufferEmitter {
         const auto lowID = helper(low, "comparison_low");
         emitCondCallBufferValue(code, lowID, 2, compareA_, 0, compareB_, 0);
     }
+    DecimalFormatter &decimalFormatter(unsigned bytes) {
+        auto &f=bytes==2?decimal16_:decimal32_;
+        if(f.entry)return f;
+        const auto digits=bytes==2?5u:10u;
+        f.input=data(Bytes(bytes+1,0),"decimal_magnitude");
+        f.negative=data({0,0},"decimal_sign");
+        f.text=data(Bytes(digits+1,'0'),"decimal_text");
+        f.first=data({0,0,0},"decimal_first");
+        const auto ten=data(bytes==2?le16Bytes(10):bitsBytes(10),"decimal_ten");
+        const auto remainder=data({0,0,0},"decimal_remainder");
+        Bytes division;
+        if(bytes==2) {
+            const auto operands=compiler_.divmodOperands();
+            copy(division,{operands.first,0},{f.input,0});copy(division,{operands.second,0},{ten,0});
+            const auto q=data({0,0},"decimal_quotient");
+            compiler_.divmod(division,q,remainder);copy(division,{f.input,0},{q,0});
+        } else {
+            const auto pair=wideDivmod(division,Type::U32,{f.input,0},{ten,0});
+            copy(division,{f.input,0},pair.first,4);copy(division,{remainder,0},pair.second,2);
+        }
+        const auto divide=helper(division,"decimal_divide_ten");
+        Bytes code,absolute;
+        emitAdjustMultiLiteral(code,f.first,kOpSet,0,{static_cast<unsigned char>(digits),0,0});
+        emitAdjustMultiLiteral(absolute,f.input,7,0,Bytes(bytes,255));
+        Bytes one(bytes,0);one[0]=1;emitAdjustMultiLiteral(absolute,f.input,kOpAddWithCarry,0,one);
+        emitCondCallBufferValue(code,helper(absolute,"decimal_absolute"),3,f.negative,0,zero_,0);
+        const auto character=data({0,0,0},"decimal_character");
+        for(unsigned position=digits;position;--position) {
+            append(code,call(divide));
+            Bytes first;emitAdjustMultiLiteral(first,f.first,kOpSet,0,{static_cast<unsigned char>(position),0});
+            emitCondCallBufferValue(code,helper(first,"decimal_nonzero"),3,remainder,0,zero_,0);
+            copy(code,{character,0},{remainder,0});
+            emitAdjustMultiLiteral(code,character,kOpAddWithCarry,0,{48,0});
+            copy(code,{f.text,position},{character,0},1);
+        }
+        Bytes dash;emitAdjustMultiLiteral(dash,f.text,kOpSet,0,{'-'});
+        const auto dashID=helper(dash,"decimal_dash");Bytes minus;
+        emitAdjustMultiLiteral(minus,f.first,kOpAddWithCarry,0,{255,255});
+        copy(minus,{dashID,7},{f.first,0});append(minus,call(dashID));
+        emitCondCallBufferValue(code,helper(minus,"decimal_minus"),3,f.negative,0,zero_,0);
+        f.entry=helper(code,"decimal_format");return f;
+    }
+    void printInteger(Bytes &code,const Expression &value) {
+        const auto input=expression(code,value);const auto bytes=width(value->type);
+        auto &f=decimalFormatter(bytes);
+        emitAdjustMultiLiteral(code,f.input,kOpSet,0,Bytes(bytes+1,0));copy(code,{f.input,0},input,bytes);
+        emitAdjustMultiLiteral(code,f.negative,kOpSet,0,{0,0});
+        if(signedInteger(value->type)) {
+            const auto negative=sign(code,{input.buffer,input.offset+(bytes==4?2u:0u)});
+            copy(code,{f.negative,0},{negative,0});
+        }
+        append(code,call(f.entry));propagate(code);
+        const auto length=bytes==2?6u:11u;
+        const auto text=data(Bytes(length,0),"str_temporary");copy(code,{text,0},{f.text,0},length);
+        Bytes invoke;emitBufferHeader(invoke,text);invoke.insert(invoke.end(),{11,0,0,0});
+        const auto action=helper(invoke,"print_text");copy(code,{action,6},{f.first,0});
+        append(code,call(action));
+        emitAdjustMultiLiteral(code,text,kOpSet,0,Bytes(length,0));
+    }
     unsigned sequence(const std::vector<Assignment> &statements, unsigned continuation) {
         size_t end = statements.size();
         while (end) {
@@ -594,6 +655,11 @@ class BufferEmitter {
                 while (start && !statements[start - 1].loop && statements[start - 1].relation.empty()) --start;
                 for (size_t i = start; i < end; ++i) {
                     const auto &statement = statements[i];
+                    if(statement.printing) {
+                        if(statement.value)printInteger(code,statement.value);
+                        else code.insert(code.end(),statement.text.begin(),statement.text.end());
+                        continue;
+                    }
                     if(statement.paired) {
                         const auto n=expression(code,statement.left);
                         const auto d=expression(code,statement.right);
@@ -681,6 +747,7 @@ public:
     }
 };
 inline std::string nativeC(const Program &program, const Layout &layout) {
+    if(containsPrint(program))throw std::runtime_error("print currently requires the stock buffered target");
     std::function<bool(const Expression&)> usesWideExpression=[&](const Expression&e){return e&&(wide(e->type)||usesWideExpression(e->left)||usesWideExpression(e->right));};
     std::function<bool(const std::vector<Assignment>&)> usesWideBody=[&](const auto&body){
         for(const auto&s:body)if(usesWideExpression(s.value)||usesWideExpression(s.left)||usesWideExpression(s.right)||usesWideExpression(s.index)||usesWideBody(s.yes)||usesWideBody(s.no))return true;

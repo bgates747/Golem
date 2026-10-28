@@ -36,6 +36,9 @@ def prepare():
     expected=bytearray();checks=[];job_commands=[]
     for name,opts in JOBS:
         output=reference/(name+'.bin' if not opts else name)
+        if output.is_dir():shutil.rmtree(output)
+        native_existing=app/'output'/(name+'.bin' if not opts else name)
+        if native_existing.is_dir():shutil.rmtree(native_existing)
         args=[str(ROOT/'build/golemc'),*opts,'examples/'+name+'.golem',str(output)]
         run(args,cwd=app,stdout=subprocess.DEVNULL)
         native_output='output/'+name+('.bin' if not opts else '')

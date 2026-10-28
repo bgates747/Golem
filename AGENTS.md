@@ -1538,3 +1538,36 @@ walkthrough remain separate open items; publication does not assert those tests.
 GOLEM-052 numeric printing is planning only. Generated task build directories,
 project .emulator and dist ZIP stay ignored; reproducible source/recipes are
 versioned. Physical devices were not flashed.
+
+
+## Stock resident integer printing — GOLEM-052
+
+The calculation profile accepts literal print and print str(integer-expression)
+for uint16/sint16/uint32/sint32, including minima. Consecutive statements emit
+adjacent text with no automatic spacing/newline. No concatenation/list operator,
+float formatting or stored string type is added. Each print site owns a fixed
+6/11-byte text temporary, immediately consumed and zeroed. Shared width-specific
+resident formatters reuse divmod; original values remain unchanged.
+
+Print defaults to stock-only packages; --target buffered selects that explicitly.
+Explicit native/both with print rejects. No-print default dual packages retain
+exact bytes; target-shape changes need fresh directories. Print typed-program
+JSON is schema5; otherwise schema4. Runtime/root ABI and application ownership
+remain unchanged. No VDPlet runtime/SDK or firmware change is required.
+
+Maintained checks/ASan/UBSan, independent decoder, actual MOS compilation,
+66 Pi stock pixel pairs and all 66 Oryx actual-ESP32 text sequences / 1,320 state
+bytes pass. Golem prints the numeric rows; C only supplies inputs/labels and
+verifies state. The standalone distribution/how-to now show counter/array/bitwise
+results. The Author's 2026-10-27 Oryx screenshot confirms expected output, PASS
+and successful MOS dir. Fresh retrieved results match all 200 bytes and the
+staged compiler hash matches. Human review passed; changes remain uncommitted
+pending explicit publication approval. See docs/tasks/GOLEM-052/README.md;
+verify_review.py is agent-only and must not repeat the guest dir instruction.
+
+
+2026-10-28 publication approval supersedes the GOLEM-052 pending checkpoint:
+the Author requested commit/push of all pending work, then VDPL-005 implementation.
+Integer printing is accepted and complete; its human evidence records approval.
+Generic color/PCM runtime work belongs to agon-vdplet. Interfaces must describe
+formats/geometry rather than a particular screen mode; mode20 is one test case.

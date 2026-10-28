@@ -45,6 +45,11 @@ AgonDev-built on-Agon compiler package: edit, compile and run buffered programs
 under MOS without a PC or LLM. Its standalone [how-to](docs/tasks/GOLEM-051/HOWTO.md)
 and qualification record describe the native-development workflow.
 
+The calculation profile supports `print "text"` and `print str(integer)` on
+stock VDP, with consecutive statements emitting adjacent text. Decimal output
+covers all four supported integer types; no eZ80 value readback or custom
+firmware is required. See the how-to's visible calculation exercises.
+
 Implemented, bounded compiler profiles; broader language design remains in
 progress. See [docs/devlog](docs/devlog/) for evidence and [docs/design](docs/design/)
 for detailed contracts and proposals.

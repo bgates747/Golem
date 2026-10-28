@@ -45,7 +45,7 @@ of their features in one source file.
 | --- | --- | --- |
 | No profile option | Simple text and counted-loop programs | A `.bin` command stream; run with `golemrun file.bin` |
 | `--resident` | A program designed to stay installed in VDP buffers and expose named `Sub` procedures for repeated calls | A directory of installation, call, cleanup and layout files; try once with `golemrun --resident directory` |
-| `--portable` | Typed arithmetic, conditionals, finite loops and integer arrays, with stock and native implementations where supported | A directory containing shared state and backend files; try its stock implementation with `golemrun --portable directory` |
+| `--portable` | Resident calculations: typed arithmetic, conditions, loops, integer arrays and printing | A directory of state/backend files; run its stock implementation with `golemrun --portable directory` |
 | `--stock-matrix` | Matrix and vertex-buffer operations using stock VDP commands | A directory for integration into your own application; this runner has no matrix-profile option |
 
 **Resident means retained on the VDP, not running forever.** A `Sub` is a named
@@ -65,7 +65,9 @@ a separately built VDPlet and supporting firmware. `--portable` normally emits
 both implementations for supported operations; `golemrun --portable` chooses the
 stock one. Portable programs can also stay resident under your application's
 control: portable and resident are not opposite lifetimes. Today the two flags
-select different implemented language profiles.
+select different implemented language profiles. Printing currently has a stock
+implementation only, so programs using print produce stock output by default.
+You do not need a VDPlet or custom firmware to print numbers.
 
 
 ## Exercise 1: Hello, world
@@ -121,38 +123,56 @@ The supplied `reference-image.png` shows the cube with the optional review
 script's labels. Those labels are supplied by the script, not hidden Golem
 statements.
 
-## Exercise 3: Compile and run a calculation
+## Exercise 3: Calculate and print the result
 
 Enter:
 
 ```text
 cd /golem
-golemc --portable examples/counter.golem output/counter
-golemrun --portable output/counter
+golemc --portable examples/counter.golem output/counter-print
+golemrun --portable output/counter-print
 ```
 
-This example declares `uint16` globals and a `Sub accumulate` that adds 1 through
-10. The calculated total is 55. **It prints no numerical result and draws
-nothing**: expect the runner's message followed by the MOS prompt. The current
-portable profile has no print statement for displaying that variable.
+You should see **i=10 total=55**, followed by the MOS prompt. The program declares
+`uint16` globals, adds 1 through 10 in `Sub accumulate`, then prints:
 
-The generated directory contains state/layout descriptions and both stock
-buffered commands and native C source. This runner uses the stock implementation,
-calls the first Sub once and removes its state afterward. An ASM/C application
-can instead own the state and preserve it between calls.
+```golem
+    print "i="
+    print str(i)
+    print " total="
+    print str(total)
+```
 
-The array example can be tried the same way:
+`str(i)` converts the integer to decimal text. Print emits that text. Each print
+has exactly one operand; consecutive statements put their output next to each
+other. There are no automatic spaces or newlines: the space before `total=` is
+inside its literal. You may put those four statements on one line if you prefer.
+The standalone runner adds its normal final newline before returning to MOS.
+
+Printing supports uint16, sint16, uint32 and sint32, including negative values
+and signed minima. Floats and Boolean values cannot yet be formatted with str.
+Printing itself leaves the variable unchanged. A failed numeric expression emits
+nothing for that print; earlier text stays on screen.
+
+This produces a **stock-only resident package**: look for buffered-install.bin,
+common-install.bin and calls.inc, rather than native.c. Your own ASM/C application
+can install it once and call it repeatedly without reading results back to the
+eZ80 for formatting. In that use, a second accumulate call prints total=110.
+The standalone runner removes its state, so rerunning these commands starts at
+zero and prints 55 again.
+
+The array example also prints its result:
 
 ```text
 cd /golem
-golemc --portable examples/arrays.golem output/arrays
-golemrun --portable output/arrays
+golemc --portable examples/arrays.golem output/arrays-print
+golemrun --portable output/arrays-print
 ```
 
-It selects an element of an explicitly typed integer array and applies bitwise
-XOR. It also has no visible numerical output. Read its source to see the syntax;
-these calculation examples introduce compilation and integration, rather than
-an interactive results viewer.
+Expect **value=4294967294**. It selects a uint32 array element and applies XOR
+with 1. Read the source to see the explicit typed array and integer expression.
+The new output-directory names above also avoid old dual-output packages from
+an earlier version of these examples.
 
 ## Integer bitwise operators
 
@@ -173,6 +193,10 @@ Sub inspectBits
     either = flags | mask
     different = flags ^ mask
     inverted = ~flags
+    print "and=" print str(both)
+    print " or=" print str(either)
+    print " xor=" print str(different)
+    print " not=" print str(inverted)
 EndSub
 ```
 
@@ -180,8 +204,16 @@ The calculated values are 1, 7, 6 and 65530. `~` flips exactly 16 bits for uint1
 it does not mean arithmetic minus. The same operators work with signed and
 unsigned 32-bit integers and signed 16-bit integers. Boolean `And`, `Or` and
 `Not` remain separate. Full precedence rules are in `LANGUAGE.md`.
-Numeric printing is not yet implemented, so this is a source illustration,
-not an additional visible-output exercise.
+The supplied source prints these four results with labels. Try:
+
+```text
+cd /golem
+golemc --portable examples/bitwise.golem output/bitwise-print
+golemrun --portable output/bitwise-print
+```
+
+Expect **and=1 or=7 xor=6 not=65530**. All formatting and printing happen on the
+stock VDP.
 
 ## Exercise 4: Compile a record/table example
 
@@ -279,11 +311,13 @@ autoexec file. It can be run again.
    name with `dir`. Relative paths in this guide start there.
 3. If compilation reports an error, correct the source or options before
    running. Files left from an earlier successful compilation may still exist.
-4. If the compiler rejects a feature, check the selected profile in `LANGUAGE.md`.
+4. If the compiler says target selection changed, choose a fresh output
+   directory. Adding print changes an ordinary dual-output package to stock-only.
+5. If the compiler rejects a feature, check the selected profile in `LANGUAGE.md`.
    A feature shown for one profile is not automatically available in another.
-5. Large programs can exhaust the Agon's RAM earlier than on a PC. The compiler
+6. Large programs can exhaust the Agon's RAM earlier than on a PC. The compiler
    reports exhaustion rather than reducing numeric precision silently.
-6. If the runner reports a VDP timeout, reset the Agon or restart the emulator
+7. If the runner reports a VDP timeout, reset the Agon or restart the emulator
    before rerunning. A timed-out program may still own active VDP buffers.
 
 ## Using the output from ASM or C

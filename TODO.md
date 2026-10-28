@@ -7,11 +7,6 @@ GOLEM-035 was accepted and explicitly approved for commit/push on 2026-10-13.
 Outstanding human/physical reviews below remain open; this checkpoint does not
 claim those reviews occurred.
 
-- [ ] **GOLEM-052:** Resident integer-to-text conversion and printing on stock
-  VDP, reusing arithmetic helpers and bounded compile-time storage. Visible
-  numeric examples and distribution update. [Plan](docs/tasks/GOLEM-052.md).
-  Planned only; concatenation and float formatting remain separate decisions.
-
 - [ ] **GOLEM-051:** Native AgonDev/MOS compiler for all implemented profiles,
   runner and standalone distribution. [Plan](docs/tasks/GOLEM-051.md),
   [results](docs/tasks/GOLEM-051/RESULTS.md), [how-to](docs/tasks/GOLEM-051/HOWTO.md).
@@ -60,6 +55,10 @@ claim those reviews occurred.
   capacity, stress/lifecycle protocol, generic services and upstream-adoption
   investigation. Stage A inventory/resource builds are complete; [numerical proposal](docs/tasks/GOLEM-002/capacity/stage-a/RESULTS.md)
   is followed by accepted GOLEM-037 composition with implemented SDK policy increases and actual-target/human qualification. CAP-001–003 research/documentation complete; broad stress and physical qualification remain open.
+  CAP-006 color framebuffer/continuous PCM follow-up is planned in
+  [agon-vdplet VDPL-005](../agon-vdplet/docs/tasks/VDPL-005.md); the Author approved
+  planning/mailbox consultation and later implementation on 2026-10-28. Public
+  interfaces must be generic across modes/formats; mode20 is a test case.
 
 - [ ] **GOLEM-021:** Eight-hour Flexe/Fab hybrid emulator, working native vdplets,
   then service offer to agon-6502; optional Golem tranche afterward.

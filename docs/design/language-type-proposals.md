@@ -1624,3 +1624,16 @@ precedence and stock buffered lowering; the maintained language reference is
 normative. This supersedes earlier notes deferring these three operators.
 No string concatenation operator was selected. Comma-separated print operands
 remain a proposal; numeric conversion/printing is queued as GOLEM-052.
+
+
+## Bounded integer printing — decision and implementation 2026-10-27
+
+The Author released GOLEM-052 and explicitly deferred concatenation. Consecutive
+print statements suffice; no operator or comma-separated list is added. Explicit
+print str(integer-expression) and literal printing are implemented in the
+calculation profile as stock resident commands. This realizes the immediate-use
+portion of Axes 7–8: compile-time-assigned per-site text storage, consumed and
+zeroed immediately, without introducing general stored strings. Shared formatters
+reuse divmod and cover all supported integer widths and signed minima. Native
+printing remains ancillary and unsupported; the language reference owns current
+syntax, target admission and exact output semantics.

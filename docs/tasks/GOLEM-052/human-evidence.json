@@ -1,0 +1,14 @@
+{
+  "saved_results_passed": true,
+  "bytes": 200,
+  "sha256": "33d011543c488b22d5fa232ada570dd9d42305856f5bc3b0f1895c1e10c50b0d",
+  "review_date": "2026-10-27",
+  "visual_review_passed": true,
+  "mos_keyboard_passed": true,
+  "review_source": "Author-supplied screenshot showing integer limits, totals 55 and 110, overflow prefix, conditional output, PASS and successful MOS dir",
+  "screenshot": "/Agon/mystuff/agent-state/codex/attachments/7ea99e7b-10f6-4b12-afb3-249c83bee820/codex-clipboard-e5a73cf1-cee1-45b0-a4ee-839b68358fb5.png",
+  "staged_compiler_sha256": "fec987554f2f49c2d7d622b4a0213fb6b95591bf89e98ec81f33f4bbc5de7a6b",
+  "staged_compiler_hash_matches": true,
+  "publication_authorized": true,
+  "publication_approval_date": "2026-10-28"
+}

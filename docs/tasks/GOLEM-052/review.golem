@@ -1,0 +1,12 @@
+// Golem computes and prints; the eZ80 application only installs and calls.
+uint16 i = 0
+uint16 total = 0
+Sub accumulate
+    For i In Range(1:10)
+        total = total + i
+    Next i
+    print "i="
+    print str(i)
+    print " total="
+    print str(total)
+EndSub

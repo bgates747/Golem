@@ -133,7 +133,7 @@ programs' default dual-backend outputs. See [Flower's mathematical tranche](../t
 for exact execution scope, accuracy cases and evidence.
 
 General Functions/parameters/locals/inter-Sub calls, Do/Loop, Switch/jump tables,
-strings/print, fixed-point, multidimensional arrays/matrices, left shifts
+stored strings, fixed-point, multidimensional arrays/matrices, left shifts
 and sqrt/pow remain outside this profile.
 The legacy resident floor/table/drawing profiles remain separately available.
 
@@ -236,3 +236,28 @@ left and evaluate both operands in order. Boolean And/Or/Not remain separate.
 Bounds admission and failure preservation are unchanged. Stock emission uses
 bytewise Adjust operations; native C uses unsigned storage with width masking.
 See the language reference for initialized examples. Left shift remains deferred.
+
+
+## Resident integer printing — GOLEM-052
+
+Calculation programs accept literal print and print str(integer-expression).
+Each expression evaluates once, before output, with normal faults. Consecutive
+statements insert no separator/newline. Decimal output covers all four integer
+types; bool/float, stored strings, concatenation and print lists remain deferred.
+One width-specific resident formatter reuses existing unsigned divmod helpers.
+Signed magnitude, including minima, is formed in carry-guarded unsigned scratch.
+Digits are written backward into fixed text; the leading offset selects only
+actual digits/sign. Each print site owns a 6/11-byte temporary, copied from that
+shared formatter, emitted with stock offset CALL and zeroed after use. All helper
+storage is private and participates in ordinary buffered cleanup.
+
+Printing currently makes the default target stock-only. --target buffered also
+selects this output explicitly, including for ordinary calculation programs.
+Explicit native/both with print rejects before output. No-print default packages
+remain unchanged. New stock-only packages have targets.json, available_backends
+[buffered], no native.c/argument/wrappers, and only stock calls/load-plan components.
+Changing backend shape requires a fresh output directory. This does not change
+the root ABI or any application loading/call/completion responsibility.
+
+Programs with print use typed-program JSON schema5 (literal byte or integer
+expression print statements); no-print programs retain schema4 and exact bytes.

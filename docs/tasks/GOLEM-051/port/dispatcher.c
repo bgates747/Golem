@@ -11,6 +11,7 @@ static int compile(int argc,char**argv){
         puts("golemc --resident [options] source.golem output-directory");
         puts("golemc --portable [options] source.golem output-directory");
         puts("golemc --stock-matrix [options] source.golem output-directory");
+        puts("Calculation target: --target buffered, both or native (print uses buffered)");
         puts("golemc @build.args     (options/paths from a text file)");return 0;
     }
     if(mode[0]=='@'){

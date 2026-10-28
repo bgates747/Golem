@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "seconds": 44.861467474000165,
+  "stock_VDP": "2.16",
+  "actual_ESP32_Flexe": true,
+  "state_observations": 1320,
+  "human": "pending",
+  "MOS_return": true,
+  "frontend_exit": 0,
+  "exact_printed_sequences": 66,
+  "formatted_integers": 248,
+  "retrieved_state_bytes_match": true,
+  "serial_source": "stock printer mirroring (VDU2); no custom firmware hook"
+}

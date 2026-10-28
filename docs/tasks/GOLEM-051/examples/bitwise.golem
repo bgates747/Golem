@@ -1,4 +1,4 @@
-// Compile with --portable. Golem computes; this source does not print numbers.
+// Compile with --portable. All calculations and printing run on stock VDP.
 uint16 flags = 5
 uint16 mask = 3
 uint16 both = 0
@@ -10,4 +10,8 @@ Sub inspectBits
     either = flags | mask
     different = flags ^ mask
     inverted = ~flags
+    print "and=" print str(both)
+    print " or=" print str(either)
+    print " xor=" print str(different)
+    print " not=" print str(inverted)
 EndSub

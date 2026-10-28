@@ -1,0 +1,24 @@
+uint16 u = 0
+sint16 s = 0
+uint32 w = 0
+sint32 n = 0
+uint16 i = 0
+uint16 total = 0
+Sub numbers
+    print "[" print str(u) print "," print str(s) print ","
+    print str(w) print "," print str(n) print "]"
+EndSub
+Sub accumulate
+    For i In Range(1:10)
+        total = total + i
+    Next i
+    print "i=" print str(i) print " total=" print str(total)
+EndSub
+Sub fail
+    print "before:" print str(u + 1) print ":after"
+EndSub
+Sub branch
+    For i In Range(0:2)
+        If i == 1 Then print "x" Else print str(i) EndIf
+    Next i
+EndSub

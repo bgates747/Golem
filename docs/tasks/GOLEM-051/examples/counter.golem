@@ -4,4 +4,8 @@ Sub accumulate
     For i In Range(1:10)
         total = total + i
     Next i
+    print "i="
+    print str(i)
+    print " total="
+    print str(total)
 EndSub

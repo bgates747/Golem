@@ -113,6 +113,8 @@ struct Assignment {
     std::string relation;
     Expression left, right;
     std::vector<Assignment> yes, no;
+    bool printing = false;
+    std::string text;
     bool paired = false;
     size_t remainder = 0;
     bool loop = false;
@@ -122,6 +124,18 @@ struct Assignment {
 };
 struct Procedure { std::string name; std::vector<Assignment> statements; uint64_t workVisits = 0; };
 struct Program { std::vector<Global> globals; std::vector<Procedure> procedures; std::vector<Array> arrays; };
+inline bool containsPrint(const std::vector<Assignment> &body) {
+    for(const auto&s:body)if(s.printing||containsPrint(s.yes)||containsPrint(s.no))return true;
+    return false;
+}
+inline bool containsPrint(const Program &p) {
+    for(const auto&s:p.procedures)if(containsPrint(s.statements))return true;
+    return false;
+}
+inline std::string decimal(Value v) {
+    if(!integer(v.type))throw std::logic_error("str requires an integer");
+    return std::to_string(static_cast<int64_t>(v.number()));
+}
 inline bool mathOperation(Op op) { return op==Op::Divide || op==Op::Sin || op==Op::Cos || op==Op::Floor; }
 inline bool requiresNativeMath(const Expression &e) {
     return e && (mathOperation(e->op) || requiresNativeMath(e->left) || requiresNativeMath(e->right));
@@ -526,6 +540,22 @@ class Parser {
         while (pendingAssignment_ || (!reader_.end() && !reader_.keyword("EndSub") && !reader_.keyword("Else") &&
                !reader_.keyword("ElseIf") && !reader_.keyword("EndIf") && !reader_.keyword("Next"))) {
             const auto at = pendingAssignment_ ? pendingAssignment_->begin : reader_.peek().begin;
+            if(reader_.takeKeyword("print")) {
+                Assignment output;output.printing=true;output.at=at;
+                if(reader_.peek().kind==Kind::String)output.text=reader_.pop().text;
+                else {
+                    reader_.needKeyword("str");reader_.need('(');
+                    const auto saved=reader_;Expression value;
+                    for(auto type:{Type::U16,Type::S16,Type::U32,Type::S32}) {
+                        reader_=saved;
+                        try {value=expression(type);reader_.need(')');break;}
+                        catch(const golem::syntax::Error&){value.reset();}
+                    }
+                    if(!value)reader_.error("str requires one supported integer expression");
+                    output.value=value;
+                }
+                result.push_back(std::move(output));continue;
+            }
             if (reader_.take('(')) {
                 auto destination = [&]() {
                     const auto token=reader_.identifier(); auto found=globals_.find(token.text);
@@ -553,7 +583,7 @@ class Parser {
                 continue;
             }
             if (!pendingAssignment_ && (reader_.peek().kind != Kind::Identifier || reserved(reader_.peek().text)))
-                reader_.error("expected global assignment, If or For");
+                reader_.error("expected global assignment, print, If or For");
             const auto token = pendingAssignment_ ? *pendingAssignment_ : reader_.identifier();
             pendingAssignment_.reset();
             auto array=arrays_.find(token.text);
@@ -661,9 +691,9 @@ public:
         while (reader_.keyword("uint16") || reader_.keyword("float32") || reader_.keyword("sint16") || reader_.keyword("bool") || reader_.keyword("Array") || reader_.keyword("ReadOnly") || reader_.keyword("uint32") || reader_.keyword("sint32")) {
             if(reader_.keyword("Array") || reader_.keyword("ReadOnly"))array();else global();
         }
-        if (program_.globals.empty() && program_.arrays.empty()) reader_.error("expected initialized uint16/float32 globals");
         while (reader_.keyword("Sub")) procedure();
         if (program_.procedures.empty()) reader_.error("expected a finite Sub");
+        if(program_.globals.empty()&&program_.arrays.empty()&&!containsPrint(program_))reader_.error("expected initialized globals or print");
         if (!reader_.end()) reader_.error("unsupported declaration or statement after Subs");
         return program_;
     }
@@ -728,7 +758,7 @@ inline Value evaluate(const Expression &e, const Layout &layout, const std::vect
     return binary(e->op, left, right);
 }
 inline unsigned invokeReference(const Program &program, const Layout &layout,
-                                std::vector<uint8_t> &state, size_t entry,ArrayState *arrays=nullptr) {
+                                std::vector<uint8_t> &state, size_t entry,ArrayState *arrays=nullptr,std::string *textOutput=nullptr) {
     if (state.size() != layout.bytes || entry >= program.procedures.size())
         throw std::runtime_error("invalid host reference state or logical entry");
     put(state, layout.errorOffset, {Type::U16, Ok});
@@ -737,7 +767,10 @@ inline unsigned invokeReference(const Program &program, const Layout &layout,
             admit(program.globals[i], get(state, layout.offsets[i], program.globals[i].type));
         std::function<void(const std::vector<Assignment>&)> execute = [&](const auto &statements) {
             for (const auto &statement : statements) {
-                if (statement.paired) {
+                if(statement.printing) {
+                    const auto text=statement.value?decimal(evaluate(statement.value,layout,state,&program,arrays)):statement.text;
+                    if(textOutput)*textOutput+=text;
+                } else if (statement.paired) {
                     const auto n=evaluate(statement.left,layout,state,&program,arrays);
                     const auto d=evaluate(statement.right,layout,state,&program,arrays);
                     if(!d.bits) throw Fault{4};
@@ -888,7 +921,12 @@ inline void statementsJson(std::ostream &out, const std::vector<Assignment> &sta
     for (size_t j = 0; j < statements.size(); ++j) {
         if (j) out << ',';
         const auto &s = statements[j];
-        if (s.paired) {
+        if(s.printing) {
+            out << "{\"print\":{";
+            if(s.value){out << "\"integer\":";expressionJson(out,s.value);}
+            else {out << "\"literal_bytes\":[";for(size_t i=0;i<s.text.size();++i){if(i)out<<',';out<<static_cast<unsigned>(static_cast<unsigned char>(s.text[i]));}out<<']';}
+            out << "}}";
+        } else if (s.paired) {
             out << "{\"divmod\":{\"quotient\":" << s.destination << ",\"remainder\":" << s.remainder << ",\"numerator\":";
             expressionJson(out,s.left); out << ",\"denominator\":"; expressionJson(out,s.right); out << "}}";
         } else if (s.loop) {
@@ -913,7 +951,7 @@ inline void statementsJson(std::ostream &out, const std::vector<Assignment> &sta
 }
 inline std::string programJson(const Program &program) {
     std::ostringstream out;
-    out << "{\"schema\":4,\"procedures\":[";
+    out << "{\"schema\":" << (containsPrint(program)?5:4) << ",\"procedures\":[";
     for (size_t i = 0; i < program.procedures.size(); ++i) {
         if (i) out << ',';
         out << "{\"name\":\"" << program.procedures[i].name << "\",\"assignments\":";

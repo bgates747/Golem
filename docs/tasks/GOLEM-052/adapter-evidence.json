@@ -1,0 +1,51 @@
+{
+  "passed": true,
+  "ASAN_OPTIONS": "detect_stack_use_after_return=0",
+  "cases": [
+    {
+      "case": "numbers",
+      "matched": true,
+      "status": 0
+    },
+    {
+      "case": "counter",
+      "matched": true,
+      "status": 0
+    },
+    {
+      "case": "load-plan",
+      "matched": true,
+      "status": 0
+    },
+    {
+      "case": "example-counter",
+      "matched": true,
+      "status": 0
+    },
+    {
+      "case": "example-arrays",
+      "matched": true,
+      "status": 0
+    },
+    {
+      "case": "example-bitwise",
+      "matched": true,
+      "status": 0
+    },
+    {
+      "case": "bad0",
+      "matched": true,
+      "status": 1
+    },
+    {
+      "case": "bad1",
+      "matched": true,
+      "status": 1
+    },
+    {
+      "case": "bad2",
+      "matched": true,
+      "status": 1
+    }
+  ]
+}

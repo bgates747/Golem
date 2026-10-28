@@ -41,7 +41,7 @@ inline int run(int argc, char **argv) {
         std::set<unsigned> roles,ids;
         std::map<std::string,std::string> arrayFiles;
         std::vector<portable::Reservation> external{{60000,60031}};
-        bool nativeOnly=false,targetSeen=false,emitLoadPlan=false;
+        bool nativeOnly=false,bufferedOnly=false,targetSeen=false,emitLoadPlan=false;
         int option=2;
         while(option<argc && std::string(argv[option]).rfind("--",0)==0) {
             const std::string flag=argv[option++];
@@ -51,10 +51,10 @@ inline int run(int argc, char **argv) {
                 emitLoadPlan=true;continue;
             }
             if(flag=="--target") {
-                if(targetSeen||option>=argc)throw std::runtime_error("--target requires one selection: both or native");
+                if(targetSeen||option>=argc)throw std::runtime_error("--target requires one selection: both, native or buffered");
                 targetSeen=true;const std::string target=argv[option++];
-                if(target!="native"&&target!="both")throw std::runtime_error("--target requires both or native");
-                nativeOnly=target=="native";continue;
+                if(target!="native"&&target!="both"&&target!="buffered")throw std::runtime_error("--target requires both, native or buffered");
+                nativeOnly=target=="native";bufferedOnly=target=="buffered";continue;
             }
             if(flag=="--reserve") {
                 if(option>=argc)throw std::runtime_error("--reserve requires FIRST:LAST");
@@ -89,10 +89,15 @@ inline int run(int argc, char **argv) {
         const std::string source{std::istreambuf_iterator<char>(input), {}};
         auto program = portable::Parser(source).parse();
         const bool math=portable::requiresNativeMath(program);
+        if(portable::containsPrint(program)) {
+            if(targetSeen&&!bufferedOnly)throw std::runtime_error("print currently requires --target buffered; native output is not supported");
+            bufferedOnly=true;
+        }
         if(math&&!nativeOnly)throw std::runtime_error("float /, sin, cos and floor currently require --target native; stock math is not qualified");
         const std::filesystem::path output(argv[option+1]);
         if((nativeOnly&&std::filesystem::exists(output/"buffered-install.bin")) ||
-           (!nativeOnly&&std::filesystem::exists(output/"targets.json")))
+           (bufferedOnly&&std::filesystem::exists(output/"native.c")) ||
+           (!nativeOnly&&!bufferedOnly&&std::filesystem::exists(output/"targets.json")))
             throw std::runtime_error("target selection changed; use a fresh output directory");
         for(auto&a:program.arrays) {
             const auto supplied=arrayFiles.find(a.name);
@@ -118,12 +123,19 @@ inline int run(int argc, char **argv) {
             buffered=BufferEmitter(program, layout, allocator).emit();
             envelope=root_v1::envelope(buffered,program,layout,allocator);
         }
-        const auto native = root_v1::native(program, layout,bindings);
-        const unsigned arguments = allocator.allocate("dual.native.arguments");
-        std::map<unsigned,Bytes> nativeRecords{{arguments,le16Bytes(layout.buffer)}};
-        Bytes nativeInstall = write(arguments, le16Bytes(layout.buffer)), nativeCleanup = clear(arguments);
-        std::vector<unsigned> nativeEntries, nativeOwned{arguments};
-        for (size_t i = 0; i < program.procedures.size(); ++i) {
+        std::string native;
+        if(!bufferedOnly)native=root_v1::native(program, layout,bindings);
+        unsigned arguments=0;
+        std::map<unsigned,Bytes> nativeRecords;
+        Bytes nativeInstall,nativeCleanup;
+        std::vector<unsigned> nativeEntries,nativeOwned;
+        if(!bufferedOnly) {
+            arguments=allocator.allocate("dual.native.arguments");
+            nativeRecords.emplace(arguments,le16Bytes(layout.buffer));
+            nativeInstall=write(arguments,le16Bytes(layout.buffer));nativeCleanup=clear(arguments);
+            nativeOwned.push_back(arguments);
+        }
+        for (size_t i = 0; !bufferedOnly && i < program.procedures.size(); ++i) {
             const auto id = allocator.allocate("dual.native.wrapper");
             nativeEntries.push_back(id); nativeOwned.push_back(id);
             Bytes run{23, 0, 0xd8, 12, 0, 1, 2, 0, 0, 0, 0, 0, 0};
@@ -139,7 +151,7 @@ inline int run(int argc, char **argv) {
         for (size_t i = 0; i < program.procedures.size(); ++i) {
             std::vector<std::pair<std::string,unsigned>> choices;
             if(!nativeOnly)choices.push_back({"buffered",buffered.entries[i]});
-            choices.push_back({"native",nativeEntries[i]});
+            if(!bufferedOnly)choices.push_back({"native",nativeEntries[i]});
             for (const auto &choice : choices) {
                 const auto stem = "golem_" + choice.first + "_" + program.procedures[i].name;
                 if (stem.size() + 5 > 64) throw std::runtime_error("assembly wrapper name too long");
@@ -162,6 +174,7 @@ inline int run(int argc, char **argv) {
             numbers(meta, std::vector<unsigned>(item.second.begin(), item.second.end()));
         }
         meta << '}';
+        if(bufferedOnly)meta << ",\"available_backends\":[\"buffered\"]";
         if(nativeOnly)meta << ",\"available_backends\":[\"native\"],\"required_module_libraries\":" << (math?"[\"m\",\"gcc\"]":"[]");
         meta << "}\n";
         golem::loading::Plan loadPlan;
@@ -180,14 +193,17 @@ inline int run(int argc, char **argv) {
                 for(const auto&p:buffered.programs)if(!c.records.emplace(p).second)throw std::logic_error("duplicate buffered load program");
                 c.setup={23,0,248,1,0,1,0};loadPlan.components.push_back(c);
             }
+            if(!bufferedOnly) {
             golem::loading::Component c;c.name="native";c.entries=nativeEntries;c.resources=nativeOwned;c.records=nativeRecords;
             for(const auto&p:program.procedures)c.entryNames.push_back(p.name);
-            loadPlan.components.push_back(c);loadPlan.finalize();
+            loadPlan.components.push_back(c);
+            }
+            loadPlan.finalize();
         }
         std::filesystem::create_directories(output);
         auto interface = portable::interfaceJson(program, layout);
         const std::string oldContract = "host_reference_only";
-        interface.replace(interface.find(oldContract), oldContract.size(), "r25-g0-root-v1-dual-backend");
+        interface.replace(interface.find(oldContract), oldContract.size(), bufferedOnly?"r25-g0-root-v1-buffered":"r25-g0-root-v1-dual-backend");
         std::ostringstream root;
         root << "{\"family\":\"R25-G0/root-v1\",\"schema\":1,\"header_bytes\":112,\"root_bytes\":" << layout.bytes
              << ",\"globals_bytes\":" << layout.bytes-112 << ",\"byte_order\":\"little\",\"argument_bytes\":2,\"fields\":{";
@@ -216,16 +232,19 @@ inline int run(int argc, char **argv) {
             writeFile(output/"buffered-install.bin", buffered.install);
             writeFile(output/"buffered-cleanup.bin", buffered.cleanup);
         } else writeFile(output/"targets.json",std::string("{\"selection\":\"native\",\"available_backends\":[\"native\"],\"requires_math_libraries\":")+(math?"true":"false")+"}\n");
-        writeFile(output/"native-install.bin", nativeInstall);
-        writeFile(output/"native-cleanup.bin", nativeCleanup);
-        writeFile(output/"native.c", native);
+        if(bufferedOnly)writeFile(output/"targets.json","{\"selection\":\"buffered\",\"available_backends\":[\"buffered\"]}\n");
+        if(!bufferedOnly) {
+            writeFile(output/"native-install.bin", nativeInstall);
+            writeFile(output/"native-cleanup.bin", nativeCleanup);
+            writeFile(output/"native.c", native);
+        }
         writeFile(output/"calls.inc", calls.str());
         writeFile(output/"backends.json", meta.str());
         if(emitLoadPlan)loadPlan.write(output);
         std::cout << "Shared state " << layout.bytes << " bytes; ";
         if(nativeOnly)std::cout << "native-only package; ";
         else std::cout << "buffered install " << buffered.install.size() << " bytes; ";
-        std::cout << program.procedures.size() << " native entries.\n";
+        std::cout << program.procedures.size() << (bufferedOnly?" buffered entries.\n":" native entries.\n");
         return 0;
     } catch (const std::exception &error) { std::cerr << "compiler: " << error.what() << '\n'; return 1; }
 }

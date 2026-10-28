@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "seconds": 39.000031064264476,
+  "actual_MOS_compilation": true,
+  "matching_package_files": 11,
+  "pixel_pairs": 66,
+  "pixels_compared": 20275200,
+  "state_observations": 1320,
+  "MOS_keyboard_continuation": true,
+  "human": "pending",
+  "frontend_exit": 0
+}

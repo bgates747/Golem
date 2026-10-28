@@ -16,7 +16,7 @@ but their statements cannot freely be combined in one source file.
 | --- | --- | --- |
 | `golemc source.golem payload.bin` | Legacy literal text, uint16 variables/addition and counted loops | A raw VDU command stream |
 | `golemc --resident source.golem directory` | A bounded floor conversion with checked uint16 arithmetic; or the separate record/table or drawing grammar below | Installation, invocation, cleanup and layout files |
-| `golemc --portable source.golem directory` | Checked typed arithmetic, conditionals, finite loops and integer arrays | Shared state, stock implementation and native C source |
+| `golemc --portable source.golem directory` | Checked typed arithmetic, conditions, loops, integer arrays and printing | Shared state and stock commands; native C where supported (printing is stock-only) |
 | `golemc --portable --target native source.golem directory` | Portable grammar plus float division/trigonometry/floor | Shared state and native C source; no stock implementation |
 | `golemc --stock-matrix source.golem directory` | Stock matrix and vertex-buffer operations, finite calls and indexed loops | Installation, invocation, cleanup, metadata and assembly |
 
@@ -43,6 +43,46 @@ does not contain that toolchain. Compilation never requires an LLM.
 6. Literal strings use double quotes. Supported escapes are `\"`, `\\` and `\n`.
    `\n` emits LF only; it does not return the VDP text cursor to the left margin.
    `\r` is not currently a recognized escape. Print does not append a newline.
+
+## Integer printing in the calculation profile
+
+`print "literal text"` emits the literal bytes. `print str(integer-expression)`
+converts one integer expression to ordinary decimal text and emits it. This
+works for uint16, sint16, uint32 and sint32, including signed minima. Positive
+values have no plus sign; zero prints `0`; leading zeros are omitted. There is
+no implicit spacing or newline, and no concatenation or print-list operator.
+Consecutive print statements build output in order:
+
+```golem
+uint16 i = 0
+uint16 total = 0
+Sub accumulate
+    For i In Range(1:10)
+        total = total + i
+    Next i
+    print "i=" print str(i) print " total=" print str(total)
+EndSub
+```
+
+The first call prints `i=10 total=55`; a second resident call prints
+`i=10 total=110`. Variables remain explicitly declared and retain their values.
+Printing itself does not modify its source value. A literal-only Sub can omit
+global declarations. Context-free integer expressions are tried in the existing
+uint16/sint16/uint32/sint32 order; variables must match the selected type, and
+mixed types require explicit conversion. Bool/float formatting, optional formats,
+stored strings and general str expressions are not implemented. `str(...)` is
+currently accepted only as the operand of print. A failing expression emits no
+characters for that print; previous successful prints remain visible.
+
+Printing currently targets stock buffered commands. `golemc --portable` defaults
+to a stock-only resident package for a program containing print; explicit
+`--target buffered` does the same. Native/both selections reject such a program
+before writing output. Programs without print retain their existing default dual
+outputs. A target-shape change needs a fresh output directory. The package's
+`available_backends` and generated wrappers describe only actual implementations.
+The eZ80 application still owns installation, calls, pacing and cleanup; it does
+not read values back to format them. The standalone runner supplies its ordinary
+final newline after the Golem call.
 
 ## Portable scalar types and declarations
 

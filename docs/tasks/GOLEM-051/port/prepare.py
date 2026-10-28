@@ -119,13 +119,13 @@ def prepare(profile=None):
             text=text.replace('writeFile(output/"backends.json", meta.str());','meta.save(output/"backends.json");')
             # Finish and release stock data before the native C formatter's
             # temporary strings. Both outputs retain the existing bytes.
-            text=text.replace('const auto native = root_v1::native(program, layout,bindings);','')
+            text=text.replace('if(!bufferedOnly)native=root_v1::native(program, layout,bindings);','')
             text=text.replace('writeFile(output/"native.c", native);','')
             text=text.replace('if(emitLoadPlan)loadPlan.write(output);','''if(emitLoadPlan)loadPlan.write(output);
         const auto publishedInstallBytes=buffered.install.size();
         buffered=Buffered{};nativeRecords.clear();loadPlan=golem::loading::Plan{};
         ag::phase="emitting native C";
-        writeFile(output/"native.c",root_v1::native(program,layout,bindings));''')
+        if(!bufferedOnly)writeFile(output/"native.c",root_v1::native(program,layout,bindings));''')
             text=text.replace('buffered.install.size() << " bytes; "','publishedInstallBytes << " bytes; "')
 
         if str(rel)=='portable/backends.hpp':

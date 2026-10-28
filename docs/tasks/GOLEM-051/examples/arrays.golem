@@ -3,4 +3,6 @@ uint32 value = 0
 Array uint32 samples(0:2) = Values(65536,4294967295,17)
 Sub selectValue
     value = samples(index) ^ 1
+    print "value="
+    print str(value)
 EndSub
