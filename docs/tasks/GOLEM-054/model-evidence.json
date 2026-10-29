@@ -1,0 +1,96 @@
+{
+  "passed": true,
+  "oracle": {
+    "passed": true,
+    "exact_known_values": 14,
+    "generated_values": 1934,
+    "binary_exponent_fields": 254,
+    "exact_roundtrips": 1934,
+    "decimal_exponent_carry_cases": 2,
+    "maximum_text_bytes": 15
+  },
+  "host_reference": {
+    "passed": true,
+    "formatted_values": 1934
+  },
+  "coverage": "full",
+  "packages": [
+    {
+      "calls": 1979,
+      "float_cases": 1934,
+      "text_bytes": 30137,
+      "seconds": 229.4383437130018,
+      "maximum_commands_per_call": 186965,
+      "maximum_command_case": {
+        "entry": "pair",
+        "x_bits": "00800000",
+        "text": "1.17549435e-38/-1"
+      },
+      "total_commands": 98908820,
+      "buffered_install_bytes": 30762,
+      "common_install_bytes": 138,
+      "shared_state_bytes": 124,
+      "private_buffers": 414,
+      "private_allocation_bytes": 24959,
+      "private_data_bytes": 1482,
+      "per_site_text_buffers": 11,
+      "per_site_text_sizes": [
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        6,
+        16
+      ],
+      "source_preservation": true,
+      "cleared_text_temporaries": true,
+      "error_recovery": true,
+      "cleanup_preserves_shared_state": true,
+      "package": "default"
+    },
+    {
+      "calls": 1979,
+      "float_cases": 1934,
+      "text_bytes": 30137,
+      "seconds": 219.09525464699982,
+      "maximum_commands_per_call": 186965,
+      "maximum_command_case": {
+        "entry": "pair",
+        "x_bits": "00800000",
+        "text": "1.17549435e-38/-1"
+      },
+      "total_commands": 98908820,
+      "buffered_install_bytes": 30762,
+      "common_install_bytes": 138,
+      "shared_state_bytes": 124,
+      "private_buffers": 414,
+      "private_allocation_bytes": 24959,
+      "private_data_bytes": 1482,
+      "per_site_text_buffers": 11,
+      "per_site_text_sizes": [
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        6,
+        16
+      ],
+      "source_preservation": true,
+      "cleared_text_temporaries": true,
+      "error_recovery": true,
+      "cleanup_preserves_shared_state": true,
+      "package": "relocated"
+    }
+  ],
+  "target_rejections": 2
+}

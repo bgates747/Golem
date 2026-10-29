@@ -1,0 +1,34 @@
+{
+  "passed": true,
+  "packages": [
+    {
+      "fixture": "literal",
+      "common_install_bytes": 130,
+      "buffered_install_bytes": 5329,
+      "shared_state_bytes": 116,
+      "private_buffers": 43,
+      "private_data_bytes": 42,
+      "private_allocation_bytes": 4720
+    },
+    {
+      "fixture": "one",
+      "common_install_bytes": 130,
+      "buffered_install_bytes": 17571,
+      "shared_state_bytes": 116,
+      "private_buffers": 207,
+      "private_data_bytes": 1061,
+      "private_allocation_bytes": 14666
+    },
+    {
+      "fixture": "two",
+      "common_install_bytes": 130,
+      "buffered_install_bytes": 17972,
+      "shared_state_bytes": 116,
+      "private_buffers": 215,
+      "private_data_bytes": 1087,
+      "private_allocation_bytes": 14955
+    }
+  ],
+  "one_extra_float_site_install_bytes": 401,
+  "one_extra_float_site_data_bytes": 26
+}

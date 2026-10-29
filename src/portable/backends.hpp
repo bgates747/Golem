@@ -35,6 +35,8 @@ class BufferEmitter {
     unsigned shiftValue_=0,shiftCount_=0,shiftSign_=0,shiftRound_=0;
     struct DecimalFormatter {unsigned input=0,negative=0,text=0,first=0,entry=0;};
     DecimalFormatter decimal16_,decimal32_;
+    struct FloatFormatter {unsigned input=0,negative=0,text=0,first=0,entry=0;};
+    FloatFormatter floatDecimal_;
     unsigned allocate(const std::string &role) {
         const auto id = allocation_.allocate("dual.buffered." + role);
         output_.owned.push_back(id);
@@ -614,6 +616,198 @@ class BufferEmitter {
         append(code,call(action));
         emitAdjustMultiLiteral(code,text,kOpSet,0,Bytes(length,0));
     }
+    FloatFormatter &floatFormatter() {
+        auto &f=floatDecimal_;
+        if(f.entry)return f;
+        // x=M*2^p, 2^23<=M<2^24, -149<=p<=104.  For p<0,
+        // A=M*5^-p and x=A*10^p; A<2^24*5^149<10^112.
+        // For p>=0 A<2^128 has at most39 digits.  One spare digit
+        // guards the fixed113-byte exact decimal coefficient.
+        f.input=data(Bytes(4,0),"float_decimal_input");
+        f.negative=data({0,0},"float_decimal_sign");
+        f.text=data(Bytes(16,0),"float_decimal_text");
+        f.first=data({0,0,0},"float_decimal_first");
+        auto word=[&](const std::string &role){return data({0,0,0},"float_decimal_"+role);};
+        auto constant=[&](unsigned value){return data(le16Bytes(value),"float_decimal_constant");};
+        auto set=[&](Bytes &c,unsigned id,unsigned value){emitAdjustMultiLiteral(c,id,kOpSet,0,{static_cast<unsigned char>(value),static_cast<unsigned char>(value>>8),0});};
+        auto add=[&](Bytes &c,unsigned id,unsigned value){emitAdjustMultiLiteral(c,id,kOpAddWithCarry,0,le16Bytes(value));};
+        auto define=[&](unsigned id,Bytes c){
+            if(c.empty()||c.size()>65535)throw std::runtime_error("float decimal helper exceeds WRITE block");
+            output_.programs[id]=std::move(c);
+        };
+        auto readAction=[&](unsigned source,unsigned result,const std::string &role){Bytes c;copy(c,{result,0},{source,0},1);emitAdjustMultiLiteral(c,result,5,0,{255,0});return helper(c,"float_decimal_"+role);};
+        auto readAt=[&](Bytes &c,unsigned action,unsigned offset){copy(c,{action,13},{offset,0});append(c,call(action));};
+        auto storeAction=[&](unsigned destination,unsigned source,const std::string &role){Bytes c;copy(c,{destination,0},{source,0},1);return helper(c,"float_decimal_"+role);};
+        auto storeAt=[&](Bytes &c,unsigned action,unsigned offset){copy(c,{action,7},{offset,0});append(c,call(action));};
+        const auto one=constant(1),five=constant(5),nine=constant(9),ten=constant(10),oneFifty=constant(150);
+        const auto digits=data(Bytes(113,0),"float_decimal_digits"),length=word("length"),scale=word("scale"),rounds=word("rounds");
+        const auto index=word("index"),digit=word("digit"),packed=word("packed"),carry=word("carry"),tableIndex=word("table_index");
+        Bytes tables(512,0),decode(80,0);
+        for(unsigned mode=0;mode<2;++mode)for(unsigned c=0;c<(mode?5u:2u);++c)for(unsigned d=0;d<10;++d) {
+            const auto product=d*(mode?5u:2u)+c;
+            tables[256*mode+16*c+d]=static_cast<unsigned char>((product/10)*16+product%10);
+        }
+        for(unsigned n=0;n<decode.size();++n)decode[n]=static_cast<unsigned char>(n/16);
+        const auto table=data(tables,"float_decimal_multiply_table"),carryTable=data(decode,"float_decimal_carry_table");
+        const auto readDigit=readAction(digits,digit,"read_digit"),readProduct=readAction(table,packed,"read_product"),readCarry=readAction(carryTable,packed,"read_carry");
+        const auto storeDigit=storeAction(digits,packed,"store_digit");
+        const auto digitLoop=allocate("float_decimal_digit_loop");Bytes multiplyDigit;
+        readAt(multiplyDigit,readDigit,index);copy(multiplyDigit,{tableIndex,0},{digit,0},1);
+        emitAdjustMultiBufferFetched(multiplyDigit,tableIndex,6,0,1,carry,0);
+        readAt(multiplyDigit,readProduct,tableIndex);
+        copy(multiplyDigit,{carry,0},{packed,0},1);emitAdjustMultiLiteral(multiplyDigit,carry,5,0,{240});
+        emitAdjustMultiLiteral(multiplyDigit,packed,5,0,{15});storeAt(multiplyDigit,storeDigit,index);add(multiplyDigit,index,1);
+        emitCondJumpBufferValue(multiplyDigit,digitLoop,4,index,0,length,0);define(digitLoop,std::move(multiplyDigit));
+        Bytes appendCarry;readAt(appendCarry,readCarry,carry);storeAt(appendCarry,storeDigit,length);add(appendCarry,length,1);
+        const auto appendCarryID=helper(appendCarry,"float_decimal_append_carry");
+        const auto scaleLoop=allocate("float_decimal_scale_loop");Bytes multiply;
+        set(multiply,index,0);set(multiply,carry,0);append(multiply,call(digitLoop));
+        emitCondCallBufferValue(multiply,appendCarryID,3,carry,0,zero_,0);add(multiply,rounds,65535);
+        emitCondJumpBufferValue(multiply,scaleLoop,3,rounds,0,zero_,0);define(scaleLoop,std::move(multiply));
+
+        // Retain9 leading digits, one guard digit and a sticky OR of every
+        // discarded lower digit.  All loops below tail-jump with finite counts.
+        const auto significant=data(Bytes(11,0),"float_decimal_significant"),count=word("count"),remaining=word("remaining"),cursor=word("cursor");
+        const auto guard=word("guard"),sticky=word("sticky"),roundUp=word("round_up"),exponent=word("exponent");
+        const auto readSignificant=readAction(significant,digit,"read_significant"),storeSignificant=storeAction(significant,digit,"store_significant");
+        const auto extractLoop=allocate("float_decimal_extract_loop");Bytes extract;
+        readAt(extract,readDigit,cursor);storeAt(extract,storeSignificant,count);add(extract,count,1);add(extract,cursor,65535);add(extract,remaining,65535);
+        emitCondJumpBufferValue(extract,65535,2,remaining,0,zero_,0);
+        emitCondJumpBufferValue(extract,extractLoop,4,count,0,nine,0);define(extractLoop,std::move(extract));
+        const auto stickyLoop=allocate("float_decimal_sticky_loop");Bytes collectSticky;
+        readAt(collectSticky,readDigit,cursor);emitAdjustMultiBufferFetched(collectSticky,sticky,6,0,1,digit,0);
+        add(collectSticky,cursor,65535);add(collectSticky,remaining,65535);
+        emitCondJumpBufferValue(collectSticky,stickyLoop,3,remaining,0,zero_,0);define(stickyLoop,std::move(collectSticky));
+        Bytes yes;set(yes,roundUp,1);const auto roundYes=helper(yes,"float_decimal_round_yes");
+        Bytes tie;emitCondCallBufferValue(tie,roundYes,3,sticky,0,zero_,0);
+        copy(tie,{digit,0},{significant,8},1);emitAdjustMultiLiteral(tie,digit,5,0,{1});
+        emitCondCallBufferValue(tie,roundYes,3,digit,0,zero_,0);const auto tieID=helper(tie,"float_decimal_tie");
+        Bytes rounding;readAt(rounding,readDigit,cursor);copy(rounding,{guard,0},{digit,0});
+        add(rounding,cursor,65535);add(rounding,remaining,65535);set(rounding,sticky,0);set(rounding,roundUp,0);
+        emitCondCallBufferValue(rounding,stickyLoop,3,remaining,0,zero_,0);
+        emitCondCallBufferValue(rounding,roundYes,5,guard,0,five,0);
+        emitCondCallBufferValue(rounding,tieID,2,guard,0,five,0);
+        Bytes increment;
+        for(int position=8;position>=0;--position) {
+            Bytes next,reset,stop;
+            emitAdjustMultiLiteral(next,significant,kOpAddWithCarry,static_cast<unsigned>(position),{1});
+            copy(next,{digit,0},{significant,static_cast<unsigned>(position)},1);
+            emitAdjustMultiLiteral(reset,significant,kOpSet,static_cast<unsigned>(position),{0});
+            set(stop,roundUp,0);
+            emitCondCallBufferValue(next,helper(reset,"float_decimal_round_carry"),2,digit,0,ten,0);
+            emitCondCallBufferValue(next,helper(stop,"float_decimal_round_stop"),3,digit,0,ten,0);
+            emitCondCallBufferValue(increment,helper(next,"float_decimal_round_digit"),3,roundUp,0,zero_,0);
+        }
+        Bytes grow;emitAdjustMultiLiteral(grow,significant,kOpSet,0,{1});add(grow,exponent,1);
+        emitCondCallBufferValue(increment,helper(grow,"float_decimal_round_grow"),3,roundUp,0,zero_,0);
+        const auto incrementID=helper(increment,"float_decimal_increment");
+        emitCondCallBufferValue(rounding,incrementID,3,roundUp,0,zero_,0);
+        const auto roundID=helper(rounding,"float_decimal_round");
+        const auto trimLoop=allocate("float_decimal_trim_loop");Bytes trim;
+        emitCondJumpBufferValue(trim,65535,2,count,0,one,0);
+        readAt(trim,readSignificant,cursor);emitCondJumpBufferValue(trim,65535,3,digit,0,zero_,0);
+        add(trim,count,65535);add(trim,cursor,65535);append(trim,jump(trimLoop));define(trimLoop,std::move(trim));
+
+        // Build backwards into16 bytes.  Both notation forms use at most15
+        // characters including sign; the final text ends at byte15.
+        const auto character=word("character"),position=word("position"),zeros=word("zeros"),pointAt=word("point_at");
+        Bytes emit;add(emit,f.first,65535);const auto storeCharacter=storeAction(f.text,character,"store_character");storeAt(emit,storeCharacter,f.first);
+        const auto emitID=helper(emit,"float_decimal_emit_character");
+        auto put=[&](Bytes &c,unsigned ch){set(c,character,ch);append(c,call(emitID));};
+        Bytes point;put(point,'.');const auto pointID=helper(point,"float_decimal_point");
+        const auto zeroLoop=allocate("float_decimal_zero_loop");Bytes emitZero;put(emitZero,'0');add(emitZero,zeros,65535);
+        emitCondJumpBufferValue(emitZero,zeroLoop,3,zeros,0,zero_,0);define(zeroLoop,std::move(emitZero));
+        const auto reverseLoop=allocate("float_decimal_reverse_loop");Bytes reverse;
+        readAt(reverse,readSignificant,cursor);copy(reverse,{character,0},{digit,0},1);add(reverse,character,48);append(reverse,call(emitID));
+        emitCondCallBufferValue(reverse,pointID,2,cursor,0,pointAt,0);
+        emitCondJumpBufferValue(reverse,65535,2,cursor,0,zero_,0);
+        add(reverse,cursor,65535);append(reverse,jump(reverseLoop));define(reverseLoop,std::move(reverse));
+        auto reverseDigits=[&](Bytes &c){copy(c,{cursor,0},{count,0});add(c,cursor,65535);append(c,call(reverseLoop));};
+        Bytes negativeFixed;set(negativeFixed,pointAt,255);reverseDigits(negativeFixed);
+        copy(negativeFixed,{zeros,0},{exponent,0});negate(negativeFixed,zeros);add(negativeFixed,zeros,65535);
+        emitCondCallBufferValue(negativeFixed,zeroLoop,3,zeros,0,zero_,0);put(negativeFixed,'.');put(negativeFixed,'0');
+        const auto negativeFixedID=helper(negativeFixed,"float_decimal_negative_fixed");
+        Bytes integerZeros;copy(integerZeros,{zeros,0},{position,0});
+        // zeros=position-count is nonnegative in this branch.
+        copy(integerZeros,{digit,0},{count,0});negate(integerZeros,digit);emitAdjustMultiBufferFetched(integerZeros,zeros,kOpAddWithCarry,0,2,digit,0);
+        emitCondCallBufferValue(integerZeros,zeroLoop,3,zeros,0,zero_,0);set(integerZeros,pointAt,255);
+        const auto integerZerosID=helper(integerZeros,"float_decimal_integer_zeros");
+        Bytes positiveFixed;copy(positiveFixed,{position,0},{exponent,0});add(positiveFixed,position,1);
+        copy(positiveFixed,{pointAt,0},{position,0});
+        emitCondCallBufferValue(positiveFixed,integerZerosID,6,count,0,position,0);reverseDigits(positiveFixed);
+        const auto positiveFixedID=helper(positiveFixed,"float_decimal_positive_fixed");
+        const auto exponentSign=word("exponent_sign"),exponentMagnitude=word("exponent_magnitude"),exponentIndex=word("exponent_index"),exponentPair=word("exponent_pair");
+        Bytes exponentCharacters;for(unsigned n=0;n<40;++n){exponentCharacters.push_back(static_cast<unsigned char>('0'+n/10));exponentCharacters.push_back(static_cast<unsigned char>('0'+n%10));}
+        const auto exponentTable=data(exponentCharacters,"float_decimal_exponent_text");
+        Bytes loadPair;copy(loadPair,{exponentPair,0},{exponentTable,0},2);const auto loadPairID=helper(loadPair,"float_decimal_exponent_pair");
+        Bytes scientific;copy(scientific,{exponentMagnitude,0},{exponent,0});
+        Bytes absExponent;negate(absExponent,exponentMagnitude);const auto absExponentID=helper(absExponent,"float_decimal_absolute_exponent");
+        emitCondCallBufferValue(scientific,absExponentID,3,exponentSign,0,zero_,0);
+        copy(scientific,{exponentIndex,0},{exponentMagnitude,0});emitAdjustMultiBufferFetched(scientific,exponentIndex,kOpAddWithCarry,0,2,exponentMagnitude,0);
+        copy(scientific,{loadPairID,13},{exponentIndex,0});append(scientific,call(loadPairID));
+        copy(scientific,{character,0},{exponentPair,1},1);append(scientific,call(emitID));
+        copy(scientific,{character,0},{exponentPair,0},1);append(scientific,call(emitID));
+        set(scientific,character,'+');Bytes minus;set(minus,character,'-');const auto minusID=helper(minus,"float_decimal_exponent_minus");
+        emitCondCallBufferValue(scientific,minusID,3,exponentSign,0,zero_,0);append(scientific,call(emitID));put(scientific,'e');
+        set(scientific,pointAt,1);Bytes noPoint;set(noPoint,pointAt,255);
+        emitCondCallBufferValue(scientific,helper(noPoint,"float_decimal_no_point"),2,count,0,one,0);reverseDigits(scientific);
+        const auto scientificID=helper(scientific,"float_decimal_scientific");
+        const auto scientificFlag=word("scientific");
+        Bytes fixed;emitCondCallBufferValue(fixed,negativeFixedID,3,exponentSign,0,zero_,0);
+        emitCondCallBufferValue(fixed,positiveFixedID,2,exponentSign,0,zero_,0);const auto fixedID=helper(fixed,"float_decimal_fixed");
+        Bytes markScientific;set(markScientific,scientificFlag,1);const auto markScientificID=helper(markScientific,"float_decimal_mark_scientific");
+        Bytes minusRange;emitCondCallBufferValue(minusRange,markScientificID,5,exponentMagnitude,0,constant(4),0);
+        const auto minusRangeID=helper(minusRange,"float_decimal_negative_range");
+        Bytes plusRange;emitCondCallBufferValue(plusRange,markScientificID,5,exponent,0,constant(8),0);
+        const auto plusRangeID=helper(plusRange,"float_decimal_positive_range");
+
+        Bytes code;emitAdjustMultiLiteral(code,f.text,kOpSet,0,Bytes(16,0));set(code,f.first,16);
+        floatCheck(code,{f.input,0});
+        // floatCheck only needs zero/all-ones and rotates the exponent's low
+        // bit into bit7.  Decode the actual biased exponent independently.
+        const auto biasedExponent=word("biased_exponent"),exponentLow=word("exponent_low_bit");
+        set(code,biasedExponent,0);copy(code,{biasedExponent,0},{f.input,3},1);emitAdjustMultiLiteral(code,biasedExponent,5,0,{127});
+        emitAdjustMultiBufferFetched(code,biasedExponent,kOpAddWithCarry,0,2,biasedExponent,0);
+        set(code,exponentLow,0);copy(code,{exponentLow,0},{f.input,2},1);emitAdjustMultiLiteral(code,exponentLow,5,0,{128});
+        Bytes oddExponent;add(oddExponent,biasedExponent,1);
+        emitCondCallBufferValue(code,helper(oddExponent,"float_decimal_odd_exponent"),3,exponentLow,0,zero_,0);
+        Bytes zero;put(zero,'0');const auto zeroID=helper(zero,"float_decimal_zero");
+        emitCondJumpBufferValue(code,zeroID,2,biasedExponent,0,zero_,0);
+        copy(code,{f.negative,0},{f.input,3},1);emitAdjustMultiLiteral(code,f.negative,5,0,{128});
+        auto &integer=decimalFormatter(4);
+        emitAdjustMultiLiteral(code,integer.input,kOpSet,0,Bytes(5,0));copy(code,{integer.input,0},{f.input,0},3);
+        emitAdjustMultiLiteral(code,integer.input,6,2,{128});emitAdjustMultiLiteral(code,integer.negative,kOpSet,0,{0,0});append(code,call(integer.entry));
+        emitAdjustMultiLiteral(code,digits,kOpSet,0,Bytes(113,0));
+        for(unsigned n=0;n<8;++n)copy(code,{digits,n},{integer.text,10-n},1);
+        emitAdjustMultiLiteral(code,digits,5,0,Bytes(8,15));set(code,length,8);
+        Bytes seven;set(seven,length,7);copy(code,{digit,0},{digits,7},1);
+        emitCondCallBufferValue(code,helper(seven,"float_decimal_seven_digits"),2,digit,0,zero_,0);
+        set(code,rounds,0);set(code,scale,0);set(code,tableIndex,0);
+        Bytes scalePositive;copy(scalePositive,{rounds,0},{biasedExponent,0});add(scalePositive,rounds,65536-150);
+        Bytes scaleNegative;copy(scaleNegative,{rounds,0},{biasedExponent,0});negate(scaleNegative,rounds);add(scaleNegative,rounds,150);
+        copy(scaleNegative,{scale,0},{biasedExponent,0});add(scaleNegative,scale,65536-150);emitAdjustMultiLiteral(scaleNegative,tableIndex,kOpSet,1,{1});
+        emitCondCallBufferValue(code,helper(scalePositive,"float_decimal_scale_positive"),7,biasedExponent,0,oneFifty,0);
+        emitCondCallBufferValue(code,helper(scaleNegative,"float_decimal_scale_negative"),4,biasedExponent,0,oneFifty,0);
+        emitCondCallBufferValue(code,scaleLoop,3,rounds,0,zero_,0);
+        set(code,exponent,0);copy(code,{exponent,0},{length,0});add(code,exponent,65535);emitAdjustMultiBufferFetched(code,exponent,kOpAddWithCarry,0,2,scale,0);
+        emitAdjustMultiLiteral(code,significant,kOpSet,0,Bytes(11,0));set(code,count,0);copy(code,{remaining,0},{length,0});copy(code,{cursor,0},{length,0});add(code,cursor,65535);
+        append(code,call(extractLoop));emitCondCallBufferValue(code,roundID,3,remaining,0,zero_,0);
+        copy(code,{cursor,0},{count,0});add(code,cursor,65535);append(code,call(trimLoop));
+        set(code,exponentSign,0);copy(code,{exponentSign,0},{exponent,1},1);emitAdjustMultiLiteral(code,exponentSign,5,0,{128});
+        copy(code,{exponentMagnitude,0},{exponent,0});emitCondCallBufferValue(code,absExponentID,3,exponentSign,0,zero_,0);
+        set(code,scientificFlag,0);emitCondCallBufferValue(code,minusRangeID,3,exponentSign,0,zero_,0);emitCondCallBufferValue(code,plusRangeID,2,exponentSign,0,zero_,0);
+        emitCondCallBufferValue(code,scientificID,3,scientificFlag,0,zero_,0);emitCondCallBufferValue(code,fixedID,2,scientificFlag,0,zero_,0);
+        Bytes signText;put(signText,'-');emitCondCallBufferValue(code,helper(signText,"float_decimal_sign_text"),3,f.negative,0,zero_,0);
+        f.entry=helper(code,"float_decimal_format");return f;
+    }
+    void printFloat(Bytes &code,const Expression &value) {
+        const auto input=expression(code,value);auto &f=floatFormatter();
+        copy(code,{f.input,0},input,4);append(code,call(f.entry));propagate(code);
+        const auto text=data(Bytes(16,0),"str_float_temporary");copy(code,{text,0},{f.text,0},16);
+        Bytes invoke;emitBufferHeader(invoke,text);invoke.insert(invoke.end(),{11,0,0,0});
+        const auto action=helper(invoke,"print_float_text");copy(code,{action,6},{f.first,0});append(code,call(action));
+        emitAdjustMultiLiteral(code,text,kOpSet,0,Bytes(16,0));
+    }
     unsigned sequence(const std::vector<Assignment> &statements, unsigned continuation) {
         size_t end = statements.size();
         while (end) {
@@ -656,7 +850,10 @@ class BufferEmitter {
                 for (size_t i = start; i < end; ++i) {
                     const auto &statement = statements[i];
                     if(statement.printing) {
-                        if(statement.value)printInteger(code,statement.value);
+                        if(statement.value) {
+                            if(statement.value->type==Type::F32)printFloat(code,statement.value);
+                            else printInteger(code,statement.value);
+                        }
                         else code.insert(code.end(),statement.text.begin(),statement.text.end());
                         continue;
                     }

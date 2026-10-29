@@ -1,8 +1,8 @@
 {
   "archive": "dist/golem-on-agon-GOLEM-051.zip",
-  "bytes": 540594,
-  "sha256": "4e5774fe84d532dd6e62af33fdd55aaeb52761ffc5f95c21644cb3422fa62afd",
-  "files": 114,
+  "bytes": 554835,
+  "sha256": "d6251c9af5de2e6e84a14914251b02b462c7d97162173c27b5d256847dcaa283",
+  "files": 115,
   "human": "pending",
   "physical": "not run",
   "source": "current maintained C++ with task-local AgonDev adapter"

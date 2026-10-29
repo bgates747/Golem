@@ -1,0 +1,7 @@
+// Compile with --portable; all formatting runs in stock resident VDP buffers.
+float32 reading = 1.5
+float32 scale = 2.0
+Sub show
+    print "reading=" print str(reading)
+    print " scaled=" print str(reading * scale)
+EndSub

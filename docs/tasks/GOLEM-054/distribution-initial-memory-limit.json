@@ -1,0 +1,17 @@
+{
+  "passed": false,
+  "stage": "actual MOS compilation of initial distributed float-print example",
+  "source": "docs/tasks/GOLEM-054/memory-limit-case.golem",
+  "worker_sha256": "b275de31d37406ff35c5a863d7b44f75061607251135f5e5b9f1455dcb0b8d05",
+  "allocation_request_bytes": 32768,
+  "compiler_stage": "building stock wrappers",
+  "error": "out of compiler memory",
+  "normal_error_return_to_MOS": true,
+  "profile": "Oryx dedicated actual Fab .emulator/golem-054",
+  "GUI_launched": false,
+  "physical_target": false,
+  "screen_sha256": "1b793a6b2df539b34f63a70424f41114fb1d84f203fda8f718889fed7ec0aa74",
+  "disposition": "Preserved actual MOS RAM-limit case. Distribution example reduced to one initialized float/one formatted expression; no allocator optimization in this tranche.",
+  "source_sha256": "9b1b48d6b1ed02244cab44786a005ea2cbbaf25b224af275d66be87be5700fbe",
+  "screen": "docs/tasks/GOLEM-054/memory-limit.png"
+}

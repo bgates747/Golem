@@ -1,0 +1,230 @@
+{
+  "passed": true,
+  "all_bytes_identical": false,
+  "executable_artifacts_identical": true,
+  "compiler_sha256": "252b209c0288328a5e2201ccf283fb563f0d4b7f8cfbdc652ad88a8d1299d91b",
+  "programs": [
+    {
+      "source": "docs/tasks/GOLEM-052/numbers.golem",
+      "source_sha256": "ae575abadebe18334dfce979e570197fb829fee6f895159dd6d518ea42130918",
+      "frozen": "docs/tasks/GOLEM-052/build/target-reference",
+      "generated": "docs/tasks/GOLEM-054/build/legacy-numbers-parity",
+      "file_count": 11,
+      "identical_files": 11,
+      "bytes_compared": 65880,
+      "files": [
+        {
+          "file": "backends.json",
+          "frozen_bytes": 40148,
+          "actual_bytes": 40148,
+          "frozen_sha256": "148720217cc128938697256ef7296b318c0cea8b60f665b0e0d7dce5ed99ec88",
+          "actual_sha256": "148720217cc128938697256ef7296b318c0cea8b60f665b0e0d7dce5ed99ec88",
+          "identical": true
+        },
+        {
+          "file": "buffered-cleanup.bin",
+          "frozen_bytes": 942,
+          "actual_bytes": 942,
+          "frozen_sha256": "c79cf4391b3bfb882e58a3d041f650c568b044af84413e3a52f7c7495f4c5c4b",
+          "actual_sha256": "c79cf4391b3bfb882e58a3d041f650c568b044af84413e3a52f7c7495f4c5c4b",
+          "identical": true
+        },
+        {
+          "file": "buffered-install.bin",
+          "frozen_bytes": 17728,
+          "actual_bytes": 17728,
+          "frozen_sha256": "97ee7d53eade33d8880d7eabcbb2d86bea499f6789271315b9b2013caa26886c",
+          "actual_sha256": "97ee7d53eade33d8880d7eabcbb2d86bea499f6789271315b9b2013caa26886c",
+          "identical": true
+        },
+        {
+          "file": "calls.inc",
+          "frozen_bytes": 617,
+          "actual_bytes": 617,
+          "frozen_sha256": "791d6fe73ac535430ebec5464cb9e059009a5fff644810402c9f6fadec4ee8ea",
+          "actual_sha256": "791d6fe73ac535430ebec5464cb9e059009a5fff644810402c9f6fadec4ee8ea",
+          "identical": true
+        },
+        {
+          "file": "common-install.bin",
+          "frozen_bytes": 142,
+          "actual_bytes": 142,
+          "frozen_sha256": "ab34c785c25703dff71076de3adccef3c4af7976c3bacb32567ec84204b7b512",
+          "actual_sha256": "ab34c785c25703dff71076de3adccef3c4af7976c3bacb32567ec84204b7b512",
+          "identical": true
+        },
+        {
+          "file": "interface.json",
+          "frozen_bytes": 1515,
+          "actual_bytes": 1515,
+          "frozen_sha256": "500bf9335bd335c96bfe9cfad9b00d586a0c36e4d1bf9dcd2738b7ecfc5a2eed",
+          "actual_sha256": "500bf9335bd335c96bfe9cfad9b00d586a0c36e4d1bf9dcd2738b7ecfc5a2eed",
+          "identical": true
+        },
+        {
+          "file": "layout.inc",
+          "frozen_bytes": 1691,
+          "actual_bytes": 1691,
+          "frozen_sha256": "16e3407c51b5ad2c64975ca1f5c1cb1b3065dde4839e68b4cc6a9f4cf825554d",
+          "actual_sha256": "16e3407c51b5ad2c64975ca1f5c1cb1b3065dde4839e68b4cc6a9f4cf825554d",
+          "identical": true
+        },
+        {
+          "file": "program.json",
+          "frozen_bytes": 1891,
+          "actual_bytes": 1891,
+          "frozen_sha256": "ef080ed707a9f9adb7eb59b1875a21ae303672a812192fa15394a03d799d0162",
+          "actual_sha256": "ef080ed707a9f9adb7eb59b1875a21ae303672a812192fa15394a03d799d0162",
+          "identical": true
+        },
+        {
+          "file": "root.json",
+          "frozen_bytes": 1019,
+          "actual_bytes": 1019,
+          "frozen_sha256": "701f87c379c5d958d167407fbcdaa0b9b1bd76b5b855209461f5a96ac13e6358",
+          "actual_sha256": "701f87c379c5d958d167407fbcdaa0b9b1bd76b5b855209461f5a96ac13e6358",
+          "identical": true
+        },
+        {
+          "file": "state.bin",
+          "frozen_bytes": 128,
+          "actual_bytes": 128,
+          "frozen_sha256": "4d04aca6838c11c94d50bdaec7949726f708884f2070d26354031fccb6f5a012",
+          "actual_sha256": "4d04aca6838c11c94d50bdaec7949726f708884f2070d26354031fccb6f5a012",
+          "identical": true
+        },
+        {
+          "file": "targets.json",
+          "frozen_bytes": 59,
+          "actual_bytes": 59,
+          "frozen_sha256": "02ee8a3c232246b4189e2e0956672ce033d0c73e7ea12aa570a28176d3daaacc",
+          "actual_sha256": "02ee8a3c232246b4189e2e0956672ce033d0c73e7ea12aa570a28176d3daaacc",
+          "identical": true
+        }
+      ]
+    },
+    {
+      "source": "docs/tasks/GOLEM-052/review.golem",
+      "source_sha256": "921919482ed37603191d23e7da269f3231fe44d46e1534248be57754a3afa2af",
+      "frozen": "docs/tasks/GOLEM-052/build/review",
+      "generated": "docs/tasks/GOLEM-054/build/legacy-review-parity",
+      "file_count": 11,
+      "identical_files": 10,
+      "bytes_compared": 37310,
+      "files": [
+        {
+          "file": "backends.json",
+          "frozen_bytes": 22672,
+          "actual_bytes": 22672,
+          "frozen_sha256": "d68d7db4a2374a39e9807a418def9b6fb0c2c1db19022a9222fe3266f028cce8",
+          "actual_sha256": "d68d7db4a2374a39e9807a418def9b6fb0c2c1db19022a9222fe3266f028cce8",
+          "identical": true
+        },
+        {
+          "file": "buffered-cleanup.bin",
+          "frozen_bytes": 456,
+          "actual_bytes": 456,
+          "frozen_sha256": "a4e16ad4eef08e79f5f16970f66eb4bfaa304be2c26e0305f0b00c6c576fd6c3",
+          "actual_sha256": "a4e16ad4eef08e79f5f16970f66eb4bfaa304be2c26e0305f0b00c6c576fd6c3",
+          "identical": true
+        },
+        {
+          "file": "buffered-install.bin",
+          "frozen_bytes": 9953,
+          "actual_bytes": 9953,
+          "frozen_sha256": "aae27bdc45a67b4bf203ff611b4aef48a17e62014d5b642afdcdfb247ac9a716",
+          "actual_sha256": "aae27bdc45a67b4bf203ff611b4aef48a17e62014d5b642afdcdfb247ac9a716",
+          "identical": true
+        },
+        {
+          "file": "calls.inc",
+          "frozen_bytes": 223,
+          "actual_bytes": 223,
+          "frozen_sha256": "329619c42a660b3d73b0d1ce90f09cee38f8ab4d03269be9c56b9063c28c17c0",
+          "actual_sha256": "329619c42a660b3d73b0d1ce90f09cee38f8ab4d03269be9c56b9063c28c17c0",
+          "identical": true
+        },
+        {
+          "file": "common-install.bin",
+          "frozen_bytes": 130,
+          "actual_bytes": 130,
+          "frozen_sha256": "203d85025da870c865d9a2eee714175e3f61f318986343d2412755224cf342de",
+          "actual_sha256": "203d85025da870c865d9a2eee714175e3f61f318986343d2412755224cf342de",
+          "identical": true
+        },
+        {
+          "file": "interface.json",
+          "frozen_bytes": 828,
+          "actual_bytes": 828,
+          "frozen_sha256": "da850a1a52a9a2bb06863d210bd31b6fe4449352b50e85c80b5426cc15eb2366",
+          "actual_sha256": "da850a1a52a9a2bb06863d210bd31b6fe4449352b50e85c80b5426cc15eb2366",
+          "identical": true
+        },
+        {
+          "file": "layout.inc",
+          "frozen_bytes": 1257,
+          "actual_bytes": 1257,
+          "frozen_sha256": "de1e254a8220503410bd0ac31e2e0762cd2803c69fe982692267140f99bde065",
+          "actual_sha256": "de1e254a8220503410bd0ac31e2e0762cd2803c69fe982692267140f99bde065",
+          "identical": true
+        },
+        {
+          "file": "program.json",
+          "frozen_bytes": 598,
+          "actual_bytes": 598,
+          "frozen_sha256": "a3646b1d3e59823637d953dd8c281bed31af12608e92240491e0ab0a00db94df",
+          "actual_sha256": "33d8bd0a02d7f8998f67faa5dac61f23c493d1d96703db2e40bbe7de7890c9cd",
+          "identical": false,
+          "disposition": "Frozen historical review metadata has schema4 despite print; maintained pre-float integer-print contract uses schema5. Only schema digit differs; executable and other artifacts are identical."
+        },
+        {
+          "file": "root.json",
+          "frozen_bytes": 1018,
+          "actual_bytes": 1018,
+          "frozen_sha256": "3cdc51e56a1b4c91c83deb51ab6cc2262022515b44d15728f4f5b77449893f10",
+          "actual_sha256": "3cdc51e56a1b4c91c83deb51ab6cc2262022515b44d15728f4f5b77449893f10",
+          "identical": true
+        },
+        {
+          "file": "state.bin",
+          "frozen_bytes": 116,
+          "actual_bytes": 116,
+          "frozen_sha256": "d51ec2396c8df1e41f80abd880f9a3137271f98a294bf3bc58a2f8edabe2d007",
+          "actual_sha256": "d51ec2396c8df1e41f80abd880f9a3137271f98a294bf3bc58a2f8edabe2d007",
+          "identical": true
+        },
+        {
+          "file": "targets.json",
+          "frozen_bytes": 59,
+          "actual_bytes": 59,
+          "frozen_sha256": "02ee8a3c232246b4189e2e0956672ce033d0c73e7ea12aa570a28176d3daaacc",
+          "actual_sha256": "02ee8a3c232246b4189e2e0956672ce033d0c73e7ea12aa570a28176d3daaacc",
+          "identical": true
+        }
+      ]
+    }
+  ],
+  "files_compared": 22,
+  "identical_files": 21,
+  "bytes_compared": 103190,
+  "metadata_exceptions": [
+    {
+      "program": "review",
+      "file": "program.json",
+      "frozen_bytes": 598,
+      "actual_bytes": 598,
+      "frozen_sha256": "a3646b1d3e59823637d953dd8c281bed31af12608e92240491e0ab0a00db94df",
+      "actual_sha256": "33d8bd0a02d7f8998f67faa5dac61f23c493d1d96703db2e40bbe7de7890c9cd",
+      "identical": false,
+      "disposition": "Frozen historical review metadata has schema4 despite print; maintained pre-float integer-print contract uses schema5. Only schema digit differs; executable and other artifacts are identical."
+    }
+  ],
+  "references_modified": false,
+  "metadata_exception_provenance": {
+    "baseline_commit": "46ade43",
+    "file": "src/portable/portable.hpp",
+    "line": 954,
+    "source_line": "out << \"{\\\"schema\\\":\" << (containsPrint(program)?5:4) << \",\\\"procedures\\\":[\";",
+    "conclusion": "The parent commit already emits schema5 for integer-print programs; the frozen review metadata discrepancy predates GOLEM-054."
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "sanitizers": [
+    "address",
+    "undefined"
+  ],
+  "leak_sanitizer": "disabled because LeakSanitizer refuses the execution tracer",
+  "seconds": 63.751521905003756,
+  "source_sha256": {
+    "src/portable/portable.hpp": "0b71f95da788f06a83f59b74f413ded4e28a2edf63774fcea9d5ed9f718b3a6d",
+    "src/portable/backends.hpp": "0e14604c6975dcc20b2f298dedd10f2f8bb1b65f2096c880fd6769ac8b4e9afe",
+    "tests/test_printing.cpp": "73fa8bc3c973a620c6bcf4c0178ae7ec5a39eac21ef64e7c05a255b3265e5728"
+  }
+}

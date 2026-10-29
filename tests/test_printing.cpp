@@ -1,6 +1,7 @@
 #include "../src/portable/driver.hpp"
 #include <cassert>
 #include <iostream>
+#include <cstdio>
 using namespace portable;
 void check(const std::string &source,const std::string &expected,unsigned status=0) {
     auto p=Parser(source).parse();auto l=layout(p);auto state=l.initial;std::string output;
@@ -37,8 +38,24 @@ int main(int argc,char**argv){
     check("uint16 i=1 Array sint32 data(0:1)=Values(0,-2147483648) Sub f print str(data(i)) EndSub","-2147483648");
     check("uint16 x=65535 Sub f print \"before\" print str(x+1) print \"after\" EndSub","before",1);
     check("uint16 x=65535 Sub f print str(x) print str(x) EndSub","6553565535");
+    check("float32 x=1.5 Sub f print str(x) EndSub","1.5");
+    check("float32 x=0.1 Sub f print str(x) EndSub","0.100000001");
+    check("float32 x=-0.0 Sub f print str(x) EndSub","0");
+    check("float32 x=1000000000.0 Sub f print str(x) EndSub","1e+09");
+    check("float32 x=0.00001 Sub f print str(x) EndSub","9.99999975e-06");
+    check("float32 x=1.5 float32 y=2.0 Sub f print str(x*y+x) EndSub","4.5");
+    check("Sub f print str(1.5) print \"/\" print str(-0.0) EndSub","1.5/0");
+    uint32_t seed=5401;
+    for(unsigned i=0;i<4096;++i) {
+        seed=seed*1664525u+1013904223u;
+        const auto magnitude=seed&0x7fffffffu;
+        if(magnitude<0x00800000u || magnitude>=0x7f800000u)continue;
+        const Value value{Type::F32,seed};char expected[32];
+        std::snprintf(expected,sizeof expected,"%.9g",value.number());
+        assert(decimal(value)==expected);
+    }
     unsigned rejected=0;
-    for(auto text:{"uint16 x=1 Sub f print x EndSub","float32 x=1.0 Sub f print str(x) EndSub",
+    for(auto text:{"uint16 x=1 Sub f print x EndSub",
         "bool x=true Sub f print str(x) EndSub","uint16 x=1 Sub f print str(x,1) EndSub",
         "uint16 x=1 Sub f print str() EndSub","uint16 x=1 Sub f print str(\"1\") EndSub",
         "uint16 x=1 Sub f print str(x),str(x) EndSub","uint16 x=1 Sub f print \"a\"+\"b\" EndSub",
@@ -49,5 +66,16 @@ int main(int argc,char**argv){
     auto p=Parser("uint16 x=1 Sub f print str(x) EndSub").parse();auto l=layout(p);
     bool bad=false;try{dual::nativeC(p,l);}catch(const std::exception&){bad=true;}assert(bad);
     assert(programJson(p).find("\"print\":{\"integer\"")!=std::string::npos);
-    std::cout<<"Printing contracts pass: 8 output/error cases and "<<rejected<<" rejected forms.\n";
+    auto floats=Parser("float32 x=1.5 Sub f print str(x) EndSub").parse();
+    assert(containsFloatPrint(floats));assert(!containsFloatPrint(p));
+    assert(programJson(floats).find("\"schema\":6")!=std::string::npos);
+    assert(programJson(floats).find("\"print\":{\"float32\"")!=std::string::npos);
+    {std::ofstream out(source);out<<"float32 x=1.5 Sub f print str(x) EndSub";}
+    assert(compile({},work/"float-buffered")==0);
+    assert(!fs::exists(work/"float-buffered/native.c"));
+    for(auto target:{"native","both"}) {
+        const auto out=work/(std::string("float-")+target);
+        assert(compile({"--target",target},out)==1);assert(!fs::exists(out));
+    }
+    std::cout<<"Printing contracts pass: 15 output/error cases, 4096 float samples and "<<rejected<<" rejected forms.\n";
 }

@@ -1,0 +1,30 @@
+float32 x = 0.0
+float32 y Bounds(-10,10) = 0.0
+uint16 i = 0
+uint16 marker = 7
+Sub show
+    print "[" print str(x) print "]"
+EndSub
+Sub pair
+    print str(x) print "/" print str(y)
+EndSub
+Sub expression
+    print "expr=" print str(x * 2.0 + 1.0)
+EndSub
+Sub repeated
+    For i In Range(0:2)
+        print str(x)
+    Next i
+EndSub
+Sub overflow
+    print "before:" print str(x * 2.0) print ":after"
+EndSub
+Sub lateFailure
+    print str(y) print ":" print str(x * 2.0) print ":after"
+EndSub
+Sub normalized
+    print str(x * 0.5)
+EndSub
+Sub mixed
+    print str(marker) print ":" print str(x)
+EndSub

@@ -1,0 +1,14 @@
+$ /Agon/mystuff/golem/build/golemc --portable /Agon/mystuff/golem/docs/tasks/GOLEM-052/numbers.golem /Agon/mystuff/golem/docs/tasks/GOLEM-054/build/legacy-numbers-parity
+Shared state 128 bytes; buffered install 17728 bytes; 4 buffered entries.
+
+
+numbers: 11/11 identical files; 65880 bytes
+
+$ /Agon/mystuff/golem/build/golemc --portable /Agon/mystuff/golem/docs/tasks/GOLEM-052/review.golem /Agon/mystuff/golem/docs/tasks/GOLEM-054/build/legacy-review-parity
+Shared state 116 bytes; buffered install 9953 bytes; 1 buffered entries.
+
+
+review: 10/11 identical files; 37310 bytes
+
+Baseline 46ade43 src/portable/portable.hpp:954: out << "{\"schema\":" << (containsPrint(program)?5:4) << ",\"procedures\":[";
+Frozen review metadata alone is stale; the schema5 rule predates GOLEM-054.

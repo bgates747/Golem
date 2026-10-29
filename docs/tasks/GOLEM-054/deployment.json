@@ -1,0 +1,50 @@
+{
+  "host": "oryx-linuxlite",
+  "profile": "Agon/mystuff/golem/.emulator/golem-054",
+  "product": "Fab Agon Emulator 1.2.5",
+  "MOS": "3.0.2",
+  "stock_native_VDP": true,
+  "GUI_launched": false,
+  "human": "pending",
+  "mode": "review",
+  "native_eZ80_compiler_sha256": "b275de31d37406ff35c5a863d7b44f75061607251135f5e5b9f1455dcb0b8d05",
+  "expected_texts": [
+    "[0]",
+    "[1.5]",
+    "[-1.5]",
+    "[1.00195312]",
+    "[1.00585938]",
+    "[0.100000001]",
+    "[9.99999975e-05]",
+    "[0.000100000005]",
+    "[16777216]",
+    "[100000000]",
+    "[1e+09]",
+    "[1.17549435e-38]",
+    "[3.40282347e+38]",
+    "[-3.40282347e+38]"
+  ],
+  "final_verification": {
+    "stopped": true,
+    "runtime_pins_match": true,
+    "fresh_review_files": true,
+    "review_cases": 14,
+    "native_eZ80_compiler_sha256": "b275de31d37406ff35c5a863d7b44f75061607251135f5e5b9f1455dcb0b8d05",
+    "each_launch_removes_prior_observations": true
+  },
+  "per_launch_cleanup_check": {
+    "passed": true,
+    "method": "bash -n, then headless ./fab-agon-emulator --help with five owned sentinel files",
+    "dummy_results_removed": [
+      "results.dat",
+      "done.dat",
+      "scene.dat",
+      "advance.dat",
+      "keyboard.dat"
+    ],
+    "launcher_sha256": "17f2edf52e7e0e9b65b07ea5eaed50c2530bfa71869a2f3b87591e48942471a2",
+    "runtime_pins_unchanged": true,
+    "GUI_launched": false,
+    "profile_stopped_after_check": true
+  }
+}

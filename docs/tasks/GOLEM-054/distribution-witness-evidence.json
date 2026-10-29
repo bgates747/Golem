@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "source": "GOLEM-051/examples/float-print.golem",
+  "source_sha256": "7d16e6f13bb94adea5b10e434130623cd85ab8698c941ee267599660df479305",
+  "worker_sha256": "b275de31d37406ff35c5a863d7b44f75061607251135f5e5b9f1455dcb0b8d05",
+  "runner_sha256": "04b64eb3d8797129e2d6f9ffdc3add5a30837cf09d184197388ff69becad9637",
+  "actual_MOS_compilation": true,
+  "matching_package_files": 11,
+  "expected_text": "reading=1.5",
+  "pixel_pairs": 1,
+  "pixels_compared": 307200,
+  "unchanged_distribution_runner_text_pixel_match": true,
+  "matching_runner_text_y": [
+    8
+  ],
+  "MOS_autoexec_continuation": true,
+  "seconds": 11.32451299099921,
+  "human": "pending",
+  "frontend_exit": 0
+}

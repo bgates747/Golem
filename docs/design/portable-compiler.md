@@ -243,7 +243,8 @@ See the language reference for initialized examples. Left shift remains deferred
 Calculation programs accept literal print and print str(integer-expression).
 Each expression evaluates once, before output, with normal faults. Consecutive
 statements insert no separator/newline. Decimal output covers all four integer
-types; bool/float, stored strings, concatenation and print lists remain deferred.
+types; bool, stored strings, concatenation and print lists remain deferred.
+GOLEM-054 additionally accepts float32, with the exact formatting contract below.
 One width-specific resident formatter reuses existing unsigned divmod helpers.
 Signed magnitude, including minima, is formed in carry-guarded unsigned scratch.
 Digits are written backward into fixed text; the leading offset selects only
@@ -261,3 +262,25 @@ the root ABI or any application loading/call/completion responsibility.
 
 Programs with print use typed-program JSON schema5 (literal byte or integer
 expression print statements); no-print programs retain schema4 and exact bytes.
+Float32 print programs use schema6 and a `float32` expression field; old integer
+print programs retain their schema5 bytes.
+
+## Resident float32 printing — GOLEM-054
+
+`print str(float32-expression)` evaluates once and formats the stored binary32
+value to nine significant decimal digits, nearest/ties-to-even. Trailing
+fractional zeros and an unnecessary point are omitted. Rounded decimal
+exponents -4 through 8 use ordinary decimal notation; all others use lowercase
+scientific notation with an explicit sign and two exponent digits. Zero is `0`.
+This is a deterministic nine-digit representation, not shortest-decimal output.
+
+Conversion unpacks the integer significand and binary exponent. Positive binary
+shifts multiply a decimal coefficient by two; negative shifts multiply by five
+and track a decimal exponent. The exact coefficient needs at most112 digits.
+Digit/carry lookup tables and bounded tail loops avoid rounded float scaling
+and 16-bit integer conversion limits. Existing input admission, expression
+normalization and status propagation remain unchanged; source bytes are borrowed
+only for evaluation and are never modified by formatting. Shared helper storage
+is private; each print site immediately consumes and clears its16-byte text
+temporary. The application retains ordinary installation/call/cleanup ownership.
+Fixed-point types, format arguments and native printing remain follow-up work.

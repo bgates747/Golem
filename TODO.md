@@ -3,12 +3,6 @@
 This is the authoritative register of promoted, unfinished work. Detailed plans
 and task artifacts live under `docs/tasks/`.
 
-- [ ] **GOLEM-054:** Resident float32 text formatting using `print str(value)`.
-  [Plan](docs/tasks/GOLEM-054.md). Author releases the next tranche after the
-  publication checkpoint: exact bounded stock conversion, nine significant
-  digits, readable decimal/scientific output, native Agon compiler/package and
-  a stopped Oryx review. Fixed-point types/formatting remain follow-up.
-
 GOLEM-035 was accepted and explicitly approved for commit/push on 2026-10-13.
 Outstanding human/physical reviews below remain open; this checkpoint does not
 claim those reviews occurred.

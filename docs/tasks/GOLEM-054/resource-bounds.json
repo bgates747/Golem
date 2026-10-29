@@ -1,0 +1,29 @@
+{
+  "source_sha256": "b8f12efb4165d67f70da0ce5391be52df107137cc363e2c82aae8885c6fc05d2",
+  "buffered_install_bytes": 17573,
+  "common_install_bytes": 130,
+  "shared_state_bytes": 116,
+  "private_buffers": 207,
+  "program_buffers": 122,
+  "private_allocation_bytes": 14668,
+  "private_data_bytes": 1061,
+  "capacity": {
+    "exact_coefficient_bytes": 113,
+    "maximum_exact_coefficient_digits": 112,
+    "maximum_scale_rounds": 149,
+    "maximum_scale_digit_visits": 16688,
+    "significant_scratch_bytes": 11,
+    "shared_output_bytes": 16,
+    "per_site_output_bytes": 16,
+    "maximum_printed_characters": 15,
+    "multiply_table_bytes": 512,
+    "carry_table_bytes": 80,
+    "exponent_table_bytes": 80
+  },
+  "patch_offsets": {
+    "fetched_source_offset": 13,
+    "destination_offset": 7,
+    "offset_call": 6
+  },
+  "finite_loops": "All digit/scale/extraction/sticky/trim/text loops tail-jump; no input-dependent stack growth."
+}

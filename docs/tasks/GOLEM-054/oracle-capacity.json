@@ -1,0 +1,18 @@
+{
+  "coefficient_capacity_digits": 112,
+  "allocated_coefficient_bytes": 113,
+  "maximum_power5_rounds": 149,
+  "maximum_power2_rounds": 104,
+  "maximum_significand_decimal_digits": 8,
+  "maximum_text_bytes": 15,
+  "maximum_text_including_spare_byte": 16,
+  "target_cases": 56,
+  "coefficient_capacity_proof": "2^24 * 5^149 < 10^112; (2^24 - 1) * 2^104 < 10^39",
+  "examples": {
+    "0x800000": "1.17549435e-38",
+    "0x7f7fffff": "3.40282347e+38",
+    "0x19416d9a": "1e-23",
+    "0x3f804000": "1.00195312",
+    "0x3f80c000": "1.00585938"
+  }
+}

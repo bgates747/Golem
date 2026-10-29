@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "cases": 14,
+  "state_observations": 112,
+  "results_sha256": "5aa5fc265a07c3fd08e9192710a37333a9f58916c340ca85447067448075ef04",
+  "source_preservation": true,
+  "human_listening_or_visual_claim": false,
+  "seconds": 10.877863517998776,
+  "picture": "/home/smith/Agon/mystuff/golem/docs/tasks/GOLEM-054/build/runs/float-054-review/review.png",
+  "actual_MOS_compilation": true,
+  "human": "pending",
+  "frontend_exit": 0
+}

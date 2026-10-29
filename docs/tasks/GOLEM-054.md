@@ -43,21 +43,21 @@ the declared input bytes and calls the exported resident entry by name.
 
 ## Work and acceptance
 
-- FMT-001 [ ] Prove decimal capacity, rounding, notation boundaries and scratch
+- FMT-001 [x] Prove decimal capacity, rounding, notation boundaries and scratch
   lifetime; retain an independent exact-rational reference under GOLEM-054/.
-- PAR-001 [ ] Admit float32 through str without changing integer parsing,
+- PAR-001 [x] Admit float32 through str without changing integer parsing,
   target selection or old no-print artifacts; update expression metadata/model.
-- VDP-001 [ ] Implement one shared bounded resident formatter, preserve inputs,
+- VDP-001 [x] Implement one shared bounded resident formatter, preserve inputs,
   clear per-site output storage and return normally after every finite call.
-- CHK-001 [ ] Check zero/sign, binary32 extrema, decimal carries/ties, values on
+- CHK-001 [x] Check zero/sign, binary32 extrema, decimal carries/ties, values on
   either side of powers of ten, fixed/scientific transitions, repeated calls,
   expressions, failed admission and relocated buffers against an independent
   oracle and actual unchanged stock VDP. Run maintained checks and sanitizers.
-- MOS-001 [ ] Rebuild the native Agon compiler; qualify an actual on-Agon float
+- MOS-001 [x] Rebuild the native Agon compiler; qualify an actual on-Agon float
   printing example and refresh the source/distribution package and how-to.
-- DOC-001 [ ] Update language reference and initialized examples. Record exact
+- DOC-001 [x] Update language reference and initialized examples. Record exact
   package/scratch costs and the formatter's work bound without speed claims.
-- REV-001 [ ] Prepare a dedicated stopped Oryx visual test in this tranche,
+- REV-001 [x] Prepare a dedicated stopped Oryx visual test in this tranche,
   identifying Golem's output and the host's role. The Author reviews the text
   and follows the single onscreen keyboard instruction; the agent retrieves
   saved results. Keep new implementation uncommitted pending explicit approval.
@@ -71,3 +71,42 @@ preserve existing profiles. Physical flashing is outside this tranche.
 Fixed-point formatting, configurable precision/notation and native-backend text
 output remain separate decisions. They need not delay useful resident float32
 output or expand this tranche into a general string library.
+
+## Implementation checkpoint — 2026-10-29
+
+The plan was frozen/pushed as46ade43 before implementation. The maintained
+parser/reference and stock emitter now support float32 print. Integer printing
+and no-print executable outputs remain unchanged. Float print metadata uses
+schema6; existing integer print metadata stays schema5.
+
+The exact-rational oracle covers1,934 values; default/relocated decoded execution
+passes3,958 calls and197,817,640 commands, including preservation, temporary
+clearing, expression errors, admission, recovery and cleanup. Maintained and
+ASan/UBSan checks pass. Actual Pi/Oryx stock Fab compiles the small formatter
+on the eZ80, matches all11 desktop package files, and passes72 pixel pairs and
+576 state bytes each. Native compiler319,489B; larger float-print sources can
+exhaust its working RAM, so the distribution uses a qualified one-input example.
+The failed larger example is preserved as a compiler limit, not a formatting
+failure. See [results and limits](GOLEM-054/README.md). Human review/publication
+remain open; new implementation is uncommitted.
+
+Native distribution example and unchanged runner now pass actual MOS/pixel
+checks. The refreshed ZIP includes current source, worker, how-to, language
+reference and the one-input example; all archive hashes verify. Oryx fourteen-row
+review is headlessly qualified, reset, pinned and stopped. REV-001 remains open
+for the Author's visual/keyboard report and explicit publication approval.
+
+## Human review — 2026-10-29
+
+The Author's screenshot shows all fourteen expected float rows, PASS and a
+successful MOS dir command. Fresh agent retrieval verifies all112 saved bytes,
+runtime pins and stopped profile; [human evidence](GOLEM-054/human-evidence.json)
+preserves the screenshot and receipt. Visual/keyboard review passes. Explicit
+publication approval remains outstanding; no commit or push of implementation.
+
+## Publication approval — 2026-10-29
+
+- PUB-001 [x] Author explicitly requests commit and push after the successful
+  visual/keyboard review. GOLEM-054 is complete and removed from TODO.md.
+  Native compiler RAM limitations and optional formatting features remain
+  separate follow-up work; no additional implementation is started here.

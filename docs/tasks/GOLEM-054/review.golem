@@ -1,0 +1,5 @@
+// C supplies each input and row break; Golem converts and prints the number.
+float32 x = 0.0
+Sub show
+    print "[" print str(x) print "]"
+EndSub

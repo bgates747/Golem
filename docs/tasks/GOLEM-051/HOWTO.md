@@ -150,7 +150,7 @@ inside its literal. You may put those four statements on one line if you prefer.
 The standalone runner adds its normal final newline before returning to MOS.
 
 Printing supports uint16, sint16, uint32 and sint32, including negative values
-and signed minima. Floats and Boolean values cannot yet be formatted with str.
+and signed minima. Float32 printing is described next; bool is not supported.
 Printing itself leaves the variable unchanged. A failed numeric expression emits
 nothing for that print; earlier text stays on screen.
 
@@ -173,6 +173,34 @@ Expect **value=4294967294**. It selects a uint32 array element and applies XOR
 with 1. Read the source to see the explicit typed array and integer expression.
 The new output-directory names above also avoid old dual-output packages from
 an earlier version of these examples.
+
+## Printing floating-point results
+
+Compile and run the supplied example in the same way:
+
+```text
+cd /golem
+golemc --portable examples/float-print.golem output/float-print
+golemrun --portable output/float-print
+```
+
+Expect **reading=1.5**. Its complete source is:
+
+```golem
+float32 reading = 1.5
+Sub show
+    print "reading=" print str(reading)
+EndSub
+```
+
+All conversion and printing run in resident buffers on stock VDP. The eZ80
+runner loads and calls them; it does not convert the result to text. Float32
+output uses nine significant digits, removes trailing fractional zeros and uses
+scientific notation outside decimal exponents -4 through 8. Thus `1.5` stays
+`1.5`, while a billion prints `1e+09`. It describes the stored binary32 value:
+an initializer of `0.1` prints `0.100000001`. Original input spelling is not
+preserved by a floating-point variable. Precision options and fixed-point types
+are not available in this profile yet.
 
 ## Integer bitwise operators
 
@@ -315,8 +343,10 @@ autoexec file. It can be run again.
    directory. Adding print changes an ordinary dual-output package to stock-only.
 5. If the compiler rejects a feature, check the selected profile in `LANGUAGE.md`.
    A feature shown for one profile is not automatically available in another.
-6. Large programs can exhaust the Agon's RAM earlier than on a PC. The compiler
-   reports exhaustion rather than reducing numeric precision silently.
+6. Compilation can exhaust the Agon's RAM even for short programs that generate
+   many resident helpers, such as several floating-point prints and arithmetic.
+   Reduce the program or compile it on a PC. The compiler reports exhaustion
+   rather than reducing numeric precision silently.
 7. If the runner reports a VDP timeout, reset the Agon or restart the emulator
    before rerunning. A timed-out program may still own active VDP buffers.
 

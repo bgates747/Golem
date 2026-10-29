@@ -44,7 +44,7 @@ does not contain that toolchain. Compilation never requires an LLM.
    `\n` emits LF only; it does not return the VDP text cursor to the left margin.
    `\r` is not currently a recognized escape. Print does not append a newline.
 
-## Integer printing in the calculation profile
+## Numeric printing in the calculation profile
 
 `print "literal text"` emits the literal bytes. `print str(integer-expression)`
 converts one integer expression to ordinary decimal text and emits it. This
@@ -69,7 +69,8 @@ The first call prints `i=10 total=55`; a second resident call prints
 Printing itself does not modify its source value. A literal-only Sub can omit
 global declarations. Context-free integer expressions are tried in the existing
 uint16/sint16/uint32/sint32 order; variables must match the selected type, and
-mixed types require explicit conversion. Bool/float formatting, optional formats,
+mixed types require explicit conversion. Float32 is tried after the four integer
+types; existing integer expressions retain their interpretation. Bool formatting, optional formats,
 stored strings and general str expressions are not implemented. `str(...)` is
 currently accepted only as the operand of print. A failing expression emits no
 characters for that print; previous successful prints remain visible.
@@ -83,6 +84,28 @@ outputs. A target-shape change needs a fresh output directory. The package's
 The eZ80 application still owns installation, calls, pacing and cleanup; it does
 not read values back to format them. The standalone runner supplies its ordinary
 final newline after the Golem call.
+
+`print str(float32-expression)` also runs entirely on stock VDP. It prints nine
+significant decimal digits, rounded to nearest with ties to even, then removes
+trailing fractional zeros and an unnecessary decimal point. It uses ordinary
+decimal notation when the rounded decimal exponent is -4 through 8; otherwise
+it uses lowercase scientific notation with a signed, two-digit exponent.
+Zero, including negative zero, prints `0`. These are the same finite normal
+float32 values and checked expressions described below; printing does not add
+support for NaN, infinity or external subnormal inputs.
+
+```golem
+float32 reading = 1.5
+Sub show
+    print "reading=" print str(reading)
+EndSub
+```
+
+This prints `reading=1.5`. Nine digits describe the stored binary32
+value; they do not preserve the spelling of input text. For example, a float32
+initialized from `0.1` prints `0.100000001`, and `1000000000.0` prints `1e+09`.
+There is no configurable precision or shortest-decimal mode yet. Applications
+that preserve users' entry text can continue to keep that text on the eZ80.
 
 ## Portable scalar types and declarations
 

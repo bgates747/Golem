@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "cases": 14,
+  "state_observations": 112,
+  "results_sha256": "5aa5fc265a07c3fd08e9192710a37333a9f58916c340ca85447067448075ef04",
+  "profile_stopped": true,
+  "runtime_pins_match": true,
+  "human_visual_report": "record separately",
+  "human_keyboard_report": "record separately"
+}

@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "cases": 14,
+  "state_observations": 112,
+  "results_sha256": "5aa5fc265a07c3fd08e9192710a37333a9f58916c340ca85447067448075ef04",
+  "profile_stopped": true,
+  "runtime_pins_match": true,
+  "human_visual_report": "passed: Author screenshot shows all fourteen expected float rows and PASS",
+  "human_keyboard_report": "passed: screenshot shows MOS dir command and directory response",
+  "screenshot": "human-review.png",
+  "screenshot_sha256": "ab979d034c0d6320136f8a73bfee44a2c4daaff35c88eb6490fa276434d63eda",
+  "publication_approved": true,
+  "publication_authority": "Author: commit and push. then tell me what we can work on next."
+}

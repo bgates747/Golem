@@ -1571,3 +1571,51 @@ the Author requested commit/push of all pending work, then VDPL-005 implementati
 Integer printing is accepted and complete; its human evidence records approval.
 Generic color/PCM runtime work belongs to agon-vdplet. Interfaces must describe
 formats/geometry rather than a particular screen mode; mode20 is one test case.
+
+## Stock resident float printing — GOLEM-054 / 2026-10-29
+
+The Author explicitly approved publishing pending work before this tranche.
+Agon-vdplet audio controls1da8572/2541f10 and Golem plan46ade43 are pushed.
+The clean-all-cases/faster-succession Fab audio result was mailed/notified to
+flexe; that owner investigates timing/delivery independently.
+
+Current calculation syntax admits print str(float32-expression). Shared stock
+formatting uses exact integer/decimal conversion, nine significant digits with
+ties-even rounding, trimmed fractional zeros, ordinary decimal exponents-4..8
+and scientific notation otherwise. Zero is canonical. Integer/no-print outputs
+remain unchanged; float-print program metadata is schema6, integer-print stays5.
+Fixed-point types, precision options, concatenation and native printing remain
+separate. No SDK/VDPlet/firmware dependency was added.
+
+Maintained/ASan/UBSan checks and3,958 independent default/relocated calls pass
+(1,934 float values/all normal exponents). Actual Pi/Oryx stock Fab compiles
+the small program on MOS, matches11 desktop package files, and passes72 pixel
+pairs/576statebytes each; relocated execution also passes. Shared source is
+preserved and per-site16-byte text is cleared. See054's indexed evidence.
+
+Native worker319,489B successfully compiles the distributed one-input example;
+an earlier two-global/arithmetic/two-print example hit compilation RAM limits
+while building stock wrappers. Failure is preserved/documented; no allocator
+redesign is claimed. ZIP/source/how-to/language reference are refreshed and
+archive hashes verify. Larger programs can use the desktop compiler.
+
+Oryx dedicated .emulator/golem-054 uses actual Fab1.2.5, stock native VDP and
+MOS3.0.2. Fourteen Golem-printed rows passed headless review checks and are
+staged/reset/stopped; no GUI/flash/shared-profile change. Launch instructions
+and exact source are in docs/tasks/GOLEM-054/REVIEW.md and review.golem. Agent-only
+verify_review.py retrieves results after the Author closes it and never repeats
+the guest dir instruction. Human visual/keyboard and publication remain open;
+keep new implementation uncommitted. TODO.md remains authoritative.
+
+
+GOLEM-054 human review passed on2026-10-29: the Author's screenshot shows all
+fourteen expected rows, PASS and successful MOS dir. Fresh agent retrieval
+verifies112 saved bytes, runtime pins and stopped Oryx profile. Evidence is
+docs/tasks/GOLEM-054/human-evidence.json. Explicit publication approval remains
+outstanding; implementation is still uncommitted.
+
+
+GOLEM-054 publication approved on2026-10-29: the Author explicitly requests
+commit and push after review. This supersedes its earlier publication hold.
+The feature is accepted/complete and removed from TODO.md. Future native
+compiler RAM work and precision options require their own next tranche.

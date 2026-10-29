@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "cases": 72,
+  "state_observations": 576,
+  "results_sha256": "55cabdf6fcf5fbdb2f3d59f176606eaaf3d8f8953c1d77dcedc88223148f776e",
+  "source_preservation": true,
+  "human_listening_or_visual_claim": false,
+  "seconds": 16.35191233999649,
+  "actual_MOS_compilation": false,
+  "matching_package_files": 11,
+  "pixel_pairs": 72,
+  "pixels_compared": 22118400,
+  "MOS_keyboard_continuation": true,
+  "profile": "/Agon/mystuff/golem/.emulator/golem-054",
+  "runtime": {
+    "fab-agon-emulator": "e822acb348e1be281dce6a80128d3924651f41157b407088b23ea73a4eba728c",
+    "fab-agon-emulator.bin": "c63b5a45b9eec9b989bdde73af6d12add92887e3f4e6ac8ffe9291d98979fb66",
+    "mos_platform.bin": "d564243283972690933a4554296ad6202ca4ef54572279533a942960846bebae",
+    "mos_platform.map": "d69e60bbce61a7b4b3eef318ba395f11c4e1a5b585755755113992dc94edcb86",
+    "firmware/vdp_platform.so": "ef5cc21d4df685970680bc5a3564852d5d312e8af77a6dfc880735d64c2e4e8e"
+  },
+  "human": "pending",
+  "frontend_exit": 0
+}

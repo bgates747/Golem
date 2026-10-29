@@ -1,0 +1,156 @@
+default: 64/1934 float cases
+default: 128/1934 float cases
+default: 192/1934 float cases
+default: 256/1934 float cases
+default: 320/1934 float cases
+default: 384/1934 float cases
+default: 448/1934 float cases
+default: 512/1934 float cases
+default: 576/1934 float cases
+default: 640/1934 float cases
+default: 704/1934 float cases
+default: 768/1934 float cases
+default: 832/1934 float cases
+default: 896/1934 float cases
+default: 960/1934 float cases
+default: 1024/1934 float cases
+default: 1088/1934 float cases
+default: 1152/1934 float cases
+default: 1216/1934 float cases
+default: 1280/1934 float cases
+default: 1344/1934 float cases
+default: 1408/1934 float cases
+default: 1472/1934 float cases
+default: 1536/1934 float cases
+default: 1600/1934 float cases
+default: 1664/1934 float cases
+default: 1728/1934 float cases
+default: 1792/1934 float cases
+default: 1856/1934 float cases
+default: 1920/1934 float cases
+relocated: 64/1934 float cases
+relocated: 128/1934 float cases
+relocated: 192/1934 float cases
+relocated: 256/1934 float cases
+relocated: 320/1934 float cases
+relocated: 384/1934 float cases
+relocated: 448/1934 float cases
+relocated: 512/1934 float cases
+relocated: 576/1934 float cases
+relocated: 640/1934 float cases
+relocated: 704/1934 float cases
+relocated: 768/1934 float cases
+relocated: 832/1934 float cases
+relocated: 896/1934 float cases
+relocated: 960/1934 float cases
+relocated: 1024/1934 float cases
+relocated: 1088/1934 float cases
+relocated: 1152/1934 float cases
+relocated: 1216/1934 float cases
+relocated: 1280/1934 float cases
+relocated: 1344/1934 float cases
+relocated: 1408/1934 float cases
+relocated: 1472/1934 float cases
+relocated: 1536/1934 float cases
+relocated: 1600/1934 float cases
+relocated: 1664/1934 float cases
+relocated: 1728/1934 float cases
+relocated: 1792/1934 float cases
+relocated: 1856/1934 float cases
+relocated: 1920/1934 float cases
+{
+  "passed": true,
+  "oracle": {
+    "passed": true,
+    "exact_known_values": 14,
+    "generated_values": 1934,
+    "binary_exponent_fields": 254,
+    "exact_roundtrips": 1934,
+    "decimal_exponent_carry_cases": 2,
+    "maximum_text_bytes": 15
+  },
+  "host_reference": {
+    "passed": true,
+    "formatted_values": 1934
+  },
+  "coverage": "full",
+  "packages": [
+    {
+      "calls": 1979,
+      "float_cases": 1934,
+      "text_bytes": 30137,
+      "seconds": 229.4383437130018,
+      "maximum_commands_per_call": 186965,
+      "maximum_command_case": {
+        "entry": "pair",
+        "x_bits": "00800000",
+        "text": "1.17549435e-38/-1"
+      },
+      "total_commands": 98908820,
+      "buffered_install_bytes": 30762,
+      "common_install_bytes": 138,
+      "shared_state_bytes": 124,
+      "private_buffers": 414,
+      "private_allocation_bytes": 24959,
+      "private_data_bytes": 1482,
+      "per_site_text_buffers": 11,
+      "per_site_text_sizes": [
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        6,
+        16
+      ],
+      "source_preservation": true,
+      "cleared_text_temporaries": true,
+      "error_recovery": true,
+      "cleanup_preserves_shared_state": true,
+      "package": "default"
+    },
+    {
+      "calls": 1979,
+      "float_cases": 1934,
+      "text_bytes": 30137,
+      "seconds": 219.09525464699982,
+      "maximum_commands_per_call": 186965,
+      "maximum_command_case": {
+        "entry": "pair",
+        "x_bits": "00800000",
+        "text": "1.17549435e-38/-1"
+      },
+      "total_commands": 98908820,
+      "buffered_install_bytes": 30762,
+      "common_install_bytes": 138,
+      "shared_state_bytes": 124,
+      "private_buffers": 414,
+      "private_allocation_bytes": 24959,
+      "private_data_bytes": 1482,
+      "per_site_text_buffers": 11,
+      "per_site_text_sizes": [
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        6,
+        16
+      ],
+      "source_preservation": true,
+      "cleared_text_temporaries": true,
+      "error_recovery": true,
+      "cleanup_preserves_shared_state": true,
+      "package": "relocated"
+    }
+  ],
+  "target_rejections": 2
+}

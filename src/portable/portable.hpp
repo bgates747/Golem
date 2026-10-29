@@ -132,9 +132,65 @@ inline bool containsPrint(const Program &p) {
     for(const auto&s:p.procedures)if(containsPrint(s.statements))return true;
     return false;
 }
+inline bool containsFloatPrint(const std::vector<Assignment> &body) {
+    for(const auto&s:body)
+        if((s.printing && s.value && s.value->type==Type::F32) ||
+           containsFloatPrint(s.yes) || containsFloatPrint(s.no))return true;
+    return false;
+}
+inline bool containsFloatPrint(const Program &p) {
+    for(const auto&s:p.procedures)if(containsFloatPrint(s.statements))return true;
+    return false;
+}
 inline std::string decimal(Value v) {
-    if(!integer(v.type))throw std::logic_error("str requires an integer");
-    return std::to_string(static_cast<int64_t>(v.number()));
+    if(integer(v.type))return std::to_string(static_cast<int64_t>(v.number()));
+    if(v.type!=Type::F32)throw std::logic_error("str requires a supported number");
+    v=normalize(v);
+    if(!v.bits)return "0";
+    // Exact decimal coefficient: M * 2^p, or (M * 5^-p) * 10^p.
+    // This also works in the small Agon library adapter, without host printf.
+    const bool negative=(v.bits&0x80000000u)!=0;
+    uint32_t mantissa=(v.bits&0x007fffffu)|0x00800000u;
+    const int power=static_cast<int>((v.bits>>23)&255)-150;
+    std::vector<unsigned> digits;
+    do {digits.push_back(mantissa%10);mantissa/=10;}while(mantissa);
+    const unsigned multiplier=power<0?5u:2u;
+    const unsigned rounds=static_cast<unsigned>(power<0?-power:power);
+    for(unsigned round=0;round<rounds;++round) {
+        unsigned carry=0;
+        for(auto &digit:digits) {const auto next=digit*multiplier+carry;digit=next%10;carry=next/10;}
+        if(carry)digits.push_back(carry);
+    }
+    int exponent=static_cast<int>(digits.size())+(power<0?power:0)-1;
+    std::string text;
+    for(size_t i=digits.size();i;--i)text+=static_cast<char>('0'+digits[i-1]);
+    if(text.size()>9) {
+        bool sticky=false;for(size_t i=10;i<text.size();++i)if(text[i]!='0')sticky=true;
+        const bool up=text[9]>'5' || (text[9]=='5' && (sticky || ((text[8]-'0')&1)));
+        text=text.substr(0,9);
+        if(up) {
+            size_t index=text.size();
+            while(index && text[index-1]=='9'){text[index-1]='0';--index;}
+            if(index)++text[index-1];
+            else {text="100000000";++exponent;}
+        }
+    }
+    while(text.size()>1 && text.back()=='0')text.pop_back();
+    std::string result=negative?"-":"";
+    if(exponent>=-4 && exponent<=8) {
+        const int point=exponent+1;
+        if(point<=0)result+="0."+std::string(static_cast<size_t>(-point),'0')+text;
+        else if(static_cast<size_t>(point)>=text.size())result+=text+std::string(static_cast<size_t>(point)-text.size(),'0');
+        else result+=text.substr(0,static_cast<size_t>(point))+"."+text.substr(static_cast<size_t>(point));
+    } else {
+        result+=text.substr(0,1);
+        if(text.size()>1)result+="."+text.substr(1);
+        result+=exponent<0?"e-":"e+";
+        const auto magnitude=static_cast<unsigned>(exponent<0?-exponent:exponent);
+        if(magnitude<10)result+='0';
+        result+=std::to_string(magnitude);
+    }
+    return result;
 }
 inline bool mathOperation(Op op) { return op==Op::Divide || op==Op::Sin || op==Op::Cos || op==Op::Floor; }
 inline bool requiresNativeMath(const Expression &e) {
@@ -546,12 +602,12 @@ class Parser {
                 else {
                     reader_.needKeyword("str");reader_.need('(');
                     const auto saved=reader_;Expression value;
-                    for(auto type:{Type::U16,Type::S16,Type::U32,Type::S32}) {
+                    for(auto type:{Type::U16,Type::S16,Type::U32,Type::S32,Type::F32}) {
                         reader_=saved;
                         try {value=expression(type);reader_.need(')');break;}
                         catch(const golem::syntax::Error&){value.reset();}
                     }
-                    if(!value)reader_.error("str requires one supported integer expression");
+                    if(!value)reader_.error("str requires one supported numeric expression");
                     output.value=value;
                 }
                 result.push_back(std::move(output));continue;
@@ -923,7 +979,7 @@ inline void statementsJson(std::ostream &out, const std::vector<Assignment> &sta
         const auto &s = statements[j];
         if(s.printing) {
             out << "{\"print\":{";
-            if(s.value){out << "\"integer\":";expressionJson(out,s.value);}
+            if(s.value){out << (s.value->type==Type::F32?"\"float32\":":"\"integer\":");expressionJson(out,s.value);}
             else {out << "\"literal_bytes\":[";for(size_t i=0;i<s.text.size();++i){if(i)out<<',';out<<static_cast<unsigned>(static_cast<unsigned char>(s.text[i]));}out<<']';}
             out << "}}";
         } else if (s.paired) {
@@ -951,7 +1007,7 @@ inline void statementsJson(std::ostream &out, const std::vector<Assignment> &sta
 }
 inline std::string programJson(const Program &program) {
     std::ostringstream out;
-    out << "{\"schema\":" << (containsPrint(program)?5:4) << ",\"procedures\":[";
+    out << "{\"schema\":" << (containsFloatPrint(program)?6:containsPrint(program)?5:4) << ",\"procedures\":[";
     for (size_t i = 0; i < program.procedures.size(); ++i) {
         if (i) out << ',';
         out << "{\"name\":\"" << program.procedures[i].name << "\",\"assignments\":";
