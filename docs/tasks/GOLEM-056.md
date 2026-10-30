@@ -55,9 +55,10 @@ only direct each session to read the brief and follow its instructions.
   cataloging and publication do not dispatch implementation.
   Delivered as [feature-requests.md](GOLEM-056/feature-requests.md): all 22 source
   proposal IDs plus Wolf's handoff, consolidated into the existing 15 CNS groups.
-- DIS-001 [ ] After the Author's review, dispatch approved assignments from
+- DIS-001 [x] After the Author's review, dispatch approved assignments from
   here and track acknowledgement, progress, evidence and completion centrally.
-  This step is explicitly gated; consultation does not authorize feature work.
+  Disposition: the Author released implementation/dispatch; continuing work
+  is promoted to [GOLEM-057](GOLEM-057.md), whose COO-002 owns execution tracking.
 
 The Author directly authorizes contacting these existing agent sessions and
 requesting durable mailbox replies. Substantive coordination stays in the
@@ -113,3 +114,11 @@ review initially rejected the mailbox push. Mailbox checkpoint `e96aa22` and
 Golem consultation checkpoint `75dd58c` are pushed. CAT-001 is complete; the
 [compiled catalog](GOLEM-056/feature-requests.md) is ready for the Author's
 selection. No implementation assignments have been sent.
+
+## Transition to execution
+
+The Author subsequently requested a committed plan and an implementation goal,
+authorizing agents to develop/test on Oryx under central exclusive signout and
+release. Consultation/catalog work is complete; [GOLEM-057](GOLEM-057.md) now
+owns delegated assignments and results. Earlier dispatch holds describe the
+consultation phase and are superseded. Human-publication/hardware gates remain.

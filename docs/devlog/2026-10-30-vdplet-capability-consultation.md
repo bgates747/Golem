@@ -29,3 +29,10 @@ all 22 proposal IDs, CNS-001 through CNS-015 coverage and local Markdown links. 
 runtime, emulator, profile, deployment or hardware change was made. Golem holds
 no Pi test reservation and performed no process cleanup during this consultation;
 that statement was separately mailed to 6502 after its interrupted run.
+
+The Author released coordinated implementation under GOLEM-057, requesting
+plan commit/push before goal execution and explicitly authorizing existing
+agents to develop/test on Oryx with central exclusive signout/release. GOLEM-056
+is complete and removed from the active register; DIS-001 transfers to057
+COO-002 rather than retaining a competing dispatch backlog. The catalog and
+provenance remain the source for implementation selection.

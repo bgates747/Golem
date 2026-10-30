@@ -3,19 +3,12 @@
 This is the authoritative register of promoted, unfinished work. Detailed plans
 and task artifacts live under `docs/tasks/`.
 
-- [ ] **GOLEM-056:** Audit the last fourteen days of agent mail, circulate a
-  shared C/C++ VDPlet capability brief, collect durable improvement/hook requests
-  and coordinate Author-approved assignments here. [Plan](docs/tasks/GOLEM-056.md).
-  Plan frozen/pushed as `2ea6059`; seven existing sessions notified. Collected
-  mailbox returns in the [coordination register](docs/tasks/GOLEM-056/coordination.md):
-  seven sessions / eight reports received/read, including Pingo module and
-  generic async proposals. [Consolidated review](docs/tasks/GOLEM-056/review.md)
-  is ready; implementation dispatch awaits Author review.
-  Additional Wolf3DOrig handoff reviewed as CNS-015; approved technical reply
-  and chat notification delivered. Wolf is on the approved consultation list.
-  CAT-001 complete: [compiled feature requests](docs/tasks/GOLEM-056/feature-requests.md)
-  cover all 22 source proposals plus Wolf. Checkpoints `75dd58c` (Golem) and
-  `e96aa22` (mailbox) are pushed; Author selection/dispatch remains pending.
+- [ ] **GOLEM-057:** Implement shared VDPlet features and coordinate consumer
+  candidates. [Plan](docs/tasks/GOLEM-057.md). Author releases development,
+  agent dispatch and Oryx testing with one emulator there at a time. First:
+  central signout/release, lean pixels/PCM and bounded Wolf proof alongside
+  priority FSIM/6502 preparation. GOLEM-056 consultation is complete. Publish
+  this plan, then begin the requested implementation goal.
 
 GOLEM-035 was accepted and explicitly approved for commit/push on 2026-10-13.
 Outstanding human/physical reviews below remain open; this checkpoint does not

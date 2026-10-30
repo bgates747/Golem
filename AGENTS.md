@@ -1734,3 +1734,15 @@ follow-up and supplemental Wolf handoff. No implementation is assigned.
 The Author specifically approved publication to bgates747/Golem and
 bgates747/agon-dev-env after automatic review blocked the initial mailbox push.
 Checkpoints75dd58c/e96aa22 are pushed; the catalog follows as documentation.
+
+## Coordinated implementation release — GOLEM-057
+
+The Author requests a plan, commit/push, then a goal implementing as many selected
+requests as practical. They authorize existing agents to develop and test on
+Oryx, centrally coordinated with only one emulator session there at a time.
+GOLEM-057 supersedes GOLEM-056's dispatch hold; consultation/catalog is complete.
+FSIM/6502 remain priorities, with an early bounded Wolf proof after lean pixel/
+PCM groundwork. Read057 and the central vdplet-rollout protocol before dispatch
+or Oryx runs. Durable mailbox carries substance; short chat notices wake peers.
+Human emulator validation/publication, hardware and source ownership rules
+remain. Never kill an unknown test or launch a GUI for the Author.
