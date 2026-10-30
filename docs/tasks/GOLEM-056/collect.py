@@ -79,7 +79,8 @@ def main():
               'and [chat-delivery.json](chat-delivery.json). Immutable return bodies, paths '
               'and hashes are indexed in [returns.json](returns.json); manual assessments '
               'are in [assessments.json](assessments.json). Consolidated proposals are in '
-              '[review.md](review.md).', '',
+              '[review.md](review.md); the concise compiled catalog is '
+              '[feature-requests.md](feature-requests.md).', '',
               '## Review and assignment gate', '',
               'The Author and Golem review the combined responses after all seven returns, '
               'or an explicit Author disposition of an outstanding item. Silence never '

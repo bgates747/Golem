@@ -12,7 +12,7 @@ All 7 sessions received mailbox invitations and brief-only chat notifications. 7
 | fsim 3d modeler | fsim-modeler | reply received | reviewed | [golem056-modeler-capability-return-one](/Agon/mystuff/agon-dev-env/cross-agent/agentcoms/messages/2026-10-30_17-39-32_fsim-modeler_golem056-modeler-capability-return-one.md) |
 | Explore stock VDP wireframe | fsim-wireframe | reply received | reviewed | [golem056-wireframe-capability-return-one](/Agon/mystuff/agon-dev-env/cross-agent/agentcoms/messages/2026-10-30_17-11-45_fsim-wireframe_golem056-wireframe-capability-return-one.md) |
 
-Invitation IDs and chat delivery receipts are in [roster.json](roster.json) and [chat-delivery.json](chat-delivery.json). Immutable return bodies, paths and hashes are indexed in [returns.json](returns.json); manual assessments are in [assessments.json](assessments.json). Consolidated proposals are in [review.md](review.md).
+Invitation IDs and chat delivery receipts are in [roster.json](roster.json) and [chat-delivery.json](chat-delivery.json). Immutable return bodies, paths and hashes are indexed in [returns.json](returns.json); manual assessments are in [assessments.json](assessments.json). Consolidated proposals are in [review.md](review.md); the concise compiled catalog is [feature-requests.md](feature-requests.md).
 
 ## Review and assignment gate
 

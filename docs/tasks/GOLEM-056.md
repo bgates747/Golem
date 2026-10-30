@@ -48,11 +48,13 @@ only direct each session to read the brief and follow its instructions.
   track outstanding replies and clarify technical questions as needed.
 - SYN-001 [x] Consolidate returned proposals, shared hook requests, dependencies
   and suggested owners for joint review with the Author after returns are in.
-- CAT-001 [ ] Compile a concise, deduplicated feature-request catalog using the
+- CAT-001 [x] Compile a concise, deduplicated feature-request catalog using the
   stable CNS IDs, original proposal/message IDs, suggested owners, dependencies,
   existing task links and the distinction between new hooks, consumer work and
   already-covered/no-change dispositions. Present it for the Author's review;
   cataloging and publication do not dispatch implementation.
+  Delivered as [feature-requests.md](GOLEM-056/feature-requests.md): all 22 source
+  proposal IDs plus Wolf's handoff, consolidated into the existing 15 CNS groups.
 - DIS-001 [ ] After the Author's review, dispatch approved assignments from
   here and track acknowledgement, progress, evidence and completion centrally.
   This step is explicitly gated; consultation does not authorize feature work.
@@ -105,3 +107,9 @@ then compiling the request list. The existing consultation task owns that
 compilation; CAT-001 makes the deliverable explicit without opening duplicate
 feature-implementation tasks. This publication instruction supersedes the prior
 hold on publishing consultation artifacts. DIS-001 remains gated on review.
+
+Publication was specifically approved for both named repositories after automatic
+review initially rejected the mailbox push. Mailbox checkpoint `e96aa22` and
+Golem consultation checkpoint `75dd58c` are pushed. CAT-001 is complete; the
+[compiled catalog](GOLEM-056/feature-requests.md) is ready for the Author's
+selection. No implementation assignments have been sent.

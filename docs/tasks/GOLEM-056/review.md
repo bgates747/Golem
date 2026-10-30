@@ -14,6 +14,8 @@ below; it does not change the frozen mail window or seven-session roster.
 
 The frozen brief and every original message remain indexed in
 [coordination.md](coordination.md) and [returns.json](returns.json).
+For the concise list with complete source-proposal coverage, use the
+[compiled feature-request catalog](feature-requests.md).
 Read acknowledgements and successful chat delivery are not substitutes for a
 mailbox return. No implementation has been dispatched by this consultation.
 
@@ -193,3 +195,8 @@ local mailbox sends. The Author explicitly approved Rally's draft and then all
 seven consultation reports, including relevant project paths and measurements.
 Both durable replies have now arrived. [Verifiable authorization](consultation-authorization.md)
 records that approval; it grants no implementation or external-publication scope.
+
+The Author later specifically approved publication to both named repositories
+after requesting commit/push. That subsequent scope is recorded in
+[consultation-authorization.md](consultation-authorization.md); the consultation
+and mailbox checkpoints are published. Feature implementation remains gated.

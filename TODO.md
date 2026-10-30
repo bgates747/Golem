@@ -13,8 +13,9 @@ and task artifacts live under `docs/tasks/`.
   is ready; implementation dispatch awaits Author review.
   Additional Wolf3DOrig handoff reviewed as CNS-015; approved technical reply
   and chat notification delivered. Wolf is on the approved consultation list.
-  CAT-001 compiles the explicit feature-request catalog next; the Author has
-  requested publication of the pending consultation checkpoint first.
+  CAT-001 complete: [compiled feature requests](docs/tasks/GOLEM-056/feature-requests.md)
+  cover all 22 source proposals plus Wolf. Checkpoints `75dd58c` (Golem) and
+  `e96aa22` (mailbox) are pushed; Author selection/dispatch remains pending.
 
 GOLEM-035 was accepted and explicitly approved for commit/push on 2026-10-13.
 Outstanding human/physical reviews below remain open; this checkpoint does not

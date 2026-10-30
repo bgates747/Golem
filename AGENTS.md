@@ -1725,3 +1725,12 @@ consultation checkpoint and supersedes its prior publication hold. GOLEM-056
 already owns compilation; CAT-001 now records the explicit deduplicated catalog
 deliverable. Do not confuse cataloging/publication with DIS-001 implementation
 dispatch, which still requires the Author's review.
+
+CAT-001 is complete: docs/tasks/GOLEM-056/feature-requests.md compiles all 22
+numbered source proposals plus Wolf into 15 stable CNS groups, separating shared
+runtime/SDK/docs requests, consumer work, emulator diagnosis and no-change
+dispositions. Eight approved sessions supplied nine reports including the FSIM
+follow-up and supplemental Wolf handoff. No implementation is assigned.
+The Author specifically approved publication to bgates747/Golem and
+bgates747/agon-dev-env after automatic review blocked the initial mailbox push.
+Checkpoints75dd58c/e96aa22 are pushed; the catalog follows as documentation.
