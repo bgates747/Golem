@@ -1,0 +1,88 @@
+{
+  "repository": "/Agon/mystuff/agon-dev-env",
+  "branch": "feature/standardized-deployment",
+  "scope": "Only current GOLEM-056 consultation/Wolf/Pi-coordination mail and Golem-owned read acknowledgements. Unrelated shared-repository changes excluded.",
+  "author_instruction": "you should already have tasks to compile feature requests. if not, add them. then commit and push any dirt, and compile the list.",
+  "paths": [
+    {
+      "path": "cross-agent/agentcoms/messages/2026-10-30_17-10-00_golem_golem056-agon-6502-invitation-one.md",
+      "sha256": "a23153d5322a99a868aff693120fdfe50fe59dea3dfcb0437129e6f3462542af"
+    },
+    {
+      "path": "cross-agent/agentcoms/messages/2026-10-30_17-10-00_golem_golem056-flexe-invitation-one.md",
+      "sha256": "ada6e23b93a40151af1f4898158c724cad622c4218fea501332c8bd0e9516c6d"
+    },
+    {
+      "path": "cross-agent/agentcoms/messages/2026-10-30_17-10-00_golem_golem056-fsim-modeler-invitation-one.md",
+      "sha256": "1f42953e56c0e5635813f8dba7411663a98bc107e5fc7caf92e941695df3b430"
+    },
+    {
+      "path": "cross-agent/agentcoms/messages/2026-10-30_17-10-00_golem_golem056-fsim-pingo-invitation-one.md",
+      "sha256": "5e5ecb5a5dbffdac6852c9a5062bc8d22bd1b5c609e16f903f18be592d5168a0"
+    },
+    {
+      "path": "cross-agent/agentcoms/messages/2026-10-30_17-10-00_golem_golem056-linux-extender-invitation-one.md",
+      "sha256": "64d77cfaa3659e1b5d87190869b030c9ad45dd0a9dfd0ff0df21e21036a2fe95"
+    },
+    {
+      "path": "cross-agent/agentcoms/messages/2026-10-30_17-10-00_golem_golem056-rally-invitation-one.md",
+      "sha256": "beb79bba791f63e86350ee964b998d708840003279416e70588a21736f4e3fde"
+    },
+    {
+      "path": "cross-agent/agentcoms/messages/2026-10-30_17-10-01_golem_golem056-fsim-wireframe-invitation-one.md",
+      "sha256": "d8bf80749173a4ae7fe65706180c0180ed61898136d3fc2d29dfc6cb30de8fc7"
+    },
+    {
+      "path": "cross-agent/agentcoms/messages/2026-10-30_17-11-45_fsim-wireframe_golem056-wireframe-capability-return-one.md",
+      "sha256": "c1bf584957d46de37b5b758c6c999ed5e64c80eb9c24257fe829419d429a1c9b"
+    },
+    {
+      "path": "cross-agent/agentcoms/messages/2026-10-30_17-13-29_flexe_golem056-flexe-audio-boundary-return-one.md",
+      "sha256": "7377459c31e5adb86edd00dbf172097b8a3c68be79a8a8416110068f7e165938"
+    },
+    {
+      "path": "cross-agent/agentcoms/messages/2026-10-30_17-19-03_fsim-pingo_golem056-fsim-capability-return-one.md",
+      "sha256": "2a6c39fc542d8886b29ee6475c92214601f5f315fa41e8bfcf3a4dfe5a805794"
+    },
+    {
+      "path": "cross-agent/agentcoms/messages/2026-10-30_17-20-01_rally_golem056-rally-review-one.md",
+      "sha256": "9478b8d4a67f94237ccb02d181073f13071d40853add5a83f41c8308f5296dd6"
+    },
+    {
+      "path": "cross-agent/agentcoms/messages/2026-10-30_17-24-38_golem_golem056-consultation-authority-two.md",
+      "sha256": "f06b6cba994e40c26138b36b69a65cc66faa8b6fa146dbfbb1e6a44d34ee1a25"
+    },
+    {
+      "path": "cross-agent/agentcoms/messages/2026-10-30_17-25-35_agon-6502_golem056-6502-capabilities-return-one.md",
+      "sha256": "01114634764bdce436de5ac1b91373d70e19ebaa49b8f9918cade77c5c98f657"
+    },
+    {
+      "path": "cross-agent/agentcoms/messages/2026-10-30_17-27-33_linux-extender_golem056-extender-capability-return-one.md",
+      "sha256": "74990c7041a9ccce595d0418f8958ad77eccf29ffdc2012f69c125046c49150e"
+    },
+    {
+      "path": "cross-agent/agentcoms/messages/2026-10-30_17-39-32_fsim-modeler_golem056-modeler-capability-return-one.md",
+      "sha256": "cc7420dc1304d0d3c020c3cd11197dc9f98a76b30eda140ebbb2cc101823f03b"
+    },
+    {
+      "path": "cross-agent/agentcoms/messages/2026-10-30_17-41-07_fsim-pingo_golem056-pingo-module-and-generic-async-two.md",
+      "sha256": "35f4ed481620a8d68638d7f109c8dc4aa5ebeecc364ea86deb78c3feef67c872"
+    },
+    {
+      "path": "cross-agent/agentcoms/messages/2026-10-30_17-48-39_wolf3dorig_wolf-vdplet-feasibility-requirements-one.md",
+      "sha256": "aebc8ce26e06b1f1ba3fcfa0b90ec6a51f9f5d75ce533b2476eed940c6a3428d"
+    },
+    {
+      "path": "cross-agent/agentcoms/messages/2026-10-30_17-54-11_golem_wolf-feasibility-runtime-review-one.md",
+      "sha256": "222e48ed8a016ba73ad6ee085ca7e2f46f8b45c0de52909d6e63eaf26224516a"
+    },
+    {
+      "path": "cross-agent/agentcoms/messages/2026-10-30_18-02-08_golem_pi-test-interruption-activity-one.md",
+      "sha256": "8b0cdf572d1c9dd323f61d56b39d7dfb899f0cc6fa811fcf1514b2b6c241966e"
+    },
+    {
+      "path": "cross-agent/agentcoms/ack-golem.json",
+      "sha256": "c6e8f5ace4f9e3ad49970d9952cdfa16af932eb7e57cef371d44e94c3282a3be"
+    }
+  ]
+}

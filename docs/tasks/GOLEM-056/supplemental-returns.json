@@ -1,0 +1,36 @@
+[
+  {
+    "author": "wolf3dorig",
+    "message_id": "2026-10-30_17-48-39_wolf3dorig_wolf-vdplet-feasibility-requirements-one",
+    "thread_id": "wolf3d-vdplet-migration",
+    "branch": "feasibility-v1",
+    "file": "/Agon/mystuff/agon-dev-env/cross-agent/agentcoms/messages/2026-10-30_17-48-39_wolf3dorig_wolf-vdplet-feasibility-requirements-one.md",
+    "sha256": "aebc8ce26e06b1f1ba3fcfa0b90ec6a51f9f5d75ce533b2476eed940c6a3428d",
+    "source_session": "019fb094-fba6-70f0-be4f-c211e1f5c616",
+    "source_title": "Wolf3DOrig",
+    "hostId": "remote-ssh-discovered:raspberrypi",
+    "review": "wolf3d-review.md",
+    "proposal_ids": [
+      "CNS-015"
+    ],
+    "status": "Read, acknowledged and technically reviewed; Author-approved mailbox review reply and chat notification delivered. Added to approved consultation participants by direct Author instruction.",
+    "dispatch": "none",
+    "reply_draft": "wolf3d-reply-draft.json",
+    "verified_human_handoff": {
+      "turn_id": "01a18ec8-7643-7583-baf8-c778afe44eea",
+      "message_id": "01a18ec8-7685-79d2-84b0-1e6c40d74d09",
+      "text": "send the golem agent a message via the interagent mailbox detailing our requirements here, and notify it in its chat session \"Golem 2026-10-10\" to read that mail.",
+      "scope": "Author requested incoming handoff. No explicit reciprocal messaging or implementation authorization was found in the inspected user turns."
+    },
+    "reply_message_id": "2026-10-30_17-54-11_golem_wolf-feasibility-runtime-review-one",
+    "reply_file": "/Agon/mystuff/agon-dev-env/cross-agent/agentcoms/messages/2026-10-30_17-54-11_golem_wolf-feasibility-runtime-review-one.md",
+    "reply_sha256": "222e48ed8a016ba73ad6ee085ca7e2f46f8b45c0de52909d6e63eaf26224516a",
+    "chat_notification": {
+      "delivered": true,
+      "thread_id": "019fb094-fba6-70f0-be4f-c211e1f5c616",
+      "hostId": "remote-ssh-discovered:raspberrypi",
+      "mail_id": "2026-10-30_17-54-11_golem_wolf-feasibility-runtime-review-one"
+    },
+    "authorization": "consultation-authorization.json"
+  }
+]

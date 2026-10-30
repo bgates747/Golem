@@ -1,0 +1,100 @@
+[
+  {
+    "recipient": "linux-extender",
+    "threadId": "01a13443-f921-72d1-9d3e-d05652c7a750",
+    "title": "Extender 2026-10-13 Sol",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"threadId\":\"01a13443-f921-72d1-9d3e-d05652c7a750\"}"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "recipient": "rally",
+    "threadId": "01a1346d-a74a-7211-b5b7-de3bcb8a28e5",
+    "title": "AgonArcade 2026-10-14",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"threadId\":\"01a1346d-a74a-7211-b5b7-de3bcb8a28e5\"}"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "recipient": "agon-6502",
+    "threadId": "01a1147a-c6cf-7b42-b6cd-336c8b762c8e",
+    "title": "Create 6502 emulator for eZ80",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"threadId\":\"01a1147a-c6cf-7b42-b6cd-336c8b762c8e\"}"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "recipient": "fsim-pingo",
+    "threadId": "01a11ddb-2f53-7700-b39f-eecc801e14b0",
+    "title": "fsim 2026-10-08 6.1 Sol",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"threadId\":\"01a11ddb-2f53-7700-b39f-eecc801e14b0\"}"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "recipient": "flexe",
+    "threadId": "01a1338a-fc8d-7db0-8dcd-52f0a3ffc476",
+    "title": "flexe-agon-emulator",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"threadId\":\"01a1338a-fc8d-7db0-8dcd-52f0a3ffc476\"}"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "recipient": "fsim-modeler",
+    "threadId": "01a1477c-09c1-7951-97df-217d4342b776",
+    "title": "fsim 3d modeler",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"threadId\":\"01a1477c-09c1-7951-97df-217d4342b776\"}"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "recipient": "fsim-wireframe",
+    "threadId": "01a16a53-6d76-72a0-94eb-51a7abded231",
+    "title": "Explore stock VDP wireframe",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"threadId\":\"01a16a53-6d76-72a0-94eb-51a7abded231\"}"
+        }
+      ],
+      "isError": false
+    }
+  }
+]

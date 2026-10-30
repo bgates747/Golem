@@ -1,0 +1,86 @@
+{
+  "fsim-wireframe": {
+    "reviewed_message": "2026-10-30_17-11-45_fsim-wireframe_golem056-wireframe-capability-return-one",
+    "proposal_ids": [
+      "WIRE-001"
+    ],
+    "disposition": "Existing public buffer/native-line services suffice. No new runtime hook requested. Optional future clipping/visibility/rendering algorithms remain consumer module work.",
+    "suggested_owner": "fsim-wireframe for any later Author-selected consumer work",
+    "dispatch": "none"
+  },
+  "flexe": {
+    "reviewed_message": "2026-10-30_17-13-29_flexe_golem056-flexe-audio-boundary-return-one",
+    "proposal_ids": [
+      "FLEXE-AUD-001"
+    ],
+    "disposition": "Reuse existing FX-062 intake for bounded producer/delivery audio diagnosis and later source-rate handling. Emulator-local observation, no new permanent firmware/wire service.",
+    "suggested_owner": "flexe; Golem preserves matched controls and contracts",
+    "dispatch": "none"
+  },
+  "rally": {
+    "reviewed_message": "2026-10-30_17-20-01_rally_golem056-rally-review-one",
+    "proposal_ids": [
+      "RLY056-001",
+      "RLY056-002",
+      "RLY056-003",
+      "RLY056-004",
+      "RLY056-005"
+    ],
+    "disposition": "Application round-trip reduction and prepared bitmap sizes use existing services. Generic pixels candidate should be evaluated before any scoped native color-row extension; pixels-only SDK accessor and omitted INFO18..23 documentation are specific existing-framework integration gaps. No new line/audio feature requested.",
+    "suggested_owner": "Rally owns INC-001-05 / AFF03; Golem owns generic pixel/SDK/docs assessment with consumer gates",
+    "dispatch": "none",
+    "delivery_exception": "Automatic review initially rejected send; Author explicitly approved drafted reply here. Mail is now received."
+  },
+  "fsim-pingo": {
+    "reviewed_message": "2026-10-30_17-19-03_fsim-pingo_golem056-fsim-capability-return-one",
+    "reviewed_messages": [
+      "2026-10-30_17-19-03_fsim-pingo_golem056-fsim-capability-return-one",
+      "2026-10-30_17-41-07_fsim-pingo_golem056-pingo-module-and-generic-async-two"
+    ],
+    "proposal_ids": [
+      "FSIM-001",
+      "FSIM-002",
+      "FSIM-003",
+      "FSIM-004",
+      "FSIM-005"
+    ],
+    "disposition": "Optional finite kernels and engine sound fit existing services. Follow-up proposes synchronous loadable Pingo feasibility first, with caller-owned scene/work/output arenas and a documented mutable bitmap publication lifetime. Reported 31,555 mapped renderer/command-owner bytes and 8,192-byte worker stack reservation do not qualify actual module size or its 2,048-byte stack cap. Generic async jobs are separate design research, consolidating GOLEM-043: bounded admission, pinned resources, worker-safe services and distinct compute/copy/present completion. No migration, limit increase, implementation or speedup follows from consultation; preserve current FLIGHT-065/069 work.",
+    "suggested_owner": "FSIM owns Pingo packaging/arenas/scenes/image parity/presentation; Golem owns generic admission, bitmap storage contract and any later approved async lifecycle/service boundary",
+    "dispatch": "none"
+  },
+  "agon-6502": {
+    "reviewed_message": "2026-10-30_17-25-35_agon-6502_golem056-6502-capabilities-return-one",
+    "proposal_ids": [
+      "A2-BASE-001",
+      "A2-GFX-001",
+      "A2-FENCE-001",
+      "A2-AUD-001",
+      "A2-AUD-002"
+    ],
+    "disposition": "Existing services cover monochrome desktop and native speaker sink. Requests pixels-only build selection, optional combination with lean PCM, and an ordinary VDU frontend to the same lean copied sink. Generic pixel candidate already fits artifact-color semantics. Clarify ordered GP as conditional non-vblank draw fence; no urgent new native fence hook.",
+    "suggested_owner": "Golem/VDPlet generic feature/build/SDK/docs and optional wire adapter; agon-6502 owns conversion/audio/adoption tests",
+    "dispatch": "none",
+    "delivery_exception": "Author explicitly approved all seven consultation reports; verifiable approval notice unblocked the prepared reply."
+  },
+  "linux-extender": {
+    "reviewed_message": "2026-10-30_17-27-33_linux-extender_golem056-extender-capability-return-one",
+    "proposal_ids": [
+      "EXT056-001",
+      "EXT056-002",
+      "EXT056-003",
+      "EXT056-004"
+    ],
+    "disposition": "Supports independent pixel/PCM SDK accessors and existing generic pixel route. Later P4 RISC-V target/discovery/reply routing requires bounded feasibility, not Xtensa binary reuse. No new controller/scroll/sprite/audio hook requested; preserve existing P4 owners and deferred tasks.",
+    "suggested_owner": "Golem portable API/package/discovery semantics with Extender-owned P4 loader/backend and EMOS route; consumer applications retain controller/tile work",
+    "dispatch": "none"
+  },
+  "fsim-modeler": {
+    "reviewed_message": "2026-10-30_17-39-32_fsim-modeler_golem056-modeler-capability-return-one",
+    "proposal_ids": [
+      "MODEL-001"
+    ],
+    "disposition": "No useful new firmware feature or implementation now. Keep geometry, UV/texture and aero tables generated offline; runtime consumers can use existing buffers/lines/bitmaps. Preserve FSIM renderer ownership; no solver/mesh-loader/aircraft-specific service requested.",
+    "suggested_owner": "Modeler continues existing offline MODEL-045; no new consultation assignment",
+    "dispatch": "none"
+  }
+}

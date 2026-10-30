@@ -1,0 +1,34 @@
+{
+  "scope": "All seven invited sessions may send GOLEM-056 reports including relevant project paths, measurements, improvement proposals and feature requests through the local mailbox to Golem. No implementation or external publication.",
+  "author_answer": "Approve all consultation replies",
+  "thread": "01a12c79-f74c-74d2-b6da-de2e34eb1bdd",
+  "turn": "01a18e9d-c89a-7b42-bccf-90182c233b91",
+  "user_message": "01a18eb2-b17b-7ad1-a011-266ea361afec",
+  "approved_participants": [
+    "linux-extender",
+    "rally",
+    "agon-6502",
+    "fsim-pingo",
+    "flexe",
+    "fsim-modeler",
+    "fsim-wireframe",
+    "wolf3dorig"
+  ],
+  "additional_authorizations": [
+    {
+      "participant": "wolf3dorig",
+      "project": "Wolf3DOrig",
+      "scope": "Continuing local mailbox and chat consultation/coordination within GOLEM-056. No feature implementation, dispatch or external publication.",
+      "thread": "01a12c79-f74c-74d2-b6da-de2e34eb1bdd",
+      "turn": "01a18ec9-61dc-7b82-ae6e-e613a1709cc6",
+      "reply_approval": {
+        "user_message": "01a18ece-0639-7c60-9260-a7f3c7c3e43b",
+        "answer": "Approve review reply and chat notification"
+      },
+      "list_addition": {
+        "user_message": "01a18ece-8e58-7e81-bf0a-7f1391f288cb",
+        "text": "add the Wolf3DOrig project to the approved list."
+      }
+    }
+  ]
+}

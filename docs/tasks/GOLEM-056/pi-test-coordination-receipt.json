@@ -1,0 +1,11 @@
+{
+  "message_id": "2026-10-30_18-02-08_golem_pi-test-interruption-activity-one",
+  "duplicate": false,
+  "chat_notification": {
+    "thread_id": "01a1147a-c6cf-7b42-b6cd-336c8b762c8e",
+    "hostId": "remote-ssh-discovered:raspberrypi",
+    "delivered": true
+  },
+  "process_actions": "none",
+  "finding": "No Golem cleanup or Pi emulator reservation during GOLEM-056; SIGTERM source unknown."
+}

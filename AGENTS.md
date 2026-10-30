@@ -1660,3 +1660,68 @@ was corrected and blinking verified on normal/error exits. Acceptance and the
 readback/correction distinction are recorded in GOLEM-055/human-review.json.
 GOLEM-055 is complete and removed from TODO.md; the remaining GOLEM-051
 distribution walkthrough is separate.
+
+
+## Cross-project VDPlet consultation — GOLEM-056
+
+The Author directly requests a fourteen-day mail audit, C/C++ VDPlet capability
+brief and chat outreach to each existing corresponding agent session, followed
+by mailbox returns and centrally coordinated assignments after Author review.
+The plan was frozen/pushed as 2ea6059 before the audit/outreach. Artifacts and
+response tracking live in docs/tasks/GOLEM-056/; coordination.md is the central
+return/assignment record and TODO.md remains the project task register.
+
+The initial window is 2026-10-16T17:01:35-04:00 through
+2026-10-30T17:01:35-04:00: 1,065 messages, 71 mail identities, seven long-lived
+sessions. Temporary helper aliases route to their owners; no new sessions or
+subagents are created. All seven mailbox invitations and brief-only chat
+notifications were delivered. Delivery/read/return are distinct. The shared
+brief is pinned by freeze.json to runtime 2541f10 and its own SHA-256.
+
+Use `.venv/bin/python docs/tasks/GOLEM-056/collect.py` to refresh mailbox returns
+for thread golem056-capability-review. It only indexes mail and writes local
+tracking; it never sends/acknowledges messages or assigns work. Substantive
+coordination stays in the canonical mailbox. Read every return, consolidate
+shared hooks and ownership, then review with the Author after all returns or an
+explicit Author disposition. Do not start proposals or dispatch implementation
+assignments before that review; existing peer work remains separately authorized.
+
+
+GOLEM-056 consultation checkpoint: seven sessions / eight reports received,
+read and acknowledged, including the modeler no-change report and FSIM's
+Pingo/async follow-up. review.md is the completed combined
+proposal/ownership/dependency review, with suggested priorities; no assignment
+has been sent. Plan RET-001/SYN-001 are complete and DIS-001 awaits the Author's
+review. Do not implement proposals or dispatch owners until that approval.
+The Author explicitly approved all seven local reports, including relevant
+project paths/measurements, after automatic approval review blocked two sends;
+consultation-authorization.md pins that direct user message. Both blocked
+returns are received. No implementation or external publication is authorized
+by that reply approval. New consultation artifacts remain local/uncommitted;
+the initial task-plan freeze2ea6059 is pushed.
+
+FSIM-004/005 revise the initial Pingo caution: assess a synchronous loadable
+renderer first, with caller-owned arenas and a documented mutable bitmap
+publication/lifetime contract. Generic async jobs are a separate possible
+follow-on under existing deferred GOLEM-043 research. Reported mapped code and
+worker stack reservation do not establish actual module fit or justify raising
+limits. No migration or implementation is dispatched by the consultation.
+
+Later Wolf3DOrig handoff is tracked separately as CNS-015 and
+GOLEM-056/wolf3d-review.md, preserving the frozen seven-session roster. Existing
+buffer/pixel services appear sufficient; module/workspace/stack/frame cost and
+physical/lifecycle qualification remain consumer gates. The Author approved
+the technical reply and chat notification; both were delivered. The Author then
+explicitly added Wolf3DOrig to the approved consultation participant list.
+Continuing mailbox/chat coordination with that project within this task is
+authorized without repeating recipient approval. consultation-authorization.md
+and .json pin the direct user messages. Frozen invitation coverage remains seven;
+the current approved list has eight. No Wolf port, runtime change or deployment
+has been started; implementation dispatch and publication gates remain intact.
+
+The Author subsequently explicitly requests commit/push of pending work, then
+compilation of the feature-request list. This authorizes publication of the
+consultation checkpoint and supersedes its prior publication hold. GOLEM-056
+already owns compilation; CAT-001 now records the explicit deduplicated catalog
+deliverable. Do not confuse cataloging/publication with DIS-001 implementation
+dispatch, which still requires the Author's review.

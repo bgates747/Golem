@@ -1,0 +1,10 @@
+{
+  "plan_commit": "2ea60598ed0e6dab0c8e4648c3001ffc2b5a86f8",
+  "capability_commit": "2541f10a1f8b06688bcecbc6d22eeae607da2b63",
+  "brief_sha256": "530b8ff2e8e00baad290372c5a572a3505a9a78175b7fd97d2256520765a5527",
+  "brief": "docs/tasks/GOLEM-056/capabilities-and-response-request.md",
+  "messages_in_initial_window": 1065,
+  "distinct_mail_identities": 71,
+  "distinct_sessions": 7,
+  "scope": "Consultation only; Author review precedes assignments."
+}

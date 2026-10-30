@@ -1,0 +1,132 @@
+[
+  {
+    "id": "01a13443-f921-72d1-9d3e-d05652c7a750",
+    "title": "Extender 2026-10-13 Sol",
+    "hostId": "remote-ssh-discovered:raspberrypi",
+    "cwd": "/Agon/mystuff/agon-extender",
+    "status": "active",
+    "recipient": "linux-extender",
+    "notification": "sent",
+    "reply": "reviewed",
+    "invitation": "2026-10-30_17-10-00_golem_golem056-linux-extender-invitation-one",
+    "mail_delivery": "published",
+    "acknowledgement": "reply received",
+    "returns": [
+      "2026-10-30_17-27-33_linux-extender_golem056-extender-capability-return-one"
+    ],
+    "followup": {
+      "reason": "Session read the brief and completed its existing controller work but has not published the requested mailbox return.",
+      "notification": "Sent one section-6 mailbox-return clarification.",
+      "status": "Resolved: durable return received and reviewed."
+    }
+  },
+  {
+    "id": "01a1346d-a74a-7211-b5b7-de3bcb8a28e5",
+    "title": "AgonArcade 2026-10-14",
+    "hostId": "remote-ssh-discovered:raspberrypi",
+    "cwd": "/Agon/mystuff/AgonArcade",
+    "status": "idle",
+    "recipient": "rally",
+    "notification": "sent",
+    "reply": "reviewed",
+    "invitation": "2026-10-30_17-10-00_golem_golem056-rally-invitation-one",
+    "mail_delivery": "published",
+    "acknowledgement": "reply received",
+    "returns": [
+      "2026-10-30_17-20-01_rally_golem056-rally-review-one"
+    ]
+  },
+  {
+    "id": "01a1147a-c6cf-7b42-b6cd-336c8b762c8e",
+    "title": "Create 6502 emulator for eZ80",
+    "hostId": "remote-ssh-discovered:raspberrypi",
+    "cwd": "/Agon/mystuff/agon-6502",
+    "status": "active",
+    "recipient": "agon-6502",
+    "notification": "sent",
+    "reply": "reviewed",
+    "invitation": "2026-10-30_17-10-00_golem_golem056-agon-6502-invitation-one",
+    "mail_delivery": "published",
+    "acknowledgement": "reply received",
+    "returns": [
+      "2026-10-30_17-25-35_agon-6502_golem056-6502-capabilities-return-one"
+    ],
+    "delivery_blocker": {
+      "source": "Peer turn reports automatic approval review rejected full and reduced send",
+      "draft": "/Agon/mystuff/agon-6502/docs/tasks/VDP-005/golem056-capability-review.md",
+      "reason": "Requires explicit current authorization to share project details with Golem",
+      "status": "Resolved: Author approval relayed and durable return received"
+    },
+    "authority_notice": "2026-10-30_17-24-38_golem_golem056-consultation-authority-two"
+  },
+  {
+    "id": "01a11ddb-2f53-7700-b39f-eecc801e14b0",
+    "title": "fsim 2026-10-08 6.1 Sol",
+    "hostId": "remote-ssh-discovered:raspberrypi",
+    "cwd": "/Agon/mystuff/agon-fsim",
+    "status": "notLoaded",
+    "recipient": "fsim-pingo",
+    "notification": "sent",
+    "reply": "reviewed",
+    "invitation": "2026-10-30_17-10-00_golem_golem056-fsim-pingo-invitation-one",
+    "mail_delivery": "published",
+    "acknowledgement": "reply received",
+    "returns": [
+      "2026-10-30_17-19-03_fsim-pingo_golem056-fsim-capability-return-one",
+      "2026-10-30_17-41-07_fsim-pingo_golem056-pingo-module-and-generic-async-two"
+    ],
+    "followup": {
+      "reason": "Initial consultation turn completed after acknowledging the brief without publishing the requested mailbox return.",
+      "notification": "Sent one section-6 mailbox-return clarification; no repeated generic wake-up.",
+      "status": "Resolved: durable return received and reviewed."
+    }
+  },
+  {
+    "id": "01a1338a-fc8d-7db0-8dcd-52f0a3ffc476",
+    "title": "flexe-agon-emulator",
+    "hostId": "remote-ssh-discovered:raspberrypi",
+    "cwd": "/Agon/mystuff/flexe-agon-emulator",
+    "status": "notLoaded",
+    "recipient": "flexe",
+    "notification": "sent",
+    "reply": "reviewed",
+    "invitation": "2026-10-30_17-10-00_golem_golem056-flexe-invitation-one",
+    "mail_delivery": "published",
+    "acknowledgement": "reply received",
+    "returns": [
+      "2026-10-30_17-13-29_flexe_golem056-flexe-audio-boundary-return-one"
+    ]
+  },
+  {
+    "id": "01a1477c-09c1-7951-97df-217d4342b776",
+    "title": "fsim 3d modeler",
+    "hostId": "remote-ssh-discovered:raspberrypi",
+    "cwd": "/Agon/mystuff/agon-fsim",
+    "status": "notLoaded",
+    "recipient": "fsim-modeler",
+    "notification": "sent",
+    "reply": "reviewed",
+    "invitation": "2026-10-30_17-10-00_golem_golem056-fsim-modeler-invitation-one",
+    "mail_delivery": "published",
+    "acknowledgement": "reply received",
+    "returns": [
+      "2026-10-30_17-39-32_fsim-modeler_golem056-modeler-capability-return-one"
+    ]
+  },
+  {
+    "id": "01a16a53-6d76-72a0-94eb-51a7abded231",
+    "title": "Explore stock VDP wireframe",
+    "hostId": "remote-ssh-discovered:raspberrypi",
+    "cwd": "/Agon/mystuff/agon-fsim",
+    "status": "notLoaded",
+    "recipient": "fsim-wireframe",
+    "notification": "sent",
+    "reply": "reviewed",
+    "invitation": "2026-10-30_17-10-01_golem_golem056-fsim-wireframe-invitation-one",
+    "mail_delivery": "published",
+    "acknowledgement": "reply received",
+    "returns": [
+      "2026-10-30_17-11-45_fsim-wireframe_golem056-wireframe-capability-return-one"
+    ]
+  }
+]

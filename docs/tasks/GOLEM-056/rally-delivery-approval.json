@@ -1,0 +1,6 @@
+{
+  "action": "Rally sends drafted VDPlet consultation to local mailbox recipient golem",
+  "author_approval": "Approve the drafted mailbox reply",
+  "source": "Direct Author answer in this Golem chat to the async question about automatic approval review rejection",
+  "status": "Mailbox reply arrived; no retry or substitute send needed"
+}

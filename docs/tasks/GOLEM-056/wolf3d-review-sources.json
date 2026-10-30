@@ -1,0 +1,22 @@
+{
+  "runtime_commit": "2541f10a1f8b06688bcecbc6d22eeae607da2b63",
+  "scope": "Static source/document/receipt review only; no new build or execution",
+  "sha256": {
+    "/Agon/mystuff/agon-vdplet/include/vdplet.h": "e0394c035bcbe38f15db1d860ad805d113ad389fbc93b8878fd8638a0389fc8b",
+    "/Agon/mystuff/agon-vdplet/include/vdplet_services.h": "44f97a1155cad4e737e220807e5913a3f69d7f42054c7821ea9abe014bd3550f",
+    "/Agon/mystuff/agon-vdplet/include/vdplet_protocol.h": "e65d387735a6c600626608127ce57ca9e29249bc2aa535fbb5f9be29f3e06254",
+    "/Agon/mystuff/agon-vdplet/src/vdplet_policy.h": "c69d6f3654b4b5dd4a8ae76e971818f4b13369d61dbded607b844e3268f66419",
+    "/Agon/mystuff/agon-vdplet/src/vdplet_image.h": "1908ccf123f53a8393a3d357b92119c19bd3e56b7576f68af256ad329a850397",
+    "/Agon/mystuff/agon-vdplet/src/vdplet_runtime.h": "cd106399c21f2b3e9e45dd542ee6b803b5721a2d8d7351a067820269e7f55993",
+    "/Agon/mystuff/agon-vdplet/src/vdplet_color.h": "2a04d1597769acc7be8c0aa19819c168de3ce4c3f95e9ae58750166b0493a7ea",
+    "/Agon/mystuff/agon-vdplet/src/vdplet_pixels.h": "58ee90c0867dea2b6f040a4b568d6fbbbf863c4baf689e1baf89af3688ff013c",
+    "/Agon/mystuff/agon-vdplet/tools/build_module.py": "315295ba9cc2ad17a6af550d795877279fa7d1bab65da971b81bccce3dc6532c",
+    "/Agon/mystuff/agon-vdplet/tools/module.exports": "9fd0e3d42b2162d4d65e43592c78e5c0ba5663a937b1474c76312654c1dce1a9",
+    "/Agon/mystuff/agon-vdplet/docs/API-reference.md": "553476a4bb4813c185915a4c2df060e78c84f3435aa37fb54c39a91852ae4027",
+    "/Agon/mystuff/agon-vdplet/docs/tasks/VDPL-005/qualification/qualify.py": "1b2f1d4241af42995a425a55e3917b438c4061357e2c118ccc8ec6463e9210b2",
+    "/Agon/mystuff/agon-vdplet/docs/tasks/VDPL-005/qualification/jit-service-evidence.json": "88b219314616960c2b41c158d4353c7de57318d39b333e2aa3abf92863a69dd5",
+    "/Agon/mystuff/agon-vdplet/docs/tasks/VDPL-005/qualification/interp-service-evidence.json": "b23c1fb52aedbf8fd03772eff741da6366026f8aec13072bd170ad4609b0d35c",
+    "/Agon/mystuff/agon-vdplet/docs/tasks/VDPL-005/qualification/oryx-jit-service-evidence.json": "5aadb3db969802db016cee91ddff7680737fd9e129b1614b29d10d3597cd89b8",
+    "/Agon/mystuff/agon-dev-env/cross-agent/agentcoms/messages/2026-10-30_17-48-39_wolf3dorig_wolf-vdplet-feasibility-requirements-one.md": "aebc8ce26e06b1f1ba3fcfa0b90ec6a51f9f5d75ce533b2476eed940c6a3428d"
+  }
+}
