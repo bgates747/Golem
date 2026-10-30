@@ -3,6 +3,11 @@
 This is the authoritative register of promoted, unfinished work. Detailed plans
 and task artifacts live under `docs/tasks/`.
 
+- [ ] **GOLEM-056:** Audit the last fourteen days of agent mail, circulate a
+  shared C/C++ VDPlet capability brief, collect durable improvement/hook requests
+  and coordinate Author-approved assignments here. [Plan](docs/tasks/GOLEM-056.md).
+  Freeze the plan before outreach; implementation proposals await joint review.
+
 GOLEM-035 was accepted and explicitly approved for commit/push on 2026-10-13.
 Outstanding human/physical reviews below remain open; this checkpoint does not
 claim those reviews occurred.

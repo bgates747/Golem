@@ -1,0 +1,60 @@
+# GOLEM-056 — C/C++ VDPlet capability review across agent projects
+
+Give recent collaborating agents one evidence-backed description of what native
+C/C++ VDPlets can now do, then collect their improvement ideas and missing
+integration hooks through the mailbox. Golem coordinates the returns and later
+assignments so the Author can review and dispatch work from this conversation.
+This first phase is consultation, not permission to implement the proposals.
+
+## Scope and frozen sequence
+
+Freeze this plan in Git before reviewing message contents or sending outreach.
+Use the fourteen-day window from **2026-10-16 17:01:35 EDT** through
+**2026-10-30 17:01:35 EDT** for the initial mailbox inventory. Preserve message
+IDs and exact agent/session identities; later consultation replies are tracked
+separately rather than changing the original inventory window.
+
+Inventory the recent mailbox's agent correspondents and relevant discussions,
+including sent and received mail. Resolve each distinct agent session using the
+app's existing-thread tools; record merged aliases, unavailable sessions and
+exclusions with reasons rather than silently omitting them. Do not create new
+agent sessions or implementation subtasks during this consultation.
+
+Verify capability claims against the current agon-vdplet source, API reference,
+task evidence and commits. Describe generic native services, VDU-byte submission,
+buffers and lifetime rules, drawing/presentation, audio, capacity and compatibility
+where supported. Separate available behavior from prototypes, pending research,
+firmware requirements and emulator limitations. C/C++ usage is the focus; Golem
+generation is optional context, not a prerequisite.
+
+Keep the shared brief, source/mail inventory, outreach log and returns under
+docs/tasks/GOLEM-056/. The brief must give agents enough detail and references to
+identify useful changes without needing a long chat message. Notifications must
+only direct each session to read the brief and follow its instructions.
+
+## Work and acceptance
+
+- PLN-001 [ ] Commit and pin this plan before the mail audit and outreach.
+- INV-001 [ ] Inventory the frozen mail window and map distinct correspondents
+  to their existing sessions; document coverage and any unresolved identities.
+- CAP-001 [ ] Write the shared capability brief with exact source/version
+  references and clear implementation/qualification limits.
+- REQ-001 [ ] Specify a mailbox response format: proposed improvement, existing
+  capabilities used, missing hooks, ownership, expected benefit, dependencies,
+  validation and any conflicts. A reasoned no-change response counts as a return.
+- OUT-001 [ ] Notify each in-scope agent session in chat, linking the brief;
+  record delivery and failures without treating delivery as acknowledgement.
+- RET-001 [ ] Collect and index all mailbox returns, preserving original IDs;
+  track outstanding replies and clarify technical questions as needed.
+- SYN-001 [ ] Consolidate returned proposals, shared hook requests, dependencies
+  and suggested owners for joint review with the Author after returns are in.
+- DIS-001 [ ] After the Author's review, dispatch approved assignments from
+  here and track acknowledgement, progress, evidence and completion centrally.
+  This step is explicitly gated; consultation does not authorize feature work.
+
+The Author directly authorizes contacting these existing agent sessions and
+requesting durable mailbox replies. Substantive coordination stays in the
+mailbox; chat serves as notification. Do not alter peer project implementations,
+flash firmware, launch graphical emulators or assign implementation work before
+the agreed review. TODO.md remains the authoritative task register; the task's
+tables record consultation and assignment state, not a second project backlog.
