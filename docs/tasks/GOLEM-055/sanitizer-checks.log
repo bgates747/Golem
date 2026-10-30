@@ -1,0 +1,4 @@
+g++ -std=c++17 -Wall -Wextra -O1 -g -ffp-contract=off -fsanitize=address,undefined -fno-omit-frame-pointer tests/test_portable.cpp -o docs/tasks/GOLEM-055/build/sanitizers/portable
+Portable contracts pass: 52 frozen output files, 3 intentionally changed native sources, 57 rejections, mapped/reserved/bound inputs, XOR types/precedence and combined reference behavior.
+g++ -std=c++17 -Wall -Wextra -O1 -g -ffp-contract=off -fsanitize=address,undefined -fno-omit-frame-pointer tests/test_printing.cpp -o docs/tasks/GOLEM-055/build/sanitizers/printing
+Printing contracts pass: 15 output/error cases, 4096 float samples and 11 rejected forms.

@@ -3,11 +3,6 @@
 This is the authoritative register of promoted, unfinished work. Detailed plans
 and task artifacts live under `docs/tasks/`.
 
-- [ ] **GOLEM-055:** Reduce native compiler peak RAM use so the preserved
-  two-float printing example compiles on Agon. [Plan](docs/tasks/GOLEM-055.md).
-  Freeze/reproduce the failure, measure avoidable copies, preserve output bytes,
-  qualify actual MOS compilation and stage a stopped Oryx Fab review.
-
 GOLEM-035 was accepted and explicitly approved for commit/push on 2026-10-13.
 Outstanding human/physical reviews below remain open; this checkpoint does not
 claim those reviews occurred.

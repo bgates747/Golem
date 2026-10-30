@@ -1,0 +1,124 @@
+{
+  "scope": "Matched direct-CLI diagnostic copies with frozen original response-file reader; snapshots after ag::memory attempts, not every allocation/free or stack peak.",
+  "diagnostic_heap_penalty_bytes": 1561,
+  "variants": {
+    "baseline": {
+      "log": "probe-baseline-direct.log",
+      "log_sha256": "827417079e3ee8ea30060f454da90a5f5b822d9c444df4d83d29390809c9f6d3",
+      "worker_sha256": "4aab31db93f389c9cb22bb582a6d3d66fa6e74e709390de93021184cd28b063e",
+      "worker_bytes": 320983,
+      "invocation": "--portable two-floats.golem package",
+      "response_file": false,
+      "compile_succeeded": false,
+      "snapshots": {
+        "job": {
+          "job": "(direct)",
+          "samples": 4857,
+          "failures": 1,
+          "largest_request": 32768,
+          "heap_bytes": 121165,
+          "sampler_scope": "after_ag_memory_attempts"
+        },
+        "peak": {
+          "valid": 1,
+          "request": 4096,
+          "success": 1,
+          "phase": "building stock wrappers",
+          "extent": 92264,
+          "used_with_headers": 86476,
+          "free_bins": 5788,
+          "uncommitted_tail": 28901,
+          "total_free": 34689,
+          "largest_payload_fit": 28894,
+          "free_blocks": 95
+        },
+        "failure": {
+          "valid": 1,
+          "request": 32768,
+          "success": 0,
+          "phase": "building stock wrappers",
+          "extent": 92264,
+          "used_with_headers": 84422,
+          "free_bins": 7842,
+          "uncommitted_tail": 28901,
+          "total_free": 36743,
+          "largest_payload_fit": 28894,
+          "free_blocks": 95
+        },
+        "final": {
+          "valid": 1,
+          "request": 0,
+          "success": 1,
+          "phase": "building stock wrappers",
+          "extent": 92264,
+          "used_with_headers": 0,
+          "free_bins": 92264,
+          "uncommitted_tail": 28901,
+          "total_free": 121165,
+          "largest_payload_fit": 92258,
+          "free_blocks": 1
+        }
+      }
+    },
+    "fixed": {
+      "log": "probe-fixed-direct.log",
+      "log_sha256": "7af3b41667c38afa38e1339f8fc459103f919eb690a7030884bee85fd3511a21",
+      "worker_sha256": "24b58000b9c1151816e9b88f2bf67ffd8963662c6f1f6789125dd435e0d5c45a",
+      "worker_bytes": 321157,
+      "invocation": "--portable two-floats.golem package",
+      "response_file": false,
+      "compile_succeeded": false,
+      "snapshots": {
+        "job": {
+          "job": "(direct)",
+          "samples": 4802,
+          "failures": 1,
+          "largest_request": 32768,
+          "heap_bytes": 120991,
+          "sampler_scope": "after_ag_memory_attempts"
+        },
+        "peak": {
+          "valid": 1,
+          "request": 16384,
+          "success": 1,
+          "phase": "emitting stock commands",
+          "extent": 88424,
+          "used_with_headers": 78695,
+          "free_bins": 9729,
+          "uncommitted_tail": 32567,
+          "total_free": 42296,
+          "largest_payload_fit": 32560,
+          "free_blocks": 56
+        },
+        "failure": {
+          "valid": 1,
+          "request": 32768,
+          "success": 0,
+          "phase": "building stock wrappers",
+          "extent": 88424,
+          "used_with_headers": 72442,
+          "free_bins": 15982,
+          "uncommitted_tail": 32567,
+          "total_free": 48549,
+          "largest_payload_fit": 32560,
+          "free_blocks": 92
+        },
+        "final": {
+          "valid": 1,
+          "request": 0,
+          "success": 1,
+          "phase": "building stock wrappers",
+          "extent": 88424,
+          "used_with_headers": 0,
+          "free_bins": 88424,
+          "uncommitted_tail": 32567,
+          "total_free": 120991,
+          "largest_payload_fit": 88418,
+          "free_blocks": 1
+        }
+      }
+    }
+  },
+  "live_allocated_reduction_at_failed_wrapper_request_bytes": 11980,
+  "interpretation": "Both probes fail the 32768-byte request. Fixed probe largest fit is 208 bytes short; its production counterpart has 1561 additional heap bytes and succeeds separately. No claim that a failed-job sampled peak is the completed compiler peak."
+}

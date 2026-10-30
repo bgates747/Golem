@@ -1,0 +1,15 @@
+{
+  "passed": false,
+  "purpose": "Optional response-file path before actual-size response-buffer fix",
+  "worker_sha256": "fe31f8cd980747aac59b1948a0a490787cc03fd90da73efe1daa000640efcceb",
+  "source_sha256": "9b1b48d6b1ed02244cab44786a005ea2cbbaf25b224af275d66be87be5700fbe",
+  "invocation": "golemc @two-floats.args",
+  "allocation_request_bytes": 32768,
+  "compiler_stage": "building stock wrappers",
+  "diagnostic": "out of compiler memory",
+  "fixed_response_buffer_bytes": 8193,
+  "screen": "response-buffer-limit.png",
+  "screen_sha256": "4eb646275864bfa7d1576a0ee141d2b733443d9ee0d425cae84123a91aae40fc",
+  "normal_return_to_MOS": true,
+  "disposition": "Final production worker subsequently passes this same source with plain, direct and optional response-file invocations."
+}

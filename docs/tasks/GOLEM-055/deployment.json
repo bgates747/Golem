@@ -1,0 +1,19 @@
+{
+  "host": "oryx-linuxlite",
+  "profile": "Agon/mystuff/golem/.emulator/golem-055",
+  "product": "Fab Agon Emulator 1.2.5",
+  "MOS": "3.0.2",
+  "stock_native_VDP": true,
+  "GUI_launched": false,
+  "mode": "review",
+  "human": "pending",
+  "native_eZ80_compiler_sha256": "0e9d835b7c9ac4e7feda2ee280e3bbb9497040ad7ed96171d38857a3482973bf",
+  "source_sha256": "9b1b48d6b1ed02244cab44786a005ea2cbbaf25b224af275d66be87be5700fbe",
+  "expected_texts": [
+    "reading=1.5 scaled=3",
+    "reading=1.5 scaled=3",
+    "reading=-2.25 scaled=-9",
+    "reading=3.125 scaled=1.5625",
+    "reading=0 scaled=0"
+  ]
+}

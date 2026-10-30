@@ -929,7 +929,7 @@ public:
             Bytes prefix; emitBufferHeader(prefix, compiler_.errorStatus()); prefix.push_back(5);
             if (code.size() >= prefix.size() && std::equal(prefix.begin(), prefix.end(), code.begin()))
                 copy(code, {layout_.buffer, layout_.errorOffset}, {compiler_.errorStatus(), 0});
-            output_.programs[item.first] = code;
+            output_.programs[item.first] = std::move(code);
         }
         std::set<unsigned> owned(output_.owned.begin(), output_.owned.end());
         for (const auto &claim : allocation_.claims())

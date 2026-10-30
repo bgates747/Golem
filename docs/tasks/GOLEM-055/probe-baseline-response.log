@@ -1,0 +1,4 @@
+job=probe.args samples=4857 failures=1 largest_request=32768 heap_bytes=121165 sampler_scope=after_ag_memory_attempts
+peak valid=1 request=4096 success=1 phase=building stock wrappers extent=100463 used_with_headers=94675 free_bins=5788 uncommitted_tail=20702 total_free=26490 largest_payload_fit=20695 free_blocks=95
+failure valid=1 request=32768 success=0 phase=building stock wrappers extent=100463 used_with_headers=92621 free_bins=7842 uncommitted_tail=20702 total_free=28544 largest_payload_fit=20695 free_blocks=95
+final valid=1 request=0 success=1 phase=building stock wrappers extent=100463 used_with_headers=8199 free_bins=92264 uncommitted_tail=20702 total_free=112966 largest_payload_fit=92258 free_blocks=1

@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "worker_sha256": "0e9d835b7c9ac4e7feda2ee280e3bbb9497040ad7ed96171d38857a3482973bf",
+  "actual_MOS_compilation": true,
+  "response_bytes": [
+    8192,
+    8193
+  ],
+  "statuses": [
+    0,
+    1,
+    0
+  ],
+  "matching_package_files": {
+    "8192_bytes": 12,
+    "quoted_paths": 11
+  },
+  "error": "[case 0 edge-max.args]\n[case 1 edge-large.args]\ngolemc: response file exceeds 8192 bytes\n\n[case 2 edge-quoted.args]\n",
+  "normal_MOS_continuation": true,
+  "seconds": 8.143544041988207,
+  "frontend_exit": 0
+}

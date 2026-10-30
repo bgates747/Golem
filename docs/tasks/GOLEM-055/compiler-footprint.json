@@ -1,0 +1,68 @@
+{
+  "baseline": {
+    "binary_bytes": 319489,
+    "sha256": "b275de31d37406ff35c5a863d7b44f75061607251135f5e5b9f1455dcb0b8d05",
+    "map_sha256": "e27c8d1c495e990689af77646785b64aa969ec8ee84eb9be44df1294dd7ebb41",
+    "heap_bottom": "0x8e09a",
+    "heap_limit": "0xac000",
+    "heap_bytes": 122726,
+    "reserved_stack_bytes": 16384
+  },
+  "header_only": {
+    "binary_bytes": 319663,
+    "sha256": "fe31f8cd980747aac59b1948a0a490787cc03fd90da73efe1daa000640efcceb",
+    "map_sha256": "ffe45092eb7f29a8a5420d040c9a8be69cafd69cf7dcf1ed47ba65add6e9df2d",
+    "heap_bottom": "0x8e148",
+    "heap_limit": "0xac000",
+    "heap_bytes": 122552,
+    "reserved_stack_bytes": 16384
+  },
+  "fixed": {
+    "binary_bytes": 319785,
+    "sha256": "0e9d835b7c9ac4e7feda2ee280e3bbb9497040ad7ed96171d38857a3482973bf",
+    "map_sha256": "ed8868f6cb2b84272776ae9015916de332b5191d0766b7a49aff7b587ee53ccf",
+    "heap_bottom": "0x8e1c2",
+    "heap_limit": "0xac000",
+    "heap_bytes": 122430,
+    "reserved_stack_bytes": 16384
+  },
+  "all_rebuilt_workers": {
+    "raw": {
+      "binary_bytes": 61711,
+      "sha256": "6cd680cb16158b7b5b7e2f3f858d35c6d47d3ff98f1c70c5dfb57c12a0ac2d38",
+      "map_sha256": "b85dd4e29c0caef7addbb6c371fb3cdb86ec56ceba6dfede80eadbd79097d8bd",
+      "heap_bottom": "0x4f1a5",
+      "heap_limit": "0xac000",
+      "heap_bytes": 380507,
+      "reserved_stack_bytes": 16384
+    },
+    "resident": {
+      "binary_bytes": 176710,
+      "sha256": "eb2fddecbd775e5252fab5b980c2717754495427e9734761afb95836568006ae",
+      "map_sha256": "7fe55e32d1fa1bff9dd01f4d2b4fc4cd01af015c21d5137bbd66ad73c998eb0e",
+      "heap_bottom": "0x6b2de",
+      "heap_limit": "0xac000",
+      "heap_bytes": 265506,
+      "reserved_stack_bytes": 16384
+    },
+    "stock-matrix": {
+      "binary_bytes": 120291,
+      "sha256": "bcc6412527f971db2054cdc8d1bce833d69b691a6b8b4e61a1f33b0ef72b81a2",
+      "map_sha256": "126996601c0a20f8d4d1bf547bb0f38008ea54285342dad8b3a92baa12311ac3",
+      "heap_bottom": "0x5d67a",
+      "heap_limit": "0xac000",
+      "heap_bytes": 321926,
+      "reserved_stack_bytes": 16384
+    },
+    "portable": {
+      "binary_bytes": 319785,
+      "sha256": "0e9d835b7c9ac4e7feda2ee280e3bbb9497040ad7ed96171d38857a3482973bf",
+      "map_sha256": "ed8868f6cb2b84272776ae9015916de332b5191d0766b7a49aff7b587ee53ccf",
+      "heap_bottom": "0x8e1c2",
+      "heap_limit": "0xac000",
+      "heap_bytes": 122430,
+      "reserved_stack_bytes": 16384
+    }
+  },
+  "interpretation": "Linker heap capacity, not measured peak usage. Production stack reservation and RAM limits are unchanged; header-only diagnostic probes have their own smaller capacities."
+}

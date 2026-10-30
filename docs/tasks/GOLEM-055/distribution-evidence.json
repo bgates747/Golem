@@ -1,0 +1,31 @@
+{
+  "passed": true,
+  "archive": "dist/golem-on-agon-GOLEM-051.zip",
+  "bytes": 555616,
+  "sha256": "2c6077ee1ee697b5c111c166114358c077ff2a49add56bddf7895e73e42f4517",
+  "manifest_files_verified": 114,
+  "current_files_verified": [
+    "HOWTO.md",
+    "LANGUAGE.md",
+    "sdcard/golem/HOWTO.md",
+    "sdcard/golem/LANGUAGE.md",
+    "sdcard/golem/examples/float-print.golem",
+    "source/src/portable/root.hpp",
+    "source/src/portable/backends.hpp",
+    "source/docs/tasks/GOLEM-051/port/entry.cpp",
+    "sdcard/golem/compiler/raw.bin",
+    "sdcard/golem/compiler/resident.bin",
+    "sdcard/golem/compiler/stock-matrix.bin",
+    "sdcard/golem/compiler/portable.bin"
+  ],
+  "consumer_evidence_directory": false,
+  "two_float_source_preserved": true,
+  "compiler_worker_sha256": "0e9d835b7c9ac4e7feda2ee280e3bbb9497040ad7ed96171d38857a3482973bf",
+  "oryx_delivery": {
+    "host": "oryx-linuxlite",
+    "path": "~/Agon/mystuff/golem/dist/golem-on-agon-GOLEM-051.zip",
+    "sha256": "2c6077ee1ee697b5c111c166114358c077ff2a49add56bddf7895e73e42f4517",
+    "checksum_matches": true,
+    "existing_emulator_profiles_modified": false
+  }
+}

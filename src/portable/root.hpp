@@ -45,13 +45,18 @@ struct Envelope {
     std::vector<unsigned> bufferedEntries;
 };
 inline Envelope envelope(Buffered &b,const Program &p,const Layout &l,golem::BufferAllocator &a) {
-    auto data=[&](Bytes bytes){const auto id=a.allocate("d0.private.data");b.owned.push_back(id);b.data[id]=bytes;
-        append(b.install,write(id,bytes));append(b.cleanup,clear(id));return id;};
-    auto program=[&](Bytes code){const auto id=a.allocate("d0.private.code");b.owned.push_back(id);b.programs[id]=code;
-        append(b.install,write(id,code));append(b.cleanup,clear(id));return id;};
+    // Retain each record once and serialize directly: the root guard can be
+    // several KiB, so encoded temporary copies waste scarce on-Agon RAM.
+    auto install=[&](unsigned id,const Bytes &bytes){
+        if(bytes.empty()||bytes.size()>65535)throw std::runtime_error("invalid block length");
+        append(b.install,clear(id));emitWriteBlock(b.install,id,bytes);};
+    auto data=[&](Bytes bytes){const auto id=a.allocate("d0.private.data");b.owned.push_back(id);b.data[id]=std::move(bytes);
+        install(id,b.data[id]);append(b.cleanup,clear(id));return id;};
+    auto program=[&](Bytes code){const auto id=a.allocate("d0.private.code");b.owned.push_back(id);b.programs[id]=std::move(code);
+        install(id,b.programs[id]);append(b.cleanup,clear(id));return id;};
     const auto scratch=data({0,0}),operand=data({0,0}),zero=data({0,0});
     std::array<unsigned,9> failure{};
-    for(unsigned n=1;n<=8;++n) {Bytes code;emitAdjustMultiLiteral(code,l.buffer,kOpSet,Interface,le16Bytes(n));failure[n]=program(code);}
+    for(unsigned n=1;n<=8;++n) {Bytes code;emitAdjustMultiLiteral(code,l.buffer,kOpSet,Interface,le16Bytes(n));failure[n]=program(std::move(code));}
     Bytes guard;emitAdjustMultiLiteral(guard,l.buffer,kOpSet,Interface,{0,0});
     for(auto offset:fixedOffsets()) {
         copy(guard,{scratch,0},{l.buffer,offset},1);
@@ -67,9 +72,9 @@ inline Envelope envelope(Buffered &b,const Program &p,const Layout &l,golem::Buf
     Bytes low;copy(low,{scratch,0},{l.buffer,Requested},1);
     emitAdjustMultiLiteral(low,operand,kOpSet,0,{static_cast<unsigned char>(p.procedures.size()),0});
     emitCondJumpBufferValue(low,failure[7],7,scratch,0,operand,0);
-    emitCondCallBufferValue(guard,program(low),2,scratch,0,operand,0);
-    const auto check=program(guard),counter=data({0,0,0,0,0});
-    Bytes finished;emitBufferHeader(finished,65535);finished.push_back(7);const auto done=program(finished);
+    emitCondCallBufferValue(guard,program(std::move(low)),2,scratch,0,operand,0);
+    const auto check=program(std::move(guard)),counter=data({0,0,0,0,0});
+    Bytes finished;emitBufferHeader(finished,65535);finished.push_back(7);const auto done=program(std::move(finished));
     std::vector<unsigned> success;
     for(auto entry:b.entries) {
         Bytes code=call(entry);emitCondJumpBufferValue(code,done,3,l.buffer,Language,zero,0);
@@ -77,17 +82,17 @@ inline Envelope envelope(Buffered &b,const Program &p,const Layout &l,golem::Buf
         emitAdjustMultiLiteral(code,counter,kOpAddWithCarry,0,{1,0,0,0});
         copy(code,{l.buffer,Generation},{counter,0},4);
         copy(code,{l.buffer,LastEntry},{l.buffer,Requested});copy(code,{l.buffer,LastSession},{l.buffer,8},4);
-        success.push_back(program(code));
+        success.push_back(program(std::move(code)));
     }
     Bytes dispatch=call(check);emitCondJumpBufferValue(dispatch,done,3,l.buffer,Interface,zero,0);
     for(unsigned i=0;i<success.size();++i) {
         emitAdjustMultiLiteral(dispatch,operand,kOpSet,0,le16Bytes(i));
         emitCondJumpBufferValue(dispatch,success[i],2,l.buffer,Requested,operand,0);
     }
-    Envelope output;output.dispatch=program(dispatch);
+    Envelope output;output.dispatch=program(std::move(dispatch));
     for(unsigned i=0;i<p.procedures.size();++i) {
         Bytes code;emitAdjustMultiLiteral(code,l.buffer,kOpSet,Requested,le16Bytes(i));
-        emitBufferHeader(code,output.dispatch);code.push_back(7);output.bufferedEntries.push_back(program(code));
+        emitBufferHeader(code,output.dispatch);code.push_back(7);output.bufferedEntries.push_back(program(std::move(code)));
     }
     b.entries=output.bufferedEntries;return output;
 }

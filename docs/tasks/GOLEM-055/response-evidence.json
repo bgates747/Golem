@@ -1,0 +1,55 @@
+{
+  "passed": true,
+  "scope": "Host-adapted reader regression; actual MOS validation is separate.",
+  "entry_sha256": "7514166ae84ac93d22e67df03c4d645b44b2489f235f4a6194f8f6b2bb67809f",
+  "cases": [
+    {
+      "case": "empty",
+      "source_bytes": 0,
+      "exit_code": 0,
+      "passed": true
+    },
+    {
+      "case": "quoted",
+      "source_bytes": 29,
+      "exit_code": 0,
+      "passed": true
+    },
+    {
+      "case": "empty-quoted",
+      "source_bytes": 2,
+      "exit_code": 0,
+      "passed": true
+    },
+    {
+      "case": "limit",
+      "source_bytes": 8192,
+      "exit_code": 0,
+      "passed": true
+    },
+    {
+      "case": "too-large",
+      "source_bytes": 8193,
+      "exit_code": 1,
+      "passed": true
+    },
+    {
+      "case": "unclosed",
+      "source_bytes": 9,
+      "exit_code": 1,
+      "passed": true
+    },
+    {
+      "case": "argument-limit",
+      "source_bytes": 253,
+      "exit_code": 0,
+      "passed": true
+    },
+    {
+      "case": "too-many",
+      "source_bytes": 255,
+      "exit_code": 1,
+      "passed": true
+    }
+  ]
+}

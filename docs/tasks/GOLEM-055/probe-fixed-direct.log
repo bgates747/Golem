@@ -1,0 +1,4 @@
+job=(direct) samples=4802 failures=1 largest_request=32768 heap_bytes=120991 sampler_scope=after_ag_memory_attempts
+peak valid=1 request=16384 success=1 phase=emitting stock commands extent=88424 used_with_headers=78695 free_bins=9729 uncommitted_tail=32567 total_free=42296 largest_payload_fit=32560 free_blocks=56
+failure valid=1 request=32768 success=0 phase=building stock wrappers extent=88424 used_with_headers=72442 free_bins=15982 uncommitted_tail=32567 total_free=48549 largest_payload_fit=32560 free_blocks=92
+final valid=1 request=0 success=1 phase=building stock wrappers extent=88424 used_with_headers=0 free_bins=88424 uncommitted_tail=32567 total_free=120991 largest_payload_fit=88418 free_blocks=1

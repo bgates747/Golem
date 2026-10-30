@@ -1,7 +1,7 @@
 {
   "archive": "dist/golem-on-agon-GOLEM-051.zip",
-  "bytes": 554835,
-  "sha256": "d6251c9af5de2e6e84a14914251b02b462c7d97162173c27b5d256847dcaa283",
+  "bytes": 555616,
+  "sha256": "2c6077ee1ee697b5c111c166114358c077ff2a49add56bddf7895e73e42f4517",
   "files": 115,
   "human": "pending",
   "physical": "not run",

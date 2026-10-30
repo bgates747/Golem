@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "profile_stopped": true,
+  "runtime_pins_match": true,
+  "fresh_observation_files": true,
+  "worker_sha256": "0e9d835b7c9ac4e7feda2ee280e3bbb9497040ad7ed96171d38857a3482973bf",
+  "source_sha256": "9b1b48d6b1ed02244cab44786a005ea2cbbaf25b224af275d66be87be5700fbe",
+  "GOLEM054_runtime_pins_match": true,
+  "launch": "cd ~/Agon/mystuff/golem/.emulator/golem-055 && ./fab-agon-emulator",
+  "GUI_launched": false,
+  "guest_sha256": "fd2be3efbe29d7d91ed0c0d1cbc474dec006b3a67e865b5839b089c8d37a4f8d",
+  "cursor_restoration_client_staged": true
+}

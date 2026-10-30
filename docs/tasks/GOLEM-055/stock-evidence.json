@@ -1,0 +1,39 @@
+{
+  "passed": true,
+  "cases": 5,
+  "state_observations": 60,
+  "results_sha256": "f5e322e8cd9ea0b0249230d04533d6907090413fae1e6ba1762787f114d9f86d",
+  "source_input_preservation": true,
+  "seconds": 45.27331687498372,
+  "actual_MOS_compilation": true,
+  "normal_plain_dispatcher_path": true,
+  "optional_response_file_path": true,
+  "matching_package_files": {
+    "plain_dispatcher": 11,
+    "direct_worker": 11,
+    "dispatcher_response_file": 11,
+    "buffered_control": 11,
+    "native_control": 12
+  },
+  "pixel_pairs": 5,
+  "pixels_compared": 1536000,
+  "unchanged_runner_exact_text_match": true,
+  "runner_text_y": [
+    8
+  ],
+  "native_compile_error_exit": 1,
+  "native_compile_error": "[case 0 invalid.args]\ncompiler: line 1, column 37: mixed variable types require an explicit conversion (not supported in this slice)\n",
+  "MOS_keyboard_continuation": true,
+  "worker_sha256": "0e9d835b7c9ac4e7feda2ee280e3bbb9497040ad7ed96171d38857a3482973bf",
+  "profile": "/Agon/mystuff/golem/.emulator/golem-055",
+  "runtime": {
+    "fab-agon-emulator": "e822acb348e1be281dce6a80128d3924651f41157b407088b23ea73a4eba728c",
+    "fab-agon-emulator.bin": "c63b5a45b9eec9b989bdde73af6d12add92887e3f4e6ac8ffe9291d98979fb66",
+    "mos_platform.bin": "d564243283972690933a4554296ad6202ca4ef54572279533a942960846bebae",
+    "mos_platform.map": "d69e60bbce61a7b4b3eef318ba395f11c4e1a5b585755755113992dc94edcb86",
+    "firmware/vdp_platform.so": "ef5cc21d4df685970680bc5a3564852d5d312e8af77a6dfc880735d64c2e4e8e"
+  },
+  "human": "pending",
+  "GUI_launched": false,
+  "frontend_exit": 0
+}

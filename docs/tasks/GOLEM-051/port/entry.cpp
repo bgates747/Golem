@@ -2,8 +2,14 @@
 int golemc_entry(int,char**);
 static int response(const char*path,char*program){
     FILE*f=fopen(path,"rb");if(!f){fprintf(stderr,"golemc: cannot open %s\n",path);return 1;}
-    char*text=(char*)malloc(8193);if(!text){fclose(f);ag::panic("out of compiler memory");}
-    size_t n=fread(text,1,8193,f);bool bad=ferror(f)||n>8192;fclose(f);
+    long length=-1;if(!fseek(f,0,SEEK_END))length=ftell(f);
+    if(length<0||length>8192||fseek(f,0,SEEK_SET)){
+        fclose(f);fputs("golemc: response file exceeds 8192 bytes\n",stderr);return 1;
+    }
+    // Keep the existing input limit without retaining its entire maximum
+    // allocation throughout compilation of a short response file.
+    char*text=(char*)malloc((size_t)length+1);if(!text){fclose(f);ag::panic("out of compiler memory");}
+    size_t n=fread(text,1,(size_t)length,f);bool bad=ferror(f)||n!=(size_t)length;fclose(f);
     if(bad){free(text);fputs("golemc: response file exceeds 8192 bytes\n",stderr);return 1;}
     text[n]=0;char*args[128];unsigned count=1;args[0]=program;char*p=text;
     while(*p){while(*p&&isspace((unsigned char)*p))++p;if(!*p)break;

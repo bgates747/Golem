@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "purpose": "Reproduce accepted native worker RAM failure",
+  "worker_sha256": "b275de31d37406ff35c5a863d7b44f75061607251135f5e5b9f1455dcb0b8d05",
+  "source_sha256": "9b1b48d6b1ed02244cab44786a005ea2cbbaf25b224af275d66be87be5700fbe",
+  "actual_MOS_compilation": true,
+  "normal_error_return_to_MOS": true,
+  "no_package_created": true,
+  "MOS_keyboard_continuation": true,
+  "seconds": 8.273041106003802,
+  "seconds_to_failure_screen": 3.090161879983498,
+  "screen": "baseline-failure.png",
+  "screen_sha256": "b170f858d64ac7be2c9ee4862d525bd37144bee1d9f9effad45f034d11538ec4",
+  "allocation_request_bytes": 32768,
+  "compiler_stage": "building stock wrappers",
+  "diagnostic_text": "out of compiler memory",
+  "diagnostic_rows_match_retained_baseline": true,
+  "profile": "/Agon/mystuff/golem/.emulator/golem-055",
+  "runtime": {
+    "fab-agon-emulator": "e822acb348e1be281dce6a80128d3924651f41157b407088b23ea73a4eba728c",
+    "fab-agon-emulator.bin": "c63b5a45b9eec9b989bdde73af6d12add92887e3f4e6ac8ffe9291d98979fb66",
+    "mos_platform.bin": "d564243283972690933a4554296ad6202ca4ef54572279533a942960846bebae",
+    "mos_platform.map": "d69e60bbce61a7b4b3eef318ba395f11c4e1a5b585755755113992dc94edcb86",
+    "firmware/vdp_platform.so": "ef5cc21d4df685970680bc5a3564852d5d312e8af77a6dfc880735d64c2e4e8e"
+  },
+  "GUI_launched": false,
+  "physical_target": false,
+  "frontend_exit": 0
+}

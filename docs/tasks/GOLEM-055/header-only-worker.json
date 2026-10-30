@@ -1,0 +1,8 @@
+{
+  "purpose": "Freeze header-copy fix before separately fixing response-file buffer size",
+  "binary_bytes": 319663,
+  "sha256": "fe31f8cd980747aac59b1948a0a490787cc03fd90da73efe1daa000640efcceb",
+  "normal_and_direct_compilation": "passed",
+  "optional_response_file_compilation": "allocation failure; retained by qualifier",
+  "entry_source_sha256": "7a6cd64b0bce5e5055dc0525a84c70790e8fdbb49d01c3ebfbf6c100ee039824"
+}

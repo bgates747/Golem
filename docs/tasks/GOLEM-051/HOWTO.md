@@ -184,12 +184,14 @@ golemc --portable examples/float-print.golem output/float-print
 golemrun --portable output/float-print
 ```
 
-Expect **reading=1.5**. Its complete source is:
+Expect **reading=1.5 scaled=3**. Its complete source is:
 
 ```golem
 float32 reading = 1.5
+float32 scale = 2.0
 Sub show
     print "reading=" print str(reading)
+    print " scaled=" print str(reading * scale)
 EndSub
 ```
 
@@ -343,10 +345,10 @@ autoexec file. It can be run again.
    directory. Adding print changes an ordinary dual-output package to stock-only.
 5. If the compiler rejects a feature, check the selected profile in `LANGUAGE.md`.
    A feature shown for one profile is not automatically available in another.
-6. Compilation can exhaust the Agon's RAM even for short programs that generate
-   many resident helpers, such as several floating-point prints and arithmetic.
-   Reduce the program or compile it on a PC. The compiler reports exhaustion
-   rather than reducing numeric precision silently.
+6. The native compiler has finite working RAM. Larger programs that generate
+   many resident helpers can exhaust it even when the source is short. The
+   two-float example above fits; larger programs may need the PC compiler.
+   Exhaustion produces a compiler error without reducing numeric precision.
 7. If the runner reports a VDP timeout, reset the Agon or restart the emulator
    before rerunning. A timed-out program may still own active VDP buffers.
 

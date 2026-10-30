@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "tests": [
+    "portable",
+    "printing"
+  ],
+  "address_sanitizer": true,
+  "undefined_behavior_sanitizer": true,
+  "leak_sanitizer": false,
+  "seconds": 131.47207681500004
+}

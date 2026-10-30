@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "files": 11,
+  "buffered_install_bytes": 18971,
+  "files_sha256": {
+    "backends.json": "e026d5f781a1760dc9d35d109110bd355fcf3fb3a54bd0ed457ac62b3dcd3fb2",
+    "buffered-cleanup.bin": "aeb38530db21ed460583ccf5d6b80a2012f5fb097ceda00b68512136e8c4c92a",
+    "buffered-install.bin": "dc54b904cc1918f6eb7631d9e767e3e57743e56f2337916156432183d8227f73",
+    "calls.inc": "b289dca7bd8b25ce2ea4a954dae7f3077fc8693aca749834a276451c514956fd",
+    "common-install.bin": "4215f65d7dbc068c0901073beb982e9f96e29d45d27a657a194f46bda9ed1d90",
+    "interface.json": "4df95d8164ca3b3943a728776fc459210b802863ceb36d48b3cc14d95f766c13",
+    "layout.inc": "fbb022c3c01f37b3aaaf6e9d1b97bb587a83ffc4f1415f609b18c51ccf6b1c13",
+    "program.json": "6418940c69e339bc1e710421a866d5c124eb3e2fd18b0cf2d0dda51fc5853010",
+    "root.json": "3ded39ecbd424bb35a4220f36ebc2162e48495f97aa69ad715e0f8b30be6e41c",
+    "state.bin": "f509381f4f98552337306c38b5a0ccd16f82db6ff0a8b4019d0cfa6cd1022ec5",
+    "targets.json": "02ee8a3c232246b4189e2e0956672ce033d0c73e7ea12aa570a28176d3daaacc"
+  }
+}

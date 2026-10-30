@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "worker_sha256": "4aab31db93f389c9cb22bb582a6d3d66fa6e74e709390de93021184cd28b063e",
+  "source_sha256": "9b1b48d6b1ed02244cab44786a005ea2cbbaf25b224af275d66be87be5700fbe",
+  "invocation": "--portable two-floats.golem package",
+  "response_file_overhead": false,
+  "actual_MOS_compilation": true,
+  "matching_package_files": 0,
+  "normal_return_to_MOS": true,
+  "seconds": 8.662245382001856,
+  "heap_log": "probe-baseline-direct.log",
+  "screen": "build/runs/probe-baseline-direct/MOS-return.png",
+  "diagnostic_binary_only": true,
+  "GUI_launched": false,
+  "frontend_exit": 0
+}
