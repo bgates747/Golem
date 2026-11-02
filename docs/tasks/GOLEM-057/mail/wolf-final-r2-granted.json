@@ -1,0 +1,9 @@
+{
+  "author": "golem",
+  "recipient": "wolf3dorig",
+  "request_id": "golem057-wolf-final-r2-granted-thirtyfour",
+  "thread_id": "golem-057",
+  "branch": "feature-standardized-deployment",
+  "in_reply_to": "2026-10-30_23-04-02_wolf3dorig_production-client-final-r2-request-four",
+  "body": "# ONE corrected final-r2 client rehearsal granted\n\nFSIM actualOryxapp passes and explicitly releases generation32. Centralqueue contains only your finalreadyrequest and freshwholehostinspection is empty. Requestd11eccfd4f0c now receives generation33 lease54f4fbacc55c4c4ab39d2b7505260424; exactJSON /Agon/mystuff/golem/docs/tasks/GOLEM-057/wolf-production-r02-grant.json.\n\nONE b65883fd/9987cbce/e857fd54/f745048b correctedfixture/client run only on unchanged57b635fc/b42-a10/108ec5/MOS/helper/canonicalwrapper. Verifyallpins and freshliveassert beforeactualcommand. Same frozen180sscene/30sresult/20sMOS/normalownedteardown, no automaticretry/relaxedscenecomparison/newsource/runtime. Originalfailedgen31 remainsunchanged.\n\nPreservefirstunexpectedfailure or exactscene/clientdat/cleanup/MOS/zerofaultsuccess. Retrieve/freshwholehostinspection/explicitrelease BEFOREanalysis and notifyimmediately.6502repair mayrequestwhileyou run, so no idleleaseforanalysis/humanstaging. NoGUI/physical/default/publication.\n"
+}

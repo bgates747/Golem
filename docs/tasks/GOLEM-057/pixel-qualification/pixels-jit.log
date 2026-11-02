@@ -1,0 +1,25 @@
+Loaded ESP32 image /home/smith/Agon/mystuff/agon-vdplet/build/vdpl-010/pixels/firmware.bin: 6 segments, entry=0x4008768C
+  Segment 0: 0x3F400020 (278396 bytes) -> flash_data
+  Segment 1: 0x3FFBDB60 (19896 bytes) -> sram_data
+  Segment 2: 0x40080000 (29364 bytes) -> sram_insn
+  Segment 3: 0x400D0020 (699204 bytes) -> flash_insn
+  Segment 4: 0x400872B4 (65476 bytes) -> sram_insn
+  Segment 5: 0x50000200 (4 bytes) -> rtc_slow
+[predecode] Built table: 1515516 entries, 19 MB (4 MB flash coverage)
+[APPCPU] boot addr = 0x40087524 (from pc=0x4000689C)
+[     10000] CORE1 started at 0x40087524
+[APPCPU] boot addr = 0x00000000 (from pc=0x4000689C)
+pixels/jit: capability discovery exactly 31
+pixels/jit: exact legacy ABI0/1/2 views, masks and bounded accessors
+pixels/jit: independent pixel accessor succeeds with all five richer PCM callbacks absent
+pixels/jit: undeclared pixel/sink capability calls refuse without extending old tables
+pixels/jit: pixels-only build rejects a copied-sink module before INIT
+pixels/jit: actual worker table extent and generic surface descriptor
+pixels/jit: all64 RGB222 colors, odd width, byte positions, padded stride and immediate source reuse
+pixels/jit: physical pixel units preserve semantics despite ordinary graphics origin and viewport
+pixels/jit: format, missing/short source, final invalid pixel and geometry rejection preserve complete screen
+pixels/jit: INDEX8 native2/4/16/64 palette mapping and packed-edge replacements
+pixels/jit: double-buffer descriptor, hidden-before-C3 and explicit stock presentation
+pixels/jit: pixels worker reports copied sink unsupported without calling absent callback
+pixels/jit: unchanged maintained numeric/VDU/line modules execute and drawing matches ordinary commands
+PASS: 13 groups; 3726336 decoded pixels

@@ -1,0 +1,23 @@
+{
+  "source": "/Agon/mystuff/agon-6502/build/vdp005/color/recovery-review/target-r01/result.json",
+  "sha256": "44e15fe11a22ae146a2af7d7b200bbb60abde73bcc3bef47d52272ba9da5faac",
+  "result_sha256": "9d55aef9ae119c8172419fe90bc9e61596bdfb54fd07593f907d821ceef5e509",
+  "passed": true,
+  "actual_mode": 11,
+  "dimensions": [
+    320,
+    240
+  ],
+  "colours": 2,
+  "space_rechecks": 2,
+  "native_state_unchanged": true,
+  "normal_unload": true,
+  "exact_executable_heap": {
+    "before": 161464,
+    "after": 161464
+  },
+  "cursor_on_command": true,
+  "MOS_return_and_Enter": true,
+  "seconds": 16.869589611000265,
+  "human_acceptance": false
+}

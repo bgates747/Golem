@@ -1,0 +1,688 @@
+{
+  "schema": "g057-display-diag-build-results-v1",
+  "variants": {
+    "original010": {
+      "root": "/Agon/mystuff/agon-vdplet/build/vdpl-010/pixels/firmware-src",
+      "artifacts": {
+        "firmware.bin": {
+          "path": "/Agon/mystuff/agon-vdplet/build/vdpl-010/pixels/firmware-src/.pio/build/esp32dev/firmware.bin",
+          "bytes": 1092448,
+          "sha256": "b42ae55f69900c44acacfbf0d665ef278e87b277b3b9fd4208e17ebf378f74b6"
+        },
+        "firmware.elf": {
+          "path": "/Agon/mystuff/agon-vdplet/build/vdpl-010/pixels/firmware-src/.pio/build/esp32dev/firmware.elf",
+          "bytes": 24954928,
+          "sha256": "a10f7989d5c1f9974fc999428865ca74771fb65a0d4d694a2ac2b81c19df9902"
+        },
+        "firmware.map": {
+          "path": "/Agon/mystuff/agon-vdplet/build/vdpl-010/pixels/firmware-src/.pio/build/esp32dev/firmware.map",
+          "bytes": 17988037,
+          "sha256": "b3997e3381e68ed28871a40083a5a413501bc47f56efc062adc160d6009ef6ee"
+        },
+        "bootloader.bin": {
+          "path": "/Agon/mystuff/agon-vdplet/build/vdpl-010/pixels/firmware-src/.pio/build/esp32dev/bootloader.bin",
+          "bytes": 18992,
+          "sha256": "f2dfacdea6ae72d0aeeb7c30e525c4c6fc768a041849feac694cbb2ee2224448"
+        },
+        "partitions.bin": {
+          "path": "/Agon/mystuff/agon-vdplet/build/vdpl-010/pixels/firmware-src/.pio/build/esp32dev/partitions.bin",
+          "bytes": 3072,
+          "sha256": "148b959cbff1c38aa8e1d5c0ba9d612c54997b945e56a63f41223eef650653a1"
+        }
+      },
+      "sections": {
+        ".rtc.data": {
+          "bytes": 1,
+          "address": "0x50000200",
+          "type": 1,
+          "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d"
+        },
+        ".rtc_noinit": {
+          "bytes": 16,
+          "address": "0x50000208",
+          "type": 8,
+          "sha256": null
+        },
+        ".iram0.vectors": {
+          "bytes": 1027,
+          "address": "0x40080000",
+          "type": 1,
+          "sha256": "e9918fc923ca565dd5e8aef9b28d86c7278c44920d13b7a94f22520c9b4c63ad"
+        },
+        ".iram0.text": {
+          "bytes": 93811,
+          "address": "0x40080404",
+          "type": 1,
+          "sha256": "ad4577eb8fc54c902c0a4ada001e663d258202a0ad199ad3442f83941d7ce835"
+        },
+        ".dram0.data": {
+          "bytes": 19896,
+          "address": "0x3ffbdb60",
+          "type": 1,
+          "sha256": "feea82009467771e8e16f1b468d5079066d00b453c53c6260a65375c188fddd6"
+        },
+        ".dram0.bss": {
+          "bytes": 25152,
+          "address": "0x3ffc2918",
+          "type": 8,
+          "sha256": null
+        },
+        ".flash.appdesc": {
+          "bytes": 256,
+          "address": "0x3f400020",
+          "type": 1,
+          "sha256": "ce84dc24e6a4994e899faaf071baddda509d1118d2bb3166f360cce5d0915f66"
+        },
+        ".flash.rodata": {
+          "bytes": 278140,
+          "address": "0x3f400120",
+          "type": 1,
+          "sha256": "91aaec02ba67cd9c8e471834574062a737c74207ba0c3c90af3b49124c9da0d3"
+        },
+        ".flash.text": {
+          "bytes": 699203,
+          "address": "0x400d0020",
+          "type": 1,
+          "sha256": "10221e5369cff5ba069ee0d0d6608a61369b48dc529efa6a79564f2046ecc84e"
+        },
+        ".iram0.text_end": {
+          "bytes": 1,
+          "address": "0x40097277",
+          "type": 8,
+          "sha256": null
+        }
+      },
+      "diagnostic_symbols": [],
+      "helper_entry_frames_bytes": {},
+      "affected_caller_entry_frames_bytes": {
+        "VDUStreamProcessor::vdu_mode(unsigned char)": 32,
+        "fabgl::VGAPalettedController::createSignalList(unsigned short*, int, int)": 48,
+        "fabgl::VGAPalettedController::createPalette(unsigned short)": 64,
+        "fabgl::VGAPalettedController::setResolution(fabgl::VGATimings const&, int, int, bool)": 48
+      }
+    },
+    "control": {
+      "root": "/Agon/mystuff/golem/docs/tasks/GOLEM-057/build/display-origin-diagnostic/control",
+      "artifacts": {
+        "firmware.bin": {
+          "path": "/Agon/mystuff/golem/docs/tasks/GOLEM-057/build/display-origin-diagnostic/control/.pio/build/esp32dev/firmware.bin",
+          "bytes": 1092976,
+          "sha256": "f55c45588cce080e57c9e7b7ec431cd99a326aed4b3cc65e632e3edb8cafcf4d"
+        },
+        "firmware.elf": {
+          "path": "/Agon/mystuff/golem/docs/tasks/GOLEM-057/build/display-origin-diagnostic/control/.pio/build/esp32dev/firmware.elf",
+          "bytes": 25000656,
+          "sha256": "22de1967de5834aae4e36e6463148615a456c32d8bd9c095c778acfc2028e680"
+        },
+        "firmware.map": {
+          "path": "/Agon/mystuff/golem/docs/tasks/GOLEM-057/build/display-origin-diagnostic/control/.pio/build/esp32dev/firmware.map",
+          "bytes": 21005293,
+          "sha256": "de6212da06394bb1bf7385859df514d71614e051a1b87e3095ef0cf55e9e43bd"
+        },
+        "bootloader.bin": {
+          "path": "/Agon/mystuff/golem/docs/tasks/GOLEM-057/build/display-origin-diagnostic/control/.pio/build/esp32dev/bootloader.bin",
+          "bytes": 18992,
+          "sha256": "f2dfacdea6ae72d0aeeb7c30e525c4c6fc768a041849feac694cbb2ee2224448"
+        },
+        "partitions.bin": {
+          "path": "/Agon/mystuff/golem/docs/tasks/GOLEM-057/build/display-origin-diagnostic/control/.pio/build/esp32dev/partitions.bin",
+          "bytes": 3072,
+          "sha256": "148b959cbff1c38aa8e1d5c0ba9d612c54997b945e56a63f41223eef650653a1"
+        }
+      },
+      "sections": {
+        ".rtc.data": {
+          "bytes": 1,
+          "address": "0x50000200",
+          "type": 1,
+          "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d"
+        },
+        ".rtc_noinit": {
+          "bytes": 16,
+          "address": "0x50000208",
+          "type": 8,
+          "sha256": null
+        },
+        ".iram0.vectors": {
+          "bytes": 1027,
+          "address": "0x40080000",
+          "type": 1,
+          "sha256": "e9918fc923ca565dd5e8aef9b28d86c7278c44920d13b7a94f22520c9b4c63ad"
+        },
+        ".iram0.text": {
+          "bytes": 93811,
+          "address": "0x40080404",
+          "type": 1,
+          "sha256": "abbf4b2903fc6b5bfc0f878d320d6134ee0e8f64089e86372464b159f8318862"
+        },
+        ".dram0.data": {
+          "bytes": 19896,
+          "address": "0x3ffbdb60",
+          "type": 1,
+          "sha256": "fc6c51864b0e8e5127b00a413806b8af11ae9a55c59d10ced3727a0cfe069b87"
+        },
+        ".dram0.bss": {
+          "bytes": 25152,
+          "address": "0x3ffc2918",
+          "type": 8,
+          "sha256": null
+        },
+        ".flash.appdesc": {
+          "bytes": 256,
+          "address": "0x3f400020",
+          "type": 1,
+          "sha256": "ce84dc24e6a4994e899faaf071baddda509d1118d2bb3166f360cce5d0915f66"
+        },
+        ".flash.rodata": {
+          "bytes": 278668,
+          "address": "0x3f400120",
+          "type": 1,
+          "sha256": "7e6c682e34fe70dd39a41dcf0641678d495ee32977c1e9af65ea4e0b1f6c6894"
+        },
+        ".flash.text": {
+          "bytes": 699195,
+          "address": "0x400d0020",
+          "type": 1,
+          "sha256": "0ca977c0f73cc327e8035920b7a63e8e6237e151ae94b3a26c565e2b40e6a096"
+        },
+        ".iram0.text_end": {
+          "bytes": 1,
+          "address": "0x40097277",
+          "type": 8,
+          "sha256": null
+        }
+      },
+      "diagnostic_symbols": [],
+      "helper_entry_frames_bytes": {},
+      "affected_caller_entry_frames_bytes": {
+        "VDUStreamProcessor::vdu_mode(unsigned char)": 32,
+        "fabgl::VGAPalettedController::createSignalList(unsigned short*, int, int)": 48,
+        "fabgl::VGAPalettedController::createPalette(unsigned short)": 64,
+        "fabgl::VGAPalettedController::setResolution(fabgl::VGATimings const&, int, int, bool)": 48
+      }
+    },
+    "instrumented": {
+      "root": "/Agon/mystuff/golem/docs/tasks/GOLEM-057/build/display-origin-diagnostic/instrumented",
+      "artifacts": {
+        "firmware.bin": {
+          "path": "/Agon/mystuff/golem/docs/tasks/GOLEM-057/build/display-origin-diagnostic/instrumented/.pio/build/esp32dev/firmware.bin",
+          "bytes": 1094160,
+          "sha256": "6284230990419db851139657618d92cafd13d52b9af4cd197293144fac1998cf"
+        },
+        "firmware.elf": {
+          "path": "/Agon/mystuff/golem/docs/tasks/GOLEM-057/build/display-origin-diagnostic/instrumented/.pio/build/esp32dev/firmware.elf",
+          "bytes": 25017772,
+          "sha256": "7d90f167e102896e7f2e5544b3b5442c290903407b85a802f7321a4d72b9b801"
+        },
+        "firmware.map": {
+          "path": "/Agon/mystuff/golem/docs/tasks/GOLEM-057/build/display-origin-diagnostic/instrumented/.pio/build/esp32dev/firmware.map",
+          "bytes": 21010007,
+          "sha256": "1be5d5edf2353a097de2f7babaeb4a7d8cbad4642264a57a2b42e957b171aa77"
+        },
+        "bootloader.bin": {
+          "path": "/Agon/mystuff/golem/docs/tasks/GOLEM-057/build/display-origin-diagnostic/instrumented/.pio/build/esp32dev/bootloader.bin",
+          "bytes": 18992,
+          "sha256": "f2dfacdea6ae72d0aeeb7c30e525c4c6fc768a041849feac694cbb2ee2224448"
+        },
+        "partitions.bin": {
+          "path": "/Agon/mystuff/golem/docs/tasks/GOLEM-057/build/display-origin-diagnostic/instrumented/.pio/build/esp32dev/partitions.bin",
+          "bytes": 3072,
+          "sha256": "148b959cbff1c38aa8e1d5c0ba9d612c54997b945e56a63f41223eef650653a1"
+        }
+      },
+      "sections": {
+        ".rtc.data": {
+          "bytes": 1,
+          "address": "0x50000200",
+          "type": 1,
+          "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d"
+        },
+        ".rtc_noinit": {
+          "bytes": 16,
+          "address": "0x50000208",
+          "type": 8,
+          "sha256": null
+        },
+        ".iram0.vectors": {
+          "bytes": 1027,
+          "address": "0x40080000",
+          "type": 1,
+          "sha256": "ded48fd0da3747aa298ac39da940d8604714d7b0ca27a929d1f0c682a13f4134"
+        },
+        ".iram0.text": {
+          "bytes": 93815,
+          "address": "0x40080404",
+          "type": 1,
+          "sha256": "76cf703f178a2ea20421c4103c0a2ea31ef01a35058ae2a09215dcefe1b47eb7"
+        },
+        ".dram0.data": {
+          "bytes": 19896,
+          "address": "0x3ffbdb60",
+          "type": 1,
+          "sha256": "4b98d1de693ccea5160c0267a58d7c180b9f7ff034f2962496baf4ec22b9e192"
+        },
+        ".dram0.bss": {
+          "bytes": 25696,
+          "address": "0x3ffc2918",
+          "type": 8,
+          "sha256": null
+        },
+        ".flash.appdesc": {
+          "bytes": 256,
+          "address": "0x3f400020",
+          "type": 1,
+          "sha256": "ce84dc24e6a4994e899faaf071baddda509d1118d2bb3166f360cce5d0915f66"
+        },
+        ".flash.rodata": {
+          "bytes": 278724,
+          "address": "0x3f400120",
+          "type": 1,
+          "sha256": "c8d23a021a670f16e307be16267546e5559ef7fe0d59fef1a11bcbeb6304ad16"
+        },
+        ".flash.text": {
+          "bytes": 700323,
+          "address": "0x400d0020",
+          "type": 1,
+          "sha256": "c252578fe8527724b5d8b10be251491def26e5b02e22420d797c42d2514126ea"
+        },
+        ".iram0.text_end": {
+          "bytes": 1,
+          "address": "0x4009727b",
+          "type": 8,
+          "sha256": null
+        }
+      },
+      "diagnostic_symbols": [
+        "3ffc5e94 00000020 B g057_control",
+        "3ffc5eb4 00000200 B g057_records",
+        "400ec2e4 00000018 T g057_uart_emit",
+        "4011cce8 0000000b t _GLOBAL__sub_D_g057_records",
+        "4011ccdc 0000000b t _GLOBAL__sub_I_g057_records",
+        "4011bd0c 0000004a T g057_begin(unsigned char, unsigned char)",
+        "4011be18 0000002e T g057_flush()",
+        "4011bd94 00000014 T g057_finish()",
+        "4011bda8 0000006e T g057_record(unsigned int, void const*, unsigned int, unsigned int, unsigned int)",
+        "4011bd58 0000003a T g057_attempt(unsigned char, unsigned char)"
+      ],
+      "helper_entry_frames_bytes": {
+        "g057_uart_emit": 32,
+        "g057_begin(unsigned char, unsigned char)": 32,
+        "g057_attempt(unsigned char, unsigned char)": 32,
+        "g057_finish()": 32,
+        "g057_record(unsigned int, void const*, unsigned int, unsigned int, unsigned int)": 32,
+        "g057_flush()": 32
+      },
+      "affected_caller_entry_frames_bytes": {
+        "VDUStreamProcessor::vdu_mode(unsigned char)": 32,
+        "fabgl::VGAPalettedController::createSignalList(unsigned short*, int, int)": 64,
+        "fabgl::VGAPalettedController::createPalette(unsigned short)": 64,
+        "fabgl::VGAPalettedController::setResolution(fabgl::VGATimings const&, int, int, bool)": 48
+      }
+    }
+  },
+  "section_delta_diag_minus_control": {
+    ".iram0.text": 4,
+    ".dram0.bss": 544,
+    ".flash.rodata": 56,
+    ".flash.text": 1128
+  },
+  "control_vs_original_sections": {
+    ".rtc.data": {
+      "size_delta": 0,
+      "address_equal": true,
+      "data_equal": true
+    },
+    ".rtc_noinit": {
+      "size_delta": 0,
+      "address_equal": true,
+      "data_equal": true
+    },
+    ".iram0.vectors": {
+      "size_delta": 0,
+      "address_equal": true,
+      "data_equal": true
+    },
+    ".iram0.text": {
+      "size_delta": 0,
+      "address_equal": true,
+      "data_equal": false
+    },
+    ".dram0.data": {
+      "size_delta": 0,
+      "address_equal": true,
+      "data_equal": false
+    },
+    ".dram0.bss": {
+      "size_delta": 0,
+      "address_equal": true,
+      "data_equal": true
+    },
+    ".flash.appdesc": {
+      "size_delta": 0,
+      "address_equal": true,
+      "data_equal": true
+    },
+    ".flash.rodata": {
+      "size_delta": 528,
+      "address_equal": true,
+      "data_equal": false
+    },
+    ".flash.text": {
+      "size_delta": -8,
+      "address_equal": true,
+      "data_equal": false
+    },
+    ".iram0.text_end": {
+      "size_delta": 0,
+      "address_equal": true,
+      "data_equal": true
+    }
+  },
+  "control_binary_equals_original": false,
+  "image_delta_bytes": 1184,
+  "stack_scope": "Compiler entry-frame sizes from Xtensa disassembly only; not full call-chain high-water. UART/Arduino/FreeRTOS nested stack is unmeasured.",
+  "toolchain": {
+    "/home/smith/.platformio/platforms/espressif32/platform.json": {
+      "sha256": "88464df11f7319223063348f355694dc5e5a4b2c60a4a8d3d309c230d370257d",
+      "metadata": {
+        "name": "espressif32",
+        "title": "Espressif 32",
+        "description": "ESP32 is a series of low-cost, low-power system on a chip microcontrollers with integrated Wi-Fi and Bluetooth. ESP32 integrates an antenna switch, RF balun, power amplifier, low-noise receive amplifier, filters, and power management modules.",
+        "homepage": "https://espressif.com/",
+        "license": "Apache-2.0",
+        "keywords": [
+          "dev-platform",
+          "Wi-Fi",
+          "Bluetooth",
+          "Xtensa",
+          "RISC-V"
+        ],
+        "engines": {
+          "platformio": "^6"
+        },
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/platformio/platform-espressif32.git"
+        },
+        "version": "6.6.0",
+        "frameworks": {
+          "arduino": {
+            "package": "framework-arduinoespressif32",
+            "script": "builder/frameworks/arduino.py"
+          },
+          "espidf": {
+            "package": "framework-espidf",
+            "script": "builder/frameworks/espidf.py"
+          }
+        },
+        "packages": {
+          "toolchain-xtensa-esp32": {
+            "type": "toolchain",
+            "owner": "espressif",
+            "version": "8.4.0+2021r2-patch5",
+            "optionalVersions": [
+              "12.2.0+20230208"
+            ]
+          },
+          "toolchain-xtensa-esp32s2": {
+            "type": "toolchain",
+            "optional": true,
+            "owner": "espressif",
+            "version": "8.4.0+2021r2-patch5",
+            "optionalVersions": [
+              "12.2.0+20230208"
+            ]
+          },
+          "toolchain-xtensa-esp32s3": {
+            "type": "toolchain",
+            "optional": true,
+            "owner": "espressif",
+            "version": "8.4.0+2021r2-patch5",
+            "optionalVersions": [
+              "12.2.0+20230208"
+            ]
+          },
+          "toolchain-riscv32-esp": {
+            "type": "toolchain",
+            "optional": true,
+            "owner": "espressif",
+            "version": "8.4.0+2021r2-patch5",
+            "optionalVersions": [
+              "13.2.0+20230928"
+            ]
+          },
+          "toolchain-esp32ulp": {
+            "type": "toolchain",
+            "optional": true,
+            "owner": "platformio",
+            "version": "~1.23500.0"
+          },
+          "tool-xtensa-esp-elf-gdb": {
+            "type": "debugger",
+            "optional": true,
+            "owner": "espressif",
+            "version": "~12.1.0"
+          },
+          "tool-riscv32-esp-elf-gdb": {
+            "type": "debugger",
+            "optional": true,
+            "owner": "espressif",
+            "version": "~12.1.0"
+          },
+          "framework-arduinoespressif32": {
+            "type": "framework",
+            "optional": true,
+            "owner": "platformio",
+            "version": "~3.20014.0"
+          },
+          "framework-espidf": {
+            "type": "framework",
+            "optional": true,
+            "owner": "platformio",
+            "version": "~3.50201.0",
+            "optionalVersions": [
+              "~3.40406.0"
+            ]
+          },
+          "tool-esptoolpy": {
+            "type": "uploader",
+            "owner": "platformio",
+            "version": "~1.40501.0"
+          },
+          "tool-dfuutil-arduino": {
+            "type": "uploader",
+            "optional": true,
+            "owner": "platformio",
+            "version": "~1.11.0"
+          },
+          "tool-openocd-esp32": {
+            "type": "debugger",
+            "optional": true,
+            "owner": "platformio",
+            "version": "~2.1100.0"
+          },
+          "tool-mkspiffs": {
+            "type": "uploader",
+            "optional": true,
+            "owner": "platformio",
+            "version": "~2.230.0"
+          },
+          "tool-mklittlefs": {
+            "type": "uploader",
+            "optional": true,
+            "owner": "platformio",
+            "version": "~1.203.0"
+          },
+          "tool-mkfatfs": {
+            "type": "uploader",
+            "optional": true,
+            "owner": "platformio",
+            "version": "~2.0.0"
+          },
+          "tool-cmake": {
+            "optional": true,
+            "owner": "platformio",
+            "version": "~3.16.0"
+          },
+          "tool-ninja": {
+            "optional": true,
+            "owner": "platformio",
+            "version": "^1.7.0"
+          },
+          "tool-mconf": {
+            "optional": true,
+            "owner": "platformio",
+            "version": "~1.4060000.0"
+          },
+          "tool-idf": {
+            "optional": true,
+            "owner": "platformio",
+            "version": "~1.0.1"
+          }
+        }
+      }
+    },
+    "/home/smith/.platformio/packages/toolchain-xtensa-esp32/package.json": {
+      "sha256": "95053a4b63082311148c4799d8271e26a66501f3ccd736ab91ffe989fa0b5691",
+      "metadata": {
+        "name": "toolchain-xtensa-esp32",
+        "version": "8.4.0+2021r2-patch5",
+        "description": "GCC Toolchain for Espressif ESP32 Xtensa MCUs",
+        "keywords": [
+          "build tools",
+          "compiler",
+          "assembler",
+          "linker",
+          "preprocessor",
+          "espressif",
+          "esp32"
+        ],
+        "license": "GPL-2.0-or-later",
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/espressif/crosstool-NG"
+        },
+        "system": "linux_aarch64"
+      }
+    },
+    "/home/smith/.platformio/packages/framework-arduinoespressif32/package.json": {
+      "sha256": "fa3262cd10e9536428203d2da0ac48e0227862e5cfc0901e13704bc06dbd7f5e",
+      "metadata": {
+        "name": "framework-arduinoespressif32",
+        "version": "3.20014.231204",
+        "description": "Arduino Wiring-based Framework for the Espressif ESP32, ESP32-S and ESP32-C series of SoCs",
+        "keywords": [
+          "framework",
+          "arduino",
+          "espressif",
+          "esp32"
+        ],
+        "license": "LGPL-2.1-or-later",
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/espressif/arduino-esp32"
+        }
+      }
+    },
+    "/home/smith/.platformio/packages/tool-esptoolpy/package.json": {
+      "sha256": "092bd61c2583d5ae523070e2935a10c3954ffa3eb9e5149e54e061cb602d2a3f",
+      "metadata": {
+        "name": "tool-esptoolpy",
+        "version": "1.40501.0",
+        "description": "A Python-based, open-source, platform-independent utility to communicate with the ROM bootloader in Espressif chips",
+        "keywords": [
+          "tools",
+          "uploader",
+          "espressif"
+        ],
+        "license": "GPL-2.0-or-later",
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/espressif/esptool"
+        }
+      }
+    }
+  },
+  "source_files": {
+    "check_parser.py": {
+      "path": "/Agon/mystuff/golem/docs/tasks/GOLEM-057/display-diagnostic/check_parser.py",
+      "bytes": 1768,
+      "sha256": "9949d96b86d7c4332d88f13d7618651d03e0cbfa55d5ab587dad5914a4b0b64b"
+    },
+    "prepare.py": {
+      "path": "/Agon/mystuff/golem/docs/tasks/GOLEM-057/display-diagnostic/prepare.py",
+      "bytes": 10718,
+      "sha256": "3a6737daf70060fcc0dd45758a55852b35473719770e19b8def279dbd2e12408"
+    },
+    "check_journal.cpp": {
+      "path": "/Agon/mystuff/golem/docs/tasks/GOLEM-057/display-diagnostic/check_journal.cpp",
+      "bytes": 3212,
+      "sha256": "4723a66434af0736e4ab19dfa6d6db81f148fa3e2d6ce164c666e901dee60a9b"
+    },
+    "parse_journal.py": {
+      "path": "/Agon/mystuff/golem/docs/tasks/GOLEM-057/display-diagnostic/parse_journal.py",
+      "bytes": 3081,
+      "sha256": "8441b7720f42b717fd041db769cc23c8f3e7995250d03edd3b86863f11b4d1e8"
+    },
+    "g057_diag.h": {
+      "path": "/Agon/mystuff/golem/docs/tasks/GOLEM-057/display-diagnostic/g057_diag.h",
+      "bytes": 4001,
+      "sha256": "fd398c438eca0ae1313bce0e23443e50e6de2d8b2ffb90d7c49a677c502bfa47"
+    },
+    "collect_results.py": {
+      "path": "/Agon/mystuff/golem/docs/tasks/GOLEM-057/display-diagnostic/collect_results.py",
+      "bytes": 6653,
+      "sha256": "d48dea5d11f3b9b699ab233c45adbcbb8a467e982f4bc9e3511917aee6e516b3"
+    },
+    "source.patch": {
+      "path": "/Agon/mystuff/golem/docs/tasks/GOLEM-057/display-diagnostic/source.patch",
+      "bytes": 10555,
+      "sha256": "c3cef4e729f029bba45dd8cd34a61250f9dc7e3cf4d8e0d9454ad525d9c61aff"
+    },
+    "package.py": {
+      "path": "/Agon/mystuff/golem/docs/tasks/GOLEM-057/display-diagnostic/package.py",
+      "bytes": 2513,
+      "sha256": "a26f35d7dfec6588c309f4f2d84be80ae8b9d951b371eb49f985df3e6e4faa76"
+    },
+    "verify_preparation.py": {
+      "path": "/Agon/mystuff/golem/docs/tasks/GOLEM-057/display-diagnostic/verify_preparation.py",
+      "bytes": 3638,
+      "sha256": "b7ffaa7a9555fff2548365fc5d222f7aec746ddfd60fbf349e6337cd3d7c0e6a"
+    }
+  },
+  "platformio_state": "/Agon/mystuff/golem/docs/tasks/GOLEM-057/build/display-origin-diagnostic/platformio-state",
+  "build_commands": {
+    "control": [
+      "env",
+      "PLATFORMIO_CORE_DIR=/Agon/mystuff/golem/docs/tasks/GOLEM-057/build/display-origin-diagnostic/platformio-state",
+      "PLATFORMIO_SETTING_ENABLE_TELEMETRY=no",
+      "/Agon/mystuff/agon-vdplet/.venv/bin/python",
+      "-m",
+      "platformio",
+      "run",
+      "-d",
+      "/Agon/mystuff/golem/docs/tasks/GOLEM-057/build/display-origin-diagnostic/control",
+      "-e",
+      "esp32dev",
+      "-j",
+      "2"
+    ],
+    "instrumented": [
+      "env",
+      "PLATFORMIO_CORE_DIR=/Agon/mystuff/golem/docs/tasks/GOLEM-057/build/display-origin-diagnostic/platformio-state",
+      "PLATFORMIO_SETTING_ENABLE_TELEMETRY=no",
+      "/Agon/mystuff/agon-vdplet/.venv/bin/python",
+      "-m",
+      "platformio",
+      "run",
+      "-d",
+      "/Agon/mystuff/golem/docs/tasks/GOLEM-057/build/display-origin-diagnostic/instrumented",
+      "-e",
+      "esp32dev",
+      "-j",
+      "2"
+    ]
+  },
+  "flags": "Original platformio.ini unchanged in both variants; macro is selected in the added private header only.",
+  "executions": "Host journal and parser checks only. Firmware builds only; no emulator, target or hardware execution."
+}

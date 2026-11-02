@@ -1,0 +1,32 @@
+{
+  "changes": [
+    {
+      "path": "/Agon/mystuff/agon-dev-env/cross-agent/vdplet-rollout/interfaces-v1.md",
+      "before_sha256": "e4a5c01fc4f700852d7d4e5a59cd09ab9101e9d9577714e56fd41b34bfe29807",
+      "after_sha256": "f8540881565dd1a3f0ff8f7bd9bf3f97cfa6a8a6c6f5b8a4a353bf0259cdf3bc"
+    },
+    {
+      "path": "/Agon/mystuff/agon-dev-env/cross-agent/vdplet-rollout/interfaces-v1.md",
+      "before_sha256": "f8540881565dd1a3f0ff8f7bd9bf3f97cfa6a8a6c6f5b8a4a353bf0259cdf3bc",
+      "after_sha256": "a8c78382031cb2d918542fdcf85ed4d560f7d70cc8d731348cba9d7ae6fea11c"
+    },
+    {
+      "path": "/Agon/mystuff/agon-vdplet/docs/API-reference.md",
+      "before_sha256": "d90ab018b3fe57101cf862455423d6a0abd3d0ded5da5127951cfc2b6f3ffc1e",
+      "after_sha256": "0c1b711b10aae5923d32093ec82ea2baf3f45633a327a9b0a3ceb554af29c0d2"
+    },
+    {
+      "path": "/Agon/mystuff/agon-vdplet/docs/tasks/VDPL-013.md",
+      "before_sha256": "17c28d1badeae8358aa4162e016f9efdfd0eae7a4e00fc393a6ddb61be641a04",
+      "after_sha256": "adcf722ec133df380ca4fbd1ed09ee84d978c86cce857da4781dc453ef9b248a"
+    },
+    {
+      "path": "/Agon/mystuff/agon-vdplet/docs/tasks/VDPL-013.md",
+      "before_sha256": "adcf722ec133df380ca4fbd1ed09ee84d978c86cce857da4781dc453ef9b248a",
+      "after_sha256": "94024c8901548e07235dddbdd2bafe59ab6f3ccd0259a553289260d8d0579b0a"
+    }
+  ],
+  "emulator_execution": false,
+  "new_test_needed": false,
+  "scope": "Documentation and delivered-contract dispositions only"
+}

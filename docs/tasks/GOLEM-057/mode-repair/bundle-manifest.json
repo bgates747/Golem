@@ -1,0 +1,129 @@
+{
+  "schema": "g057-mode-repair-prepared-bundle-v1",
+  "scope": "Offline prepared failure-only disposal candidate. No execution/deployment grant or maintained SDK promotion.",
+  "original_source": "/Agon/mystuff/agon-vdplet/build/vdpl-010/pixels/firmware-src",
+  "source_note": "Includes source delta, exact patch and full original-source hashes; unchanged pinned dependencies remain in original export and separate copied roots.",
+  "files": {
+    "candidate/bootloader.bin": {
+      "bytes": 18992,
+      "sha256": "f2dfacdea6ae72d0aeeb7c30e525c4c6fc768a041849feac694cbb2ee2224448"
+    },
+    "candidate/firmware.bin": {
+      "bytes": 1093104,
+      "sha256": "f30b299a95d58517be510b7adc4312252265eefd338b03712b91d4bef4394844"
+    },
+    "candidate/firmware.elf": {
+      "bytes": 24997376,
+      "sha256": "3ea64b06cd99c7cdf51080551451c3cd3fe80d07e8a9ad0f95a22e5eef5b6a88"
+    },
+    "candidate/firmware.map": {
+      "bytes": 20731234,
+      "sha256": "0f5dc75c446844a401fd257ea5d720d7408fcafccc891e4f0fd2dd51c706e219"
+    },
+    "candidate/partitions.bin": {
+      "bytes": 3072,
+      "sha256": "148b959cbff1c38aa8e1d5c0ba9d612c54997b945e56a63f41223eef650653a1"
+    },
+    "control00/bootloader.bin": {
+      "bytes": 18992,
+      "sha256": "f2dfacdea6ae72d0aeeb7c30e525c4c6fc768a041849feac694cbb2ee2224448"
+    },
+    "control00/firmware.bin": {
+      "bytes": 1092928,
+      "sha256": "b3dd3772aceb6bf54d7e959dc1c5790cdaebca352b6a7fcab6e766bc1dfa1f8d"
+    },
+    "control00/firmware.elf": {
+      "bytes": 24996480,
+      "sha256": "eb468a5e36a259165ea677ae50e956c3ce024a0cfdcde861883e98abae0ebf80"
+    },
+    "control00/firmware.map": {
+      "bytes": 20730997,
+      "sha256": "5d21f7b1c24a3877b17cbb9b0615be437d93fa10121d76b4e82836aeedaa4a31"
+    },
+    "control00/partitions.bin": {
+      "bytes": 3072,
+      "sha256": "148b959cbff1c38aa8e1d5c0ba9d612c54997b945e56a63f41223eef650653a1"
+    },
+    "preparation/README.md": {
+      "bytes": 6594,
+      "sha256": "fdbf2cb0da8e54a5d6485b89e16561fccb5efd86a3f4a0744515e70b21acc22e"
+    },
+    "preparation/build-results.json": {
+      "bytes": 23865,
+      "sha256": "3447b3ff31bc8a9e6dba368132455e682cc14dfb32978545e2aa3ed3452e7da5"
+    },
+    "preparation/check_host.py": {
+      "bytes": 7036,
+      "sha256": "c6a839b3b6389e6344862e3514908501f65a25aed0f7fdb13782ed53efc464d5"
+    },
+    "preparation/check_release.cpp": {
+      "bytes": 9444,
+      "sha256": "57437dfd63268838b35e1d09a1296ad9cceb057be166f7e8504302d6a07fc224"
+    },
+    "preparation/collect_results.py": {
+      "bytes": 6730,
+      "sha256": "582646bb1787af7c0bb7f928806fedb97119b3ca3861947b4cac4b87ad676bee"
+    },
+    "preparation/host-results.json": {
+      "bytes": 6838,
+      "sha256": "70ced53ceda7013204240f12fc535a271b6e3c8d219864867c3a0f9c78d06e7d"
+    },
+    "preparation/mode-fallback-release-plan-v1.freeze.json": {
+      "bytes": 362,
+      "sha256": "14095cf871130387d4397e883f8d10fa452e484027c2c357910565f3fedfff46"
+    },
+    "preparation/mode-fallback-release-plan-v1.md": {
+      "bytes": 4084,
+      "sha256": "ff84eb791917a8a4432187b0035c306c924296d521d2a5e5f29abd04eaebda53"
+    },
+    "preparation/package.py": {
+      "bytes": 2723,
+      "sha256": "d411d7136194429e3df5707163c23936819a56b7cb98c6baa59eaccc2433e24e"
+    },
+    "preparation/preparation.json": {
+      "bytes": 1142,
+      "sha256": "262d46f00b993fc0f17db4b7e058a0e4fd6898bb0493dfcce30052a210c5749a"
+    },
+    "preparation/prepare.py": {
+      "bytes": 4804,
+      "sha256": "eab84d7f8119eb53ee43da425534a49f4f650045b3a81613daa8323b4b761779"
+    },
+    "preparation/source-manifests.json.gz": {
+      "bytes": 249676,
+      "sha256": "20d97b5731b39e2e19d3bf6e84cdbf7f71ff88800602a7d133a3b2d4b98def21"
+    },
+    "preparation/source-verification.json": {
+      "bytes": 821,
+      "sha256": "611183aa6d5fd6ba74ea40ba062618ff04d801fd1c28d878f9d9bd56d8d6a99b"
+    },
+    "preparation/source.patch": {
+      "bytes": 960,
+      "sha256": "e73c930084eda9a4062a7a4ff9314412260d103c58a6f4a2682fd12f69dadbb0"
+    },
+    "preparation/verify_sources.py": {
+      "bytes": 2984,
+      "sha256": "9d02d4945994baf1b789b42f0bc04fec32d8742261f75a4fcc946e4dea0e16dd"
+    },
+    "prepared-source/candidate/video/agon_screen.h": {
+      "bytes": 13931,
+      "sha256": "648dbc7d0ba9d98a3115a4ba307ff7585c6c5e28189c1e8961eff7a3c3d60343"
+    },
+    "prepared-source/candidate/video/vdu.h": {
+      "bytes": 11306,
+      "sha256": "d0ebff6e6b7a78aa434e2c4179368e0f6e1153b67b50718aa2cadb69c9c04de2"
+    },
+    "prepared-source/control00/video/agon_screen.h": {
+      "bytes": 13931,
+      "sha256": "648dbc7d0ba9d98a3115a4ba307ff7585c6c5e28189c1e8961eff7a3c3d60343"
+    },
+    "prepared-source/control00/video/vdu.h": {
+      "bytes": 10875,
+      "sha256": "24923b53a83d77ebf729795d7ecb7343e6f2fed0e9d748d48fc83c8b75e805cb"
+    }
+  },
+  "bundle": {
+    "path": "/Agon/mystuff/golem/docs/tasks/GOLEM-057/build/display-mode-repair/prepared-mode-repair-r01.tar.gz",
+    "bytes": 20423545,
+    "sha256": "a6dc73335ed342c8ab5c730ee49a6e4b53c99da14d89768cb616bb806a0b13ce"
+  }
+}

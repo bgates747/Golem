@@ -1,0 +1,1691 @@
+{
+  "arms": {
+    "control": {
+      "callbacks": {
+        "callback_elapsed_fraction_of_wall": 0.00037095962637767024,
+        "callback_elapsed_ns": {
+          "max": 44440,
+          "median": 760.0,
+          "min": 190,
+          "p99_nearest_rank": 17470
+        },
+        "callback_elapsed_total_ns": 2965812,
+        "callback_interval_ns": {
+          "max": 7994126,
+          "median": 6078399,
+          "min": 4736408,
+          "p99_nearest_rank": 7201491
+        },
+        "callback_seconds": 7.994972469,
+        "callbacks": 1306,
+        "demand_excluding_first": 130989,
+        "demand_per_callback_second_excluding_first": 16383.921334051061,
+        "request_frames": {
+          "max": 126,
+          "median": 100.0,
+          "min": 90,
+          "p99_nearest_rank": 119
+        },
+        "requested_total": 131100,
+        "scope": "Elapsed interval includes original callback and queue queries, not isolated observer CPU cost; excludes work before/after timestamps"
+      },
+      "observation": {
+        "callback_demand_bytes": 131100,
+        "callback_rows": 1306,
+        "complete": true,
+        "driver": "pulseaudio",
+        "prefix_available": true,
+        "reasons": [],
+        "scope": "Whole-run completeness only; counts do not qualify waveform or listening",
+        "source_bytes_queued_by_callbacks": 131100,
+        "summary": {
+          "atexit_registered": true,
+          "callback_cap": 32768,
+          "callback_cap_hit": false,
+          "callbacks_active_at_flush": 0,
+          "callbacks_forwarded": 1306,
+          "callbacks_quiesced": true,
+          "callbacks_stored": 1306,
+          "callbacks_total": 1306,
+          "capture_complete": true,
+          "capture_valid": true,
+          "driver_rejections": 0,
+          "finalized": true,
+          "io_errors": 0,
+          "multiple_callback_streams_unsupported": false,
+          "prefix_valid": true,
+          "query_errors": 0,
+          "quit_observed": true,
+          "schema_version": 1,
+          "tracked_destroyed": true
+        }
+      },
+      "opens": [
+        {
+          "actual_device": 21,
+          "callback_supplied": false,
+          "device_spec": {
+            "channels": 2,
+            "format_code": 32784,
+            "freq": 48000
+          },
+          "driver": "pulseaudio",
+          "event": "open_device",
+          "host_ns": 3505201118073,
+          "opened_device": 21,
+          "requested_device": 4294967295,
+          "requested_spec": {
+            "channels": 1,
+            "format_code": 8,
+            "freq": 48000
+          },
+          "sample_frames": 2048,
+          "schema_version": 1,
+          "sdl_library_path": "/home/smith/.local/lib/libSDL3.so.0",
+          "sdl_runtime_version": 3002018,
+          "stream": 0,
+          "stream_destination_spec": null,
+          "stream_source_spec": null,
+          "success": true,
+          "wrapped": false
+        },
+        {
+          "actual_device": 25,
+          "callback_supplied": true,
+          "device_spec": {
+            "channels": 2,
+            "format_code": 32784,
+            "freq": 48000
+          },
+          "driver": "pulseaudio",
+          "event": "open_stream",
+          "host_ns": 3505201185163,
+          "opened_device": 0,
+          "requested_device": 21,
+          "requested_spec": {
+            "channels": 1,
+            "format_code": 8,
+            "freq": 16384
+          },
+          "sample_frames": 2048,
+          "schema_version": 1,
+          "sdl_library_path": "/home/smith/.local/lib/libSDL3.so.0",
+          "sdl_runtime_version": 3002018,
+          "stream": 104625269758512,
+          "stream_destination_spec": {
+            "channels": 2,
+            "format_code": 33056,
+            "freq": 48000
+          },
+          "stream_source_spec": {
+            "channels": 1,
+            "format_code": 8,
+            "freq": 16384
+          },
+          "success": true,
+          "wrapped": true
+        },
+        {
+          "actual_device": 29,
+          "callback_supplied": false,
+          "device_spec": {
+            "channels": 2,
+            "format_code": 32784,
+            "freq": 48000
+          },
+          "driver": "pulseaudio",
+          "event": "open_stream",
+          "host_ns": 3505201200513,
+          "opened_device": 0,
+          "requested_device": 21,
+          "requested_spec": {
+            "channels": 1,
+            "format_code": 8,
+            "freq": 48000
+          },
+          "sample_frames": 2048,
+          "schema_version": 1,
+          "sdl_library_path": "/home/smith/.local/lib/libSDL3.so.0",
+          "sdl_runtime_version": 3002018,
+          "stream": 104625269789488,
+          "stream_destination_spec": {
+            "channels": 2,
+            "format_code": 33056,
+            "freq": 48000
+          },
+          "stream_source_spec": {
+            "channels": 1,
+            "format_code": 8,
+            "freq": 48000
+          },
+          "success": true,
+          "wrapped": false
+        }
+      ],
+      "passed": true,
+      "pins": {
+        "esp32-firmware.bin": "6e3e85da586f641629e5df3732ef641e5bae0098deb0f6b1c076993f4d11bfe5",
+        "esp32-firmware.elf": "3451af56f431f034c8cc1c63b34936d5f5ecafc0ddd841bd12a03b6fa495e26f",
+        "flexe-agon-emulator": "2898244981458b643500648aaf029343dfe357905e5883e3ed1729ff852eaf9e",
+        "flexe-agon-emulator.bin": "7e78e991a32c7bc94e84d70e8ad1792e3b840c48adc2e3aae7f635a88f4878ad",
+        "flexe-vdp.so": "928d32daadb7820552f2579d68c8c1be4e7e725f43380815469c2b4d3e5770fb",
+        "mos_platform.bin": "d564243283972690933a4554296ad6202ca4ef54572279533a942960846bebae",
+        "mos_platform.map": "d69e60bbce61a7b4b3eef318ba395f11c4e1a5b585755755113992dc94edcb86",
+        "sdcard/autoexec.txt": "bdee09c8affc586364055824461586e8156c31c31e4b26f9cf0ef64d7df1e45d",
+        "sdcard/vdpl009f/cases.json": "c4afbcc915fef500ca2eb3d441417a4458b85b5146a06bb7ad9806bd985c819f",
+        "sdcard/vdpl009f/main.c": "3a73a458ab445a1ae3eecd2178408410b610726750b7a97bb56557df1f33af30",
+        "sdcard/vdpl009f/reed-s8.raw": "6bc65243843e66e4525b5e4d16095267c06741a28623c432266e68feef5686aa",
+        "sdcard/vdpl009f/review.bin": "437d63909ddfef6c1e3cf66e5fa27fc37f9f7cb75e19cdf4881f367de23f08b3",
+        "sdcard/vdpl009f/sample-metadata.json": "bf3625fc8d0b35663c1ea331082d2627f5f6db77390ab508adeed9880a2c5758",
+        "sdcard/vdpl009f/spans.bin": "2b0cdc69de4c20eb9c46d03c871360213cf7261eb1f68b130fffc7f3a7031f39",
+        "sdl-audio-observer.so": "fe1494cc432a0696faed924b00ae272daa8c8f6affae5c4d15e2403ffab889cc"
+      },
+      "wall_seconds": 8.133537412999885
+    },
+    "fixture": {
+      "callbacks": {
+        "callback_elapsed_fraction_of_wall": 0.0011127531004678844,
+        "callback_elapsed_ns": {
+          "max": 2343064,
+          "median": 3690,
+          "min": 690,
+          "p99_nearest_rank": 51079
+        },
+        "callback_elapsed_total_ns": 45183817,
+        "callback_interval_ns": {
+          "max": 7246332,
+          "median": 6073805.0,
+          "min": 4308911,
+          "p99_nearest_rank": 6191839
+        },
+        "callback_seconds": 40.605428986,
+        "callbacks": 6687,
+        "demand_excluding_first": 665284,
+        "demand_per_callback_second_excluding_first": 16384.114553484404,
+        "request_frames": {
+          "max": 119,
+          "median": 100,
+          "min": 87,
+          "p99_nearest_rank": 101
+        },
+        "requested_total": 665396,
+        "scope": "Elapsed interval includes original callback and queue queries, not isolated observer CPU cost; excludes work before/after timestamps"
+      },
+      "observation": {
+        "callback_demand_bytes": 665396,
+        "callback_rows": 6687,
+        "complete": true,
+        "driver": "pulseaudio",
+        "prefix_available": true,
+        "reasons": [],
+        "scope": "Whole-run completeness only; counts do not qualify waveform or listening",
+        "source_bytes_queued_by_callbacks": 665396,
+        "summary": {
+          "atexit_registered": true,
+          "callback_cap": 32768,
+          "callback_cap_hit": false,
+          "callbacks_active_at_flush": 0,
+          "callbacks_forwarded": 6687,
+          "callbacks_quiesced": true,
+          "callbacks_stored": 6687,
+          "callbacks_total": 6687,
+          "capture_complete": true,
+          "capture_valid": true,
+          "driver_rejections": 0,
+          "finalized": true,
+          "io_errors": 0,
+          "multiple_callback_streams_unsupported": false,
+          "prefix_valid": true,
+          "query_errors": 0,
+          "quit_observed": true,
+          "schema_version": 1,
+          "tracked_destroyed": true
+        }
+      },
+      "opens": [
+        {
+          "actual_device": 21,
+          "callback_supplied": false,
+          "device_spec": {
+            "channels": 2,
+            "format_code": 32784,
+            "freq": 48000
+          },
+          "driver": "pulseaudio",
+          "event": "open_device",
+          "host_ns": 3525674485400,
+          "opened_device": 21,
+          "requested_device": 4294967295,
+          "requested_spec": {
+            "channels": 1,
+            "format_code": 8,
+            "freq": 48000
+          },
+          "sample_frames": 2048,
+          "schema_version": 1,
+          "sdl_library_path": "/home/smith/.local/lib/libSDL3.so.0",
+          "sdl_runtime_version": 3002018,
+          "stream": 0,
+          "stream_destination_spec": null,
+          "stream_source_spec": null,
+          "success": true,
+          "wrapped": false
+        },
+        {
+          "actual_device": 25,
+          "callback_supplied": true,
+          "device_spec": {
+            "channels": 2,
+            "format_code": 32784,
+            "freq": 48000
+          },
+          "driver": "pulseaudio",
+          "event": "open_stream",
+          "host_ns": 3525674526170,
+          "opened_device": 0,
+          "requested_device": 21,
+          "requested_spec": {
+            "channels": 1,
+            "format_code": 8,
+            "freq": 16384
+          },
+          "sample_frames": 2048,
+          "schema_version": 1,
+          "sdl_library_path": "/home/smith/.local/lib/libSDL3.so.0",
+          "sdl_runtime_version": 3002018,
+          "stream": 101896785449376,
+          "stream_destination_spec": {
+            "channels": 2,
+            "format_code": 33056,
+            "freq": 48000
+          },
+          "stream_source_spec": {
+            "channels": 1,
+            "format_code": 8,
+            "freq": 16384
+          },
+          "success": true,
+          "wrapped": true
+        },
+        {
+          "actual_device": 29,
+          "callback_supplied": false,
+          "device_spec": {
+            "channels": 2,
+            "format_code": 32784,
+            "freq": 48000
+          },
+          "driver": "pulseaudio",
+          "event": "open_stream",
+          "host_ns": 3525674563740,
+          "opened_device": 0,
+          "requested_device": 21,
+          "requested_spec": {
+            "channels": 1,
+            "format_code": 8,
+            "freq": 48000
+          },
+          "sample_frames": 2048,
+          "schema_version": 1,
+          "sdl_library_path": "/home/smith/.local/lib/libSDL3.so.0",
+          "sdl_runtime_version": 3002018,
+          "stream": 101896785667136,
+          "stream_destination_spec": {
+            "channels": 2,
+            "format_code": 33056,
+            "freq": 48000
+          },
+          "stream_source_spec": {
+            "channels": 1,
+            "format_code": 8,
+            "freq": 48000
+          },
+          "success": true,
+          "wrapped": false
+        }
+      ],
+      "passed": true,
+      "pins": {
+        "esp32-firmware.bin": "6e3e85da586f641629e5df3732ef641e5bae0098deb0f6b1c076993f4d11bfe5",
+        "esp32-firmware.elf": "3451af56f431f034c8cc1c63b34936d5f5ecafc0ddd841bd12a03b6fa495e26f",
+        "flexe-agon-emulator": "2898244981458b643500648aaf029343dfe357905e5883e3ed1729ff852eaf9e",
+        "flexe-agon-emulator.bin": "7e78e991a32c7bc94e84d70e8ad1792e3b840c48adc2e3aae7f635a88f4878ad",
+        "flexe-vdp.so": "928d32daadb7820552f2579d68c8c1be4e7e725f43380815469c2b4d3e5770fb",
+        "mos_platform.bin": "d564243283972690933a4554296ad6202ca4ef54572279533a942960846bebae",
+        "mos_platform.map": "d69e60bbce61a7b4b3eef318ba395f11c4e1a5b585755755113992dc94edcb86",
+        "sdcard/autoexec.txt": "bdee09c8affc586364055824461586e8156c31c31e4b26f9cf0ef64d7df1e45d",
+        "sdcard/vdpl009f/cases.json": "c4afbcc915fef500ca2eb3d441417a4458b85b5146a06bb7ad9806bd985c819f",
+        "sdcard/vdpl009f/main.c": "3a73a458ab445a1ae3eecd2178408410b610726750b7a97bb56557df1f33af30",
+        "sdcard/vdpl009f/reed-s8.raw": "6bc65243843e66e4525b5e4d16095267c06741a28623c432266e68feef5686aa",
+        "sdcard/vdpl009f/review.bin": "437d63909ddfef6c1e3cf66e5fa27fc37f9f7cb75e19cdf4881f367de23f08b3",
+        "sdcard/vdpl009f/sample-metadata.json": "bf3625fc8d0b35663c1ea331082d2627f5f6db77390ab508adeed9880a2c5758",
+        "sdcard/vdpl009f/spans.bin": "2b0cdc69de4c20eb9c46d03c871360213cf7261eb1f68b130fffc7f3a7031f39",
+        "sdl-audio-observer.so": "fe1494cc432a0696faed924b00ae272daa8c8f6affae5c4d15e2403ffab889cc"
+      },
+      "wall_seconds": 40.847648923999714
+    }
+  },
+  "callback_to_ring_delivery_exact": true,
+  "controls": {
+    "disk": {
+      "callback_error": "",
+      "callback_errors": 0,
+      "callback_seconds": 7.989670471,
+      "callbacks": 379,
+      "demand_frames_excluding_first": 132121,
+      "demand_frames_per_callback_second_excluding_first": 16536.476752021,
+      "device_actual": {
+        "channels": 2,
+        "format_code": 32784,
+        "freq": 48000
+      },
+      "device_requested": {
+        "channels": 1,
+        "format_code": 8,
+        "freq": 48000
+      },
+      "device_sample_frames": 1024,
+      "driver": "disk",
+      "first_callback_ns": 14791341788853,
+      "first_request_frames": 350,
+      "last_callback_ns": 14799331459324,
+      "max_request_frames": 350,
+      "min_request_frames": 349,
+      "positive_callbacks": 379,
+      "probe": "SDL3_disk_only_no_emulator",
+      "put_frames": 132471,
+      "queued_source_bytes_after_stop": 7,
+      "requested_frames": 132471,
+      "requested_seconds": 8.0,
+      "schema_version": 1,
+      "sdl_compile_version": 3004002,
+      "sdl_runtime_version": 3002018,
+      "source_requested": {
+        "channels": 1,
+        "format_code": 8,
+        "freq": 16384
+      },
+      "start_ns": 14791341721773,
+      "stopped_ns": 14799349656037,
+      "stream_destination_actual": {
+        "channels": 2,
+        "format_code": 33056,
+        "freq": 48000
+      },
+      "stream_device_actual": {
+        "channels": 2,
+        "format_code": 32784,
+        "freq": 48000
+      },
+      "stream_device_sample_frames": 1024,
+      "stream_source_actual": {
+        "channels": 1,
+        "format_code": 8,
+        "freq": 16384
+      },
+      "success": true,
+      "zero_callbacks": 0
+    },
+    "normal": {
+      "callback_error": "",
+      "callback_errors": 0,
+      "callback_seconds": 7.994968189,
+      "callbacks": 1306,
+      "demand_frames_excluding_first": 130989,
+      "demand_frames_per_callback_second_excluding_first": 16383.930104966,
+      "device_actual": {
+        "channels": 2,
+        "format_code": 32784,
+        "freq": 48000
+      },
+      "device_requested": {
+        "channels": 1,
+        "format_code": 8,
+        "freq": 48000
+      },
+      "device_sample_frames": 2048,
+      "driver": "pulseaudio",
+      "driver_requested": "pulseaudio",
+      "error": "",
+      "first_callback_ns": 3505205267595,
+      "first_request_frames": 111,
+      "gpio_destination_actual": {
+        "channels": 2,
+        "format_code": 33056,
+        "freq": 48000
+      },
+      "gpio_device_actual": {
+        "channels": 2,
+        "format_code": 32784,
+        "freq": 48000
+      },
+      "gpio_device_sample_frames": 2048,
+      "gpio_put_frames": 0,
+      "gpio_queued_source_bytes_after_stop": 0,
+      "gpio_source_actual": {
+        "channels": 1,
+        "format_code": 8,
+        "freq": 48000
+      },
+      "gpio_source_requested": {
+        "channels": 1,
+        "format_code": 8,
+        "freq": 48000
+      },
+      "gpio_stream_created": true,
+      "gpio_stream_resumed": false,
+      "interpretation": "Silence demand control, not listening or emulator qualification; sample_frames are reported buffer sizes, not measured wall-clock periods.",
+      "last_callback_ns": 3513200235784,
+      "max_request_frames": 126,
+      "min_request_frames": 90,
+      "positive_callbacks": 1306,
+      "probe": "SDL3_pulseaudio_only_no_emulator",
+      "put_frames": 131100,
+      "queued_source_bytes_after_stop": 7,
+      "requested_frames": 131100,
+      "requested_seconds": 8.0,
+      "schema_version": 1,
+      "sdl_compile_version": 3004002,
+      "sdl_runtime_version": 3002018,
+      "source_requested": {
+        "channels": 1,
+        "format_code": 8,
+        "freq": 16384
+      },
+      "start_ns": 3505201198553,
+      "stopped_ns": 3513201664585,
+      "stream_destination_actual": {
+        "channels": 2,
+        "format_code": 33056,
+        "freq": 48000
+      },
+      "stream_device_actual": {
+        "channels": 2,
+        "format_code": 32784,
+        "freq": 48000
+      },
+      "stream_device_sample_frames": 2048,
+      "stream_source_actual": {
+        "channels": 1,
+        "format_code": 8,
+        "freq": 16384
+      },
+      "success": true,
+      "zero_callbacks": 0
+    }
+  },
+  "limits": [
+    "One normal run and historical disk data, not contemporaneous randomized performance A/B.",
+    "Normal adds SDL observation, different backend/buffer/callback cadence and later host conditions; slowdown cause is unisolated.",
+    "Phase boundaries are approximate; rates include intentional rests and gaps. Primary nominal240MHz and peripheral deadline clocks are distinct.",
+    "Exact producer-to-delivery reconstruction and zero scheduled DMA lateness do not qualify synthesis, mixer scheduling or physical output.",
+    "Observed callback elapsed time is not total instrumentation CPU overhead; no unobserved boost/thermal/scheduler condition is inferred.",
+    "No listening, repair, new execution or publication acceptance."
+  ],
+  "normal_phases": {
+    "approximate_phase_boundaries": true,
+    "cases": [
+      {
+        "callbacks": 571,
+        "callbacks_with_varying_real_audio_then_inserted127": 216,
+        "case": 1,
+        "counters": {
+          "dequeued_real": 49564,
+          "dropped_oldest": 0,
+          "filled127": 7201,
+          "produced": 49856
+        },
+        "delivered_adjacent_step_max": 56,
+        "demand_samples_per_phase_host_second": 16395.521262910046,
+        "end_boundary": "polled_phase_end",
+        "event_guest_seconds": 3.0422936166666665,
+        "inserted127_fraction": 0.12685633753192987,
+        "max_missing_samples_one_callback": 98,
+        "phase_host_seconds": 3.462226,
+        "produced_per_phase_host_second": 14399.984287565285,
+        "producer_adjacent_step_max": 29,
+        "producer_mean": 127.0095274390244,
+        "producer_population_stddev": 27.789287028875357,
+        "producer_sample_range": [
+          71,
+          183
+        ],
+        "underrun_callbacks": 228
+      },
+      {
+        "callbacks": 636,
+        "callbacks_with_varying_real_audio_then_inserted127": 386,
+        "case": 2,
+        "counters": {
+          "dequeued_real": 49906,
+          "dropped_oldest": 0,
+          "filled127": 13375,
+          "produced": 49088
+        },
+        "delivered_adjacent_step_max": 54,
+        "demand_samples_per_phase_host_second": 16383.417695727358,
+        "end_boundary": "polled_phase_end",
+        "event_guest_seconds": 2.9931630625,
+        "inserted127_fraction": 0.21135885968932222,
+        "max_missing_samples_one_callback": 100,
+        "phase_host_seconds": 3.862503,
+        "produced_per_phase_host_second": 12708.85744295862,
+        "producer_adjacent_step_max": 29,
+        "producer_mean": 126.98736962190353,
+        "producer_population_stddev": 27.989109335350346,
+        "producer_sample_range": [
+          71,
+          183
+        ],
+        "underrun_callbacks": 422
+      },
+      {
+        "callbacks": 630,
+        "callbacks_with_varying_real_audio_then_inserted127": 420,
+        "case": 3,
+        "counters": {
+          "dequeued_real": 48277,
+          "dropped_oldest": 0,
+          "filled127": 14323,
+          "produced": 48192
+        },
+        "delivered_adjacent_step_max": 34,
+        "demand_samples_per_phase_host_second": 16388.052328775757,
+        "end_boundary": "polled_phase_end",
+        "event_guest_seconds": 2.9404012458333333,
+        "inserted127_fraction": 0.22880191693290736,
+        "max_missing_samples_one_callback": 100,
+        "phase_host_seconds": 3.819855999,
+        "produced_per_phase_host_second": 12616.182393424302,
+        "producer_adjacent_step_max": 18,
+        "producer_mean": 126.94075780212484,
+        "producer_population_stddev": 17.640515516071176,
+        "producer_sample_range": [
+          89,
+          165
+        ],
+        "underrun_callbacks": 463
+      },
+      {
+        "callbacks": 636,
+        "callbacks_with_varying_real_audio_then_inserted127": 443,
+        "case": 4,
+        "counters": {
+          "dequeued_real": 47900,
+          "dropped_oldest": 0,
+          "filled127": 15474,
+          "produced": 47744
+        },
+        "delivered_adjacent_step_max": 34,
+        "demand_samples_per_phase_host_second": 16391.364983198426,
+        "end_boundary": "polled_phase_end",
+        "event_guest_seconds": 2.9146500833333335,
+        "inserted127_fraction": 0.24416953324707294,
+        "max_missing_samples_one_callback": 100,
+        "phase_host_seconds": 3.866304,
+        "produced_per_phase_host_second": 12348.744433960703,
+        "producer_adjacent_step_max": 16,
+        "producer_mean": 126.93159349865952,
+        "producer_population_stddev": 17.747781801914737,
+        "producer_sample_range": [
+          89,
+          165
+        ],
+        "underrun_callbacks": 479
+      },
+      {
+        "callbacks": 677,
+        "callbacks_with_varying_real_audio_then_inserted127": 537,
+        "case": 5,
+        "counters": {
+          "dequeued_real": 47486,
+          "dropped_oldest": 0,
+          "filled127": 19925,
+          "produced": 47680
+        },
+        "delivered_adjacent_step_max": 52,
+        "demand_samples_per_phase_host_second": 16380.866382129982,
+        "end_boundary": "polled_phase_end",
+        "event_guest_seconds": 2.90711685,
+        "inserted127_fraction": 0.2955749061725831,
+        "max_missing_samples_one_callback": 101,
+        "phase_host_seconds": 4.115228,
+        "produced_per_phase_host_second": 11586.23531916093,
+        "producer_adjacent_step_max": 29,
+        "producer_mean": 126.9973154362416,
+        "producer_population_stddev": 28.311067828414096,
+        "producer_sample_range": [
+          71,
+          183
+        ],
+        "underrun_callbacks": 584
+      },
+      {
+        "callbacks": 638,
+        "callbacks_with_varying_real_audio_then_inserted127": 448,
+        "case": 6,
+        "counters": {
+          "dequeued_real": 48164,
+          "dropped_oldest": 0,
+          "filled127": 15147,
+          "produced": 47680
+        },
+        "delivered_adjacent_step_max": 55,
+        "demand_samples_per_phase_host_second": 16384.40186102748,
+        "end_boundary": "polled_phase_end",
+        "event_guest_seconds": 2.909676425,
+        "inserted127_fraction": 0.23924752412692896,
+        "max_missing_samples_one_callback": 100,
+        "phase_host_seconds": 3.864102,
+        "produced_per_phase_host_second": 12339.218788737979,
+        "producer_adjacent_step_max": 27,
+        "producer_mean": 127.0128355704698,
+        "producer_population_stddev": 28.37233864785915,
+        "producer_sample_range": [
+          71,
+          183
+        ],
+        "underrun_callbacks": 485
+      },
+      {
+        "callbacks": 660,
+        "callbacks_with_varying_real_audio_then_inserted127": 517,
+        "case": 7,
+        "counters": {
+          "dequeued_real": 47356,
+          "dropped_oldest": 0,
+          "filled127": 18414,
+          "produced": 47488
+        },
+        "delivered_adjacent_step_max": 37,
+        "demand_samples_per_phase_host_second": 16384.980525863954,
+        "end_boundary": "polled_phase_end",
+        "event_guest_seconds": 2.8976506416666665,
+        "inserted127_fraction": 0.27997567279914853,
+        "max_missing_samples_one_callback": 101,
+        "phase_host_seconds": 4.014042,
+        "produced_per_phase_host_second": 11830.469138090733,
+        "producer_adjacent_step_max": 18,
+        "producer_mean": 126.93478352425876,
+        "producer_population_stddev": 17.756699924124103,
+        "producer_sample_range": [
+          89,
+          165
+        ],
+        "underrun_callbacks": 564
+      },
+      {
+        "callbacks": 652,
+        "callbacks_with_varying_real_audio_then_inserted127": 458,
+        "case": 8,
+        "counters": {
+          "dequeued_real": 47793,
+          "dropped_oldest": 0,
+          "filled127": 17119,
+          "produced": 47552
+        },
+        "delivered_adjacent_step_max": 33,
+        "demand_samples_per_phase_host_second": 16368.50726637456,
+        "end_boundary": "polled_phase_end",
+        "event_guest_seconds": 2.9000953458333334,
+        "inserted127_fraction": 0.26372627557308354,
+        "max_missing_samples_one_callback": 101,
+        "phase_host_seconds": 3.965664,
+        "produced_per_phase_host_second": 11990.93014435918,
+        "producer_adjacent_step_max": 18,
+        "producer_mean": 126.95087483176312,
+        "producer_population_stddev": 17.607743241187666,
+        "producer_sample_range": [
+          89,
+          165
+        ],
+        "underrun_callbacks": 507
+      }
+    ],
+    "scope": "Each phase includes notes and intended rests. Host phase-file polling/buffering delays are not sample-accurate. Event counters identify host-inserted samples;127values alone do not. Varying real prefix followed by inserted127 establishes a delivery discontinuity, not clean upstream synthesis or physical audibility."
+  },
+  "qualified_ring_analysis_reproduced": true,
+  "raw_bundle": {
+    "files": 29,
+    "path": "/home/smith/Agon/mystuff/flexe-agon-emulator/build/fx067/measurement-r01/runs.tar",
+    "sha256": "bc8b81d059be71af609e73070c55b7225493c8fc82eb4b58d0e819c405e7dcf8",
+    "size": 4341760
+  },
+  "release": {
+    "coordinator": "golem",
+    "generation": 39,
+    "granted": "2026-10-31T17:14:32.543342+00:00",
+    "idle_observation": {
+      "emulators": [],
+      "epoch": 1793466850.4894257,
+      "machine": "oryx-linuxlite"
+    },
+    "lease": "fbd381d645304b6c9cd282caf85b8b37",
+    "owner": "flexe",
+    "profile": "/home/smith/Agon/mystuff/flexe-agon-emulator/.emulator/fx067/normal",
+    "purpose": "Resumed sealed r02 normal-audio diagnostic: one 8-second control, then conditional 90-second-bound stock fixture; no prior arm ran",
+    "release_observation": {
+      "emulators": [],
+      "epoch": 1793467160.3965929,
+      "machine": "oryx-linuxlite"
+    },
+    "released": "2026-10-31T17:19:20.460266+00:00",
+    "request": "9322abeacec8",
+    "requested": "2026-10-31T17:14:25.404161+00:00",
+    "task": "FX-067"
+  },
+  "ring": {
+    "disk": {
+      "capture_directory": "/Agon/mystuff/flexe-agon-emulator/build/fx062/retrieved/runs/trace/mos-jit/diagnostic",
+      "capture_format": "unsigned 8-bit mono, explicitly specified by FX-062 instrumentation; not SDL disk format",
+      "capture_status": "complete",
+      "delivered": {
+        "analysis_read_capped": false,
+        "analyzed_bytes": 570076,
+        "analyzed_prefix_sha256": "11e73e41a1b7c058fe3527f7cef10627094ab4b152351acc3487f82009aa2f0d",
+        "file_bytes": 570076,
+        "path": "/Agon/mystuff/flexe-agon-emulator/build/fx062/retrieved/runs/trace/mos-jit/diagnostic/audio-delivered.u8",
+        "present": true,
+        "waveform": {
+          "ac_rms_u8": 19.923051346543005,
+          "adjacent_step_absolute_maximum": 156,
+          "adjacent_step_absolute_mean": 1.857653817480156,
+          "crossings_of_127_5": 15122,
+          "frames": 570076,
+          "frames_at_0_or_255": 0,
+          "frames_equal_127": 235754,
+          "frames_equal_128": 3443,
+          "interpretation": "Descriptive U8 statistics; neither distortion nor underruns inferred from values.",
+          "largest_constant_run_frames": 73243,
+          "maximum": 205,
+          "mean_u8": 126.97849058721995,
+          "minimum": 49
+        }
+      },
+      "dma": {
+        "consistent": true,
+        "first_event": {
+          "actual_cycle": 452327064,
+          "descriptor": 1073439520,
+          "due_cycle": 452327064,
+          "guest_cycles": 102120000,
+          "host_ns": 14181561202561,
+          "late_cycles": 0,
+          "sequence": 1
+        },
+        "interpretation": "Emulated peripheral deadline lateness; not host callback latency or proof of audible corruption.",
+        "last_event": {
+          "actual_cycle": 8544321346,
+          "descriptor": 1073439532,
+          "due_cycle": 8544321346,
+          "guest_cycles": 8231497196,
+          "host_ns": 14215419330634,
+          "late_cycles": 0,
+          "sequence": 8622
+        },
+        "late_completions": 0,
+        "late_cycles_maximum": 0,
+        "late_cycles_mean": 0.0,
+        "late_cycles_p50": 0,
+        "late_cycles_p99": 0,
+        "rows": 8622
+      },
+      "events": {
+        "counter_and_queue_consistency": true,
+        "delivered_real_rate": {
+          "available": true,
+          "frames": 556893,
+          "guest_cycles": 8231497196,
+          "guest_hz_assumed": 240000000,
+          "guest_seconds": 34.29790498333333,
+          "guest_seconds_per_host_second": 0.9974505279516223,
+          "host_seconds": 34.385570033,
+          "samples_per_guest_second": 16236.939261176904,
+          "samples_per_host_second": 16195.543638379328,
+          "window": "post-first to post-last event; excludes first event's samples"
+        },
+        "depth_maximum": 1025,
+        "depth_minimum_including_empty_initial_ring": 0,
+        "derived_event_prefix_totals": {
+          "dequeued_real": 556893,
+          "dropped_oldest": 0,
+          "filled127": 13183,
+          "produced": 557184
+        },
+        "first_event": {
+          "bits": 0,
+          "channels": 0,
+          "delivered_stored": 350,
+          "depth_after": 0,
+          "depth_before": 0,
+          "dequeued_real": 0,
+          "dropped_oldest": 0,
+          "event": "deliver",
+          "filled127": 350,
+          "frames": 350,
+          "guest_cycles": 0,
+          "host_ns": 14181033761841,
+          "produced": 0,
+          "producer_stored": 0,
+          "reported_rate": 0,
+          "sequence": 1
+        },
+        "inserted127_contiguous_gap_count": 172,
+        "inserted127_spans_first32": [
+          {
+            "frames": 350,
+            "host_ns": 14181033761841,
+            "offset": 0,
+            "sequence": 1
+          },
+          {
+            "frames": 350,
+            "host_ns": 14181054889951,
+            "offset": 350,
+            "sequence": 2
+          },
+          {
+            "frames": 349,
+            "host_ns": 14181075999631,
+            "offset": 700,
+            "sequence": 3
+          },
+          {
+            "frames": 350,
+            "host_ns": 14181097119811,
+            "offset": 1049,
+            "sequence": 4
+          },
+          {
+            "frames": 349,
+            "host_ns": 14181118210041,
+            "offset": 1399,
+            "sequence": 5
+          },
+          {
+            "frames": 350,
+            "host_ns": 14181139325541,
+            "offset": 1748,
+            "sequence": 6
+          },
+          {
+            "frames": 349,
+            "host_ns": 14181160404011,
+            "offset": 2098,
+            "sequence": 7
+          },
+          {
+            "frames": 350,
+            "host_ns": 14181181492481,
+            "offset": 2447,
+            "sequence": 8
+          },
+          {
+            "frames": 349,
+            "host_ns": 14181202568431,
+            "offset": 2797,
+            "sequence": 9
+          },
+          {
+            "frames": 350,
+            "host_ns": 14181223645281,
+            "offset": 3146,
+            "sequence": 10
+          },
+          {
+            "frames": 349,
+            "host_ns": 14181244712371,
+            "offset": 3496,
+            "sequence": 11
+          },
+          {
+            "frames": 350,
+            "host_ns": 14181265828051,
+            "offset": 3845,
+            "sequence": 12
+          },
+          {
+            "frames": 350,
+            "host_ns": 14181286910661,
+            "offset": 4195,
+            "sequence": 13
+          },
+          {
+            "frames": 349,
+            "host_ns": 14181308012811,
+            "offset": 4545,
+            "sequence": 14
+          },
+          {
+            "frames": 350,
+            "host_ns": 14181329080361,
+            "offset": 4894,
+            "sequence": 15
+          },
+          {
+            "frames": 349,
+            "host_ns": 14181350174371,
+            "offset": 5244,
+            "sequence": 16
+          },
+          {
+            "frames": 350,
+            "host_ns": 14181371256681,
+            "offset": 5593,
+            "sequence": 17
+          },
+          {
+            "frames": 349,
+            "host_ns": 14181392372871,
+            "offset": 5943,
+            "sequence": 18
+          },
+          {
+            "frames": 350,
+            "host_ns": 14181413445811,
+            "offset": 6292,
+            "sequence": 19
+          },
+          {
+            "frames": 349,
+            "host_ns": 14181434520981,
+            "offset": 6642,
+            "sequence": 20
+          },
+          {
+            "frames": 350,
+            "host_ns": 14181455597711,
+            "offset": 6991,
+            "sequence": 21
+          },
+          {
+            "frames": 349,
+            "host_ns": 14181476695231,
+            "offset": 7341,
+            "sequence": 22
+          },
+          {
+            "frames": 350,
+            "host_ns": 14181497761191,
+            "offset": 7690,
+            "sequence": 23
+          },
+          {
+            "frames": 349,
+            "host_ns": 14181518850041,
+            "offset": 8040,
+            "sequence": 24
+          },
+          {
+            "frames": 350,
+            "host_ns": 14181539930091,
+            "offset": 8389,
+            "sequence": 25
+          },
+          {
+            "frames": 93,
+            "host_ns": 14181561018221,
+            "offset": 8995,
+            "sequence": 30
+          },
+          {
+            "frames": 9,
+            "host_ns": 14182847427201,
+            "offset": 30400,
+            "sequence": 424
+          },
+          {
+            "frames": 15,
+            "host_ns": 14182995388540,
+            "offset": 32841,
+            "sequence": 469
+          },
+          {
+            "frames": 25,
+            "host_ns": 14183058704579,
+            "offset": 33880,
+            "sequence": 488
+          },
+          {
+            "frames": 19,
+            "host_ns": 14183164193479,
+            "offset": 35633,
+            "sequence": 520
+          },
+          {
+            "frames": 20,
+            "host_ns": 14183269717019,
+            "offset": 37380,
+            "sequence": 552
+          },
+          {
+            "frames": 20,
+            "host_ns": 14183375219299,
+            "offset": 39128,
+            "sequence": 584
+          }
+        ],
+        "largest_contiguous_inserted127_gap_frames": 8739,
+        "largest_host_delivery_callback_gap_ns": 21299099,
+        "largest_host_producer_callback_gap_ns": 7310805,
+        "last_event": {
+          "bits": 16,
+          "channels": 1,
+          "delivered_stored": 570076,
+          "depth_after": 291,
+          "depth_before": 227,
+          "dequeued_real": 556893,
+          "dropped_oldest": 0,
+          "event": "produce",
+          "filled127": 13183,
+          "frames": 64,
+          "guest_cycles": 8231497196,
+          "host_ns": 14215419331874,
+          "produced": 557184,
+          "producer_stored": 557184,
+          "reported_rate": 16384,
+          "sequence": 10337
+        },
+        "maximum_consecutive_underrun_callbacks": 26,
+        "maximum_inserted127_tail_frames": 350,
+        "production_rate": {
+          "available": true,
+          "frames": 557120,
+          "guest_cycles": 8130347196,
+          "guest_hz_assumed": 240000000,
+          "guest_seconds": 33.87644665,
+          "guest_seconds_per_host_second": 1.000425325030085,
+          "host_seconds": 33.862044275,
+          "samples_per_guest_second": 16445.64454341908,
+          "samples_per_host_second": 16452.639287679274,
+          "window": "post-first to post-last event; excludes first event's samples"
+        },
+        "remaining_depth": 291,
+        "reported_i2s_formats": [
+          {
+            "bits": 16,
+            "channels": 1,
+            "rate_hz": 16384
+          }
+        ],
+        "rows": 10337,
+        "sequence_comparison": {
+          "captured_frames_outside_event_prefix": 0,
+          "compared_frames": 570076,
+          "event_requested_frames_not_captured": 0,
+          "exact_match_for_entire_analyzed_delivered_capture": true,
+          "first_mismatches": [],
+          "method": "Producer order after exact oldest-prefix drops, real dequeues, then recorded missing-frame 127 tails.",
+          "mismatched_frames": 0,
+          "unverified_frames_within_event_prefix": 0
+        },
+        "underrun_callbacks": 196
+      },
+      "interpretation_limits": [
+        "Missing/capped events or PCM permit only a prefix comparison; summary completeness flags remain authoritative.",
+        "A byte equal to 127 is not itself an underrun; only event counter reconciliation identifies inserted silence.",
+        "Matching delivery to the producer does not prove the producer waveform, firmware timing or physical audio is correct.",
+        "Counters and waveform statistics do not establish audible distortion, causality, or human acceptance.",
+        "Guest seconds use the diagnostic's nominal 240MHz primary-cycle scale; host seconds remain separate."
+      ],
+      "issues": [],
+      "producer": {
+        "analysis_read_capped": false,
+        "analyzed_bytes": 557184,
+        "analyzed_prefix_sha256": "b22ad26b727cb945878f692ab2b65c9a73fb0fe77f5a5e08bcd582a39d9efba2",
+        "file_bytes": 557184,
+        "path": "/Agon/mystuff/flexe-agon-emulator/build/fx062/retrieved/runs/trace/mos-jit/diagnostic/audio-producer.u8",
+        "present": true,
+        "waveform": {
+          "ac_rms_u8": 20.152220611803216,
+          "adjacent_step_absolute_maximum": 156,
+          "adjacent_step_absolute_mean": 1.8933205069070664,
+          "crossings_of_127_5": 15032,
+          "frames": 557184,
+          "frames_at_0_or_255": 0,
+          "frames_equal_127": 222862,
+          "frames_equal_128": 3443,
+          "interpretation": "Descriptive U8 statistics; neither distortion nor underruns inferred from values.",
+          "largest_constant_run_frames": 63872,
+          "maximum": 205,
+          "mean_u8": 126.97799290719044,
+          "minimum": 49
+        }
+      },
+      "reconciliation": {
+        "complete_capture": true,
+        "consistency_failures": [],
+        "final_conserved_depth": 291,
+        "full_window_inserted127_fraction": 0.023124986843859417,
+        "full_window_oldest_drop_fraction_of_production": 0.0,
+        "full_window_production_rate": {
+          "available": true,
+          "frames": 557184,
+          "guest_cycles": 8231857196,
+          "guest_hz_assumed": 240000000,
+          "guest_seconds": 34.29940498333333,
+          "guest_seconds_per_host_second": 0.9958659270535559,
+          "host_seconds": 34.441789855,
+          "samples_per_guest_second": 16244.713290820795,
+          "samples_per_host_second": 16177.556461082473,
+          "window": "summary initialization to finalization; includes startup/silence/shutdown"
+        },
+        "partial_capture_reasons": []
+      },
+      "schema": "fx062-audio-analysis-v1",
+      "summary": {
+        "atexit_registered": true,
+        "delivered_cap_hit": false,
+        "delivered_stored": 570076,
+        "delivered_total": 570076,
+        "dequeued_real": 556893,
+        "dma_cap_hit": false,
+        "dma_stored": 8622,
+        "dma_total": 8622,
+        "dropped_oldest": 0,
+        "enabled": true,
+        "event_cap_hit": false,
+        "event_cap_rows": 131072,
+        "events_stored": 10337,
+        "events_total": 10337,
+        "filled127": 13183,
+        "finalized": true,
+        "first_guest_cycles": 0,
+        "first_host_ns": 14181033625672,
+        "io_errors": 0,
+        "last_errno": 0,
+        "last_guest_cycles": 8231857196,
+        "last_host_ns": 14215475415527,
+        "last_i2s_bits": 16,
+        "last_i2s_channels": 1,
+        "last_reported_rate": 16384,
+        "pcm_cap_bytes": 8388608,
+        "produced": 557184,
+        "producer_cap_hit": false,
+        "producer_stored": 557184,
+        "producer_total": 557184,
+        "ring_capacity": 65536,
+        "sample_channels": 1,
+        "sample_format": "U8",
+        "schema_version": 1
+      }
+    },
+    "normal": {
+      "capture_directory": "/Agon/mystuff/flexe-agon-emulator/build/fx067/measurement-r01/retrieved/runs/fixture/mos-jit/diagnostic",
+      "capture_format": "unsigned 8-bit mono, explicitly specified by FX-062 instrumentation; not SDL disk format",
+      "capture_status": "complete",
+      "delivered": {
+        "analysis_read_capped": false,
+        "analyzed_bytes": 665396,
+        "analyzed_prefix_sha256": "09c81786b42342ee7becbea047fa8070a02de43cd65c23375926f04ac31c084b",
+        "file_bytes": 665396,
+        "path": "/Agon/mystuff/flexe-agon-emulator/build/fx067/measurement-r01/retrieved/runs/fixture/mos-jit/diagnostic/audio-delivered.u8",
+        "present": true,
+        "waveform": {
+          "ac_rms_u8": 18.451207378354137,
+          "adjacent_step_absolute_maximum": 156,
+          "adjacent_step_absolute_mean": 1.7739027194373267,
+          "crossings_of_127_5": 18020,
+          "frames": 665396,
+          "frames_at_0_or_255": 0,
+          "frames_equal_127": 330685,
+          "frames_equal_128": 3464,
+          "interpretation": "Descriptive U8 statistics; neither distortion nor underruns inferred from values.",
+          "largest_constant_run_frames": 72260,
+          "maximum": 205,
+          "mean_u8": 126.98345045657022,
+          "minimum": 49
+        }
+      },
+      "dma": {
+        "consistent": true,
+        "first_event": {
+          "actual_cycle": 452327064,
+          "descriptor": 1073439520,
+          "due_cycle": 452327064,
+          "guest_cycles": 102120000,
+          "host_ns": 3526197205070,
+          "late_cycles": 0,
+          "sequence": 1
+        },
+        "interpretation": "Emulated peripheral deadline lateness; not host callback latency or proof of audible corruption.",
+        "last_event": {
+          "actual_cycle": 8053675733,
+          "descriptor": 1073439532,
+          "due_cycle": 8053675733,
+          "guest_cycles": 7737456335,
+          "host_ns": 3566275787274,
+          "late_cycles": 0,
+          "sequence": 8098
+        },
+        "late_completions": 0,
+        "late_cycles_maximum": 0,
+        "late_cycles_mean": 0.0,
+        "late_cycles_p50": 0,
+        "late_cycles_p99": 0,
+        "rows": 8098
+      },
+      "events": {
+        "counter_and_queue_consistency": true,
+        "delivered_real_rate": {
+          "available": true,
+          "frames": 523648,
+          "guest_cycles": 7738076335,
+          "guest_hz_assumed": 240000000,
+          "guest_seconds": 32.24198472916667,
+          "guest_seconds_per_host_second": 0.7940770049301562,
+          "host_seconds": 40.603095832,
+          "samples_per_guest_second": 16241.183798040161,
+          "samples_per_host_second": 12896.75058686791,
+          "window": "post-first to post-last event; excludes first event's samples"
+        },
+        "depth_maximum": 1041,
+        "depth_minimum_including_empty_initial_ring": 0,
+        "derived_event_prefix_totals": {
+          "dequeued_real": 523648,
+          "dropped_oldest": 0,
+          "filled127": 141748,
+          "produced": 523648
+        },
+        "first_event": {
+          "bits": 0,
+          "channels": 0,
+          "delivered_stored": 112,
+          "depth_after": 0,
+          "depth_before": 0,
+          "dequeued_real": 0,
+          "dropped_oldest": 0,
+          "event": "deliver",
+          "filled127": 112,
+          "frames": 112,
+          "guest_cycles": 0,
+          "host_ns": 3525681073476,
+          "produced": 0,
+          "producer_stored": 0,
+          "reported_rate": 0,
+          "sequence": 1
+        },
+        "inserted127_contiguous_gap_count": 4070,
+        "inserted127_spans_first32": [
+          {
+            "frames": 112,
+            "host_ns": 3525681073476,
+            "offset": 0,
+            "sequence": 1
+          },
+          {
+            "frames": 100,
+            "host_ns": 3525684806561,
+            "offset": 112,
+            "sequence": 2
+          },
+          {
+            "frames": 99,
+            "host_ns": 3525690909970,
+            "offset": 212,
+            "sequence": 3
+          },
+          {
+            "frames": 99,
+            "host_ns": 3525696992289,
+            "offset": 311,
+            "sequence": 4
+          },
+          {
+            "frames": 99,
+            "host_ns": 3525702943709,
+            "offset": 410,
+            "sequence": 5
+          },
+          {
+            "frames": 98,
+            "host_ns": 3525708952449,
+            "offset": 509,
+            "sequence": 6
+          },
+          {
+            "frames": 99,
+            "host_ns": 3525714957799,
+            "offset": 607,
+            "sequence": 7
+          },
+          {
+            "frames": 99,
+            "host_ns": 3525721086277,
+            "offset": 706,
+            "sequence": 8
+          },
+          {
+            "frames": 99,
+            "host_ns": 3525727099427,
+            "offset": 805,
+            "sequence": 9
+          },
+          {
+            "frames": 98,
+            "host_ns": 3525733048587,
+            "offset": 904,
+            "sequence": 10
+          },
+          {
+            "frames": 99,
+            "host_ns": 3525739075177,
+            "offset": 1002,
+            "sequence": 11
+          },
+          {
+            "frames": 99,
+            "host_ns": 3525745107186,
+            "offset": 1101,
+            "sequence": 12
+          },
+          {
+            "frames": 99,
+            "host_ns": 3525751205065,
+            "offset": 1200,
+            "sequence": 13
+          },
+          {
+            "frames": 100,
+            "host_ns": 3525757276874,
+            "offset": 1299,
+            "sequence": 14
+          },
+          {
+            "frames": 100,
+            "host_ns": 3525763408443,
+            "offset": 1399,
+            "sequence": 15
+          },
+          {
+            "frames": 100,
+            "host_ns": 3525769512272,
+            "offset": 1499,
+            "sequence": 16
+          },
+          {
+            "frames": 100,
+            "host_ns": 3525775603781,
+            "offset": 1599,
+            "sequence": 17
+          },
+          {
+            "frames": 99,
+            "host_ns": 3525781667931,
+            "offset": 1699,
+            "sequence": 18
+          },
+          {
+            "frames": 100,
+            "host_ns": 3525787735430,
+            "offset": 1798,
+            "sequence": 19
+          },
+          {
+            "frames": 100,
+            "host_ns": 3525793841789,
+            "offset": 1898,
+            "sequence": 20
+          },
+          {
+            "frames": 100,
+            "host_ns": 3525799927728,
+            "offset": 1998,
+            "sequence": 21
+          },
+          {
+            "frames": 99,
+            "host_ns": 3525805998987,
+            "offset": 2098,
+            "sequence": 22
+          },
+          {
+            "frames": 100,
+            "host_ns": 3525812080286,
+            "offset": 2197,
+            "sequence": 23
+          },
+          {
+            "frames": 100,
+            "host_ns": 3525818162975,
+            "offset": 2297,
+            "sequence": 24
+          },
+          {
+            "frames": 99,
+            "host_ns": 3525824263114,
+            "offset": 2397,
+            "sequence": 25
+          },
+          {
+            "frames": 99,
+            "host_ns": 3525830382193,
+            "offset": 2496,
+            "sequence": 26
+          },
+          {
+            "frames": 99,
+            "host_ns": 3525836308474,
+            "offset": 2595,
+            "sequence": 27
+          },
+          {
+            "frames": 99,
+            "host_ns": 3525842350503,
+            "offset": 2694,
+            "sequence": 28
+          },
+          {
+            "frames": 99,
+            "host_ns": 3525848421762,
+            "offset": 2793,
+            "sequence": 29
+          },
+          {
+            "frames": 100,
+            "host_ns": 3525854493641,
+            "offset": 2892,
+            "sequence": 30
+          },
+          {
+            "frames": 99,
+            "host_ns": 3525860579241,
+            "offset": 2992,
+            "sequence": 31
+          },
+          {
+            "frames": 100,
+            "host_ns": 3525866679950,
+            "offset": 3091,
+            "sequence": 32
+          }
+        ],
+        "largest_contiguous_inserted127_gap_frames": 8452,
+        "largest_host_delivery_callback_gap_ns": 7249731,
+        "largest_host_producer_callback_gap_ns": 9559727,
+        "last_event": {
+          "bits": 16,
+          "channels": 1,
+          "delivered_stored": 665396,
+          "depth_after": 0,
+          "depth_before": 0,
+          "dequeued_real": 523648,
+          "dropped_oldest": 0,
+          "event": "deliver",
+          "filled127": 141748,
+          "frames": 101,
+          "guest_cycles": 7738076335,
+          "host_ns": 3566284169308,
+          "produced": 523648,
+          "producer_stored": 523648,
+          "reported_rate": 16384,
+          "sequence": 14869
+        },
+        "maximum_consecutive_underrun_callbacks": 85,
+        "maximum_inserted127_tail_frames": 112,
+        "production_rate": {
+          "available": true,
+          "frames": 523584,
+          "guest_cycles": 7636306335,
+          "guest_hz_assumed": 240000000,
+          "guest_seconds": 31.8179430625,
+          "guest_seconds_per_host_second": 0.7938113466533032,
+          "host_seconds": 40.082499698,
+          "samples_per_guest_second": 16455.620621720383,
+          "samples_per_host_second": 13062.658365743724,
+          "window": "post-first to post-last event; excludes first event's samples"
+        },
+        "remaining_depth": 0,
+        "reported_i2s_formats": [
+          {
+            "bits": 16,
+            "channels": 1,
+            "rate_hz": 16384
+          }
+        ],
+        "rows": 14869,
+        "sequence_comparison": {
+          "captured_frames_outside_event_prefix": 0,
+          "compared_frames": 665396,
+          "event_requested_frames_not_captured": 0,
+          "exact_match_for_entire_analyzed_delivered_capture": true,
+          "first_mismatches": [],
+          "method": "Producer order after exact oldest-prefix drops, real dequeues, then recorded missing-frame 127 tails.",
+          "mismatched_frames": 0,
+          "unverified_frames_within_event_prefix": 0
+        },
+        "underrun_callbacks": 4202
+      },
+      "interpretation_limits": [
+        "Missing/capped events or PCM permit only a prefix comparison; summary completeness flags remain authoritative.",
+        "A byte equal to 127 is not itself an underrun; only event counter reconciliation identifies inserted silence.",
+        "Matching delivery to the producer does not prove the producer waveform, firmware timing or physical audio is correct.",
+        "Counters and waveform statistics do not establish audible distortion, causality, or human acceptance.",
+        "Guest seconds use the diagnostic's nominal 240MHz primary-cycle scale; host seconds remain separate."
+      ],
+      "issues": [],
+      "producer": {
+        "analysis_read_capped": false,
+        "analyzed_bytes": 523648,
+        "analyzed_prefix_sha256": "5cbd9d82432348836dd6511e1a1f54e2febbd7ea04ce0bc9d37be6ec37bf0210",
+        "file_bytes": 523648,
+        "path": "/Agon/mystuff/flexe-agon-emulator/build/fx067/measurement-r01/retrieved/runs/fixture/mos-jit/diagnostic/audio-producer.u8",
+        "present": true,
+        "waveform": {
+          "ac_rms_u8": 20.799127207728382,
+          "adjacent_step_absolute_maximum": 156,
+          "adjacent_step_absolute_mean": 2.0161482830991106,
+          "crossings_of_127_5": 15050,
+          "frames": 523648,
+          "frames_at_0_or_255": 0,
+          "frames_equal_127": 188937,
+          "frames_equal_128": 3464,
+          "interpretation": "Descriptive U8 statistics; neither distortion nor underruns inferred from values.",
+          "largest_constant_run_frames": 63808,
+          "maximum": 205,
+          "mean_u8": 126.97897060620875,
+          "minimum": 49
+        }
+      },
+      "reconciliation": {
+        "complete_capture": true,
+        "consistency_failures": [],
+        "final_conserved_depth": 0,
+        "full_window_inserted127_fraction": 0.21302803142790158,
+        "full_window_oldest_drop_fraction_of_production": 0.0,
+        "full_window_production_rate": {
+          "available": true,
+          "frames": 523648,
+          "guest_cycles": 7738076335,
+          "guest_hz_assumed": 240000000,
+          "guest_seconds": 32.24198472916667,
+          "guest_seconds_per_host_second": 0.7922324437515679,
+          "host_seconds": 40.697632347,
+          "samples_per_guest_second": 16241.183798040161,
+          "samples_per_host_second": 12866.79272973973,
+          "window": "summary initialization to finalization; includes startup/silence/shutdown"
+        },
+        "partial_capture_reasons": []
+      },
+      "schema": "fx062-audio-analysis-v1",
+      "summary": {
+        "atexit_registered": true,
+        "delivered_cap_hit": false,
+        "delivered_stored": 665396,
+        "delivered_total": 665396,
+        "dequeued_real": 523648,
+        "dma_cap_hit": false,
+        "dma_stored": 8098,
+        "dma_total": 8098,
+        "dropped_oldest": 0,
+        "enabled": true,
+        "event_cap_hit": false,
+        "event_cap_rows": 131072,
+        "events_stored": 14869,
+        "events_total": 14869,
+        "filled127": 141748,
+        "finalized": true,
+        "first_guest_cycles": 0,
+        "first_host_ns": 3525678749102,
+        "io_errors": 0,
+        "last_errno": 0,
+        "last_guest_cycles": 7738076335,
+        "last_host_ns": 3566376381449,
+        "last_i2s_bits": 16,
+        "last_i2s_channels": 1,
+        "last_reported_rate": 16384,
+        "pcm_cap_bytes": 8388608,
+        "produced": 523648,
+        "producer_cap_hit": false,
+        "producer_stored": 523648,
+        "producer_total": 523648,
+        "ring_capacity": 65536,
+        "sample_channels": 1,
+        "sample_format": "U8",
+        "schema_version": 1
+      }
+    }
+  },
+  "schema": "fx067-normal-disk-comparison-v1",
+  "verified_raw_files": 29,
+  "warm_windows": {
+    "disk": {
+      "boundary_method": "Last event at/before approximate case1 start and case7 end; includes rests/gaps/polling delay",
+      "counts": {
+        "dequeued_real": 412445,
+        "dropped_oldest": 0,
+        "filled127": 3140,
+        "produced": 412288
+      },
+      "demand": 415585,
+      "demand_per_host_second": 16576.15059045192,
+      "first_event": 1288,
+      "guest_seconds_nominal_primary": 25.077530125,
+      "guest_seconds_per_host_second": 1.0002500470146771,
+      "host_seconds": 25.071261131,
+      "inserted_fraction": 0.007555614374917285,
+      "last_event": 8919,
+      "producer_per_guest_second": 16440.53453210636,
+      "producer_per_host_second": 16444.64543868581
+    },
+    "normal": {
+      "boundary_method": "Last event at/before approximate case1 start and case7 end; includes rests/gaps/polling delay",
+      "counts": {
+        "dequeued_real": 386011,
+        "dropped_oldest": 0,
+        "filled127": 109924,
+        "produced": 386112
+      },
+      "demand": 495935,
+      "demand_per_host_second": 16383.878346271695,
+      "first_event": 1811,
+      "guest_seconds_nominal_primary": 23.4722890875,
+      "guest_seconds_per_host_second": 0.7754385734382946,
+      "host_seconds": 30.269694972,
+      "inserted_fraction": 0.22165001461885125,
+      "last_event": 12829,
+      "producer_per_guest_second": 16449.695151616943,
+      "producer_per_host_second": 12755.728141864673
+    }
+  }
+}

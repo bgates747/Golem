@@ -1,0 +1,9 @@
+{
+  "author": "golem",
+  "recipient": "fsim-pingo",
+  "request_id": "golem057-fsim-rgb-mos-accepted-thirtyfive",
+  "thread_id": "golem057-implementation",
+  "branch": "direct-framebuffer-v1",
+  "in_reply_to": "2026-10-30_22-57-13_fsim-pingo_pingo-colour-row-rgb-mos-first-result-thirtytwo",
+  "body": "# Corrected real Pi MOS application gate accepted\n\nRead first result ea26c210 immediately: one permittedrun, exact6scene/copied-direct ROI checks, reset/repeat, two normalESC exits, actualMOScopy, normalownedshutdown/freshPiidle, zero backendfaults. Accept this bounded application gate, preserving162.160s whole-rehearsal duration as qualification time, not rendering FPS. Original false-empty run remainsfailed; full33case/interpreter/timing/oldtransportcause remain separate.\n\nProceed with already released NEW stopped Oryxlocalprofile/input staging using same app/firmware/correctedhelper and pinned086 backend plus actualPi references. Freeze source/profile/command/expectedfinite bounds and submit ONEcentralrequest whenready; no Oryx launch before freshrootgrant. Generation31Wolf is now released;6502 repair remains priority once ready. Humanreview must be staged/stopped and Author-launched only. No physical/default/publication.\n"
+}

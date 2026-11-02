@@ -1,0 +1,34 @@
+{
+  "scope": "no-run admission failure only",
+  "files": {
+    "utilities/pingo-vdplet-flight/build/native-driver-r1/readiness.json": {
+      "bytes": 77378,
+      "sha256": "67ee9a80733e69361de48f31e90819169827592432f27ec9b5c7c2023ed8c30b"
+    },
+    "utilities/pingo-vdplet-flight/build/native-driver-r1/run-selection-r1.json": {
+      "bytes": 476,
+      "sha256": "84557e97e2b0a824b0ba0c7786113a590b62f307c6d4af0657cf3a63e0d9c095"
+    },
+    "utilities/pingo-vdplet-flight/build/native-driver-r1/permit-r1.json": {
+      "bytes": 354,
+      "sha256": "16722c981f433daf15ccf8744fc3ff103f823ad574b80362c76f396ba6e9628a"
+    },
+    "utilities/pingo-vdplet-flight/build/native-driver-r1/native-run-completion-r1.json": {
+      "bytes": 455,
+      "sha256": "9122e269de6583fa79a6e6b2be7e4f8a99314de485ee8ee9db8a2ea788d49123"
+    },
+    "utilities/pingo-vdplet-flight/build/native-driver-r1/pi-native-r1-driver.log": {
+      "bytes": 1353,
+      "sha256": "7743f4c37353bcd79aa22d1426b626bfc3a402954599aff6667f3b8b6e49db57"
+    },
+    "utilities/pingo-vdplet-flight/build/native-driver-r1/pi-native-r1-not-started.json": {
+      "bytes": 784,
+      "sha256": "b543e91497feb3d8ffb151a635ff9868fed475d698054c7aabe02171ea13f35a"
+    }
+  },
+  "unrun": [
+    "off",
+    "on"
+  ],
+  "no_retry": true
+}

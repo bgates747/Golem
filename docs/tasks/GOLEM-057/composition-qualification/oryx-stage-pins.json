@@ -1,0 +1,19 @@
+{
+  "build/vdpl011pixelswire/firmware.bin": "23a5d54861524ef33d41f1e4a0e1ada1cc5bcced6b8c83aef51672a9a5c0246c",
+  "build/vdpl011pixelswire/firmware.elf": "a9e09ede1a5f35c1ebea0f73d75049ff1ece556f8428063bd338cc8f03b3a49e",
+  "build/vdpl011pixelswire/firmware-source.json": "ba641f4052c2a168fd2e4ea27fdc70df1f9956e6655604c0daf23b351b4600a4",
+  "build/vdpl011pixelswire/firmware-artifacts.json": "a3f750260142d869b225d1dfbc345486896d925a38976b25f8a0eda59fe8c93e",
+  "docs/tasks/VDPL-010/qualification/target.py": "bb9b084f82e08572f7886f0c8845f26fe8a6dea32ce811ccbf369d5d00d4f941",
+  "docs/tasks/VDPL-010/qualification/qualify.py": "9d1012ef24b6b50e5f17893478919083bc91d9ce95efe19715999e0f07e2f716",
+  "docs/tasks/VDPL-010/qualification/worker.c": "798a90c0c577d567b16d2790ced472b06fb751d1eb78690b0534176961bf67ea",
+  "docs/tasks/VDPL-011/qualification/target.py": "be853411d3a9b59ee83a73ab4c80abfd3b8b69703c6ee86ccb31a15ae6b9523f",
+  "docs/tasks/VDPL-011/qualification/qualify.py": "d99b0cc9de4e42fc04b4a112cf8f7a3b870b23971d4b30b5ccd9705b95d48e9c",
+  "docs/tasks/VDPL-011/qualification/README.md": "d3e383ca5d82d351a626aa4ae0df5c77fbf2ad3aec2e61018fc75cc735086b30",
+  "docs/tasks/VDPL-011/qualification/lifecycle.c": "2545920e0a7d4436d018344e0ee73f14439d47c7d84ba31a6d560adfeb910bf8",
+  "include/vdp_pcm_sink_wire.h": "5555235b73a68c7ee5648c7fe67f1e99014c707c1fe024b2dec5225edd9feb4e",
+  "build/vdpl-010/runtime/flexe-vdp.so": "108ec5b02122381e6c3ae851508188ec0a96240ca5f74be804fd2201b141e6e9",
+  "build/vdpl-010/modules/pixels-worker.vdpl": "abfbaf8f2bea9f2220886498abede64981ce86f4e421c63c81685d8455bd7a66",
+  "build/vdpl-010/modules/pixels-sink-worker.vdpl": "53f4fdca824b55c96a016ffcfa1df11ac7627bb9aa6feddefd69c5fad6c8b614",
+  "build/vdpl011qualification/modules/native-lifecycle.vdpl": "f7c94fd2ad166aeb48779b387472ba674c4f7076fb918783a1dcd990e54e3733",
+  "build/vdpl011qualification/modules/failed-init.vdpl": "1a17c9b21c4a743b081611569eed0c3881b792b83259a67a6ec0aa50c1c0bf1c"
+}

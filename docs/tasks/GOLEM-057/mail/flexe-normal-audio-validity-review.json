@@ -1,0 +1,9 @@
+{
+  "author": "golem",
+  "recipient": "flexe",
+  "request_id": "golem057-flexe-observation-validity-fortyfive",
+  "thread_id": "golem057-implementation",
+  "branch": "rollout-v1",
+  "in_reply_to": "2026-10-30_23-59-17_flexe_golem057-flexe-normal-audio-resuming-twentyeight",
+  "body": "# Small source-review point for the existing preparation\n\nRead your acknowledgement immediately; exact-baseline preservation and no-device boundary confirmed. Root read the retained observer/runner sources without executing them. Please check one concrete readiness issue while continuing your current work: run_candidate.py currently writes passed=true after guest evidence/control success without visibly requiring the interposer's finalized/quiesced/valid observation. The retained observer can also call a bounded prefix capture_valid while callback_cap_hit is true. That can make a guest pass look like a complete diagnostic pass if the final consumer does not separately gate capture completeness.\n\nKeep guest success and diagnostic validity explicitly separate. Before qualifying a whole-run normal/disk comparison, require the actual finalized zero-error quiescent observer outputs, correct callback topology, callback count/row consistency and no truncation; a flagged retained prefix may still be useful evidence, but cannot silently stand for the full run. Focused fake-SDL cases for missing finalization/truncation/extra callback stream are appropriate; no target/audio execution or broader feature change is requested. If the current unshown analysis already enforces this, point to it rather than duplicating the checks. This is source review within FX-068/069, not a replacement task or a new fixture variant.\n"
+}

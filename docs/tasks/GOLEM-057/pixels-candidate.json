@@ -1,0 +1,42 @@
+{
+  "baseline_commit": "2541f10a1f8b06688bcecbc6d22eeae607da2b63",
+  "candidate": "VDPL-010 independent pixels/PCM; uncommitted pending target/human qualification",
+  "sdk": "/Agon/mystuff/agon-vdplet/build/vdpl-010/sdk",
+  "files": {
+    "include/vdplet_pcm_sink.h": "1c0215f00853081bdf4d58ef794b889145aa71c9e1f119f16a5e29c1f384f942",
+    "include/vdplet_protocol.h": "e65d387735a6c600626608127ce57ca9e29249bc2aa535fbb5f9be29f3e06254",
+    "include/vdp_audio_queue.h": "4f7363364712301529d5c7bbc9ebd1496a7103aaae717880e4ddb3375520b85e",
+    "include/vdplet_services.h": "44f97a1155cad4e737e220807e5913a3f69d7f42054c7821ea9abe014bd3550f",
+    "include/vdplet.h": "574fe46923142b0cae9fa7cb5989bea5c76a1cf8a2b6327c6ae4a783ced7bbe8",
+    "tools/build_module.py": "315295ba9cc2ad17a6af550d795877279fa7d1bab65da971b81bccce3dc6532c",
+    "tools/module.exports": "9fd0e3d42b2162d4d65e43592c78e5c0ba5663a937b1474c76312654c1dce1a9",
+    "src/vdplet_policy.h": "c69d6f3654b4b5dd4a8ae76e971818f4b13369d61dbded607b844e3268f66419"
+  },
+  "firmware": {
+    "firmware.bin": {
+      "path": "/Agon/mystuff/agon-vdplet/build/vdpl-010/pixels/firmware-src/.pio/build/esp32dev/firmware.bin",
+      "bytes": 1092448,
+      "sha256": "b42ae55f69900c44acacfbf0d665ef278e87b277b3b9fd4208e17ebf378f74b6"
+    },
+    "firmware.elf": {
+      "path": "/Agon/mystuff/agon-vdplet/build/vdpl-010/pixels/firmware-src/.pio/build/esp32dev/firmware.elf",
+      "bytes": 24954928,
+      "sha256": "a10f7989d5c1f9974fc999428865ca74771fb65a0d4d694a2ac2b81c19df9902"
+    },
+    "firmware.map": {
+      "path": "/Agon/mystuff/agon-vdplet/build/vdpl-010/pixels/firmware-src/.pio/build/esp32dev/firmware.map",
+      "bytes": 17988037,
+      "sha256": "b3997e3381e68ed28871a40083a5a413501bc47f56efc062adc160d6009ef6ee"
+    },
+    "bootloader.bin": {
+      "path": "/Agon/mystuff/agon-vdplet/build/vdpl-010/pixels/firmware-src/.pio/build/esp32dev/bootloader.bin",
+      "bytes": 18992,
+      "sha256": "f2dfacdea6ae72d0aeeb7c30e525c4c6fc768a041849feac694cbb2ee2224448"
+    },
+    "partitions.bin": {
+      "path": "/Agon/mystuff/agon-vdplet/build/vdpl-010/pixels/firmware-src/.pio/build/esp32dev/partitions.bin",
+      "bytes": 3072,
+      "sha256": "148b959cbff1c38aa8e1d5c0ba9d612c54997b945e56a63f41223eef650653a1"
+    }
+  }
+}

@@ -1,0 +1,255 @@
+{
+  "passed": true,
+  "scope": "actual ESP32 parser/UART and native coexistence via pinned direct ctypes adapter; not stock MOS, physical or clean-audio qualification",
+  "runs": [
+    {
+      "passed": true,
+      "engine": "jit",
+      "wire_expected": false,
+      "firmware_sha256": "8c4e3377c228df478760d34eefba0a1d2ecc89bbe49da868fbb7d5fa14f46bc1",
+      "elf_sha256": "5562629695439b4769fccc8af5d0409210206587851432ab66c846dcfe25b943",
+      "backend_sha256": "108ec5b02122381e6c3ae851508188ec0a96240ca5f74be804fd2201b141e6e9",
+      "protocol_header_sha256": "5555235b73a68c7ee5648c7fe67f1e99014c707c1fe024b2dec5225edd9feb4e",
+      "qualifier_sha256": "595c564a347d10c84af894e7f023a0786e0685534ad84bd321886b01bd2b394c",
+      "target_sha256": "be853411d3a9b59ee83a73ab4c80abfd3b8b69703c6ee86ccb31a15ae6b9523f",
+      "lifecycle_source_sha256": "2545920e0a7d4436d018344e0ee73f14439d47c7d84ba31a6d560adfeb910bf8",
+      "elapsed_seconds": 4.349,
+      "result_bytes": 260,
+      "outbound_bytes": 345,
+      "audio16_requests_sent": 0,
+      "name": "no-option-jit",
+      "groups": 2,
+      "ordinary_pcm_transactions": 0,
+      "snapshots": 0,
+      "acks": 0,
+      "pcm_packet_bytes": 0,
+      "resources": {
+        "internal_free_bytes": 60740,
+        "internal_largest_block_bytes": 38900,
+        "command_stack_free_bytes": 2760,
+        "spiram_free_bytes": 4167647,
+        "spiram_largest_block_bytes": 4128756,
+        "audio_stack_free_bytes": 1544,
+        "tasks": 12
+      },
+      "ring_cycles": 0,
+      "raw_artifact_directory": "/Agon/mystuff/agon-vdplet/build/vdpl011qualification/oryx/no-option-jit",
+      "raw_files": {
+        "esp32-uart0.log": {
+          "bytes": 124,
+          "sha256": "25de5372a18dd95cff4c85d315126e4d1c35b90320edc288a07e6577762985b0"
+        },
+        "evidence.json": {
+          "bytes": 5799,
+          "sha256": "6917c17fa808b9582f89f4bec6b70d1014505ca6dd2b28ff4582b4378a1f6ee3"
+        },
+        "final.ppm": {
+          "bytes": 921615,
+          "sha256": "ddbde47215f6559a2da7d49aca8d97c51797dfe77741ab0037d30ee76dcde7d0"
+        },
+        "mos-to-vdp.bin": {
+          "bytes": 345,
+          "sha256": "5fb26c1daac9c0bd8d70da6dd829642bcd614aae1b2af17a160f134bc4860f1b"
+        },
+        "results.dat": {
+          "bytes": 260,
+          "sha256": "eb6a7efb421291822eb0055782b0b853e49b22dd1e37d6df53c23643ed58c23d"
+        },
+        "stats.json": {
+          "bytes": 221,
+          "sha256": "695164c096a26102a9b15452c83c17d116f24128d080376ad08bb728db128c4f"
+        },
+        "vdp-to-mos-delivered.bin": {
+          "bytes": 337,
+          "sha256": "1122b9d20d19b0a0211daf8785d40500c1c9a66cb0bc62aa8e044a505aec6596"
+        },
+        "vdp-to-mos.bin": {
+          "bytes": 337,
+          "sha256": "1122b9d20d19b0a0211daf8785d40500c1c9a66cb0bc62aa8e044a505aec6596"
+        },
+        "wire-rx.dat": {
+          "bytes": 337,
+          "sha256": "1122b9d20d19b0a0211daf8785d40500c1c9a66cb0bc62aa8e044a505aec6596"
+        }
+      }
+    },
+    {
+      "passed": true,
+      "engine": "interp",
+      "wire_expected": true,
+      "firmware_sha256": "b3811707bf80a24698b5d9f9c4260f5ce771aa8e68a89be991a96262aa59fab4",
+      "elf_sha256": "93d189f50756d5dd1e2d5af89a06f136262d5f167e9671a282508bf730d40564",
+      "backend_sha256": "108ec5b02122381e6c3ae851508188ec0a96240ca5f74be804fd2201b141e6e9",
+      "protocol_header_sha256": "5555235b73a68c7ee5648c7fe67f1e99014c707c1fe024b2dec5225edd9feb4e",
+      "qualifier_sha256": "595c564a347d10c84af894e7f023a0786e0685534ad84bd321886b01bd2b394c",
+      "target_sha256": "be853411d3a9b59ee83a73ab4c80abfd3b8b69703c6ee86ccb31a15ae6b9523f",
+      "lifecycle_source_sha256": "2545920e0a7d4436d018344e0ee73f14439d47c7d84ba31a6d560adfeb910bf8",
+      "elapsed_seconds": 8.118,
+      "result_bytes": 8800,
+      "outbound_bytes": 58622,
+      "audio16_requests_sent": 93,
+      "name": "wire-interp",
+      "groups": 15,
+      "ordinary_pcm_transactions": 92,
+      "snapshots": 41,
+      "acks": 51,
+      "pcm_packet_bytes": 3440,
+      "resources": {
+        "internal_free_bytes": 139532,
+        "internal_largest_block_bytes": 45044,
+        "command_stack_free_bytes": 2152,
+        "spiram_free_bytes": 4157099,
+        "spiram_largest_block_bytes": 4128756,
+        "audio_stack_free_bytes": 1508,
+        "tasks": 12
+      },
+      "ring_cycles": 8,
+      "raw_artifact_directory": "/Agon/mystuff/agon-vdplet/build/vdpl011qualification/oryx/wire-interp",
+      "raw_files": {
+        "esp32-uart0.log": {
+          "bytes": 2613,
+          "sha256": "d37b3d94c32a970302bf19c25ceff7968788426eeabeb20750bb5ef5d7bbba87"
+        },
+        "evidence.json": {
+          "bytes": 61119,
+          "sha256": "ceba371bfbfb289cec6f1e4c0098764ac81ce149bb77bde5e862d9db46de9ac8"
+        },
+        "final.ppm": {
+          "bytes": 230415,
+          "sha256": "12c810bd25efe1a7484387cd3d5a8503ce7cc341d61768b99a85c39a0ecca884"
+        },
+        "mos-to-vdp.bin": {
+          "bytes": 58622,
+          "sha256": "3e4ed1eb92b8e38ef4b0f7a1ffdf46d58d79d7f687ca63bdc6e225b68a9b7f92"
+        },
+        "pcm-packets.dat": {
+          "bytes": 3440,
+          "sha256": "f56e86587843e1d268839dc35d450099522720d86a44b66ce58c7ebb88ca33a7"
+        },
+        "results.dat": {
+          "bytes": 8800,
+          "sha256": "1b90b0b780951781550030e6bad639997bcbfb74db9ecaf2950c0b863c8a0615"
+        },
+        "stats.json": {
+          "bytes": 230,
+          "sha256": "ef1a6e010d24d4c0ba67cc94f68b0f079f838f3ac1f16931b2d777063c2e11cb"
+        },
+        "vdp-to-mos-delivered.bin": {
+          "bytes": 14071,
+          "sha256": "11b5bf2b4202f5d7fa3d0778ed77d180751b233bcdcc5fb387b439b799b2648f"
+        },
+        "vdp-to-mos.bin": {
+          "bytes": 14071,
+          "sha256": "11b5bf2b4202f5d7fa3d0778ed77d180751b233bcdcc5fb387b439b799b2648f"
+        },
+        "wire-rx.dat": {
+          "bytes": 14071,
+          "sha256": "11b5bf2b4202f5d7fa3d0778ed77d180751b233bcdcc5fb387b439b799b2648f"
+        }
+      },
+      "ring_allocator_bytes": 1040
+    },
+    {
+      "passed": true,
+      "engine": "jit",
+      "wire_expected": true,
+      "firmware_sha256": "b3811707bf80a24698b5d9f9c4260f5ce771aa8e68a89be991a96262aa59fab4",
+      "elf_sha256": "93d189f50756d5dd1e2d5af89a06f136262d5f167e9671a282508bf730d40564",
+      "backend_sha256": "108ec5b02122381e6c3ae851508188ec0a96240ca5f74be804fd2201b141e6e9",
+      "protocol_header_sha256": "5555235b73a68c7ee5648c7fe67f1e99014c707c1fe024b2dec5225edd9feb4e",
+      "qualifier_sha256": "595c564a347d10c84af894e7f023a0786e0685534ad84bd321886b01bd2b394c",
+      "target_sha256": "be853411d3a9b59ee83a73ab4c80abfd3b8b69703c6ee86ccb31a15ae6b9523f",
+      "lifecycle_source_sha256": "2545920e0a7d4436d018344e0ee73f14439d47c7d84ba31a6d560adfeb910bf8",
+      "elapsed_seconds": 6.174,
+      "result_bytes": 8800,
+      "outbound_bytes": 58622,
+      "audio16_requests_sent": 93,
+      "name": "wire-jit",
+      "groups": 15,
+      "ordinary_pcm_transactions": 92,
+      "snapshots": 41,
+      "acks": 51,
+      "pcm_packet_bytes": 3440,
+      "resources": {
+        "internal_free_bytes": 139532,
+        "internal_largest_block_bytes": 45044,
+        "command_stack_free_bytes": 2152,
+        "spiram_free_bytes": 4157099,
+        "spiram_largest_block_bytes": 4128756,
+        "audio_stack_free_bytes": 1456,
+        "tasks": 12
+      },
+      "ring_cycles": 8,
+      "raw_artifact_directory": "/Agon/mystuff/agon-vdplet/build/vdpl011qualification/oryx/wire-jit",
+      "raw_files": {
+        "esp32-uart0.log": {
+          "bytes": 2613,
+          "sha256": "d37b3d94c32a970302bf19c25ceff7968788426eeabeb20750bb5ef5d7bbba87"
+        },
+        "evidence.json": {
+          "bytes": 61113,
+          "sha256": "8f978ff496bfe06d10279a16d0594dd715dcf93ab6614f342dc388e38b044f7c"
+        },
+        "final.ppm": {
+          "bytes": 230415,
+          "sha256": "12c810bd25efe1a7484387cd3d5a8503ce7cc341d61768b99a85c39a0ecca884"
+        },
+        "mos-to-vdp.bin": {
+          "bytes": 58622,
+          "sha256": "3e4ed1eb92b8e38ef4b0f7a1ffdf46d58d79d7f687ca63bdc6e225b68a9b7f92"
+        },
+        "pcm-packets.dat": {
+          "bytes": 3440,
+          "sha256": "ccfad0cc562d237796a24fbff7a35e2566cb59b1cbf89d4b60f2c4e11eafc9ee"
+        },
+        "results.dat": {
+          "bytes": 8800,
+          "sha256": "a8a017faa5136c208d711073dd9ded024c299cc524db02e9bc55866334138aca"
+        },
+        "stats.json": {
+          "bytes": 227,
+          "sha256": "91973a9249f201aa859a504efc4850af653d436606b4dbda09d66cf2f6d6e333"
+        },
+        "vdp-to-mos-delivered.bin": {
+          "bytes": 14071,
+          "sha256": "ffe7a1eb3a739c175cc6b761a7d0ef097bec81b4ea7420e4fa870df9e931756e"
+        },
+        "vdp-to-mos.bin": {
+          "bytes": 14071,
+          "sha256": "ffe7a1eb3a739c175cc6b761a7d0ef097bec81b4ea7420e4fa870df9e931756e"
+        },
+        "wire-rx.dat": {
+          "bytes": 14071,
+          "sha256": "ffe7a1eb3a739c175cc6b761a7d0ef097bec81b4ea7420e4fa870df9e931756e"
+        }
+      },
+      "ring_allocator_bytes": 1040
+    }
+  ],
+  "total_groups": 32,
+  "ordinary_pcm_transactions": 184,
+  "ring_cycles": 16,
+  "lease_release": {
+    "owner": "golem",
+    "task": "VDPL-011",
+    "purpose": "three fresh sequential actual-Xtensa copiedPCM wire/native ownership and no-option controls",
+    "profile": "/home/smith/Agon/mystuff/agon-vdplet/docs/tasks/VDPL-011/qualification",
+    "request": "e8be4fd68746",
+    "requested": "2026-10-30T23:10:24.896452+00:00",
+    "lease": "f2fbc9274df64f84bec9d682007ea632",
+    "generation": 7,
+    "granted": "2026-10-30T23:10:25.017645+00:00",
+    "coordinator": "golem",
+    "idle_observation": {
+      "machine": "oryx-linuxlite",
+      "epoch": 1793401824.80976,
+      "emulators": []
+    },
+    "released": "2026-10-30T23:11:59.835474+00:00",
+    "release_observation": {
+      "machine": "oryx-linuxlite",
+      "epoch": 1793401919.7575395,
+      "emulators": []
+    }
+  }
+}

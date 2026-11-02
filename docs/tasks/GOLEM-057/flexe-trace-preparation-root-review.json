@@ -1,0 +1,24 @@
+{
+  "readiness_sha256": "0df607fb1e1688aa9c0c248f5c380831907195682204b9a9cb18375af5984977",
+  "source_files_verified": 5,
+  "bundle_sha256": "3bbfb1abf743078f578db2330df18cfb804436cb03ccb90e6353439ad7babda7",
+  "device_free_checks": 17,
+  "identical_runtime_fixture_observer_pins": true,
+  "verifier_delta_exactly_child_environment_hook": true,
+  "mode_D": "backend trace absence; ring/PCM/fill/drop/depth/DMA unavailable, not complete or zero",
+  "bounds": {
+    "guest": 90,
+    "MOS": 20,
+    "trailing": 1,
+    "TERM": 5,
+    "KILL": 5,
+    "owned_child": 10,
+    "final_wait": 5,
+    "collector_lifetime": 150,
+    "collector_join": 2,
+    "collector_TERM": 2,
+    "collector_KILL": 2
+  },
+  "execution_granted": false,
+  "hold": "Author42 recovery review"
+}

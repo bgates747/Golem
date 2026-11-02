@@ -1,0 +1,87 @@
+{
+  "scope": "read-only source-backed draft; current runtime may include parent-agent in-progress pixel edits",
+  "vdplet_head": "2541f10a1f8b06688bcecbc6d22eeae607da2b63",
+  "mos_checkout_head": "8336409351ee5314e02801a7b72a4f1bb5282519",
+  "files": [
+    {
+      "path": "/Agon/mystuff/agon-vdplet/include/vdplet_pcm_sink.h",
+      "bytes": 1264,
+      "sha256": "1c0215f00853081bdf4d58ef794b889145aa71c9e1f119f16a5e29c1f384f942"
+    },
+    {
+      "path": "/Agon/mystuff/agon-vdplet/src/vdplet_pcm_sink.h",
+      "bytes": 6969,
+      "sha256": "6c93f498fb206f2041da63b8de647b200a6b264fbc0c5b3e8dede9c9c5ce0e9e"
+    },
+    {
+      "path": "/Agon/mystuff/agon-vdplet/src/vdplet_pcm_sink_core.h",
+      "bytes": 3747,
+      "sha256": "15820a5711ebfa7accaabdae89ad556b7d642bee9def8855123a461f79ba5a9c"
+    },
+    {
+      "path": "/Agon/mystuff/agon-vdplet/src/vdplet_runtime.h",
+      "bytes": 27241,
+      "sha256": "c472db2dd3f9bbe70506dfcc10ff041962cde3cf008ecf9874788e7567be4df8"
+    },
+    {
+      "path": "/Agon/mystuff/agon-vdplet/include/vdp_audio_queue.h",
+      "bytes": 1409,
+      "sha256": "4f7363364712301529d5c7bbc9ebd1496a7103aaae717880e4ddb3375520b85e"
+    },
+    {
+      "path": "/Agon/mystuff/agon-vdplet/src/vdp_audio_queue_vdu.h",
+      "bytes": 1606,
+      "sha256": "70d46e2b1aa224c22fa065a80d573bb7433464b804514fdf2e6f42f5d08817f5"
+    },
+    {
+      "path": "/Agon/mystuff/agon-vdplet/tools/build_firmware.py",
+      "bytes": 26708,
+      "sha256": "2a29bdbebe073d4320d1b6aa285190bbed585448ce0566dc467db3faccffbb3b"
+    },
+    {
+      "path": "/Agon/mystuff/agon-vdplet/build/vdpl-009d/firmware/firmware-source.json",
+      "bytes": 3363,
+      "sha256": "e2c8b14a2928f28e666e4c31db6a546d4bb84d2062c8965cfa2a177ef75bcd67"
+    },
+    {
+      "path": "/Agon/mystuff/agon-vdplet/build/vdpl-009d/firmware/firmware-src/video/agon.h",
+      "bytes": 32195,
+      "sha256": "9cd4c9d11a7138f282e9e64122d652b98277894f1ae0e61c696f7732d92377e4"
+    },
+    {
+      "path": "/Agon/mystuff/agon-vdplet/build/vdpl-009d/firmware/firmware-src/video/agon_audio.h",
+      "bytes": 6027,
+      "sha256": "b42f103cbbf126c609a6e0eff14c33aae56094f9ec9614da0b1df5a30e7f30ad"
+    },
+    {
+      "path": "/Agon/mystuff/agon-vdplet/build/vdpl-009d/firmware/firmware-src/video/vdu_stream_processor.h",
+      "bytes": 26509,
+      "sha256": "35f7d0d29f22462a9ccd7fad605aec5aa42fb7aadbe6c124e88ee54b29c8acc7"
+    },
+    {
+      "path": "/Agon/agon-mos/src/equs.inc",
+      "bytes": 2834,
+      "sha256": "4cbf0779e32ace92f725fc6cb5e8e32a4389f46bec1e43c7d660b10b95647fbb"
+    },
+    {
+      "path": "/Agon/agon-mos/src/vdp_protocol.asm",
+      "bytes": 9168,
+      "sha256": "56ef61c794ba61d3d9e1ef4a454955343cde0564ef5bbc6059f84fd2dbb55e71"
+    },
+    {
+      "path": "/Agon/agon-mos/src/keyboard.asm",
+      "bytes": 8295,
+      "sha256": "79dbadd08fca2838d2e92a6ea7c4f36caf44677becdb3ccacf2049bf701aa591"
+    },
+    {
+      "path": "/Agon/agon-mos/src/mos_api.asm",
+      "bytes": 64464,
+      "sha256": "85d930816d0d80831d8ad1fa47194bb2b4b9c825c6b402b8badbce929add4bab"
+    },
+    {
+      "path": "/Agon/mystuff/agon-dev-env/cross-agent/agentcoms/messages/2026-10-30_18-33-31_agon-6502_golem057-6502-acceptance-pcm-one.md",
+      "bytes": 6163,
+      "sha256": "e4929af5d87ed152d57e60a05fb0b198c316f2536c9664cfb22b5a66ae86bf06"
+    }
+  ]
+}

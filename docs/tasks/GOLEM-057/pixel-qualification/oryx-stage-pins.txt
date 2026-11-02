@@ -1,0 +1,13 @@
+{
+  "build/vdpl-010/base/firmware.bin": "ea08073e64bb74d686c5a2bc8ffe8f9da34925f42e24a7b8fa384bd587f5ce94",
+  "build/vdpl-010/base/firmware.elf": "99020d3e78126d6d077e335d3749422a7e9c82910bb8ff476e1775393f080f82",
+  "build/vdpl-010/pixels/firmware.bin": "b42ae55f69900c44acacfbf0d665ef278e87b277b3b9fd4208e17ebf378f74b6",
+  "build/vdpl-010/pixels/firmware.elf": "a10f7989d5c1f9974fc999428865ca74771fb65a0d4d694a2ac2b81c19df9902",
+  "build/vdpl-010/pixels-lean/firmware.bin": "30754052f90fe35d6e480f3f09f8611b7734cf087e8e001b35a9e4b70e8e4a46",
+  "build/vdpl-010/pixels-lean/firmware.elf": "2adf83133b85ef244cef94f4775b7e65cc1d5f9e7b5a6e3c81ac888f7615ea06",
+  "docs/tasks/VDPL-010/qualification/target.py": "bb9b084f82e08572f7886f0c8845f26fe8a6dea32ce811ccbf369d5d00d4f941",
+  "docs/tasks/VDPL-010/qualification/qualify.py": "9d1012ef24b6b50e5f17893478919083bc91d9ce95efe19715999e0f07e2f716",
+  "docs/tasks/VDPL-010/qualification/worker.c": "798a90c0c577d567b16d2790ced472b06fb751d1eb78690b0534176961bf67ea",
+  "build/vdpl-010/runtime/flexe-vdp.so": "108ec5b02122381e6c3ae851508188ec0a96240ca5f74be804fd2201b141e6e9"
+}
+PYTHON True

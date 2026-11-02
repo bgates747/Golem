@@ -1,0 +1,15 @@
+{
+  "schema": "vdpl012-freeze-v1",
+  "contract_sha256": "5172702f7ebc7dea77efb487d9ffafc99514981c7600ffc11d769835f44f267e",
+  "contract": "/Agon/mystuff/agon-vdplet/docs/tasks/VDPL-012/contract-v1.md",
+  "before_implementation": true,
+  "authority": "GOLEM-057 accepted catalog implementation goal; Author-requested FSIM consultation and reviewed scope",
+  "consumer_reviews": [
+    "2026-10-30_20-19-04_fsim-pingo_pingo-colour-row-review-two",
+    "2026-10-30_20-19-35_fsim-pingo_pingo-colour-row-review-clarification-three"
+  ],
+  "independent_source_review": "root/pixel_target_qualification read-only review; no implementation blocker",
+  "scope": "optional ABI1.6/cap256 single colour-frame callback; synchronous hidden SBGR2222 rows; existing limits/default services preserved",
+  "publication": "new coupled implementation remains uncommitted pending human validation and explicit approval",
+  "physical": false
+}

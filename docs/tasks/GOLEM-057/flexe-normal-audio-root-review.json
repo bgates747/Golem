@@ -1,0 +1,37 @@
+{
+  "scope": "Both actual normal-audio arms and preserved raw evidence; no listening/waveform/causal repair claim",
+  "archive_sha256": "bc8b81d059be71af609e73070c55b7225493c8fc82eb4b58d0e819c405e7dcf8",
+  "manifest_sha256": "20f299ed00fa918dab89ff1029581e8fda32e4c78254407739d9af83996b7956",
+  "raw_files_verified": 29,
+  "records": {
+    "control": {
+      "sha256": "42c5cc5f35d70ba190b547d827da124e752631124a48552841f2c883915091db",
+      "passed": true,
+      "seconds": 8.133537412999885,
+      "callbacks": 1306,
+      "complete_observation": true,
+      "guest_passed": null,
+      "ring_complete": null,
+      "teardown": null
+    },
+    "fixture": {
+      "sha256": "dab52f4df61ef9b73f2522b6b6db92e356b8ae5ac264cdbf0a7fb4d12b05a8c6",
+      "passed": true,
+      "seconds": 40.847648923999714,
+      "callbacks": 6687,
+      "complete_observation": true,
+      "guest_passed": true,
+      "ring_complete": true,
+      "teardown": {
+        "forced_kill": false,
+        "children_stopped": true,
+        "wrapper_exit": -15
+      }
+    }
+  },
+  "generation39_released": "2026-10-31T17:19:20.460266+00:00",
+  "offline_comparison_pending": false,
+  "offline_comparison_sha256": "76e1911ab0d1ddfa9fe291d04e25be7efab770eabfb94f6147eb70314f325bc0",
+  "independent_comparison_matches_owner": true,
+  "listening_report": "Author heard distortion in the actual normal fixture; no correction accepted"
+}

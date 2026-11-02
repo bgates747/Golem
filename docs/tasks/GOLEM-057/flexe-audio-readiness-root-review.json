@@ -1,0 +1,16 @@
+{
+  "readiness": "/Agon/mystuff/flexe-agon-emulator/build/fx067/resume-r01/retrieved/fx067/readiness-r02.json",
+  "readiness_sha256": "974e48d8d9d2f64b3c9108f057aef51a6f3e9d085b120a86c0d5263fda1417a7",
+  "guard_sha256": "b998bd0c7ec1605120f900fa1cd3f784573e3b0e146f283d7389c9dbeb647538",
+  "host_receipt_sha256": "71f9cebd3ab375f8630ea8b20042722e5e5637ca632474cd48635d527ab8a09b",
+  "cases": 28,
+  "gate_checks": 196,
+  "source_count": 9,
+  "observer": "fe1494cc432a0696faed924b00ae272daa8c8f6affae5c4d15e2403ffab889cc",
+  "control": "f5c652ebade51bbe2f1339064593f3559d1b5820a945f4ff60beb19294e8f4a4",
+  "baseline_exact": true,
+  "source_checked": true,
+  "actual_audio_run": false,
+  "oryx_guard_inputs_verified": 35,
+  "fresh_generation": 38
+}

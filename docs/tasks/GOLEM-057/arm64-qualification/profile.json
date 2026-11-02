@@ -1,0 +1,18 @@
+{
+  "stopped": true,
+  "emulator_instantiated": false,
+  "architecture": "aarch64",
+  "profile": "/Agon/mystuff/agon-vdplet/.emulator/vdpl012-arm64-qualification",
+  "pins": {
+    "flexe-agon-emulator": "c47b3ab958f752c1bd681f71934166396ab2d128d4275ec4d19255967f034165",
+    "flexe-agon-emulator.bin": "b476068b62c7c85aa50f0bf56953f5075219082e14c0116ec5d292275454227c",
+    "mos_platform.bin": "d564243283972690933a4554296ad6202ca4ef54572279533a942960846bebae",
+    "mos_platform.map": "d69e60bbce61a7b4b3eef318ba395f11c4e1a5b585755755113992dc94edcb86",
+    "flexe-vdp.so": "af0ccc012bed9184acadadf684fd00cbd78aae4cc0460660a454c609d0291caf",
+    "esp32-firmware.bin": "8d980025f891484cf7e6cc5f2992cf517cb80e0123ff7de712ae8d7f2dc1c807",
+    "esp32-firmware.elf": "1a7c44482d4ba8c5bfb49976c0bd664b9a9c2a635c7027b30954929ca567f814",
+    "sdcard/autoexec.txt": "6794c9436d319663931149171338229221a5bf13e6e6e25ddf4ab3360e1f8ff3"
+  },
+  "canonical_setup_sha256": "844ab629cb604daf2469c2c1c9c5dab89d8e9abc9c62f0a19c3eceb6f960a98a",
+  "scope": "Staging only. Root Pi permit still required before direct-library execution; no Oryx lease."
+}

@@ -1,0 +1,45 @@
+{
+  "status": "prepared-not-executed",
+  "emulator_launched": false,
+  "layout_vectors_pass": true,
+  "independently_decoded_state": {
+    "generation": 305419896,
+    "rate": 24000,
+    "capacity": 8192,
+    "prime": 240,
+    "queued": 480,
+    "free": 7712,
+    "accepted": 4294967294,
+    "consumed": 123456,
+    "underrun": 42,
+    "flags": 3,
+    "channel": 31,
+    "status": 0,
+    "operation": 3
+  },
+  "files": {
+    "target.py": "be853411d3a9b59ee83a73ab4c80abfd3b8b69703c6ee86ccb31a15ae6b9523f",
+    "qualify.py": "65f60c8032bd36562257ca90e8a3d289ebfa2790993afea51395116097a15b33",
+    "lifecycle.c": "2545920e0a7d4436d018344e0ee73f14439d47c7d84ba31a6d560adfeb910bf8"
+  },
+  "modules": [
+    {
+      "name": "failed-init",
+      "source_sha256": "2545920e0a7d4436d018344e0ee73f14439d47c7d84ba31a6d560adfeb910bf8",
+      "capabilities": 129,
+      "abi_minor": 5,
+      "sha256": "1a17c9b21c4a743b081611569eed0c3881b792b83259a67a6ec0aa50c1c0bf1c",
+      "resident_text_bytes": 608,
+      "resident_data_bytes": 0
+    },
+    {
+      "name": "native-lifecycle",
+      "source_sha256": "2545920e0a7d4436d018344e0ee73f14439d47c7d84ba31a6d560adfeb910bf8",
+      "capabilities": 129,
+      "abi_minor": 5,
+      "sha256": "f7c94fd2ad166aeb48779b387472ba674c4f7076fb918783a1dcd990e54e3733",
+      "resident_text_bytes": 600,
+      "resident_data_bytes": 0
+    }
+  ]
+}

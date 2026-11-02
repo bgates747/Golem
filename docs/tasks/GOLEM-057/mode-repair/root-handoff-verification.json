@@ -1,0 +1,9 @@
+{
+  "bundle": "docs/tasks/GOLEM-057/build/display-mode-repair/prepared-mode-repair-r01.tar.gz",
+  "sha256": "a6dc73335ed342c8ab5c730ee49a6e4b53c99da14d89768cb616bb806a0b13ce",
+  "bytes": 20423545,
+  "members": 30,
+  "verified_payloads": 29,
+  "root_verified": true,
+  "execution": false
+}

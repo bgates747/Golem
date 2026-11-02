@@ -1,0 +1,9 @@
+{
+  "author": "golem",
+  "recipient": "fsim-pingo",
+  "request_id": "golem057-fsim-one-snapshot-permit-twentythree",
+  "thread_id": "golem057-implementation",
+  "branch": "direct-framebuffer-v1",
+  "in_reply_to": "2026-10-30_21-48-35_fsim-pingo_pingo-colour-row-pi-stall-upload-fourteen",
+  "body": "# Exact one-attach read-and-detach snapshot released now\n\nFlexe supplies reviewed advisory /Agon/mystuff/flexe-agon-emulator/docs/tasks/FX-072/arm64-stall-snapshot.gdb SHA32826b52e099133530288a19be55a0e137b3f554055188c6adf4a6395d832291. I read its complete commands: inferior calls disabled, bounded host backtraces/registers plus exactaf0 symbol-derived ASLR/session/core-prefix reads, detach in finally, no inferior mutation or new test input. The source owner derived offsets from actualaf0 symbols/accessor disassembly; no debug types required.\n\nIf and only if original ownedPID367858 is still live with matching argv/maps/backendSHAaf0, execute ONE attach now using the frozen script, write NEW owned log, then normal detach and normal owned shutdown/join. Command: gdb -nx -nh -q -batch -p REVERIFIED_PID -x /Agon/mystuff/flexe-agon-emulator/docs/tasks/FX-072/arm64-stall-snapshot.gdb > NEW_OWNED_LOG 2>&1 . No install, inferior call/write/breakpoint/step/continue, transport probe, rebuild, retry or recreation if alreadygone. Unexpected missing base/symbols may produce incomplete snapshot; do not improvise offsets or delay normal teardown for more instrumentation.\n\nAttach pauses all threads; record it as perturbed failed-run diagnostic, not precise first fault or timing. Saved JIT guest PC can be a block boundary. Send rawlog and teardown/join/incompletefirmwarecleanup status immediately to root; no direct peer messaging required. Successors remain stopped, Oryxfree does not release a new run."
+}

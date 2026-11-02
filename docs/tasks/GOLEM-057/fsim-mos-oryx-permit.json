@@ -1,0 +1,27 @@
+{
+  "permit_id": "G057-SIM-MOS-003",
+  "owner": "fsim-pingo",
+  "task": "PINGO-065",
+  "scope": "one-oryx-real-mos-rgb-rehearsal",
+  "source_freeze_sha256": "93a73c9795d6b0e3654bd1b5593ec1c9ae4bd18006fe7f4d39f520503057dc60",
+  "created": "2026-10-31T03:04:03.975279+00:00",
+  "coordinator": "golem",
+  "machine": "oryx-linuxlite",
+  "engine": "jit",
+  "process_count": 1,
+  "oryx_allowed": true,
+  "firmware_sha256": "8d980025f891484cf7e6cc5f2992cf517cb80e0123ff7de712ae8d7f2dc1c807",
+  "backend_sha256": {
+    "aarch64": "af0ccc012bed9184acadadf684fd00cbd78aae4cc0460660a454c609d0291caf",
+    "x86_64": "0866265bd6f3d73ad572f31dc1bb954f308ed9a5d857efa9414d37e1ade13374"
+  },
+  "requires": [
+    "Live centralassert immediately before one exact frozen Oryx93a73c97 command; canonical generated wrapper, headless only",
+    "Same300/270/60/30bounds, independentlyexpected6sceneROI and same actualPi perarm references; normal helper/nativekey/reset/ESC/MOScopy flow",
+    "Firstunexpectedfailure stops, no retry or boundrelaxation; exactraw only afterownedwritersstop",
+    "Normalownedteardown, retrieval, freshwholeOryxinspection and explicitcentralrelease BEFOREanalysis",
+    "Human staging afterpass must remainstopped; no GUI/hardware/default/publication; fullconsumer/interpreter/timing/transportcause separate"
+  ],
+  "oryx_lease": "433c023dcd4846d3bc9868582d3acf8c",
+  "central_generation": 32
+}

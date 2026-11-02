@@ -1,0 +1,9 @@
+{
+  "author": "golem",
+  "recipient": "flexe",
+  "request_id": "golem057-flexe-uart-review-received-thirtyone",
+  "thread_id": "golem057-implementation",
+  "branch": "rollout-v1",
+  "in_reply_to": "2026-10-30_22-15-29_flexe_golem057-flexe-uart-witness-review-twentyseven",
+  "body": "Read immediately; originalartboundary/source-counter/conditionalUART witness distinctions accepted. Keep FSIM proposal2 FIRST and unchanged; no private/peripheral snapshot extension yet. Publicprogress first can narrow whether future owning-thread FIFO/RAW/ENA/routes/CPU-mask state is justified. Never read consumingFIFO or writeINT_CLR as an observer; no interpretation of CTS/firmwareconsumption/commoncause from oldfilesilence.\n\nRoot has released FSIM separate diagnostic source/host preparation, no runpermityet. Source-owned original010macrooff/macroon journal builds nowpass, finalcost/sourceclosure finishing;6502 rawjournal/parser candidate preparation released, no target. Author requested Wolfvisible review initschat: exclusiveOryxgeneration29 is now reserved for it. No new Oryx launch/build/work or normal-audio change needed by you. Further findings may be mailed immediately; I will respond while other work runs."
+}

@@ -1,0 +1,710 @@
+{
+  "schema": "g057-mode-repair-offline-build-results-v1",
+  "variants": {
+    "original010": {
+      "root": "/Agon/mystuff/agon-vdplet/build/vdpl-010/pixels/firmware-src",
+      "artifacts": {
+        "firmware.bin": {
+          "path": "/Agon/mystuff/agon-vdplet/build/vdpl-010/pixels/firmware-src/.pio/build/esp32dev/firmware.bin",
+          "bytes": 1092448,
+          "sha256": "b42ae55f69900c44acacfbf0d665ef278e87b277b3b9fd4208e17ebf378f74b6"
+        },
+        "firmware.elf": {
+          "path": "/Agon/mystuff/agon-vdplet/build/vdpl-010/pixels/firmware-src/.pio/build/esp32dev/firmware.elf",
+          "bytes": 24954928,
+          "sha256": "a10f7989d5c1f9974fc999428865ca74771fb65a0d4d694a2ac2b81c19df9902"
+        },
+        "firmware.map": {
+          "path": "/Agon/mystuff/agon-vdplet/build/vdpl-010/pixels/firmware-src/.pio/build/esp32dev/firmware.map",
+          "bytes": 17988037,
+          "sha256": "b3997e3381e68ed28871a40083a5a413501bc47f56efc062adc160d6009ef6ee"
+        },
+        "bootloader.bin": {
+          "path": "/Agon/mystuff/agon-vdplet/build/vdpl-010/pixels/firmware-src/.pio/build/esp32dev/bootloader.bin",
+          "bytes": 18992,
+          "sha256": "f2dfacdea6ae72d0aeeb7c30e525c4c6fc768a041849feac694cbb2ee2224448"
+        },
+        "partitions.bin": {
+          "path": "/Agon/mystuff/agon-vdplet/build/vdpl-010/pixels/firmware-src/.pio/build/esp32dev/partitions.bin",
+          "bytes": 3072,
+          "sha256": "148b959cbff1c38aa8e1d5c0ba9d612c54997b945e56a63f41223eef650653a1"
+        }
+      },
+      "sections": {
+        ".rtc.data": {
+          "bytes": 1,
+          "address": "0x50000200",
+          "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d"
+        },
+        ".rtc_noinit": {
+          "bytes": 16,
+          "address": "0x50000208",
+          "sha256": null
+        },
+        ".iram0.vectors": {
+          "bytes": 1027,
+          "address": "0x40080000",
+          "sha256": "e9918fc923ca565dd5e8aef9b28d86c7278c44920d13b7a94f22520c9b4c63ad"
+        },
+        ".iram0.text": {
+          "bytes": 93811,
+          "address": "0x40080404",
+          "sha256": "ad4577eb8fc54c902c0a4ada001e663d258202a0ad199ad3442f83941d7ce835"
+        },
+        ".dram0.data": {
+          "bytes": 19896,
+          "address": "0x3ffbdb60",
+          "sha256": "feea82009467771e8e16f1b468d5079066d00b453c53c6260a65375c188fddd6"
+        },
+        ".dram0.bss": {
+          "bytes": 25152,
+          "address": "0x3ffc2918",
+          "sha256": null
+        },
+        ".flash.appdesc": {
+          "bytes": 256,
+          "address": "0x3f400020",
+          "sha256": "ce84dc24e6a4994e899faaf071baddda509d1118d2bb3166f360cce5d0915f66"
+        },
+        ".flash.rodata": {
+          "bytes": 278140,
+          "address": "0x3f400120",
+          "sha256": "91aaec02ba67cd9c8e471834574062a737c74207ba0c3c90af3b49124c9da0d3"
+        },
+        ".flash.text": {
+          "bytes": 699203,
+          "address": "0x400d0020",
+          "sha256": "10221e5369cff5ba069ee0d0d6608a61369b48dc529efa6a79564f2046ecc84e"
+        },
+        ".iram0.text_end": {
+          "bytes": 1,
+          "address": "0x40097277",
+          "sha256": null
+        }
+      },
+      "affected_entry_frames_bytes": {
+        "updateVGAController(unsigned char)": 48,
+        "VDUStreamProcessor::vdu_mode(unsigned char)": 32
+      },
+      "repair_symbols": [],
+      "journal_symbols": []
+    },
+    "control00": {
+      "root": "/Agon/mystuff/golem/docs/tasks/GOLEM-057/build/display-mode-repair/control00",
+      "artifacts": {
+        "firmware.bin": {
+          "path": "/Agon/mystuff/golem/docs/tasks/GOLEM-057/build/display-mode-repair/control00/.pio/build/esp32dev/firmware.bin",
+          "bytes": 1092928,
+          "sha256": "b3dd3772aceb6bf54d7e959dc1c5790cdaebca352b6a7fcab6e766bc1dfa1f8d"
+        },
+        "firmware.elf": {
+          "path": "/Agon/mystuff/golem/docs/tasks/GOLEM-057/build/display-mode-repair/control00/.pio/build/esp32dev/firmware.elf",
+          "bytes": 24996480,
+          "sha256": "eb468a5e36a259165ea677ae50e956c3ce024a0cfdcde861883e98abae0ebf80"
+        },
+        "firmware.map": {
+          "path": "/Agon/mystuff/golem/docs/tasks/GOLEM-057/build/display-mode-repair/control00/.pio/build/esp32dev/firmware.map",
+          "bytes": 20730997,
+          "sha256": "5d21f7b1c24a3877b17cbb9b0615be437d93fa10121d76b4e82836aeedaa4a31"
+        },
+        "bootloader.bin": {
+          "path": "/Agon/mystuff/golem/docs/tasks/GOLEM-057/build/display-mode-repair/control00/.pio/build/esp32dev/bootloader.bin",
+          "bytes": 18992,
+          "sha256": "f2dfacdea6ae72d0aeeb7c30e525c4c6fc768a041849feac694cbb2ee2224448"
+        },
+        "partitions.bin": {
+          "path": "/Agon/mystuff/golem/docs/tasks/GOLEM-057/build/display-mode-repair/control00/.pio/build/esp32dev/partitions.bin",
+          "bytes": 3072,
+          "sha256": "148b959cbff1c38aa8e1d5c0ba9d612c54997b945e56a63f41223eef650653a1"
+        }
+      },
+      "sections": {
+        ".rtc.data": {
+          "bytes": 1,
+          "address": "0x50000200",
+          "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d"
+        },
+        ".rtc_noinit": {
+          "bytes": 16,
+          "address": "0x50000208",
+          "sha256": null
+        },
+        ".iram0.vectors": {
+          "bytes": 1027,
+          "address": "0x40080000",
+          "sha256": "e9918fc923ca565dd5e8aef9b28d86c7278c44920d13b7a94f22520c9b4c63ad"
+        },
+        ".iram0.text": {
+          "bytes": 93811,
+          "address": "0x40080404",
+          "sha256": "86eeddc69591885b2655636c4735c90fbba3d16513f6cf32cb24c8725f2ce446"
+        },
+        ".dram0.data": {
+          "bytes": 19896,
+          "address": "0x3ffbdb60",
+          "sha256": "99be3018fe678335bb93d1270e3bda4dc5a4dc4310904d1b7e013b05485762e1"
+        },
+        ".dram0.bss": {
+          "bytes": 25152,
+          "address": "0x3ffc2918",
+          "sha256": null
+        },
+        ".flash.appdesc": {
+          "bytes": 256,
+          "address": "0x3f400020",
+          "sha256": "ce84dc24e6a4994e899faaf071baddda509d1118d2bb3166f360cce5d0915f66"
+        },
+        ".flash.rodata": {
+          "bytes": 278620,
+          "address": "0x3f400120",
+          "sha256": "6e183e3a576175befe19a9f8bcd8ff208f041755166f63260424c5dd27f6b50c"
+        },
+        ".flash.text": {
+          "bytes": 699195,
+          "address": "0x400d0020",
+          "sha256": "337d6792e3c8b718db56de9b38c6825153961647db21a2291215f96bb9dd2f33"
+        },
+        ".iram0.text_end": {
+          "bytes": 1,
+          "address": "0x40097277",
+          "sha256": null
+        }
+      },
+      "affected_entry_frames_bytes": {
+        "updateVGAController(unsigned char)": 48,
+        "VDUStreamProcessor::vdu_mode(unsigned char)": 32
+      },
+      "repair_symbols": [],
+      "journal_symbols": [],
+      "expanded_flags": {
+        "CCFLAGS": [
+          "-O2",
+          "-mfix-esp32-psram-cache-issue",
+          "-mlongcalls",
+          "-ffunction-sections",
+          "-fdata-sections",
+          "-Wno-error=unused-function",
+          "-Wno-error=unused-variable",
+          "-Wno-error=deprecated-declarations",
+          "-Wno-unused-parameter",
+          "-Wno-sign-compare",
+          "-ggdb",
+          "-freorder-blocks",
+          "-Wwrite-strings",
+          "-fstack-protector",
+          "-fstrict-volatile-bitfields",
+          "-Wno-error=unused-but-set-variable",
+          "-fno-jump-tables",
+          "-fno-tree-switch-conversion",
+          "-MMD"
+        ],
+        "CFLAGS": [
+          "-Wno-frame-address",
+          "-std=gnu99",
+          "-Wno-old-style-declaration"
+        ],
+        "CPPDEFINES": [
+          [
+            "PLATFORMIO",
+            60200
+          ],
+          "ARDUINO_ESP32_DEV",
+          "BOARD_HAS_PSRAM",
+          "HAVE_CONFIG_H",
+          [
+            "MBEDTLS_CONFIG_FILE",
+            "\\\"mbedtls/esp_config.h\\\""
+          ],
+          "UNITY_INCLUDE_CONFIG_H",
+          "WITH_POSIX",
+          "_GNU_SOURCE",
+          [
+            "IDF_VER",
+            "\\\"v4.4.6-dirty\\\""
+          ],
+          "ESP_PLATFORM",
+          "_POSIX_READER_WRITER_LOCKS",
+          "ARDUINO_ARCH_ESP32",
+          "ESP32",
+          [
+            "F_CPU",
+            "$BOARD_F_CPU"
+          ],
+          [
+            "ARDUINO",
+            10812
+          ],
+          [
+            "ARDUINO_VARIANT",
+            "\\\"esp32\\\""
+          ],
+          [
+            "ARDUINO_BOARD",
+            "\\\"Espressif ESP32 Dev Module\\\""
+          ],
+          "ARDUINO_PARTITION_default"
+        ],
+        "CXXFLAGS": [
+          "-std=c++17",
+          "-std=gnu++17",
+          "-Wno-frame-address",
+          "-fexceptions",
+          "-fno-rtti"
+        ],
+        "LINKFLAGS": [
+          "-mlongcalls",
+          "-Wno-frame-address",
+          "-Wl,--cref",
+          "-Wl,--gc-sections",
+          "-fno-rtti",
+          "-fno-lto",
+          "-Wl,--wrap=esp_log_write",
+          "-Wl,--wrap=esp_log_writev",
+          "-Wl,--wrap=log_printf",
+          "-Wl,--wrap=longjmp",
+          "-Wl,--undefined=uxTopUsedPriority",
+          "-T",
+          "esp32.rom.redefined.ld",
+          "-T",
+          "memory.ld",
+          "-T",
+          "sections.ld",
+          "-T",
+          "esp32.rom.ld",
+          "-T",
+          "esp32.rom.api.ld",
+          "-T",
+          "esp32.rom.libgcc.ld",
+          "-T",
+          "esp32.rom.newlib-data.ld",
+          "-T",
+          "esp32.rom.syscalls.ld",
+          "-T",
+          "esp32.peripherals.ld",
+          "-u",
+          "ld_include_hli_vectors_bt",
+          "-u",
+          "_Z5setupv",
+          "-u",
+          "_Z4loopv",
+          "-u",
+          "esp_app_desc",
+          "-u",
+          "pthread_include_pthread_impl",
+          "-u",
+          "pthread_include_pthread_cond_impl",
+          "-u",
+          "pthread_include_pthread_local_storage_impl",
+          "-u",
+          "pthread_include_pthread_rwlock_impl",
+          "-u",
+          "include_esp_phy_override",
+          "-u",
+          "ld_include_highint_hdl",
+          "-u",
+          "start_app",
+          "-u",
+          "start_app_other_cores",
+          "-u",
+          "__ubsan_include",
+          "-u",
+          "__assert_func",
+          "-u",
+          "vfs_include_syscalls_impl",
+          "-u",
+          "app_main",
+          "-u",
+          "newlib_include_heap_impl",
+          "-u",
+          "newlib_include_syscalls_impl",
+          "-u",
+          "newlib_include_pthread_impl",
+          "-u",
+          "newlib_include_assert_impl",
+          "-u",
+          "__cxa_guard_dummy",
+          "-Wl,-Map=\"${BUILD_DIR}/${PROGNAME}.map\""
+        ]
+      },
+      "platformio_configuration": {
+        "path": "/Agon/mystuff/golem/docs/tasks/GOLEM-057/build/display-mode-repair/control00/platformio.ini",
+        "bytes": 1053,
+        "sha256": "7947cbd2e5fcb38e12ca3b8dee44b97700da0ca1d05c19914b100d47885f0bb1"
+      },
+      "build_log": {
+        "path": "/Agon/mystuff/golem/docs/tasks/GOLEM-057/build/display-mode-repair/control00-build.log",
+        "bytes": 9966,
+        "sha256": "0d774915c84d4d66663aa6b8481a996a1e65c5ce157da88dc84cd18fb6e67ab5"
+      },
+      "platformio_reported_build_seconds": 81.79
+    },
+    "candidate": {
+      "root": "/Agon/mystuff/golem/docs/tasks/GOLEM-057/build/display-mode-repair/candidate",
+      "artifacts": {
+        "firmware.bin": {
+          "path": "/Agon/mystuff/golem/docs/tasks/GOLEM-057/build/display-mode-repair/candidate/.pio/build/esp32dev/firmware.bin",
+          "bytes": 1093104,
+          "sha256": "f30b299a95d58517be510b7adc4312252265eefd338b03712b91d4bef4394844"
+        },
+        "firmware.elf": {
+          "path": "/Agon/mystuff/golem/docs/tasks/GOLEM-057/build/display-mode-repair/candidate/.pio/build/esp32dev/firmware.elf",
+          "bytes": 24997376,
+          "sha256": "3ea64b06cd99c7cdf51080551451c3cd3fe80d07e8a9ad0f95a22e5eef5b6a88"
+        },
+        "firmware.map": {
+          "path": "/Agon/mystuff/golem/docs/tasks/GOLEM-057/build/display-mode-repair/candidate/.pio/build/esp32dev/firmware.map",
+          "bytes": 20731234,
+          "sha256": "0f5dc75c446844a401fd257ea5d720d7408fcafccc891e4f0fd2dd51c706e219"
+        },
+        "bootloader.bin": {
+          "path": "/Agon/mystuff/golem/docs/tasks/GOLEM-057/build/display-mode-repair/candidate/.pio/build/esp32dev/bootloader.bin",
+          "bytes": 18992,
+          "sha256": "f2dfacdea6ae72d0aeeb7c30e525c4c6fc768a041849feac694cbb2ee2224448"
+        },
+        "partitions.bin": {
+          "path": "/Agon/mystuff/golem/docs/tasks/GOLEM-057/build/display-mode-repair/candidate/.pio/build/esp32dev/partitions.bin",
+          "bytes": 3072,
+          "sha256": "148b959cbff1c38aa8e1d5c0ba9d612c54997b945e56a63f41223eef650653a1"
+        }
+      },
+      "sections": {
+        ".rtc.data": {
+          "bytes": 1,
+          "address": "0x50000200",
+          "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d"
+        },
+        ".rtc_noinit": {
+          "bytes": 16,
+          "address": "0x50000208",
+          "sha256": null
+        },
+        ".iram0.vectors": {
+          "bytes": 1027,
+          "address": "0x40080000",
+          "sha256": "26cac812f9a15c189b551308a2356c035ec2a70b9a236d46512d11380d753c11"
+        },
+        ".iram0.text": {
+          "bytes": 93823,
+          "address": "0x40080404",
+          "sha256": "d20bf0a9b89d918167b8f1cb2ecac26325256d173999efa95ea2af54888fa995"
+        },
+        ".dram0.data": {
+          "bytes": 19896,
+          "address": "0x3ffbdb60",
+          "sha256": "3fb968736238fe7f6617cfade5e8c6a9b5b4cda2bd4e6a8a9291c2ab9fc500a7"
+        },
+        ".dram0.bss": {
+          "bytes": 25152,
+          "address": "0x3ffc2918",
+          "sha256": null
+        },
+        ".flash.appdesc": {
+          "bytes": 256,
+          "address": "0x3f400020",
+          "sha256": "ce84dc24e6a4994e899faaf071baddda509d1118d2bb3166f360cce5d0915f66"
+        },
+        ".flash.rodata": {
+          "bytes": 278648,
+          "address": "0x3f400120",
+          "sha256": "afd17bf51d3db835fa2314c9cb46ca1981c66f2a309572b79ab13e21a5b69262"
+        },
+        ".flash.text": {
+          "bytes": 699335,
+          "address": "0x400d0020",
+          "sha256": "2bcee3542325f6985bf988a9c08aef0ae55a8751efc0c3cb798bd4b9202cb4a5"
+        },
+        ".iram0.text_end": {
+          "bytes": 1,
+          "address": "0x40097283",
+          "sha256": null
+        }
+      },
+      "affected_entry_frames_bytes": {
+        "releaseFailedResolution()": 32,
+        "updateVGAController(unsigned char)": 48,
+        "VDUStreamProcessor::vdu_mode(unsigned char)": 32
+      },
+      "repair_symbols": [
+        "400d1368 0000004e t releaseFailedResolution()"
+      ],
+      "journal_symbols": [],
+      "expanded_flags": {
+        "CCFLAGS": [
+          "-O2",
+          "-mfix-esp32-psram-cache-issue",
+          "-mlongcalls",
+          "-ffunction-sections",
+          "-fdata-sections",
+          "-Wno-error=unused-function",
+          "-Wno-error=unused-variable",
+          "-Wno-error=deprecated-declarations",
+          "-Wno-unused-parameter",
+          "-Wno-sign-compare",
+          "-ggdb",
+          "-freorder-blocks",
+          "-Wwrite-strings",
+          "-fstack-protector",
+          "-fstrict-volatile-bitfields",
+          "-Wno-error=unused-but-set-variable",
+          "-fno-jump-tables",
+          "-fno-tree-switch-conversion",
+          "-MMD"
+        ],
+        "CFLAGS": [
+          "-Wno-frame-address",
+          "-std=gnu99",
+          "-Wno-old-style-declaration"
+        ],
+        "CPPDEFINES": [
+          [
+            "PLATFORMIO",
+            60200
+          ],
+          "ARDUINO_ESP32_DEV",
+          "BOARD_HAS_PSRAM",
+          "HAVE_CONFIG_H",
+          [
+            "MBEDTLS_CONFIG_FILE",
+            "\\\"mbedtls/esp_config.h\\\""
+          ],
+          "UNITY_INCLUDE_CONFIG_H",
+          "WITH_POSIX",
+          "_GNU_SOURCE",
+          [
+            "IDF_VER",
+            "\\\"v4.4.6-dirty\\\""
+          ],
+          "ESP_PLATFORM",
+          "_POSIX_READER_WRITER_LOCKS",
+          "ARDUINO_ARCH_ESP32",
+          "ESP32",
+          [
+            "F_CPU",
+            "$BOARD_F_CPU"
+          ],
+          [
+            "ARDUINO",
+            10812
+          ],
+          [
+            "ARDUINO_VARIANT",
+            "\\\"esp32\\\""
+          ],
+          [
+            "ARDUINO_BOARD",
+            "\\\"Espressif ESP32 Dev Module\\\""
+          ],
+          "ARDUINO_PARTITION_default"
+        ],
+        "CXXFLAGS": [
+          "-std=c++17",
+          "-std=gnu++17",
+          "-Wno-frame-address",
+          "-fexceptions",
+          "-fno-rtti"
+        ],
+        "LINKFLAGS": [
+          "-mlongcalls",
+          "-Wno-frame-address",
+          "-Wl,--cref",
+          "-Wl,--gc-sections",
+          "-fno-rtti",
+          "-fno-lto",
+          "-Wl,--wrap=esp_log_write",
+          "-Wl,--wrap=esp_log_writev",
+          "-Wl,--wrap=log_printf",
+          "-Wl,--wrap=longjmp",
+          "-Wl,--undefined=uxTopUsedPriority",
+          "-T",
+          "esp32.rom.redefined.ld",
+          "-T",
+          "memory.ld",
+          "-T",
+          "sections.ld",
+          "-T",
+          "esp32.rom.ld",
+          "-T",
+          "esp32.rom.api.ld",
+          "-T",
+          "esp32.rom.libgcc.ld",
+          "-T",
+          "esp32.rom.newlib-data.ld",
+          "-T",
+          "esp32.rom.syscalls.ld",
+          "-T",
+          "esp32.peripherals.ld",
+          "-u",
+          "ld_include_hli_vectors_bt",
+          "-u",
+          "_Z5setupv",
+          "-u",
+          "_Z4loopv",
+          "-u",
+          "esp_app_desc",
+          "-u",
+          "pthread_include_pthread_impl",
+          "-u",
+          "pthread_include_pthread_cond_impl",
+          "-u",
+          "pthread_include_pthread_local_storage_impl",
+          "-u",
+          "pthread_include_pthread_rwlock_impl",
+          "-u",
+          "include_esp_phy_override",
+          "-u",
+          "ld_include_highint_hdl",
+          "-u",
+          "start_app",
+          "-u",
+          "start_app_other_cores",
+          "-u",
+          "__ubsan_include",
+          "-u",
+          "__assert_func",
+          "-u",
+          "vfs_include_syscalls_impl",
+          "-u",
+          "app_main",
+          "-u",
+          "newlib_include_heap_impl",
+          "-u",
+          "newlib_include_syscalls_impl",
+          "-u",
+          "newlib_include_pthread_impl",
+          "-u",
+          "newlib_include_assert_impl",
+          "-u",
+          "__cxa_guard_dummy",
+          "-Wl,-Map=\"${BUILD_DIR}/${PROGNAME}.map\""
+        ]
+      },
+      "platformio_configuration": {
+        "path": "/Agon/mystuff/golem/docs/tasks/GOLEM-057/build/display-mode-repair/candidate/platformio.ini",
+        "bytes": 1053,
+        "sha256": "7947cbd2e5fcb38e12ca3b8dee44b97700da0ca1d05c19914b100d47885f0bb1"
+      },
+      "build_log": {
+        "path": "/Agon/mystuff/golem/docs/tasks/GOLEM-057/build/display-mode-repair/candidate-build.log",
+        "bytes": 9500,
+        "sha256": "710e2a294b0bbe219a6a12c5bbe2d2a4b1db18ab9959625b9ef1ff79680981e7"
+      },
+      "platformio_reported_build_seconds": 95.59
+    }
+  },
+  "matched_flags_equal": true,
+  "equal_length_build_root_names": true,
+  "candidate_minus_control": {
+    "image_bytes": 176,
+    "sections": {
+      ".iram0.text": 12,
+      ".flash.rodata": 28,
+      ".flash.text": 140
+    }
+  },
+  "control_vs_original": {
+    "image_bytes": 480,
+    "binary_equal": false,
+    "section_size_differences": {
+      ".flash.rodata": 480,
+      ".flash.text": -8
+    }
+  },
+  "stack_limit": "Xtensa compiler entry-frame sizes only; full RTOS/end/destructor call-chain high-water is not measured.",
+  "toolchain": {
+    "/home/smith/.platformio/platforms/espressif32/platform.json": {
+      "path": "/home/smith/.platformio/platforms/espressif32/platform.json",
+      "bytes": 3888,
+      "sha256": "88464df11f7319223063348f355694dc5e5a4b2c60a4a8d3d309c230d370257d"
+    },
+    "/home/smith/.platformio/packages/toolchain-xtensa-esp32/package.json": {
+      "path": "/home/smith/.platformio/packages/toolchain-xtensa-esp32/package.json",
+      "bytes": 436,
+      "sha256": "95053a4b63082311148c4799d8271e26a66501f3ccd736ab91ffe989fa0b5691"
+    },
+    "/home/smith/.platformio/packages/framework-arduinoespressif32/package.json": {
+      "path": "/home/smith/.platformio/packages/framework-arduinoespressif32/package.json",
+      "bytes": 401,
+      "sha256": "fa3262cd10e9536428203d2da0ac48e0227862e5cfc0901e13704bc06dbd7f5e"
+    },
+    "/home/smith/.platformio/packages/tool-esptoolpy/package.json": {
+      "path": "/home/smith/.platformio/packages/tool-esptoolpy/package.json",
+      "bytes": 384,
+      "sha256": "092bd61c2583d5ae523070e2935a10c3954ffa3eb9e5149e54e061cb602d2a3f"
+    },
+    "/home/smith/.platformio/packages/toolchain-xtensa-esp32/bin/xtensa-esp32-elf-g++": {
+      "path": "/home/smith/.platformio/packages/toolchain-xtensa-esp32/bin/xtensa-esp32-elf-g++",
+      "bytes": 858304,
+      "sha256": "74018ec8d9443df597cb726333372b0924d9f2ab822980ea229cc4700ebf85c8"
+    }
+  },
+  "commands": {
+    "control00": [
+      "env",
+      "PLATFORMIO_CORE_DIR=/Agon/mystuff/golem/docs/tasks/GOLEM-057/build/display-mode-repair/platformio-state",
+      "PLATFORMIO_SETTING_ENABLE_TELEMETRY=no",
+      "/Agon/mystuff/agon-vdplet/.venv/bin/python",
+      "-m",
+      "platformio",
+      "run",
+      "-d",
+      "/Agon/mystuff/golem/docs/tasks/GOLEM-057/build/display-mode-repair/control00",
+      "-e",
+      "esp32dev",
+      "-j",
+      "2"
+    ],
+    "candidate": [
+      "env",
+      "PLATFORMIO_CORE_DIR=/Agon/mystuff/golem/docs/tasks/GOLEM-057/build/display-mode-repair/platformio-state",
+      "PLATFORMIO_SETTING_ENABLE_TELEMETRY=no",
+      "/Agon/mystuff/agon-vdplet/.venv/bin/python",
+      "-m",
+      "platformio",
+      "run",
+      "-d",
+      "/Agon/mystuff/golem/docs/tasks/GOLEM-057/build/display-mode-repair/candidate",
+      "-e",
+      "esp32dev",
+      "-j",
+      "2"
+    ]
+  },
+  "source_and_test_files": {
+    "verify_sources.py": {
+      "path": "/Agon/mystuff/golem/docs/tasks/GOLEM-057/mode-repair/verify_sources.py",
+      "bytes": 2984,
+      "sha256": "9d02d4945994baf1b789b42f0bc04fec32d8742261f75a4fcc946e4dea0e16dd"
+    },
+    "prepare.py": {
+      "path": "/Agon/mystuff/golem/docs/tasks/GOLEM-057/mode-repair/prepare.py",
+      "bytes": 4804,
+      "sha256": "eab84d7f8119eb53ee43da425534a49f4f650045b3a81613daa8323b4b761779"
+    },
+    "check_release.cpp": {
+      "path": "/Agon/mystuff/golem/docs/tasks/GOLEM-057/mode-repair/check_release.cpp",
+      "bytes": 9444,
+      "sha256": "57437dfd63268838b35e1d09a1296ad9cceb057be166f7e8504302d6a07fc224"
+    },
+    "collect_results.py": {
+      "path": "/Agon/mystuff/golem/docs/tasks/GOLEM-057/mode-repair/collect_results.py",
+      "bytes": 6730,
+      "sha256": "582646bb1787af7c0bb7f928806fedb97119b3ca3861947b4cac4b87ad676bee"
+    },
+    "source.patch": {
+      "path": "/Agon/mystuff/golem/docs/tasks/GOLEM-057/mode-repair/source.patch",
+      "bytes": 960,
+      "sha256": "e73c930084eda9a4062a7a4ff9314412260d103c58a6f4a2682fd12f69dadbb0"
+    },
+    "package.py": {
+      "path": "/Agon/mystuff/golem/docs/tasks/GOLEM-057/mode-repair/package.py",
+      "bytes": 2723,
+      "sha256": "d411d7136194429e3df5707163c23936819a56b7cb98c6baa59eaccc2433e24e"
+    },
+    "check_host.py": {
+      "path": "/Agon/mystuff/golem/docs/tasks/GOLEM-057/mode-repair/check_host.py",
+      "bytes": 7036,
+      "sha256": "c6a839b3b6389e6344862e3514908501f65a25aed0f7fdb13782ed53efc464d5"
+    }
+  },
+  "scope": "Source preparation, host tests and offline builds only. No firmware/emulator/target execution, deployment or promotion."
+}

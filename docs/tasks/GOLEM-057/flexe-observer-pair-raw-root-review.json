@@ -1,0 +1,52 @@
+{
+  "archive_sha256": "bfde3e0c0164a43c99d4bf30efd044c7cc455fc9c00902af0de270fd1c5cc414",
+  "manifest_sha256": "6435cb3092e3f2f19a8f803d569c69229a8a62381945bdfe46648d1a0e4ba073",
+  "raw_files_verified": 53,
+  "archive_members_match_manifest": true,
+  "records": {
+    "a": {
+      "run_sha256": "9369484b8a6c5964a0530b70dfa33a2794dd5e9e6253521dc51e8f8ef59f6587",
+      "wall_seconds": 41.21799364400067,
+      "passed": true,
+      "ring_complete": true,
+      "collector_complete": true,
+      "collector_stopped": true,
+      "observation_mode": "full",
+      "callback_coverage": true,
+      "forced_kill": false
+    },
+    "b": {
+      "run_sha256": "63c956181a0f8026fa9d6a437ebb06bcdaa389f88652331dc61d7a3aa240cc7a",
+      "wall_seconds": 40.96859914200013,
+      "passed": true,
+      "ring_complete": true,
+      "collector_complete": true,
+      "collector_stopped": true,
+      "observation_mode": "metadata_only",
+      "callback_coverage": false,
+      "forced_kill": false
+    }
+  },
+  "generation41_released": "2026-10-31T17:47:22.083444+00:00",
+  "paired_analysis_pending": false,
+  "quality_fix": false,
+  "independently_reproduced_comparison_sha256": "6bff1591a4b12905a3b66d9892d519d14ff3096fca209ae64d57c1119607112d",
+  "warm_fill_fractions": {
+    "a": 0.234324156264401,
+    "b": 0.20970626319062816
+  },
+  "primary_guest_wall_ratio": {
+    "a": 0.7622669514756775,
+    "b": 0.7865666084059726
+  },
+  "scheduled_DMA_late_completions": {
+    "a": {
+      "count": 2,
+      "cycles_each": 1
+    },
+    "b": {
+      "count": 0
+    }
+  },
+  "interpretation": "Full callback observation alone is insufficient; one ordered pair does not isolate causes or qualify a repair"
+}

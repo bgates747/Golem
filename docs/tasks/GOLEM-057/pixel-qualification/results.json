@@ -1,0 +1,467 @@
+{
+  "passed": true,
+  "scope": "Actual ESP32 firmware/JIT and interpreter via the pinned Flexe VDP adapter; Oryx only, no physical/listening qualification",
+  "backend_sha256": "108ec5b02122381e6c3ae851508188ec0a96240ca5f74be804fd2201b141e6e9",
+  "runs": [
+    {
+      "profile": "base",
+      "engine": "jit",
+      "firmware_sha256": "ea08073e64bb74d686c5a2bc8ffe8f9da34925f42e24a7b8fa384bd587f5ce94",
+      "elf_sha256": "99020d3e78126d6d077e335d3749422a7e9c82910bb8ff476e1775393f080f82",
+      "backend_sha256": "108ec5b02122381e6c3ae851508188ec0a96240ca5f74be804fd2201b141e6e9",
+      "qualifier_sha256": "9d1012ef24b6b50e5f17893478919083bc91d9ce95efe19715999e0f07e2f716",
+      "target_sha256": "bb9b084f82e08572f7886f0c8845f26fe8a6dea32ce811ccbf369d5d00d4f941",
+      "worker_source_sha256": "798a90c0c577d567b16d2790ced472b06fb751d1eb78690b0534176961bf67ea",
+      "module_sha256": "abfbaf8f2bea9f2220886498abede64981ce86f4e421c63c81685d8455bd7a66",
+      "passed": true,
+      "pixels_compared": 153600,
+      "elapsed_seconds": 4.923,
+      "result_bytes": 1970,
+      "outbound_bytes": 25891,
+      "groups": 4,
+      "raw_artifact_directory": "/Agon/mystuff/agon-vdplet/build/vdpl-010/qualification/oryx/base-jit",
+      "resources": {
+        "command_stack_free_bytes": 2152,
+        "spiram_free_bytes": 4165807,
+        "spiram_largest_block_bytes": 4128756,
+        "audio_stack_free_bytes": 1508,
+        "task_count": 12,
+        "internal_free_bytes": 139732,
+        "internal_largest_block_bytes": 45044,
+        "executable_free_bytes": 84660,
+        "executable_largest_block_bytes": 34804
+      },
+      "raw_files": {
+        "esp32-uart0.log": {
+          "bytes": 2119,
+          "sha256": "6c446e1a45d58acbbb8c329aba1b456c92fee7ab9c0c88b5922cc5dc9278c5c7"
+        },
+        "evidence.json": {
+          "bytes": 3133,
+          "sha256": "f4a0de359e9c7b56b431b98712aa44d1cceb8a68efe3c26dc7ab580354b38874"
+        },
+        "final.ppm": {
+          "bytes": 230415,
+          "sha256": "1974bd25ecd95ee98d45d2d56c477ca17b8020b20775382159ffe5db20c75bf8"
+        },
+        "mos-to-vdp.bin": {
+          "bytes": 25891,
+          "sha256": "30dfeefc245481e66fd0bcdf200d2938671a4ccabfdba43e579b095ff4817190"
+        },
+        "results.dat": {
+          "bytes": 1970,
+          "sha256": "e5fee77f29da0cbec80c822fe354781947c6e96e9170ed0554896e7d418f3277"
+        },
+        "stats.json": {
+          "bytes": 225,
+          "sha256": "acbc0808814c9b75bc3126b3c978eec6f816f95f52f48e2edef4af03d27e43b6"
+        },
+        "vdp-to-mos-delivered.bin": {
+          "bytes": 2473,
+          "sha256": "07641cf28dc916f056a81db0b56f715fd9f2386f12b5ab8c64211496ff865c09"
+        },
+        "vdp-to-mos.bin": {
+          "bytes": 2473,
+          "sha256": "07641cf28dc916f056a81db0b56f715fd9f2386f12b5ab8c64211496ff865c09"
+        },
+        "wire-rx.dat": {
+          "bytes": 2473,
+          "sha256": "07641cf28dc916f056a81db0b56f715fd9f2386f12b5ab8c64211496ff865c09"
+        }
+      }
+    },
+    {
+      "profile": "pixels",
+      "engine": "interp",
+      "firmware_sha256": "b42ae55f69900c44acacfbf0d665ef278e87b277b3b9fd4208e17ebf378f74b6",
+      "elf_sha256": "a10f7989d5c1f9974fc999428865ca74771fb65a0d4d694a2ac2b81c19df9902",
+      "backend_sha256": "108ec5b02122381e6c3ae851508188ec0a96240ca5f74be804fd2201b141e6e9",
+      "qualifier_sha256": "9d1012ef24b6b50e5f17893478919083bc91d9ce95efe19715999e0f07e2f716",
+      "target_sha256": "bb9b084f82e08572f7886f0c8845f26fe8a6dea32ce811ccbf369d5d00d4f941",
+      "worker_source_sha256": "798a90c0c577d567b16d2790ced472b06fb751d1eb78690b0534176961bf67ea",
+      "module_sha256": "abfbaf8f2bea9f2220886498abede64981ce86f4e421c63c81685d8455bd7a66",
+      "passed": true,
+      "pixels_compared": 3726336,
+      "elapsed_seconds": 10.529,
+      "result_bytes": 19270,
+      "outbound_bytes": 64302,
+      "groups": 13,
+      "raw_artifact_directory": "/Agon/mystuff/agon-vdplet/build/vdpl-010/qualification/oryx/pixels-interp",
+      "resources": {
+        "command_stack_free_bytes": 2152,
+        "spiram_free_bytes": 4165803,
+        "spiram_largest_block_bytes": 4128756,
+        "audio_stack_free_bytes": 1508,
+        "task_count": 12,
+        "internal_free_bytes": 139476,
+        "internal_largest_block_bytes": 45044,
+        "executable_free_bytes": 84660,
+        "executable_largest_block_bytes": 34804
+      },
+      "raw_files": {
+        "esp32-uart0.log": {
+          "bytes": 5032,
+          "sha256": "76a3c61a18f783a58cfdf722ff257d0b214f6d44c239c5d236ef9d16bb95e11e"
+        },
+        "evidence.json": {
+          "bytes": 4470,
+          "sha256": "23d211514d1a98705d08ac051893499c47ab1c701ac0cec72c4571478676e99e"
+        },
+        "final.ppm": {
+          "bytes": 230415,
+          "sha256": "1974bd25ecd95ee98d45d2d56c477ca17b8020b20775382159ffe5db20c75bf8"
+        },
+        "mos-to-vdp.bin": {
+          "bytes": 64302,
+          "sha256": "0af5409b036074e7415981266b6a2f1d1d9647d9388c89162bbe48bc8950d271"
+        },
+        "results.dat": {
+          "bytes": 19270,
+          "sha256": "74724d6505fececce2b4026c1f14b78a863f85a0231863e7727748bf4e8c9d0c"
+        },
+        "stats.json": {
+          "bytes": 231,
+          "sha256": "88c016e4b87e7aaec365e383e8b4b53fbe291ad7bdd0a4a5164b7bf2f437d40e"
+        },
+        "vdp-to-mos-delivered.bin": {
+          "bytes": 23605,
+          "sha256": "0668c607d877c767a6d768a031202c91fbf78dc29346907dcba2f6e0af303e8a"
+        },
+        "vdp-to-mos.bin": {
+          "bytes": 23605,
+          "sha256": "0668c607d877c767a6d768a031202c91fbf78dc29346907dcba2f6e0af303e8a"
+        },
+        "wire-rx.dat": {
+          "bytes": 23605,
+          "sha256": "0668c607d877c767a6d768a031202c91fbf78dc29346907dcba2f6e0af303e8a"
+        }
+      }
+    },
+    {
+      "profile": "pixels",
+      "engine": "jit",
+      "firmware_sha256": "b42ae55f69900c44acacfbf0d665ef278e87b277b3b9fd4208e17ebf378f74b6",
+      "elf_sha256": "a10f7989d5c1f9974fc999428865ca74771fb65a0d4d694a2ac2b81c19df9902",
+      "backend_sha256": "108ec5b02122381e6c3ae851508188ec0a96240ca5f74be804fd2201b141e6e9",
+      "qualifier_sha256": "9d1012ef24b6b50e5f17893478919083bc91d9ce95efe19715999e0f07e2f716",
+      "target_sha256": "bb9b084f82e08572f7886f0c8845f26fe8a6dea32ce811ccbf369d5d00d4f941",
+      "worker_source_sha256": "798a90c0c577d567b16d2790ced472b06fb751d1eb78690b0534176961bf67ea",
+      "module_sha256": "abfbaf8f2bea9f2220886498abede64981ce86f4e421c63c81685d8455bd7a66",
+      "passed": true,
+      "pixels_compared": 3726336,
+      "elapsed_seconds": 7.378,
+      "result_bytes": 19270,
+      "outbound_bytes": 64302,
+      "groups": 13,
+      "raw_artifact_directory": "/Agon/mystuff/agon-vdplet/build/vdpl-010/qualification/oryx/pixels-jit",
+      "resources": {
+        "command_stack_free_bytes": 2152,
+        "spiram_free_bytes": 4165803,
+        "spiram_largest_block_bytes": 4128756,
+        "audio_stack_free_bytes": 1424,
+        "task_count": 12,
+        "internal_free_bytes": 139476,
+        "internal_largest_block_bytes": 45044,
+        "executable_free_bytes": 84660,
+        "executable_largest_block_bytes": 34804
+      },
+      "raw_files": {
+        "esp32-uart0.log": {
+          "bytes": 5032,
+          "sha256": "76a3c61a18f783a58cfdf722ff257d0b214f6d44c239c5d236ef9d16bb95e11e"
+        },
+        "evidence.json": {
+          "bytes": 4463,
+          "sha256": "d692f5e90143366dd84d840d09fdc18a5bf47857a0c0fd08cb4738b2a7d64a51"
+        },
+        "final.ppm": {
+          "bytes": 230415,
+          "sha256": "1974bd25ecd95ee98d45d2d56c477ca17b8020b20775382159ffe5db20c75bf8"
+        },
+        "mos-to-vdp.bin": {
+          "bytes": 64302,
+          "sha256": "0af5409b036074e7415981266b6a2f1d1d9647d9388c89162bbe48bc8950d271"
+        },
+        "results.dat": {
+          "bytes": 19270,
+          "sha256": "d133fd79e921066b0d4c89d412a01d26fee3d28ae33f1643ed75e574f1355c21"
+        },
+        "stats.json": {
+          "bytes": 228,
+          "sha256": "75e9dd735b6bf3c22a3739398084ad847c9421b42cd4ab72ea1f53a8de63b998"
+        },
+        "vdp-to-mos-delivered.bin": {
+          "bytes": 23605,
+          "sha256": "f0c650b97f0271065ae88b50a8f7f8cc3da121dc801c6822cdde3416309a3f28"
+        },
+        "vdp-to-mos.bin": {
+          "bytes": 23605,
+          "sha256": "f0c650b97f0271065ae88b50a8f7f8cc3da121dc801c6822cdde3416309a3f28"
+        },
+        "wire-rx.dat": {
+          "bytes": 23605,
+          "sha256": "f0c650b97f0271065ae88b50a8f7f8cc3da121dc801c6822cdde3416309a3f28"
+        }
+      }
+    },
+    {
+      "profile": "pixels-lean",
+      "engine": "interp",
+      "firmware_sha256": "30754052f90fe35d6e480f3f09f8611b7734cf087e8e001b35a9e4b70e8e4a46",
+      "elf_sha256": "2adf83133b85ef244cef94f4775b7e65cc1d5f9e7b5a6e3c81ac888f7615ea06",
+      "backend_sha256": "108ec5b02122381e6c3ae851508188ec0a96240ca5f74be804fd2201b141e6e9",
+      "qualifier_sha256": "9d1012ef24b6b50e5f17893478919083bc91d9ce95efe19715999e0f07e2f716",
+      "target_sha256": "bb9b084f82e08572f7886f0c8845f26fe8a6dea32ce811ccbf369d5d00d4f941",
+      "worker_source_sha256": "798a90c0c577d567b16d2790ced472b06fb751d1eb78690b0534176961bf67ea",
+      "module_sha256": "53f4fdca824b55c96a016ffcfa1df11ac7627bb9aa6feddefd69c5fad6c8b614",
+      "passed": true,
+      "pixels_compared": 3726336,
+      "elapsed_seconds": 12.745,
+      "result_bytes": 40530,
+      "outbound_bytes": 127364,
+      "groups": 17,
+      "raw_artifact_directory": "/Agon/mystuff/agon-vdplet/build/vdpl-010/qualification/oryx/pixels-lean-interp",
+      "resources": {
+        "command_stack_free_bytes": 1844,
+        "spiram_free_bytes": 4165795,
+        "spiram_largest_block_bytes": 4128756,
+        "audio_stack_free_bytes": 1516,
+        "task_count": 12,
+        "internal_free_bytes": 139268,
+        "internal_largest_block_bytes": 45044,
+        "executable_free_bytes": 84660,
+        "executable_largest_block_bytes": 34804
+      },
+      "raw_files": {
+        "esp32-uart0.log": {
+          "bytes": 7549,
+          "sha256": "6c53be9c4a4533c0e7f5e622d9b137a33ce81d4ff926527ad0e2b59adf26d1c9"
+        },
+        "evidence.json": {
+          "bytes": 6391,
+          "sha256": "31068a97d3f017a59c6fe63716c4695cdfd987ba0b34c65d9d9cf0a738a1d85c"
+        },
+        "final.ppm": {
+          "bytes": 230415,
+          "sha256": "1974bd25ecd95ee98d45d2d56c477ca17b8020b20775382159ffe5db20c75bf8"
+        },
+        "mos-to-vdp.bin": {
+          "bytes": 127364,
+          "sha256": "7378576561ce208cf46083310ad528c9a0fc5bf78053109aebb6bd8eb49a797a"
+        },
+        "pcm-observation.u8": {
+          "bytes": 8192,
+          "sha256": "4dad2d7fcbdc9ee1b3ec1cd907265a1dee5ac3fbce1fc9392b0c1d825f69741f"
+        },
+        "results.dat": {
+          "bytes": 40530,
+          "sha256": "5eb18320e8afb1bef0cda2db12ea497926acadcec04778a5bfdc524d548e7d10"
+        },
+        "stats.json": {
+          "bytes": 234,
+          "sha256": "59daf8fffc0fbb9bb70f9af88c40fae8bb1c74c1470ce4a489c5255b86ec9102"
+        },
+        "vdp-to-mos-delivered.bin": {
+          "bytes": 49147,
+          "sha256": "4b46e970ef327defc0dfccde2f790deac90b393fb0f9eae3e1816b86e3678786"
+        },
+        "vdp-to-mos.bin": {
+          "bytes": 49147,
+          "sha256": "4b46e970ef327defc0dfccde2f790deac90b393fb0f9eae3e1816b86e3678786"
+        },
+        "wire-rx.dat": {
+          "bytes": 49147,
+          "sha256": "4b46e970ef327defc0dfccde2f790deac90b393fb0f9eae3e1816b86e3678786"
+        }
+      },
+      "lazy_ring": {
+        "capacity": 1024,
+        "closed": {
+          "command_stack_free_bytes": 1844,
+          "spiram_free_bytes": 4156559,
+          "spiram_largest_block_bytes": 4128756,
+          "audio_stack_free_bytes": 1516,
+          "task_count": 12,
+          "internal_free_bytes": 139368,
+          "internal_largest_block_bytes": 45044,
+          "executable_free_bytes": 83280,
+          "executable_largest_block_bytes": 34804
+        },
+        "opened": {
+          "command_stack_free_bytes": 1844,
+          "spiram_free_bytes": 4156559,
+          "spiram_largest_block_bytes": 4128756,
+          "audio_stack_free_bytes": 1516,
+          "task_count": 12,
+          "internal_free_bytes": 138328,
+          "internal_largest_block_bytes": 45044,
+          "executable_free_bytes": 83280,
+          "executable_largest_block_bytes": 34804
+        },
+        "recovered": {
+          "command_stack_free_bytes": 1844,
+          "spiram_free_bytes": 4156559,
+          "spiram_largest_block_bytes": 4128756,
+          "audio_stack_free_bytes": 1516,
+          "task_count": 12,
+          "internal_free_bytes": 139368,
+          "internal_largest_block_bytes": 45044,
+          "executable_free_bytes": 83280,
+          "executable_largest_block_bytes": 34804
+        },
+        "allocated_bytes": 1040
+      },
+      "audio_observation": {
+        "bytes": 8192,
+        "sha256": "4dad2d7fcbdc9ee1b3ec1cd907265a1dee5ac3fbce1fc9392b0c1d825f69741f",
+        "minimum": 27,
+        "maximum": 227,
+        "non_silent": 1024,
+        "limitation": "observational only: Flexe audio delivery defect precludes waveform or listening acceptance"
+      }
+    },
+    {
+      "profile": "pixels-lean",
+      "engine": "jit",
+      "firmware_sha256": "30754052f90fe35d6e480f3f09f8611b7734cf087e8e001b35a9e4b70e8e4a46",
+      "elf_sha256": "2adf83133b85ef244cef94f4775b7e65cc1d5f9e7b5a6e3c81ac888f7615ea06",
+      "backend_sha256": "108ec5b02122381e6c3ae851508188ec0a96240ca5f74be804fd2201b141e6e9",
+      "qualifier_sha256": "9d1012ef24b6b50e5f17893478919083bc91d9ce95efe19715999e0f07e2f716",
+      "target_sha256": "bb9b084f82e08572f7886f0c8845f26fe8a6dea32ce811ccbf369d5d00d4f941",
+      "worker_source_sha256": "798a90c0c577d567b16d2790ced472b06fb751d1eb78690b0534176961bf67ea",
+      "module_sha256": "53f4fdca824b55c96a016ffcfa1df11ac7627bb9aa6feddefd69c5fad6c8b614",
+      "passed": true,
+      "pixels_compared": 3726336,
+      "elapsed_seconds": 8.452,
+      "result_bytes": 40530,
+      "outbound_bytes": 127364,
+      "groups": 17,
+      "raw_artifact_directory": "/Agon/mystuff/agon-vdplet/build/vdpl-010/qualification/oryx/pixels-lean-jit",
+      "resources": {
+        "command_stack_free_bytes": 2152,
+        "spiram_free_bytes": 4165795,
+        "spiram_largest_block_bytes": 4128756,
+        "audio_stack_free_bytes": 1512,
+        "task_count": 12,
+        "internal_free_bytes": 139268,
+        "internal_largest_block_bytes": 45044,
+        "executable_free_bytes": 84660,
+        "executable_largest_block_bytes": 34804
+      },
+      "raw_files": {
+        "esp32-uart0.log": {
+          "bytes": 7549,
+          "sha256": "6c53be9c4a4533c0e7f5e622d9b137a33ce81d4ff926527ad0e2b59adf26d1c9"
+        },
+        "evidence.json": {
+          "bytes": 6384,
+          "sha256": "b5a24c48ceb5c0ad1fbce5596513685c614dfd2efe380644c0d553e013680e42"
+        },
+        "final.ppm": {
+          "bytes": 230415,
+          "sha256": "1974bd25ecd95ee98d45d2d56c477ca17b8020b20775382159ffe5db20c75bf8"
+        },
+        "mos-to-vdp.bin": {
+          "bytes": 127364,
+          "sha256": "7378576561ce208cf46083310ad528c9a0fc5bf78053109aebb6bd8eb49a797a"
+        },
+        "pcm-observation.u8": {
+          "bytes": 8192,
+          "sha256": "4909d39cf871ec5699516d4dd0fcfd1cb03da0f7e546512fa6f1a76b3e05d4c0"
+        },
+        "results.dat": {
+          "bytes": 40530,
+          "sha256": "56eea094fe4a44c57f0b0d68137edceb321368407b33d6f22fe30f960e65ca5d"
+        },
+        "stats.json": {
+          "bytes": 231,
+          "sha256": "a620b35a6f243a83092fcbde97039b30c888ae96e173fc2696011830556645db"
+        },
+        "vdp-to-mos-delivered.bin": {
+          "bytes": 49147,
+          "sha256": "51314a5a3e5398801edb772adbf4b6b8a20776043755acdc1f92d3b70471fed2"
+        },
+        "vdp-to-mos.bin": {
+          "bytes": 49147,
+          "sha256": "51314a5a3e5398801edb772adbf4b6b8a20776043755acdc1f92d3b70471fed2"
+        },
+        "wire-rx.dat": {
+          "bytes": 49147,
+          "sha256": "51314a5a3e5398801edb772adbf4b6b8a20776043755acdc1f92d3b70471fed2"
+        }
+      },
+      "lazy_ring": {
+        "capacity": 1024,
+        "closed": {
+          "command_stack_free_bytes": 2152,
+          "spiram_free_bytes": 4156559,
+          "spiram_largest_block_bytes": 4128756,
+          "audio_stack_free_bytes": 1516,
+          "task_count": 12,
+          "internal_free_bytes": 139368,
+          "internal_largest_block_bytes": 45044,
+          "executable_free_bytes": 83280,
+          "executable_largest_block_bytes": 34804
+        },
+        "opened": {
+          "command_stack_free_bytes": 2152,
+          "spiram_free_bytes": 4156559,
+          "spiram_largest_block_bytes": 4128756,
+          "audio_stack_free_bytes": 1516,
+          "task_count": 12,
+          "internal_free_bytes": 138328,
+          "internal_largest_block_bytes": 45044,
+          "executable_free_bytes": 83280,
+          "executable_largest_block_bytes": 34804
+        },
+        "recovered": {
+          "command_stack_free_bytes": 2152,
+          "spiram_free_bytes": 4156559,
+          "spiram_largest_block_bytes": 4128756,
+          "audio_stack_free_bytes": 1516,
+          "task_count": 12,
+          "internal_free_bytes": 139368,
+          "internal_largest_block_bytes": 45044,
+          "executable_free_bytes": 83280,
+          "executable_largest_block_bytes": 34804
+        },
+        "allocated_bytes": 1040
+      },
+      "audio_observation": {
+        "bytes": 8192,
+        "sha256": "4909d39cf871ec5699516d4dd0fcfd1cb03da0f7e546512fa6f1a76b3e05d4c0",
+        "minimum": 27,
+        "maximum": 227,
+        "non_silent": 1024,
+        "limitation": "observational only: Flexe audio delivery defect precludes waveform or listening acceptance"
+      }
+    }
+  ],
+  "total_groups": 64,
+  "total_decoded_pixels": 15058944,
+  "sdk_snapshot_header_sha256": "574fe46923142b0cae9fa7cb5989bea5c76a1cf8a2b6327c6ae4a783ced7bbe8",
+  "probe_builds_sha256": "8ac45bd2389f5096de573d5c85d165aedf38e437f502f1ae8935ffa72195d741",
+  "lease_release": {
+    "owner": "golem",
+    "task": "VDPL-010",
+    "purpose": "finite sequential pixels and pixels-lean compatibility/controller/sink qualification, both instruction engines and base rejection control",
+    "profile": "/home/smith/Agon/mystuff/agon-vdplet/docs/tasks/VDPL-010/qualification",
+    "request": "ad05963b09d3",
+    "requested": "2026-10-30T22:58:42.971900+00:00",
+    "lease": "d6b84f5b47974da8b6daa9d901c78800",
+    "generation": 4,
+    "granted": "2026-10-30T22:58:51.207653+00:00",
+    "coordinator": "golem",
+    "idle_observation": {
+      "machine": "oryx-linuxlite",
+      "epoch": 1793401131.123998,
+      "emulators": []
+    },
+    "released": "2026-10-30T23:01:23.198905+00:00",
+    "release_observation": {
+      "machine": "oryx-linuxlite",
+      "epoch": 1793401283.109179,
+      "emulators": []
+    }
+  }
+}

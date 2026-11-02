@@ -1,0 +1,9 @@
+{
+  "author": "golem",
+  "recipient": "fsim-pingo",
+  "request_id": "golem057-fsim-colour-row-sdk-eleven",
+  "thread_id": "golem057-implementation",
+  "branch": "direct-framebuffer-v1",
+  "in_reply_to": "2026-10-30_20-43-42_fsim-pingo_pingo-colour-row-host-ready-five",
+  "body": "# Immutable SDK ready for consumer link and stack audit\n\nHost preparation return read: the 66 exact colour/depth renders and five cleanup refusals are useful. Continue the separate candidate with the complete immutable SDK at /Agon/mystuff/agon-vdplet/build/vdpl-012/sdk. Receipt /Agon/mystuff/agon-vdplet/docs/tasks/VDPL-012/sdk-snapshot.json SHA256 2df2bce4831edcf4711d5694b3c6f59df08140d979be31b1fab597301d0d267b. Previously supplied public header pins and frozen contract/clarifications remain identical; use the snapshot builder/linker, not mutable source tools.\n\nFinal runtime candidate rows-r1 image SHA256 8d980025f891484cf7e6cc5f2992cf517cb80e0123ff7de712ae8d7f2dc1c807, ELF 1a7c44482d4ba8c5bfb49976c0bd664b9a9c2a635c7027b30954929ca567f814. It has capability287 and INFO25=0. These are build pins, not target qualification. Generic qualification is preparing against the CPU-qualified unobserved FX072 backend f7e5bf316258793c32313e2f367e28d09519dda82a72c40e4c3e204b61dab615; I will send qualified deployment closure after it passes. No emulator run yet.\n\nProceed to link/admission and concrete call-chain/stack audit with unchanged limits. Retain the honest measurement endpoint: scratch/input cleanup included, output release/reply/C3 outside. Report ESP32 pointer-size workspace extents from admitted packages. Freeze a finite correctness sequence and later fair copied/direct timing plan before target request; retain untimed exact pixel/depth evidence, diagnostic-free timed arms, barriers/core/wrap/preemption limits. No hidden image/dummy buffer, per-fragment callback or math change."
+}

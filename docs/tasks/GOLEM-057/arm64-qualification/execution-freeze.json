@@ -1,0 +1,126 @@
+{
+  "schema": "golem057-arm64-execution-freeze-v1",
+  "emulator_instantiated": false,
+  "permit": {
+    "permit_id": "G057-ARM-001",
+    "coordinator": "golem",
+    "owner": "golem",
+    "machine": "raspberrypi",
+    "created": "2026-10-31T01:33:44.210144+00:00",
+    "scope": "Four sequential fresh Pi direct-library mechanism checks; not an Oryx lease",
+    "allowed_cases": [
+      "toy35072-jit",
+      "toy35072-interp",
+      "rows-r1-jit",
+      "rows-r1-interp"
+    ],
+    "source_freeze": "b21f16bfd5cd80774862e16db2ca80e2e4a4f0eaa51ca05f2b5a22c80bf556aa",
+    "backend": "/Agon/mystuff/agon-fsim/utilities/pingo-vdplet-rows/build/maintained-arm64-r02/flexe-vdp-maintained-arm64.so",
+    "backend_sha256": "af0ccc012bed9184acadadf684fd00cbd78aae4cc0460660a454c609d0291caf",
+    "core_sha256": "7618f338cc0106a36657b64f62421ef29d19743a596acd222292a0a39a9097e2",
+    "build_receipt_sha256": "4a55dfd2909b57aba4c4f6a3da98bb220ece570aeca0415084eb8a8c80724fa3",
+    "input_archive_sha256": "1ea30cfe06f9a2c78edcbf9babbe35f2dd158baf5b1698fe123378bdb6a37591",
+    "profile": "/Agon/mystuff/agon-vdplet/.emulator/vdpl012-arm64-qualification",
+    "requires": [
+      "Verify actual ARM/source/build/module/firmware pins before first load",
+      "Record r02 build provenance and final execution freeze before launch; r01 failure preserved",
+      "Four fresh sequential processes only; stop first unexpected failure; no retry/source/expectation change",
+      "Normal owned stop/join before analysis; inspect Pi for any pre-existing emulator, stop if unknown conflicting use",
+      "No Oryx launch/lease/profile mutation, GUI, physical operation or publication"
+    ]
+  },
+  "permit_sha256": "7313e257408684cb79d315bef14002f8a076a1e6e80d51c6edc1d9d944905281",
+  "preparation_freeze_sha256": "b21f16bfd5cd80774862e16db2ca80e2e4a4f0eaa51ca05f2b5a22c80bf556aa",
+  "profile": {
+    "stopped": true,
+    "emulator_instantiated": false,
+    "architecture": "aarch64",
+    "profile": "/Agon/mystuff/agon-vdplet/.emulator/vdpl012-arm64-qualification",
+    "pins": {
+      "flexe-agon-emulator": "c47b3ab958f752c1bd681f71934166396ab2d128d4275ec4d19255967f034165",
+      "flexe-agon-emulator.bin": "b476068b62c7c85aa50f0bf56953f5075219082e14c0116ec5d292275454227c",
+      "mos_platform.bin": "d564243283972690933a4554296ad6202ca4ef54572279533a942960846bebae",
+      "mos_platform.map": "d69e60bbce61a7b4b3eef318ba395f11c4e1a5b585755755113992dc94edcb86",
+      "flexe-vdp.so": "af0ccc012bed9184acadadf684fd00cbd78aae4cc0460660a454c609d0291caf",
+      "esp32-firmware.bin": "8d980025f891484cf7e6cc5f2992cf517cb80e0123ff7de712ae8d7f2dc1c807",
+      "esp32-firmware.elf": "1a7c44482d4ba8c5bfb49976c0bd664b9a9c2a635c7027b30954929ca567f814",
+      "sdcard/autoexec.txt": "6794c9436d319663931149171338229221a5bf13e6e6e25ddf4ab3360e1f8ff3"
+    },
+    "canonical_setup_sha256": "844ab629cb604daf2469c2c1c9c5dab89d8e9abc9c62f0a19c3eceb6f960a98a",
+    "scope": "Staging only. Root Pi permit still required before direct-library execution; no Oryx lease."
+  },
+  "owner_build": [
+    {
+      "path": "/Agon/mystuff/agon-fsim/utilities/pingo-vdplet-rows/build/maintained-arm64-r02/flexe-vdp-maintained-arm64.so",
+      "bytes": 1564816,
+      "sha256": "af0ccc012bed9184acadadf684fd00cbd78aae4cc0460660a454c609d0291caf"
+    },
+    {
+      "path": "/Agon/mystuff/agon-fsim/utilities/pingo-vdplet-rows/build/maintained-arm64-r02/core/libxtensa-emu-lib.a",
+      "bytes": 2005332,
+      "sha256": "7618f338cc0106a36657b64f62421ef29d19743a596acd222292a0a39a9097e2"
+    },
+    {
+      "path": "/Agon/mystuff/agon-fsim/utilities/pingo-vdplet-rows/build/maintained-arm64-r02/build-receipt.json",
+      "bytes": 29313,
+      "sha256": "4a55dfd2909b57aba4c4f6a3da98bb220ece570aeca0415084eb8a8c80724fa3"
+    },
+    {
+      "path": "/Agon/mystuff/flexe-agon-emulator/build/fx072/arm64-prep/arm64-source-closure-r02.tar",
+      "bytes": 7311360,
+      "sha256": "1ea30cfe06f9a2c78edcbf9babbe35f2dd158baf5b1698fe123378bdb6a37591"
+    },
+    {
+      "path": "/Agon/mystuff/flexe-agon-emulator/build/fx072/arm64-prep/closure-r02/closure-manifest.json",
+      "bytes": 14132,
+      "sha256": "e51a20ff8a2d461f0d083d8299bc96bbcf415df2e8679f10641925e86fb9c577"
+    },
+    {
+      "path": "/Agon/mystuff/flexe-agon-emulator/build/fx072/arm64-prep/closure-r02/recipe/build_arm64.py",
+      "bytes": 10963,
+      "sha256": "e1b3caf7fd8d112d0b6f1f98b3376977fe73a5ebd1997e829f8e14c0e56c25ad"
+    },
+    {
+      "path": "/Agon/mystuff/agon-fsim/utilities/pingo-vdplet-rows/build/maintained-arm64-r02/warning-policy-verification.json",
+      "bytes": 237,
+      "sha256": "a97487328f21b82877c9894eb73c66e32601711fc687323dd4a791fb42377677"
+    }
+  ],
+  "architecture": {
+    "system": "Linux",
+    "machine": "aarch64",
+    "elf_machine": 183,
+    "page_size": 16384,
+    "native_tuning": true
+  },
+  "compiler": "cc (Debian 14.2.0-19) 14.2.0",
+  "compiler_target": "aarch64-linux-gnu",
+  "host_checks": {
+    "coherence": {
+      "passed": true,
+      "expected_wide": true,
+      "scenarios": 29,
+      "assertions": 515
+    },
+    "ulp_ps2": true,
+    "i2s_eof": true,
+    "clock": true
+  },
+  "diagnostic_exception": {
+    "flag": "-Wno-error=stringop-truncation",
+    "translation_unit": "src/rom_stubs.c",
+    "warning_visible": true,
+    "compiler_family": "GNU",
+    "other_Werror_preserved": true,
+    "core_compile_commands": 59,
+    "exceptional_commands": 1
+  },
+  "unchanged_source_and_payload_preflight_passed": true,
+  "prior_attempt": "Owner r01 compile failed; retained. Approved r02 only adds documented rom_stubs.c warning severity exception, no target workaround or fixture change.",
+  "cases": [
+    "toy35072-jit",
+    "toy35072-interp",
+    "rows-r1-jit",
+    "rows-r1-interp"
+  ]
+}

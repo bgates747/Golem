@@ -1,0 +1,22 @@
+{
+  "schema": "g057-wolf-path-root-candidate-v1",
+  "source_only": true,
+  "actual_original_runner_sha256": "f0ffe79892f9a93edc41f590bb02551583580e899b7232545253b1141962ca98",
+  "tests": 4,
+  "tests_passed": true,
+  "actual_spawn": false,
+  "audio": false,
+  "ssh": false,
+  "build": false,
+  "consumer_sources_modified": false,
+  "owner_adoption_pending": true,
+  "target_selected": false,
+  "files": {
+    "README.md": "2717aa4a798ecc3444b50ecd8c016f6935723bbb6ec7c4bd5c0a4018e0b011ba",
+    "path-only.patch": "fa02514c8bbeb15a8a628cb20515624c27e1626be06f9602cd0b3e6188e5db20",
+    "test_prelaunch.py": "bd9e50f5ccd1821d4c10f0200396f905349039765495c53662a333e2231132b6",
+    "inputs.json": "874eecdcba9a9a60ad8748a30eb56ae55fb4ad1aa70e177a2e5e2d53c373ec9e",
+    "stage_oryx.py": "067306472d82fabf61c1794d806bf265f8c080d27f8e38a3ad04286644b0473a",
+    "prepare_profile.py": "4ba61f5e5eadd09ceafecdbc061acf49fbe909f2c713bde5d1b1e52683449bae"
+  }
+}

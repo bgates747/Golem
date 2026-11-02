@@ -1,0 +1,12 @@
+{"native_before": {"time": 1793585390.6554852, "pid1": "systemd", "pid_namespace": "pid:[4026531836]", "emulators": []}}
+Traceback (most recent call last):
+  File "/tmp/p066-execute-native.py", line 8, in <module>
+    try:d.execute_selected(d.OUT/'readiness.json',d.OUT/'permit-r1.json',d.OUT/'pi-native-r1')
+        ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Agon/mystuff/agon-fsim/utilities/pingo-vdplet-flight/native_cost_driver.py", line 308, in execute_selected
+    admission=native_admission() # Failed admission never stages/launches.
+  File "/Agon/mystuff/agon-fsim/utilities/pingo-vdplet-flight/native_cost_driver.py", line 265, in native_admission
+    require(pid1=='systemd' and namespace==os.readlink('/proc/1/ns/pid'),'native whole-host PID visibility required')
+                                           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: '/proc/1/ns/pid'
+{"before": {"time": 1793585390.6554852, "pid1": "systemd", "pid_namespace": "pid:[4026531836]", "emulators": []}, "after": {"time": 1793585391.040569, "pid1": "systemd", "pid_namespace": "pid:[4026531836]", "emulators": []}, "error": "PermissionError(13, 'Permission denied')", "permit_consumed": false, "output_exists": false, "packages": {"off": false, "on": false}, "no_retry": true}

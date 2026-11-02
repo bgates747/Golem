@@ -1,0 +1,17 @@
+{
+  "stopped": true,
+  "emulator_instantiated": false,
+  "profile": "/home/smith/Agon/mystuff/agon-vdplet/.emulator/vdpl-012-qualification",
+  "pins": {
+    "flexe-agon-emulator": "c47b3ab958f752c1bd681f71934166396ab2d128d4275ec4d19255967f034165",
+    "flexe-agon-emulator.bin": "7e78e991a32c7bc94e84d70e8ad1792e3b840c48adc2e3aae7f635a88f4878ad",
+    "mos_platform.bin": "d564243283972690933a4554296ad6202ca4ef54572279533a942960846bebae",
+    "mos_platform.map": "d69e60bbce61a7b4b3eef318ba395f11c4e1a5b585755755113992dc94edcb86",
+    "flexe-vdp.so": "f7e5bf316258793c32313e2f367e28d09519dda82a72c40e4c3e204b61dab615",
+    "esp32-firmware.bin": "8d980025f891484cf7e6cc5f2992cf517cb80e0123ff7de712ae8d7f2dc1c807",
+    "esp32-firmware.elf": "1a7c44482d4ba8c5bfb49976c0bd664b9a9c2a635c7027b30954929ca567f814",
+    "sdcard/autoexec.txt": "6794c9436d319663931149171338229221a5bf13e6e6e25ddf4ab3360e1f8ff3"
+  },
+  "canonical_setup_sha256": "229c66f63a24b4a20822810e6f771c506dff0f25a179df905ea815770277b92e",
+  "scope": "staging only; direct-library qualification is separate and needs central lease"
+}

@@ -1,0 +1,25 @@
+{
+  "recorded": "2026-11-01T23:29:17-05:00",
+  "authority": "Direct Author: wind it up for tonight; Author notifies active chats of Oryx shutdown; queue incoming agent messages and do not reply until next work session tomorrow.",
+  "goal_action": "Pause after this clean local checkpoint.",
+  "communications": "No further mailbox reads/acks, replies or chat notifications until explicit Author resumption. Incoming durable mail remains unread; incoming chat notices are pending input, not reply authorization.",
+  "last_delivered": "root255 Wolf next-owner mailbox and chat notification after actual generation85 release",
+  "blocked_unsent": "root256 outgoing mailbox confirmation rejected by automatic review after new no-replies instruction; send command failed before chat call. Draft preserved, not automatically retried.",
+  "next_session": [
+    "Read held mail and respond only after explicit Author resumption.",
+    "Get 6502 original human result/release report and visible-feedback correction readiness; consumer owner implements/tests.",
+    "Recheck live central FIFO, testing hold and machine availability before any tests.",
+    "Keep human/publication/physical gates distinct; no commits or pushes approved at this stop."
+  ],
+  "worktree": "Preserved uncommitted; no root emulator process or lease; last verified6502release85 and Wolf next request08708e5edbd9. Reinspect live state tomorrow; this is historical only.",
+  "single_reply_exception": {
+    "authority": "Direct Author: you may send that one reply, making sure the receiving agent understands that no new work is to begin until further notification.",
+    "message_id": "2026-11-01_23-32-29_golem_g057-release85-handoff-delivered-256",
+    "recipient": "agon-6502",
+    "mail_sent": true,
+    "chat_notification_sent": true,
+    "instruction": "Begin no new work until further explicit notification; earlier continue-work directions suspended; no reply requested tonight.",
+    "goal_resumed": false,
+    "other_communications_hold_lifted": false
+  }
+}

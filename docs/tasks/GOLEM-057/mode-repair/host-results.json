@@ -1,0 +1,177 @@
+{
+  "schema": "g057-mode-release-host-v1",
+  "passed": true,
+  "compiler": "c++ (Debian 14.2.0-19) 14.2.0",
+  "source_pins": {
+    "original": {
+      "root": "/Agon/mystuff/agon-vdplet/build/vdpl-010/pixels/firmware-src",
+      "vdu_sha256": "24923b53a83d77ebf729795d7ecb7343e6f2fed0e9d748d48fc83c8b75e805cb",
+      "agon_screen_sha256": "648dbc7d0ba9d98a3115a4ba307ff7585c6c5e28189c1e8961eff7a3c3d60343",
+      "extracted_mode_sha256": "717c6ed0331d7ddd58b29969a6f0e261251dbdca72448dc5b8fdc4ec8aaec726",
+      "extracted_update_sha256": "4b8c9492f20c8c4de58c423b4310df8feaeaec0a3ac459c8520f59a6e94d4250",
+      "extracted_helper_sha256": null
+    },
+    "control": {
+      "root": "/Agon/mystuff/golem/docs/tasks/GOLEM-057/build/display-mode-repair/control00",
+      "vdu_sha256": "24923b53a83d77ebf729795d7ecb7343e6f2fed0e9d748d48fc83c8b75e805cb",
+      "agon_screen_sha256": "648dbc7d0ba9d98a3115a4ba307ff7585c6c5e28189c1e8961eff7a3c3d60343",
+      "extracted_mode_sha256": "717c6ed0331d7ddd58b29969a6f0e261251dbdca72448dc5b8fdc4ec8aaec726",
+      "extracted_update_sha256": "4b8c9492f20c8c4de58c423b4310df8feaeaec0a3ac459c8520f59a6e94d4250",
+      "extracted_helper_sha256": null
+    },
+    "candidate": {
+      "root": "/Agon/mystuff/golem/docs/tasks/GOLEM-057/build/display-mode-repair/candidate",
+      "vdu_sha256": "d0ebff6e6b7a78aa434e2c4179368e0f6e1153b67b50718aa2cadb69c9c04de2",
+      "agon_screen_sha256": "648dbc7d0ba9d98a3115a4ba307ff7585c6c5e28189c1e8961eff7a3c3d60343",
+      "extracted_mode_sha256": "481b5d118d8e1b701b9d489d68978c08fa200746c984bc3fd1f00d5313b7d711",
+      "extracted_update_sha256": "4b8c9492f20c8c4de58c423b4310df8feaeaec0a3ac459c8520f59a6e94d4250",
+      "extracted_helper_sha256": "027a2f047d407a18f18222adc59c7ed923460fdfd3d5129cc824755561f84deb"
+    }
+  },
+  "test_pins": {
+    "check_host.py": "c6a839b3b6389e6344862e3514908501f65a25aed0f7fdb13782ed53efc464d5",
+    "check_release.cpp": "57437dfd63268838b35e1d09a1296ad9cceb057be166f7e8504302d6a07fc224"
+  },
+  "original_control_match": true,
+  "unchanged_cases": [
+    "success",
+    "invalid_mode",
+    "teletext_refusal",
+    "factory_error",
+    "nonheight_second_error"
+  ],
+  "sanitizer": "ASan+UBSan; detect_leaks=0; halt_on_error=1",
+  "limitation": "Ownership fakes test extracted control flow and lifetime ordering; no real allocation, firmware, ISR, emulator or physical proof.",
+  "runs": {
+    "original": {
+      "checks": 396,
+      "cases": [
+        "success",
+        "invalid_mode",
+        "teletext_refusal",
+        "factory_error",
+        "nonheight_second_error",
+        "height_error",
+        "same_depth_height_error",
+        "two_height_errors",
+        "second_height_error"
+      ],
+      "command": [
+        "c++",
+        "-std=c++17",
+        "-O1",
+        "-g",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-DREPAIR_ENABLED=0",
+        "-I",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-057/build/display-mode-repair/host/original",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-057/mode-repair/check_release.cpp",
+        "-o",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-057/build/display-mode-repair/host/original/check_release"
+      ],
+      "executable_sha256": "733a85bc7d88d3c80d964d37301bc1178f384d6c7c6131461b17f16c5f7c8c7c",
+      "stdout_sha256": "6d033504df38903d0a1d7a6b6c4d31af0b1273d9f97d4cafe9ab9e3c80d512dc",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "control": {
+      "checks": 396,
+      "cases": [
+        "success",
+        "invalid_mode",
+        "teletext_refusal",
+        "factory_error",
+        "nonheight_second_error",
+        "height_error",
+        "same_depth_height_error",
+        "two_height_errors",
+        "second_height_error"
+      ],
+      "command": [
+        "c++",
+        "-std=c++17",
+        "-O1",
+        "-g",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-DREPAIR_ENABLED=0",
+        "-I",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-057/build/display-mode-repair/host/control",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-057/mode-repair/check_release.cpp",
+        "-o",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-057/build/display-mode-repair/host/control/check_release"
+      ],
+      "executable_sha256": "d5eb1645709da8ea143384d92ab8b8d9a2923fd5f179b03f1be725f6359882d9",
+      "stdout_sha256": "6d033504df38903d0a1d7a6b6c4d31af0b1273d9f97d4cafe9ab9e3c80d512dc",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "candidate": {
+      "checks": 424,
+      "cases": [
+        "success",
+        "invalid_mode",
+        "teletext_refusal",
+        "factory_error",
+        "nonheight_second_error",
+        "height_error",
+        "same_depth_height_error",
+        "two_height_errors",
+        "second_height_error"
+      ],
+      "command": [
+        "c++",
+        "-std=c++17",
+        "-O1",
+        "-g",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-DREPAIR_ENABLED=1",
+        "-I",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-057/build/display-mode-repair/host/candidate",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-057/mode-repair/check_release.cpp",
+        "-o",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-057/build/display-mode-repair/host/candidate/check_release"
+      ],
+      "executable_sha256": "5b6bfae71298b24022380dccc8415b80116cb357b88475de1da45c5a909844fc",
+      "stdout_sha256": "173a4515262abe899c07a2338c7dc4e53e2a0ca991f61d956822c8d4ebcf2c24",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "candidate-sanitized": {
+      "checks": 424,
+      "cases": [
+        "success",
+        "invalid_mode",
+        "teletext_refusal",
+        "factory_error",
+        "nonheight_second_error",
+        "height_error",
+        "same_depth_height_error",
+        "two_height_errors",
+        "second_height_error"
+      ],
+      "command": [
+        "c++",
+        "-std=c++17",
+        "-O1",
+        "-g",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-DREPAIR_ENABLED=1",
+        "-I",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-057/build/display-mode-repair/host/candidate-sanitized",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-057/mode-repair/check_release.cpp",
+        "-o",
+        "/Agon/mystuff/golem/docs/tasks/GOLEM-057/build/display-mode-repair/host/candidate-sanitized/check_release",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer"
+      ],
+      "executable_sha256": "b11cb40f3b2eb78e397a27710b7a4e7d6fd3b57df4dc638e0f32c4c5a5a2a8ff",
+      "stdout_sha256": "173a4515262abe899c07a2338c7dc4e53e2a0ca991f61d956822c8d4ebcf2c24",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  }
+}

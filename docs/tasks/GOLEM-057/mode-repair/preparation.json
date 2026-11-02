@@ -1,0 +1,22 @@
+{
+  "schema": "g057-mode-repair-preparation-v1",
+  "frozen_plan_sha256": "ff84eb791917a8a4432187b0035c306c924296d521d2a5e5f29abd04eaebda53",
+  "original_root": "/Agon/mystuff/agon-vdplet/build/vdpl-010/pixels/firmware-src",
+  "build_root": "/Agon/mystuff/golem/docs/tasks/GOLEM-057/build/display-mode-repair",
+  "equal_length_variant_names": [
+    "control00",
+    "candidate"
+  ],
+  "source_files_per_variant": 4755,
+  "only_changed_file": "candidate/video/vdu.h",
+  "original_vdu_sha256": "24923b53a83d77ebf729795d7ecb7343e6f2fed0e9d748d48fc83c8b75e805cb",
+  "candidate_vdu_sha256": "d0ebff6e6b7a78aa434e2c4179368e0f6e1153b67b50718aa2cadb69c9c04de2",
+  "patch_sha256": "e73c930084eda9a4062a7a4ff9314412260d103c58a6f4a2682fd12f69dadbb0",
+  "source_manifest": {
+    "path": "source-manifests.json.gz",
+    "bytes": 249676,
+    "sha256": "20d97b5731b39e2e19d3bf6e84cdbf7f71ff88800602a7d133a3b2d4b98def21"
+  },
+  "dependency_policy": "Original cached .pio/libdeps including GL VCS metadata copied; current SDK exporter never invoked.",
+  "execution_scope": "Source, host tests and offline matched builds only; no target/emulator/deployment."
+}

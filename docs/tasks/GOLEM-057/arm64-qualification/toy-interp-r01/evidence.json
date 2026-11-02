@@ -1,0 +1,103 @@
+{
+  "passed": true,
+  "scope": "Pi ARM64 finite mode11 CPU/lifecycle mechanism gate; no app rendering or physical timing",
+  "architecture": "aarch64",
+  "engine": "interp",
+  "inputs": {
+    "target.py": {
+      "path": "/Agon/mystuff/agon-vdplet/docs/tasks/VDPL-012/qualification/target.py",
+      "bytes": 7620,
+      "sha256": "66ad78c3838179703e8f9f5149028b68317f778995e463c95b4f1c9cc93d5228"
+    },
+    "package": {
+      "path": "/Agon/mystuff/agon-6502/build/vdp005/module/vdp005-text32k.vdpl",
+      "bytes": 35876,
+      "sha256": "7113d107a7c91fc56c6e65169c1d3a17fc7cc7771a125373505c421cf46f68ef"
+    },
+    "oracle": {
+      "path": "/Agon/mystuff/agon-6502/build/vdp005/color/maintained-controls/vdp005-text32k-jit-r01/toy-state.bin",
+      "bytes": 64,
+      "sha256": "ab5a0785dc71ee37fbc2e7af8fbe75fb55fe207a09801f518945f93a52a9e9e2"
+    },
+    "firmware": {
+      "path": "/Agon/mystuff/agon-vdplet/build/vdpl-010/pixels/firmware-src/.pio/build/esp32dev/firmware.bin",
+      "bytes": 1092448,
+      "sha256": "b42ae55f69900c44acacfbf0d665ef278e87b277b3b9fd4208e17ebf378f74b6"
+    },
+    "elf": {
+      "path": "/Agon/mystuff/agon-vdplet/build/vdpl-010/pixels/firmware-src/.pio/build/esp32dev/firmware.elf",
+      "bytes": 24954928,
+      "sha256": "a10f7989d5c1f9974fc999428865ca74771fb65a0d4d694a2ac2b81c19df9902"
+    }
+  },
+  "backend": {
+    "path": "/Agon/mystuff/agon-vdplet/.emulator/vdpl012-arm64-qualification/flexe-vdp.so",
+    "sha256": "af0ccc012bed9184acadadf684fd00cbd78aae4cc0460660a454c609d0291caf"
+  },
+  "harness_sha256": "ec6d76c749334cb2419e1a914ac458f17c3b04df3130f6b107d0ef468a42f6a6",
+  "calls": [
+    {
+      "entry": 0,
+      "budget": 0,
+      "arguments_hex": "85e486e487e40000000000000000010010000000000000000800000000000000"
+    },
+    {
+      "entry": 1,
+      "budget": 8,
+      "arguments_hex": "85e486e487e40000080000000000010010000000000000000800000000000000"
+    }
+  ],
+  "no_oryx_lease_used": true,
+  "before_load": {
+    "executable_free_bytes": 161476,
+    "executable_largest_bytes": 110580,
+    "internal_free_bytes": 205252,
+    "internal_largest_bytes": 110580,
+    "spiram_free_bytes": 4167647,
+    "spiram_largest_bytes": 4128756,
+    "command_stack_free_bytes": 2260,
+    "audio_stack_free_bytes": 1536,
+    "tasks": 12
+  },
+  "loaded_handle": 1,
+  "init_complete": true,
+  "text_bytes": 35072,
+  "data_bytes": 4,
+  "toy_state_sha256": "ab5a0785dc71ee37fbc2e7af8fbe75fb55fe207a09801f518945f93a52a9e9e2",
+  "toy_steps": 8,
+  "toy_cycles": 29,
+  "complete_64byte_oracle_match": true,
+  "fini_unload_complete": true,
+  "after_unload": {
+    "executable_free_bytes": 161476,
+    "executable_largest_bytes": 110580,
+    "internal_free_bytes": 205252,
+    "internal_largest_bytes": 110580,
+    "spiram_free_bytes": 4167603,
+    "spiram_largest_bytes": 4128756,
+    "command_stack_free_bytes": 2136,
+    "audio_stack_free_bytes": 1536,
+    "tasks": 12
+  },
+  "empty_slot": true,
+  "same_mode_executable_heap_recovered": true,
+  "execution_stats": {
+    "engine": "interp",
+    "frames": 237,
+    "cycles": 1068881427,
+    "retired": 296007766,
+    "uart_rx": 103050,
+    "uart_tx": 887,
+    "uart_delivered": 887,
+    "isync": 15,
+    "code_invalidations": 2,
+    "keys": 0,
+    "failed": false,
+    "unhandled": 0,
+    "unregistered": 0,
+    "unmapped": 0
+  },
+  "elapsed_seconds": 8.734,
+  "result_bytes": 720,
+  "outbound_bytes": 103050
+}

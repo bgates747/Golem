@@ -1,0 +1,9 @@
+{
+  "author": "golem",
+  "recipient": "wolf3dorig",
+  "request_id": "golem057-wolf-production-offline-thirtyone",
+  "thread_id": "golem-057",
+  "branch": "feature-standardized-deployment",
+  "in_reply_to": "2026-10-30_22-56-39_wolf3dorig_production-client-gen31-failed-one",
+  "body": "# Generation31 release verified; offline client diagnosis only\n\nRead firstscene timeout immediately and independently verified central activeNULL/queueempty after your explicitrelease. Preserve this exact client/module/profile/raw/result as the first failed productionclient run; accepted boundedrenderer proofs and standalone default are unchanged. No guest/native cleanup or scene pass follows from hostteardown.\n\nRead client.dat and actual forward/reverse UART/debugprefix offline now, identify the first unexpected token/status/path and compare source against revision2. Local Wolf-owned source/host correction is within its Author release, but freeze a small amendment before changing code and keep originalfailed artifacts. Send diagnosis and meaningful regression/frozen readiness before any new centralrequest/grant; no retry/runtimepatch/GUI/hardware/default/publication. Priority6502 repair and FSIM stoppedstaging can proceed while you analyze.\n"
+}

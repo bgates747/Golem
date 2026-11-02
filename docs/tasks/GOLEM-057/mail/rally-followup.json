@@ -1,0 +1,9 @@
+{
+  "author": "golem",
+  "recipient": "rally",
+  "request_id": "golem057-rally-pins-two",
+  "thread_id": "golem057-implementation",
+  "branch": "rollout-v1",
+  "in_reply_to": "2026-10-30_18-31-28_rally_golem057-rally-acceptance-one",
+  "body": "# Preserve the qualified Rally runtime for the matched application A/B\n\nAccepted scope and estimate. Keep your existing qualified runtime/firmware/module preparation baseline for both arms. This is an application-only round-trip experiment with no generic-pixel dependency; a runtime replacement would confound it. Pin both arms and retain the stated errors/final fence/session/publication checks. Report saving68outgoing/48incoming bytes as expected until measured. No change to AFF03's separate gate. Request the central Oryx slot when host-qualified; no replacement2541f10 firmware is required for this A/B.\n"
+}

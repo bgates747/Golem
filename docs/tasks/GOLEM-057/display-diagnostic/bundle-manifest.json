@@ -1,0 +1,161 @@
+{
+  "schema": "g057-display-origin-prepared-bundle-v1",
+  "scope": "Source/build/host preparation only. No emulator/target execution or repair is authorized by this bundle.",
+  "original_source": "/Agon/mystuff/agon-vdplet/build/vdpl-010/pixels/firmware-src",
+  "note": "Contains changed source files, exact patch and full source hash manifests; unchanged pinned dependencies remain in the original export and prepared source copies.",
+  "files": {
+    "control/bootloader.bin": {
+      "bytes": 18992,
+      "sha256": "f2dfacdea6ae72d0aeeb7c30e525c4c6fc768a041849feac694cbb2ee2224448"
+    },
+    "control/firmware.bin": {
+      "bytes": 1092976,
+      "sha256": "f55c45588cce080e57c9e7b7ec431cd99a326aed4b3cc65e632e3edb8cafcf4d"
+    },
+    "control/firmware.elf": {
+      "bytes": 25000656,
+      "sha256": "22de1967de5834aae4e36e6463148615a456c32d8bd9c095c778acfc2028e680"
+    },
+    "control/firmware.map": {
+      "bytes": 21005293,
+      "sha256": "de6212da06394bb1bf7385859df514d71614e051a1b87e3095ef0cf55e9e43bd"
+    },
+    "control/partitions.bin": {
+      "bytes": 3072,
+      "sha256": "148b959cbff1c38aa8e1d5c0ba9d612c54997b945e56a63f41223eef650653a1"
+    },
+    "instrumented/bootloader.bin": {
+      "bytes": 18992,
+      "sha256": "f2dfacdea6ae72d0aeeb7c30e525c4c6fc768a041849feac694cbb2ee2224448"
+    },
+    "instrumented/firmware.bin": {
+      "bytes": 1094160,
+      "sha256": "6284230990419db851139657618d92cafd13d52b9af4cd197293144fac1998cf"
+    },
+    "instrumented/firmware.elf": {
+      "bytes": 25017772,
+      "sha256": "7d90f167e102896e7f2e5544b3b5442c290903407b85a802f7321a4d72b9b801"
+    },
+    "instrumented/firmware.map": {
+      "bytes": 21010007,
+      "sha256": "1be5d5edf2353a097de2f7babaeb4a7d8cbad4642264a57a2b42e957b171aa77"
+    },
+    "instrumented/partitions.bin": {
+      "bytes": 3072,
+      "sha256": "148b959cbff1c38aa8e1d5c0ba9d612c54997b945e56a63f41223eef650653a1"
+    },
+    "preparation/README.md": {
+      "bytes": 9854,
+      "sha256": "0aa030759a2d9c425e9d69006ad59ed06fdb12dbcca9aacb9d26177203dffba5"
+    },
+    "preparation/UART-source-proof.md": {
+      "bytes": 2368,
+      "sha256": "f15f53ebaeac3a652cadfa0f811e45455cb6cb9dc205373419e0e68b3dfe5e9f"
+    },
+    "preparation/build-results.json": {
+      "bytes": 24560,
+      "sha256": "09cac41a6c1b0f2c261f4818362377bbfdbc8203ec942a2337009f73929485f5"
+    },
+    "preparation/check_journal.cpp": {
+      "bytes": 3212,
+      "sha256": "4723a66434af0736e4ab19dfa6d6db81f148fa3e2d6ce164c666e901dee60a9b"
+    },
+    "preparation/check_parser.py": {
+      "bytes": 1768,
+      "sha256": "9949d96b86d7c4332d88f13d7618651d03e0cbfa55d5ab587dad5914a4b0b64b"
+    },
+    "preparation/collect_results.py": {
+      "bytes": 6653,
+      "sha256": "d48dea5d11f3b9b699ab233c45adbcbb8a467e982f4bc9e3511917aee6e516b3"
+    },
+    "preparation/g057_diag.h": {
+      "bytes": 4001,
+      "sha256": "fd398c438eca0ae1313bce0e23443e50e6de2d8b2ffb90d7c49a677c502bfa47"
+    },
+    "preparation/host-checks.json": {
+      "bytes": 2121,
+      "sha256": "dacbd8673d923d3c63205d90cd7a2785eccbd8b45e49681c81a11976cb45478d"
+    },
+    "preparation/journal-contract-freeze.json": {
+      "bytes": 539,
+      "sha256": "68341ad2ae2dc41c5f193de26a73bc2cb1fbf27af55bb74110b584119e5d0a66"
+    },
+    "preparation/journal-contract-v1.md": {
+      "bytes": 4012,
+      "sha256": "4933235414ce9d68e3e0dca3286f66529c501ba4423f168a18496ee80ee49ad2"
+    },
+    "preparation/package.py": {
+      "bytes": 2513,
+      "sha256": "a26f35d7dfec6588c309f4f2d84be80ae8b9d951b371eb49f985df3e6e4faa76"
+    },
+    "preparation/parse_journal.py": {
+      "bytes": 3081,
+      "sha256": "8441b7720f42b717fd041db769cc23c8f3e7995250d03edd3b86863f11b4d1e8"
+    },
+    "preparation/preparation.json": {
+      "bytes": 3134,
+      "sha256": "65a01db868a617ec159ece7624e79eb97847976565cdad65f1374ed94e6797a6"
+    },
+    "preparation/prepare.py": {
+      "bytes": 10718,
+      "sha256": "3a6737daf70060fcc0dd45758a55852b35473719770e19b8def279dbd2e12408"
+    },
+    "preparation/source-manifests.json.gz": {
+      "bytes": 997669,
+      "sha256": "6844544dc87575bca6cccd7140e10b71b806b00c7e3e4d100793ea270a237e47"
+    },
+    "preparation/source-verification.json": {
+      "bytes": 571,
+      "sha256": "a6d56a1efa5e38cec14a60b1200ad814052c922b82a393fa1bea74554137fb76"
+    },
+    "preparation/source.patch": {
+      "bytes": 10555,
+      "sha256": "c3cef4e729f029bba45dd8cd34a61250f9dc7e3cf4d8e0d9454ad525d9c61aff"
+    },
+    "preparation/tool-flags.json": {
+      "bytes": 6677,
+      "sha256": "2006e3c6052583493d114c7a7ce1168b8762660025b29966132d3895eedf5976"
+    },
+    "preparation/verify_preparation.py": {
+      "bytes": 3638,
+      "sha256": "b7ffaa7a9555fff2548365fc5d222f7aec746ddfd60fbf349e6337cd3d7c0e6a"
+    },
+    "prepared-source/control/.pio/libdeps/esp32dev/vdp-gl/src/dispdrivers/vgapalettedcontroller.cpp": {
+      "bytes": 17498,
+      "sha256": "4bc8314daccf9a081ecd55d049013659dd6754a8e54ebbecaabfc4279e65e23e"
+    },
+    "prepared-source/control/.pio/libdeps/esp32dev/vdp-gl/src/g057_diag.h": {
+      "bytes": 4001,
+      "sha256": "abd03fe1e4025f8dd957d1af6df9ce0b63e4a24dcc7f164c6b3d8dced8370a85"
+    },
+    "prepared-source/control/video/vdu.h": {
+      "bytes": 11212,
+      "sha256": "094468a910b4a64900b2d3e5460bddc70b22b4928c11dbac4d2ca675b3f640f7"
+    },
+    "prepared-source/control/video/video.ino": {
+      "bytes": 11424,
+      "sha256": "43f6740775e82d1496abca8571bc2ca47e8ae371bd14ed9763123f5631d3ad92"
+    },
+    "prepared-source/instrumented/.pio/libdeps/esp32dev/vdp-gl/src/dispdrivers/vgapalettedcontroller.cpp": {
+      "bytes": 17498,
+      "sha256": "4bc8314daccf9a081ecd55d049013659dd6754a8e54ebbecaabfc4279e65e23e"
+    },
+    "prepared-source/instrumented/.pio/libdeps/esp32dev/vdp-gl/src/g057_diag.h": {
+      "bytes": 4001,
+      "sha256": "fd398c438eca0ae1313bce0e23443e50e6de2d8b2ffb90d7c49a677c502bfa47"
+    },
+    "prepared-source/instrumented/video/vdu.h": {
+      "bytes": 11212,
+      "sha256": "094468a910b4a64900b2d3e5460bddc70b22b4928c11dbac4d2ca675b3f640f7"
+    },
+    "prepared-source/instrumented/video/video.ino": {
+      "bytes": 11424,
+      "sha256": "43f6740775e82d1496abca8571bc2ca47e8ae371bd14ed9763123f5631d3ad92"
+    }
+  },
+  "bundle": {
+    "path": "/Agon/mystuff/golem/docs/tasks/GOLEM-057/build/display-origin-diagnostic/prepared-display-origin-r01.tar.gz",
+    "bytes": 21211896,
+    "sha256": "a26c804968ee724f2c260b726fdae36c9d5d64672a46b3a47bea4b1b65421f3b"
+  }
+}

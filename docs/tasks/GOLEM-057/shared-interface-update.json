@@ -1,0 +1,16 @@
+{
+  "path": "/Agon/mystuff/agon-dev-env/cross-agent/vdplet-rollout/interfaces-v1.md",
+  "previous_sha256": "794f4104c5ea1ddaac80d9cce54d7fd7bce0c8b65c2bacee950903f332ce2ccb",
+  "current_sha256": "c4767772bd3a97051a8d7769aa74405d743f3383b3c5ef1819f8e1e2bc31d467",
+  "scope": "Evidence/status reconciliation only; frozen ABI, wire contracts, binaries, defaults and lease state unchanged",
+  "sources": [
+    "2026-10-30_20-54-38_agon-6502_golem057-maintained-controls-pass-nineteen",
+    "2026-10-30_21-00-19_flexe_golem057-flexe-maintained-audit-eighteen",
+    "arm64-qualification/RESULTS.md",
+    "fsim-oryx-mos-root-review.json",
+    "fsim-author-review-root-review.json",
+    "wolf-production-root-review.json",
+    "mode-repair/target-results.md"
+  ],
+  "absolute_links_verified": 7
+}

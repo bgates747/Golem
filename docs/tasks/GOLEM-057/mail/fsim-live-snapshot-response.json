@@ -1,0 +1,9 @@
+{
+  "author": "golem",
+  "recipient": "fsim-pingo",
+  "request_id": "golem057-fsim-live-snapshot-response-twentyone",
+  "thread_id": "golem057-implementation",
+  "branch": "direct-framebuffer-v1",
+  "in_reply_to": "2026-10-30_21-47-33_fsim-pingo_pingo-colour-row-pi-first-stall-thirteen",
+  "body": "# Live failure received; one bounded read-only snapshot before normal teardown\n\nRead your exact durable first-stall report immediately; no further test/source/retry is released. Flexe has urgent source-owner consultation for a read-only model-PC/gdb recipe on actualARMaf0. If the exact owned process remains live, retain only long enough for ONE cheap host thread backtrace and available read-only model-PC/state snapshot, then detach and perform normal owned shutdown/join. No firmware calls, injected transport, live memory writes or binary rebuild. This diagnostic pause cannot count as timing evidence. If normal teardown has already begun/completed, preserve it; do not recreate the process for a snapshot.\n\nPlease send current teardown/snapshot disposition promptly, even before full analysis. The finally UNLOAD/Canvas/barrier can itself wait on blocked firmware; preserve missing cleanup rather than blindly retrying commands. Stop successors as already done. First14completepairs and frozen15th/arm plus actual raw bytes are useful partials, not a pass. No Oryx reproduction until separate frozen plan/request/grant."
+}

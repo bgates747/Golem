@@ -1,0 +1,694 @@
+{
+  "schema": "vdpl012-arm64-mechanism-results-v1",
+  "passed": true,
+  "scope": "Four fresh sequential Pi ARM64 direct-library processes; finite CPU/row mechanism only, no real application/MOS/human/physical or speed qualification",
+  "permit_id": "G057-ARM-001",
+  "preparation_freeze_sha256": "b21f16bfd5cd80774862e16db2ca80e2e4a4f0eaa51ca05f2b5a22c80bf556aa",
+  "execution_freeze_sha256": "26a965b2fd03b2eb640e7cf4d52e62c0112281c76dcf66a0533796c5a15471b9",
+  "architecture": {
+    "system": "Linux",
+    "machine": "aarch64",
+    "elf_machine": 183,
+    "page_size": 16384,
+    "native_tuning": true
+  },
+  "compiler": "cc (Debian 14.2.0-19) 14.2.0",
+  "compiler_target": "aarch64-linux-gnu",
+  "owner_artifacts": [
+    {
+      "path": "/Agon/mystuff/agon-fsim/utilities/pingo-vdplet-rows/build/maintained-arm64-r02/flexe-vdp-maintained-arm64.so",
+      "bytes": 1564816,
+      "sha256": "af0ccc012bed9184acadadf684fd00cbd78aae4cc0460660a454c609d0291caf"
+    },
+    {
+      "path": "/Agon/mystuff/agon-fsim/utilities/pingo-vdplet-rows/build/maintained-arm64-r02/core/libxtensa-emu-lib.a",
+      "bytes": 2005332,
+      "sha256": "7618f338cc0106a36657b64f62421ef29d19743a596acd222292a0a39a9097e2"
+    },
+    {
+      "path": "/Agon/mystuff/agon-fsim/utilities/pingo-vdplet-rows/build/maintained-arm64-r02/build-receipt.json",
+      "bytes": 29313,
+      "sha256": "4a55dfd2909b57aba4c4f6a3da98bb220ece570aeca0415084eb8a8c80724fa3"
+    },
+    {
+      "path": "/Agon/mystuff/flexe-agon-emulator/build/fx072/arm64-prep/arm64-source-closure-r02.tar",
+      "bytes": 7311360,
+      "sha256": "1ea30cfe06f9a2c78edcbf9babbe35f2dd158baf5b1698fe123378bdb6a37591"
+    },
+    {
+      "path": "/Agon/mystuff/flexe-agon-emulator/build/fx072/arm64-prep/closure-r02/closure-manifest.json",
+      "bytes": 14132,
+      "sha256": "e51a20ff8a2d461f0d083d8299bc96bbcf415df2e8679f10641925e86fb9c577"
+    },
+    {
+      "path": "/Agon/mystuff/flexe-agon-emulator/build/fx072/arm64-prep/closure-r02/recipe/build_arm64.py",
+      "bytes": 10963,
+      "sha256": "e1b3caf7fd8d112d0b6f1f98b3376977fe73a5ebd1997e829f8e14c0e56c25ad"
+    },
+    {
+      "path": "/Agon/mystuff/agon-fsim/utilities/pingo-vdplet-rows/build/maintained-arm64-r02/warning-policy-verification.json",
+      "bytes": 237,
+      "sha256": "a97487328f21b82877c9894eb73c66e32601711fc687323dd4a791fb42377677"
+    }
+  ],
+  "host_checks": {
+    "coherence": {
+      "passed": true,
+      "expected_wide": true,
+      "scenarios": 29,
+      "assertions": 515
+    },
+    "ulp_ps2": true,
+    "i2s_eof": true,
+    "clock": true
+  },
+  "diagnostic_exception": {
+    "flag": "-Wno-error=stringop-truncation",
+    "translation_unit": "src/rom_stubs.c",
+    "warning_visible": true,
+    "compiler_family": "GNU",
+    "other_Werror_preserved": true,
+    "core_compile_commands": 59,
+    "exceptional_commands": 1
+  },
+  "profile": {
+    "stopped": true,
+    "emulator_instantiated": false,
+    "architecture": "aarch64",
+    "profile": "/Agon/mystuff/agon-vdplet/.emulator/vdpl012-arm64-qualification",
+    "pins": {
+      "flexe-agon-emulator": "c47b3ab958f752c1bd681f71934166396ab2d128d4275ec4d19255967f034165",
+      "flexe-agon-emulator.bin": "b476068b62c7c85aa50f0bf56953f5075219082e14c0116ec5d292275454227c",
+      "mos_platform.bin": "d564243283972690933a4554296ad6202ca4ef54572279533a942960846bebae",
+      "mos_platform.map": "d69e60bbce61a7b4b3eef318ba395f11c4e1a5b585755755113992dc94edcb86",
+      "flexe-vdp.so": "af0ccc012bed9184acadadf684fd00cbd78aae4cc0460660a454c609d0291caf",
+      "esp32-firmware.bin": "8d980025f891484cf7e6cc5f2992cf517cb80e0123ff7de712ae8d7f2dc1c807",
+      "esp32-firmware.elf": "1a7c44482d4ba8c5bfb49976c0bd664b9a9c2a635c7027b30954929ca567f814",
+      "sdcard/autoexec.txt": "6794c9436d319663931149171338229221a5bf13e6e6e25ddf4ab3360e1f8ff3"
+    },
+    "canonical_setup_sha256": "844ab629cb604daf2469c2c1c9c5dab89d8e9abc9c62f0a19c3eceb6f960a98a",
+    "scope": "Staging only. Root Pi permit still required before direct-library execution; no Oryx lease."
+  },
+  "source_equivalent_x86_backend": "0866265bd6f3d73ad572f31dc1bb954f308ed9a5d857efa9414d37e1ade13374",
+  "previous_generic_x86_backend": "f7e5bf316258793c32313e2f367e28d09519dda82a72c40e4c3e204b61dab615",
+  "toy_inputs": {
+    "target.py": {
+      "path": "/Agon/mystuff/agon-vdplet/docs/tasks/VDPL-012/qualification/target.py",
+      "bytes": 7620,
+      "sha256": "66ad78c3838179703e8f9f5149028b68317f778995e463c95b4f1c9cc93d5228"
+    },
+    "package": {
+      "path": "/Agon/mystuff/agon-6502/build/vdp005/module/vdp005-text32k.vdpl",
+      "bytes": 35876,
+      "sha256": "7113d107a7c91fc56c6e65169c1d3a17fc7cc7771a125373505c421cf46f68ef"
+    },
+    "oracle": {
+      "path": "/Agon/mystuff/agon-6502/build/vdp005/color/maintained-controls/vdp005-text32k-jit-r01/toy-state.bin",
+      "bytes": 64,
+      "sha256": "ab5a0785dc71ee37fbc2e7af8fbe75fb55fe207a09801f518945f93a52a9e9e2"
+    },
+    "firmware": {
+      "path": "/Agon/mystuff/agon-vdplet/build/vdpl-010/pixels/firmware-src/.pio/build/esp32dev/firmware.bin",
+      "bytes": 1092448,
+      "sha256": "b42ae55f69900c44acacfbf0d665ef278e87b277b3b9fd4208e17ebf378f74b6"
+    },
+    "elf": {
+      "path": "/Agon/mystuff/agon-vdplet/build/vdpl-010/pixels/firmware-src/.pio/build/esp32dev/firmware.elf",
+      "bytes": 24954928,
+      "sha256": "a10f7989d5c1f9974fc999428865ca74771fb65a0d4d694a2ac2b81c19df9902"
+    }
+  },
+  "toy_harness_sha256": "ec6d76c749334cb2419e1a914ac458f17c3b04df3130f6b107d0ef468a42f6a6",
+  "immutable_sdk": {
+    "scope": "Immutable ABI1.6 candidate SDK snapshot; target qualification pending",
+    "created": "2026-10-31T00:34:31.514984+00:00",
+    "contract_sha256": "5172702f7ebc7dea77efb487d9ffafc99514981c7600ffc11d769835f44f267e",
+    "source_baseline": "Current matched VDPL012 source, including preserved010/011 changes; not an old frozen build export",
+    "files": {
+      "include/vdp_audio_queue.h": "4f7363364712301529d5c7bbc9ebd1496a7103aaae717880e4ddb3375520b85e",
+      "include/vdp_pcm_sink_wire.h": "5555235b73a68c7ee5648c7fe67f1e99014c707c1fe024b2dec5225edd9feb4e",
+      "include/vdplet.h": "92a6bbc403ecc51e165c103cfd16fd071f3d644ad52f83a4a7cb4fe088a5a2d6",
+      "include/vdplet_pcm_sink.h": "e3bf5d900105ddd87e82f5cd38301fab02ffb7a7e38f81012db0bb2e13ba963c",
+      "include/vdplet_protocol.h": "a55dce6ca09a32da736e43416207a1e5c3d1bceea6c70c1229764696f622f5ef",
+      "include/vdplet_services.h": "00844d5220bf05d329c4f66f6fb3653d8bcca3f60eafc51c820820f1203f394f",
+      "src/vdplet_policy.h": "c69d6f3654b4b5dd4a8ae76e971818f4b13369d61dbded607b844e3268f66419",
+      "tools/build_module.py": "d9bf73144f57b64cc463f10f634f4de2893e50349f4782ba299db24aa47f93c9",
+      "tools/module.exports": "9fd0e3d42b2162d4d65e43592c78e5c0ba5663a937b1474c76312654c1dce1a9"
+    }
+  },
+  "unchanged_rows_qualifier": {
+    "worker.c": "e569e3393a7632ca5b55569d412f93fbf111aa707f3ab2f8fbebe51737e86d95",
+    "target.py": "66ad78c3838179703e8f9f5149028b68317f778995e463c95b4f1c9cc93d5228",
+    "qualify.py": "80ca7a7ae9e265547e4b2f4a849ce6c84a88df0ae5060271a2446db6d8dffc16",
+    "stage.py": "074c9a6150cebb971a83821c63a9f7c133c71e9432a26b6ccd3de71bcc27a49d",
+    "README.md": "4c18d9bdf0d1f6c3c144c0d542ade5ffa94bb586dc88efad4a98cdf146cadd11"
+  },
+  "row_modules": [
+    {
+      "name": "rows",
+      "path": "/Agon/mystuff/agon-vdplet/build/vdpl012qualification/modules/rows.vdpl",
+      "bytes": 4148,
+      "sha256": "828fa85a934b62f4559d45476bb4ca383cc40581f1db3d0ebc5812c3317f4caf"
+    },
+    {
+      "name": "undeclared",
+      "path": "/Agon/mystuff/agon-vdplet/build/vdpl012qualification/modules/undeclared.vdpl",
+      "bytes": 4148,
+      "sha256": "228911cd534ac95087cf500737e8f1546980420c4617917dc8ce33e9430203c3"
+    },
+    {
+      "name": "view-0",
+      "path": "/Agon/mystuff/agon-vdplet/build/vdpl012qualification/modules/view-0.vdpl",
+      "bytes": 1048,
+      "sha256": "9e9348d37e468bf8e25ae79b29394913200f9cf1f0584ed518faec9477de8f0c"
+    },
+    {
+      "name": "view-1",
+      "path": "/Agon/mystuff/agon-vdplet/build/vdpl012qualification/modules/view-1.vdpl",
+      "bytes": 1048,
+      "sha256": "fde52907b9fbd4042a647446bb8664491d7817ca40e28bce3f0253ffcf78cf69"
+    },
+    {
+      "name": "view-2",
+      "path": "/Agon/mystuff/agon-vdplet/build/vdpl012qualification/modules/view-2.vdpl",
+      "bytes": 1048,
+      "sha256": "d6ab08b28337f2a82c35c0cee52acc5c9f26d2dbb2304927a7f11409e8ced500"
+    },
+    {
+      "name": "view-3",
+      "path": "/Agon/mystuff/agon-vdplet/build/vdpl012qualification/modules/view-3.vdpl",
+      "bytes": 1048,
+      "sha256": "42450a6e0c9c423e110242ca81526e8ecec4943acce354c79b818d25877b66f1"
+    },
+    {
+      "name": "view-4",
+      "path": "/Agon/mystuff/agon-vdplet/build/vdpl012qualification/modules/view-4.vdpl",
+      "bytes": 1048,
+      "sha256": "c6dacdde96fd12bd91ac5fc746276f0a4f4298145249422a0acf3d72419a7010"
+    },
+    {
+      "name": "view-5",
+      "path": "/Agon/mystuff/agon-vdplet/build/vdpl012qualification/modules/view-5.vdpl",
+      "bytes": 1048,
+      "sha256": "898f0618b8470efa0cc2cc6be307c79a4d1860991523ba991a319abcce27a062"
+    },
+    {
+      "name": "view-6",
+      "path": "/Agon/mystuff/agon-vdplet/build/vdpl012qualification/modules/view-6.vdpl",
+      "bytes": 1048,
+      "sha256": "0c4fafc3401685db5cb6df681703c495d9ac90a4f342f928a0c7907e2e5ab889"
+    }
+  ],
+  "legacy_modules": [
+    {
+      "path": "/Agon/mystuff/agon-vdplet/build/modules/packed-mono.vdpl",
+      "bytes": 1392,
+      "sha256": "e43844240acf5d6acfdfa3aabd6dd42bc4ed229789ed9d33e696378a511e29aa"
+    },
+    {
+      "path": "/Agon/mystuff/agon-vdplet/build/modules/numeric-1.vdpl",
+      "bytes": 1472,
+      "sha256": "722f77c8b33b57ec040c3366b6ceff16267efb358a716074179a1fb4cb6a6522"
+    }
+  ],
+  "processes": 4,
+  "toy_cases": 2,
+  "row_groups": 22,
+  "total_pixels_compared": 5240832,
+  "total_execution_seconds": 88.256,
+  "identical_outbound_fixture_within_each_engine_pair": true,
+  "normal_shutdown_all": true,
+  "fresh_pi_idle": {
+    "machine": "raspberrypi",
+    "epoch": 1793410661.2179437,
+    "emulators": []
+  },
+  "oryx_used": false,
+  "target_retry": false,
+  "frozen_source_or_expectation_changes": false,
+  "limitations": [
+    "Native ARM64 artifact is distinct from x86; source equivalence refers to maintained 0866265b, not relabelling the prior f7e5 generic row evidence.",
+    "Elapsed times include startup, transport and capture; host architecture/JIT/compiler differences preclude a consumer or physical speed claim.",
+    "Toy executable/internal heap fully recover in unchanged mode 11; each observes 44 fewer PSRAM bytes after buffer cleanup, not a PSRAM recovery claim.",
+    "Row boot/final screen states differ; heap readings are observations. Actual command stack headroom is measured, not a static whole-call guarantee.",
+    "Public C3/RUN rebinding is exercised; injected pending-Canvas-swap ordering remains separate host/source evidence."
+  ],
+  "runs": [
+    {
+      "name": "toy-jit-r01",
+      "kind": "toy",
+      "engine": "jit",
+      "passed": true,
+      "elapsed_seconds": 4.996,
+      "row_groups": 0,
+      "pixels_compared": 0,
+      "before_resources": {
+        "executable_free_bytes": 161476,
+        "executable_largest_bytes": 110580,
+        "internal_free_bytes": 205252,
+        "internal_largest_bytes": 110580,
+        "spiram_free_bytes": 4167647,
+        "spiram_largest_bytes": 4128756,
+        "command_stack_free_bytes": 2260,
+        "audio_stack_free_bytes": 1536,
+        "tasks": 12
+      },
+      "after_resources": {
+        "executable_free_bytes": 161476,
+        "executable_largest_bytes": 110580,
+        "internal_free_bytes": 205252,
+        "internal_largest_bytes": 110580,
+        "spiram_free_bytes": 4167603,
+        "spiram_largest_bytes": 4128756,
+        "command_stack_free_bytes": 2136,
+        "audio_stack_free_bytes": 1536,
+        "tasks": 12
+      },
+      "checks": {
+        "text_bytes": 35072,
+        "data_bytes": 4,
+        "toy_state_sha256": "ab5a0785dc71ee37fbc2e7af8fbe75fb55fe207a09801f518945f93a52a9e9e2",
+        "toy_steps": 8,
+        "toy_cycles": 29,
+        "complete_64byte_oracle_match": true,
+        "init_complete": true,
+        "fini_unload_complete": true,
+        "empty_slot": true,
+        "same_mode_executable_heap_recovered": true
+      },
+      "execution_stats": {
+        "engine": "jit",
+        "frames": 238,
+        "cycles": 1074320335,
+        "retired": 297654397,
+        "uart_rx": 103050,
+        "uart_tx": 887,
+        "uart_delivered": 887,
+        "isync": 15,
+        "code_invalidations": 2,
+        "keys": 0,
+        "failed": false,
+        "unhandled": 0,
+        "unregistered": 0,
+        "unmapped": 0
+      },
+      "raw_audit": {
+        "emitted_delivered_received_equal": true,
+        "sequential_reply_tokens": true,
+        "vdpl_reply_count": 72,
+        "vdpl_reply_bytes": 720,
+        "reply_kinds": {
+          "4": 68,
+          "2": 1,
+          "3": 3
+        },
+        "outbound_bytes": 103050,
+        "delivered_bytes": 887
+      },
+      "raw_directory": "build/vdpl012arm64qualification/toy-jit-r01",
+      "raw_files": {
+        "esp32-uart0.log": {
+          "bytes": 489,
+          "sha256": "3a1b34cc2dbd61be519c2ba7108398eb02174f89793244dc0244569fc1f03152"
+        },
+        "evidence.json": {
+          "bytes": 3390,
+          "sha256": "0ca46116d7970df641257065ceb9a4cc835b93c2141c314d044edcd4acfdbd49"
+        },
+        "final.ppm": {
+          "bytes": 230415,
+          "sha256": "12c810bd25efe1a7484387cd3d5a8503ce7cc341d61768b99a85c39a0ecca884"
+        },
+        "mos-to-vdp.bin": {
+          "bytes": 103050,
+          "sha256": "5bc5a018fa59538a1a0853a80cceb99238d8239dc66cfbe0737b00934b3b45c4"
+        },
+        "results.dat": {
+          "bytes": 720,
+          "sha256": "ffc599aeea9494cea44e17ec50549abe823fa602fe3dcd303113082fd6fbc51a"
+        },
+        "stats.json": {
+          "bytes": 224,
+          "sha256": "1a083097d4305fac72f476297bef2782487bd9ea5b83c2a42ed5da0e6de7d5a6"
+        },
+        "toy-state.bin": {
+          "bytes": 64,
+          "sha256": "ab5a0785dc71ee37fbc2e7af8fbe75fb55fe207a09801f518945f93a52a9e9e2"
+        },
+        "toy_gate-executed.py": {
+          "bytes": 8727,
+          "sha256": "ec6d76c749334cb2419e1a914ac458f17c3b04df3130f6b107d0ef468a42f6a6"
+        },
+        "vdp-to-mos-delivered.bin": {
+          "bytes": 887,
+          "sha256": "afd42a5813fd1f2828a3da2cf015041fea6cca65f969b2f84d7b325200a1e6f8"
+        },
+        "vdp-to-mos.bin": {
+          "bytes": 887,
+          "sha256": "afd42a5813fd1f2828a3da2cf015041fea6cca65f969b2f84d7b325200a1e6f8"
+        },
+        "wire-rx.dat": {
+          "bytes": 887,
+          "sha256": "afd42a5813fd1f2828a3da2cf015041fea6cca65f969b2f84d7b325200a1e6f8"
+        }
+      }
+    },
+    {
+      "name": "toy-interp-r01",
+      "kind": "toy",
+      "engine": "interp",
+      "passed": true,
+      "elapsed_seconds": 8.734,
+      "row_groups": 0,
+      "pixels_compared": 0,
+      "before_resources": {
+        "executable_free_bytes": 161476,
+        "executable_largest_bytes": 110580,
+        "internal_free_bytes": 205252,
+        "internal_largest_bytes": 110580,
+        "spiram_free_bytes": 4167647,
+        "spiram_largest_bytes": 4128756,
+        "command_stack_free_bytes": 2260,
+        "audio_stack_free_bytes": 1536,
+        "tasks": 12
+      },
+      "after_resources": {
+        "executable_free_bytes": 161476,
+        "executable_largest_bytes": 110580,
+        "internal_free_bytes": 205252,
+        "internal_largest_bytes": 110580,
+        "spiram_free_bytes": 4167603,
+        "spiram_largest_bytes": 4128756,
+        "command_stack_free_bytes": 2136,
+        "audio_stack_free_bytes": 1536,
+        "tasks": 12
+      },
+      "checks": {
+        "text_bytes": 35072,
+        "data_bytes": 4,
+        "toy_state_sha256": "ab5a0785dc71ee37fbc2e7af8fbe75fb55fe207a09801f518945f93a52a9e9e2",
+        "toy_steps": 8,
+        "toy_cycles": 29,
+        "complete_64byte_oracle_match": true,
+        "init_complete": true,
+        "fini_unload_complete": true,
+        "empty_slot": true,
+        "same_mode_executable_heap_recovered": true
+      },
+      "execution_stats": {
+        "engine": "interp",
+        "frames": 237,
+        "cycles": 1068881427,
+        "retired": 296007766,
+        "uart_rx": 103050,
+        "uart_tx": 887,
+        "uart_delivered": 887,
+        "isync": 15,
+        "code_invalidations": 2,
+        "keys": 0,
+        "failed": false,
+        "unhandled": 0,
+        "unregistered": 0,
+        "unmapped": 0
+      },
+      "raw_audit": {
+        "emitted_delivered_received_equal": true,
+        "sequential_reply_tokens": true,
+        "vdpl_reply_count": 72,
+        "vdpl_reply_bytes": 720,
+        "reply_kinds": {
+          "4": 68,
+          "2": 1,
+          "3": 3
+        },
+        "outbound_bytes": 103050,
+        "delivered_bytes": 887
+      },
+      "raw_directory": "build/vdpl012arm64qualification/toy-interp-r01",
+      "raw_files": {
+        "esp32-uart0.log": {
+          "bytes": 489,
+          "sha256": "3a1b34cc2dbd61be519c2ba7108398eb02174f89793244dc0244569fc1f03152"
+        },
+        "evidence.json": {
+          "bytes": 3396,
+          "sha256": "b3b896bf8176d1419932e8a53e721519a2b07e6c1df7455165bbb2e74afb72a7"
+        },
+        "final.ppm": {
+          "bytes": 230415,
+          "sha256": "12c810bd25efe1a7484387cd3d5a8503ce7cc341d61768b99a85c39a0ecca884"
+        },
+        "mos-to-vdp.bin": {
+          "bytes": 103050,
+          "sha256": "5bc5a018fa59538a1a0853a80cceb99238d8239dc66cfbe0737b00934b3b45c4"
+        },
+        "results.dat": {
+          "bytes": 720,
+          "sha256": "ffc599aeea9494cea44e17ec50549abe823fa602fe3dcd303113082fd6fbc51a"
+        },
+        "stats.json": {
+          "bytes": 227,
+          "sha256": "0de70ba43bfad2e820dcf0dc04289a74cf1eec69fe019aadd165bec183420f47"
+        },
+        "toy-state.bin": {
+          "bytes": 64,
+          "sha256": "ab5a0785dc71ee37fbc2e7af8fbe75fb55fe207a09801f518945f93a52a9e9e2"
+        },
+        "toy_gate-executed.py": {
+          "bytes": 8727,
+          "sha256": "ec6d76c749334cb2419e1a914ac458f17c3b04df3130f6b107d0ef468a42f6a6"
+        },
+        "vdp-to-mos-delivered.bin": {
+          "bytes": 887,
+          "sha256": "afd42a5813fd1f2828a3da2cf015041fea6cca65f969b2f84d7b325200a1e6f8"
+        },
+        "vdp-to-mos.bin": {
+          "bytes": 887,
+          "sha256": "afd42a5813fd1f2828a3da2cf015041fea6cca65f969b2f84d7b325200a1e6f8"
+        },
+        "wire-rx.dat": {
+          "bytes": 887,
+          "sha256": "afd42a5813fd1f2828a3da2cf015041fea6cca65f969b2f84d7b325200a1e6f8"
+        }
+      }
+    },
+    {
+      "name": "rows-r1-jit",
+      "kind": "rows",
+      "engine": "jit",
+      "passed": true,
+      "elapsed_seconds": 29.616,
+      "row_groups": 11,
+      "pixels_compared": 2620416,
+      "before_resources": {
+        "command_stack_free_bytes": 2760,
+        "internal_free_bytes": 60796,
+        "internal_largest": 38900,
+        "spiram_free_bytes": 4167647,
+        "spiram_largest": 4128756,
+        "audio_stack_free_bytes": 1536,
+        "tasks": 12
+      },
+      "after_resources": {
+        "command_stack_free_bytes": 2152,
+        "internal_free_bytes": 181508,
+        "internal_largest": 110580,
+        "spiram_free_bytes": 4164615,
+        "spiram_largest": 4128756,
+        "audio_stack_free_bytes": 1392,
+        "tasks": 12
+      },
+      "checks": [
+        "exact ABI0..6 sizes/masks; old tables never gain new capability",
+        "actual present callback requires module declaration; valid failed descriptor has no pointer/span/token",
+        "ABI1.6 descriptor, INIT phase refusal and actual SBGR2222 hidden-page discovery",
+        "all4X biases, odd/full widths, final row/column, raw sync/group padding and copied-control pictures match",
+        "ordinary queued C3 then RUN rebinds new hidden page; pending-Canvas swap injection remains host/source proof",
+        "cross-kind old ROW/END, immutable rectangle, BUSY drawing,4buffer slots, stale tokens and fresh generation",
+        "bad extents/input lease/zero/negative/outside geometry reject without granting row pointers",
+        "single visible page and packed surface refuse; active mono lease rejects colour ROW/END and BEGIN BUSY",
+        "normal forgotten END is automatically closed, retains hidden result and permits next frame transaction",
+        "failed RUN never publishes; Canvas/old copy path recover, FINI refuses row phase and unload/reload works",
+        "unchanged ABI0 packed-mono and numeric packages retain their actual output"
+      ],
+      "execution_stats": {
+        "engine": "jit",
+        "frames": 652,
+        "cycles": 2881568880,
+        "retired": 1696172312,
+        "uart_rx": 1724816,
+        "uart_tx": 106573,
+        "uart_delivered": 106573,
+        "isync": 104,
+        "code_invalidations": 11,
+        "keys": 0,
+        "failed": false,
+        "unhandled": 0,
+        "unregistered": 0,
+        "unmapped": 0
+      },
+      "raw_audit": {
+        "emitted_delivered_received_equal": true,
+        "sequential_reply_tokens": true,
+        "vdpl_reply_count": 8825,
+        "vdpl_reply_bytes": 88250,
+        "reply_kinds": {
+          "4": 8732,
+          "2": 12,
+          "3": 80,
+          "5": 1
+        },
+        "outbound_bytes": 1724816,
+        "delivered_bytes": 106573
+      },
+      "raw_directory": "build/vdpl012arm64qualification/rows-r1-jit",
+      "raw_files": {
+        "esp32-uart0.log": {
+          "bytes": 12723,
+          "sha256": "d09e5378048b4124911ae7c6096de937dd4429442ef48d5ac1f348cdadf14f1e"
+        },
+        "evidence.json": {
+          "bytes": 59885,
+          "sha256": "e6c12373c2e7f6909170c1a4582ffc37c10c8637baac88678944db499eb55df3"
+        },
+        "final.ppm": {
+          "bytes": 589839,
+          "sha256": "df066e0021b8cc9879c90fd10e6f6b0876abf8aca81a30d20dc73f84d377e4b8"
+        },
+        "mos-to-vdp.bin": {
+          "bytes": 1724816,
+          "sha256": "1a620372225a46671f02756fa559d31a38909f4dcdb20c660d791136dd560466"
+        },
+        "results.dat": {
+          "bytes": 88250,
+          "sha256": "1f044efa0af78756c3eac0fc3702f640b08a68a142eb415b069bd56162350b6b"
+        },
+        "stats.json": {
+          "bytes": 234,
+          "sha256": "090a8128190a33c0e19eee9ad953b2497e8d9cbbf2edfa5b6ffc38ba8d5ef19a"
+        },
+        "vdp-to-mos-delivered.bin": {
+          "bytes": 106573,
+          "sha256": "7c2582c90f9bbd88c278a10fc77dc5c214f0246e516dafa88c21cecbf5c388f4"
+        },
+        "vdp-to-mos.bin": {
+          "bytes": 106573,
+          "sha256": "7c2582c90f9bbd88c278a10fc77dc5c214f0246e516dafa88c21cecbf5c388f4"
+        },
+        "wire-rx.dat": {
+          "bytes": 106573,
+          "sha256": "7c2582c90f9bbd88c278a10fc77dc5c214f0246e516dafa88c21cecbf5c388f4"
+        }
+      }
+    },
+    {
+      "name": "rows-r1-interp",
+      "kind": "rows",
+      "engine": "interp",
+      "passed": true,
+      "elapsed_seconds": 44.91,
+      "row_groups": 11,
+      "pixels_compared": 2620416,
+      "before_resources": {
+        "command_stack_free_bytes": 2760,
+        "internal_free_bytes": 60796,
+        "internal_largest": 38900,
+        "spiram_free_bytes": 4167647,
+        "spiram_largest": 4128756,
+        "audio_stack_free_bytes": 1536,
+        "tasks": 12
+      },
+      "after_resources": {
+        "command_stack_free_bytes": 1844,
+        "internal_free_bytes": 181508,
+        "internal_largest": 110580,
+        "spiram_free_bytes": 4164615,
+        "spiram_largest": 4128756,
+        "audio_stack_free_bytes": 1456,
+        "tasks": 12
+      },
+      "checks": [
+        "exact ABI0..6 sizes/masks; old tables never gain new capability",
+        "actual present callback requires module declaration; valid failed descriptor has no pointer/span/token",
+        "ABI1.6 descriptor, INIT phase refusal and actual SBGR2222 hidden-page discovery",
+        "all4X biases, odd/full widths, final row/column, raw sync/group padding and copied-control pictures match",
+        "ordinary queued C3 then RUN rebinds new hidden page; pending-Canvas swap injection remains host/source proof",
+        "cross-kind old ROW/END, immutable rectangle, BUSY drawing,4buffer slots, stale tokens and fresh generation",
+        "bad extents/input lease/zero/negative/outside geometry reject without granting row pointers",
+        "single visible page and packed surface refuse; active mono lease rejects colour ROW/END and BEGIN BUSY",
+        "normal forgotten END is automatically closed, retains hidden result and permits next frame transaction",
+        "failed RUN never publishes; Canvas/old copy path recover, FINI refuses row phase and unload/reload works",
+        "unchanged ABI0 packed-mono and numeric packages retain their actual output"
+      ],
+      "execution_stats": {
+        "engine": "interp",
+        "frames": 608,
+        "cycles": 2693583707,
+        "retired": 1584116367,
+        "uart_rx": 1724816,
+        "uart_tx": 106573,
+        "uart_delivered": 106573,
+        "isync": 104,
+        "code_invalidations": 11,
+        "keys": 0,
+        "failed": false,
+        "unhandled": 0,
+        "unregistered": 0,
+        "unmapped": 0
+      },
+      "raw_audit": {
+        "emitted_delivered_received_equal": true,
+        "sequential_reply_tokens": true,
+        "vdpl_reply_count": 8825,
+        "vdpl_reply_bytes": 88250,
+        "reply_kinds": {
+          "4": 8732,
+          "2": 12,
+          "3": 80,
+          "5": 1
+        },
+        "outbound_bytes": 1724816,
+        "delivered_bytes": 106573
+      },
+      "raw_directory": "build/vdpl012arm64qualification/rows-r1-interp",
+      "raw_files": {
+        "esp32-uart0.log": {
+          "bytes": 12723,
+          "sha256": "d09e5378048b4124911ae7c6096de937dd4429442ef48d5ac1f348cdadf14f1e"
+        },
+        "evidence.json": {
+          "bytes": 59890,
+          "sha256": "dbbf1536d4a8f7a30c813d1e5316793dad601a1dd6adec5ee49461a130b69918"
+        },
+        "final.ppm": {
+          "bytes": 589839,
+          "sha256": "df066e0021b8cc9879c90fd10e6f6b0876abf8aca81a30d20dc73f84d377e4b8"
+        },
+        "mos-to-vdp.bin": {
+          "bytes": 1724816,
+          "sha256": "1a620372225a46671f02756fa559d31a38909f4dcdb20c660d791136dd560466"
+        },
+        "results.dat": {
+          "bytes": 88250,
+          "sha256": "3cb6b76fd317b8c23eb35860f7eba281b5e5cd2f9040f974b6133e5c3980d7cf"
+        },
+        "stats.json": {
+          "bytes": 237,
+          "sha256": "91ad500f884e82d3bd3f9b84feafd27134062b1dc5f4f94711db043fc74e7b8d"
+        },
+        "vdp-to-mos-delivered.bin": {
+          "bytes": 106573,
+          "sha256": "b26a7f9887402960490d0af3a2ad8d6f4fa0d0f7df9a3a1413fdbeb6a5f0efbc"
+        },
+        "vdp-to-mos.bin": {
+          "bytes": 106573,
+          "sha256": "b26a7f9887402960490d0af3a2ad8d6f4fa0d0f7df9a3a1413fdbeb6a5f0efbc"
+        },
+        "wire-rx.dat": {
+          "bytes": 106573,
+          "sha256": "b26a7f9887402960490d0af3a2ad8d6f4fa0d0f7df9a3a1413fdbeb6a5f0efbc"
+        }
+      }
+    }
+  ]
+}

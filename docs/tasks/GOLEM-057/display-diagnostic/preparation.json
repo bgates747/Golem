@@ -1,0 +1,66 @@
+{
+  "schema": "g057-display-diag-preparation-v1",
+  "original": "/Agon/mystuff/agon-vdplet/build/vdpl-010/pixels/firmware-src",
+  "pins": {
+    "video/vdu.h": "24923b53a83d77ebf729795d7ecb7343e6f2fed0e9d748d48fc83c8b75e805cb",
+    ".pio/libdeps/esp32dev/vdp-gl/src/dispdrivers/vgapalettedcontroller.cpp": "5c8f9b6b673d917ed7052a39aaef1f9671b669563f379c40337e3d1a829c2f49",
+    "platformio.ini": "7947cbd2e5fcb38e12ca3b8dee44b97700da0ca1d05c19914b100d47885f0bb1"
+  },
+  "patch_sha256": "c3cef4e729f029bba45dd8cd34a61250f9dc7e3cf4d8e0d9454ad525d9c61aff",
+  "offline_dependency_metadata": "Copied original cached vdp-gl/.git after setup attempt2; excluded from source inventories. No fetch/update or original write.",
+  "full_manifest": {
+    "path": "source-manifests.json.gz",
+    "bytes": 997669,
+    "sha256": "6844544dc87575bca6cccd7140e10b71b806b00c7e3e4d100793ea270a237e47"
+  },
+  "variants": {
+    "control": {
+      "root": "/Agon/mystuff/golem/docs/tasks/GOLEM-057/build/display-origin-diagnostic/control",
+      "macro": 0,
+      "original_file_count": 4755,
+      "prepared_file_count": 4756,
+      "changes": {
+        ".pio/libdeps/esp32dev/vdp-gl/src/dispdrivers/vgapalettedcontroller.cpp": {
+          "before": "5c8f9b6b673d917ed7052a39aaef1f9671b669563f379c40337e3d1a829c2f49",
+          "after": "4bc8314daccf9a081ecd55d049013659dd6754a8e54ebbecaabfc4279e65e23e"
+        },
+        ".pio/libdeps/esp32dev/vdp-gl/src/g057_diag.h": {
+          "before": null,
+          "after": "abd03fe1e4025f8dd957d1af6df9ce0b63e4a24dcc7f164c6b3d8dced8370a85"
+        },
+        "video/vdu.h": {
+          "before": "24923b53a83d77ebf729795d7ecb7343e6f2fed0e9d748d48fc83c8b75e805cb",
+          "after": "094468a910b4a64900b2d3e5460bddc70b22b4928c11dbac4d2ca675b3f640f7"
+        },
+        "video/video.ino": {
+          "before": "0743e76728397c56e963baebe98c2746540195732d658d9dad2edf2e768ada27",
+          "after": "43f6740775e82d1496abca8571bc2ca47e8ae371bd14ed9763123f5631d3ad92"
+        }
+      }
+    },
+    "instrumented": {
+      "root": "/Agon/mystuff/golem/docs/tasks/GOLEM-057/build/display-origin-diagnostic/instrumented",
+      "macro": 1,
+      "original_file_count": 4755,
+      "prepared_file_count": 4756,
+      "changes": {
+        ".pio/libdeps/esp32dev/vdp-gl/src/dispdrivers/vgapalettedcontroller.cpp": {
+          "before": "5c8f9b6b673d917ed7052a39aaef1f9671b669563f379c40337e3d1a829c2f49",
+          "after": "4bc8314daccf9a081ecd55d049013659dd6754a8e54ebbecaabfc4279e65e23e"
+        },
+        ".pio/libdeps/esp32dev/vdp-gl/src/g057_diag.h": {
+          "before": null,
+          "after": "fd398c438eca0ae1313bce0e23443e50e6de2d8b2ffb90d7c49a677c502bfa47"
+        },
+        "video/vdu.h": {
+          "before": "24923b53a83d77ebf729795d7ecb7343e6f2fed0e9d748d48fc83c8b75e805cb",
+          "after": "094468a910b4a64900b2d3e5460bddc70b22b4928c11dbac4d2ca675b3f640f7"
+        },
+        "video/video.ino": {
+          "before": "0743e76728397c56e963baebe98c2746540195732d658d9dad2edf2e768ada27",
+          "after": "43f6740775e82d1496abca8571bc2ca47e8ae371bd14ed9763123f5631d3ad92"
+        }
+      }
+    }
+  }
+}

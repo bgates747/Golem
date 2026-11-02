@@ -1,0 +1,56 @@
+{
+  "status": "prepared-not-executed",
+  "emulator_launched": false,
+  "files": {
+    "/Agon/mystuff/agon-vdplet/docs/tasks/VDPL-010/qualification/target.py": "bb9b084f82e08572f7886f0c8845f26fe8a6dea32ce811ccbf369d5d00d4f941",
+    "/Agon/mystuff/agon-vdplet/docs/tasks/VDPL-010/qualification/qualify.py": "b10574b64b2b6b2f7aa0adb58152b16e8db222e30be907e05499c84f0cf7e3f6",
+    "/Agon/mystuff/agon-vdplet/docs/tasks/VDPL-010/qualification/README.md": "0fd331c7fa5cbb8ad086c08d3e1fc58df7044394f0c200fc37e75085910148b5"
+  },
+  "probes": [
+    {
+      "name": "view-0",
+      "source_sha256": "6588277d6c90335bdd1947cc1e818d6d1979e702eefb54598b790146644d2674",
+      "capabilities": 1,
+      "abi_minor": 0,
+      "sha256": "819d830c972353966364169744ca924aa8ba34e8b4a3dd5a3384709e10deb0b2",
+      "resident_text_bytes": 644,
+      "resident_data_bytes": 0
+    },
+    {
+      "name": "view-1",
+      "source_sha256": "6588277d6c90335bdd1947cc1e818d6d1979e702eefb54598b790146644d2674",
+      "capabilities": 5,
+      "abi_minor": 1,
+      "sha256": "164d0ed433c222e12521f1eeaf2b2ef67c8ec25b3572c4df62af819beb4871e9",
+      "resident_text_bytes": 644,
+      "resident_data_bytes": 0
+    },
+    {
+      "name": "view-2",
+      "source_sha256": "6588277d6c90335bdd1947cc1e818d6d1979e702eefb54598b790146644d2674",
+      "capabilities": 9,
+      "abi_minor": 2,
+      "sha256": "a7edeb510701506adc238cdc1646aa5dd984b3c599ca8f032cafea1911583dc2",
+      "resident_text_bytes": 644,
+      "resident_data_bytes": 0
+    },
+    {
+      "name": "view-3",
+      "source_sha256": "6588277d6c90335bdd1947cc1e818d6d1979e702eefb54598b790146644d2674",
+      "capabilities": 1,
+      "abi_minor": 3,
+      "sha256": "3821807f71073254a0ec6354751d8fccb14f040b605c8c1430bf4d4dc176131a",
+      "resident_text_bytes": 644,
+      "resident_data_bytes": 0
+    },
+    {
+      "name": "view-5",
+      "source_sha256": "6588277d6c90335bdd1947cc1e818d6d1979e702eefb54598b790146644d2674",
+      "capabilities": 1,
+      "abi_minor": 5,
+      "sha256": "f00c108a8eb02b083eebd120b681d7fe8a157b09d32298c5d07744fc59d50f25",
+      "resident_text_bytes": 644,
+      "resident_data_bytes": 0
+    }
+  ]
+}

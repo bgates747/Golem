@@ -1,0 +1,5 @@
+{
+  "scope": "pre-execution receipt creation only; no emulator loaded",
+  "error": "Relative Golem receipt path was resolved from the SDK profile cwd",
+  "resolution": "Use absolute paths for receipt creation and explicit cwd only for profile verification. No staged/source/pin changes."
+}

@@ -1,0 +1,115 @@
+{
+  "profile": "pixels",
+  "engine": "jit",
+  "firmware_sha256": "b42ae55f69900c44acacfbf0d665ef278e87b277b3b9fd4208e17ebf378f74b6",
+  "elf_sha256": "a10f7989d5c1f9974fc999428865ca74771fb65a0d4d694a2ac2b81c19df9902",
+  "backend_sha256": "108ec5b02122381e6c3ae851508188ec0a96240ca5f74be804fd2201b141e6e9",
+  "qualifier_sha256": "9d1012ef24b6b50e5f17893478919083bc91d9ce95efe19715999e0f07e2f716",
+  "target_sha256": "bb9b084f82e08572f7886f0c8845f26fe8a6dea32ce811ccbf369d5d00d4f941",
+  "worker_source_sha256": "798a90c0c577d567b16d2790ced472b06fb751d1eb78690b0534176961bf67ea",
+  "module_sha256": "abfbaf8f2bea9f2220886498abede64981ce86f4e421c63c81685d8455bd7a66",
+  "modules": {
+    "view-0.vdpl": "819d830c972353966364169744ca924aa8ba34e8b4a3dd5a3384709e10deb0b2",
+    "view-1.vdpl": "164d0ed433c222e12521f1eeaf2b2ef67c8ec25b3572c4df62af819beb4871e9",
+    "view-2.vdpl": "a7edeb510701506adc238cdc1646aa5dd984b3c599ca8f032cafea1911583dc2",
+    "view-3.vdpl": "3821807f71073254a0ec6354751d8fccb14f040b605c8c1430bf4d4dc176131a",
+    "view-5.vdpl": "f00c108a8eb02b083eebd120b681d7fe8a157b09d32298c5d07744fc59d50f25",
+    "numeric-1.vdpl": "722f77c8b33b57ec040c3366b6ceff16267efb358a716074179a1fb4cb6a6522",
+    "vdu-plot.vdpl": "d4bc2100573f0d89d1ce0780d2fd2a658802980d48af464dcfd6f749cffd3215",
+    "line-batch.vdpl": "be39f9f68689dbf9ec69d2ba957be94d7e9cf0addc713a317dcc46c8e73a1160"
+  },
+  "checks": [
+    "capability discovery exactly 31",
+    "exact legacy ABI0/1/2 views, masks and bounded accessors",
+    "independent pixel accessor succeeds with all five richer PCM callbacks absent",
+    "undeclared pixel/sink capability calls refuse without extending old tables",
+    "pixels-only build rejects a copied-sink module before INIT",
+    "actual worker table extent and generic surface descriptor",
+    "all64 RGB222 colors, odd width, byte positions, padded stride and immediate source reuse",
+    "physical pixel units preserve semantics despite ordinary graphics origin and viewport",
+    "format, missing/short source, final invalid pixel and geometry rejection preserve complete screen",
+    "INDEX8 native2/4/16/64 palette mapping and packed-edge replacements",
+    "double-buffer descriptor, hidden-before-C3 and explicit stock presentation",
+    "pixels worker reports copied sink unsupported without calling absent callback",
+    "unchanged maintained numeric/VDU/line modules execute and drawing matches ordinary commands"
+  ],
+  "resource_observations": {
+    "boot": {
+      "command_stack_free_bytes": 2760,
+      "spiram_free_bytes": 4167647,
+      "spiram_largest_block_bytes": 4128756,
+      "audio_stack_free_bytes": 1536,
+      "task_count": 12,
+      "internal_free_bytes": 60828,
+      "internal_largest_block_bytes": 38900,
+      "executable_free_bytes": 53940,
+      "executable_largest_block_bytes": 32756
+    },
+    "final": {
+      "command_stack_free_bytes": 2152,
+      "spiram_free_bytes": 4165803,
+      "spiram_largest_block_bytes": 4128756,
+      "audio_stack_free_bytes": 1424,
+      "task_count": 12,
+      "internal_free_bytes": 139476,
+      "internal_largest_block_bytes": 45044,
+      "executable_free_bytes": 84660,
+      "executable_largest_block_bytes": 34804
+    }
+  },
+  "pixels_compared": 3726336,
+  "passed": true,
+  "scope": "actual ESP32 instructions and decoded VGA; no physical or clean-audio qualification",
+  "surfaces": [
+    {
+      "mode": 23,
+      "width": 512,
+      "height": 384,
+      "colors": 2,
+      "native_format": 2
+    },
+    {
+      "mode": 22,
+      "width": 512,
+      "height": 384,
+      "colors": 4,
+      "native_format": 4
+    },
+    {
+      "mode": 21,
+      "width": 512,
+      "height": 384,
+      "colors": 16,
+      "native_format": 16
+    },
+    {
+      "mode": 8,
+      "width": 320,
+      "height": 240,
+      "colors": 64,
+      "native_format": 64
+    }
+  ],
+  "controller_matrix_deferred": false,
+  "palette8_target_coverage": false,
+  "palette8_limit": "stock numbered modes do not select the available8-color controller; host kernel tests are separate",
+  "elapsed_seconds": 7.378,
+  "execution_stats": {
+    "engine": "jit",
+    "frames": 385,
+    "cycles": 1756067587,
+    "retired": 890478937,
+    "uart_rx": 64302,
+    "uart_tx": 23605,
+    "uart_delivered": 23605,
+    "isync": 68,
+    "code_invalidations": 13,
+    "keys": 0,
+    "failed": false,
+    "unhandled": 0,
+    "unregistered": 0,
+    "unmapped": 0
+  },
+  "result_bytes": 19270,
+  "outbound_bytes": 64302
+}

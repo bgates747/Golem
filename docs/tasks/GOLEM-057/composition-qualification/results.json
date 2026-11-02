@@ -1,0 +1,174 @@
+{
+  "passed": true,
+  "scope": "bounded two-run JIT composition smoke; mechanisms retain separate two-engine qualification; human review explicitly deferred",
+  "expected_capabilities": 159,
+  "firmware_sha256": "23a5d54861524ef33d41f1e4a0e1ada1cc5bcced6b8c83aef51672a9a5c0246c",
+  "runs": [
+    {
+      "passed": true,
+      "engine": "jit",
+      "firmware_sha256": "23a5d54861524ef33d41f1e4a0e1ada1cc5bcced6b8c83aef51672a9a5c0246c",
+      "elf_sha256": "a9e09ede1a5f35c1ebea0f73d75049ff1ece556f8428063bd338cc8f03b3a49e",
+      "backend_sha256": "108ec5b02122381e6c3ae851508188ec0a96240ca5f74be804fd2201b141e6e9",
+      "qualifier_sha256": "d99b0cc9de4e42fc04b4a112cf8f7a3b870b23971d4b30b5ccd9705b95d48e9c",
+      "target_sha256": "be853411d3a9b59ee83a73ab4c80abfd3b8b69703c6ee86ccb31a15ae6b9523f",
+      "elapsed_seconds": 6.16,
+      "result_bytes": 8800,
+      "outbound_bytes": 58622,
+      "name": "pixels-wire-jit",
+      "groups": 15,
+      "pixels_compared": 0,
+      "ordinary_pcm_transactions": 92,
+      "resources": {
+        "internal_free_bytes": 139532,
+        "internal_largest_block_bytes": 45044,
+        "command_stack_free_bytes": 2152,
+        "spiram_free_bytes": 4157099,
+        "spiram_largest_block_bytes": 4128756,
+        "audio_stack_free_bytes": 1424,
+        "tasks": 12
+      },
+      "ring_allocator_bytes": 1040,
+      "raw_artifact_directory": "/Agon/mystuff/agon-vdplet/build/vdpl011qualification/oryx/pixels-wire-jit",
+      "raw_files": {
+        "esp32-uart0.log": {
+          "bytes": 2613,
+          "sha256": "eefda012c08b9ec7997654da1e0fc23843c71c50fb4a47368194e10bf23d10f4"
+        },
+        "evidence.json": {
+          "bytes": 61541,
+          "sha256": "feee467242596ea9b7555ffea7886400b12326f7711d9ec1d1b9a4f12d0f3f12"
+        },
+        "final.ppm": {
+          "bytes": 230415,
+          "sha256": "12c810bd25efe1a7484387cd3d5a8503ce7cc341d61768b99a85c39a0ecca884"
+        },
+        "mos-to-vdp.bin": {
+          "bytes": 58622,
+          "sha256": "3e4ed1eb92b8e38ef4b0f7a1ffdf46d58d79d7f687ca63bdc6e225b68a9b7f92"
+        },
+        "pcm-packets.dat": {
+          "bytes": 3440,
+          "sha256": "ccfad0cc562d237796a24fbff7a35e2566cb59b1cbf89d4b60f2c4e11eafc9ee"
+        },
+        "results.dat": {
+          "bytes": 8800,
+          "sha256": "e97f7e5d961e2e406beb5247d32015dfee67e9c892237a57104d9e956b489501"
+        },
+        "stats.json": {
+          "bytes": 227,
+          "sha256": "c7a42deafe58918d6b1f9bc8e17f1234a9b573bcedbe05b9db17fe14a8c3f0a0"
+        },
+        "vdp-to-mos-delivered.bin": {
+          "bytes": 14071,
+          "sha256": "83db2313b043edb5cc17d78ea0087fa5cbfd2fa65af8c2b96c49d77a696ce22e"
+        },
+        "vdp-to-mos.bin": {
+          "bytes": 14071,
+          "sha256": "83db2313b043edb5cc17d78ea0087fa5cbfd2fa65af8c2b96c49d77a696ce22e"
+        },
+        "wire-rx.dat": {
+          "bytes": 14071,
+          "sha256": "83db2313b043edb5cc17d78ea0087fa5cbfd2fa65af8c2b96c49d77a696ce22e"
+        }
+      }
+    },
+    {
+      "passed": true,
+      "engine": "jit",
+      "firmware_sha256": "23a5d54861524ef33d41f1e4a0e1ada1cc5bcced6b8c83aef51672a9a5c0246c",
+      "elf_sha256": "a9e09ede1a5f35c1ebea0f73d75049ff1ece556f8428063bd338cc8f03b3a49e",
+      "backend_sha256": "108ec5b02122381e6c3ae851508188ec0a96240ca5f74be804fd2201b141e6e9",
+      "qualifier_sha256": "9d1012ef24b6b50e5f17893478919083bc91d9ce95efe19715999e0f07e2f716",
+      "target_sha256": "bb9b084f82e08572f7886f0c8845f26fe8a6dea32ce811ccbf369d5d00d4f941",
+      "elapsed_seconds": 8.476,
+      "result_bytes": 40530,
+      "outbound_bytes": 127364,
+      "name": "pixels-media-jit",
+      "groups": 17,
+      "pixels_compared": 3726336,
+      "ordinary_pcm_transactions": 0,
+      "resources": {
+        "command_stack_free_bytes": 2152,
+        "spiram_free_bytes": 4165795,
+        "spiram_largest_block_bytes": 4128756,
+        "audio_stack_free_bytes": 1392,
+        "task_count": 12,
+        "internal_free_bytes": 139260,
+        "internal_largest_block_bytes": 45044,
+        "executable_free_bytes": 84672,
+        "executable_largest_block_bytes": 34804
+      },
+      "ring_allocator_bytes": 1040,
+      "raw_artifact_directory": "/Agon/mystuff/agon-vdplet/build/vdpl011qualification/oryx/pixels-media-jit",
+      "raw_files": {
+        "esp32-uart0.log": {
+          "bytes": 7549,
+          "sha256": "f5c58e0b05727a4f28847aa1589a1c2ca6e912b549078c68e2aacb8041eb38f5"
+        },
+        "evidence.json": {
+          "bytes": 6384,
+          "sha256": "55780c5ad3cc5c268c9129487a309dd717df3e9190e60bff2d00457ceb83c4d8"
+        },
+        "final.ppm": {
+          "bytes": 230415,
+          "sha256": "1974bd25ecd95ee98d45d2d56c477ca17b8020b20775382159ffe5db20c75bf8"
+        },
+        "mos-to-vdp.bin": {
+          "bytes": 127364,
+          "sha256": "7378576561ce208cf46083310ad528c9a0fc5bf78053109aebb6bd8eb49a797a"
+        },
+        "pcm-observation.u8": {
+          "bytes": 8192,
+          "sha256": "4909d39cf871ec5699516d4dd0fcfd1cb03da0f7e546512fa6f1a76b3e05d4c0"
+        },
+        "results.dat": {
+          "bytes": 40530,
+          "sha256": "d1e01284c0b3588991f0973f0f73b2925d2d20533901f23cb1604c66877d1b37"
+        },
+        "stats.json": {
+          "bytes": 231,
+          "sha256": "e7380df9f284a1b54989f97e26086927421335b0eb9b8444d6c265ded57366b4"
+        },
+        "vdp-to-mos-delivered.bin": {
+          "bytes": 49147,
+          "sha256": "715d8a311239fc231f4da0ba47c3f0366d1de96b85344c57f0d7b93559849aea"
+        },
+        "vdp-to-mos.bin": {
+          "bytes": 49147,
+          "sha256": "715d8a311239fc231f4da0ba47c3f0366d1de96b85344c57f0d7b93559849aea"
+        },
+        "wire-rx.dat": {
+          "bytes": 49147,
+          "sha256": "715d8a311239fc231f4da0ba47c3f0366d1de96b85344c57f0d7b93559849aea"
+        }
+      }
+    }
+  ],
+  "total_groups": 32,
+  "total_decoded_pixels": 3726336,
+  "ordinary_pcm_transactions": 92,
+  "lease_release": {
+    "owner": "golem",
+    "task": "VDPL-011-COMPOSITION",
+    "purpose": "two sequential JIT checks of combined pixels/copiedPCM/ordinarywire feature selection",
+    "profile": "/home/smith/Agon/mystuff/agon-vdplet/docs/tasks/VDPL-011/qualification",
+    "request": "91af5bf3e72f",
+    "requested": "2026-10-30T23:22:38.657665+00:00",
+    "lease": "d2085d4cedd34f81a25742d94ed3a05a",
+    "generation": 11,
+    "granted": "2026-10-30T23:26:42.192428+00:00",
+    "coordinator": "golem",
+    "idle_observation": {
+      "machine": "oryx-linuxlite",
+      "epoch": 1793402802.1183422,
+      "emulators": []
+    },
+    "released": "2026-10-30T23:27:52.662316+00:00",
+    "release_observation": {
+      "machine": "oryx-linuxlite",
+      "epoch": 1793402872.5953596,
+      "emulators": []
+    }
+  }
+}

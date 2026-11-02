@@ -1,0 +1,261 @@
+{
+  "schema": 1,
+  "baseline": "lean",
+  "candidate": "pixels-lean",
+  "matching_build": {
+    "vdp_pin": {
+      "before": "1056ee38ec1cc68ed327bd32ee47d04b1c30597c",
+      "after": "1056ee38ec1cc68ed327bd32ee47d04b1c30597c",
+      "match": true
+    },
+    "graphics_pin": {
+      "before": "ac2dd5986daf496c43ae8e7fe41836274aec54a0",
+      "after": "ac2dd5986daf496c43ae8e7fe41836274aec54a0",
+      "match": true
+    },
+    "compiler_version": {
+      "before": "xtensa-esp32-elf-gcc (crosstool-NG esp-2021r2-patch5) 8.4.0",
+      "after": "xtensa-esp32-elf-gcc (crosstool-NG esp-2021r2-patch5) 8.4.0",
+      "match": true
+    },
+    "compiler_binary": {
+      "before": "e091761ac142b87be663aa36c8dc9af10044a9769a540ee0337ebc97ea56a22d",
+      "after": "e091761ac142b87be663aa36c8dc9af10044a9769a540ee0337ebc97ea56a22d",
+      "match": true
+    },
+    "platformio_version": {
+      "before": "6.2.0",
+      "after": "6.2.0",
+      "match": true
+    },
+    "configuration": {
+      "before": {
+        "platform": "espressif32@6.6.0 ;v6.9.0 uses about 0.5kb more internal RAM",
+        "board": "esp32dev",
+        "framework": "arduino",
+        "board_build.flash_mode": "qio",
+        "board_build.f_cpu": "240000000L",
+        "board_build.f_flash": "80000000L",
+        "build_flags": "-O2\n-DBOARD_HAS_PSRAM\n-mfix-esp32-psram-cache-issue\n-std=c++17\n-std=gnu++17",
+        "build_unflags": "-Os\n-std=c++11\n-std=gnu++11",
+        "lib_deps": "https://github.com/AgonPlatform/vdp-gl.git#ac2dd5986daf496c43ae8e7fe41836274aec54a0\nfbiego/ESP32Time@2.0.6\nrobtillaart/CRC@1.0.4"
+      },
+      "after": {
+        "platform": "espressif32@6.6.0 ;v6.9.0 uses about 0.5kb more internal RAM",
+        "board": "esp32dev",
+        "framework": "arduino",
+        "board_build.flash_mode": "qio",
+        "board_build.f_cpu": "240000000L",
+        "board_build.f_flash": "80000000L",
+        "build_flags": "-O2\n-DBOARD_HAS_PSRAM\n-mfix-esp32-psram-cache-issue\n-std=c++17\n-std=gnu++17",
+        "build_unflags": "-Os\n-std=c++11\n-std=gnu++11",
+        "lib_deps": "https://github.com/AgonPlatform/vdp-gl.git#ac2dd5986daf496c43ae8e7fe41836274aec54a0\nfbiego/ESP32Time@2.0.6\nrobtillaart/CRC@1.0.4"
+      },
+      "match": true
+    },
+    "partition_table": {
+      "before": "148b959cbff1c38aa8e1d5c0ba9d612c54997b945e56a63f41223eef650653a1",
+      "after": "148b959cbff1c38aa8e1d5c0ba9d612c54997b945e56a63f41223eef650653a1",
+      "match": true
+    },
+    "build_packages": {
+      "before": {
+        "platforms/espressif32/platform.json": {
+          "name": "espressif32",
+          "version": "6.6.0",
+          "sha256": "88464df11f7319223063348f355694dc5e5a4b2c60a4a8d3d309c230d370257d"
+        },
+        "packages/framework-arduinoespressif32/package.json": {
+          "name": "framework-arduinoespressif32",
+          "version": "3.20014.231204",
+          "sha256": "fa3262cd10e9536428203d2da0ac48e0227862e5cfc0901e13704bc06dbd7f5e"
+        },
+        "packages/tool-esptoolpy/package.json": {
+          "name": "tool-esptoolpy",
+          "version": "1.40501.0",
+          "sha256": "092bd61c2583d5ae523070e2935a10c3954ffa3eb9e5149e54e061cb602d2a3f"
+        },
+        "packages/tool-scons/package.json": {
+          "name": "tool-scons",
+          "version": "4.41101.0",
+          "sha256": "e4c25069254659e84a0d150348e7b08b215577fad7a9d8843c58f64ad22ddbbf"
+        },
+        "packages/toolchain-xtensa-esp32/package.json": {
+          "name": "toolchain-xtensa-esp32",
+          "version": "8.4.0+2021r2-patch5",
+          "sha256": "95053a4b63082311148c4799d8271e26a66501f3ccd736ab91ffe989fa0b5691"
+        }
+      },
+      "after": {
+        "platforms/espressif32/platform.json": {
+          "name": "espressif32",
+          "version": "6.6.0",
+          "sha256": "88464df11f7319223063348f355694dc5e5a4b2c60a4a8d3d309c230d370257d"
+        },
+        "packages/framework-arduinoespressif32/package.json": {
+          "name": "framework-arduinoespressif32",
+          "version": "3.20014.231204",
+          "sha256": "fa3262cd10e9536428203d2da0ac48e0227862e5cfc0901e13704bc06dbd7f5e"
+        },
+        "packages/tool-esptoolpy/package.json": {
+          "name": "tool-esptoolpy",
+          "version": "1.40501.0",
+          "sha256": "092bd61c2583d5ae523070e2935a10c3954ffa3eb9e5149e54e061cb602d2a3f"
+        },
+        "packages/tool-scons/package.json": {
+          "name": "tool-scons",
+          "version": "4.41101.0",
+          "sha256": "e4c25069254659e84a0d150348e7b08b215577fad7a9d8843c58f64ad22ddbbf"
+        },
+        "packages/toolchain-xtensa-esp32/package.json": {
+          "name": "toolchain-xtensa-esp32",
+          "version": "8.4.0+2021r2-patch5",
+          "sha256": "95053a4b63082311148c4799d8271e26a66501f3ccd736ab91ffe989fa0b5691"
+        }
+      },
+      "match": true
+    }
+  },
+  "image": {
+    "before": 1092304,
+    "after": 1094816,
+    "delta": 2512
+  },
+  "groups": {
+    "dram_bss": {
+      "before": 25224,
+      "after": 25224,
+      "delta": 0
+    },
+    "dram_data": {
+      "before": 19912,
+      "after": 19912,
+      "delta": 0
+    },
+    "dram_noinit": {
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    },
+    "external_static": {
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    },
+    "flash_readonly": {
+      "before": 278504,
+      "after": 278600,
+      "delta": 96
+    },
+    "flash_text": {
+      "before": 698923,
+      "after": 701347,
+      "delta": 2424
+    },
+    "initialized_load_bytes": {
+      "before": 1092182,
+      "after": 1094698,
+      "delta": 2516
+    },
+    "iram": {
+      "before": 94843,
+      "after": 94839,
+      "delta": -4
+    },
+    "mapped_flash": {
+      "before": 977427,
+      "after": 979947,
+      "delta": 2520
+    },
+    "other_allocated": {
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    },
+    "rtc": {
+      "before": 17,
+      "after": 17,
+      "delta": 0
+    },
+    "static_dram": {
+      "before": 45136,
+      "after": 45136,
+      "delta": 0
+    }
+  },
+  "sections": {
+    ".flash.rodata": {
+      "before": 278248,
+      "after": 278344,
+      "delta": 96
+    },
+    ".flash.text": {
+      "before": 698923,
+      "after": 701347,
+      "delta": 2424
+    },
+    ".iram0.text": {
+      "before": 93815,
+      "after": 93811,
+      "delta": -4
+    }
+  },
+  "application_partitions": [
+    {
+      "label": "nvs",
+      "type": 1,
+      "subtype": 2,
+      "offset": 36864,
+      "bytes": 20480,
+      "flags": 0
+    },
+    {
+      "label": "otadata",
+      "type": 1,
+      "subtype": 0,
+      "offset": 57344,
+      "bytes": 8192,
+      "flags": 0
+    },
+    {
+      "label": "app0",
+      "type": 0,
+      "subtype": 16,
+      "offset": 65536,
+      "bytes": 1310720,
+      "flags": 0,
+      "image_bytes": 1094816,
+      "headroom_bytes": 215904,
+      "occupied_percent": 83.527832,
+      "fits": true
+    },
+    {
+      "label": "app1",
+      "type": 0,
+      "subtype": 17,
+      "offset": 1376256,
+      "bytes": 1310720,
+      "flags": 0,
+      "image_bytes": 1094816,
+      "headroom_bytes": 215904,
+      "occupied_percent": 83.527832,
+      "fits": true
+    },
+    {
+      "label": "spiffs",
+      "type": 1,
+      "subtype": 130,
+      "offset": 2686976,
+      "bytes": 1441792,
+      "flags": 0
+    },
+    {
+      "label": "coredump",
+      "type": 1,
+      "subtype": 3,
+      "offset": 4128768,
+      "bytes": 65536,
+      "flags": 0
+    }
+  ]
+}

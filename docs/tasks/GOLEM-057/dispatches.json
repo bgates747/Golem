@@ -1,0 +1,58 @@
+[
+  {
+    "recipient": "wolf3dorig",
+    "assignment": "G057-WLF-001",
+    "file": "docs/tasks/GOLEM-057/mail/wolf3dorig-dispatch.json",
+    "message_id": "2026-10-30_18-29-45_golem_golem057-wolf-bounded-proof-one",
+    "duplicate": false
+  },
+  {
+    "recipient": "fsim-pingo",
+    "assignment": "G057-SIM-001",
+    "file": "docs/tasks/GOLEM-057/mail/fsim-pingo-dispatch.json",
+    "message_id": "2026-10-30_18-29-45_golem_golem057-pingo-synchronous-proof-one",
+    "duplicate": false
+  },
+  {
+    "recipient": "agon-6502",
+    "assignment": "G057-A2G-001",
+    "file": "docs/tasks/GOLEM-057/mail/agon-6502-dispatch.json",
+    "message_id": "2026-10-30_18-29-45_golem_golem057-6502-colour-and-wire-one",
+    "duplicate": false
+  },
+  {
+    "recipient": "rally",
+    "assignment": "G057-RLY-001",
+    "file": "docs/tasks/GOLEM-057/mail/rally-dispatch.json",
+    "message_id": "2026-10-30_18-29-45_golem_golem057-rally-round-trips-one",
+    "duplicate": false
+  },
+  {
+    "recipient": "flexe",
+    "assignment": "G057-FLX-001",
+    "file": "docs/tasks/GOLEM-057/mail/flexe-dispatch.json",
+    "message_id": "2026-10-30_18-29-45_golem_golem057-flexe-audio-diagnostic-one",
+    "duplicate": false
+  },
+  {
+    "recipient": "linux-extender",
+    "assignment": "G057-P4F-001",
+    "file": "docs/tasks/GOLEM-057/mail/linux-extender-dispatch.json",
+    "message_id": "2026-10-30_18-29-45_golem_golem057-p4-target-feasibility-one",
+    "duplicate": false
+  },
+  {
+    "recipient": "fsim-wireframe",
+    "assignment": "coordination-only",
+    "file": "docs/tasks/GOLEM-057/mail/fsim-wireframe-dispatch.json",
+    "message_id": "2026-10-30_18-29-46_golem_golem057-fsim-wireframe-coordination-one",
+    "duplicate": false
+  },
+  {
+    "recipient": "fsim-modeler",
+    "assignment": "coordination-only",
+    "file": "docs/tasks/GOLEM-057/mail/fsim-modeler-dispatch.json",
+    "message_id": "2026-10-30_18-29-46_golem_golem057-fsim-modeler-coordination-one",
+    "duplicate": false
+  }
+]

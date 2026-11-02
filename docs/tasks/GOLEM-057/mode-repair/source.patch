@@ -1,0 +1,32 @@
+--- a/video/vdu.h
++++ b/video/vdu.h
+@@ -296,6 +296,17 @@
+ 	bufferCallCallbacks(CALLBACK_PALETTE);
+ }
+ 
++// Private failure-only disposal: reconstruct the fallback after releasing
++// the installed controller whose resolution returned height error 2.
++static void releaseFailedResolution() {
++    canvas.reset();
++    if (_VGAController) {
++        _VGAController->end();
++        _VGAController.reset();
++    }
++    _VGAColourDepth = uint8_t(-1);
++}
++
+ // VDU 22 Handle MODE
+ //
+ void VDUStreamProcessor::vdu_mode(uint8_t mode) {
+@@ -307,9 +318,11 @@
+ 	auto errVal = changeMode(mode);
+ 	if (errVal != 0) {
+ 		debug_log("vdu_mode: Error %d changing to mode %d\n\r", errVal, mode);
++		if (errVal == 2) releaseFailedResolution();
+ 		errVal = changeMode(videoMode);
+ 		if (errVal != 0) {
+ 			debug_log("vdu_mode: Error %d changing back to mode %d\n\r", errVal, videoMode);
++			if (errVal == 2) releaseFailedResolution();
+ 			videoMode = 1;
+ 			changeMode(1);
+ 		}

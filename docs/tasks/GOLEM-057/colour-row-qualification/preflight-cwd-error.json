@@ -1,0 +1,7 @@
+{
+  "scope": "pre-execution staging verification; no emulator instantiated",
+  "attempted_cwd": "/home/smith/Agon/mystuff/agon-vdplet",
+  "command": "sha256sum --check --status .emulator/vdpl-012-qualification/.runtime.sha256",
+  "result": "Eight relative manifest paths not found because verification ran outside profile directory; no observed checksum mismatch.",
+  "correction": "Run identical manifest verification from its profile directory. No source, pins or target expectations changed."
+}

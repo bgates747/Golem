@@ -1,0 +1,314 @@
+{
+  "schema": 1,
+  "label": "base",
+  "scope": "Linked-image/static-section measurements; no flash or runtime claim",
+  "files": {
+    "firmware.bin": {
+      "path": "/Agon/mystuff/agon-vdplet/build/vdpl-010/base/firmware-src/.pio/build/esp32dev/firmware.bin",
+      "bytes": 1090096,
+      "sha256": "ea08073e64bb74d686c5a2bc8ffe8f9da34925f42e24a7b8fa384bd587f5ce94"
+    },
+    "firmware.elf": {
+      "path": "/Agon/mystuff/agon-vdplet/build/vdpl-010/base/firmware-src/.pio/build/esp32dev/firmware.elf",
+      "bytes": 24922968,
+      "sha256": "99020d3e78126d6d077e335d3749422a7e9c82910bb8ff476e1775393f080f82"
+    },
+    "firmware.map": {
+      "path": "/Agon/mystuff/agon-vdplet/build/vdpl-010/base/firmware-src/.pio/build/esp32dev/firmware.map",
+      "bytes": 17986246,
+      "sha256": "02f70ed2fcb1099205f890169c7b756930f0088733c11d5425733f6fcd6f2e6a"
+    },
+    "bootloader.bin": {
+      "path": "/Agon/mystuff/agon-vdplet/build/vdpl-010/base/firmware-src/.pio/build/esp32dev/bootloader.bin",
+      "bytes": 18992,
+      "sha256": "f2dfacdea6ae72d0aeeb7c30e525c4c6fc768a041849feac694cbb2ee2224448"
+    },
+    "partitions.bin": {
+      "path": "/Agon/mystuff/agon-vdplet/build/vdpl-010/base/firmware-src/.pio/build/esp32dev/partitions.bin",
+      "bytes": 3072,
+      "sha256": "148b959cbff1c38aa8e1d5c0ba9d612c54997b945e56a63f41223eef650653a1"
+    }
+  },
+  "groups": {
+    "flash_text": 696939,
+    "flash_readonly": 278308,
+    "iram": 94839,
+    "dram_data": 19896,
+    "dram_bss": 25152,
+    "dram_noinit": 0,
+    "rtc": 17,
+    "external_static": 0,
+    "other_allocated": 0,
+    "initialized_load_bytes": 1089982,
+    "static_dram": 45048,
+    "mapped_flash": 975247
+  },
+  "allocated_sections": [
+    {
+      "name": ".rtc.data",
+      "type": 1,
+      "flags": 3,
+      "address": 1342177792,
+      "bytes": 1
+    },
+    {
+      "name": ".rtc_noinit",
+      "type": 8,
+      "flags": 3,
+      "address": 1342177800,
+      "bytes": 16
+    },
+    {
+      "name": ".iram0.vectors",
+      "type": 1,
+      "flags": 6,
+      "address": 1074266112,
+      "bytes": 1027
+    },
+    {
+      "name": ".iram0.text",
+      "type": 1,
+      "flags": 6,
+      "address": 1074267140,
+      "bytes": 93811
+    },
+    {
+      "name": ".dram0.data",
+      "type": 1,
+      "flags": 3,
+      "address": 1073470304,
+      "bytes": 19896
+    },
+    {
+      "name": ".dram0.bss",
+      "type": 8,
+      "flags": 3,
+      "address": 1073490200,
+      "bytes": 25152
+    },
+    {
+      "name": ".flash.appdesc",
+      "type": 1,
+      "flags": 2,
+      "address": 1061158944,
+      "bytes": 256
+    },
+    {
+      "name": ".flash.rodata",
+      "type": 1,
+      "flags": 3,
+      "address": 1061159200,
+      "bytes": 278052
+    },
+    {
+      "name": ".flash.text",
+      "type": 1,
+      "flags": 6,
+      "address": 1074593824,
+      "bytes": 696939
+    },
+    {
+      "name": ".iram0.text_end",
+      "type": 8,
+      "flags": 3,
+      "address": 1074360951,
+      "bytes": 1
+    }
+  ],
+  "partitions": [
+    {
+      "label": "nvs",
+      "type": 1,
+      "subtype": 2,
+      "offset": 36864,
+      "bytes": 20480,
+      "flags": 0
+    },
+    {
+      "label": "otadata",
+      "type": 1,
+      "subtype": 0,
+      "offset": 57344,
+      "bytes": 8192,
+      "flags": 0
+    },
+    {
+      "label": "app0",
+      "type": 0,
+      "subtype": 16,
+      "offset": 65536,
+      "bytes": 1310720,
+      "flags": 0,
+      "image_bytes": 1090096,
+      "headroom_bytes": 220624,
+      "occupied_percent": 83.167725,
+      "fits": true
+    },
+    {
+      "label": "app1",
+      "type": 0,
+      "subtype": 17,
+      "offset": 1376256,
+      "bytes": 1310720,
+      "flags": 0,
+      "image_bytes": 1090096,
+      "headroom_bytes": 220624,
+      "occupied_percent": 83.167725,
+      "fits": true
+    },
+    {
+      "label": "spiffs",
+      "type": 1,
+      "subtype": 130,
+      "offset": 2686976,
+      "bytes": 1441792,
+      "flags": 0
+    },
+    {
+      "label": "coredump",
+      "type": 1,
+      "subtype": 3,
+      "offset": 4128768,
+      "bytes": 65536,
+      "flags": 0
+    }
+  ],
+  "feature_objects": [
+    {
+      "name": "_ZN12vdpl_runtimeL5stateE",
+      "address": 1073470316,
+      "bytes": 332,
+      "section": ".dram0.data"
+    },
+    {
+      "name": "_ZN12vdpl_runtimeL9host_sinkE",
+      "address": 1061165224,
+      "bytes": 80,
+      "section": ".flash.rodata"
+    },
+    {
+      "name": "_ZN12vdpl_runtimeL16host_audio_queueE",
+      "address": 1061165304,
+      "bytes": 76,
+      "section": ".flash.rodata"
+    },
+    {
+      "name": "_ZN12vdpl_runtimeL10host_mediaE",
+      "address": 1061165380,
+      "bytes": 72,
+      "section": ".flash.rodata"
+    },
+    {
+      "name": "_ZN12vdpl_runtimeL10host_linesE",
+      "address": 1061165452,
+      "bytes": 44,
+      "section": ".flash.rodata"
+    },
+    {
+      "name": "_ZN12vdpl_runtimeL8host_vduE",
+      "address": 1061165496,
+      "bytes": 40,
+      "section": ".flash.rodata"
+    },
+    {
+      "name": "_ZN12vdpl_runtimeL4hostE",
+      "address": 1061165536,
+      "bytes": 36,
+      "section": ".flash.rodata"
+    }
+  ],
+  "build_source_receipt": {
+    "path": "/Agon/mystuff/agon-vdplet/build/vdpl-010/base/firmware-source.json",
+    "sha256": "0733b799c912691992c466917147193d9afc5563025bceec99738a12302fd359",
+    "contents": {
+      "project": "VDPlet Runtime",
+      "features": "base",
+      "vdp_repository": "https://github.com/tomm/agon-vdp.git",
+      "vdp_pin": "1056ee38ec1cc68ed327bd32ee47d04b1c30597c",
+      "graphics_pin": "ac2dd5986daf496c43ae8e7fe41836274aec54a0",
+      "source": "/Agon/mystuff/agon-vdplet/build/vdpl-010/base/firmware-src",
+      "upstream_modified": false,
+      "builder_sha256": "2a29bdbebe073d4320d1b6aa285190bbed585448ce0566dc467db3faccffbb3b",
+      "dispatch_sha256": "35fff838a0942826fd8b63a69bbde9bae17a0d428e6a9289dd03607b225817ef",
+      "processor_sha256": "35f7d0d29f22462a9ccd7fad605aec5aa42fb7aadbe6c124e88ee54b29c8acc7",
+      "context_sha256": "38004060560979dc7338547345ad7784820f7938fb490a7afe8ac28d1d407c45",
+      "audio_sha256": "bb8ee5b666350eb244e667cdb75ceb00d9a05f9c8a4913b7604210a5a6e6f79e",
+      "audio_vdu_sha256": "6a479afd49dbb7111a6b3637cad62f3bfacb8fc8ea514799f89431810ee4ba67",
+      "audio_channel_sha256": "0100e83d3921aef6a1195b185842be32a012068914f6d6675da6e8ee3066e22f",
+      "buffered_sha256": "b9d9d93295ddc5fb05c802071057e32ed9755837f029ce381340072352c262f0",
+      "configuration_sha256": "7947cbd2e5fcb38e12ca3b8dee44b97700da0ca1d05c19914b100d47885f0bb1",
+      "headers": {
+        "vdplet_policy.h": "c69d6f3654b4b5dd4a8ae76e971818f4b13369d61dbded607b844e3268f66419",
+        "vdplet.h": "574fe46923142b0cae9fa7cb5989bea5c76a1cf8a2b6327c6ae4a783ced7bbe8",
+        "vdplet_services.h": "44f97a1155cad4e737e220807e5913a3f69d7f42054c7821ea9abe014bd3550f",
+        "vdplet_protocol.h": "e65d387735a6c600626608127ce57ca9e29249bc2aa535fbb5f9be29f3e06254",
+        "vdplet_vdu_validate.h": "5b95c6ead04b6a86bb578f6f5c1cd8b5b70dc8d72e11502874d41cd00b564381",
+        "vdplet_lines_validate.h": "2dd5d6168eb98b0adcae6070eb55f1fdcc4136ceb065f8274ba15b53fa09c4a3",
+        "vdplet_image.h": "1908ccf123f53a8393a3d357b92119c19bd3e56b7576f68af256ad329a850397",
+        "vdplet_runtime.h": "c472db2dd3f9bbe70506dfcc10ff041962cde3cf008ecf9874788e7567be4df8",
+        "vdplet_pcm_sink_protocol.h": "1c0215f00853081bdf4d58ef794b889145aa71c9e1f119f16a5e29c1f384f942"
+      },
+      "exported_headers": {
+        "vdplet_policy.h": "c69d6f3654b4b5dd4a8ae76e971818f4b13369d61dbded607b844e3268f66419",
+        "vdplet.h": "b20994f60adf3c794bdc4fc5ec2d5951dfc7ea68476f564aa04fedeeabe5b622",
+        "vdplet_services.h": "44f97a1155cad4e737e220807e5913a3f69d7f42054c7821ea9abe014bd3550f",
+        "vdplet_protocol.h": "e65d387735a6c600626608127ce57ca9e29249bc2aa535fbb5f9be29f3e06254",
+        "vdplet_vdu_validate.h": "72922683020827fb99a101ae909da28d8e3f6e1d9c79ad1cda215bc5176e1b13",
+        "vdplet_lines_validate.h": "0086167133611ec7c314cfcf2f13fef9986dae1dff540f1f653c91931bee0dff",
+        "vdplet_image.h": "e9c92e3dedbf8a81d24c2c245944f2eaffa539b2ee7ae791772a45c97c75b4cd",
+        "vdplet_runtime.h": "c472db2dd3f9bbe70506dfcc10ff041962cde3cf008ecf9874788e7567be4df8",
+        "vdplet_pcm_sink_protocol.h": "1c0215f00853081bdf4d58ef794b889145aa71c9e1f119f16a5e29c1f384f942"
+      },
+      "build_configuration_sha256": "c43841470728b4a81239ae98f635c109b490b2e918aeae4f155557343bae0e26"
+    }
+  },
+  "configuration": {
+    "path": "/Agon/mystuff/agon-vdplet/build/vdpl-010/base/firmware-src/platformio.ini",
+    "sha256": "7947cbd2e5fcb38e12ca3b8dee44b97700da0ca1d05c19914b100d47885f0bb1",
+    "environment": "env:esp32dev",
+    "settings": {
+      "platform": "espressif32@6.6.0 ;v6.9.0 uses about 0.5kb more internal RAM",
+      "board": "esp32dev",
+      "framework": "arduino",
+      "board_build.flash_mode": "qio",
+      "board_build.f_cpu": "240000000L",
+      "board_build.f_flash": "80000000L",
+      "build_flags": "-O2\n-DBOARD_HAS_PSRAM\n-mfix-esp32-psram-cache-issue\n-std=c++17\n-std=gnu++17",
+      "build_unflags": "-Os\n-std=c++11\n-std=gnu++11",
+      "lib_deps": "https://github.com/AgonPlatform/vdp-gl.git#ac2dd5986daf496c43ae8e7fe41836274aec54a0\nfbiego/ESP32Time@2.0.6\nrobtillaart/CRC@1.0.4"
+    }
+  },
+  "compiler": {
+    "path": "/home/smith/.platformio/packages/toolchain-xtensa-esp32/bin/xtensa-esp32-elf-gcc",
+    "sha256": "e091761ac142b87be663aa36c8dc9af10044a9769a540ee0337ebc97ea56a22d",
+    "version": "xtensa-esp32-elf-gcc (crosstool-NG esp-2021r2-patch5) 8.4.0"
+  },
+  "platformio_python_package": "6.2.0",
+  "build_package_inventory": {
+    "platforms/espressif32/platform.json": {
+      "name": "espressif32",
+      "version": "6.6.0",
+      "sha256": "88464df11f7319223063348f355694dc5e5a4b2c60a4a8d3d309c230d370257d"
+    },
+    "packages/framework-arduinoespressif32/package.json": {
+      "name": "framework-arduinoespressif32",
+      "version": "3.20014.231204",
+      "sha256": "fa3262cd10e9536428203d2da0ac48e0227862e5cfc0901e13704bc06dbd7f5e"
+    },
+    "packages/tool-esptoolpy/package.json": {
+      "name": "tool-esptoolpy",
+      "version": "1.40501.0",
+      "sha256": "092bd61c2583d5ae523070e2935a10c3954ffa3eb9e5149e54e061cb602d2a3f"
+    },
+    "packages/tool-scons/package.json": {
+      "name": "tool-scons",
+      "version": "4.41101.0",
+      "sha256": "e4c25069254659e84a0d150348e7b08b215577fad7a9d8843c58f64ad22ddbbf"
+    },
+    "packages/toolchain-xtensa-esp32/package.json": {
+      "name": "toolchain-xtensa-esp32",
+      "version": "8.4.0+2021r2-patch5",
+      "sha256": "95053a4b63082311148c4799d8271e26a66501f3ccd736ab91ffe989fa0b5691"
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "source": "/Agon/mystuff/agon-6502/build/vdp005/color/coherence/candidate-observer-jit-r01/wire-rx.bin",
+  "modes": [
+    {
+      "offset": 3,
+      "width": 640,
+      "height": 480,
+      "chars": [
+        80,
+        60
+      ],
+      "colours": 16,
+      "mode": 0
+    },
+    {
+      "offset": 13,
+      "width": 320,
+      "height": 240,
+      "chars": [
+        40,
+        30
+      ],
+      "colours": 2,
+      "mode": 11
+    },
+    {
+      "offset": 3419,
+      "width": 320,
+      "height": 240,
+      "chars": [
+        40,
+        30
+      ],
+      "colours": 2,
+      "mode": 11
+    }
+  ],
+  "inference": "Last retained stock MODE packet is mode11/320x240/two colours after requested mode20. This confirms actual reported fallback, not its allocation cause."
+}

@@ -1,0 +1,9 @@
+{
+  "author": "golem",
+  "recipient": "flexe",
+  "request_id": "golem057-flexe-rally-partial-context-twentynine",
+  "thread_id": "golem057-implementation",
+  "branch": "rollout-v1",
+  "in_reply_to": "2026-10-30_21-59-32_flexe_golem057-flexe-arm-upload-triage-twentysix",
+  "body": "Immediate context only, no new analysis/run contract yet: Rally full900four-run cohort stopped thirdprocess on60s unchangedUART; firstorderedC/P900 passes guestchecks, fourthUNRUN. Normalguardteardown/boostrestore/freshidle and generation28release precedeanalysis. Mail2026-10-30_22-09-40_rally_golem057-rally-full900-release-twenty-five; originalx86backend200f28cb/firmware8da2... differs from FSIMARMaf0/8d98. Owner is locating exactboundary offline now. No commoncause or rendererdefect inferred. FSIM's frozen publicatomicupload diagnostic is source/hostpreparing; no restartyet. I will forward concrete newboundary only if it helps that existingcontract, not add broad tracing."
+}

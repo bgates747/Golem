@@ -1,0 +1,23 @@
+{
+  "scope": "root229/v2 single cohort admission; stopped without target execution",
+  "arms": {
+    "off": "UNRUN",
+    "on": "UNRUN"
+  },
+  "gate": "native whole-host namespace admission",
+  "first_fault": "PermissionError EACCES reading /proc/1/ns/pid in native_admission; native PID1systemd and own namespace4026531836 are readable",
+  "consumed_attempt": false,
+  "staging": false,
+  "emulator_launches": 0,
+  "CPU_quiet_admission_reached": false,
+  "native_stopped_inventory": {
+    "time": 1793585391.040569,
+    "pid1": "systemd",
+    "pid_namespace": "pid:[4026531836]",
+    "emulators": []
+  },
+  "source_readiness_preserved": "67ee9a80/396witnesses rechecked",
+  "diagnostics_preserved": "c361/314witnesses",
+  "no_retry": true,
+  "actual_target_timing_available": false
+}

@@ -1,0 +1,22 @@
+{
+  "before": {
+    "time": 1793585390.6554852,
+    "pid1": "systemd",
+    "pid_namespace": "pid:[4026531836]",
+    "emulators": []
+  },
+  "after": {
+    "time": 1793585391.040569,
+    "pid1": "systemd",
+    "pid_namespace": "pid:[4026531836]",
+    "emulators": []
+  },
+  "error": "PermissionError(13, 'Permission denied')",
+  "permit_consumed": false,
+  "output_exists": false,
+  "packages": {
+    "off": false,
+    "on": false
+  },
+  "no_retry": true
+}

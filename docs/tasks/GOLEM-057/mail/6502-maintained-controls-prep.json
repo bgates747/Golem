@@ -1,0 +1,9 @@
+{
+  "author": "golem",
+  "recipient": "agon-6502",
+  "request_id": "golem057-6502-maintained-controls-twenty",
+  "thread_id": "golem057-implementation",
+  "branch": "rollout-v1",
+  "in_reply_to": "2026-10-30_20-29-41_agon-6502_golem057-cpu-controls-pass-sixteen",
+  "body": "# Maintained cache candidate: repeat finite CPU gate preparation\n\nFlexe returns a stable unobserved maintained build at /home/smith/Agon/mystuff/flexe-agon-emulator/build/fx072/maintained-r02/flexe-vdp-maintained.so, SHA256 0866265bd6f3d73ad572f31dc1bb954f308ed9a5d857efa9414d37e1ade13374. Read its durable source receipt 2026-10-30_20-39-35_flexe_golem057-flexe-maintained-ready-sixteen and docs/tasks/FX-072/maintained-candidate.{md,json}.\n\nThis is not the already-qualified f7e5bf31. Same core archive and cache correction; maintained adapter additionally retains the existing agon_cycles_to_ns multiply-first pacing correction. Host regression/repeated linking pass, with no diagnostic hooks. No source promotion or old profile replacement is implied.\n\nPlease freeze a proportional repeat of exactly the same eight finite CPU-only current/small/26880/35072 cells in both engines against explicit 0866265b. Preserve b42/a10/85aa/d316 and original per-cell state/heap/counter/lifecycle comparisons. New output paths; no mode20, rendering, address observer, speed or PS2 expansion. Your guest-only palette21 source/host preparation remains authorized independently, but its target should use a freshly qualified stable backend if these controls pass. Request a new central slot only when frozen; root currently holds generation20 for three generic row processes. No target launch before a fresh grant."
+}

@@ -1,0 +1,75 @@
+{
+  "profile": "base",
+  "engine": "jit",
+  "firmware_sha256": "ea08073e64bb74d686c5a2bc8ffe8f9da34925f42e24a7b8fa384bd587f5ce94",
+  "elf_sha256": "99020d3e78126d6d077e335d3749422a7e9c82910bb8ff476e1775393f080f82",
+  "backend_sha256": "108ec5b02122381e6c3ae851508188ec0a96240ca5f74be804fd2201b141e6e9",
+  "qualifier_sha256": "9d1012ef24b6b50e5f17893478919083bc91d9ce95efe19715999e0f07e2f716",
+  "target_sha256": "bb9b084f82e08572f7886f0c8845f26fe8a6dea32ce811ccbf369d5d00d4f941",
+  "worker_source_sha256": "798a90c0c577d567b16d2790ced472b06fb751d1eb78690b0534176961bf67ea",
+  "module_sha256": "abfbaf8f2bea9f2220886498abede64981ce86f4e421c63c81685d8455bd7a66",
+  "modules": {
+    "view-0.vdpl": "819d830c972353966364169744ca924aa8ba34e8b4a3dd5a3384709e10deb0b2",
+    "view-1.vdpl": "164d0ed433c222e12521f1eeaf2b2ef67c8ec25b3572c4df62af819beb4871e9",
+    "view-2.vdpl": "a7edeb510701506adc238cdc1646aa5dd984b3c599ca8f032cafea1911583dc2",
+    "view-3.vdpl": "3821807f71073254a0ec6354751d8fccb14f040b605c8c1430bf4d4dc176131a",
+    "numeric-1.vdpl": "722f77c8b33b57ec040c3366b6ceff16267efb358a716074179a1fb4cb6a6522",
+    "vdu-plot.vdpl": "d4bc2100573f0d89d1ce0780d2fd2a658802980d48af464dcfd6f749cffd3215",
+    "line-batch.vdpl": "be39f9f68689dbf9ec69d2ba957be94d7e9cf0addc713a317dcc46c8e73a1160"
+  },
+  "checks": [
+    "capability discovery exactly 15",
+    "exact legacy ABI0/1/2 views, masks and bounded accessors",
+    "base rejects pixel/sink image requirements and exposes no PCM/pixel callbacks",
+    "unchanged maintained numeric/VDU/line modules execute and drawing matches ordinary commands"
+  ],
+  "resource_observations": {
+    "boot": {
+      "command_stack_free_bytes": 2760,
+      "spiram_free_bytes": 4167647,
+      "spiram_largest_block_bytes": 4128756,
+      "audio_stack_free_bytes": 1536,
+      "task_count": 12,
+      "internal_free_bytes": 60828,
+      "internal_largest_block_bytes": 38900,
+      "executable_free_bytes": 53940,
+      "executable_largest_block_bytes": 32756
+    },
+    "final": {
+      "command_stack_free_bytes": 2152,
+      "spiram_free_bytes": 4165807,
+      "spiram_largest_block_bytes": 4128756,
+      "audio_stack_free_bytes": 1508,
+      "task_count": 12,
+      "internal_free_bytes": 139732,
+      "internal_largest_block_bytes": 45044,
+      "executable_free_bytes": 84660,
+      "executable_largest_block_bytes": 34804
+    }
+  },
+  "pixels_compared": 153600,
+  "passed": true,
+  "scope": "actual ESP32 instructions and decoded VGA; no physical or clean-audio qualification",
+  "controller_matrix_deferred": false,
+  "palette8_target_coverage": false,
+  "palette8_limit": "stock numbered modes do not select the available8-color controller; host kernel tests are separate",
+  "elapsed_seconds": 4.923,
+  "execution_stats": {
+    "engine": "jit",
+    "frames": 257,
+    "cycles": 1163692083,
+    "retired": 364389604,
+    "uart_rx": 25891,
+    "uart_tx": 2473,
+    "uart_delivered": 2473,
+    "isync": 32,
+    "code_invalidations": 5,
+    "keys": 0,
+    "failed": false,
+    "unhandled": 0,
+    "unregistered": 0,
+    "unmapped": 0
+  },
+  "result_bytes": 1970,
+  "outbound_bytes": 25891
+}

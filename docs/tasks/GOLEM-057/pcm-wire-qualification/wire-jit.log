@@ -1,0 +1,27 @@
+Loaded ESP32 image /home/smith/Agon/mystuff/agon-vdplet/build/vdpl011wire/firmware.bin: 6 segments, entry=0x40087688
+  Segment 0: 0x3F400020 (278620 bytes) -> flash_data
+  Segment 1: 0x3FFBDB60 (19912 bytes) -> sram_data
+  Segment 2: 0x40080000 (29124 bytes) -> sram_insn
+  Segment 3: 0x400D0020 (701004 bytes) -> flash_insn
+  Segment 4: 0x400871C4 (65712 bytes) -> sram_insn
+  Segment 5: 0x50000200 (4 bytes) -> rtc_slow
+[predecode] Built table: 1515516 entries, 19 MB (4 MB flash coverage)
+[APPCPU] boot addr = 0x40087520 (from pc=0x4000689C)
+[     10000] CORE1 started at 0x40087520
+[APPCPU] boot addr = 0x00000000 (from pc=0x4000689C)
+jit: operand-free runtime discovery, nativecap143 and explicit INFO25 presence
+jit: module-free DISCOVER emits four14-byte bodies from one coherent32-byte state
+jit: version/op/channel/generation/length errors drain complete payloads and preserve framing across token wrap
+jit: truncated fixed header times out without reply, allocation or live-stream effects
+jit: WRITE ACK permits immediate source clear/reallocate; explicit offset, prime and all-or-BUSY hold without a module
+jit: wire stream survives actual numeric INIT/RUN/error/UNLOAD and deliberate failed native INIT
+jit: native OPEN/STATE/WRITE/CLOSE cannot take over a wire owner; native failed RUN cleanup preserves it
+jit: final priming frame starts independent drain; later irregular writes cross the physical ring boundary
+jit: missing/multiblock/overflow/end-span refusals, valid zero-frame span and wrong channel/generation preserve stream
+jit: RESET/STOP/MUTE use fresh generations; UNMUTE cannot replay, oversized/muted writes refuse, CLOSE invalidates
+jit: native control matches prime/BUSY/drain counters; wire live calls and OPEN cannot inspect, close or steal native stream
+jit: native failure/unload still cancel its own producer while explicit native CLOSE leaves module loaded
+jit: successful wire CLOSE preserves unrelated loaded module and retained numeric state
+jit: selected ordinary DISABLE and global mixer replacement cancel wire owner; original output rate restored
+jit: 8 repeated1024-frame copied rings recover exact heap with unchanged task count
+PASS: 15 groups; 92 ordinary PCM transactions

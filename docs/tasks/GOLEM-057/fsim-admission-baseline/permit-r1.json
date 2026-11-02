@@ -1,0 +1,12 @@
+{
+  "owner": "fsim-pingo",
+  "task": "PINGO-066",
+  "scope": "finite-pi-native-off-on",
+  "arms": [
+    "off",
+    "on"
+  ],
+  "driver_freeze_sha256": "67ee9a80733e69361de48f31e90819169827592432f27ec9b5c7c2023ed8c30b",
+  "authority": "root229-execution-v2",
+  "execution_plan_sha256": "7ff7732cfadd05274a2c97ef0ed01441a082fc8bf77ad3d8e6b538679488a475"
+}

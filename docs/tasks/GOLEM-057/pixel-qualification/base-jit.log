@@ -1,0 +1,16 @@
+Loaded ESP32 image /home/smith/Agon/mystuff/agon-vdplet/build/vdpl-010/base/firmware.bin: 6 segments, entry=0x4008768C
+  Segment 0: 0x3F400020 (278308 bytes) -> flash_data
+  Segment 1: 0x3FFBDB60 (19896 bytes) -> sram_data
+  Segment 2: 0x40080000 (29452 bytes) -> sram_insn
+  Segment 3: 0x400D0020 (696940 bytes) -> flash_insn
+  Segment 4: 0x4008730C (65388 bytes) -> sram_insn
+  Segment 5: 0x50000200 (4 bytes) -> rtc_slow
+[predecode] Built table: 1515516 entries, 19 MB (4 MB flash coverage)
+[APPCPU] boot addr = 0x40087524 (from pc=0x4000689C)
+[     10000] CORE1 started at 0x40087524
+[APPCPU] boot addr = 0x00000000 (from pc=0x4000689C)
+base/jit: capability discovery exactly 15
+base/jit: exact legacy ABI0/1/2 views, masks and bounded accessors
+base/jit: base rejects pixel/sink image requirements and exposes no PCM/pixel callbacks
+base/jit: unchanged maintained numeric/VDU/line modules execute and drawing matches ordinary commands
+PASS: 4 groups; 153600 decoded pixels

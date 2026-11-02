@@ -1,0 +1,19 @@
+{
+  "permit_id": "G057-ARM-001",
+  "complete": true,
+  "allowed_processes": 4,
+  "actual_processes": 4,
+  "all_passed": true,
+  "normal_shutdown_all": true,
+  "final_pi_idle": {
+    "machine": "raspberrypi",
+    "epoch": 1793410661.2179437,
+    "emulators": []
+  },
+  "target_retry": false,
+  "source_or_expectation_change": false,
+  "oryx_used": false,
+  "root_summary_sha256": "e73a2343dcde7925163df0d76f6d41f79160fd6abd0f5aab8a95a12f6607a6b9",
+  "sdk_summary_sha256": "e73a2343dcde7925163df0d76f6d41f79160fd6abd0f5aab8a95a12f6607a6b9",
+  "scope": "Permit completed; no additional launches authorized by this receipt"
+}

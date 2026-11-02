@@ -1,0 +1,9 @@
+{
+  "author": "golem",
+  "recipient": "flexe",
+  "request_id": "golem057-flexe-lease-two",
+  "thread_id": "golem057-implementation",
+  "branch": "rollout-v1",
+  "in_reply_to": "2026-10-30_18-38-01_flexe_golem057-flexe-audio-ready-one",
+  "body": "# Flexe exclusive Oryx slot granted\n\nRequest0f155c37f595 granted generation2, lease 9fd195a9cc3e41cd86efe85fc5d456a7. Rally explicitly released and fresh host process/maps are idle. Proceed with your two strictly sequential headless baseline/trace runs and exact frozen inputs. Assert-owner before each launch; retain lease through full teardown, inspect and explicitly release afterward. Mail raw/audited results and release; notify Golem. No audio behavior fix, shared replacement, GUI, hardware or publication is authorized by this diagnostic. Planning estimate2minutes is not automatic expiry. Wolf is preparing the next priority candidate; preserve all other processes.\n"
+}

@@ -1,0 +1,161 @@
+{
+  "task": "GOLEM-057 BMP-001 / CNS-014",
+  "method": "Read-only source audit; no emulator or hardware execution",
+  "runtime_pin": "2541f10a1f8b06688bcecbc6d22eeae607da2b63",
+  "firmware_pin": "1056ee38ec1cc68ed327bd32ee47d04b1c30597c",
+  "graphics_pin": "ac2dd5986daf496c43ae8e7fe41836274aec54a0",
+  "sources": [
+    {
+      "path": "/Agon/mystuff/agon-vdplet/build/vdpl-009d/firmware/firmware-src/video/vdu_sprites.h",
+      "sha256": "53b0fe1474ba20565cfc31afae993f88eb44084ab8b3c4181d5261a59db3c1eb",
+      "repository": "https://github.com/tomm/agon-vdp.git",
+      "pin": "1056ee38ec1cc68ed327bd32ee47d04b1c30597c",
+      "relative_path": "video/vdu_sprites.h",
+      "stock_sha256": "53b0fe1474ba20565cfc31afae993f88eb44084ab8b3c4181d5261a59db3c1eb",
+      "identical_to_stock": true,
+      "note": "Owned runtime export may contain independent VDPlet integration; cited stock bitmap/CA functions were inspected directly."
+    },
+    {
+      "path": "/Agon/mystuff/agon-vdplet/build/vdpl-009d/firmware/firmware-src/video/buffers.h",
+      "sha256": "f04f4da7521192d05725a7f54a52200c0b7cd9ed067335feaf20baf32ec62751",
+      "repository": "https://github.com/tomm/agon-vdp.git",
+      "pin": "1056ee38ec1cc68ed327bd32ee47d04b1c30597c",
+      "relative_path": "video/buffers.h",
+      "stock_sha256": "f04f4da7521192d05725a7f54a52200c0b7cd9ed067335feaf20baf32ec62751",
+      "identical_to_stock": true,
+      "note": "Owned runtime export may contain independent VDPlet integration; cited stock bitmap/CA functions were inspected directly."
+    },
+    {
+      "path": "/Agon/mystuff/agon-vdplet/build/vdpl-009d/firmware/firmware-src/video/buffer_stream.h",
+      "sha256": "6b57aedf9e7fee1b8fdb84660e4eaade788c185ec540f94b00f965f2024c418d",
+      "repository": "https://github.com/tomm/agon-vdp.git",
+      "pin": "1056ee38ec1cc68ed327bd32ee47d04b1c30597c",
+      "relative_path": "video/buffer_stream.h",
+      "stock_sha256": "6b57aedf9e7fee1b8fdb84660e4eaade788c185ec540f94b00f965f2024c418d",
+      "identical_to_stock": true,
+      "note": "Owned runtime export may contain independent VDPlet integration; cited stock bitmap/CA functions were inspected directly."
+    },
+    {
+      "path": "/Agon/mystuff/agon-vdplet/build/vdpl-009d/firmware/firmware-src/video/sprites.h",
+      "sha256": "82ada351315c23b67ccbd6db44ec7c2b45f1a5223211713d4d4588e9a5c51407",
+      "repository": "https://github.com/tomm/agon-vdp.git",
+      "pin": "1056ee38ec1cc68ed327bd32ee47d04b1c30597c",
+      "relative_path": "video/sprites.h",
+      "stock_sha256": "82ada351315c23b67ccbd6db44ec7c2b45f1a5223211713d4d4588e9a5c51407",
+      "identical_to_stock": true,
+      "note": "Owned runtime export may contain independent VDPlet integration; cited stock bitmap/CA functions were inspected directly."
+    },
+    {
+      "path": "/Agon/mystuff/agon-vdplet/build/vdpl-009d/firmware/firmware-src/video/vdu_buffered.h",
+      "sha256": "b9d9d93295ddc5fb05c802071057e32ed9755837f029ce381340072352c262f0",
+      "repository": "https://github.com/tomm/agon-vdp.git",
+      "pin": "1056ee38ec1cc68ed327bd32ee47d04b1c30597c",
+      "relative_path": "video/vdu_buffered.h",
+      "stock_sha256": "b9d9d93295ddc5fb05c802071057e32ed9755837f029ce381340072352c262f0",
+      "identical_to_stock": true,
+      "note": "Owned runtime export may contain independent VDPlet integration; cited stock bitmap/CA functions were inspected directly."
+    },
+    {
+      "path": "/Agon/mystuff/agon-vdplet/build/vdpl-009d/firmware/firmware-src/video/vdu_sys.h",
+      "sha256": "35fff838a0942826fd8b63a69bbde9bae17a0d428e6a9289dd03607b225817ef",
+      "repository": "https://github.com/tomm/agon-vdp.git",
+      "pin": "1056ee38ec1cc68ed327bd32ee47d04b1c30597c",
+      "relative_path": "video/vdu_sys.h",
+      "stock_sha256": "c5ecd98b7dc005525375ad8f044949f8304251f20a8eeaeaf41020dca3013c4e",
+      "identical_to_stock": false,
+      "note": "Owned runtime export may contain independent VDPlet integration; cited stock bitmap/CA functions were inspected directly."
+    },
+    {
+      "path": "/Agon/mystuff/agon-vdplet/build/vdpl-009d/firmware/firmware-src/video/agon_screen.h",
+      "sha256": "648dbc7d0ba9d98a3115a4ba307ff7585c6c5e28189c1e8961eff7a3c3d60343",
+      "repository": "https://github.com/tomm/agon-vdp.git",
+      "pin": "1056ee38ec1cc68ed327bd32ee47d04b1c30597c",
+      "relative_path": "video/agon_screen.h",
+      "stock_sha256": "648dbc7d0ba9d98a3115a4ba307ff7585c6c5e28189c1e8961eff7a3c3d60343",
+      "identical_to_stock": true,
+      "note": "Owned runtime export may contain independent VDPlet integration; cited stock bitmap/CA functions were inspected directly."
+    },
+    {
+      "path": "/Agon/mystuff/agon-vdplet/build/vdpl-009d/firmware/firmware-src/video/context/graphics.h",
+      "sha256": "eba700bc2b988af484784c4d90ebc8233a008687f1e5d5b65ab61cc7e6433d2a",
+      "repository": "https://github.com/tomm/agon-vdp.git",
+      "pin": "1056ee38ec1cc68ed327bd32ee47d04b1c30597c",
+      "relative_path": "video/context/graphics.h",
+      "stock_sha256": "eba700bc2b988af484784c4d90ebc8233a008687f1e5d5b65ab61cc7e6433d2a",
+      "identical_to_stock": true,
+      "note": "Owned runtime export may contain independent VDPlet integration; cited stock bitmap/CA functions were inspected directly."
+    },
+    {
+      "path": "/Agon/mystuff/agon-vdplet/build/vdpl-009d/firmware/firmware-src/.pio/libdeps/esp32dev/vdp-gl/src/displaycontroller.h",
+      "sha256": "603bac727fd1ab61d6f36a8d1a0e533471b849d6c30159b5f95ed4260e9d5c23",
+      "repository": "https://github.com/AgonPlatform/vdp-gl.git",
+      "pin": "ac2dd5986daf496c43ae8e7fe41836274aec54a0",
+      "relative_path": "src/displaycontroller.h",
+      "identical_to_pin": true
+    },
+    {
+      "path": "/Agon/mystuff/agon-vdplet/build/vdpl-009d/firmware/firmware-src/.pio/libdeps/esp32dev/vdp-gl/src/displaycontroller.cpp",
+      "sha256": "f3588a684647ef258c024251d17b029e2877c8363b28a570432376f353232902",
+      "repository": "https://github.com/AgonPlatform/vdp-gl.git",
+      "pin": "ac2dd5986daf496c43ae8e7fe41836274aec54a0",
+      "relative_path": "src/displaycontroller.cpp",
+      "identical_to_pin": true
+    },
+    {
+      "path": "/Agon/mystuff/agon-vdplet/build/vdpl-009d/firmware/firmware-src/.pio/libdeps/esp32dev/vdp-gl/src/canvas.cpp",
+      "sha256": "3626baa0df539ed5a8fde03d67d236c5a38636cd914764eca702b5310bde3271",
+      "repository": "https://github.com/AgonPlatform/vdp-gl.git",
+      "pin": "ac2dd5986daf496c43ae8e7fe41836274aec54a0",
+      "relative_path": "src/canvas.cpp",
+      "identical_to_pin": true
+    },
+    {
+      "path": "/Agon/mystuff/agon-vdplet/build/vdpl-009d/firmware/firmware-src/.pio/libdeps/esp32dev/vdp-gl/src/dispdrivers/vgacontroller.cpp",
+      "sha256": "77cbb352a896c7d1464fba8dbc1cd4cc33dab6d513d818742aa582868a66b541",
+      "repository": "https://github.com/AgonPlatform/vdp-gl.git",
+      "pin": "ac2dd5986daf496c43ae8e7fe41836274aec54a0",
+      "relative_path": "src/dispdrivers/vgacontroller.cpp",
+      "identical_to_pin": true
+    },
+    {
+      "path": "/Agon/mystuff/agon-vdplet/build/vdpl-009d/firmware/firmware-src/.pio/libdeps/esp32dev/vdp-gl/src/dispdrivers/vgapalettedcontroller.cpp",
+      "sha256": "5c8f9b6b673d917ed7052a39aaef1f9671b669563f379c40337e3d1a829c2f49",
+      "repository": "https://github.com/AgonPlatform/vdp-gl.git",
+      "pin": "ac2dd5986daf496c43ae8e7fe41836274aec54a0",
+      "relative_path": "src/dispdrivers/vgapalettedcontroller.cpp",
+      "identical_to_pin": true
+    },
+    {
+      "path": "/Agon/mystuff/agon-vdplet/src/vdplet_runtime.h",
+      "sha256_at_pin": "cd106399c21f2b3e9e45dd542ee6b803b5721a2d8d7351a067820269e7f55993",
+      "repository": "https://github.com/bgates747/agon-vdplet.git",
+      "pin": "2541f10a1f8b06688bcecbc6d22eeae607da2b63",
+      "relative_path": "src/vdplet_runtime.h",
+      "note": "Line references use the reviewed baseline; GOLEM-057 development may subsequently change the working file."
+    },
+    {
+      "path": "/Agon/mystuff/agon-vdplet/src/vdplet_pixels.h",
+      "sha256_at_pin": "58ee90c0867dea2b6f040a4b568d6fbbbf863c4baf689e1baf89af3688ff013c",
+      "repository": "https://github.com/bgates747/agon-vdplet.git",
+      "pin": "2541f10a1f8b06688bcecbc6d22eeae607da2b63",
+      "relative_path": "src/vdplet_pixels.h",
+      "note": "Line references use the reviewed baseline; GOLEM-057 development may subsequently change the working file."
+    },
+    {
+      "path": "/Agon/mystuff/agon-vdplet/src/vdplet_vdu_validate.h",
+      "sha256_at_pin": "5b95c6ead04b6a86bb578f6f5c1cd8b5b70dc8d72e11502874d41cd00b564381",
+      "repository": "https://github.com/bgates747/agon-vdplet.git",
+      "pin": "2541f10a1f8b06688bcecbc6d22eeae607da2b63",
+      "relative_path": "src/vdplet_vdu_validate.h",
+      "note": "Line references use the reviewed baseline; GOLEM-057 development may subsequently change the working file."
+    },
+    {
+      "path": "/Agon/mystuff/agon-vdplet/include/vdplet.h",
+      "sha256_at_pin": "e0394c035bcbe38f15db1d860ad805d113ad389fbc93b8878fd8638a0389fc8b",
+      "repository": "https://github.com/bgates747/agon-vdplet.git",
+      "pin": "2541f10a1f8b06688bcecbc6d22eeae607da2b63",
+      "relative_path": "include/vdplet.h",
+      "note": "Line references use the reviewed baseline; GOLEM-057 development may subsequently change the working file."
+    }
+  ]
+}

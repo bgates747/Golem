@@ -1,5 +1,12 @@
 # VDPlet feature requests — compiled consultation list
 
+This is the2026-10-30 consultation snapshot, before GOLEM-057 implementation.
+Statements below about features not yet existing describe that snapshot.
+Current implementation, consumer assignments and qualification are recorded in
+[GOLEM-057](../GOLEM-057.md) and the
+[central rollout records](/Agon/mystuff/agon-dev-env/cross-agent/vdplet-rollout/assignments.md).
+This catalog does not override those later Author releases or source evidence.
+
 Eight approved project sessions supplied nine reports. They yield **15 groups**:
 seven shared runtime/SDK/documentation proposals, five application/module
 proposals, one emulator diagnostic and two no-change dispositions. Most consumer

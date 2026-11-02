@@ -1,0 +1,26 @@
+{
+  "schema": "g057-display-origin-diagnostic-freeze-v1",
+  "created": "2026-10-31T02:09:09.892514+00:00",
+  "plan": "docs/tasks/GOLEM-057/display-origin-diagnostic-proposal.md",
+  "plan_sha256": "4145de67d31212fa0ce30ce428d31d5f891842dbfffc304576211e760a03f74a",
+  "scope": "Separate original010-source macrooff/macroon diagnostic preparation and matched builds only; no target or repair",
+  "events": [
+    "DEFAULT_PLANE",
+    "INITIAL_LIST",
+    "PREACTIVATE"
+  ],
+  "maximum_records": 8,
+  "planned_static_bytes": 544,
+  "clarifications": [
+    "All8slotsused is conservatively saturated/incomplete even if overflow count cannot be emitted later; no false completeness",
+    "No diagnostic operator[]/extraallocation/retry/guard; originalcall/results/decisions unchanged",
+    "RawSBGR2222 table-size0 skips are expected and separately tagged",
+    "Match newbinary/newELF/source exactly; a different control rebuild is never calledb42/a10",
+    "Foreground rawUART0 emission only before activation; no ISRtrace, newwire, task or productionpromotion",
+    "Originalsource/artifacts/consumer/firmware140e backend unchanged; no emulator/lease/hardware/publication"
+  ],
+  "source_preparation_released": true,
+  "host_and_matched_build_released": true,
+  "emulator_released": false,
+  "repair_released": false
+}

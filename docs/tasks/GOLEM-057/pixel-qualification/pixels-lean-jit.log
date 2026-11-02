@@ -1,0 +1,29 @@
+Loaded ESP32 image /home/smith/Agon/mystuff/agon-vdplet/build/vdpl-010/pixels-lean/firmware.bin: 6 segments, entry=0x4008768C
+  Segment 0: 0x3F400020 (278600 bytes) -> flash_data
+  Segment 1: 0x3FFBDB60 (19912 bytes) -> sram_data
+  Segment 2: 0x40080000 (29144 bytes) -> sram_insn
+  Segment 3: 0x400D0020 (701348 bytes) -> flash_insn
+  Segment 4: 0x400871D8 (65696 bytes) -> sram_insn
+  Segment 5: 0x50000200 (4 bytes) -> rtc_slow
+[predecode] Built table: 1515516 entries, 19 MB (4 MB flash coverage)
+[APPCPU] boot addr = 0x40087524 (from pc=0x4000689C)
+[     10000] CORE1 started at 0x40087524
+[APPCPU] boot addr = 0x00000000 (from pc=0x4000689C)
+pixels-lean/jit: capability discovery exactly 159
+pixels-lean/jit: exact legacy ABI0/1/2 views, masks and bounded accessors
+pixels-lean/jit: independent pixel accessor succeeds with all five richer PCM callbacks absent
+pixels-lean/jit: undeclared pixel/sink capability calls refuse without extending old tables
+pixels-lean/jit: actual worker table extent and generic surface descriptor
+pixels-lean/jit: all64 RGB222 colors, odd width, byte positions, padded stride and immediate source reuse
+pixels-lean/jit: physical pixel units preserve semantics despite ordinary graphics origin and viewport
+pixels-lean/jit: format, missing/short source, final invalid pixel and geometry rejection preserve complete screen
+pixels-lean/jit: INDEX8 native2/4/16/64 palette mapping and packed-edge replacements
+pixels-lean/jit: double-buffer descriptor, hidden-before-C3 and explicit stock presentation
+pixels-lean/jit: fresh unallocated channel, current-rate admission, copied source reuse, prime, all-or-BUSY and independent drain
+pixels-lean/jit: RESET/MUTE/STOP flush generations and counters; muted writes refuse; explicit close invalidates owner
+pixels-lean/jit: lazy 1024-frame ring releases exact internal heap with no extra task
+pixels-lean/jit: copied PCM drains between finite RUNs; DAC data preserved as diagnostic only
+pixels-lean/jit: ordinary DISABLE and global mixer replacement synchronize sink cancellation
+pixels-lean/jit: failed RUN and module unload cancel sink; stale worker generation refuses after reload
+pixels-lean/jit: unchanged maintained numeric/VDU/line modules execute and drawing matches ordinary commands
+PASS: 17 groups; 3726336 decoded pixels

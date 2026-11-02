@@ -1,0 +1,51 @@
+{
+  "passed": true,
+  "compiler": "c++ (Debian 14.2.0-19) 14.2.0",
+  "sanitizers": "ASan+UBSan; detect_leaks=0 because LeakSanitizer is incompatible with tool-runner ptrace",
+  "results": [
+    {
+      "command": [
+        "c++",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "docs/tasks/GOLEM-057/display-diagnostic/check_journal.cpp",
+        "-o",
+        "docs/tasks/GOLEM-057/build/display-origin-diagnostic/check-journal"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "docs/tasks/GOLEM-057/build/display-origin-diagnostic/check-journal"
+      ],
+      "exit_code": 0,
+      "stdout": "PASS: classifications, context, one-shot, no early/duplicate emission, unused slots, fixed budget, saturation/no overwrite\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        ".venv/bin/python",
+        "docs/tasks/GOLEM-057/display-diagnostic/check_parser.py"
+      ],
+      "exit_code": 0,
+      "stdout": "PASS: binary noise, arbitrary offsets, little-endian words, attempts/address reuse, cap8, malformed ordinal, missing/truncated events, external completion requirement\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        ".venv/bin/python",
+        "docs/tasks/GOLEM-057/display-diagnostic/verify_preparation.py"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"schema\": \"g057-display-diag-source-verification-v1\",\n  \"passed\": true,\n  \"checked_prepared_source_files\": {\n    \"control\": 4756,\n    \"instrumented\": 4756\n  },\n  \"checks\": [\n    \"Frozen original copied-file hashes unchanged\",\n    \"Prepared-file hashes unchanged\",\n    \"Macro-off three changed source files equal original after whitespace removal\",\n    \"Macro-on palette and list allocation calls each remain exactly once\",\n    \"Journal emission precedes original GPIO then interrupt-allocation calls\",\n    \"No hooks in VGA2 ISR source or getSignalsForScanline\"\n  ]\n}\n",
+      "stderr": ""
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "prepared": true,
+  "emulator_instantiated": false,
+  "inputs": {
+    "target.py": {
+      "path": "/Agon/mystuff/agon-vdplet/docs/tasks/VDPL-012/qualification/target.py",
+      "bytes": 7620,
+      "sha256": "66ad78c3838179703e8f9f5149028b68317f778995e463c95b4f1c9cc93d5228"
+    },
+    "package": {
+      "path": "/Agon/mystuff/agon-6502/build/vdp005/module/vdp005-text32k.vdpl",
+      "bytes": 35876,
+      "sha256": "7113d107a7c91fc56c6e65169c1d3a17fc7cc7771a125373505c421cf46f68ef"
+    },
+    "oracle": {
+      "path": "/Agon/mystuff/agon-6502/build/vdp005/color/maintained-controls/vdp005-text32k-jit-r01/toy-state.bin",
+      "bytes": 64,
+      "sha256": "ab5a0785dc71ee37fbc2e7af8fbe75fb55fe207a09801f518945f93a52a9e9e2"
+    },
+    "firmware": {
+      "path": "/Agon/mystuff/agon-vdplet/build/vdpl-010/pixels/firmware-src/.pio/build/esp32dev/firmware.bin",
+      "bytes": 1092448,
+      "sha256": "b42ae55f69900c44acacfbf0d665ef278e87b277b3b9fd4208e17ebf378f74b6"
+    },
+    "elf": {
+      "path": "/Agon/mystuff/agon-vdplet/build/vdpl-010/pixels/firmware-src/.pio/build/esp32dev/firmware.elf",
+      "bytes": 24954928,
+      "sha256": "a10f7989d5c1f9974fc999428865ca74771fb65a0d4d694a2ac2b81c19df9902"
+    }
+  }
+}

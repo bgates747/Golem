@@ -1,0 +1,9 @@
+{
+  "plan": "docs/tasks/GOLEM-057/mode-fallback-release-plan-v1.md",
+  "sha256": "ff84eb791917a8a4432187b0035c306c924296d521d2a5e5f29abd04eaebda53",
+  "created": "2026-10-31T02:45:34.184635+00:00",
+  "before_implementation": true,
+  "scope": "task-local paired original010 source/host/build only",
+  "target_execution": false,
+  "maintained_sdk_change": false
+}

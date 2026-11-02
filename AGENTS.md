@@ -1668,8 +1668,10 @@ The Author directly requests a fourteen-day mail audit, C/C++ VDPlet capability
 brief and chat outreach to each existing corresponding agent session, followed
 by mailbox returns and centrally coordinated assignments after Author review.
 The plan was frozen/pushed as 2ea6059 before the audit/outreach. Artifacts and
-response tracking live in docs/tasks/GOLEM-056/; coordination.md is the central
-return/assignment record and TODO.md remains the project task register.
+consultation evidence lives in docs/tasks/GOLEM-056/. Its coordination.md is a
+closed consultation snapshot, not a current assignment register. All live
+cross-project coordination is owned by agon-dev-env/cross-agent/vdplet-rollout/;
+TODO.md remains the Golem implementation register.
 
 The initial window is 2026-10-16T17:01:35-04:00 through
 2026-10-30T17:01:35-04:00: 1,065 messages, 71 mail identities, seven long-lived
@@ -1746,3 +1748,154 @@ PCM groundwork. Read057 and the central vdplet-rollout protocol before dispatch
 or Oryx runs. Durable mailbox carries substance; short chat notices wake peers.
 Human emulator validation/publication, hardware and source ownership rules
 remain. Never kill an unknown test or launch a GUI for the Author.
+
+The Author's2026-10-31 policy supersedes Golem scheduling grants: agents reserve
+and check out Oryx themselves in FIFO order using
+`/Agon/mystuff/agon-dev-env/cross-agent/vdplet-rollout/README.md`.
+All live cross-project assignments, shared contracts, result reconciliation,
+scheduling, instructions and helper code belong to agon-dev-env. Golem task
+artifacts retain project evidence and historical snapshots with central pointers;
+they must not become a parallel coordination authority.
+`state/reservations.json` and `state/checkout.json` are authoritative. Release
+removes the finished request; its owner immediately notifies the next chat.
+The Author will inform agents. Do not broadcast the change; refer an uninformed
+agent asking for time to that document. Other technical/publication gates keep
+their scope. Golem retains only project task/evidence notes, not a second queue.
+
+## Immediate peer communication — Author clarification2026-10-30
+
+Read and respond to new mail promptly while continuing the active task. Do not
+queue comments or substantive replies merely because another test is running.
+Send durable mailbox substance and notify the existing authorized chat at once;
+active chats should receive steering, idle chats an immediate continuation.
+Use the available chat messaging tool and do not silently fall back to a
+deferred queue. Only dependent test execution waits for its required permit or
+exclusive Oryx lease. Acknowledgements do not require an endless reply cycle.
+
+Immediate-notification implementation: publish durable mail, use its returned
+message_id, and call the available send_message_to_thread tool at once, including
+when the recipient is active. An absent delivery-mode selector does not establish
+deferred delivery; current calls are observed arriving within active turns.
+Keep send acceptance distinct from recipient read/acknowledgement; do not claim
+a hidden mode was selected. Report an actually queued case if observed.
+Acknowledge and resume the original work after routine coordination replies.
+
+
+## GOLEM-057 resumed — 2026-11-01
+
+The Author returns Oryx to service and explicitly resumes the goal. Central
+testing-hold.json is inactive; the earlier blocked audit is historical. Shared
+contracts, assignment/result records and self-service FIFO remain entirely in
+agon-dev-env/cross-agent/vdplet-rollout/. No coupled publication is authorized
+by resuming tests.
+
+Rally's observed one-frame actualMOS/JIT run59passes226native replies, exact
+311timed bytes/fullstate/cleanup; root22-file/raw/reader audit reproduces
+eddcc59e. Record has0samples/shutdown, no stasis/repair/newFPS claim. A fresh
+matched control/cached60pair is separately frozen4cf9f6f1 and selectedroot133:
+common7e7d/200f/8da2/observer,260source+44profile pins,344replies/18317bytes
+each. First failure stops successor; no retry/900benchmark/racepixel acceptance.
+
+6502/60passes formerfont/chooser/modal/drive2 progress then strictFAIL109.6335s.
+Root82files/pinnedreader/rawaccounting verify. Last successfulRENDER21689 and
+RUN21690 precede complete unanswered READ16token21691(buffer58702,1776); this
+is an observed boundary, not causality. Exact3ea6 ELF PC4008815c is panic_abort
+ENTRY, BREAK is later40088176; selected adapter installs entry breakpoints.
+Cause4 is retainedLEVEL1_INT/currentstate, finalCTSfalse follows failure gating.
+First-fault reason/registers/flags were not saved. No retry/SDK successor chosen.
+Flexe prepares one bounded owner-thread first-stop record under frozen central
+first-stop-preparation-v1.md8a55fe31: exact086baseline/source before changes,
+then diagnostic-only private candidate/hostchecks. No target from that plan.
+
+Wolf observer profile is independently staged/verified73runtime files and
+stopped; b719profile/ee48wrapper, freshJSONLabsent. Its180smanual custody plan
+is accepted preparation only; reserve when Author ready, no agentGUI launch.
+FSIM live review remains qualified/stopped with no new run selected.
+
+Later Nov1 outcomes supersede the pending observations above: Rally61 matched
+60smokes pass and root actually calls/reproduces both audits (root137 corrects
+the initial no-CLI invocation). Four900ABBA cases selectedroot144, normalFIFO.
+6502 first-stop65 completes full script193.153s/253files/35756native pairs;
+empty0B stop file means no captured context. Old failures nonreproduced, cause
+unknown/no repair. Root146 selects only existing CUR001..004 SDK recovery
+regressions after fresh17source/9input/120actualprofile checks, behind Rally.
+Wolf64 manual load/play/exit passes; severe delayed audio reported. Flexe
+prepares bounded ring-residence observer only, central contract
+wolf-audio-ring-preparation-v1.md; no audio target/fix/default. All shared
+receipts/assignments are central, no publication or hardware authority added.
+
+Latest Nov1 continuation: current SDK recovery CUR001..004 strictPASS is audited;
+its unchanged utility/current-image human profile is stopped and20pin verified.
+No generic publication/default approval. SDK VDPL015 now holds exact source
+research and optional8-byte readback proposal;6502 refinement requirements are
+incorporated, no numbers or implementation selected. Wolf stoppedr02 passes11
+root-reproduced device-free checks plus actual80runtime/72baseline/46dependency
+hashes. One finite realaudio/dummyvideo observation71 completes103.295s and
+releases before analysis. Root15raw hashes/2.999MB/pinned reader/oracle/window/
+custody reproduce:158563 known samples mean325.774ms, eventdepth5065..5543,
+zero windowfills/drops;5277 left-censored and5277 pending retain unknown ages.
+This is host-ring residence, not gunshot identity/whole audible latency/cause.
+Flexe root177 is SOURCE/OFFLINE explanation/proposal only; no repeat or audio
+fix/default/publication. FSIM70 reviewed/released, physical identical-fixture
+comparison staged by owner but not run. Rally FOUR900ABBA remainsUNRUN until
+actual final scientific-job process-gone/quiet/FIFO; estimated16:55 not release.
+All shared authority/records remain agon-dev-env/cross-agent/vdplet-rollout/.
+The goal tool still reports paused; direct human resumption authorizes work,
+but tool cannot set active. Do not replace the goal or mark it paused again.
+
+Supplement to the preceding audio result: Flexe review53 finds a private0f4b
+observer initialization publication race, independently confirmed in sealed
+headers. My earlier root source review missed startup locking. Read old71
+trace/325.774ms as coherent observed data WITH this source limitation; do not
+claim race-free startup/pristine baseline/cause or repair. Central supplemental
+reviews/fx124-init-publication-limitation.json preserves disclosure without
+rewriting evidence. Root178 selects ONLY init synchronization/host preparation
+(existing audio_lock, armed-last, reproduce086/0f4b first, controlled thread
+checks); no new emulator/startup capture/default/audio behavior or publication.
+
+## Active maintenance pause — later2026-11-01
+
+Direct Author requests ALL work paused at clean point and NO agent replies until
+explicit resumption. Central README top maintenance banner/testing-hold active
+and Author first-position FIFO reservation own Oryx availability. Do not answer
+peer messages or start tests based on a reachable host. Root has no processes or
+checkout. FX129 readiness54 is read but UNANSWERED; preliminary82member/14file
+source/test-evidence audit is saved in centralreviews/fx129-preliminary-root-
+maintenance-checkpoint.json. Actual Oryx final artifact/exports review and
+acceptance are pending. FSIM hardware/source query was answered root180 before
+pause; exact8d source has old buffer clearing, lacks optionalVDPL013failed-mode
+cleanup, unspecified later allocation PR unknown. No firmware action selected.
+Resume only on Author instruction; preserve queue reservation until authorized
+release, inspect new state/mail then continue. No work or peer replies now.
+
+## Later maintenance lifted — 2026-11-01
+
+Direct Author: "oryx is back up. normal work may resume." Central hold/banner
+cleared, Author reservation78840ef8f48e cancelled through helper, no next queue
+at cancellation. Direct provenance centralreviews/author-maintenance-resume-
+2026-11-01-later.json; goal indicator now ACTIVE. The active pause above is
+historical and must not block replies or existing work. New boot9ba12fbc/kernel
+7.1.5, read-only no-emulator snapshot obtained; no root checkout or run.
+FX129 source/artifact/test-evidence readiness is accepted root182 after actual
+postmaintenance baseline/old/new/3objects and exports. Centralreceiptfx129-init-
+preparation-root.json. Root183 selects only STOPPED Wolf startup0..10s prep;
+root184 corrects mail pin label (frontend7e7d/MOSd564 unchanged). Initial-history
+witness/expected shot non-overlap explicit; no target yet. Rally receives actual
+fine10 completion16:39:06 and resume root181; FOUR900ABBA still needs fresh
+quiet/input/FIFO/liveassert, no retry. Delayed54/modeler16 mail acknowledged.
+
+
+## Consumer ownership — Author instruction 2026-11-01
+
+Golem owns shared VDPlet runtime/interfaces and Golem's own compiler/documents.
+When consumer work is wrong, immediately send concrete findings and what to fix
+to its owner through mailbox plus chat. Let that agent implement and test its
+project; return to Golem-owned tasks. Do not take over consumer implementation
+or become a per-test approval gate. The canonical shared workflow records this
+policy; existing source/hardware/publication authority still applies.
+
+Latest selected FSIM diagnostic pair passes root235 raw/state/cleanup audit,
+44results/412inputs/14SD files and1364B minimum stack both arms. Counter shares
+are conditional modelled spans, not physical CPU time. Wolf production remains
+a copied-output path; root237 returns correction using existing ABI1.6 rows,
+with Wolf responsible for its production integration and independent tests.

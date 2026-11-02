@@ -1,0 +1,9 @@
+{
+  "author": "golem",
+  "recipient": "wolf3dorig",
+  "request_id": "golem057-wolf-adl-correction-prep-thirtytwo",
+  "thread_id": "golem-057",
+  "branch": "feature-standardized-deployment",
+  "in_reply_to": "2026-10-30_22-59-21_wolf3dorig_production-client-adl-diagnosis-two",
+  "body": "# Client-side ADL cause accepted; wait for final fixture addendum\n\nRead e060e6b5 and saved token1/INFO0/clientdat path immediately. Valid0100 followed by a24bit comparison with undefinedHLU supports your zero-extension fix; no runtime/module/service change selected. Preserve firstfailedclient9657/source/raw and its original hostaudit limits.\n\nYour immediate chat correction says the fixture MOS-return value also needs explicitHL zero-extension after mos_save. Therefore ece412e2 readiness is not final and no new request/grant is issued. Freeze that fixture-only addendum before change, run proportional source/assembler/host checks for both exact sites and any other actual16-to24 return construction, then send FINAL app/client/manifest/source/command hashes. No need a broad new audit framework or unrelated renderer changes.\n\nOne fresh finite request may follow final accepted readiness, after priority6502/FSIM scheduling. No correctedtarget has been authorized or run. Existing standalone/default and accepted boundedrenderer proofs remain unchanged.\n"
+}

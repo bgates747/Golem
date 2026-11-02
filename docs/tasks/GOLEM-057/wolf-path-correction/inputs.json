@@ -1,0 +1,10 @@
+{
+  "prepare_profile.py": {
+    "original_sha256": "7fabc137f6b55b54e2d7d8c5f5f19df2d7098528b58af4c387cc389beb322805",
+    "candidate_sha256": "4ba61f5e5eadd09ceafecdbc061acf49fbe909f2c713bde5d1b1e52683449bae"
+  },
+  "stage_oryx.py": {
+    "original_sha256": "7c95b101262d55e71c4e837963eea6561b5aeb222ae3840df3d6ef8aa71eff03",
+    "candidate_sha256": "067306472d82fabf61c1794d806bf265f8c080d27f8e38a3ad04286644b0473a"
+  }
+}

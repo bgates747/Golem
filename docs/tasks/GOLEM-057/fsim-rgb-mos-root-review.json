@@ -1,0 +1,31 @@
+{
+  "source": "/Agon/mystuff/agon-fsim/utilities/pingo-vdplet-rows/build/pi-mos-rgb-r01/result.json",
+  "sha256": "ea26c2108474a2bbe9389594e8eabb6ac0b16088a252679f564583bd87899992",
+  "scope": "RealPiMOS app only; no fullconsumer/interpreter/timing/cause qualification",
+  "passed": true,
+  "oracle_matched_captures": 20,
+  "views": 6,
+  "reset_repeat": true,
+  "normal_guest_exits": 2,
+  "mos_copy": true,
+  "frontend_absent": true,
+  "writers_quiescent": true,
+  "elapsed_seconds": 162.16028029299923,
+  "stats": {
+    "engine": "jit",
+    "frames": 1568,
+    "cycles": 6625056625,
+    "retired": 5792239965,
+    "uart_rx": 4909844,
+    "uart_tx": 138362,
+    "uart_delivered": 138362,
+    "isync": 59,
+    "code_invalidations": 15,
+    "keys": 104,
+    "failed": false,
+    "unhandled": 0,
+    "unregistered": 0,
+    "unmapped": 0
+  },
+  "original_false_empty_run_preserved": true
+}

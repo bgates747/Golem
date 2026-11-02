@@ -1,0 +1,28 @@
+{
+  "permit_id": "G057-ARM-001",
+  "coordinator": "golem",
+  "owner": "golem",
+  "machine": "raspberrypi",
+  "created": "2026-10-31T01:33:44.210144+00:00",
+  "scope": "Four sequential fresh Pi direct-library mechanism checks; not an Oryx lease",
+  "allowed_cases": [
+    "toy35072-jit",
+    "toy35072-interp",
+    "rows-r1-jit",
+    "rows-r1-interp"
+  ],
+  "source_freeze": "b21f16bfd5cd80774862e16db2ca80e2e4a4f0eaa51ca05f2b5a22c80bf556aa",
+  "backend": "/Agon/mystuff/agon-fsim/utilities/pingo-vdplet-rows/build/maintained-arm64-r02/flexe-vdp-maintained-arm64.so",
+  "backend_sha256": "af0ccc012bed9184acadadf684fd00cbd78aae4cc0460660a454c609d0291caf",
+  "core_sha256": "7618f338cc0106a36657b64f62421ef29d19743a596acd222292a0a39a9097e2",
+  "build_receipt_sha256": "4a55dfd2909b57aba4c4f6a3da98bb220ece570aeca0415084eb8a8c80724fa3",
+  "input_archive_sha256": "1ea30cfe06f9a2c78edcbf9babbe35f2dd158baf5b1698fe123378bdb6a37591",
+  "profile": "/Agon/mystuff/agon-vdplet/.emulator/vdpl012-arm64-qualification",
+  "requires": [
+    "Verify actual ARM/source/build/module/firmware pins before first load",
+    "Record r02 build provenance and final execution freeze before launch; r01 failure preserved",
+    "Four fresh sequential processes only; stop first unexpected failure; no retry/source/expectation change",
+    "Normal owned stop/join before analysis; inspect Pi for any pre-existing emulator, stop if unknown conflicting use",
+    "No Oryx launch/lease/profile mutation, GUI, physical operation or publication"
+  ]
+}

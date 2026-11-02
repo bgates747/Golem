@@ -1,0 +1,16 @@
+{
+  "aggregate_sha256": "8af825dd43a214c199a6fb7473a43ef55ccd7844a98288e2194a1c84ebd76614",
+  "manifest_sha256": "6af0debcdedbef92bf80edd6b045ca4cf2b21f1fc8640fb9c6916c3561b75cb0",
+  "saved_files_verified": 16,
+  "compact_record_fields_verified": 18,
+  "exact_executable_heap": 161464,
+  "native_cycles": 205,
+  "native_instructions": 64,
+  "stable96_equal": true,
+  "execution_faults": 0,
+  "actual_MOS_dir_listing": true,
+  "human_report": "idk what that was supposed to prove, but there are no evident errors",
+  "OS_exit_code_observed": false,
+  "blink_timing_explicitly_observed": false,
+  "scope": "Successful exercised recovery/native-state/MOS review; no physical/full-colour/publication inference"
+}

@@ -1,0 +1,17 @@
+test_actual_host_begin_failed_admission_preserves_output (test_native_cost_driver.Checks.test_actual_host_begin_failed_admission_preserves_output) ... ok
+test_both_arms_observed_phases (test_native_cost_driver.Checks.test_both_arms_observed_phases) ... ok
+test_failed_admission_never_stages (test_native_cost_driver.Checks.test_failed_admission_never_stages) ... ok
+test_first_failure_stops_no_on (test_native_cost_driver.Checks.test_first_failure_stops_no_on) ... ok
+test_on_failure_keeps_off_result (test_native_cost_driver.Checks.test_on_failure_keeps_off_result) ... ok
+test_owned_cleanup_escalation (test_native_cost_driver.Checks.test_owned_cleanup_escalation) ... ok
+test_partial_and_reordered_observations (test_native_cost_driver.Checks.test_partial_and_reordered_observations) ... ok
+test_partial_terminal_and_clock_fault (test_native_cost_driver.Checks.test_partial_terminal_and_clock_fault) ... ok
+test_phase_deadlines_and_key_cleanup (test_native_cost_driver.Checks.test_phase_deadlines_and_key_cleanup) ... ok
+test_record_on_sum_and_unavailable (test_native_cost_driver.Checks.test_record_on_sum_and_unavailable) ... ok
+test_separate_file_observation_skew_keeps_unowned_tail (test_native_cost_driver.Checks.test_separate_file_observation_skew_keeps_unowned_tail) ... ok
+test_source_drift_preflight_read_only (test_native_cost_driver.Checks.test_source_drift_preflight_read_only) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.386s
+
+OK

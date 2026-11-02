@@ -1,0 +1,25 @@
+{
+  "permit_id": "G057-SIM-MOS-001",
+  "owner": "fsim-pingo",
+  "task": "PINGO-065",
+  "scope": "one-pi-real-mos-rehearsal",
+  "source_freeze_sha256": "06e2a8b40783c3b7a301adf8eb241565bd7173ce961d5275a0fb848d9b922298",
+  "created": "2026-10-31T02:38:47.303939+00:00",
+  "coordinator": "golem",
+  "machine": "raspberrypi",
+  "engine": "jit",
+  "process_count": 1,
+  "oryx_allowed": false,
+  "firmware_sha256": "8d980025f891484cf7e6cc5f2992cf517cb80e0123ff7de712ae8d7f2dc1c807",
+  "backend_sha256": {
+    "aarch64": "af0ccc012bed9184acadadf684fd00cbd78aae4cc0460660a454c609d0291caf",
+    "x86_64": "0866265bd6f3d73ad572f31dc1bb954f308ed9a5d857efa9414d37e1ade13374"
+  },
+  "requires": [
+    "Fresh native whole-Pi idle and exact frozen source/input/profile verification immediately before launch",
+    "One unchanged real MOS application rehearsal under external941191eb supervisor;300s overall/270s work/60s no UART progress/30s cleanup reserve",
+    "Only owned helper once SIGINT on bound; preserve first failure and explicitly report pending teardown; no retry or relaxed budget",
+    "Actual app/helper receipt plus frontend absence required; writer quiescence before exact raw claims; no full consumer matrix/timing/cause claim",
+    "Normal owned teardown/fresh Pi inspection before analysis; no Oryx,GUI,hardware or publication"
+  ]
+}

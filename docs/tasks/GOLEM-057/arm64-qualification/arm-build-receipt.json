@@ -1,0 +1,663 @@
+{
+  "schema": "fx072-maintained-arm64-build-v1",
+  "native_build": true,
+  "manifest_sha256": "e51a20ff8a2d461f0d083d8299bc96bbcf415df2e8679f10641925e86fb9c577",
+  "source_equivalent_x86_library": "0866265bd6f3d73ad572f31dc1bb954f308ed9a5d857efa9414d37e1ade13374",
+  "adapter_sha256": "5b07b0de702431ad700e83de90007c63a8aefe481b33c146add91084abc8e927",
+  "active_core_sources": {
+    "aot.h": "1f7fd7cf94cf7ce440edcb1c07ed725144f62725c53a2443d064f26fa152e304",
+    "syscon_memory.c": "99bc4c24622871f531d91244d09b16700ec068b1d34156e00d38da3169635787",
+    "rom_elf.h": "d13915f3ae1674e174c5ed14afb5caaba4a32467b366d3c9d3a70d7a88b9e1df",
+    "loader.c": "a4e142899b0500e1a332cd7d7de5c770bc559169ccb8223863b70b72cef8b738",
+    "esp_timer_stubs.h": "924b291df25a71bf7d12f032d47fb2026ce029e51f8800223405ceaf3ad7aeb2",
+    "radio.c": "900208254c9f218d729ca26f5a265e5f7411b9fa083a12e06dfad8278797c184",
+    "firmware_scan.h": "0aace32751cd74cf35be23529fad539f66a9fa8be92141afcfeb2ad9685b3bb1",
+    "xtensa_disasm.c": "144b729d99122883b75660513625e7c416fa09a2414dbc497623a74ab19067c1",
+    "sensitive_memprot.c": "9deac9519fe405c24e89efe255e15fc8ac81fab258d8c7b4bc9fcb6fe4bcd011",
+    "wifi_stubs.c": "285d431bf65906668333d060eaa8e7650c4a4fd8317d410a795f89dcf190e1b5",
+    "jit_stub.c": "069dc56cbfe59065dda5f5a419487d976dd217e760012a21fb828934081637a7",
+    "guest_call.h": "b2933ed75023d4065b2b51cb7c1ae5f09e1e08f1ec24fdf278e4aa3e54ba6cd9",
+    "sx127x.c": "fee4daac7a25f9c06844d942d50c278a803b5774687fdb126a6b8d23d4208864",
+    "i2s_v2.c": "9edc78088c108d47b8a7bddd80be363136966f78e486b2a4574628c62cf98eb0",
+    "host_net_slirp.c": "d6a5b18b86044f15f5a371b4b8228840974e978439dcd6152ddfa48c0da51be7",
+    "mpi_stubs.h": "8e8e18443b6df6a8a1544a7340355edecdb4eea1b75909b5e5df3ac1d0dd32ed",
+    "msvc_compat.h": "2604b48580b76e57749ef1c23e424108ab30f8ae843db129e510776b5c7c2d7c",
+    "elf_symbols.h": "b65c6a8ae1b14fe5c1d52448f280f1bed32d45cbd53fd8875d5514cb2e65e47a",
+    "syscon_memory.h": "c1bd6438588785602c0469042f70e5b613c025818b14918dfdc8134745e57f84",
+    "rmt_v1.h": "21dab5f0dc1cf2e9c462c1b608c610bc6c672efc8ade89266eaf540f32f23f29",
+    "touch_v2.c": "c349ee39673bb798c242223f9c3f5e1112649358e3826be2f0d5c07ed9413e06",
+    "regi2c.h": "4be4e730fd4d3017c698b7734bfd95f099394bdc0b4c6741057fde19183b34e1",
+    "vfs_stubs.h": "3bd498e1351f2c2c9752793695448f885657e969098769dbf97ef84ccbd6bd1d",
+    "regi2c.c": "279f095f2e942b12d9181b2f9e713f245bbde20dad1bd7780178654c8a6bfaaf",
+    "sensitive_memprot.h": "2827e499851c89813a1b61db9ab5d03e1cae0fec129433593b0c430d22071028",
+    "sdcard_stubs.h": "7b3a8e75b194d0b230dc243b1c83c1cb6638bf624566ca88ab4974e81c32c695",
+    "target.h": "39e34e6bb58dfecf9ae4fbea042b809677ea1ea2519be927415d25162df36480",
+    "ublox_gps.c": "d9a008806307877a3091f3b3949b5a62653deb17cc7adea8387be0270b9ee2fa",
+    "jit.h": "a5a49c065b59c372e853c0d4edee9d355968d615e9cacae1e75c7c0d9fdad4e7",
+    "loader.h": "be6897b4048c763116e16ede5acd60e1ca44b1e3d016149353fdb4beaecb9ba0",
+    "main.c": "900cdefc2dfbe76d558f12a9ca818338453456c02eeff3ed858fbdd015aadfd2",
+    "apb_saradc.h": "0e8a931f121822d63e6c1742afd2c066a920cbb3a594369b531ec6a156edf130",
+    "efuse.h": "8b098a7de7c889ac16dd10a531e04a02f3a97685e613c30e6f1e5971eac640c2",
+    "rtc_io.c": "eecd1b305e00ee562459eadddfc67c906a8a9eeb5160c5ae852a50e3b3d49c7f",
+    "window_accel.c": "f0a761812d3505002f6f11eb81504deda5a48ffcdcfa61d5358be10c202a6504",
+    "vfs_stubs.c": "363086f512fd3bc1cc550b42208427f9a8394c2fc4f47fc6f9263fe2cf003ae9",
+    "display_stubs.h": "6cef8485a198ede5170616672d58e0faf071bcad9c92b74d9d93887b898b31f5",
+    "flash_mmu.h": "a9ab701c2628f91f8bfb664b26f9f6baa8ee5ed58a95f1a44c0f59a568685c6f",
+    "rtc_io.h": "fe12e100e05b0e22a906d586bfb62e8c418a4a14037f929a4e22d21e4494fdc2",
+    "sx127x.h": "f006fa1c17ffa949f18fa6a4181aa130ed19232961ed77db4320dd9d1bedba36",
+    "spi_mem.h": "5e16017991d6aef393bb0cf8cbb0fe9fae2d5e36d6fce67b9982b5a72a530fb6",
+    "jit_emit_x64.h": "4ff55b171e49132486260a66686619cfb0f8f6de7e6dca10eea868451ee43122",
+    "usb_serial_jtag.h": "f7ba09753b21a2b9cee1cf4347bc18a7975fc9b41e4dbcda9f083488f0b0588d",
+    "bt_stubs.c": "6fe99ee4aac117d32fcffcfa84a66cb928ec8f77cc647bacc0f578c018e30c73",
+    "flexe_session.h": "d4fc19213c07cde822f53551070b36b760072093a67326fb05cb6279fa50dc2b",
+    "sandbox_input.h": "138c1df72d0b78c50750db3b9499377fb34a2524cb708a0a6c7a6f921c3dff68",
+    "efuse.c": "1cc384378c52ea76dc446b4295987dc7c378859320dfc7d40652cbd2dfb6ef89",
+    "radio.h": "503db501e6804ccce3cce9314589eb237a3af4bd775e469d0ae211c38f6b6067",
+    "memory.h": "05dfd6fb9f00e2768deb495e1021f81b508e9fabef88b580afc55a52e4e85f99",
+    "touch_v2.h": "b623eee1cda918d1c9db37320c8195ab12a6f4fe79272d7565af7c7d0ea7729d",
+    "lcd_cam.c": "7a9cec055a5478d406cd4d331f93e7fb4f2921b09d994f469faafe0bfabdc702",
+    "hierarchical_trace.h": "7ddcf72e0e03c6bf145b02d38449d0c67baed845038c2cc7494da60b21917e8f",
+    "sens.c": "30f3c462ecdd5c9730bfe280dcc1e9671e70b8c4d34b7b1b9dbc9add14147d7b",
+    "gdma.c": "fcf120b2b75f95206638c54f06fb82dd99b4b257414c2596a08fe9d5d09463d2",
+    "systimer.c": "bbc3f48f6cd52d85b264066362fbd62a841f2a3f8db3d6e8d4c90f0d6d2765dd",
+    "savestate.c": "dd85e40c46025b15d3497526d78bf2d7924cece878224173578e74240d24e0f0",
+    "esp32s3_extmem.c": "bfc3ce1009a13537cd3c18ecfb885738f42ccf7bc03e5572496c76a4eecd1b88",
+    "sandbox_events.h": "ec20d8864c11b47db0db69df87605c097956a330006bb7702e827de82cca1b54",
+    "xtensa.c": "fea1df8d0ec122f1cd6eeb3bc270cffbcb47b0aad43c8f0bad012552183f18f5",
+    "spi_mem.c": "5fc2d49536c7a50655e04ffab32ccfb27840bf4b7aa9a833f3abc2e5566b7c06",
+    "touch_stubs.c": "d95817e216c44bcd64521683f0c12830c61c42448d77e7a6e3d63a41d08fad1b",
+    "freertos_stubs.h": "e2bd93fb0a7ce0ba99989964ab9b657efb668f113aec4df7ed071e3d9afe0aa9",
+    "host_net_slirp.h": "bef4633fd7ee6c5c1a393f83a24f82f6818f396b06072a027e6c34ffd01d790c",
+    "i2s_v2.h": "4a603becb92756410f45491f89eadfc2a1fdf55f575f26c38e8a4d449e786901",
+    "gpio.c": "10c25da0f564c5e7b1d18a3f8cf910b01eb95888ddad01343c01fdc0c7fd4a06",
+    "savestate.h": "ade15f93ea028dd382170a7b5b5fa23561051107a056f8fea43f8e863edaeb7a",
+    "rom_stubs.c": "f0f0133edd631e3d39e451de6e05091ad492b652c2593714974f0568ec3c806c",
+    "systimer.h": "0cbc962583728fcc9f66aa2cfa542d5577c54efbbe5da3a9ed01b0a3b503d47a",
+    "target_types.h": "0d26140356b402997f6a19a9901c6a2346912ef52d25416ddbe84be1b4d864a6",
+    "target.c": "83444564bf25df3b6e257863230c138401fd72477241b525ed5258ef647b23e0",
+    "apb_saradc.c": "e2f69684bd3f2d93bf57e6e5c6c790066d35d59225fb4fe594b411b305f3eda8",
+    "assist_debug.c": "64a2f7b76d2898283fad1d647842c07b1b3a0aa79001f14df8823aa550717523",
+    "bt_stubs.h": "157af2731bc8da75dc1ced54d8db7d7555783f5cde185a99892626526742f55a",
+    "sha_stubs.c": "71ca02e55c116b840438c3801e85d775854370c5436e1aed87628e24b05de3c7",
+    "profile.c": "21de41bc5305624532d950d92e9809818f4d5886e6298fd5c740a93d850392c8",
+    "jit_emit_arm64.h": "55b7a323e1002b707428b47ece57a31d38b6e217b7db5f815676be2f76fe33e7",
+    "ublox_gps.h": "1fae0bf3c5941864487d5f750222e27da8f60b70b0e0e8c8a7212240e54dabe2",
+    "aot.c": "95df8cbb390394c39c5b62c6ba10f74256471dae0792442a20159b467dc5efc0",
+    "axp192.h": "555af2e701595e09c2515297c1a1a1bf83279c7ad35be07a9226c15f514371b5",
+    "timer_group.c": "b0b661224d4ff0c69bf08381087eaf0defdcca4f069bbd47bc6c153c50150be8",
+    "sandbox_input.c": "985dd9fb7fc562cd4e22309bdbcb796094fd04010fa6263e44af16aaff4f0092",
+    "freertos_stubs.c": "0294aebd7cba899e526ae18e81549affdca9aa6d89f2b7a446e8ce4d7174d2f9",
+    "hierarchical_trace.c": "684906098a432086c68186fd3dd3260a05f82059b294727a96aa84637f465c23",
+    "esp_timer_stubs.c": "386c2478651ab5d6071fcb668b1b90404484bd88e2d76b60cfd9672cd174c365",
+    "timer_group.h": "1df38a16793db6f89d69d2d597ed77c499565973c52a236ee2d362dc4c79cb02",
+    "peripherals.h": "22b499cd25263c8d062ca3606462a3330dd20928dc310d9d6ebc03d3336e42bc",
+    "io_mux.c": "b1da0b1607c59fdfd9d458bf7a84123e5e0dc3553167ce873b3fbf00c472bf55",
+    "sens.h": "41c1aabd25d6261c1b7ed9c326793a85cbfc8324b1a9eed2d546961b06ce9b19",
+    "lcd_cam.h": "ebc5bc517c823f408e3e1a9d3c369c0fe54a199b7170b370711348d7353d9429",
+    "flexe_log.h": "9d24d774fd8f6bf881e7bf9baa09c081865bdeac889c37d7acb03415e9b8b1ff",
+    "sha_stubs.h": "68d6ee0517165382c3c546abb5572b8a566910c45023ee76e4d9d754b0195c4a",
+    "sandbox_events.c": "18be761ce0941d5acbb030cdd65f3b6e105ddf563248de9a23f8c213023bd9c6",
+    "system_clock.h": "80bd50ae23bb6afbe4272cc3bcb24bbb1b35257bbcdb59163536104568118775",
+    "firmware_scan.c": "fe7626741cad2cf2a45d86f33554d8a9805a2854579364e734a16ec9ca1a4bb9",
+    "touch_stubs.h": "c08ca43c0c7c23481326e941ecdf00593e64e52a5e3bed630391c51c446884d2",
+    "sdcard_stubs.c": "3568408a3f1815e1402c2c586421ce70a0cbcabb3aed9afdce0bb2193bb7da0e",
+    "guest_call.c": "62bc98e2d0d30e133ba5e2180bea79b6391cb84bbe4fd53b51adb443e2b440bf",
+    "aes_stubs.h": "0142d57ff9be729690b0bf90d053acaf92126af6dc19ba37098ede0b5858ac6c",
+    "axp192.c": "c517ed758b7584c8e55a6ad1384b23088a9fd4953e74c8c128882465bdf120cb",
+    "io_mux.h": "8073deb6f6f22e951e61f7953dbacb1198955d7194d0055fa9f6cb4b1276b352",
+    "flexe_session.c": "4598855158f5499d2238c1d1edcafc746ae821f3d8f31cfd0a5d4e008eed5dc3",
+    "gpio.h": "4b84e95a7ef9c04b563b31dec4c21cd222b2d4663c67025cbe603a435c8f672a",
+    "mpi_stubs.c": "d090caec7fe6900b08a4f4633c65e919b866b6a4286c32be4acaa2f728640783",
+    "wifi_stubs.h": "01ad88f621c05f10dc833786fb5334d1336d9aafb99d2e77daa2ee3fef8c7b04",
+    "rom_elf.c": "b90c7aceceaaad35b5719ac3aec2dc3b6167c7cec45f09e779415b3340aec853",
+    "peripherals.c": "9905994d4b65ec50c45f6da63e2e3f7ba821d9d6554d612c57842ed60d06564e",
+    "usb_serial_jtag.c": "9cb1ff8c4e600de3751f609d6de6d9e3f1460928fcd80a00f9622420b971b773",
+    "elf_symbols.c": "a307788918f54966fabde8c4d68ec1bc6c0b84396b745612d749620b2b7f2081",
+    "gdma.h": "54b0db80ff53e7dadc97a656e9bbd93ab85f5d2bb75b1f47d25cf672d2a73396",
+    "assist_debug.h": "872d39b37f0d889daa8dc6307a5456d4ba9f7ed0d0002897e9eb4a79c81ed6d5",
+    "esp32s3_extmem.h": "6a03e75dfef007e1972746c8404c2100bb221d6ca11b88b5fdde6db98b9b148a",
+    "memory.c": "6cb34f743ef9e68c313a69899a8a332539b609ca0d1beca452d18947dfc53195",
+    "display_stubs.c": "5e4a5f73e84d17cc5fe4b99e7302f636bd615ae4c40be81bb0bb623f460574dc",
+    "spi_display.h": "2749252ae2039bd63194455b75a35f2e485d5660ef1d79479787595ea8e5eb21",
+    "jit.c": "a7f3c9b5da4515724774121b5f05098c47d6ccf4de69813f53e27a8aa7e6ca42",
+    "spi_display.c": "2ec26486f7a35d63f633cca2657bcd5db65ad0c81b54b0d54c5cffbf1d769ec0",
+    "system_clock.c": "9fc58e96dac83ab2d1396aa8de6dcce79234788a370b807f83d6b7ecb6953420",
+    "xtensa.h": "e7f0301139eeac03f1a984df8d1ccc4583cd1176bea59b70908aa535beddc3b1",
+    "rtc_cntl.c": "73e8a1f94c6eeb23fa0e50ed7025f64c9571abb9bf67af37ec940cff4714bc70",
+    "aes_stubs.c": "4fc41a22332a99c7e885029c285bc65b181d330cc7d08523db793369b8c0f6f2",
+    "msvc_compat.c": "0468eca2f4535d8384a1d27ff6776a898efb5a89ac14c97428ff1a569de49a42",
+    "flash_mmu.c": "20cbd70b576f64c4a4c81d80d07280483144a1f2f5b70950e17f3b5aaf145d6c",
+    "rtc_cntl.h": "e47c76146c16202b3655535a902c6c68ad2bb32ed4c494679a390d6dafa71f54",
+    "rom_stubs.h": "73176d4be1b16ea8528b32422f7cf0eecb1968b9080f5727b98bac619e1c0e4a",
+    "rmt_v1.c": "e75eab83f1015255732919695c2e807b0d9a55f46d85dcf731c5640ec91961f5"
+  },
+  "architecture": {
+    "system": "Linux",
+    "machine": "aarch64",
+    "elf_machine": 183,
+    "page_size": 16384,
+    "native_tuning": true
+  },
+  "compiler": "cc (Debian 14.2.0-19) 14.2.0",
+  "compiler_target": "aarch64-linux-gnu",
+  "commands": [
+    [
+      "patch",
+      "--fuzz=0",
+      "-p1",
+      "-d",
+      "/Agon/mystuff/agon-fsim/utilities/pingo-vdplet-rows/build/maintained-arm64-r02/source",
+      "-i",
+      "/Agon/mystuff/flexe-agon-emulator/build/fx072/arm64-prep/closure-r02/patches/flexe-integration.patch"
+    ],
+    [
+      "patch",
+      "--fuzz=0",
+      "-p1",
+      "-d",
+      "/Agon/mystuff/agon-fsim/utilities/pingo-vdplet-rows/build/maintained-arm64-r02/source",
+      "-i",
+      "/Agon/mystuff/flexe-agon-emulator/build/fx072/arm64-prep/closure-r02/patches/flexe-ulp.patch"
+    ],
+    [
+      "patch",
+      "--fuzz=0",
+      "-p1",
+      "-d",
+      "/Agon/mystuff/agon-fsim/utilities/pingo-vdplet-rows/build/maintained-arm64-r02/source",
+      "-i",
+      "/Agon/mystuff/flexe-agon-emulator/build/fx072/arm64-prep/closure-r02/patches/flexe-logging.patch"
+    ],
+    [
+      "patch",
+      "--fuzz=0",
+      "-p1",
+      "-d",
+      "/Agon/mystuff/agon-fsim/utilities/pingo-vdplet-rows/build/maintained-arm64-r02/source",
+      "-i",
+      "/Agon/mystuff/flexe-agon-emulator/build/fx072/arm64-prep/closure-r02/patches/flexe-i2s-eof.patch"
+    ],
+    [
+      "cmake",
+      "-S",
+      "/Agon/mystuff/agon-fsim/utilities/pingo-vdplet-rows/build/maintained-arm64-r02/source",
+      "-B",
+      "/Agon/mystuff/agon-fsim/utilities/pingo-vdplet-rows/build/maintained-arm64-r02/core",
+      "-DCMAKE_C_COMPILER=/usr/bin/cc",
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DCMAKE_PROJECT_INCLUDE=/Agon/mystuff/agon-fsim/utilities/pingo-vdplet-rows/build/maintained-arm64-r02/rom-stubs-warning-policy.cmake",
+      "-DCMAKE_POSITION_INDEPENDENT_CODE=ON",
+      "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON",
+      "-DFLEXE_LTO=OFF",
+      "-DNATIVE_ARCH=ON",
+      "-DFLEXE_CCACHE=OFF",
+      "-DFLEXE_PROFILE=OFF",
+      "-DFLEXE_SANITIZERS=OFF",
+      "-DPGO=",
+      "-DPREDECODE_FLASH_MB=4"
+    ],
+    [
+      "cmake",
+      "--build",
+      "/Agon/mystuff/agon-fsim/utilities/pingo-vdplet-rows/build/maintained-arm64-r02/core",
+      "--target",
+      "xtensa-emu-lib",
+      "--parallel",
+      "2"
+    ],
+    [
+      "/usr/bin/cc",
+      "-std=c17",
+      "-O2",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-I/Agon/mystuff/agon-fsim/utilities/pingo-vdplet-rows/build/maintained-arm64-r02/source/src",
+      "-I/Agon/mystuff/agon-fsim/utilities/pingo-vdplet-rows/build/maintained-arm64-r02/adapter",
+      "-fPIC",
+      "-shared",
+      "/Agon/mystuff/agon-fsim/utilities/pingo-vdplet-rows/build/maintained-arm64-r02/adapter/flexe_vdp.c",
+      "/Agon/mystuff/agon-fsim/utilities/pingo-vdplet-rows/build/maintained-arm64-r02/adapter/ulp.c",
+      "/Agon/mystuff/agon-fsim/utilities/pingo-vdplet-rows/build/maintained-arm64-r02/adapter/ps2.c",
+      "/Agon/mystuff/agon-fsim/utilities/pingo-vdplet-rows/build/maintained-arm64-r02/core/libxtensa-emu-lib.a",
+      "-lssl",
+      "-lcrypto",
+      "-lz",
+      "-lm",
+      "-lpthread",
+      "-o",
+      "/Agon/mystuff/agon-fsim/utilities/pingo-vdplet-rows/build/maintained-arm64-r02/flexe-vdp-maintained-arm64.so"
+    ],
+    [
+      "/usr/bin/cc",
+      "-std=c17",
+      "-O2",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-I/Agon/mystuff/agon-fsim/utilities/pingo-vdplet-rows/build/maintained-arm64-r02/source/src",
+      "-I/Agon/mystuff/agon-fsim/utilities/pingo-vdplet-rows/build/maintained-arm64-r02/adapter",
+      "-fPIC",
+      "-shared",
+      "/Agon/mystuff/agon-fsim/utilities/pingo-vdplet-rows/build/maintained-arm64-r02/adapter/flexe_vdp.c",
+      "/Agon/mystuff/agon-fsim/utilities/pingo-vdplet-rows/build/maintained-arm64-r02/adapter/ulp.c",
+      "/Agon/mystuff/agon-fsim/utilities/pingo-vdplet-rows/build/maintained-arm64-r02/adapter/ps2.c",
+      "/Agon/mystuff/agon-fsim/utilities/pingo-vdplet-rows/build/maintained-arm64-r02/core/libxtensa-emu-lib.a",
+      "-lssl",
+      "-lcrypto",
+      "-lz",
+      "-lm",
+      "-lpthread",
+      "-o",
+      "/Agon/mystuff/agon-fsim/utilities/pingo-vdplet-rows/build/maintained-arm64-r02/repeat-arm64.so"
+    ],
+    [
+      "/usr/bin/cc",
+      "-std=c17",
+      "-O2",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-I/Agon/mystuff/agon-fsim/utilities/pingo-vdplet-rows/build/maintained-arm64-r02/source/src",
+      "-I/Agon/mystuff/agon-fsim/utilities/pingo-vdplet-rows/build/maintained-arm64-r02/adapter",
+      "/Agon/mystuff/agon-fsim/utilities/pingo-vdplet-rows/build/maintained-arm64-r02/tests/coherence-host.c",
+      "-DEXPECT_WIDE=1",
+      "-o",
+      "/Agon/mystuff/agon-fsim/utilities/pingo-vdplet-rows/build/maintained-arm64-r02/coherence-host-tests"
+    ],
+    [
+      "/Agon/mystuff/agon-fsim/utilities/pingo-vdplet-rows/build/maintained-arm64-r02/coherence-host-tests"
+    ],
+    [
+      "/usr/bin/cc",
+      "-std=c17",
+      "-O2",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-I/Agon/mystuff/agon-fsim/utilities/pingo-vdplet-rows/build/maintained-arm64-r02/source/src",
+      "-I/Agon/mystuff/agon-fsim/utilities/pingo-vdplet-rows/build/maintained-arm64-r02/adapter",
+      "/Agon/mystuff/agon-fsim/utilities/pingo-vdplet-rows/build/maintained-arm64-r02/tests/ulp_ps2.c",
+      "/Agon/mystuff/agon-fsim/utilities/pingo-vdplet-rows/build/maintained-arm64-r02/adapter/ulp.c",
+      "/Agon/mystuff/agon-fsim/utilities/pingo-vdplet-rows/build/maintained-arm64-r02/adapter/ps2.c",
+      "/Agon/mystuff/agon-fsim/utilities/pingo-vdplet-rows/build/maintained-arm64-r02/core/libxtensa-emu-lib.a",
+      "-lssl",
+      "-lcrypto",
+      "-lz",
+      "-lm",
+      "-lpthread",
+      "-o",
+      "/Agon/mystuff/agon-fsim/utilities/pingo-vdplet-rows/build/maintained-arm64-r02/ulp_ps2-tests"
+    ],
+    [
+      "/Agon/mystuff/agon-fsim/utilities/pingo-vdplet-rows/build/maintained-arm64-r02/ulp_ps2-tests"
+    ],
+    [
+      "/usr/bin/cc",
+      "-std=c17",
+      "-O2",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-I/Agon/mystuff/agon-fsim/utilities/pingo-vdplet-rows/build/maintained-arm64-r02/source/src",
+      "-I/Agon/mystuff/agon-fsim/utilities/pingo-vdplet-rows/build/maintained-arm64-r02/adapter",
+      "/Agon/mystuff/agon-fsim/utilities/pingo-vdplet-rows/build/maintained-arm64-r02/tests/i2s_eof.c",
+      "/Agon/mystuff/agon-fsim/utilities/pingo-vdplet-rows/build/maintained-arm64-r02/core/libxtensa-emu-lib.a",
+      "-lssl",
+      "-lcrypto",
+      "-lz",
+      "-lm",
+      "-lpthread",
+      "-o",
+      "/Agon/mystuff/agon-fsim/utilities/pingo-vdplet-rows/build/maintained-arm64-r02/i2s_eof-tests"
+    ],
+    [
+      "/Agon/mystuff/agon-fsim/utilities/pingo-vdplet-rows/build/maintained-arm64-r02/i2s_eof-tests"
+    ],
+    [
+      "/usr/bin/cc",
+      "-std=c17",
+      "-O2",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-I/Agon/mystuff/agon-fsim/utilities/pingo-vdplet-rows/build/maintained-arm64-r02/source/src",
+      "-I/Agon/mystuff/agon-fsim/utilities/pingo-vdplet-rows/build/maintained-arm64-r02/adapter",
+      "/Agon/mystuff/agon-fsim/utilities/pingo-vdplet-rows/build/maintained-arm64-r02/tests/clock.c",
+      "-o",
+      "/Agon/mystuff/agon-fsim/utilities/pingo-vdplet-rows/build/maintained-arm64-r02/clock-tests"
+    ],
+    [
+      "/Agon/mystuff/agon-fsim/utilities/pingo-vdplet-rows/build/maintained-arm64-r02/clock-tests"
+    ]
+  ],
+  "jobs": 2,
+  "core_sha256": "7618f338cc0106a36657b64f62421ef29d19743a596acd222292a0a39a9097e2",
+  "objects": {
+    "target.c.o": {
+      "sha256": "12267f42a4e846b854380c8add7ebbf375050244426e609466315b3eb559d39e",
+      "e_machine": 183,
+      "bytes": 18832
+    },
+    "assist_debug.c.o": {
+      "sha256": "99a241df65eab4799b00e12b2a5d56a80442da80abd54d87e2d67dbfde941cbe",
+      "e_machine": 183,
+      "bytes": 4240
+    },
+    "xtensa.c.o": {
+      "sha256": "4f0fe95ce0103ca162cc4a0a4d3a99c4dc092010e9155195cd305a55dc67694d",
+      "e_machine": 183,
+      "bytes": 132744
+    },
+    "window_accel.c.o": {
+      "sha256": "3e339c03eddeabe3cf1b0cb68fcc1227fd582abb9097715756730ce51fd8c42f",
+      "e_machine": 183,
+      "bytes": 6640
+    },
+    "profile.c.o": {
+      "sha256": "3b52fb54ff4491430399fa0f178ef57040f30d204ea1e0adcdfba567cc2c6dd9",
+      "e_machine": 183,
+      "bytes": 1264
+    },
+    "xtensa_disasm.c.o": {
+      "sha256": "24163631aa6273a73ba3ad362dba1f97e8d9793c9f5931639ee9356f4fc67899",
+      "e_machine": 183,
+      "bytes": 48192
+    },
+    "memory.c.o": {
+      "sha256": "aef7fdcdf62844c71afb7ce852fffacb6f6f10d6200f6305ff52e7a7667d4dd1",
+      "e_machine": 183,
+      "bytes": 18912
+    },
+    "flash_mmu.c.o": {
+      "sha256": "4b8697551feb3d4b6e7b5e05ba31fa164b7383647e058c6c2bdb90ef6918505e",
+      "e_machine": 183,
+      "bytes": 4648
+    },
+    "esp32s3_extmem.c.o": {
+      "sha256": "2a26a1b95c732947abcec3fda0754ae6f512dcfdf1a0a3770e54f6cf443c937d",
+      "e_machine": 183,
+      "bytes": 3712
+    },
+    "efuse.c.o": {
+      "sha256": "9ec8519a98c6c550ae3c4d3711a62070781f6c435b1aa18e4ac7ced36c15fbf8",
+      "e_machine": 183,
+      "bytes": 2824
+    },
+    "apb_saradc.c.o": {
+      "sha256": "4d9c6c5284018b72e71303ffe4ae9767554f3312fd24932a35c11f8556d44353",
+      "e_machine": 183,
+      "bytes": 6800
+    },
+    "gpio.c.o": {
+      "sha256": "b7ed5d8e84866336d78633a87a410d60653fddf996bb94af96afbff0edffea3a",
+      "e_machine": 183,
+      "bytes": 15760
+    },
+    "gdma.c.o": {
+      "sha256": "8b9b34fb67ae0c8c11e2fb156c580801037fb9127fe82575eb899e9c25928577",
+      "e_machine": 183,
+      "bytes": 22704
+    },
+    "i2s_v2.c.o": {
+      "sha256": "0563e39216f1ab8baad57a3d8f0570738c90d02dcbf5e46cded4e97f578e90ef",
+      "e_machine": 183,
+      "bytes": 11504
+    },
+    "lcd_cam.c.o": {
+      "sha256": "98b83b75493bbd28142c1e3d000b575f53da49592c43938d2c3d0be6912282bb",
+      "e_machine": 183,
+      "bytes": 9240
+    },
+    "rmt_v1.c.o": {
+      "sha256": "fb2c19f3fe9cdac85eb9965a2e9b769c87b7aab434a050c33081b49cd9e03c0a",
+      "e_machine": 183,
+      "bytes": 21424
+    },
+    "io_mux.c.o": {
+      "sha256": "306b5b8a1d5d065fd7a9223f516282c1c7c86977e83b6ea286ac34134e4d942e",
+      "e_machine": 183,
+      "bytes": 3888
+    },
+    "rtc_cntl.c.o": {
+      "sha256": "3a0df10e50978830c42b134a50a693f4d7a9ccad5b4c9c86e3bd7631a61837a9",
+      "e_machine": 183,
+      "bytes": 48488
+    },
+    "rtc_io.c.o": {
+      "sha256": "a465adfaeb685d1e768b1749f68960ab65920bd39676e533f22843f4d4628287",
+      "e_machine": 183,
+      "bytes": 5816
+    },
+    "regi2c.c.o": {
+      "sha256": "5e325e088f10f10cb7dc0f5418b36292b4810c469ce5bc52a865872f9774084c",
+      "e_machine": 183,
+      "bytes": 7224
+    },
+    "radio.c.o": {
+      "sha256": "b05844cac0c6310ab9259291ced81b38e6ef00b0482b4f20f5d4afcd01b6b09f",
+      "e_machine": 183,
+      "bytes": 14800
+    },
+    "sens.c.o": {
+      "sha256": "fd685b8daedd713f8a5042c2442a525a0f5124a12010f3f840ecd5a7ee2d8a6d",
+      "e_machine": 183,
+      "bytes": 8664
+    },
+    "touch_v2.c.o": {
+      "sha256": "2e893b3203fdd08f3010a096aebd60b63a2c55ebdf4c40ca01f74146b6b791b6",
+      "e_machine": 183,
+      "bytes": 6136
+    },
+    "sensitive_memprot.c.o": {
+      "sha256": "be619adbda2603ffedd8735ef058c8f6808a6e35f37390ff0d57110cf9c6baed",
+      "e_machine": 183,
+      "bytes": 7488
+    },
+    "syscon_memory.c.o": {
+      "sha256": "05216ebd1ca9fac22c934d3bcd394e8f564139eebc04c2565fc6fe116a9b1bfa",
+      "e_machine": 183,
+      "bytes": 6400
+    },
+    "system_clock.c.o": {
+      "sha256": "3bcf66c6d1c65fd226e21c6c468a564662c14861779d2791cd19f4c4147d595b",
+      "e_machine": 183,
+      "bytes": 12008
+    },
+    "systimer.c.o": {
+      "sha256": "f4048d57a2b63c58dcb4bd12e2ae282e707ad7ce37784dbba61498dff62ab9d8",
+      "e_machine": 183,
+      "bytes": 9184
+    },
+    "timer_group.c.o": {
+      "sha256": "dcddb30a0864f62f0428f1c494b3494782331d24d079cd72ce58261251e7ffee",
+      "e_machine": 183,
+      "bytes": 11920
+    },
+    "usb_serial_jtag.c.o": {
+      "sha256": "e708077d224e60e57648986751556d350374c036c55e6973e990c181a87c0755",
+      "e_machine": 183,
+      "bytes": 8224
+    },
+    "spi_mem.c.o": {
+      "sha256": "ed9cdcafe6e084aa88fd8f009ef3b7ac8d5058d01fe99bcc2b728d2397d4e86b",
+      "e_machine": 183,
+      "bytes": 19960
+    },
+    "firmware_scan.c.o": {
+      "sha256": "92bf8b82192e6ce704477f1142067aeee7bd15eb74c1621112a9935374adb64f",
+      "e_machine": 183,
+      "bytes": 6480
+    },
+    "loader.c.o": {
+      "sha256": "49cfe759916ee0408bbdfa3bee545e8f0938f600db679342baf91bd635e58074",
+      "e_machine": 183,
+      "bytes": 25608
+    },
+    "rom_elf.c.o": {
+      "sha256": "d27a2923f43c8453ee5e1ea9abf6cc91b036585b37f8f7aee0b5853b40d26f78",
+      "e_machine": 183,
+      "bytes": 11040
+    },
+    "peripherals.c.o": {
+      "sha256": "af3924ec62607fcebdd3098e8058a8e93d9b9311f95e04ce36a730e2d580cf80",
+      "e_machine": 183,
+      "bytes": 298376
+    },
+    "spi_display.c.o": {
+      "sha256": "f74f98a1f44613fb161dcb30a41ce58fef61d658434191aa7a94cf7970ee5f06",
+      "e_machine": 183,
+      "bytes": 36712
+    },
+    "sx127x.c.o": {
+      "sha256": "aa75a3303ad48512f5aa74be9f6b53f04e4f316cb4ac615b350d102f3d3c1388",
+      "e_machine": 183,
+      "bytes": 5896
+    },
+    "axp192.c.o": {
+      "sha256": "550a0653d842949f2722a290704cdf04b66d94cfc6b273be398292b55f61ff69",
+      "e_machine": 183,
+      "bytes": 3424
+    },
+    "ublox_gps.c.o": {
+      "sha256": "2acc3dc234f273464f4703bf3b89ce96e9e535e8d0a04cb5addc77bd379338f6",
+      "e_machine": 183,
+      "bytes": 5016
+    },
+    "rom_stubs.c.o": {
+      "sha256": "2c558f427723fa7a63ea0cf8bf01c379dc2c11181e6cd691173383adf21f91fc",
+      "e_machine": 183,
+      "bytes": 301968
+    },
+    "elf_symbols.c.o": {
+      "sha256": "70ed491a6b2c4083858cd5008e0eeb23ee2a5a0a12c6d19ceb96bd9862be69a8",
+      "e_machine": 183,
+      "bytes": 5544
+    },
+    "freertos_stubs.c.o": {
+      "sha256": "f5acea3002a93afbc8f57127a6f51dcd1421466c7dd2f81d26e867884fbd96ce",
+      "e_machine": 183,
+      "bytes": 128616
+    },
+    "esp_timer_stubs.c.o": {
+      "sha256": "47b97f20f7bebaf4c86d2d7172f1334ade042ec8ce376cbd410814ac930aec72",
+      "e_machine": 183,
+      "bytes": 19112
+    },
+    "display_stubs.c.o": {
+      "sha256": "bee60d8d9d571275fa20fcccb55c1559678c67c8346328429018eda71e69680c",
+      "e_machine": 183,
+      "bytes": 83096
+    },
+    "touch_stubs.c.o": {
+      "sha256": "7964d58e64aad94e42346caa5918ad9de9f7b732a0df67683563eb02340cb6b9",
+      "e_machine": 183,
+      "bytes": 9888
+    },
+    "sdcard_stubs.c.o": {
+      "sha256": "0cbc54abaedf03fc20f4bdf9a62b4e87095d34fd44f0bb23ec946431193d4e10",
+      "e_machine": 183,
+      "bytes": 34344
+    },
+    "guest_call.c.o": {
+      "sha256": "26831e66d63b9f21008b61117fe35a8829feadf8d13482ff1aa71af5739b0ce1",
+      "e_machine": 183,
+      "bytes": 8184
+    },
+    "wifi_stubs.c.o": {
+      "sha256": "be38fd5266edcf7f04212e50ddae68ec77d29229b6fddb61c90682c64541895b",
+      "e_machine": 183,
+      "bytes": 138368
+    },
+    "vfs_stubs.c.o": {
+      "sha256": "2c4b11e7b32c2538e2dcc9fdf520677876661ea9904eb78ca4f27e0176566d10",
+      "e_machine": 183,
+      "bytes": 45360
+    },
+    "bt_stubs.c.o": {
+      "sha256": "0faa67be2d25d0de63056c3ab6385a3bf435dc141492bc6931d5d32dcb36a597",
+      "e_machine": 183,
+      "bytes": 44728
+    },
+    "sha_stubs.c.o": {
+      "sha256": "a3d827c9ef1a971af0e9dae18fcd69c3eac37938c2b5ced2c482553cfed91478",
+      "e_machine": 183,
+      "bytes": 30792
+    },
+    "aes_stubs.c.o": {
+      "sha256": "e9910740f5dfa955947ee24085fdb0d4dd60cc6ef841c415d3136fc9ff602bec",
+      "e_machine": 183,
+      "bytes": 19064
+    },
+    "mpi_stubs.c.o": {
+      "sha256": "a624d70161282e99e5cc3f25c0ff0d4121cc10ec6ae9034cc5206af44fff35a7",
+      "e_machine": 183,
+      "bytes": 13960
+    },
+    "flexe_session.c.o": {
+      "sha256": "c33a8e5dddf1fd2c31b221076c9dda4847a6501e7ed8bdd82b6ecae46f1fd93b",
+      "e_machine": 183,
+      "bytes": 34136
+    },
+    "savestate.c.o": {
+      "sha256": "23d00b336ce4bad10da260b314dfdbdc2766f4ac4e0835c0a3ae9eb94e197bfc",
+      "e_machine": 183,
+      "bytes": 48360
+    },
+    "hierarchical_trace.c.o": {
+      "sha256": "482087d2bc2ffdcdc5ce260df42bfcfb7b0a6c50df532af66cff86ec00e09814",
+      "e_machine": 183,
+      "bytes": 9184
+    },
+    "sandbox_input.c.o": {
+      "sha256": "c58ea541864eb7d8693b76321f1b4220454034fc315e72a5f71dc61f0a730234",
+      "e_machine": 183,
+      "bytes": 5768
+    },
+    "sandbox_events.c.o": {
+      "sha256": "d8385b9e44f57f90506dca7b031d1dd362dc9522cf2764a65e2ebaa35a5df78e",
+      "e_machine": 183,
+      "bytes": 1728
+    },
+    "aot.c.o": {
+      "sha256": "8c8a4f74c4431c83ee3b1470edf98d4443364748f925ab7e3116ff64f6e32fac",
+      "e_machine": 183,
+      "bytes": 5832
+    },
+    "jit.c.o": {
+      "sha256": "87d5bdff6c88c8bf6c89ffc9c3341762141acce1b3e9c25a2cd3ab5c83c7795f",
+      "e_machine": 183,
+      "bytes": 97736
+    }
+  },
+  "library_sha256": "af0ccc012bed9184acadadf684fd00cbd78aae4cc0460660a454c609d0291caf",
+  "repeated_build_identical": true,
+  "diagnostic_symbols_absent": true,
+  "host_checks": {
+    "coherence": {
+      "passed": true,
+      "expected_wide": true,
+      "scenarios": 29,
+      "assertions": 515
+    },
+    "ulp_ps2": true,
+    "i2s_eof": true,
+    "clock": true
+  },
+  "compile_commands_sha256": "586edc3071fad72b7a3a5ceb9c095ef52ec01d183250bd796f77ff9319971af9",
+  "flags_sha256": "d1cd64cb94a3c57c773d864b7485ef01e6bea0efe48d365a3900fe513d09e876",
+  "diagnostic_exception": {
+    "flag": "-Wno-error=stringop-truncation",
+    "translation_unit": "src/rom_stubs.c",
+    "warning_visible": true,
+    "compiler_family": "GNU",
+    "other_Werror_preserved": true,
+    "core_compile_commands": 59,
+    "exceptional_commands": 1
+  },
+  "diagnostic_policy_sha256": "56fdf1c1b49bf0c0e0cbbfac8794ab0b873873dfee4644c2da5f4d8ac50eb9de",
+  "emulator_instantiated": false,
+  "target_qualified": false,
+  "profile_replacement": false,
+  "publication": false
+}

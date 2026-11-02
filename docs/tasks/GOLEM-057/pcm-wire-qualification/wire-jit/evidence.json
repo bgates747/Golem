@@ -1,0 +1,2361 @@
+{
+  "passed": true,
+  "engine": "jit",
+  "wire_expected": true,
+  "scope": "actual ESP32 firmware and UART packet framing through direct ctypes adapter; not stock-MOS, physical or clean-audio qualification",
+  "firmware_sha256": "b3811707bf80a24698b5d9f9c4260f5ce771aa8e68a89be991a96262aa59fab4",
+  "elf_sha256": "93d189f50756d5dd1e2d5af89a06f136262d5f167e9671a282508bf730d40564",
+  "backend_sha256": "108ec5b02122381e6c3ae851508188ec0a96240ca5f74be804fd2201b141e6e9",
+  "protocol_header_sha256": "5555235b73a68c7ee5648c7fe67f1e99014c707c1fe024b2dec5225edd9feb4e",
+  "qualifier_sha256": "595c564a347d10c84af894e7f023a0786e0685534ad84bd321886b01bd2b394c",
+  "target_sha256": "be853411d3a9b59ee83a73ab4c80abfd3b8b69703c6ee86ccb31a15ae6b9523f",
+  "lifecycle_source_sha256": "2545920e0a7d4436d018344e0ee73f14439d47c7d84ba31a6d560adfeb910bf8",
+  "checks": [
+    "operand-free runtime discovery, nativecap143 and explicit INFO25 presence",
+    "module-free DISCOVER emits four14-byte bodies from one coherent32-byte state",
+    "version/op/channel/generation/length errors drain complete payloads and preserve framing across token wrap",
+    "truncated fixed header times out without reply, allocation or live-stream effects",
+    "WRITE ACK permits immediate source clear/reallocate; explicit offset, prime and all-or-BUSY hold without a module",
+    "wire stream survives actual numeric INIT/RUN/error/UNLOAD and deliberate failed native INIT",
+    "native OPEN/STATE/WRITE/CLOSE cannot take over a wire owner; native failed RUN cleanup preserves it",
+    "final priming frame starts independent drain; later irregular writes cross the physical ring boundary",
+    "missing/multiblock/overflow/end-span refusals, valid zero-frame span and wrong channel/generation preserve stream",
+    "RESET/STOP/MUTE use fresh generations; UNMUTE cannot replay, oversized/muted writes refuse, CLOSE invalidates",
+    "native control matches prime/BUSY/drain counters; wire live calls and OPEN cannot inspect, close or steal native stream",
+    "native failure/unload still cancel its own producer while explicit native CLOSE leaves module loaded",
+    "successful wire CLOSE preserves unrelated loaded module and retained numeric state",
+    "selected ordinary DISABLE and global mixer replacement cancel wire owner; original output rate restored",
+    "8 repeated1024-frame copied rings recover exact heap with unchanged task count"
+  ],
+  "wire_transactions": [
+    {
+      "token": 65533,
+      "channel": 255,
+      "operation": 0,
+      "status": 0,
+      "request_hex": "170085ff100100fdff000000000000",
+      "reply_hex": [
+        "50533130fdff0000000000400000",
+        "50533131fdff0020010000000000",
+        "50533132fdff0000000000000000",
+        "50533133fdff0000000000ff0000"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "generation": 0,
+        "rate": 16384,
+        "capacity": 8192,
+        "prime": 1,
+        "queued": 0,
+        "free": 0,
+        "accepted": 0,
+        "consumed": 0,
+        "underrun": 0,
+        "flags": 0,
+        "channel": 255,
+        "status": 0,
+        "operation": 0
+      }
+    },
+    {
+      "token": 65534,
+      "channel": 255,
+      "operation": 0,
+      "status": 5,
+      "request_hex": "170085ff100200feff000000000000",
+      "reply_hex": [
+        "50533141feff0005000000000000"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "status": 5,
+        "operation": 0,
+        "generation": 0,
+        "free": 0
+      }
+    },
+    {
+      "token": 65535,
+      "channel": 31,
+      "operation": 99,
+      "status": 9,
+      "request_hex": "1700851f100163ffff000000000000",
+      "reply_hex": [
+        "50533141ffff6309000000000000"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "status": 9,
+        "operation": 99,
+        "generation": 0,
+        "free": 0
+      }
+    },
+    {
+      "token": 0,
+      "channel": 32,
+      "operation": 3,
+      "status": 1,
+      "request_hex": "170085201001030000000000000000",
+      "reply_hex": [
+        "5053314100000301000000000000"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "status": 1,
+        "operation": 3,
+        "generation": 0,
+        "free": 0
+      }
+    },
+    {
+      "token": 1,
+      "channel": 31,
+      "operation": 0,
+      "status": 1,
+      "request_hex": "1700851f1001000100000000000000",
+      "reply_hex": [
+        "5053314101000001000000000000"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "status": 1,
+        "operation": 0,
+        "generation": 0,
+        "free": 0
+      }
+    },
+    {
+      "token": 2,
+      "channel": 31,
+      "operation": 1,
+      "status": 1,
+      "request_hex": "1700851f10010102000800010000000000000000000000",
+      "reply_hex": [
+        "5053314102000101010000000000"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "status": 1,
+        "operation": 1,
+        "generation": 1,
+        "free": 0
+      }
+    },
+    {
+      "token": 3,
+      "channel": 31,
+      "operation": 1,
+      "status": 1,
+      "request_hex": "1700851f100101030007000000000000000000000000",
+      "reply_hex": [
+        "5053314103000101000000000000"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "status": 1,
+        "operation": 1,
+        "generation": 0,
+        "free": 0
+      }
+    },
+    {
+      "token": 4,
+      "channel": 31,
+      "operation": 3,
+      "status": 1,
+      "request_hex": "1700851f100103040028000000000017008077170080771700807717008077170080771700807717008077170080771700807717008077",
+      "reply_hex": [
+        "5053314104000301000000000000"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "status": 1,
+        "operation": 3,
+        "generation": 0,
+        "free": 0
+      }
+    },
+    {
+      "token": 5,
+      "channel": 31,
+      "operation": 3,
+      "status": 8,
+      "request_hex": "1700851f1001030500000000000000",
+      "reply_hex": [
+        "5053314105000308000000000000"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "status": 8,
+        "operation": 3,
+        "generation": 0,
+        "free": 0
+      }
+    },
+    {
+      "token": 6,
+      "channel": 31,
+      "operation": 1,
+      "status": 0,
+      "request_hex": "1700851f10010106000800000000000040000011001100",
+      "reply_hex": [
+        "5053313006000100000000400000",
+        "5053313106001100110000001100",
+        "5053313206000000000000000000",
+        "50533133060000000000011f0001"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "generation": 1,
+        "rate": 16384,
+        "capacity": 17,
+        "prime": 17,
+        "queued": 0,
+        "free": 17,
+        "accepted": 0,
+        "consumed": 0,
+        "underrun": 0,
+        "flags": 1,
+        "channel": 31,
+        "status": 0,
+        "operation": 1
+      }
+    },
+    {
+      "token": 7,
+      "channel": 31,
+      "operation": 2,
+      "status": 0,
+      "request_hex": "1700851f100102070008000100000028eb020000001000",
+      "reply_hex": [
+        "5053314107000200010000000100"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "status": 0,
+        "operation": 2,
+        "generation": 1,
+        "free": 1
+      }
+    },
+    {
+      "token": 8,
+      "channel": 31,
+      "operation": 3,
+      "status": 0,
+      "request_hex": "1700851f1001030800000001000000",
+      "reply_hex": [
+        "5053313008000100000000400000",
+        "5053313108001100110010000100",
+        "5053313208001000000000000000",
+        "50533133080000000000011f0003"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "generation": 1,
+        "rate": 16384,
+        "capacity": 17,
+        "prime": 17,
+        "queued": 16,
+        "free": 1,
+        "accepted": 16,
+        "consumed": 0,
+        "underrun": 0,
+        "flags": 1,
+        "channel": 31,
+        "status": 0,
+        "operation": 3
+      }
+    },
+    {
+      "token": 9,
+      "channel": 31,
+      "operation": 2,
+      "status": 7,
+      "request_hex": "1700851f100102090008000100000028eb000000000200",
+      "reply_hex": [
+        "5053314109000207010000000000"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "status": 7,
+        "operation": 2,
+        "generation": 1,
+        "free": 0
+      }
+    },
+    {
+      "token": 10,
+      "channel": 31,
+      "operation": 3,
+      "status": 0,
+      "request_hex": "1700851f1001030a00000001000000",
+      "reply_hex": [
+        "505331300a000100000000400000",
+        "505331310a001100110010000100",
+        "505331320a001000000000000000",
+        "505331330a0000000000011f0003"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "generation": 1,
+        "rate": 16384,
+        "capacity": 17,
+        "prime": 17,
+        "queued": 16,
+        "free": 1,
+        "accepted": 16,
+        "consumed": 0,
+        "underrun": 0,
+        "flags": 1,
+        "channel": 31,
+        "status": 0,
+        "operation": 3
+      }
+    },
+    {
+      "token": 11,
+      "channel": 31,
+      "operation": 3,
+      "status": 0,
+      "request_hex": "1700851f1001030b00000001000000",
+      "reply_hex": [
+        "505331300b000100000000400000",
+        "505331310b001100110010000100",
+        "505331320b001000000000000000",
+        "505331330b0000000000011f0003"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "generation": 1,
+        "rate": 16384,
+        "capacity": 17,
+        "prime": 17,
+        "queued": 16,
+        "free": 1,
+        "accepted": 16,
+        "consumed": 0,
+        "underrun": 0,
+        "flags": 1,
+        "channel": 31,
+        "status": 0,
+        "operation": 3
+      }
+    },
+    {
+      "token": 12,
+      "channel": 31,
+      "operation": 3,
+      "status": 0,
+      "request_hex": "1700851f1001030c00000001000000",
+      "reply_hex": [
+        "505331300c000100000000400000",
+        "505331310c001100110010000100",
+        "505331320c001000000000000000",
+        "505331330c0000000000011f0003"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "generation": 1,
+        "rate": 16384,
+        "capacity": 17,
+        "prime": 17,
+        "queued": 16,
+        "free": 1,
+        "accepted": 16,
+        "consumed": 0,
+        "underrun": 0,
+        "flags": 1,
+        "channel": 31,
+        "status": 0,
+        "operation": 3
+      }
+    },
+    {
+      "token": 13,
+      "channel": 31,
+      "operation": 3,
+      "status": 0,
+      "request_hex": "1700851f1001030d00000001000000",
+      "reply_hex": [
+        "505331300d000100000000400000",
+        "505331310d001100110010000100",
+        "505331320d001000000000000000",
+        "505331330d0000000000011f0003"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "generation": 1,
+        "rate": 16384,
+        "capacity": 17,
+        "prime": 17,
+        "queued": 16,
+        "free": 1,
+        "accepted": 16,
+        "consumed": 0,
+        "underrun": 0,
+        "flags": 1,
+        "channel": 31,
+        "status": 0,
+        "operation": 3
+      }
+    },
+    {
+      "token": 14,
+      "channel": 31,
+      "operation": 3,
+      "status": 0,
+      "request_hex": "1700851f1001030e00000001000000",
+      "reply_hex": [
+        "505331300e000100000000400000",
+        "505331310e001100110010000100",
+        "505331320e001000000000000000",
+        "505331330e0000000000011f0003"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "generation": 1,
+        "rate": 16384,
+        "capacity": 17,
+        "prime": 17,
+        "queued": 16,
+        "free": 1,
+        "accepted": 16,
+        "consumed": 0,
+        "underrun": 0,
+        "flags": 1,
+        "channel": 31,
+        "status": 0,
+        "operation": 3
+      }
+    },
+    {
+      "token": 15,
+      "channel": 31,
+      "operation": 3,
+      "status": 0,
+      "request_hex": "1700851f1001030f00000001000000",
+      "reply_hex": [
+        "505331300f000100000000400000",
+        "505331310f001100110010000100",
+        "505331320f001000000000000000",
+        "505331330f0000000000011f0003"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "generation": 1,
+        "rate": 16384,
+        "capacity": 17,
+        "prime": 17,
+        "queued": 16,
+        "free": 1,
+        "accepted": 16,
+        "consumed": 0,
+        "underrun": 0,
+        "flags": 1,
+        "channel": 31,
+        "status": 0,
+        "operation": 3
+      }
+    },
+    {
+      "token": 16,
+      "channel": 31,
+      "operation": 3,
+      "status": 0,
+      "request_hex": "1700851f1001031000000001000000",
+      "reply_hex": [
+        "5053313010000100000000400000",
+        "5053313110001100110010000100",
+        "5053313210001000000000000000",
+        "50533133100000000000011f0003"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "generation": 1,
+        "rate": 16384,
+        "capacity": 17,
+        "prime": 17,
+        "queued": 16,
+        "free": 1,
+        "accepted": 16,
+        "consumed": 0,
+        "underrun": 0,
+        "flags": 1,
+        "channel": 31,
+        "status": 0,
+        "operation": 3
+      }
+    },
+    {
+      "token": 17,
+      "channel": 31,
+      "operation": 3,
+      "status": 0,
+      "request_hex": "1700851f1001031100000001000000",
+      "reply_hex": [
+        "5053313011000100000000400000",
+        "5053313111001100110010000100",
+        "5053313211001000000000000000",
+        "50533133110000000000011f0003"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "generation": 1,
+        "rate": 16384,
+        "capacity": 17,
+        "prime": 17,
+        "queued": 16,
+        "free": 1,
+        "accepted": 16,
+        "consumed": 0,
+        "underrun": 0,
+        "flags": 1,
+        "channel": 31,
+        "status": 0,
+        "operation": 3
+      }
+    },
+    {
+      "token": 18,
+      "channel": 31,
+      "operation": 3,
+      "status": 0,
+      "request_hex": "1700851f1001031200000001000000",
+      "reply_hex": [
+        "5053313012000100000000400000",
+        "5053313112001100110010000100",
+        "5053313212001000000000000000",
+        "50533133120000000000011f0003"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "generation": 1,
+        "rate": 16384,
+        "capacity": 17,
+        "prime": 17,
+        "queued": 16,
+        "free": 1,
+        "accepted": 16,
+        "consumed": 0,
+        "underrun": 0,
+        "flags": 1,
+        "channel": 31,
+        "status": 0,
+        "operation": 3
+      }
+    },
+    {
+      "token": 19,
+      "channel": 31,
+      "operation": 2,
+      "status": 0,
+      "request_hex": "1700851f100102130008000100000028eb030000000100",
+      "reply_hex": [
+        "5053314113000200010000000000"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "status": 0,
+        "operation": 2,
+        "generation": 1,
+        "free": 0
+      }
+    },
+    {
+      "token": 20,
+      "channel": 31,
+      "operation": 3,
+      "status": 0,
+      "request_hex": "1700851f1001031400000001000000",
+      "reply_hex": [
+        "5053313014000100000000400000",
+        "5053313114001100110000001100",
+        "5053313214001100000011000000",
+        "5053313314002f030000031f0003"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "generation": 1,
+        "rate": 16384,
+        "capacity": 17,
+        "prime": 17,
+        "queued": 0,
+        "free": 17,
+        "accepted": 17,
+        "consumed": 17,
+        "underrun": 815,
+        "flags": 3,
+        "channel": 31,
+        "status": 0,
+        "operation": 3
+      }
+    },
+    {
+      "token": 21,
+      "channel": 31,
+      "operation": 2,
+      "status": 0,
+      "request_hex": "1700851f100102150008000100000028eb050000000d00",
+      "reply_hex": [
+        "5053314115000200010000000400"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "status": 0,
+        "operation": 2,
+        "generation": 1,
+        "free": 4
+      }
+    },
+    {
+      "token": 22,
+      "channel": 31,
+      "operation": 2,
+      "status": 0,
+      "request_hex": "1700851f100102160008000100000028eb050000000b00",
+      "reply_hex": [
+        "5053314116000200010000000600"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "status": 0,
+        "operation": 2,
+        "generation": 1,
+        "free": 6
+      }
+    },
+    {
+      "token": 23,
+      "channel": 31,
+      "operation": 3,
+      "status": 0,
+      "request_hex": "1700851f1001031700000001000000",
+      "reply_hex": [
+        "5053313017000100000000400000",
+        "5053313117001100110000001100",
+        "5053313217002900000029000000",
+        "50533133170097090000031f0003"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "generation": 1,
+        "rate": 16384,
+        "capacity": 17,
+        "prime": 17,
+        "queued": 0,
+        "free": 17,
+        "accepted": 41,
+        "consumed": 41,
+        "underrun": 2455,
+        "flags": 3,
+        "channel": 31,
+        "status": 0,
+        "operation": 3
+      }
+    },
+    {
+      "token": 24,
+      "channel": 31,
+      "operation": 2,
+      "status": 2,
+      "request_hex": "1700851f10010218000800010000005fea000000000100",
+      "reply_hex": [
+        "5053314118000202010000000000"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "status": 2,
+        "operation": 2,
+        "generation": 1,
+        "free": 0
+      }
+    },
+    {
+      "token": 25,
+      "channel": 31,
+      "operation": 2,
+      "status": 2,
+      "request_hex": "1700851f10010219000800010000002ceb000000000100",
+      "reply_hex": [
+        "5053314119000202010000000000"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "status": 2,
+        "operation": 2,
+        "generation": 1,
+        "free": 0
+      }
+    },
+    {
+      "token": 26,
+      "channel": 31,
+      "operation": 2,
+      "status": 3,
+      "request_hex": "1700851f1001021a0008000100000028ebffffffff0100",
+      "reply_hex": [
+        "505331411a000203010000000000"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "status": 3,
+        "operation": 2,
+        "generation": 1,
+        "free": 0
+      }
+    },
+    {
+      "token": 27,
+      "channel": 31,
+      "operation": 2,
+      "status": 3,
+      "request_hex": "1700851f1001021b0008000100000028eb400000000100",
+      "reply_hex": [
+        "505331411b000203010000000000"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "status": 3,
+        "operation": 2,
+        "generation": 1,
+        "free": 0
+      }
+    },
+    {
+      "token": 28,
+      "channel": 31,
+      "operation": 2,
+      "status": 3,
+      "request_hex": "1700851f1001021c0008000100000028eb410000000000",
+      "reply_hex": [
+        "505331411c000203010000000000"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "status": 3,
+        "operation": 2,
+        "generation": 1,
+        "free": 0
+      }
+    },
+    {
+      "token": 29,
+      "channel": 31,
+      "operation": 2,
+      "status": 3,
+      "request_hex": "1700851f1001021d0008000100000028eb3f0000000200",
+      "reply_hex": [
+        "505331411d000203010000000000"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "status": 3,
+        "operation": 2,
+        "generation": 1,
+        "free": 0
+      }
+    },
+    {
+      "token": 30,
+      "channel": 31,
+      "operation": 2,
+      "status": 0,
+      "request_hex": "1700851f1001021e0008000100000028eb400000000000",
+      "reply_hex": [
+        "505331411e000200010000001100"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "status": 0,
+        "operation": 2,
+        "generation": 1,
+        "free": 17
+      }
+    },
+    {
+      "token": 31,
+      "channel": 31,
+      "operation": 3,
+      "status": 0,
+      "request_hex": "1700851f1001031f00000001000000",
+      "reply_hex": [
+        "505331301f000100000000400000",
+        "505331311f001100110000001100",
+        "505331321f002900000029000000",
+        "505331331f00d7090000031f0003"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "generation": 1,
+        "rate": 16384,
+        "capacity": 17,
+        "prime": 17,
+        "queued": 0,
+        "free": 17,
+        "accepted": 41,
+        "consumed": 41,
+        "underrun": 2519,
+        "flags": 3,
+        "channel": 31,
+        "status": 0,
+        "operation": 3
+      }
+    },
+    {
+      "token": 32,
+      "channel": 30,
+      "operation": 3,
+      "status": 8,
+      "request_hex": "1700851e1001032000000001000000",
+      "reply_hex": [
+        "5053314120000308010000000000"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "status": 8,
+        "operation": 3,
+        "generation": 1,
+        "free": 0
+      }
+    },
+    {
+      "token": 33,
+      "channel": 31,
+      "operation": 3,
+      "status": 8,
+      "request_hex": "1700851f1001032100000001000080",
+      "reply_hex": [
+        "5053314121000308010000800000"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "status": 8,
+        "operation": 3,
+        "generation": 2147483649,
+        "free": 0
+      }
+    },
+    {
+      "token": 34,
+      "channel": 31,
+      "operation": 4,
+      "status": 0,
+      "request_hex": "1700851f1001042200000001000000",
+      "reply_hex": [
+        "5053313022000200000000400000",
+        "5053313122001100110000001100",
+        "5053313222000000000000000000",
+        "50533133220000000000011f0004"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "generation": 2,
+        "rate": 16384,
+        "capacity": 17,
+        "prime": 17,
+        "queued": 0,
+        "free": 17,
+        "accepted": 0,
+        "consumed": 0,
+        "underrun": 0,
+        "flags": 1,
+        "channel": 31,
+        "status": 0,
+        "operation": 4
+      }
+    },
+    {
+      "token": 35,
+      "channel": 31,
+      "operation": 3,
+      "status": 8,
+      "request_hex": "1700851f1001032300000001000000",
+      "reply_hex": [
+        "5053314123000308010000000000"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "status": 8,
+        "operation": 3,
+        "generation": 1,
+        "free": 0
+      }
+    },
+    {
+      "token": 36,
+      "channel": 31,
+      "operation": 2,
+      "status": 7,
+      "request_hex": "1700851f100102240008000200000028eb000000001200",
+      "reply_hex": [
+        "5053314124000207020000000000"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "status": 7,
+        "operation": 2,
+        "generation": 2,
+        "free": 0
+      }
+    },
+    {
+      "token": 37,
+      "channel": 31,
+      "operation": 2,
+      "status": 0,
+      "request_hex": "1700851f100102250008000200000028eb000000001000",
+      "reply_hex": [
+        "5053314125000200020000000100"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "status": 0,
+        "operation": 2,
+        "generation": 2,
+        "free": 1
+      }
+    },
+    {
+      "token": 38,
+      "channel": 31,
+      "operation": 5,
+      "status": 0,
+      "request_hex": "1700851f1001052600000002000000",
+      "reply_hex": [
+        "5053313026000300000000400000",
+        "5053313126001100110000001100",
+        "5053313226000000000000000000",
+        "50533133260000000000051f0005"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "generation": 3,
+        "rate": 16384,
+        "capacity": 17,
+        "prime": 17,
+        "queued": 0,
+        "free": 17,
+        "accepted": 0,
+        "consumed": 0,
+        "underrun": 0,
+        "flags": 5,
+        "channel": 31,
+        "status": 0,
+        "operation": 5
+      }
+    },
+    {
+      "token": 39,
+      "channel": 31,
+      "operation": 2,
+      "status": 7,
+      "request_hex": "1700851f100102270008000300000028eb000000000100",
+      "reply_hex": [
+        "5053314127000207030000000000"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "status": 7,
+        "operation": 2,
+        "generation": 3,
+        "free": 0
+      }
+    },
+    {
+      "token": 40,
+      "channel": 31,
+      "operation": 6,
+      "status": 0,
+      "request_hex": "1700851f1001062800000003000000",
+      "reply_hex": [
+        "5053313028000300000000400000",
+        "5053313128001100110000001100",
+        "5053313228000000000000000000",
+        "50533133280000000000011f0006"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "generation": 3,
+        "rate": 16384,
+        "capacity": 17,
+        "prime": 17,
+        "queued": 0,
+        "free": 17,
+        "accepted": 0,
+        "consumed": 0,
+        "underrun": 0,
+        "flags": 1,
+        "channel": 31,
+        "status": 0,
+        "operation": 6
+      }
+    },
+    {
+      "token": 41,
+      "channel": 31,
+      "operation": 7,
+      "status": 0,
+      "request_hex": "1700851f1001072900000003000000",
+      "reply_hex": [
+        "5053313029000400000000400000",
+        "5053313129001100110000001100",
+        "5053313229000000000000000000",
+        "50533133290000000000011f0007"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "generation": 4,
+        "rate": 16384,
+        "capacity": 17,
+        "prime": 17,
+        "queued": 0,
+        "free": 17,
+        "accepted": 0,
+        "consumed": 0,
+        "underrun": 0,
+        "flags": 1,
+        "channel": 31,
+        "status": 0,
+        "operation": 7
+      }
+    },
+    {
+      "token": 42,
+      "channel": 31,
+      "operation": 8,
+      "status": 0,
+      "request_hex": "1700851f1001082a00000004000000",
+      "reply_hex": [
+        "505331412a000800040000000000"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "status": 0,
+        "operation": 8,
+        "generation": 4,
+        "free": 0
+      }
+    },
+    {
+      "token": 43,
+      "channel": 31,
+      "operation": 3,
+      "status": 8,
+      "request_hex": "1700851f1001032b00000004000000",
+      "reply_hex": [
+        "505331412b000308040000000000"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "status": 8,
+        "operation": 3,
+        "generation": 4,
+        "free": 0
+      }
+    },
+    {
+      "token": 44,
+      "channel": 31,
+      "operation": 1,
+      "status": 7,
+      "request_hex": "1700851f1001012c000800000000000040000011001100",
+      "reply_hex": [
+        "505331412c000107000000000000"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "status": 7,
+        "operation": 1,
+        "generation": 0,
+        "free": 0
+      }
+    },
+    {
+      "token": 45,
+      "channel": 255,
+      "operation": 0,
+      "status": 0,
+      "request_hex": "170085ff1001002d00000000000000",
+      "reply_hex": [
+        "505331302d000000000000400000",
+        "505331312d000020010000000000",
+        "505331322d000000000000000000",
+        "505331332d000000000000ff0000"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "generation": 0,
+        "rate": 16384,
+        "capacity": 8192,
+        "prime": 1,
+        "queued": 0,
+        "free": 0,
+        "accepted": 0,
+        "consumed": 0,
+        "underrun": 0,
+        "flags": 0,
+        "channel": 255,
+        "status": 0,
+        "operation": 0
+      }
+    },
+    {
+      "token": 46,
+      "channel": 31,
+      "operation": 3,
+      "status": 8,
+      "request_hex": "1700851f1001032e00000005000000",
+      "reply_hex": [
+        "505331412e000308050000000000"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "status": 8,
+        "operation": 3,
+        "generation": 5,
+        "free": 0
+      }
+    },
+    {
+      "token": 47,
+      "channel": 31,
+      "operation": 2,
+      "status": 8,
+      "request_hex": "1700851f1001022f0008000500000028eb000000000100",
+      "reply_hex": [
+        "505331412f000208050000000000"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "status": 8,
+        "operation": 2,
+        "generation": 5,
+        "free": 0
+      }
+    },
+    {
+      "token": 48,
+      "channel": 31,
+      "operation": 8,
+      "status": 8,
+      "request_hex": "1700851f1001083000000005000000",
+      "reply_hex": [
+        "5053314130000808050000000000"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "status": 8,
+        "operation": 8,
+        "generation": 5,
+        "free": 0
+      }
+    },
+    {
+      "token": 49,
+      "channel": 31,
+      "operation": 1,
+      "status": 0,
+      "request_hex": "1700851f10010131000800000000000040000011001100",
+      "reply_hex": [
+        "5053313031000800000000400000",
+        "5053313131001100110000001100",
+        "5053313231000000000000000000",
+        "50533133310000000000011f0001"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "generation": 8,
+        "rate": 16384,
+        "capacity": 17,
+        "prime": 17,
+        "queued": 0,
+        "free": 17,
+        "accepted": 0,
+        "consumed": 0,
+        "underrun": 0,
+        "flags": 1,
+        "channel": 31,
+        "status": 0,
+        "operation": 1
+      }
+    },
+    {
+      "token": 50,
+      "channel": 31,
+      "operation": 8,
+      "status": 0,
+      "request_hex": "1700851f1001083200000008000000",
+      "reply_hex": [
+        "5053314132000800080000000000"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "status": 0,
+        "operation": 8,
+        "generation": 8,
+        "free": 0
+      }
+    },
+    {
+      "token": 51,
+      "channel": 31,
+      "operation": 1,
+      "status": 0,
+      "request_hex": "1700851f10010133000800000000000040000011001100",
+      "reply_hex": [
+        "5053313033000900000000400000",
+        "5053313133001100110000001100",
+        "5053313233000000000000000000",
+        "50533133330000000000011f0001"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "generation": 9,
+        "rate": 16384,
+        "capacity": 17,
+        "prime": 17,
+        "queued": 0,
+        "free": 17,
+        "accepted": 0,
+        "consumed": 0,
+        "underrun": 0,
+        "flags": 1,
+        "channel": 31,
+        "status": 0,
+        "operation": 1
+      }
+    },
+    {
+      "token": 52,
+      "channel": 31,
+      "operation": 3,
+      "status": 8,
+      "request_hex": "1700851f1001033400000009000000",
+      "reply_hex": [
+        "5053314134000308090000000000"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "status": 8,
+        "operation": 3,
+        "generation": 9,
+        "free": 0
+      }
+    },
+    {
+      "token": 53,
+      "channel": 31,
+      "operation": 1,
+      "status": 0,
+      "request_hex": "1700851f10010135000800000000000040000011001100",
+      "reply_hex": [
+        "5053313035000a00000000400000",
+        "5053313135001100110000001100",
+        "5053313235000000000000000000",
+        "50533133350000000000011f0001"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "generation": 10,
+        "rate": 16384,
+        "capacity": 17,
+        "prime": 17,
+        "queued": 0,
+        "free": 17,
+        "accepted": 0,
+        "consumed": 0,
+        "underrun": 0,
+        "flags": 1,
+        "channel": 31,
+        "status": 0,
+        "operation": 1
+      }
+    },
+    {
+      "token": 54,
+      "channel": 31,
+      "operation": 3,
+      "status": 8,
+      "request_hex": "1700851f100103360000000a000000",
+      "reply_hex": [
+        "50533141360003080a0000000000"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "status": 8,
+        "operation": 3,
+        "generation": 10,
+        "free": 0
+      }
+    },
+    {
+      "token": 55,
+      "channel": 255,
+      "operation": 0,
+      "status": 0,
+      "request_hex": "170085ff1001003700000000000000",
+      "reply_hex": [
+        "50533130370000000000c05d0000",
+        "5053313137000020010000000000",
+        "5053313237000000000000000000",
+        "5053313337000000000000ff0000"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "generation": 0,
+        "rate": 24000,
+        "capacity": 8192,
+        "prime": 1,
+        "queued": 0,
+        "free": 0,
+        "accepted": 0,
+        "consumed": 0,
+        "underrun": 0,
+        "flags": 0,
+        "channel": 255,
+        "status": 0,
+        "operation": 0
+      }
+    },
+    {
+      "token": 56,
+      "channel": 255,
+      "operation": 0,
+      "status": 0,
+      "request_hex": "170085ff1001003800000000000000",
+      "reply_hex": [
+        "5053313038000000000000400000",
+        "5053313138000020010000000000",
+        "5053313238000000000000000000",
+        "5053313338000000000000ff0000"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "generation": 0,
+        "rate": 16384,
+        "capacity": 8192,
+        "prime": 1,
+        "queued": 0,
+        "free": 0,
+        "accepted": 0,
+        "consumed": 0,
+        "underrun": 0,
+        "flags": 0,
+        "channel": 255,
+        "status": 0,
+        "operation": 0
+      }
+    },
+    {
+      "token": 57,
+      "channel": 31,
+      "operation": 1,
+      "status": 0,
+      "request_hex": "1700851f10010139000800000000000040000000040004",
+      "reply_hex": [
+        "5053313039000b00000000400000",
+        "5053313139000004000400000004",
+        "5053313239000000000000000000",
+        "50533133390000000000011f0001"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "generation": 11,
+        "rate": 16384,
+        "capacity": 1024,
+        "prime": 1024,
+        "queued": 0,
+        "free": 1024,
+        "accepted": 0,
+        "consumed": 0,
+        "underrun": 0,
+        "flags": 1,
+        "channel": 31,
+        "status": 0,
+        "operation": 1
+      }
+    },
+    {
+      "token": 58,
+      "channel": 31,
+      "operation": 2,
+      "status": 0,
+      "request_hex": "1700851f1001023a0008000b00000028eb07000000f000",
+      "reply_hex": [
+        "505331413a0002000b0000001003"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "status": 0,
+        "operation": 2,
+        "generation": 11,
+        "free": 784
+      }
+    },
+    {
+      "token": 59,
+      "channel": 31,
+      "operation": 3,
+      "status": 0,
+      "request_hex": "1700851f1001033b0000000b000000",
+      "reply_hex": [
+        "505331303b000b00000000400000",
+        "505331313b0000040004f0001003",
+        "505331323b00f000000000000000",
+        "505331333b0000000000011f0003"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "generation": 11,
+        "rate": 16384,
+        "capacity": 1024,
+        "prime": 1024,
+        "queued": 240,
+        "free": 784,
+        "accepted": 240,
+        "consumed": 0,
+        "underrun": 0,
+        "flags": 1,
+        "channel": 31,
+        "status": 0,
+        "operation": 3
+      }
+    },
+    {
+      "token": 60,
+      "channel": 31,
+      "operation": 8,
+      "status": 0,
+      "request_hex": "1700851f1001083c0000000b000000",
+      "reply_hex": [
+        "505331413c0008000b0000000000"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "status": 0,
+        "operation": 8,
+        "generation": 11,
+        "free": 0
+      }
+    },
+    {
+      "token": 61,
+      "channel": 31,
+      "operation": 1,
+      "status": 0,
+      "request_hex": "1700851f1001013d000800000000000040000000040004",
+      "reply_hex": [
+        "505331303d000c00000000400000",
+        "505331313d000004000400000004",
+        "505331323d000000000000000000",
+        "505331333d0000000000011f0001"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "generation": 12,
+        "rate": 16384,
+        "capacity": 1024,
+        "prime": 1024,
+        "queued": 0,
+        "free": 1024,
+        "accepted": 0,
+        "consumed": 0,
+        "underrun": 0,
+        "flags": 1,
+        "channel": 31,
+        "status": 0,
+        "operation": 1
+      }
+    },
+    {
+      "token": 62,
+      "channel": 31,
+      "operation": 2,
+      "status": 0,
+      "request_hex": "1700851f1001023e0008000c00000028eb07000000f000",
+      "reply_hex": [
+        "505331413e0002000c0000001003"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "status": 0,
+        "operation": 2,
+        "generation": 12,
+        "free": 784
+      }
+    },
+    {
+      "token": 63,
+      "channel": 31,
+      "operation": 3,
+      "status": 0,
+      "request_hex": "1700851f1001033f0000000c000000",
+      "reply_hex": [
+        "505331303f000c00000000400000",
+        "505331313f0000040004f0001003",
+        "505331323f00f000000000000000",
+        "505331333f0000000000011f0003"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "generation": 12,
+        "rate": 16384,
+        "capacity": 1024,
+        "prime": 1024,
+        "queued": 240,
+        "free": 784,
+        "accepted": 240,
+        "consumed": 0,
+        "underrun": 0,
+        "flags": 1,
+        "channel": 31,
+        "status": 0,
+        "operation": 3
+      }
+    },
+    {
+      "token": 64,
+      "channel": 31,
+      "operation": 8,
+      "status": 0,
+      "request_hex": "1700851f100108400000000c000000",
+      "reply_hex": [
+        "50533141400008000c0000000000"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "status": 0,
+        "operation": 8,
+        "generation": 12,
+        "free": 0
+      }
+    },
+    {
+      "token": 65,
+      "channel": 31,
+      "operation": 1,
+      "status": 0,
+      "request_hex": "1700851f10010141000800000000000040000000040004",
+      "reply_hex": [
+        "5053313041000d00000000400000",
+        "5053313141000004000400000004",
+        "5053313241000000000000000000",
+        "50533133410000000000011f0001"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "generation": 13,
+        "rate": 16384,
+        "capacity": 1024,
+        "prime": 1024,
+        "queued": 0,
+        "free": 1024,
+        "accepted": 0,
+        "consumed": 0,
+        "underrun": 0,
+        "flags": 1,
+        "channel": 31,
+        "status": 0,
+        "operation": 1
+      }
+    },
+    {
+      "token": 66,
+      "channel": 31,
+      "operation": 2,
+      "status": 0,
+      "request_hex": "1700851f100102420008000d00000028eb07000000f000",
+      "reply_hex": [
+        "50533141420002000d0000001003"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "status": 0,
+        "operation": 2,
+        "generation": 13,
+        "free": 784
+      }
+    },
+    {
+      "token": 67,
+      "channel": 31,
+      "operation": 3,
+      "status": 0,
+      "request_hex": "1700851f100103430000000d000000",
+      "reply_hex": [
+        "5053313043000d00000000400000",
+        "50533131430000040004f0001003",
+        "505331324300f000000000000000",
+        "50533133430000000000011f0003"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "generation": 13,
+        "rate": 16384,
+        "capacity": 1024,
+        "prime": 1024,
+        "queued": 240,
+        "free": 784,
+        "accepted": 240,
+        "consumed": 0,
+        "underrun": 0,
+        "flags": 1,
+        "channel": 31,
+        "status": 0,
+        "operation": 3
+      }
+    },
+    {
+      "token": 68,
+      "channel": 31,
+      "operation": 8,
+      "status": 0,
+      "request_hex": "1700851f100108440000000d000000",
+      "reply_hex": [
+        "50533141440008000d0000000000"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "status": 0,
+        "operation": 8,
+        "generation": 13,
+        "free": 0
+      }
+    },
+    {
+      "token": 69,
+      "channel": 31,
+      "operation": 1,
+      "status": 0,
+      "request_hex": "1700851f10010145000800000000000040000000040004",
+      "reply_hex": [
+        "5053313045000e00000000400000",
+        "5053313145000004000400000004",
+        "5053313245000000000000000000",
+        "50533133450000000000011f0001"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "generation": 14,
+        "rate": 16384,
+        "capacity": 1024,
+        "prime": 1024,
+        "queued": 0,
+        "free": 1024,
+        "accepted": 0,
+        "consumed": 0,
+        "underrun": 0,
+        "flags": 1,
+        "channel": 31,
+        "status": 0,
+        "operation": 1
+      }
+    },
+    {
+      "token": 70,
+      "channel": 31,
+      "operation": 2,
+      "status": 0,
+      "request_hex": "1700851f100102460008000e00000028eb07000000f000",
+      "reply_hex": [
+        "50533141460002000e0000001003"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "status": 0,
+        "operation": 2,
+        "generation": 14,
+        "free": 784
+      }
+    },
+    {
+      "token": 71,
+      "channel": 31,
+      "operation": 3,
+      "status": 0,
+      "request_hex": "1700851f100103470000000e000000",
+      "reply_hex": [
+        "5053313047000e00000000400000",
+        "50533131470000040004f0001003",
+        "505331324700f000000000000000",
+        "50533133470000000000011f0003"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "generation": 14,
+        "rate": 16384,
+        "capacity": 1024,
+        "prime": 1024,
+        "queued": 240,
+        "free": 784,
+        "accepted": 240,
+        "consumed": 0,
+        "underrun": 0,
+        "flags": 1,
+        "channel": 31,
+        "status": 0,
+        "operation": 3
+      }
+    },
+    {
+      "token": 72,
+      "channel": 31,
+      "operation": 8,
+      "status": 0,
+      "request_hex": "1700851f100108480000000e000000",
+      "reply_hex": [
+        "50533141480008000e0000000000"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "status": 0,
+        "operation": 8,
+        "generation": 14,
+        "free": 0
+      }
+    },
+    {
+      "token": 73,
+      "channel": 31,
+      "operation": 1,
+      "status": 0,
+      "request_hex": "1700851f10010149000800000000000040000000040004",
+      "reply_hex": [
+        "5053313049000f00000000400000",
+        "5053313149000004000400000004",
+        "5053313249000000000000000000",
+        "50533133490000000000011f0001"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "generation": 15,
+        "rate": 16384,
+        "capacity": 1024,
+        "prime": 1024,
+        "queued": 0,
+        "free": 1024,
+        "accepted": 0,
+        "consumed": 0,
+        "underrun": 0,
+        "flags": 1,
+        "channel": 31,
+        "status": 0,
+        "operation": 1
+      }
+    },
+    {
+      "token": 74,
+      "channel": 31,
+      "operation": 2,
+      "status": 0,
+      "request_hex": "1700851f1001024a0008000f00000028eb07000000f000",
+      "reply_hex": [
+        "505331414a0002000f0000001003"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "status": 0,
+        "operation": 2,
+        "generation": 15,
+        "free": 784
+      }
+    },
+    {
+      "token": 75,
+      "channel": 31,
+      "operation": 3,
+      "status": 0,
+      "request_hex": "1700851f1001034b0000000f000000",
+      "reply_hex": [
+        "505331304b000f00000000400000",
+        "505331314b0000040004f0001003",
+        "505331324b00f000000000000000",
+        "505331334b0000000000011f0003"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "generation": 15,
+        "rate": 16384,
+        "capacity": 1024,
+        "prime": 1024,
+        "queued": 240,
+        "free": 784,
+        "accepted": 240,
+        "consumed": 0,
+        "underrun": 0,
+        "flags": 1,
+        "channel": 31,
+        "status": 0,
+        "operation": 3
+      }
+    },
+    {
+      "token": 76,
+      "channel": 31,
+      "operation": 8,
+      "status": 0,
+      "request_hex": "1700851f1001084c0000000f000000",
+      "reply_hex": [
+        "505331414c0008000f0000000000"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "status": 0,
+        "operation": 8,
+        "generation": 15,
+        "free": 0
+      }
+    },
+    {
+      "token": 77,
+      "channel": 31,
+      "operation": 1,
+      "status": 0,
+      "request_hex": "1700851f1001014d000800000000000040000000040004",
+      "reply_hex": [
+        "505331304d001000000000400000",
+        "505331314d000004000400000004",
+        "505331324d000000000000000000",
+        "505331334d0000000000011f0001"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "generation": 16,
+        "rate": 16384,
+        "capacity": 1024,
+        "prime": 1024,
+        "queued": 0,
+        "free": 1024,
+        "accepted": 0,
+        "consumed": 0,
+        "underrun": 0,
+        "flags": 1,
+        "channel": 31,
+        "status": 0,
+        "operation": 1
+      }
+    },
+    {
+      "token": 78,
+      "channel": 31,
+      "operation": 2,
+      "status": 0,
+      "request_hex": "1700851f1001024e0008001000000028eb07000000f000",
+      "reply_hex": [
+        "505331414e000200100000001003"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "status": 0,
+        "operation": 2,
+        "generation": 16,
+        "free": 784
+      }
+    },
+    {
+      "token": 79,
+      "channel": 31,
+      "operation": 3,
+      "status": 0,
+      "request_hex": "1700851f1001034f00000010000000",
+      "reply_hex": [
+        "505331304f001000000000400000",
+        "505331314f0000040004f0001003",
+        "505331324f00f000000000000000",
+        "505331334f0000000000011f0003"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "generation": 16,
+        "rate": 16384,
+        "capacity": 1024,
+        "prime": 1024,
+        "queued": 240,
+        "free": 784,
+        "accepted": 240,
+        "consumed": 0,
+        "underrun": 0,
+        "flags": 1,
+        "channel": 31,
+        "status": 0,
+        "operation": 3
+      }
+    },
+    {
+      "token": 80,
+      "channel": 31,
+      "operation": 8,
+      "status": 0,
+      "request_hex": "1700851f1001085000000010000000",
+      "reply_hex": [
+        "5053314150000800100000000000"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "status": 0,
+        "operation": 8,
+        "generation": 16,
+        "free": 0
+      }
+    },
+    {
+      "token": 81,
+      "channel": 31,
+      "operation": 1,
+      "status": 0,
+      "request_hex": "1700851f10010151000800000000000040000000040004",
+      "reply_hex": [
+        "5053313051001100000000400000",
+        "5053313151000004000400000004",
+        "5053313251000000000000000000",
+        "50533133510000000000011f0001"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "generation": 17,
+        "rate": 16384,
+        "capacity": 1024,
+        "prime": 1024,
+        "queued": 0,
+        "free": 1024,
+        "accepted": 0,
+        "consumed": 0,
+        "underrun": 0,
+        "flags": 1,
+        "channel": 31,
+        "status": 0,
+        "operation": 1
+      }
+    },
+    {
+      "token": 82,
+      "channel": 31,
+      "operation": 2,
+      "status": 0,
+      "request_hex": "1700851f100102520008001100000028eb07000000f000",
+      "reply_hex": [
+        "5053314152000200110000001003"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "status": 0,
+        "operation": 2,
+        "generation": 17,
+        "free": 784
+      }
+    },
+    {
+      "token": 83,
+      "channel": 31,
+      "operation": 3,
+      "status": 0,
+      "request_hex": "1700851f1001035300000011000000",
+      "reply_hex": [
+        "5053313053001100000000400000",
+        "50533131530000040004f0001003",
+        "505331325300f000000000000000",
+        "50533133530000000000011f0003"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "generation": 17,
+        "rate": 16384,
+        "capacity": 1024,
+        "prime": 1024,
+        "queued": 240,
+        "free": 784,
+        "accepted": 240,
+        "consumed": 0,
+        "underrun": 0,
+        "flags": 1,
+        "channel": 31,
+        "status": 0,
+        "operation": 3
+      }
+    },
+    {
+      "token": 84,
+      "channel": 31,
+      "operation": 8,
+      "status": 0,
+      "request_hex": "1700851f1001085400000011000000",
+      "reply_hex": [
+        "5053314154000800110000000000"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "status": 0,
+        "operation": 8,
+        "generation": 17,
+        "free": 0
+      }
+    },
+    {
+      "token": 85,
+      "channel": 31,
+      "operation": 1,
+      "status": 0,
+      "request_hex": "1700851f10010155000800000000000040000000040004",
+      "reply_hex": [
+        "5053313055001200000000400000",
+        "5053313155000004000400000004",
+        "5053313255000000000000000000",
+        "50533133550000000000011f0001"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "generation": 18,
+        "rate": 16384,
+        "capacity": 1024,
+        "prime": 1024,
+        "queued": 0,
+        "free": 1024,
+        "accepted": 0,
+        "consumed": 0,
+        "underrun": 0,
+        "flags": 1,
+        "channel": 31,
+        "status": 0,
+        "operation": 1
+      }
+    },
+    {
+      "token": 86,
+      "channel": 31,
+      "operation": 2,
+      "status": 0,
+      "request_hex": "1700851f100102560008001200000028eb07000000f000",
+      "reply_hex": [
+        "5053314156000200120000001003"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "status": 0,
+        "operation": 2,
+        "generation": 18,
+        "free": 784
+      }
+    },
+    {
+      "token": 87,
+      "channel": 31,
+      "operation": 3,
+      "status": 0,
+      "request_hex": "1700851f1001035700000012000000",
+      "reply_hex": [
+        "5053313057001200000000400000",
+        "50533131570000040004f0001003",
+        "505331325700f000000000000000",
+        "50533133570000000000011f0003"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "generation": 18,
+        "rate": 16384,
+        "capacity": 1024,
+        "prime": 1024,
+        "queued": 240,
+        "free": 784,
+        "accepted": 240,
+        "consumed": 0,
+        "underrun": 0,
+        "flags": 1,
+        "channel": 31,
+        "status": 0,
+        "operation": 3
+      }
+    },
+    {
+      "token": 88,
+      "channel": 31,
+      "operation": 8,
+      "status": 0,
+      "request_hex": "1700851f1001085800000012000000",
+      "reply_hex": [
+        "5053314158000800120000000000"
+      ],
+      "non_service_packets": [],
+      "result": {
+        "status": 0,
+        "operation": 8,
+        "generation": 18,
+        "free": 0
+      }
+    }
+  ],
+  "modules": {
+    "numeric-1.vdpl": "722f77c8b33b57ec040c3366b6ceff16267efb358a716074179a1fb4cb6a6522",
+    "failed-init.vdpl": "1a17c9b21c4a743b081611569eed0c3881b792b83259a67a6ec0aa50c1c0bf1c",
+    "native-lifecycle.vdpl": "f7c94fd2ad166aeb48779b387472ba674c4f7076fb918783a1dcd990e54e3733"
+  },
+  "resource_observations": {
+    "boot": {
+      "internal_free_bytes": 60732,
+      "internal_largest_block_bytes": 38900,
+      "command_stack_free_bytes": 2760,
+      "spiram_free_bytes": 4167647,
+      "spiram_largest_block_bytes": 4128756,
+      "audio_stack_free_bytes": 1536,
+      "tasks": 12
+    },
+    "final": {
+      "internal_free_bytes": 139532,
+      "internal_largest_block_bytes": 45044,
+      "command_stack_free_bytes": 2152,
+      "spiram_free_bytes": 4157099,
+      "spiram_largest_block_bytes": 4128756,
+      "audio_stack_free_bytes": 1456,
+      "tasks": 12
+    }
+  },
+  "firmware_source_receipt": {
+    "path": "build/vdpl011wire/firmware-source.json",
+    "sha256": "86886e4a74a0ddeb2e71d9020557144295328446bfb168b347241ad95cb56584",
+    "receipt": {
+      "project": "VDPlet Runtime",
+      "features": "lean",
+      "vdp_repository": "https://github.com/tomm/agon-vdp.git",
+      "vdp_pin": "1056ee38ec1cc68ed327bd32ee47d04b1c30597c",
+      "graphics_pin": "ac2dd5986daf496c43ae8e7fe41836274aec54a0",
+      "source": "/Agon/mystuff/agon-vdplet/build/vdpl011wire/firmware-src",
+      "upstream_modified": false,
+      "builder_sha256": "a4e87f91a652f72472a9fc7fed52653f65531dbeb563c1929fd563e3b864d58a",
+      "dispatch_sha256": "35fff838a0942826fd8b63a69bbde9bae17a0d428e6a9289dd03607b225817ef",
+      "processor_sha256": "93b17e8c57bc0679226bf823967aa77c46e69d4972ce90d3bd6b6bc593ea1edd",
+      "context_sha256": "38004060560979dc7338547345ad7784820f7938fb490a7afe8ac28d1d407c45",
+      "audio_sha256": "b42f103cbbf126c609a6e0eff14c33aae56094f9ec9614da0b1df5a30e7f30ad",
+      "audio_vdu_sha256": "8c3b3917571658a19389891df8b614f59fda766813f87f0dbf45f0d981d658ee",
+      "audio_channel_sha256": "0100e83d3921aef6a1195b185842be32a012068914f6d6675da6e8ee3066e22f",
+      "buffered_sha256": "b9d9d93295ddc5fb05c802071057e32ed9755837f029ce381340072352c262f0",
+      "configuration_sha256": "7947cbd2e5fcb38e12ca3b8dee44b97700da0ca1d05c19914b100d47885f0bb1",
+      "headers": {
+        "vdplet_policy.h": "c69d6f3654b4b5dd4a8ae76e971818f4b13369d61dbded607b844e3268f66419",
+        "vdplet.h": "574fe46923142b0cae9fa7cb5989bea5c76a1cf8a2b6327c6ae4a783ced7bbe8",
+        "vdplet_services.h": "44f97a1155cad4e737e220807e5913a3f69d7f42054c7821ea9abe014bd3550f",
+        "vdplet_protocol.h": "e65d387735a6c600626608127ce57ca9e29249bc2aa535fbb5f9be29f3e06254",
+        "vdplet_vdu_validate.h": "5b95c6ead04b6a86bb578f6f5c1cd8b5b70dc8d72e11502874d41cd00b564381",
+        "vdplet_lines_validate.h": "2dd5d6168eb98b0adcae6070eb55f1fdcc4136ceb065f8274ba15b53fa09c4a3",
+        "vdplet_image.h": "1908ccf123f53a8393a3d357b92119c19bd3e56b7576f68af256ad329a850397",
+        "vdplet_runtime.h": "77210b1206810b49689268049678236a0d9e45d6aa0750128ba325b8369c8ceb",
+        "vdplet_pcm_sink_protocol.h": "1c0215f00853081bdf4d58ef794b889145aa71c9e1f119f16a5e29c1f384f942",
+        "vdplet_pcm_sink.h": "bb976714113e448ff11a900960b422ff378925484e2b8247266b0a9bae3f058b",
+        "vdplet_pcm_sink_core.h": "15820a5711ebfa7accaabdae89ad556b7d642bee9def8855123a461f79ba5a9c",
+        "vdp_pcm_sink_wire.h": "5555235b73a68c7ee5648c7fe67f1e99014c707c1fe024b2dec5225edd9feb4e",
+        "vdplet_pcm_sink_wire.h": "5ded0d86f8e162f04085d72449935f7d05e130f473267a68a9b39bdb2128310d",
+        "vdplet_pcm_sink_vdu.h": "aba601094da641a1e5a711ba17d855e44ab375830b183777b15af292a079904e"
+      },
+      "exported_headers": {
+        "vdplet_policy.h": "c69d6f3654b4b5dd4a8ae76e971818f4b13369d61dbded607b844e3268f66419",
+        "vdplet.h": "b20994f60adf3c794bdc4fc5ec2d5951dfc7ea68476f564aa04fedeeabe5b622",
+        "vdplet_services.h": "44f97a1155cad4e737e220807e5913a3f69d7f42054c7821ea9abe014bd3550f",
+        "vdplet_protocol.h": "e65d387735a6c600626608127ce57ca9e29249bc2aa535fbb5f9be29f3e06254",
+        "vdplet_vdu_validate.h": "72922683020827fb99a101ae909da28d8e3f6e1d9c79ad1cda215bc5176e1b13",
+        "vdplet_lines_validate.h": "0086167133611ec7c314cfcf2f13fef9986dae1dff540f1f653c91931bee0dff",
+        "vdplet_image.h": "e9c92e3dedbf8a81d24c2c245944f2eaffa539b2ee7ae791772a45c97c75b4cd",
+        "vdplet_runtime.h": "77210b1206810b49689268049678236a0d9e45d6aa0750128ba325b8369c8ceb",
+        "vdplet_pcm_sink_protocol.h": "1c0215f00853081bdf4d58ef794b889145aa71c9e1f119f16a5e29c1f384f942",
+        "vdplet_pcm_sink.h": "bb976714113e448ff11a900960b422ff378925484e2b8247266b0a9bae3f058b",
+        "vdplet_pcm_sink_core.h": "8b3e0f225d3f8f045ad372376f63fcf0129549a5764f8331ec321d6c718fd1b4",
+        "vdp_pcm_sink_wire.h": "5555235b73a68c7ee5648c7fe67f1e99014c707c1fe024b2dec5225edd9feb4e",
+        "vdplet_pcm_sink_wire.h": "5a5759e7b06e06ee8d8cc43814ad1896dbabb5f7a38f69e69ca94c916d2955e7",
+        "vdplet_pcm_sink_vdu.h": "aba601094da641a1e5a711ba17d855e44ab375830b183777b15af292a079904e"
+      },
+      "build_configuration_sha256": "f8203bc50d242d816fce6a79a1b877d95983d18a3d20ce0799a0a077a8051268",
+      "pcm_wire": true
+    }
+  },
+  "repeated_ring_cycles": [
+    {
+      "open": {
+        "internal_free_bytes": 138492,
+        "internal_largest_block_bytes": 45044,
+        "command_stack_free_bytes": 2152,
+        "spiram_free_bytes": 4157099,
+        "spiram_largest_block_bytes": 4128756,
+        "audio_stack_free_bytes": 1456,
+        "tasks": 12
+      },
+      "closed": {
+        "internal_free_bytes": 139532,
+        "internal_largest_block_bytes": 45044,
+        "command_stack_free_bytes": 2152,
+        "spiram_free_bytes": 4157099,
+        "spiram_largest_block_bytes": 4128756,
+        "audio_stack_free_bytes": 1456,
+        "tasks": 12
+      },
+      "allocated_bytes": 1040
+    },
+    {
+      "open": {
+        "internal_free_bytes": 138492,
+        "internal_largest_block_bytes": 45044,
+        "command_stack_free_bytes": 2152,
+        "spiram_free_bytes": 4157099,
+        "spiram_largest_block_bytes": 4128756,
+        "audio_stack_free_bytes": 1456,
+        "tasks": 12
+      },
+      "closed": {
+        "internal_free_bytes": 139532,
+        "internal_largest_block_bytes": 45044,
+        "command_stack_free_bytes": 2152,
+        "spiram_free_bytes": 4157099,
+        "spiram_largest_block_bytes": 4128756,
+        "audio_stack_free_bytes": 1456,
+        "tasks": 12
+      },
+      "allocated_bytes": 1040
+    },
+    {
+      "open": {
+        "internal_free_bytes": 138492,
+        "internal_largest_block_bytes": 45044,
+        "command_stack_free_bytes": 2152,
+        "spiram_free_bytes": 4157099,
+        "spiram_largest_block_bytes": 4128756,
+        "audio_stack_free_bytes": 1456,
+        "tasks": 12
+      },
+      "closed": {
+        "internal_free_bytes": 139532,
+        "internal_largest_block_bytes": 45044,
+        "command_stack_free_bytes": 2152,
+        "spiram_free_bytes": 4157099,
+        "spiram_largest_block_bytes": 4128756,
+        "audio_stack_free_bytes": 1456,
+        "tasks": 12
+      },
+      "allocated_bytes": 1040
+    },
+    {
+      "open": {
+        "internal_free_bytes": 138492,
+        "internal_largest_block_bytes": 45044,
+        "command_stack_free_bytes": 2152,
+        "spiram_free_bytes": 4157099,
+        "spiram_largest_block_bytes": 4128756,
+        "audio_stack_free_bytes": 1456,
+        "tasks": 12
+      },
+      "closed": {
+        "internal_free_bytes": 139532,
+        "internal_largest_block_bytes": 45044,
+        "command_stack_free_bytes": 2152,
+        "spiram_free_bytes": 4157099,
+        "spiram_largest_block_bytes": 4128756,
+        "audio_stack_free_bytes": 1456,
+        "tasks": 12
+      },
+      "allocated_bytes": 1040
+    },
+    {
+      "open": {
+        "internal_free_bytes": 138492,
+        "internal_largest_block_bytes": 45044,
+        "command_stack_free_bytes": 2152,
+        "spiram_free_bytes": 4157099,
+        "spiram_largest_block_bytes": 4128756,
+        "audio_stack_free_bytes": 1456,
+        "tasks": 12
+      },
+      "closed": {
+        "internal_free_bytes": 139532,
+        "internal_largest_block_bytes": 45044,
+        "command_stack_free_bytes": 2152,
+        "spiram_free_bytes": 4157099,
+        "spiram_largest_block_bytes": 4128756,
+        "audio_stack_free_bytes": 1456,
+        "tasks": 12
+      },
+      "allocated_bytes": 1040
+    },
+    {
+      "open": {
+        "internal_free_bytes": 138492,
+        "internal_largest_block_bytes": 45044,
+        "command_stack_free_bytes": 2152,
+        "spiram_free_bytes": 4157099,
+        "spiram_largest_block_bytes": 4128756,
+        "audio_stack_free_bytes": 1456,
+        "tasks": 12
+      },
+      "closed": {
+        "internal_free_bytes": 139532,
+        "internal_largest_block_bytes": 45044,
+        "command_stack_free_bytes": 2152,
+        "spiram_free_bytes": 4157099,
+        "spiram_largest_block_bytes": 4128756,
+        "audio_stack_free_bytes": 1456,
+        "tasks": 12
+      },
+      "allocated_bytes": 1040
+    },
+    {
+      "open": {
+        "internal_free_bytes": 138492,
+        "internal_largest_block_bytes": 45044,
+        "command_stack_free_bytes": 2152,
+        "spiram_free_bytes": 4157099,
+        "spiram_largest_block_bytes": 4128756,
+        "audio_stack_free_bytes": 1456,
+        "tasks": 12
+      },
+      "closed": {
+        "internal_free_bytes": 139532,
+        "internal_largest_block_bytes": 45044,
+        "command_stack_free_bytes": 2152,
+        "spiram_free_bytes": 4157099,
+        "spiram_largest_block_bytes": 4128756,
+        "audio_stack_free_bytes": 1456,
+        "tasks": 12
+      },
+      "allocated_bytes": 1040
+    },
+    {
+      "open": {
+        "internal_free_bytes": 138492,
+        "internal_largest_block_bytes": 45044,
+        "command_stack_free_bytes": 2152,
+        "spiram_free_bytes": 4157099,
+        "spiram_largest_block_bytes": 4128756,
+        "audio_stack_free_bytes": 1456,
+        "tasks": 12
+      },
+      "closed": {
+        "internal_free_bytes": 139532,
+        "internal_largest_block_bytes": 45044,
+        "command_stack_free_bytes": 2152,
+        "spiram_free_bytes": 4157099,
+        "spiram_largest_block_bytes": 4128756,
+        "audio_stack_free_bytes": 1456,
+        "tasks": 12
+      },
+      "allocated_bytes": 1040
+    }
+  ],
+  "audio16_requests_sent": 93,
+  "pcm_packet_bytes": 3440,
+  "pcm_packets_sha256": "ccfad0cc562d237796a24fbff7a35e2566cb59b1cbf89d4b60f2c4e11eafc9ee",
+  "execution_stats": {
+    "engine": "jit",
+    "frames": 333,
+    "cycles": 1466098972,
+    "retired": 672750567,
+    "uart_rx": 58622,
+    "uart_tx": 14071,
+    "uart_delivered": 14071,
+    "isync": 47,
+    "code_invalidations": 5,
+    "keys": 0,
+    "failed": false,
+    "unhandled": 0,
+    "unregistered": 0,
+    "unmapped": 0
+  },
+  "result_bytes": 8800,
+  "outbound_bytes": 58622,
+  "elapsed_seconds": 6.174
+}

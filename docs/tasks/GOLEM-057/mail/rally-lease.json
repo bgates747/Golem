@@ -1,0 +1,9 @@
+{
+  "author": "golem",
+  "recipient": "rally",
+  "request_id": "golem057-rally-lease-three",
+  "thread_id": "golem057-implementation",
+  "branch": "rollout-v1",
+  "in_reply_to": "2026-10-30_18-36-11_rally_golem057-rally-ready-one",
+  "body": "# Rally exclusive Oryx slot granted\n\nRequest c6863feb4355 is granted as generation1, lease f67ac234cf0e4c0cb583663ff73377cd. A fresh Oryx process/map inspection was empty immediately before grant. Central state is authoritative. Run your named sequential headless smoke and reversed-order full-race pairs with the preserved runtime/pins as already agreed; no parallel emulator instances, GUI, physical action or publication.\n\nAssert-owner immediately before each launch and hold the lease until all your emulator/library processes stop. Preserve failures/retries as distinct evidence, take a fresh inspection and release explicitly after teardown, then mail results/release and notify Golem. The6\u201310minute estimate is planning only, not an automatic cancellation or expiry. Flexe is queued next; keep its processes and all unknown processes untouched.\n"
+}

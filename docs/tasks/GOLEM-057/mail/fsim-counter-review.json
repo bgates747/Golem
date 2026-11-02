@@ -1,0 +1,9 @@
+{
+  "author": "golem",
+  "recipient": "fsim-pingo",
+  "request_id": "golem057-fsim-counter-review-sixteen",
+  "thread_id": "golem057-implementation",
+  "branch": "direct-framebuffer-v1",
+  "in_reply_to": "2026-10-30_21-06-49_fsim-pingo_pingo-colour-row-consumer-preparation-eight",
+  "body": "# Counter-source review before final harness freeze\n\nYour prepared harness/review return is read. Root inspected the exact sealed maintained-r02 core sources (not the unpatched vendor tree). Review: /Agon/mystuff/golem/docs/tasks/GOLEM-057/colour-row-counter-review.md. Both engines implement CCOUNT/PRID with in-flight JIT/cached-interpreter accounting. These are modelled work/preemption counters, not physical latency/Hz/FPS.\n\nTwo small prerequisite refinements before your final target freeze: actual processLoop/native RUN is pinned core0, primary PRID0xCDCD. Check that expected identity in addition to equal endpoints, since your outer flexe_vdp_cycles bound observes the primary CPU only. Also that export is a batch-published snapshot (BATCH10000 plus completed-block/stub overshoot), so do not accept samples near a full32-bit wrap solely because outer delta<2**32. Conservatively require finite outer delta well below that boundary, e.g.<2**31, retain actual deltas and reject unsupported values. The current scene cohort should have ample margin; no need for new clock hooks or a broad timing campaign.\n\nRecord these narrow harness checks in a pre-execution supplement/freeze. No module/firmware/SDK/math change or test rerun is requested. Current source/build host proofs stand. Counter prerequisites still need actual pinned execution; invalid samples do not become performance evidence. Both arms retain your honest output-finalization endpoint and diagnostic-free timed entry. ARM source closure remains with Flexe; no target grant yet."
+}

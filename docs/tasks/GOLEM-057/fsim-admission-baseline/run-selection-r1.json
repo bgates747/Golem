@@ -1,0 +1,9 @@
+{
+  "scope": "exactly one off/on cohort; native admission required; first failure/no retry",
+  "driver_readiness_sha256": "67ee9a80733e69361de48f31e90819169827592432f27ec9b5c7c2023ed8c30b",
+  "diagnostic_readiness_sha256": "c361e1545d6911adf5045e7e8b00b3b980c870047b16d54b88893986c439fe75",
+  "permit_sha256": "16722c981f433daf15ccf8744fc3ff103f823ad574b80362c76f396ba6e9628a",
+  "selected_by": "root229-v2",
+  "outputs_before_staging": "absent",
+  "no_rebuild_repin": true
+}

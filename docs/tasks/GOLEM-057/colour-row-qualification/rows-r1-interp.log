@@ -1,0 +1,23 @@
+Loaded ESP32 image /home/smith/Agon/mystuff/agon-vdplet/.emulator/vdpl-012-qualification/esp32-firmware.bin: 6 segments, entry=0x40087688
+  Segment 0: 0x3F400020 (278504 bytes) -> flash_data
+  Segment 1: 0x3FFBDB60 (19928 bytes) -> sram_data
+  Segment 2: 0x40080000 (29224 bytes) -> sram_insn
+  Segment 3: 0x400D0020 (700408 bytes) -> flash_insn
+  Segment 4: 0x40087228 (65612 bytes) -> sram_insn
+  Segment 5: 0x50000200 (4 bytes) -> rtc_slow
+[predecode] Built table: 1515517 entries, 19 MB (4 MB flash coverage)
+[APPCPU] boot addr = 0x40087520 (from pc=0x4000689C)
+[     10000] CORE1 started at 0x40087520
+[APPCPU] boot addr = 0x00000000 (from pc=0x4000689C)
+interp exact ABI0..6 sizes/masks; old tables never gain new capability
+interp actual present callback requires module declaration; valid failed descriptor has no pointer/span/token
+interp ABI1.6 descriptor, INIT phase refusal and actual SBGR2222 hidden-page discovery
+interp all4X biases, odd/full widths, final row/column, raw sync/group padding and copied-control pictures match
+interp ordinary queued C3 then RUN rebinds new hidden page; pending-Canvas swap injection remains host/source proof
+interp cross-kind old ROW/END, immutable rectangle, BUSY drawing,4buffer slots, stale tokens and fresh generation
+interp bad extents/input lease/zero/negative/outside geometry reject without granting row pointers
+interp single visible page and packed surface refuse; active mono lease rejects colour ROW/END and BEGIN BUSY
+interp normal forgotten END is automatically closed, retains hidden result and permits next frame transaction
+interp failed RUN never publishes; Canvas/old copy path recover, FINI refuses row phase and unload/reload works
+interp unchanged ABI0 packed-mono and numeric packages retain their actual output
+PASS 11 groups 2620416 decoded pixels

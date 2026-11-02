@@ -1,0 +1,21 @@
+{
+  "scope": "draft layout/count proof only; no firmware/parser qualification",
+  "request_bytes": 23,
+  "write_ack_wire_bytes": 16,
+  "state_bytes": 32,
+  "state_wire_bytes": 64,
+  "state_packet_body_bytes": [
+    14,
+    14,
+    14,
+    14
+  ],
+  "request_hex": "1700851f100102563408007856341274ea78563412f000",
+  "ack_hex": "810e505331415634020078563412201e",
+  "state_packet_hex": [
+    "810e50533130563478563412c05d0000",
+    "810e5053313156340020f000e001201e",
+    "810e505331325634feffffff40e20100",
+    "810e5053313356342a000000031f0003"
+  ]
+}

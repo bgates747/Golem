@@ -1,0 +1,21 @@
+{
+  "source": "/Agon/mystuff/Wolf3dOrig/src/asm/wolf3d_vdplet_client/tgt/oryx-pass-gen35/rehearsal.json",
+  "sha256": "974a205396efab72fd7797a9724b672b0a64f9330e49a5005a94a2f459be247b",
+  "passed": true,
+  "result": {
+    "result": 0,
+    "status": 0,
+    "pending": 0,
+    "callback_error": 0,
+    "handle": 0,
+    "native_error": 0,
+    "token": 7,
+    "schema": 1
+  },
+  "scene_sha256": "42e227e80bba3cd7d65dc1bc1bee0b87e5d233e1cd8d3a1dd4f26805499bb4a2",
+  "frontend_returncode": 0,
+  "actual_mos_return": true,
+  "callback_and_owned_buffers_released": true,
+  "seconds": 6.299,
+  "scope": "Finiteproductionclient gate only; no fullgame/default/physical/publication qualification"
+}

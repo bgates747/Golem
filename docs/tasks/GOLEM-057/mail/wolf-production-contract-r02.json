@@ -1,0 +1,9 @@
+{
+  "author": "golem",
+  "recipient": "wolf3dorig",
+  "request_id": "golem057-wolf-production-contract-r02-twentynine",
+  "thread_id": "golem057",
+  "branch": "wolf-production",
+  "in_reply_to": "2026-10-30_22-40-21_golem_golem057-wolf-production-contract-twentyeight",
+  "body": "# Client contract revision2: precise native error/UNLOAD and consolidation semantics\n\nImmediate source-review correction: use /Agon/mystuff/golem/docs/tasks/GOLEM-057/wolf-production-client-contract-v1-r02.md SHAefeb2e352156e8bf67b17120b0dc976ca4659a3e897dae7a161e24d471e6a65b instead of initial de41d131 (preserved).\n\n1. ERROR7/8 can come from native RUN/FINI as well as runtime admission. An admitted valid-owned UNLOAD frees even when FINI errors; rejected admission does not. If provenance/release is uncertain after response, INFO2 establishes whether the owned slot remains. Never clear ownership unconditionally on any ERROR.\n2. DONE establishes RUN returned; ERROR may mean request rejected without native entry. Both finish the matching request, not drawing presentation.\n3. Consolidation14 has no success ACK and allocates a total-sized destination alongside original blocks. LOAD admission is the relevant contiguous/exact-size result; ordinary WRITE length is u16.\n4. MOS hook exposes scratch pointer, not original packet length; the accepted fixture does not validate length independently, and neutralized replies still increment MOS key-event count. Consume replies before the real game key path.\n\nNo first-renderer/scope/grant change. These are clarifications before production source freezes, not a new wire/runtime feature.\n"
+}

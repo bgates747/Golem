@@ -1,5 +1,10 @@
 # GOLEM-056 outreach, returns and later assignments
 
+Historical consultation snapshot: this completed GOLEM-056 record is preserved
+for provenance. Live assignments, shared contracts and Oryx scheduling are owned
+by [agon-dev-env](/Agon/mystuff/agon-dev-env/cross-agent/vdplet-rollout/README.md);
+this file is not a current coordination register.
+
 All 7 sessions received mailbox invitations and brief-only chat notifications. 7 sessions have mailed 8 reports; 0 remain outstanding. Receipt and content review are recorded separately; acknowledgement alone is not a substantive return.
 
 | Existing session | Mail identity | Mail read/replied | Content review | Return |

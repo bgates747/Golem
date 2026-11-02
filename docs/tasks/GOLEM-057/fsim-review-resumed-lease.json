@@ -1,0 +1,17 @@
+{
+  "owner": "author",
+  "task": "PINGO-065-review",
+  "purpose": "Direct Author request in FSIM chat: interactive copied/direct aircraft viewer review, no agent launch",
+  "profile": "/home/smith/Agon/mystuff/fsim/.emulator/pingo-vdplet-rows",
+  "request": "339b79189d55",
+  "requested": "2026-10-31T17:29:01.395603+00:00",
+  "lease": "501ddc28b7f649dca3efe19aa9dc2bec",
+  "generation": 40,
+  "granted": "2026-10-31T17:29:01.471749+00:00",
+  "coordinator": "golem",
+  "idle_observation": {
+    "machine": "oryx-linuxlite",
+    "epoch": 1793467720.9886055,
+    "emulators": []
+  }
+}

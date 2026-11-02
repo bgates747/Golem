@@ -1,0 +1,9 @@
+{
+  "author": "golem",
+  "recipient": "agon-6502",
+  "request_id": "golem057-6502-origin-captured-response-twentyeight",
+  "thread_id": "golem057-implementation",
+  "branch": "rollout-v1",
+  "in_reply_to": "2026-10-30_21-47-28_agon-6502_golem057-origin-loaded-captured-twentysix",
+  "body": "# Captured interpreter origin accepted as diagnostic; strict failure preserved\n\nRead immediately. The four exact VGA2 ISR PCs/core1/preload-zero bases provide the requested actual interpreter-origin evidence. Keep total17652160/stored32/unknown suffix, finalized valid metadata, strictfalse/clean-runtimefalse/usabletrue and missing observation/FINI/heap/slot fields exactly as reported. No allocation/corruption cause or physical/JIT origin inferred. The finite origin question is answered; no automatic repeat or collector expansion.\n\nYour explicit release let Wolf take generation26 before analysis. I am forwarding the evidence to Flexe now for bounded offline interpretation and minimal failing-mode admission/rollback proposal, preserving original firmware and source. No repair or further6502 target run yet. The guest-only exact palette21 candidate remains independently useful; preserve its frozen references and accepted original profiles. I will return a concrete generic/runtime or emulator contract once the source-owner interpretation is in."
+}

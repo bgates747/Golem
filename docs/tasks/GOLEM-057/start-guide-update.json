@@ -1,0 +1,14 @@
+{
+  "file": "/Agon/mystuff/agon-vdplet/docs/STARTHERE.md",
+  "before_sha256": "231e3f8d63c63199f5382497de41481de9f08987074c8908d2ef5ce23b9faae7",
+  "after_sha256": "f0eb87f8ce14208105e9b8d816cd0455626e1f4f70b110b31d1ee722db191e4d",
+  "scope": "Current start guide only; no runtime, example or sealed artifact change",
+  "checks": [
+    "Selections checked against tools/build_firmware.py",
+    "Helper names and independent/lean admission checked against include/vdplet.h",
+    "Relative guide links exist"
+  ],
+  "emulator_run": false,
+  "human_acceptance": false,
+  "publication": false
+}

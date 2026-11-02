@@ -1,0 +1,207 @@
+{
+  "schema": "vdpl012-target-qualification-freeze-v1",
+  "before_target_execution": true,
+  "emulator_instantiated": false,
+  "contract_sha256": "5172702f7ebc7dea77efb487d9ffafc99514981c7600ffc11d769835f44f267e",
+  "clarification_sha256": "db2012b778701ee95cf71b2d06e7fb469fa386702631ea63de88f77a1973c5f1",
+  "sdk_snapshot": {
+    "scope": "Immutable ABI1.6 candidate SDK snapshot; target qualification pending",
+    "created": "2026-10-31T00:34:31.514984+00:00",
+    "contract_sha256": "5172702f7ebc7dea77efb487d9ffafc99514981c7600ffc11d769835f44f267e",
+    "source_baseline": "Current matched VDPL012 source, including preserved010/011 changes; not an old frozen build export",
+    "files": {
+      "include/vdp_audio_queue.h": "4f7363364712301529d5c7bbc9ebd1496a7103aaae717880e4ddb3375520b85e",
+      "include/vdp_pcm_sink_wire.h": "5555235b73a68c7ee5648c7fe67f1e99014c707c1fe024b2dec5225edd9feb4e",
+      "include/vdplet.h": "92a6bbc403ecc51e165c103cfd16fd071f3d644ad52f83a4a7cb4fe088a5a2d6",
+      "include/vdplet_pcm_sink.h": "e3bf5d900105ddd87e82f5cd38301fab02ffb7a7e38f81012db0bb2e13ba963c",
+      "include/vdplet_protocol.h": "a55dce6ca09a32da736e43416207a1e5c3d1bceea6c70c1229764696f622f5ef",
+      "include/vdplet_services.h": "00844d5220bf05d329c4f66f6fb3653d8bcca3f60eafc51c820820f1203f394f",
+      "src/vdplet_policy.h": "c69d6f3654b4b5dd4a8ae76e971818f4b13369d61dbded607b844e3268f66419",
+      "tools/build_module.py": "d9bf73144f57b64cc463f10f634f4de2893e50349f4782ba299db24aa47f93c9",
+      "tools/module.exports": "9fd0e3d42b2162d4d65e43592c78e5c0ba5663a937b1474c76312654c1dce1a9"
+    }
+  },
+  "sources": {
+    "worker.c": "e569e3393a7632ca5b55569d412f93fbf111aa707f3ab2f8fbebe51737e86d95",
+    "target.py": "66ad78c3838179703e8f9f5149028b68317f778995e463c95b4f1c9cc93d5228",
+    "qualify.py": "80ca7a7ae9e265547e4b2f4a849ce6c84a88df0ae5060271a2446db6d8dffc16",
+    "stage.py": "074c9a6150cebb971a83821c63a9f7c133c71e9432a26b6ccd3de71bcc27a49d",
+    "README.md": "4c18d9bdf0d1f6c3c144c0d542ade5ffa94bb586dc88efad4a98cdf146cadd11"
+  },
+  "modules": [
+    {
+      "name": "rows",
+      "sha256": "828fa85a934b62f4559d45476bb4ca383cc40581f1db3d0ebc5812c3317f4caf",
+      "text": 3272,
+      "data": 16,
+      "capabilities": 287,
+      "minor": 6,
+      "stack_usage_source": "worker.c:17:13:put32\t32\tstatic\nworker.c:30:17:fail_clear\t32\tstatic\nworker.c:31:16:color$isra$0\t32\tstatic\nworker.c:13:7:memset\t32\tstatic\nworker.c:14:7:memcpy\t32\tstatic\nworker.c:36:9:vdplet_entry\t816\tstatic\n"
+    },
+    {
+      "name": "undeclared",
+      "sha256": "228911cd534ac95087cf500737e8f1546980420c4617917dc8ce33e9430203c3",
+      "text": 3272,
+      "data": 16,
+      "capabilities": 31,
+      "minor": 6,
+      "stack_usage_source": "worker.c:17:13:put32\t32\tstatic\nworker.c:30:17:fail_clear\t32\tstatic\nworker.c:31:16:color$isra$0\t32\tstatic\nworker.c:13:7:memset\t32\tstatic\nworker.c:14:7:memcpy\t32\tstatic\nworker.c:36:9:vdplet_entry\t816\tstatic\n"
+    },
+    {
+      "name": "view-0",
+      "sha256": "9e9348d37e468bf8e25ae79b29394913200f9cf1f0584ed518faec9477de8f0c",
+      "text": 324,
+      "data": 0,
+      "capabilities": 1,
+      "minor": 0,
+      "stack_usage_source": "worker.c:13:7:memset\t32\tstatic\nworker.c:14:7:memcpy\t32\tstatic\nworker.c:36:9:vdplet_entry\t368\tstatic\n"
+    },
+    {
+      "name": "view-1",
+      "sha256": "fde52907b9fbd4042a647446bb8664491d7817ca40e28bce3f0253ffcf78cf69",
+      "text": 324,
+      "data": 0,
+      "capabilities": 1,
+      "minor": 1,
+      "stack_usage_source": "worker.c:13:7:memset\t32\tstatic\nworker.c:14:7:memcpy\t32\tstatic\nworker.c:36:9:vdplet_entry\t368\tstatic\n"
+    },
+    {
+      "name": "view-2",
+      "sha256": "d6ab08b28337f2a82c35c0cee52acc5c9f26d2dbb2304927a7f11409e8ced500",
+      "text": 324,
+      "data": 0,
+      "capabilities": 1,
+      "minor": 2,
+      "stack_usage_source": "worker.c:13:7:memset\t32\tstatic\nworker.c:14:7:memcpy\t32\tstatic\nworker.c:36:9:vdplet_entry\t368\tstatic\n"
+    },
+    {
+      "name": "view-3",
+      "sha256": "42450a6e0c9c423e110242ca81526e8ecec4943acce354c79b818d25877b66f1",
+      "text": 324,
+      "data": 0,
+      "capabilities": 1,
+      "minor": 3,
+      "stack_usage_source": "worker.c:13:7:memset\t32\tstatic\nworker.c:14:7:memcpy\t32\tstatic\nworker.c:36:9:vdplet_entry\t368\tstatic\n"
+    },
+    {
+      "name": "view-4",
+      "sha256": "c6dacdde96fd12bd91ac5fc746276f0a4f4298145249422a0acf3d72419a7010",
+      "text": 324,
+      "data": 0,
+      "capabilities": 1,
+      "minor": 4,
+      "stack_usage_source": "worker.c:13:7:memset\t32\tstatic\nworker.c:14:7:memcpy\t32\tstatic\nworker.c:36:9:vdplet_entry\t368\tstatic\n"
+    },
+    {
+      "name": "view-5",
+      "sha256": "898f0618b8470efa0cc2cc6be307c79a4d1860991523ba991a319abcce27a062",
+      "text": 324,
+      "data": 0,
+      "capabilities": 1,
+      "minor": 5,
+      "stack_usage_source": "worker.c:13:7:memset\t32\tstatic\nworker.c:14:7:memcpy\t32\tstatic\nworker.c:36:9:vdplet_entry\t368\tstatic\n"
+    },
+    {
+      "name": "view-6",
+      "sha256": "0c4fafc3401685db5cb6df681703c495d9ac90a4f342f928a0c7907e2e5ab889",
+      "text": 324,
+      "data": 0,
+      "capabilities": 1,
+      "minor": 6,
+      "stack_usage_source": "worker.c:13:7:memset\t32\tstatic\nworker.c:14:7:memcpy\t32\tstatic\nworker.c:36:9:vdplet_entry\t368\tstatic\n"
+    }
+  ],
+  "module_local_stack": {
+    "entry_bytes": 816,
+    "maximum_local_callee_bytes": 32,
+    "own_source_chain_bytes": 848,
+    "declared_allowance": 2048,
+    "limitation": "runtime/Canvas call chains consume additional command-task stack; target INFO17 required, not a whole-firmware bound"
+  },
+  "runtime_profile": {
+    "stopped": true,
+    "emulator_instantiated": false,
+    "profile": "/home/smith/Agon/mystuff/agon-vdplet/.emulator/vdpl-012-qualification",
+    "pins": {
+      "flexe-agon-emulator": "c47b3ab958f752c1bd681f71934166396ab2d128d4275ec4d19255967f034165",
+      "flexe-agon-emulator.bin": "7e78e991a32c7bc94e84d70e8ad1792e3b840c48adc2e3aae7f635a88f4878ad",
+      "mos_platform.bin": "d564243283972690933a4554296ad6202ca4ef54572279533a942960846bebae",
+      "mos_platform.map": "d69e60bbce61a7b4b3eef318ba395f11c4e1a5b585755755113992dc94edcb86",
+      "flexe-vdp.so": "f7e5bf316258793c32313e2f367e28d09519dda82a72c40e4c3e204b61dab615",
+      "esp32-firmware.bin": "8d980025f891484cf7e6cc5f2992cf517cb80e0123ff7de712ae8d7f2dc1c807",
+      "esp32-firmware.elf": "1a7c44482d4ba8c5bfb49976c0bd664b9a9c2a635c7027b30954929ca567f814",
+      "sdcard/autoexec.txt": "6794c9436d319663931149171338229221a5bf13e6e6e25ddf4ab3360e1f8ff3"
+    },
+    "canonical_setup_sha256": "229c66f63a24b4a20822810e6f771c506dff0f25a179df905ea815770277b92e",
+    "scope": "staging only; direct-library qualification is separate and needs central lease"
+  },
+  "backend_provenance": {
+    "source": "/home/smith/Agon/mystuff/flexe-agon-emulator/build/fx072/bin/candidate.so",
+    "sha256": "f7e5bf316258793c32313e2f367e28d09519dda82a72c40e4c3e204b61dab615",
+    "selection": "root-supplied CPU-qualified unobserved FX072 candidate",
+    "previous_control_sha256": "108ec5b02122381e6c3ae851508188ec0a96240ca5f74be804fd2201b141e6e9",
+    "old_profiles": "untouched"
+  },
+  "firmware": {
+    "rows-r1": {
+      "firmware.bin": {
+        "path": "/Agon/mystuff/agon-vdplet/build/vdpl-012/rows-r1/firmware-src/.pio/build/esp32dev/firmware.bin",
+        "bytes": 1093792,
+        "sha256": "8d980025f891484cf7e6cc5f2992cf517cb80e0123ff7de712ae8d7f2dc1c807"
+      },
+      "firmware.elf": {
+        "path": "/Agon/mystuff/agon-vdplet/build/vdpl-012/rows-r1/firmware-src/.pio/build/esp32dev/firmware.elf",
+        "bytes": 24969816,
+        "sha256": "1a7c44482d4ba8c5bfb49976c0bd664b9a9c2a635c7027b30954929ca567f814"
+      },
+      "firmware.map": {
+        "path": "/Agon/mystuff/agon-vdplet/build/vdpl-012/rows-r1/firmware-src/.pio/build/esp32dev/firmware.map",
+        "bytes": 17989277,
+        "sha256": "2f00913814e4ed85cb41501bf83f263accc63ccef53779a4a5b39042bea5c325"
+      },
+      "bootloader.bin": {
+        "path": "/Agon/mystuff/agon-vdplet/build/vdpl-012/rows-r1/firmware-src/.pio/build/esp32dev/bootloader.bin",
+        "bytes": 18992,
+        "sha256": "f2dfacdea6ae72d0aeeb7c30e525c4c6fc768a041849feac694cbb2ee2224448"
+      },
+      "partitions.bin": {
+        "path": "/Agon/mystuff/agon-vdplet/build/vdpl-012/rows-r1/firmware-src/.pio/build/esp32dev/partitions.bin",
+        "bytes": 3072,
+        "sha256": "148b959cbff1c38aa8e1d5c0ba9d612c54997b945e56a63f41223eef650653a1"
+      }
+    },
+    "base-r1": {
+      "firmware.bin": {
+        "path": "/Agon/mystuff/agon-vdplet/build/vdpl-012/base-r1/firmware-src/.pio/build/esp32dev/firmware.bin",
+        "bytes": 1092608,
+        "sha256": "48c926160cc0df0a41158e031714272d387aecab6fab087f8ce2f22bbae30ea1"
+      },
+      "firmware.elf": {
+        "path": "/Agon/mystuff/agon-vdplet/build/vdpl-012/base-r1/firmware-src/.pio/build/esp32dev/firmware.elf",
+        "bytes": 24955736,
+        "sha256": "9b74fe7e8be4c7d15a3ca7bd85e43bb6701b530d5eaa6617045e51b899c043dc"
+      },
+      "firmware.map": {
+        "path": "/Agon/mystuff/agon-vdplet/build/vdpl-012/base-r1/firmware-src/.pio/build/esp32dev/firmware.map",
+        "bytes": 17987832,
+        "sha256": "c99210b47797b9b736053ce293905d889d0676f73b3d673ee5aa4a28a1ec2ef1"
+      },
+      "bootloader.bin": {
+        "path": "/Agon/mystuff/agon-vdplet/build/vdpl-012/base-r1/firmware-src/.pio/build/esp32dev/bootloader.bin",
+        "bytes": 18992,
+        "sha256": "f2dfacdea6ae72d0aeeb7c30e525c4c6fc768a041849feac694cbb2ee2224448"
+      },
+      "partitions.bin": {
+        "path": "/Agon/mystuff/agon-vdplet/build/vdpl-012/base-r1/firmware-src/.pio/build/esp32dev/partitions.bin",
+        "bytes": 3072,
+        "sha256": "148b959cbff1c38aa8e1d5c0ba9d612c54997b945e56a63f41223eef650653a1"
+      }
+    }
+  },
+  "matrix": [
+    "rows-r1/JIT/cap287",
+    "rows-r1/interpreter/cap287",
+    "base-r1/JIT/cap31/no-option refusal"
+  ],
+  "duration_estimate": "20\u201360s each execution plus staging/retrieval, based prior010/011 checks;600s failure bound, no lease expiry"
+}

@@ -1,0 +1,10 @@
+{
+  "sealed_inputs_verified": 35,
+  "readiness_sha256": "974e48d8d9d2f64b3c9108f057aef51a6f3e9d085b120a86c0d5263fda1417a7",
+  "guard_sha256": "b998bd0c7ec1605120f900fa1cd3f784573e3b0e146f283d7389c9dbeb647538",
+  "prior_run_directory": false,
+  "normal_control_pids": [],
+  "whole_host_idle_evidence": "resume-oryx-idle.json",
+  "generation": 39,
+  "actual_audio_result_pending": true
+}

@@ -1,0 +1,35 @@
+--- a/prepare_profile.py
++++ b/prepare_profile.py
+@@ -17,8 +17,8 @@
+ TARGET_TASK = TASK / "target"
+ OLD = PROJECT / ".emulator/wolf3d-vdplet-audio-ring-r02"
+ CORRECTED = PROJECT / ".emulator/wolf3d-vdplet-audio-ring-startup-r01"
+-PROFILE = PROJECT / ".emulator/wolf3d-vdplet-audio-ring-late-corrected-r01"
+-OUTPUT = PROFILE / "ring-output-late-corrected"
++PROFILE = PROJECT / ".emulator/wolf3d-vdplet-audio-ring-late-corrected-r02"
++OUTPUT = PROFILE / "ring-output"
+ OLD_RECEIPT = TARGET_TASK / "accepted-old-staging.json"
+ CORRECTED_RECEIPT = TARGET_TASK / "accepted-corrected-staging.json"
+ CENTRAL_RUN = TARGET_TASK / "accepted-central-run.md"
+--- a/stage_oryx.py
++++ b/stage_oryx.py
+@@ -18,7 +18,7 @@
+ CENTRAL_RUN = Path("/Agon/mystuff/agon-dev-env/cross-agent/vdplet-rollout/wolf-ring-late-corrected-run-v1.md")
+ REMOTE_TASK = "/home/smith/Agon/mystuff/Wolf3dOrig/agonport/vdplet/audio-ring-late-corrected"
+ REMOTE_TARGET = REMOTE_TASK + "/target"
+-REMOTE_PROFILE = "/home/smith/Agon/mystuff/Wolf3dOrig/.emulator/wolf3d-vdplet-audio-ring-late-corrected-r01"
++REMOTE_PROFILE = "/home/smith/Agon/mystuff/Wolf3dOrig/.emulator/wolf3d-vdplet-audio-ring-late-corrected-r02"
+ 
+ 
+ def run(command: list[object], **kwargs) -> subprocess.CompletedProcess:
+@@ -63,8 +63,8 @@
+         " && sha256sum --check --status .runtime.sha256"
+         " && test -x runner.py"
+         " && test -x read_residence.py"
+-        " && test -d ring-output-late-corrected"
+-        " && test -z \"$(find ring-output-late-corrected -mindepth 1 -maxdepth 1 -print -quit)\""
++        " && test -d ring-output"
++        " && test -z \"$(find ring-output -mindepth 1 -maxdepth 1 -print -quit)\""
+         " && grep -Fqx 'export FLEXE_RING_WINDOW_AFTER_MS=\"90000\"' flexe-agon-emulator"
+         " && ! grep -q 'FLEXE_UART_OBSERVER_OUTPUT' flexe-agon-emulator"
+     )

@@ -1,0 +1,410 @@
+{
+  "passed": true,
+  "scope": "Three sequential fresh actual-Xtensa direct-library processes on Oryx; no MOS, human or physical-target qualification",
+  "frozen_inputs_sha256": "f49de5d0f16d39ae932c38415e3478274a3560bcb6e761eae2ebbefbb17fd357",
+  "contract_sha256": "5172702f7ebc7dea77efb487d9ffafc99514981c7600ffc11d769835f44f267e",
+  "clarification_sha256": "db2012b778701ee95cf71b2d06e7fb469fa386702631ea63de88f77a1973c5f1",
+  "source_pins": {
+    "worker.c": "e569e3393a7632ca5b55569d412f93fbf111aa707f3ab2f8fbebe51737e86d95",
+    "target.py": "66ad78c3838179703e8f9f5149028b68317f778995e463c95b4f1c9cc93d5228",
+    "qualify.py": "80ca7a7ae9e265547e4b2f4a849ce6c84a88df0ae5060271a2446db6d8dffc16",
+    "stage.py": "074c9a6150cebb971a83821c63a9f7c133c71e9432a26b6ccd3de71bcc27a49d",
+    "README.md": "4c18d9bdf0d1f6c3c144c0d542ade5ffa94bb586dc88efad4a98cdf146cadd11"
+  },
+  "backend": {
+    "source": "/home/smith/Agon/mystuff/flexe-agon-emulator/build/fx072/bin/candidate.so",
+    "sha256": "f7e5bf316258793c32313e2f367e28d09519dda82a72c40e4c3e204b61dab615",
+    "selection": "root-supplied CPU-qualified unobserved FX072 candidate",
+    "previous_control_sha256": "108ec5b02122381e6c3ae851508188ec0a96240ca5f74be804fd2201b141e6e9",
+    "old_profiles": "untouched"
+  },
+  "total_groups": 25,
+  "total_pixels_compared": 5437440,
+  "total_execution_seconds": 43.924,
+  "positive_engines_identical_outbound_fixture": true,
+  "module_local_stack": {
+    "entry_bytes": 816,
+    "maximum_local_callee_bytes": 32,
+    "own_source_chain_bytes": 848,
+    "declared_allowance": 2048,
+    "limitation": "runtime/Canvas call chains consume additional command-task stack; target INFO17 required, not a whole-firmware bound"
+  },
+  "release": {
+    "owner": "golem",
+    "generation": 20,
+    "lease": "0c81057025594acf88c3e93391344847",
+    "granted": "2026-10-31T00:45:22.508774+00:00",
+    "released": "2026-10-31T00:49:04.589199+00:00",
+    "fresh_host_idle": true
+  },
+  "limitations": [
+    "Target checks ordinary C3 then RUN rebinding and hidden-before-C3. Injected pending-Canvas-swap ordering belongs to the separate runtime host test/source proof.",
+    "Run elapsed time includes boot, transport, qualification and decoded frame capture; it is not an isolated rendering benchmark.",
+    "INFO17 is observed command-task stack high-water headroom; the 848-byte own-worker static chain is not a whole-firmware stack bound.",
+    "Boot and final heaps use different screen/buffer states; the values are observations, not a leakage or resident feature-cost measurement."
+  ],
+  "runs": [
+    {
+      "name": "rows-r1-jit",
+      "profile": "rows-r1",
+      "engine": "jit",
+      "passed": true,
+      "groups": 11,
+      "pixels_compared": 2620416,
+      "elapsed_seconds": 18.423,
+      "checks": [
+        "exact ABI0..6 sizes/masks; old tables never gain new capability",
+        "actual present callback requires module declaration; valid failed descriptor has no pointer/span/token",
+        "ABI1.6 descriptor, INIT phase refusal and actual SBGR2222 hidden-page discovery",
+        "all4X biases, odd/full widths, final row/column, raw sync/group padding and copied-control pictures match",
+        "ordinary queued C3 then RUN rebinds new hidden page; pending-Canvas swap injection remains host/source proof",
+        "cross-kind old ROW/END, immutable rectangle, BUSY drawing,4buffer slots, stale tokens and fresh generation",
+        "bad extents/input lease/zero/negative/outside geometry reject without granting row pointers",
+        "single visible page and packed surface refuse; active mono lease rejects colour ROW/END and BEGIN BUSY",
+        "normal forgotten END is automatically closed, retains hidden result and permits next frame transaction",
+        "failed RUN never publishes; Canvas/old copy path recover, FINI refuses row phase and unload/reload works",
+        "unchanged ABI0 packed-mono and numeric packages retain their actual output"
+      ],
+      "boot_resources": {
+        "command_stack_free_bytes": 2760,
+        "internal_free_bytes": 60796,
+        "internal_largest": 38900,
+        "spiram_free_bytes": 4167647,
+        "spiram_largest": 4128756,
+        "audio_stack_free_bytes": 1536,
+        "tasks": 12
+      },
+      "final_resources": {
+        "command_stack_free_bytes": 2100,
+        "internal_free_bytes": 181508,
+        "internal_largest": 110580,
+        "spiram_free_bytes": 4164615,
+        "spiram_largest": 4128756,
+        "audio_stack_free_bytes": 1424,
+        "tasks": 12
+      },
+      "execution_stats": {
+        "engine": "jit",
+        "frames": 1021,
+        "cycles": 4402140164,
+        "retired": 1877233120,
+        "uart_rx": 1724816,
+        "uart_tx": 106573,
+        "uart_delivered": 106573,
+        "isync": 104,
+        "code_invalidations": 11,
+        "keys": 0,
+        "failed": false,
+        "unhandled": 0,
+        "unregistered": 0,
+        "unmapped": 0
+      },
+      "raw_audit": {
+        "emitted_delivered_received_equal": true,
+        "sequential_reply_tokens": true,
+        "vdpl_reply_count": 8825,
+        "vdpl_reply_bytes": 88250,
+        "reply_kinds": {
+          "2": 12,
+          "3": 80,
+          "4": 8732,
+          "5": 1
+        },
+        "outbound_bytes": 1724816,
+        "delivered_bytes": 106573
+      },
+      "raw_artifact_directory": "/Agon/mystuff/agon-vdplet/build/vdpl012qualification/oryx/rows-r1-jit",
+      "raw_files": {
+        "esp32-uart0.log": {
+          "bytes": 12723,
+          "sha256": "d09e5378048b4124911ae7c6096de937dd4429442ef48d5ac1f348cdadf14f1e"
+        },
+        "evidence.json": {
+          "bytes": 59886,
+          "sha256": "9e38bdf97df0cda3b915298b78882a9e61b7875305b1cfffd3f2d41976aa3339"
+        },
+        "final.ppm": {
+          "bytes": 589839,
+          "sha256": "df066e0021b8cc9879c90fd10e6f6b0876abf8aca81a30d20dc73f84d377e4b8"
+        },
+        "mos-to-vdp.bin": {
+          "bytes": 1724816,
+          "sha256": "1a620372225a46671f02756fa559d31a38909f4dcdb20c660d791136dd560466"
+        },
+        "results.dat": {
+          "bytes": 88250,
+          "sha256": "173769bd88e2294c0e19d5e2b7c9f05a34310141a7048574ce11cb0740406550"
+        },
+        "stats.json": {
+          "bytes": 235,
+          "sha256": "62b612e8698d78343f0cd8c845ebe5c20b63e13d5888c485069377c6b8d54008"
+        },
+        "vdp-to-mos-delivered.bin": {
+          "bytes": 106573,
+          "sha256": "b7ff9c805d034b39fd273da7e5b0a8f282b8447cebec47ccba59833d9d302394"
+        },
+        "vdp-to-mos.bin": {
+          "bytes": 106573,
+          "sha256": "b7ff9c805d034b39fd273da7e5b0a8f282b8447cebec47ccba59833d9d302394"
+        },
+        "wire-rx.dat": {
+          "bytes": 106573,
+          "sha256": "b7ff9c805d034b39fd273da7e5b0a8f282b8447cebec47ccba59833d9d302394"
+        }
+      },
+      "firmware_sha256": "8d980025f891484cf7e6cc5f2992cf517cb80e0123ff7de712ae8d7f2dc1c807",
+      "elf_sha256": "1a7c44482d4ba8c5bfb49976c0bd664b9a9c2a635c7027b30954929ca567f814",
+      "modules": {
+        "view-0": "9e9348d37e468bf8e25ae79b29394913200f9cf1f0584ed518faec9477de8f0c",
+        "view-1": "fde52907b9fbd4042a647446bb8664491d7817ca40e28bce3f0253ffcf78cf69",
+        "view-2": "d6ab08b28337f2a82c35c0cee52acc5c9f26d2dbb2304927a7f11409e8ced500",
+        "view-3": "42450a6e0c9c423e110242ca81526e8ecec4943acce354c79b818d25877b66f1",
+        "view-4": "c6dacdde96fd12bd91ac5fc746276f0a4f4298145249422a0acf3d72419a7010",
+        "view-5": "898f0618b8470efa0cc2cc6be307c79a4d1860991523ba991a319abcce27a062",
+        "view-6": "0c4fafc3401685db5cb6df681703c495d9ac90a4f342f928a0c7907e2e5ab889",
+        "undeclared": "228911cd534ac95087cf500737e8f1546980420c4617917dc8ce33e9430203c3",
+        "rows": "828fa85a934b62f4559d45476bb4ca383cc40581f1db3d0ebc5812c3317f4caf",
+        "packed-mono.vdpl": "e43844240acf5d6acfdfa3aabd6dd42bc4ed229789ed9d33e696378a511e29aa",
+        "numeric-1.vdpl": "722f77c8b33b57ec040c3366b6ceff16267efb358a716074179a1fb4cb6a6522"
+      }
+    },
+    {
+      "name": "rows-r1-interp",
+      "profile": "rows-r1",
+      "engine": "interp",
+      "passed": true,
+      "groups": 11,
+      "pixels_compared": 2620416,
+      "elapsed_seconds": 20.565,
+      "checks": [
+        "exact ABI0..6 sizes/masks; old tables never gain new capability",
+        "actual present callback requires module declaration; valid failed descriptor has no pointer/span/token",
+        "ABI1.6 descriptor, INIT phase refusal and actual SBGR2222 hidden-page discovery",
+        "all4X biases, odd/full widths, final row/column, raw sync/group padding and copied-control pictures match",
+        "ordinary queued C3 then RUN rebinds new hidden page; pending-Canvas swap injection remains host/source proof",
+        "cross-kind old ROW/END, immutable rectangle, BUSY drawing,4buffer slots, stale tokens and fresh generation",
+        "bad extents/input lease/zero/negative/outside geometry reject without granting row pointers",
+        "single visible page and packed surface refuse; active mono lease rejects colour ROW/END and BEGIN BUSY",
+        "normal forgotten END is automatically closed, retains hidden result and permits next frame transaction",
+        "failed RUN never publishes; Canvas/old copy path recover, FINI refuses row phase and unload/reload works",
+        "unchanged ABI0 packed-mono and numeric packages retain their actual output"
+      ],
+      "boot_resources": {
+        "command_stack_free_bytes": 2760,
+        "internal_free_bytes": 60796,
+        "internal_largest": 38900,
+        "spiram_free_bytes": 4167647,
+        "spiram_largest": 4128756,
+        "audio_stack_free_bytes": 1536,
+        "tasks": 12
+      },
+      "final_resources": {
+        "command_stack_free_bytes": 1972,
+        "internal_free_bytes": 181508,
+        "internal_largest": 110580,
+        "spiram_free_bytes": 4164615,
+        "spiram_largest": 4128756,
+        "audio_stack_free_bytes": 1424,
+        "tasks": 12
+      },
+      "execution_stats": {
+        "engine": "interp",
+        "frames": 893,
+        "cycles": 3869284476,
+        "retired": 1768960140,
+        "uart_rx": 1724816,
+        "uart_tx": 106573,
+        "uart_delivered": 106573,
+        "isync": 104,
+        "code_invalidations": 11,
+        "keys": 0,
+        "failed": false,
+        "unhandled": 0,
+        "unregistered": 0,
+        "unmapped": 0
+      },
+      "raw_audit": {
+        "emitted_delivered_received_equal": true,
+        "sequential_reply_tokens": true,
+        "vdpl_reply_count": 8825,
+        "vdpl_reply_bytes": 88250,
+        "reply_kinds": {
+          "2": 12,
+          "3": 80,
+          "4": 8732,
+          "5": 1
+        },
+        "outbound_bytes": 1724816,
+        "delivered_bytes": 106573
+      },
+      "raw_artifact_directory": "/Agon/mystuff/agon-vdplet/build/vdpl012qualification/oryx/rows-r1-interp",
+      "raw_files": {
+        "esp32-uart0.log": {
+          "bytes": 12723,
+          "sha256": "d09e5378048b4124911ae7c6096de937dd4429442ef48d5ac1f348cdadf14f1e"
+        },
+        "evidence.json": {
+          "bytes": 59891,
+          "sha256": "1a0de6159f5969e4b99d3763f761c17eab519522a642518ce782b027e49bdf98"
+        },
+        "final.ppm": {
+          "bytes": 589839,
+          "sha256": "df066e0021b8cc9879c90fd10e6f6b0876abf8aca81a30d20dc73f84d377e4b8"
+        },
+        "mos-to-vdp.bin": {
+          "bytes": 1724816,
+          "sha256": "1a620372225a46671f02756fa559d31a38909f4dcdb20c660d791136dd560466"
+        },
+        "results.dat": {
+          "bytes": 88250,
+          "sha256": "6639eb818b18fcab6fe43d08017fa7a4047412b355a8860841253fd2eaec6ae5"
+        },
+        "stats.json": {
+          "bytes": 237,
+          "sha256": "e252e12d3646a819252806172f22ef1b83eb6535163fb00c6e13ef4ef5207498"
+        },
+        "vdp-to-mos-delivered.bin": {
+          "bytes": 106573,
+          "sha256": "58813b88e64d9610fb2eae67820daac08d6fef5ca3bd069886c1caf615af3cf9"
+        },
+        "vdp-to-mos.bin": {
+          "bytes": 106573,
+          "sha256": "58813b88e64d9610fb2eae67820daac08d6fef5ca3bd069886c1caf615af3cf9"
+        },
+        "wire-rx.dat": {
+          "bytes": 106573,
+          "sha256": "58813b88e64d9610fb2eae67820daac08d6fef5ca3bd069886c1caf615af3cf9"
+        }
+      },
+      "firmware_sha256": "8d980025f891484cf7e6cc5f2992cf517cb80e0123ff7de712ae8d7f2dc1c807",
+      "elf_sha256": "1a7c44482d4ba8c5bfb49976c0bd664b9a9c2a635c7027b30954929ca567f814",
+      "modules": {
+        "view-0": "9e9348d37e468bf8e25ae79b29394913200f9cf1f0584ed518faec9477de8f0c",
+        "view-1": "fde52907b9fbd4042a647446bb8664491d7817ca40e28bce3f0253ffcf78cf69",
+        "view-2": "d6ab08b28337f2a82c35c0cee52acc5c9f26d2dbb2304927a7f11409e8ced500",
+        "view-3": "42450a6e0c9c423e110242ca81526e8ecec4943acce354c79b818d25877b66f1",
+        "view-4": "c6dacdde96fd12bd91ac5fc746276f0a4f4298145249422a0acf3d72419a7010",
+        "view-5": "898f0618b8470efa0cc2cc6be307c79a4d1860991523ba991a319abcce27a062",
+        "view-6": "0c4fafc3401685db5cb6df681703c495d9ac90a4f342f928a0c7907e2e5ab889",
+        "undeclared": "228911cd534ac95087cf500737e8f1546980420c4617917dc8ce33e9430203c3",
+        "rows": "828fa85a934b62f4559d45476bb4ca383cc40581f1db3d0ebc5812c3317f4caf",
+        "packed-mono.vdpl": "e43844240acf5d6acfdfa3aabd6dd42bc4ed229789ed9d33e696378a511e29aa",
+        "numeric-1.vdpl": "722f77c8b33b57ec040c3366b6ceff16267efb358a716074179a1fb4cb6a6522"
+      }
+    },
+    {
+      "name": "base-r1-jit",
+      "profile": "base-r1",
+      "engine": "jit",
+      "passed": true,
+      "groups": 3,
+      "pixels_compared": 196608,
+      "elapsed_seconds": 4.936,
+      "checks": [
+        "exact ABI0..6 sizes/masks; old tables never gain new capability",
+        "no-option build rejects required row capability before INIT",
+        "unchanged ABI0 packed-mono and numeric packages retain their actual output"
+      ],
+      "boot_resources": {
+        "command_stack_free_bytes": 2760,
+        "internal_free_bytes": 60828,
+        "internal_largest": 38900,
+        "spiram_free_bytes": 4167647,
+        "spiram_largest": 4128756,
+        "audio_stack_free_bytes": 1536,
+        "tasks": 12
+      },
+      "final_resources": {
+        "command_stack_free_bytes": 2152,
+        "internal_free_bytes": 181680,
+        "internal_largest": 110580,
+        "spiram_free_bytes": 4164615,
+        "spiram_largest": 4063220,
+        "audio_stack_free_bytes": 1536,
+        "tasks": 12
+      },
+      "execution_stats": {
+        "engine": "jit",
+        "frames": 261,
+        "cycles": 1167109894,
+        "retired": 409582523,
+        "uart_rx": 39681,
+        "uart_tx": 11493,
+        "uart_delivered": 11493,
+        "isync": 38,
+        "code_invalidations": 4,
+        "keys": 0,
+        "failed": false,
+        "unhandled": 0,
+        "unregistered": 0,
+        "unmapped": 0
+      },
+      "raw_audit": {
+        "emitted_delivered_received_equal": true,
+        "sequential_reply_tokens": true,
+        "vdpl_reply_count": 953,
+        "vdpl_reply_bytes": 9530,
+        "reply_kinds": {
+          "2": 9,
+          "3": 18,
+          "4": 925,
+          "5": 1
+        },
+        "outbound_bytes": 39681,
+        "delivered_bytes": 11493
+      },
+      "raw_artifact_directory": "/Agon/mystuff/agon-vdplet/build/vdpl012qualification/oryx/base-r1-jit",
+      "raw_files": {
+        "esp32-uart0.log": {
+          "bytes": 3242,
+          "sha256": "95168ae59be575ad1b74cc85334a589c3f797cd1df75ad02c7ad784ec9ef897c"
+        },
+        "evidence.json": {
+          "bytes": 8283,
+          "sha256": "8b98ee175cb086446b5901e8e2dc2234d3c8e00971e8ffbe893fabeace10eaae"
+        },
+        "final.ppm": {
+          "bytes": 589839,
+          "sha256": "df066e0021b8cc9879c90fd10e6f6b0876abf8aca81a30d20dc73f84d377e4b8"
+        },
+        "mos-to-vdp.bin": {
+          "bytes": 39681,
+          "sha256": "43dc13dabc1e99515825f7a425f0178641d615edeb103ea6d862985b58cbaa99"
+        },
+        "results.dat": {
+          "bytes": 9530,
+          "sha256": "780a69761a10830afda504f8aa94ff6ef9651fe60572eb027e5aa03578537e8e"
+        },
+        "stats.json": {
+          "bytes": 227,
+          "sha256": "86a3b9605a1c3d88afec40145879ef5ec4c8de0fd7ab7f10f1c6b0c3fa2c98dd"
+        },
+        "vdp-to-mos-delivered.bin": {
+          "bytes": 11493,
+          "sha256": "1780d938d5f25183ed0566f8c8318bc601814862e33abcba1732f6915a565cc8"
+        },
+        "vdp-to-mos.bin": {
+          "bytes": 11493,
+          "sha256": "1780d938d5f25183ed0566f8c8318bc601814862e33abcba1732f6915a565cc8"
+        },
+        "wire-rx.dat": {
+          "bytes": 11493,
+          "sha256": "1780d938d5f25183ed0566f8c8318bc601814862e33abcba1732f6915a565cc8"
+        }
+      },
+      "firmware_sha256": "48c926160cc0df0a41158e031714272d387aecab6fab087f8ce2f22bbae30ea1",
+      "elf_sha256": "9b74fe7e8be4c7d15a3ca7bd85e43bb6701b530d5eaa6617045e51b899c043dc",
+      "modules": {
+        "view-0": "9e9348d37e468bf8e25ae79b29394913200f9cf1f0584ed518faec9477de8f0c",
+        "view-1": "fde52907b9fbd4042a647446bb8664491d7817ca40e28bce3f0253ffcf78cf69",
+        "view-2": "d6ab08b28337f2a82c35c0cee52acc5c9f26d2dbb2304927a7f11409e8ced500",
+        "view-3": "42450a6e0c9c423e110242ca81526e8ecec4943acce354c79b818d25877b66f1",
+        "view-4": "c6dacdde96fd12bd91ac5fc746276f0a4f4298145249422a0acf3d72419a7010",
+        "view-5": "898f0618b8470efa0cc2cc6be307c79a4d1860991523ba991a319abcce27a062",
+        "view-6": "0c4fafc3401685db5cb6df681703c495d9ac90a4f342f928a0c7907e2e5ab889",
+        "packed-mono.vdpl": "e43844240acf5d6acfdfa3aabd6dd42bc4ed229789ed9d33e696378a511e29aa",
+        "numeric-1.vdpl": "722f77c8b33b57ec040c3366b6ceff16267efb358a716074179a1fb4cb6a6522"
+      }
+    }
+  ]
+}

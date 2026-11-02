@@ -1,0 +1,15 @@
+{
+  "contract-v1.md": {
+    "path": "/Agon/mystuff/golem/docs/tasks/GOLEM-057/pcm-wire/contract-v1.md",
+    "sha256": "5c3c95636201492416a72753791d456aebeba67778403edc972dad010cf64a1d"
+  },
+  "vdp_pcm_sink_wire.h": {
+    "path": "/Agon/mystuff/golem/docs/tasks/GOLEM-057/pcm-wire/vdp_pcm_sink_wire.h",
+    "sha256": "5555235b73a68c7ee5648c7fe67f1e99014c707c1fe024b2dec5225edd9feb4e"
+  },
+  "layout-evidence.json": {
+    "path": "/Agon/mystuff/golem/docs/tasks/GOLEM-057/pcm-wire/layout-evidence.json",
+    "sha256": "0d8d2ccffef13a124b992551f5feb8212a48eec159822f47c9be9e69a95db6be"
+  },
+  "accepted_mail": "2026-10-30_18-54-04_agon-6502_golem057-pcm-contract-accepted-three"
+}

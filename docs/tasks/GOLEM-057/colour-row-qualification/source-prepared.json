@@ -1,0 +1,12 @@
+{
+  "status": "source-prepared-uncompiled",
+  "emulator_launched": false,
+  "contract_sha256": "5172702f7ebc7dea77efb487d9ffafc99514981c7600ffc11d769835f44f267e",
+  "files": {
+    "worker.c": "e569e3393a7632ca5b55569d412f93fbf111aa707f3ab2f8fbebe51737e86d95",
+    "target.py": "66ad78c3838179703e8f9f5149028b68317f778995e463c95b4f1c9cc93d5228",
+    "qualify.py": "c386b5359a9f2b36333b8b7d00b718076186d3ce9e9ed73285a82c769e7dc747",
+    "README.md": "4c18d9bdf0d1f6c3c144c0d542ade5ffa94bb586dc88efad4a98cdf146cadd11"
+  },
+  "awaiting": "immutable SDK snapshot, module compilation and qualifier freeze before target"
+}

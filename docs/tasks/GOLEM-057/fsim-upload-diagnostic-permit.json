@@ -1,0 +1,20 @@
+{
+  "permit_id": "G057-SIM-UPLOAD-001",
+  "owner": "fsim-pingo",
+  "task": "PINGO-065",
+  "scope": "one-pi-jit-upload-diagnostic",
+  "source_freeze_sha256": "74198f7e623099aaad051c70fc048954844bc1b3374822ba4a9d037fe88b9e06",
+  "created": "2026-10-31T02:22:32.164764+00:00",
+  "coordinator": "golem",
+  "machine": "raspberrypi",
+  "engine": "jit",
+  "process_count": 1,
+  "oryx_allowed": false,
+  "requires": [
+    "Owner fresh native whole-Pi idle before launch; verify exact frozen source/input/backend/firmware and no output dir reuse",
+    "Only3488356B frozenhistory/upload/barrier plan,30snoenqueue/180soverall inclobservationjoins",
+    "No laterRUN,firmwarecleanup/recovery or retry; preserve nonreproduction/partial and unavailable state",
+    "Raw accounting exact only after BOTHwriters joined; report failed/incomplete joins explicitly",
+    "Normalownedstop/join and freshPi inspection beforeanalysis; no GUI/hardware/publication"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "file": "/Agon/mystuff/agon-vdplet/docs/API-reference.md",
+  "before_sha256": "2e11652545c49d68f3553798da1bc2027c2e03535be1a3c94f8d7b415577f3ba",
+  "after_sha256": "4bbd047fde324a5041f42b89273d10e6db4da51d63cd3a256b245aff7014212e",
+  "scope": "Correct introductory ABI1.6/header minor range/INFO1 bit256/table sizes/optional-flag masks; historical views/defaults unchanged",
+  "source_only": true,
+  "emulator": false
+}

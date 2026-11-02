@@ -1,0 +1,19 @@
+{
+  "owner_report_sha256": "5037da664b1dbf5e57ecc82708030a6662cf6fadee95b1b79b523995ae392c4a",
+  "owner_report": "/Agon/mystuff/agon-fsim/utilities/pingo-vdplet-rows/build/author-review-generation40-report.json",
+  "raw_files_verified": [
+    "vdp-to-mos.bin",
+    "final.ppm",
+    "esp32-uart0.log",
+    "vdp-to-mos-delivered.bin",
+    "mos-to-vdp.bin",
+    "stats.json"
+  ],
+  "completed_render_calls": 27,
+  "normal_exit": true,
+  "no_execution_faults": true,
+  "author_report": "i don't know what i was supposed to do there. i pressed N until it seemed tests were repeating, then C once, then esc to quit. dir worked at the mos prompt. the emulator is now closed.",
+  "generation40_released": "2026-10-31T17:37:31.885271+00:00",
+  "visual_parity_explicitly_approved": false,
+  "publication_authorized": false
+}

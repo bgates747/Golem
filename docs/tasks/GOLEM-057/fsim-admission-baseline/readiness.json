@@ -1,0 +1,1680 @@
+{
+  "schema": "pingo066-native-cost-driver-r1",
+  "scope": "root221 separate source/device-free preparation only; no staging/execution/build",
+  "files": {
+    "utilities/pingo-vdplet-flight/native_cost.py": {
+      "sha256": "1bf740802f0fa79f1486313e36480a4f1a29d79cfbf1012efd919d8ef33be966",
+      "bytes": 12288
+    },
+    "utilities/pingo-vdplet-flight/native_cost.h": {
+      "sha256": "4b99aef2c9fa5cffd88e8bb11ed125fd29da112af71c507f1a04ba02553e2f73",
+      "bytes": 3243
+    },
+    "utilities/pingo-vdplet-flight/native_cost_module.inc": {
+      "sha256": "a980bf00f268bc92bc4428d5b93a91df21c16eb95f893d57f96430b5f8b32fa0",
+      "bytes": 5301
+    },
+    "utilities/pingo-vdplet-flight/native_cost_client.inc": {
+      "sha256": "b4ed5a0e535c2f31d416330cc2c5b84d3dfcafe5b52f2a679e2e5a21271ec0e7",
+      "bytes": 4774
+    },
+    "utilities/pingo-vdplet-flight/test_native_cost.c": {
+      "sha256": "f97df98d696cc51982ad5da27210383fb92fe5f3b4caa11f7f6fea4a44d8439c",
+      "bytes": 2760
+    },
+    "utilities/pingo-vdplet-flight/test_native_cost_client.cpp": {
+      "sha256": "7f1536abf66dd72f381e7751740439eaa45e06c7620fac4ab714a32594e476e0",
+      "bytes": 5238
+    },
+    "utilities/pingo-vdplet-flight/check_native_cost.py": {
+      "sha256": "47d099db6a6a4eba3448245595f20166419a731414bb51eecc482be0aa85ba2b",
+      "bytes": 6460
+    },
+    "utilities/pingo-vdplet-flight/check_native_cost_build.py": {
+      "sha256": "871a9b00e85b3cd46f2c6cbec275e57407c359608df48506c828eee9d95908f2",
+      "bytes": 5148
+    },
+    "docs/tasks/PINGO-066/native-cost-implementation-v1.md": {
+      "sha256": "c321ece7f6866551ae32b892ddf34d5d330a84ebba4412cd7f3877f91764877d",
+      "bytes": 3060
+    },
+    "docs/tasks/PINGO-066/native-cost-pi-proposal-v1.md": {
+      "sha256": "883a9128d6ee2020216d689d13f555fd0ac5c53b4220de9967be10b2e6ddb131",
+      "bytes": 3609
+    },
+    "docs/development/2026-11-01-pingo066-native-cost-ready.md": {
+      "sha256": "b672874f9ddd65ca8dc17e5a5be94a6d15d980c79e5ecbf653de31601d77c927",
+      "bytes": 4941
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/implementation-freeze.json": {
+      "sha256": "4e13f05e698f94c1e7b8d3b4191fbabb52c3e1453d786514bf4b59b4f36f7dc5",
+      "bytes": 3509
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/build-check.json": {
+      "sha256": "a3de7e14f760d3a9247614d737bd3c9a2315c82668523d5bb7b72b1f16ac15ae",
+      "bytes": 13122
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/host-check.json": {
+      "sha256": "ce520d1a14c450ad8bf61ddaefd92997cff08f429a0705df0f8d1aa536d68ac9",
+      "bytes": 6842
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/host-validation.json": {
+      "sha256": "e76a1061cc1cc844b7de06bd0d29037b5224ea402ea1568e19281850cb54f184",
+      "bytes": 632
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/fixed-pose.bin": {
+      "sha256": "1922b6ef0a48d16a0fe2cdd119dd37d6dc69fcff10e9bdbbd762fdd580d1de04",
+      "bytes": 44
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/module.c": {
+      "sha256": "d77d3bedba8ff25135857206c59ebddeeb336ba30c74b3e6f9447e2d1531b4ae",
+      "bytes": 5895
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/live.c": {
+      "sha256": "0242a4acbc27f4f19ffd54f8b882c16b639cc7121f995bd039e4398d9c34df29",
+      "bytes": 696
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/live.o": {
+      "sha256": "d0f4f597c4a749b3a1586069cb0737c3a83445bc11befe23dc7df22dcfe2c6ba",
+      "bytes": 93520
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/live.su": {
+      "sha256": "26b8e849542677462248459508bd5b0b9371475f86582823a9ef29ff8b3c7014",
+      "bytes": 3925
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/live.c.000i.cgraph": {
+      "sha256": "d15adf422c25b4dc498686abf0579e589a2613a040e3b63013607db559201708",
+      "bytes": 453575
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/layout.c": {
+      "sha256": "39f43adb5b53f366054eae0340b0ce2412c5c697b1a99da31c112d6ab2f31cd2",
+      "bytes": 318
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/layout.o": {
+      "sha256": "658011e46c937bb585a8fdec3beb2ce93e6626112817b1a7d2b7a5fd60c49e93",
+      "bytes": 92864
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/layout.bin": {
+      "sha256": "502607ed9dd061cfef78b45a885a74658ce68856822ca2857479500683c6dcec",
+      "bytes": 44
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/stack.json": {
+      "sha256": "c3252cd0a74a8f7f504aa57baf95b47ab16522f7dd922507ff4efcea1f4e3352",
+      "bytes": 1199
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/host-record.bin": {
+      "sha256": "6a34a9d0e2a5718f0516e64569593736bd1b5ddf2ed711abcfba4dc6600332f5",
+      "bytes": 640
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/source/native_cost.h": {
+      "sha256": "4b99aef2c9fa5cffd88e8bb11ed125fd29da112af71c507f1a04ba02553e2f73",
+      "bytes": 3243
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/source/native_cost_client.inc": {
+      "sha256": "b4ed5a0e535c2f31d416330cc2c5b84d3dfcafe5b52f2a679e2e5a21271ec0e7",
+      "bytes": 4774
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/source/backend.inc": {
+      "sha256": "5e598c5fdbc2c4c751ee7372c3e0be2b38f2d0eaeac3629eca5551460ad9fbdd",
+      "bytes": 8306
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/source/cost_hooks.inc": {
+      "sha256": "0e3592bb443793e3688239ea1c8dce2ebc78afa4b25095a8150fa9bb60fb2138",
+      "bytes": 998
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/source/cost.h": {
+      "sha256": "7821ac9c7825ed5774bfefee96da22bad68bc52c6bd64b52c091baa5bed20867",
+      "bytes": 5038
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/source/callback.s": {
+      "sha256": "e3b232a47e6ecad727de3ec686eefb3d03cb4a858aa1a8133ab58cf566b3d660",
+      "bytes": 1509
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/source/cost_report.inc": {
+      "sha256": "df6b2fc00ec223c714594b3205f6b2f51ee5eeff5201dfb9902b3e37d68805a8",
+      "bytes": 4523
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/source/main.cpp": {
+      "sha256": "62e0669c8fa1b62136b12fd5e6dbaed130f31f690fe2c95aaa427fe03ffef8bf",
+      "bytes": 25313
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/source/native_resources.h": {
+      "sha256": "958a9d8094d0ea57e41a2244a99d7eca077075a824928897dee8b0fe12ddbc93",
+      "bytes": 165
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/target/pingo_flight.su": {
+      "sha256": "26b8e849542677462248459508bd5b0b9371475f86582823a9ef29ff8b3c7014",
+      "bytes": 3925
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/target/pingo_flight.vdpl": {
+      "sha256": "4cc7dd879799126405fc2815e18d00552bc145ecbfb873807c6da2def9103675",
+      "bytes": 31012
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/target/pingo_flight.o": {
+      "sha256": "d0f4f597c4a749b3a1586069cb0737c3a83445bc11befe23dc7df22dcfe2c6ba",
+      "bytes": 93520
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/target/pingo_flight.json": {
+      "sha256": "3cffac46c0b63a1574645247d004b960955ea46684ff0e234f00c24eb534ea31",
+      "bytes": 2466
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/target/pingo_flight.disassembly.txt": {
+      "sha256": "63ba4760dce0a66b1c2b2fcad414bb8b8528546ba987df5682d43584e6e53582",
+      "bytes": 961946
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/target/pingo_flight.elf": {
+      "sha256": "22cbf9c7bf969a227785bdf70932bb9328d3dec708fe456d2f096bd4dd39172d",
+      "bytes": 146116
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/target/pingo_flight.upload.elf": {
+      "sha256": "6eeed72ca032ae4d8468126110165cc9c4d9001c4a14964dd0b1cb7d6d7f6f44",
+      "bytes": 30948
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/target/pingo_flight.readelf.txt": {
+      "sha256": "af6a80b9e4fe68a6a87493e354b2ca5be44a1f0ae6c113c78d302bfb3462a166",
+      "bytes": 7533
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/client/textured/flight.map": {
+      "sha256": "91540dcf3533162fd369def6ee08bb8817d2ed8536da5c6c69093f853c78fc87",
+      "bytes": 99750
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/client/textured/flight.bin": {
+      "sha256": "a8f4e2e9da325ad8728e71f3115b211aa428240ed76402c2822eba364cc53e85",
+      "bytes": 184086
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/client/textured/flight.elf": {
+      "sha256": "8da191c5edd766d08aec7feb82c004341e04b5428175f1f813aa649c4874d717",
+      "bytes": 319216
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/client/textured/controller-kind.txt": {
+      "sha256": "1d3bd11a6fade122c72c115ba256fbbb24e9a041c8e5de8bd118160c02f67658",
+      "bytes": 29
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/client/textured/fsim.cfg": {
+      "sha256": "fc9d66ab268f60147fdb0d6033d7cd8b961cd31c8b9b50937bd31187b4cb5046",
+      "bytes": 313
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/client/textured/assets/bay.idx4": {
+      "sha256": "668aed984607460493a24b294fc22d1e7c08c3152b13eea0014ed0a5ce158cc8",
+      "bytes": 262144
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/client/textured/assets/corsair.rgba2": {
+      "sha256": "ae861271f52cff7044ea81b40bd893057aec88dc984ef31f14e813aed3e9b820",
+      "bytes": 262144
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/client/textured/assets/native.vdu": {
+      "sha256": "52ec4215d2068e949e7420ffccf1935d7901a2f4fc0f452da7bae0afd2b9cbb7",
+      "bytes": 306180
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/client/textured/assets/native.scn": {
+      "sha256": "e525b8f2e37fca4f110d65e5f3589dfee2f2a827ac9aeaffe59e687590b11941",
+      "bytes": 203392
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/client/textured/assets/renderer.vdpl": {
+      "sha256": "4cc7dd879799126405fc2815e18d00552bc145ecbfb873807c6da2def9103675",
+      "bytes": 31012
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/client/flat/flight.map": {
+      "sha256": "7190e45bd5bdd8a1b59989bf03003543c21d4e61d9e4a93d3283ab4265cc29ad",
+      "bytes": 99630
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/client/flat/flight.bin": {
+      "sha256": "0f9a54eecc488b0e4b3bdd09eb48ecb803c9c16735cb329957599f4f4744c052",
+      "bytes": 184082
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/client/flat/flight.elf": {
+      "sha256": "7fa2293d9273ad8599afc52eeb947512f3394cef2750a21d2b18efe42a351736",
+      "bytes": 319212
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/client/flat/controller-kind.txt": {
+      "sha256": "1d3bd11a6fade122c72c115ba256fbbb24e9a041c8e5de8bd118160c02f67658",
+      "bytes": 29
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/client/flat/fsim.cfg": {
+      "sha256": "fc9d66ab268f60147fdb0d6033d7cd8b961cd31c8b9b50937bd31187b4cb5046",
+      "bytes": 313
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/client/flat/assets/bay.idx4": {
+      "sha256": "668aed984607460493a24b294fc22d1e7c08c3152b13eea0014ed0a5ce158cc8",
+      "bytes": 262144
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/client/flat/assets/corsair.rgba2": {
+      "sha256": "cb009c153533ac4891f4ef3d32c19528eebf7d49a24648028b38268aa29e816b",
+      "bytes": 8
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/client/flat/assets/native.vdu": {
+      "sha256": "52ec4215d2068e949e7420ffccf1935d7901a2f4fc0f452da7bae0afd2b9cbb7",
+      "bytes": 306180
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/client/flat/assets/native.scn": {
+      "sha256": "0e8312984b668c74aa003ad532e2219a61cebabb7010f93ec5b489cdfbe2c60a",
+      "bytes": 89712
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/client/flat/assets/renderer.vdpl": {
+      "sha256": "4cc7dd879799126405fc2815e18d00552bc145ecbfb873807c6da2def9103675",
+      "bytes": 31012
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/client/objects/sf_s_countLeadingZeros8.o": {
+      "sha256": "cbbb9ae5f0dcc5297fc35a403e829d5fef53847e328f7375e577f8cf41f18ea4",
+      "bytes": 1032
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/client/objects/sf_s_roundPackToF16.o": {
+      "sha256": "1f080caca77086c7a7da63c5b2ea5a84b7810237c6a67e4f57a2a48ea634d9b1",
+      "bytes": 2248
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/client/objects/sf_softfloat_raiseFlags.o": {
+      "sha256": "4329bd6c461417edd1d27fad8d7b008d9a452d3d09f241d20aa4c5c17babedcd",
+      "bytes": 876
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/client/objects/contact_surface.o": {
+      "sha256": "2673102c80fa6d8017578605f30073325fbbeefd05de65a6df02ae1f8a611d8d",
+      "bytes": 4400
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/client/objects/arithmetic.o": {
+      "sha256": "cea09acc95f05dacef1e7590ae525ecbb2a992e73226c4792614ae4fa622bffe",
+      "bytes": 2300
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/client/objects/sf_s_subMagsF16.o": {
+      "sha256": "7b4fd20dc983aaf9373e159b3905863eeced3c0368b7a191328a37dfa65d7c4c",
+      "bytes": 3612
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/client/objects/contact_coupling.o": {
+      "sha256": "10c4a6f36badce5e764796d7d70235e2bd2ad2b951c785f66e6ba2500f392822",
+      "bytes": 6840
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/client/objects/sf_f16_le.o": {
+      "sha256": "11933882a1b5a95b3dd1edc2a11336946dd85451851b66e3749b629d128dbba2",
+      "bytes": 1408
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/client/objects/runtime.o": {
+      "sha256": "f8c592b92640935f27d445a486bb2b37c370a58ebc232fbb606fdf22f5b7034c",
+      "bytes": 552
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/client/objects/session.o": {
+      "sha256": "e69308c7ca6a51cc3333823fc472048b51deae6cc37374245c72cd5a851449e7",
+      "bytes": 6932
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/client/objects/compare.o": {
+      "sha256": "7a2aa1e16c51e5778b66d635c495f9aabcd6503686d87aae7b8bece5b2d5bc00",
+      "bytes": 908
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/client/objects/lcmps.o": {
+      "sha256": "0a98335fca0e12f66fc207655d782642a03bb6382240b98fa05e18d7eba30a99",
+      "bytes": 512
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/client/objects/sf_f16_mul.o": {
+      "sha256": "294379d5a2878b82aa578bff39bf526abb3797748113bbb8af5eb9ff488036af",
+      "bytes": 2180
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/client/objects/main-textured.o": {
+      "sha256": "5bc627c54a6dd3c84376b204b2b8537bc9f7d67eb67925eff4aa58ed15588301",
+      "bytes": 69128
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/client/objects/sf_s_f32UIToCommonNaN.o": {
+      "sha256": "545a9b0e4c3197be70e6fa8f06c2d4ea4f0b162c96a77e35eccf26f2a6181b95",
+      "bytes": 1212
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/client/objects/convert.o": {
+      "sha256": "f8584ee36d33720c62ce369d4a7a561b9c7116e47248613b17992b19399a803d",
+      "bytes": 1004
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/client/objects/contact.o": {
+      "sha256": "127491988e9a89dbccde8287608cc2c67190b028861d1f82112547dc21de9de6",
+      "bytes": 92964
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/client/objects/sf_f32_to_f16.o": {
+      "sha256": "51bd11f617b68572e70acd4aceff83f45f3b2f0787b80a3962a795924915314f",
+      "bytes": 1580
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/client/objects/module.o": {
+      "sha256": "b19a0d57e01ebbe5991313f4ea7e675a3fd79a83934c048ec43ce61ca88b5022",
+      "bytes": 4752
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/client/objects/sf_f16_eq.o": {
+      "sha256": "25eab3c083dc50d8cb7c2e87fcbd4aba3794c633ebec4cb2e0c116a2654f7841",
+      "bytes": 1096
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/client/objects/sf_f16_sub.o": {
+      "sha256": "0c6605bcc9f2c473fdb247a5b9579360154c9f32f5e2ebb6cb63462bdebdee0d",
+      "bytes": 1020
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/client/objects/controller_gateway.o": {
+      "sha256": "c825a7b0089ab613a56e3957b9b8f6a56a924ff812f6c7bb37aa5a49337afbb5",
+      "bytes": 684
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/client/objects/convert_fallback.o": {
+      "sha256": "7f521f7a9117baa9f6711f972271ac64e2722b0b38b3454fa74578af6ee22c4b",
+      "bytes": 1028
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/client/objects/sf_f16_div.o": {
+      "sha256": "9b94c2d6db063385f49f0edaa529ef057e30dea1d8088ca7484e4d42e508a06a",
+      "bytes": 2244
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/client/objects/controls.o": {
+      "sha256": "f311afbb89839b1a3da20636e5a8a512fb370a5de057e8e50645944e0ffd945c",
+      "bytes": 7864
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/client/objects/sf_softfloat_state.o": {
+      "sha256": "362e2d489a29239bd6ed9e8efa8cf3aaac21e729bec5bf1a049c6ae5b1144874",
+      "bytes": 832
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/client/objects/sf_s_commonNaNToF32UI.o": {
+      "sha256": "77cf58c9e0a67d518611a238d30ca08043a36b4a82c734bf406c0d1bd7fa4894",
+      "bytes": 1012
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/client/objects/baseline.o": {
+      "sha256": "a92c7d1bde9c7f0625e06a472456a95254fab467295cc21eaa76ddaba18ce6c3",
+      "bytes": 31656
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/client/objects/sf_s_propagateNaNF16UI.o": {
+      "sha256": "bd9a5ba470981e510936fd9bc4d7f24541ecf685fefff26de409ad4f46484f68",
+      "bytes": 808
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/client/objects/sf_f16_lt.o": {
+      "sha256": "cb98e1850b7d2fbc7698c135f520bb23f62ab14b4de3619d3c60795dfc72fb53",
+      "bytes": 1372
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/client/objects/sf_f16_to_f32.o": {
+      "sha256": "47916f9b8b88653b616bc6d04424350051f4d46232a103c3f8b9745cbcc23db2",
+      "bytes": 1564
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/client/objects/sf_f16_add.o": {
+      "sha256": "14418b21383a871cedb4ea5a7a368a805a639738c3b9ff5ce720d0987f892d8c",
+      "bytes": 1020
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/client/objects/sf_f16_sin.o": {
+      "sha256": "a06019b38a3046b4d3272e7bb8d1a2abbffca6ca7be496b50b16755a9616d69c",
+      "bytes": 2872
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/client/objects/sf_s_commonNaNToF16UI.o": {
+      "sha256": "796429f7d4884c650360d8998422ec588ca6153983247c3f161729dd0b823c11",
+      "bytes": 808
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/client/objects/sf_s_normSubnormalF16Sig.o": {
+      "sha256": "ec9b55f8070900b9752f9edba4e3f510546561a759557c536b350a7cb733403f",
+      "bytes": 988
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/client/objects/sf_s_f16UIToCommonNaN.o": {
+      "sha256": "28133bf3d704a72eb30d3cd46d1a6255da9fcfae42c48f93b9e1e44b560025a8",
+      "bytes": 844
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/client/objects/sf_f16_sqrt.o": {
+      "sha256": "95d660cef5246c14a2d440931cce9d97b9324e46c9224bbaf3d26a36ab2e3e11",
+      "bytes": 2608
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/client/objects/main-flat.o": {
+      "sha256": "f7b12b28599c5811f1d9f3c55ab03769da5dbad2b1bfd3e7fcb3bc5ccf2eb6ce",
+      "bytes": 69124
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/client/objects/sf_s_approxRecipSqrt_1Ks.o": {
+      "sha256": "b146c1e10aec330a2ed1ab9e446dbf1d346c76bd5201bf1595d72d3bc04bd37e",
+      "bytes": 892
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/client/objects/flight_half.o": {
+      "sha256": "b69cf0e659d19ec2a80880ccc710a56216991e66e0f29a24164f2a92673a1600",
+      "bytes": 38444
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/client/objects/sf_s_addMagsF16.o": {
+      "sha256": "81a307408f33c3ceb7ce7b9848e4c368b53217fca7f16044ae36cea21f14d046",
+      "bytes": 3040
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/client/objects/bridge.o": {
+      "sha256": "48911dd79428a05c3ea55528a79ee40f381e1120d9ec8b9ef5afec55b91e82f1",
+      "bytes": 1004
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/client/objects/widen.o": {
+      "sha256": "9f7e1b112a8d08f468e7a5674dd053bb21df138dd154f71bc427bd2d27499de8",
+      "bytes": 688
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/client/objects/callback.o": {
+      "sha256": "901293658e99f1558993035df5ce3db4a08fb1321bc1342b3ba1318c8b09cebb",
+      "bytes": 1088
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/client/objects/guard_fallback.o": {
+      "sha256": "e0168f392d60db9bfeaf53eb297b322e95fe7b4b8ac20f71cbc4ff57f8053a50",
+      "bytes": 1552
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/client/manifest.json": {
+      "sha256": "48259e0a000f6a34e040b965471a5fb56a030880c0946604ec805e5f6a7b79f9",
+      "bytes": 16223
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/mock.c": {
+      "sha256": "fb9d0106ce70df069229393b6d94068277118222143219653d4f9cef7154d64c",
+      "bytes": 6118
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/mock.so": {
+      "sha256": "20611472a3322c2af0a6d356b81c3cc2437537b6f97dbdfc009e661d4368dbc2",
+      "bytes": 233192
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/off/test-client": {
+      "sha256": "ab877af593ec044aa6fb8a1a3854fee326d05b9358d5f5ede881e63bf3830d29",
+      "bytes": 164056
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/module.c": {
+      "sha256": "d77d3bedba8ff25135857206c59ebddeeb336ba30c74b3e6f9447e2d1531b4ae",
+      "bytes": 5895
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/live.c": {
+      "sha256": "b554b7809f08a957ccb871bc843854477bf7829075bd9b0908b45217f8b8bd4b",
+      "bytes": 695
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/live.o": {
+      "sha256": "1db8e35f21f68244ad00529def00961d4ff7c69f5997d92812144a9622515911",
+      "bytes": 95564
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/live.su": {
+      "sha256": "53a0313edb50ef02580c6b406f852cabff6bf812e32672f48c22ab5fef9952e4",
+      "bytes": 4023
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/live.c.000i.cgraph": {
+      "sha256": "03c1fed88e11d8627181c4a5109cd7601e681d3a3f87b868aaaf3e2a6eacb4e3",
+      "bytes": 468731
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/layout.c": {
+      "sha256": "151e335bad3a5d9e7936b7c66ebb526127e4fd31fecc51da3da8aa8378597db8",
+      "bytes": 317
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/layout.o": {
+      "sha256": "deee2dbafbda9cf74c1aed48319f13b163ca4ffc02965f7ccb331c134ff80889",
+      "bytes": 94912
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/layout.bin": {
+      "sha256": "502607ed9dd061cfef78b45a885a74658ce68856822ca2857479500683c6dcec",
+      "bytes": 44
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/stack.json": {
+      "sha256": "a1d36c1fad571c5829060befc6d57a2ffda0fe527d0d69d503bfbe94b0edb149",
+      "bytes": 1199
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/host-record.bin": {
+      "sha256": "51fd95834f554cb3e367eade58cf83a0963b5c03ce06da12caa0c4cdacc6dcbf",
+      "bytes": 640
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/source/native_cost.h": {
+      "sha256": "4b99aef2c9fa5cffd88e8bb11ed125fd29da112af71c507f1a04ba02553e2f73",
+      "bytes": 3243
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/source/native_cost_client.inc": {
+      "sha256": "b4ed5a0e535c2f31d416330cc2c5b84d3dfcafe5b52f2a679e2e5a21271ec0e7",
+      "bytes": 4774
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/source/backend.inc": {
+      "sha256": "5e598c5fdbc2c4c751ee7372c3e0be2b38f2d0eaeac3629eca5551460ad9fbdd",
+      "bytes": 8306
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/source/cost_hooks.inc": {
+      "sha256": "0e3592bb443793e3688239ea1c8dce2ebc78afa4b25095a8150fa9bb60fb2138",
+      "bytes": 998
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/source/cost.h": {
+      "sha256": "7821ac9c7825ed5774bfefee96da22bad68bc52c6bd64b52c091baa5bed20867",
+      "bytes": 5038
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/source/callback.s": {
+      "sha256": "e3b232a47e6ecad727de3ec686eefb3d03cb4a858aa1a8133ab58cf566b3d660",
+      "bytes": 1509
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/source/cost_report.inc": {
+      "sha256": "df6b2fc00ec223c714594b3205f6b2f51ee5eeff5201dfb9902b3e37d68805a8",
+      "bytes": 4523
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/source/main.cpp": {
+      "sha256": "0bb6de27367b4c9d744aa2cc437643a408c5f8131b61f959a9af84499b24c061",
+      "bytes": 25313
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/source/native_resources.h": {
+      "sha256": "c663e0ad1653bf7adb8af2b6e3344b86c4b849910f6bcaa41718ca569d960faa",
+      "bytes": 165
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/target/pingo_flight.su": {
+      "sha256": "53a0313edb50ef02580c6b406f852cabff6bf812e32672f48c22ab5fef9952e4",
+      "bytes": 4023
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/target/pingo_flight.vdpl": {
+      "sha256": "685488d00e283611704cd70407dd6f33f5775d470e7988916a92917f99dea681",
+      "bytes": 31416
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/target/pingo_flight.o": {
+      "sha256": "1db8e35f21f68244ad00529def00961d4ff7c69f5997d92812144a9622515911",
+      "bytes": 95564
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/target/pingo_flight.json": {
+      "sha256": "96778158d81d0ab9e2249412875184641a82d55a65507e10ef3c3e4e98a4b8cb",
+      "bytes": 2463
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/target/pingo_flight.disassembly.txt": {
+      "sha256": "16f7c2785b4ab824e0ce7ee1caf9cacbddecef5c7b2ee3f314ed3bffeb53e3a0",
+      "bytes": 971533
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/target/pingo_flight.elf": {
+      "sha256": "060f71a9d589c6b3849f07d75db659b74f9cad25234a5fa6772a110a47273cf0",
+      "bytes": 146924
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/target/pingo_flight.upload.elf": {
+      "sha256": "dfba4dfb81e4873d721bb8cc5227d39e70c30f01e4be139622192c5fb0028836",
+      "bytes": 31352
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/target/pingo_flight.readelf.txt": {
+      "sha256": "14974020e65305e19c5c8dfd7e21695c40f9f60fb42a78b93fb519f7730b135b",
+      "bytes": 7643
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/client/textured/flight.map": {
+      "sha256": "0e16ba1078cd6d033bd12fde78b4eeb3194fb8640efbda0205986d65fba2dcde",
+      "bytes": 99457
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/client/textured/flight.bin": {
+      "sha256": "307c271c25b151e191fea4b0f298f537424ca5eda223be7d8e2c64527ebe7e84",
+      "bytes": 184821
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/client/textured/flight.elf": {
+      "sha256": "a618235e5e8490223c83315ccc46dc73a93b2cba4b7f8e23c6c9a93f2fe421d6",
+      "bytes": 319948
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/client/textured/controller-kind.txt": {
+      "sha256": "1d3bd11a6fade122c72c115ba256fbbb24e9a041c8e5de8bd118160c02f67658",
+      "bytes": 29
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/client/textured/fsim.cfg": {
+      "sha256": "fc9d66ab268f60147fdb0d6033d7cd8b961cd31c8b9b50937bd31187b4cb5046",
+      "bytes": 313
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/client/textured/assets/bay.idx4": {
+      "sha256": "668aed984607460493a24b294fc22d1e7c08c3152b13eea0014ed0a5ce158cc8",
+      "bytes": 262144
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/client/textured/assets/corsair.rgba2": {
+      "sha256": "ae861271f52cff7044ea81b40bd893057aec88dc984ef31f14e813aed3e9b820",
+      "bytes": 262144
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/client/textured/assets/native.vdu": {
+      "sha256": "52ec4215d2068e949e7420ffccf1935d7901a2f4fc0f452da7bae0afd2b9cbb7",
+      "bytes": 306180
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/client/textured/assets/native.scn": {
+      "sha256": "e525b8f2e37fca4f110d65e5f3589dfee2f2a827ac9aeaffe59e687590b11941",
+      "bytes": 203392
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/client/textured/assets/renderer.vdpl": {
+      "sha256": "685488d00e283611704cd70407dd6f33f5775d470e7988916a92917f99dea681",
+      "bytes": 31416
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/client/flat/flight.map": {
+      "sha256": "78025db20097243063182775387e48d93c61bc05b8091da9f5021070fd2da190",
+      "bytes": 99337
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/client/flat/flight.bin": {
+      "sha256": "14841f684f06fcf2365ffd29286416ede1aaa3cfb28425dc189390d0459fbe23",
+      "bytes": 184817
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/client/flat/flight.elf": {
+      "sha256": "3e9c50d4009aa2153d90f52d61c651f9bbe01fcc6bca6c2e2702bb1be791544c",
+      "bytes": 319944
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/client/flat/controller-kind.txt": {
+      "sha256": "1d3bd11a6fade122c72c115ba256fbbb24e9a041c8e5de8bd118160c02f67658",
+      "bytes": 29
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/client/flat/fsim.cfg": {
+      "sha256": "fc9d66ab268f60147fdb0d6033d7cd8b961cd31c8b9b50937bd31187b4cb5046",
+      "bytes": 313
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/client/flat/assets/bay.idx4": {
+      "sha256": "668aed984607460493a24b294fc22d1e7c08c3152b13eea0014ed0a5ce158cc8",
+      "bytes": 262144
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/client/flat/assets/corsair.rgba2": {
+      "sha256": "cb009c153533ac4891f4ef3d32c19528eebf7d49a24648028b38268aa29e816b",
+      "bytes": 8
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/client/flat/assets/native.vdu": {
+      "sha256": "52ec4215d2068e949e7420ffccf1935d7901a2f4fc0f452da7bae0afd2b9cbb7",
+      "bytes": 306180
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/client/flat/assets/native.scn": {
+      "sha256": "0e8312984b668c74aa003ad532e2219a61cebabb7010f93ec5b489cdfbe2c60a",
+      "bytes": 89712
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/client/flat/assets/renderer.vdpl": {
+      "sha256": "685488d00e283611704cd70407dd6f33f5775d470e7988916a92917f99dea681",
+      "bytes": 31416
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/client/objects/sf_s_countLeadingZeros8.o": {
+      "sha256": "cbbb9ae5f0dcc5297fc35a403e829d5fef53847e328f7375e577f8cf41f18ea4",
+      "bytes": 1032
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/client/objects/sf_s_roundPackToF16.o": {
+      "sha256": "1f080caca77086c7a7da63c5b2ea5a84b7810237c6a67e4f57a2a48ea634d9b1",
+      "bytes": 2248
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/client/objects/sf_softfloat_raiseFlags.o": {
+      "sha256": "4329bd6c461417edd1d27fad8d7b008d9a452d3d09f241d20aa4c5c17babedcd",
+      "bytes": 876
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/client/objects/contact_surface.o": {
+      "sha256": "2673102c80fa6d8017578605f30073325fbbeefd05de65a6df02ae1f8a611d8d",
+      "bytes": 4400
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/client/objects/arithmetic.o": {
+      "sha256": "cea09acc95f05dacef1e7590ae525ecbb2a992e73226c4792614ae4fa622bffe",
+      "bytes": 2300
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/client/objects/sf_s_subMagsF16.o": {
+      "sha256": "7b4fd20dc983aaf9373e159b3905863eeced3c0368b7a191328a37dfa65d7c4c",
+      "bytes": 3612
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/client/objects/contact_coupling.o": {
+      "sha256": "10c4a6f36badce5e764796d7d70235e2bd2ad2b951c785f66e6ba2500f392822",
+      "bytes": 6840
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/client/objects/sf_f16_le.o": {
+      "sha256": "11933882a1b5a95b3dd1edc2a11336946dd85451851b66e3749b629d128dbba2",
+      "bytes": 1408
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/client/objects/runtime.o": {
+      "sha256": "f8c592b92640935f27d445a486bb2b37c370a58ebc232fbb606fdf22f5b7034c",
+      "bytes": 552
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/client/objects/session.o": {
+      "sha256": "e69308c7ca6a51cc3333823fc472048b51deae6cc37374245c72cd5a851449e7",
+      "bytes": 6932
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/client/objects/compare.o": {
+      "sha256": "7a2aa1e16c51e5778b66d635c495f9aabcd6503686d87aae7b8bece5b2d5bc00",
+      "bytes": 908
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/client/objects/lcmps.o": {
+      "sha256": "0a98335fca0e12f66fc207655d782642a03bb6382240b98fa05e18d7eba30a99",
+      "bytes": 512
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/client/objects/sf_f16_mul.o": {
+      "sha256": "294379d5a2878b82aa578bff39bf526abb3797748113bbb8af5eb9ff488036af",
+      "bytes": 2180
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/client/objects/main-textured.o": {
+      "sha256": "9ea5dc7a9059295cdd63d2e564496fd8ab80d028eac98f540f880d5367abd5a7",
+      "bytes": 70496
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/client/objects/sf_s_f32UIToCommonNaN.o": {
+      "sha256": "545a9b0e4c3197be70e6fa8f06c2d4ea4f0b162c96a77e35eccf26f2a6181b95",
+      "bytes": 1212
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/client/objects/convert.o": {
+      "sha256": "f8584ee36d33720c62ce369d4a7a561b9c7116e47248613b17992b19399a803d",
+      "bytes": 1004
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/client/objects/contact.o": {
+      "sha256": "127491988e9a89dbccde8287608cc2c67190b028861d1f82112547dc21de9de6",
+      "bytes": 92964
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/client/objects/sf_f32_to_f16.o": {
+      "sha256": "51bd11f617b68572e70acd4aceff83f45f3b2f0787b80a3962a795924915314f",
+      "bytes": 1580
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/client/objects/module.o": {
+      "sha256": "b19a0d57e01ebbe5991313f4ea7e675a3fd79a83934c048ec43ce61ca88b5022",
+      "bytes": 4752
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/client/objects/sf_f16_eq.o": {
+      "sha256": "25eab3c083dc50d8cb7c2e87fcbd4aba3794c633ebec4cb2e0c116a2654f7841",
+      "bytes": 1096
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/client/objects/sf_f16_sub.o": {
+      "sha256": "0c6605bcc9f2c473fdb247a5b9579360154c9f32f5e2ebb6cb63462bdebdee0d",
+      "bytes": 1020
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/client/objects/controller_gateway.o": {
+      "sha256": "c825a7b0089ab613a56e3957b9b8f6a56a924ff812f6c7bb37aa5a49337afbb5",
+      "bytes": 684
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/client/objects/convert_fallback.o": {
+      "sha256": "7f521f7a9117baa9f6711f972271ac64e2722b0b38b3454fa74578af6ee22c4b",
+      "bytes": 1028
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/client/objects/sf_f16_div.o": {
+      "sha256": "9b94c2d6db063385f49f0edaa529ef057e30dea1d8088ca7484e4d42e508a06a",
+      "bytes": 2244
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/client/objects/controls.o": {
+      "sha256": "f311afbb89839b1a3da20636e5a8a512fb370a5de057e8e50645944e0ffd945c",
+      "bytes": 7864
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/client/objects/sf_softfloat_state.o": {
+      "sha256": "362e2d489a29239bd6ed9e8efa8cf3aaac21e729bec5bf1a049c6ae5b1144874",
+      "bytes": 832
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/client/objects/sf_s_commonNaNToF32UI.o": {
+      "sha256": "77cf58c9e0a67d518611a238d30ca08043a36b4a82c734bf406c0d1bd7fa4894",
+      "bytes": 1012
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/client/objects/baseline.o": {
+      "sha256": "a92c7d1bde9c7f0625e06a472456a95254fab467295cc21eaa76ddaba18ce6c3",
+      "bytes": 31656
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/client/objects/sf_s_propagateNaNF16UI.o": {
+      "sha256": "bd9a5ba470981e510936fd9bc4d7f24541ecf685fefff26de409ad4f46484f68",
+      "bytes": 808
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/client/objects/sf_f16_lt.o": {
+      "sha256": "cb98e1850b7d2fbc7698c135f520bb23f62ab14b4de3619d3c60795dfc72fb53",
+      "bytes": 1372
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/client/objects/sf_f16_to_f32.o": {
+      "sha256": "47916f9b8b88653b616bc6d04424350051f4d46232a103c3f8b9745cbcc23db2",
+      "bytes": 1564
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/client/objects/sf_f16_add.o": {
+      "sha256": "14418b21383a871cedb4ea5a7a368a805a639738c3b9ff5ce720d0987f892d8c",
+      "bytes": 1020
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/client/objects/sf_f16_sin.o": {
+      "sha256": "a06019b38a3046b4d3272e7bb8d1a2abbffca6ca7be496b50b16755a9616d69c",
+      "bytes": 2872
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/client/objects/sf_s_commonNaNToF16UI.o": {
+      "sha256": "796429f7d4884c650360d8998422ec588ca6153983247c3f161729dd0b823c11",
+      "bytes": 808
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/client/objects/sf_s_normSubnormalF16Sig.o": {
+      "sha256": "ec9b55f8070900b9752f9edba4e3f510546561a759557c536b350a7cb733403f",
+      "bytes": 988
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/client/objects/sf_s_f16UIToCommonNaN.o": {
+      "sha256": "28133bf3d704a72eb30d3cd46d1a6255da9fcfae42c48f93b9e1e44b560025a8",
+      "bytes": 844
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/client/objects/sf_f16_sqrt.o": {
+      "sha256": "95d660cef5246c14a2d440931cce9d97b9324e46c9224bbaf3d26a36ab2e3e11",
+      "bytes": 2608
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/client/objects/main-flat.o": {
+      "sha256": "8e209dcdaa3cf8809b01c7235a13a4243ad3150f7c45461392fa9e1df1f8b55e",
+      "bytes": 70492
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/client/objects/sf_s_approxRecipSqrt_1Ks.o": {
+      "sha256": "b146c1e10aec330a2ed1ab9e446dbf1d346c76bd5201bf1595d72d3bc04bd37e",
+      "bytes": 892
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/client/objects/flight_half.o": {
+      "sha256": "b69cf0e659d19ec2a80880ccc710a56216991e66e0f29a24164f2a92673a1600",
+      "bytes": 38444
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/client/objects/sf_s_addMagsF16.o": {
+      "sha256": "81a307408f33c3ceb7ce7b9848e4c368b53217fca7f16044ae36cea21f14d046",
+      "bytes": 3040
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/client/objects/bridge.o": {
+      "sha256": "48911dd79428a05c3ea55528a79ee40f381e1120d9ec8b9ef5afec55b91e82f1",
+      "bytes": 1004
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/client/objects/widen.o": {
+      "sha256": "9f7e1b112a8d08f468e7a5674dd053bb21df138dd154f71bc427bd2d27499de8",
+      "bytes": 688
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/client/objects/callback.o": {
+      "sha256": "901293658e99f1558993035df5ce3db4a08fb1321bc1342b3ba1318c8b09cebb",
+      "bytes": 1088
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/client/objects/guard_fallback.o": {
+      "sha256": "e0168f392d60db9bfeaf53eb297b322e95fe7b4b8ac20f71cbc4ff57f8053a50",
+      "bytes": 1552
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/client/manifest.json": {
+      "sha256": "606d7d078ee0ddcee0455bf4a46e057ea9af187a835f9be1482cd315002d3c74",
+      "bytes": 16206
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/mock.c": {
+      "sha256": "b81a1d54d5d96e1fd5c91610a8478e241782989f4502948e20fc94d0a81413e6",
+      "bytes": 6117
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/mock.so": {
+      "sha256": "2a078bc15d9b5f03b459a70bf8ca3345ea0719da24e9c7838128abd334466497",
+      "bytes": 235832
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/test-client": {
+      "sha256": "8efcc68adfcd6bb91ce12a214aea66b3b94b4205af089260b565f8339e06d774",
+      "bytes": 165312
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/check-layout-san": {
+      "sha256": "026b204b9cbf568969aca7927ff2b6ed78e754dd52a052b59d9c06c216acc8c7",
+      "bytes": 381696
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/test-native": {
+      "sha256": "d6c40f2c2c15800fd3a38579001e8d0c8bc59d69cfcf530296ac90a71a2e1e45",
+      "bytes": 219224
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/test-native-san": {
+      "sha256": "46c1bead7bda224576f0896c3994cc128fd952ee4720d17243934132c2ac7380",
+      "bytes": 1342168
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/test-client-san": {
+      "sha256": "d4e40883d9688540d36e8b1c44161021b0821bda62457e6dd29c7d4ced989df5",
+      "bytes": 352928
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/unavailable.c": {
+      "sha256": "9895ce4f53e6fcfd4cac1f3245203a149c31016810d42c0d283ede20cda0c14d",
+      "bytes": 6117
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/on/unavailable.so": {
+      "sha256": "ab466b29480f1593aaae0971ab6212e0d8c337f84b3790f0569f9fbc0806063b",
+      "bytes": 233720
+    },
+    "utilities/pingo-vdplet-flight/build/cost-r1/native-plan-source-witness.json": {
+      "sha256": "3a5a05a8da2af32a6bbdcd41410b52a4a6e97f26a3dfc31105747b2dbc5203ce",
+      "bytes": 2618
+    },
+    "utilities/pingo-vdplet-flight/build/cost-r1/manifest.json": {
+      "sha256": "08494a8f8e08dca0428b178b059234208de7edc3869476835f27a26e1c74f15c",
+      "bytes": 37165
+    },
+    "utilities/pingo-vdplet-flight/build/cost-r1/driver-readiness.json": {
+      "sha256": "bd5f299559b662d5435828b10ea455cb62362586a9a21ea3a3bb6d513e68ef9f",
+      "bytes": 11725
+    },
+    "utilities/pingo-vdplet-flight/build/target-r2/pingo_flight.vdpl": {
+      "sha256": "cadf2470297abc85b880954e0661e2e55a418b026e4528b72376ed9b4847743f",
+      "bytes": 29664
+    },
+    "utilities/pingo-vdplet-flight/build/client-source/main.cpp": {
+      "sha256": "03b65c54e72ec21b9a6bc141d2008409855a69e2986c6db1e452ab1bd1f7b1c9",
+      "bytes": 23711
+    },
+    "utilities/pingo-vdplet-flight/stack_check.py": {
+      "sha256": "6bfcc66ef1641d63f90ad3ac83ba23d87e1780f8e49f19a5f524cd0edeea2de1",
+      "bytes": 5070
+    },
+    "utilities/pingo-vdplet-flight/build/sdk-r2/tools/build_module.py": {
+      "sha256": "ac203b6d5a799f2e6ad1f585ff7f8eb527218393060974b8e1d730ade7152a07",
+      "bytes": 13346
+    },
+    "docs/tasks/PINGO-066/native-cost-plan-v1.md": {
+      "sha256": "e6d0bf7626174c3d6d48f37a3945471bba32daa00f939b7c0a10c88768551352",
+      "bytes": 15614
+    },
+    "docs/development/2026-11-01-pingo066-native-cost-plan.md": {
+      "sha256": "af75f811d6d2cfeb6ce4f023d6b32d36b73d1764444a6ff6f6045d5850d5627a",
+      "bytes": 2776
+    },
+    "utilities/pingo-vdplet-flight/module.c": {
+      "sha256": "f43c961da92ac8eda072771c160b0a601727d9460369d133cf06d3b3ac636567",
+      "bytes": 5342
+    },
+    "utilities/pingo-vdplet-flight/contract.h": {
+      "sha256": "e598b4422d0ab154062bec3adb5638b1167a354b4d7bde8b11df9417d5ea1279",
+      "bytes": 1044
+    },
+    "utilities/pingo-vdplet-flight/presentation.h": {
+      "sha256": "be3a675f904d210b82ffc2154d077d6b5bc8682e58039a763fb5fafb46d765e6",
+      "bytes": 4172
+    },
+    "utilities/pingo-vdplet-flight/model.h": {
+      "sha256": "16af7d741d10ca9f7bd47d9f2ba0849fab34610731fee8a229d47b9bd39d5be4",
+      "bytes": 4411
+    },
+    "utilities/pingo-vdplet-flight/build/base_adapter.inc": {
+      "sha256": "a9cf9225a37d68e8b9e1ab5f7acee830eaf1e94f58f73fc679dcdd9e590d3094",
+      "bytes": 4964
+    },
+    "utilities/pingo-vdplet-flight/build/legacy_helpers.inc": {
+      "sha256": "4ccd28a900e94e9c8e69194796aa1c2897a58cc2528dad30fd74c9dc8c1e9079",
+      "bytes": 8684
+    },
+    "utilities/pingo-vdplet-rows/module.c": {
+      "sha256": "baf9b79ef632615f6b4406b8a77b306ce790a6318847db894de164f074a54c00",
+      "bytes": 11963
+    },
+    "utilities/pingo-vdplet-rows/contract.h": {
+      "sha256": "a4b4e7b5c8744ed114000d728cc380fa92986e9a097cbab825bd6213f298fe5b",
+      "bytes": 1109
+    },
+    "utilities/corsair-backdrop-target/ground.h": {
+      "sha256": "d1bebfea5bc7bd7d160024c92a19cb1c2b6a5ba159eb676a267b806cce5a8f40",
+      "bytes": 4839
+    },
+    "utilities/pingo-vdplet/arena.h": {
+      "sha256": "9f773f17e162a23e3d456fb41142cfd317e56299b7956a1bb5003921120a665b",
+      "bytes": 1228
+    },
+    "utilities/pingo-vdplet-rows/build/maintained-arm64-r02/source/src/xtensa.c": {
+      "sha256": "fea1df8d0ec122f1cd6eeb3bc270cffbcb47b0aad43c8f0bad012552183f18f5",
+      "bytes": 181237
+    },
+    "utilities/pingo-vdplet-rows/build/maintained-arm64-r02/source/src/xtensa.h": {
+      "sha256": "e7f0301139eeac03f1a984df8d1ccc4583cd1176bea59b70908aa535beddc3b1",
+      "bytes": 35648
+    },
+    "utilities/pingo-vdplet-rows/build/maintained-arm64-r02/source/src/jit.c": {
+      "sha256": "a7f3c9b5da4515724774121b5f05098c47d6ccf4de69813f53e27a8aa7e6ca42",
+      "bytes": 222630
+    },
+    "utilities/pingo-vdplet-rows/build/maintained-arm64-r02/source/src/esp_timer_stubs.c": {
+      "sha256": "386c2478651ab5d6071fcb668b1b90404484bd88e2d76b60cfd9672cd174c365",
+      "bytes": 29066
+    },
+    "utilities/pingo-vdplet-flight/build/cost-r1/readiness-freeze.json": {
+      "sha256": "fdaa6f64c5e0e9e358d96dfebe8ada9b6fe2b54c5ce6f7f392076e46a1cd2469",
+      "bytes": 2948
+    },
+    "utilities/pingo-vdplet-flight/build/cost-r1/pi-cost-r1/result-freeze.json": {
+      "sha256": "1fcd95ed94adb5b0063e7e8d3770c9a8043f462f1a853c7e98e9a1535f90f2a1",
+      "bytes": 19725
+    },
+    "utilities/pingo-vdplet-flight/build/engine/LICENSE": {
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+      "bytes": 7048
+    },
+    "utilities/pingo-vdplet-flight/build/engine/math/fun.h": {
+      "sha256": "1a1e93a7d53e8ec55393a6e14e9d8a99071d2dd32067ee69509e80607a0a4ed9",
+      "bytes": 511
+    },
+    "utilities/pingo-vdplet-flight/build/engine/math/mat3.c": {
+      "sha256": "7f80d9f80a2a6c313488f0422acc088db67a3e78469a032889e8e389786b880a",
+      "bytes": 4664
+    },
+    "utilities/pingo-vdplet-flight/build/engine/math/mat3.h": {
+      "sha256": "ba4d95adcf206e6a25aa5d394c34c93a891b585fdf73219bc06f36fdca212eb6",
+      "bytes": 1589
+    },
+    "utilities/pingo-vdplet-flight/build/engine/math/mat4.c": {
+      "sha256": "62ed807e617a047a6c580f314cb4120fd8d6e963eb2d4dc7d02f47622dec2517",
+      "bytes": 10531
+    },
+    "utilities/pingo-vdplet-flight/build/engine/math/mat4.h": {
+      "sha256": "e500b59d9e8ba743b6f7bf8cee029c781678673f5cac29e6a678969f53238e50",
+      "bytes": 854
+    },
+    "utilities/pingo-vdplet-flight/build/engine/math/types.h": {
+      "sha256": "f9c4f0d258772a8b5ff484049971458cb474508fc50ba72e58f4a10c95c92656",
+      "bytes": 271
+    },
+    "utilities/pingo-vdplet-flight/build/engine/math/vec2.c": {
+      "sha256": "3a0668214d0d1c6c863b53fadc22419b25ff78d72b63e00941b95a8321609fc7",
+      "bytes": 210
+    },
+    "utilities/pingo-vdplet-flight/build/engine/math/vec2.h": {
+      "sha256": "ca1d0a3567e8f54c2293e9ca7ad06b46dd59a257b47d4ed320b2efb6ac7f4c23",
+      "bytes": 327
+    },
+    "utilities/pingo-vdplet-flight/build/engine/math/vec3.c": {
+      "sha256": "cd2a173b3f09b10b4373888cc508ef0168a3210ee2cc65e300e5e3305e1e81ef",
+      "bytes": 1035
+    },
+    "utilities/pingo-vdplet-flight/build/engine/math/vec3.h": {
+      "sha256": "3fcaf2126465d1a1a8f45c5b90afe572eb5dfab669d3d62ce3bf0f8b4a7a7d0c",
+      "bytes": 489
+    },
+    "utilities/pingo-vdplet-flight/build/engine/math/vec4.c": {
+      "sha256": "b7cfb6b7a2b0ae518c68475075653341207f1f5ec93df646764d882921a75412",
+      "bytes": 18
+    },
+    "utilities/pingo-vdplet-flight/build/engine/math/vec4.h": {
+      "sha256": "c48fa1b8fec7c2ffbfee4eb1d75588f156c32eef7bf460881bf85f523408c82e",
+      "bytes": 280
+    },
+    "utilities/pingo-vdplet-flight/build/engine/render/array.c": {
+      "sha256": "4413dea4af0f1ac2e51ff9b50b57e2d407c45d7821f35a5dfe76c0cdbf43ddbd",
+      "bytes": 307
+    },
+    "utilities/pingo-vdplet-flight/build/engine/render/array.h": {
+      "sha256": "e46fcf1ea9c7bc3d5d559b62b08628c51eb2a2258606481b0a57e7a73e71b834",
+      "bytes": 145
+    },
+    "utilities/pingo-vdplet-flight/build/engine/render/backend.h": {
+      "sha256": "10fc60b42e02d982c027b3e4988871672ca480892afad0a5aba2baa6b9949369",
+      "bytes": 848
+    },
+    "utilities/pingo-vdplet-flight/build/engine/render/clip.h": {
+      "sha256": "5fedd00c57c4c0f82b68f9ab164ff0af16a50324b01727228259af7a59ffe03b",
+      "bytes": 7470
+    },
+    "utilities/pingo-vdplet-flight/build/engine/render/depth.c": {
+      "sha256": "7e8adee52c4d509f1e352d0055f66d896a62097d09c7bdcf881e87cb3b8d7534",
+      "bytes": 392
+    },
+    "utilities/pingo-vdplet-flight/build/engine/render/depth.h": {
+      "sha256": "50a995858caab1499817961ad3d95f62fbbabdba76ceb5948cff8ff0c4ca9e97",
+      "bytes": 866
+    },
+    "utilities/pingo-vdplet-flight/build/engine/render/entity.c": {
+      "sha256": "8c078c2389377e2095ed1e26ae6b2b8e69664489d77e1aca871e2a869294fbce",
+      "bytes": 1653
+    },
+    "utilities/pingo-vdplet-flight/build/engine/render/entity.h": {
+      "sha256": "4c769d7dd32029147d8122b99e872709b074e9dfac1e807f1c7b6cdea820eb18",
+      "bytes": 493
+    },
+    "utilities/pingo-vdplet-flight/build/engine/render/material.c": {
+      "sha256": "210dabcc1e408e8cb772f22703b8c854896857197b2e643029763372d9f8ddd9",
+      "bytes": 229
+    },
+    "utilities/pingo-vdplet-flight/build/engine/render/material.h": {
+      "sha256": "1d6d144c79a9f9220066d50de290cff4035f113b974830a95468f4cd0457324a",
+      "bytes": 148
+    },
+    "utilities/pingo-vdplet-flight/build/engine/render/mesh.c": {
+      "sha256": "b222ebbbf540b3668e5076cf4b8758d36621315ab52eeab370e3b1d790761c17",
+      "bytes": 9342
+    },
+    "utilities/pingo-vdplet-flight/build/engine/render/mesh.h": {
+      "sha256": "c7b28f43da38ffd2e9500a3990ad5f5cc6434524841f2b84933fb40b82bfdcd2",
+      "bytes": 2447
+    },
+    "utilities/pingo-vdplet-flight/build/engine/render/native_rows.h": {
+      "sha256": "0a2d12f6493db374060a8a6314f439fbcd58c55d98d9fb2846d25ce82cdad15f",
+      "bytes": 868
+    },
+    "utilities/pingo-vdplet-flight/build/engine/render/object.c": {
+      "sha256": "2063ad8b170d4834f4e76abadc934f075138c863fa93963b44c85935134e8cfa",
+      "bytes": 1025
+    },
+    "utilities/pingo-vdplet-flight/build/engine/render/object.h": {
+      "sha256": "ecb4c5d98db95f90d40c6cd07075d178252347ebd9ca371601c58f0f10c909d0",
+      "bytes": 266
+    },
+    "utilities/pingo-vdplet-flight/build/engine/render/perspective_span.h": {
+      "sha256": "e4ccd1e0634346b6597bb70c9c424b85b58a51118ef873c9bac3f035b68787ac",
+      "bytes": 3538
+    },
+    "utilities/pingo-vdplet-flight/build/engine/render/pipeline.c": {
+      "sha256": "d7a3f125c6017d785cf9a67a36599109ed98bcc54df096dc51a1e88a843eda8c",
+      "bytes": 27607
+    },
+    "utilities/pingo-vdplet-flight/build/engine/render/pipeline.h": {
+      "sha256": "2969b69bbff72509a4e1e090dc98db6825e47fdb7ae6744a6522ccc0b966713f",
+      "bytes": 156
+    },
+    "utilities/pingo-vdplet-flight/build/engine/render/pipeline_diagnostics.h": {
+      "sha256": "db77c4c1152e2664afc19993eba9d0b0d7a24bfe6abe2cace015283b42b9ec5c",
+      "bytes": 1063
+    },
+    "utilities/pingo-vdplet-flight/build/engine/render/pixel.c": {
+      "sha256": "8275f868ff6fb5d30c79c45527b2086ef0f4b5a5c08741f206a022985002171e",
+      "bytes": 1672
+    },
+    "utilities/pingo-vdplet-flight/build/engine/render/pixel.h": {
+      "sha256": "c0316d527cf308f30852396ddb6888a6970b672f5bf5426321b6b7ee57e5a973",
+      "bytes": 2806
+    },
+    "utilities/pingo-vdplet-flight/build/engine/render/rasterizer.c": {
+      "sha256": "37192c316d5f03bab1d7f48024b94192dd92bae92948de7f9f09228ff3e1031b",
+      "bytes": 11794
+    },
+    "utilities/pingo-vdplet-flight/build/engine/render/rasterizer.h": {
+      "sha256": "f7c007fce6258da9f3e5e6e0ecd04a8cc930d003693e793edfba93a1925cf92e",
+      "bytes": 1016
+    },
+    "utilities/pingo-vdplet-flight/build/engine/render/renderable.h": {
+      "sha256": "dea4c9bdaf1c6fc6862c195e0866ca36376626ccfd977bab80776f6b504e9c41",
+      "bytes": 226
+    },
+    "utilities/pingo-vdplet-flight/build/engine/render/renderer.c": {
+      "sha256": "46d787b137260721b4a48de2a10b6bdf7ce6faac7777a7f166f3a5dd4f0a8a70",
+      "bytes": 4002
+    },
+    "utilities/pingo-vdplet-flight/build/engine/render/renderer.h": {
+      "sha256": "f938c1384367990705e3f191e0342d6f38dc9d4b2b78777db486386542b9a8e6",
+      "bytes": 1521
+    },
+    "utilities/pingo-vdplet-flight/build/engine/render/span.h": {
+      "sha256": "735f516ca887ffa6a434f74f25b33db4bbcdc49771e496bd4fe68e8184e0fa7c",
+      "bytes": 2028
+    },
+    "utilities/pingo-vdplet-flight/build/engine/render/sprite.c": {
+      "sha256": "3111427cffd6e437088dad9c506aab2cbed2f465e2b713044cb552a471449085",
+      "bytes": 1017
+    },
+    "utilities/pingo-vdplet-flight/build/engine/render/sprite.h": {
+      "sha256": "badbe4c5174ec388cb8fd405d21514a6b11307ccf12a1e806e78ad1c1636df94",
+      "bytes": 237
+    },
+    "utilities/pingo-vdplet-flight/build/engine/render/state.h": {
+      "sha256": "187459b13fc0484fbc4f7452d37b4c7db321daeae366013f2c5f0a06f0fb1af7",
+      "bytes": 374
+    },
+    "utilities/pingo-vdplet-flight/build/engine/render/texture.c": {
+      "sha256": "33be0e499e26186ae9f6de0c309794bafc7a595bfec087e5045d9b20d3c0a170",
+      "bytes": 637
+    },
+    "utilities/pingo-vdplet-flight/build/engine/render/texture.h": {
+      "sha256": "e1ec7413300d49087286820b2f637a8358746c503c57503930a6d96f7c6ec636",
+      "bytes": 1124
+    },
+    "utilities/pingo-vdplet-flight/build/engine/render/triangle_span.h": {
+      "sha256": "4dfb67b6e7897beae6ae7b6910f94e28a27889b8d333cf37b4f7af743fbc1a2d",
+      "bytes": 2612
+    },
+    "utilities/pingo-vdplet-flight/build/engine/render/vertex_cache.h": {
+      "sha256": "c1ebf9653fbb5f3790611f9be7600c3180af3510e0239f2ca47f0c6c0e3f20b2",
+      "bytes": 646
+    },
+    "utilities/pingo-vdplet-flight/build/sdk-r2/include/vdp_audio_queue.h": {
+      "sha256": "4f7363364712301529d5c7bbc9ebd1496a7103aaae717880e4ddb3375520b85e",
+      "bytes": 1409
+    },
+    "utilities/pingo-vdplet-flight/build/sdk-r2/include/vdp_pcm_sink_wire.h": {
+      "sha256": "5555235b73a68c7ee5648c7fe67f1e99014c707c1fe024b2dec5225edd9feb4e",
+      "bytes": 2017
+    },
+    "utilities/pingo-vdplet-flight/build/sdk-r2/include/vdplet.h": {
+      "sha256": "92a6bbc403ecc51e165c103cfd16fd071f3d644ad52f83a4a7cb4fe088a5a2d6",
+      "bytes": 8053
+    },
+    "utilities/pingo-vdplet-flight/build/sdk-r2/include/vdplet_pcm_sink.h": {
+      "sha256": "e3bf5d900105ddd87e82f5cd38301fab02ffb7a7e38f81012db0bb2e13ba963c",
+      "bytes": 1267
+    },
+    "utilities/pingo-vdplet-flight/build/sdk-r2/include/vdplet_protocol.h": {
+      "sha256": "a55dce6ca09a32da736e43416207a1e5c3d1bceea6c70c1229764696f622f5ef",
+      "bytes": 1970
+    },
+    "utilities/pingo-vdplet-flight/build/sdk-r2/include/vdplet_services.h": {
+      "sha256": "00844d5220bf05d329c4f66f6fb3653d8bcca3f60eafc51c820820f1203f394f",
+      "bytes": 2253
+    },
+    "utilities/pingo-vdplet-flight/build/sdk-r2/src/vdplet_policy.h": {
+      "sha256": "c69d6f3654b4b5dd4a8ae76e971818f4b13369d61dbded607b844e3268f66419",
+      "bytes": 398
+    },
+    "utilities/pingo-vdplet-flight/build/sdk-r2/tools/module.exports": {
+      "sha256": "9fd0e3d42b2162d4d65e43592c78e5c0ba5663a937b1474c76312654c1dce1a9",
+      "bytes": 45
+    },
+    ".emulator/pingo-vdplet-flight/flexe-agon-emulator.bin": {
+      "sha256": "71b91fdee47d66d2b5f94767772c88bee90e8e9f530f9930655e0e297263b1fe",
+      "bytes": 2061168
+    },
+    ".emulator/pingo-vdplet-flight/flexe-vdp.so": {
+      "sha256": "af0ccc012bed9184acadadf684fd00cbd78aae4cc0460660a454c609d0291caf",
+      "bytes": 1564816
+    },
+    ".emulator/pingo-vdplet-flight/esp32-firmware.bin": {
+      "sha256": "8d980025f891484cf7e6cc5f2992cf517cb80e0123ff7de712ae8d7f2dc1c807",
+      "bytes": 1093792
+    },
+    ".emulator/pingo-vdplet-flight/esp32-firmware.elf": {
+      "sha256": "1a7c44482d4ba8c5bfb49976c0bd664b9a9c2a635c7027b30954929ca567f814",
+      "bytes": 24969816
+    },
+    ".emulator/pingo-vdplet-flight/mos_platform.bin": {
+      "sha256": "d564243283972690933a4554296ad6202ca4ef54572279533a942960846bebae",
+      "bytes": 108490
+    },
+    ".emulator/pingo-vdplet-flight/mos_platform.map": {
+      "sha256": "d69e60bbce61a7b4b3eef318ba395f11c4e1a5b585755755113992dc94edcb86",
+      "bytes": 167185
+    },
+    ".emulator/pingo-vdplet-flight/flexe-agon-emulator": {
+      "sha256": "ad9115a640d25aab77868b812b70bc46547cd9c820d786d31158f6b00094eb8c",
+      "bytes": 2457
+    },
+    ".emulator/pingo-vdplet-flight/.bespoke-vdp-profile": {
+      "sha256": "3016ae6e37a83c44f8f0b1ce533c4b98e23b48e1c1639ed41919b90ea05db1cb",
+      "bytes": 13
+    },
+    "utilities/corsair-flight/build_target.py": {
+      "sha256": "61bc249647b76d6d0cd64f24b8fcdef7eb367ddd993c2304f2b946fcfccb2f1c",
+      "bytes": 14144
+    },
+    "/Agon/agondev/release/bin/ez80-none-elf-clang": {
+      "sha256": "b26b8b361834c7af13d272408efafd350cf8d6493c89e50cecd73f9d9e70a220",
+      "bytes": 90494992
+    },
+    "/Agon/agondev/release/bin/ez80-none-elf-ld": {
+      "sha256": "8941596adea72c999d20c94938cc61c969731367367110a1c1f6cb9826ba0e23",
+      "bytes": 1451224
+    },
+    "/Agon/agondev/release/bin/ez80-none-elf-as": {
+      "sha256": "1ee23e5551998d5fe0d2e7dcdf0fa6916342fc2d2c973b467e174ba679509097",
+      "bytes": 1255816
+    },
+    "/Agon/agondev/release/bin/agondev-setname": {
+      "sha256": "bbd44ff30e8543768148fd1b6c218fe3ca89f00925a9bf70f234400160c05e38",
+      "bytes": 67688
+    },
+    "/Agon/agondev/release/lib/libagon.a": {
+      "sha256": "163ac7b26e485fec0b98e58b2097045aef2a4b275047b795d4971efdfee1a952",
+      "bytes": 1322790
+    },
+    "/Agon/agondev/release/config/linker.conf": {
+      "sha256": "35e642f4e17a8293b4653d927aca81bc1d82f42052a91f47578048918c3e3b73",
+      "bytes": 2145
+    },
+    "utilities/pingo-vdplet-flight/build/pi-r3/capture.so": {
+      "sha256": "749dc370d4dcdff6469b75d596614b5b558fa1344dc4c7518bc46e6837a730f0",
+      "bytes": 71040
+    },
+    "utilities/stock-vdp-bulk/source/capture.c": {
+      "sha256": "fcddee3a5127da725751d8d671bea7695fdca9eb6fe683a1c13d10e5bcb8f9a2",
+      "bytes": 6337
+    },
+    "/home/smith/.platformio/packages/toolchain-xtensa-esp32/bin/xtensa-esp32-elf-gcc": {
+      "sha256": "e091761ac142b87be663aa36c8dc9af10044a9769a540ee0337ebc97ea56a22d",
+      "bytes": 858304
+    },
+    "/home/smith/.platformio/packages/toolchain-xtensa-esp32/xtensa-esp32-elf/lib/libm.a": {
+      "sha256": "89565dc52d561a7145679685683a9d0f05110889dd14925aac487bd646043d69",
+      "bytes": 4581164
+    },
+    "/home/smith/.platformio/packages/toolchain-xtensa-esp32/lib/gcc/xtensa-esp32-elf/8.4.0/libgcc.a": {
+      "sha256": "fe2bda6df58227d33ed36af602c7a540f2d7d3adf83d0592a262d94eccd4a3a5",
+      "bytes": 1160222
+    },
+    "utilities/pingo-vdplet-flight/cost_driver.py": {
+      "sha256": "5acddf79752d8f53e2d8bde904b744b4d0ecaeca071b7b397ce32275c76ea315",
+      "bytes": 22749
+    },
+    "utilities/pingo-vdplet-flight/test_cost_driver.py": {
+      "sha256": "9d07c07a34707c285b2d0fa2fadc3fabae79a5c19c977dcb244f09b13116a76a",
+      "bytes": 11697
+    },
+    "utilities/pingo-vdplet-flight/app_check.py": {
+      "sha256": "aad761ec57b1cc521408ca86660a1919f01e299a72878687cec53fc6de3ce1c1",
+      "bytes": 10369
+    },
+    "utilities/pingo-vdplet-flight/build.py": {
+      "sha256": "0eecc7a8fc88df989317a60a0a1a7baaccddae65725a621e5166336e078c70d0",
+      "bytes": 4856
+    },
+    "docs/tasks/PINGO-066/frame-cost-driver-freeze-v1.md": {
+      "sha256": "e29b44cff534cfa3135a1fd13a64dad85cf4af28f19cef554c20431d51b1d992",
+      "bytes": 2663
+    },
+    "docs/tasks/PINGO-066/frame-cost-pi-invocation-v1.md": {
+      "sha256": "21b2d7b6003f1fedc327a3e1a85e958072581f8a3d0b6c563053dcb06c8dd2f9",
+      "bytes": 5899
+    },
+    "docs/development/2026-11-01-pingo066-frame-cost-driver-ready.md": {
+      "sha256": "decfd9f2e9bc60c232a75868290584f84dc000177fe5261d17d16a020330a843",
+      "bytes": 4228
+    },
+    "utilities/corsair-flight/check_landing_session.py": {
+      "sha256": "5a134997aa86da2f1402a9eb0e5e08de2f822733d31580c6574adcdea8f94d0d",
+      "bytes": 11658
+    },
+    "utilities/corsair-flight/build/landing-scale3-check/three/landing-session.so": {
+      "sha256": "ac16eaae4575b7f9d0f47f28a1c1536f2d4615dae46583b80d50838d6682c5c6",
+      "bytes": 144256
+    },
+    "utilities/corsair-flight/build/landing-scale3-check/three/landing_config.h": {
+      "sha256": "66f62c2ebfc48c0b424dc93c6ab26eddd5ade7749e2a8b7b610cee9d4384a08f",
+      "bytes": 2235
+    },
+    "utilities/corsair-flight/build/landing-scale3-check/three/profiles/down/aircraft.json": {
+      "sha256": "e5d4584a330301a33956954c4c57d2507b44ca36c4b25a5022236af8cc400bbf",
+      "bytes": 2376
+    },
+    "utilities/corsair-flight/build/landing-scale3-check/scale-check.json": {
+      "sha256": "c448aea8596525be33477b63ba759464d96ed4047fd8f430e8fa1e104b342152",
+      "bytes": 6347
+    },
+    "common/flight-model/flight.h": {
+      "sha256": "b4ff1c3544dfc445dea2acc9375043b1537777d5add909f75d2eb0db158f09bd",
+      "bytes": 1842
+    },
+    "common/rc-flight/session.h": {
+      "sha256": "56f8863a9fb7ee3f00d30a74e98215ed186ec33b32dc1d1b94353df4740d8879",
+      "bytes": 1087
+    },
+    "utilities/pingo-vdplet-flight/build/cost-r1/driver-implementation-freeze.json": {
+      "sha256": "c5f487110cc0b6f23f360cfb27d5684aae2d65d9ec9d63931ee28a30fcab5365",
+      "bytes": 743
+    },
+    "utilities/pingo-vdplet-flight/build/cost-r1/driver-host-tests.txt": {
+      "sha256": "aeb8eab8eeb87c97d150804b54d470279b25d480780ccf79e9464381ccfc401a",
+      "bytes": 105
+    },
+    ".emulator/pingo-vdplet-flight/.runtime.sha256": {
+      "sha256": "9b73fa9bf3ac66074f0dbc17cfe87f693d3deb0f89ad6112320b25b3ae1dac2b",
+      "bytes": 2552
+    },
+    ".emulator/pingo-vdplet-flight/.mos-release.sha256": {
+      "sha256": "aee02d6e06411dcdab6d68fd41eaf781e61c9d1746c90de001596dd31fe36e72",
+      "bytes": 166
+    },
+    "/Agon/mystuff/agon-dev-env/.local/mig001-arm64/cpython-3.14.6-linux-aarch64-gnu/bin/python3.14": {
+      "sha256": "65091c84baa22dee105ca695c284df14acfd9a307373ccf7a0b19078b67c7b65",
+      "bytes": 23154416
+    },
+    ".emulator/pingo-vdplet-flight/runtime/flexe-agon-emulator.bin": {
+      "sha256": "71b91fdee47d66d2b5f94767772c88bee90e8e9f530f9930655e0e297263b1fe",
+      "bytes": 2061168
+    },
+    ".emulator/pingo-vdplet-flight/runtime/flexe-vdp.so": {
+      "sha256": "af0ccc012bed9184acadadf684fd00cbd78aae4cc0460660a454c609d0291caf",
+      "bytes": 1564816
+    },
+    "/usr/lib/aarch64-linux-gnu/ld-linux-aarch64.so.1": {
+      "sha256": "32f8643735b7bbc6375bdae3198376ef0e130be0006150fb1524f04c3528e07a",
+      "bytes": 201344
+    },
+    "/usr/lib/aarch64-linux-gnu/libFLAC.so.14.0.0": {
+      "sha256": "e766917a53fe2f4cb588147ebe2cea59cfd316869541781068568bfbbd15cddd",
+      "bytes": 395216
+    },
+    "/usr/lib/aarch64-linux-gnu/libSDL3.so.0.2.10": {
+      "sha256": "2bb22e11b1b90806e48523d347e41fba1a98f9a5d36d75d720535184ef8674e7",
+      "bytes": 2860576
+    },
+    "/usr/lib/aarch64-linux-gnu/libX11-xcb.so.1.0.0": {
+      "sha256": "3827c0df48c2fbcaecc42531a90cda1ce20744e9bad813170b1e3bcf2413e094",
+      "bytes": 67296
+    },
+    "/usr/lib/aarch64-linux-gnu/libX11.so.6.4.0": {
+      "sha256": "94938979e2e2030f3471823a186eec66f994b128125ea2f4b4c18b502444b0a0",
+      "bytes": 1395344
+    },
+    "/usr/lib/aarch64-linux-gnu/libXau.so.6.0.0": {
+      "sha256": "66ba1611449064d4beb81d33d9200eed4cfad41771dbbf38895774690c29bb26",
+      "bytes": 67752
+    },
+    "/usr/lib/aarch64-linux-gnu/libXcursor.so.1.0.2": {
+      "sha256": "69a0a80908bbd066a8f28a771047e827645738c25d89a7ba1d1eef7e0aaddf43",
+      "bytes": 68288
+    },
+    "/usr/lib/aarch64-linux-gnu/libXdmcp.so.6.0.0": {
+      "sha256": "d2374e9168c2d221a527088b18781cd11da9735b8053b8231359f4fe11428298",
+      "bytes": 67728
+    },
+    "/usr/lib/aarch64-linux-gnu/libXext.so.6.4.0": {
+      "sha256": "1c169c283fde27467ad2dc72e7efafe99881c973bb32f8779e02718b6027b651",
+      "bytes": 134768
+    },
+    "/usr/lib/aarch64-linux-gnu/libXfixes.so.3.1.0": {
+      "sha256": "6d8be637030dca8c9438bbe08874f0e93ba0f561732f3b1882767d9ed8557ac5",
+      "bytes": 67728
+    },
+    "/usr/lib/aarch64-linux-gnu/libXi.so.6.1.0": {
+      "sha256": "9acd854a82b89ad8e5287655d1f6e853eb211dbcc5225b9cee0288f7710bf761",
+      "bytes": 67968
+    },
+    "/usr/lib/aarch64-linux-gnu/libXrandr.so.2.2.0": {
+      "sha256": "6c7d7daf03a9152be52a0666ac379922605414d77a5b85b32803e907fd2dd2b2",
+      "bytes": 67864
+    },
+    "/usr/lib/aarch64-linux-gnu/libXrender.so.1.3.0": {
+      "sha256": "33fe5e2aefc2e3b63699cc856a6703a871b6f54f8d187ce0424fae64042af102",
+      "bytes": 68080
+    },
+    "/usr/lib/aarch64-linux-gnu/libXss.so.1.0.0": {
+      "sha256": "c683ed386e09bd5ab0045b39d1f261d8ef9801fc8e6089d9be2aea3ebde15e6f",
+      "bytes": 67752
+    },
+    "/usr/lib/aarch64-linux-gnu/libasound.so.2.0.0": {
+      "sha256": "9f8d4335961d3cacb1329bf2b94ba04248dfd729e1c99cc12c49e14f078f5bde",
+      "bytes": 1182272
+    },
+    "/usr/lib/aarch64-linux-gnu/libasyncns.so.0.3.1": {
+      "sha256": "492999b3b31e980cda7336510a4c2410e6dde4eb2406328efde283a4eb5bd10e",
+      "bytes": 67440
+    },
+    "/usr/lib/aarch64-linux-gnu/libbsd.so.0.12.2": {
+      "sha256": "9b1bb9f8b294e61b41312193ccb77176f4068215ed27e8039fbc592fa179798c",
+      "bytes": 134032
+    },
+    "/usr/lib/aarch64-linux-gnu/libc.so.6": {
+      "sha256": "299c5552010a3daed3d45ec46c231d28a50c501ab1f84ccebac4561939954986",
+      "bytes": 1716616
+    },
+    "/usr/lib/aarch64-linux-gnu/libcap.so.2.75": {
+      "sha256": "2d74e5a4d536311c2e84d1603edb4c8dd7cdfaa92f1305ec4e317edcd062ddec",
+      "bytes": 67792
+    },
+    "/usr/lib/aarch64-linux-gnu/libcrypto.so.3": {
+      "sha256": "3384243d6dc689fcd00880ab1415cc3525895b9cc5dfde8ea15752a1af6b198e",
+      "bytes": 6302952
+    },
+    "/usr/lib/aarch64-linux-gnu/libdbus-1.so.3.38.3": {
+      "sha256": "33dc83ad1eb603068542245eab12d67bca6c6f8323c08fe4600ef3b0868966af",
+      "bytes": 395416
+    },
+    "/usr/lib/aarch64-linux-gnu/libdecor-0.so.0.200.2": {
+      "sha256": "ffe467568ba9f19dc7073860dee9945144b117246e38f93cdd07f64a9196c5d9",
+      "bytes": 67912
+    },
+    "/usr/lib/aarch64-linux-gnu/libdl.so.2": {
+      "sha256": "8023ba7cb6ecabb57d1910ecd24ce347cba5653d1b547d9c7950301ed59716ca",
+      "bytes": 67592
+    },
+    "/usr/lib/aarch64-linux-gnu/libdrm.so.2.134.0": {
+      "sha256": "57d61aea9de0cdb630c4c155d39e6d0b889a4b7c23a0ca155ef14ca1c4a1bec0",
+      "bytes": 134000
+    },
+    "/usr/lib/aarch64-linux-gnu/libexpat.so.1.13.0": {
+      "sha256": "9852d754604063d671c14e66817b2d55d70883ac83208af3d85a8b847e66c522",
+      "bytes": 198856
+    },
+    "/usr/lib/aarch64-linux-gnu/libffi.so.8.1.4": {
+      "sha256": "f0527ef7efeaf85fc2f5855d68fddb63bf7b3b90f1228c6b49fb6020b0dca490",
+      "bytes": 68088
+    },
+    "/usr/lib/aarch64-linux-gnu/libgbm.so.1.0.0": {
+      "sha256": "5d491eddfefcfb0313de1a0311788642ee2b691e624dd139b1368b3977af8ebe",
+      "bytes": 67936
+    },
+    "/usr/lib/aarch64-linux-gnu/libgcc_s.so.1": {
+      "sha256": "9a146967dc38c3820c5dc21c3209812655f66b6551264072b187bd0e787947e0",
+      "bytes": 133768
+    },
+    "/usr/lib/aarch64-linux-gnu/libm.so.6": {
+      "sha256": "a8afb2d1f4a0c5e14c0fc82f794ec839eafe29738907aa92895410f57630bbe2",
+      "bytes": 591960
+    },
+    "/usr/lib/aarch64-linux-gnu/libmd.so.0.1.0": {
+      "sha256": "f38fb5100db99d717c0d09b093e2207ce7bc826abea6b05d1342b80865a449f2",
+      "bytes": 67664
+    },
+    "/usr/lib/aarch64-linux-gnu/libmp3lame.so.0.0.0": {
+      "sha256": "8a0787f844e8c8ad3e2d3861625e406fae6b3670a6c95bf9ce940b9dded42588",
+      "bytes": 329696
+    },
+    "/usr/lib/aarch64-linux-gnu/libmpg123.so.0.48.3": {
+      "sha256": "165e8bb3b5f5fade01c7a1be6194083c9cf4e0e956c79715dd6fb80387d4d403",
+      "bytes": 332104
+    },
+    "/usr/lib/aarch64-linux-gnu/libogg.so.0.8.5": {
+      "sha256": "faac9822d3667bbf735633005142ab314a62a00c1bc6c33acb97bc0cc5c17c23",
+      "bytes": 67440
+    },
+    "/usr/lib/aarch64-linux-gnu/libopus.so.0.10.1": {
+      "sha256": "7dcca79810c46e4a8e0ce2b337565007c9e856fc0c9741e74fe0156be118cce9",
+      "bytes": 3475960
+    },
+    "/usr/lib/aarch64-linux-gnu/libpipewire-0.3.so.0.1402.0": {
+      "sha256": "4d11a5336d3122487fe1d0a18d8cd0549b8073de89d521386b65ce0cb1f25314",
+      "bytes": 985856
+    },
+    "/usr/lib/aarch64-linux-gnu/libpthread.so.0": {
+      "sha256": "b4f0bcbb029e42861545757592356a490d87ef42cfa8a7f2d4295846e42698b5",
+      "bytes": 67592
+    },
+    "/usr/lib/aarch64-linux-gnu/libpulse.so.0.24.3": {
+      "sha256": "03bbe4848b29b8e77cf26eb09207c698993bcf5763fee10616dbb99d6070f657",
+      "bytes": 396352
+    },
+    "/usr/lib/aarch64-linux-gnu/librt.so.1": {
+      "sha256": "a4b07c4b8bf45da4ec97170e6cd15097c42af1f94124a9ab251551a9a0a79556",
+      "bytes": 67664
+    },
+    "/usr/lib/aarch64-linux-gnu/libsndfile.so.1.0.37": {
+      "sha256": "2e53722ccc874d2d7b7885bf7df4d0cbfbb66d7d25b4dc6d87286fbf6bf76d45",
+      "bytes": 595104
+    },
+    "/usr/lib/aarch64-linux-gnu/libsndio.so.7.3": {
+      "sha256": "60373203d3f7a06e363361919f3e474d67421bd3be5deed19d84a370cc831b41",
+      "bytes": 67848
+    },
+    "/usr/lib/aarch64-linux-gnu/libssl.so.3": {
+      "sha256": "392f5f041fba7650841146cc5daf9a70b700b6eccb165a9ae44f8df19e65838e",
+      "bytes": 1195960
+    },
+    "/usr/lib/aarch64-linux-gnu/libsystemd.so.0.40.0": {
+      "sha256": "e3ecd5cf99aa5a9aa88422ab21bde152e998be07b38ebed7ac20cc7d2dd6fe8f",
+      "bytes": 1186360
+    },
+    "/usr/lib/aarch64-linux-gnu/libudev.so.1.7.10": {
+      "sha256": "bcf309a103288b263adfffded7db309ed393643acc5f60e8daf1962103e3a113",
+      "bytes": 330440
+    },
+    "/usr/lib/aarch64-linux-gnu/libutil.so.1": {
+      "sha256": "7a9ee1e1a208b3721b1cacc5c68beb8f03c588cc270da5842af0c2de368d5354",
+      "bytes": 67592
+    },
+    "/usr/lib/aarch64-linux-gnu/libvorbis.so.0.4.9": {
+      "sha256": "e81cebb7af0fe3e7cef50f280d701a83dcca34d4e90b293a74ab68a1656d218d",
+      "bytes": 198584
+    },
+    "/usr/lib/aarch64-linux-gnu/libvorbisenc.so.2.0.12": {
+      "sha256": "11b9bcb2cb6fedc81e29da115aeb8ceac44acc3c8c121d9deb95d30d2413d462",
+      "bytes": 722936
+    },
+    "/usr/lib/aarch64-linux-gnu/libwayland-client.so.0.24.0": {
+      "sha256": "64c06c8bb8c9a5c8379228b10047b232085296b56f33def37fda8d762077a681",
+      "bytes": 134576
+    },
+    "/usr/lib/aarch64-linux-gnu/libwayland-cursor.so.0.24.0": {
+      "sha256": "a6d8d638f7384e3d292a485e5c1a1640a27078c18036e5b8ca7e6d1e096a3acd",
+      "bytes": 80704
+    },
+    "/usr/lib/aarch64-linux-gnu/libwayland-egl.so.1.24.0": {
+      "sha256": "bb8541744c14674d8ce8cd1dddf74defa71974f1693f4bd110e8458a9b0e8aac",
+      "bytes": 67472
+    },
+    "/usr/lib/aarch64-linux-gnu/libxcb.so.1.1.0": {
+      "sha256": "e8ede627b1ff9101854931904ee57a7c19ed2a359fa7bc2fb9522cf923950210",
+      "bytes": 199640
+    },
+    "/usr/lib/aarch64-linux-gnu/libxkbcommon.so.0.13.1": {
+      "sha256": "28be5bc6aae24411bfecee4316d32f4bc1e7770a5fb0b951acb53bb517529539",
+      "bytes": 396152
+    },
+    "/usr/lib/aarch64-linux-gnu/libz.so.1.3.1": {
+      "sha256": "6fe00acadf8119ff245855e5dcc7f26c6c0ffaf4bfa2baa88feab58f23727d65",
+      "bytes": 133600
+    },
+    "/usr/lib/aarch64-linux-gnu/libzstd.so.1.5.7": {
+      "sha256": "1279c4edfbfb08878b5b7fb40d392c1bdc9b30100d9b7a019d4aefaf10d2046c",
+      "bytes": 723048
+    },
+    "/usr/lib/aarch64-linux-gnu/pulseaudio/libpulsecommon-17.0.so": {
+      "sha256": "961b8e26c977c7e9d100d6124aaf7d0bb2f42ba70816e3979454bfd06bf6fcbb",
+      "bytes": 592072
+    },
+    "utilities/pingo-vdplet-flight/native_cost_driver.py": {
+      "sha256": "d24341c2d41a4f434457fdeec1702009dbca805633921ea13c8d3a60b1edfe73",
+      "bytes": 22935
+    },
+    "utilities/pingo-vdplet-flight/test_native_cost_driver.py": {
+      "sha256": "003e9f8e638ea5d3c67da907f55efa828f116786aa6f5d96a21be55b7bb81335",
+      "bytes": 13442
+    },
+    "docs/tasks/PINGO-066/native-cost-driver-freeze-v1.md": {
+      "sha256": "467dd44491b0683c0432a4effbed63003ab12da0e9e9794feb5a2f779df7ac98",
+      "bytes": 3194
+    },
+    "docs/tasks/PINGO-066/native-cost-driver-invocation-v1.md": {
+      "sha256": "f7021b98b44f5aeccba475ee557dd7c5b9655e3a9eaf1efdc882bedf9045135c",
+      "bytes": 3257
+    },
+    "utilities/pingo-vdplet-flight/build/native-cost-r1/readiness.json": {
+      "sha256": "c361e1545d6911adf5045e7e8b00b3b980c870047b16d54b88893986c439fe75",
+      "bytes": 75560
+    },
+    "utilities/pingo-vdplet-flight/build/native-driver-r1/implementation-freeze.json": {
+      "sha256": "b9f36fddf52a3d87173b8e6c2fd3d3260e94db24073bbb38ba48cd30dc086560",
+      "bytes": 915
+    },
+    "utilities/pingo-vdplet-flight/build/native-driver-r1/host-tests.txt": {
+      "sha256": "2c4b0fe336eadd947ebcec07dc3fd48f4c4a8c3c386d5826cdeff892aeb520ef",
+      "bytes": 1499
+    }
+  },
+  "packages": {
+    "off": {
+      "flight.bin": {
+        "sha256": "a8f4e2e9da325ad8728e71f3115b211aa428240ed76402c2822eba364cc53e85",
+        "bytes": 184086
+      },
+      "fsim.cfg": {
+        "sha256": "fc9d66ab268f60147fdb0d6033d7cd8b961cd31c8b9b50937bd31187b4cb5046",
+        "bytes": 313
+      },
+      "assets/bay.idx4": {
+        "sha256": "668aed984607460493a24b294fc22d1e7c08c3152b13eea0014ed0a5ce158cc8",
+        "bytes": 262144
+      },
+      "assets/corsair.rgba2": {
+        "sha256": "ae861271f52cff7044ea81b40bd893057aec88dc984ef31f14e813aed3e9b820",
+        "bytes": 262144
+      },
+      "assets/native.vdu": {
+        "sha256": "52ec4215d2068e949e7420ffccf1935d7901a2f4fc0f452da7bae0afd2b9cbb7",
+        "bytes": 306180
+      },
+      "assets/native.scn": {
+        "sha256": "e525b8f2e37fca4f110d65e5f3589dfee2f2a827ac9aeaffe59e687590b11941",
+        "bytes": 203392
+      },
+      "assets/renderer.vdpl": {
+        "sha256": "4cc7dd879799126405fc2815e18d00552bc145ecbfb873807c6da2def9103675",
+        "bytes": 31012
+      }
+    },
+    "on": {
+      "flight.bin": {
+        "sha256": "307c271c25b151e191fea4b0f298f537424ca5eda223be7d8e2c64527ebe7e84",
+        "bytes": 184821
+      },
+      "fsim.cfg": {
+        "sha256": "fc9d66ab268f60147fdb0d6033d7cd8b961cd31c8b9b50937bd31187b4cb5046",
+        "bytes": 313
+      },
+      "assets/bay.idx4": {
+        "sha256": "668aed984607460493a24b294fc22d1e7c08c3152b13eea0014ed0a5ce158cc8",
+        "bytes": 262144
+      },
+      "assets/corsair.rgba2": {
+        "sha256": "ae861271f52cff7044ea81b40bd893057aec88dc984ef31f14e813aed3e9b820",
+        "bytes": 262144
+      },
+      "assets/native.vdu": {
+        "sha256": "52ec4215d2068e949e7420ffccf1935d7901a2f4fc0f452da7bae0afd2b9cbb7",
+        "bytes": 306180
+      },
+      "assets/native.scn": {
+        "sha256": "e525b8f2e37fca4f110d65e5f3589dfee2f2a827ac9aeaffe59e687590b11941",
+        "bytes": 203392
+      },
+      "assets/renderer.vdpl": {
+        "sha256": "685488d00e283611704cd70407dd6f33f5775d470e7988916a92917f99dea681",
+        "bytes": 31416
+      }
+    }
+  },
+  "build_ids": {
+    "off": "F065-105adbc6/textured",
+    "on": "F065-11467ab2/textured"
+  },
+  "host_environment": {
+    "HOME": "/home/smith",
+    "LD_LIBRARY_PATH": null,
+    "LD_AUDIT": null,
+    "AGON_FLEXE_ENGINE": null
+  },
+  "home_sdl_override_present": false,
+  "bounds": {
+    "boot": 75,
+    "load": 195,
+    "flight_to_GP68": 120,
+    "READ16_after_GP68": 30,
+    "terminal_MOS_cleanup": 30,
+    "total_per_arm": 450,
+    "each_RUN_observed": 2,
+    "poll_seconds": 0.05
+  },
+  "diagnostic_readiness_sha256": "c361e1545d6911adf5045e7e8b00b3b980c870047b16d54b88893986c439fe75",
+  "armpair": [
+    "off",
+    "on"
+  ],
+  "original_driver_preserved": true,
+  "actual_execution": false
+}

@@ -1,0 +1,16 @@
+{
+  "schema": "g057-mode-repair-source-verification-v1",
+  "passed": true,
+  "files_checked_per_variant": 4755,
+  "only_change": "Candidate video/vdu.h: one private helper and two error2-conditional calls.",
+  "checks": [
+    "Frozen plan identity verified before and after preparation",
+    "Original copied-source and original artifact hashes unchanged",
+    "Control sources exactly match copied originals",
+    "Candidate changes no file except video/vdu.h",
+    "Removing helper and its two failure-only calls exactly restores original source",
+    "Canvas reset before end before controller deletion before depth255",
+    "Success, invalid/error-1, factory/error1 source branches and original MODE epilogue unchanged",
+    "No ISR, journal, allocation capability, module limit, SDK or service source changed"
+  ]
+}

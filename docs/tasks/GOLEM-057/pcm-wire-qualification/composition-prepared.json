@@ -1,0 +1,24 @@
+{
+  "status": "prepared-not-executed",
+  "emulator_launched": false,
+  "expected_capabilities": 159,
+  "qualifier_sha256": "d99b0cc9de4e42fc04b4a112cf8f7a3b870b23971d4b30b5ccd9705b95d48e9c",
+  "prior_qualified_source_snapshot": "/Agon/mystuff/agon-vdplet/build/vdpl011qualification/source-snapshots/595c564a347d10c84af894e7f023a0786e0685534ad84bd321886b01bd2b394c",
+  "firmware": {
+    "firmware.bin": {
+      "path": "/Agon/mystuff/agon-vdplet/build/vdpl011pixelswire/firmware-src/.pio/build/esp32dev/firmware.bin",
+      "bytes": 1097056,
+      "sha256": "23a5d54861524ef33d41f1e4a0e1ada1cc5bcced6b8c83aef51672a9a5c0246c"
+    },
+    "firmware.elf": {
+      "path": "/Agon/mystuff/agon-vdplet/build/vdpl011pixelswire/firmware-src/.pio/build/esp32dev/firmware.elf",
+      "bytes": 25016072,
+      "sha256": "a9e09ede1a5f35c1ebea0f73d75049ff1ece556f8428063bd338cc8f03b3a49e"
+    }
+  },
+  "matrix": [
+    "wire-native/JIT",
+    "pixels-native-sink/JIT"
+  ],
+  "human_review": "explicitly deferred"
+}

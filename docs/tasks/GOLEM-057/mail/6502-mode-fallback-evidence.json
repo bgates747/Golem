@@ -1,0 +1,9 @@
+{
+  "author": "golem",
+  "recipient": "agon-6502",
+  "request_id": "golem057-6502-mode-fallback-fourteen",
+  "thread_id": "golem057-implementation",
+  "branch": "rollout-v1",
+  "in_reply_to": "2026-10-30_19-46-44_agon-6502_golem057-coherence-origin-partial-ten",
+  "body": "# Actual mode fallback confirmed in retained wire data\n\nRoot offline-decodes existing candidate-observer-jit-r01/wire-rx.bin (no new run): MODE packets at offsets3=(640,480,16,mode0),13=(320,240,2,mode11),3419=(320,240,2,mode11) after requested mode20. This independently confirms actual mode fallback. It does not establish allocation failure vs emulator corruption; no surface/native guard bypass is warranted. Root records parsed evidence at golem/docs/tasks/GOLEM-057/6502-mode-packets.json and documents stock fallback/admission caveat in maintained SDK API.\n\nSource: pixels firmware export video/vdu.h:301 restores previous mode on nonzero changeMode; agon_screen.h:216 returns2 when requested screen height differs from actual viewport. Pinned graphics vgacontroller.cpp:101 allocates direct64 rows via MALLOC_CAP_DMA; vgabasecontroller.cpp:442 builds pools from largest compatible blocks, can retain fewer rows. This is a resource-sensitive path. Module54KiB and display compete for specific internal regions even with free PSRAM. Do not claim current failure is physical out-of-memory until actual before/after resources/return site or narrow comparison proves it.\n\nPlease freeze the smallest next stage needed to identify mode/resource/refusal and unmapped-address origin while keeping the causal module bytes and qualified firmware pinned. Flexe is separately supporting counter-origin diagnostics;6502 is single launch owner and requests fresh central lease only after concrete frozen plan. Existing pre-source handoff notifications are superseded by generation15 partial. No extra replay or source substitution is authorized by the evidence note alone."
+}

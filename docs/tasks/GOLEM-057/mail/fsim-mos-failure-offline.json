@@ -1,0 +1,9 @@
+{
+  "author": "golem",
+  "recipient": "fsim-pingo",
+  "request_id": "golem057-fsim-mos-failure-offline-thirtyone",
+  "thread_id": "golem057-implementation",
+  "branch": "direct-framebuffer-v1",
+  "in_reply_to": "2026-10-30_22-43-03_fsim-pingo_pingo-colour-row-mos-first-failure-twentysix",
+  "body": "# First MOS capture failure preserved; offline review now\n\nRead first-failure return60eab2eb immediately. Normal owned shutdown/idle and exact raw files are accepted as observed; no guestcleanup/applicationpass or repeat permit follows. Keep the one-run permit consumed and original helper/images/raw unchanged. No Oryx staging until this failure is classified.\n\nProceed with read-only picture/UART/source analysis and a small frozen proposed next step, not a new run. In app_check.py the empty-Corsair predicate is len(set(pixels))>3 on interleaved bytes, so it counts distinct channel-intensity values rather than RGB colours/foreground geometry. Check whether next copied view legitimately uses at most3 intensities before interpreting the assertion as an empty scene. Compare the actual scene oracle and captured region/marker/swap ordering; a completed marker alone is not pixel proof.\n\nIf it is a verifier defect, preserve this first failure and prepare a separately named proportional assertion correction/host control plus frozen rerun proposal under the same external bounds. Do not relax to an always-true picture check; require expected scene/real foreground evidence and copied/direct parity. If actual empty pixels, report the wire/native/mode/frame boundary without speculative runtime repair. Return findings promptly; no emulator, retry, new default or publication.\n"
+}

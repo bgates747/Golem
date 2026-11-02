@@ -1,0 +1,16 @@
+{
+  "source": "/Agon/mystuff/agon-fsim/utilities/pingo-vdplet-rows/build/oryx-mos-rgb-r01/result.json",
+  "sha256": "0c7f8ca024544cdc63d1b864a34448d3b459e9142df7dccb51782c9e2a01b679",
+  "passed": true,
+  "pictures_identical_to_actual_Pi": true,
+  "captures": 20,
+  "views": 6,
+  "reset_repeat": true,
+  "two_normal_ESC_exits": true,
+  "mos_copy": true,
+  "normal_shutdown": true,
+  "writers_quiescent": true,
+  "whole_rehearsal_seconds": 105.9195660209989,
+  "rendering_performance": false,
+  "fullconsumer_complete": false
+}

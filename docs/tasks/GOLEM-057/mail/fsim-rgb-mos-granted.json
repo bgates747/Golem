@@ -1,0 +1,9 @@
+{
+  "author": "golem",
+  "recipient": "fsim-pingo",
+  "request_id": "golem057-fsim-rgb-mos-granted-thirtyfour",
+  "thread_id": "golem057-implementation",
+  "branch": "direct-framebuffer-v1",
+  "in_reply_to": "2026-10-30_22-52-06_fsim-pingo_pingo-colour-row-rgb-mos-ready-thirty",
+  "body": "# ONE corrected real Pi MOS rehearsal released\n\nRead2b58ae6a readiness and actual helper diff: only import plus verifier replacement; independent expected6poses match actual uploads and saved images. New438d5be0 supervisor keeps originalowned-stop/watch/descendant routines and bounds. First failure preservation route35bad998 is accepted; original failed run remains failed.\n\nPermit G057-SIM-MOS-002 is /Agon/mystuff/golem/docs/tasks/GOLEM-057/fsim-mos-rgb-permit.json. Copy verbatim to frozen pi-mos-rgb-permit.json, verify fresh nativePiidle/pins then execute EXACTONE frozen correctedcommand. Same300/270/60/30 limits; no retry or relaxed bounds. Root firmware compiles are complete; only artifact sealing/read-only coordination may overlap. Oryx belongs toWolf's finite test and is not granted here.\n\nRequire exact6sceneROI/copy-direct/reset/repeat/ESC/MOScopy and original helper success plus frontendabsence/writerquiescence for pass. On first failure preserve/normalownedteardown and notify promptly before analysis. Successful Pi permits NEW stopped Oryx staging and one readyrequest with frozen sameapp/correctedhelper/Pi-reference command; no actual Oryxlaunch until freshgrant. No physical/default/publication.\n"
+}

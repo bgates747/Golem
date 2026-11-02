@@ -1,0 +1,41 @@
+{
+  "scope": "Read-only source review; no new build, target, emulator, hardware or causal claim",
+  "recorded": "2026-10-31T01:00:27.594276+00:00",
+  "firmware": {
+    "path": "/Agon/mystuff/agon-vdplet/build/vdpl-010/pixels/firmware-src/.pio/build/esp32dev/firmware.bin",
+    "sha256": "b42ae55f69900c44acacfbf0d665ef278e87b277b3b9fd4208e17ebf378f74b6"
+  },
+  "elf": {
+    "path": "/Agon/mystuff/agon-vdplet/build/vdpl-010/pixels/firmware-src/.pio/build/esp32dev/firmware.elf",
+    "sha256": "a10f7989d5c1f9974fc999428865ca74771fb65a0d4d694a2ac2b81c19df9902"
+  },
+  "source_receipt": {
+    "path": "/Agon/mystuff/agon-vdplet/build/vdpl-010/pixels/firmware-source.json",
+    "sha256": "bfe71a8a2788e54255a1f48a6f8ec5990434b703f908f092a925c65ee225f19c",
+    "vdp_pin": "1056ee38ec1cc68ed327bd32ee47d04b1c30597c",
+    "graphics_pin": "ac2dd5986daf496c43ae8e7fe41836274aec54a0",
+    "features": "pixels"
+  },
+  "read_sources_sha256": {
+    "/Agon/mystuff/agon-vdplet/build/vdpl-010/pixels/firmware-src/video/agon_screen.h": "648dbc7d0ba9d98a3115a4ba307ff7585c6c5e28189c1e8961eff7a3c3d60343",
+    "/Agon/mystuff/agon-vdplet/build/vdpl-010/pixels/firmware-src/video/vdu.h": "24923b53a83d77ebf729795d7ecb7343e6f2fed0e9d748d48fc83c8b75e805cb",
+    "/Agon/mystuff/agon-vdplet/build/vdpl-010/pixels/firmware-src/video/vdplet_runtime.h": "c472db2dd3f9bbe70506dfcc10ff041962cde3cf008ecf9874788e7567be4df8",
+    "/Agon/mystuff/agon-vdplet/build/vdpl-010/pixels/firmware-src/.pio/libdeps/esp32dev/vdp-gl/src/dispdrivers/vgabasecontroller.cpp": "443e24bbd568d9eb75fc069a0001275b6959c88dc941ff4fef7fbe2f3f8264aa",
+    "/Agon/mystuff/agon-vdplet/build/vdpl-010/pixels/firmware-src/.pio/libdeps/esp32dev/vdp-gl/src/dispdrivers/vgabasecontroller.h": "b57445969deda2e43f118ee633abb5645a0e932b75f1b22ded04c407f3bc7b3b",
+    "/Agon/mystuff/agon-vdplet/build/vdpl-010/pixels/firmware-src/.pio/libdeps/esp32dev/vdp-gl/src/dispdrivers/vgapalettedcontroller.cpp": "5c8f9b6b673d917ed7052a39aaef1f9671b669563f379c40337e3d1a829c2f49",
+    "/Agon/mystuff/agon-vdplet/build/vdpl-010/pixels/firmware-src/.pio/libdeps/esp32dev/vdp-gl/src/dispdrivers/vgapalettedcontroller.h": "d2e351a41010481ebd94e054bc216c6c8bf0f802e33ff50216ff4cced96b96aa",
+    "/Agon/mystuff/agon-vdplet/build/vdpl-010/pixels/firmware-src/.pio/libdeps/esp32dev/vdp-gl/src/dispdrivers/vga2controller.cpp": "bfbe92522511398ea17bba6079ac543b02c1380d50fdfa92e13f2988e5919d5c",
+    "/Agon/mystuff/agon-vdplet/build/vdpl-010/pixels/firmware-src/.pio/libdeps/esp32dev/vdp-gl/src/dispdrivers/vga2controller.h": "d7bcb9c122a01efcdb346d738af180af1f359cbbcc9185f6feaa11ec91ca6ea6",
+    "/Agon/mystuff/agon-vdplet/build/vdpl-010/pixels/firmware-src/.pio/libdeps/esp32dev/vdp-gl/src/dispdrivers/vga64controller.cpp": "8a6e3a11daced6d380da7a5cc4f83295bd8ee6bb44d9f821e5bad532976c707b",
+    "/Agon/mystuff/agon-vdplet/build/vdpl-010/pixels/firmware-src/.pio/libdeps/esp32dev/vdp-gl/src/dispdrivers/vga64controller.h": "ff9531dc3213e66507b7d691841d44371af6d5492c00ea6f206d9a0c2650a101",
+    "/Agon/mystuff/agon-vdplet/build/vdpl-010/pixels/firmware-src/.pio/libdeps/esp32dev/vdp-gl/src/displaycontroller.cpp": "f3588a684647ef258c024251d17b029e2877c8363b28a570432376f353232902",
+    "/Agon/mystuff/agon-vdplet/build/vdpl-010/pixels/firmware-src/.pio/libdeps/esp32dev/vdp-gl/src/displaycontroller.h": "603bac727fd1ab61d6f36a8d1a0e533471b849d6c30159b5f95ed4260e9d5c23",
+    "/Agon/mystuff/agon-vdplet/build/vdpl-010/pixels/firmware-src/.pio/libdeps/esp32dev/vdp-gl/src/fabutils.h": "9badf4ab1a47e4d1e8ede9dc3a93b10f9ffc6f1b2b18616562b483e257e6836d",
+    "/Agon/mystuff/agon-vdplet/build/vdpl-010/pixels/firmware-src/.pio/libdeps/esp32dev/vdp-gl/src/fabglconf.h": "244afe581be47a3ef0dd21fbe8025f4da6e01ce8e53edc595d3188ef4d3a0ee3",
+    "/Agon/mystuff/flexe-agon-emulator/docs/tasks/FX-072/mode-address-audit.md": "ae4ccae706c2de63751d0c47058d1cd9d1267cece04f4d1618c894331ba30314",
+    "/Agon/mystuff/flexe-agon-emulator/build/fx072/mode-address-audit/source-pins.json": "221a5cb4bccd9531dcf2cf7a1c51305e2381753e167eb7b8154451f74f4c5477",
+    "/Agon/mystuff/agon-dev-env/cross-agent/agentcoms/messages/2026-10-30_20-18-05_agon-6502_golem057-mode-address-result-thirteen.md": "faa900c659df013ae92a1656c51906a331fb073608e4f9641bf8947ddf3fa697",
+    "/Agon/mystuff/agon-dev-env/cross-agent/agentcoms/messages/2026-10-30_20-21-46_agon-6502_golem057-mode-address-offline-fourteen.md": "b0f3d48453f1ef4225dd17958e87a6fc71bce579c04753b742cb39bacdbe306f",
+    "/Agon/mystuff/agon-dev-env/cross-agent/agentcoms/messages/2026-10-30_20-28-19_flexe_golem057-flexe-mode-address-source-five.md": "864a1643bd731b2a38f7c9185bc4ce3f653fe91763adab90f427da85e254bee6"
+  }
+}

@@ -1,0 +1,164 @@
+{
+  "profile": "pixels-lean",
+  "engine": "interp",
+  "firmware_sha256": "30754052f90fe35d6e480f3f09f8611b7734cf087e8e001b35a9e4b70e8e4a46",
+  "elf_sha256": "2adf83133b85ef244cef94f4775b7e65cc1d5f9e7b5a6e3c81ac888f7615ea06",
+  "backend_sha256": "108ec5b02122381e6c3ae851508188ec0a96240ca5f74be804fd2201b141e6e9",
+  "qualifier_sha256": "9d1012ef24b6b50e5f17893478919083bc91d9ce95efe19715999e0f07e2f716",
+  "target_sha256": "bb9b084f82e08572f7886f0c8845f26fe8a6dea32ce811ccbf369d5d00d4f941",
+  "worker_source_sha256": "798a90c0c577d567b16d2790ced472b06fb751d1eb78690b0534176961bf67ea",
+  "module_sha256": "53f4fdca824b55c96a016ffcfa1df11ac7627bb9aa6feddefd69c5fad6c8b614",
+  "modules": {
+    "view-0.vdpl": "819d830c972353966364169744ca924aa8ba34e8b4a3dd5a3384709e10deb0b2",
+    "view-1.vdpl": "164d0ed433c222e12521f1eeaf2b2ef67c8ec25b3572c4df62af819beb4871e9",
+    "view-2.vdpl": "a7edeb510701506adc238cdc1646aa5dd984b3c599ca8f032cafea1911583dc2",
+    "view-3.vdpl": "3821807f71073254a0ec6354751d8fccb14f040b605c8c1430bf4d4dc176131a",
+    "view-5.vdpl": "f00c108a8eb02b083eebd120b681d7fe8a157b09d32298c5d07744fc59d50f25",
+    "numeric-1.vdpl": "722f77c8b33b57ec040c3366b6ceff16267efb358a716074179a1fb4cb6a6522",
+    "vdu-plot.vdpl": "d4bc2100573f0d89d1ce0780d2fd2a658802980d48af464dcfd6f749cffd3215",
+    "line-batch.vdpl": "be39f9f68689dbf9ec69d2ba957be94d7e9cf0addc713a317dcc46c8e73a1160"
+  },
+  "checks": [
+    "capability discovery exactly 159",
+    "exact legacy ABI0/1/2 views, masks and bounded accessors",
+    "independent pixel accessor succeeds with all five richer PCM callbacks absent",
+    "undeclared pixel/sink capability calls refuse without extending old tables",
+    "actual worker table extent and generic surface descriptor",
+    "all64 RGB222 colors, odd width, byte positions, padded stride and immediate source reuse",
+    "physical pixel units preserve semantics despite ordinary graphics origin and viewport",
+    "format, missing/short source, final invalid pixel and geometry rejection preserve complete screen",
+    "INDEX8 native2/4/16/64 palette mapping and packed-edge replacements",
+    "double-buffer descriptor, hidden-before-C3 and explicit stock presentation",
+    "fresh unallocated channel, current-rate admission, copied source reuse, prime, all-or-BUSY and independent drain",
+    "RESET/MUTE/STOP flush generations and counters; muted writes refuse; explicit close invalidates owner",
+    "lazy 1024-frame ring releases exact internal heap with no extra task",
+    "copied PCM drains between finite RUNs; DAC data preserved as diagnostic only",
+    "ordinary DISABLE and global mixer replacement synchronize sink cancellation",
+    "failed RUN and module unload cancel sink; stale worker generation refuses after reload",
+    "unchanged maintained numeric/VDU/line modules execute and drawing matches ordinary commands"
+  ],
+  "resource_observations": {
+    "boot": {
+      "command_stack_free_bytes": 2760,
+      "spiram_free_bytes": 4167647,
+      "spiram_largest_block_bytes": 4128756,
+      "audio_stack_free_bytes": 1544,
+      "task_count": 12,
+      "internal_free_bytes": 60740,
+      "internal_largest_block_bytes": 38900,
+      "executable_free_bytes": 53940,
+      "executable_largest_block_bytes": 32756
+    },
+    "final": {
+      "command_stack_free_bytes": 1844,
+      "spiram_free_bytes": 4165795,
+      "spiram_largest_block_bytes": 4128756,
+      "audio_stack_free_bytes": 1516,
+      "task_count": 12,
+      "internal_free_bytes": 139268,
+      "internal_largest_block_bytes": 45044,
+      "executable_free_bytes": 84660,
+      "executable_largest_block_bytes": 34804
+    }
+  },
+  "pixels_compared": 3726336,
+  "passed": true,
+  "scope": "actual ESP32 instructions and decoded VGA; no physical or clean-audio qualification",
+  "surfaces": [
+    {
+      "mode": 23,
+      "width": 512,
+      "height": 384,
+      "colors": 2,
+      "native_format": 2
+    },
+    {
+      "mode": 22,
+      "width": 512,
+      "height": 384,
+      "colors": 4,
+      "native_format": 4
+    },
+    {
+      "mode": 21,
+      "width": 512,
+      "height": 384,
+      "colors": 16,
+      "native_format": 16
+    },
+    {
+      "mode": 8,
+      "width": 320,
+      "height": 240,
+      "colors": 64,
+      "native_format": 64
+    }
+  ],
+  "lazy_ring": {
+    "capacity": 1024,
+    "closed": {
+      "command_stack_free_bytes": 1844,
+      "spiram_free_bytes": 4156559,
+      "spiram_largest_block_bytes": 4128756,
+      "audio_stack_free_bytes": 1516,
+      "task_count": 12,
+      "internal_free_bytes": 139368,
+      "internal_largest_block_bytes": 45044,
+      "executable_free_bytes": 83280,
+      "executable_largest_block_bytes": 34804
+    },
+    "opened": {
+      "command_stack_free_bytes": 1844,
+      "spiram_free_bytes": 4156559,
+      "spiram_largest_block_bytes": 4128756,
+      "audio_stack_free_bytes": 1516,
+      "task_count": 12,
+      "internal_free_bytes": 138328,
+      "internal_largest_block_bytes": 45044,
+      "executable_free_bytes": 83280,
+      "executable_largest_block_bytes": 34804
+    },
+    "recovered": {
+      "command_stack_free_bytes": 1844,
+      "spiram_free_bytes": 4156559,
+      "spiram_largest_block_bytes": 4128756,
+      "audio_stack_free_bytes": 1516,
+      "task_count": 12,
+      "internal_free_bytes": 139368,
+      "internal_largest_block_bytes": 45044,
+      "executable_free_bytes": 83280,
+      "executable_largest_block_bytes": 34804
+    },
+    "allocated_bytes": 1040
+  },
+  "audio_observation": {
+    "bytes": 8192,
+    "sha256": "4dad2d7fcbdc9ee1b3ec1cd907265a1dee5ac3fbce1fc9392b0c1d825f69741f",
+    "minimum": 27,
+    "maximum": 227,
+    "non_silent": 1024,
+    "limitation": "observational only: Flexe audio delivery defect precludes waveform or listening acceptance"
+  },
+  "controller_matrix_deferred": false,
+  "palette8_target_coverage": false,
+  "palette8_limit": "stock numbered modes do not select the available8-color controller; host kernel tests are separate",
+  "elapsed_seconds": 12.745,
+  "execution_stats": {
+    "engine": "interp",
+    "frames": 433,
+    "cycles": 1954541913,
+    "retired": 1092697885,
+    "uart_rx": 127364,
+    "uart_tx": 49147,
+    "uart_delivered": 49147,
+    "isync": 103,
+    "code_invalidations": 14,
+    "keys": 0,
+    "failed": false,
+    "unhandled": 0,
+    "unregistered": 0,
+    "unmapped": 0
+  },
+  "result_bytes": 40530,
+  "outbound_bytes": 127364
+}

@@ -1,0 +1,9 @@
+{
+  "author": "golem",
+  "recipient": "rally",
+  "request_id": "golem057-rally-smoke-audit-correction-eighteen",
+  "thread_id": "golem057-implementation",
+  "branch": "rollout-v1",
+  "in_reply_to": "2026-10-30_21-39-20_rally_golem057-rally-functional-audit-omission-nineteen",
+  "body": "# Audit-only three-read correction released immediately\n\nAgreed: preserve original oracle/readiness/first mismatch and all captured streams, guest/native/firmware/backend/profile bytes. Freeze a NEW oracle revision adding only the three unchanged source-required poseguard reads immediately after Init and before warm; record exact source/outbound/reply witnesses and separate +3 predictions. Re-audit the SAME immutable captures. No emulator, lease, fixture/game/limit change or repeated target run is needed or authorized by this audit correction.\n\nKeep all other checks; stop and report another actual mismatch. Return complete corrected raw/state/stack/memory/counter/cleanup audit before performance preparation. Expected17946 smoke replies/19626 full900 replies remain predictions until verified; keep functional pass distinct from independently audited qualification. Actual1972B command-task minimum and explicit post-unload heap residuals remain as measured, without broad leak/stack guarantees.\n\nThe Author explicitly requests immediate mail responses. This reply releases useful offline work now while6502 owns the next bounded Oryx diagnostic; it does not wait in a comment queue."
+}

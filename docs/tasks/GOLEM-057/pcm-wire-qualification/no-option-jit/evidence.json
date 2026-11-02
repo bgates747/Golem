@@ -1,0 +1,108 @@
+{
+  "passed": true,
+  "engine": "jit",
+  "wire_expected": false,
+  "scope": "actual ESP32 firmware and UART packet framing through direct ctypes adapter; not stock-MOS, physical or clean-audio qualification",
+  "firmware_sha256": "8c4e3377c228df478760d34eefba0a1d2ecc89bbe49da868fbb7d5fa14f46bc1",
+  "elf_sha256": "5562629695439b4769fccc8af5d0409210206587851432ab66c846dcfe25b943",
+  "backend_sha256": "108ec5b02122381e6c3ae851508188ec0a96240ca5f74be804fd2201b141e6e9",
+  "protocol_header_sha256": "5555235b73a68c7ee5648c7fe67f1e99014c707c1fe024b2dec5225edd9feb4e",
+  "qualifier_sha256": "595c564a347d10c84af894e7f023a0786e0685534ad84bd321886b01bd2b394c",
+  "target_sha256": "be853411d3a9b59ee83a73ab4c80abfd3b8b69703c6ee86ccb31a15ae6b9523f",
+  "lifecycle_source_sha256": "2545920e0a7d4436d018344e0ee73f14439d47c7d84ba31a6d560adfeb910bf8",
+  "checks": [
+    "operand-free runtime discovery, nativecap143 and explicit INFO25 presence",
+    "no-option control reports INFO25=0; no blind audio16 request"
+  ],
+  "wire_transactions": [],
+  "modules": {},
+  "resource_observations": {
+    "boot": {
+      "internal_free_bytes": 60740,
+      "internal_largest_block_bytes": 38900,
+      "command_stack_free_bytes": 2760,
+      "spiram_free_bytes": 4167647,
+      "spiram_largest_block_bytes": 4128756,
+      "audio_stack_free_bytes": 1544,
+      "tasks": 12
+    },
+    "final": {
+      "internal_free_bytes": 60740,
+      "internal_largest_block_bytes": 38900,
+      "command_stack_free_bytes": 2760,
+      "spiram_free_bytes": 4167647,
+      "spiram_largest_block_bytes": 4128756,
+      "audio_stack_free_bytes": 1544,
+      "tasks": 12
+    }
+  },
+  "firmware_source_receipt": {
+    "path": "build/vdpl011base/firmware-source.json",
+    "sha256": "d408abfc536751f7720ab1bf877b3e6ebbcd8e24395b55cebef735c7d72d938d",
+    "receipt": {
+      "project": "VDPlet Runtime",
+      "features": "lean",
+      "vdp_repository": "https://github.com/tomm/agon-vdp.git",
+      "vdp_pin": "1056ee38ec1cc68ed327bd32ee47d04b1c30597c",
+      "graphics_pin": "ac2dd5986daf496c43ae8e7fe41836274aec54a0",
+      "source": "/Agon/mystuff/agon-vdplet/build/vdpl011base/firmware-src",
+      "upstream_modified": false,
+      "builder_sha256": "a4e87f91a652f72472a9fc7fed52653f65531dbeb563c1929fd563e3b864d58a",
+      "dispatch_sha256": "35fff838a0942826fd8b63a69bbde9bae17a0d428e6a9289dd03607b225817ef",
+      "processor_sha256": "35f7d0d29f22462a9ccd7fad605aec5aa42fb7aadbe6c124e88ee54b29c8acc7",
+      "context_sha256": "38004060560979dc7338547345ad7784820f7938fb490a7afe8ac28d1d407c45",
+      "audio_sha256": "b42f103cbbf126c609a6e0eff14c33aae56094f9ec9614da0b1df5a30e7f30ad",
+      "audio_vdu_sha256": "bb8ffac2da903f10b60f9427fc83c764bfcf46a0be692d2a8f861e4bf0520762",
+      "audio_channel_sha256": "0100e83d3921aef6a1195b185842be32a012068914f6d6675da6e8ee3066e22f",
+      "buffered_sha256": "b9d9d93295ddc5fb05c802071057e32ed9755837f029ce381340072352c262f0",
+      "configuration_sha256": "7947cbd2e5fcb38e12ca3b8dee44b97700da0ca1d05c19914b100d47885f0bb1",
+      "headers": {
+        "vdplet_policy.h": "c69d6f3654b4b5dd4a8ae76e971818f4b13369d61dbded607b844e3268f66419",
+        "vdplet.h": "574fe46923142b0cae9fa7cb5989bea5c76a1cf8a2b6327c6ae4a783ced7bbe8",
+        "vdplet_services.h": "44f97a1155cad4e737e220807e5913a3f69d7f42054c7821ea9abe014bd3550f",
+        "vdplet_protocol.h": "e65d387735a6c600626608127ce57ca9e29249bc2aa535fbb5f9be29f3e06254",
+        "vdplet_vdu_validate.h": "5b95c6ead04b6a86bb578f6f5c1cd8b5b70dc8d72e11502874d41cd00b564381",
+        "vdplet_lines_validate.h": "2dd5d6168eb98b0adcae6070eb55f1fdcc4136ceb065f8274ba15b53fa09c4a3",
+        "vdplet_image.h": "1908ccf123f53a8393a3d357b92119c19bd3e56b7576f68af256ad329a850397",
+        "vdplet_runtime.h": "77210b1206810b49689268049678236a0d9e45d6aa0750128ba325b8369c8ceb",
+        "vdplet_pcm_sink_protocol.h": "1c0215f00853081bdf4d58ef794b889145aa71c9e1f119f16a5e29c1f384f942",
+        "vdplet_pcm_sink.h": "bb976714113e448ff11a900960b422ff378925484e2b8247266b0a9bae3f058b",
+        "vdplet_pcm_sink_core.h": "15820a5711ebfa7accaabdae89ad556b7d642bee9def8855123a461f79ba5a9c"
+      },
+      "exported_headers": {
+        "vdplet_policy.h": "c69d6f3654b4b5dd4a8ae76e971818f4b13369d61dbded607b844e3268f66419",
+        "vdplet.h": "b20994f60adf3c794bdc4fc5ec2d5951dfc7ea68476f564aa04fedeeabe5b622",
+        "vdplet_services.h": "44f97a1155cad4e737e220807e5913a3f69d7f42054c7821ea9abe014bd3550f",
+        "vdplet_protocol.h": "e65d387735a6c600626608127ce57ca9e29249bc2aa535fbb5f9be29f3e06254",
+        "vdplet_vdu_validate.h": "72922683020827fb99a101ae909da28d8e3f6e1d9c79ad1cda215bc5176e1b13",
+        "vdplet_lines_validate.h": "0086167133611ec7c314cfcf2f13fef9986dae1dff540f1f653c91931bee0dff",
+        "vdplet_image.h": "e9c92e3dedbf8a81d24c2c245944f2eaffa539b2ee7ae791772a45c97c75b4cd",
+        "vdplet_runtime.h": "77210b1206810b49689268049678236a0d9e45d6aa0750128ba325b8369c8ceb",
+        "vdplet_pcm_sink_protocol.h": "1c0215f00853081bdf4d58ef794b889145aa71c9e1f119f16a5e29c1f384f942",
+        "vdplet_pcm_sink.h": "bb976714113e448ff11a900960b422ff378925484e2b8247266b0a9bae3f058b",
+        "vdplet_pcm_sink_core.h": "8b3e0f225d3f8f045ad372376f63fcf0129549a5764f8331ec321d6c718fd1b4"
+      },
+      "build_configuration_sha256": "a369ed090632d8615ad373a131826421ddef44b248afcb1f189cbebd781cb444"
+    }
+  },
+  "audio16_requests_sent": 0,
+  "execution_stats": {
+    "engine": "jit",
+    "frames": 229,
+    "cycles": 1027960000,
+    "retired": 272606493,
+    "uart_rx": 345,
+    "uart_tx": 337,
+    "uart_delivered": 337,
+    "isync": 11,
+    "code_invalidations": 1,
+    "keys": 0,
+    "failed": false,
+    "unhandled": 0,
+    "unregistered": 0,
+    "unmapped": 0
+  },
+  "result_bytes": 260,
+  "outbound_bytes": 345,
+  "elapsed_seconds": 4.349
+}

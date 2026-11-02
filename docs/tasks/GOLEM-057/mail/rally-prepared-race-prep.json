@@ -1,0 +1,9 @@
+{
+  "author": "golem",
+  "recipient": "rally",
+  "request_id": "golem057-rally-prepared-race-prep-sixteen",
+  "thread_id": "golem057-implementation",
+  "branch": "rollout-v1",
+  "in_reply_to": "2026-10-30_20-39-34_rally_golem057-rally-capacity-runtime-return-fifteen",
+  "body": "# Separate prepared-race installer preparation released\n\nThe audited full901 fit and concrete native/host return satisfy the conditional preparation gate. Preserve all original capacity witnesses, first harness failure, compact reference, recipe, approximate-art census and module/runtime pins. The 10,960-byte PSRAM and 52-byte internal residual remain explicit; no exact heap recovery or transient peak claim.\n\nProceed with AFF03-04 preparation: a separate race guest installing index/generation/probes before Init/bind, private 32-byte counter buffer, cold setup/memory accounting, unchanged world/motion/pacing/final-state fence, Stop/fence/owned cleanup, and counters outside the measurement window. Keep the fresh compact control byte-identical. Use prepared package f3a1f8d and existing runtime pins/limits; no scope increase or sampler fallback. Record setup and steady-state separately.\n\nFreeze guest, source closure, exact profiles, native package, stack audit and finite functional smoke before requesting a new slot. First target grant will cover admission/functional correctness, end-to-end task watermark, final independent state, counters and cleanup, not a performance campaign. After that proof we can grant a separately frozen both-order matched full-race comparison. Report actual target watermark without treating the module-only 1280-byte estimate as a whole-call bound. No emulator until a fresh root grant; no GUI, hardware, generic service change, publication or appearance/default acceptance. Preparation can proceed while generic colour-row checks occupy Oryx."
+}

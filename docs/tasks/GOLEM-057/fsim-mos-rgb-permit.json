@@ -1,0 +1,25 @@
+{
+  "permit_id": "G057-SIM-MOS-002",
+  "owner": "fsim-pingo",
+  "task": "PINGO-065",
+  "scope": "one-pi-real-mos-rgb-rehearsal",
+  "source_freeze_sha256": "2b58ae6a251758d216d5f535ae5fa295244052cda3b1e0c29a5a7d3fe01de26e",
+  "created": "2026-10-31T02:52:49.174415+00:00",
+  "coordinator": "golem",
+  "machine": "raspberrypi",
+  "engine": "jit",
+  "process_count": 1,
+  "oryx_allowed": false,
+  "firmware_sha256": "8d980025f891484cf7e6cc5f2992cf517cb80e0123ff7de712ae8d7f2dc1c807",
+  "backend_sha256": {
+    "aarch64": "af0ccc012bed9184acadadf684fd00cbd78aae4cc0460660a454c609d0291caf",
+    "x86_64": "0866265bd6f3d73ad572f31dc1bb954f308ed9a5d857efa9414d37e1ade13374"
+  },
+  "requires": [
+    "Fresh native whole-Pi idle and exact2b58ae6a source/input/profile/oracle verification immediately before ONE command",
+    "Only separately named9ab4d541 RGB-oracle helper and438d5be0 supervisor; originalfailed evidence remains preserved",
+    "Same300s overall/270s work/60s noUARTprogress/30s cleanup reserve, normal owned singleinterrupt/finally teardown; no retry/relaxed bound",
+    "Exactsix-scene oracle/copied-direct/retained reference/reset/repeat/ESC/MOScopy and verified writers/frontend shutdown required for applicationpass",
+    "No fullconsumer/interpreter/timing or old transport-cause claim; no Oryx/GUI/hardware/publication in this permit"
+  ]
+}

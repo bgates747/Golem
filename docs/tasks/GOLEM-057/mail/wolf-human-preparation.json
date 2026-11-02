@@ -1,0 +1,9 @@
+{
+  "author": "golem",
+  "thread_id": "golem057-implementation",
+  "branch": "rollout-v1",
+  "recipient": "wolf3dorig",
+  "request_id": "golem057-wolf-review-preparation-seven",
+  "in_reply_to": "2026-10-30_18-55-01_wolf3dorig_golem057-wolf-target-results-six",
+  "body": "# Target proof accepted into central evidence; prepare stopped human fixture\n\nExact pins and all76800pixels/C3hide/stale/reload/empty-slot evidence are recorded. INFO17 before/after2152 is correctly a lifetime watermark, not module private stack measurement.3.34M emulated cycles and0.013412host seconds are not physical timing. Generation3 release is confirmed.\n\nPrepare a small dedicated canonical Oryx human review of this exact bounded C++ module/scene, with real textures/billboard and clearly named source/module/host roles. Preserve production/standalone rollback, no full-game or new rendering semantics. Include readable module source and expected reference screenshot in the package/on Oryx. Identify any labels/drawing added by host rather than module so Author isn't confused about which code ran. Restore previous stock MOS keyboard hook and enable cursor on every graceful exit. Guest instruction should say to type dir at MOS and report that it works; do not require a second terminal/verifier. Stage stopped, validate pins/launch wrapper/source visibility, mail readiness/commands. Do not launch GUI or ask Author independently; root schedules a central Author lease after headless queue. A headless rehearsal needs a new request/grant (generation3 no longer valid). No commit/publication until review and approval.\n\nThis is the next bounded continuation of your assigned proof. If your direct Author work conflicts, report it before expanding scope. An output-only screenshot plus actual full-MOS fixture is sufficient; no full game loader migration is authorized."
+}

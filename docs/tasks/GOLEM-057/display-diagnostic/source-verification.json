@@ -1,0 +1,16 @@
+{
+  "schema": "g057-display-diag-source-verification-v1",
+  "passed": true,
+  "checked_prepared_source_files": {
+    "control": 4756,
+    "instrumented": 4756
+  },
+  "checks": [
+    "Frozen original copied-file hashes unchanged",
+    "Prepared-file hashes unchanged",
+    "Macro-off three changed source files equal original after whitespace removal",
+    "Macro-on palette and list allocation calls each remain exactly once",
+    "Journal emission precedes original GPIO then interrupt-allocation calls",
+    "No hooks in VGA2 ISR source or getSignalsForScanline"
+  ]
+}

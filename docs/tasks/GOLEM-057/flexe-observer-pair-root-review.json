@@ -1,0 +1,25 @@
+{
+  "readiness_sha256": "79b5800027b6bad7d911c8ac22df62d984ea9f6bd5148c5c19267c393b7f11a6",
+  "source_files_verified": 10,
+  "fake_SDL_cases": 15,
+  "only_profile_binary_difference": [
+    "sdl-audio-observer.so"
+  ],
+  "original_full_observer_preserved": true,
+  "mode_B": "metadata_only; no SDL callback coverage",
+  "scope": "Preparation/source audit only; actual device/collector availability unqualified until a granted run",
+  "deadlines": {
+    "guest_seconds": 90,
+    "MOS_return_seconds": 20,
+    "trailing_seconds": 1,
+    "TERM_seconds": 5,
+    "KILL_seconds": 5,
+    "owned_child_seconds": 10,
+    "final_wait_seconds": 5,
+    "session_read_seconds": 5,
+    "collector_lifetime_seconds": 150,
+    "collector_join_seconds": 2,
+    "collector_TERM_seconds": 2,
+    "collector_KILL_seconds": 2
+  }
+}

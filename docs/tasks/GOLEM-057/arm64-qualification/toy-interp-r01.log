@@ -1,0 +1,12 @@
+Loaded ESP32 image /Agon/mystuff/agon-vdplet/build/vdpl-010/pixels/firmware-src/.pio/build/esp32dev/firmware.bin: 6 segments, entry=0x4008768C
+  Segment 0: 0x3F400020 (278396 bytes) -> flash_data
+  Segment 1: 0x3FFBDB60 (19896 bytes) -> sram_data
+  Segment 2: 0x40080000 (29364 bytes) -> sram_insn
+  Segment 3: 0x400D0020 (699204 bytes) -> flash_insn
+  Segment 4: 0x400872B4 (65476 bytes) -> sram_insn
+  Segment 5: 0x50000200 (4 bytes) -> rtc_slow
+[predecode] Built table: 1515516 entries, 19 MB (4 MB flash coverage)
+[APPCPU] boot addr = 0x40087524 (from pc=0x4000689C)
+[     10000] CORE1 started at 0x40087524
+[APPCPU] boot addr = 0x00000000 (from pc=0x4000689C)
+PASS interp original toy: 8 steps / 29 cycles, all 64 state bytes and finite lifecycle
