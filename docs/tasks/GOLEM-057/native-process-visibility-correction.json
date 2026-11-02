@@ -1,0 +1,17 @@
+{
+  "schema": "g057-native-process-visibility-correction-v1",
+  "supersedes_inference": "root269 specific PID blocker ended",
+  "sandbox_pid_namespace": "pid:[4026532844]",
+  "native_check": "require_escalated read-only exec",
+  "native_pid1_comm": "systemd",
+  "native_self_pid_namespace": "pid:[4026531836]",
+  "native_pid1_namespace": "permission denied",
+  "native_ps_exit": 0,
+  "pid": 498672,
+  "alive": true,
+  "observed_lifetime_cpu_percent": 100,
+  "foreign_process_modified": false,
+  "reply_request_id": "g057-native-process-visibility-correction-271",
+  "fsim_all_four_unrun": true,
+  "whole_host_quiet_claim": false
+}

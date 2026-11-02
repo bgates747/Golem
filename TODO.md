@@ -4,46 +4,14 @@ This is the authoritative register of promoted, unfinished work. Detailed plans
 and task artifacts live under `docs/tasks/`.
 
 - [ ] **GOLEM-057:** Shared VDPlet services and coordinated consumer proofs.
-  [Plan](docs/tasks/GOLEM-057.md), [results](docs/tasks/GOLEM-057/RESULTS.md),
-  [central review record](/Agon/mystuff/agon-dev-env/cross-agent/vdplet-rollout/human-reviews.md).
-  Independent pixel/PCM/row services, ordinary PCM transport and bounded Wolf,
-  FSIM and6502 candidates qualify within their recorded scopes. Four current-SDK
-  failed-mode recovery checks pass; the Author's current-image human review is
-  accepted: saved results and actual generation76 release verify. Publication/default gates
-  remain separate. Wolf's corrected startup observer measures19.287ms known
-  host-ring residence in its first10seconds; the older late-window result is
-  separate and no audible-delay cause or repair is established. Rally77 now
-  passes one maintained086 cached900/3600 strict functional qualification;
-  old74partial failure/successors stay preserved and clocks uncalibrated.
-  Wolf78 late attempt fails before startup on an output-path mismatch;
-  only separate source/device-free correction preparation is selected.
-  FSIM reports four Olimex hardware startup/exit passes without reproducing the
-  Console8 failure; exact full-flash restoration and CLI handback verify.
-  All3finite Pi frame-cost arms pass independent raw state/wire/counter checks.
-  A combined composition/render interval dominates observed source-clock time;
-  its separate off/on native diagnostics pass314frozen-witness root review,
-  focused host tests and actual2032/2048static stack closure. Separate finite
-  Pi driver396witness/12test audit passes; one finite native off/on cohort
-  stops before staging on a native namespace-link permission assumption.
-  BotharmsUNRUN/permitunconsumed; the host-only correction passes412witness/
-  15test/nativehelper review. The actual off/on pair now passes independent raw
-  trace/state/cleanup checks:44saved witnesses,412inputs/14staged files intact,
-  minimum stack1364B both arms. Conditional native counters attribute89.8684%
-  of RENDER span to the engine; no physical CPU-time or copied/direct claim.
-  Wolf production output still uses a full-frame copy; root237 returns the
-  concrete correction to Wolf, which owns its renderer changes and tests.
-  Generic direct rows already exist. No new firmware service.
-  Generic8-byte readback is now Author-approved and implemented in SDK VDPL-015:
-  sanitizer/fullSDK and actual both-engine mechanism/raw gates pass; optional
-  432image/0staticDRAM,512byte traffic7424→2368B. Root239 hands exact candidate
-  to6502. Its six independent MOS/key/disk cases now pass, including failed-save
-  dirty retention and retry; root accepts its bounded report without duplicating
-  owner tests. The revised visible-feedback utility passes its independent
-  headless UI/MOS check; generation89 released, readable r02 human review is
-  accepted by the Author; owner report6d42fbd6 and release91 recorded. Author
-  approves Golem-owned commits/push. Original silent-run discrepancy remains
-  preserved; physical/default adoption stay separate. Oryx scheduling
-  is self-service FIFO in agon-dev-env.
+  [Plan](docs/tasks/GOLEM-057.md), [current checkpoint](docs/tasks/GOLEM-057/review-checkpoint.md),
+  [shared coordination](/Agon/mystuff/agon-dev-env/cross-agent/vdplet-rollout/assignments.md).
+  Qualified SDK/runtime published at3ca63f6; token-epoch contract atb10eedb.
+  Current-image recovery and corrected readback human reviews pass.6502's
+  independent DOS/Lode pairs pass both engines and the Author accepts its
+  playable review; physical deployment remains owner work. Remaining generic PCM listening, FSIM full-matrix/
+  comparative-performance and old unreproduced-fault gates stay explicit.
+  Oryx uses the central self-service FIFO; physical/default adoption is separate.
 
 GOLEM-035 was accepted and explicitly approved for commit/push on 2026-10-13.
 Outstanding human/physical reviews below remain open; this checkpoint does not

@@ -135,7 +135,7 @@ and evidence rather than creating a competing implementation backlog.
   representative flat/textured/mixed parity; keep async overlap separate.
   Real module and six full-MOS Corsair views/reset/repeat/cleanup pass; existing
   cap17 real-scene direct-pixel supplement passes all three Corsair cases. No async requirement.
-- SIM-002 [ ] Coordinate the Author's newly selected live FSIM/PINGO-066 port
+- SIM-002 [x] Coordinate the Author's newly selected live FSIM/PINGO-066 port
   through the existing synchronous pixel/colour-row contract. Preserve host
   physics/30Hz scheduling/controls/HUD and the original P065 matrix/partial gates.
   Owner freezes/publishes its task before implementation, pins linked module/
@@ -144,6 +144,12 @@ and evidence rather than creating a competing implementation backlog.
   its own execution policy. Root supplies generic ABI support within its fence.
   P064/P065 consumer publication is directly authorized in the owner's chat;
   this does not approve root SDK publication or infer visual/full-matrix pass.
+  Bounded live-port coordination is complete: independent Pi/Oryx actual-MOS
+  views, own-tick state/cleanup, human controls/MOS return and later native
+  diagnostic pair retain their individual evidence. Root supplies no further
+  missing hook. Original P065 matrix/timing/failure limits remain open under
+  ROW-001/002; newer compiler comparisons remain FSIM-owned. This disposition
+  does not turn the partial matrix or performance concerns into a pass.
 - SIM-003 [x] Review the source-only live-client frame-cost plan assigned by
   root201 under central fsim-render-cost-planning-v1.md. Preserve the completed
   Olimex startup cohort and Console8 reports separately. Existing clock units,
