@@ -1,0 +1,328 @@
+{
+  "captured": "2026-10-30T19:13:47.457845-04:00",
+  "scope": "Static source review only; no builds, execution, firmware/ABI/service allocation, emulator/hardware, mail or commits.",
+  "sdk_head": "2541f10a1f8b06688bcecbc6d22eeae607da2b63",
+  "sdk_status": [
+    " M AGENTS.md",
+    " M Makefile",
+    " M TODO.md",
+    " M docs/API-reference.md",
+    " M include/vdplet.h",
+    " M src/vdplet_pcm_sink.h",
+    " M src/vdplet_runtime.h",
+    " M tools/build_firmware.py",
+    "?? docs/pcm-sink-wire.md",
+    "?? docs/tasks/VDPL-010.md",
+    "?? docs/tasks/VDPL-010/",
+    "?? docs/tasks/VDPL-011.md",
+    "?? docs/tasks/VDPL-011/",
+    "?? include/vdp_pcm_sink_wire.h",
+    "?? src/vdplet_pcm_sink_vdu.h",
+    "?? src/vdplet_pcm_sink_wire.h",
+    "?? tests/check_accessors.c",
+    "?? tests/test_pcm_sink_wire.cpp"
+  ],
+  "consumer_head": "86930cf1d12be9bcbcfe5a43dcd7f54b6643dfe6",
+  "consumer_status": [
+    " M TODO.md",
+    " M docs/task-dependency-gates.md",
+    "?? docs/development/2026-10-30-pingo064-vdplet.md",
+    "?? docs/tasks/PINGO-064.md",
+    "?? utilities/airfoil-analysis/original_xfoil_build.py",
+    "?? utilities/pingo-vdplet/"
+  ],
+  "emulator_head": "a35b17d7dddb83d127ef4bb75f33a5808d9d8515",
+  "warning": "Working SDK/consumer files may be uncommitted ongoing candidates. Head identifies checkout history, not the bytes reviewed. Exported sources are patched owned build exports, not maintained integration paths.",
+  "vdp_pin": "1056ee38ec1cc68ed327bd32ee47d04b1c30597c",
+  "graphics_pin": "ac2dd5986daf496c43ae8e7fe41836274aec54a0",
+  "framework": "Arduino ESP32 2.0.14; installed ESP-IDF headers4.4.6; espressif32 PlatformIO6.6.0",
+  "files": {
+    "sdk_working_tree": {
+      "src/vdplet_runtime.h": {
+        "path": "/Agon/mystuff/agon-vdplet/src/vdplet_runtime.h",
+        "bytes": 27348,
+        "sha256": "77210b1206810b49689268049678236a0d9e45d6aa0750128ba325b8369c8ceb"
+      },
+      "src/vdplet_image.h": {
+        "path": "/Agon/mystuff/agon-vdplet/src/vdplet_image.h",
+        "bytes": 9342,
+        "sha256": "1908ccf123f53a8393a3d357b92119c19bd3e56b7576f68af256ad329a850397"
+      },
+      "src/vdplet_policy.h": {
+        "path": "/Agon/mystuff/agon-vdplet/src/vdplet_policy.h",
+        "bytes": 398,
+        "sha256": "c69d6f3654b4b5dd4a8ae76e971818f4b13369d61dbded607b844e3268f66419"
+      },
+      "src/vdplet_color.h": {
+        "path": "/Agon/mystuff/agon-vdplet/src/vdplet_color.h",
+        "bytes": 3701,
+        "sha256": "2a04d1597769acc7be8c0aa19819c168de3ce4c3f95e9ae58750166b0493a7ea"
+      },
+      "src/vdplet_pcm_sink.h": {
+        "path": "/Agon/mystuff/agon-vdplet/src/vdplet_pcm_sink.h",
+        "bytes": 8008,
+        "sha256": "bb976714113e448ff11a900960b422ff378925484e2b8247266b0a9bae3f058b"
+      },
+      "include/vdplet.h": {
+        "path": "/Agon/mystuff/agon-vdplet/include/vdplet.h",
+        "bytes": 7002,
+        "sha256": "574fe46923142b0cae9fa7cb5989bea5c76a1cf8a2b6327c6ae4a783ced7bbe8"
+      },
+      "docs/API-reference.md": {
+        "path": "/Agon/mystuff/agon-vdplet/docs/API-reference.md",
+        "bytes": 47194,
+        "sha256": "dca10f81b5abf5d8096f82c011cce086ecefde36466a9d5a9f9c75544958ebff"
+      },
+      "tools/build_module.py": {
+        "path": "/Agon/mystuff/agon-vdplet/tools/build_module.py",
+        "bytes": 9799,
+        "sha256": "315295ba9cc2ad17a6af550d795877279fa7d1bab65da971b81bccce3dc6532c"
+      }
+    },
+    "owned_pixels_export": {
+      "platformio.ini": {
+        "path": "/Agon/mystuff/agon-vdplet/build/vdpl-010/pixels/firmware-src/platformio.ini",
+        "bytes": 1053,
+        "sha256": "7947cbd2e5fcb38e12ca3b8dee44b97700da0ca1d05c19914b100d47885f0bb1"
+      },
+      "video/video.ino": {
+        "path": "/Agon/mystuff/agon-vdplet/build/vdpl-010/pixels/firmware-src/video/video.ino",
+        "bytes": 11600,
+        "sha256": "0743e76728397c56e963baebe98c2746540195732d658d9dad2edf2e768ada27"
+      },
+      "video/agon.h": {
+        "path": "/Agon/mystuff/agon-vdplet/build/vdpl-010/pixels/firmware-src/video/agon.h",
+        "bytes": 32195,
+        "sha256": "9cd4c9d11a7138f282e9e64122d652b98277894f1ae0e61c696f7732d92377e4"
+      },
+      "video/agon_audio.h": {
+        "path": "/Agon/mystuff/agon-vdplet/build/vdpl-010/pixels/firmware-src/video/agon_audio.h",
+        "bytes": 5852,
+        "sha256": "bb8ee5b666350eb244e667cdb75ceb00d9a05f9c8a4913b7604210a5a6e6f79e"
+      },
+      "video/agon_ps2.h": {
+        "path": "/Agon/mystuff/agon-vdplet/build/vdpl-010/pixels/firmware-src/video/agon_ps2.h",
+        "bytes": 12115,
+        "sha256": "76dd5fd87e4be895e9a017d648e6f2de64b3273d98da876235ff9868b6ed66b6"
+      },
+      "video/buffers.h": {
+        "path": "/Agon/mystuff/agon-vdplet/build/vdpl-010/pixels/firmware-src/video/buffers.h",
+        "bytes": 10387,
+        "sha256": "f04f4da7521192d05725a7f54a52200c0b7cd9ed067335feaf20baf32ec62751"
+      },
+      "video/buffer_stream.h": {
+        "path": "/Agon/mystuff/agon-vdplet/build/vdpl-010/pixels/firmware-src/video/buffer_stream.h",
+        "bytes": 3583,
+        "sha256": "6b57aedf9e7fee1b8fdb84660e4eaade788c185ec540f94b00f965f2024c418d"
+      },
+      "video/vdu_buffered.h": {
+        "path": "/Agon/mystuff/agon-vdplet/build/vdpl-010/pixels/firmware-src/video/vdu_buffered.h",
+        "bytes": 100535,
+        "sha256": "b9d9d93295ddc5fb05c802071057e32ed9755837f029ce381340072352c262f0"
+      },
+      "video/vdu_stream_processor.h": {
+        "path": "/Agon/mystuff/agon-vdplet/build/vdpl-010/pixels/firmware-src/video/vdu_stream_processor.h",
+        "bytes": 26509,
+        "sha256": "35f7d0d29f22462a9ccd7fad605aec5aa42fb7aadbe6c124e88ee54b29c8acc7"
+      },
+      "video/vdplet_runtime.h": {
+        "path": "/Agon/mystuff/agon-vdplet/build/vdpl-010/pixels/firmware-src/video/vdplet_runtime.h",
+        "bytes": 27241,
+        "sha256": "c472db2dd3f9bbe70506dfcc10ff041962cde3cf008ecf9874788e7567be4df8"
+      },
+      "video/vdplet_image.h": {
+        "path": "/Agon/mystuff/agon-vdplet/build/vdpl-010/pixels/firmware-src/video/vdplet_image.h",
+        "bytes": 9331,
+        "sha256": "e9c92e3dedbf8a81d24c2c245944f2eaffa539b2ee7ae791772a45c97c75b4cd"
+      },
+      "video/vdplet_color.h": {
+        "path": "/Agon/mystuff/agon-vdplet/build/vdpl-010/pixels/firmware-src/video/vdplet_color.h",
+        "bytes": 3701,
+        "sha256": "2a04d1597769acc7be8c0aa19819c168de3ce4c3f95e9ae58750166b0493a7ea"
+      }
+    },
+    "graphics_dependency": {
+      "fabglconf.h": {
+        "path": "/Agon/mystuff/agon-vdplet/build/vdpl-010/pixels/firmware-src/.pio/libdeps/esp32dev/vdp-gl/src/fabglconf.h",
+        "bytes": 9223,
+        "sha256": "244afe581be47a3ef0dd21fbe8025f4da6e01ce8e53edc595d3188ef4d3a0ee3"
+      },
+      "fabutils.h": {
+        "path": "/Agon/mystuff/agon-vdplet/build/vdpl-010/pixels/firmware-src/.pio/libdeps/esp32dev/vdp-gl/src/fabutils.h",
+        "bytes": 54946,
+        "sha256": "9badf4ab1a47e4d1e8ede9dc3a93b10f9ffc6f1b2b18616562b483e257e6836d"
+      },
+      "fabutils.cpp": {
+        "path": "/Agon/mystuff/agon-vdplet/build/vdpl-010/pixels/firmware-src/.pio/libdeps/esp32dev/vdp-gl/src/fabutils.cpp",
+        "bytes": 48464,
+        "sha256": "0906c9b846ea60a710f4301c3972d883ce3986600408d35f9ad718c56c8a0aec"
+      },
+      "canvas.h": {
+        "path": "/Agon/mystuff/agon-vdplet/build/vdpl-010/pixels/firmware-src/.pio/libdeps/esp32dev/vdp-gl/src/canvas.h",
+        "bytes": 31021,
+        "sha256": "f220ff61f235810e8d255135a78ae02c2a319b666e2a8ea9843d3342616138f9"
+      },
+      "canvas.cpp": {
+        "path": "/Agon/mystuff/agon-vdplet/build/vdpl-010/pixels/firmware-src/.pio/libdeps/esp32dev/vdp-gl/src/canvas.cpp",
+        "bytes": 16615,
+        "sha256": "3626baa0df539ed5a8fde03d67d236c5a38636cd914764eca702b5310bde3271"
+      },
+      "dispdrivers/vgabasecontroller.cpp": {
+        "path": "/Agon/mystuff/agon-vdplet/build/vdpl-010/pixels/firmware-src/.pio/libdeps/esp32dev/vdp-gl/src/dispdrivers/vgabasecontroller.cpp",
+        "bytes": 29748,
+        "sha256": "443e24bbd568d9eb75fc069a0001275b6959c88dc941ff4fef7fbe2f3f8264aa"
+      },
+      "dispdrivers/vgapalettedcontroller.cpp": {
+        "path": "/Agon/mystuff/agon-vdplet/build/vdpl-010/pixels/firmware-src/.pio/libdeps/esp32dev/vdp-gl/src/dispdrivers/vgapalettedcontroller.cpp",
+        "bytes": 13921,
+        "sha256": "5c8f9b6b673d917ed7052a39aaef1f9671b669563f379c40337e3d1a829c2f49"
+      },
+      "devdrivers/soundgen.cpp": {
+        "path": "/Agon/mystuff/agon-vdplet/build/vdpl-010/pixels/firmware-src/.pio/libdeps/esp32dev/vdp-gl/src/devdrivers/soundgen.cpp",
+        "bytes": 21833,
+        "sha256": "0ba6e855a4327a7e01c500e9fee221b7c55e4452bcfa40180abeef687b114c0f"
+      },
+      "devdrivers/keyboard.cpp": {
+        "path": "/Agon/mystuff/agon-vdplet/build/vdpl-010/pixels/firmware-src/.pio/libdeps/esp32dev/vdp-gl/src/devdrivers/keyboard.cpp",
+        "bytes": 23041,
+        "sha256": "0a9286530708524a9bce7313bf71d68ebb68f165435ee2e16dfcfc0a497eb09f"
+      },
+      "devdrivers/mouse.cpp": {
+        "path": "/Agon/mystuff/agon-vdplet/build/vdpl-010/pixels/firmware-src/.pio/libdeps/esp32dev/vdp-gl/src/devdrivers/mouse.cpp",
+        "bytes": 9582,
+        "sha256": "c413a7f086c19541c900aa6245c8a45a5b43c1e1ab52a97fbccf5c69fb834530"
+      }
+    },
+    "installed_framework": {
+      "package.json": {
+        "path": "/home/smith/.platformio/packages/framework-arduinoespressif32/package.json",
+        "bytes": 401,
+        "sha256": "fa3262cd10e9536428203d2da0ac48e0227862e5cfc0901e13704bc06dbd7f5e"
+      },
+      "cores/esp32/main.cpp": {
+        "path": "/home/smith/.platformio/packages/framework-arduinoespressif32/cores/esp32/main.cpp",
+        "bytes": 1709,
+        "sha256": "130ee85dbf77f5343ce3b7a4f9b9355316fb293105603af8cd70ebbcaff5d9ff"
+      },
+      "tools/sdk/esp32/include/esp_common/include/esp_idf_version.h": {
+        "path": "/home/smith/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_common/include/esp_idf_version.h",
+        "bytes": 2011,
+        "sha256": "87b8bf9cc971b7c500f8b7c0f1a433e5a43f80a8374a0296274b0512318ca4fa"
+      },
+      "tools/sdk/esp32/qio_qspi/include/sdkconfig.h": {
+        "path": "/home/smith/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/qio_qspi/include/sdkconfig.h",
+        "bytes": 39365,
+        "sha256": "39630e411b3adb4ee8ee395417f525203aae09251d45fb16aac104622952cb4d"
+      },
+      "tools/sdk/esp32/include/freertos/include/freertos/task.h": {
+        "path": "/home/smith/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freertos/include/freertos/task.h",
+        "bytes": 151222,
+        "sha256": "7bb7ecfae47900bb10e6e38e4fb1ddba04b95adc14f43704f1972c2c41f7397b"
+      },
+      "tools/sdk/esp32/include/freertos/include/esp_additions/freertos/FreeRTOSConfig.h": {
+        "path": "/home/smith/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freertos/include/esp_additions/freertos/FreeRTOSConfig.h",
+        "bytes": 10069,
+        "sha256": "4880fca919579c52e5c0dcefb697bdf168d10062e7c280f4b88209b5b67f3f1e"
+      },
+      "tools/sdk/esp32/include/freertos/port/xtensa/include/freertos/portmacro.h": {
+        "path": "/home/smith/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freertos/port/xtensa/include/freertos/portmacro.h",
+        "bytes": 30203,
+        "sha256": "a5f5927cf10238a164ee23c7835803d97394caeb4c942217404e56f7196b78a9"
+      },
+      "tools/sdk/esp32/include/esp_wifi/include/esp_wifi.h": {
+        "path": "/home/smith/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_wifi/include/esp_wifi.h",
+        "bytes": 54844,
+        "sha256": "2ebaed039cebb20aeabb7bb59f0adcae1c035597c014fea9e82859c6a96348c3"
+      }
+    },
+    "consumer_read_only": {
+      "utilities/pingo-vdplet/module.c": {
+        "path": "/Agon/mystuff/agon-fsim/utilities/pingo-vdplet/module.c",
+        "bytes": 11826,
+        "sha256": "a9f52ed37dc50918aca476c7febbc36bcc2358de259567dd02251f4223bab19c"
+      },
+      "utilities/pingo-vdplet/arena.h": {
+        "path": "/Agon/mystuff/agon-fsim/utilities/pingo-vdplet/arena.h",
+        "bytes": 1228,
+        "sha256": "9f773f17e162a23e3d456fb41142cfd317e56299b7956a1bb5003921120a665b"
+      },
+      "utilities/pingo-vdplet/build/stack-check.json": {
+        "path": "/Agon/mystuff/agon-fsim/utilities/pingo-vdplet/build/stack-check.json",
+        "bytes": 737,
+        "sha256": "d315953873c71a1be3c604f377ba14cbaa8cafc39465ca7eb8198fbda4349918"
+      },
+      "utilities/corsair-backdrop-target/scanout.h": {
+        "path": "/Agon/mystuff/agon-fsim/utilities/corsair-backdrop-target/scanout.h",
+        "bytes": 18073,
+        "sha256": "c97adb4a88091aee7396759a265ea209440be7178fbae1961f1037652722e44a"
+      },
+      "docs/decisions/ADR-0009-composed-aircraft-presentation.md": {
+        "path": "/Agon/mystuff/agon-fsim/docs/decisions/ADR-0009-composed-aircraft-presentation.md",
+        "bytes": 5180,
+        "sha256": "ff27183613a37b0d4cb7d4b5c5eab0d1542a6725d922e234ac25f67daa6742b1"
+      }
+    },
+    "emulator_read_only": {
+      "adapter/flexe_vdp.c": {
+        "path": "/Agon/mystuff/flexe-agon-emulator/adapter/flexe_vdp.c",
+        "bytes": 22038,
+        "sha256": "359e62ac9501ab0989148d2d7abba5ae4736a99259237054f2097cbe22fee489"
+      },
+      "vendor/flexe/src/xtensa.c": {
+        "path": "/Agon/mystuff/flexe-agon-emulator/vendor/flexe/src/xtensa.c",
+        "bytes": 180954,
+        "sha256": "7cb3d058a595bc70fff4eea4865d69e71e7e219e99fff2e73faec70a180fb849"
+      },
+      "vendor/flexe/src/jit.c": {
+        "path": "/Agon/mystuff/flexe-agon-emulator/vendor/flexe/src/jit.c",
+        "bytes": 222441,
+        "sha256": "1f609d01e16e3300e6f97d71e31bc74cee8353fc9c5631e828e725f5606ca437"
+      },
+      "vendor/flexe/src/flexe_session.h": {
+        "path": "/Agon/mystuff/flexe-agon-emulator/vendor/flexe/src/flexe_session.h",
+        "bytes": 6136,
+        "sha256": "d4fc19213c07cde822f53551070b36b760072093a67326fb05cb6279fa50dc2b"
+      }
+    },
+    "export_receipts": {
+      "build/vdpl-010/pixels/firmware-source.json": {
+        "path": "/Agon/mystuff/agon-vdplet/build/vdpl-010/pixels/firmware-source.json",
+        "bytes": 3342,
+        "sha256": "bfe71a8a2788e54255a1f48a6f8ec5990434b703f908f092a925c65ee225f19c"
+      },
+      "build/vdpl-010/pixels/firmware-artifacts.json": {
+        "path": "/Agon/mystuff/agon-vdplet/build/vdpl-010/pixels/firmware-artifacts.json",
+        "bytes": 1193,
+        "sha256": "0114c521ec774f058c4314730d850fe1d420fe9faa4b63505760e2cb65766905"
+      }
+    }
+  },
+  "official_references": [
+    "https://docs.espressif.com/projects/esp-idf/en/v4.4.6/esp32/api-guides/freertos-smp.html",
+    "https://docs.espressif.com/projects/esp-idf/en/v4.4.6/esp32/api-reference/system/mem_alloc.html",
+    "https://docs.espressif.com/projects/esp-idf/en/v4.4.6/esp32/api-guides/external-ram.html"
+  ],
+  "end_check": {
+    "changed_since_capture": [
+      {
+        "category": "sdk_working_tree",
+        "file": "docs/API-reference.md",
+        "reviewed_sha256": "dca10f81b5abf5d8096f82c011cce086ecefde36466a9d5a9f9c75544958ebff",
+        "later_sha256": "292aa7552bf413c6d3e9584eb4adec60334c63a5d766b39e33b7ba7827931cf3"
+      }
+    ],
+    "interpretation": "Only ongoing API documentation changed during this final check; task/runtime/export/consumer code evidence stayed at the pinned hashes. Original bytes are not silently substituted."
+  },
+  "export_artifact_readback": {
+    "firmware.bin": {
+      "bytes": 1092448,
+      "sha256": "b42ae55f69900c44acacfbf0d665ef278e87b277b3b9fd4208e17ebf378f74b6",
+      "matches_export_receipt": true
+    },
+    "firmware.elf": {
+      "bytes": 24954928,
+      "sha256": "a10f7989d5c1f9974fc999428865ca74771fb65a0d4d694a2ac2b81c19df9902",
+      "matches_export_receipt": true
+    }
+  }
+}
