@@ -280,7 +280,7 @@ and evidence rather than creating a competing implementation backlog.
   scope without duplicating owner tests. The Author selects the stopped human
   review next through FIFO; requestd5086d201162 waits for actual prior release.
   Human acceptance and explicit publication remain open.
-- TOK-001 [ ] Review6502's consumer-only clean token-epoch rollover proposal
+- TOK-001 [x] Review6502's consumer-only clean token-epoch rollover proposal
   before adoption. Audit actual INFO0 reply order and the normal UART/callback
   path; require a clean quiescent consumer boundary, distinct fence token,
   foreground consumption and safe session transition. Preserve poison/error/
@@ -693,7 +693,7 @@ and evidence rather than creating a competing implementation backlog.
   stage readable, useful human reviews stopped with expected behavior/evidence.
   All three current reviews are staged. FSIM controls/MOS review completes and
   generation40 releases; visual equality and publication remain under PUB-001.
-- PUB-001 [ ] Obtain required human emulator acceptance/publication approval
+- PUB-001 [x] Obtain required human emulator acceptance/publication approval
   before committing coupled implementation/profile changes. Publish permitted
   completed work in logical groups and preserve open consumer/hardware gates.
 
@@ -867,3 +867,21 @@ test. The Author directly authorizes committing/pushing Golem-owned work and
 continuing the task. RDB-001 completes its bounded generic/consumer scope;
 physical/default adoption remain separate. PUB-001 completes only after actual
 permitted commits/pushes, not by this approval alone.
+
+
+## Clean token-epoch review delivered
+
+TOK-001 source review confirms conditional clean INFO0 epoch renewal without
+wire/firmware/MOS changes. SDK docs/readback-token-epochs.md defines controlled
+normal UART, single producer, no pending/unread/fault state, distinct exact
+fence, foreground consumption and guarded renewal; uncertainty remains poisoned
+and teardown-only. Snapshot token-epoch-source-review.json pins examined SDK,
+stock MOS and consumer sources. Root263 returns one concrete consumer gap:
+ordinary remote errors were not retained as renewal ineligibility.6502 owns
+that correction and portable/real-MOS qualification; root neither edits nor
+reruns its consumer. No extra per-test scheduling grant is required.
+
+PUB-001 completed the current permitted checkpoint: SDK3ca63f6, Golem62f69f4/
+baf9336, shared ce4f76a/1868852/750486e all pushed. Older unrelated shared
+mail/index and other agents' mixed edits remain untouched; all original
+functional, physical, audio/performance and consumer-adoption limits remain.

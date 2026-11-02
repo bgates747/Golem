@@ -1148,3 +1148,14 @@ and host. It must confirm fresh preflight/checkout before root supplies launch
 commands; only the Author launches. Human acceptance, publication and physical
 qualification remain open. No source/default changes or further rehearsal are
 selected. Central reviews/sdk015-consumer-terminal-root.json owns the receipt.
+
+
+## Current publication and token protocol follow-up
+
+The bounded readback human review is accepted and the qualified runtime/SDK
+checkpoint is pushed as3ca63f6. Golem rollout/research and shared protocol/
+receipt/current-goal mail groups are also pushed. Actual code still matches
+the qualified SDK source closure. Root completes clean INFO0 token-epoch
+source review without a firmware change and returns a concrete consumer error-
+admission gap to6502. The consumer implements/tests independently; no new
+target/human outcome is claimed by the contract clarification.

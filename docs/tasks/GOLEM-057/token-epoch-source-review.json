@@ -1,0 +1,22 @@
+{
+  "schema": "g057-clean-token-epoch-source-review-v1",
+  "task": "TOK-001",
+  "date": "2026-11-02",
+  "scope": "Static source/interface review only; no consumer implementation or emulator test",
+  "sdk_commit": "3ca63f6fe2c36c7527457904e6a9e35158b37994",
+  "sources": {
+    "/Agon/mystuff/agon-vdplet/src/vdplet_runtime.h": "c6f704e0b5d75e2180fa3ece74b1a5fd798d8afab390f365dacb815c8f74af5d",
+    "/Agon/mystuff/agon-vdplet/build/vdpl-015/enabled/firmware-src/video/vdu_stream_processor.h": "35f7d0d29f22462a9ccd7fad605aec5aa42fb7aadbe6c124e88ee54b29c8acc7",
+    "/Agon/mystuff/agon-6502/experiments/vdp005/bulk_read/client.c": "092b1a2a181d761dd26c0a746a952dc73282f212841a1bcc435b483c4e35f974",
+    "/Agon/mystuff/agon-6502/experiments/vdp005/bulk_read/client.h": "7c6e4220a6dc370da4c477da67fd54213b07caf02e03e04030d7ad56f3869a3a",
+    "/Agon/mystuff/agon-6502/experiments/vdp005/bulk_read/mos_transport.c": "b943b6d35e11ad44945e9ade00a1aa455e985c9e29813c6b389496d99a60275d",
+    "/Agon/mystuff/agon-6502/docs/tasks/VDP-005/playable-integration-plan.md": "4b001edff89372e125533dff0410d158253a3d42996e93f4dcb12374b83dc393",
+    "/Agon/agon-mos/src/vdp_protocol.asm": "56ef61c794ba61d3d9e1ef4a454955343cde0564ef5bbc6059f84fd2dbb55e71",
+    "/Agon/agon-mos/src/interrupts.asm": "8cc01976ade723da300897a0c59d53b45f294e910b6ad1b7a69626c5dc13b1b0",
+    "/Agon/mystuff/agon-6502/experiments/vdp005/playable/client.c": "bf33cb70c48063cc04559b9a8f2e7ed4d410c85c90550470c61e3c2d63cefbad",
+    "/Agon/mystuff/agon-6502/experiments/vdp005/playable/client.h": "1ad3624c38ce8432d7b79961b20f5eb71be34f3332478cdc57ea109236c35a59",
+    "/Agon/mystuff/agon-6502/experiments/vdp005/playable/mos_transport.c": "e03c429cc90b28ebf0201a1550dab92f69d78826e5ac9f2afb057690f648040a"
+  },
+  "conclusion": "Conditional clean epoch renewal supported by the existing synchronous INFO0/ordinary ordered UART path; uncertainty never permits renewal; application owns qualification.",
+  "consumer_gap": "Ordinary remote error taken outside a clean fence is not latched in playable/client.c br_take; br_clean_begin can later accept it. Add/prove a persistent eligibility refusal for disallowed private errors, with explicit pre-transfer unsupported discovery separately governed by v1."
+}

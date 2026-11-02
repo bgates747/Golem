@@ -63,3 +63,32 @@ contract remains until the source/FIFO/session proof is reviewed. Root261
 delivers the actual pushed SDK pin without requiring a consumer repin or run.
 Modeler starts its separately Author-selected MODEL-066 preparation; root262
 reports no root timing-sensitive window, not host-wide scheduling admission.
+
+
+## Clean epochs and compiler-control consultation
+
+Following publication, root completes TOK-001 static review. Synchronous INFO0
+plus sequential normal-UART reply emission and stock MOS full-body-before-
+callback parsing support a clean token-epoch boundary under explicit sole-
+producer/lifetime rules. Frozen contract1 remains unchanged; the live SDK
+reference links the additive token-epochs document. No firmware/native/MOS
+operation or root emulator run is added. Production32768/test64 leave separate
+clean/teardown tokens. Arbitrary later replay cannot be recognized after reuse;
+therefore the restricted producer assumptions are required, not a claimed
+global queue drain or graphics/audio completion. Uncertain sessions stay
+poisoned and the existing reconciliation fence permits teardown only.
+
+Root263 sends the supported generic contract and a concrete candidate gap:
+ordinary error outside a clean fence was consumed without an error eligibility
+latch, allowing later clean_begin. Owner6502 must fix/prove refusal while
+preserving explicit pre-transfer unsupported-feature fallback. No consumer
+code/test takeover or extra root per-test gate. Its pending target result is
+not inferred from the existing portable preparation.
+
+FSIM34 independently reports strict compiler controls: retained -Os reproduces
+26185text/2032stack, -O2 builds30265text/2016stack. Root264 confirms -Os is
+a size default rather than an ABI requirement; all compiler/PIC/relocation/
+layout/stack/FP/workload gates remain. No performance result or universal libc/
+scheduling explanation follows. Root has no Pi timed work; MODEL066 host
+clarification is requested via265 so owners can resolve actual shared CPU
+conflicts without root acting as an approval gate.
