@@ -3,6 +3,12 @@
 This is the authoritative register of promoted, unfinished work. Detailed plans
 and task artifacts live under `docs/tasks/`.
 
+- [ ] **GOLEM-058:** VDPlet capacity/lifecycle qualification, broader VDU
+  font/text and bounded resource/execution coverage, and refreshed standalone
+  on-Agon compiler distribution. [Plan](docs/tasks/GOLEM-058.md). New active
+  goal; publish plan first, then implement with normal shared scheduling and
+  required review gates. Continue servicing GOLEM-057 consumer requests.
+
 - [ ] **GOLEM-057:** Shared VDPlet services and coordinated consumer proofs.
   [Plan](docs/tasks/GOLEM-057.md), [current checkpoint](docs/tasks/GOLEM-057/review-checkpoint.md),
   [shared coordination](/Agon/mystuff/agon-dev-env/cross-agent/vdplet-rollout/assignments.md).
