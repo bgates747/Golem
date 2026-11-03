@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "author_report": "Pass; emulator closed",
+  "display": true,
+  "numerical_output": true,
+  "blinking_MOS_cursor": true,
+  "dir_response": true,
+  "window_closed": true,
+  "retrieved_files": 49,
+  "identical_native_output_files": 40,
+  "actual_MOS_DIR": true,
+  "archive_sha256": "0edce1573beb32fd3f0acb0b04ea7dfcfd06b04206289d5650b594446e4dbc91",
+  "publication_approval": true,
+  "checkout_generation": 218,
+  "checkout_released": true
+}

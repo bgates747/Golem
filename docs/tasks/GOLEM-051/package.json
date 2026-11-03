@@ -1,9 +1,11 @@
 {
   "archive": "dist/golem-on-agon-GOLEM-051.zip",
-  "bytes": 555616,
-  "sha256": "2c6077ee1ee697b5c111c166114358c077ff2a49add56bddf7895e73e42f4517",
+  "bytes": 556961,
+  "sha256": "0edce1573beb32fd3f0acb0b04ea7dfcfd06b04206289d5650b594446e4dbc91",
   "files": 115,
-  "human": "pending",
+  "human": "passed2026-11-03; display/numbers/cursor/dir/closed",
   "physical": "not run",
-  "source": "current maintained C++ with task-local AgonDev adapter"
+  "source": "current maintained C++ with task-local AgonDev adapter",
+  "publication": "explicitly approved2026-11-03",
+  "qualification": "GOLEM-058/standalone-human-review.json and stock-native-results-root.json"
 }

@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Assemble a standalone SD distribution and reproducible source ZIP."""
 from pathlib import Path
+import argparse
 import hashlib
 import importlib.util
 import json
@@ -16,10 +17,10 @@ def put(source,destination):
     destination.parent.mkdir(parents=True,exist_ok=True)
     shutil.copyfile(source,destination)
 
-def package():
+def package(*, tree=None, archive=None, report_path=None):
     report=json.loads((HERE/'qualification.json').read_text())
     if not report['passed']:raise RuntimeError('Qualification has not passed')
-    tree=BUILD/'distribution'
+    tree=Path(tree) if tree is not None else BUILD/'distribution'
     if tree.exists():shutil.rmtree(tree)
     tree.mkdir()
     sd=tree/'sdcard';app=sd/'golem'
@@ -92,7 +93,7 @@ Example programs are in `sdcard/golem/examples/`; compiler source is in `source/
     (tree/'OWNER.txt').write_text('Golem — repository owner: Brandon R. Gates\nhttps://github.com/bgates747/Golem\n\nThis distribution preserves the repository source and third-party notices.\nNo new project-wide license grant is made by this task. See THIRD-PARTY.md.\n')
     sums={str(p.relative_to(tree)):hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(tree.rglob('*')) if p.is_file()}
     (tree/'SHA256SUMS').write_text(''.join(d+'  '+p+'\n' for p,d in sums.items()))
-    archive=ROOT/'dist/golem-on-agon-GOLEM-051.zip';archive.parent.mkdir(exist_ok=True)
+    archive=Path(archive) if archive is not None else ROOT/'dist/golem-on-agon-GOLEM-051.zip';archive.parent.mkdir(parents=True,exist_ok=True)
     with zipfile.ZipFile(archive,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=9) as z:
         for p in sorted(tree.rglob('*')):
             name=str(p.relative_to(tree))+('/' if p.is_dir() else '')
@@ -101,7 +102,10 @@ Example programs are in `sdcard/golem/examples/`; compiler source is in `source/
             z.writestr(item,b'' if p.is_dir() else p.read_bytes())
     result={'archive':str(archive.relative_to(ROOT)),'bytes':archive.stat().st_size,'sha256':hashlib.sha256(archive.read_bytes()).hexdigest(),
             'files':len(sums)+1,'human':'pending','physical':'not run','source':'current maintained C++ with task-local AgonDev adapter'}
-    (HERE/'package.json').write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result))
+    (Path(report_path) if report_path is not None else HERE/'package.json').write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result))
     return tree
 
-if __name__=='__main__':package()
+if __name__=='__main__':
+    p=argparse.ArgumentParser(description=__doc__)
+    p.add_argument('--tree',type=Path);p.add_argument('--archive',type=Path);p.add_argument('--report',type=Path)
+    a=p.parse_args();package(tree=a.tree,archive=a.archive,report_path=a.report)

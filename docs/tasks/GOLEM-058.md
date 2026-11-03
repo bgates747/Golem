@@ -96,24 +96,24 @@ Refresh the existing GOLEM-051 builder and package rather than starting another
 compiler port. Every implemented language/profile feature must be accounted
 for; proposed syntax must not be presented as implemented.
 
-- PKG-001 [ ] Compare maintained compiler syntax/options and subsequent accepted
+- PKG-001 [x] Compare maintained compiler syntax/options and subsequent accepted
   changes against native source adaptation, runner, examples, reference and
   package contents. Record concrete gaps; do not assume old parity evidence
   covers a newer compiler or ZIP.
-- PKG-002 [ ] Fix distribution/native-compiler gaps found by that comparison,
+- PKG-002 [x] Fix distribution/native-compiler gaps found by that comparison,
   preserving all implemented profiles and output semantics. Include useful
   initialized examples with visible output, including integer/float printing
   and bitwise behavior where implemented. No string-concatenation extension.
-- PKG-003 [ ] Make the how-to independently understandable: installation,
+- PKG-003 [x] Make the how-to independently understandable: installation,
   compiling, `--resident`, target/profile choices, invocation, retained state,
   expected output, errors and return to MOS. Include the language reference,
   source/build recipe and examples in the ZIP. Exclude internal evidence and
   consumer-irrelevant qualification bookkeeping.
-- PKG-004 [ ] Rebuild from the shipped source in isolation, verify archive
+- PKG-004 [x] Rebuild from the shipped source in isolation, verify archive
   contents and maintained/native compiler parity, and run shipped examples on
   stock firmware under MOS. Keep tests proportional to actual changes and
   carry forward existing meaningful parity fixtures.
-- PKG-005 [ ] Stage the updated standalone walkthrough stopped on Oryx, with
+- PKG-005 [x] Stage the updated standalone walkthrough stopped on Oryx, with
   simple launch commands and visible results. Complete human review and any
   required publication gate, then record the final ZIP identity and supported
   limits in maintained user documentation.

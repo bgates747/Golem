@@ -1,0 +1,57 @@
+{
+  "passed": true,
+  "archive": "/Agon/mystuff/golem/build/golem-on-agon-GOLEM-058-candidate-r01.zip",
+  "archive_sha256": "0edce1573beb32fd3f0acb0b04ea7dfcfd06b04206289d5650b594446e4dbc91",
+  "manifest_files": 114,
+  "command": [
+    "/Agon/mystuff/golem/.venv/bin/python",
+    "/Agon/mystuff/golem/build/g058-candidate-archive-rebuild-r01/extracted/source/docs/tasks/GOLEM-051/port/build_all.py"
+  ],
+  "returncode": 0,
+  "seconds": 16.472653029000185,
+  "repository_compiler_inputs_used": false,
+  "comparisons": [
+    {
+      "shipped": "sdcard/mos/golemc.bin",
+      "bytes": 10881,
+      "sha256": "ba8e9738818d2e510f0647d0358068c57524db9556879a2b5a8f3a065feae8e1",
+      "expected_sha256": "ba8e9738818d2e510f0647d0358068c57524db9556879a2b5a8f3a065feae8e1",
+      "same": true
+    },
+    {
+      "shipped": "sdcard/bin/golemrun.bin",
+      "bytes": 12746,
+      "sha256": "04b64eb3d8797129e2d6f9ffdc3add5a30837cf09d184197388ff69becad9637",
+      "expected_sha256": "04b64eb3d8797129e2d6f9ffdc3add5a30837cf09d184197388ff69becad9637",
+      "same": true
+    },
+    {
+      "shipped": "sdcard/golem/compiler/raw.bin",
+      "bytes": 61720,
+      "sha256": "c3a1f8deec6825f45c4cbda6152029eff6b5aa29a20f3ae56b96c31982933dbc",
+      "expected_sha256": "c3a1f8deec6825f45c4cbda6152029eff6b5aa29a20f3ae56b96c31982933dbc",
+      "same": true
+    },
+    {
+      "shipped": "sdcard/golem/compiler/resident.bin",
+      "bytes": 176719,
+      "sha256": "86f75d7d1141e0b59ab0c678ec30862407af6e6562f64f383ae5a2b8bb47df78",
+      "expected_sha256": "86f75d7d1141e0b59ab0c678ec30862407af6e6562f64f383ae5a2b8bb47df78",
+      "same": true
+    },
+    {
+      "shipped": "sdcard/golem/compiler/portable.bin",
+      "bytes": 319794,
+      "sha256": "77a046b7a80990e7e45d3ab99b45786075249fe04dec9da2a6b5d01392ed5677",
+      "expected_sha256": "77a046b7a80990e7e45d3ab99b45786075249fe04dec9da2a6b5d01392ed5677",
+      "same": true
+    },
+    {
+      "shipped": "sdcard/golem/compiler/stock-matrix.bin",
+      "bytes": 120300,
+      "sha256": "b10c46f18821e42ef3edfce1dde599acc91f7c9582d777ec1ec25ad6b7d87d44",
+      "expected_sha256": "b10c46f18821e42ef3edfce1dde599acc91f7c9582d777ec1ec25ad6b7d87d44",
+      "same": true
+    }
+  ]
+}

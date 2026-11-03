@@ -39,7 +39,9 @@ asset-directory metadata=4. Roles 1/3/4 are read; role 2 is read/write. These
 descriptors declare externally installed ranges, not working synchronization,
 event transport or automatic asset loading.
 
-The default mode emits both backends. `--target native` explicitly emits only
+The default mode emits both backends where supported. `--target buffered`
+emits only stock buffered output. Printing selects that output automatically
+when no target option is supplied; explicit native/both rejects printing. `--target native` explicitly emits only
 native source/install/cleanup and named native wrappers, retaining the common
 typed state/root/layout. `--target both` is the default. Native-only packages
 include targets.json and capability/library metadata; they omit buffered

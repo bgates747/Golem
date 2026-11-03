@@ -1,0 +1,9 @@
+{
+  "selected": true,
+  "cohort_sha256": "8850c2875ca3282f41a5af7b66cfe57f7c5b48b4fe21e487ebf876e9f413d963",
+  "maximum_processes": 1,
+  "engine": "jit",
+  "retry": false,
+  "contract": "docs/tasks/GOLEM-058/stock-target-contract-r01.md",
+  "r02_disposition": "Actual native worker write failures: stager discarded existing ZIP empty cache/output directories. Saved 28 files, normal stopped frontend, released Oryx. Candidate ZIP/source unchanged. r03 preserves exact shipped directories and stops on first batch error."
+}

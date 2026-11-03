@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "seconds": 32.23615211300785,
+  "stock_firmware": true,
+  "native_example_compilations": 5,
+  "exact_example_output": true,
+  "white_cube_anchors": 8,
+  "actual_MOS_prompt": true,
+  "human_review": "pending",
+  "archive_sha256": "0edce1573beb32fd3f0acb0b04ea7dfcfd06b04206289d5650b594446e4dbc91"
+}

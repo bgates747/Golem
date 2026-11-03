@@ -6,8 +6,9 @@ and task artifacts live under `docs/tasks/`.
 - [ ] **GOLEM-058:** VDPlet capacity/lifecycle qualification, broader VDU
   font/text and bounded resource/execution coverage, and refreshed standalone
   on-Agon compiler distribution. [Plan](docs/tasks/GOLEM-058.md). New active
-  goal; publish plan first, then implement with normal shared scheduling and
-  required review gates. Continue servicing GOLEM-057 consumer requests.
+  goal; plan445afed is published. Standalone distribution refresh and human
+  walkthrough are accepted and publication approved. Capacity and broader VDU
+  work continue with normal scheduling and review gates; service GOLEM-057.
 
 - [ ] **GOLEM-057:** Shared VDPlet services and coordinated consumer proofs.
   [Plan](docs/tasks/GOLEM-057.md), [current checkpoint](docs/tasks/GOLEM-057/review-checkpoint.md),

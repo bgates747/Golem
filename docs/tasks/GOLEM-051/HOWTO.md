@@ -69,6 +69,11 @@ select different implemented language profiles. Printing currently has a stock
 implementation only, so programs using print produce stock output by default.
 You do not need a VDPlet or custom firmware to print numbers.
 
+Use `--target buffered` after `--portable` when you want only stock buffered
+output. Use `--target both` for both implementations where supported, or
+`--target native` for C output only. An explicit native/both selection rejects
+printing; an omitted selection automatically chooses buffered output for it.
+
 
 ## Exercise 1: Hello, world
 
@@ -88,8 +93,8 @@ golemrun output/hello.bin
 
 `cd` selects the working directory. The next command compiles the source into
 `output/hello.bin`. The last command runs it. You should see **Hello, world!**
-and then the MOS prompt. Print does not append a newline, so the prompt can
-follow the greeting on the same line.
+and then the MOS prompt. Print itself does not append a newline; the supplied
+runner finishes the output line before returning to MOS.
 
 Change the greeting in the source, save it, then repeat the compile and run
 commands. Running without recompiling uses the previous compiled version.
@@ -134,13 +139,20 @@ golemrun --portable output/counter-print
 ```
 
 You should see **i=10 total=55**, followed by the MOS prompt. The program declares
-`uint16` globals, adds 1 through 10 in `Sub accumulate`, then prints:
+`uint16` globals, adds 1 through 10 in `Sub accumulate`, with this complete source:
 
 ```golem
+uint16 i = 0
+uint16 total = 0
+Sub accumulate
+    For i In Range(1:10)
+        total = total + i
+    Next i
     print "i="
     print str(i)
     print " total="
     print str(total)
+EndSub
 ```
 
 `str(i)` converts the integer to decimal text. Print emits that text. Each print

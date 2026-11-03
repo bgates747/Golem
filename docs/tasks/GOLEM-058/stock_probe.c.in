@@ -1,0 +1,59 @@
+/* Test-only observer; the packaged runner itself is included unchanged. */
+#include <stdint.h>
+#include <stdio.h>
+#define GOLEM_QUALIFY 1
+#define main runner_main
+#include "runner.c"
+#undef main
+#include "observations.h"
+static uint8_t observed[OBSERVATIONS];
+static unsigned current = GROUPS, errors;
+
+void g_observe(void) {
+    if (current >= GROUPS) return;
+    for (unsigned i = starts[current]; i < starts[current + 1]; ++i) {
+        const struct Observation *o = observations + i;
+        uint8_t header[8] = {23,0,160,0,0,0,4,0};
+        uint8_t query[4] = {23,0,128,(uint8_t)~o->expected};
+        uint8_t patch[15] = {23,0,160,0,0,5,0xe2,3,0,1,0,0,0,0,0};
+        command(0,2); send(header,8); send(query,4);
+        word(patch+11,o->buffer); word(patch+13,o->offset); send(patch,15);
+        volatile uint8_t *gp = mos_sysvars()+sysvar_gp;
+        *gp = (uint8_t)~o->expected; command(0,1);
+        uint32_t began = getsysvar_time();
+        while (*gp != o->expected && (uint32_t)(getsysvar_time()-began)<600ul) {}
+        observed[i] = *gp;
+        if (*gp != o->expected) ++errors;
+    }
+}
+
+int main(void) {
+    char *hello[] = {"golemrun","output/hello.bin"};
+    char *loops[] = {"golemrun","output/loops.bin"};
+    if (runner_main(2,hello)) ++errors;
+    if (runner_main(2,loops)) ++errors;
+    /* Borrowed matrix buffers belong to this test application. */
+    const int16_t xyz[] = {0,0,0,32,0,0,0,32,0};
+    uint8_t header[8] = {23,0,160,0,0,0,18,0};
+    for (unsigned id=1000; id<=1001; ++id) {
+        command(id,2); word(header+3,id); send(header,8); send(xyz,18);
+    }
+    if (!echo()) return 1;
+    for (current=0; current<GROUPS; ++current) {
+        char path[48]; snprintf(path,sizeof path,"output/%s",names[current]);
+        char *args[] = {"golemrun",current<PORTABLE_GROUPS?"--portable":"--resident",path};
+        if (runner_main(3,args)) ++errors;
+    }
+    command(1000,2); command(1001,2); echo();
+    FILE *f=fopen("probe-results.dat","wb"); if(!f) return 1;
+    fwrite(observed,1,sizeof observed,f); fclose(f);
+    f=fopen("probe-status.dat","wb"); if(!f) return 1;
+    uint8_t status=(uint8_t)errors; fwrite(&status,1,1,f); fclose(f);
+    /* Only the native-compiled cube.golem draws the review picture. */
+    char *draw[]={"golemrun","--review","--resident","output/cube"};
+    int rc=runner_main(4,draw);
+    const uint8_t cursor[]={23,1,1}; send(cursor,sizeof cursor);
+    f=fopen("probe-done.dat","wb"); if(!f) return 1;
+    uint8_t done=(uint8_t)rc; fwrite(&done,1,1,f); fclose(f);
+    return rc;
+}

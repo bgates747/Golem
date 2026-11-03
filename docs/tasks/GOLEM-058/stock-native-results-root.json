@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "scope": "Independent saved-file/native output/state/cube audit; human review remains separate",
+  "archive_sha256": "0edce1573beb32fd3f0acb0b04ea7dfcfd06b04206289d5650b594446e4dbc91",
+  "verified_files": 214,
+  "native_compilations": 13,
+  "identical_output_files": 196,
+  "state_bytes": 76,
+  "independent_white_cube_anchors": 13,
+  "actual_MOS_DIR": true,
+  "cursor_enable_command": true,
+  "human_review": false
+}

@@ -25,6 +25,27 @@ and qualification are tracked in GOLEM-051. Native C output still needs a
 separate C-to-Xtensa build to become an executable VDPlet. The on-Agon compiler
 does not contain that toolchain. Compilation never requires an LLM.
 
+## Compiler options
+
+Place the profile first, its options next, then the source and output paths.
+On Agon, `golemc @build.args` reads options/paths from a response file; paths
+resolve from the current MOS directory. The HOWTO explains its size limits.
+
+| Option | Profiles | Meaning |
+| --- | --- | --- |
+| `--target buffered`, `both` or `native` | portable | Choose stock commands, both implementations or native C; printing requires buffered and native-only math requires native |
+| `--reserve FIRST:LAST` | resident, portable, stock-matrix | Protect inclusive externally owned buffer IDs; repeat for disjoint ranges |
+| `--array-data NAME=PATH` | portable | Supply exact packed array initializer bytes at compile time |
+| `--table-data NAME=PATH` | resident table | Supply packed records at compile time |
+| `--bind ROLE ID OFFSET BYTES` | portable | Declare an installed external span: input snapshot1, event mailbox2, table3, asset metadata4; this adds no transport or automatic loading |
+| `--emit-asm` | resident, stock-matrix | Emit named assembly wrappers/layout; matrix already emits them |
+| `--emit-load-plan` | resident, portable, stock-matrix | Emit installation records for application/AGNB loader integration |
+
+Portable always emits its named wrappers and layout. These integration options
+do not cause compilation to install data or execute anything on the VDP.
+Do not combine features from different profiles merely because their command
+options look alike; profile-specific limits below still apply.
+
 ## Lexical rules
 
 1. Keywords and builtins ignore case: `Sub`, `SUB` and `sub` mean the same thing.

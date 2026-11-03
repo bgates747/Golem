@@ -1,0 +1,28 @@
+{
+  "scope": "Archive/worker-source audit, not new rebuild or native execution",
+  "manifest_files_verified": 114,
+  "worker_sources": [
+    {
+      "profile": "raw",
+      "source_files": 15,
+      "different_sources": []
+    },
+    {
+      "profile": "resident",
+      "source_files": 15,
+      "different_sources": []
+    },
+    {
+      "profile": "portable",
+      "source_files": 15,
+      "different_sources": []
+    },
+    {
+      "profile": "stock-matrix",
+      "source_files": 15,
+      "different_sources": []
+    }
+  ],
+  "howto_correction": "Runner finishes output line; Print itself does not",
+  "ZIP_refreshed": false
+}

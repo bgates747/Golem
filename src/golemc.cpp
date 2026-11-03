@@ -199,7 +199,7 @@ int main(int argc, char **argv) {
             std::cerr << "usage: golemc <source> <payload>\n"
                       << "       golemc --resident [--emit-asm] [--emit-load-plan] [--table-data NAME=PATH] [--reserve FIRST:LAST ...] <source> <directory> [example-input]\n";
             std::cerr << "       golemc --stock-matrix [--reserve FIRST:LAST ...] [--emit-asm] [--emit-load-plan] <source> <directory>\n";
-            std::cerr << "       golemc --portable [--emit-load-plan] [--target both|native] [--reserve FIRST:LAST ...] [--bind ROLE ID OFFSET BYTES ...] [--array-data NAME=PATH ...] <source> <directory>\n";
+            std::cerr << "       golemc --portable [--emit-load-plan] [--target both|native|buffered] [--reserve FIRST:LAST ...] [--bind ROLE ID OFFSET BYTES ...] [--array-data NAME=PATH ...] <source> <directory>\n";
             return 2;
         }
         auto bytes = compile(readFile(argv[1]));

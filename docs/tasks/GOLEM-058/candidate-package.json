@@ -1,0 +1,9 @@
+{
+  "archive": "build/golem-on-agon-GOLEM-058-candidate-r01.zip",
+  "bytes": 556961,
+  "sha256": "0edce1573beb32fd3f0acb0b04ea7dfcfd06b04206289d5650b594446e4dbc91",
+  "files": 115,
+  "human": "pending",
+  "physical": "not run",
+  "source": "current maintained C++ with task-local AgonDev adapter"
+}
