@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "scope": "Saved review log/oracle/native wire/MOS continuation; human report remains separate",
+  "files": 10,
+  "modes": [
+    11,
+    8,
+    136
+  ],
+  "loads": 15,
+  "calls": 45,
+  "expected_MEMORY_refusals": 2,
+  "sampled_free_recovery": true,
+  "MOS_DIR": true,
+  "explicit_flashing_cursor_commands": true,
+  "physical": false
+}

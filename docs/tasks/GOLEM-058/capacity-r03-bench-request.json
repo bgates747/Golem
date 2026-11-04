@@ -1,0 +1,10 @@
+{
+  "owner": "golem",
+  "task": "VDPL-022-CAPACITY-R03",
+  "purpose": "One finite capacity C client on installed native VDP; modes11/8/136, no audio or firmware change, current fast-transfer confirmation required",
+  "plan": "/Agon/mystuff/agon-vdplet/docs/tasks/VDPL-022/physical/PROPOSAL.md",
+  "notify_thread": "01a12c79-f74c-74d2-b6da-de2e34eb1bdd",
+  "notify_host": "remote-ssh-discovered:raspberrypi",
+  "request": "7a95c2bd372b",
+  "requested": "2026-11-04T01:35:56.418683+00:00"
+}

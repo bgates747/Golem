@@ -1,0 +1,50 @@
+{
+  "passed": true,
+  "scope": "Independent raw command/reply/oracle/lifecycle replay of the selected actual-engine cohort; not physical capacity/timing",
+  "records": [
+    {
+      "engine": "jit",
+      "native_transactions": 2461,
+      "successful_loads": 25,
+      "oracle_runs": 55,
+      "readback_words_checked": 1056,
+      "refusals": {
+        "7": 7,
+        "8": 48,
+        "12": 1,
+        "13": 1,
+        "2": 3
+      },
+      "raw_wire_bytes": 326869,
+      "steady_exec_free": 84664,
+      "steady_exec_largest": 34804,
+      "steady_internal_free": 139596,
+      "internal_largest": 45044,
+      "last_observed_stack_floor": 2136,
+      "normal_shutdown": true,
+      "passed": true
+    },
+    {
+      "engine": "interp",
+      "native_transactions": 2461,
+      "successful_loads": 25,
+      "oracle_runs": 55,
+      "readback_words_checked": 1056,
+      "refusals": {
+        "7": 7,
+        "8": 48,
+        "12": 1,
+        "13": 1,
+        "2": 3
+      },
+      "raw_wire_bytes": 326869,
+      "steady_exec_free": 84664,
+      "steady_exec_largest": 34804,
+      "steady_internal_free": 139596,
+      "internal_largest": 45044,
+      "last_observed_stack_floor": 1924,
+      "normal_shutdown": true,
+      "passed": true
+    }
+  ]
+}

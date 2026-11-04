@@ -1,0 +1,7 @@
+{
+  "phase": "preparation only",
+  "target_launched": false,
+  "profile": "/home/smith/Agon/mystuff/agon-vdplet/.emulator/vdpl022-capacity-r01",
+  "error": "AttributeError: canonical_flexe has no attribute verify_profile_executables",
+  "next": "Private pinned current canonical checker, verify existing generated profile without recreating it"
+}

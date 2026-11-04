@@ -1,0 +1,49 @@
+{
+  "passed": true,
+  "host_cases": [
+    {
+      "steps": 1,
+      "data_words": 1,
+      "bss_words": 1,
+      "variant": 1,
+      "source_sha256": "f503499dfdc76731c7c42cd019fa37cc12a16a675ac9bfe699e37c8ac87e799f",
+      "passed": true
+    },
+    {
+      "steps": 5,
+      "data_words": 4,
+      "bss_words": 9,
+      "variant": 1,
+      "source_sha256": "28bbeabd51c5485b8f65507875a1269acc9715f2ccc20adf01efb9711de9c0aa",
+      "passed": true
+    },
+    {
+      "steps": 64,
+      "data_words": 33,
+      "bss_words": 17,
+      "variant": 1,
+      "source_sha256": "310913e0d8650cd8c1dc1cbba395a527bab021edb684eb14a4976391502ade97",
+      "passed": true
+    },
+    {
+      "steps": 5,
+      "data_words": 4,
+      "bss_words": 9,
+      "variant": 2,
+      "source_sha256": "28bbeabd51c5485b8f65507875a1269acc9715f2ccc20adf01efb9711de9c0aa",
+      "passed": true
+    }
+  ],
+  "rejected_generator_inputs": 5,
+  "oracle_runs": 9,
+  "sanitizers": "undefined, unrecoverable",
+  "target_executed": false,
+  "scope": "Host API/output/initialization checks only; no ELF admission or Xtensa/hardware capacity proof",
+  "source_pins": {
+    "generate.py": "d2b111e06f3f254ffb0b5f38667338200f666454d26daff34e21fa24bc0e1375",
+    "capacity.c.in": "7d426d7f719492b244d5bbdc6476d8e3157efd6e6c9d882ffee2233fe917ba5a",
+    "check_host.py": "18b146bd338cd2db251dd9f5173844b043060efb26b55d60753808ff56eae79c",
+    "host_check.c": "886205ff186b39b1befd8feb0dfcc310d6cddfd7ee65092d7b4a534e053766ee"
+  },
+  "host_output": "/Agon/mystuff/golem/build/g058-capacity-host-r01"
+}

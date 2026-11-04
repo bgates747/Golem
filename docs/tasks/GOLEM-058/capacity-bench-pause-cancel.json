@@ -1,0 +1,21 @@
+{
+  "owner": "golem",
+  "task": "VDPL-022",
+  "purpose": "One finite physical capacity/lifecycle control; unchanged installed firmware, idle modes11/8/136; MOS-qualified C client",
+  "plan": "/Agon/mystuff/agon-vdplet/docs/tasks/VDPL-022/physical/PROPOSAL.md",
+  "notify_thread": "01a12c79-f74c-74d2-b6da-de2e34eb1bdd",
+  "notify_host": "remote-ssh-discovered:raspberrypi",
+  "request": "8ea5da518b63",
+  "requested": "2026-11-03T23:02:57.534132+00:00",
+  "cancelled": "2026-11-03T23:16:41.597049+00:00",
+  "next_request": {
+    "owner": "wolf3dorig",
+    "task": "WOLF-HW-STARTUP-R01",
+    "purpose": "Finite passive diagnosis of intermittent Console8 startup and SFX-load failures; exact candidate; live VDP serial; bounded starts; full restoration",
+    "plan": "/Agon/mystuff/Wolf3dOrig/agonport/doc/wolf3d-console8-startup-diagnostic-plan.md",
+    "notify_thread": "019fb094-fba6-70f0-be4f-c211e1f5c616",
+    "notify_host": "remote-ssh-discovered:raspberrypi",
+    "request": "134cdd479b46",
+    "requested": "2026-11-03T23:15:13.651972+00:00"
+  }
+}

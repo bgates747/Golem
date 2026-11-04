@@ -1,0 +1,18 @@
+{
+  "owner": "golem",
+  "task": "GOLEM-058-CAPACITY-R03",
+  "purpose": "One finite 180s headless MOS capacity client check with visible labels and bounded settling; same native modules, no GUI/physical/retry",
+  "profile": "/home/smith/Agon/mystuff/agon-vdplet/.emulator/vdpl022-physical-mos-r03",
+  "notify_thread": "01a12c79-f74c-74d2-b6da-de2e34eb1bdd",
+  "notify_host": "remote-ssh-discovered:raspberrypi",
+  "request": "510b37205c21",
+  "requested": "2026-11-04T01:32:43.370809+00:00",
+  "lease": "1193f862920d416d9e6ada1fca2aade4",
+  "generation": 233,
+  "checked_out": "2026-11-04T01:32:54.968265+00:00",
+  "idle_observation": {
+    "machine": "oryx-linuxlite",
+    "epoch": 1793755974.891156,
+    "emulators": []
+  }
+}

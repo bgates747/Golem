@@ -1,0 +1,946 @@
+{
+  "passed": true,
+  "scope": "Actual Xtensa ELF build/policy refusal and host-loader/oracle checks; no actual engine or physical capacity",
+  "builder_sha256": "c7b7075679fed93bde4a59b78a093fdb089d74f58d998f05c3892f53ae0c3ce0",
+  "cases": [
+    {
+      "name": "text_default_edge",
+      "generator": {
+        "steps": 1535,
+        "data_words": 1,
+        "bss_words": 1,
+        "variant": 1
+      },
+      "expected_package": true,
+      "source_sha256": "ecd834e78e5e1556d265c1cd429b671093519fed9e1911d2248433ee8fef8859",
+      "packaged": true,
+      "module": {
+        "compiler_target": {
+          "psram_cache_workaround": true,
+          "flags": [
+            "-mfix-esp32-psram-cache-issue"
+          ]
+        },
+        "link_map": "/Agon/mystuff/agon-vdplet/build/vdpl022-boundaries-r01/text_default_edge/text_default_edge.map",
+        "name": "text_default_edge",
+        "source": "/Agon/mystuff/agon-vdplet/build/vdpl022-boundaries-r01/text_default_edge/capacity.c",
+        "source_sha256": "ecd834e78e5e1556d265c1cd429b671093519fed9e1911d2248433ee8fef8859",
+        "policy_sha256": "c69d6f3654b4b5dd4a8ae76e971818f4b13369d61dbded607b844e3268f66419",
+        "declared_limits": {
+          "text": 32768,
+          "data": 4096,
+          "stack": 512,
+          "image": 131072
+        },
+        "build_id": "0x22010000",
+        "capabilities": 1,
+        "abi_major": 1,
+        "abi_minor": 0,
+        "envelope_bytes": 64,
+        "elf_bytes": 33728,
+        "package_bytes": 33792,
+        "sha256": "0d7ffb590c0f6a2519e38ea31339a194bbade0a7531276b759e156e6863f3de7",
+        "package": "/Agon/mystuff/agon-vdplet/build/vdpl022-boundaries-r01/text_default_edge/text_default_edge.vdpl",
+        "elf": "/Agon/mystuff/agon-vdplet/build/vdpl022-boundaries-r01/text_default_edge/text_default_edge.elf",
+        "entry_virtual": 32648,
+        "resident_text_bytes": 32764,
+        "resident_data_bytes": 16,
+        "relative_relocations": 6,
+        "allocated_sections": {
+          ".text": {
+            "virtual_address": 380,
+            "bytes": 32762,
+            "type": 1
+          },
+          ".data": {
+            "virtual_address": 37396,
+            "bytes": 8,
+            "type": 1
+          },
+          ".bss": {
+            "virtual_address": 37404,
+            "bytes": 8,
+            "type": 8
+          }
+        },
+        "generator": {
+          "steps": 1535,
+          "data_words": 1,
+          "bss_words": 1,
+          "variant": 1
+        },
+        "compiler_frames": {
+          "kernel": {
+            "bytes": 32,
+            "kind": "static"
+          },
+          "vdplet_entry": {
+            "bytes": 144,
+            "kind": "static"
+          }
+        },
+        "module_frame_path_sum": 176
+      }
+    },
+    {
+      "name": "text_default_over",
+      "generator": {
+        "steps": 1536,
+        "data_words": 1,
+        "bss_words": 1,
+        "variant": 1
+      },
+      "expected_package": false,
+      "source_sha256": "995dd52dff686219555d4222baf8eaf46a639f769b5d0dfca21033498f9fa2a3",
+      "packaged": false,
+      "expected_refusal": "module exceeds declared text/data envelope: text 32788/32768, data 16/4096",
+      "actual_sections": {
+        "": {
+          "virtual_address": 0,
+          "bytes": 0,
+          "type": 0
+        },
+        ".hash": {
+          "virtual_address": 148,
+          "bytes": 40,
+          "type": 5
+        },
+        ".dynsym": {
+          "virtual_address": 188,
+          "bytes": 80,
+          "type": 11
+        },
+        ".dynstr": {
+          "virtual_address": 268,
+          "bytes": 38,
+          "type": 3
+        },
+        ".rela.dyn": {
+          "virtual_address": 308,
+          "bytes": 72,
+          "type": 4
+        },
+        ".text": {
+          "virtual_address": 380,
+          "bytes": 32786,
+          "type": 1
+        },
+        ".data": {
+          "virtual_address": 37420,
+          "bytes": 8,
+          "type": 1
+        },
+        ".bss": {
+          "virtual_address": 37428,
+          "bytes": 8,
+          "type": 8
+        },
+        ".shstrtab": {
+          "virtual_address": 0,
+          "bytes": 60,
+          "type": 3
+        }
+      }
+    },
+    {
+      "name": "text_extended",
+      "generator": {
+        "steps": 1536,
+        "data_words": 1,
+        "bss_words": 1,
+        "variant": 1
+      },
+      "expected_package": true,
+      "source_sha256": "995dd52dff686219555d4222baf8eaf46a639f769b5d0dfca21033498f9fa2a3",
+      "packaged": true,
+      "module": {
+        "compiler_target": {
+          "psram_cache_workaround": true,
+          "flags": [
+            "-mfix-esp32-psram-cache-issue"
+          ]
+        },
+        "link_map": "/Agon/mystuff/agon-vdplet/build/vdpl022-boundaries-r01/text_extended/text_extended.map",
+        "name": "text_extended",
+        "source": "/Agon/mystuff/agon-vdplet/build/vdpl022-boundaries-r01/text_extended/capacity.c",
+        "source_sha256": "995dd52dff686219555d4222baf8eaf46a639f769b5d0dfca21033498f9fa2a3",
+        "policy_sha256": "c69d6f3654b4b5dd4a8ae76e971818f4b13369d61dbded607b844e3268f66419",
+        "declared_limits": {
+          "text": 65536,
+          "data": 4096,
+          "stack": 512,
+          "image": 131072
+        },
+        "build_id": "0x22010002",
+        "capabilities": 1,
+        "abi_major": 1,
+        "abi_minor": 0,
+        "envelope_bytes": 64,
+        "elf_bytes": 33752,
+        "package_bytes": 33816,
+        "sha256": "ee59af0aa55f748c935de98b49ad0bdf40169f2e64bac724d33a792dae0cb5a1",
+        "package": "/Agon/mystuff/agon-vdplet/build/vdpl022-boundaries-r01/text_extended/text_extended.vdpl",
+        "elf": "/Agon/mystuff/agon-vdplet/build/vdpl022-boundaries-r01/text_extended/text_extended.elf",
+        "entry_virtual": 32672,
+        "resident_text_bytes": 32788,
+        "resident_data_bytes": 16,
+        "relative_relocations": 6,
+        "allocated_sections": {
+          ".text": {
+            "virtual_address": 380,
+            "bytes": 32786,
+            "type": 1
+          },
+          ".data": {
+            "virtual_address": 37420,
+            "bytes": 8,
+            "type": 1
+          },
+          ".bss": {
+            "virtual_address": 37428,
+            "bytes": 8,
+            "type": 8
+          }
+        },
+        "generator": {
+          "steps": 1536,
+          "data_words": 1,
+          "bss_words": 1,
+          "variant": 1
+        },
+        "compiler_frames": {
+          "kernel": {
+            "bytes": 32,
+            "kind": "static"
+          },
+          "vdplet_entry": {
+            "bytes": 144,
+            "kind": "static"
+          }
+        },
+        "module_frame_path_sum": 176
+      }
+    },
+    {
+      "name": "text_hard_near",
+      "generator": {
+        "steps": 3095,
+        "data_words": 1,
+        "bss_words": 1,
+        "variant": 1
+      },
+      "expected_package": true,
+      "source_sha256": "799c2be05c63820c7d1285ec5b16fe253bb73d7d0d7af65b8e40815e15f283e3",
+      "packaged": true,
+      "module": {
+        "compiler_target": {
+          "psram_cache_workaround": true,
+          "flags": [
+            "-mfix-esp32-psram-cache-issue"
+          ]
+        },
+        "link_map": "/Agon/mystuff/agon-vdplet/build/vdpl022-boundaries-r01/text_hard_near/text_hard_near.map",
+        "name": "text_hard_near",
+        "source": "/Agon/mystuff/agon-vdplet/build/vdpl022-boundaries-r01/text_hard_near/capacity.c",
+        "source_sha256": "799c2be05c63820c7d1285ec5b16fe253bb73d7d0d7af65b8e40815e15f283e3",
+        "policy_sha256": "c69d6f3654b4b5dd4a8ae76e971818f4b13369d61dbded607b844e3268f66419",
+        "declared_limits": {
+          "text": 65536,
+          "data": 4096,
+          "stack": 512,
+          "image": 131072
+        },
+        "build_id": "0x22010003",
+        "capabilities": 1,
+        "abi_major": 1,
+        "abi_minor": 0,
+        "envelope_bytes": 64,
+        "elf_bytes": 66492,
+        "package_bytes": 66556,
+        "sha256": "003f9503a64adc93e6e59526657b0dbc5da1db5dd1bcb00c0b8eb71ba982647b",
+        "package": "/Agon/mystuff/agon-vdplet/build/vdpl022-boundaries-r01/text_hard_near/text_hard_near.vdpl",
+        "elf": "/Agon/mystuff/agon-vdplet/build/vdpl022-boundaries-r01/text_hard_near/text_hard_near.elf",
+        "entry_virtual": 65412,
+        "resident_text_bytes": 65528,
+        "resident_data_bytes": 16,
+        "relative_relocations": 6,
+        "allocated_sections": {
+          ".text": {
+            "virtual_address": 380,
+            "bytes": 65526,
+            "type": 1
+          },
+          ".data": {
+            "virtual_address": 70160,
+            "bytes": 8,
+            "type": 1
+          },
+          ".bss": {
+            "virtual_address": 70168,
+            "bytes": 8,
+            "type": 8
+          }
+        },
+        "generator": {
+          "steps": 3095,
+          "data_words": 1,
+          "bss_words": 1,
+          "variant": 1
+        },
+        "compiler_frames": {
+          "kernel": {
+            "bytes": 32,
+            "kind": "static"
+          },
+          "vdplet_entry": {
+            "bytes": 144,
+            "kind": "static"
+          }
+        },
+        "module_frame_path_sum": 176
+      }
+    },
+    {
+      "name": "text_hard_over",
+      "generator": {
+        "steps": 3096,
+        "data_words": 1,
+        "bss_words": 1,
+        "variant": 1
+      },
+      "expected_package": false,
+      "source_sha256": "86eb1a2acec4d64bc27daf2fb06b6be98021e871b8eb9b5c55fe2218992da1ff",
+      "packaged": false,
+      "expected_refusal": "module exceeds declared text/data envelope: text 65552/65536, data 16/4096",
+      "actual_sections": {
+        "": {
+          "virtual_address": 0,
+          "bytes": 0,
+          "type": 0
+        },
+        ".hash": {
+          "virtual_address": 148,
+          "bytes": 40,
+          "type": 5
+        },
+        ".dynsym": {
+          "virtual_address": 188,
+          "bytes": 80,
+          "type": 11
+        },
+        ".dynstr": {
+          "virtual_address": 268,
+          "bytes": 38,
+          "type": 3
+        },
+        ".rela.dyn": {
+          "virtual_address": 308,
+          "bytes": 72,
+          "type": 4
+        },
+        ".text": {
+          "virtual_address": 380,
+          "bytes": 65550,
+          "type": 1
+        },
+        ".data": {
+          "virtual_address": 70184,
+          "bytes": 8,
+          "type": 1
+        },
+        ".bss": {
+          "virtual_address": 70192,
+          "bytes": 8,
+          "type": 8
+        },
+        ".shstrtab": {
+          "virtual_address": 0,
+          "bytes": 60,
+          "type": 3
+        }
+      }
+    },
+    {
+      "name": "data_default_edge",
+      "generator": {
+        "steps": 1,
+        "data_words": 1021,
+        "bss_words": 1,
+        "variant": 1
+      },
+      "expected_package": true,
+      "source_sha256": "eddab928e8d867fdbe63141d3f04806c79f5bf59d50dde3301cc30fc9edea104",
+      "packaged": true,
+      "module": {
+        "compiler_target": {
+          "psram_cache_workaround": true,
+          "flags": [
+            "-mfix-esp32-psram-cache-issue"
+          ]
+        },
+        "link_map": "/Agon/mystuff/agon-vdplet/build/vdpl022-boundaries-r01/data_default_edge/data_default_edge.map",
+        "name": "data_default_edge",
+        "source": "/Agon/mystuff/agon-vdplet/build/vdpl022-boundaries-r01/data_default_edge/capacity.c",
+        "source_sha256": "eddab928e8d867fdbe63141d3f04806c79f5bf59d50dde3301cc30fc9edea104",
+        "policy_sha256": "c69d6f3654b4b5dd4a8ae76e971818f4b13369d61dbded607b844e3268f66419",
+        "declared_limits": {
+          "text": 32768,
+          "data": 4096,
+          "stack": 512,
+          "image": 131072
+        },
+        "build_id": "0x22010005",
+        "capabilities": 1,
+        "abi_major": 1,
+        "abi_minor": 0,
+        "envelope_bytes": 64,
+        "elf_bytes": 5632,
+        "package_bytes": 5696,
+        "sha256": "e35950937ac41cb02b63f947d21f776e27ef46e55ccccaf9f93e953e418f9da0",
+        "package": "/Agon/mystuff/agon-vdplet/build/vdpl022-boundaries-r01/data_default_edge/data_default_edge.vdpl",
+        "elf": "/Agon/mystuff/agon-vdplet/build/vdpl022-boundaries-r01/data_default_edge/data_default_edge.elf",
+        "entry_virtual": 440,
+        "resident_text_bytes": 588,
+        "resident_data_bytes": 4096,
+        "relative_relocations": 6,
+        "allocated_sections": {
+          ".text": {
+            "virtual_address": 380,
+            "bytes": 586,
+            "type": 1
+          },
+          ".data": {
+            "virtual_address": 5220,
+            "bytes": 4088,
+            "type": 1
+          },
+          ".bss": {
+            "virtual_address": 9308,
+            "bytes": 8,
+            "type": 8
+          }
+        },
+        "generator": {
+          "steps": 1,
+          "data_words": 1021,
+          "bss_words": 1,
+          "variant": 1
+        },
+        "compiler_frames": {
+          "kernel": {
+            "bytes": 32,
+            "kind": "static"
+          },
+          "vdplet_entry": {
+            "bytes": 128,
+            "kind": "static"
+          }
+        },
+        "module_frame_path_sum": 160
+      }
+    },
+    {
+      "name": "data_default_over",
+      "generator": {
+        "steps": 1,
+        "data_words": 1022,
+        "bss_words": 1,
+        "variant": 1
+      },
+      "expected_package": false,
+      "source_sha256": "f6ba4afbc2b52e26e51bb9663942128a3f859f3acdbb512cfeac02b965b304d0",
+      "packaged": false,
+      "expected_refusal": "module exceeds declared text/data envelope: text 588/32768, data 4100/4096",
+      "actual_sections": {
+        "": {
+          "virtual_address": 0,
+          "bytes": 0,
+          "type": 0
+        },
+        ".hash": {
+          "virtual_address": 148,
+          "bytes": 40,
+          "type": 5
+        },
+        ".dynsym": {
+          "virtual_address": 188,
+          "bytes": 80,
+          "type": 11
+        },
+        ".dynstr": {
+          "virtual_address": 268,
+          "bytes": 38,
+          "type": 3
+        },
+        ".rela.dyn": {
+          "virtual_address": 308,
+          "bytes": 72,
+          "type": 4
+        },
+        ".text": {
+          "virtual_address": 380,
+          "bytes": 586,
+          "type": 1
+        },
+        ".data": {
+          "virtual_address": 5220,
+          "bytes": 4092,
+          "type": 1
+        },
+        ".bss": {
+          "virtual_address": 9312,
+          "bytes": 8,
+          "type": 8
+        },
+        ".shstrtab": {
+          "virtual_address": 0,
+          "bytes": 60,
+          "type": 3
+        }
+      }
+    },
+    {
+      "name": "bss_default_edge",
+      "generator": {
+        "steps": 1,
+        "data_words": 1,
+        "bss_words": 1021,
+        "variant": 1
+      },
+      "expected_package": true,
+      "source_sha256": "1e921159f3baaaf7a67ccb834e4a516e505d71e4b5a8e80b4f432310ba56d437",
+      "packaged": true,
+      "module": {
+        "compiler_target": {
+          "psram_cache_workaround": true,
+          "flags": [
+            "-mfix-esp32-psram-cache-issue"
+          ]
+        },
+        "link_map": "/Agon/mystuff/agon-vdplet/build/vdpl022-boundaries-r01/bss_default_edge/bss_default_edge.map",
+        "name": "bss_default_edge",
+        "source": "/Agon/mystuff/agon-vdplet/build/vdpl022-boundaries-r01/bss_default_edge/capacity.c",
+        "source_sha256": "1e921159f3baaaf7a67ccb834e4a516e505d71e4b5a8e80b4f432310ba56d437",
+        "policy_sha256": "c69d6f3654b4b5dd4a8ae76e971818f4b13369d61dbded607b844e3268f66419",
+        "declared_limits": {
+          "text": 32768,
+          "data": 4096,
+          "stack": 512,
+          "image": 131072
+        },
+        "build_id": "0x22010007",
+        "capabilities": 1,
+        "abi_major": 1,
+        "abi_minor": 0,
+        "envelope_bytes": 64,
+        "elf_bytes": 1556,
+        "package_bytes": 1620,
+        "sha256": "b1eadf6793878c52a0cdd74f2794a00f4a54c25e47f77f883bed8aadf385797f",
+        "package": "/Agon/mystuff/agon-vdplet/build/vdpl022-boundaries-r01/bss_default_edge/bss_default_edge.vdpl",
+        "elf": "/Agon/mystuff/agon-vdplet/build/vdpl022-boundaries-r01/bss_default_edge/bss_default_edge.elf",
+        "entry_virtual": 440,
+        "resident_text_bytes": 592,
+        "resident_data_bytes": 4096,
+        "relative_relocations": 6,
+        "allocated_sections": {
+          ".text": {
+            "virtual_address": 380,
+            "bytes": 592,
+            "type": 1
+          },
+          ".data": {
+            "virtual_address": 5224,
+            "bytes": 8,
+            "type": 1
+          },
+          ".bss": {
+            "virtual_address": 5232,
+            "bytes": 4088,
+            "type": 8
+          }
+        },
+        "generator": {
+          "steps": 1,
+          "data_words": 1,
+          "bss_words": 1021,
+          "variant": 1
+        },
+        "compiler_frames": {
+          "kernel": {
+            "bytes": 32,
+            "kind": "static"
+          },
+          "vdplet_entry": {
+            "bytes": 128,
+            "kind": "static"
+          }
+        },
+        "module_frame_path_sum": 160
+      }
+    },
+    {
+      "name": "bss_default_over",
+      "generator": {
+        "steps": 1,
+        "data_words": 1,
+        "bss_words": 1022,
+        "variant": 1
+      },
+      "expected_package": false,
+      "source_sha256": "57e097990adfa7c6fcc3219fa55806af076371821505855636c65cbee24cd2aa",
+      "packaged": false,
+      "expected_refusal": "module exceeds declared text/data envelope: text 592/32768, data 4100/4096",
+      "actual_sections": {
+        "": {
+          "virtual_address": 0,
+          "bytes": 0,
+          "type": 0
+        },
+        ".hash": {
+          "virtual_address": 148,
+          "bytes": 40,
+          "type": 5
+        },
+        ".dynsym": {
+          "virtual_address": 188,
+          "bytes": 80,
+          "type": 11
+        },
+        ".dynstr": {
+          "virtual_address": 268,
+          "bytes": 38,
+          "type": 3
+        },
+        ".rela.dyn": {
+          "virtual_address": 308,
+          "bytes": 72,
+          "type": 4
+        },
+        ".text": {
+          "virtual_address": 380,
+          "bytes": 592,
+          "type": 1
+        },
+        ".data": {
+          "virtual_address": 5224,
+          "bytes": 8,
+          "type": 1
+        },
+        ".bss": {
+          "virtual_address": 5232,
+          "bytes": 4092,
+          "type": 8
+        },
+        ".shstrtab": {
+          "virtual_address": 0,
+          "bytes": 60,
+          "type": 3
+        }
+      }
+    },
+    {
+      "name": "data_hard_edge",
+      "generator": {
+        "steps": 1,
+        "data_words": 4093,
+        "bss_words": 1,
+        "variant": 1
+      },
+      "expected_package": true,
+      "source_sha256": "fe1d56c8078f119b76d41eef26f47b417b7bf243de313a221643a4786a4ba7d8",
+      "packaged": true,
+      "module": {
+        "compiler_target": {
+          "psram_cache_workaround": true,
+          "flags": [
+            "-mfix-esp32-psram-cache-issue"
+          ]
+        },
+        "link_map": "/Agon/mystuff/agon-vdplet/build/vdpl022-boundaries-r01/data_hard_edge/data_hard_edge.map",
+        "name": "data_hard_edge",
+        "source": "/Agon/mystuff/agon-vdplet/build/vdpl022-boundaries-r01/data_hard_edge/capacity.c",
+        "source_sha256": "fe1d56c8078f119b76d41eef26f47b417b7bf243de313a221643a4786a4ba7d8",
+        "policy_sha256": "c69d6f3654b4b5dd4a8ae76e971818f4b13369d61dbded607b844e3268f66419",
+        "declared_limits": {
+          "text": 32768,
+          "data": 16384,
+          "stack": 512,
+          "image": 131072
+        },
+        "build_id": "0x22010009",
+        "capabilities": 1,
+        "abi_major": 1,
+        "abi_minor": 0,
+        "envelope_bytes": 64,
+        "elf_bytes": 17940,
+        "package_bytes": 18004,
+        "sha256": "8c82450413a799262cc857c0a5a148d5e5a2e8bfc19319c49c504e99ea82c9c7",
+        "package": "/Agon/mystuff/agon-vdplet/build/vdpl022-boundaries-r01/data_hard_edge/data_hard_edge.vdpl",
+        "elf": "/Agon/mystuff/agon-vdplet/build/vdpl022-boundaries-r01/data_hard_edge/data_hard_edge.elf",
+        "entry_virtual": 452,
+        "resident_text_bytes": 608,
+        "resident_data_bytes": 16384,
+        "relative_relocations": 6,
+        "allocated_sections": {
+          ".text": {
+            "virtual_address": 380,
+            "bytes": 606,
+            "type": 1
+          },
+          ".data": {
+            "virtual_address": 5240,
+            "bytes": 16376,
+            "type": 1
+          },
+          ".bss": {
+            "virtual_address": 21616,
+            "bytes": 8,
+            "type": 8
+          }
+        },
+        "generator": {
+          "steps": 1,
+          "data_words": 4093,
+          "bss_words": 1,
+          "variant": 1
+        },
+        "compiler_frames": {
+          "kernel": {
+            "bytes": 32,
+            "kind": "static"
+          },
+          "vdplet_entry": {
+            "bytes": 128,
+            "kind": "static"
+          }
+        },
+        "module_frame_path_sum": 160
+      }
+    },
+    {
+      "name": "data_hard_over",
+      "generator": {
+        "steps": 1,
+        "data_words": 4094,
+        "bss_words": 1,
+        "variant": 1
+      },
+      "expected_package": false,
+      "source_sha256": "e1c06d134688bf0a234f2e72b39d1625162c5f568dc334c9613852255e18095b",
+      "packaged": false,
+      "expected_refusal": "module exceeds declared text/data envelope: text 608/32768, data 16388/16384",
+      "actual_sections": {
+        "": {
+          "virtual_address": 0,
+          "bytes": 0,
+          "type": 0
+        },
+        ".hash": {
+          "virtual_address": 148,
+          "bytes": 40,
+          "type": 5
+        },
+        ".dynsym": {
+          "virtual_address": 188,
+          "bytes": 80,
+          "type": 11
+        },
+        ".dynstr": {
+          "virtual_address": 268,
+          "bytes": 38,
+          "type": 3
+        },
+        ".rela.dyn": {
+          "virtual_address": 308,
+          "bytes": 72,
+          "type": 4
+        },
+        ".text": {
+          "virtual_address": 380,
+          "bytes": 606,
+          "type": 1
+        },
+        ".data": {
+          "virtual_address": 5240,
+          "bytes": 16380,
+          "type": 1
+        },
+        ".bss": {
+          "virtual_address": 21620,
+          "bytes": 8,
+          "type": 8
+        },
+        ".shstrtab": {
+          "virtual_address": 0,
+          "bytes": 60,
+          "type": 3
+        }
+      }
+    },
+    {
+      "name": "bss_hard_edge",
+      "generator": {
+        "steps": 1,
+        "data_words": 1,
+        "bss_words": 4093,
+        "variant": 1
+      },
+      "expected_package": true,
+      "source_sha256": "a222c61a7a2f79c715069d921320268f3529f7c4e30e4ecac443159627a3eb5a",
+      "packaged": true,
+      "module": {
+        "compiler_target": {
+          "psram_cache_workaround": true,
+          "flags": [
+            "-mfix-esp32-psram-cache-issue"
+          ]
+        },
+        "link_map": "/Agon/mystuff/agon-vdplet/build/vdpl022-boundaries-r01/bss_hard_edge/bss_hard_edge.map",
+        "name": "bss_hard_edge",
+        "source": "/Agon/mystuff/agon-vdplet/build/vdpl022-boundaries-r01/bss_hard_edge/capacity.c",
+        "source_sha256": "a222c61a7a2f79c715069d921320268f3529f7c4e30e4ecac443159627a3eb5a",
+        "policy_sha256": "c69d6f3654b4b5dd4a8ae76e971818f4b13369d61dbded607b844e3268f66419",
+        "declared_limits": {
+          "text": 32768,
+          "data": 16384,
+          "stack": 512,
+          "image": 131072
+        },
+        "build_id": "0x2201000b",
+        "capabilities": 1,
+        "abi_major": 1,
+        "abi_minor": 0,
+        "envelope_bytes": 64,
+        "elf_bytes": 1560,
+        "package_bytes": 1624,
+        "sha256": "af8253bcacbe07655ec28bda7a7e1f7581e9e2ec93d86051528e4b6e12e1e100",
+        "package": "/Agon/mystuff/agon-vdplet/build/vdpl022-boundaries-r01/bss_hard_edge/bss_hard_edge.vdpl",
+        "elf": "/Agon/mystuff/agon-vdplet/build/vdpl022-boundaries-r01/bss_hard_edge/bss_hard_edge.elf",
+        "entry_virtual": 444,
+        "resident_text_bytes": 596,
+        "resident_data_bytes": 16384,
+        "relative_relocations": 6,
+        "allocated_sections": {
+          ".text": {
+            "virtual_address": 380,
+            "bytes": 596,
+            "type": 1
+          },
+          ".data": {
+            "virtual_address": 5228,
+            "bytes": 8,
+            "type": 1
+          },
+          ".bss": {
+            "virtual_address": 5236,
+            "bytes": 16376,
+            "type": 8
+          }
+        },
+        "generator": {
+          "steps": 1,
+          "data_words": 1,
+          "bss_words": 4093,
+          "variant": 1
+        },
+        "compiler_frames": {
+          "kernel": {
+            "bytes": 32,
+            "kind": "static"
+          },
+          "vdplet_entry": {
+            "bytes": 128,
+            "kind": "static"
+          }
+        },
+        "module_frame_path_sum": 160
+      }
+    },
+    {
+      "name": "bss_hard_over",
+      "generator": {
+        "steps": 1,
+        "data_words": 1,
+        "bss_words": 4094,
+        "variant": 1
+      },
+      "expected_package": false,
+      "source_sha256": "3c3f3971cbe2343c46c030a11262d2e3a1082d32108cfb1148dc10c8f09c20f8",
+      "packaged": false,
+      "expected_refusal": "module exceeds declared text/data envelope: text 596/32768, data 16388/16384",
+      "actual_sections": {
+        "": {
+          "virtual_address": 0,
+          "bytes": 0,
+          "type": 0
+        },
+        ".hash": {
+          "virtual_address": 148,
+          "bytes": 40,
+          "type": 5
+        },
+        ".dynsym": {
+          "virtual_address": 188,
+          "bytes": 80,
+          "type": 11
+        },
+        ".dynstr": {
+          "virtual_address": 268,
+          "bytes": 38,
+          "type": 3
+        },
+        ".rela.dyn": {
+          "virtual_address": 308,
+          "bytes": 72,
+          "type": 4
+        },
+        ".text": {
+          "virtual_address": 380,
+          "bytes": 596,
+          "type": 1
+        },
+        ".data": {
+          "virtual_address": 5228,
+          "bytes": 8,
+          "type": 1
+        },
+        ".bss": {
+          "virtual_address": 5236,
+          "bytes": 16380,
+          "type": 8
+        },
+        ".shstrtab": {
+          "virtual_address": 0,
+          "bytes": 60,
+          "type": 3
+        }
+      }
+    }
+  ],
+  "host_cases": [
+    {
+      "steps": 3095,
+      "data_words": 1,
+      "bss_words": 1,
+      "oracle_runs": 3,
+      "passed": true
+    },
+    {
+      "steps": 1,
+      "data_words": 4093,
+      "bss_words": 1,
+      "oracle_runs": 3,
+      "passed": true
+    },
+    {
+      "steps": 1,
+      "data_words": 1,
+      "bss_words": 4093,
+      "oracle_runs": 3,
+      "passed": true
+    }
+  ],
+  "packaged": 7,
+  "expected_refusals": 6,
+  "target": false
+}

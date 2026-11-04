@@ -1,0 +1,82 @@
+{
+  "passed": true,
+  "scope": "Source/build/actual host-loader admission only; no target execution or capacity guarantee",
+  "builder_sha256": "c7b7075679fed93bde4a59b78a093fdb089d74f58d998f05c3892f53ae0c3ce0",
+  "target_executed": false,
+  "cases": [
+    {
+      "name": "control",
+      "text_bytes": 552,
+      "data_bytes": 16,
+      "package_bytes": 1580,
+      "relative_relocations": 6,
+      "compiler_module_frame_sum": 176,
+      "package_sha256": "b0b2e82d6fe2854c975d57c9e70bc2a7881ad965d1a8cbb9a8150207351bc2b0"
+    },
+    {
+      "name": "code64",
+      "text_bytes": 1876,
+      "data_bytes": 16,
+      "package_bytes": 2904,
+      "relative_relocations": 6,
+      "compiler_module_frame_sum": 176,
+      "package_sha256": "ee4c525c5af8d6a07bf00c23116948a859d8435db0edd3fc6928bf4545c88774"
+    },
+    {
+      "name": "code256",
+      "text_bytes": 5908,
+      "data_bytes": 16,
+      "package_bytes": 6936,
+      "relative_relocations": 6,
+      "compiler_module_frame_sum": 176,
+      "package_sha256": "86998d1a4e6f8e8cfd8e61f0535758e7543084d5370f4528fd607fecd2179382"
+    },
+    {
+      "name": "code512",
+      "text_bytes": 11284,
+      "data_bytes": 16,
+      "package_bytes": 12312,
+      "relative_relocations": 6,
+      "compiler_module_frame_sum": 176,
+      "package_sha256": "22b7964aa7f71cda11ff6a662e9dee21ec579495bbc21c826b4f6bca8ae2cc13"
+    },
+    {
+      "name": "code1024",
+      "text_bytes": 22036,
+      "data_bytes": 16,
+      "package_bytes": 23064,
+      "relative_relocations": 6,
+      "compiler_module_frame_sum": 176,
+      "package_sha256": "dd8644f277c9aa02036d5b256111b7531175ac746f8d38df41489d7beec38fbe"
+    },
+    {
+      "name": "data1024",
+      "text_bytes": 588,
+      "data_bytes": 4108,
+      "package_bytes": 5708,
+      "relative_relocations": 6,
+      "compiler_module_frame_sum": 160,
+      "package_sha256": "484fb5b8dd02a758997e6a98cf66496992a35c0c6084f4ff67165285f8eca3d2"
+    },
+    {
+      "name": "bss1024",
+      "text_bytes": 592,
+      "data_bytes": 4108,
+      "package_bytes": 1620,
+      "relative_relocations": 6,
+      "compiler_module_frame_sum": 160,
+      "package_sha256": "7d10d1edaeddf90dc0580a053db05eb5d021967047a00f2a54f096160520e5ce"
+    },
+    {
+      "name": "initfail",
+      "text_bytes": 724,
+      "data_bytes": 60,
+      "package_bytes": 1764,
+      "relative_relocations": 6,
+      "compiler_module_frame_sum": 160,
+      "package_sha256": "2b5fdbd61bff9775b8b6ca2cbcc866cae8f946dee0b6f76d157027aa79e54361"
+    }
+  ],
+  "source_result": "/Agon/mystuff/golem/build/g058-capacity-build-r01/result.json",
+  "SDK_result": "/Agon/mystuff/agon-vdplet/docs/tasks/VDPL-022/build-results.json"
+}

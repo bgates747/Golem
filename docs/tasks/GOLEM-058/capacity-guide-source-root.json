@@ -1,0 +1,16 @@
+{
+  "scope": "Documentation/source cross-check only",
+  "passed": true,
+  "guide_sha256": "77ccd98c26ab0616a0826cedf3ee0b808942e9c4ec835228a44ffb6d4dfeba4d",
+  "example_exists": true,
+  "native_packages": {
+    "c2.vdpl": 74708,
+    "c4.vdpl": 1624,
+    "c0.vdpl": 1580,
+    "c1.vdpl": 35080,
+    "c3.vdpl": 18004
+  },
+  "physical_pending": true,
+  "stack_allocation_and_capability_views_clarified": true,
+  "human_review_passed": true
+}

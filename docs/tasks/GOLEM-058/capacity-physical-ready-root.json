@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "scope": "Host readiness after actual MOS qualification; no device access or grant",
+  "request": "8ea5da518b63",
+  "package": "/Agon/mystuff/agon-vdplet/build/vdpl022-physical-client-r02/package",
+  "files": {
+    "c2.vdpl": "cb868481046be9778ea915284b04a507958c0041df88d39b1edba4d6a82b2bad",
+    "main.c": "80eb5ec897ae5bceb0e76461d21eb25674d7b1e4fb83e5e91d9215a2f902ad78",
+    "c4.vdpl": "af8253bcacbe07655ec28bda7a7e1f7581e9e2ec93d86051528e4b6e12e1e100",
+    "c0.vdpl": "b0b2e82d6fe2854c975d57c9e70bc2a7881ad965d1a8cbb9a8150207351bc2b0",
+    "c1.vdpl": "d46be99b086839bff962f6595d06f75073165270796936aa3b5078a6caa86cbe",
+    "capacity.bin": "6136615b2a61f497dccf5fb4af74ca7a372f96d9dfb8df0d271982c696d79c57",
+    "c3.vdpl": "8c82450413a799262cc857c0a5a148d5e5a2e8bfc19319c49c504e99ea82c9c7"
+  },
+  "binary_bytes": 15509,
+  "actual_MOS_audit": "resource-capacity-MOS-root.json",
+  "physical": false,
+  "firmware_change": false,
+  "bench_lease": null
+}

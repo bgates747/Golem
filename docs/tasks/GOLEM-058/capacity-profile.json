@@ -1,0 +1,24 @@
+{
+  "profile": "/home/smith/Agon/mystuff/agon-vdplet/.emulator/vdpl022-capacity-r01",
+  "pins": {
+    "flexe-agon-emulator": "2f7d6b534af0728a537e550c7b1d7ffc933f6eff3f0fb970106fbde215eac433",
+    "flexe-agon-emulator.bin": "82e8492297fd9df07678fddbea83b563d0543fdfadb39ac77984a0bacf56b448",
+    "flexe-vdp.so": "0866265bd6f3d73ad572f31dc1bb954f308ed9a5d857efa9414d37e1ade13374",
+    "mos_platform.bin": "d564243283972690933a4554296ad6202ca4ef54572279533a942960846bebae",
+    "mos_platform.map": "d69e60bbce61a7b4b3eef318ba395f11c4e1a5b585755755113992dc94edcb86",
+    "esp32-firmware.bin": "b4c62cb22f427a6a356105f37bab08f596c9d1906b0b331b91e7250b30af0208",
+    "esp32-firmware.elf": "a4104409eba1e2d2e5204c82b2c2df14eebbef6bd79d7b0dbb6ee9e253b1f116",
+    ".mos-release": "857eb82c24dabfeece5f196549e418d3eadce278a2bbf37c30a79b08044c4afd",
+    ".mos-release.sha256": "aee02d6e06411dcdab6d68fd41eaf781e61c9d1746c90de001596dd31fe36e72",
+    ".bespoke-vdp-profile": "3016ae6e37a83c44f8f0b1ce533c4b98e23b48e1c1639ed41919b90ea05db1cb",
+    "sdcard/autoexec.txt": "6794c9436d319663931149171338229221a5bf13e6e6e25ddf4ab3360e1f8ff3"
+  },
+  "stopped": true,
+  "emulator_started": false,
+  "canonical_executable_check": {
+    "source": "/Agon/mystuff/agon-dev-env/scripts/flexe_profile.py",
+    "sha256": "2e7fa13cb9f27ea1a696d472c90604749dd0c8709afc29034ec6e1909409bf34",
+    "shared_environment_changed": false
+  },
+  "preparation_refusal": "Remote shared helper lacked verify_profile_executables; verified with current pinned private canonical copy. No shared tool modified."
+}

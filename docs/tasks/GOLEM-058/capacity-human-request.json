@@ -1,0 +1,10 @@
+{
+  "owner": "golem",
+  "task": "GOLEM-058-CAPACITY-HUMAN",
+  "purpose": "Author-approved capacity client review: three mode/module labels, PASS, blinking MOS cursor and dir; Author launches GUI",
+  "profile": "/home/smith/Agon/mystuff/agon-vdplet/.emulator/vdpl022-capacity-human-r01",
+  "notify_thread": "01a12c79-f74c-74d2-b6da-de2e34eb1bdd",
+  "notify_host": "remote-ssh-discovered:raspberrypi",
+  "request": "715040ca0d67",
+  "requested": "2026-11-04T01:59:08.291467+00:00"
+}

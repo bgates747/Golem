@@ -1,0 +1,18 @@
+{
+  "owner": "golem",
+  "task": "VDPL-022-LIFE-R01",
+  "purpose": "Two finite headless capacity lifecycle engines, eight qualified modules and sixteen replacement cycles; no GUI or hardware",
+  "profile": "/home/smith/Agon/mystuff/agon-vdplet/.emulator/vdpl022-capacity-r01",
+  "notify_thread": "01a12c79-f74c-74d2-b6da-de2e34eb1bdd",
+  "notify_host": "remote-ssh-discovered:raspberrypi",
+  "request": "847f551c282e",
+  "requested": "2026-11-03T19:56:53.080936+00:00",
+  "lease": "799fe878d7f54271af17b9d8d9f445d6",
+  "generation": 204,
+  "checked_out": "2026-11-03T19:57:13.075029+00:00",
+  "idle_observation": {
+    "machine": "oryx-linuxlite",
+    "epoch": 1793735830.3106806,
+    "emulators": []
+  }
+}

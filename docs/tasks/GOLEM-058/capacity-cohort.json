@@ -1,0 +1,576 @@
+{
+  "schema": "vdpl022-engine-cohort-v1",
+  "modules": [
+    {
+      "compiler_target": {
+        "psram_cache_workaround": true,
+        "flags": [
+          "-mfix-esp32-psram-cache-issue"
+        ]
+      },
+      "link_map": "/Agon/mystuff/golem/build/g058-capacity-build-r01/control/control.map",
+      "name": "control",
+      "source": "/Agon/mystuff/golem/build/g058-capacity-build-r01/control/capacity.c",
+      "source_sha256": "f503499dfdc76731c7c42cd019fa37cc12a16a675ac9bfe699e37c8ac87e799f",
+      "policy_sha256": "c69d6f3654b4b5dd4a8ae76e971818f4b13369d61dbded607b844e3268f66419",
+      "declared_limits": {
+        "text": 65536,
+        "data": 16384,
+        "stack": 512,
+        "image": 131072
+      },
+      "build_id": "0x22000000",
+      "capabilities": 1,
+      "abi_major": 1,
+      "abi_minor": 0,
+      "envelope_bytes": 64,
+      "elf_bytes": 1516,
+      "package_bytes": 1580,
+      "sha256": "b0b2e82d6fe2854c975d57c9e70bc2a7881ad965d1a8cbb9a8150207351bc2b0",
+      "package": "/Agon/mystuff/golem/build/g058-capacity-build-r01/control/control.vdpl",
+      "elf": "/Agon/mystuff/golem/build/g058-capacity-build-r01/control/control.elf",
+      "entry_virtual": 436,
+      "resident_text_bytes": 552,
+      "resident_data_bytes": 16,
+      "relative_relocations": 6,
+      "allocated_sections": {
+        ".text": {
+          "virtual_address": 380,
+          "bytes": 550,
+          "type": 1
+        },
+        ".data": {
+          "virtual_address": 5184,
+          "bytes": 8,
+          "type": 1
+        },
+        ".bss": {
+          "virtual_address": 5192,
+          "bytes": 8,
+          "type": 8
+        }
+      },
+      "generator": {
+        "steps": 1,
+        "data_words": 1,
+        "bss_words": 1,
+        "variant": 1
+      },
+      "compiler_frames": {
+        "kernel": {
+          "bytes": 32,
+          "kind": "static"
+        },
+        "vdplet_entry": {
+          "bytes": 144,
+          "kind": "static"
+        }
+      },
+      "module_frame_path_sum": 176,
+      "stack_scope": "Compiler module frames only; runtime/services/register windows/interrupts additional"
+    },
+    {
+      "compiler_target": {
+        "psram_cache_workaround": true,
+        "flags": [
+          "-mfix-esp32-psram-cache-issue"
+        ]
+      },
+      "link_map": "/Agon/mystuff/golem/build/g058-capacity-build-r01/code64/code64.map",
+      "name": "code64",
+      "source": "/Agon/mystuff/golem/build/g058-capacity-build-r01/code64/capacity.c",
+      "source_sha256": "385d6326e245b3931fdbd9e93ce4cf94c28a00c13aeca44784ad94837a9b81a9",
+      "policy_sha256": "c69d6f3654b4b5dd4a8ae76e971818f4b13369d61dbded607b844e3268f66419",
+      "declared_limits": {
+        "text": 65536,
+        "data": 16384,
+        "stack": 512,
+        "image": 131072
+      },
+      "build_id": "0x22000001",
+      "capabilities": 1,
+      "abi_major": 1,
+      "abi_minor": 0,
+      "envelope_bytes": 64,
+      "elf_bytes": 2840,
+      "package_bytes": 2904,
+      "sha256": "ee4c525c5af8d6a07bf00c23116948a859d8435db0edd3fc6928bf4545c88774",
+      "package": "/Agon/mystuff/golem/build/g058-capacity-build-r01/code64/code64.vdpl",
+      "elf": "/Agon/mystuff/golem/build/g058-capacity-build-r01/code64/code64.elf",
+      "entry_virtual": 1760,
+      "resident_text_bytes": 1876,
+      "resident_data_bytes": 16,
+      "relative_relocations": 6,
+      "allocated_sections": {
+        ".text": {
+          "virtual_address": 380,
+          "bytes": 1874,
+          "type": 1
+        },
+        ".data": {
+          "virtual_address": 6508,
+          "bytes": 8,
+          "type": 1
+        },
+        ".bss": {
+          "virtual_address": 6516,
+          "bytes": 8,
+          "type": 8
+        }
+      },
+      "generator": {
+        "steps": 64,
+        "data_words": 1,
+        "bss_words": 1,
+        "variant": 1
+      },
+      "compiler_frames": {
+        "kernel": {
+          "bytes": 32,
+          "kind": "static"
+        },
+        "vdplet_entry": {
+          "bytes": 144,
+          "kind": "static"
+        }
+      },
+      "module_frame_path_sum": 176,
+      "stack_scope": "Compiler module frames only; runtime/services/register windows/interrupts additional"
+    },
+    {
+      "compiler_target": {
+        "psram_cache_workaround": true,
+        "flags": [
+          "-mfix-esp32-psram-cache-issue"
+        ]
+      },
+      "link_map": "/Agon/mystuff/golem/build/g058-capacity-build-r01/code256/code256.map",
+      "name": "code256",
+      "source": "/Agon/mystuff/golem/build/g058-capacity-build-r01/code256/capacity.c",
+      "source_sha256": "104369e45e911443b76c81b155629e7d6a5e328ee6f1dbed47718b02ea499e75",
+      "policy_sha256": "c69d6f3654b4b5dd4a8ae76e971818f4b13369d61dbded607b844e3268f66419",
+      "declared_limits": {
+        "text": 65536,
+        "data": 16384,
+        "stack": 512,
+        "image": 131072
+      },
+      "build_id": "0x22000002",
+      "capabilities": 1,
+      "abi_major": 1,
+      "abi_minor": 0,
+      "envelope_bytes": 64,
+      "elf_bytes": 6872,
+      "package_bytes": 6936,
+      "sha256": "86998d1a4e6f8e8cfd8e61f0535758e7543084d5370f4528fd607fecd2179382",
+      "package": "/Agon/mystuff/golem/build/g058-capacity-build-r01/code256/code256.vdpl",
+      "elf": "/Agon/mystuff/golem/build/g058-capacity-build-r01/code256/code256.elf",
+      "entry_virtual": 5792,
+      "resident_text_bytes": 5908,
+      "resident_data_bytes": 16,
+      "relative_relocations": 6,
+      "allocated_sections": {
+        ".text": {
+          "virtual_address": 380,
+          "bytes": 5906,
+          "type": 1
+        },
+        ".data": {
+          "virtual_address": 10540,
+          "bytes": 8,
+          "type": 1
+        },
+        ".bss": {
+          "virtual_address": 10548,
+          "bytes": 8,
+          "type": 8
+        }
+      },
+      "generator": {
+        "steps": 256,
+        "data_words": 1,
+        "bss_words": 1,
+        "variant": 1
+      },
+      "compiler_frames": {
+        "kernel": {
+          "bytes": 32,
+          "kind": "static"
+        },
+        "vdplet_entry": {
+          "bytes": 144,
+          "kind": "static"
+        }
+      },
+      "module_frame_path_sum": 176,
+      "stack_scope": "Compiler module frames only; runtime/services/register windows/interrupts additional"
+    },
+    {
+      "compiler_target": {
+        "psram_cache_workaround": true,
+        "flags": [
+          "-mfix-esp32-psram-cache-issue"
+        ]
+      },
+      "link_map": "/Agon/mystuff/golem/build/g058-capacity-build-r01/code512/code512.map",
+      "name": "code512",
+      "source": "/Agon/mystuff/golem/build/g058-capacity-build-r01/code512/capacity.c",
+      "source_sha256": "4e734e17408d93c88a7381def658ecf0db79a3508fcc9aa399a872cf55d22159",
+      "policy_sha256": "c69d6f3654b4b5dd4a8ae76e971818f4b13369d61dbded607b844e3268f66419",
+      "declared_limits": {
+        "text": 65536,
+        "data": 16384,
+        "stack": 512,
+        "image": 131072
+      },
+      "build_id": "0x22000003",
+      "capabilities": 1,
+      "abi_major": 1,
+      "abi_minor": 0,
+      "envelope_bytes": 64,
+      "elf_bytes": 12248,
+      "package_bytes": 12312,
+      "sha256": "22b7964aa7f71cda11ff6a662e9dee21ec579495bbc21c826b4f6bca8ae2cc13",
+      "package": "/Agon/mystuff/golem/build/g058-capacity-build-r01/code512/code512.vdpl",
+      "elf": "/Agon/mystuff/golem/build/g058-capacity-build-r01/code512/code512.elf",
+      "entry_virtual": 11168,
+      "resident_text_bytes": 11284,
+      "resident_data_bytes": 16,
+      "relative_relocations": 6,
+      "allocated_sections": {
+        ".text": {
+          "virtual_address": 380,
+          "bytes": 11282,
+          "type": 1
+        },
+        ".data": {
+          "virtual_address": 15916,
+          "bytes": 8,
+          "type": 1
+        },
+        ".bss": {
+          "virtual_address": 15924,
+          "bytes": 8,
+          "type": 8
+        }
+      },
+      "generator": {
+        "steps": 512,
+        "data_words": 1,
+        "bss_words": 1,
+        "variant": 1
+      },
+      "compiler_frames": {
+        "kernel": {
+          "bytes": 32,
+          "kind": "static"
+        },
+        "vdplet_entry": {
+          "bytes": 144,
+          "kind": "static"
+        }
+      },
+      "module_frame_path_sum": 176,
+      "stack_scope": "Compiler module frames only; runtime/services/register windows/interrupts additional"
+    },
+    {
+      "compiler_target": {
+        "psram_cache_workaround": true,
+        "flags": [
+          "-mfix-esp32-psram-cache-issue"
+        ]
+      },
+      "link_map": "/Agon/mystuff/golem/build/g058-capacity-build-r01/code1024/code1024.map",
+      "name": "code1024",
+      "source": "/Agon/mystuff/golem/build/g058-capacity-build-r01/code1024/capacity.c",
+      "source_sha256": "f144d5a41ba435e211ac0ca0eddbd771a29a86d09b8f1ae4149245d4de952a0d",
+      "policy_sha256": "c69d6f3654b4b5dd4a8ae76e971818f4b13369d61dbded607b844e3268f66419",
+      "declared_limits": {
+        "text": 65536,
+        "data": 16384,
+        "stack": 512,
+        "image": 131072
+      },
+      "build_id": "0x22000004",
+      "capabilities": 1,
+      "abi_major": 1,
+      "abi_minor": 0,
+      "envelope_bytes": 64,
+      "elf_bytes": 23000,
+      "package_bytes": 23064,
+      "sha256": "dd8644f277c9aa02036d5b256111b7531175ac746f8d38df41489d7beec38fbe",
+      "package": "/Agon/mystuff/golem/build/g058-capacity-build-r01/code1024/code1024.vdpl",
+      "elf": "/Agon/mystuff/golem/build/g058-capacity-build-r01/code1024/code1024.elf",
+      "entry_virtual": 21920,
+      "resident_text_bytes": 22036,
+      "resident_data_bytes": 16,
+      "relative_relocations": 6,
+      "allocated_sections": {
+        ".text": {
+          "virtual_address": 380,
+          "bytes": 22034,
+          "type": 1
+        },
+        ".data": {
+          "virtual_address": 26668,
+          "bytes": 8,
+          "type": 1
+        },
+        ".bss": {
+          "virtual_address": 26676,
+          "bytes": 8,
+          "type": 8
+        }
+      },
+      "generator": {
+        "steps": 1024,
+        "data_words": 1,
+        "bss_words": 1,
+        "variant": 1
+      },
+      "compiler_frames": {
+        "kernel": {
+          "bytes": 32,
+          "kind": "static"
+        },
+        "vdplet_entry": {
+          "bytes": 144,
+          "kind": "static"
+        }
+      },
+      "module_frame_path_sum": 176,
+      "stack_scope": "Compiler module frames only; runtime/services/register windows/interrupts additional"
+    },
+    {
+      "compiler_target": {
+        "psram_cache_workaround": true,
+        "flags": [
+          "-mfix-esp32-psram-cache-issue"
+        ]
+      },
+      "link_map": "/Agon/mystuff/golem/build/g058-capacity-build-r01/data1024/data1024.map",
+      "name": "data1024",
+      "source": "/Agon/mystuff/golem/build/g058-capacity-build-r01/data1024/capacity.c",
+      "source_sha256": "aa9cdcfa805e3044048e7e49b16210a5c90e6ed56c840e3e94df3a6f24143b31",
+      "policy_sha256": "c69d6f3654b4b5dd4a8ae76e971818f4b13369d61dbded607b844e3268f66419",
+      "declared_limits": {
+        "text": 65536,
+        "data": 16384,
+        "stack": 512,
+        "image": 131072
+      },
+      "build_id": "0x22000005",
+      "capabilities": 1,
+      "abi_major": 1,
+      "abi_minor": 0,
+      "envelope_bytes": 64,
+      "elf_bytes": 5644,
+      "package_bytes": 5708,
+      "sha256": "484fb5b8dd02a758997e6a98cf66496992a35c0c6084f4ff67165285f8eca3d2",
+      "package": "/Agon/mystuff/golem/build/g058-capacity-build-r01/data1024/data1024.vdpl",
+      "elf": "/Agon/mystuff/golem/build/g058-capacity-build-r01/data1024/data1024.elf",
+      "entry_virtual": 440,
+      "resident_text_bytes": 588,
+      "resident_data_bytes": 4108,
+      "relative_relocations": 6,
+      "allocated_sections": {
+        ".text": {
+          "virtual_address": 380,
+          "bytes": 586,
+          "type": 1
+        },
+        ".data": {
+          "virtual_address": 5220,
+          "bytes": 4100,
+          "type": 1
+        },
+        ".bss": {
+          "virtual_address": 9320,
+          "bytes": 8,
+          "type": 8
+        }
+      },
+      "generator": {
+        "steps": 1,
+        "data_words": 1024,
+        "bss_words": 1,
+        "variant": 1
+      },
+      "compiler_frames": {
+        "kernel": {
+          "bytes": 32,
+          "kind": "static"
+        },
+        "vdplet_entry": {
+          "bytes": 128,
+          "kind": "static"
+        }
+      },
+      "module_frame_path_sum": 160,
+      "stack_scope": "Compiler module frames only; runtime/services/register windows/interrupts additional"
+    },
+    {
+      "compiler_target": {
+        "psram_cache_workaround": true,
+        "flags": [
+          "-mfix-esp32-psram-cache-issue"
+        ]
+      },
+      "link_map": "/Agon/mystuff/golem/build/g058-capacity-build-r01/bss1024/bss1024.map",
+      "name": "bss1024",
+      "source": "/Agon/mystuff/golem/build/g058-capacity-build-r01/bss1024/capacity.c",
+      "source_sha256": "42760d2d359cc919f2b468a45553d118fc38e0258d6b94cd2ba0739550f676a9",
+      "policy_sha256": "c69d6f3654b4b5dd4a8ae76e971818f4b13369d61dbded607b844e3268f66419",
+      "declared_limits": {
+        "text": 65536,
+        "data": 16384,
+        "stack": 512,
+        "image": 131072
+      },
+      "build_id": "0x22000006",
+      "capabilities": 1,
+      "abi_major": 1,
+      "abi_minor": 0,
+      "envelope_bytes": 64,
+      "elf_bytes": 1556,
+      "package_bytes": 1620,
+      "sha256": "7d10d1edaeddf90dc0580a053db05eb5d021967047a00f2a54f096160520e5ce",
+      "package": "/Agon/mystuff/golem/build/g058-capacity-build-r01/bss1024/bss1024.vdpl",
+      "elf": "/Agon/mystuff/golem/build/g058-capacity-build-r01/bss1024/bss1024.elf",
+      "entry_virtual": 440,
+      "resident_text_bytes": 592,
+      "resident_data_bytes": 4108,
+      "relative_relocations": 6,
+      "allocated_sections": {
+        ".text": {
+          "virtual_address": 380,
+          "bytes": 592,
+          "type": 1
+        },
+        ".data": {
+          "virtual_address": 5224,
+          "bytes": 8,
+          "type": 1
+        },
+        ".bss": {
+          "virtual_address": 5232,
+          "bytes": 4100,
+          "type": 8
+        }
+      },
+      "generator": {
+        "steps": 1,
+        "data_words": 1,
+        "bss_words": 1024,
+        "variant": 1
+      },
+      "compiler_frames": {
+        "kernel": {
+          "bytes": 32,
+          "kind": "static"
+        },
+        "vdplet_entry": {
+          "bytes": 128,
+          "kind": "static"
+        }
+      },
+      "module_frame_path_sum": 160,
+      "stack_scope": "Compiler module frames only; runtime/services/register windows/interrupts additional"
+    },
+    {
+      "compiler_target": {
+        "psram_cache_workaround": true,
+        "flags": [
+          "-mfix-esp32-psram-cache-issue"
+        ]
+      },
+      "link_map": "/Agon/mystuff/golem/build/g058-capacity-build-r01/initfail/initfail.map",
+      "name": "initfail",
+      "source": "/Agon/mystuff/golem/build/g058-capacity-build-r01/initfail/capacity.c",
+      "source_sha256": "28bbeabd51c5485b8f65507875a1269acc9715f2ccc20adf01efb9711de9c0aa",
+      "policy_sha256": "c69d6f3654b4b5dd4a8ae76e971818f4b13369d61dbded607b844e3268f66419",
+      "declared_limits": {
+        "text": 65536,
+        "data": 16384,
+        "stack": 512,
+        "image": 131072
+      },
+      "build_id": "0x22000007",
+      "capabilities": 1,
+      "abi_major": 1,
+      "abi_minor": 0,
+      "envelope_bytes": 64,
+      "elf_bytes": 1700,
+      "package_bytes": 1764,
+      "sha256": "2b5fdbd61bff9775b8b6ca2cbcc866cae8f946dee0b6f76d157027aa79e54361",
+      "package": "/Agon/mystuff/golem/build/g058-capacity-build-r01/initfail/initfail.vdpl",
+      "elf": "/Agon/mystuff/golem/build/g058-capacity-build-r01/initfail/initfail.elf",
+      "entry_virtual": 528,
+      "resident_text_bytes": 724,
+      "resident_data_bytes": 60,
+      "relative_relocations": 6,
+      "allocated_sections": {
+        ".text": {
+          "virtual_address": 380,
+          "bytes": 722,
+          "type": 1
+        },
+        ".data": {
+          "virtual_address": 5356,
+          "bytes": 20,
+          "type": 1
+        },
+        ".bss": {
+          "virtual_address": 5376,
+          "bytes": 40,
+          "type": 8
+        }
+      },
+      "generator": {
+        "steps": 5,
+        "data_words": 4,
+        "bss_words": 9,
+        "variant": 2
+      },
+      "compiler_frames": {
+        "kernel": {
+          "bytes": 32,
+          "kind": "static"
+        },
+        "vdplet_entry": {
+          "bytes": 128,
+          "kind": "static"
+        }
+      },
+      "module_frame_path_sum": 160,
+      "stack_scope": "Compiler module frames only; runtime/services/register windows/interrupts additional"
+    }
+  ],
+  "files": {
+    "adapter-provenance.json": "3a7d8488561b892fbe54553c8c2cc8d3aa43166b2b18903b90b275bf1cc22857",
+    "canonical-helper.json": "14ec42c6ce822d858ef65d4d4ce4cd71a59853c1e1c5ae6dd55d60cf71c52eb6",
+    "canonical_flexe_profile.py": "2e7fa13cb9f27ea1a696d472c90604749dd0c8709afc29034ec6e1909409bf34",
+    "capacity.c.in": "7d426d7f719492b244d5bbdc6476d8e3157efd6e6c9d882ffee2233fe917ba5a",
+    "complete_stage.py": "6f0d499d55d5a58964e47b0da535f155c4152e337d5947317aea8b9b60cf40e4",
+    "engine-contract-r01.md": "446cab49d16213f6f65be26fe9292a5d4acc62b1d370ac08e7092d68b4fceab2",
+    "generate.py": "d2b111e06f3f254ffb0b5f38667338200f666454d26daff34e21fa24bc0e1375",
+    "inspect_oryx.py": "c8191981eeff2aaa3458c16721a29e6c68a589b2c93b57aaf493511b680d57c1",
+    "modules/bss1024.vdpl": "7d10d1edaeddf90dc0580a053db05eb5d021967047a00f2a54f096160520e5ce",
+    "modules/code1024.vdpl": "dd8644f277c9aa02036d5b256111b7531175ac746f8d38df41489d7beec38fbe",
+    "modules/code256.vdpl": "86998d1a4e6f8e8cfd8e61f0535758e7543084d5370f4528fd607fecd2179382",
+    "modules/code512.vdpl": "22b7964aa7f71cda11ff6a662e9dee21ec579495bbc21c826b4f6bca8ae2cc13",
+    "modules/code64.vdpl": "ee4c525c5af8d6a07bf00c23116948a859d8435db0edd3fc6928bf4545c88774",
+    "modules/control.vdpl": "b0b2e82d6fe2854c975d57c9e70bc2a7881ad965d1a8cbb9a8150207351bc2b0",
+    "modules/data1024.vdpl": "484fb5b8dd02a758997e6a98cf66496992a35c0c6084f4ff67165285f8eca3d2",
+    "modules/initfail.vdpl": "2b5fdbd61bff9775b8b6ca2cbcc866cae8f946dee0b6f76d157027aa79e54361",
+    "modules-build.json": "bb7fabee30a4a975ba93b08cc975035d2cb671e1e38e3291486209dc0b70a73f",
+    "qualify.py": "18be9124c0f80a154ffab529af7a62449e7f9c8930fc1a54ffdb914718c546b3",
+    "run_cohort.py": "ed336ed958ad4f89fa98916970e97024285590d00f8898a373abe5fd34651d87",
+    "stage.py": "a6145ebddbf1407a56c4e8c6a5a50350588de655dcf5da469e2c6e412112b73c",
+    "target_adapter.py": "dbb7380e806de9ee24422e9a612fff92c897ad24a2c563d661ff7badd8df8522"
+  },
+  "profile_identity_sha256": "5455cf4d513da991ef12ae438337af1aa89b0afa8d62a9f8fc76d4dacca857b2",
+  "maximum_processes": 2,
+  "retry": false,
+  "physical": false
+}

@@ -1,0 +1,17 @@
+{
+  "accepted": true,
+  "author_report": "Pass; emulator closed",
+  "display_PASS": true,
+  "MOS_cursor_blinks": true,
+  "MOS_DIR": true,
+  "emulator_closed": true,
+  "screenshot": "/Agon/mystuff/agent-state/codex/attachments/9bb91105-756e-4158-a8c2-3de4defd0c4a/codex-clipboard-31ab2c6b-74e4-4611-bbd9-8a02de82ede2.png",
+  "automated_result": "capacity-human-root.json",
+  "retrieved_files": 10,
+  "checkout_generation": 235,
+  "released": "2026-11-04T02:21:46.665188+00:00",
+  "next_request": "19a2dcb299a2",
+  "next_chat_notified": true,
+  "physical_capacity_test": false,
+  "publication_approved": false
+}

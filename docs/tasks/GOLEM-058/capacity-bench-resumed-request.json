@@ -1,0 +1,10 @@
+{
+  "owner": "golem",
+  "task": "VDPL-022",
+  "purpose": "Resumed finite physical capacity control; unchanged MOS-qualified C client, no firmware change, idle modes11/8/136",
+  "plan": "/Agon/mystuff/agon-vdplet/docs/tasks/VDPL-022/physical/PROPOSAL.md",
+  "notify_thread": "01a12c79-f74c-74d2-b6da-de2e34eb1bdd",
+  "notify_host": "remote-ssh-discovered:raspberrypi",
+  "request": "d7c3b4445bb8",
+  "requested": "2026-11-04T01:19:52.164163+00:00"
+}

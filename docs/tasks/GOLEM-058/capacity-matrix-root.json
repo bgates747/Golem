@@ -1,0 +1,209 @@
+{
+  "passed": true,
+  "scope": "Independent saved-wire audit; no physical, timing or universal allocation guarantee",
+  "identical_oracle_outputs": true,
+  "engines": [
+    {
+      "engine": "jit",
+      "transactions": 5596,
+      "successful_loads": 49,
+      "calls": 147,
+      "refused_MEMORY": 8,
+      "stale_handle_refusals": 49,
+      "resource_groups": 232,
+      "requested_MODE_replies": 7,
+      "boot_MODE_reply": [
+        640,
+        480,
+        80,
+        60,
+        16,
+        0
+      ],
+      "active_audio_statuses": 12,
+      "configurations": [
+        {
+          "mode": 11,
+          "active_audio": false,
+          "steady": {
+            "exec_free": 161480,
+            "exec_largest": 110580,
+            "internal_free": 204728,
+            "internal_largest": 110580
+          },
+          "refused": []
+        },
+        {
+          "mode": 11,
+          "active_audio": true,
+          "steady": {
+            "exec_free": 161480,
+            "exec_largest": 110580,
+            "internal_free": 204484,
+            "internal_largest": 110580
+          },
+          "refused": []
+        },
+        {
+          "mode": 8,
+          "active_audio": false,
+          "steady": {
+            "exec_free": 84664,
+            "exec_largest": 34804,
+            "internal_free": 139320,
+            "internal_largest": 45044
+          },
+          "refused": [
+            "text_hard_near"
+          ]
+        },
+        {
+          "mode": 8,
+          "active_audio": true,
+          "steady": {
+            "exec_free": 84664,
+            "exec_largest": 34804,
+            "internal_free": 139320,
+            "internal_largest": 45044
+          },
+          "refused": [
+            "text_hard_near"
+          ]
+        },
+        {
+          "mode": 136,
+          "active_audio": false,
+          "steady": {
+            "exec_free": 53928,
+            "exec_largest": 31732,
+            "internal_free": 62368,
+            "internal_largest": 26612
+          },
+          "refused": [
+            "text_default_edge",
+            "text_extended",
+            "text_hard_near"
+          ]
+        },
+        {
+          "mode": 136,
+          "active_audio": true,
+          "steady": {
+            "exec_free": 53928,
+            "exec_largest": 31732,
+            "internal_free": 62368,
+            "internal_largest": 26612
+          },
+          "refused": [
+            "text_default_edge",
+            "text_extended",
+            "text_hard_near"
+          ]
+        }
+      ],
+      "tx_sha256": "7339e7a4165d09852aaecef119fe87ab43ee3cba25efe5cd885c22ee4871f9b3",
+      "rx_sha256": "f64c886c972597d15ed3e27ab065838886f3123f9f882b2f59867cd85125b9c3"
+    },
+    {
+      "engine": "interp",
+      "transactions": 5596,
+      "successful_loads": 49,
+      "calls": 147,
+      "refused_MEMORY": 8,
+      "stale_handle_refusals": 49,
+      "resource_groups": 232,
+      "requested_MODE_replies": 7,
+      "boot_MODE_reply": [
+        640,
+        480,
+        80,
+        60,
+        16,
+        0
+      ],
+      "active_audio_statuses": 12,
+      "configurations": [
+        {
+          "mode": 11,
+          "active_audio": false,
+          "steady": {
+            "exec_free": 161480,
+            "exec_largest": 110580,
+            "internal_free": 204728,
+            "internal_largest": 110580
+          },
+          "refused": []
+        },
+        {
+          "mode": 11,
+          "active_audio": true,
+          "steady": {
+            "exec_free": 161480,
+            "exec_largest": 110580,
+            "internal_free": 204484,
+            "internal_largest": 110580
+          },
+          "refused": []
+        },
+        {
+          "mode": 8,
+          "active_audio": false,
+          "steady": {
+            "exec_free": 84664,
+            "exec_largest": 34804,
+            "internal_free": 139320,
+            "internal_largest": 45044
+          },
+          "refused": [
+            "text_hard_near"
+          ]
+        },
+        {
+          "mode": 8,
+          "active_audio": true,
+          "steady": {
+            "exec_free": 84664,
+            "exec_largest": 34804,
+            "internal_free": 139320,
+            "internal_largest": 45044
+          },
+          "refused": [
+            "text_hard_near"
+          ]
+        },
+        {
+          "mode": 136,
+          "active_audio": false,
+          "steady": {
+            "exec_free": 53928,
+            "exec_largest": 31732,
+            "internal_free": 62368,
+            "internal_largest": 26612
+          },
+          "refused": [
+            "text_default_edge",
+            "text_extended",
+            "text_hard_near"
+          ]
+        },
+        {
+          "mode": 136,
+          "active_audio": true,
+          "steady": {
+            "exec_free": 53928,
+            "exec_largest": 31732,
+            "internal_free": 62368,
+            "internal_largest": 26612
+          },
+          "refused": [
+            "text_default_edge",
+            "text_extended",
+            "text_hard_near"
+          ]
+        }
+      ],
+      "tx_sha256": "7339e7a4165d09852aaecef119fe87ab43ee3cba25efe5cd885c22ee4871f9b3",
+      "rx_sha256": "777a3b6f9542b77471481f7d67ed50be4399cecaf9cbba7d803286f82054aeeb"
+    }
+  ]
+}

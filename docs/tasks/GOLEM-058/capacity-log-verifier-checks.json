@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "saved_actual_MOS": true,
+  "oracle_calls": 45,
+  "negative_cases": [
+    "changed_native_output",
+    "changed_sampled_heap",
+    "missing_completion"
+  ],
+  "target_rerun": false,
+  "physical": false
+}

@@ -1,0 +1,11 @@
+{
+  "author_answer": "Approve capacity commits and pushes",
+  "scope_manifest": "capacity-publication-candidate.json",
+  "repositories": [
+    "bgates747/agon-vdplet",
+    "bgates747/Golem"
+  ],
+  "human_capacity_review_passed": true,
+  "physical_capacity_pending": true,
+  "unrelated_changes_excluded": true
+}

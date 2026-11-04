@@ -33,16 +33,16 @@ limits, largest executable allocation, total free memory and observed stack
 floor; none is a substitute for another. Establish useful operating guidance,
 not a promise that every module below one advertised byte count always fits.
 
-- CAP-001 [ ] Inventory current admission limits, executable/data allocation,
+- CAP-001 [x] Inventory current admission limits, executable/data allocation,
   compiler policy, image/ELF sections, resource queries and prior physical
   evidence. Reconcile outdated capacity-plan statements without rewriting old
   results. Publish the selected baseline and exact questions for the tests.
-- CAP-002 [ ] Prepare a small generated family of valid executable modules
+- CAP-002 [x] Prepare a small generated family of valid executable modules
   with meaningful code/literal/data/BSS use, representative relocation and
   finite self-checking calls. Exercise increasing sizes and both sides of
   relevant admission/allocation boundaries without executing malformed code.
   Keep baseline code and module identities explicit.
-- CAP-003 [ ] Qualify load/call/unload/reload and replacement over bounded
+- CAP-003 [x] Qualify load/call/unload/reload and replacement over bounded
   repeated cycles. Include expected refusal preserving established state,
   stale handles, partial initialization cleanup and subsequent successful use.
   Sample resources at stable lifecycle points; add no per-call checksum or
@@ -66,23 +66,23 @@ Then qualify safe resource/execution-lifetime operations; classify operations
 that cannot safely run inside an executing native module instead of admitting
 them by accident. This does not authorize a background interpreter thread.
 
-- VDU-001 [ ] Reconcile existing coverage with the pinned interpreter source.
+- VDU-001 [x] Reconcile existing coverage with the pinned interpreter source.
   Inventory remaining font/text, resource mutation, execution, waits, transport
   and callback families; record exact packet lengths, ownership and hazards.
-- VDU-002 [ ] Freeze an implementation-sized font/text contract with concrete
+- VDU-002 [x] Freeze an implementation-sized font/text contract with concrete
   wire examples, discovery, inline-payload/retained-storage rules, callback and
   truncation behavior. Implement useful supported font/glyph operations through
   the existing entry, without per-operation public dispatch-table functions.
-- VDU-003 [ ] Implement and qualify the useful bounded resource/lifetime subset
+- VDU-003 [x] Implement and qualify the useful bounded resource/lifetime subset
   justified by the inventory. Preserve the current module, call arguments,
   borrowed views and transport; explicitly refuse unsafe re-entry, unload,
   indefinite waits and storage invalidation. Record deliberate exclusions and
   their technical reasons rather than claiming all VDU operations work.
-- VDU-004 [ ] Verify full-span rejection before effects, exact operand framing,
+- VDU-004 [x] Verify full-span rejection before effects, exact operand framing,
   direct-UART/native parity, normal reply ordering, legacy modules and finite
   return/cleanup in both instruction engines and a real MOS client. Run focused
   sanitizer checks and report matched firmware/static-memory costs.
-- VDU-005 [ ] Stage a readable, stopped Oryx demonstration showing custom text
+- VDU-005 [x] Stage a readable, stopped Oryx demonstration showing custom text
   and the added useful operations. Identify the native source and host role;
   restore mode/cursor on exit. Obtain human review and explicit publication
   approval for coupled emulator/runtime changes before committing them.
@@ -120,9 +120,9 @@ for; proposed syntax must not be presented as implemented.
 
 ## Sequence and completion
 
-- PLN-001 [ ] Commit and push this plan and its task-register entry before
+- PLN-001 [x] Commit and push this plan and its task-register entry before
   implementation. Confirm the remote commit identity.
-- INT-001 [ ] Complete the initial CAP-001/VDU-001/PKG-001 audit, then freeze
+- INT-001 [x] Complete the initial CAP-001/VDU-001/PKG-001 audit, then freeze
   concrete finite subtranches before code/device work. Start capacity tooling
   first; use unavailable machine time for source/distribution work.
 - INT-002 [ ] Keep accepted interfaces and current results in maintained docs,

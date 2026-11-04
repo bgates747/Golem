@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "native_outputs_bound_to_log": 45,
+  "mode_labels": [
+    11,
+    8,
+    136
+  ],
+  "module_labels": 5,
+  "double_buffer_presentation": true,
+  "MOS_cursor_enable_sequence": true,
+  "actual_MOS_DIR": true,
+  "physical": false,
+  "human": false,
+  "run": {
+    "passed": true,
+    "seconds": 15.293470685006469,
+    "actual_MOS_DIR": true,
+    "human": false,
+    "physical": false
+  }
+}
